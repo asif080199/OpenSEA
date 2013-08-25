@@ -1,0 +1,8 @@
+<map id="ReadInput" name="ReadInput">
+<area shape="rect" id="node3" href="$class_bodiesinput.html" title="Bodiesinput" alt="" coords="5,80,96,107"/>
+<area shape="rect" id="node5" href="$class_control_input.html" title="ControlInput" alt="" coords="121,80,212,107"/>
+<area shape="rect" id="node7" href="$class_data_input.html" title="DataInput" alt="" coords="237,80,315,107"/>
+<area shape="rect" id="node9" href="$class_forces_input.html" title="ForcesInput" alt="" coords="340,80,431,107"/>
+<area shape="rect" id="node11" href="$class_hydrodynamic_input.html" title="HydrodynamicInput" alt="" coords="455,80,589,107"/>
+<area shape="rect" id="node13" href="$class_seaenv_input.html" title="SeaenvInput" alt="" coords="615,80,711,107"/>
+</map>

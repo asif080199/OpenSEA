@@ -1,0 +1,15 @@
+digraph "Mat::steal_mem"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="Mat::steal_mem",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled" fontcolor="black"];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="Col::shed_rows",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___col.html#ga82b3a4facee9186ff9a5a5bb95f8b15a",tooltip="remove specified rows"];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="Col::insert_rows",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___col.html#ga4d8f4d168c2226f1dde34d501ace8f7c"];
+  Node1 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="Row::shed_cols",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___row.html#ga52a4f10ea70929bc908562f131638570",tooltip="remove specified columns"];
+  Node1 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="Row::insert_cols",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___row.html#gaf85f70487ac4ff8d452d5734e66a6a62"];
+}

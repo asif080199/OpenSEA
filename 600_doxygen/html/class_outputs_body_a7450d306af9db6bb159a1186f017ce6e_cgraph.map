@@ -1,0 +1,4 @@
+<map id="OutputsBody::getGlobalMotion" name="OutputsBody::getGlobalMotion">
+<area shape="rect" id="node3" href="$class_outputs_body.html#afdb3f49b84baf1a6b2de8a5d014abfe5" title="Gets the current Body objects used by the class for calculating Derived Outputs. The returned value d..." alt="" coords="259,5,434,32"/>
+<area shape="rect" id="node5" href="$class_body.html#a07a8f186c02f0d5bad4beded83949571" title="Gets the number of equations used in the body." alt="" coords="263,56,431,83"/>
+</map>

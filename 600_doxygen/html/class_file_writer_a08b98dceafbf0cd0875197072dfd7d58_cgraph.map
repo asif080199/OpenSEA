@@ -1,0 +1,4 @@
+<map id="FileWriter::FileWriter" name="FileWriter::FileWriter">
+<area shape="rect" id="node3" href="$class_file_writer.html#a15370335402192f7e5342a6049f664fc" title="Sets the path to the project directory. Assumes the string specifying the path does not end with a sl..." alt="" coords="205,5,369,32"/>
+<area shape="rect" id="node5" href="$class_file_writer.html#a77da1b41e1332209f39243fcca4d1287" title="Provides direct access to the OutputsBody object. The OutputsBody object must be set for the fileWrit..." alt="" coords="197,56,376,83"/>
+</map>

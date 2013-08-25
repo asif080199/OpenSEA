@@ -1,0 +1,21 @@
+digraph "auxlib::solve_od"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="auxlib::solve_od",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled" fontcolor="black"];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="Mat::set_size",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___mat.html#ga750c2d7d0bd0cf7b88e17a24db252438",tooltip="change the matrix to have user specified dimensions (data is not preserved)"];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="Mat::is_empty",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___mat.html#ga6aea90307174186e101c8d20cb33be66",tooltip="returns true if the matrix has no elements"];
+  Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="trans",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group__fn__trans.html#ga8dd5ea042c5f17007a8d2d8d1ca4735e",tooltip="two consecutive transpose operations cancel each other"];
+  Node1 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="arma::max",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group__fn__max.html#ga4399d515d0581cd95e66728552a8ca55",tooltip="Delayed &#39;maximum values&#39; operation. The dimension, along which the maxima are found, is set via &#39;dim&#39;. For dim = 0, the maximum value of each column is found (i.e. searches by traversing across rows). For dim = 1, the maximum value of each row is found (i.e. searches by traversing across columns). The default is dim = 0."];
+  Node1 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="Mat::memptr",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___mat.html#gad5b1b46a9288e04128aa11c99cc2b444",tooltip="returns a pointer to array of eTs used by the matrix"];
+  Node1 -> Node7 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="Mat::colptr",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___mat.html#gad6a294c2ed4726f7b4b95e750ddfeb7a",tooltip="returns a pointer to array of eTs for a specified column; no bounds check"];
+  Node7 -> Node8 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="access::rw",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classaccess.html#acd46d2d9e6004074b21bdec6a2f23c6e",tooltip="internal function to allow modification of data declared as read-only (use with caution)"];
+}

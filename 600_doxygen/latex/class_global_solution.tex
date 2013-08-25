@@ -1,0 +1,205 @@
+\hypertarget{class_global_solution}{\section{Global\-Solution Class Reference}
+\label{class_global_solution}\index{Global\-Solution@{Global\-Solution}}
+}
+
+
+{\ttfamily \#include $<$globalsolution.\-h$>$}
+
+
+
+Inheritance diagram for Global\-Solution\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_global_solution__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Global\-Solution\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=162pt]{class_global_solution__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_global_solution_a27fcfb056c30fc07f8937bc71ec677e6}{Global\-Solution} ()
+\item 
+\hyperlink{class_global_solution_aea630b237ced06e04c5ea00bf1bb9398}{$\sim$\-Global\-Solution} ()
+\item 
+virtual void \hyperlink{class_global_solution_a537163391f1f55d073720b20f69acfa5}{set\-Derivative} (int ord)
+\begin{DoxyCompactList}\small\item\em Sets the order of the derivative for the object. \end{DoxyCompactList}\item 
+int \hyperlink{class_global_solution_abf8fa956895f2728820d65fda2f5304d}{get\-Derivative} ()
+\begin{DoxyCompactList}\small\item\em Gets the order of derivative set for the object. \end{DoxyCompactList}\item 
+cx\-\_\-mat \hyperlink{class_global_solution_adf90922a97153ce858da530e20bc3f4d}{calc\-Output} (double freq\-In)
+\begin{DoxyCompactList}\small\item\em Calculates the \hyperlink{class_global_solution}{Global\-Solution} output. \hyperlink{class_global_solution}{Global\-Solution} is the direct output of the solution for each body, translated into body coordinates. The output is modified to provide the specified order of derivative for the solution. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_solution}{Solution} \& \hyperlink{class_global_solution_a43a8caad9f88e3b468c3e9a364b45500}{get\-Solution} (double freq\-In)
+\begin{DoxyCompactList}\small\item\em Gets the solution matrix to perform operations on. Accesses the solution matrix from the parent body. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_global_solution_a026746ffb8e416eb4142a058b108148c}{int \hyperlink{class_global_solution_a026746ffb8e416eb4142a058b108148c}{order\-Derivative}}\label{class_global_solution_a026746ffb8e416eb4142a058b108148c}
+
+\begin{DoxyCompactList}\small\item\em The order of derivative to use for calculating output. Set by child classes for specifying specific outputs. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class represents the Global \hyperlink{class_solution}{Solution}. The Global \hyperlink{class_solution}{Solution} is the direct output of the solved values for each body. It provides the motions calculated for each body, translated back to body coordinate system. The \hyperlink{class_global_solution}{Global\-Solution} can output any desired derivative of the solved motions. Several other child classes are derived from this class. The only difference is that for those other classes, the order of derivative is predefined. \begin{DoxySeeAlso}{See Also}
+\hyperlink{class_global_motion}{Global\-Motion} 
+
+\hyperlink{class_global_velocity}{Global\-Velocity} 
+
+\hyperlink{class_global_acceleration}{Global\-Acceleration} 
+\end{DoxySeeAlso}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_global_solution_a27fcfb056c30fc07f8937bc71ec677e6}{\index{Global\-Solution@{Global\-Solution}!Global\-Solution@{Global\-Solution}}
+\index{Global\-Solution@{Global\-Solution}!GlobalSolution@{Global\-Solution}}
+\subsubsection[{Global\-Solution}]{\setlength{\rightskip}{0pt plus 5cm}Global\-Solution\-::\-Global\-Solution (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_global_solution_a27fcfb056c30fc07f8937bc71ec677e6}
+This default constructor creates a Global \hyperlink{class_solution}{Solution} object. 
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_global_solution_a27fcfb056c30fc07f8937bc71ec677e6_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_global_solution_aea630b237ced06e04c5ea00bf1bb9398}{\index{Global\-Solution@{Global\-Solution}!$\sim$\-Global\-Solution@{$\sim$\-Global\-Solution}}
+\index{$\sim$\-Global\-Solution@{$\sim$\-Global\-Solution}!GlobalSolution@{Global\-Solution}}
+\subsubsection[{$\sim$\-Global\-Solution}]{\setlength{\rightskip}{0pt plus 5cm}Global\-Solution\-::$\sim$\-Global\-Solution (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_global_solution_aea630b237ced06e04c5ea00bf1bb9398}
+The default destructor, nothing happens here. 
+
+\subsection{Member Function Documentation}
+\hypertarget{class_global_solution_adf90922a97153ce858da530e20bc3f4d}{\index{Global\-Solution@{Global\-Solution}!calc\-Output@{calc\-Output}}
+\index{calc\-Output@{calc\-Output}!GlobalSolution@{Global\-Solution}}
+\subsubsection[{calc\-Output}]{\setlength{\rightskip}{0pt plus 5cm}cx\-\_\-mat Global\-Solution\-::calc\-Output (
+\begin{DoxyParamCaption}
+\item[{double}]{freq\-In}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_global_solution_adf90922a97153ce858da530e20bc3f4d}
+
+
+Calculates the \hyperlink{class_global_solution}{Global\-Solution} output. \hyperlink{class_global_solution}{Global\-Solution} is the direct output of the solution for each body, translated into body coordinates. The output is modified to provide the specified order of derivative for the solution. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em freq\-In} & The wave frequency to use for calculating the \hyperlink{class_output_derived}{Output\-Derived} object. Most outputs will depend on the wave frequency. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns a complex matrix that is the \hyperlink{class_global_solution}{Global\-Solution} object. The complex matrix is a single row matrix. Each column in the row matrix represents a new degree of freedom variable. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_output_derived_a7a65864e45519edfe7fe45c408457f41}{Output\-Derived}.
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_global_solution_adf90922a97153ce858da530e20bc3f4d_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_global_solution_abf8fa956895f2728820d65fda2f5304d}{\index{Global\-Solution@{Global\-Solution}!get\-Derivative@{get\-Derivative}}
+\index{get\-Derivative@{get\-Derivative}!GlobalSolution@{Global\-Solution}}
+\subsubsection[{get\-Derivative}]{\setlength{\rightskip}{0pt plus 5cm}int Global\-Solution\-::get\-Derivative (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_global_solution_abf8fa956895f2728820d65fda2f5304d}
+
+
+Gets the order of derivative set for the object. 
+
+\begin{DoxyReturn}{Returns}
+Integer that specifies the order of the derivative. Value can be anything from 0 or larger. Variable is passed by value. 
+\end{DoxyReturn}
+\hypertarget{class_global_solution_a43a8caad9f88e3b468c3e9a364b45500}{\index{Global\-Solution@{Global\-Solution}!get\-Solution@{get\-Solution}}
+\index{get\-Solution@{get\-Solution}!GlobalSolution@{Global\-Solution}}
+\subsubsection[{get\-Solution}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Solution} \& Global\-Solution\-::get\-Solution (
+\begin{DoxyParamCaption}
+\item[{double}]{freq\-In}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_global_solution_a43a8caad9f88e3b468c3e9a364b45500}
+
+
+Gets the solution matrix to perform operations on. Accesses the solution matrix from the parent body. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em freq\-In} & The wave frequency. Used to identify which variable to access in the solution matrix. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns the \hyperlink{class_solution}{Solution} object to use for calculations. Variable is passed by reference. 
+\end{DoxyReturn}
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_global_solution_a43a8caad9f88e3b468c3e9a364b45500_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_global_solution_a537163391f1f55d073720b20f69acfa5}{\index{Global\-Solution@{Global\-Solution}!set\-Derivative@{set\-Derivative}}
+\index{set\-Derivative@{set\-Derivative}!GlobalSolution@{Global\-Solution}}
+\subsubsection[{set\-Derivative}]{\setlength{\rightskip}{0pt plus 5cm}void Global\-Solution\-::set\-Derivative (
+\begin{DoxyParamCaption}
+\item[{int}]{ord}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_global_solution_a537163391f1f55d073720b20f69acfa5}
+
+
+Sets the order of the derivative for the object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ord} & Integer input that specifies the order of the derivative. Value can be anything from 0 or larger. Variable is passed by value. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \hyperlink{class_global_acceleration_a14a041ea42d4c1bc10211c9a44aa3431}{Global\-Acceleration}, \hyperlink{class_global_motion_a15a8c0d57ffedf65a1cd84154cdaa6ae}{Global\-Motion}, and \hyperlink{class_global_velocity_a11229a6dbc7f85f3c321b5eddb127f10}{Global\-Velocity}.
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_global_solution_a537163391f1f55d073720b20f69acfa5_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/home/nicholas/\-Ship Design/\-Projects/\-D\-M\-S1305 Open\-S\-E\-A/master/200\-\_\-src/bin/ofreq/derived\-\_\-outputs/globalsolution.\-h\item 
+/home/nicholas/\-Ship Design/\-Projects/\-D\-M\-S1305 Open\-S\-E\-A/master/200\-\_\-src/bin/ofreq/derived\-\_\-outputs/globalsolution.\-cpp\end{DoxyCompactItemize}

@@ -1,0 +1,13 @@
+digraph "diskio::save_raw_ascii"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="diskio::save_raw_ascii",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled" fontcolor="black"];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="Cube::save",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___cube.html#ga5a648d4ca1600224245ab7d46ca47a78",tooltip="save the cube to a file"];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="diskio::save_raw_ascii",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group__diskio.html#gaedcbb7ee6e42314196627ae32222c19b",tooltip="Save a cube as raw text (no header, human readable)."];
+  Node1 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="Mat::save",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___mat.html#gad29ecbcc752a7a2b2ec5c234bcec31a4",tooltip="save the matrix to a file"];
+}

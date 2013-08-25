@@ -1,0 +1,605 @@
+\hypertarget{class_system}{\section{System Class Reference}
+\label{class_system}\index{System@{System}}
+}
+
+
+{\ttfamily \#include $<$system.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_system_ae317936c9bcf1374d61745572e0f2f8a}{System} ()
+\item 
+\hyperlink{class_system_a3be70bb338e3f062f821173fd15680d0}{$\sim$\-System} ()
+\item 
+void \hyperlink{class_system_a20bda2428f8aef211bf8787e1efeeeee}{test\-Print} ()
+\item 
+void \hyperlink{class_system_ae58c969c9ba0a1ec4bebff64b88a22ed}{set\-Analysis\-Type} (string)
+\item 
+void \hyperlink{class_system_ab1bfe916791d4c61bb807c930f73930c}{set\-Wave\-Frequencies} (vector$<$ double $>$)
+\item 
+void \hyperlink{class_system_a492b1dc5f789192ff6207f2555b23138}{set\-Wave\-Directions} (vector$<$ double $>$)
+\item 
+void \hyperlink{class_system_a2c26340bdbd94e6bed0f75dba991b49c}{set\-Spread\-Model} (string)
+\item 
+vector$<$ double $>$ \hyperlink{class_system_a18b18022b6468a41dfdbfc49c881b933}{get\-Wave\-Frequencies} ()
+\item 
+vector$<$ double $>$ \& \hyperlink{class_system_aa8af03fa5a3e8d6154d88987060a03e8}{ref\-Wave\-Frequencies} ()
+\begin{DoxyCompactList}\small\item\em Provides direct access to the list of wave frequencies. \end{DoxyCompactList}\item 
+vector$<$ double $>$ \hyperlink{class_system_a8e1d633a4b604223236e4cc4de35bd70}{get\-Wave\-Directions} ()
+\item 
+vector$<$ double $>$ \& \hyperlink{class_system_a660da11fb839d3efe76f4ab62be8bb23}{ref\-Wave\-Directions} ()
+\begin{DoxyCompactList}\small\item\em Provides direct access to the list of wave directions. \end{DoxyCompactList}\item 
+void \hyperlink{class_system_a1bdee1bedde63db2d813fda1036f8299}{set\-Cur\-Wave\-Dir\-Ind} (int input)
+\begin{DoxyCompactList}\small\item\em Sets the current wave index. \end{DoxyCompactList}\item 
+void \hyperlink{class_system_a76c849ddc8e6d9cc628f4208df2ea950}{set\-Cur\-Freq\-Ind} (int input)
+\begin{DoxyCompactList}\small\item\em Sets the current frequency index. \end{DoxyCompactList}\item 
+int \hyperlink{class_system_aff94e0e384f1c55cccfa0f0238e445b8}{get\-Cur\-Wave\-Dir\-Ind} ()
+\begin{DoxyCompactList}\small\item\em Returns the current wave direction index. \end{DoxyCompactList}\item 
+int \hyperlink{class_system_ae348a554ad912c084343e96c3a7b8647}{get\-Cur\-Freq\-Ind} ()
+\begin{DoxyCompactList}\small\item\em Returns the current wave frequency index. \end{DoxyCompactList}\item 
+double \hyperlink{class_system_aea8c3cb08e84051a4325c06c5a7185fa}{get\-Cur\-Wave\-Dir} ()
+\begin{DoxyCompactList}\small\item\em Returns the current wave direction. Actual value of wave direction angle. Angle specified as radians with zero as True North, positive counter-\/clockwise. \end{DoxyCompactList}\item 
+double \hyperlink{class_system_ac4dec1ad6e8745d87f18dfb91bbd8f6b}{get\-Cur\-Freq} ()
+\begin{DoxyCompactList}\small\item\em Returns the current wave frequency. Actual value of the wave frequency. Value specified with units of radians per second. \end{DoxyCompactList}\item 
+vector$<$ \hyperlink{class_body}{Body} $>$ \& \hyperlink{class_system_a18bd5c0db7e2cf00404ee9791fa7344a}{reflist\-Body} ()
+\begin{DoxyCompactList}\small\item\em Returns direct access to the list of \hyperlink{class_body}{Body} objects. Includes all the properties included by a vector$<$$>$ class. \end{DoxyCompactList}\item 
+vector$<$ \hyperlink{class_outputs_body}{Outputs\-Body} $>$ \& \hyperlink{class_system_aea22bb014c1b994c336842076cc86483}{reflist\-Outputs} ()
+\begin{DoxyCompactList}\small\item\em Returns direct access to the list of \hyperlink{class_outputs_body}{Outputs\-Body} objects. Includes all the properties included by a vector$<$$>$ class. \end{DoxyCompactList}\item 
+\hyperlink{class_body}{Body} \& \hyperlink{class_system_a3bb2a6aaa71a7b4b58afc8d92a67e214}{ref\-Body} (int input=0)
+\begin{DoxyCompactList}\small\item\em Returns direct access to a single \hyperlink{class_body}{Body} object. \end{DoxyCompactList}\item 
+\hyperlink{class_outputs_body}{Outputs\-Body} \& \hyperlink{class_system_af5cdbac74348f475cc5a529134ac418d}{ref\-Output} (int input=0)
+\begin{DoxyCompactList}\small\item\em Returns direct access to a single \hyperlink{class_outputs_body}{Outputs\-Body} object. \end{DoxyCompactList}\item 
+void \hyperlink{class_system_a0e146c46e245b3222a77fbcf93901630}{add\-Body} (\hyperlink{class_body}{Body} input)
+\begin{DoxyCompactList}\small\item\em Adds another \hyperlink{class_body}{Body} object to the list of \hyperlink{class_body}{Body} objects. Sets the new \hyperlink{class_body}{Body} object equal to the input. \end{DoxyCompactList}\item 
+void \hyperlink{class_system_a31949bbe2fceb1df4ba99f9c9c9465cd}{add\-Body} ()
+\begin{DoxyCompactList}\small\item\em Adds another \hyperlink{class_body}{Body} object to the list of \hyperlink{class_body}{Body} objects. Uses a blank new \hyperlink{class_body}{Body} object. \end{DoxyCompactList}\item 
+void \hyperlink{class_system_a439bada214bf663084c15939a1793e02}{add\-Output} (\hyperlink{class_outputs_body}{Outputs\-Body} input)
+\begin{DoxyCompactList}\small\item\em Adds another \hyperlink{class_outputs_body}{Outputs\-Body} object to the list of \hyperlink{class_outputs_body}{Outputs\-Body} objects. Sets the object equal to the input. \end{DoxyCompactList}\item 
+void \hyperlink{class_system_a4f84d2819d8a095818cb08bc84fa92f9}{add\-Output} ()
+\begin{DoxyCompactList}\small\item\em Adds another \hyperlink{class_outputs_body}{Outputs\-Body} object to the list of \hyperlink{class_outputs_body}{Outputs\-Body} objects. Uses a blank new \hyperlink{class_outputs_body}{Outputs\-Body} object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class holds data for the system object. The system object controls the overall behavior of the program. It also decides which analysis type to run\-: motion or resonant frequency. The system object controls the current wave environment settings. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_system_ae317936c9bcf1374d61745572e0f2f8a}{\index{System@{System}!System@{System}}
+\index{System@{System}!System@{System}}
+\subsubsection[{System}]{\setlength{\rightskip}{0pt plus 5cm}System\-::\-System (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_system_ae317936c9bcf1374d61745572e0f2f8a}
+The default constructor. \hypertarget{class_system_a3be70bb338e3f062f821173fd15680d0}{\index{System@{System}!$\sim$\-System@{$\sim$\-System}}
+\index{$\sim$\-System@{$\sim$\-System}!System@{System}}
+\subsubsection[{$\sim$\-System}]{\setlength{\rightskip}{0pt plus 5cm}System\-::$\sim$\-System (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_system_a3be70bb338e3f062f821173fd15680d0}
+The default destructor, nothing happens here. 
+
+\subsection{Member Function Documentation}
+\hypertarget{class_system_a0e146c46e245b3222a77fbcf93901630}{\index{System@{System}!add\-Body@{add\-Body}}
+\index{add\-Body@{add\-Body}!System@{System}}
+\subsubsection[{add\-Body}]{\setlength{\rightskip}{0pt plus 5cm}void System\-::add\-Body (
+\begin{DoxyParamCaption}
+\item[{{\bf Body}}]{input}
+\end{DoxyParamCaption}
+)}}\label{class_system_a0e146c46e245b3222a77fbcf93901630}
+
+
+Adds another \hyperlink{class_body}{Body} object to the list of \hyperlink{class_body}{Body} objects. Sets the new \hyperlink{class_body}{Body} object equal to the input. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em input} & \hyperlink{class_body}{Body} object to add into the list of stored \hyperlink{class_body}{Body} objects. Variable is passed by value and stored independant inside the \hyperlink{class_system}{System} class. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{class_body}{Body} 
+\end{DoxySeeAlso}
+\hypertarget{class_system_a31949bbe2fceb1df4ba99f9c9c9465cd}{\index{System@{System}!add\-Body@{add\-Body}}
+\index{add\-Body@{add\-Body}!System@{System}}
+\subsubsection[{add\-Body}]{\setlength{\rightskip}{0pt plus 5cm}void System\-::add\-Body (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_system_a31949bbe2fceb1df4ba99f9c9c9465cd}
+
+
+Adds another \hyperlink{class_body}{Body} object to the list of \hyperlink{class_body}{Body} objects. Uses a blank new \hyperlink{class_body}{Body} object. 
+
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{class_body}{Body} 
+\end{DoxySeeAlso}
+\hypertarget{class_system_a439bada214bf663084c15939a1793e02}{\index{System@{System}!add\-Output@{add\-Output}}
+\index{add\-Output@{add\-Output}!System@{System}}
+\subsubsection[{add\-Output}]{\setlength{\rightskip}{0pt plus 5cm}void System\-::add\-Output (
+\begin{DoxyParamCaption}
+\item[{{\bf Outputs\-Body}}]{input}
+\end{DoxyParamCaption}
+)}}\label{class_system_a439bada214bf663084c15939a1793e02}
+
+
+Adds another \hyperlink{class_outputs_body}{Outputs\-Body} object to the list of \hyperlink{class_outputs_body}{Outputs\-Body} objects. Sets the object equal to the input. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em input} & \hyperlink{class_outputs_body}{Outputs\-Body} object to add into the list of stored \hyperlink{class_outputs_body}{Outputs\-Body} objects. Variable is passed by value and sotred independant inside the \hyperlink{class_system}{System} class. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{class_outputs_body}{Outputs\-Body} 
+\end{DoxySeeAlso}
+\hypertarget{class_system_a4f84d2819d8a095818cb08bc84fa92f9}{\index{System@{System}!add\-Output@{add\-Output}}
+\index{add\-Output@{add\-Output}!System@{System}}
+\subsubsection[{add\-Output}]{\setlength{\rightskip}{0pt plus 5cm}void System\-::add\-Output (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_system_a4f84d2819d8a095818cb08bc84fa92f9}
+
+
+Adds another \hyperlink{class_outputs_body}{Outputs\-Body} object to the list of \hyperlink{class_outputs_body}{Outputs\-Body} objects. Uses a blank new \hyperlink{class_outputs_body}{Outputs\-Body} object. 
+
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{class_outputs_body}{Outputs\-Body} 
+\end{DoxySeeAlso}
+\hypertarget{class_system_ac4dec1ad6e8745d87f18dfb91bbd8f6b}{\index{System@{System}!get\-Cur\-Freq@{get\-Cur\-Freq}}
+\index{get\-Cur\-Freq@{get\-Cur\-Freq}!System@{System}}
+\subsubsection[{get\-Cur\-Freq}]{\setlength{\rightskip}{0pt plus 5cm}double System\-::get\-Cur\-Freq (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_system_ac4dec1ad6e8745d87f18dfb91bbd8f6b}
+
+
+Returns the current wave frequency. Actual value of the wave frequency. Value specified with units of radians per second. 
+
+\begin{DoxyReturn}{Returns}
+Double. Returns the current wave frequency. Actual value of the wave frequency. Value specified with units of radians per second. 
+\end{DoxyReturn}
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_system_ac4dec1ad6e8745d87f18dfb91bbd8f6b_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_system_ae348a554ad912c084343e96c3a7b8647}{\index{System@{System}!get\-Cur\-Freq\-Ind@{get\-Cur\-Freq\-Ind}}
+\index{get\-Cur\-Freq\-Ind@{get\-Cur\-Freq\-Ind}!System@{System}}
+\subsubsection[{get\-Cur\-Freq\-Ind}]{\setlength{\rightskip}{0pt plus 5cm}int System\-::get\-Cur\-Freq\-Ind (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_system_ae348a554ad912c084343e96c3a7b8647}
+
+
+Returns the current wave frequency index. 
+
+\begin{DoxyReturn}{Returns}
+Integer. Returns the current wave frequency index. Variable passed by value. 
+\end{DoxyReturn}
+\hypertarget{class_system_aea8c3cb08e84051a4325c06c5a7185fa}{\index{System@{System}!get\-Cur\-Wave\-Dir@{get\-Cur\-Wave\-Dir}}
+\index{get\-Cur\-Wave\-Dir@{get\-Cur\-Wave\-Dir}!System@{System}}
+\subsubsection[{get\-Cur\-Wave\-Dir}]{\setlength{\rightskip}{0pt plus 5cm}double System\-::get\-Cur\-Wave\-Dir (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_system_aea8c3cb08e84051a4325c06c5a7185fa}
+
+
+Returns the current wave direction. Actual value of wave direction angle. Angle specified as radians with zero as True North, positive counter-\/clockwise. 
+
+\begin{DoxyReturn}{Returns}
+Double. Returns the current wave direction. Actual value of wave direction angle. Angle specified as radians with zero as True North, positive counter-\/clockwise. Variable passed by value. 
+\end{DoxyReturn}
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_system_aea8c3cb08e84051a4325c06c5a7185fa_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_system_aff94e0e384f1c55cccfa0f0238e445b8}{\index{System@{System}!get\-Cur\-Wave\-Dir\-Ind@{get\-Cur\-Wave\-Dir\-Ind}}
+\index{get\-Cur\-Wave\-Dir\-Ind@{get\-Cur\-Wave\-Dir\-Ind}!System@{System}}
+\subsubsection[{get\-Cur\-Wave\-Dir\-Ind}]{\setlength{\rightskip}{0pt plus 5cm}int System\-::get\-Cur\-Wave\-Dir\-Ind (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_system_aff94e0e384f1c55cccfa0f0238e445b8}
+
+
+Returns the current wave direction index. 
+
+\begin{DoxyReturn}{Returns}
+Integer. Returns the current wave direction index. Variable passed by value. 
+\end{DoxyReturn}
+\hypertarget{class_system_a8e1d633a4b604223236e4cc4de35bd70}{\index{System@{System}!get\-Wave\-Directions@{get\-Wave\-Directions}}
+\index{get\-Wave\-Directions@{get\-Wave\-Directions}!System@{System}}
+\subsubsection[{get\-Wave\-Directions}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ double $>$ System\-::get\-Wave\-Directions (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_system_a8e1d633a4b604223236e4cc4de35bd70}
+Retrieve the list of wave directions. \begin{DoxyReturn}{Returns}
+The list of wave directions. 
+\end{DoxyReturn}
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_system_a8e1d633a4b604223236e4cc4de35bd70_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_system_a8e1d633a4b604223236e4cc4de35bd70_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_system_a18b18022b6468a41dfdbfc49c881b933}{\index{System@{System}!get\-Wave\-Frequencies@{get\-Wave\-Frequencies}}
+\index{get\-Wave\-Frequencies@{get\-Wave\-Frequencies}!System@{System}}
+\subsubsection[{get\-Wave\-Frequencies}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ double $>$ System\-::get\-Wave\-Frequencies (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_system_a18b18022b6468a41dfdbfc49c881b933}
+Retrieve the list of wave frequencies. \begin{DoxyReturn}{Returns}
+The list of wave frequencies. 
+\end{DoxyReturn}
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_system_a18b18022b6468a41dfdbfc49c881b933_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_system_a18b18022b6468a41dfdbfc49c881b933_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_system_a3bb2a6aaa71a7b4b58afc8d92a67e214}{\index{System@{System}!ref\-Body@{ref\-Body}}
+\index{ref\-Body@{ref\-Body}!System@{System}}
+\subsubsection[{ref\-Body}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Body} \& System\-::ref\-Body (
+\begin{DoxyParamCaption}
+\item[{int}]{input = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}}\label{class_system_a3bb2a6aaa71a7b4b58afc8d92a67e214}
+
+
+Returns direct access to a single \hyperlink{class_body}{Body} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em input} & Specifies index of which \hyperlink{class_body}{Body} object to access in the list of \hyperlink{class_body}{Body} objects. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns a \hyperlink{class_body}{Body} object. Returned variable is passed by reference. 
+\end{DoxyReturn}
+\hypertarget{class_system_a18bd5c0db7e2cf00404ee9791fa7344a}{\index{System@{System}!reflist\-Body@{reflist\-Body}}
+\index{reflist\-Body@{reflist\-Body}!System@{System}}
+\subsubsection[{reflist\-Body}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ {\bf Body} $>$ \& System\-::reflist\-Body (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_system_a18bd5c0db7e2cf00404ee9791fa7344a}
+
+
+Returns direct access to the list of \hyperlink{class_body}{Body} objects. Includes all the properties included by a vector$<$$>$ class. 
+
+\begin{DoxyReturn}{Returns}
+Returns a vector of \hyperlink{class_body}{Body} objects. Returned variable passed by reference. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{class_body}{Body} 
+\end{DoxySeeAlso}
+\hypertarget{class_system_aea22bb014c1b994c336842076cc86483}{\index{System@{System}!reflist\-Outputs@{reflist\-Outputs}}
+\index{reflist\-Outputs@{reflist\-Outputs}!System@{System}}
+\subsubsection[{reflist\-Outputs}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ {\bf Outputs\-Body} $>$ \& System\-::reflist\-Outputs (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_system_aea22bb014c1b994c336842076cc86483}
+
+
+Returns direct access to the list of \hyperlink{class_outputs_body}{Outputs\-Body} objects. Includes all the properties included by a vector$<$$>$ class. 
+
+\begin{DoxyReturn}{Returns}
+Returns a vector of \hyperlink{class_outputs_body}{Outputs\-Body} objects. Returned variable passed by reference. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{class_outputs_body}{Outputs\-Body} 
+\end{DoxySeeAlso}
+\hypertarget{class_system_af5cdbac74348f475cc5a529134ac418d}{\index{System@{System}!ref\-Output@{ref\-Output}}
+\index{ref\-Output@{ref\-Output}!System@{System}}
+\subsubsection[{ref\-Output}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Outputs\-Body} \& System\-::ref\-Output (
+\begin{DoxyParamCaption}
+\item[{int}]{input = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}}\label{class_system_af5cdbac74348f475cc5a529134ac418d}
+
+
+Returns direct access to a single \hyperlink{class_outputs_body}{Outputs\-Body} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em input} & Specifies the index of which \hyperlink{class_outputs_body}{Outputs\-Body} object to access in the list of \hyperlink{class_outputs_body}{Outputs\-Body} objects. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns an \hyperlink{class_outputs_body}{Outputs\-Body} object. Returned variable is passed by reference. 
+\end{DoxyReturn}
+\hypertarget{class_system_a660da11fb839d3efe76f4ab62be8bb23}{\index{System@{System}!ref\-Wave\-Directions@{ref\-Wave\-Directions}}
+\index{ref\-Wave\-Directions@{ref\-Wave\-Directions}!System@{System}}
+\subsubsection[{ref\-Wave\-Directions}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ double $>$ \& System\-::ref\-Wave\-Directions (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_system_a660da11fb839d3efe76f4ab62be8bb23}
+
+
+Provides direct access to the list of wave directions. 
+
+\begin{DoxyReturn}{Returns}
+Pointer to the list of wave directions Variable passed by reference. 
+\end{DoxyReturn}
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_system_a660da11fb839d3efe76f4ab62be8bb23_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_system_aa8af03fa5a3e8d6154d88987060a03e8}{\index{System@{System}!ref\-Wave\-Frequencies@{ref\-Wave\-Frequencies}}
+\index{ref\-Wave\-Frequencies@{ref\-Wave\-Frequencies}!System@{System}}
+\subsubsection[{ref\-Wave\-Frequencies}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ double $>$ \& System\-::ref\-Wave\-Frequencies (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_system_aa8af03fa5a3e8d6154d88987060a03e8}
+
+
+Provides direct access to the list of wave frequencies. 
+
+\begin{DoxyReturn}{Returns}
+Pointer to the list of wave frequencies. Variable passed by reference. 
+\end{DoxyReturn}
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_system_aa8af03fa5a3e8d6154d88987060a03e8_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_system_ae58c969c9ba0a1ec4bebff64b88a22ed}{\index{System@{System}!set\-Analysis\-Type@{set\-Analysis\-Type}}
+\index{set\-Analysis\-Type@{set\-Analysis\-Type}!System@{System}}
+\subsubsection[{set\-Analysis\-Type}]{\setlength{\rightskip}{0pt plus 5cm}void System\-::set\-Analysis\-Type (
+\begin{DoxyParamCaption}
+\item[{string}]{analysis\-Type\-In}
+\end{DoxyParamCaption}
+)}}\label{class_system_ae58c969c9ba0a1ec4bebff64b88a22ed}
+Sets the analysis ype. 
+\begin{DoxyParams}{Parameters}
+{\em analysis\-Type\-In} & The analysis type. \\
+\hline
+\end{DoxyParams}
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_system_ae58c969c9ba0a1ec4bebff64b88a22ed_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_system_a76c849ddc8e6d9cc628f4208df2ea950}{\index{System@{System}!set\-Cur\-Freq\-Ind@{set\-Cur\-Freq\-Ind}}
+\index{set\-Cur\-Freq\-Ind@{set\-Cur\-Freq\-Ind}!System@{System}}
+\subsubsection[{set\-Cur\-Freq\-Ind}]{\setlength{\rightskip}{0pt plus 5cm}void System\-::set\-Cur\-Freq\-Ind (
+\begin{DoxyParamCaption}
+\item[{int}]{input}
+\end{DoxyParamCaption}
+)}}\label{class_system_a76c849ddc8e6d9cc628f4208df2ea950}
+
+
+Sets the current frequency index. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em input} & Integer specifying the index of the current wave frequency in the list of wave frequencies. \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_system_a1bdee1bedde63db2d813fda1036f8299}{\index{System@{System}!set\-Cur\-Wave\-Dir\-Ind@{set\-Cur\-Wave\-Dir\-Ind}}
+\index{set\-Cur\-Wave\-Dir\-Ind@{set\-Cur\-Wave\-Dir\-Ind}!System@{System}}
+\subsubsection[{set\-Cur\-Wave\-Dir\-Ind}]{\setlength{\rightskip}{0pt plus 5cm}void System\-::set\-Cur\-Wave\-Dir\-Ind (
+\begin{DoxyParamCaption}
+\item[{int}]{input}
+\end{DoxyParamCaption}
+)}}\label{class_system_a1bdee1bedde63db2d813fda1036f8299}
+
+
+Sets the current wave index. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em input} & Integer specifying the index of the current wave direction in the list of wave directions. \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_system_a2c26340bdbd94e6bed0f75dba991b49c}{\index{System@{System}!set\-Spread\-Model@{set\-Spread\-Model}}
+\index{set\-Spread\-Model@{set\-Spread\-Model}!System@{System}}
+\subsubsection[{set\-Spread\-Model}]{\setlength{\rightskip}{0pt plus 5cm}void System\-::set\-Spread\-Model (
+\begin{DoxyParamCaption}
+\item[{string}]{spread\-In}
+\end{DoxyParamCaption}
+)}}\label{class_system_a2c26340bdbd94e6bed0f75dba991b49c}
+Sets the spread model. 
+\begin{DoxyParams}{Parameters}
+{\em spread\-In} & The spread model. \\
+\hline
+\end{DoxyParams}
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_system_a2c26340bdbd94e6bed0f75dba991b49c_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_system_a2c26340bdbd94e6bed0f75dba991b49c_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_system_a492b1dc5f789192ff6207f2555b23138}{\index{System@{System}!set\-Wave\-Directions@{set\-Wave\-Directions}}
+\index{set\-Wave\-Directions@{set\-Wave\-Directions}!System@{System}}
+\subsubsection[{set\-Wave\-Directions}]{\setlength{\rightskip}{0pt plus 5cm}void System\-::set\-Wave\-Directions (
+\begin{DoxyParamCaption}
+\item[{vector$<$ double $>$}]{vec\-In}
+\end{DoxyParamCaption}
+)}}\label{class_system_a492b1dc5f789192ff6207f2555b23138}
+Sets the wave directions. 
+\begin{DoxyParams}{Parameters}
+{\em vec\-In} & The list of wave directions. \\
+\hline
+\end{DoxyParams}
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_system_a492b1dc5f789192ff6207f2555b23138_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_system_a492b1dc5f789192ff6207f2555b23138_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_system_ab1bfe916791d4c61bb807c930f73930c}{\index{System@{System}!set\-Wave\-Frequencies@{set\-Wave\-Frequencies}}
+\index{set\-Wave\-Frequencies@{set\-Wave\-Frequencies}!System@{System}}
+\subsubsection[{set\-Wave\-Frequencies}]{\setlength{\rightskip}{0pt plus 5cm}void System\-::set\-Wave\-Frequencies (
+\begin{DoxyParamCaption}
+\item[{vector$<$ double $>$}]{vec\-In}
+\end{DoxyParamCaption}
+)}}\label{class_system_ab1bfe916791d4c61bb807c930f73930c}
+Sets the wave frequencies. 
+\begin{DoxyParams}{Parameters}
+{\em vec\-In} & The list of wave frequencies. \\
+\hline
+\end{DoxyParams}
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_system_ab1bfe916791d4c61bb807c930f73930c_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_system_ab1bfe916791d4c61bb807c930f73930c_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_system_a20bda2428f8aef211bf8787e1efeeeee}{\index{System@{System}!test\-Print@{test\-Print}}
+\index{test\-Print@{test\-Print}!System@{System}}
+\subsubsection[{test\-Print}]{\setlength{\rightskip}{0pt plus 5cm}void System\-::test\-Print (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_system_a20bda2428f8aef211bf8787e1efeeeee}
+Test print to console the values of all data members. 
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_system_a20bda2428f8aef211bf8787e1efeeeee_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=318pt]{class_system_a20bda2428f8aef211bf8787e1efeeeee_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/home/nicholas/\-Ship Design/\-Projects/\-D\-M\-S1305 Open\-S\-E\-A/master/200\-\_\-src/bin/ofreq/global\-\_\-objects/system.\-h\item 
+/home/nicholas/\-Ship Design/\-Projects/\-D\-M\-S1305 Open\-S\-E\-A/master/200\-\_\-src/bin/ofreq/global\-\_\-objects/system.\-cpp\end{DoxyCompactItemize}

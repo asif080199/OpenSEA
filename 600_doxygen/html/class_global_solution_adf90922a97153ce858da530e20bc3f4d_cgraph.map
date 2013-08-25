@@ -1,0 +1,5 @@
+<map id="GlobalSolution::calcOutput" name="GlobalSolution::calcOutput">
+<area shape="rect" id="node3" href="$class_global_solution.html#a43a8caad9f88e3b468c3e9a364b45500" title="Gets the solution matrix to perform operations on. Accesses the solution matrix from the parent body..." alt="" coords="235,5,421,32"/>
+<area shape="rect" id="node5" href="$class_solution.html#aa224465c8237cd395681164bee0d7f8d" title="Returns direct access to the solution matrix." alt="" coords="257,56,399,83"/>
+<area shape="rect" id="node7" href="$class_solution.html#a631b5866d3df132464a7d1ec70cc6028" title="Returns the solution matrix." alt="" coords="255,107,401,133"/>
+</map>

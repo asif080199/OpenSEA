@@ -1,0 +1,4 @@
+<map id="WaveDirections::refWaveDirections" name="WaveDirections::refWaveDirections">
+<area shape="rect" id="node3" href="$class_system.html#a660da11fb839d3efe76f4ab62be8bb23" title="Provides direct access to the list of wave directions." alt="" coords="291,5,477,32"/>
+<area shape="rect" id="node5" href="$class_system.html#aea8c3cb08e84051a4325c06c5a7185fa" title="Returns the current wave direction. Actual value of wave direction angle. Angle specified as radians ..." alt="" coords="300,56,468,83"/>
+</map>

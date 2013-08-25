@@ -1,0 +1,225 @@
+\hypertarget{classmat_body}{\section{mat\-Body Class Reference}
+\label{classmat_body}\index{mat\-Body@{mat\-Body}}
+}
+
+
+{\ttfamily \#include $<$matbody.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmat_body_adbcb73fc9873660ca781493b2b2742a2}{mat\-Body} ()
+\item 
+\hyperlink{classmat_body_afcc3a6a87689dfbb5dfa72648a46c355}{$\sim$mat\-Body} ()
+\item 
+void \hyperlink{classmat_body_abb86318fbd7300ed01eae308551f9e96}{set\-Id} (int num)
+\begin{DoxyCompactList}\small\item\em Sets the force id number for the object. \end{DoxyCompactList}\item 
+int \hyperlink{classmat_body_a551183ad56eeba71ea4690574b1841e4}{get\-Id} ()
+\begin{DoxyCompactList}\small\item\em Returns the force id number for the object. \end{DoxyCompactList}\item 
+void \hyperlink{classmat_body_abb8ea32c84153da5dfc53d7b0dc836a5}{set\-Model\-Id} (int num)
+\begin{DoxyCompactList}\small\item\em Sets the integer id of the motion model used by the \hyperlink{classmat_body}{mat\-Body} object. \end{DoxyCompactList}\item 
+int \hyperlink{classmat_body_ae4c339b7ce6a93cf6e54bc998cbd5903}{get\-Model\-Id} ()
+\begin{DoxyCompactList}\small\item\em Gets the integer id of the motion model used by the \hyperlink{classmat_body}{mat\-Body} object. \end{DoxyCompactList}\item 
+cx\-\_\-mat \& \hyperlink{classmat_body_ad1f7a689d28f2201cf9455495536fa8b}{Mass} ()
+\begin{DoxyCompactList}\small\item\em Returns a reference to the mass matrix. \end{DoxyCompactList}\item 
+vector$<$ \hyperlink{classmat_react_force}{mat\-React\-Force} $>$ \& \hyperlink{classmat_body_a9a477bda31517ad2454c34c0a1942308}{list\-React\-Force\-\_\-user} ()
+\begin{DoxyCompactList}\small\item\em Returns a reference to the Reactive \hyperlink{class_force}{Force}, user objects. \end{DoxyCompactList}\item 
+vector$<$ \hyperlink{classmat_cross_force}{mat\-Cross\-Force} $>$ \& \hyperlink{classmat_body_a644f523eb34ce98ebbee3a52b35f13f0}{list\-Cross\-Force\-\_\-user} ()
+\begin{DoxyCompactList}\small\item\em Returns a reference to the Cross-\/\-Body \hyperlink{class_force}{Force}, user objects. \end{DoxyCompactList}\item 
+vector$<$ \hyperlink{classmat_active_force}{mat\-Active\-Force} $>$ \& \hyperlink{classmat_body_a6cce7e3a5be94a9fd7b58ae76809271f}{list\-Active\-Force\-\_\-user} ()
+\begin{DoxyCompactList}\small\item\em Returns a reference to the Active \hyperlink{class_force}{Force}, user objects. \end{DoxyCompactList}\item 
+vector$<$ \hyperlink{classmat_react_force}{mat\-React\-Force} $>$ \& \hyperlink{classmat_body_a09da411ea6f2934fc36b84c34da8f63d}{list\-React\-Force\-\_\-hydro} ()
+\begin{DoxyCompactList}\small\item\em Returns a reference to the Reactive \hyperlink{class_force}{Force}, hydro objects. \end{DoxyCompactList}\item 
+vector$<$ \hyperlink{classmat_cross_force}{mat\-Cross\-Force} $>$ \& \hyperlink{classmat_body_ac4e3b6e287af37f0bc89195ed93a3670}{list\-Cross\-Force\-\_\-hydro} ()
+\begin{DoxyCompactList}\small\item\em Returns a reference to the Cross-\/\-Body \hyperlink{class_force}{Force}, hydro objects. \end{DoxyCompactList}\item 
+vector$<$ \hyperlink{classmat_active_force}{mat\-Active\-Force} $>$ \& \hyperlink{classmat_body_af5e93e715ac8c15cf7a8b29ab6f4a930}{list\-Active\-Force\-\_\-hydro} ()
+\begin{DoxyCompactList}\small\item\em Returns a reference to the Active \hyperlink{class_force}{Force}, hydro objects. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class holds all data for a body and related force matrices. The \hyperlink{classmat_body}{mat\-Body} class contains data defined in a pure mathematical context. It is prepared for combination and solution. User interface items, such as relative coordinates and body names are stripped out. Definitions of equations, derivatives, and variables are replaced by sets of matrices. The body still contains force objects, but the objects are defined in terms of matrices. Each force object contains a vector of matrices, denoted by the derivative property. Each matrix within that vector represents a derivative, starting with order 0 (index 0 in the vector.) Each matrix is organized so that rows = equations, and columns = variables.
+
+The class definition also includes a number and size property. The number denotes the body's position within a vector of bodies. The size denotes the number of equations used. This in turn notes how big the matrices must be to accomodate any forces from the body. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classmat_body_adbcb73fc9873660ca781493b2b2742a2}{\index{mat\-Body@{mat\-Body}!mat\-Body@{mat\-Body}}
+\index{mat\-Body@{mat\-Body}!matBody@{mat\-Body}}
+\subsubsection[{mat\-Body}]{\setlength{\rightskip}{0pt plus 5cm}mat\-Body\-::mat\-Body (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classmat_body_adbcb73fc9873660ca781493b2b2742a2}
+The default constructor. \hypertarget{classmat_body_afcc3a6a87689dfbb5dfa72648a46c355}{\index{mat\-Body@{mat\-Body}!$\sim$mat\-Body@{$\sim$mat\-Body}}
+\index{$\sim$mat\-Body@{$\sim$mat\-Body}!matBody@{mat\-Body}}
+\subsubsection[{$\sim$mat\-Body}]{\setlength{\rightskip}{0pt plus 5cm}mat\-Body\-::$\sim$mat\-Body (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classmat_body_afcc3a6a87689dfbb5dfa72648a46c355}
+The default destructor, nothing happens here. 
+
+\subsection{Member Function Documentation}
+\hypertarget{classmat_body_a551183ad56eeba71ea4690574b1841e4}{\index{mat\-Body@{mat\-Body}!get\-Id@{get\-Id}}
+\index{get\-Id@{get\-Id}!matBody@{mat\-Body}}
+\subsubsection[{get\-Id}]{\setlength{\rightskip}{0pt plus 5cm}int mat\-Body\-::get\-Id (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classmat_body_a551183ad56eeba71ea4690574b1841e4}
+
+
+Returns the force id number for the object. 
+
+This is similar to the name parameter in other force objects. It is an identifier. In this case, a numerical identifier. Normally correlates to the objects index in a vector of other objects of the same class. \begin{DoxyReturn}{Returns}
+Returns the force id number, integer data type. 
+\end{DoxyReturn}
+\hypertarget{classmat_body_ae4c339b7ce6a93cf6e54bc998cbd5903}{\index{mat\-Body@{mat\-Body}!get\-Model\-Id@{get\-Model\-Id}}
+\index{get\-Model\-Id@{get\-Model\-Id}!matBody@{mat\-Body}}
+\subsubsection[{get\-Model\-Id}]{\setlength{\rightskip}{0pt plus 5cm}int mat\-Body\-::get\-Model\-Id (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classmat_body_ae4c339b7ce6a93cf6e54bc998cbd5903}
+
+
+Gets the integer id of the motion model used by the \hyperlink{classmat_body}{mat\-Body} object. 
+
+Gets the integer id of the motion model used by the \hyperlink{classmat_body}{mat\-Body} object. \begin{DoxyReturn}{Returns}
+Returns the integer id of the motion model used by the \hyperlink{classmat_body}{mat\-Body} object. Variable is passed by value. 
+\end{DoxyReturn}
+\hypertarget{classmat_body_af5e93e715ac8c15cf7a8b29ab6f4a930}{\index{mat\-Body@{mat\-Body}!list\-Active\-Force\-\_\-hydro@{list\-Active\-Force\-\_\-hydro}}
+\index{list\-Active\-Force\-\_\-hydro@{list\-Active\-Force\-\_\-hydro}!matBody@{mat\-Body}}
+\subsubsection[{list\-Active\-Force\-\_\-hydro}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ {\bf mat\-Active\-Force} $>$ \& mat\-Body\-::list\-Active\-Force\-\_\-hydro (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classmat_body_af5e93e715ac8c15cf7a8b29ab6f4a930}
+
+
+Returns a reference to the Active \hyperlink{class_force}{Force}, hydro objects. 
+
+Returns a reference to the Active \hyperlink{class_force}{Force}, hydro objects. This is a vector list of the Active \hyperlink{class_force}{Force} objects. Provides direct access to the variable and all the member functions of the vector class. \begin{DoxyReturn}{Returns}
+This is a vector list of the Active \hyperlink{class_force}{Force} objects. Provides direct access to the variable and all the member functions of the vector class. Variable passed by reference. 
+\end{DoxyReturn}
+\hypertarget{classmat_body_a6cce7e3a5be94a9fd7b58ae76809271f}{\index{mat\-Body@{mat\-Body}!list\-Active\-Force\-\_\-user@{list\-Active\-Force\-\_\-user}}
+\index{list\-Active\-Force\-\_\-user@{list\-Active\-Force\-\_\-user}!matBody@{mat\-Body}}
+\subsubsection[{list\-Active\-Force\-\_\-user}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ {\bf mat\-Active\-Force} $>$ \& mat\-Body\-::list\-Active\-Force\-\_\-user (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classmat_body_a6cce7e3a5be94a9fd7b58ae76809271f}
+
+
+Returns a reference to the Active \hyperlink{class_force}{Force}, user objects. 
+
+Returns a reference to the Active \hyperlink{class_force}{Force}, user objects. This is a vector list of the Active \hyperlink{class_force}{Force} objects. Provides direct access to the variable and all the member functions of the vector class. \begin{DoxyReturn}{Returns}
+This is a vector list of the Active \hyperlink{class_force}{Force} objects. Provides direct access to the variable and all the member functions of the vector class. Variable passed by reference. 
+\end{DoxyReturn}
+\hypertarget{classmat_body_ac4e3b6e287af37f0bc89195ed93a3670}{\index{mat\-Body@{mat\-Body}!list\-Cross\-Force\-\_\-hydro@{list\-Cross\-Force\-\_\-hydro}}
+\index{list\-Cross\-Force\-\_\-hydro@{list\-Cross\-Force\-\_\-hydro}!matBody@{mat\-Body}}
+\subsubsection[{list\-Cross\-Force\-\_\-hydro}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ {\bf mat\-Cross\-Force} $>$ \& mat\-Body\-::list\-Cross\-Force\-\_\-hydro (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classmat_body_ac4e3b6e287af37f0bc89195ed93a3670}
+
+
+Returns a reference to the Cross-\/\-Body \hyperlink{class_force}{Force}, hydro objects. 
+
+Returns a reference to the Cross-\/\-Body \hyperlink{class_force}{Force}, hydro objects. This is a vector list of the Cross-\/\-Body \hyperlink{class_force}{Force} objects. Provides direct access to the variable and all the member functions of the vector class. \begin{DoxyReturn}{Returns}
+This is a vector list of the Cross-\/\-Body \hyperlink{class_force}{Force} objects. Provides direct access to the variable and all the member functions of the vector class. Variable passed by reference. 
+\end{DoxyReturn}
+\hypertarget{classmat_body_a644f523eb34ce98ebbee3a52b35f13f0}{\index{mat\-Body@{mat\-Body}!list\-Cross\-Force\-\_\-user@{list\-Cross\-Force\-\_\-user}}
+\index{list\-Cross\-Force\-\_\-user@{list\-Cross\-Force\-\_\-user}!matBody@{mat\-Body}}
+\subsubsection[{list\-Cross\-Force\-\_\-user}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ {\bf mat\-Cross\-Force} $>$ \& mat\-Body\-::list\-Cross\-Force\-\_\-user (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classmat_body_a644f523eb34ce98ebbee3a52b35f13f0}
+
+
+Returns a reference to the Cross-\/\-Body \hyperlink{class_force}{Force}, user objects. 
+
+Returns a reference to the Cross-\/\-Body \hyperlink{class_force}{Force}, user objects. This is a vector list of the Cross-\/\-Body \hyperlink{class_force}{Force} objects. Provides direct access to the variable and all the member functions of the vector class. \begin{DoxyReturn}{Returns}
+This is a vector list of the Cross-\/\-Body \hyperlink{class_force}{Force} objects. Provides direct access to the variable and all the member functions of the vector class. Variable passed by reference. 
+\end{DoxyReturn}
+\hypertarget{classmat_body_a09da411ea6f2934fc36b84c34da8f63d}{\index{mat\-Body@{mat\-Body}!list\-React\-Force\-\_\-hydro@{list\-React\-Force\-\_\-hydro}}
+\index{list\-React\-Force\-\_\-hydro@{list\-React\-Force\-\_\-hydro}!matBody@{mat\-Body}}
+\subsubsection[{list\-React\-Force\-\_\-hydro}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ {\bf mat\-React\-Force} $>$ \& mat\-Body\-::list\-React\-Force\-\_\-hydro (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classmat_body_a09da411ea6f2934fc36b84c34da8f63d}
+
+
+Returns a reference to the Reactive \hyperlink{class_force}{Force}, hydro objects. 
+
+Returns a reference to the Reactive \hyperlink{class_force}{Force}, hydro objects. This is a vector list of the Reactive \hyperlink{class_force}{Force} objects. Provides direct access to the variable and all the member functions of the vector class. \begin{DoxyReturn}{Returns}
+This is a vector list of the Reactive \hyperlink{class_force}{Force} objects. Provides direct access to the variable and all the member functions of the vector class. Variable passed by reference. 
+\end{DoxyReturn}
+\hypertarget{classmat_body_a9a477bda31517ad2454c34c0a1942308}{\index{mat\-Body@{mat\-Body}!list\-React\-Force\-\_\-user@{list\-React\-Force\-\_\-user}}
+\index{list\-React\-Force\-\_\-user@{list\-React\-Force\-\_\-user}!matBody@{mat\-Body}}
+\subsubsection[{list\-React\-Force\-\_\-user}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ {\bf mat\-React\-Force} $>$ \& mat\-Body\-::list\-React\-Force\-\_\-user (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classmat_body_a9a477bda31517ad2454c34c0a1942308}
+
+
+Returns a reference to the Reactive \hyperlink{class_force}{Force}, user objects. 
+
+Returns a reference to the Reactive \hyperlink{class_force}{Force}, user objects. This is a vector list of the Reactive \hyperlink{class_force}{Force} objects. Provides direct access to the variable and all the member functions of the vector class. \begin{DoxyReturn}{Returns}
+This is a vector list of the Reactive \hyperlink{class_force}{Force} objects. Provides direct access to the variable and all the member functions of the vector class. Variable passed by reference. 
+\end{DoxyReturn}
+\hypertarget{classmat_body_ad1f7a689d28f2201cf9455495536fa8b}{\index{mat\-Body@{mat\-Body}!Mass@{Mass}}
+\index{Mass@{Mass}!matBody@{mat\-Body}}
+\subsubsection[{Mass}]{\setlength{\rightskip}{0pt plus 5cm}cx\-\_\-mat \& mat\-Body\-::\-Mass (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classmat_body_ad1f7a689d28f2201cf9455495536fa8b}
+
+
+Returns a reference to the mass matrix. 
+
+Returns a reference to the mass matrix. \begin{DoxyReturn}{Returns}
+Returns a reference to the mass matrix. Variable passed by reference. 
+\end{DoxyReturn}
+\hypertarget{classmat_body_abb86318fbd7300ed01eae308551f9e96}{\index{mat\-Body@{mat\-Body}!set\-Id@{set\-Id}}
+\index{set\-Id@{set\-Id}!matBody@{mat\-Body}}
+\subsubsection[{set\-Id}]{\setlength{\rightskip}{0pt plus 5cm}void mat\-Body\-::set\-Id (
+\begin{DoxyParamCaption}
+\item[{int}]{num}
+\end{DoxyParamCaption}
+)}}\label{classmat_body_abb86318fbd7300ed01eae308551f9e96}
+
+
+Sets the force id number for the object. 
+
+This is similar to the name parameter in other force objects. It is an identifier. In this case, a numerical identifier. Normally correlates to the objects index in a vector of other objects of the same class. 
+\begin{DoxyParams}{Parameters}
+{\em num} & The integer number to input as the objects integer id. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classmat_body_abb8ea32c84153da5dfc53d7b0dc836a5}{\index{mat\-Body@{mat\-Body}!set\-Model\-Id@{set\-Model\-Id}}
+\index{set\-Model\-Id@{set\-Model\-Id}!matBody@{mat\-Body}}
+\subsubsection[{set\-Model\-Id}]{\setlength{\rightskip}{0pt plus 5cm}void mat\-Body\-::set\-Model\-Id (
+\begin{DoxyParamCaption}
+\item[{int}]{num}
+\end{DoxyParamCaption}
+)}}\label{classmat_body_abb8ea32c84153da5dfc53d7b0dc836a5}
+
+
+Sets the integer id of the motion model used by the \hyperlink{classmat_body}{mat\-Body} object. 
+
+Sets the integer id of the motion model used by the \hyperlink{classmat_body}{mat\-Body} object. 
+\begin{DoxyParams}{Parameters}
+{\em num} & Integer. The integer id of the motion model used by the \hyperlink{classmat_body}{mat\-Body} object. Variable is passed by value. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/home/nicholas/\-Ship Design/\-Projects/\-D\-M\-S1305 Open\-S\-E\-A/master/200\-\_\-src/bin/ofreq/motion\-\_\-solver/matbody.\-h\item 
+/home/nicholas/\-Ship Design/\-Projects/\-D\-M\-S1305 Open\-S\-E\-A/master/200\-\_\-src/bin/ofreq/motion\-\_\-solver/matbody.\-cpp\end{DoxyCompactItemize}

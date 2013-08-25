@@ -1,0 +1,4 @@
+<map id="motionModel::MaxDataIndex" name="motionModel::MaxDataIndex">
+<area shape="rect" id="node3" href="$classmotion_model.html#aefe2ac7a2420f4d21d273ed1914552df" title="Returns a vector containing all equation indices. This may be the same as the number of equations..." alt="" coords="251,5,421,32"/>
+<area shape="rect" id="node5" href="$classmotion_model.html#ac0f0cef68dc8d4751ba3f6e5c48345ec" title="Reports the number of equations used in the motion model." alt="" coords="469,5,661,32"/>
+</map>

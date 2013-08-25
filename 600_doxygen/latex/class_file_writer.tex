@@ -1,0 +1,477 @@
+\hypertarget{class_file_writer}{\section{File\-Writer Class Reference}
+\label{class_file_writer}\index{File\-Writer@{File\-Writer}}
+}
+
+
+{\ttfamily \#include $<$filewriter.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_file_writer_aa6b362f5b306dd3409af81a463e97f40}{\hyperlink{class_file_writer_aa6b362f5b306dd3409af81a463e97f40}{File\-Writer} ()}\label{class_file_writer_aa6b362f5b306dd3409af81a463e97f40}
+
+\begin{DoxyCompactList}\small\item\em The default constructor. \end{DoxyCompactList}\item 
+\hyperlink{class_file_writer_a08b98dceafbf0cd0875197072dfd7d58}{File\-Writer} (string root\-Path, \hyperlink{class_outputs_body}{Outputs\-Body} \&Body\-In)
+\begin{DoxyCompactList}\small\item\em Constructor that includes the two important properties that must be declared for \hyperlink{class_file_writer}{File\-Writer} to work correctly. The root path for the project must be declared. And the pointer to the \hyperlink{class_outputs_body}{Outputs\-Body} object must be declared. \end{DoxyCompactList}\item 
+\hyperlink{class_file_writer_ae5490307dcaf9237f4c1b8b8df433e03}{$\sim$\-File\-Writer} ()
+\item 
+void \hyperlink{class_file_writer_a15370335402192f7e5342a6049f664fc}{set\-Project\-Dir} (string dir\-In)
+\begin{DoxyCompactList}\small\item\em Sets the path to the project directory. Assumes the string specifying the path does not end with a slash mark. The class will automatically add the slash mark. If a slash mark is present, the function will automatically remove it. \end{DoxyCompactList}\item 
+bool \hyperlink{class_file_writer_a74a40c3c47b4d12582a2aa44c38d9d07}{clear\-Files} ()
+\item 
+\hyperlink{class_outputs_body}{Outputs\-Body} \& \hyperlink{class_file_writer_a77da1b41e1332209f39243fcca4d1287}{ref\-Outputs\-Body} ()
+\begin{DoxyCompactList}\small\item\em Provides direct access to the \hyperlink{class_outputs_body}{Outputs\-Body} object. The \hyperlink{class_outputs_body}{Outputs\-Body} object must be set for the file\-Writer to work. All file data comes from the \hyperlink{class_file_writer}{File\-Writer} object. \end{DoxyCompactList}\item 
+bool \hyperlink{class_file_writer_a268a7349181f2d8c739a0809ba0eede2}{file\-Exists} (string filename)
+\begin{DoxyCompactList}\small\item\em Test is a file exists. Function automatically assumes that the file is located in the directory associated with the \hyperlink{class_file_writer_a9748d987475a225b49e14f48b8be0cd6}{get\-Cur\-Wave\-Ind()} function. Returns true if the file exists and is valid. Returns false if the file does not exist or the directory does not exist. \end{DoxyCompactList}\item 
+bool \hyperlink{class_file_writer_a0428a4f8ad72d01ff5316bfa3e4ce631}{write\-Wave\-Direction} ()
+\begin{DoxyCompactList}\small\item\em Writes the directions list to file. \end{DoxyCompactList}\item 
+bool \hyperlink{class_file_writer_ac6df31af71020a41adb6ecd6ff136532}{write\-Frequency} ()
+\item 
+bool \hyperlink{class_file_writer_a5c921b5ae92039cf50458e2c46e204da}{write\-Global\-Motion} ()
+\begin{DoxyCompactList}\small\item\em Writes the output file of global motions. If file exists, appends to the file, assuming the appended file is a new body object. \end{DoxyCompactList}\item 
+bool \hyperlink{class_file_writer_a2078a50dbd21946aeed86d8e0bccd50e}{write\-Global\-Velocity} ()
+\begin{DoxyCompactList}\small\item\em Writes the output file of global velocities. If file exists, appends to the file, assuming the appended file is a new body object. \end{DoxyCompactList}\item 
+bool \hyperlink{class_file_writer_aaff553c2e03cb1c1639e107cfeac3038}{write\-Global\-Acceleration} ()
+\begin{DoxyCompactList}\small\item\em Writes the output file of global accelerations. If file exists, appends to the file, assuming the appended file is a new body object. \end{DoxyCompactList}\item 
+bool \hyperlink{class_file_writer_a317649499b8c16dd529e2bf588e3be88}{write\-Global\-Solution} ()
+\begin{DoxyCompactList}\small\item\em Writes the output file of global solutions. If file exists, appends to the file, assuming the appended file is a new body object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{class_file_writer_a9748d987475a225b49e14f48b8be0cd6}{get\-Cur\-Wave\-Ind} ()
+\begin{DoxyCompactList}\small\item\em Gets the index of the current wave direction. The index is used to specify which directory to write the file into. \end{DoxyCompactList}\item 
+string \hyperlink{class_file_writer_a82a3acb66bd5c0396836386258608a40}{get\-Cur\-Wave\-Dir} ()
+\begin{DoxyCompactList}\small\item\em Returns the string containing the folder path for the current wave direction. Path name includes the slash mark. For example, if using wave index 0, the string output would be\-: \char`\"{}d0/\char`\"{}. \end{DoxyCompactList}\item 
+bool \hyperlink{class_file_writer_ae6e5afc50484694d033628c954c62df3}{create\-Dir} (string path)
+\begin{DoxyCompactList}\small\item\em Creates the directory specified by the string path. Assumes any specified directory is under the root project directory. \end{DoxyCompactList}\item 
+\hypertarget{class_file_writer_aeea3ca877f0c5280b22ea7ff653db233}{void \hyperlink{class_file_writer_aeea3ca877f0c5280b22ea7ff653db233}{set\-Header} ()}\label{class_file_writer_aeea3ca877f0c5280b22ea7ff653db233}
+
+\begin{DoxyCompactList}\small\item\em Reads in from input file the header to be used in all files. This is a basic header text that should be at the top of all Open\-S\-E\-A output files. Simple identification of the program. Nothing specific for output. \end{DoxyCompactList}\item 
+string \hyperlink{class_file_writer_a419b9ba153151766c7a8c68717a11778}{get\-Info\-Block} (string name\-In)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class write all outputs to files. All output data is based on the attached \hyperlink{class_outputs_body}{Outputs\-Body} object. To use the filewriter object, follow this sequence of steps\-: 1.) Create object. 2.) Set \hyperlink{class_outputs_body}{Outputs\-Body} object associated with the file. 3.) Set the filesystem path to the root directory for the current run of ofreq. 4.) Run the \hyperlink{class_file_writer_a74a40c3c47b4d12582a2aa44c38d9d07}{clear\-Files()} function, which will clear out any pre-\/existing files. 5.) Run the write\-File function for the specified file that you want to write out.
+
+Note that the \hyperlink{class_outputs_body}{Outputs\-Body} object also provides the information on the current wave direction. And the \hyperlink{class_file_writer}{File\-Writer} changes its directory to write to depending on the current wave direction. So the \hyperlink{class_outputs_body}{Outputs\-Body} object must be updated before writing a new wave direction. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_file_writer_a08b98dceafbf0cd0875197072dfd7d58}{\index{File\-Writer@{File\-Writer}!File\-Writer@{File\-Writer}}
+\index{File\-Writer@{File\-Writer}!FileWriter@{File\-Writer}}
+\subsubsection[{File\-Writer}]{\setlength{\rightskip}{0pt plus 5cm}File\-Writer\-::\-File\-Writer (
+\begin{DoxyParamCaption}
+\item[{string}]{root\-Path, }
+\item[{{\bf Outputs\-Body} \&}]{Body\-In}
+\end{DoxyParamCaption}
+)}}\label{class_file_writer_a08b98dceafbf0cd0875197072dfd7d58}
+
+
+Constructor that includes the two important properties that must be declared for \hyperlink{class_file_writer}{File\-Writer} to work correctly. The root path for the project must be declared. And the pointer to the \hyperlink{class_outputs_body}{Outputs\-Body} object must be declared. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em root\-Path} & The full fule system path to the root directory of the currently running o\-Freq project. Not the path to the o\-Freq executable files. This is the path to the directory containing input and output files. \\
+\hline
+{\em Body\-In} & The \hyperlink{class_outputs_body}{Outputs\-Body} object that will be used to write out data for the \hyperlink{class_file_writer}{File\-Writer}. The \hyperlink{class_outputs_body}{Outputs\-Body} object supplies the data, and the \hyperlink{class_file_writer}{File\-Writer} writes that data to the A\-S\-C\-I\-I text file. The \hyperlink{class_outputs_body}{Outputs\-Body} object also provides the information on the current wave direction. So the \hyperlink{class_outputs_body}{Outputs\-Body} object must be updated before writing a new wave direction. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{class_outputs_body}{Outputs\-Body} 
+\end{DoxySeeAlso}
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_file_writer_a08b98dceafbf0cd0875197072dfd7d58_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_file_writer_ae5490307dcaf9237f4c1b8b8df433e03}{\index{File\-Writer@{File\-Writer}!$\sim$\-File\-Writer@{$\sim$\-File\-Writer}}
+\index{$\sim$\-File\-Writer@{$\sim$\-File\-Writer}!FileWriter@{File\-Writer}}
+\subsubsection[{$\sim$\-File\-Writer}]{\setlength{\rightskip}{0pt plus 5cm}File\-Writer\-::$\sim$\-File\-Writer (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_file_writer_ae5490307dcaf9237f4c1b8b8df433e03}
+The default destructor, nothing happens here. 
+
+\subsection{Member Function Documentation}
+\hypertarget{class_file_writer_a74a40c3c47b4d12582a2aa44c38d9d07}{\index{File\-Writer@{File\-Writer}!clear\-Files@{clear\-Files}}
+\index{clear\-Files@{clear\-Files}!FileWriter@{File\-Writer}}
+\subsubsection[{clear\-Files}]{\setlength{\rightskip}{0pt plus 5cm}bool File\-Writer\-::clear\-Files (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_file_writer_a74a40c3c47b4d12582a2aa44c38d9d07}
+Remove all old directiories \& files written by o\-Freq previous run. \begin{DoxyReturn}{Returns}
+Return true if all files \& directories were successfully deleted. 
+\end{DoxyReturn}
+\hypertarget{class_file_writer_ae6e5afc50484694d033628c954c62df3}{\index{File\-Writer@{File\-Writer}!create\-Dir@{create\-Dir}}
+\index{create\-Dir@{create\-Dir}!FileWriter@{File\-Writer}}
+\subsubsection[{create\-Dir}]{\setlength{\rightskip}{0pt plus 5cm}bool File\-Writer\-::create\-Dir (
+\begin{DoxyParamCaption}
+\item[{string}]{path}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_file_writer_ae6e5afc50484694d033628c954c62df3}
+
+
+Creates the directory specified by the string path. Assumes any specified directory is under the root project directory. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & String. The path of the directory to create. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns true if creation sucessful. 
+\end{DoxyReturn}
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_file_writer_ae6e5afc50484694d033628c954c62df3_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_file_writer_a268a7349181f2d8c739a0809ba0eede2}{\index{File\-Writer@{File\-Writer}!file\-Exists@{file\-Exists}}
+\index{file\-Exists@{file\-Exists}!FileWriter@{File\-Writer}}
+\subsubsection[{file\-Exists}]{\setlength{\rightskip}{0pt plus 5cm}bool File\-Writer\-::file\-Exists (
+\begin{DoxyParamCaption}
+\item[{string}]{filename}
+\end{DoxyParamCaption}
+)}}\label{class_file_writer_a268a7349181f2d8c739a0809ba0eede2}
+
+
+Test is a file exists. Function automatically assumes that the file is located in the directory associated with the \hyperlink{class_file_writer_a9748d987475a225b49e14f48b8be0cd6}{get\-Cur\-Wave\-Ind()} function. Returns true if the file exists and is valid. Returns false if the file does not exist or the directory does not exist. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & String. Specifies the filename to search for. Only needs to specify local filename. Directory information is already inferred from previous settings with the \hyperlink{class_outputs_body}{Outputs\-Body} object. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns boolean variable. True if the file exists. False if the file or any required directories do not exist. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{class_file_writer_a9748d987475a225b49e14f48b8be0cd6}{File\-Writer\-::get\-Cur\-Wave\-Ind()} 
+\end{DoxySeeAlso}
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_file_writer_a268a7349181f2d8c739a0809ba0eede2_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_file_writer_a82a3acb66bd5c0396836386258608a40}{\index{File\-Writer@{File\-Writer}!get\-Cur\-Wave\-Dir@{get\-Cur\-Wave\-Dir}}
+\index{get\-Cur\-Wave\-Dir@{get\-Cur\-Wave\-Dir}!FileWriter@{File\-Writer}}
+\subsubsection[{get\-Cur\-Wave\-Dir}]{\setlength{\rightskip}{0pt plus 5cm}string File\-Writer\-::get\-Cur\-Wave\-Dir (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_file_writer_a82a3acb66bd5c0396836386258608a40}
+
+
+Returns the string containing the folder path for the current wave direction. Path name includes the slash mark. For example, if using wave index 0, the string output would be\-: \char`\"{}d0/\char`\"{}. 
+
+\begin{DoxyReturn}{Returns}
+String output. Has the path name for the current wave directory. 
+\end{DoxyReturn}
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_file_writer_a82a3acb66bd5c0396836386258608a40_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_file_writer_a82a3acb66bd5c0396836386258608a40_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_file_writer_a9748d987475a225b49e14f48b8be0cd6}{\index{File\-Writer@{File\-Writer}!get\-Cur\-Wave\-Ind@{get\-Cur\-Wave\-Ind}}
+\index{get\-Cur\-Wave\-Ind@{get\-Cur\-Wave\-Ind}!FileWriter@{File\-Writer}}
+\subsubsection[{get\-Cur\-Wave\-Ind}]{\setlength{\rightskip}{0pt plus 5cm}int File\-Writer\-::get\-Cur\-Wave\-Ind (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_file_writer_a9748d987475a225b49e14f48b8be0cd6}
+
+
+Gets the index of the current wave direction. The index is used to specify which directory to write the file into. 
+
+\begin{DoxyReturn}{Returns}
+Returns integer which specifies the index of the current wave direction. Index specifies the wave direction in the list of wave directions. Valid values are any integer from 0 or greater. 
+\end{DoxyReturn}
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_file_writer_a9748d987475a225b49e14f48b8be0cd6_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_file_writer_a9748d987475a225b49e14f48b8be0cd6_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_file_writer_a419b9ba153151766c7a8c68717a11778}{\index{File\-Writer@{File\-Writer}!get\-Info\-Block@{get\-Info\-Block}}
+\index{get\-Info\-Block@{get\-Info\-Block}!FileWriter@{File\-Writer}}
+\subsubsection[{get\-Info\-Block}]{\setlength{\rightskip}{0pt plus 5cm}string File\-Writer\-::get\-Info\-Block (
+\begin{DoxyParamCaption}
+\item[{string}]{name\-In}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_file_writer_a419b9ba153151766c7a8c68717a11778}
+Set information about the file to be written after header and above data, included in the seafile block. 
+\begin{DoxyParams}{Parameters}
+{\em name\-In} & The name of the object. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns string. String contains the file info for the output file. Everything written into the seafile block. Variable passed by value. 
+\end{DoxyReturn}
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_file_writer_a419b9ba153151766c7a8c68717a11778_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_file_writer_a77da1b41e1332209f39243fcca4d1287}{\index{File\-Writer@{File\-Writer}!ref\-Outputs\-Body@{ref\-Outputs\-Body}}
+\index{ref\-Outputs\-Body@{ref\-Outputs\-Body}!FileWriter@{File\-Writer}}
+\subsubsection[{ref\-Outputs\-Body}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Outputs\-Body} \& File\-Writer\-::ref\-Outputs\-Body (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_file_writer_a77da1b41e1332209f39243fcca4d1287}
+
+
+Provides direct access to the \hyperlink{class_outputs_body}{Outputs\-Body} object. The \hyperlink{class_outputs_body}{Outputs\-Body} object must be set for the file\-Writer to work. All file data comes from the \hyperlink{class_file_writer}{File\-Writer} object. 
+
+\begin{DoxyReturn}{Returns}
+Returns pointer to the \hyperlink{class_outputs_body}{Outputs\-Body} object. Variable passed by reference. 
+\end{DoxyReturn}
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_file_writer_a77da1b41e1332209f39243fcca4d1287_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_file_writer_a15370335402192f7e5342a6049f664fc}{\index{File\-Writer@{File\-Writer}!set\-Project\-Dir@{set\-Project\-Dir}}
+\index{set\-Project\-Dir@{set\-Project\-Dir}!FileWriter@{File\-Writer}}
+\subsubsection[{set\-Project\-Dir}]{\setlength{\rightskip}{0pt plus 5cm}void File\-Writer\-::set\-Project\-Dir (
+\begin{DoxyParamCaption}
+\item[{string}]{dir\-In}
+\end{DoxyParamCaption}
+)}}\label{class_file_writer_a15370335402192f7e5342a6049f664fc}
+
+
+Sets the path to the project directory. Assumes the string specifying the path does not end with a slash mark. The class will automatically add the slash mark. If a slash mark is present, the function will automatically remove it. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dir\-In} & String specifying the path to the project directory. Variable passed by value. \\
+\hline
+\end{DoxyParams}
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=348pt]{class_file_writer_a15370335402192f7e5342a6049f664fc_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_file_writer_ac6df31af71020a41adb6ecd6ff136532}{\index{File\-Writer@{File\-Writer}!write\-Frequency@{write\-Frequency}}
+\index{write\-Frequency@{write\-Frequency}!FileWriter@{File\-Writer}}
+\subsubsection[{write\-Frequency}]{\setlength{\rightskip}{0pt plus 5cm}bool File\-Writer\-::write\-Frequency (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_file_writer_ac6df31af71020a41adb6ecd6ff136532}
+Writes the frequencies list to file. \begin{DoxyReturn}{Returns}
+true if write successful. 
+\end{DoxyReturn}
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_file_writer_ac6df31af71020a41adb6ecd6ff136532_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_file_writer_aaff553c2e03cb1c1639e107cfeac3038}{\index{File\-Writer@{File\-Writer}!write\-Global\-Acceleration@{write\-Global\-Acceleration}}
+\index{write\-Global\-Acceleration@{write\-Global\-Acceleration}!FileWriter@{File\-Writer}}
+\subsubsection[{write\-Global\-Acceleration}]{\setlength{\rightskip}{0pt plus 5cm}bool File\-Writer\-::write\-Global\-Acceleration (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_file_writer_aaff553c2e03cb1c1639e107cfeac3038}
+
+
+Writes the output file of global accelerations. If file exists, appends to the file, assuming the appended file is a new body object. 
+
+\begin{DoxyReturn}{Returns}
+Returns true if write successful. 
+\end{DoxyReturn}
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_file_writer_aaff553c2e03cb1c1639e107cfeac3038_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_file_writer_a5c921b5ae92039cf50458e2c46e204da}{\index{File\-Writer@{File\-Writer}!write\-Global\-Motion@{write\-Global\-Motion}}
+\index{write\-Global\-Motion@{write\-Global\-Motion}!FileWriter@{File\-Writer}}
+\subsubsection[{write\-Global\-Motion}]{\setlength{\rightskip}{0pt plus 5cm}bool File\-Writer\-::write\-Global\-Motion (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_file_writer_a5c921b5ae92039cf50458e2c46e204da}
+
+
+Writes the output file of global motions. If file exists, appends to the file, assuming the appended file is a new body object. 
+
+\begin{DoxyReturn}{Returns}
+Returns true if write successful. 
+\end{DoxyReturn}
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_file_writer_a5c921b5ae92039cf50458e2c46e204da_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_file_writer_a317649499b8c16dd529e2bf588e3be88}{\index{File\-Writer@{File\-Writer}!write\-Global\-Solution@{write\-Global\-Solution}}
+\index{write\-Global\-Solution@{write\-Global\-Solution}!FileWriter@{File\-Writer}}
+\subsubsection[{write\-Global\-Solution}]{\setlength{\rightskip}{0pt plus 5cm}bool File\-Writer\-::write\-Global\-Solution (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_file_writer_a317649499b8c16dd529e2bf588e3be88}
+
+
+Writes the output file of global solutions. If file exists, appends to the file, assuming the appended file is a new body object. 
+
+\begin{DoxyReturn}{Returns}
+Returns true if write successful. 
+\end{DoxyReturn}
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_file_writer_a317649499b8c16dd529e2bf588e3be88_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_file_writer_a2078a50dbd21946aeed86d8e0bccd50e}{\index{File\-Writer@{File\-Writer}!write\-Global\-Velocity@{write\-Global\-Velocity}}
+\index{write\-Global\-Velocity@{write\-Global\-Velocity}!FileWriter@{File\-Writer}}
+\subsubsection[{write\-Global\-Velocity}]{\setlength{\rightskip}{0pt plus 5cm}bool File\-Writer\-::write\-Global\-Velocity (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_file_writer_a2078a50dbd21946aeed86d8e0bccd50e}
+
+
+Writes the output file of global velocities. If file exists, appends to the file, assuming the appended file is a new body object. 
+
+\begin{DoxyReturn}{Returns}
+Returns true if write successful. 
+\end{DoxyReturn}
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_file_writer_a2078a50dbd21946aeed86d8e0bccd50e_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_file_writer_a0428a4f8ad72d01ff5316bfa3e4ce631}{\index{File\-Writer@{File\-Writer}!write\-Wave\-Direction@{write\-Wave\-Direction}}
+\index{write\-Wave\-Direction@{write\-Wave\-Direction}!FileWriter@{File\-Writer}}
+\subsubsection[{write\-Wave\-Direction}]{\setlength{\rightskip}{0pt plus 5cm}bool File\-Writer\-::write\-Wave\-Direction (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_file_writer_a0428a4f8ad72d01ff5316bfa3e4ce631}
+
+
+Writes the directions list to file. 
+
+\begin{DoxyReturn}{Returns}
+true if write successful. 
+\end{DoxyReturn}
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_file_writer_a0428a4f8ad72d01ff5316bfa3e4ce631_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/home/nicholas/\-Ship Design/\-Projects/\-D\-M\-S1305 Open\-S\-E\-A/master/200\-\_\-src/bin/ofreq/file\-\_\-writer/filewriter.\-h\item 
+/home/nicholas/\-Ship Design/\-Projects/\-D\-M\-S1305 Open\-S\-E\-A/master/200\-\_\-src/bin/ofreq/file\-\_\-writer/filewriter.\-cpp\end{DoxyCompactItemize}

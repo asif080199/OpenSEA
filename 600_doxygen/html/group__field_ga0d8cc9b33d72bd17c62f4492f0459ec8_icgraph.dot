@@ -1,0 +1,11 @@
+digraph "field::set_size"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="field::set_size",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled" fontcolor="black"];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="subview_field::extract",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group__subview__field.html#gaf25325b79bda05aa606604c63d650fbe",tooltip="X = Y.subfield(...)"];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="field::operator=",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group__field.html#ga467421e6c27727e23bcab0726d25d8cc",tooltip="construct a field from subview_field (e.g. construct a field from a delayed subfield operation)..."];
+}

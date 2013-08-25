@@ -1,0 +1,9 @@
+<map id="OutputsBody::getCurWaveDir" name="OutputsBody::getCurWaveDir">
+<area shape="rect" id="node3" href="$class_file_writer.html#a9748d987475a225b49e14f48b8be0cd6" title="Gets the index of the current wave direction. The index is used to specify which directory to write t..." alt="" coords="253,56,435,83"/>
+<area shape="rect" id="node5" href="$class_file_writer.html#a268a7349181f2d8c739a0809ba0eede2" title="Test is a file exists. Function automatically assumes that the file is located in the directory assoc..." alt="" coords="504,31,643,57"/>
+<area shape="rect" id="node7" href="$class_file_writer.html#a82a3acb66bd5c0396836386258608a40" title="Returns the string containing the folder path for the current wave direction. Path name includes the ..." alt="" coords="483,81,663,108"/>
+<area shape="rect" id="node9" href="$class_file_writer.html#a5c921b5ae92039cf50458e2c46e204da" title="Writes the output file of global motions. If file exists, appends to the file, assuming the appended ..." alt="" coords="731,5,925,32"/>
+<area shape="rect" id="node11" href="$class_file_writer.html#a2078a50dbd21946aeed86d8e0bccd50e" title="Writes the output file of global velocities. If file exists, appends to the file, assuming the append..." alt="" coords="727,56,929,83"/>
+<area shape="rect" id="node13" href="$class_file_writer.html#aaff553c2e03cb1c1639e107cfeac3038" title="Writes the output file of global accelerations. If file exists, appends to the file, assuming the appended file is a new body object." alt="" coords="713,107,943,133"/>
+<area shape="rect" id="node15" href="$class_file_writer.html#a317649499b8c16dd529e2bf588e3be88" title="Writes the output file of global solutions. If file exists, appends to the file, assuming the appende..." alt="" coords="727,157,929,184"/>
+</map>

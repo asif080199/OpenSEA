@@ -30,8 +30,6 @@ SOURCES += ofreq.cpp \
     file_reader/controlinput.cpp \
     file_reader/bodiesinput.cpp \
     file_writer/filewriter.cpp \
-    global_objects/wavefrequencies.cpp \
-    global_objects/wavedirections.cpp \
     global_objects/system.cpp \
     motion_solver/motionsolver.cpp \
     motion_solver/forceactive.cpp \
@@ -51,7 +49,10 @@ SOURCES += ofreq.cpp \
     motion_solver/equation.cpp \
     motion_solver/matactiveforce.cpp \
     global_objects/solution.cpp \
-    global_objects/listsolution.cpp
+    global_objects/listsolution.cpp \
+    file_reader/filereader.cpp \
+    file_reader/parser.cpp \
+    file_reader/objectgroup.cpp
 
 HEADERS += \
     derived_outputs/outputsbody.h \
@@ -68,8 +69,6 @@ HEADERS += \
     file_reader/controlinput.h \
     file_reader/bodiesinput.h \
     file_writer/filewriter.h \
-    global_objects/wavefrequencies.h \
-    global_objects/wavedirections.h \
     global_objects/system.h \
     motion_solver/motionsolver.h \
     motion_solver/forceactive.h \
@@ -89,7 +88,10 @@ HEADERS += \
     motion_solver/equation.h \
     motion_solver/matactiveforce.h \
     global_objects/solution.h \
-    global_objects/listsolution.h
+    global_objects/listsolution.h \
+    file_reader/filereader.h \
+    file_reader/parser.h \
+    file_reader/objectgroup.h
 
 # Include header files path for libraries
 INCLUDEPATH += \

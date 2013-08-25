@@ -1,0 +1,284 @@
+\hypertarget{class_motion_solver}{\section{Motion\-Solver Class Reference}
+\label{class_motion_solver}\index{Motion\-Solver@{Motion\-Solver}}
+}
+
+
+{\ttfamily \#include $<$motionsolver.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_motion_solver_a4dbc64bfeff4aab69a723c142292f787}{\hyperlink{class_motion_solver_a4dbc64bfeff4aab69a723c142292f787}{Motion\-Solver} ()}\label{class_motion_solver_a4dbc64bfeff4aab69a723c142292f787}
+
+\begin{DoxyCompactList}\small\item\em The default constructor. \end{DoxyCompactList}\item 
+\hyperlink{class_motion_solver_af5ddc959738154c51b9c877b87670a5b}{Motion\-Solver} (vector$<$ \hyperlink{classmat_body}{mat\-Body} $>$ list\-Bod\-In)
+\begin{DoxyCompactList}\small\item\em Constructor. Initialize with objects already added. \end{DoxyCompactList}\item 
+\hyperlink{class_motion_solver_ae1fb5f389752a21a6d65ce41599b9b91}{$\sim$\-Motion\-Solver} ()
+\item 
+void \hyperlink{class_motion_solver_a656b01e691319a9113eaccf1f8e55570}{Add\-Body} (\hyperlink{classmat_body}{mat\-Body} bod\-In)
+\begin{DoxyCompactList}\small\item\em Add a body to the motion solver set. \end{DoxyCompactList}\item 
+\hyperlink{classmat_react_force}{mat\-React\-Force} \hyperlink{class_motion_solver_ae236a6bf04932d75d4e98052ef10d918}{sum\-React\-Set} (vector$<$ \hyperlink{classmat_react_force}{mat\-React\-Force} $>$ list\-Forces)
+\begin{DoxyCompactList}\small\item\em Sum Reactive forces for each set. \end{DoxyCompactList}\item 
+vector$<$ \hyperlink{classmat_cross_force}{mat\-Cross\-Force} $>$ \hyperlink{class_motion_solver_a7386a0a14180cb7bee3612dae4ca6454}{sum\-Cross\-Set} (vector$<$ \hyperlink{classmat_cross_force}{mat\-Cross\-Force} $>$ list\-Forces)
+\begin{DoxyCompactList}\small\item\em Sum cross-\/body forces for each set. \end{DoxyCompactList}\item 
+cx\-\_\-mat \hyperlink{class_motion_solver_a933c30bb482dcc91c629bc5505b54139}{sum\-Active\-Set} (vector$<$ cx\-\_\-mat $>$ list\-Forces)
+\begin{DoxyCompactList}\small\item\em Sum active forces for each set. \end{DoxyCompactList}\item 
+cx\-\_\-mat \hyperlink{class_motion_solver_a0329ea30a70df3544d58c52100f332d2}{sum\-Derivative} (\hyperlink{classmat_react_force}{mat\-React\-Force} force\-In)
+\begin{DoxyCompactList}\small\item\em Sum Derivatives for reactive force matrix. \end{DoxyCompactList}\item 
+vector$<$ cx\-\_\-mat $>$ \hyperlink{class_motion_solver_a6728b7250a3c73a6aa50be51047f5a91}{sum\-Derivative} (vector$<$ \hyperlink{classmat_cross_force}{mat\-Cross\-Force} $>$ force\-In)
+\begin{DoxyCompactList}\small\item\em Sum Derivatives for reactive force matrix. \end{DoxyCompactList}\item 
+void \hyperlink{class_motion_solver_a5deee421d26ef9729e0a870fd48b4403}{set\-Wave\-Freq} (double freq\-In)
+\begin{DoxyCompactList}\small\item\em Sets the current wave frequency. \end{DoxyCompactList}\item 
+\hypertarget{class_motion_solver_ae072dd17e5535185100a4505adf2c627}{void \hyperlink{class_motion_solver_ae072dd17e5535185100a4505adf2c627}{Calculate\-Outputs} ()}\label{class_motion_solver_ae072dd17e5535185100a4505adf2c627}
+
+\begin{DoxyCompactList}\small\item\em Calculate the \hyperlink{class_solution}{Solution}. \end{DoxyCompactList}\item 
+vector$<$ cx\-\_\-mat $>$ \hyperlink{class_motion_solver_a31dee35ce228eacf14e48c59fc98481b}{get\-Solution} ()
+\begin{DoxyCompactList}\small\item\em Get the solution for the solved equation. \end{DoxyCompactList}\item 
+\hypertarget{class_motion_solver_a114d7cc652f8202d5da7e23beb9e3232}{cx\-\_\-mat {\bfseries get\-Solution} (int bod)}\label{class_motion_solver_a114d7cc652f8202d5da7e23beb9e3232}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class holds data for the motion solver and performs calculations on all of the data to get the solution matrix. The motion solver performs a series of operations. 1.) Sum each force object for all forces within a set. 2.) Sum each force object for all the derivatives defined within each force. Applied frequency dependence. 3.) Sum user reactive forces, hydro reactive forces, and body mass into a single object for each body. 4.) Sum user cross-\/body forces, hydro cross-\/body forces into a single object for each body. 5.) Sum user active forces and hydro active forces into a single object for each body. 6.) Assemble reactive forces and cross-\/body forces into a single global response matrix. (\mbox{[}A\mbox{]}) 7.) Assemble active forces into a single global active force matrix. (\mbox{[}F\mbox{]}) 8.) Solve the linear system system of equations formed by the equation \mbox{[}A\mbox{]} $\ast$ \mbox{[}x\mbox{]} = \mbox{[}F\mbox{]} 9.) Redistribute the solution back to each body object. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_motion_solver_af5ddc959738154c51b9c877b87670a5b}{\index{Motion\-Solver@{Motion\-Solver}!Motion\-Solver@{Motion\-Solver}}
+\index{Motion\-Solver@{Motion\-Solver}!MotionSolver@{Motion\-Solver}}
+\subsubsection[{Motion\-Solver}]{\setlength{\rightskip}{0pt plus 5cm}Motion\-Solver\-::\-Motion\-Solver (
+\begin{DoxyParamCaption}
+\item[{vector$<$ {\bf mat\-Body} $>$}]{list\-Bod\-In}
+\end{DoxyParamCaption}
+)}}\label{class_motion_solver_af5ddc959738154c51b9c877b87670a5b}
+
+
+Constructor. Initialize with objects already added. 
+
+This constructor combines creation of the class with adding the body objects to the class at the same time. The list of \hyperlink{classmat_body}{mat\-Body} objects is added to the set of bodies that the motion solver solves. Bodies inputs are passed by value, and not by reference. 
+\begin{DoxyParams}{Parameters}
+{\em list\-Bod\-In} & The vector list of bodies to add to the motion solver object. \\
+\hline
+\end{DoxyParams}
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_motion_solver_af5ddc959738154c51b9c877b87670a5b_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_motion_solver_ae1fb5f389752a21a6d65ce41599b9b91}{\index{Motion\-Solver@{Motion\-Solver}!$\sim$\-Motion\-Solver@{$\sim$\-Motion\-Solver}}
+\index{$\sim$\-Motion\-Solver@{$\sim$\-Motion\-Solver}!MotionSolver@{Motion\-Solver}}
+\subsubsection[{$\sim$\-Motion\-Solver}]{\setlength{\rightskip}{0pt plus 5cm}Motion\-Solver\-::$\sim$\-Motion\-Solver (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_motion_solver_ae1fb5f389752a21a6d65ce41599b9b91}
+The default destructor, nothing happens here. 
+
+\subsection{Member Function Documentation}
+\hypertarget{class_motion_solver_a656b01e691319a9113eaccf1f8e55570}{\index{Motion\-Solver@{Motion\-Solver}!Add\-Body@{Add\-Body}}
+\index{Add\-Body@{Add\-Body}!MotionSolver@{Motion\-Solver}}
+\subsubsection[{Add\-Body}]{\setlength{\rightskip}{0pt plus 5cm}void Motion\-Solver\-::\-Add\-Body (
+\begin{DoxyParamCaption}
+\item[{{\bf mat\-Body}}]{bod\-In}
+\end{DoxyParamCaption}
+)}}\label{class_motion_solver_a656b01e691319a9113eaccf1f8e55570}
+
+
+Add a body to the motion solver set. 
+
+Add a body to the motion solver set. After initialization, this is how the motion solver gets the correct data to perform math operations on. 
+\begin{DoxyParams}{Parameters}
+{\em The} & \hyperlink{classmat_body}{mat\-Body} object to add the motion solver set. \hyperlink{class_body}{Body} inputs are added passed by value, and not by reference. \\
+\hline
+\end{DoxyParams}
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_motion_solver_a656b01e691319a9113eaccf1f8e55570_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_motion_solver_a31dee35ce228eacf14e48c59fc98481b}{\index{Motion\-Solver@{Motion\-Solver}!get\-Solution@{get\-Solution}}
+\index{get\-Solution@{get\-Solution}!MotionSolver@{Motion\-Solver}}
+\subsubsection[{get\-Solution}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$cx\-\_\-mat$>$ Motion\-Solver\-::get\-Solution (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_motion_solver_a31dee35ce228eacf14e48c59fc98481b}
+
+
+Get the solution for the solved equation. 
+
+Get the solution for the solved equation. Returns the full vector of complex matrices. Each element in the vector is a solution matrix specific to the body. The vector is ordered in the same sequence that the bodies were added to the motionsolver object. \begin{DoxyReturn}{Returns}
+Returns the full vector of complex matrices. Each element in the vector is a solution matrix specific to the body. The vector is ordered in the same sequence that the bodies were added to the motionsolver object. 
+\end{DoxyReturn}
+\hypertarget{class_motion_solver_a5deee421d26ef9729e0a870fd48b4403}{\index{Motion\-Solver@{Motion\-Solver}!set\-Wave\-Freq@{set\-Wave\-Freq}}
+\index{set\-Wave\-Freq@{set\-Wave\-Freq}!MotionSolver@{Motion\-Solver}}
+\subsubsection[{set\-Wave\-Freq}]{\setlength{\rightskip}{0pt plus 5cm}void Motion\-Solver\-::set\-Wave\-Freq (
+\begin{DoxyParamCaption}
+\item[{double}]{freq\-In}
+\end{DoxyParamCaption}
+)}}\label{class_motion_solver_a5deee421d26ef9729e0a870fd48b4403}
+
+
+Sets the current wave frequency. 
+
+Sets the current wave frequency. This is used in calculating the summations and must be set before calling the solve method. 
+\begin{DoxyParams}{Parameters}
+{\em freq\-In} & The input wave frequency. A double precision floating point value. Used when summing derivatives. \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_motion_solver_a933c30bb482dcc91c629bc5505b54139}{\index{Motion\-Solver@{Motion\-Solver}!sum\-Active\-Set@{sum\-Active\-Set}}
+\index{sum\-Active\-Set@{sum\-Active\-Set}!MotionSolver@{Motion\-Solver}}
+\subsubsection[{sum\-Active\-Set}]{\setlength{\rightskip}{0pt plus 5cm}cx\-\_\-mat Motion\-Solver\-::sum\-Active\-Set (
+\begin{DoxyParamCaption}
+\item[{vector$<$ cx\-\_\-mat $>$}]{list\-Forces}
+\end{DoxyParamCaption}
+)}}\label{class_motion_solver_a933c30bb482dcc91c629bc5505b54139}
+
+
+Sum active forces for each set. 
+
+Sum active forces for each set. 
+\begin{DoxyParams}{Parameters}
+{\em list\-Forces} & The active force matrix. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The sum of active force matrix. 
+\end{DoxyReturn}
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_motion_solver_a933c30bb482dcc91c629bc5505b54139_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_motion_solver_a7386a0a14180cb7bee3612dae4ca6454}{\index{Motion\-Solver@{Motion\-Solver}!sum\-Cross\-Set@{sum\-Cross\-Set}}
+\index{sum\-Cross\-Set@{sum\-Cross\-Set}!MotionSolver@{Motion\-Solver}}
+\subsubsection[{sum\-Cross\-Set}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ {\bf mat\-Cross\-Force} $>$ Motion\-Solver\-::sum\-Cross\-Set (
+\begin{DoxyParamCaption}
+\item[{vector$<$ {\bf mat\-Cross\-Force} $>$}]{list\-Forces}
+\end{DoxyParamCaption}
+)}}\label{class_motion_solver_a7386a0a14180cb7bee3612dae4ca6454}
+
+
+Sum cross-\/body forces for each set. 
+
+Sum cross-\/body forces for each set. This gets handled a little differently from reactive forces, as the linked body for the force depends on whether two objects are summed together. Output from this function is a vector of cross-\/body forces. Each entry in the vector contains a cross-\/body force object. 
+\begin{DoxyParams}{Parameters}
+{\em Cross\-Bod\-Mat} & The vector of cross-\/body force matrices. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A vector of complex matrices, with each entry in the vectors representing a cross-\/body force linked to a specific body. 
+\end{DoxyReturn}
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_motion_solver_a7386a0a14180cb7bee3612dae4ca6454_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_motion_solver_a0329ea30a70df3544d58c52100f332d2}{\index{Motion\-Solver@{Motion\-Solver}!sum\-Derivative@{sum\-Derivative}}
+\index{sum\-Derivative@{sum\-Derivative}!MotionSolver@{Motion\-Solver}}
+\subsubsection[{sum\-Derivative}]{\setlength{\rightskip}{0pt plus 5cm}cx\-\_\-mat Motion\-Solver\-::sum\-Derivative (
+\begin{DoxyParamCaption}
+\item[{{\bf mat\-React\-Force}}]{force\-In}
+\end{DoxyParamCaption}
+)}}\label{class_motion_solver_a0329ea30a70df3544d58c52100f332d2}
+
+
+Sum Derivatives for reactive force matrix. 
+
+Sum Derivatives for reactive force matrix. 
+\begin{DoxyParams}{Parameters}
+{\em the\-Reactive\-Force\-Matrix} & The reactive force matrix. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+T\-Single matrix that is the sum of Matrices passed in. 
+\end{DoxyReturn}
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_motion_solver_a0329ea30a70df3544d58c52100f332d2_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_motion_solver_a6728b7250a3c73a6aa50be51047f5a91}{\index{Motion\-Solver@{Motion\-Solver}!sum\-Derivative@{sum\-Derivative}}
+\index{sum\-Derivative@{sum\-Derivative}!MotionSolver@{Motion\-Solver}}
+\subsubsection[{sum\-Derivative}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ cx\-\_\-mat $>$ Motion\-Solver\-::sum\-Derivative (
+\begin{DoxyParamCaption}
+\item[{vector$<$ {\bf mat\-Cross\-Force} $>$}]{force\-In}
+\end{DoxyParamCaption}
+)}}\label{class_motion_solver_a6728b7250a3c73a6aa50be51047f5a91}
+
+
+Sum Derivatives for reactive force matrix. 
+
+Sum Derivatives for reactive force matrix. 
+\begin{DoxyParams}{Parameters}
+{\em force\-In} & the matrix that contains the set of cross body forces. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Single matrix that contains the cross body forces for a single definition. 
+\end{DoxyReturn}
+\hypertarget{class_motion_solver_ae236a6bf04932d75d4e98052ef10d918}{\index{Motion\-Solver@{Motion\-Solver}!sum\-React\-Set@{sum\-React\-Set}}
+\index{sum\-React\-Set@{sum\-React\-Set}!MotionSolver@{Motion\-Solver}}
+\subsubsection[{sum\-React\-Set}]{\setlength{\rightskip}{0pt plus 5cm}{\bf mat\-React\-Force} Motion\-Solver\-::sum\-React\-Set (
+\begin{DoxyParamCaption}
+\item[{vector$<$ {\bf mat\-React\-Force} $>$}]{list\-Forces}
+\end{DoxyParamCaption}
+)}}\label{class_motion_solver_ae236a6bf04932d75d4e98052ef10d918}
+
+
+Sum Reactive forces for each set. 
+
+Sum Reactive forces for each set. This iterates through each reactive force in a set and adds the forces together. It respects derivatives in the summation. 
+\begin{DoxyParams}{Parameters}
+{\em list\-Forces} & The list of reactive forces associated with each body. This list may be anything from zero to infinite number of entries. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The sum of reactive force matrices. 
+\end{DoxyReturn}
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_motion_solver_ae236a6bf04932d75d4e98052ef10d918_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/home/nicholas/\-Ship Design/\-Projects/\-D\-M\-S1305 Open\-S\-E\-A/master/200\-\_\-src/bin/ofreq/motion\-\_\-solver/motionsolver.\-h\item 
+/home/nicholas/\-Ship Design/\-Projects/\-D\-M\-S1305 Open\-S\-E\-A/master/200\-\_\-src/bin/ofreq/motion\-\_\-solver/motionsolver.\-cpp\end{DoxyCompactItemize}

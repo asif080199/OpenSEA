@@ -1,0 +1,13 @@
+digraph "diskio::save_arma_ascii"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="diskio::save_arma_ascii",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled" fontcolor="black"];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="diskio::gen_txt_header",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group__diskio.html#ga516d274a7df21c9eee685089d6eeed37"];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="Mat::at",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___mat.html#ga62c874c45807d7853afd231ae9f512d7",tooltip="linear element accessor (treats the matrix as a vector); no bounds check."];
+  Node3 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="access::rw",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classaccess.html#acd46d2d9e6004074b21bdec6a2f23c6e",tooltip="internal function to allow modification of data declared as read-only (use with caution)"];
+}

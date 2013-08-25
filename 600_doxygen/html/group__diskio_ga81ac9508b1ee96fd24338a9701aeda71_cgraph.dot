@@ -1,0 +1,9 @@
+digraph "diskio::gen_tmp_name"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="diskio::gen_tmp_name",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled" fontcolor="black"];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="arma::sum",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group__fn__sum.html#gaac94471603e655a8ad1e90659fd32bc4",tooltip="Delayed sum of elements of a matrix along a specified dimension (either rows or columns). The result is stored in a dense matrix that has either one column or one row. For dim = 0, find the sum of each column (traverse across rows) For dim = 1, find the sum of each row (traverse across columns) The default is dim = 0. NOTE: the dim argument is different than in Matlab/Octave."];
+}

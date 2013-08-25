@@ -118,7 +118,7 @@ void ReadInput::setData(istream& infile)
 				{
 					infile >> curString;
 
-					int index = curString.find(KEY_VAL_SEPERATOR);
+					int index = curString.find(KEY_VAL_SEPARATOR);
 
 					if ((curString != LIST_END) && (index != std::string::npos))
 					{

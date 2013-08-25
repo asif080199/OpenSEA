@@ -1,0 +1,6 @@
+<map id="listSolution::setSolution" name="listSolution::setSolution">
+<area shape="rect" id="node3" href="$classlist_solution.html#a73345469dee89ca2073fb70df1e2a972" title="Returns the number of rows as an integer. This is the number of wave directions." alt="" coords="217,5,348,32"/>
+<area shape="rect" id="node7" href="$classlist_solution.html#a3a0ce41a07718eca37ecccddf632a3c2" title="Returns the number of columns as an integer. This is the number of wave frequencies." alt="" coords="213,56,352,83"/>
+<area shape="rect" id="node9" href="$classlist_solution.html#a0127a6f326ca08b2c965592dda51dc1e" title="Resizes the 2&#45;D array of Solution objects. Any existing objects in the array are preserved. If the array is sized smaller than the existing number of Solution objects, any object beyond the new index range are deleted." alt="" coords="217,107,348,133"/>
+<area shape="rect" id="node5" href="$classlist_solution.html#ab38c08043b312606a13451cf717af288" title="Returns the size of the matrix as a vector of two elements." alt="" coords="401,5,519,32"/>
+</map>

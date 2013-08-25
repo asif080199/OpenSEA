@@ -39,7 +39,6 @@
 #ifndef FORCESINPUT_H
 #define FORCESINPUT_H
 #include "readinputfile.h"
-#include "../motion_solver/userforces.h"
 #include <string>
 #include <iostream>
 #include <fstream>

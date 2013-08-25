@@ -1,0 +1,4 @@
+<map id="FileWriter::fileExists" name="FileWriter::fileExists">
+<area shape="rect" id="node3" href="$class_file_writer.html#a9748d987475a225b49e14f48b8be0cd6" title="Gets the index of the current wave direction. The index is used to specify which directory to write t..." alt="" coords="192,5,373,32"/>
+<area shape="rect" id="node5" href="$class_outputs_body.html#a21deeef0aaace27fa376c6222bc8b0a4" title="Gets the current wave direction. Output is the actual value for the current wave direction, in units of radians." alt="" coords="422,5,621,32"/>
+</map>

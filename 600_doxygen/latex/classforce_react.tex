@@ -1,0 +1,244 @@
+\hypertarget{classforce_react}{\section{force\-React Class Reference}
+\label{classforce_react}\index{force\-React@{force\-React}}
+}
+
+
+{\ttfamily \#include $<$forcereact.\-h$>$}
+
+
+
+Inheritance diagram for force\-React\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=146pt]{classforce_react__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for force\-React\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=144pt]{classforce_react__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classforce_react_a5e7cbffe0d5e0fd9a634bc4cc329be4b}{force\-React} ()
+\item 
+\hyperlink{classforce_react_a38f59a748162de8ab0f97e521bf60698}{$\sim$force\-React} ()
+\item 
+void \hyperlink{classforce_react_a90d48f4c10e9cc82792f8e873a3132ec}{test\-Print} ()
+\item 
+void \hyperlink{classforce_react_aeedacc255bc921bf1a6812bb1f998ec5}{set\-Coeff} (vector$<$ string $>$, bool)
+\item 
+void \hyperlink{classforce_react_a87a77c3c9e73249a6677c721150a354a}{set\-Cur\-Derivative} (int)
+\item 
+void \hyperlink{classforce_react_ae6344d3b2a7d7ac6a9e3c9d9772fee05}{set\-Cur\-Equation\-Num} (int)
+\item 
+vector$<$ \hyperlink{class_derivative}{Derivative} $>$ \hyperlink{classforce_react_a8452cb2b5249c46f7612954653b7bc8a}{get\-Derivatives} ()
+\item 
+vector$<$ \hyperlink{class_derivative}{Derivative} $>$ \& \hyperlink{classforce_react_acb76f120afcc78a6fd56f0bdb440df70}{Derivatives} ()
+\begin{DoxyCompactList}\small\item\em Another implementation of get\-Derivatives, under a different name. \end{DoxyCompactList}\item 
+\hyperlink{class_derivative}{Derivative} \hyperlink{classforce_react_a2e4e000177394989813940002518bff4}{get\-Derivative} (int num)
+\begin{DoxyCompactList}\small\item\em Retrieve the derivative object specified by the index number. \end{DoxyCompactList}\item 
+\hyperlink{class_derivative}{Derivative} \& \hyperlink{classforce_react_a7a730eac8ddff77861256f53013ae18f}{ref\-Derivative} (int num)
+\begin{DoxyCompactList}\small\item\em Retrieve the derivative object specified by the index number. \end{DoxyCompactList}\item 
+int \hyperlink{classforce_react_a1071d201d5dd52cbfc757ab43cb1db79}{get\-Max\-Ord} ()
+\begin{DoxyCompactList}\small\item\em Returns the maximum order of the derivatives included in the force object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+vector$<$ \hyperlink{class_derivative}{Derivative} $>$ \hyperlink{classforce_react_ae63f5996167638e1b23c57b50d205d67}{p\-Derivative}
+\item 
+int \hyperlink{classforce_react_a603631183ab10df81b658791657d3b4a}{current\-Derivative}
+\item 
+int \hyperlink{classforce_react_ae90fedade4c66ee2fc45a73885187aa6}{current\-Equation}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class holds all of the data for a reactive force. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classforce_react_a5e7cbffe0d5e0fd9a634bc4cc329be4b}{\index{force\-React@{force\-React}!force\-React@{force\-React}}
+\index{force\-React@{force\-React}!forceReact@{force\-React}}
+\subsubsection[{force\-React}]{\setlength{\rightskip}{0pt plus 5cm}force\-React\-::force\-React (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classforce_react_a5e7cbffe0d5e0fd9a634bc4cc329be4b}
+This default constructor. \hypertarget{classforce_react_a38f59a748162de8ab0f97e521bf60698}{\index{force\-React@{force\-React}!$\sim$force\-React@{$\sim$force\-React}}
+\index{$\sim$force\-React@{$\sim$force\-React}!forceReact@{force\-React}}
+\subsubsection[{$\sim$force\-React}]{\setlength{\rightskip}{0pt plus 5cm}force\-React\-::$\sim$force\-React (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classforce_react_a38f59a748162de8ab0f97e521bf60698}
+The default destructor, nothing happens here. 
+
+\subsection{Member Function Documentation}
+\hypertarget{classforce_react_acb76f120afcc78a6fd56f0bdb440df70}{\index{force\-React@{force\-React}!Derivatives@{Derivatives}}
+\index{Derivatives@{Derivatives}!forceReact@{force\-React}}
+\subsubsection[{Derivatives}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ {\bf Derivative} $>$ \& force\-React\-::\-Derivatives (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classforce_react_acb76f120afcc78a6fd56f0bdb440df70}
+
+
+Another implementation of get\-Derivatives, under a different name. 
+
+\begin{DoxyReturn}{Returns}
+Returns the vector of derviative objects. Returned object is by reference. 
+\end{DoxyReturn}
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classforce_react_acb76f120afcc78a6fd56f0bdb440df70_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classforce_react_a2e4e000177394989813940002518bff4}{\index{force\-React@{force\-React}!get\-Derivative@{get\-Derivative}}
+\index{get\-Derivative@{get\-Derivative}!forceReact@{force\-React}}
+\subsubsection[{get\-Derivative}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Derivative} force\-React\-::get\-Derivative (
+\begin{DoxyParamCaption}
+\item[{int}]{num}
+\end{DoxyParamCaption}
+)}}\label{classforce_react_a2e4e000177394989813940002518bff4}
+
+
+Retrieve the derivative object specified by the index number. 
+
+Retrieve the derivative object specified by the index number. 
+\begin{DoxyParams}{Parameters}
+{\em num} & The index number of the derivative object. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns the derivative object specified by integer num. Returned value is by value. 
+\end{DoxyReturn}
+\hypertarget{classforce_react_a8452cb2b5249c46f7612954653b7bc8a}{\index{force\-React@{force\-React}!get\-Derivatives@{get\-Derivatives}}
+\index{get\-Derivatives@{get\-Derivatives}!forceReact@{force\-React}}
+\subsubsection[{get\-Derivatives}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ {\bf Derivative} $>$ force\-React\-::get\-Derivatives (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classforce_react_a8452cb2b5249c46f7612954653b7bc8a}
+Retrieve the derivatives list. \begin{DoxyReturn}{Returns}
+The order derivative of this object. Returned object is by value. 
+\end{DoxyReturn}
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classforce_react_a8452cb2b5249c46f7612954653b7bc8a_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classforce_react_a1071d201d5dd52cbfc757ab43cb1db79}{\index{force\-React@{force\-React}!get\-Max\-Ord@{get\-Max\-Ord}}
+\index{get\-Max\-Ord@{get\-Max\-Ord}!forceReact@{force\-React}}
+\subsubsection[{get\-Max\-Ord}]{\setlength{\rightskip}{0pt plus 5cm}int force\-React\-::get\-Max\-Ord (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classforce_react_a1071d201d5dd52cbfc757ab43cb1db79}
+
+
+Returns the maximum order of the derivatives included in the force object. 
+
+Returns the maximum order of the derivatives included in the force object. \begin{DoxyReturn}{Returns}
+Returns integer. Returns the maximum order of the derivatives included in the force object. Returned result passed by value. 
+\end{DoxyReturn}
+\hypertarget{classforce_react_a7a730eac8ddff77861256f53013ae18f}{\index{force\-React@{force\-React}!ref\-Derivative@{ref\-Derivative}}
+\index{ref\-Derivative@{ref\-Derivative}!forceReact@{force\-React}}
+\subsubsection[{ref\-Derivative}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Derivative} \& force\-React\-::ref\-Derivative (
+\begin{DoxyParamCaption}
+\item[{int}]{num}
+\end{DoxyParamCaption}
+)}}\label{classforce_react_a7a730eac8ddff77861256f53013ae18f}
+
+
+Retrieve the derivative object specified by the index number. 
+
+Retrieve the derivative object specified by the index number. Retrieves a pointer to the derivative object. 
+\begin{DoxyParams}{Parameters}
+{\em num} & The index number of the derivative object. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns a pointer to the derivative object specified by integer num. Returned value is by reference. 
+\end{DoxyReturn}
+\hypertarget{classforce_react_aeedacc255bc921bf1a6812bb1f998ec5}{\index{force\-React@{force\-React}!set\-Coeff@{set\-Coeff}}
+\index{set\-Coeff@{set\-Coeff}!forceReact@{force\-React}}
+\subsubsection[{set\-Coeff}]{\setlength{\rightskip}{0pt plus 5cm}void force\-React\-::set\-Coeff (
+\begin{DoxyParamCaption}
+\item[{vector$<$ string $>$}]{new\-List, }
+\item[{bool}]{is\-Direct\-List}
+\end{DoxyParamCaption}
+)}}\label{classforce_react_aeedacc255bc921bf1a6812bb1f998ec5}
+Sets the list of coeffcients. 
+\begin{DoxyParams}{Parameters}
+{\em new\-List} & The list of coefficients. \\
+\hline
+{\em is\-Direct\-List} & Specifies whether the list is direct or sequential. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classforce_react_a87a77c3c9e73249a6677c721150a354a}{\index{force\-React@{force\-React}!set\-Cur\-Derivative@{set\-Cur\-Derivative}}
+\index{set\-Cur\-Derivative@{set\-Cur\-Derivative}!forceReact@{force\-React}}
+\subsubsection[{set\-Cur\-Derivative}]{\setlength{\rightskip}{0pt plus 5cm}void force\-React\-::set\-Cur\-Derivative (
+\begin{DoxyParamCaption}
+\item[{int}]{new\-Order}
+\end{DoxyParamCaption}
+)}}\label{classforce_react_a87a77c3c9e73249a6677c721150a354a}
+Sets the current derivative. 
+\begin{DoxyParams}{Parameters}
+{\em neworder} & The order of derivative. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classforce_react_ae6344d3b2a7d7ac6a9e3c9d9772fee05}{\index{force\-React@{force\-React}!set\-Cur\-Equation\-Num@{set\-Cur\-Equation\-Num}}
+\index{set\-Cur\-Equation\-Num@{set\-Cur\-Equation\-Num}!forceReact@{force\-React}}
+\subsubsection[{set\-Cur\-Equation\-Num}]{\setlength{\rightskip}{0pt plus 5cm}void force\-React\-::set\-Cur\-Equation\-Num (
+\begin{DoxyParamCaption}
+\item[{int}]{new\-Equation\-Num}
+\end{DoxyParamCaption}
+)}}\label{classforce_react_ae6344d3b2a7d7ac6a9e3c9d9772fee05}
+Sets the current number of the equation. 
+\begin{DoxyParams}{Parameters}
+{\em new\-Equation\-Num} & The number of the equation. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classforce_react_a90d48f4c10e9cc82792f8e873a3132ec}{\index{force\-React@{force\-React}!test\-Print@{test\-Print}}
+\index{test\-Print@{test\-Print}!forceReact@{force\-React}}
+\subsubsection[{test\-Print}]{\setlength{\rightskip}{0pt plus 5cm}void force\-React\-::test\-Print (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classforce_react_a90d48f4c10e9cc82792f8e873a3132ec}
+Test print to console the values of all data members. 
+
+\subsection{Member Data Documentation}
+\hypertarget{classforce_react_a603631183ab10df81b658791657d3b4a}{\index{force\-React@{force\-React}!current\-Derivative@{current\-Derivative}}
+\index{current\-Derivative@{current\-Derivative}!forceReact@{force\-React}}
+\subsubsection[{current\-Derivative}]{\setlength{\rightskip}{0pt plus 5cm}int force\-React\-::current\-Derivative\hspace{0.3cm}{\ttfamily [protected]}}}\label{classforce_react_a603631183ab10df81b658791657d3b4a}
+The current order derivative. \hypertarget{classforce_react_ae90fedade4c66ee2fc45a73885187aa6}{\index{force\-React@{force\-React}!current\-Equation@{current\-Equation}}
+\index{current\-Equation@{current\-Equation}!forceReact@{force\-React}}
+\subsubsection[{current\-Equation}]{\setlength{\rightskip}{0pt plus 5cm}int force\-React\-::current\-Equation\hspace{0.3cm}{\ttfamily [protected]}}}\label{classforce_react_ae90fedade4c66ee2fc45a73885187aa6}
+This current equation number. \hypertarget{classforce_react_ae63f5996167638e1b23c57b50d205d67}{\index{force\-React@{force\-React}!p\-Derivative@{p\-Derivative}}
+\index{p\-Derivative@{p\-Derivative}!forceReact@{force\-React}}
+\subsubsection[{p\-Derivative}]{\setlength{\rightskip}{0pt plus 5cm}vector$<${\bf Derivative}$>$ force\-React\-::p\-Derivative\hspace{0.3cm}{\ttfamily [protected]}}}\label{classforce_react_ae63f5996167638e1b23c57b50d205d67}
+This list of derivatives. 
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/home/nicholas/\-Ship Design/\-Projects/\-D\-M\-S1305 Open\-S\-E\-A/master/200\-\_\-src/bin/ofreq/motion\-\_\-solver/forcereact.\-h\item 
+/home/nicholas/\-Ship Design/\-Projects/\-D\-M\-S1305 Open\-S\-E\-A/master/200\-\_\-src/bin/ofreq/motion\-\_\-solver/forcereact.\-cpp\end{DoxyCompactItemize}

@@ -1,0 +1,11 @@
+digraph "Base&lt; elem_type, derived &gt;"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="Base\< elem_type, derived \>",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled" fontcolor="black"];
+  Node2 -> Node1 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="Base_extra\< derived,\l is_supported_blas_type\l\< elem_type \>::value \>\l::result",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_base__extra_1_1result.html"];
+  Node3 -> Node1 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="Base_eval\< elem_type,\l derived, is_Mat\< derived\l \>::value \>::result",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_base__eval_1_1result.html"];
+}

@@ -44,16 +44,26 @@
  */
 
 class classname;
-//==========================================Section Separator =========================================================
 //Put this at the beginnning of section separations.  Valid sections are:
-//Public:
-//Protected:
-//Private:
-//Signals:
-//Slots:
 
-//Please at least include the first three sections in your class definitions.  We are trying to achieve a uniformity
-// in the structure of the header files, so that anyone can quickly understand the structure of the code.
+//==========================================Section Separator =========================================================
+public:
+
+//==========================================Section Separator =========================================================
+signals:
+  
+//==========================================Section Separator =========================================================
+public slots:
+
+//==========================================Section Separator =========================================================
+protected:
+  
+//==========================================Section Separator =========================================================
+private:
+
+//Please at least include the public, protected, and private sections for each class defintion.  We are trying to 
+//achieve a uniformity in the structure of the header files, so that anyone can quickly understand the structure of 
+//the code.
 
     //------------------------------------------Function Separator ----------------------------------------------------
     //Put this separator at the beginning of each function definition.  Any properties can also be grouped into a 

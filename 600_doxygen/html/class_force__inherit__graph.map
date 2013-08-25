@@ -1,0 +1,5 @@
+<map id="Force" name="Force">
+<area shape="rect" id="node3" href="$classforce_active.html" title="forceActive" alt="" coords="5,80,93,107"/>
+<area shape="rect" id="node5" href="$classforce_react.html" title="forceReact" alt="" coords="118,80,204,107"/>
+<area shape="rect" id="node7" href="$classforce_cross.html" title="forceCross" alt="" coords="117,155,205,181"/>
+</map>

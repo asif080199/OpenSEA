@@ -1,0 +1,19 @@
+digraph "SpMat::SpMat"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="SpMat::SpMat",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled" fontcolor="black"];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="SpMat::init",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___sp_mat.html#ga4cced396306a3df76139f4638b2e1405"];
+  Node2 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="access::rw",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classaccess.html#acd46d2d9e6004074b21bdec6a2f23c6e",tooltip="internal function to allow modification of data declared as read-only (use with caution)"];
+  Node2 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="arma::max",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group__fn__max.html#ga4399d515d0581cd95e66728552a8ca55",tooltip="Delayed &#39;maximum values&#39; operation. The dimension, along which the maxima are found, is set via &#39;dim&#39;. For dim = 0, the maximum value of each column is found (i.e. searches by traversing across rows). For dim = 1, the maximum value of each row is found (i.e. searches by traversing across columns). The default is dim = 0."];
+  Node1 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="SpMat::mem_resize",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___sp_mat.html#gacbf679aafce6db7a56c0981de3dc7748"];
+  Node5 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="arma::min",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group__fn__min.html#ga8d2773d9b50b6aa6f6de23bfe4d6bc56",tooltip="Delayed &#39;minimum values&#39; operation. The dimension, along which the minima are found, is set via &#39;dim&#39;. For dim = 0, the minimum value of each column is found (i.e. searches by traversing across rows). For dim = 1, the minimum value of each row is found (i.e. searches by traversing across columns). The default is dim = 0."];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+}

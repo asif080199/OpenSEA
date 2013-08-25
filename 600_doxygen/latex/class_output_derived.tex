@@ -1,0 +1,369 @@
+\hypertarget{class_output_derived}{\section{Output\-Derived Class Reference}
+\label{class_output_derived}\index{Output\-Derived@{Output\-Derived}}
+}
+
+
+{\ttfamily \#include $<$outputderived.\-h$>$}
+
+
+
+Inheritance diagram for Output\-Derived\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_output_derived__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_output_derived_af8b70b70b8a5089f2b673da8b59a7b6a}{\hyperlink{class_output_derived_af8b70b70b8a5089f2b673da8b59a7b6a}{Output\-Derived} ()}\label{class_output_derived_af8b70b70b8a5089f2b673da8b59a7b6a}
+
+\begin{DoxyCompactList}\small\item\em Default constructor. Nothing happens here. \end{DoxyCompactList}\item 
+\hyperlink{class_output_derived_a4dde733443e52964c74d8bb6477f85f7}{$\sim$\-Output\-Derived} ()
+\item 
+string \hyperlink{class_output_derived_a31aeafb442ffc032f4e3e8a48285ebef}{get\-Name} ()
+\begin{DoxyCompactList}\small\item\em Returns the name of the \hyperlink{class_output_derived}{Output\-Derived} object. This is a name set by the user to idenfity the object. If multiple objects of the same type are created, the name can also distinguish between the various objects. \end{DoxyCompactList}\item 
+void \hyperlink{class_output_derived_a617d5070230751c908a1b261072e3672}{set\-Name} (string name\-In)
+\begin{DoxyCompactList}\small\item\em Sets the name of the \hyperlink{class_output_derived}{Output\-Derived} object. This is a name set by the user to idenfity the object. If multiple objects of the same type are created, the name can also distinguish between the various objects. \end{DoxyCompactList}\item 
+int \hyperlink{class_output_derived_ad4bb95c9693b2f34a40eb0136f2a13f4}{get\-Cur\-Wave\-Ind} ()
+\begin{DoxyCompactList}\small\item\em Gets the index of the current wave direction used by the \hyperlink{class_output_derived}{Output\-Derived} object. Some child classes will need this to determine proper calculation of output. This differs from the \hyperlink{class_output_derived_ad59fff8dc8f1772039aff4950a3cdf18}{get\-Cur\-Wave\-Dir()} method in that the other method returns the actual value of the angle. This returns the index of the current angle in the list of wave directions. \end{DoxyCompactList}\item 
+virtual cx\-\_\-mat \hyperlink{class_output_derived_a7a65864e45519edfe7fe45c408457f41}{calc\-Output} (double freq\-In)=0
+\begin{DoxyCompactList}\small\item\em Pure virtual member. Calculates the output from the \hyperlink{class_output_derived}{Output\-Derived} object. \end{DoxyCompactList}\item 
+vector$<$ \hyperlink{class_body}{Body} $>$ \& \hyperlink{class_output_derived_ac6a77d28934026f473f89cc65126d95c}{getlist\-Body} ()
+\begin{DoxyCompactList}\small\item\em Returns the list of body objects. Only a c++ reference to the list of body objects. \end{DoxyCompactList}\item 
+void \hyperlink{class_output_derived_a261f8d51928fa5aa497cfe8ccd47fb16}{setlist\-Body} (vector$<$ \hyperlink{class_body}{Body} $>$ \&Input)
+\begin{DoxyCompactList}\small\item\em Sets the list of \hyperlink{class_body}{Body} objects. \end{DoxyCompactList}\item 
+vector$<$ \hyperlink{classlist_solution}{list\-Solution} $>$ \& \hyperlink{class_output_derived_a49a581a23397a24893db0990d3b67bfa}{getlist\-Solution} ()
+\begin{DoxyCompactList}\small\item\em Returns a vector of \hyperlink{classlist_solution}{list\-Solution} objects. \end{DoxyCompactList}\item 
+void \hyperlink{class_output_derived_a6689e121641bb37ddb1620416b7ccd3c}{setlist\-Solution} (vector$<$ \hyperlink{classlist_solution}{list\-Solution} $>$ \&Input)
+\begin{DoxyCompactList}\small\item\em Sets the list of solutions. \end{DoxyCompactList}\item 
+vector$<$ double $>$ \& \hyperlink{class_output_derived_a355046fc651296105375693479d57687}{getlist\-Freq} ()
+\begin{DoxyCompactList}\small\item\em Gets the list of frequencies. Frequencies are in radians per second. \end{DoxyCompactList}\item 
+void \hyperlink{class_output_derived_a0d7ed0123c1af843d2c257630e26595e}{setlist\-Freq} (vector$<$ double $>$ \&Input)
+\begin{DoxyCompactList}\small\item\em Sets the list of wave frequencies. Frequencies are in radians per second. \end{DoxyCompactList}\item 
+vector$<$ double $>$ \& \hyperlink{class_output_derived_ae52ca63f6ad9b7b99913fd071adda371}{getlist\-Wave\-Dir} ()
+\begin{DoxyCompactList}\small\item\em Gets the list of wave directions. Wave directions are measured in radians. True North is zero, with positive angles going counter-\/clockwise. \end{DoxyCompactList}\item 
+void \hyperlink{class_output_derived_ab809f8db22894f657c6b3256253395bf}{setlist\-Wave\-Dir} (vector$<$ double $>$ \&Input)
+\begin{DoxyCompactList}\small\item\em Sets the list of wave directions. Wave directions are measured in radians. True North is zero, with positive angles going counter-\/clockwise. \end{DoxyCompactList}\item 
+int \& \hyperlink{class_output_derived_ad59fff8dc8f1772039aff4950a3cdf18}{get\-Cur\-Wave\-Dir} ()
+\begin{DoxyCompactList}\small\item\em Gets the integer index of the current wave direction. \end{DoxyCompactList}\item 
+void \hyperlink{class_output_derived_a174188431586c269edca5f17db16b498}{set\-Cur\-Wave\-Dir} (int \&Input)
+\begin{DoxyCompactList}\small\item\em Sets the integer index of the current wave direction. \end{DoxyCompactList}\item 
+int \hyperlink{class_output_derived_ac3a9e37f0f7bc0ac003d2662db3d17bb}{get\-Cur\-Body} ()
+\begin{DoxyCompactList}\small\item\em Gets the integer index of the current body. This represents the \hyperlink{class_body}{Body} object that the derived output is associated with. \end{DoxyCompactList}\item 
+void \hyperlink{class_output_derived_a56aa87d4a9aec5e21842bf614920c1dc}{set\-Cur\-Body} (int Input)
+\begin{DoxyCompactList}\small\item\em Sets the integer index of the current body. This represents the \hyperlink{class_body}{Body} object that the derived output is associated with. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_output_derived_a54e3e1356bd379db875c0ce8ee223ef6}{string \hyperlink{class_output_derived_a54e3e1356bd379db875c0ce8ee223ef6}{p\-Name}}\label{class_output_derived_a54e3e1356bd379db875c0ce8ee223ef6}
+
+\begin{DoxyCompactList}\small\item\em The name for the derived output object. This is a name set by the user to idenfity the object. If multiple objects of the same type are created, the name can also distinguish between the various objects. \end{DoxyCompactList}\item 
+\hypertarget{class_output_derived_a584a7b228dfc4ea3830631763e0a36fa}{vector$<$ \hyperlink{class_body}{Body} $>$ $\ast$ \hyperlink{class_output_derived_a584a7b228dfc4ea3830631763e0a36fa}{plist\-Body}}\label{class_output_derived_a584a7b228dfc4ea3830631763e0a36fa}
+
+\begin{DoxyCompactList}\small\item\em The vector list of \hyperlink{class_body}{Body} objects. \end{DoxyCompactList}\item 
+\hypertarget{class_output_derived_a3d5228713e1711a3ab57fe3bd0887c6e}{vector$<$ \hyperlink{classlist_solution}{list\-Solution} $>$ $\ast$ \hyperlink{class_output_derived_a3d5228713e1711a3ab57fe3bd0887c6e}{plist\-Solution}}\label{class_output_derived_a3d5228713e1711a3ab57fe3bd0887c6e}
+
+\begin{DoxyCompactList}\small\item\em The vector list of \hyperlink{classlist_solution}{list\-Solution} objects. \end{DoxyCompactList}\item 
+\hypertarget{class_output_derived_a2c367aa51c34c8eb43dc226be92c3d07}{vector$<$ double $>$ $\ast$ \hyperlink{class_output_derived_a2c367aa51c34c8eb43dc226be92c3d07}{plist\-Freq}}\label{class_output_derived_a2c367aa51c34c8eb43dc226be92c3d07}
+
+\begin{DoxyCompactList}\small\item\em The list of wave frequencies. Wave frequency recorded in units of radians per second. \end{DoxyCompactList}\item 
+\hypertarget{class_output_derived_a10727e0eabf2b6f22940cb2c9f510772}{vector$<$ double $>$ $\ast$ \hyperlink{class_output_derived_a10727e0eabf2b6f22940cb2c9f510772}{plist\-Wave\-Dir}}\label{class_output_derived_a10727e0eabf2b6f22940cb2c9f510772}
+
+\begin{DoxyCompactList}\small\item\em The list of wave directions. Wave direction recorded in units of radians. Zero is true North direction. Oriented positive counter-\/clockwise. \end{DoxyCompactList}\item 
+\hypertarget{class_output_derived_a408bb4755c3f283773bc3d8923f7e7f4}{int $\ast$ \hyperlink{class_output_derived_a408bb4755c3f283773bc3d8923f7e7f4}{p\-Cur\-Wave\-Dir}}\label{class_output_derived_a408bb4755c3f283773bc3d8923f7e7f4}
+
+\begin{DoxyCompactList}\small\item\em The current wave direction used for calculating the Derived\-Output objects. \end{DoxyCompactList}\item 
+\hypertarget{class_output_derived_acf0ac8dbd4ead154a92d7d77d8893c1b}{int \hyperlink{class_output_derived_acf0ac8dbd4ead154a92d7d77d8893c1b}{p\-Cur\-Body}}\label{class_output_derived_acf0ac8dbd4ead154a92d7d77d8893c1b}
+
+\begin{DoxyCompactList}\small\item\em The index of the current body used for calculating derived outputs. This index is the position of the current body in the list of \hyperlink{class_body}{Body} objects. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This abstract class represents the Derived Outputs. Derived outputs are any additional information that needs to be calculated from basic information within a body. That can be anything from taking derivatives to calculating an empirical equation for motion sickness incidence. The constructor for this class requires a pointer to the parent class to access any further information required for calculation.
+
+The Derived Output class can not be used directly. Individual types of Derived Outputs must be developed and inherit this Derived Output class. This abstract class provides a common framework that all Derived Outputs must share. The most important part is the \hyperlink{class_output_derived_a7a65864e45519edfe7fe45c408457f41}{calc\-Output()} method. Everything that uses a Derived Output object expects to have this \hyperlink{class_output_derived_a7a65864e45519edfe7fe45c408457f41}{calc\-Output()} method, and will call it by that name.
+
+Developers note\-: The original scheme had the \hyperlink{class_output_derived}{Output\-Derived} class include a pointer to the contain parent class, \hyperlink{class_outputs_body}{Outputs\-Body}. But this creates a cyclic dependency of header files, and will not compile. The only resolution I found to this was to not include the parent class and pass all the necessary information to each individual \hyperlink{class_output_derived}{Output\-Derived} object. This is tedious, but within the reasons of the methods defined by the \hyperlink{class_outputs_body}{Outputs\-Body} class. And it allow compilation. All data items are passed by reference to avoid excess memory duplication.
+
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{class_output_derived_a7a65864e45519edfe7fe45c408457f41}{Output\-Derived\-::calc\-Output()}; 
+\end{DoxySeeAlso}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_output_derived_a4dde733443e52964c74d8bb6477f85f7}{\index{Output\-Derived@{Output\-Derived}!$\sim$\-Output\-Derived@{$\sim$\-Output\-Derived}}
+\index{$\sim$\-Output\-Derived@{$\sim$\-Output\-Derived}!OutputDerived@{Output\-Derived}}
+\subsubsection[{$\sim$\-Output\-Derived}]{\setlength{\rightskip}{0pt plus 5cm}Output\-Derived\-::$\sim$\-Output\-Derived (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_output_derived_a4dde733443e52964c74d8bb6477f85f7}
+The default destructor. Nothing happens here. 
+
+\subsection{Member Function Documentation}
+\hypertarget{class_output_derived_a7a65864e45519edfe7fe45c408457f41}{\index{Output\-Derived@{Output\-Derived}!calc\-Output@{calc\-Output}}
+\index{calc\-Output@{calc\-Output}!OutputDerived@{Output\-Derived}}
+\subsubsection[{calc\-Output}]{\setlength{\rightskip}{0pt plus 5cm}virtual cx\-\_\-mat Output\-Derived\-::calc\-Output (
+\begin{DoxyParamCaption}
+\item[{double}]{freq\-In}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{class_output_derived_a7a65864e45519edfe7fe45c408457f41}
+
+
+Pure virtual member. Calculates the output from the \hyperlink{class_output_derived}{Output\-Derived} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em freq\-In} & The wave frequency to use for calculating the \hyperlink{class_output_derived}{Output\-Derived} object. Most outputs will depend on the wave frequency. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns a complex matrix that is the \hyperlink{class_output_derived}{Output\-Derived} result. The exact meaning and organization of the complex matrix changes with each type of \hyperlink{class_output_derived}{Output\-Derived} object created as a child of this class. The cx\-\_\-mat data type is used because that is the most natural data type for the larges number of \hyperlink{class_output_derived}{Output\-Derived} objects. It isn't always the best, but it can usually work well for the intended purposes. 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{class_global_solution_adf90922a97153ce858da530e20bc3f4d}{Global\-Solution}.
+
+\hypertarget{class_output_derived_ac3a9e37f0f7bc0ac003d2662db3d17bb}{\index{Output\-Derived@{Output\-Derived}!get\-Cur\-Body@{get\-Cur\-Body}}
+\index{get\-Cur\-Body@{get\-Cur\-Body}!OutputDerived@{Output\-Derived}}
+\subsubsection[{get\-Cur\-Body}]{\setlength{\rightskip}{0pt plus 5cm}int Output\-Derived\-::get\-Cur\-Body (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_output_derived_ac3a9e37f0f7bc0ac003d2662db3d17bb}
+
+
+Gets the integer index of the current body. This represents the \hyperlink{class_body}{Body} object that the derived output is associated with. 
+
+\begin{DoxyReturn}{Returns}
+Returns the integer index of the current \hyperlink{class_body}{Body} object associated with this derived output object. Variable is passed by value. 
+\end{DoxyReturn}
+\hypertarget{class_output_derived_ad59fff8dc8f1772039aff4950a3cdf18}{\index{Output\-Derived@{Output\-Derived}!get\-Cur\-Wave\-Dir@{get\-Cur\-Wave\-Dir}}
+\index{get\-Cur\-Wave\-Dir@{get\-Cur\-Wave\-Dir}!OutputDerived@{Output\-Derived}}
+\subsubsection[{get\-Cur\-Wave\-Dir}]{\setlength{\rightskip}{0pt plus 5cm}int \& Output\-Derived\-::get\-Cur\-Wave\-Dir (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_output_derived_ad59fff8dc8f1772039aff4950a3cdf18}
+
+
+Gets the integer index of the current wave direction. 
+
+\begin{DoxyReturn}{Returns}
+Gets the integer index of the current wave direction. Variable is passed by reference. Variable is stored internally as a pointer. 
+\end{DoxyReturn}
+\hypertarget{class_output_derived_ad4bb95c9693b2f34a40eb0136f2a13f4}{\index{Output\-Derived@{Output\-Derived}!get\-Cur\-Wave\-Ind@{get\-Cur\-Wave\-Ind}}
+\index{get\-Cur\-Wave\-Ind@{get\-Cur\-Wave\-Ind}!OutputDerived@{Output\-Derived}}
+\subsubsection[{get\-Cur\-Wave\-Ind}]{\setlength{\rightskip}{0pt plus 5cm}int Output\-Derived\-::get\-Cur\-Wave\-Ind (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_output_derived_ad4bb95c9693b2f34a40eb0136f2a13f4}
+
+
+Gets the index of the current wave direction used by the \hyperlink{class_output_derived}{Output\-Derived} object. Some child classes will need this to determine proper calculation of output. This differs from the \hyperlink{class_output_derived_ad59fff8dc8f1772039aff4950a3cdf18}{get\-Cur\-Wave\-Dir()} method in that the other method returns the actual value of the angle. This returns the index of the current angle in the list of wave directions. 
+
+\begin{DoxyReturn}{Returns}
+Returns an integer that represents the index of the current angle in the list of wave directions. Variable passed by value. 
+\end{DoxyReturn}
+\hypertarget{class_output_derived_ac6a77d28934026f473f89cc65126d95c}{\index{Output\-Derived@{Output\-Derived}!getlist\-Body@{getlist\-Body}}
+\index{getlist\-Body@{getlist\-Body}!OutputDerived@{Output\-Derived}}
+\subsubsection[{getlist\-Body}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ {\bf Body} $>$ \& Output\-Derived\-::getlist\-Body (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_output_derived_ac6a77d28934026f473f89cc65126d95c}
+
+
+Returns the list of body objects. Only a c++ reference to the list of body objects. 
+
+\begin{DoxyReturn}{Returns}
+Returns reference to the list of \hyperlink{class_body}{Body} objects. Variable passed by reference. 
+\end{DoxyReturn}
+\hypertarget{class_output_derived_a355046fc651296105375693479d57687}{\index{Output\-Derived@{Output\-Derived}!getlist\-Freq@{getlist\-Freq}}
+\index{getlist\-Freq@{getlist\-Freq}!OutputDerived@{Output\-Derived}}
+\subsubsection[{getlist\-Freq}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ double $>$ \& Output\-Derived\-::getlist\-Freq (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_output_derived_a355046fc651296105375693479d57687}
+
+
+Gets the list of frequencies. Frequencies are in radians per second. 
+
+\begin{DoxyReturn}{Returns}
+Returns the list of wave frequencies. Variable is passed by reference. Variable is stored internally as a pointer. 
+\end{DoxyReturn}
+\hypertarget{class_output_derived_a49a581a23397a24893db0990d3b67bfa}{\index{Output\-Derived@{Output\-Derived}!getlist\-Solution@{getlist\-Solution}}
+\index{getlist\-Solution@{getlist\-Solution}!OutputDerived@{Output\-Derived}}
+\subsubsection[{getlist\-Solution}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ {\bf list\-Solution} $>$ \& Output\-Derived\-::getlist\-Solution (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_output_derived_a49a581a23397a24893db0990d3b67bfa}
+
+
+Returns a vector of \hyperlink{classlist_solution}{list\-Solution} objects. 
+
+\begin{DoxyReturn}{Returns}
+Returns a vector of \hyperlink{classlist_solution}{list\-Solution} objects. Internal storage is just a set of pointers to the object. Variable is passed by reference. 
+\end{DoxyReturn}
+\hypertarget{class_output_derived_ae52ca63f6ad9b7b99913fd071adda371}{\index{Output\-Derived@{Output\-Derived}!getlist\-Wave\-Dir@{getlist\-Wave\-Dir}}
+\index{getlist\-Wave\-Dir@{getlist\-Wave\-Dir}!OutputDerived@{Output\-Derived}}
+\subsubsection[{getlist\-Wave\-Dir}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ double $>$ \& Output\-Derived\-::getlist\-Wave\-Dir (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_output_derived_ae52ca63f6ad9b7b99913fd071adda371}
+
+
+Gets the list of wave directions. Wave directions are measured in radians. True North is zero, with positive angles going counter-\/clockwise. 
+
+\begin{DoxyReturn}{Returns}
+Returns the vector of doubles containing the wave directions. Variable passed by reference. Variable is stored internally as a pointer. 
+\end{DoxyReturn}
+\hypertarget{class_output_derived_a31aeafb442ffc032f4e3e8a48285ebef}{\index{Output\-Derived@{Output\-Derived}!get\-Name@{get\-Name}}
+\index{get\-Name@{get\-Name}!OutputDerived@{Output\-Derived}}
+\subsubsection[{get\-Name}]{\setlength{\rightskip}{0pt plus 5cm}string Output\-Derived\-::get\-Name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_output_derived_a31aeafb442ffc032f4e3e8a48285ebef}
+
+
+Returns the name of the \hyperlink{class_output_derived}{Output\-Derived} object. This is a name set by the user to idenfity the object. If multiple objects of the same type are created, the name can also distinguish between the various objects. 
+
+\begin{DoxyReturn}{Returns}
+Returns the name of the \hyperlink{class_output_derived}{Output\-Derived} object. String variable. Variable passed by value. 
+\end{DoxyReturn}
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_output_derived_a31aeafb442ffc032f4e3e8a48285ebef_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_output_derived_a56aa87d4a9aec5e21842bf614920c1dc}{\index{Output\-Derived@{Output\-Derived}!set\-Cur\-Body@{set\-Cur\-Body}}
+\index{set\-Cur\-Body@{set\-Cur\-Body}!OutputDerived@{Output\-Derived}}
+\subsubsection[{set\-Cur\-Body}]{\setlength{\rightskip}{0pt plus 5cm}void Output\-Derived\-::set\-Cur\-Body (
+\begin{DoxyParamCaption}
+\item[{int}]{Input}
+\end{DoxyParamCaption}
+)}}\label{class_output_derived_a56aa87d4a9aec5e21842bf614920c1dc}
+
+
+Sets the integer index of the current body. This represents the \hyperlink{class_body}{Body} object that the derived output is associated with. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Input} & The integer index of the current \hyperlink{class_body}{Body} object associated with this derived output object. Variable is passed by value \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_output_derived_a174188431586c269edca5f17db16b498}{\index{Output\-Derived@{Output\-Derived}!set\-Cur\-Wave\-Dir@{set\-Cur\-Wave\-Dir}}
+\index{set\-Cur\-Wave\-Dir@{set\-Cur\-Wave\-Dir}!OutputDerived@{Output\-Derived}}
+\subsubsection[{set\-Cur\-Wave\-Dir}]{\setlength{\rightskip}{0pt plus 5cm}void Output\-Derived\-::set\-Cur\-Wave\-Dir (
+\begin{DoxyParamCaption}
+\item[{int \&}]{Input}
+\end{DoxyParamCaption}
+)}}\label{class_output_derived_a174188431586c269edca5f17db16b498}
+
+
+Sets the integer index of the current wave direction. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Input} & The integer index of the current wave direction in the vector list of wave directions. Variable is passed by reference. Variable is stored internally as a pointer. \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_output_derived_a261f8d51928fa5aa497cfe8ccd47fb16}{\index{Output\-Derived@{Output\-Derived}!setlist\-Body@{setlist\-Body}}
+\index{setlist\-Body@{setlist\-Body}!OutputDerived@{Output\-Derived}}
+\subsubsection[{setlist\-Body}]{\setlength{\rightskip}{0pt plus 5cm}void Output\-Derived\-::setlist\-Body (
+\begin{DoxyParamCaption}
+\item[{vector$<$ {\bf Body} $>$ \&}]{Input}
+\end{DoxyParamCaption}
+)}}\label{class_output_derived_a261f8d51928fa5aa497cfe8ccd47fb16}
+
+
+Sets the list of \hyperlink{class_body}{Body} objects. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Input} & T\-He list of \hyperlink{class_body}{Body} objects. Variable passed by reference. \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_output_derived_a0d7ed0123c1af843d2c257630e26595e}{\index{Output\-Derived@{Output\-Derived}!setlist\-Freq@{setlist\-Freq}}
+\index{setlist\-Freq@{setlist\-Freq}!OutputDerived@{Output\-Derived}}
+\subsubsection[{setlist\-Freq}]{\setlength{\rightskip}{0pt plus 5cm}void Output\-Derived\-::setlist\-Freq (
+\begin{DoxyParamCaption}
+\item[{vector$<$ double $>$ \&}]{Input}
+\end{DoxyParamCaption}
+)}}\label{class_output_derived_a0d7ed0123c1af843d2c257630e26595e}
+
+
+Sets the list of wave frequencies. Frequencies are in radians per second. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Input} & The list of wave frequencies. Variable is passed by reference. Variable is stored internally as a pointer. \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_output_derived_a6689e121641bb37ddb1620416b7ccd3c}{\index{Output\-Derived@{Output\-Derived}!setlist\-Solution@{setlist\-Solution}}
+\index{setlist\-Solution@{setlist\-Solution}!OutputDerived@{Output\-Derived}}
+\subsubsection[{setlist\-Solution}]{\setlength{\rightskip}{0pt plus 5cm}void Output\-Derived\-::setlist\-Solution (
+\begin{DoxyParamCaption}
+\item[{vector$<$ {\bf list\-Solution} $>$ \&}]{Input}
+\end{DoxyParamCaption}
+)}}\label{class_output_derived_a6689e121641bb37ddb1620416b7ccd3c}
+
+
+Sets the list of solutions. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Input} & The vector list of \hyperlink{classlist_solution}{list\-Solution} objects. Variable is passed by reference. Variable is stored internally as a pointer. \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_output_derived_ab809f8db22894f657c6b3256253395bf}{\index{Output\-Derived@{Output\-Derived}!setlist\-Wave\-Dir@{setlist\-Wave\-Dir}}
+\index{setlist\-Wave\-Dir@{setlist\-Wave\-Dir}!OutputDerived@{Output\-Derived}}
+\subsubsection[{setlist\-Wave\-Dir}]{\setlength{\rightskip}{0pt plus 5cm}void Output\-Derived\-::setlist\-Wave\-Dir (
+\begin{DoxyParamCaption}
+\item[{vector$<$ double $>$ \&}]{Input}
+\end{DoxyParamCaption}
+)}}\label{class_output_derived_ab809f8db22894f657c6b3256253395bf}
+
+
+Sets the list of wave directions. Wave directions are measured in radians. True North is zero, with positive angles going counter-\/clockwise. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Input} & The vector of doubles containing the wave directions. Variable is passed by reference. Variable is stored internally as a pointer. \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_output_derived_a617d5070230751c908a1b261072e3672}{\index{Output\-Derived@{Output\-Derived}!set\-Name@{set\-Name}}
+\index{set\-Name@{set\-Name}!OutputDerived@{Output\-Derived}}
+\subsubsection[{set\-Name}]{\setlength{\rightskip}{0pt plus 5cm}void Output\-Derived\-::set\-Name (
+\begin{DoxyParamCaption}
+\item[{string}]{name\-In}
+\end{DoxyParamCaption}
+)}}\label{class_output_derived_a617d5070230751c908a1b261072e3672}
+
+
+Sets the name of the \hyperlink{class_output_derived}{Output\-Derived} object. This is a name set by the user to idenfity the object. If multiple objects of the same type are created, the name can also distinguish between the various objects. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name\-In} & String variable. Sets the name of the \hyperlink{class_output_derived}{Output\-Derived} object. Variable passed by value. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/home/nicholas/\-Ship Design/\-Projects/\-D\-M\-S1305 Open\-S\-E\-A/master/200\-\_\-src/bin/ofreq/derived\-\_\-outputs/outputderived.\-h\item 
+/home/nicholas/\-Ship Design/\-Projects/\-D\-M\-S1305 Open\-S\-E\-A/master/200\-\_\-src/bin/ofreq/derived\-\_\-outputs/outputderived.\-cpp\end{DoxyCompactItemize}

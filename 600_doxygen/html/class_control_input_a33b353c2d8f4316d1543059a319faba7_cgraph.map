@@ -1,0 +1,6 @@
+<map id="ControlInput::keywordHandler" name="ControlInput::keywordHandler">
+<area shape="rect" id="node3" href="$class_system.html#ab1bfe916791d4c61bb807c930f73930c" title="System::setWaveFrequencies" alt="" coords="254,5,458,32"/>
+<area shape="rect" id="node7" href="$class_system.html#a492b1dc5f789192ff6207f2555b23138" title="System::setWaveDirections" alt="" coords="261,56,451,83"/>
+<area shape="rect" id="node5" href="$class_wave_frequencies.html#ad8f27f97cfb137efdec72611e7cdf3b5" title="WaveFrequencies::setFrequencies" alt="" coords="507,5,741,32"/>
+<area shape="rect" id="node9" href="$class_wave_directions.html#a83344e448693bff3d145bce0f9e44fc3" title="WaveDirections::setDirections" alt="" coords="522,56,726,83"/>
+</map>

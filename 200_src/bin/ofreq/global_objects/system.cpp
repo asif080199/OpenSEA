@@ -26,8 +26,11 @@
 
 #include "system.h"
 
+//==========================================Section Separator =========================================================
+//Public methods
+
 //------------------------------------------Function Separator --------------------------------------------------------
-System::System() : waveDirections(), waveFrequencies()
+System::System() : pWaveDirections(), pWaveFrequencies()
 {
 	/*waveDirections = new WaveDirections();
 	waveFrequencies = new WaveFrequencies();*/
@@ -42,57 +45,51 @@ System::~System()
 void System::testPrint()
 {
 	cout << "Analysis Type: " << analysisType << endl;
-	waveDirections.testPrint();
-	waveFrequencies.testPrint();
+	pWaveDirections.testPrint();
+	pWaveFrequencies.testPrint();
 	cout << endl;
-}
-
-//------------------------------------------Function Separator --------------------------------------------------------
-void System::setAnalysisType(string analysisTypeIn)
-{
-	analysisType = analysisTypeIn;
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
 void System::setWaveFrequencies(vector<double> vecIn)
 {
-	waveFrequencies.setFrequencies(vecIn);
+    pWaveFrequencies = vecIn;
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
 void System::setWaveDirections(vector<double> vecIn)
 {
-	waveDirections.setDirections(vecIn);
+    pWaveDirections = vecIn;
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
 void System::setSpreadModel(string spreadIn)
 {
-	waveDirections.setSpreadModel(spreadIn);
+	pWaveDirections.setSpreadModel(spreadIn);
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
 vector<double> System::getWaveFrequencies()
 {
-	return waveFrequencies.getWaveFrequencies();
+    return pWaveFrequencies;
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
 vector<double> &System::refWaveFrequencies()
 {
-    return waveFrequencies.refWaveFrequencies();
+    return pWaveFrequencies;
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
 vector<double> System::getWaveDirections()
 {
-	return waveDirections.getWaveDirections();
+    return pWaveDirections;
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
 vector<double> &System::refWaveDirections()
 {
-    return waveDirections.refWaveDirections();
+    return pWaveDirections;
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
@@ -122,11 +119,75 @@ int System::getCurFreqInd()
 //------------------------------------------Function Separator --------------------------------------------------------
 double System::getCurWaveDir()
 {
-    return waveDirections.refWaveDirections()[pCurWaveDir];
+    return pWaveDirections[pCurWaveDir];
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
 double System::getCurFreq()
 {
-    return waveFrequencies.refWaveFrequencies()[pCurWaveFreq];
+    return pWaveFrequencies[pCurWaveFreq];
 }
+
+//------------------------------------------Function Separator --------------------------------------------------------
+vector<Body>& System::reflistBody()
+{
+    return plistBody;
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+vector<OutputsBody>& System::reflistOutputs()
+{
+    return plistOutputs;
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+Body& System::refBody(int input = 0)
+{
+    return plistBody.at(input);
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+OutputsBody& System::refOutput(int input = 0)
+{
+    return plistOutputs.at(input);
+}
+
+//==========================================Section Separator =========================================================
+//Public Slots
+
+//------------------------------------------Function Separator --------------------------------------------------------
+void System::setAnalysisType(string analysisTypeIn)
+{
+    analysisType = analysisTypeIn;
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+void System::addBody(Body input)
+{
+    plistBody.push_back(input);
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+void System::addBody()
+{
+    plistBody.push_back(Body());
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+void System::addOutput(OutputsBody input)
+{
+    plistOutputs.push_back(input);
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+void System::addOutput()
+{
+    plistOutputs.push_back(OutputsBody());
+}
+
+
+//==========================================Section Separator =========================================================
+//Protected methods
+
+//==========================================Section Separator =========================================================
+//Private methods

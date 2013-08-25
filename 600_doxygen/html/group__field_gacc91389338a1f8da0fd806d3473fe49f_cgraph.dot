@@ -1,0 +1,19 @@
+digraph "field::print"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="field::print",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled" fontcolor="black"];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="arma_ostream::print",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group__arma__ostream.html#ga203b8a0da4b4475a62bdd88a3661831f",tooltip="Print a matrix to the specified stream."];
+  Node2 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="Mat::memptr",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___mat.html#gad5b1b46a9288e04128aa11c99cc2b444",tooltip="returns a pointer to array of eTs used by the matrix"];
+  Node2 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="Mat::is_empty",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___mat.html#ga6aea90307174186e101c8d20cb33be66",tooltip="returns true if the matrix has no elements"];
+  Node2 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="arma_ostream::print_elem",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group__arma__ostream.html#ga1cfd7bc0f3cd2ead922639f275db1d35",tooltip="Print an element to the specified stream."];
+  Node2 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="Mat::at",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___mat.html#ga62c874c45807d7853afd231ae9f512d7",tooltip="linear element accessor (treats the matrix as a vector); no bounds check."];
+  Node6 -> Node7 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="access::rw",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classaccess.html#acd46d2d9e6004074b21bdec6a2f23c6e",tooltip="internal function to allow modification of data declared as read-only (use with caution)"];
+}

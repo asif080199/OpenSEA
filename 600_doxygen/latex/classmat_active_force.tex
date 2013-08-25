@@ -1,0 +1,115 @@
+\hypertarget{classmat_active_force}{\section{mat\-Active\-Force Class Reference}
+\label{classmat_active_force}\index{mat\-Active\-Force@{mat\-Active\-Force}}
+}
+
+
+{\ttfamily \#include $<$matactiveforce.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmat_active_force_a54cf53622c0704794cce57e5e2bf4778}{mat\-Active\-Force} ()
+\item 
+\hyperlink{classmat_active_force_aee61f8fd09276f17947adbb266de05a4}{$\sim$mat\-Active\-Force} ()
+\item 
+\hypertarget{classmat_active_force_a1c47a1b00dc16fbafb551510919fdeba}{\hyperlink{classmat_active_force}{mat\-Active\-Force} {\bfseries operator+} (const \hyperlink{classmat_active_force}{mat\-Active\-Force} \&force\-Other)}\label{classmat_active_force_a1c47a1b00dc16fbafb551510919fdeba}
+
+\item 
+\hypertarget{classmat_active_force_ad4691f97653f3ce814df4d4f9afc4c59}{\hyperlink{classmat_active_force}{mat\-Active\-Force} {\bfseries operator-\/} (const \hyperlink{classmat_active_force}{mat\-Active\-Force} \&force\-Other)}\label{classmat_active_force_ad4691f97653f3ce814df4d4f9afc4c59}
+
+\item 
+cx\-\_\-mat \& \hyperlink{classmat_active_force_a56526b6497fc513d211526584db50470}{Coefficients} ()
+\begin{DoxyCompactList}\small\item\em Returns the coefficients matrix. \end{DoxyCompactList}\item 
+void \hyperlink{classmat_active_force_afb097b17026a4ebe4f1f9567778a7c33}{set\-Id} (int num)
+\begin{DoxyCompactList}\small\item\em Sets the force id number for the object. \end{DoxyCompactList}\item 
+int \hyperlink{classmat_active_force_a0c60888b6547182a7c5ef89a9dc667e1}{get\-Id} ()
+\begin{DoxyCompactList}\small\item\em Returns the force id number for the object. \end{DoxyCompactList}\item 
+int \hyperlink{classmat_active_force_aef428f04d3a5f532f0d7c49e62019256}{get\-Mat\-Size} ()
+\begin{DoxyCompactList}\small\item\em Returns the size of the matrix in each order of derivative. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class holds all data for an active force matrix. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classmat_active_force_a54cf53622c0704794cce57e5e2bf4778}{\index{mat\-Active\-Force@{mat\-Active\-Force}!mat\-Active\-Force@{mat\-Active\-Force}}
+\index{mat\-Active\-Force@{mat\-Active\-Force}!matActiveForce@{mat\-Active\-Force}}
+\subsubsection[{mat\-Active\-Force}]{\setlength{\rightskip}{0pt plus 5cm}mat\-Active\-Force\-::mat\-Active\-Force (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classmat_active_force_a54cf53622c0704794cce57e5e2bf4778}
+The default constructor. \hypertarget{classmat_active_force_aee61f8fd09276f17947adbb266de05a4}{\index{mat\-Active\-Force@{mat\-Active\-Force}!$\sim$mat\-Active\-Force@{$\sim$mat\-Active\-Force}}
+\index{$\sim$mat\-Active\-Force@{$\sim$mat\-Active\-Force}!matActiveForce@{mat\-Active\-Force}}
+\subsubsection[{$\sim$mat\-Active\-Force}]{\setlength{\rightskip}{0pt plus 5cm}mat\-Active\-Force\-::$\sim$mat\-Active\-Force (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classmat_active_force_aee61f8fd09276f17947adbb266de05a4}
+The default destructor, nothing happens here. 
+
+\subsection{Member Function Documentation}
+\hypertarget{classmat_active_force_a56526b6497fc513d211526584db50470}{\index{mat\-Active\-Force@{mat\-Active\-Force}!Coefficients@{Coefficients}}
+\index{Coefficients@{Coefficients}!matActiveForce@{mat\-Active\-Force}}
+\subsubsection[{Coefficients}]{\setlength{\rightskip}{0pt plus 5cm}cx\-\_\-mat \& mat\-Active\-Force\-::\-Coefficients (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classmat_active_force_a56526b6497fc513d211526584db50470}
+
+
+Returns the coefficients matrix. 
+
+Returns the coefficients matrix. \begin{DoxyReturn}{Returns}
+Returns the coefficients matrix. 
+\end{DoxyReturn}
+\hypertarget{classmat_active_force_a0c60888b6547182a7c5ef89a9dc667e1}{\index{mat\-Active\-Force@{mat\-Active\-Force}!get\-Id@{get\-Id}}
+\index{get\-Id@{get\-Id}!matActiveForce@{mat\-Active\-Force}}
+\subsubsection[{get\-Id}]{\setlength{\rightskip}{0pt plus 5cm}int mat\-Active\-Force\-::get\-Id (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classmat_active_force_a0c60888b6547182a7c5ef89a9dc667e1}
+
+
+Returns the force id number for the object. 
+
+This is similar to the name parameter in other force objects. It is an identifier. In this case, a numerical identifier. Normally correlates to the objects index in a vector of other objects of the same class. \begin{DoxyReturn}{Returns}
+Returns the force id number, integer data type. 
+\end{DoxyReturn}
+\hypertarget{classmat_active_force_aef428f04d3a5f532f0d7c49e62019256}{\index{mat\-Active\-Force@{mat\-Active\-Force}!get\-Mat\-Size@{get\-Mat\-Size}}
+\index{get\-Mat\-Size@{get\-Mat\-Size}!matActiveForce@{mat\-Active\-Force}}
+\subsubsection[{get\-Mat\-Size}]{\setlength{\rightskip}{0pt plus 5cm}int mat\-Active\-Force\-::get\-Mat\-Size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classmat_active_force_aef428f04d3a5f532f0d7c49e62019256}
+
+
+Returns the size of the matrix in each order of derivative. 
+
+Returns the size of the matrix in each order of derivative. Integer output type. \begin{DoxyReturn}{Returns}
+Returns the size of the matrix in each order of derivative. 
+\end{DoxyReturn}
+\hypertarget{classmat_active_force_afb097b17026a4ebe4f1f9567778a7c33}{\index{mat\-Active\-Force@{mat\-Active\-Force}!set\-Id@{set\-Id}}
+\index{set\-Id@{set\-Id}!matActiveForce@{mat\-Active\-Force}}
+\subsubsection[{set\-Id}]{\setlength{\rightskip}{0pt plus 5cm}void mat\-Active\-Force\-::set\-Id (
+\begin{DoxyParamCaption}
+\item[{int}]{num}
+\end{DoxyParamCaption}
+)}}\label{classmat_active_force_afb097b17026a4ebe4f1f9567778a7c33}
+
+
+Sets the force id number for the object. 
+
+This is similar to the name parameter in other force objects. It is an identifier. In this case, a numerical identifier. Normally correlates to the objects index in a vector of other objects of the same class. 
+\begin{DoxyParams}{Parameters}
+{\em num} & The integer number to input as the objects integer id. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/home/nicholas/\-Ship Design/\-Projects/\-D\-M\-S1305 Open\-S\-E\-A/master/200\-\_\-src/bin/ofreq/motion\-\_\-solver/matactiveforce.\-h\item 
+/home/nicholas/\-Ship Design/\-Projects/\-D\-M\-S1305 Open\-S\-E\-A/master/200\-\_\-src/bin/ofreq/motion\-\_\-solver/matactiveforce.\-cpp\end{DoxyCompactItemize}

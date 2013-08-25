@@ -1,0 +1,15 @@
+digraph "diskio::load_arma_ascii"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="diskio::load_arma_ascii",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled" fontcolor="black"];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="Cube::load",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___cube.html#ga3aadfc5ae5ceb50c06d358cd8e6a6167",tooltip="load a cube from a file"];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="diskio::load_auto_detect",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group__diskio.html#ga811cdced00eafaa959e9bec675ae5b51",tooltip="Try to load a matrix by automatically determining its type."];
+  Node1 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="diskio::load_arma_ascii",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group__diskio.html#ga2a2f0ef10c92d31759200804a7bab79d"];
+  Node1 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="Mat::load",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___mat.html#gac94864fc30968b245890537e2b2869ac",tooltip="load a matrix from a file"];
+}

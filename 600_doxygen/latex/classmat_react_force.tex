@@ -1,0 +1,252 @@
+\hypertarget{classmat_react_force}{\section{mat\-React\-Force Class Reference}
+\label{classmat_react_force}\index{mat\-React\-Force@{mat\-React\-Force}}
+}
+
+
+{\ttfamily \#include $<$matreactforce.\-h$>$}
+
+
+
+Inheritance diagram for mat\-React\-Force\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=166pt]{classmat_react_force__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmat_react_force_a99fcb09f4058b81d1006fe06b3376545}{mat\-React\-Force} ()
+\item 
+\hyperlink{classmat_react_force_a153e4fb02d198b3cbd3c9943f6e21923}{mat\-React\-Force} (vector$<$ cx\-\_\-mat $>$ force\-In)
+\begin{DoxyCompactList}\small\item\em The constructor. Takes a vector of complex matrices and stores them as derivatives. \end{DoxyCompactList}\item 
+\hyperlink{classmat_react_force_a2d6e43b1a9fcff98e1c2ead6c1c3e0c6}{$\sim$mat\-React\-Force} ()
+\item 
+virtual \hyperlink{classmat_react_force}{mat\-React\-Force} \hyperlink{classmat_react_force_aed364735975e65fe52ee9425b15ac839}{operator+} (const \hyperlink{classmat_react_force}{mat\-React\-Force} \&force\-Other)
+\begin{DoxyCompactList}\small\item\em Operator overload to add two \hyperlink{classmat_react_force}{mat\-React\-Force} objects together. \end{DoxyCompactList}\item 
+virtual \hyperlink{classmat_react_force}{mat\-React\-Force} \hyperlink{classmat_react_force_a0294972a0d151ae787f1593bf45aaf9e}{operator-\/} (const \hyperlink{classmat_react_force}{mat\-React\-Force} \&force\-Other)
+\begin{DoxyCompactList}\small\item\em Operator overload to subtract two \hyperlink{classmat_react_force}{mat\-React\-Force} objects together. \end{DoxyCompactList}\item 
+int \hyperlink{classmat_react_force_a91c2d98f7fe7e316f728840daad6bf70}{getmax\-Order} ()
+\begin{DoxyCompactList}\small\item\em The maximum order of the derivatives. \end{DoxyCompactList}\item 
+vector$<$ cx\-\_\-mat $>$ \hyperlink{classmat_react_force_a1fccdee7a9611e8ac3b6e0e3cd843124}{get\-Derivative} ()
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_derivative}{Derivative} Returns the full vector of derivatives. \end{DoxyCompactList}\item 
+cx\-\_\-mat \hyperlink{classmat_react_force_a356968b35d5b97b3b60e161e0b5ab150}{get\-Derivative} (int order)
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_derivative}{Derivative} Returns the complex matrix for only the order of derivative specified. \end{DoxyCompactList}\item 
+void \hyperlink{classmat_react_force_a3234297ea2fb234b03284e527b50c47c}{set\-Derivative} (int order, cx\-\_\-mat Coeff)
+\begin{DoxyCompactList}\small\item\em Inputs a derivative matrix. \end{DoxyCompactList}\item 
+vector$<$ cx\-\_\-mat $>$ \& \hyperlink{classmat_react_force_a1a0e65c32c79f08037b0db2573ec4c28}{Derivatives} ()
+\begin{DoxyCompactList}\small\item\em Provides direct access to the vector of derivatives. \end{DoxyCompactList}\item 
+void \hyperlink{classmat_react_force_aa28cd4435f0c67cd920fcfc912abf211}{set\-Id} (int num)
+\begin{DoxyCompactList}\small\item\em Sets the force id number for the object. \end{DoxyCompactList}\item 
+int \hyperlink{classmat_react_force_a331b028f5972dfb08631b14fc02d6ca6}{get\-Id} ()
+\begin{DoxyCompactList}\small\item\em Returns the force id number for the object. \end{DoxyCompactList}\item 
+int \hyperlink{classmat_react_force_a573eb6c3b61ef1501d4ee6281aa2841c}{get\-Mat\-Size} ()
+\begin{DoxyCompactList}\small\item\em Returns the size of the matrix in each order of derivative. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class holds data for reactive force matrix whch includes force coefficients. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classmat_react_force_a99fcb09f4058b81d1006fe06b3376545}{\index{mat\-React\-Force@{mat\-React\-Force}!mat\-React\-Force@{mat\-React\-Force}}
+\index{mat\-React\-Force@{mat\-React\-Force}!matReactForce@{mat\-React\-Force}}
+\subsubsection[{mat\-React\-Force}]{\setlength{\rightskip}{0pt plus 5cm}mat\-React\-Force\-::mat\-React\-Force (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classmat_react_force_a99fcb09f4058b81d1006fe06b3376545}
+The default constructor. \hypertarget{classmat_react_force_a153e4fb02d198b3cbd3c9943f6e21923}{\index{mat\-React\-Force@{mat\-React\-Force}!mat\-React\-Force@{mat\-React\-Force}}
+\index{mat\-React\-Force@{mat\-React\-Force}!matReactForce@{mat\-React\-Force}}
+\subsubsection[{mat\-React\-Force}]{\setlength{\rightskip}{0pt plus 5cm}mat\-React\-Force\-::mat\-React\-Force (
+\begin{DoxyParamCaption}
+\item[{vector$<$ cx\-\_\-mat $>$}]{force\-In}
+\end{DoxyParamCaption}
+)}}\label{classmat_react_force_a153e4fb02d198b3cbd3c9943f6e21923}
+
+
+The constructor. Takes a vector of complex matrices and stores them as derivatives. 
+
+The constructor. Takes a vector of complex matrices and stores them as derivatives. Assumes that the matrices in the vector are order in sequence of increasing order of derivative. (index 0 = derivative order 0.) 
+\begin{DoxyParams}{Parameters}
+{\em force\-In} & The list of forces. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classmat_react_force_a2d6e43b1a9fcff98e1c2ead6c1c3e0c6}{\index{mat\-React\-Force@{mat\-React\-Force}!$\sim$mat\-React\-Force@{$\sim$mat\-React\-Force}}
+\index{$\sim$mat\-React\-Force@{$\sim$mat\-React\-Force}!matReactForce@{mat\-React\-Force}}
+\subsubsection[{$\sim$mat\-React\-Force}]{\setlength{\rightskip}{0pt plus 5cm}mat\-React\-Force\-::$\sim$mat\-React\-Force (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classmat_react_force_a2d6e43b1a9fcff98e1c2ead6c1c3e0c6}
+The default destructor, nothing happens here. 
+
+\subsection{Member Function Documentation}
+\hypertarget{classmat_react_force_a1a0e65c32c79f08037b0db2573ec4c28}{\index{mat\-React\-Force@{mat\-React\-Force}!Derivatives@{Derivatives}}
+\index{Derivatives@{Derivatives}!matReactForce@{mat\-React\-Force}}
+\subsubsection[{Derivatives}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ cx\-\_\-mat $>$ \& mat\-React\-Force\-::\-Derivatives (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classmat_react_force_a1a0e65c32c79f08037b0db2573ec4c28}
+
+
+Provides direct access to the vector of derivatives. 
+
+Provides direct access to the vector of derivatives. Allows for use of vector operations on the derivatives object. \begin{DoxyReturn}{Returns}
+Returns reference to the vector of complex matrices which contain the derivatives. Variable passed by reference. 
+\end{DoxyReturn}
+\hypertarget{classmat_react_force_a1fccdee7a9611e8ac3b6e0e3cd843124}{\index{mat\-React\-Force@{mat\-React\-Force}!get\-Derivative@{get\-Derivative}}
+\index{get\-Derivative@{get\-Derivative}!matReactForce@{mat\-React\-Force}}
+\subsubsection[{get\-Derivative}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ cx\-\_\-mat $>$ mat\-React\-Force\-::get\-Derivative (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classmat_react_force_a1fccdee7a9611e8ac3b6e0e3cd843124}
+
+
+\hyperlink{class_derivative}{Derivative} Returns the full vector of derivatives. 
+
+\hyperlink{class_derivative}{Derivative} Returns the full vector of derivatives. \begin{DoxyReturn}{Returns}
+Returns the full vector of derivatives. Passed as values, not as references. 
+\end{DoxyReturn}
+\hypertarget{classmat_react_force_a356968b35d5b97b3b60e161e0b5ab150}{\index{mat\-React\-Force@{mat\-React\-Force}!get\-Derivative@{get\-Derivative}}
+\index{get\-Derivative@{get\-Derivative}!matReactForce@{mat\-React\-Force}}
+\subsubsection[{get\-Derivative}]{\setlength{\rightskip}{0pt plus 5cm}cx\-\_\-mat mat\-React\-Force\-::get\-Derivative (
+\begin{DoxyParamCaption}
+\item[{int}]{order}
+\end{DoxyParamCaption}
+)}}\label{classmat_react_force_a356968b35d5b97b3b60e161e0b5ab150}
+
+
+\hyperlink{class_derivative}{Derivative} Returns the complex matrix for only the order of derivative specified. 
+
+\hyperlink{class_derivative}{Derivative} Returns the complex matrix for only the order of derivative specified. 
+\begin{DoxyParams}{Parameters}
+{\em order} & Integer input to specify the order of the derivative. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns a complex matrix that contains the force coefficients for the given order of derivative. Passed as a value. 
+\end{DoxyReturn}
+\hypertarget{classmat_react_force_a331b028f5972dfb08631b14fc02d6ca6}{\index{mat\-React\-Force@{mat\-React\-Force}!get\-Id@{get\-Id}}
+\index{get\-Id@{get\-Id}!matReactForce@{mat\-React\-Force}}
+\subsubsection[{get\-Id}]{\setlength{\rightskip}{0pt plus 5cm}int mat\-React\-Force\-::get\-Id (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classmat_react_force_a331b028f5972dfb08631b14fc02d6ca6}
+
+
+Returns the force id number for the object. 
+
+This is similar to the name parameter in other force objects. It is an identifier. In this case, a numerical identifier. Normally correlates to the objects index in a vector of other objects of the same class. \begin{DoxyReturn}{Returns}
+Returns the force id number, integer data type. 
+\end{DoxyReturn}
+\hypertarget{classmat_react_force_a573eb6c3b61ef1501d4ee6281aa2841c}{\index{mat\-React\-Force@{mat\-React\-Force}!get\-Mat\-Size@{get\-Mat\-Size}}
+\index{get\-Mat\-Size@{get\-Mat\-Size}!matReactForce@{mat\-React\-Force}}
+\subsubsection[{get\-Mat\-Size}]{\setlength{\rightskip}{0pt plus 5cm}int mat\-React\-Force\-::get\-Mat\-Size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classmat_react_force_a573eb6c3b61ef1501d4ee6281aa2841c}
+
+
+Returns the size of the matrix in each order of derivative. 
+
+Returns the size of the matrix in each order of derivative. Integer output type. \begin{DoxyReturn}{Returns}
+Returns the size of the matrix in each order of derivative. 
+\end{DoxyReturn}
+\hypertarget{classmat_react_force_a91c2d98f7fe7e316f728840daad6bf70}{\index{mat\-React\-Force@{mat\-React\-Force}!getmax\-Order@{getmax\-Order}}
+\index{getmax\-Order@{getmax\-Order}!matReactForce@{mat\-React\-Force}}
+\subsubsection[{getmax\-Order}]{\setlength{\rightskip}{0pt plus 5cm}int mat\-React\-Force\-::getmax\-Order (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classmat_react_force_a91c2d98f7fe7e316f728840daad6bf70}
+
+
+The maximum order of the derivatives. 
+
+The maximum order of the derivatives (Integer). Also the total size of the vector containing the derivatives. \begin{DoxyReturn}{Returns}
+Returns the maximum order of derivatives in the force. 
+\end{DoxyReturn}
+\hypertarget{classmat_react_force_aed364735975e65fe52ee9425b15ac839}{\index{mat\-React\-Force@{mat\-React\-Force}!operator+@{operator+}}
+\index{operator+@{operator+}!matReactForce@{mat\-React\-Force}}
+\subsubsection[{operator+}]{\setlength{\rightskip}{0pt plus 5cm}{\bf mat\-React\-Force} mat\-React\-Force\-::operator+ (
+\begin{DoxyParamCaption}
+\item[{const {\bf mat\-React\-Force} \&}]{force\-Other}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classmat_react_force_aed364735975e65fe52ee9425b15ac839}
+
+
+Operator overload to add two \hyperlink{classmat_react_force}{mat\-React\-Force} objects together. 
+
+This overloads the + operator to add two \hyperlink{classmat_react_force}{mat\-React\-Force} objects together. Functions are added on a per-\/derivative basis. The function recognizes the derivative matrices contained within each object. Only derivatives of the same order are added together. 
+\begin{DoxyParams}{Parameters}
+{\em force\-Other} & The other objects of type \hyperlink{classmat_react_force}{mat\-React\-Force} that will be added. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns an object of type \hyperlink{classmat_react_force}{mat\-React\-Force}. The new object will contain the same order of derivatives as the highest derivative of the two added functions. 
+\end{DoxyReturn}
+\hypertarget{classmat_react_force_a0294972a0d151ae787f1593bf45aaf9e}{\index{mat\-React\-Force@{mat\-React\-Force}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!matReactForce@{mat\-React\-Force}}
+\subsubsection[{operator-\/}]{\setlength{\rightskip}{0pt plus 5cm}{\bf mat\-React\-Force} mat\-React\-Force\-::operator-\/ (
+\begin{DoxyParamCaption}
+\item[{const {\bf mat\-React\-Force} \&}]{force\-Other}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classmat_react_force_a0294972a0d151ae787f1593bf45aaf9e}
+
+
+Operator overload to subtract two \hyperlink{classmat_react_force}{mat\-React\-Force} objects together. 
+
+This overloads the -\/ operator to subtract two \hyperlink{classmat_react_force}{mat\-React\-Force} objects together. Functions are subtracted on a per-\/derivative basis. The function recognizes the derivative matrices contained within each object. Only derivatives of the same order are subtracted together. Order of operations does matter. 
+\begin{DoxyParams}{Parameters}
+{\em force\-Other} & The other objects of type \hyperlink{classmat_react_force}{mat\-React\-Force} that will be subtracted. force\-Other is always subtracted from the calling object. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns an object of type \hyperlink{classmat_react_force}{mat\-React\-Force}. The new object will contain the same order of derivatives as the highest derivative of the two subtracted functions. 
+\end{DoxyReturn}
+\hypertarget{classmat_react_force_a3234297ea2fb234b03284e527b50c47c}{\index{mat\-React\-Force@{mat\-React\-Force}!set\-Derivative@{set\-Derivative}}
+\index{set\-Derivative@{set\-Derivative}!matReactForce@{mat\-React\-Force}}
+\subsubsection[{set\-Derivative}]{\setlength{\rightskip}{0pt plus 5cm}void mat\-React\-Force\-::set\-Derivative (
+\begin{DoxyParamCaption}
+\item[{int}]{order, }
+\item[{cx\-\_\-mat}]{Coeff}
+\end{DoxyParamCaption}
+)}}\label{classmat_react_force_a3234297ea2fb234b03284e527b50c47c}
+
+
+Inputs a derivative matrix. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em order} & The order of the derivative matrix. Also is sequence in the vector that contains the matrices. \\
+\hline
+{\em Coeff} & The matrix of complex numbers that contains the force coefficients for the derivative. Passed as a value, not a reference. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classmat_react_force_aa28cd4435f0c67cd920fcfc912abf211}{\index{mat\-React\-Force@{mat\-React\-Force}!set\-Id@{set\-Id}}
+\index{set\-Id@{set\-Id}!matReactForce@{mat\-React\-Force}}
+\subsubsection[{set\-Id}]{\setlength{\rightskip}{0pt plus 5cm}void mat\-React\-Force\-::set\-Id (
+\begin{DoxyParamCaption}
+\item[{int}]{num}
+\end{DoxyParamCaption}
+)}}\label{classmat_react_force_aa28cd4435f0c67cd920fcfc912abf211}
+
+
+Sets the force id number for the object. 
+
+This is similar to the name parameter in other force objects. It is an identifier. In this case, a numerical identifier. Normally correlates to the objects index in a vector of other objects of the same class. 
+\begin{DoxyParams}{Parameters}
+{\em num} & The integer number to input as the objects integer id. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/home/nicholas/\-Ship Design/\-Projects/\-D\-M\-S1305 Open\-S\-E\-A/master/200\-\_\-src/bin/ofreq/motion\-\_\-solver/matreactforce.\-h\item 
+/home/nicholas/\-Ship Design/\-Projects/\-D\-M\-S1305 Open\-S\-E\-A/master/200\-\_\-src/bin/ofreq/motion\-\_\-solver/matreactforce.\-cpp\end{DoxyCompactItemize}

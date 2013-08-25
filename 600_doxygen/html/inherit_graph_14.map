@@ -1,0 +1,9 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" href="$class_read_input.html" title="ReadInput" alt="" coords="5,132,88,159"/>
+<area shape="rect" id="node3" href="$class_bodiesinput.html" title="Bodiesinput" alt="" coords="158,5,250,32"/>
+<area shape="rect" id="node5" href="$class_control_input.html" title="ControlInput" alt="" coords="158,56,250,83"/>
+<area shape="rect" id="node7" href="$class_data_input.html" title="DataInput" alt="" coords="165,107,243,133"/>
+<area shape="rect" id="node9" href="$class_forces_input.html" title="ForcesInput" alt="" coords="159,157,249,184"/>
+<area shape="rect" id="node11" href="$class_hydrodynamic_input.html" title="HydrodynamicInput" alt="" coords="136,208,272,235"/>
+<area shape="rect" id="node13" href="$class_seaenv_input.html" title="SeaenvInput" alt="" coords="156,259,252,285"/>
+</map>

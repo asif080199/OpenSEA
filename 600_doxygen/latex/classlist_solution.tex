@@ -1,0 +1,276 @@
+\hypertarget{classlist_solution}{\section{list\-Solution Class Reference}
+\label{classlist_solution}\index{list\-Solution@{list\-Solution}}
+}
+
+
+{\ttfamily \#include $<$listsolution.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classlist_solution_a9d3685567c422016200d957f5b316b8d}{\hyperlink{classlist_solution_a9d3685567c422016200d957f5b316b8d}{list\-Solution} ()}\label{classlist_solution_a9d3685567c422016200d957f5b316b8d}
+
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\hyperlink{classlist_solution_ab7a21a46816be43db63f6d6d1773366b}{list\-Solution} (int dir, int freq)
+\begin{DoxyCompactList}\small\item\em Constructor with number of wave directions and wave frequencies specified. Automatically allocates dynamic memory for the specified number of wave directions and wave frequencies. \end{DoxyCompactList}\item 
+\hyperlink{classlist_solution_a02b5f6df04333f91a4bf9a297b145826}{$\sim$list\-Solution} ()
+\item 
+\hyperlink{class_solution}{Solution} \& \hyperlink{classlist_solution_aae2dcc67016955affa22dc752c583c59}{ref\-Solution} (int dir, int freq)
+\begin{DoxyCompactList}\small\item\em Returns a pointer to the solution object at the specified wave direction and frequency. \end{DoxyCompactList}\item 
+void \hyperlink{classlist_solution_a5f833204f4836e3e2475d748e4b6690c}{set\-Solution} (int dir, int freq, \hyperlink{class_solution}{Solution} soln)
+\begin{DoxyCompactList}\small\item\em Sets the solution object at the specified wave direction and frequency. \end{DoxyCompactList}\item 
+\hyperlink{class_solution}{Solution} \hyperlink{classlist_solution_ac3c2f8b35907a1563bc3f7ca0157ba25}{get\-Solution} (int dir, int freq)
+\begin{DoxyCompactList}\small\item\em Gets the solution object at the specified wave direction and frequency. \end{DoxyCompactList}\item 
+void \hyperlink{classlist_solution_a0127a6f326ca08b2c965592dda51dc1e}{resize} (int dir, int freq)
+\begin{DoxyCompactList}\small\item\em Resizes the 2-\/\-D array of \hyperlink{class_solution}{Solution} objects. Any existing objects in the array are preserved. If the array is sized smaller than the existing number of \hyperlink{class_solution}{Solution} objects, any object beyond the new index range are deleted. \end{DoxyCompactList}\item 
+vector$<$ int $>$ \hyperlink{classlist_solution_ab38c08043b312606a13451cf717af288}{size} ()
+\begin{DoxyCompactList}\small\item\em Returns the size of the matrix as a vector of two elements. \end{DoxyCompactList}\item 
+int \hyperlink{classlist_solution_a73345469dee89ca2073fb70df1e2a972}{n\-\_\-dirs} ()
+\begin{DoxyCompactList}\small\item\em Returns the number of rows as an integer. This is the number of wave directions. \end{DoxyCompactList}\item 
+int \hyperlink{classlist_solution_a3a0ce41a07718eca37ecccddf632a3c2}{n\-\_\-freqs} ()
+\begin{DoxyCompactList}\small\item\em Returns the number of columns as an integer. This is the number of wave frequencies. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class records the list of solutions obtained for a single \hyperlink{class_body}{Body} object. It is essentially a 2\-D version of the vector$<$object$>$ class. But since vector can't handle 2-\/d storage solutions, this class was created. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classlist_solution_ab7a21a46816be43db63f6d6d1773366b}{\index{list\-Solution@{list\-Solution}!list\-Solution@{list\-Solution}}
+\index{list\-Solution@{list\-Solution}!listSolution@{list\-Solution}}
+\subsubsection[{list\-Solution}]{\setlength{\rightskip}{0pt plus 5cm}list\-Solution\-::list\-Solution (
+\begin{DoxyParamCaption}
+\item[{int}]{dir, }
+\item[{int}]{freq}
+\end{DoxyParamCaption}
+)}}\label{classlist_solution_ab7a21a46816be43db63f6d6d1773366b}
+
+
+Constructor with number of wave directions and wave frequencies specified. Automatically allocates dynamic memory for the specified number of wave directions and wave frequencies. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dir} & The new number of wave directions to resize the array to. \\
+\hline
+{\em freq} & The new number of wave frequencies to resize the array to. \\
+\hline
+\end{DoxyParams}
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=334pt]{classlist_solution_ab7a21a46816be43db63f6d6d1773366b_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classlist_solution_a02b5f6df04333f91a4bf9a297b145826}{\index{list\-Solution@{list\-Solution}!$\sim$list\-Solution@{$\sim$list\-Solution}}
+\index{$\sim$list\-Solution@{$\sim$list\-Solution}!listSolution@{list\-Solution}}
+\subsubsection[{$\sim$list\-Solution}]{\setlength{\rightskip}{0pt plus 5cm}list\-Solution\-::$\sim$list\-Solution (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classlist_solution_a02b5f6df04333f91a4bf9a297b145826}
+Default destructor. Frees any memory dynamically assigned. 
+
+\subsection{Member Function Documentation}
+\hypertarget{classlist_solution_ac3c2f8b35907a1563bc3f7ca0157ba25}{\index{list\-Solution@{list\-Solution}!get\-Solution@{get\-Solution}}
+\index{get\-Solution@{get\-Solution}!listSolution@{list\-Solution}}
+\subsubsection[{get\-Solution}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Solution} list\-Solution\-::get\-Solution (
+\begin{DoxyParamCaption}
+\item[{int}]{dir, }
+\item[{int}]{freq}
+\end{DoxyParamCaption}
+)}}\label{classlist_solution_ac3c2f8b35907a1563bc3f7ca0157ba25}
+
+
+Gets the solution object at the specified wave direction and frequency. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dir} & Integer. Index of the wave direction desired. \\
+\hline
+{\em freq} & Integer. Index of the wave frequency desired. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns the \hyperlink{class_solution}{Solution} object at the specified wave direction and wave frequency. Returned variable is passed by value. 
+\end{DoxyReturn}
+\hypertarget{classlist_solution_a73345469dee89ca2073fb70df1e2a972}{\index{list\-Solution@{list\-Solution}!n\-\_\-dirs@{n\-\_\-dirs}}
+\index{n\-\_\-dirs@{n\-\_\-dirs}!listSolution@{list\-Solution}}
+\subsubsection[{n\-\_\-dirs}]{\setlength{\rightskip}{0pt plus 5cm}int list\-Solution\-::n\-\_\-dirs (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classlist_solution_a73345469dee89ca2073fb70df1e2a972}
+
+
+Returns the number of rows as an integer. This is the number of wave directions. 
+
+\begin{DoxyReturn}{Returns}
+Integer. Returns the number of rows as an integer. This is the number of wave directions. 
+\end{DoxyReturn}
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=304pt]{classlist_solution_a73345469dee89ca2073fb70df1e2a972_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=334pt]{classlist_solution_a73345469dee89ca2073fb70df1e2a972_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classlist_solution_a3a0ce41a07718eca37ecccddf632a3c2}{\index{list\-Solution@{list\-Solution}!n\-\_\-freqs@{n\-\_\-freqs}}
+\index{n\-\_\-freqs@{n\-\_\-freqs}!listSolution@{list\-Solution}}
+\subsubsection[{n\-\_\-freqs}]{\setlength{\rightskip}{0pt plus 5cm}int list\-Solution\-::n\-\_\-freqs (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classlist_solution_a3a0ce41a07718eca37ecccddf632a3c2}
+
+
+Returns the number of columns as an integer. This is the number of wave frequencies. 
+
+\begin{DoxyReturn}{Returns}
+Integer. Returns the number of columns as an integer. This is the number of wave frequencies. 
+\end{DoxyReturn}
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=340pt]{classlist_solution_a3a0ce41a07718eca37ecccddf632a3c2_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classlist_solution_aae2dcc67016955affa22dc752c583c59}{\index{list\-Solution@{list\-Solution}!ref\-Solution@{ref\-Solution}}
+\index{ref\-Solution@{ref\-Solution}!listSolution@{list\-Solution}}
+\subsubsection[{ref\-Solution}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Solution} \& list\-Solution\-::ref\-Solution (
+\begin{DoxyParamCaption}
+\item[{int}]{dir, }
+\item[{int}]{freq}
+\end{DoxyParamCaption}
+)}}\label{classlist_solution_aae2dcc67016955affa22dc752c583c59}
+
+
+Returns a pointer to the solution object at the specified wave direction and frequency. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dir} & Integer. Index of the wave direction desired. \\
+\hline
+{\em freq} & Integer. Index of the wave frequency desired. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns a pointer to the \hyperlink{class_solution}{Solution} object at the specified wave direction and wave frequency. Returned variable is passed by reference. 
+\end{DoxyReturn}
+\hypertarget{classlist_solution_a0127a6f326ca08b2c965592dda51dc1e}{\index{list\-Solution@{list\-Solution}!resize@{resize}}
+\index{resize@{resize}!listSolution@{list\-Solution}}
+\subsubsection[{resize}]{\setlength{\rightskip}{0pt plus 5cm}void list\-Solution\-::resize (
+\begin{DoxyParamCaption}
+\item[{int}]{dir, }
+\item[{int}]{freq}
+\end{DoxyParamCaption}
+)}}\label{classlist_solution_a0127a6f326ca08b2c965592dda51dc1e}
+
+
+Resizes the 2-\/\-D array of \hyperlink{class_solution}{Solution} objects. Any existing objects in the array are preserved. If the array is sized smaller than the existing number of \hyperlink{class_solution}{Solution} objects, any object beyond the new index range are deleted. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dir} & The new number of wave directions to resize the array to. \\
+\hline
+{\em freq} & The new number of wave frequencies to resize the array to. \\
+\hline
+\end{DoxyParams}
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=334pt]{classlist_solution_a0127a6f326ca08b2c965592dda51dc1e_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classlist_solution_a5f833204f4836e3e2475d748e4b6690c}{\index{list\-Solution@{list\-Solution}!set\-Solution@{set\-Solution}}
+\index{set\-Solution@{set\-Solution}!listSolution@{list\-Solution}}
+\subsubsection[{set\-Solution}]{\setlength{\rightskip}{0pt plus 5cm}void list\-Solution\-::set\-Solution (
+\begin{DoxyParamCaption}
+\item[{int}]{dir, }
+\item[{int}]{freq, }
+\item[{{\bf Solution}}]{soln}
+\end{DoxyParamCaption}
+)}}\label{classlist_solution_a5f833204f4836e3e2475d748e4b6690c}
+
+
+Sets the solution object at the specified wave direction and frequency. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dir} & Integer. Index of the wave direction desired. \\
+\hline
+{\em freq} & Integer. Index of the wave frequency desired. \\
+\hline
+{\em soln} & The solution object to pass in. \\
+\hline
+\end{DoxyParams}
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classlist_solution_a5f833204f4836e3e2475d748e4b6690c_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classlist_solution_ab38c08043b312606a13451cf717af288}{\index{list\-Solution@{list\-Solution}!size@{size}}
+\index{size@{size}!listSolution@{list\-Solution}}
+\subsubsection[{size}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ int $>$ list\-Solution\-::size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classlist_solution_ab38c08043b312606a13451cf717af288}
+
+
+Returns the size of the matrix as a vector of two elements. 
+
+\begin{DoxyReturn}{Returns}
+Integer. Returns the size of the matrix as a vector of two elements. 
+\end{DoxyReturn}
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classlist_solution_ab38c08043b312606a13451cf717af288_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/home/nicholas/\-Ship Design/\-Projects/\-D\-M\-S1305 Open\-S\-E\-A/master/200\-\_\-src/bin/ofreq/global\-\_\-objects/listsolution.\-h\item 
+/home/nicholas/\-Ship Design/\-Projects/\-D\-M\-S1305 Open\-S\-E\-A/master/200\-\_\-src/bin/ofreq/global\-\_\-objects/listsolution.\-cpp\end{DoxyCompactItemize}

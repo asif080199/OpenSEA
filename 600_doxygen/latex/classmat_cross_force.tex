@@ -1,0 +1,197 @@
+\hypertarget{classmat_cross_force}{\section{mat\-Cross\-Force Class Reference}
+\label{classmat_cross_force}\index{mat\-Cross\-Force@{mat\-Cross\-Force}}
+}
+
+
+{\ttfamily \#include $<$matcrossforce.\-h$>$}
+
+
+
+Inheritance diagram for mat\-Cross\-Force\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=166pt]{classmat_cross_force__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for mat\-Cross\-Force\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=166pt]{classmat_cross_force__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmat_cross_force_a11abe5f2ba38beb3c85645557a21cf80}{mat\-Cross\-Force} ()
+\item 
+\hyperlink{classmat_cross_force_ab74a2bae3db92487eb022be166147711}{mat\-Cross\-Force} (vector$<$ cx\-\_\-mat $>$ force\-In)
+\begin{DoxyCompactList}\small\item\em The constructor. Takes a vector of complex matrices and stores them as derivatives. \end{DoxyCompactList}\item 
+\hyperlink{classmat_cross_force_a92013c8d5347ffcf90629541d26a247c}{$\sim$mat\-Cross\-Force} ()
+\item 
+\hyperlink{classmat_cross_force}{mat\-Cross\-Force} \hyperlink{classmat_cross_force_ae08bed0375d872e33a128b2e70224e6d}{operator+} (const \hyperlink{classmat_cross_force}{mat\-Cross\-Force} \&force\-Other)
+\begin{DoxyCompactList}\small\item\em Operator overload to add two \hyperlink{classmat_cross_force}{mat\-Cross\-Force} objects together. \end{DoxyCompactList}\item 
+\hyperlink{classmat_cross_force}{mat\-Cross\-Force} \hyperlink{classmat_cross_force_ae0d2f74c5c7a615e93ba523fe86275b0}{operator-\/} (const \hyperlink{classmat_cross_force}{mat\-Cross\-Force} \&force\-Other)
+\begin{DoxyCompactList}\small\item\em Operator overload to subtract two \hyperlink{classmat_cross_force}{mat\-Cross\-Force} objects together. \end{DoxyCompactList}\item 
+void \hyperlink{classmat_cross_force_af5affd28ed65f7974eb0ca38930b75a2}{set\-Linked\-Body} (\hyperlink{classmat_body}{mat\-Body} \&Bod\-In)
+\item 
+\hyperlink{classmat_body}{mat\-Body} \hyperlink{classmat_cross_force_adabf398d7bd888dd672a6abc0fdf0354}{get\-Linked\-Body} ()
+\item 
+void \hyperlink{classmat_cross_force_a37b010f0666d4f904b906f39aa0e29ed}{set\-Linked\-Id} (int bod\-Id)
+\begin{DoxyCompactList}\small\item\em Sets the id of the linked body. \end{DoxyCompactList}\item 
+int \hyperlink{classmat_cross_force_a38d43dc1fc80ec04f13b100021b2e64a}{get\-Linked\-Id} ()
+\begin{DoxyCompactList}\small\item\em Gets the id of the linked body. \end{DoxyCompactList}\item 
+vector$<$ int $>$ \hyperlink{classmat_cross_force_ad8d1b2cac588b9d976371e7d4134bc19}{getmat\-Dims} ()
+\begin{DoxyCompactList}\small\item\em Returns the size of the matrix in each order of derivative. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+$\ast$\-This class defines the cross body force matrix. It is an extension of the reactive force matrix class. The main $\ast$difference is that this class includes an additional property for the connected body. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classmat_cross_force_a11abe5f2ba38beb3c85645557a21cf80}{\index{mat\-Cross\-Force@{mat\-Cross\-Force}!mat\-Cross\-Force@{mat\-Cross\-Force}}
+\index{mat\-Cross\-Force@{mat\-Cross\-Force}!matCrossForce@{mat\-Cross\-Force}}
+\subsubsection[{mat\-Cross\-Force}]{\setlength{\rightskip}{0pt plus 5cm}mat\-Cross\-Force\-::mat\-Cross\-Force (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classmat_cross_force_a11abe5f2ba38beb3c85645557a21cf80}
+The default constructor \hypertarget{classmat_cross_force_ab74a2bae3db92487eb022be166147711}{\index{mat\-Cross\-Force@{mat\-Cross\-Force}!mat\-Cross\-Force@{mat\-Cross\-Force}}
+\index{mat\-Cross\-Force@{mat\-Cross\-Force}!matCrossForce@{mat\-Cross\-Force}}
+\subsubsection[{mat\-Cross\-Force}]{\setlength{\rightskip}{0pt plus 5cm}mat\-Cross\-Force\-::mat\-Cross\-Force (
+\begin{DoxyParamCaption}
+\item[{vector$<$ cx\-\_\-mat $>$}]{force\-In}
+\end{DoxyParamCaption}
+)}}\label{classmat_cross_force_ab74a2bae3db92487eb022be166147711}
+
+
+The constructor. Takes a vector of complex matrices and stores them as derivatives. 
+
+The constructor. Takes a vector of complex matrices and stores them as derivatives. Assumes that the matrices in the vector are order in sequence of increasing order of derivative. (index 0 = derivative order 0.) 
+\begin{DoxyParams}{Parameters}
+{\em force\-In} & The list of forces. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classmat_cross_force_a92013c8d5347ffcf90629541d26a247c}{\index{mat\-Cross\-Force@{mat\-Cross\-Force}!$\sim$mat\-Cross\-Force@{$\sim$mat\-Cross\-Force}}
+\index{$\sim$mat\-Cross\-Force@{$\sim$mat\-Cross\-Force}!matCrossForce@{mat\-Cross\-Force}}
+\subsubsection[{$\sim$mat\-Cross\-Force}]{\setlength{\rightskip}{0pt plus 5cm}mat\-Cross\-Force\-::$\sim$mat\-Cross\-Force (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classmat_cross_force_a92013c8d5347ffcf90629541d26a247c}
+The default destructor. Nothing happens here. 
+
+\subsection{Member Function Documentation}
+\hypertarget{classmat_cross_force_adabf398d7bd888dd672a6abc0fdf0354}{\index{mat\-Cross\-Force@{mat\-Cross\-Force}!get\-Linked\-Body@{get\-Linked\-Body}}
+\index{get\-Linked\-Body@{get\-Linked\-Body}!matCrossForce@{mat\-Cross\-Force}}
+\subsubsection[{get\-Linked\-Body}]{\setlength{\rightskip}{0pt plus 5cm}{\bf mat\-Body} mat\-Cross\-Force\-::get\-Linked\-Body (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classmat_cross_force_adabf398d7bd888dd672a6abc0fdf0354}
+Return the linked body for the cross body object \begin{DoxyReturn}{Returns}
+Returns a pointer to the \hyperlink{classmat_body}{mat\-Body} object that this force relates to. 
+\end{DoxyReturn}
+\hypertarget{classmat_cross_force_a38d43dc1fc80ec04f13b100021b2e64a}{\index{mat\-Cross\-Force@{mat\-Cross\-Force}!get\-Linked\-Id@{get\-Linked\-Id}}
+\index{get\-Linked\-Id@{get\-Linked\-Id}!matCrossForce@{mat\-Cross\-Force}}
+\subsubsection[{get\-Linked\-Id}]{\setlength{\rightskip}{0pt plus 5cm}int mat\-Cross\-Force\-::get\-Linked\-Id (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classmat_cross_force_a38d43dc1fc80ec04f13b100021b2e64a}
+
+
+Gets the id of the linked body. 
+
+Gets the id of the linked body. The id is like the body's name. This is normally the index of the body within the vector of other bodies. \begin{DoxyReturn}{Returns}
+Integer value which is the body's id. This is normally the index of the body within the vector of other bodies. 
+\end{DoxyReturn}
+\hypertarget{classmat_cross_force_ad8d1b2cac588b9d976371e7d4134bc19}{\index{mat\-Cross\-Force@{mat\-Cross\-Force}!getmat\-Dims@{getmat\-Dims}}
+\index{getmat\-Dims@{getmat\-Dims}!matCrossForce@{mat\-Cross\-Force}}
+\subsubsection[{getmat\-Dims}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ int $>$ mat\-Cross\-Force\-::getmat\-Dims (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classmat_cross_force_ad8d1b2cac588b9d976371e7d4134bc19}
+
+
+Returns the size of the matrix in each order of derivative. 
+
+Returns the size of the matrix in each order of derivative. Integer output type. Reports both number of columns and number of rows. Vector of 2 integers output. \begin{DoxyReturn}{Returns}
+Returns a vector of two integers specifying size of matrix. First output is number of rows. Second output is number of columns. 
+\end{DoxyReturn}
+\hypertarget{classmat_cross_force_ae08bed0375d872e33a128b2e70224e6d}{\index{mat\-Cross\-Force@{mat\-Cross\-Force}!operator+@{operator+}}
+\index{operator+@{operator+}!matCrossForce@{mat\-Cross\-Force}}
+\subsubsection[{operator+}]{\setlength{\rightskip}{0pt plus 5cm}{\bf mat\-Cross\-Force} mat\-Cross\-Force\-::operator+ (
+\begin{DoxyParamCaption}
+\item[{const {\bf mat\-Cross\-Force} \&}]{force\-Other}
+\end{DoxyParamCaption}
+)}}\label{classmat_cross_force_ae08bed0375d872e33a128b2e70224e6d}
+
+
+Operator overload to add two \hyperlink{classmat_cross_force}{mat\-Cross\-Force} objects together. 
+
+This overloads the + operator to add two \hyperlink{classmat_cross_force}{mat\-Cross\-Force} objects together. Functions are added on a per-\/derivative basis. The function recognizes the derivative matrices contained within each object. Only derivatives of the same order are added together. The function also checks the linked body parameter. Only objects with the same linked body are added together. 
+\begin{DoxyParams}{Parameters}
+{\em force\-Other} & The other objects of type \hyperlink{classmat_cross_force}{mat\-Cross\-Force} that will be added. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns an object of type \hyperlink{classmat_cross_force}{mat\-Cross\-Force}. The new object will contain the same order of derivatives as the highest derivative of the two added functions. 
+\end{DoxyReturn}
+\hypertarget{classmat_cross_force_ae0d2f74c5c7a615e93ba523fe86275b0}{\index{mat\-Cross\-Force@{mat\-Cross\-Force}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!matCrossForce@{mat\-Cross\-Force}}
+\subsubsection[{operator-\/}]{\setlength{\rightskip}{0pt plus 5cm}{\bf mat\-Cross\-Force} mat\-Cross\-Force\-::operator-\/ (
+\begin{DoxyParamCaption}
+\item[{const {\bf mat\-Cross\-Force} \&}]{force\-Other}
+\end{DoxyParamCaption}
+)}}\label{classmat_cross_force_ae0d2f74c5c7a615e93ba523fe86275b0}
+
+
+Operator overload to subtract two \hyperlink{classmat_cross_force}{mat\-Cross\-Force} objects together. 
+
+This overloads the -\/ operator to subtract two \hyperlink{classmat_cross_force}{mat\-Cross\-Force} objects together. Functions are subtracted on a per-\/derivative basis. The function recognizes the derivative matrices contained within each object. Only derivatives of the same order are subtracted together. Order of operations does matter. The function also checks the linked body parameter. Only objects with the same linked body are added together. 
+\begin{DoxyParams}{Parameters}
+{\em force\-Other} & The other objects of type \hyperlink{classmat_cross_force}{mat\-Cross\-Force} that will be subtracted. force\-Other is always subtracted from the calling object. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns an object of type \hyperlink{classmat_cross_force}{mat\-Cross\-Force}. The new object will contain the same order of derivatives as the highest derivative of the two subtracted functions. 
+\end{DoxyReturn}
+\hypertarget{classmat_cross_force_af5affd28ed65f7974eb0ca38930b75a2}{\index{mat\-Cross\-Force@{mat\-Cross\-Force}!set\-Linked\-Body@{set\-Linked\-Body}}
+\index{set\-Linked\-Body@{set\-Linked\-Body}!matCrossForce@{mat\-Cross\-Force}}
+\subsubsection[{set\-Linked\-Body}]{\setlength{\rightskip}{0pt plus 5cm}void mat\-Cross\-Force\-::set\-Linked\-Body (
+\begin{DoxyParamCaption}
+\item[{{\bf mat\-Body} \&}]{Bod\-In}
+\end{DoxyParamCaption}
+)}}\label{classmat_cross_force_af5affd28ed65f7974eb0ca38930b75a2}
+Set linked body for cross body object. 
+\begin{DoxyParams}{Parameters}
+{\em Bod\-In} & pointer to the \hyperlink{classmat_body}{mat\-Body} object that this linked force relates to. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classmat_cross_force_a37b010f0666d4f904b906f39aa0e29ed}{\index{mat\-Cross\-Force@{mat\-Cross\-Force}!set\-Linked\-Id@{set\-Linked\-Id}}
+\index{set\-Linked\-Id@{set\-Linked\-Id}!matCrossForce@{mat\-Cross\-Force}}
+\subsubsection[{set\-Linked\-Id}]{\setlength{\rightskip}{0pt plus 5cm}void mat\-Cross\-Force\-::set\-Linked\-Id (
+\begin{DoxyParamCaption}
+\item[{int}]{bod\-Id}
+\end{DoxyParamCaption}
+)}}\label{classmat_cross_force_a37b010f0666d4f904b906f39aa0e29ed}
+
+
+Sets the id of the linked body. 
+
+Sets the id of the linked body. The id is like the body's name. This is normally the index of the body within the vector of other bodies. 
+\begin{DoxyParams}{Parameters}
+{\em bod\-Id} & The integer of the body id. This is normally the index of the body within the vector of other bodies. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/home/nicholas/\-Ship Design/\-Projects/\-D\-M\-S1305 Open\-S\-E\-A/master/200\-\_\-src/bin/ofreq/motion\-\_\-solver/matcrossforce.\-h\item 
+/home/nicholas/\-Ship Design/\-Projects/\-D\-M\-S1305 Open\-S\-E\-A/master/200\-\_\-src/bin/ofreq/motion\-\_\-solver/matcrossforce.\-cpp\end{DoxyCompactItemize}

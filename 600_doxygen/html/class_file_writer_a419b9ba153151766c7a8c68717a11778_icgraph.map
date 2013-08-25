@@ -1,0 +1,8 @@
+<map id="FileWriter::getInfoBlock" name="FileWriter::getInfoBlock">
+<area shape="rect" id="node3" href="$class_file_writer.html#a0428a4f8ad72d01ff5316bfa3e4ce631" title="Writes the directions list to file." alt="" coords="230,5,434,32"/>
+<area shape="rect" id="node5" href="$class_file_writer.html#ac6df31af71020a41adb6ecd6ff136532" title="FileWriter::writeFrequency" alt="" coords="243,56,421,83"/>
+<area shape="rect" id="node7" href="$class_file_writer.html#a5c921b5ae92039cf50458e2c46e204da" title="Writes the output file of global motions. If file exists, appends to the file, assuming the appended ..." alt="" coords="235,107,429,133"/>
+<area shape="rect" id="node9" href="$class_file_writer.html#a2078a50dbd21946aeed86d8e0bccd50e" title="Writes the output file of global velocities. If file exists, appends to the file, assuming the append..." alt="" coords="231,157,433,184"/>
+<area shape="rect" id="node11" href="$class_file_writer.html#aaff553c2e03cb1c1639e107cfeac3038" title="Writes the output file of global accelerations. If file exists, appends to the file, assuming the appended file is a new body object." alt="" coords="217,208,447,235"/>
+<area shape="rect" id="node13" href="$class_file_writer.html#a317649499b8c16dd529e2bf588e3be88" title="Writes the output file of global solutions. If file exists, appends to the file, assuming the appende..." alt="" coords="231,259,433,285"/>
+</map>

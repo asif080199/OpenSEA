@@ -1,0 +1,4 @@
+<map id="WaveFrequencies::refWaveFrequencies" name="WaveFrequencies::refWaveFrequencies">
+<area shape="rect" id="node3" href="$class_system.html#aa8af03fa5a3e8d6154d88987060a03e8" title="Provides direct access to the list of wave frequencies." alt="" coords="246,5,447,32"/>
+<area shape="rect" id="node5" href="$class_system.html#ac4dec1ad6e8745d87f18dfb91bbd8f6b" title="Returns the current wave frequency. Actual value of the wave frequency. Value specified with units of..." alt="" coords="275,56,418,83"/>
+</map>

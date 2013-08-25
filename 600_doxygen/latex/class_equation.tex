@@ -1,0 +1,214 @@
+\hypertarget{class_equation}{\section{Equation Class Reference}
+\label{class_equation}\index{Equation@{Equation}}
+}
+
+
+{\ttfamily \#include $<$equation.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_equation_a68511fc719250ed80f86c50de9136733}{Equation} ()
+\item 
+\hyperlink{class_equation_a37fec641aec75302c37590d191421790}{Equation} (int Index\-In)
+\begin{DoxyCompactList}\small\item\em Constructor with setting the data index. \end{DoxyCompactList}\item 
+\hyperlink{class_equation_a097243d0dfd608330fc91f115a0d15bb}{$\sim$\-Equation} ()
+\item 
+void \hyperlink{class_equation_af6c9148998a4abe47f4a4215c51ce3c8}{test\-Print} ()
+\item 
+vector$<$ double $>$ \& \hyperlink{class_equation_abe2b02e37a07bddaf1040d2d24c3564c}{Coefficients} ()
+\begin{DoxyCompactList}\small\item\em Direct access to the list of coefficients. \end{DoxyCompactList}\item 
+double \hyperlink{class_equation_a6aa77458d50e80de2a31708756c7925b}{get\-Coefficient} (int number)
+\begin{DoxyCompactList}\small\item\em Get the coefficient at the specified number. \end{DoxyCompactList}\item 
+void \hyperlink{class_equation_a96dd6f24624703a1ff3ffb4d19a76582}{set\-Coefficient} (int number, double coeff\-In)
+\begin{DoxyCompactList}\small\item\em Set the coefficient value at the specified index number. \end{DoxyCompactList}\item 
+int \hyperlink{class_equation_abb01745ac8c816354d72ee529d2bddc0}{get\-Coefficient\-List\-Size} ()
+\item 
+void \hyperlink{class_equation_aa9e40c1cc6fb3cb030e9956663025a87}{set\-Data\-Index} (int index)
+\begin{DoxyCompactList}\small\item\em Set the index number of any equation data that should be retrieved. \end{DoxyCompactList}\item 
+int \hyperlink{class_equation_ac5fd13eba76ddbbf4813823fad4166e2}{get\-Data\-Index} ()
+\begin{DoxyCompactList}\small\item\em Get the index number of any equation data that should be retrieved. \end{DoxyCompactList}\item 
+int \& \hyperlink{class_equation_ad3c7c4766cf4b17eaf4f07e0792f012a}{Data\-Index} ()
+\begin{DoxyCompactList}\small\item\em Exposed access to the data access variable. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class holds data for an equation. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_equation_a68511fc719250ed80f86c50de9136733}{\index{Equation@{Equation}!Equation@{Equation}}
+\index{Equation@{Equation}!Equation@{Equation}}
+\subsubsection[{Equation}]{\setlength{\rightskip}{0pt plus 5cm}Equation\-::\-Equation (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_equation_a68511fc719250ed80f86c50de9136733}
+This default constructor. 
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=320pt]{class_equation_a68511fc719250ed80f86c50de9136733_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_equation_a37fec641aec75302c37590d191421790}{\index{Equation@{Equation}!Equation@{Equation}}
+\index{Equation@{Equation}!Equation@{Equation}}
+\subsubsection[{Equation}]{\setlength{\rightskip}{0pt plus 5cm}Equation\-::\-Equation (
+\begin{DoxyParamCaption}
+\item[{int}]{Index\-In}
+\end{DoxyParamCaption}
+)}}\label{class_equation_a37fec641aec75302c37590d191421790}
+
+
+Constructor with setting the data index. 
+
+Constructor with setting the data index. 
+\begin{DoxyParams}{Parameters}
+{\em Index\-In} & The integer specifying the data index number. \\
+\hline
+\end{DoxyParams}
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=320pt]{class_equation_a37fec641aec75302c37590d191421790_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_equation_a097243d0dfd608330fc91f115a0d15bb}{\index{Equation@{Equation}!$\sim$\-Equation@{$\sim$\-Equation}}
+\index{$\sim$\-Equation@{$\sim$\-Equation}!Equation@{Equation}}
+\subsubsection[{$\sim$\-Equation}]{\setlength{\rightskip}{0pt plus 5cm}Equation\-::$\sim$\-Equation (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_equation_a097243d0dfd608330fc91f115a0d15bb}
+The default destructor, nothing happens here. 
+
+\subsection{Member Function Documentation}
+\hypertarget{class_equation_abe2b02e37a07bddaf1040d2d24c3564c}{\index{Equation@{Equation}!Coefficients@{Coefficients}}
+\index{Coefficients@{Coefficients}!Equation@{Equation}}
+\subsubsection[{Coefficients}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ double $>$ \& Equation\-::\-Coefficients (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_equation_abe2b02e37a07bddaf1040d2d24c3564c}
+
+
+Direct access to the list of coefficients. 
+
+\begin{DoxyReturn}{Returns}
+Pointer to the list of coefficients. 
+\end{DoxyReturn}
+\hypertarget{class_equation_ad3c7c4766cf4b17eaf4f07e0792f012a}{\index{Equation@{Equation}!Data\-Index@{Data\-Index}}
+\index{Data\-Index@{Data\-Index}!Equation@{Equation}}
+\subsubsection[{Data\-Index}]{\setlength{\rightskip}{0pt plus 5cm}int \& Equation\-::\-Data\-Index (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_equation_ad3c7c4766cf4b17eaf4f07e0792f012a}
+
+
+Exposed access to the data access variable. 
+
+\begin{DoxyReturn}{Returns}
+Returns the data access variable. Return passed by reference. 
+\end{DoxyReturn}
+\hypertarget{class_equation_a6aa77458d50e80de2a31708756c7925b}{\index{Equation@{Equation}!get\-Coefficient@{get\-Coefficient}}
+\index{get\-Coefficient@{get\-Coefficient}!Equation@{Equation}}
+\subsubsection[{get\-Coefficient}]{\setlength{\rightskip}{0pt plus 5cm}double Equation\-::get\-Coefficient (
+\begin{DoxyParamCaption}
+\item[{int}]{number}
+\end{DoxyParamCaption}
+)}}\label{class_equation_a6aa77458d50e80de2a31708756c7925b}
+
+
+Get the coefficient at the specified number. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em number} & The index number of the coefficient to retrieve. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns a double precision floating point number of the coefficient at the index specified by number. 
+\end{DoxyReturn}
+\hypertarget{class_equation_abb01745ac8c816354d72ee529d2bddc0}{\index{Equation@{Equation}!get\-Coefficient\-List\-Size@{get\-Coefficient\-List\-Size}}
+\index{get\-Coefficient\-List\-Size@{get\-Coefficient\-List\-Size}!Equation@{Equation}}
+\subsubsection[{get\-Coefficient\-List\-Size}]{\setlength{\rightskip}{0pt plus 5cm}int Equation\-::get\-Coefficient\-List\-Size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_equation_abb01745ac8c816354d72ee529d2bddc0}
+Retrieve the size of the coefficient list. \begin{DoxyReturn}{Returns}
+The size of the coefficient list. 
+\end{DoxyReturn}
+\hypertarget{class_equation_ac5fd13eba76ddbbf4813823fad4166e2}{\index{Equation@{Equation}!get\-Data\-Index@{get\-Data\-Index}}
+\index{get\-Data\-Index@{get\-Data\-Index}!Equation@{Equation}}
+\subsubsection[{get\-Data\-Index}]{\setlength{\rightskip}{0pt plus 5cm}int Equation\-::get\-Data\-Index (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_equation_ac5fd13eba76ddbbf4813823fad4166e2}
+
+
+Get the index number of any equation data that should be retrieved. 
+
+Get the index number of any equation data that should be retrieved. Because the first six values in the index are reserved for 6\-D\-O\-F, it is necessary that equation objects should be able to specify their index as something other than their place in a containing vector. The default initialization value for this is -\/1, which indicates the index is not set. Any number less than zero indicates the index is not set. 
+\begin{DoxyParams}{Parameters}
+{\em index} & Integer. The index number that should be retrieved. Any number less than zero indicates the index is not set. \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_equation_a96dd6f24624703a1ff3ffb4d19a76582}{\index{Equation@{Equation}!set\-Coefficient@{set\-Coefficient}}
+\index{set\-Coefficient@{set\-Coefficient}!Equation@{Equation}}
+\subsubsection[{set\-Coefficient}]{\setlength{\rightskip}{0pt plus 5cm}void Equation\-::set\-Coefficient (
+\begin{DoxyParamCaption}
+\item[{int}]{number, }
+\item[{double}]{coeff\-In}
+\end{DoxyParamCaption}
+)}}\label{class_equation_a96dd6f24624703a1ff3ffb4d19a76582}
+
+
+Set the coefficient value at the specified index number. 
+
+Set the coefficient value at the specified index number. 
+\begin{DoxyParams}{Parameters}
+{\em number} & Integer. The index number of the coefficient to set. \\
+\hline
+{\em coeff\-In} & Double precision floating number. The value of the coefficient to set at the specified index. \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_equation_aa9e40c1cc6fb3cb030e9956663025a87}{\index{Equation@{Equation}!set\-Data\-Index@{set\-Data\-Index}}
+\index{set\-Data\-Index@{set\-Data\-Index}!Equation@{Equation}}
+\subsubsection[{set\-Data\-Index}]{\setlength{\rightskip}{0pt plus 5cm}void Equation\-::set\-Data\-Index (
+\begin{DoxyParamCaption}
+\item[{int}]{index}
+\end{DoxyParamCaption}
+)}}\label{class_equation_aa9e40c1cc6fb3cb030e9956663025a87}
+
+
+Set the index number of any equation data that should be retrieved. 
+
+Set the index number of any equation data that should be retrieved. Because the first six values in the index are reserved for 6\-D\-O\-F, it is necessary that equation objects should be able to specify their index as something other than their place in a containing vector. The default initialization value for this is -\/1, which indicates the index is not set. Any number less than zero indicates the index is not set. 
+\begin{DoxyParams}{Parameters}
+{\em index} & The index number that should be set. Any number less than zero indicates the index is not set. \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_equation_af6c9148998a4abe47f4a4215c51ce3c8}{\index{Equation@{Equation}!test\-Print@{test\-Print}}
+\index{test\-Print@{test\-Print}!Equation@{Equation}}
+\subsubsection[{test\-Print}]{\setlength{\rightskip}{0pt plus 5cm}void Equation\-::test\-Print (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_equation_af6c9148998a4abe47f4a4215c51ce3c8}
+Test print to console the values of all data members. 
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/home/nicholas/\-Ship Design/\-Projects/\-D\-M\-S1305 Open\-S\-E\-A/master/200\-\_\-src/bin/ofreq/motion\-\_\-solver/equation.\-h\item 
+/home/nicholas/\-Ship Design/\-Projects/\-D\-M\-S1305 Open\-S\-E\-A/master/200\-\_\-src/bin/ofreq/motion\-\_\-solver/equation.\-cpp\end{DoxyCompactItemize}

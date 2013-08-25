@@ -1,0 +1,11 @@
+digraph "SpMat::init"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="SpMat::init",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled" fontcolor="black"];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="SpCol::operator=",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___sp_col.html#gae11ba1013b4939b332e2d364c2ff2bde",tooltip="construct a column vector from specified text"];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="SpMat::SpMat",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group___sp_mat.html#ga8d343782b2da54cda4fa94c26a1322a2"];
+}

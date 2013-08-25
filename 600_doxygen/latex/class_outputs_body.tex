@@ -1,0 +1,861 @@
+\hypertarget{class_outputs_body}{\section{Outputs\-Body Class Reference}
+\label{class_outputs_body}\index{Outputs\-Body@{Outputs\-Body}}
+}
+
+
+{\ttfamily \#include $<$outputsbody.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_outputs_body_a6898483a0919f9bb9cd82e3036a59a14}{\hyperlink{class_outputs_body_a6898483a0919f9bb9cd82e3036a59a14}{Outputs\-Body} ()}\label{class_outputs_body_a6898483a0919f9bb9cd82e3036a59a14}
+
+\begin{DoxyCompactList}\small\item\em Default constructor for the \hyperlink{class_outputs_body}{Outputs\-Body} object. Nothing happens here. \end{DoxyCompactList}\item 
+\hyperlink{class_outputs_body_ab60bf40c068f1dc57e7fc34ef289d297}{Outputs\-Body} (vector$<$ \hyperlink{class_body}{Body} $>$ \&list\-Bod, vector$<$ \hyperlink{classlist_solution}{list\-Solution} $>$ \&list\-Soln, vector$<$ double $>$ \&list\-Freq, vector$<$ double $>$ \&list\-Wave\-Dir)
+\begin{DoxyCompactList}\small\item\em Overloaded constructor for the \hyperlink{class_outputs_body}{Outputs\-Body} object. Includes inputs for \hyperlink{class_body}{Body} list, \hyperlink{class_solution}{Solution} list, frequencies list, and wave directions list. All inputs are passed by reference and held as constant variables to avoid changing the referenced variables. \end{DoxyCompactList}\item 
+\hypertarget{class_outputs_body_a9ec0c3721f511168c425b792bdaf2d62}{\hyperlink{class_outputs_body_a9ec0c3721f511168c425b792bdaf2d62}{$\sim$\-Outputs\-Body} ()}\label{class_outputs_body_a9ec0c3721f511168c425b792bdaf2d62}
+
+\begin{DoxyCompactList}\small\item\em Default destructor. Nothing happens here. \end{DoxyCompactList}\item 
+void \hyperlink{class_outputs_body_a7be4a4a8ebdd43a7f0c8b56a9cf0d800}{setlist\-Body} (vector$<$ \hyperlink{class_body}{Body} $>$ \&list\-In)
+\begin{DoxyCompactList}\small\item\em Sets the list of \hyperlink{class_body}{Body} objects to calculate derived outputs for. Derived outputs are calculated for only one \hyperlink{class_body}{Body} object in the list. The rest are included as reference for cross-\/body forces. \end{DoxyCompactList}\item 
+void \hyperlink{class_outputs_body_a555b87de16dbb48444dcef24de08c70d}{setlist\-Solution} (vector$<$ \hyperlink{classlist_solution}{list\-Solution} $>$ \&list\-In)
+\begin{DoxyCompactList}\small\item\em Sets the list of \hyperlink{classlist_solution}{list\-Solution} objects to calculate derived outputs for. Derived outputs are calculated for only one \hyperlink{classlist_solution}{list\-Solution} object in the list. The rest are included as reference for cross-\/body forces. \end{DoxyCompactList}\item 
+void \hyperlink{class_outputs_body_a876c62a76404b2a963d78d3753456fc3}{setlist\-Freq} (vector$<$ double $>$ \&list\-In)
+\begin{DoxyCompactList}\small\item\em Sets the list of wave frequencies. \end{DoxyCompactList}\item 
+vector$<$ double $>$ \& \hyperlink{class_outputs_body_a880542382668134727cb312757c11d07}{reflist\-Freq} ()
+\begin{DoxyCompactList}\small\item\em Gets the list of wave frequencies. Provides direct access to the list. \end{DoxyCompactList}\item 
+void \hyperlink{class_outputs_body_a3cfa70c13f0330d7ce94b5755243aac4}{setlist\-Wave\-Dir} (vector$<$ double $>$ \&list\-In)
+\begin{DoxyCompactList}\small\item\em Sets the list of wave directions. \end{DoxyCompactList}\item 
+vector$<$ double $>$ \& \hyperlink{class_outputs_body_a76439db0a461f51b572c0d011cf405b7}{reflist\-Wave\-Dir} ()
+\begin{DoxyCompactList}\small\item\em Gets the list of wave directions. Provides direct access to the list. \end{DoxyCompactList}\item 
+void \hyperlink{class_outputs_body_a7d2b93ecaf1fa39257444bdf3194eacc}{set\-Cur\-Wave\-Dir} (int index)
+\begin{DoxyCompactList}\small\item\em Sets the current wave direction. \end{DoxyCompactList}\item 
+int \hyperlink{class_outputs_body_acac6b220f8d472d3cc7e9102022c88ff}{get\-Cur\-Wave\-Ind} ()
+\begin{DoxyCompactList}\small\item\em Returns the index of the current wave directio entry. \end{DoxyCompactList}\item 
+double \hyperlink{class_outputs_body_a21deeef0aaace27fa376c6222bc8b0a4}{get\-Cur\-Wave\-Dir} ()
+\begin{DoxyCompactList}\small\item\em Gets the current wave direction. Output is the actual value for the current wave direction, in units of radians. \end{DoxyCompactList}\item 
+void \hyperlink{class_outputs_body_a4b33361c2888937d2aa450f3e6df200d}{set\-Cur\-Body} (int index)
+\begin{DoxyCompactList}\small\item\em Sets the current \hyperlink{class_body}{Body} to use. Input selects from the list of supplied \hyperlink{class_body}{Body} objects. \end{DoxyCompactList}\item 
+int \hyperlink{class_outputs_body_a7331d48ef7cee6bd23ac0ab487894d6c}{get\-Cur\-Body\-Index} ()
+\begin{DoxyCompactList}\small\item\em Gets the index of the current \hyperlink{class_body}{Body} in the list of \hyperlink{class_body}{Body} objects. \end{DoxyCompactList}\item 
+\hyperlink{class_body}{Body} \& \hyperlink{class_outputs_body_afdb3f49b84baf1a6b2de8a5d014abfe5}{ref\-Cur\-Body} ()
+\begin{DoxyCompactList}\small\item\em Gets the current \hyperlink{class_body}{Body} objects used by the class for calculating Derived Outputs. The returned value depends on the last input of set\-Cur\-Body. \end{DoxyCompactList}\item 
+int \hyperlink{class_outputs_body_acf20f3cfb2baee6c93a2e17d7e27aa0c}{size\-Global\-Motion} ()
+\begin{DoxyCompactList}\small\item\em returns the number of entries for the vector of \hyperlink{class_global_motion}{Global\-Motion} outputs. \end{DoxyCompactList}\item 
+\hyperlink{class_global_motion}{Global\-Motion} \& \hyperlink{class_outputs_body_a54325e076109111454b5ed0633c85660}{ref\-Global\-Motion} (int index=0)
+\begin{DoxyCompactList}\small\item\em Returns the \hyperlink{class_global_motion}{Global\-Motion} object from the list of \hyperlink{class_global_motion}{Global\-Motion} objects. \end{DoxyCompactList}\item 
+vector$<$ cx\-\_\-vector $>$ \hyperlink{class_outputs_body_a7450d306af9db6bb159a1186f017ce6e}{get\-Global\-Motion} (int index=0)
+\begin{DoxyCompactList}\small\item\em Calculates the \hyperlink{class_global_motion}{Global\-Motion} object from the list of \hyperlink{class_global_motion}{Global\-Motion} objects and returns the output. \end{DoxyCompactList}\item 
+void \hyperlink{class_outputs_body_a29af17e822ec8fe1a397403752d0ff1a}{add\-Global\-Motion} (\hyperlink{class_global_motion}{Global\-Motion} input)
+\begin{DoxyCompactList}\small\item\em Adds a new \hyperlink{class_global_motion}{Global\-Motion} object to the list of \hyperlink{class_global_motion}{Global\-Motion} objects. This version sets the new \hyperlink{class_global_motion}{Global\-Motion} object equal to the information passed in. \end{DoxyCompactList}\item 
+\hypertarget{class_outputs_body_a889dcf6d9be6e910c110018e0a309eae}{void \hyperlink{class_outputs_body_a889dcf6d9be6e910c110018e0a309eae}{add\-Global\-Motion} ()}\label{class_outputs_body_a889dcf6d9be6e910c110018e0a309eae}
+
+\begin{DoxyCompactList}\small\item\em Overloaded function for adding a \hyperlink{class_global_motion}{Global\-Motion} object to the list of \hyperlink{class_global_motion}{Global\-Motion} objects. This version has no input \hyperlink{class_global_motion}{Global\-Motion} object and automatically creates a blank \hyperlink{class_global_motion}{Global\-Motion} object. \end{DoxyCompactList}\item 
+int \hyperlink{class_outputs_body_af41b4423bd40c87fa87ae0af53bc96e5}{size\-Global\-Velocity} ()
+\begin{DoxyCompactList}\small\item\em returns the number of entries for the vector of \hyperlink{class_global_velocity}{Global\-Velocity} outputs. \end{DoxyCompactList}\item 
+\hyperlink{class_global_velocity}{Global\-Velocity} \& \hyperlink{class_outputs_body_a6728d42493b83db7d682ca751a8f080a}{ref\-Global\-Velocity} (int index=0)
+\begin{DoxyCompactList}\small\item\em Returns the \hyperlink{class_global_velocity}{Global\-Velocity} object from the list of \hyperlink{class_global_velocity}{Global\-Velocity} objects. \end{DoxyCompactList}\item 
+vector$<$ cx\-\_\-vector $>$ \hyperlink{class_outputs_body_a16d63ba2343caa9244a461fb3d539843}{get\-Global\-Velocity} (int index=0)
+\begin{DoxyCompactList}\small\item\em Calculates the \hyperlink{class_global_velocity}{Global\-Velocity} object from the list of \hyperlink{class_global_velocity}{Global\-Velocity} objects and returns the output. \end{DoxyCompactList}\item 
+void \hyperlink{class_outputs_body_abe974976080b1b9bfa3d66ffb89b0640}{add\-Global\-Velocity} (\hyperlink{class_global_velocity}{Global\-Velocity} input)
+\begin{DoxyCompactList}\small\item\em Adds a new \hyperlink{class_global_velocity}{Global\-Velocity} object to the list of \hyperlink{class_global_velocity}{Global\-Velocity} objects. This version sets the new \hyperlink{class_global_velocity}{Global\-Velocity} object equal to the information passed in. \end{DoxyCompactList}\item 
+\hypertarget{class_outputs_body_a07a548f3df9fa5aff4223a60f5f1b56c}{void \hyperlink{class_outputs_body_a07a548f3df9fa5aff4223a60f5f1b56c}{add\-Global\-Velocity} ()}\label{class_outputs_body_a07a548f3df9fa5aff4223a60f5f1b56c}
+
+\begin{DoxyCompactList}\small\item\em Overloaded function for adding a \hyperlink{class_global_velocity}{Global\-Velocity} object to the list of \hyperlink{class_global_velocity}{Global\-Velocity} objects. This version has no input \hyperlink{class_global_velocity}{Global\-Velocity} object and automatically creates a blank \hyperlink{class_global_velocity}{Global\-Velocity} object. \end{DoxyCompactList}\item 
+int \hyperlink{class_outputs_body_a4265e0ece0f65f6ee6b3e36fc66bf960}{size\-Global\-Acceleration} ()
+\begin{DoxyCompactList}\small\item\em returns the number of entries for the vector of \hyperlink{class_global_acceleration}{Global\-Acceleration} outputs. \end{DoxyCompactList}\item 
+\hyperlink{class_global_acceleration}{Global\-Acceleration} \& \hyperlink{class_outputs_body_a7be24ef361c2dcd9c6b9c62d58ee34bd}{ref\-Global\-Acceleration} (int index=0)
+\begin{DoxyCompactList}\small\item\em Returns the \hyperlink{class_global_acceleration}{Global\-Acceleration} object from the list of \hyperlink{class_global_acceleration}{Global\-Acceleration} objects. \end{DoxyCompactList}\item 
+vector$<$ cx\-\_\-vector $>$ \hyperlink{class_outputs_body_a9c4de0023e30be8e03c4f910a3848bdc}{get\-Global\-Acceleration} (int index=0)
+\begin{DoxyCompactList}\small\item\em Calculates the \hyperlink{class_global_acceleration}{Global\-Acceleration} object from the list of \hyperlink{class_global_acceleration}{Global\-Acceleration} objects and returns the output. \end{DoxyCompactList}\item 
+void \hyperlink{class_outputs_body_a38f7909d116feefc04acc11f58515c8c}{add\-Global\-Acceleration} (\hyperlink{class_global_acceleration}{Global\-Acceleration} input)
+\begin{DoxyCompactList}\small\item\em Adds a new \hyperlink{class_global_acceleration}{Global\-Acceleration} object to the list of \hyperlink{class_global_acceleration}{Global\-Acceleration} objects. This version sets the new \hyperlink{class_global_acceleration}{Global\-Acceleration} object equal to the information passed in. \end{DoxyCompactList}\item 
+\hypertarget{class_outputs_body_a3205155873f5db270a71377e5ff80bb4}{void \hyperlink{class_outputs_body_a3205155873f5db270a71377e5ff80bb4}{add\-Global\-Acceleration} ()}\label{class_outputs_body_a3205155873f5db270a71377e5ff80bb4}
+
+\begin{DoxyCompactList}\small\item\em Overloaded function for adding a \hyperlink{class_global_acceleration}{Global\-Acceleration} object to the list of \hyperlink{class_global_acceleration}{Global\-Acceleration} objects. This version has no input \hyperlink{class_global_acceleration}{Global\-Acceleration} object and automatically creates a blank \hyperlink{class_global_acceleration}{Global\-Acceleration} object. \end{DoxyCompactList}\item 
+int \hyperlink{class_outputs_body_abe9227589bf83ee0ff40251e6e0d8d27}{size\-Global\-Solution} ()
+\begin{DoxyCompactList}\small\item\em returns the number of entries for the vector of \hyperlink{class_global_solution}{Global\-Solution} outputs. \end{DoxyCompactList}\item 
+\hyperlink{class_global_solution}{Global\-Solution} \& \hyperlink{class_outputs_body_a7480b88e4d67c84a2c540127c93a15d2}{ref\-Global\-Solution} (int index=0)
+\begin{DoxyCompactList}\small\item\em Returns the \hyperlink{class_global_solution}{Global\-Solution} object from the list of \hyperlink{class_global_solution}{Global\-Solution} objects. \end{DoxyCompactList}\item 
+vector$<$ cx\-\_\-vector $>$ \hyperlink{class_outputs_body_a0f669819a398d64524a4aff29e20aa8b}{get\-Global\-Solution} (int index=0)
+\begin{DoxyCompactList}\small\item\em Calculates the \hyperlink{class_global_solution}{Global\-Solution} object from the list of \hyperlink{class_global_solution}{Global\-Solution} objects and returns the output. \end{DoxyCompactList}\item 
+void \hyperlink{class_outputs_body_a75283b4dd4533851008431eb84341919}{add\-Global\-Solution} (\hyperlink{class_global_solution}{Global\-Solution} input)
+\begin{DoxyCompactList}\small\item\em Adds a new \hyperlink{class_global_solution}{Global\-Solution} object to the list of \hyperlink{class_global_solution}{Global\-Solution} objects. This version sets the new \hyperlink{class_global_solution}{Global\-Solution} object equal to the information passed in. \end{DoxyCompactList}\item 
+\hypertarget{class_outputs_body_a13ae87153fcf43774b970aad94f0ca27}{void \hyperlink{class_outputs_body_a13ae87153fcf43774b970aad94f0ca27}{add\-Global\-Solution} ()}\label{class_outputs_body_a13ae87153fcf43774b970aad94f0ca27}
+
+\begin{DoxyCompactList}\small\item\em Overloaded function for adding a \hyperlink{class_global_solution}{Global\-Solution} object to the list of \hyperlink{class_global_solution}{Global\-Solution} objects. This version has no input \hyperlink{class_global_solution}{Global\-Solution} object and automatically creates a blank \hyperlink{class_global_solution}{Global\-Solution} object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class holds all types of derived outputs for a single body object. Each derived output type is contained in a vector. This allows multiple instances of each output type. To save on memory, an output type is not calculated until it is requested. And then the derived output immediately returns the calculations. Outputs are typically returned as a vector of objects. Each row in the vectorrepresents a different wave frequency. T\-He object contained in the returned vector The meaning may change with each derived output type. You should check the documentation for each derived output.
+
+Each derived output is listed as its own item in the class. Each derived output class has the following methods associated with it. (For this generic example, the term Output refers to any derived output object.)
+\begin{DoxyEnumerate}
+\item ref\-Output\-: Pointer to the output object itself.
+\item get\-Output\-: Calculates the output and writes the result out as a cx\-\_\-matrix object.
+\item add\-Output\-: Adds a new output object to the list of objects. Optionally takes the supplied output. Otherwise creates a new output object in the vector list.
+\end{DoxyEnumerate}
+
+To use the outputs\-Body class, you must supply several properties to it. These properties give the outputs class full knowledge of the current state of affairs. This allows the different derived outputs to have the most flexibility for how to calculate results. Set the following properties\-:
+
+Data Sets\-:
+\begin{DoxyEnumerate}
+\item Bodies list
+\item Solutions list
+\item Frequencies list
+\item Wave directions list
+\end{DoxyEnumerate}
+
+Individual properties
+\begin{DoxyEnumerate}
+\item Current body for outputs\-Body object.
+\item Current wave direction.
+\end{DoxyEnumerate}
+
+Once these properties are set, you may calculate derived outputs. Inputs for derived outputs may be set before all these properties are set.
+
+The following derived outputs are available\-: \begin{DoxySeeAlso}{See Also}
+\hyperlink{class_global_solution}{Global\-Solution} 
+
+\hyperlink{class_global_motion}{Global\-Motion} 
+
+\hyperlink{class_global_velocity}{Global\-Velocity} 
+
+\hyperlink{class_global_acceleration}{Global\-Acceleration}
+\end{DoxySeeAlso}
+
+\begin{DoxyItemize}
+\item Developers note\-: The original scheme had the \hyperlink{class_output_derived}{Output\-Derived} class include a pointer to the contain parent class, \hyperlink{class_outputs_body}{Outputs\-Body}. But this creates a cyclic dependency of header files, and will not compile. The only resolution I found to this was to not include the parent class and pass all the necessary information to each individual \hyperlink{class_output_derived}{Output\-Derived} object. This is tedious, but within the reasons of the methods defined by the \hyperlink{class_outputs_body}{Outputs\-Body} class. And it allow compilation. All data items are passed by reference to avoid excess memory duplication. 
+\end{DoxyItemize}
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_outputs_body_ab60bf40c068f1dc57e7fc34ef289d297}{\index{Outputs\-Body@{Outputs\-Body}!Outputs\-Body@{Outputs\-Body}}
+\index{Outputs\-Body@{Outputs\-Body}!OutputsBody@{Outputs\-Body}}
+\subsubsection[{Outputs\-Body}]{\setlength{\rightskip}{0pt plus 5cm}Outputs\-Body\-::\-Outputs\-Body (
+\begin{DoxyParamCaption}
+\item[{vector$<$ {\bf Body} $>$ \&}]{list\-Bod, }
+\item[{vector$<$ {\bf list\-Solution} $>$ \&}]{list\-Soln, }
+\item[{vector$<$ double $>$ \&}]{list\-Freq, }
+\item[{vector$<$ double $>$ \&}]{list\-Wave\-Dir}
+\end{DoxyParamCaption}
+)}}\label{class_outputs_body_ab60bf40c068f1dc57e7fc34ef289d297}
+
+
+Overloaded constructor for the \hyperlink{class_outputs_body}{Outputs\-Body} object. Includes inputs for \hyperlink{class_body}{Body} list, \hyperlink{class_solution}{Solution} list, frequencies list, and wave directions list. All inputs are passed by reference and held as constant variables to avoid changing the referenced variables. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em list\-Bod} & The vector of \hyperlink{class_body}{Body} objects to use for the object. Contains all the information about \hyperlink{class_body}{Body} forces. \\
+\hline
+{\em list\-Soln} & The vector of \hyperlink{classlist_solution}{list\-Solution} objects to use for the object. Contains all the information about solutions for each body. Each \hyperlink{classlist_solution}{list\-Solution} object in the vector represents the solutions for all frequencies for a single \hyperlink{class_body}{Body} object. \\
+\hline
+{\em list\-Freq} & The vector of wave frequencies to use for the object. Each wave frequency corresponds to a \hyperlink{class_solution}{Solution} object in the \hyperlink{classlist_solution}{list\-Solution} object. \\
+\hline
+{\em list\-Wave\-Dir} & The vector of wave directions to use for the object. This is provided mostly for reference. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_outputs_body_a38f7909d116feefc04acc11f58515c8c}{\index{Outputs\-Body@{Outputs\-Body}!add\-Global\-Acceleration@{add\-Global\-Acceleration}}
+\index{add\-Global\-Acceleration@{add\-Global\-Acceleration}!OutputsBody@{Outputs\-Body}}
+\subsubsection[{add\-Global\-Acceleration}]{\setlength{\rightskip}{0pt plus 5cm}void Outputs\-Body\-::add\-Global\-Acceleration (
+\begin{DoxyParamCaption}
+\item[{{\bf Global\-Acceleration}}]{input}
+\end{DoxyParamCaption}
+)}}\label{class_outputs_body_a38f7909d116feefc04acc11f58515c8c}
+
+
+Adds a new \hyperlink{class_global_acceleration}{Global\-Acceleration} object to the list of \hyperlink{class_global_acceleration}{Global\-Acceleration} objects. This version sets the new \hyperlink{class_global_acceleration}{Global\-Acceleration} object equal to the information passed in. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em input} & The new \hyperlink{class_global_acceleration}{Global\-Acceleration} object to add to the list of \hyperlink{class_global_acceleration}{Global\-Acceleration} objects. Variable is passed by value. \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_outputs_body_a29af17e822ec8fe1a397403752d0ff1a}{\index{Outputs\-Body@{Outputs\-Body}!add\-Global\-Motion@{add\-Global\-Motion}}
+\index{add\-Global\-Motion@{add\-Global\-Motion}!OutputsBody@{Outputs\-Body}}
+\subsubsection[{add\-Global\-Motion}]{\setlength{\rightskip}{0pt plus 5cm}void Outputs\-Body\-::add\-Global\-Motion (
+\begin{DoxyParamCaption}
+\item[{{\bf Global\-Motion}}]{input}
+\end{DoxyParamCaption}
+)}}\label{class_outputs_body_a29af17e822ec8fe1a397403752d0ff1a}
+
+
+Adds a new \hyperlink{class_global_motion}{Global\-Motion} object to the list of \hyperlink{class_global_motion}{Global\-Motion} objects. This version sets the new \hyperlink{class_global_motion}{Global\-Motion} object equal to the information passed in. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em input} & The new \hyperlink{class_global_motion}{Global\-Motion} object to add to the list of \hyperlink{class_global_motion}{Global\-Motion} objects. Variable is passed by value. \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_outputs_body_a75283b4dd4533851008431eb84341919}{\index{Outputs\-Body@{Outputs\-Body}!add\-Global\-Solution@{add\-Global\-Solution}}
+\index{add\-Global\-Solution@{add\-Global\-Solution}!OutputsBody@{Outputs\-Body}}
+\subsubsection[{add\-Global\-Solution}]{\setlength{\rightskip}{0pt plus 5cm}void Outputs\-Body\-::add\-Global\-Solution (
+\begin{DoxyParamCaption}
+\item[{{\bf Global\-Solution}}]{input}
+\end{DoxyParamCaption}
+)}}\label{class_outputs_body_a75283b4dd4533851008431eb84341919}
+
+
+Adds a new \hyperlink{class_global_solution}{Global\-Solution} object to the list of \hyperlink{class_global_solution}{Global\-Solution} objects. This version sets the new \hyperlink{class_global_solution}{Global\-Solution} object equal to the information passed in. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em input} & The new \hyperlink{class_global_solution}{Global\-Solution} object to add to the list of \hyperlink{class_global_solution}{Global\-Solution} objects. Variable is passed by value. \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_outputs_body_abe974976080b1b9bfa3d66ffb89b0640}{\index{Outputs\-Body@{Outputs\-Body}!add\-Global\-Velocity@{add\-Global\-Velocity}}
+\index{add\-Global\-Velocity@{add\-Global\-Velocity}!OutputsBody@{Outputs\-Body}}
+\subsubsection[{add\-Global\-Velocity}]{\setlength{\rightskip}{0pt plus 5cm}void Outputs\-Body\-::add\-Global\-Velocity (
+\begin{DoxyParamCaption}
+\item[{{\bf Global\-Velocity}}]{input}
+\end{DoxyParamCaption}
+)}}\label{class_outputs_body_abe974976080b1b9bfa3d66ffb89b0640}
+
+
+Adds a new \hyperlink{class_global_velocity}{Global\-Velocity} object to the list of \hyperlink{class_global_velocity}{Global\-Velocity} objects. This version sets the new \hyperlink{class_global_velocity}{Global\-Velocity} object equal to the information passed in. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em input} & The new \hyperlink{class_global_velocity}{Global\-Velocity} object to add to the list of \hyperlink{class_global_velocity}{Global\-Velocity} objects. Variable is passed by value. \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_outputs_body_a7331d48ef7cee6bd23ac0ab487894d6c}{\index{Outputs\-Body@{Outputs\-Body}!get\-Cur\-Body\-Index@{get\-Cur\-Body\-Index}}
+\index{get\-Cur\-Body\-Index@{get\-Cur\-Body\-Index}!OutputsBody@{Outputs\-Body}}
+\subsubsection[{get\-Cur\-Body\-Index}]{\setlength{\rightskip}{0pt plus 5cm}int Outputs\-Body\-::get\-Cur\-Body\-Index (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_outputs_body_a7331d48ef7cee6bd23ac0ab487894d6c}
+
+
+Gets the index of the current \hyperlink{class_body}{Body} in the list of \hyperlink{class_body}{Body} objects. 
+
+\begin{DoxyReturn}{Returns}
+Returns the index of the current \hyperlink{class_body}{Body} assigned to this \hyperlink{class_outputs_body}{Outputs\-Body} object. This differs from other function \hyperlink{class_outputs_body_afdb3f49b84baf1a6b2de8a5d014abfe5}{ref\-Cur\-Body()} because \hyperlink{class_outputs_body_afdb3f49b84baf1a6b2de8a5d014abfe5}{ref\-Cur\-Body()} returns a pointer to the body directly. But this function, \hyperlink{class_outputs_body_a7331d48ef7cee6bd23ac0ab487894d6c}{get\-Cur\-Body\-Index()} returns the integer index of the \hyperlink{class_body}{Body} object in the vector list of \hyperlink{class_body}{Body} objects. Returned variable is passed by value. 
+\end{DoxyReturn}
+\hypertarget{class_outputs_body_a21deeef0aaace27fa376c6222bc8b0a4}{\index{Outputs\-Body@{Outputs\-Body}!get\-Cur\-Wave\-Dir@{get\-Cur\-Wave\-Dir}}
+\index{get\-Cur\-Wave\-Dir@{get\-Cur\-Wave\-Dir}!OutputsBody@{Outputs\-Body}}
+\subsubsection[{get\-Cur\-Wave\-Dir}]{\setlength{\rightskip}{0pt plus 5cm}double Outputs\-Body\-::get\-Cur\-Wave\-Dir (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_outputs_body_a21deeef0aaace27fa376c6222bc8b0a4}
+
+
+Gets the current wave direction. Output is the actual value for the current wave direction, in units of radians. 
+
+\begin{DoxyReturn}{Returns}
+Returns a double that is the current wave direction, in units of radians. Variable is passed by value. 
+\end{DoxyReturn}
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_outputs_body_a21deeef0aaace27fa376c6222bc8b0a4_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_outputs_body_acac6b220f8d472d3cc7e9102022c88ff}{\index{Outputs\-Body@{Outputs\-Body}!get\-Cur\-Wave\-Ind@{get\-Cur\-Wave\-Ind}}
+\index{get\-Cur\-Wave\-Ind@{get\-Cur\-Wave\-Ind}!OutputsBody@{Outputs\-Body}}
+\subsubsection[{get\-Cur\-Wave\-Ind}]{\setlength{\rightskip}{0pt plus 5cm}int Outputs\-Body\-::get\-Cur\-Wave\-Ind (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_outputs_body_acac6b220f8d472d3cc7e9102022c88ff}
+
+
+Returns the index of the current wave directio entry. 
+
+\begin{DoxyReturn}{Returns}
+Integer. Returns the index of the current wave directio entry. Variable passed by value. 
+\end{DoxyReturn}
+\hypertarget{class_outputs_body_a9c4de0023e30be8e03c4f910a3848bdc}{\index{Outputs\-Body@{Outputs\-Body}!get\-Global\-Acceleration@{get\-Global\-Acceleration}}
+\index{get\-Global\-Acceleration@{get\-Global\-Acceleration}!OutputsBody@{Outputs\-Body}}
+\subsubsection[{get\-Global\-Acceleration}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ cx\-\_\-vector $>$ Outputs\-Body\-::get\-Global\-Acceleration (
+\begin{DoxyParamCaption}
+\item[{int}]{index = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}}\label{class_outputs_body_a9c4de0023e30be8e03c4f910a3848bdc}
+
+
+Calculates the \hyperlink{class_global_acceleration}{Global\-Acceleration} object from the list of \hyperlink{class_global_acceleration}{Global\-Acceleration} objects and returns the output. 
+
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{class_global_acceleration}{Global\-Acceleration} 
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em index} & The index of which \hyperlink{class_global_acceleration}{Global\-Acceleration} object to retrieve from the list of objects. For this Derived Output, there is only one \hyperlink{class_global_acceleration}{Global\-Acceleration} object per \hyperlink{class_outputs_body}{Outputs\-Body}. The default value selects this object. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns a vector of vectors, which is the \hyperlink{class_global_acceleration}{Global\-Acceleration} Results. Each row in the vector represents a wave frequency. Each entry in the vector for that frequency represents a result for one of the degrees of freedom. All entries are complex numbers. Returned variable is passed by value. Value is not stored in memory and must be calculated new each time method is called. 
+\end{DoxyReturn}
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_outputs_body_a9c4de0023e30be8e03c4f910a3848bdc_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_outputs_body_a9c4de0023e30be8e03c4f910a3848bdc_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_outputs_body_a7450d306af9db6bb159a1186f017ce6e}{\index{Outputs\-Body@{Outputs\-Body}!get\-Global\-Motion@{get\-Global\-Motion}}
+\index{get\-Global\-Motion@{get\-Global\-Motion}!OutputsBody@{Outputs\-Body}}
+\subsubsection[{get\-Global\-Motion}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ cx\-\_\-vector $>$ Outputs\-Body\-::get\-Global\-Motion (
+\begin{DoxyParamCaption}
+\item[{int}]{index = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}}\label{class_outputs_body_a7450d306af9db6bb159a1186f017ce6e}
+
+
+Calculates the \hyperlink{class_global_motion}{Global\-Motion} object from the list of \hyperlink{class_global_motion}{Global\-Motion} objects and returns the output. 
+
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{class_global_motion}{Global\-Motion} 
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em index} & The index of which \hyperlink{class_global_motion}{Global\-Motion} object to retrieve from the list of objects. For this Derived Output, there is only one \hyperlink{class_global_motion}{Global\-Motion} object per \hyperlink{class_outputs_body}{Outputs\-Body}. The default value selects this object. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns a vector of vectors, which is the \hyperlink{class_global_motion}{Global\-Motion} Results. Each row in the vector represents a wave frequency. Each entry in the vector for that frequency represents a result for one of the degrees of freedom. All entries are complex numbers. Returned variable is passed by value. Value is not stored in memory and must be calculated new each time method is called. 
+\end{DoxyReturn}
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_outputs_body_a7450d306af9db6bb159a1186f017ce6e_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_outputs_body_a7450d306af9db6bb159a1186f017ce6e_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_outputs_body_a0f669819a398d64524a4aff29e20aa8b}{\index{Outputs\-Body@{Outputs\-Body}!get\-Global\-Solution@{get\-Global\-Solution}}
+\index{get\-Global\-Solution@{get\-Global\-Solution}!OutputsBody@{Outputs\-Body}}
+\subsubsection[{get\-Global\-Solution}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ cx\-\_\-vector $>$ Outputs\-Body\-::get\-Global\-Solution (
+\begin{DoxyParamCaption}
+\item[{int}]{index = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}}\label{class_outputs_body_a0f669819a398d64524a4aff29e20aa8b}
+
+
+Calculates the \hyperlink{class_global_solution}{Global\-Solution} object from the list of \hyperlink{class_global_solution}{Global\-Solution} objects and returns the output. 
+
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{class_global_solution}{Global\-Solution} 
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em index} & The index of which \hyperlink{class_global_solution}{Global\-Solution} object to retrieve from the list of objects. For this Derived Output, there is only one \hyperlink{class_global_solution}{Global\-Solution} object per \hyperlink{class_outputs_body}{Outputs\-Body}. The default value selects this object. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns a vector of vectors, which is the \hyperlink{class_global_solution}{Global\-Solution} Results. Each row in the vector represents a wave frequency. Each entry in the vector for that frequency represents a result for one of the degrees of freedom. All entries are complex numbers. Returned variable is passed by value. Value is not stored in memory and must be calculated new each time method is called. 
+\end{DoxyReturn}
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_outputs_body_a0f669819a398d64524a4aff29e20aa8b_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_outputs_body_a0f669819a398d64524a4aff29e20aa8b_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_outputs_body_a16d63ba2343caa9244a461fb3d539843}{\index{Outputs\-Body@{Outputs\-Body}!get\-Global\-Velocity@{get\-Global\-Velocity}}
+\index{get\-Global\-Velocity@{get\-Global\-Velocity}!OutputsBody@{Outputs\-Body}}
+\subsubsection[{get\-Global\-Velocity}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ cx\-\_\-vector $>$ Outputs\-Body\-::get\-Global\-Velocity (
+\begin{DoxyParamCaption}
+\item[{int}]{index = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}}\label{class_outputs_body_a16d63ba2343caa9244a461fb3d539843}
+
+
+Calculates the \hyperlink{class_global_velocity}{Global\-Velocity} object from the list of \hyperlink{class_global_velocity}{Global\-Velocity} objects and returns the output. 
+
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{class_global_velocity}{Global\-Velocity} 
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em index} & The index of which \hyperlink{class_global_velocity}{Global\-Velocity} object to retrieve from the list of objects. For this Derived Output, there is only one \hyperlink{class_global_velocity}{Global\-Velocity} object per \hyperlink{class_outputs_body}{Outputs\-Body}. The default value selects this object. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns a vector of vectors, which is the \hyperlink{class_global_velocity}{Global\-Velocity} Results. Each row in the vector represents a wave frequency. Each entry in the vector for that frequency represents a result for one of the degrees of freedom. All entries are complex numbers. Returned variable is passed by value. Value is not stored in memory and must be calculated new each time method is called. 
+\end{DoxyReturn}
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_outputs_body_a16d63ba2343caa9244a461fb3d539843_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_outputs_body_a16d63ba2343caa9244a461fb3d539843_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_outputs_body_afdb3f49b84baf1a6b2de8a5d014abfe5}{\index{Outputs\-Body@{Outputs\-Body}!ref\-Cur\-Body@{ref\-Cur\-Body}}
+\index{ref\-Cur\-Body@{ref\-Cur\-Body}!OutputsBody@{Outputs\-Body}}
+\subsubsection[{ref\-Cur\-Body}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Body} \& Outputs\-Body\-::ref\-Cur\-Body (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_outputs_body_afdb3f49b84baf1a6b2de8a5d014abfe5}
+
+
+Gets the current \hyperlink{class_body}{Body} objects used by the class for calculating Derived Outputs. The returned value depends on the last input of set\-Cur\-Body. 
+
+\begin{DoxyReturn}{Returns}
+Returns a pointer the \hyperlink{class_body}{Body} object used by the class for calculating Derived Outputs. The returned variable is passed by reference. 
+\end{DoxyReturn}
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_outputs_body_afdb3f49b84baf1a6b2de8a5d014abfe5_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_outputs_body_a7be24ef361c2dcd9c6b9c62d58ee34bd}{\index{Outputs\-Body@{Outputs\-Body}!ref\-Global\-Acceleration@{ref\-Global\-Acceleration}}
+\index{ref\-Global\-Acceleration@{ref\-Global\-Acceleration}!OutputsBody@{Outputs\-Body}}
+\subsubsection[{ref\-Global\-Acceleration}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Global\-Acceleration} \& Outputs\-Body\-::ref\-Global\-Acceleration (
+\begin{DoxyParamCaption}
+\item[{int}]{index = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}}\label{class_outputs_body_a7be24ef361c2dcd9c6b9c62d58ee34bd}
+
+
+Returns the \hyperlink{class_global_acceleration}{Global\-Acceleration} object from the list of \hyperlink{class_global_acceleration}{Global\-Acceleration} objects. 
+
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{class_global_acceleration}{Global\-Acceleration} 
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em index} & The index of which \hyperlink{class_global_acceleration}{Global\-Acceleration} object to retrieve from the list of objects. For this Derived Output, there is only one \hyperlink{class_global_acceleration}{Global\-Acceleration} object per \hyperlink{class_outputs_body}{Outputs\-Body}. The default value selects this object. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns the \hyperlink{class_global_acceleration}{Global\-Acceleration} object from the list of \hyperlink{class_global_acceleration}{Global\-Acceleration} objects. Returned variable is passed by reference. Returns only the object specified by the input index. 
+\end{DoxyReturn}
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_outputs_body_a7be24ef361c2dcd9c6b9c62d58ee34bd_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_outputs_body_a54325e076109111454b5ed0633c85660}{\index{Outputs\-Body@{Outputs\-Body}!ref\-Global\-Motion@{ref\-Global\-Motion}}
+\index{ref\-Global\-Motion@{ref\-Global\-Motion}!OutputsBody@{Outputs\-Body}}
+\subsubsection[{ref\-Global\-Motion}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Global\-Motion} \& Outputs\-Body\-::ref\-Global\-Motion (
+\begin{DoxyParamCaption}
+\item[{int}]{index = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}}\label{class_outputs_body_a54325e076109111454b5ed0633c85660}
+
+
+Returns the \hyperlink{class_global_motion}{Global\-Motion} object from the list of \hyperlink{class_global_motion}{Global\-Motion} objects. 
+
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{class_global_motion}{Global\-Motion} 
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em index} & The index of which \hyperlink{class_global_motion}{Global\-Motion} object to retrieve from the list of objects. For this Derived Output, there is only one \hyperlink{class_global_motion}{Global\-Motion} object per \hyperlink{class_outputs_body}{Outputs\-Body}. The default value selects this object. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns the \hyperlink{class_global_motion}{Global\-Motion} object from the list of \hyperlink{class_global_motion}{Global\-Motion} objects. Returned variable is passed by reference. Returns only the object specified by the input index. 
+\end{DoxyReturn}
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_outputs_body_a54325e076109111454b5ed0633c85660_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_outputs_body_a7480b88e4d67c84a2c540127c93a15d2}{\index{Outputs\-Body@{Outputs\-Body}!ref\-Global\-Solution@{ref\-Global\-Solution}}
+\index{ref\-Global\-Solution@{ref\-Global\-Solution}!OutputsBody@{Outputs\-Body}}
+\subsubsection[{ref\-Global\-Solution}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Global\-Solution} \& Outputs\-Body\-::ref\-Global\-Solution (
+\begin{DoxyParamCaption}
+\item[{int}]{index = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}}\label{class_outputs_body_a7480b88e4d67c84a2c540127c93a15d2}
+
+
+Returns the \hyperlink{class_global_solution}{Global\-Solution} object from the list of \hyperlink{class_global_solution}{Global\-Solution} objects. 
+
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{class_global_solution}{Global\-Solution} 
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em index} & The index of which \hyperlink{class_global_solution}{Global\-Solution} object to retrieve from the list of objects. For this Derived Output, there is only one \hyperlink{class_global_solution}{Global\-Solution} object per \hyperlink{class_outputs_body}{Outputs\-Body}. The default value selects this object. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns the \hyperlink{class_global_solution}{Global\-Solution} object from the list of \hyperlink{class_global_solution}{Global\-Solution} objects. Returned variable is passed by reference. Returns only the object specified by the input index. 
+\end{DoxyReturn}
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_outputs_body_a7480b88e4d67c84a2c540127c93a15d2_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_outputs_body_a6728d42493b83db7d682ca751a8f080a}{\index{Outputs\-Body@{Outputs\-Body}!ref\-Global\-Velocity@{ref\-Global\-Velocity}}
+\index{ref\-Global\-Velocity@{ref\-Global\-Velocity}!OutputsBody@{Outputs\-Body}}
+\subsubsection[{ref\-Global\-Velocity}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Global\-Velocity} \& Outputs\-Body\-::ref\-Global\-Velocity (
+\begin{DoxyParamCaption}
+\item[{int}]{index = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}}\label{class_outputs_body_a6728d42493b83db7d682ca751a8f080a}
+
+
+Returns the \hyperlink{class_global_velocity}{Global\-Velocity} object from the list of \hyperlink{class_global_velocity}{Global\-Velocity} objects. 
+
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{class_global_velocity}{Global\-Velocity} 
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em index} & The index of which \hyperlink{class_global_velocity}{Global\-Velocity} object to retrieve from the list of objects. For this Derived Output, there is only one \hyperlink{class_global_velocity}{Global\-Velocity} object per \hyperlink{class_outputs_body}{Outputs\-Body}. The default value selects this object. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns the \hyperlink{class_global_velocity}{Global\-Velocity} object from the list of \hyperlink{class_global_velocity}{Global\-Velocity} objects. Returned variable is passed by reference. Returns only the object specified by the input index. 
+\end{DoxyReturn}
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_outputs_body_a6728d42493b83db7d682ca751a8f080a_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_outputs_body_a880542382668134727cb312757c11d07}{\index{Outputs\-Body@{Outputs\-Body}!reflist\-Freq@{reflist\-Freq}}
+\index{reflist\-Freq@{reflist\-Freq}!OutputsBody@{Outputs\-Body}}
+\subsubsection[{reflist\-Freq}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ double $>$ \& Outputs\-Body\-::reflist\-Freq (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_outputs_body_a880542382668134727cb312757c11d07}
+
+
+Gets the list of wave frequencies. Provides direct access to the list. 
+
+\begin{DoxyReturn}{Returns}
+Returns the vector of doubles representing the wave frequencies. Frequencies entered in units of radians per second. Variable is passed by reference. 
+\end{DoxyReturn}
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_outputs_body_a880542382668134727cb312757c11d07_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_outputs_body_a76439db0a461f51b572c0d011cf405b7}{\index{Outputs\-Body@{Outputs\-Body}!reflist\-Wave\-Dir@{reflist\-Wave\-Dir}}
+\index{reflist\-Wave\-Dir@{reflist\-Wave\-Dir}!OutputsBody@{Outputs\-Body}}
+\subsubsection[{reflist\-Wave\-Dir}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ double $>$ \& Outputs\-Body\-::reflist\-Wave\-Dir (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_outputs_body_a76439db0a461f51b572c0d011cf405b7}
+
+
+Gets the list of wave directions. Provides direct access to the list. 
+
+\begin{DoxyReturn}{Returns}
+Returns the vector of doubles representing the wave directions. Directions entered in units of radians. Variable is passed by reference. 
+\end{DoxyReturn}
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_outputs_body_a76439db0a461f51b572c0d011cf405b7_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_outputs_body_a4b33361c2888937d2aa450f3e6df200d}{\index{Outputs\-Body@{Outputs\-Body}!set\-Cur\-Body@{set\-Cur\-Body}}
+\index{set\-Cur\-Body@{set\-Cur\-Body}!OutputsBody@{Outputs\-Body}}
+\subsubsection[{set\-Cur\-Body}]{\setlength{\rightskip}{0pt plus 5cm}void Outputs\-Body\-::set\-Cur\-Body (
+\begin{DoxyParamCaption}
+\item[{int}]{index}
+\end{DoxyParamCaption}
+)}}\label{class_outputs_body_a4b33361c2888937d2aa450f3e6df200d}
+
+
+Sets the current \hyperlink{class_body}{Body} to use. Input selects from the list of supplied \hyperlink{class_body}{Body} objects. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & Integer input that selects from the list of supplied \hyperlink{class_body}{Body} objects. Variable is passed by value. \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_outputs_body_a7d2b93ecaf1fa39257444bdf3194eacc}{\index{Outputs\-Body@{Outputs\-Body}!set\-Cur\-Wave\-Dir@{set\-Cur\-Wave\-Dir}}
+\index{set\-Cur\-Wave\-Dir@{set\-Cur\-Wave\-Dir}!OutputsBody@{Outputs\-Body}}
+\subsubsection[{set\-Cur\-Wave\-Dir}]{\setlength{\rightskip}{0pt plus 5cm}void Outputs\-Body\-::set\-Cur\-Wave\-Dir (
+\begin{DoxyParamCaption}
+\item[{int}]{index}
+\end{DoxyParamCaption}
+)}}\label{class_outputs_body_a7d2b93ecaf1fa39257444bdf3194eacc}
+
+
+Sets the current wave direction. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & Integer input specifying the index of the current wave direction from the list set by setlist\-Wave\-Dir. \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_outputs_body_a7be4a4a8ebdd43a7f0c8b56a9cf0d800}{\index{Outputs\-Body@{Outputs\-Body}!setlist\-Body@{setlist\-Body}}
+\index{setlist\-Body@{setlist\-Body}!OutputsBody@{Outputs\-Body}}
+\subsubsection[{setlist\-Body}]{\setlength{\rightskip}{0pt plus 5cm}void Outputs\-Body\-::setlist\-Body (
+\begin{DoxyParamCaption}
+\item[{vector$<$ {\bf Body} $>$ \&}]{list\-In}
+\end{DoxyParamCaption}
+)}}\label{class_outputs_body_a7be4a4a8ebdd43a7f0c8b56a9cf0d800}
+
+
+Sets the list of \hyperlink{class_body}{Body} objects to calculate derived outputs for. Derived outputs are calculated for only one \hyperlink{class_body}{Body} object in the list. The rest are included as reference for cross-\/body forces. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em list\-In} & The vector of \hyperlink{class_body}{Body} objects to assign to this \hyperlink{class_outputs_body}{Outputs\-Body}. Input is passed by reference. Input is held as a constant value, so that it can not be modified by the class. \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_outputs_body_a876c62a76404b2a963d78d3753456fc3}{\index{Outputs\-Body@{Outputs\-Body}!setlist\-Freq@{setlist\-Freq}}
+\index{setlist\-Freq@{setlist\-Freq}!OutputsBody@{Outputs\-Body}}
+\subsubsection[{setlist\-Freq}]{\setlength{\rightskip}{0pt plus 5cm}void Outputs\-Body\-::setlist\-Freq (
+\begin{DoxyParamCaption}
+\item[{vector$<$ double $>$ \&}]{list\-In}
+\end{DoxyParamCaption}
+)}}\label{class_outputs_body_a876c62a76404b2a963d78d3753456fc3}
+
+
+Sets the list of wave frequencies. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em list\-In} & The vector of doubles representing the wave frequencies. Frequencies entered in units of radians per second. Input is passed by reference and held as a constant so that the class can not change the frequencies. \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_outputs_body_a555b87de16dbb48444dcef24de08c70d}{\index{Outputs\-Body@{Outputs\-Body}!setlist\-Solution@{setlist\-Solution}}
+\index{setlist\-Solution@{setlist\-Solution}!OutputsBody@{Outputs\-Body}}
+\subsubsection[{setlist\-Solution}]{\setlength{\rightskip}{0pt plus 5cm}void Outputs\-Body\-::setlist\-Solution (
+\begin{DoxyParamCaption}
+\item[{vector$<$ {\bf list\-Solution} $>$ \&}]{list\-In}
+\end{DoxyParamCaption}
+)}}\label{class_outputs_body_a555b87de16dbb48444dcef24de08c70d}
+
+
+Sets the list of \hyperlink{classlist_solution}{list\-Solution} objects to calculate derived outputs for. Derived outputs are calculated for only one \hyperlink{classlist_solution}{list\-Solution} object in the list. The rest are included as reference for cross-\/body forces. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em list\-In} & The vector of \hyperlink{classlist_solution}{list\-Solution} objects to assign to this \hyperlink{class_outputs_body}{Outputs\-Body}. Input is passed by reference. Inputs is held as a constant value, so that it can not be modified by the class. \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_outputs_body_a3cfa70c13f0330d7ce94b5755243aac4}{\index{Outputs\-Body@{Outputs\-Body}!setlist\-Wave\-Dir@{setlist\-Wave\-Dir}}
+\index{setlist\-Wave\-Dir@{setlist\-Wave\-Dir}!OutputsBody@{Outputs\-Body}}
+\subsubsection[{setlist\-Wave\-Dir}]{\setlength{\rightskip}{0pt plus 5cm}void Outputs\-Body\-::setlist\-Wave\-Dir (
+\begin{DoxyParamCaption}
+\item[{vector$<$ double $>$ \&}]{list\-In}
+\end{DoxyParamCaption}
+)}}\label{class_outputs_body_a3cfa70c13f0330d7ce94b5755243aac4}
+
+
+Sets the list of wave directions. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em list\-In} & The vector of doubles representing the wave directions. Directions entered in units of radians. Input is passed by reference and held as a constant so that the class can not change the directions. \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_outputs_body_a4265e0ece0f65f6ee6b3e36fc66bf960}{\index{Outputs\-Body@{Outputs\-Body}!size\-Global\-Acceleration@{size\-Global\-Acceleration}}
+\index{size\-Global\-Acceleration@{size\-Global\-Acceleration}!OutputsBody@{Outputs\-Body}}
+\subsubsection[{size\-Global\-Acceleration}]{\setlength{\rightskip}{0pt plus 5cm}int Outputs\-Body\-::size\-Global\-Acceleration (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_outputs_body_a4265e0ece0f65f6ee6b3e36fc66bf960}
+
+
+returns the number of entries for the vector of \hyperlink{class_global_acceleration}{Global\-Acceleration} outputs. 
+
+\begin{DoxyReturn}{Returns}
+Integer. Returns the number of entries for the vector of \hyperlink{class_global_acceleration}{Global\-Acceleration} outputs. Variable passed by value. 
+\end{DoxyReturn}
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_outputs_body_a4265e0ece0f65f6ee6b3e36fc66bf960_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_outputs_body_acf20f3cfb2baee6c93a2e17d7e27aa0c}{\index{Outputs\-Body@{Outputs\-Body}!size\-Global\-Motion@{size\-Global\-Motion}}
+\index{size\-Global\-Motion@{size\-Global\-Motion}!OutputsBody@{Outputs\-Body}}
+\subsubsection[{size\-Global\-Motion}]{\setlength{\rightskip}{0pt plus 5cm}int Outputs\-Body\-::size\-Global\-Motion (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_outputs_body_acf20f3cfb2baee6c93a2e17d7e27aa0c}
+
+
+returns the number of entries for the vector of \hyperlink{class_global_motion}{Global\-Motion} outputs. 
+
+\begin{DoxyReturn}{Returns}
+Integer. Returns the number of entries for the vector of \hyperlink{class_global_motion}{Global\-Motion} outputs. Variable passed by value. 
+\end{DoxyReturn}
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_outputs_body_acf20f3cfb2baee6c93a2e17d7e27aa0c_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_outputs_body_abe9227589bf83ee0ff40251e6e0d8d27}{\index{Outputs\-Body@{Outputs\-Body}!size\-Global\-Solution@{size\-Global\-Solution}}
+\index{size\-Global\-Solution@{size\-Global\-Solution}!OutputsBody@{Outputs\-Body}}
+\subsubsection[{size\-Global\-Solution}]{\setlength{\rightskip}{0pt plus 5cm}int Outputs\-Body\-::size\-Global\-Solution (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_outputs_body_abe9227589bf83ee0ff40251e6e0d8d27}
+
+
+returns the number of entries for the vector of \hyperlink{class_global_solution}{Global\-Solution} outputs. 
+
+\begin{DoxyReturn}{Returns}
+Integer. Returns the number of entries for the vector of \hyperlink{class_global_solution}{Global\-Solution} outputs. Variable passed by value. 
+\end{DoxyReturn}
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_outputs_body_abe9227589bf83ee0ff40251e6e0d8d27_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_outputs_body_af41b4423bd40c87fa87ae0af53bc96e5}{\index{Outputs\-Body@{Outputs\-Body}!size\-Global\-Velocity@{size\-Global\-Velocity}}
+\index{size\-Global\-Velocity@{size\-Global\-Velocity}!OutputsBody@{Outputs\-Body}}
+\subsubsection[{size\-Global\-Velocity}]{\setlength{\rightskip}{0pt plus 5cm}int Outputs\-Body\-::size\-Global\-Velocity (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_outputs_body_af41b4423bd40c87fa87ae0af53bc96e5}
+
+
+returns the number of entries for the vector of \hyperlink{class_global_velocity}{Global\-Velocity} outputs. 
+
+\begin{DoxyReturn}{Returns}
+Integer. Returns the number of entries for the vector of \hyperlink{class_global_velocity}{Global\-Velocity} outputs. Variable passed by value. 
+\end{DoxyReturn}
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_outputs_body_af41b4423bd40c87fa87ae0af53bc96e5_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/home/nicholas/\-Ship Design/\-Projects/\-D\-M\-S1305 Open\-S\-E\-A/master/200\-\_\-src/bin/ofreq/derived\-\_\-outputs/outputsbody.\-h\item 
+/home/nicholas/\-Ship Design/\-Projects/\-D\-M\-S1305 Open\-S\-E\-A/master/200\-\_\-src/bin/ofreq/derived\-\_\-outputs/outputsbody.\-cpp\end{DoxyCompactItemize}

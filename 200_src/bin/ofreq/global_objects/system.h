@@ -11,6 +11,9 @@
  *Date              Author				Description
  *---------------------------------------------------------------------------------------------------------------------
  *May 15 2013       Shane Honanie       Initially created
+ *Aug 22 2013       Nicholas Barczak    Revised to include main objects in the system object.
+ *Aug 24 2013       Nicholas Barczak    Changed the definition of wave directions and wave frequencies from their own
+ *                                      objects to simple vector lists.
  *
 \*-------------------------------------------------------------------------------------------------------------------*/
 
@@ -38,12 +41,13 @@
 //######################################### Class Separator ###########################################################
 #ifndef SYSTEM_H
 #define SYSTEM_H
-#include "wavedirections.h"
-#include "wavefrequencies.h"
 #include <string>
 #include <iostream>
 #include <fstream>
 #include <vector>
+#include <QObject>
+#include "../motion_solver/body.h"
+#include "../derived_outputs/outputsbody.h"
 using namespace std;
 
 //######################################### Class Separator ###########################################################
@@ -53,8 +57,9 @@ using namespace std;
  * wave environment settings.
  */
 
-class System
+class System : public QObject
 {
+    Q_OBJECT
 
 //==========================================Section Separator =========================================================
 public:
@@ -66,13 +71,6 @@ public:
 
     //------------------------------------------Function Separator ----------------------------------------------------
 	void testPrint(); /**< Test print to console the values of all data members. */
-
-    //------------------------------------------Function Separator ----------------------------------------------------
-	/**
-	 * Sets the analysis ype.
-	 * @param analysisTypeIn The analysis type.
-	 */
-	void setAnalysisType(string);
 
     //------------------------------------------Function Separator ----------------------------------------------------
 	/**
@@ -169,6 +167,81 @@ public:
      */
     double getCurFreq();
 
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Returns direct access to the list of Body objects.  Includes all the properties included by a vector<>
+     * class.
+     * @return Returns a vector of Body objects.  Returned variable passed by reference.
+     * @sa Body
+     */
+    vector<Body>& reflistBody();
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Returns direct access to the list of OutputsBody objects.  Includes all the properties included by a
+     * vector<> class.
+     * @return Returns a vector of OutputsBody objects.  Returned variable passed by reference.
+     * @sa OutputsBody
+     */
+    vector<OutputsBody>& reflistOutputs();
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Returns direct access to a single Body object.
+     * @param input Specifies index of which Body object to access in the list of Body objects.
+     * @return Returns a Body object. Returned variable is passed by reference.
+     */
+    Body& refBody(int input = 0);
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Returns direct access to a single OutputsBody object.
+     * @param input Specifies the index of which OutputsBody object to access in the list of OutputsBody objects.
+     * @return Returns an OutputsBody object.  Returned variable is passed by reference.
+     */
+    OutputsBody& refOutput(int input = 0);
+
+//==========================================Section Separator =========================================================
+public slots:
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * Sets the analysis ype.
+     * @param analysisTypeIn The analysis type.
+     */
+    void setAnalysisType(string);
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Adds another Body object to the list of Body objects.  Sets the new Body object equal to the input.
+     * @param input Body object to add into the list of stored Body objects.  Variable is passed by value and stored
+     * independant inside the System class.
+     * @sa Body
+     */
+    void addBody(Body input);
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Adds another Body object to the list of Body objects.  Uses a blank new Body object.
+     * @sa Body
+     */
+    void addBody();
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Adds another OutputsBody object to the list of OutputsBody objects.  Sets the object equal to the input.
+     * @param input OutputsBody object to add into the list of stored OutputsBody objects.  Variable is passed by
+     * value and sotred independant inside the System class.
+     * @sa OutputsBody
+     */
+    void addOutput(OutputsBody input);
+
+    //-----------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Adds another OutputsBody object to the list of OutputsBody objects.  Uses a blank new OutputsBody object.
+     * @sa OutputsBody
+     */
+    void addOutput();
+
 //==========================================Section Separator =========================================================
 protected:
 
@@ -178,16 +251,39 @@ private:
 	string analysisType; /**< The analysis type. */
 
     //------------------------------------------Function Separator ----------------------------------------------------
-	WaveDirections waveDirections; /**< The wave directions object. */
+    /**
+     * @brief The list of wave directions.  Directions measured in radians.  True North is zero, with positive going
+     * counter clockwise.
+     */
+    vector<double> pWaveDirections;
 
     //------------------------------------------Function Separator ----------------------------------------------------
-	WaveFrequencies waveFrequencies; /**< The wave frequencies object. */
+    /**
+     * @brief The list of wave frequencies.  Each frequency measured in radians per second.
+     */
+    vector<double> pWaveFrequencies;
 
     //------------------------------------------Function Separator ----------------------------------------------------
     int pCurWaveDir; /**< The index of the current wave direction. */
 
     //------------------------------------------Function Separator ----------------------------------------------------
     int pCurWaveFreq; /**< The index of the current wave frequency. */
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief The list of Body objects.  Inputs set by file reader go to this list of Body objects.
+     * @sa Body
+     */
+    vector<Body> plistBody;
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief The list of OutputsBody objects.  The inputs set by the file reader on which Output options to calculate
+     * go to this list of OutputsBody objects.
+     * @sa OutputsBody
+     * @sa OutputDerived
+     */
+    vector<OutputsBody> plistOutputs;
 };
 #endif
 

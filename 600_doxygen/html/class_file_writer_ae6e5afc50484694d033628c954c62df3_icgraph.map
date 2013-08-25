@@ -1,0 +1,6 @@
+<map id="FileWriter::createDir" name="FileWriter::createDir">
+<area shape="rect" id="node3" href="$class_file_writer.html#a5c921b5ae92039cf50458e2c46e204da" title="Writes the output file of global motions. If file exists, appends to the file, assuming the appended ..." alt="" coords="216,5,411,32"/>
+<area shape="rect" id="node5" href="$class_file_writer.html#a2078a50dbd21946aeed86d8e0bccd50e" title="Writes the output file of global velocities. If file exists, appends to the file, assuming the append..." alt="" coords="212,56,415,83"/>
+<area shape="rect" id="node7" href="$class_file_writer.html#aaff553c2e03cb1c1639e107cfeac3038" title="Writes the output file of global accelerations. If file exists, appends to the file, assuming the appended file is a new body object." alt="" coords="198,107,429,133"/>
+<area shape="rect" id="node9" href="$class_file_writer.html#a317649499b8c16dd529e2bf588e3be88" title="Writes the output file of global solutions. If file exists, appends to the file, assuming the appende..." alt="" coords="212,157,415,184"/>
+</map>
