@@ -56,7 +56,7 @@ void ReadInput::setData(istream& infile)
 
 		legalKeywordVal = legalKeyword(curString); 
 
-		if (curString == SEAFILE) //ignore the seafile object
+		if (curString == OBJ_SEAFILE) //ignore the seafile object
 		{
 			infile.ignore(MAX_IGNORE, '}'); //need to make const
 			if (infile.eof()) break; 

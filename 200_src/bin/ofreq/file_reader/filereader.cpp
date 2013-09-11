@@ -61,8 +61,17 @@ int FileReader::readControl()
     string filename;
     filename = pPath + SLASH + SYS + SLASH + CONTROL;
 
+    //clear the list of objects.
+    plistObjects.clear();
+
     //Read file
     return readFile(filename);
+
+    //Emit signal of objects that were read
+    for (int i = 0; i < plistObjects.size(); i++)
+    {
+        emit outputControlFile(plistObjects[i]);
+    }
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
@@ -74,8 +83,17 @@ int FileReader::readBodies()
     string filename;
     filename = pPath + SLASH + CONST + SLASH + BODIES;
 
+    //clear the list of objects.
+    plistObjects.clear();
+
     //Read file
     return readFile(filename);
+
+    //Emit signal of objects that were read
+    for (int i = 0; i < plistObjects.size(); i++)
+    {
+        emit outputBodiesFile(plistObjects[i]);
+    }
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
@@ -87,8 +105,17 @@ int FileReader::readForces()
     string filename;
     filename = pPath + SLASH + CONST + SLASH + FORCES;
 
+    //clear the list of objects.
+    plistObjects.clear();
+
     //Read file
     return readFile(filename);
+
+    //Emit signal of objects that were read
+    for (int i = 0; i < plistObjects.size(); i++)
+    {
+        emit outputForcesFile(plistObjects[i]);
+    }
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
@@ -100,8 +127,17 @@ int FileReader::readSeaEnv()
     string filename;
     filename = pPath + SLASH + CONST + SLASH + SEAENV;
 
+    //clear the list of objects.
+    plistObjects.clear();
+
     //Read file
     return readFile(filename);
+
+    //Emit signal of objects that were read
+    for (int i = 0; i < plistObjects.size(); i++)
+    {
+        emit outputSeaEnvFile(plistObjects[i]);
+    }
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
@@ -113,8 +149,17 @@ int FileReader::readData()
     string filename;
     filename = pPath + SLASH + CONST + SLASH + DATA;
 
+    //clear the list of objects.
+    plistObjects.clear();
+
     //Read file
     return readFile(filename);
+
+    //Emit signal of objects that were read
+    for (int i = 0; i < plistObjects.size(); i++)
+    {
+        emit outputDataFile(plistObjects[i]);
+    }
 }
 
 //==========================================Section Separator =========================================================
@@ -122,6 +167,13 @@ int FileReader::readData()
 
 //==========================================Section Separator =========================================================
 //Public Slots
+
+//------------------------------------------Function Separator --------------------------------------------------------
+int FileReader::readHydroFile(string path)
+{
+    //Read hydrodynamic input file
+    return readFile(path);
+}
 
 //==========================================Section Separator =========================================================
 //Protected Functions
@@ -149,10 +201,43 @@ int FileReader::readFile(string path)
     Parser myParse;
     myParse.Parse(InputFile);
 
+    //variables to record seafile parameters.
+    string version;     //version of the sea file.
+    string format;      //format of the sea file.
+    int sea_index = 0;  //Index of where the sea file object is located.
+
     //Get results
-    for (unsigned int i = 0; i < myParse.refObject().size(); i++)
+    for (unsigned int i = sea_index; i < myParse.refObject().size(); i++)
     {
-        plistObjects.push_back(myParse.getObject(i));
+        //Check if the first object is an opensea file definition.
+        if (myParse.refObject()[sea_index].getClassName() == OBJ_SEAFILE)
+        {
+            //True.  Process as a seafile object.
+            for (int j = 0; j < myParse.refObject().at(sea_index).refListKey().size(); j++)
+            {
+                switch (myParse.refObject().at(sea_index).getKey(j))
+                {
+                case KEY_VERSION:
+                    //Response if the key is the version number.
+                    version = myParse.refObject().at(sea_index).getVal(j).at(0);
+                    break;
+                case KEY_FORMAT:
+                    //Response if the key is the format designator.
+                    format = myParse.refObject().at(sea_index).getVal(j).at(0);
+                    break;
+                }
+            }
+        }
+        else
+        {
+            //False.  Process as normal file object.
+            //Add objects to list.
+            plistObjects.push_back(myParse.getObject(i));
+
+            //Add version and format to object.
+            plistObjects[i].setVersion(version);
+            plistObjects[i].setFormat(format);
+        }
     }
 
     //Report success of file reading.

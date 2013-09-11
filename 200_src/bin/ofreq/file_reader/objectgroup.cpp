@@ -71,7 +71,7 @@ vecObject& ObjectGroup::refListObject()
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-void ObjectGroup::addSubObject(ObjectGroup* objIn)
+void ObjectGroup::addSubObject(ObjectGroup objIn)
 {
     plistObject.push_back(objIn);
 }

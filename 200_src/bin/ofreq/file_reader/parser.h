@@ -66,7 +66,7 @@ const string LIST_END = ");"; /**< List scope end. */
 const string KEY_VAL_SEPARATOR= ":"; /**< Key/Val pair seperator. */
 const char EOL = '\n'; /**< newline. */
 const int MAX_IGNORE = 150000; /**< Max # of chars to ignore. */
-const string SEAFILE = "seafile"; /**< seafile object name, used to ignore seafile block. */
+const string OBJ_SEAFILE = "seafile"; /**< seafile object name, used to ignore seafile block. */
 const string QUOTE = "\"";
 
 //######################################### Class Separator ###########################################################
@@ -127,7 +127,7 @@ public:
      * @return Returns a reference to the list of SubObjects detected by the parser.  Returned variable passed by
      * reference.  Returned variable is a vector of pointers to the SubObjects.
      */
-    vector<ObjectGroup *> &refSubObject(int index1 = 0);
+    vector<ObjectGroup> &refSubObject(int index1 = 0);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -153,9 +153,15 @@ private:
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
+     * @brief ObjectGroup objec to contain the OpenSEA object that is the header at the beginning of every input file.
+     */
+    ObjectGroup oSeaObject;
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
      * @brief Pointer to the recursive object of this class.  This is necessary to allow recursive parsing of an object.
      */
-    Parser* subParse;
+    Parser subParse;
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -174,6 +180,12 @@ private:
      * keySet = False:  Key not set and process as key word.
      */
     bool keySet;
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Tracks which object the parser is currently adding data to.  Handles situations of possible multiple
+     */
+    int curObject;
 };
 
 #endif // PARSER_H

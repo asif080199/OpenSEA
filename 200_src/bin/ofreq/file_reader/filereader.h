@@ -73,6 +73,20 @@ const string DATA = "data.in"; /**< The filename for the data control file. */
 const string FORCES = "forces.in"; /**< The filename for the forces control file. */
 const string SEAENV = "seaenv.in"; /**< The filename for the sea environment control file. */
 
+// Class Name Designators
+// ---------------------------------
+const string OBJ_SEAFILE = "seafile"; /**< The string designation for a sea file object. */
+const string OBJ_SYSTEM = "system"; /**< The string designation for a system object. */
+const string OBJ_HYDROFILE = "hydrofiles"; /**< The string designation for a hydrofile object. */
+const string OBJ_FORCE_ACTIVE = "force_active"; /**< The string designation for an active force object. */
+const string OBJ_FORCE_REACT = "force_reactive"; /**< The string designation for a reactive force object. */
+const string OBJ_FORCE_CROSS = "force_crossbody"; /**< The string designation for a cross-body force object.*/
+
+// Key Value Pair Designators
+// ---------------------------------
+const string KEY_FORMAT = "format";  /**< The key designator for a format value in the seafile object. */
+const string KEY_VERSION = "version"; /**< The key designator for a version value in the seafile object. */
+
 //######################################### Class Separator ###########################################################
 /**
  * FileReader is the next generation of superseded class:  ReadInputFile.  FileReader simply reads the text file and
@@ -168,16 +182,64 @@ public:
 
 //==========================================Section Separator =========================================================
 signals:
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Sends output of objects discovered when reading the Control file.  Top level objects can include:
+     * 1.  System object.
+     * @sa System
+     * @param output The ObjectGroup object parsed out of the file.  Variable passed by value.
+     */
+    void outputControlFile(ObjectGroup output);
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Sends output of objects discovered when reading the Bodies file.  Top level objects can include:
+     * 1.  Body object.
+     * @sa Body
+     * @param output The ObjectGroup object parsed out of the file.  Variable passed by value.
+     */
+    void outputBodiesFile(ObjectGroup output);
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Sends output of objects discovered when reading the Data file.  Top level objects can include:
+     * 1.  hydrofiles
+     * @param output The ObjectGroup object parsed out of the file.  Variable passed by value.
+     */
+    void outputDataFile(ObjectGroup output);
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Sends output of objects discovered when reading the Forces file.  Top level objects can include:
+     * 1.  ForceActive
+     * 2.  ForceReactive
+     * 3.  ForceCrossBody
+     * @sa ForceActive
+     * @sa ForceCross
+     * @sa ForceReact
+     * @param output The ObjectGroup object parsed out of the file.  Variable passed by value.
+     */
+    void outputForcesFile(ObjectGroup output);
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Sends output of objects discovered when reading the SeaEnv file.  Top level objects can include:
+     * 1.  Wave_Custom
+     * 2.  Sea_Custom
+     * @param output The ObjectGroup object parsed out of the file.  Variable passed by value.
+     */
+    void outputSeaEnvFile(ObjectGroup output);
 
 //==========================================Section Separator =========================================================
 public slots:
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
      * @brief Reads hydrodynamic input files.
+     * @param path The full path to the hydrodynamic input file to read.
      * @return Returns integer to report success or failure of file parsing.  Returns 0 for success.
      * Returns 1 for file does not exist.
      */
-    int readHydroFile();
+    int readHydroFile(string path);
 
 //==========================================Section Separator =========================================================
 protected:

@@ -126,9 +126,9 @@ public:
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
      * @brief Adds an object to the list of ObjectGroup objects defined under this existing ObjectGroup.
-     * @param objIn A pointer to a ObjectGroup object.
+     * @param objIn An ObjectGroup object.  Variable passed by value.
      */
-    void addSubObject(ObjectGroup* objIn);
+    void addSubObject(ObjectGroup objIn);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**

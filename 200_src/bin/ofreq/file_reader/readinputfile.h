@@ -59,7 +59,7 @@ const string KEY_VAL_SEPARATOR= ":"; /**< Key/Val pair seperator. */
 const char EOL = '\n'; /**< newline. */
 const int MAX_IGNORE = 15000; /**< Max # of chars to ignore. */
 const int UNDEFINED_KEYWORD = -1; /**< Invalid/Undefined keyword. */
-const string SEAFILE = "seafile"; /**< seafile object name, used to ignore seafile block. */
+const string OBJ_SEAFILE = "seafile"; /**< seafile object name, used to ignore seafile block. */
 const string QUOTE = "\"";
 
 /**

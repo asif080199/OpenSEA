@@ -52,7 +52,8 @@ SOURCES += ofreq.cpp \
     global_objects/listsolution.cpp \
     file_reader/filereader.cpp \
     file_reader/parser.cpp \
-    file_reader/objectgroup.cpp
+    file_reader/objectgroup.cpp \
+    file_reader/dictionary.cpp
 
 HEADERS += \
     derived_outputs/outputsbody.h \
@@ -91,7 +92,8 @@ HEADERS += \
     global_objects/listsolution.h \
     file_reader/filereader.h \
     file_reader/parser.h \
-    file_reader/objectgroup.h
+    file_reader/objectgroup.h \
+    file_reader/dictionary.h
 
 # Include header files path for libraries
 INCLUDEPATH += \

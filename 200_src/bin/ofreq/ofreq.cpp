@@ -249,10 +249,6 @@ int main(int argc, char *argv[])
 		}
     }
 
-
-    //---------------------------------------------------------------------------
-
-
     //Write outputs
     //---------------------------------------------------------------------------
     //Iterate through each body output.  Setup the output and calculate outputs.
@@ -263,7 +259,7 @@ int main(int argc, char *argv[])
     for (unsigned int i = 0; i < sysofreq.reflistOutputs().size(); i++)
     {
         //Setup variables for each OutputBody object.
-        sysofreq.reflistOutputs()[i].setlistBody()(sysofreq.reflistBody());
+        sysofreq.reflistOutputs()[i].setlistBody(sysofreq.reflistBody());
         sysofreq.reflistOutputs()[i].setlistSolution(listSolutions);
         sysofreq.reflistOutputs()[i].setlistFreq(sysofreq.refWaveFrequencies());
         sysofreq.reflistOutputs()[i].setlistWaveDir(sysofreq.refWaveDirections());

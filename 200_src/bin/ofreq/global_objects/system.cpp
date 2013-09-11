@@ -152,6 +152,121 @@ OutputsBody& System::refOutput(int input = 0)
     return plistOutputs.at(input);
 }
 
+//------------------------------------------Function Separator --------------------------------------------------------
+void System::clearForce(string forceClass)
+{
+    //Clears the vector of force objects.
+    switch (forceClass)
+    {
+    case valForceActive_user:
+        //clear forceActive objects class, under scope of user
+        plistForceActive_user.clear();
+        break;
+    case valForceReact_user:
+        //Clear forceReact objects class, under scope of user
+        plistForceReact_user.clear();
+        break;
+    case valForceCross_user:
+        //Clear forceCross objects class, under scope of user
+        plistForceCross_user.clear();
+        break;
+    case "":
+        //Clear all three object types.
+        plistForceActive_user.clear();
+        plistForceReact_user.clear();
+        plistForceCross_user.clear();
+        break;
+    default:
+        //Case for any unknown inputs.
+        //do nothing.
+    }
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+forceActive System::getforceActive_user(string forceName)
+{
+    //returns forceActive_user specified by forcename
+    int i = 0;      //counting variable
+    while (i <= plistForceActive_user.size() - 1)
+    {
+        //Check if forcename matches specified force.
+        if (plistForceActive_user[i].getForceName() == forceName)
+            break;
+
+        i += 1;
+    }
+
+    //Return value
+    if (i <= (plistForceActive_user.size() - 1))
+    {
+        //return specified object
+        return plistForceActive_user[i];
+    }
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+vector<forceActive> &System::listforceActive_user()
+{
+    //return vector
+    return plistForceActive_user;
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+forceReact System::getforceReact_user(string forceName)
+{
+    //returns forceReact_user specified by forcename
+    int i = 0;      //counting variable
+    while (i <= plistForceReact_user.size() - 1)
+    {
+        //Check if forcename matches specified force.
+        if (plistForceReact_user[i].getForceName() == forceName)
+            break;
+
+        i += 1;
+    }
+
+    //Return value
+    if (i <= (plistForceReact_user.size() - 1))
+    {
+        //return specified object
+        return plistForceReact_user[i];
+    }
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+vector<forceReact> &System::listforceReact_user()
+{
+    return plistForceReact_user;
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+forceActive System::getforceCross_user(string forceName)
+{
+    //returns ForceCross_user specified by forcename
+    int i = 0;      //counting variable
+    while (i <= plistForceCross_user.size() - 1)
+    {
+        //Check if forcename matches specified force.
+        if (plistForceCross_user[i].getForceName() == forceName)
+            break;
+
+        i += 1;
+    }
+
+    //Return value
+    if (i <= (plistForceCross_user.size() - 1))
+    {
+        //return specified object
+        return plistForceCross_user[i];
+    }
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+vector<forceActive> &System::listforceCross_user()
+{
+    return plistForceCross_user;
+}
+
 //==========================================Section Separator =========================================================
 //Public Slots
 
@@ -165,12 +280,18 @@ void System::setAnalysisType(string analysisTypeIn)
 void System::addBody(Body input)
 {
     plistBody.push_back(input);
+
+    //Return the system object.
+    emit ReferenceSystem(this);
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
 void System::addBody()
 {
     plistBody.push_back(Body());
+
+    //Return the system object.
+    emit ReferenceSystem(this);
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
@@ -185,6 +306,44 @@ void System::addOutput()
     plistOutputs.push_back(OutputsBody());
 }
 
+//------------------------------------------Function Separator --------------------------------------------------------
+void System::addforceActive_user(forceActive input)
+{
+    plistForceActive_user.push_back(input);
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+void System::addforceActive_user()
+{
+    plistForceActive_user.push_back(forceActive());
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+void System::addforceReact_user(forceReact input)
+{
+    plistForceReact_user.push_back(input);
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+void System::addforceReact_user()
+{
+    plistForceReact_user.push_back(forceReact());
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+void System::addforceCross_user(forceCross input)
+{
+    plistForceCross_user.push_back(forceCross());
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+void System::addforceCross_user()
+{
+    plistForceCross_user.push_back(forceReact());
+}
+
+//==========================================Section Separator =========================================================
+//Signals
 
 //==========================================Section Separator =========================================================
 //Protected methods

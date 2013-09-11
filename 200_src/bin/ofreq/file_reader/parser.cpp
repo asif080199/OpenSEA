@@ -32,7 +32,10 @@
 //------------------------------------------Function Separator --------------------------------------------------------
 Parser::Parser()
 {
-
+    //Set initial value for curObject
+    curObject = 0;
+    //Resize list of objects.
+    plistObject.resize(curObject + 1);
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
@@ -113,7 +116,7 @@ vector<ObjectGroup>& Parser::refObject()
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-vector<ObjectGroup*>& Parser::refSubObject(int index1)
+vector<ObjectGroup>& Parser::refSubObject(int index1)
 {
     return plistObject.at(index1).refListObject();
 }
@@ -121,14 +124,8 @@ vector<ObjectGroup*>& Parser::refSubObject(int index1)
 //------------------------------------------Function Separator --------------------------------------------------------
 ObjectGroup Parser::getSubObject(int index, int index1)
 {
-    return *(plistObject.at(index1).refListObject().at(index));
+    return plistObject.at(index1).refListObject().at(index);
 }
-
-//==========================================Section Separator =========================================================
-//Signals
-
-//==========================================Section Separator =========================================================
-//Public Slots
 
 //==========================================Section Separator =========================================================
 //Protected Functions
@@ -139,7 +136,6 @@ ObjectGroup Parser::getSubObject(int index, int index1)
 //------------------------------------------Function Separator --------------------------------------------------------
 void Parser::ParseCommands(istream& infile, string prevString)
 {
-    vector<string> theList;     //list of output items
     string curString = "";      //Current string from input.
 
     infile >> curString;
@@ -149,8 +145,10 @@ void Parser::ParseCommands(istream& infile, string prevString)
     //-----------------------------------
     if (curString = OBJECT_BEGIN)
     {
-        //Set the name of the object.
-        plistObject.back().setClassName(prevString);
+        //create new object and store the name
+        plistObject.push_back(ObjectGroup());
+        curObject += 1;
+        plistObject[curObject].setClassName(prevString);
 
         int bracket_count;      //THe number of object definition brackets.  Must add to zero
                                 //in the end.
@@ -158,9 +156,6 @@ void Parser::ParseCommands(istream& infile, string prevString)
 
         string tempString;      //String for checking count of object brackets
         iostream buffer;        //Buffer to pass string back into stream.
-
-        //create new Parse object.
-        subParse = new Parse();
 
         //Get string from input
         infile >> tempString;
@@ -179,7 +174,7 @@ void Parser::ParseCommands(istream& infile, string prevString)
             buffer << tempString;
 
             //Feed the information to a recursive instance of Parse function.
-            subParse->Parse(buffer);
+            subParse.Parse(buffer);
 
             //Get next string
             infile >> tempString;
@@ -191,14 +186,17 @@ void Parser::ParseCommands(istream& infile, string prevString)
                 bracket_count -= 1; //Closing bracket.  Subtract to the count.
         }
 
-        //Parsing complete.  Get the parsed objects back.
-        for (unsigned int i = 0; i < subParse->refObject().size(); i++)
+        //Get the keysets from the parsed object.
+        for (unsigned int i = 0; i < subParse.getObject(0).refListKey().size(); i++)
         {
-            plistObject.push_back(subParse->refObject().at(i));
+            plistObject[curObject].addKeySet(subParse.getObject(0).getKey(i), subParse.getObject(0).getVal(i));
         }
 
-        //Remove the subparse object.
-        delete subParse;
+        //Parsing complete.  Get the parsed subobjects back.
+        for (unsigned int i = 0; i < subParse.refObject().size(); i++)
+        {
+            plistObject[curObject].addSubObject(subParse.getObject(i));
+        }
     }
 
     //Check for string enclosed in quotation marks.
@@ -222,11 +220,14 @@ void Parser::ParseCommands(istream& infile, string prevString)
     }
 
     //remove ignore chars from string
+    //-----------------------------------
     for(unsigned int i = 0; i < 2; i++)
         curString.erase(std::remove(curString.begin(), curString.end(), ignoreChars[i]), curString.end());
 
     //Check if this is a list
     //-----------------------------------
+    vector<string> theList;     //list of output items
+
     if (curString == LIST_BEGIN) //check if is a list
     {
         while(curString != LIST_END)
