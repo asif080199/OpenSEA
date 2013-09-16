@@ -53,7 +53,9 @@ SOURCES += ofreq.cpp \
     file_reader/filereader.cpp \
     file_reader/parser.cpp \
     file_reader/objectgroup.cpp \
-    file_reader/dictionary.cpp
+    file_reader/dictionary.cpp \
+    file_reader/dictcontrol.cpp \
+    file_reader/dictforces.cpp
 
 HEADERS += \
     derived_outputs/outputsbody.h \
@@ -93,7 +95,9 @@ HEADERS += \
     file_reader/filereader.h \
     file_reader/parser.h \
     file_reader/objectgroup.h \
-    file_reader/dictionary.h
+    file_reader/dictionary.h \
+    file_reader/dictcontrol.h \
+    file_reader/dictforces.h
 
 # Include header files path for libraries
 INCLUDEPATH += \

@@ -40,8 +40,8 @@
 
 //######################################### Class Separator ###########################################################
 //Put header files
-#ifndef FILEPARSER_H
-#define FILEPARSER_H
+#ifndef FILEREADER_H
+#define FILEREADER_H
 #include <QObject>
 #include <string>
 #include <iostream>
@@ -51,6 +51,10 @@
 #include "objectgroup.h"
 
 using namespace std;
+
+//######################################### Class Separator ###########################################################
+//Prototype class declarations
+class System;       /** < Prototype class declaration of System object.  Allows reference to system object.*/
 
 //######################################### Class Separator ###########################################################
 //Constant variables
@@ -241,6 +245,13 @@ public slots:
      */
     int readHydroFile(string path);
 
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Sets the system object for the dictionary to reference.
+     * @param ptSystem Pointer to the System object.  Variable passed by value.
+     */
+    void setSystem(System* ptInput);
+
 //==========================================Section Separator =========================================================
 protected:
 
@@ -270,6 +281,12 @@ private:
      * Returns 1 for file does not exist.
      */
     int readFile(string path);
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Pointer to the System object.  Used to reference any important variables in the System object.
+     */
+    System* ptSystem;
 };
 
 #endif // FILEPARSER_H

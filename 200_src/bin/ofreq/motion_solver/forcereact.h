@@ -122,6 +122,23 @@ public:
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
+     * @brief Adds a Derivative object to the list of derivatives.  Creates a blank derivative object.  Assumed to be
+     * the latest order of derivative in the list.
+     */
+    void addDerivative();
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Adds a Derivative object in the list of derivatives.  Sets the new objects as the input for the new
+     * derivative object.  Uses the properties of the Derivative object to set the correct index.
+     * @param derivIn The derivative object to add to the list of derivatives.
+     * @param ordIn The order of the derivative.
+     *
+     */
+    void addDerivative(Derivative derivIn, int ordIn);
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
      * @brief Returns the maximum order of the derivatives included in the force object.
      *
      * Returns the maximum order of the derivatives included in the force object.

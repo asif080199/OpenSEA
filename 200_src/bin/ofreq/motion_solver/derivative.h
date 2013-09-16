@@ -110,7 +110,7 @@ public:
      * @return Value returned is a pointer to the equation object.  Allows
      * editting of the equation object, or just data access.
      */
-    Equation &getEquation(int number);
+    Equation &refEquation(int number);
 
     //------------------------------------------Function Separator ----------------------------------------------------
 	/**

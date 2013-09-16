@@ -24,65 +24,106 @@
  *along with OpenSEA.  If not, see <http://www.gnu.org/licenses/>.
 \*-------------------------------------------------------------------------------------------------------------------*/
 
-#include "dictionary.h"
-
+#include "dictcontrol.h"
 //==========================================Section Separator =========================================================
 //Public Functions
 
 //------------------------------------------Function Separator --------------------------------------------------------
-Dictionary::Dictionary(QObject *parent) :
-    QObject(parent)
+dictControl::dictControl(): Dictionary()
 {
 }
-
-//------------------------------------------Function Separator --------------------------------------------------------
-Dictionary::Dictionary()
-{
-
-}
-
-//==========================================Section Separator =========================================================
-//Signal Functions
 
 
 //==========================================Section Separator =========================================================
-//Public Slots
-//------------------------------------------Function Separator --------------------------------------------------------
-virtual void Dictionary::setObject(ObjectGroup input)
-{
-    //Define the object based on its name
-    defineClass(input.getClassName());
+//Signals
 
-    //Create variable to catch return value
-    int returnVal;
 
-    //Proceed through each key / value pair defined for the ObjectGroup object.
-    for (unsigned int i = 0; i <= input.refListKey().size(); i++)
-    {
-        //define the key
-        returnVal = defineKey(input.getKey(i), input.getVal(i));
-        //Need to create error handler later to handle what happens if returnVal not 0
-    }
+//==========================================Section Separator =========================================================
+//Slots
 
-    //Next proceed through each of the sub classes defined for the ObjectGroup object.
-    for (unsigned int i = 0; i <= input.refListObject().size(); i++)
-    {
-        //define the class
-        returnVal = setObject(input.refListObject()[i]);
-        //Need to create error handler later to handle what happens if returnVal not 0
-    }
-}
-
-//------------------------------------------Function Separator --------------------------------------------------------
-virtual void Dictionary::setSystem(System* ptInput)
-{
-    ptSystem = ptInput;
-}
 
 //==========================================Section Separator =========================================================
 //Protected Functions
+//------------------------------------------Function Separator --------------------------------------------------------
+int dictControl::defineKey(string keyIn, vector<string> valIn)
+{
+    switch (keyIn)
+    {
+    case KEY_ANALYSIS:
+        //Set the analysis type.
+        ptSystem->setAnalysisType(valInt[0]);
 
+        //return success
+        return 0;
+        break;
+
+    case KEY_FREQUENCY:
+        //Set the wave frequencies.
+        //First convert them from strings to doubles.
+        vector<double> freqIn;
+
+        for (int i = 0; i < valIn.size(); i++)
+        {
+            //Convert value and add it to the list.
+            freqIn.push_back(atof(valIn[i].c_str()));
+        }
+
+        //Pass the information to the System object.
+        ptSystem->setWaveFrequencies(freqIn);
+
+        //return success
+        return 0;
+        break;
+
+    case KEY_DIRECTION:
+        //Set the wave directions.
+        //First convert them from strings to doubles.
+        vector<double> dirIn;
+
+        for (int i = 0; i < valIn.size(); i++)
+        {
+            //Convert the value and add it to the list.
+            dirIn.push_back(atof(valIn[i].c_str()));
+        }
+
+        //Pass the information to the System object.
+        ptSystem->setWaveDirections(dirIn);
+
+        //return success
+        return 0;
+        break;
+
+    case KEY_WAVEMODEL:
+        //Set the wave spread model
+        ptSystem->setSpreadModel(valIn);
+
+        //return success
+        return 0;
+        break;
+
+    default:
+        //Word not found.  Return error code.
+        return 1;
+        break;
+    }
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+int dictControl::defineClass(string nameIn)
+{
+    switch (nameIn)
+    {
+    case KEY_SYSTEM:
+        //Don't need to do anything for the system object.
+        //this one is so fundamental to the program that it automatically gets created at program start.
+        return 0;
+        break;
+    default:
+        //Word not found.  Return error code.
+        return 1;
+        break;
+    }
+}
 
 //==========================================Section Separator =========================================================
 //Private Functions
-

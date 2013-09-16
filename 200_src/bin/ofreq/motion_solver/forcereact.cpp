@@ -96,6 +96,14 @@ Derivative forceReact::getDerivative(int num)
 {
     //Return the derivative object specified.
 
+    //Also checks to ensure that the request will not return an out of bounds error.  If requested index
+    //is greater than current vector size, the vector size is increased.
+    if(num > pDerivative.size() - 1)
+    {
+        //resize vector
+        pDerivative.resize(num + 1);
+    }
+
     return pDerivative[num];
 }
 
@@ -105,7 +113,38 @@ Derivative &forceReact::refDerivative(int num)
     //Return the derivative object specified.
     //Value is a pointer to the derivative.
 
+    //Also checks to ensure that the request will not return an out of bounds error.  If requested index
+    //is greater than current vector size, the vector size is increased.
+    if(num > pDerivative.size() - 1)
+    {
+        //resize vector
+        pDerivative.resize(num + 1);
+    }
+
     return pDerivative[num];
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+void forceReact::addDerivative()
+{
+    //Adds a new derivative object.
+    pDerivative.push_back(Derivative());
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+void forceReact::addDerivative(Derivative derivIn, int ordIn)
+{
+    //Adds a new derivative object
+
+    //Check if the order is high enough.
+    if (ordIn > pDerivative.size() - 1)
+    {
+        //Resize vector
+        pDerivative.resize(ordIn + 1);
+    }
+
+    //Add in the new derivative.  This will overwrite any pre-existing derivatives.
+    pDerivative[ordIn] = derivIn;
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------

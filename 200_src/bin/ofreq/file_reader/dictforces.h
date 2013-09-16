@@ -8,9 +8,9 @@
 /*-------------------------------------------------------------------------------------------------------------------*\
  *Revision History
  *---------------------------------------------------------------------------------------------------------------------
- *Date          Author				Description
+ *Date          Author                  Description
  *---------------------------------------------------------------------------------------------------------------------
- *Aug 30, 2013  Nicholas Barczak    Initially created
+ *Sep 15 2013	Nicholas Barczak		Initially Created
  *
 \*-------------------------------------------------------------------------------------------------------------------*/
 
@@ -35,59 +35,72 @@
 
 //######################################### Class Separator ###########################################################
 //Put header file includes and constant variables in here.
-#ifndef DICTIONARY_H
-#define DICTIONARY_H
-
-#include <QObject>
-#include "objectgroup.h"
-#include "../global_objects/system.h"
-
-//######################################### Class Separator ###########################################################
-//Prototype class declarations
-//class System;       /** < Prototype class declaration of System object.  Allows reference to system object.*/
-
-//######################################### Class Separator ###########################################################
-//Constant variable declarations
-
+#ifndef DICTFORCES_H
+#define DICTFORCES_H
+#include <vector>
+#include <string>
+#include "dictionary.h"
+//#include "../motion_solver/forceactive.h"
+//#include "../motion_solver/forcecross.h"
+//#include "../motion_solver/forcereact.h"
+//#include "../motion_solver/derivative.h"
+//#include "../motion_solver/equation.h"
 
 //######################################### Class Separator ###########################################################
+//Prototype class defitions
+
+//######################################### Class Separator ###########################################################
+//Put constant variables in this section.
+
+//==========================================Section Separator =========================================================
+//Class Names
+const string KEY_FORCE_ACTIVE = "force_active"; /**< Keyword for force_active definition.*/
+const string KEY_FORCE_REACT = "force_reactive"; /**< Keyword for force_react class definition.*/
+const string KEY_FORCE_CROSS = "force_crossbody"; /**< Keyword for force_cross class definition.*/
+const string KEY_DERIVATIVE = "derivative"; /**< Keyword for derivative class definition. */
+const string KEY_EQUATION = "equation"; /**< Keyword for equation designation.*/
+
+//==========================================Section Separator =========================================================
+//Keyword Names
+const string KEY_NAME = "name"; /**< Keyword for the name the user assigns for a force.*/
+const string KEY_COEFF = "coeff"; /**< Keyword for coefficient designation.*/
+const string KEY_NUMBER = "number"; /**< Keyword for equation number designation. */
+const string KEY_ORDER = "order"; /**< Keyword for order of derivative designation. */
+const string KEY_FORCE = "force"; /**< Keyword for force coefficients designation.*/
+
+//######################################### Class Separator ###########################################################
+//Put this at the beginning of each class definition, right before the Doxygen formatted explanation.
+//Start doxygen documentation like this:
 /**
- * This is a virtual class definition, inheritted by each fileDictionary object.  Contains the basic functions for
- * how to recursively progress through the definitions for an ObjectGroup object that is fed in.
- * @sa ObjectGroup
+ * The dictForces class defines the key-word value pairs associated with the Forces.in input file.  Just as a normal
+ * dictionary defines the meaning of words, the dictForces class works in the same way.  The dictForces class takes
+ * individual pairs of keywords and values.  It has a definition for each of these keywords.  The definition is
+ * whatever actions are necessary to process the value of key-pair and apply it to the program.  This may include
+ * variable type conversions.  It will also use slots and signals to retrieve pointers to any appropriate objects that
+ * the dictForces object needs to interact with.  It will use the properties of those objects to apply the values
+ * it finds in the key-value pair.  Any objects created in the dictForces class can be safely deleted once all file
+ * reading is done.
+ *
+ * Note:  The code for the dictForces object always references the last object in the list.  This assumes that no
+ * other commands get issued in the input file between the creation of an object and the definition of key-value
+ * pairs associated with that object.  Currently, I can not imagine any situation where this assumption would be
+ * violated.  But do consider this when planning error recovery methods.
+ * @sa Dictionary
+ * @sa FileReader
  */
-
-class Dictionary : public QObject
+class dictForces: public Dictionary
 {
     Q_OBJECT
 
 //==========================================Section Separator =========================================================
 public:
-    //------------------------------------------Function Separator ----------------------------------------------------
-    explicit Dictionary(QObject *parent = 0);
-
-    //------------------------------------------Function Separator ----------------------------------------------------
-    Dictionary();
+    dictForces();
 
 //==========================================Section Separator =========================================================
 signals:
 
-
 //==========================================Section Separator =========================================================
 public slots:
-    //------------------------------------------Function Separator ----------------------------------------------------
-    /**
-     * @brief Public signal for the ObjectGroup object that is sent to the Dictionary object for procesing.
-     * @param input The ObjectGroup object that contains the class definitions.  Variable passed by value.
-     */
-    virtual void setObject(ObjectGroup input);
-
-    //------------------------------------------Function Separator ----------------------------------------------------
-    /**
-     * @brief Sets the system object for the dictionary to reference.
-     * @param ptSystem Pointer to the System object.  Variable passed by value.
-     */
-    virtual void setSystem(System* ptInput);
 
 //==========================================Section Separator =========================================================
 protected:
@@ -99,7 +112,7 @@ protected:
      * @param valIn Vector of strings containing the key values.  Variable passed by value.
      * @return Returns 0 if definition found.  Returns 1 if no definition found.
      */
-    virtual int defineKey(string keyIn, vector<string> valIn);
+    int defineKey(string keyIn, vector<string> valIn);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -109,16 +122,46 @@ protected:
      * @param nameIn String, variable passed by value.  The name of the class name.
      * @return Returns 0 if definition found.  Returns 1 if no definition found.
      */
-    virtual int defineClass(string nameIn);
+    int defineClass(string nameIn);
 
 //==========================================Section Separator =========================================================
-private:
+private:  
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
-     * @brief Pointer to the System object.  Used to reference any important variables in the System object.
+     * @brief Integer variable.  Can take on an integer from 1 to 3.  This is how the dictionary remembers which type
+     * of force object was created.  Valid values are:
+     * 0:  Variable not set
+     * 1:  forceActive_user
+     * 2:  forceReact_user
+     * 3:  forceCross_user
      */
-    System* ptSystem;
-    
+    int pForceType;
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Index of last force currently being used.
+     * Any value less than zero means variable not set.
+     */
+    int pForceIndex;
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Order of the derivative object with properties currently assigned.
+     * Any value less than 0 means variable not set.
+     */
+    int pOrd;
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Integer which specified the current equation to add properties for.
+     */
+    int pEqn;
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    void setEquation();
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    void setDerivative();
 };
 
-#endif // DICTIONARY_H
+#endif // DICTFORCES_H

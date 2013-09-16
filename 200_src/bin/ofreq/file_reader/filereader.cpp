@@ -30,7 +30,7 @@
 //Public Functions
 
 //------------------------------------------Function Separator --------------------------------------------------------
-FileReader::FileParser()
+FileReader::FileReader()
 {
 }
 
@@ -173,6 +173,12 @@ int FileReader::readHydroFile(string path)
 {
     //Read hydrodynamic input file
     return readFile(path);
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+void FileReader::setSystem(System* ptInput)
+{
+    ptSystem = ptInput;
 }
 
 //==========================================Section Separator =========================================================

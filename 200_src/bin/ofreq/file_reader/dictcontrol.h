@@ -8,9 +8,9 @@
 /*-------------------------------------------------------------------------------------------------------------------*\
  *Revision History
  *---------------------------------------------------------------------------------------------------------------------
- *Date          Author				Description
+ *Date          Author                  Description
  *---------------------------------------------------------------------------------------------------------------------
- *Aug 30, 2013  Nicholas Barczak    Initially created
+ *Sep 15 2013	Nicholas Barczak		Initially Created
  *
 \*-------------------------------------------------------------------------------------------------------------------*/
 
@@ -35,59 +35,54 @@
 
 //######################################### Class Separator ###########################################################
 //Put header file includes and constant variables in here.
-#ifndef DICTIONARY_H
-#define DICTIONARY_H
-
-#include <QObject>
-#include "objectgroup.h"
-#include "../global_objects/system.h"
-
-//######################################### Class Separator ###########################################################
-//Prototype class declarations
-//class System;       /** < Prototype class declaration of System object.  Allows reference to system object.*/
+#ifndef DICTCONTROL_H
+#define DICTCONTROL_H
+#include <vector>
+#include <string>
+#include "dictionary.h"
 
 //######################################### Class Separator ###########################################################
-//Constant variable declarations
+//Put constant variables in this section.
 
+//==========================================Section Separator =========================================================
+//Class Names
+const string KEY_SYSTEM = "system"; /**< Keyword for system object.*/
+
+//==========================================Section Separator =========================================================
+//Keyword Value Pairs
+const string KEY_ANALYSIS = "analysis"; /**< Keyword for analysis specification */
+const string KEY_FREQUENCY = "frequency"; /**< Keyword for frequency specification */
+const string KEY_DIRECTION = "direction"; /**< Keyword for direction list specification. */
+const string KEY_WAVEMODEL = "wavemodel"; /**< Keyword for wave model specification. */
 
 //######################################### Class Separator ###########################################################
+//Put this at the beginning of each class definition, right before the Doxygen formatted explanation.
+//Start doxygen documentation like this:
 /**
- * This is a virtual class definition, inheritted by each fileDictionary object.  Contains the basic functions for
- * how to recursively progress through the definitions for an ObjectGroup object that is fed in.
- * @sa ObjectGroup
+ * The dictControl class defines the key-word value pairs associated with the Control.in input file.  Just as a normal
+ * dictionary defines the meaning of words, the dictControl class works in the same way.  The dictControl class takes
+ * individual pairs of keywords and values.  It has a definition for each of these keywords.  The definition is
+ * whatever actions are necessary to process the value of key-pair and apply it to the program.  This may include
+ * variable type conversions.  It will also use slots and signals to retrieve pointers to any appropriate objects that
+ * the dictControl object needs to interact with.  It will use the properties of those objects to apply the values
+ * it finds in the key-value pair.  Any objects created in the dictControl object can be safely deleted once all file
+ * reading is done.
+ * @sa Dictionary
+ * @sa FileReader
  */
 
-class Dictionary : public QObject
+class dictControl: public Dictionary
 {
     Q_OBJECT
 
 //==========================================Section Separator =========================================================
 public:
-    //------------------------------------------Function Separator ----------------------------------------------------
-    explicit Dictionary(QObject *parent = 0);
-
-    //------------------------------------------Function Separator ----------------------------------------------------
-    Dictionary();
-
+    dictControl();
 //==========================================Section Separator =========================================================
 signals:
 
-
 //==========================================Section Separator =========================================================
 public slots:
-    //------------------------------------------Function Separator ----------------------------------------------------
-    /**
-     * @brief Public signal for the ObjectGroup object that is sent to the Dictionary object for procesing.
-     * @param input The ObjectGroup object that contains the class definitions.  Variable passed by value.
-     */
-    virtual void setObject(ObjectGroup input);
-
-    //------------------------------------------Function Separator ----------------------------------------------------
-    /**
-     * @brief Sets the system object for the dictionary to reference.
-     * @param ptSystem Pointer to the System object.  Variable passed by value.
-     */
-    virtual void setSystem(System* ptInput);
 
 //==========================================Section Separator =========================================================
 protected:
@@ -99,7 +94,7 @@ protected:
      * @param valIn Vector of strings containing the key values.  Variable passed by value.
      * @return Returns 0 if definition found.  Returns 1 if no definition found.
      */
-    virtual int defineKey(string keyIn, vector<string> valIn);
+    int defineKey(string keyIn, vector<string> valIn);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -109,16 +104,10 @@ protected:
      * @param nameIn String, variable passed by value.  The name of the class name.
      * @return Returns 0 if definition found.  Returns 1 if no definition found.
      */
-    virtual int defineClass(string nameIn);
+    int defineClass(string nameIn);
 
 //==========================================Section Separator =========================================================
 private:
     //------------------------------------------Function Separator ----------------------------------------------------
-    /**
-     * @brief Pointer to the System object.  Used to reference any important variables in the System object.
-     */
-    System* ptSystem;
-    
 };
-
-#endif // DICTIONARY_H
+#endif // DICTCONTROL_H

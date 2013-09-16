@@ -65,8 +65,14 @@ vector<Equation> &Derivative::Equations()
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-Equation &Derivative::getEquation(int number)
+Equation &Derivative::refEquation(int number)
 {
+    //Check to see if the equation is out of bounds.  If so, resize vector.
+    if (number > pEquationList.size() - 1)
+    {
+        pEquationList.resize(number + 1);
+    }
+
     //Return pointer to the specified equation.
     return pEquationList[number];
 }
