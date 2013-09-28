@@ -8,9 +8,9 @@
 /*-------------------------------------------------------------------------------------------------------------------*\
  *Revision History
  *---------------------------------------------------------------------------------------------------------------------
- *Date          Author                  Description
+ *Date		Author				Description
  *---------------------------------------------------------------------------------------------------------------------
- *Sep 15 2013	Nicholas Barczak		Initially Created
+ *Mar 09 2013	Nicholas Barczak		Initially Created
  *
 \*-------------------------------------------------------------------------------------------------------------------*/
 
@@ -35,44 +35,38 @@
 
 //######################################### Class Separator ###########################################################
 //Put header file includes and constant variables in here.
-#ifndef DICTFORCES_H
-#define DICTFORCES_H
-#include <vector>
-#include <string>
+#ifndef DICTBODIES_H
+#define DICTBODIES_H
 #include "dictionary.h"
 
 using namespace std;
 
 //######################################### Class Separator ###########################################################
-//Prototype class defitions
-
-//######################################### Class Separator ###########################################################
-//Put this at the beginning of each class definition, right before the Doxygen formatted explanation.
-//Start doxygen documentation like this:
 /**
- * The dictForces class defines the key-word value pairs associated with the Forces.in input file.  Just as a normal
- * dictionary defines the meaning of words, the dictForces class works in the same way.  The dictForces class takes
+ * The dictBodies class defines the key-word value pairs associated with the Bodies.in input file.  Just as a normal
+ * dictionary defines the meaning of words, the dictBodies class works in the same way.  The dictBodies class takes
  * individual pairs of keywords and values.  It has a definition for each of these keywords.  The definition is
  * whatever actions are necessary to process the value of key-pair and apply it to the program.  This may include
  * variable type conversions.  It will also use slots and signals to retrieve pointers to any appropriate objects that
- * the dictForces object needs to interact with.  It will use the properties of those objects to apply the values
- * it finds in the key-value pair.  Any objects created in the dictForces class can be safely deleted once all file
+ * the dictBodies object needs to interact with.  It will use the properties of those objects to apply the values
+ * it finds in the key-value pair.  Any objects created in the dictBodies class can be safely deleted once all file
  * reading is done.
  *
- * Note:  The code for the dictForces object always references the last object in the list.  This assumes that no
+ * Note:  The code for the dictBodies object always references the last object in the list.  This assumes that no
  * other commands get issued in the input file between the creation of an object and the definition of key-value
  * pairs associated with that object.  Currently, I can not imagine any situation where this assumption would be
  * violated.  But do consider this when planning error recovery methods.
  * @sa Dictionary
  * @sa FileReader
  */
-class dictForces: public Dictionary
+class dictBodies: public Dictionary
 {
     Q_OBJECT
 
-//==========================================Section Separator =========================================================
+    //==========================================Section Separator =========================================================
 public:
-    dictForces();
+    //------------------------------------------Function Separator ----------------------------------------------------
+    dictBodies();
 
 //==========================================Section Separator =========================================================
 signals:
@@ -111,7 +105,7 @@ protected:
     int defineClass(string nameIn);
 
 //==========================================Section Separator =========================================================
-private:  
+private:
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
      * @brief Integer variable.  Can take on an integer from 1 to 3.  This is how the dictionary remembers which type
@@ -132,16 +126,43 @@ private:
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
-     * @brief Order of the derivative object with properties currently assigned.
-     * Any value less than 0 means variable not set.
+     * @brief Records the index of the last force within the Body object.  This is because there is the global list of
+     * forces recorded in the System object.  And then the local list of forces explicitely used in the Body object.
+     * @sa Body
+     * @sa System
      */
-    int pOrd;
+    int pForceBodyIndex;
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
-     * @brief Integer which specified the current equation to add properties for.
+     * @brief Records the index of the current Body object.
      */
-    int pEqn;
+    int pBody;
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Records if the MassProp object is currently active.  This tracks how many mass properties have been
+     * entered.  Toggles each element in the array as true when the key is entered.  Used if any future features
+     * need to track if a KEY property has been set.  Array values are as follows:
+     * [0]:  KEY_MASS
+     * [1]:  KEY_IXX
+     * [2]:  KEY_IYY
+     * [3]:  KEY_IZZ
+     * [4]:  KEY_IXY
+     * [5]:  KEY_IXZ
+     * [6]:  KEY_IYZ
+     */
+    bool pMassProp[7];
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Records if the COG properties have been set.  Each element in the array is a different COG property.
+     * Used if any future features need to track if a KEY property has been set.  Properties are recorded as follows:
+     * [0]:  KEY_COGX
+     * [1]:  KEY_COGY
+     * [2]:  KEY_COGZ
+     */
+    bool pCOG[3];
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -153,39 +174,33 @@ private:
     void setForceIndex(int forceIn = -1);
 
     //------------------------------------------Function Separator ----------------------------------------------------
-    /**
-     * @brief This sets the integer variable pEqn to specify the current equation that object properties
-     * will be assigned under.  If no input is provided, the function finds the index of the last equation + 1.
-     * @param eqIn The input for the index of the equation.  Default input is -1, which triggers the function to
-     * find the index of the last equation in the list + 1.  Variable is passed by value.
-     */
-    void setEquation(int eqIn = -1);
+    //Class Name constants
+    static const string OBJECT_BODY; /**< Object designator for new body object.*/
+    static const string OBJECT_MASSPROP; /**< Object designator for new mass property object. */
+    static const string OBJECT_CENTROID; /**< Object designator for new centroid object. */
+    static const string OBJECT_FORCE_ACTIVE; /**< Object designator for new ForceActive object. */
+    static const string OBJECT_FORCE_REACT; /**< Object designator for new ForceReact object. */
+    static const string OBJECT_FORCE_CROSS; /**< Object designator for new ForceCross object. */
+    static const string OBJECT_MODEL; /**< Object designator for model of ForceCross object. */
 
     //------------------------------------------Function Separator ----------------------------------------------------
-    /**
-     * @brief This sets the integer variable pOrd to specify the order of the current derivative that objects will
-     * be created under.  If no input is provided, the function finds the current highest order of derivative + 1.
-     * @param ordIn The input for the order of the derivative.  Default input is -1, which triggers the function to
-     * find the current highest order of the derivative + 1.  Variable is passed by value.
-     */
-    void setDerivative(int ordIn = -1);
-
-    //------------------------------------------Function Separator ----------------------------------------------------
-    //Class Names
-    const static string OBJECT_FORCE_ACTIVE; /**< Keyword for force_active definition.*/
-    const static string OBJECT_FORCE_REACT; /**< Keyword for force_react class definition.*/
-    const static string OBJECT_FORCE_CROSS; /**< Keyword for force_cross class definition.*/
-    const static string OBJECT_DERIVATIVE; /**< Keyword for derivative class definition. */
-    const static string OBJECT_EQUATION; /**< Keyword for equation designation.*/
-
-    //------------------------------------------Function Separator ----------------------------------------------------
-    //Keyword Names
-    const static string KEY_NAME; /**< Keyword for the name the user assigns for a force.*/
-    const static string KEY_COEFF; /**< Keyword for coefficient designation.*/
-    const static string KEY_NUMBER; /**< Keyword for equation number designation. */
-    const static string KEY_ORDER; /**< Keyword for order of derivative designation. */
-    const static string KEY_FORCE; /**< Keyword for force coefficients designation.*/
-    const static string KEY_EQUATION; /**< Keyword for equation designation.*/
+    //Keyword name static constants
+    static const string KEY_NAME; /**< Key for body name */
+    static const string KEY_HYDROBODY; /**< Key for hydrobody name. */
+    static const string KEY_MASS; /**< Key for mass of body */
+    static const string KEY_IXX; /**< Key for moment of inertia, X-X axis */
+    static const string KEY_IYY; /**< Key for moment of inertia, Y-Y axis */
+    static const string KEY_IZZ; /**< Key for moment of inertia, Z-Z axis */
+    static const string KEY_IXY; /**< Key for cross-product of inertia, X-Y coupling */
+    static const string KEY_IXZ; /**< Key for cross-product of inertia, X-Z coupling */
+    static const string KEY_IYZ; /**< Key for cross-product of inertia, Y-Z coupling */
+    static const string KEY_COGX; /**< Key for center of gravity, X-axis coordinate */
+    static const string KEY_COGY; /**< Key for center of gravity, Y-axis coordinate */
+    static const string KEY_COGZ; /**< Key for center of gravity, Z-axis coordinate */
+    static const string KEY_HEADING; /**< Key for heading of body, Z-axis rotation */
+    static const string KEY_MOTION; /**< Key to specify motion model.*/
+    static const string KEY_LINKEDBODY; /**< Key for linked body */
+    static const string KEY_MODEL; /**< Key for model to use for force specification. */
 };
 
-#endif // DICTFORCES_H
+#endif // DICTBODIES_H

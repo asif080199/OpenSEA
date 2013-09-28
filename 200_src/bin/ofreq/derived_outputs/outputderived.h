@@ -45,16 +45,15 @@
 #elif defined Q_OS_LINUX
     #include <armadillo>    //Armadillo library included with standard system libraries.
 #endif
-//#include "../motion_solver/body.h"
-//#include "../global_objects/listsolution.h"
+#include "../motion_solver/body.h"
+//#include "../global_objects/solutionset.h"
 
 using namespace std;
 using namespace arma;
 
 //######################################### Class Separator ###########################################################
 //Forward declarations to keep the compiler happy.
-class Body;
-class listSolution;
+class SolutionSet;
 
 //######################################### Class Separator ###########################################################
 /**
@@ -137,30 +136,38 @@ public:
      * @brief Returns the list of body objects.  Only a c++ reference to the list of body objects.
      * @return Returns reference to the list of Body objects.  Variable passed by reference.
      */
-    vector<Body> &getlistBody();
+    vector<Body> &listBody();
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Returns a reference to an individual Body in the list of Body objects.
+     * @param bodIn The integer index of the body you wish to retrieve from the list of Body objects.
+     * @return Returns the Body object requested.  Returned variable is passed by reference.
+     */
+    Body &refBody(int bodIn);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
      * @brief Sets the list of Body objects.
      * @param Input THe list of Body objects.  Variable passed by reference.
      */
-    void setlistBody(vector<Body> &Input);
+    void setListBody(vector<Body> &Input);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
-     * @brief Returns a vector of listSolution objects.
-     * @return Returns a vector of listSolution objects.  Internal storage is just a set of pointers to the object.
+     * @brief Returns a vector of SolutionSet objects.
+     * @return Returns a vector of SolutionSet objects.  Internal storage is just a set of pointers to the object.
      * Variable is passed by reference.
      */
-    vector<listSolution> &getlistSolution();
+    vector<SolutionSet> &refSolutionSet();
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
      * @brief Sets the list of solutions.
-     * @param Input The vector list of listSolution objects.  Variable is passed by reference.  Variable is stored
+     * @param Input The vector list of SolutionSet objects.  Variable is passed by reference.  Variable is stored
      * internally as a pointer.
      */
-    void setlistSolution(vector<listSolution>& Input);
+    void setSolutionSet(vector<SolutionSet> &Input);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -168,7 +175,7 @@ public:
      * @return Returns the list of wave frequencies.  Variable is passed by reference.  Variable is stored internally
      * as a pointer.
      */
-    vector<double> &getlistFreq();
+    vector<double> &listFreq();
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -176,7 +183,7 @@ public:
      * @param Input The list of wave frequencies.  Variable is passed by reference.  Variable is stored internally as
      * a pointer.
      */
-    void setlistFreq(vector<double>& Input);
+    void setListFreq(vector<double>& Input);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -185,7 +192,7 @@ public:
      * @return Returns the vector of doubles containing the wave directions.  Variable passed by reference.  Variable
      * is stored internally as a pointer.
      */
-    vector<double> &getlistWaveDir();
+    vector<double> &listWaveDir();
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -194,7 +201,7 @@ public:
      * @param Input The vector of doubles containing the wave directions.  Variable is passed by reference.  Variable
      * is stored internally as a pointer.
      */
-    void setlistWaveDir(vector<double>& Input);
+    void setListWaveDir(vector<double>& Input);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -247,9 +254,9 @@ protected:
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
-     * @brief The vector list of listSolution objects.
+     * @brief The vector list of SolutionSet objects.
      */
-    vector<listSolution>* plistSolution;
+    vector<SolutionSet>* plistSolution;
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**

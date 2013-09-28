@@ -53,18 +53,15 @@ using namespace std;
  * The forces from the Cross-body force owned by Body A are dependant on the motions of another body.
  */
 
-class forceCross: public forceReact
+class ForceCross: public ForceReact
 {
 //==========================================Section Separator =========================================================
 public:
     //------------------------------------------Function Separator ----------------------------------------------------
-    forceCross(); /**< This default constructor creates a Body object. */
+    ForceCross(); /**< This default constructor creates a Body object. */
 
     //------------------------------------------Function Separator ----------------------------------------------------
-    ~forceCross(); /**< The default destructor, nothing happens here. */
-
-    //------------------------------------------Function Separator ----------------------------------------------------
-	void testPrint(); /**< Test print to console the values of all data members. */
+    ~ForceCross(); /**< The default destructor, nothing happens here. */
 
 //==========================================Section Separator =========================================================
 protected:

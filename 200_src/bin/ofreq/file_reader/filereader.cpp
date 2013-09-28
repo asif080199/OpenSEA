@@ -32,11 +32,43 @@
 //------------------------------------------Function Separator --------------------------------------------------------
 FileReader::FileReader()
 {
+    //------------------------------------------Function Separator ----------------------------------------------------
+    // Directory Names
+    SYS = "system"; /**< The system directory name */
+    CONST = "constant"; /**< The constant directory name */
+    #ifdef Q_OS_WIN
+        SLASH = "\"";  /**< Directory separator in a string path., windows version**/
+    #elif defined Q_OS_LINUX
+        SLASH = "/";   /**< Directory separator in a string path., linux version**/
+    #endif
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    // Input File Names
+    CONTROL = "control.in"; /**< The filename for the control file. */
+    BODIES = "bodies.in"; /**< The filename for the bodies control file. */
+    DATA = "data.in"; /**< The filename for the data control file. */
+    FORCES = "forces.in"; /**< The filename for the forces control file. */
+    SEAENV = "seaenv.in"; /**< The filename for the sea environment control file. */
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    // Class Name Designators
+    OBJ_SEAFILE = "seafile"; /**< The string designation for a sea file object. */
+    OBJ_SYSTEM = "system"; /**< The string designation for a system object. */
+    OBJ_HYDROFILE = "hydrofiles"; /**< The string designation for a hydrofile object. */
+    OBJ_FORCE_ACTIVE = "force_active"; /**< The string designation for an active force object. */
+    OBJ_FORCE_REACT = "force_reactive"; /**< The string designation for a reactive force object. */
+    OBJ_FORCE_CROSS = "force_crossbody"; /**< The string designation for a cross-body force object.*/
+
+    // ---------------------------------
+    // Key Value Pair Designators
+    KEY_FORMAT = "format";  /**< The key designator for a format value in the seafile object. */
+    KEY_VERSION = "version"; /**< The key designator for a version value in the seafile object. */
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
 FileReader(string Path)
 {
+    FileReader();
     this->setPath(Path);
 }
 
@@ -68,7 +100,7 @@ int FileReader::readControl()
     return readFile(filename);
 
     //Emit signal of objects that were read
-    for (int i = 0; i < plistObjects.size(); i++)
+    for (unsigned int i = 0; i < plistObjects.size(); i++)
     {
         emit outputControlFile(plistObjects[i]);
     }
@@ -90,7 +122,7 @@ int FileReader::readBodies()
     return readFile(filename);
 
     //Emit signal of objects that were read
-    for (int i = 0; i < plistObjects.size(); i++)
+    for (unsigned int i = 0; i < plistObjects.size(); i++)
     {
         emit outputBodiesFile(plistObjects[i]);
     }
@@ -112,7 +144,7 @@ int FileReader::readForces()
     return readFile(filename);
 
     //Emit signal of objects that were read
-    for (int i = 0; i < plistObjects.size(); i++)
+    for (unsigned int i = 0; i < plistObjects.size(); i++)
     {
         emit outputForcesFile(plistObjects[i]);
     }
@@ -134,7 +166,7 @@ int FileReader::readSeaEnv()
     return readFile(filename);
 
     //Emit signal of objects that were read
-    for (int i = 0; i < plistObjects.size(); i++)
+    for (unsigned int i = 0; i < plistObjects.size(); i++)
     {
         emit outputSeaEnvFile(plistObjects[i]);
     }
@@ -156,7 +188,7 @@ int FileReader::readData()
     return readFile(filename);
 
     //Emit signal of objects that were read
-    for (int i = 0; i < plistObjects.size(); i++)
+    for (unsigned int i = 0; i < plistObjects.size(); i++)
     {
         emit outputDataFile(plistObjects[i]);
     }
@@ -219,7 +251,7 @@ int FileReader::readFile(string path)
         if (myParse.refObject()[sea_index].getClassName() == OBJ_SEAFILE)
         {
             //True.  Process as a seafile object.
-            for (int j = 0; j < myParse.refObject().at(sea_index).refListKey().size(); j++)
+            for (unsigned int j = 0; j < myParse.refObject().at(sea_index).listKey().size(); j++)
             {
                 switch (myParse.refObject().at(sea_index).getKey(j))
                 {

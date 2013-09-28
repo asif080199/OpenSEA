@@ -24,23 +24,23 @@
  *along with OpenSEA.  If not, see <http://www.gnu.org/licenses/>.
 \*-------------------------------------------------------------------------------------------------------------------*/
 
-#include "matactiveforce.h"
+#include "matforceactive.h"
 
 //------------------------------------------Function Separator --------------------------------------------------------
-matActiveForce::matActiveForce()
+matForceActive::matForceActive()
 {
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-matActiveForce::~matActiveForce()
+matForceActive::~matForceActive()
 {
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-matActiveForce matActiveForce::operator+(const matActiveForce &forceOther)
+matForceActive matForceActive::operator+(const matForceActive &forceOther)
 {
     //Add two force objects together.
-    matActiveForce output;
+    matForceActive output;
 
     //Find max size
     int maxsize;
@@ -54,7 +54,7 @@ matActiveForce matActiveForce::operator+(const matActiveForce &forceOther)
     output.pCoeff.zeros(maxsize,1);
 
     //Iterate through matrix and add the two together.
-    for (int i = 0; i < pCoeff.n_rows; i++)
+    for (unsigned int i = 0; i < pCoeff.n_rows; i++)
     {
         output.pCoeff(i,1) = pCoeff(i,1) + forceOther.pCoeff(i,1);
     }
@@ -68,10 +68,10 @@ matActiveForce matActiveForce::operator+(const matActiveForce &forceOther)
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-matActiveForce matActiveForce::operator-(const matActiveForce &forceOther)
+matForceActive matForceActive::operator-(const matForceActive &forceOther)
 {
     //Add two force objects together.
-    matActiveForce output;
+    matForceActive output;
 
     //Find max size
     int maxsize;
@@ -85,7 +85,7 @@ matActiveForce matActiveForce::operator-(const matActiveForce &forceOther)
     output.pCoeff.zeros(maxsize,1);
 
     //Iterate through matrix and add the two together.
-    for (int i = 0; i < pCoeff.n_rows; i++)
+    for (unsigned int i = 0; i < pCoeff.n_rows; i++)
     {
         output.pCoeff(i,1) = pCoeff(i,1) - forceOther.pCoeff(i,1);
     }
@@ -99,25 +99,25 @@ matActiveForce matActiveForce::operator-(const matActiveForce &forceOther)
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-cx_mat &matActiveForce::Coefficients()
+cx_mat &matForceActive::listCoefficients()
 {
     return pCoeff;
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-void matActiveForce::setId(int num)
+void matForceActive::setId(int num)
 {
     pId = num;
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-int matActiveForce::getId()
+int matForceActive::getId()
 {
     return pId;
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-int matActiveForce::getMatSize()
+int matForceActive::getMatSize()
 {
     return pCoeff.n_rows;
 }

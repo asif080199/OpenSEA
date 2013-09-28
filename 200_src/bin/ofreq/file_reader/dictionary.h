@@ -41,13 +41,15 @@
 #include <QObject>
 #include "objectgroup.h"
 #include "../global_objects/system.h"
+#include <complex>
+#include <vector>
+#include <string>
+
+using namespace std;
 
 //######################################### Class Separator ###########################################################
 //Prototype class declarations
 //class System;       /** < Prototype class declaration of System object.  Allows reference to system object.*/
-
-//######################################### Class Separator ###########################################################
-//Constant variable declarations
 
 
 //######################################### Class Separator ###########################################################
@@ -97,7 +99,11 @@ protected:
      * corresponding actions to take for interpretting each key value.
      * @param keyIn String containing the key name.  Variable passed by value.
      * @param valIn Vector of strings containing the key values.  Variable passed by value.
-     * @return Returns 0 if definition found.  Returns 1 if no definition found.
+     * @return Returns status of assigning key.  Returned value is an integer, passed by value.
+     * See list of return codes below:
+     * 0:  Key definition found.  Success.
+     * 1:  No key found. / General error message.
+     * 2:  Key is invalid within current active object.
      */
     virtual int defineKey(string keyIn, vector<string> valIn);
 
@@ -107,9 +113,27 @@ protected:
      * a new object of the class named by the class name.  This is a separate set of definitions to handle class
      * declarations.
      * @param nameIn String, variable passed by value.  The name of the class name.
-     * @return Returns 0 if definition found.  Returns 1 if no definition found.
+     * @return Returns status of assigning key.  Returned value is an integer, passed by value.
+     * See list of return codes below:
+     * 0:  Key definition found.  Success.
+     * 1:  No key found. / General error message.
+     * 2:  Key is invalid within current active object.
      */
     virtual int defineClass(string nameIn);
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Converts a string of a complex number into a complex object (double base type) i.e. complex<double>.
+     * @param input The string which holds the complex number.  Valid input formats are:
+     * 1.00+1.00i
+     * 1.00-1.00i
+     * 1.00+i1.00
+     * 1.00-i1.00
+     * 1.414<0.785398 (angle must be in radians)
+     * 1.414<-0.785398 (angle must be in radians)
+     * @return Returns a complex<double> object.  Variable passed by value.
+     */
+    complex<double> convertComplex(string input);
 
 //==========================================Section Separator =========================================================
 private:

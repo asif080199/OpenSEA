@@ -60,43 +60,43 @@ int matBody::getModelId()
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-cx_mat &matBody::Mass()
+cx_mat &matBody::refMass()
 {
     return pMass;
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-vector<matReactForce> &matBody::listReactForce_user()
+vector<matForceReact> &matBody::listForceReact_user()
 {
-    return plistReactForce_user;
+    return plistForceReact_user;
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-vector<matCrossForce> &matBody::listCrossForce_user()
+vector<matForceCross> &matBody::listForceCross_user()
 {
-    return plistCrossForce_user;
+    return plistForceCross_user;
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-vector<matActiveForce> &matBody::listActiveForce_user()
+vector<matForceActive> &matBody::listForceActive_user()
 {
-    return plistActiveForce_user
+    return plistForceActive_user;
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-vector<matReactForce> &matBody::listReactForce_hydro()
+vector<matForceReact> &matBody::listForceReact_hydro()
 {
-    return plistReactForce_hydro;
+    return plistForceReact_hydro;
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-vector<matCrossForce> &matBody::listCrossForce_hydro()
+vector<matForceCross> &matBody::listForceCross_hydro()
 {
-    return plistCrossForce_hydro;
+    return plistForceCross_hydro;
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-vector<matActiveForce> &matBody::listActiveForce_hydro()
+vector<matForceActive> &matBody::listForceActive_hydro()
 {
-    return plistActiveForce_hydro
+    return plistForceActive_hydro;
 }

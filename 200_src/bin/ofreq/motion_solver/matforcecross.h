@@ -38,7 +38,7 @@
 //######################################### Class Separator ###########################################################
 #ifndef MATCROSSFORCE_H
 #define MATCROSSFORCE_H
-#include "matreactforce.h"
+#include "matforcereact.h"
 #include "matbody.h"
 #include <vector>
 #include <complex>
@@ -53,7 +53,7 @@ using namespace arma;
 using namespace std;
 
 //######################################### Class Separator ###########################################################
-//Createa a forward declaration of class matBody to keep the compiler happy.
+//Create a forward declaration of class matBody to keep the compiler happy.
 //The full definition for class matBody happens later in file matbody.h.
 class matBody;
 
@@ -64,7 +64,7 @@ class matBody;
  *difference is that this class includes an additional property for the connected body.
  */
 
-class matCrossForce: public matReactForce
+class matForceCross: public matForceReact
 {
 //==========================================Section Separator =========================================================
 public:
@@ -72,7 +72,7 @@ public:
     /**
      * The default constructor
      */
-    matCrossForce();
+    matForceCross();
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -82,43 +82,43 @@ public:
      * in the vector are order in sequence of increasing order of derivative. (index 0 = derivative order 0.)
      * @param forceIn The list of forces.
      */
-    matCrossForce(vector<cx_mat> forceIn);
+    matForceCross(vector<cx_mat> forceIn);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
      * The default destructor.  Nothing happens here.
      */
-    ~matCrossForce();
+    ~matForceCross();
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
-     * @brief Operator overload to add two matCrossForce objects together.
+     * @brief Operator overload to add two matForceCross objects together.
      *
-     * This overloads the + operator to add two matCrossForce objects together.  Functions are added on a per-derivative
+     * This overloads the + operator to add two matForceCross objects together.  Functions are added on a per-derivative
      * basis.  The function recognizes the derivative matrices contained within each object.  Only derivatives of the
      * same order are added together.  The function also checks the linked body parameter.  Only objects with the
      * same linked body are added together.
-     * @param forceOther The other objects of type matCrossForce that will be added.
-     * @return Returns an object of type matCrossForce.  The new object will contain the same order of derivatives as
+     * @param forceOther The other objects of type matForceCross that will be added.
+     * @return Returns an object of type matForceCross.  The new object will contain the same order of derivatives as
      * the highest derivative of the two added functions.
      */
-    matCrossForce operator+(const matCrossForce& forceOther);
+    matForceCross operator+(const matForceCross& forceOther);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
-     * @brief Operator overload to subtract two matCrossForce objects together.
+     * @brief Operator overload to subtract two matForceCross objects together.
      *
-     * This overloads the - operator to subtract two matCrossForce objects together.  Functions are subtracted on a
+     * This overloads the - operator to subtract two matForceCross objects together.  Functions are subtracted on a
      * per-derivative basis.  The function recognizes the derivative matrices contained within each object.
      * Only derivatives of the same order are subtracted together.  Order of operations does matter.
      * The function also checks the linked body parameter.  Only objects with the
      * same linked body are added together.
-     * @param forceOther The other objects of type matCrossForce that will be subtracted.  forceOther is always
+     * @param forceOther The other objects of type matForceCross that will be subtracted.  forceOther is always
      * subtracted from the calling object.
-     * @return Returns an object of type matCrossForce.  The new object will contain the same order of derivatives as
+     * @return Returns an object of type matForceCross.  The new object will contain the same order of derivatives as
      * the highest derivative of the two subtracted functions.
      */
-    matCrossForce operator-(const matCrossForce& forceOther);
+    matForceCross operator-(const matForceCross& forceOther);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -165,7 +165,7 @@ public:
      * @return Returns a vector of two integers specifying size of matrix.  First output is number of rows. Second
      * output is number of columns.
      */
-    vector<int> getmatDims();
+    vector<int> getMatDims();
 
 //==========================================Section Separator =========================================================
 protected:

@@ -32,6 +32,22 @@
 //------------------------------------------Function Separator --------------------------------------------------------
 dictForces::dictForces()
 {
+    //------------------------------------------Function Separator ----------------------------------------------------
+    //Class Names
+    OBJECT_FORCE_ACTIVE = "force_active"; /**< Keyword for force_active definition.*/
+    OBJECT_FORCE_REACT = "force_reactive"; /**< Keyword for force_react class definition.*/
+    OBJECT_FORCE_CROSS = "force_crossbody"; /**< Keyword for force_cross class definition.*/
+    OBJECT_DERIVATIVE = "derivative"; /**< Keyword for derivative class definition. */
+    OBJECT_EQUATION = "equation"; /**< Keyword for equation designation.*/
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    //Keyword Names
+    KEY_NAME = "name"; /**< Keyword for the name the user assigns for a force.*/
+    KEY_COEFF = "coeff"; /**< Keyword for coefficient designation.*/
+    KEY_NUMBER = "number"; /**< Keyword for equation number designation. */
+    KEY_ORDER = "order"; /**< Keyword for order of derivative designation. */
+    KEY_FORCE = "force"; /**< Keyword for force coefficients designation.*/
+    KEY_EQUATION = "equation"; /**< Keyword for equation designation.*/
 }
 
 //==========================================Section Separator =========================================================
@@ -46,7 +62,119 @@ dictForces::dictForces()
 //------------------------------------------Function Separator --------------------------------------------------------
 int dictForces::defineKey(string keyIn, vector<string> valIn)
 {
+    switch (keyIn)
+    {
+    case KEY_NAME:
+        //Set the name of the force object.
+        if (pForceType == 1)
+        {
+            //Active force type.
+            ptSystem->refForceActive_user(pForceIndex).setForceName(valIn);
+        }
+        else if (pForceType == 2)
+        {
+            //Reactive force type
+            ptSystem->refForceReact_user(pForceIndex).setForceName(valIn);
+        }
+        else if (pForceType == 3)
+        {
+            //Cross-body force type
+            ptSystem->refForceCross_user(pForceIndex).setForceName(valIn);
+        }
+        //Report success
+        return 0;
+        break;
 
+    case KEY_COEFF:
+        //Set the coefficient of the current force equation specified.
+        //Only applicable to ForceActive objects.
+        if (pForceType == 1)
+        {
+            //convert data type and input.
+            ptSystem->refForceActive_user(pForceIndex).setCoeff(
+                        convertComplex(valIn[0].c_str()), pEqn);
+            //Report success
+            return 0;
+        }
+        else
+        {
+            //Report error
+            return 2;
+        }
+        break;
+
+    case KEY_NUMBER:
+        //Set the equation number
+        pEqn = atoi(valIn[0].c_str());
+        //Report success
+        return 0;
+        break;
+
+    case KEY_ORDER:
+        //Set the derivative number
+        pOrd = atoi(valIn[0].c_str());
+        //Report success
+        return 0;
+        break;
+
+    case KEY_FORCE:
+        //Create a vector of force coefficients
+        vector<double> coeffIn;
+        for (unsigned int i = 0; i < valIn.size(); i++)
+        {
+            coeffIn.push_back(atof(valIn[i].c_str()));
+        }
+        //Add the vector to the appropriate derivative and equation.
+        if (pForceType == 2)
+        {
+            //Reactive force object
+            ptSystem->refForceReact_user(pForceIndex).refDerivative(pOrd).refEquation(pEqn).listCoefficients().clear();
+            ptSystem->refForceReact_user(pForceIndex).refDerivative(pOrd).refEquation(pEqn).listCoefficients() = coeffIn;
+            //Report success
+            return 0;
+        }
+        else if (pForceType == 3)
+        {
+            //Cross-body force object
+            ptSystem->refForceCross_user(pForceIndex).refDerivative(pOrd).refEquation(pEqn).listCoefficients().clear();
+            ptSystem->refForceCross_user(pForceIndex).refDerivative(pOrd).refEquation(pEqn).listCoefficients() = coeffIn;
+            //Report success
+            return 0;
+        }
+        else
+        {
+            //Incorrect force object.  return error.
+            return 2;
+        }
+        break;
+
+    case KEY_EQUATION:
+        //Check that the current active force object is an active force.
+        //Otherwise, the key is invalid.
+        if (pForceType == 1)
+        {
+            //Convert value
+            int indexIn;
+            indexIn = atoi(valIn[0].c_str());
+
+            //Active force type.  Set the equation index.
+            setEquation(indexIn);
+
+            //Report success
+            return 0;
+        }
+        else
+        {
+            //Invalid use of key.  Report error.
+            return 2;
+        }
+        break;
+
+    default:
+        //Key not found.  Report error
+        return 1;
+        break;
+    }
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
@@ -54,49 +182,43 @@ int dictForces::defineClass(string nameIn)
 {
     switch (nameIn)
     {
-    case KEY_FORCE_ACTIVE:
-        //Active force key.  Must create active force object.
-        ptSystem->addforceActive_user();
-
+    case OBJECT_FORCE_ACTIVE:
+        //Active force key.
         //Set variable for force type.
         pForceType = 1;
 
-        //Get index of last force created.
-        pForceIndex = ptSystem->listforceActive_user().size() - 1;
+        //Set index of new force
+        setForceIndex();
 
         //Report back success
         return 0;
         break;
 
-    case KEY_FORCE_REACT:
-        //Reactive force key.  Must create reactive force object.
-        ptSystem->addforceReact_user();
-
+    case OBJECT_FORCE_REACT:
+        //Reactive force key.
         //Set variable for force type.
         pForceType = 2;
 
-        //Get index of last force created.
-        pForceIndex = ptSystem->listforceReact_user().size() - 1;
+        //Set index of new force
+        setForceIndex();
 
         //Report back success
         return 0;
         break;
 
-    case KEY_FORCE_CROSS:
-        //Cross-body force key.  Must create cross-body force object.
-        ptSystem->addforceReact_user();
-
+    case OBJECT_FORCE_CROSS:
+        //Cross-body force key.
         //Set variable for force type.
         pForceType = 3;
 
-        //Get index of last force created.
-        pForceIndex = ptSystem->listforceCross_user().size() - 1;
+        //Set index of new force
+        setForceIndex();
 
         //Report back success
         return 0;
         break;
 
-    case KEY_DERIVATIVE:
+    case OBJECT_DERIVATIVE:
         //Add new derivative
         //Do nothing.  Not necessary to create new derivative object.
         //That will be done automatically when using the refDerivative function to
@@ -109,14 +231,14 @@ int dictForces::defineClass(string nameIn)
         return 0;
         break;
 
-    case KEY_EQUATION:
+    case OBJECT_EQUATION:
         //Add new equation.
         //Do nothing.  Not necessary to create new equation object.
         //That will be done automatically when using the refEquation function to
         //assign properties of new derivative.
 
         //Set variable of latest equation, until reassigned.
-
+        setEquation();
 
         //Report back success
         return 0;
@@ -133,27 +255,85 @@ int dictForces::defineClass(string nameIn)
 //Private Functions
 
 //------------------------------------------Function Separator --------------------------------------------------------
-void dictForces::setEquation()
-{
+ void dictForces::setForceIndex(int forceIn = -1)
+ {
+     if (forceIn < 0)
+     {
+         if (pForceType == 1)
+         {
+             //Active forces
+             pForceIndex = ptSystem->listForceActive_user().size();
+         }
+         else if (pForceType == 2)
+         {
+             //Reactive Forces
+             pForceIndex = ptSystem->listForceReact_user().size();
 
+         }
+         else if (pForceType == 3)
+         {
+             //Cross-body forces
+            pForceIndex = ptSystem->listForceCross_user().size();
+         }
+     }
+     else
+     {
+         pForceIndex = forceIn;
+     }
+ }
+
+//------------------------------------------Function Separator --------------------------------------------------------
+void dictForces::setEquation(int eqIn)
+{
+    if (eqIn < 0)
+    {
+        if (pForceType == 1)
+        {
+            //Active force type.
+            //Get latest equation
+            pEqn = ptSystem->listForceActive_user()[pForceIndex].listEquations().size();
+        }
+        else if (pForceType == 2)
+        {
+            //Reactive force type.
+            pEqn = ptSystem->listForceReact_user()[pForceIndex].refDerivative(pOrd).listEquations().size();
+        }
+        else if (pForceType == 3)
+        {
+            //Cross-body force type.
+            pEqn = ptSystem->listForceReact_user()[pForceIndex].refDerivative(pOrd).listEquations().size();
+        }
+    }
+    else
+    {
+        pEqn = eqIn;
+    }
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-void dictForces::setDerivative()
+void dictForces::setDerivative(int ordIn)
 {
-    if (pForceType == 1)
+    if (ordIn < 0)
     {
-        //Active force type.  Do nothing.  No derivatives.
-        pOrd = -1;
+        if (pForceType == 1)
+        {
+            //Active force type.  Do nothing.  No derivatives.
+            pOrd = -1;
+        }
+        else if (pForceType == 2)
+        {
+            //Reactive force type.
+            if (ordIn < 0)
+            pOrd = ptSystem->listForceReact_user()[pForceIndex].getMaxOrd() + 1;
+        }
+        else if (pForceType == 3)
+        {
+            //Cross-body force type
+            pOrd = ptSystem->listForceCross_user()[pForceIndex].getMaxOrd() + 1;
+        }
     }
-    else if (pForceType == 2)
+    else
     {
-        //Reactive force type.
-        pOrd = ptSystem->listforceReact_user()[pForceIndex].getMaxOrd();
-    }
-    else if (pForceType == 3)
-    {
-        //Cross-body force type
-        pOrd = ptSystem->listforceCross_user()[pForceIndex].getMaxOrd();
+        pOrd = ordIn;
     }
 }

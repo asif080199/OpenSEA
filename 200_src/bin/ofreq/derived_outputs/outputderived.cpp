@@ -49,49 +49,55 @@ void OutputDerived::setName(string nameIn)
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-vector<Body> &OutputDerived::getlistBody()
+vector<Body> &OutputDerived::listBody()
 {
     return *plistBody;
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-void OutputDerived::setlistBody(vector<Body> &Input)
+Body &OutputDerived::refBody(int bodIn)
+{
+    return plistBody->at(bodIn);
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+void OutputDerived::setListBody(vector<Body> &Input)
 {
     plistBody = &Input;
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-vector<listSolution> &OutputDerived::getlistSolution()
+vector<SolutionSet> &OutputDerived::refSolutionSet()
 {
     return *plistSolution;
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-void OutputDerived::setlistSolution(vector<listSolution>& Input)
+void OutputDerived::setSolutionSet(vector<SolutionSet>& Input)
 {
     plistSolution = &Input;
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-vector<double> &OutputDerived::getlistFreq()
+vector<double> &OutputDerived::listFreq()
 {
     return *plistFreq;
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-void OutputDerived::setlistFreq(vector<double>& Input)
+void OutputDerived::setListFreq(vector<double>& Input)
 {
     plistFreq = &Input;
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-vector<double> &OutputDerived::getlistWaveDir()
+vector<double> &OutputDerived::listWaveDir()
 {
     return *plistWaveDir;
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-void OutputDerived::setlistWaveDir(vector<double>& Input)
+void OutputDerived::setListWaveDir(vector<double>& Input)
 {
     plistWaveDir = &Input;
 }

@@ -51,7 +51,6 @@ using namespace std;
 //Prototype class declarations.
 class Body;
 
-
 //######################################### Class Separator ###########################################################
 /**
  * This class defines a solution object.  The solution object records the basic value of motion solution.  The motion
@@ -97,7 +96,7 @@ public:
      * @return Returns direct access to the solution matrix.  Provides a pointer to the solution matrix.  Returned
      * variable is passed by reference.
      */
-    cx_mat &refSolution();
+    cx_mat &refSolnMat();
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -109,7 +108,7 @@ public:
      * Returns the solution matrix as a whole.
      * @return Returned value is a complex number matrix.  Returned variable is passed by value.
      */
-    cx_mat getSolution();
+    cx_mat getSolnMat();
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -118,28 +117,21 @@ public:
      * @return Returns a complex number data type.  Single value from the solution matrix.  Value specified by the
      * index input.  Variable passed by value.
      */
-    complex<double> getSolution(int index);
+    complex<double> getSolnMat(int index);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
      * @brief Sets the solution matrix as a whole.
      * @param matIn The input matrix to set as the solution matrix.
      */
-    void setSolution(cx_mat matIn);
+    void setSolnMat(cx_mat matIn);
 
-    //------------------------------------------Function Separator ----------------------------------------------------
-    /**
-     * @brief Sets the pointer to the reference body.
-     * @param bodIn The reference body.  Variabled passed by reference.
-     */
-    void setBody(Body &bodIn);
-
-    //------------------------------------------Function Separator ----------------------------------------------------
-    /**
-     * @brief Gets the body object used as the reference body.  Variable passed by value.
-     * @return Gets the body object used as the reference body.  Variable passed by value.
-     */
-    Body getBody();
+//    //------------------------------------------Function Separator ----------------------------------------------------
+//    /**
+//     * @brief Gets the body object used as the reference body.  Variable passed by value.
+//     * @return Gets the body object used as the reference body.  Variable passed by value.
+//     */
+//    Body getBody();
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**

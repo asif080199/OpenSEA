@@ -53,19 +53,19 @@ string ObjectGroup::getClassName()
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-vecKeyword& ObjectGroup::refListKey()
+vecKeyword& ObjectGroup::listKey()
 {
     return plistKey;
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-vecValue& ObjectGroup::refListVal()
+vecValue& ObjectGroup::listVal()
 {
     return plistVal;
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-vecObject& ObjectGroup::refListObject()
+vecObject& ObjectGroup::listObject()
 {
     return plistObject;
 }

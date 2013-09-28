@@ -32,6 +32,13 @@ Force::Force()
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
+Force::Force(int indexIn)
+{
+    //Set force index
+    setSystemIndex(indexIn);
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
 Force::~Force()
 {
 }
@@ -48,3 +55,14 @@ string Force::getForceName()
 	return forceName;
 }
 
+//------------------------------------------Function Separator --------------------------------------------------------
+void Force::setSystemIndex(int indexIn)
+{
+    pSysIndex = indexIn;
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+int Force::getSystemIndex()
+{
+    return pSysIndex;
+}

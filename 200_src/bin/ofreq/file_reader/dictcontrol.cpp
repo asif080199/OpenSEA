@@ -31,6 +31,16 @@
 //------------------------------------------Function Separator --------------------------------------------------------
 dictControl::dictControl(): Dictionary()
 {
+    //------------------------------------------Function Separator ----------------------------------------------------
+    //Class Names
+    KEY_SYSTEM = "system"; /**< Keyword for system object.*/
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    //Keyword Value Pairs
+    KEY_ANALYSIS = "analysis"; /**< Keyword for analysis specification */
+    KEY_FREQUENCY = "frequency"; /**< Keyword for frequency specification */
+    KEY_DIRECTION = "direction"; /**< Keyword for direction list specification. */
+    KEY_WAVEMODEL = "wavemodel"; /**< Keyword for wave model specification. */
 }
 
 
@@ -62,7 +72,7 @@ int dictControl::defineKey(string keyIn, vector<string> valIn)
         //First convert them from strings to doubles.
         vector<double> freqIn;
 
-        for (int i = 0; i < valIn.size(); i++)
+        for (unsigned int i = 0; i < valIn.size(); i++)
         {
             //Convert value and add it to the list.
             freqIn.push_back(atof(valIn[i].c_str()));
@@ -80,7 +90,7 @@ int dictControl::defineKey(string keyIn, vector<string> valIn)
         //First convert them from strings to doubles.
         vector<double> dirIn;
 
-        for (int i = 0; i < valIn.size(); i++)
+        for (unsigned int i = 0; i < valIn.size(); i++)
         {
             //Convert the value and add it to the list.
             dirIn.push_back(atof(valIn[i].c_str()));

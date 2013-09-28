@@ -49,15 +49,7 @@ Equation::~Equation()
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-void Equation::testPrint()
-{
-    cout << "Coefficients" << endl;
-    for(unsigned int i = 0; i < pcoeffs.size(); i++)
-        cout << "[" << i+1 << "]: " << pcoeffs[i] << endl;
-}
-
-//------------------------------------------Function Separator --------------------------------------------------------
-vector<double> &Equation::Coefficients()
+vector<double> &Equation::listCoefficients()
 {
     //Return pointer to the list of coefficients.
     return pcoeffs;
@@ -96,7 +88,7 @@ int Equation::getDataIndex()
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-int &Equation::DataIndex()
+int &Equation::refDataIndex()
 {
     return pDataIndex;
 }

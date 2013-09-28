@@ -44,9 +44,6 @@
 
 using namespace std;
 
-const string ACCELERATION_NAME = "Global Acceleration"; /**< Used for reference in file output. */
-const int GLOBAL_ACCELERATION_DERIVATIVE = 2;  /**< Specifies 2nd order of the derivative. (acceleration) */
-
 //######################################### Class Separator ###########################################################
 //prototype class declarations
 class OutputDerived;    //Include prototype declaration to allow proper class definition.
@@ -75,5 +72,8 @@ protected:
 
 //==========================================Section Separator =========================================================
 private:
+    static string ACCELERATION_NAME; /**< Used for reference in file output. */
+    static int GLOBAL_ACCELERATION_DERIVATIVE;  /**< Specifies 2nd order of the derivative. (acceleration) */
+
 };
 #endif

@@ -53,7 +53,7 @@
 #include "globalacceleration.h"
 #include "globalmotion.h"
 #include "globalvelocity.h"
-#include "../global_objects/listsolution.h"
+#include "../global_objects/solutionset.h"
 #include "../motion_solver/body.h"
 
 using namespace std;
@@ -129,15 +129,15 @@ public:
      * frequencies list, and wave directions list.  All inputs are passed by reference and held as constant variables
      * to avoid changing the referenced variables.
      * @param listBod The vector of Body objects to use for the object.  Contains all the information about Body forces.
-     * @param listSoln The vector of listSolution objects to use for the object.  Contains all the information about
-     * solutions for each body.  Each listSolution object in the vector represents the solutions for all frequencies
+     * @param listSoln The vector of SolutionSet objects to use for the object.  Contains all the information about
+     * solutions for each body.  Each SolutionSet object in the vector represents the solutions for all frequencies
      * for a single Body object.
      * @param listFreq The vector of wave frequencies to use for the object.  Each wave frequency corresponds to a
-     * Solution object in the listSolution object.
+     * Solution object in the SolutionSet object.
      * @param listWaveDir The vector of wave directions to use for the object.  This is provided mostly for reference.
      */
     OutputsBody(vector<Body> &listBod,
-                vector<listSolution> &listSoln,
+                vector<SolutionSet> &listSoln,
                 vector<double> &listFreq,
                 vector<double> &listWaveDir);
 
@@ -154,16 +154,16 @@ public:
      * @param listIn The vector of Body objects to assign to this OutputsBody.  Input is passed by reference.  Input
      * is held as a constant value, so that it can not be modified by the class.
      */
-    void setlistBody(vector<Body> &listIn);
+    void setListBody(vector<Body> &listIn);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
-     * @brief Sets the list of listSolution objects to calculate derived outputs for.  Derived outputs are calculated
-     * for only one listSolution object in the list.  The rest are included as reference for cross-body forces.
-     * @param listIn The vector of listSolution objects to assign to this OutputsBody.  Input is passed by reference.
+     * @brief Sets the list of SolutionSet objects to calculate derived outputs for.  Derived outputs are calculated
+     * for only one SolutionSet object in the list.  The rest are included as reference for cross-body forces.
+     * @param listIn The vector of SolutionSet objects to assign to this OutputsBody.  Input is passed by reference.
      * Inputs is held as a constant value, so that it can not be modified by the class.
      */
-    void setlistSolution(vector<listSolution> &listIn);
+    void setSolutionSet(vector<SolutionSet> &listIn);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -171,7 +171,7 @@ public:
      * @param listIn The vector of doubles representing the wave frequencies.  Frequencies entered in units of radians
      * per second.  Input is passed by reference and held as a constant so that the class can not change the frequencies.
      */
-    void setlistFreq(vector<double> &listIn);
+    void setListFreq(vector<double> &listIn);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -179,7 +179,7 @@ public:
      * @return Returns the vector of doubles representing the wave frequencies.  Frequencies entered in units of radians
      * per second.  Variable is passed by reference.
      */
-    vector<double> &reflistFreq();
+    vector<double> &listFreq();
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -187,7 +187,7 @@ public:
      * @param listIn The vector of doubles representing the wave directions.  Directions entered in units of radians.
      * Input is passed by reference and held as a constant so that the class can not change the directions.
      */
-    void setlistWaveDir(vector<double> &listIn);
+    void setListWaveDir(vector<double> &listIn);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -195,13 +195,13 @@ public:
      * @return Returns the vector of doubles representing the wave directions.  Directions entered in units of radians.
      * Variable is passed by reference.
      */
-    vector<double> &reflistWaveDir();
+    vector<double> &listWaveDir();
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
      * @brief Sets the current wave direction.
      * @param index Integer input specifying the index of the current wave direction from the list set by
-     * setlistWaveDir.
+     * setListWaveDir.
      */
     void setCurWaveDir(int index);
 
@@ -457,9 +457,9 @@ private:
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
-     * @brief The vector list of listSolution objects.
+     * @brief The vector list of SolutionSet objects.
      */
-    vector<listSolution>* plistSolution;
+    vector<SolutionSet>* plistSolution;
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**

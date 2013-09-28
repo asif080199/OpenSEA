@@ -51,15 +51,15 @@ using namespace std;
  * This class holds all of the data for a reactive force.
  */
 
-class forceReact: public Force
+class ForceReact: public Force
 {
 //==========================================Section Separator =========================================================
 public:
     //------------------------------------------Function Separator ----------------------------------------------------
-    forceReact(); /**< This default constructor. */
+    ForceReact(); /**< This default constructor. */
 
     //------------------------------------------Function Separator ----------------------------------------------------
-    ~forceReact(); /**< The default destructor, nothing happens here. */
+    ~ForceReact(); /**< The default destructor, nothing happens here. */
 
     //------------------------------------------Function Separator ----------------------------------------------------
 	void testPrint(); /**< Test print to console the values of all data members. */
@@ -87,18 +87,11 @@ public:
 	void setCurEquationNum(int);
 
     //------------------------------------------Function Separator ----------------------------------------------------
-	/**
-     * Retrieve the derivatives list.
-     * @return The order derivative of this object.  Returned object is by value.
-	 */
-    vector<Derivative> getDerivatives();
-
-    //------------------------------------------Function Separator ----------------------------------------------------
     /**
      * @brief Another implementation of getDerivatives, under a different name.
      * @return Returns the vector of derviative objects.  Returned object is by reference.
      */
-    vector<Derivative> &Derivatives();
+    vector<Derivative> &listDerivatives();
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**

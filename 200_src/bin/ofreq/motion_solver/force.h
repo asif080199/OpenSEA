@@ -38,7 +38,6 @@
 //######################################### Class Separator ###########################################################
 #ifndef FORCE_H
 #define FORCE_H
-#include "../file_reader/readinputfile.h"
 #include "equation.h"
 #include <string>
 #include <iostream>
@@ -59,6 +58,19 @@ public:
 	Force(); /**< The default constructor. */
 
     //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Overloaded constructor for Force object.  Allows the System object to pass the index of the newly created
+     * Force object in the list of other similar Force objects.  Used during object creation for proper association
+     * with Body object.
+     * @param indexIn Integer.  The index of the Force object as it exists in the list of other similar Force objects
+     * contained under the System object.  Variable passed by value.
+     * @sa dictBodies
+     * @sa System
+     * @sa Body
+     */
+    Force(int indexIn);
+
+    //------------------------------------------Function Separator ----------------------------------------------------
 	~Force(); /**< The default destructor, nothing happens here. */
 
     //------------------------------------------Function Separator ----------------------------------------------------
@@ -73,14 +85,37 @@ public:
 	 * Retrieve the name of the force.
 	 * @return newName The name of the force.
 	 */
+	string getForceName();
 
     //------------------------------------------Function Separator ----------------------------------------------------
-	string getForceName();
+    /**
+     * @brief Sets the system index.  The index of the Force object as it exists in the list of other similar Force objects
+     * contained under the System object.
+     * @param indexIn Integer.  The index of the Force object as it exists in the list of other similar Force objects
+     * contained under the System object.  Variable passed by value.
+     */
+    void setSystemIndex(int indexIn);
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Gets the system index.  The index of the Force object as it exists in the list of other similar
+     * Force objects contained under the System object.
+     * @return  Integer.  The index of the Force object as it exists in the list of other similar
+     * Force objects contained under the System object.  Variable passed by value.
+     */
+    int getSystemIndex();
 
 //==========================================Section Separator =========================================================
 protected:
     //------------------------------------------Function Separator ----------------------------------------------------
     string forceName; /**< The force name. */
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief The index of the Force object as it exists in the list of other similar Force objects
+     * contained under the System object.
+     */
+    int pSysIndex;
 
 //==========================================Section Separator =========================================================
 private:

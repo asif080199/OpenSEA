@@ -47,34 +47,14 @@
 #include <vector>
 #include <QObject>
 #include "../motion_solver/body.h"
-#include "../motion_solver/forceactive.h"
-#include "../motion_solver/forcecross.h"
-#include "../motion_solver/forcereact.h"
 #include "../derived_outputs/outputsbody.h"
+
+//The following definitions are included indirectly through inclusion of body.h
+//#include "../motion_solver/forceactive.h"
+//#include "../motion_solver/forcecross.h"
+//#include "../motion_solver/forcereact.h"
+
 using namespace std;
-
-//######################################### Class Separator ###########################################################
-//Constant Variables declaration
-//------------------------------------------Function Separator --------------------------------------------------------
-/**
- *@brief Designator for the vector of forceActive class of objects, under the scope of the user.  These are force objects
- *defined by the Forces input file.
- */
-const string valForceActive_user = "forceActive_user";
-
-//------------------------------------------Function Separator --------------------------------------------------------
-/**
- *@brief Designator for the vector of forceReact class of objects, under the scope of the user.  These are force objects
- *defined by the Forces input file.
- */
-const string valForceReact_user = "forceReact_user";
-
-//------------------------------------------Function Separator --------------------------------------------------------
-/**
- *@brief Designator for the vector of forceCross class of objects, under the scope of the user.  These are force objects
- *defined by the Forces input file.
- */
-const string valForceCross_user = "forceCross_user";
 
 //######################################### Class Separator ###########################################################
 /**
@@ -82,7 +62,6 @@ const string valForceCross_user = "forceCross_user";
  * It also decides which analysis type to run:  motion or resonant frequency.  The system object controls the current
  * wave environment settings.
  */
-
 class System : public QObject
 {
     Q_OBJECT
@@ -200,7 +179,7 @@ public:
      * @return Returns a vector of Body objects.  Returned variable passed by reference.
      * @sa Body
      */
-    vector<Body>& reflistBody();
+    vector<Body> &listBody();
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -209,7 +188,7 @@ public:
      * @return Returns a vector of OutputsBody objects.  Returned variable passed by reference.
      * @sa OutputsBody
      */
-    vector<OutputsBody>& reflistOutputs();
+    vector<OutputsBody> &listOutputs();
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -217,7 +196,7 @@ public:
      * @param input Specifies index of which Body object to access in the list of Body objects.
      * @return Returns a Body object. Returned variable is passed by reference.
      */
-    Body& refBody(int input = 0);
+    Body &refBody(int input = 0);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -225,7 +204,7 @@ public:
      * @param input Specifies the index of which OutputsBody object to access in the list of OutputsBody objects.
      * @return Returns an OutputsBody object.  Returned variable is passed by reference.
      */
-    OutputsBody& refOutput(int input = 0);  
+    OutputsBody &refOutput(int input = 0);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -234,9 +213,9 @@ public:
      * input.  If no string input is supplied, all force objects are cleared from the system object.  All force objects
      * should already be copied to their respective Body objects before issuing this function.
      * @param forceClass String input designating which force object type to clear.  Valid values are:
-     * forceActive:  Clears the forceActive class of objects.
-     * forceReact:   Clears the forceReact class of objects.
-     * forceCross:   Clears the forceCross class of objects.
+     * ForceActive:  Clears the ForceActive class of objects.
+     * ForceReact:   Clears the ForceReact class of objects.
+     * ForceCross:   Clears the ForceCross class of objects.
      * "":           Clears all three object classes of objects.
      * other:        If an unknown input is encountered, no objects are cleared.
      */
@@ -250,14 +229,23 @@ public:
      * exactly what is defined in the Forces.in input file which defines the forceActive_user object.
      * @return Returns a forceActive_user object as requested.  Variable passed by value.
      */
-    forceActive getforceActive_user(string forceName);
+    ForceActive getForceActive_user(string forceName);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
      * @brief Exposes the vector of forceActive_user objects.  Provides direct access to the vector.
      * @return Returns a reference to the vector of forceActive_user objects.  Variable passed by reference.
      */
-    vector<forceActive> &listforceActive_user();
+    vector<ForceActive> &listForceActive_user();
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Returns reference to the forceActive_user object referenced by the index specified in the input.
+     * @param forceIndex Integer variable which defines the index of which forceActive_user object to retrieve.
+     * Variable passed by reference.
+     * @return Returns a reference to the ForceActive_user object.  Variable passed by reference
+     */
+    ForceActive &refForceActive_user(unsigned int forceIndex);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -267,14 +255,23 @@ public:
      * exactly what is defined in the Forces.in input file which defines the forceReact_user object.
      * @return Returns a forceReact_user object as requested.  Variable passed by value.
      */
-    forceReact getforceReact_user(string forceName);
+    ForceReact getforceReact_user(string forceName);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
      * @brief Exposes the vector of forceReact_user objects.  Provides direct access to the vector.
      * @return Returns a reference to the vector of forceReact_user objects.  Variable passed by reference.
      */
-    vector<forceReact> &listforceReact_user();
+    vector<ForceReact> &listForceReact_user();
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Returns reference to the forceReact_user object referenced by the index specified in the input.
+     * @param forceIndex Integer variable which defines the index of which forceReact_user object to retrieve.
+     * Variable passed by value.
+     * @return Returns a reference to the ForceReact_user object.  Variable passed by reference
+     */
+    ForceReact &refForceReact_user(unsigned int forceIndex);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -284,14 +281,23 @@ public:
      * exactly what is defined in the Forces.in input file which defines the forceCross_user object.
      * @return Returns a forceCross_user object as requested.  Variable passed by value.
      */
-    forceActive getforceCross_user(string forceName);
+    ForceCross getforceCross_user(string forceName);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
      * @brief Exposes the vector of forceCross_user objects.  Provides direct access to the vector.
      * @return Returns a reference to the vector of forceCross_user objects.  Variable passed by reference.
      */
-    vector<forceActive> &listforceCross_user();
+    vector<ForceCross> &listForceCross_user();
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Returns reference to the forceCross_user object referenced by the index specified in the input.
+     * @param forceIndex Integer variable which defines the index of which forceCross_user object to retrieve.
+     * Variable passed by value.
+     * @return Returns a reference to the ForceCross_user object.  Variable passed by reference
+     */
+    ForceCross &refForceCross_user(unsigned int forceIndex);
 
 //==========================================Section Separator =========================================================
 public slots:
@@ -336,57 +342,57 @@ public slots:
 
     //-----------------------------------------Function Separator ----------------------------------------------------
     /**
-     * @brief Adds another forceActive object to the list of forceActive_user objects.  Sets the object equal to
+     * @brief Adds another ForceActive object to the list of forceActive_user objects.  Sets the object equal to
      * the input.
-     * @param input forceActive object to add to the list of forceActive_user objects.  Variable is passed by value
+     * @param input ForceActive object to add to the list of forceActive_user objects.  Variable is passed by value
      * and stored independant inside the System class.
-     * @sa forceActive
+     * @sa ForceActive
      */
-    void addforceActive_user(forceActive input);
+    void addForceActive_user(ForceActive input);
 
     //-----------------------------------------Function Separator ----------------------------------------------------
     /**
-     * @brief Adds another forceActive Object to the list of forceActive_user objects.  Uses a blank new forceActive
+     * @brief Adds another ForceActive Object to the list of forceActive_user objects.  Uses a blank new ForceActive
      * object.
-     * @sa forceActive
+     * @sa ForceActive
      */
-    void addforceActive_user();
+    void addForceActive_user();
 
     //-----------------------------------------Function Separator ----------------------------------------------------
     /**
-     * @brief Adds another forceReact object to the list of forceReact_user objects.  Sets the object equal to
+     * @brief Adds another ForceReact object to the list of forceReact_user objects.  Sets the object equal to
      * the input.
-     * @param input forceReact object to add to the list of forceReact_user objects.  Variable is passed by value
+     * @param input ForceReact object to add to the list of forceReact_user objects.  Variable is passed by value
      * and stored independant inside the System class.
-     * @sa forceReact
+     * @sa ForceReact
      */
-    void addforceReact_user(forceReact input);
+    void addForceReact_user(ForceReact input);
 
     //-----------------------------------------Function Separator ----------------------------------------------------
     /**
-     * @brief Adds another forceReact Object to the list of forceReact_user objects.  Uses a blank new forceReact
+     * @brief Adds another ForceReact Object to the list of forceReact_user objects.  Uses a blank new ForceReact
      * object.
-     * @sa forceReact
+     * @sa ForceReact
      */
-    void addforceReact_user();
+    void addForceReact_user();
 
     //-----------------------------------------Function Separator ----------------------------------------------------
     /**
-     * @brief Adds another forceCross object to the list of forceCross_user objects.  Sets the object equal to
+     * @brief Adds another ForceCross object to the list of forceCross_user objects.  Sets the object equal to
      * the input.
-     * @param input forceCross object to add to the list of forceCross_user objects.  Variable is passed by value
+     * @param input ForceCross object to add to the list of forceCross_user objects.  Variable is passed by value
      * and stored independant inside the System class.
-     * @sa forceCross
+     * @sa ForceCross
      */
-    void addforceCross_user(forceCross input);
+    void addForceCross_user(ForceCross input);
 
     //-----------------------------------------Function Separator ----------------------------------------------------
     /**
-     * @brief Adds another forceCross Object to the list of forceCross_user objects.  Uses a blank new forceCross
+     * @brief Adds another ForceCross Object to the list of forceCross_user objects.  Uses a blank new ForceCross
      * object.
-     * @sa forceCross
+     * @sa ForceCross
      */
-    void addforceCross_user();
+    void addForceCross_user();
 
 //==========================================Section Separator =========================================================
 signals:
@@ -448,7 +454,7 @@ private:
      * copied to their respective Body objects.  The list of force objects can then be safely deleted.
      * @sa Body
      */
-    vector<forceActive> plistForceActive_user;
+    vector<ForceActive> plistForceActive_user;
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -458,7 +464,7 @@ private:
      * copied to their respective Body objects.  The list of force objects can then be safely deleted.
      * @sa Body
      */
-    vector<forceReact> plistForceReact_user;
+    vector<ForceReact> plistForceReact_user;
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -468,7 +474,29 @@ private:
      * copied to their respective Body objects.  The list of force objects can then be safely deleted.
      * @sa Body
      */
-    vector<forceCross> plistForceCross_user;
+    vector<ForceCross> plistForceCross_user;
+
+    //Constant Variables declaration
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Designator for the vector of ForceActive class of objects, under the scope of the user.  These are force
+     * objects defined by the Forces input file.
+     */
+    static string valForceActive_user;
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Designator for the vector of ForceReact class of objects, under the scope of the user.  These are force
+     * objects defined by the Forces input file.
+     */
+    static string valForceReact_user;
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Designator for the vector of ForceCross class of objects, under the scope of the user.  These are force
+     * objects defined by the Forces input file.
+     */
+    static string valForceCross_user;
 };
 #endif
 

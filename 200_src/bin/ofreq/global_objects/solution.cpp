@@ -39,46 +39,39 @@ Solution::~Solution()
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-cx_mat &Solution::refSolution()
+cx_mat &Solution::refSolnMat()
 {
     //Returns the solution object, by reference.
     return pSoln;
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-complex<double> Solution::getSolution(int index)
+complex<double> Solution::getSolnMat(int index)
 {
     //Returns single entry in the solution matrix.  By Value.
     return pSoln(index,1);
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-cx_mat Solution::getSolution()
+cx_mat Solution::getSolnMat()
 {
     //Returns the solution object, by value.
     return pSoln;
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-void Solution::setSolution(cx_mat matIn)
+void Solution::setSolnMat(cx_mat matIn)
 {
     //Sets the solution object, by value.
     pSoln = matIn;
 }
 
-//------------------------------------------Function Separator --------------------------------------------------------
-Body Solution::setBody(Body &bodIn)
-{
-    //Sets the reference body.
-    pBod = &bodIn;
-}
-
-//------------------------------------------Function Separator --------------------------------------------------------
-Body Solution::getBody()
-{
-    //Gets the body object.
-    return *pBod;
-}
+////------------------------------------------Function Separator --------------------------------------------------------
+//Body Solution::getBody()
+//{
+//    //Gets the body object.
+//    return *pBod;
+//}
 
 //------------------------------------------Function Separator --------------------------------------------------------
 Body &Solution::refBody()

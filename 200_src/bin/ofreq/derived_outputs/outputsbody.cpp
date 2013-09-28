@@ -34,7 +34,7 @@ OutputsBody::OutputsBody()
 
 //------------------------------------------Function Separator --------------------------------------------------------
 OutputsBody::OutputsBody(vector<Body> &listBod,
-            vector<listSolution> &listSoln,
+            vector<SolutionSet> &listSoln,
             vector<double> &listFreq,
             vector<double> &listWaveDir)
 {
@@ -52,37 +52,37 @@ OutputsBody::~OutputsBody()
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-void OutputsBody::setlistBody(vector<Body> &listIn)
+void OutputsBody::setListBody(vector<Body> &listIn)
 {
     plistBody = & listIn;
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-void OutputsBody::setlistSolution(vector<listSolution> &listIn)
+void OutputsBody::setSolutionSet(vector<SolutionSet> &listIn)
 {
     plistSolution = & listIn;
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-void OutputsBody::setlistFreq(vector<double> &listIn)
+void OutputsBody::setListFreq(vector<double> &listIn)
 {
     plistFreq = & listIn;
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-vector<double> &OutputsBody::reflistFreq()
+vector<double> &OutputsBody::listFreq()
 {
     return * plistFreq;
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-void OutputsBody::setlistWaveDir(vector<double> &listIn)
+void OutputsBody::setListWaveDir(vector<double> &listIn)
 {
     plistWaveDir = & listIn;
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-vector<double> &OutputsBody::reflistWaveDir()
+vector<double> &OutputsBody::listWaveDir()
 {
     return * plistWaveDir;
 }
@@ -179,10 +179,10 @@ void OutputsBody::addGlobalMotion(GlobalMotion input)
     pGlobalMotion.push_back(input);    
 
     //Add necessary information
-    pGlobalMotion.back().setlistBody(*plistBody);
-    pGlobalMotion.back().setlistSolution(*plistSolution);
-    pGlobalMotion.back().setlistFreq(*plistFreq);
-    pGlobalMotion.back().setlistWaveDir(*plistWaveDir);
+    pGlobalMotion.back().setListBody(*plistBody);
+    pGlobalMotion.back().setSolutionSet(*plistSolution);
+    pGlobalMotion.back().setListFreq(*plistFreq);
+    pGlobalMotion.back().setListWaveDir(*plistWaveDir);
     pGlobalMotion.back().setCurWaveDir(pCurWaveDir);
     pGlobalMotion.back().setCurBody(pCurBody);
 }
@@ -193,10 +193,10 @@ void OutputsBody::addGlobalMotion()
     pGlobalMotion.push_back(GlobalMotion());
 
     //Add necessary information
-    pGlobalMotion.back().setlistBody(*plistBody);
-    pGlobalMotion.back().setlistSolution(*plistSolution);
-    pGlobalMotion.back().setlistFreq(*plistFreq);
-    pGlobalMotion.back().setlistWaveDir(*plistWaveDir);
+    pGlobalMotion.back().setListBody(*plistBody);
+    pGlobalMotion.back().setSolutionSet(*plistSolution);
+    pGlobalMotion.back().setListFreq(*plistFreq);
+    pGlobalMotion.back().setListWaveDir(*plistWaveDir);
     pGlobalMotion.back().setCurWaveDir(pCurWaveDir);
     pGlobalMotion.back().setCurBody(pCurBody);
 }
@@ -251,10 +251,10 @@ void OutputsBody::addGlobalVelocity(GlobalVelocity input)
     pGlobalVelocity.push_back(input);
 
     //Add necessary information
-    pGlobalVelocity.back().setlistBody(*plistBody);
-    pGlobalVelocity.back().setlistSolution(*plistSolution);
-    pGlobalVelocity.back().setlistFreq(*plistFreq);
-    pGlobalVelocity.back().setlistWaveDir(*plistWaveDir);
+    pGlobalVelocity.back().setListBody(*plistBody);
+    pGlobalVelocity.back().setSolutionSet(*plistSolution);
+    pGlobalVelocity.back().setListFreq(*plistFreq);
+    pGlobalVelocity.back().setListWaveDir(*plistWaveDir);
     pGlobalVelocity.back().setCurWaveDir(pCurWaveDir);
     pGlobalVelocity.back().setCurBody(pCurBody);
 }
@@ -265,10 +265,10 @@ void OutputsBody::addGlobalVelocity()
     pGlobalVelocity.push_back(GlobalVelocity());
 
     //Add necessary information
-    pGlobalVelocity.back().setlistBody(*plistBody);
-    pGlobalVelocity.back().setlistSolution(*plistSolution);
-    pGlobalVelocity.back().setlistFreq(*plistFreq);
-    pGlobalVelocity.back().setlistWaveDir(*plistWaveDir);
+    pGlobalVelocity.back().setListBody(*plistBody);
+    pGlobalVelocity.back().setSolutionSet(*plistSolution);
+    pGlobalVelocity.back().setListFreq(*plistFreq);
+    pGlobalVelocity.back().setListWaveDir(*plistWaveDir);
     pGlobalVelocity.back().setCurWaveDir(pCurWaveDir);
     pGlobalVelocity.back().setCurBody(pCurBody);
 }
@@ -323,10 +323,10 @@ void OutputsBody::addGlobalAcceleration(GlobalAcceleration input)
     pGlobalAcceleration.push_back(input);
 
     //Add necessary information
-    pGlobalAcceleration.back().setlistBody(*plistBody);
-    pGlobalAcceleration.back().setlistSolution(*plistSolution);
-    pGlobalAcceleration.back().setlistFreq(*plistFreq);
-    pGlobalAcceleration.back().setlistWaveDir(*plistWaveDir);
+    pGlobalAcceleration.back().setListBody(*plistBody);
+    pGlobalAcceleration.back().setSolutionSet(*plistSolution);
+    pGlobalAcceleration.back().setListFreq(*plistFreq);
+    pGlobalAcceleration.back().setListWaveDir(*plistWaveDir);
     pGlobalAcceleration.back().setCurWaveDir(pCurWaveDir);
     pGlobalAcceleration.back().setCurBody(pCurBody);
 }
@@ -337,10 +337,10 @@ void OutputsBody::addGlobalAcceleration()
     pGlobalAcceleration.push_back(GlobalAcceleration());
 
     //Add necessary information
-    pGlobalAcceleration.back().setlistBody(*plistBody);
-    pGlobalAcceleration.back().setlistSolution(*plistSolution);
-    pGlobalAcceleration.back().setlistFreq(*plistFreq);
-    pGlobalAcceleration.back().setlistWaveDir(*plistWaveDir);
+    pGlobalAcceleration.back().setListBody(*plistBody);
+    pGlobalAcceleration.back().setSolutionSet(*plistSolution);
+    pGlobalAcceleration.back().setListFreq(*plistFreq);
+    pGlobalAcceleration.back().setListWaveDir(*plistWaveDir);
     pGlobalAcceleration.back().setCurWaveDir(pCurWaveDir);
     pGlobalAcceleration.back().setCurBody(pCurBody);
 }
@@ -397,10 +397,10 @@ void OutputsBody::addGlobalSolution(GlobalSolution input)
     pGlobalSolution.push_back(input);
 
     //Add necessary information
-    pGlobalSolution.back().setlistBody(*plistBody);
-    pGlobalSolution.back().setlistSolution(*plistSolution);
-    pGlobalSolution.back().setlistFreq(*plistFreq);
-    pGlobalSolution.back().setlistWaveDir(*plistWaveDir);
+    pGlobalSolution.back().setListBody(*plistBody);
+    pGlobalSolution.back().setSolutionSet(*plistSolution);
+    pGlobalSolution.back().setListFreq(*plistFreq);
+    pGlobalSolution.back().setListWaveDir(*plistWaveDir);
     pGlobalSolution.back().setCurWaveDir(pCurWaveDir);
     pGlobalSolution.back().setCurBody(pCurBody);
 }
@@ -411,10 +411,10 @@ void OutputsBody::addGlobalSolution()
     pGlobalSolution.push_back(GlobalSolution());
 
     //Add necessary information
-    pGlobalSolution.back().setlistBody(*plistBody);
-    pGlobalSolution.back().setlistSolution(*plistSolution);
-    pGlobalSolution.back().setlistFreq(*plistFreq);
-    pGlobalSolution.back().setlistWaveDir(*plistWaveDir);
+    pGlobalSolution.back().setListBody(*plistBody);
+    pGlobalSolution.back().setSolutionSet(*plistSolution);
+    pGlobalSolution.back().setListFreq(*plistFreq);
+    pGlobalSolution.back().setListWaveDir(*plistWaveDir);
     pGlobalSolution.back().setCurWaveDir(pCurWaveDir);
     pGlobalSolution.back().setCurBody(pCurBody);
 }

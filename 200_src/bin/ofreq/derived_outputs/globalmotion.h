@@ -42,8 +42,6 @@
 #include "globalsolution.h"
 
 using namespace std;
-const string MOTION_NAME = "Global Motion"; /**< Used for reference in file output. */
-const int GLOBAL_MOTION_DERIVATIVE = 0;  /**< Specifies zero order of the derivative. (motion) */
 
 //######################################### Class Separator ###########################################################
 //Prototype class declarations
@@ -72,6 +70,8 @@ protected:
 
 //==========================================Section Separator =========================================================
 private:
+    static string MOTION_NAME; /**< Used for reference in file output. */
+    static int GLOBAL_MOTION_DERIVATIVE;  /**< Specifies zero order of the derivative. (motion) */
 
 };
 #endif

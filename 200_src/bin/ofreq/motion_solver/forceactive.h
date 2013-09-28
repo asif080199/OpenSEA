@@ -54,56 +54,37 @@ typedef complex<double> complexDouble;
  * This class holds data for an active force.
  */
 
-class forceActive: public Force
+class ForceActive: public Force
 {
 //==========================================Section Separator =========================================================
 public:
     //------------------------------------------Function Separator ----------------------------------------------------
-    forceActive(); /**< The default constructor. */
+    ForceActive(); /**< The default constructor. */
 
     //------------------------------------------Function Separator ----------------------------------------------------
-    ~forceActive(); /**< The default destructor, nothing happens here. */
+    ~ForceActive(); /**< The default destructor, nothing happens here. */
 
     //------------------------------------------Function Separator ----------------------------------------------------
-	void testPrint(); /**< Test print to console the values of all data members. */
-
-    //------------------------------------------Function Separator ----------------------------------------------------
-	/**
-	 * Converts string in rectanguluar form to a complex number.
-	 * @param expression The string in Rectanguluar form.
-	 * @return a complex number.
-	 */
-	complexDouble convertRectangularFormToComplexNumber(string);
-
-    //------------------------------------------Function Separator ----------------------------------------------------
-	/**
-	 * Converts string in polar form to a complex number.
-	 * @param expression The string in polar form.
-	 * @return a complex number.
-	 */
-	complexDouble convertPolarFormToComplexNumber(string);
-
-    //------------------------------------------Function Separator ----------------------------------------------------
-	/**
-	 * Set the coefficients.
-	 * @param theListIn The list of coefficients.
-	 * @param isDirectList Specifies whether list of coefficients is direct list or sequential list.
-	 */
-	void setCoeff(vector<string>, bool); 
+    /**
+     * @brief Sets the coefficient for the specified index.
+     * @param coeffIn The value of the coefficient to specify.  Added as a complex number.  Variable passed by value.
+     * @param index The equation index of the coefficient to specify.
+     */
+    void setCoeff(complex<double> coeffIn, int index);
 
     //------------------------------------------Function Separator ----------------------------------------------------
 	/**
 	 * Retrieve the list of coefficients.
 	 * @return The list of coefficients.
 	 */
-    vector<complexDouble> &getCoefficients();
+    vector<complexDouble> &listCoefficients();
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
-     * @brief Another implementation of function getCoefficients.
+     * @brief Another implementation of function listCoefficients.
      * @return Vector containing the list of coefficients.  Argument passed by reference.
      */
-    vector<complexDouble> &Equations();
+    vector<complexDouble> &listEquations();
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -112,15 +93,15 @@ public:
      * Get a specific number from the list of coefficients.  Similar to getCoefficients(), only instead of returning
      * the entire vector of coefficients, this only returns a single value in the list.
      * @param number Integer specifying which number should be retrieved from the list.
-     * @return Double which is the input coefficient for the active force on the equation specified by number.  Returns
-     * by value, not by reference.
+     * @return Complex Double which is the input coefficient for the active force on the equation specified by number.
+     * Returns by value, not by reference.
      */
-    double getEquation(int number);
+    complexDouble getEquation(int number);
 
 //==========================================Section Separator =========================================================
 protected:
     //------------------------------------------Function Separator ----------------------------------------------------
-    vector<complexDouble> coefficients; /**< The list of force coeffients. */
+    vector<complexDouble> pCoefficients; /**< The list of force coeffients. */
 
 //==========================================Section Separator =========================================================
 private:

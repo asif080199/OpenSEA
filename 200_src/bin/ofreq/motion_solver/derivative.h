@@ -70,16 +70,7 @@ public:
      *
      * Pointer to the list vector list of equations.  Value returned by reference.
      */
-    vector<Equation> &EquationList;
-
-    //------------------------------------------Function Separator ----------------------------------------------------
-    /**
-     * @brief Just another implementation of EquationList property, under a different name.
-     *
-     * Just another implementation of EquationList property, under a different name.
-     */
-    vector<Equation> &Equations;
-
+    vector<Equation> &listEquations();
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
      * @brief Returns the equation requested.  Only specified by the data index property of the equation object.
@@ -88,7 +79,7 @@ public:
      * @param indexIn The integer describing the data index for the equation requested.
      * @return Pointer to the Equation object specified by the DataIndex of indexIn.  Value returned is by reference.
      */
-    Equation &IndexEquation(int indexIn);
+    Equation &refIndexEquation(int indexIn);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**

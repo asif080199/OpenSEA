@@ -45,8 +45,8 @@
     #include <armadillo>    //Armadillo library included with standard system libraries.
 #endif
 #include "matbody.h"
-#include "matreactforce.h"
-#include "matcrossforce.h"
+#include "matforcereact.h"
+#include "matforcecross.h"
 
 using namespace arma;
 using namespace std;
@@ -99,7 +99,7 @@ public:
      * @param The matBody object to add the motion solver set.  Body inputs are added passed by value, and not by
      * reference.
      */
-    void AddBody(matBody bodIn);
+    void addBody(matBody bodIn);
 
     //------------------------------------------Function Separator ----------------------------------------------------
 	/**
@@ -109,9 +109,9 @@ public:
      * together.  It respects derivatives in the summation.
      * @param listForces The list of reactive forces associated with each body.  This list may be anything from
      * zero to infinite number of entries.
-     * @return The sum of reactive force matrices.
+     * @return The Sum of reactive force matrices.
 	 */
-    matReactForce sumReactSet(vector<matReactForce> listForces);
+    matForceReact sumReactSet(vector<matForceReact> listForces);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -124,7 +124,7 @@ public:
      * @return A vector of complex matrices, with each entry in the vectors representing a cross-body force linked to
      * a specific body.
      */
-    vector<matCrossForce> sumCrossSet(vector<matCrossForce> listForces);
+    vector<matForceCross> sumCrossSet(vector<matForceCross> listForces);
 
     //------------------------------------------Function Separator ----------------------------------------------------
 	/**
@@ -132,29 +132,29 @@ public:
      *
 	 * Sum active forces for each set.
      * @param listForces The active force matrix.
-	 * @return The sum of active force matrix.
+	 * @return The Sum of active force matrix.
 	 */
-    cx_mat sumActiveSet(vector<cx_mat> listForces);
+    cx_mat sumActiveSet(vector<matForceActive> listForces);
 
     //------------------------------------------Function Separator ----------------------------------------------------
 	/**
-     * @brief Sum Derivatives for reactive force matrix.
+     * @brief Sum listDerivatives for reactive force matrix.
      *
-	 * Sum Derivatives for reactive force matrix.
+	 * Sum listDerivatives for reactive force matrix.
 	 * @param theReactiveForceMatrix The reactive force matrix.
-	 * @return TSingle matrix that is the sum of Matrices passed in.
+	 * @return TSingle matrix that is the Sum of Matrices passed in.
 	 */
-    cx_mat sumDerivative(matReactForce forceIn);
+    cx_mat sumDerivative(matForceReact forceIn);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
-     * @brief Sum Derivatives for reactive force matrix.
+     * @brief Sum listDerivatives for reactive force matrix.
      *
-     * Sum Derivatives for reactive force matrix.
+     * Sum listDerivatives for reactive force matrix.
      * @param forceIn the matrix that contains the set of cross body forces.
      * @return Single matrix that contains the cross body forces for a single definition.
      */
-    vector<cx_mat> sumDerivative(vector<matCrossForce> forceIn);
+    vector<cx_mat> sumDerivative(vector<matForceCross> forceIn);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -170,7 +170,7 @@ public:
     /**
      * @brief Calculate the Solution
      */
-    void CalculateOutputs();
+    void calculateOutputs();
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**

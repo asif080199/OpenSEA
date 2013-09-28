@@ -42,9 +42,6 @@
 #include "globalsolution.h"
 using namespace std;
 
-const string VELOCITY_NAME = "Global Velocity"; /**< Used for reference in file output. */
-const int GLOBAL_VELOCITY_DERIVATIVE = 1;  /**< Specifies first order of the derivative. (velocity) */
-
 //######################################### Class Separator ###########################################################
 //Prototype class declarations
 class OutputDerived;    //Include prototype declaration to allow proper class definition.
@@ -72,6 +69,7 @@ protected:
 
 //==========================================Section Separator =========================================================
 private:
-
+    static string VELOCITY_NAME; /**< Used for reference in file output. */
+    static int GLOBAL_VELOCITY_DERIVATIVE;  /**< Specifies first order of the derivative. (velocity) */
 };
 #endif

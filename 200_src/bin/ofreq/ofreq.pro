@@ -22,13 +22,6 @@ SOURCES += ofreq.cpp \
     derived_outputs/globalsolution.cpp \
     derived_outputs/globalmotion.cpp \
     derived_outputs/globalacceleration.cpp \
-    file_reader/seaenvinput.cpp \
-    file_reader/readinputfile.cpp \
-    file_reader/hydrodynamicinput.cpp \
-    file_reader/forcesinput.cpp \
-    file_reader/datainput.cpp \
-    file_reader/controlinput.cpp \
-    file_reader/bodiesinput.cpp \
     file_writer/filewriter.cpp \
     global_objects/system.cpp \
     motion_solver/motionsolver.cpp \
@@ -38,24 +31,25 @@ SOURCES += ofreq.cpp \
     wave_calcs/wavespreadmodel.cpp \
     wave_calcs/wavespectrummodel.cpp \
     wave_calcs/seaenviroment.cpp \
-    motion_solver/matreactforce.cpp \
     motion_solver/matbody.cpp \
-    motion_solver/matcrossforce.cpp \
     motion_model/equationofmotion.cpp \
     motion_model/motionmodel.cpp \
     motion_solver/forcecross.cpp \
     motion_solver/forcereact.cpp \
     motion_solver/derivative.cpp \
     motion_solver/equation.cpp \
-    motion_solver/matactiveforce.cpp \
     global_objects/solution.cpp \
-    global_objects/listsolution.cpp \
     file_reader/filereader.cpp \
     file_reader/parser.cpp \
     file_reader/objectgroup.cpp \
     file_reader/dictionary.cpp \
     file_reader/dictcontrol.cpp \
-    file_reader/dictforces.cpp
+    file_reader/dictforces.cpp \
+    file_reader/dictbodies.cpp \
+    global_objects/solutionset.cpp \
+    motion_solver/matforcecross.cpp \
+    motion_solver/matforceactive.cpp \
+    motion_solver/matforcereact.cpp
 
 HEADERS += \
     derived_outputs/outputsbody.h \
@@ -64,13 +58,6 @@ HEADERS += \
     derived_outputs/globalsolution.h \
     derived_outputs/globalmotion.h \
     derived_outputs/globalacceleration.h \
-    file_reader/seaenvinput.h \
-    file_reader/readinputfile.h \
-    file_reader/hydrodynamicinput.h \
-    file_reader/forcesinput.h \
-    file_reader/datainput.h \
-    file_reader/controlinput.h \
-    file_reader/bodiesinput.h \
     file_writer/filewriter.h \
     global_objects/system.h \
     motion_solver/motionsolver.h \
@@ -81,23 +68,24 @@ HEADERS += \
     wave_calcs/wavespectrummodel.h \
     wave_calcs/seaenviroment.h \
     motion_solver/matbody.h \
-    motion_solver/matcrossforce.h \
-    motion_solver/matreactforce.h \
     motion_model/equationofmotion.h \
     motion_model/motionmodel.h \
     motion_solver/forcecross.h \
     motion_solver/forcereact.h \
     motion_solver/derivative.h \
     motion_solver/equation.h \
-    motion_solver/matactiveforce.h \
     global_objects/solution.h \
-    global_objects/listsolution.h \
     file_reader/filereader.h \
     file_reader/parser.h \
     file_reader/objectgroup.h \
     file_reader/dictionary.h \
     file_reader/dictcontrol.h \
-    file_reader/dictforces.h
+    file_reader/dictforces.h \
+    file_reader/dictbodies.h \
+    global_objects/solutionset.h \
+    motion_solver/matforcecross.h \
+    motion_solver/matforceactive.h \
+    motion_solver/matforcereact.h
 
 # Include header files path for libraries
 INCLUDEPATH += \

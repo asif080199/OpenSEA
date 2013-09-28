@@ -64,14 +64,14 @@ cx_mat GlobalSolution::calcOutput(double freqIn)
 
     //Get number of rows
     int nrow;
-    nrow = getSolution(freqIn).refSolution().n_rows;
+    nrow = getSolution(freqIn).refSolnMat().n_rows;
 
     //resize matrix
     output.set_size(1, nrow);
 
     for(int i = 0; i < nrow; i++)
 	{
-        output(1,i) = pow(wavefreq, orderDerivative) * pow(compI, orderDerivative) * getSolution(freqIn).getSolution(i);
+        output(1,i) = pow(wavefreq, orderDerivative) * pow(compI, orderDerivative) * getSolution(freqIn).getSolnMat(i);
 	}
     return output;
 }
@@ -85,7 +85,7 @@ Solution &GlobalSolution::getSolution(double freqIn)
     int freqIndex;      //The index of the specified frequency in the list of frequencies.
 
     //Search for the index of the frequency specified.
-    for (int i = 0; i < plistFreq->size(); i++)
+    for (unsigned int i = 0; i < plistFreq->size(); i++)
     {
         //Check if the frequency matches the specified freq in.
         if (plistFreq->at(i) == freqIn)

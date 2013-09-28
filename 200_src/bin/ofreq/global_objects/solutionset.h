@@ -57,7 +57,7 @@ using namespace std;
  * This class records the list of solutions obtained for a single Body object.  It is essentially a 2D version of the
  * vector<object> class.  But since vector can't handle 2-d storage solutions, this class was created.
  */
-class listSolution
+class SolutionSet
 {
 //==========================================Section Separator =========================================================
 public:
@@ -65,7 +65,7 @@ public:
     /**
      * @brief Default constructor.
      */
-    listSolution();
+    SolutionSet();
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -74,13 +74,13 @@ public:
      * @param dir The new number of wave directions to resize the array to.
      * @param freq The new number of wave frequencies to resize the array to.
      */
-    listSolution(int dir, int freq);
+    SolutionSet(int dir, int freq);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
      * Default destructor.  Frees any memory dynamically assigned.
      */
-    ~listSolution();
+    ~SolutionSet();
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -99,7 +99,7 @@ public:
      * @param freq Integer.  Index of the wave frequency desired.
      * @param soln The solution object to pass in.
      */
-    void setSolution(int dir, int freq, Solution soln);
+    void setSolnMat(int dir, int freq, Solution soln);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**

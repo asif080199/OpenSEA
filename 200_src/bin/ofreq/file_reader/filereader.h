@@ -57,41 +57,6 @@ using namespace std;
 class System;       /** < Prototype class declaration of System object.  Allows reference to system object.*/
 
 //######################################### Class Separator ###########################################################
-//Constant variables
-
-// Directory Names
-// ---------------------------------
-const string SYS = "system"; /**< The system directory name */
-const string CONST = "constant"; /**< The constant directory name */
-#ifdef Q_OS_WIN
-    const string SLASH = "\"";  /**< Directory separator in a string path., windows version**/
-#elif defined Q_OS_LINUX
-    const string SLASH = "/";   /**< Directory separator in a string path., linux version**/
-#endif
-
-// Input File Names
-// ---------------------------------
-const string CONTROL = "control.in"; /**< The filename for the control file. */
-const string BODIES = "bodies.in"; /**< The filename for the bodies control file. */
-const string DATA = "data.in"; /**< The filename for the data control file. */
-const string FORCES = "forces.in"; /**< The filename for the forces control file. */
-const string SEAENV = "seaenv.in"; /**< The filename for the sea environment control file. */
-
-// Class Name Designators
-// ---------------------------------
-const string OBJ_SEAFILE = "seafile"; /**< The string designation for a sea file object. */
-const string OBJ_SYSTEM = "system"; /**< The string designation for a system object. */
-const string OBJ_HYDROFILE = "hydrofiles"; /**< The string designation for a hydrofile object. */
-const string OBJ_FORCE_ACTIVE = "force_active"; /**< The string designation for an active force object. */
-const string OBJ_FORCE_REACT = "force_reactive"; /**< The string designation for a reactive force object. */
-const string OBJ_FORCE_CROSS = "force_crossbody"; /**< The string designation for a cross-body force object.*/
-
-// Key Value Pair Designators
-// ---------------------------------
-const string KEY_FORMAT = "format";  /**< The key designator for a format value in the seafile object. */
-const string KEY_VERSION = "version"; /**< The key designator for a version value in the seafile object. */
-
-//######################################### Class Separator ###########################################################
 /**
  * FileReader is the next generation of superseded class:  ReadInputFile.  FileReader simply reads the text file and
  * parses it into keword value pairs.  FileReader reads in the input files.  It then passes those input files to the
@@ -140,7 +105,8 @@ public:
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
      * @brief Sets the path to the working directory that all control files are located in.
-     * @param input The full path to the working directory.  Variable passed by value.
+     * @param input The full path to the working directory.  Do not include directory separator (SLASH, "/") at end
+     * of string.  Variable passed by value.
      */
     void setPath(string input);
 
@@ -183,6 +149,24 @@ public:
      * Returns 1 for file does not exist.
      */
     int readData();
+
+//==========================================Section Separator =========================================================
+public slots:
+        //------------------------------------------Function Separator ----------------------------------------------------
+        /**
+         * @brief Reads hydrodynamic input files.
+         * @param path The full path to the hydrodynamic input file to read.
+         * @return Returns integer to report success or failure of file parsing.  Returns 0 for success.
+         * Returns 1 for file does not exist.
+         */
+        int readHydroFile(string path);
+
+        //------------------------------------------Function Separator ----------------------------------------------------
+        /**
+         * @brief Sets the system object for the dictionary to reference.
+         * @param ptSystem Pointer to the System object.  Variable passed by value.
+         */
+        void setSystem(System* ptInput);
 
 //==========================================Section Separator =========================================================
 signals:
@@ -235,24 +219,6 @@ signals:
     void outputSeaEnvFile(ObjectGroup output);
 
 //==========================================Section Separator =========================================================
-public slots:
-    //------------------------------------------Function Separator ----------------------------------------------------
-    /**
-     * @brief Reads hydrodynamic input files.
-     * @param path The full path to the hydrodynamic input file to read.
-     * @return Returns integer to report success or failure of file parsing.  Returns 0 for success.
-     * Returns 1 for file does not exist.
-     */
-    int readHydroFile(string path);
-
-    //------------------------------------------Function Separator ----------------------------------------------------
-    /**
-     * @brief Sets the system object for the dictionary to reference.
-     * @param ptSystem Pointer to the System object.  Variable passed by value.
-     */
-    void setSystem(System* ptInput);
-
-//==========================================Section Separator =========================================================
 protected:
 
 //==========================================Section Separator =========================================================
@@ -287,6 +253,34 @@ private:
      * @brief Pointer to the System object.  Used to reference any important variables in the System object.
      */
     System* ptSystem;
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    // Directory Names
+    const static string SYS; /**< The system directory name */
+    const static string CONST; /**< The const staticant directory name */
+    const static string SLASH; /**< Directory separator in a string path. */
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    // Input File Names
+    const static string CONTROL; /**< The filename for the control file. */
+    const static string BODIES; /**< The filename for the bodies control file. */
+    const static string DATA; /**< The filename for the data control file. */
+    const static string FORCES; /**< The filename for the forces control file. */
+    const static string SEAENV; /**< The filename for the sea environment control file. */
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    // Class Name Designators
+    const static string OBJ_SEAFILE; /**< The string designation for a sea file object. */
+    const static string OBJ_SYSTEM; /**< The string designation for a system object. */
+    const static string OBJ_HYDROFILE; /**< The string designation for a hydrofile object. */
+    const static string OBJ_FORCE_ACTIVE; /**< The string designation for an active force object. */
+    const static string OBJ_FORCE_REACT; /**< The string designation for a reactive force object. */
+    const static string OBJ_FORCE_CROSS; /**< The string designation for a cross-body force object.*/
+
+    // Key Value Pair Designators
+    // ---------------------------------
+    const static string KEY_FORMAT;  /**< The key designator for a format value in the seafile object. */
+    const static string KEY_VERSION; /**< The key designator for a version value in the seafile object. */
 };
 
 #endif // FILEPARSER_H

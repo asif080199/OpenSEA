@@ -53,9 +53,9 @@
 #endif
 #include "body.h"
 #include "derivative.h"
-#include "matreactforce.h"
-#include "matactiveforce.h"
-#include "matcrossforce.h"
+#include "matforcereact.h"
+#include "matforceactive.h"
+#include "matforcecross.h"
 
 using namespace arma;
 using namespace std;
@@ -132,7 +132,7 @@ public:
      * Returns a reference to the mass matrix.
      * @return Returns a reference to the mass matrix.  Variable passed by reference.
      */
-    cx_mat &Mass();
+    cx_mat &refMass();
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -143,7 +143,7 @@ public:
      * @return This is a vector list of the Reactive Force objects. Provides direct access to the variable and all
      * the member functions of the vector class.  Variable passed by reference.
      */
-    vector<matReactForce> &listReactForce_user();
+    vector<matForceReact> &listForceReact_user();
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -154,7 +154,7 @@ public:
      * @return This is a vector list of the Cross-Body Force objects. Provides direct access to the variable and all
      * the member functions of the vector class.  Variable passed by reference.
      */
-    vector<matCrossForce> &listCrossForce_user();
+    vector<matForceCross> &listForceCross_user();
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -165,7 +165,7 @@ public:
      * @return This is a vector list of the Active Force objects. Provides direct access to the variable and all
      * the member functions of the vector class.  Variable passed by reference.
      */
-    vector<matActiveForce> &listActiveForce_user();
+    vector<matForceActive> &listForceActive_user();
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -176,7 +176,7 @@ public:
      * @return This is a vector list of the Reactive Force objects. Provides direct access to the variable and all
      * the member functions of the vector class.  Variable passed by reference.
      */
-    vector<matReactForce> &listReactForce_hydro();
+    vector<matForceReact> &listForceReact_hydro();
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -187,7 +187,7 @@ public:
      * @return This is a vector list of the Cross-Body Force objects. Provides direct access to the variable and all
      * the member functions of the vector class.  Variable passed by reference.
      */
-    vector<matCrossForce> &listCrossForce_hydro();
+    vector<matForceCross> &listForceCross_hydro();
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -198,7 +198,7 @@ public:
      * @return This is a vector list of the Active Force objects. Provides direct access to the variable and all
      * the member functions of the vector class.  Variable passed by reference.
      */
-    vector<matActiveForce> &listActiveForce_hydro();
+    vector<matForceActive> &listForceActive_hydro();
 
 
 
@@ -224,14 +224,13 @@ private:
     cx_mat pMass; /**< The Mass Matrix. */
 
     //User Force Coefficient Matrices
-    vector<matReactForce> plistReactForce_user; /**< List of user reactive force matrices. */
-    vector<matCrossForce> plistCrossForce_user; /**< List of user cross body force matrices. */
-    vector<matActiveForce> plistActiveForce_user; /**< List of user active force matrices. */
+    vector<matForceReact> plistForceReact_user; /**< List of user reactive force matrices. */
+    vector<matForceCross> plistForceCross_user; /**< List of user cross body force matrices. */
+    vector<matForceActive> plistForceActive_user; /**< List of user active force matrices. */
 
     //Hydro Force Coefficient Matrices
-    vector<matReactForce> plistReactForce_hydro; /**< List of hydro reactive force matrices. */
-    vector<matCrossForce> plistCrossForce_hydro; /**< List of hydro cross body force matrices. */
-    vector<matActiveForce> plistActiveForce_hydro; /**< List of hydro active force matrices. */
-
+    vector<matForceReact> plistForceReact_hydro; /**< List of hydro reactive force matrices. */
+    vector<matForceCross> plistForceCross_hydro; /**< List of hydro cross body force matrices. */
+    vector<matForceActive> plistForceActive_hydro; /**< List of hydro active force matrices. */
 };
 #endif

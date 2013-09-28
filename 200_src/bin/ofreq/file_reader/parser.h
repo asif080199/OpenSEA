@@ -50,26 +50,6 @@ class Parser;       //This forward declaration is required because the class def
                     //class.
 
 //######################################### Class Separator ###########################################################
-//Constant Variables
-
-// Characters within Input files
-// ---------------------------------
-const int HEADER_LENGTH = 6; /**< Length of header, This is temp needs to be fixed. */
-const string COMMENT_LINE = "//"; /**< Line Comment. */
-const string COMMENT_BLOCK_BEGIN = "/*"; /**< Block Comment Begin. */
-const string COMMENT_BLOCK_END = "*/"; /**< Block comment end. */
-const string END_STATEMENT = ";"; /**< End of statement. */
-const string OBJECT_BEGIN = "{"; /**< Object scope begin. */
-const string OBJECT_END = "}"; /**< Object scope end */
-const string LIST_BEGIN = "("; /**< List scope begin. */
-const string LIST_END = ");"; /**< List scope end. */
-const string KEY_VAL_SEPARATOR= ":"; /**< Key/Val pair seperator. */
-const char EOL = '\n'; /**< newline. */
-const int MAX_IGNORE = 150000; /**< Max # of chars to ignore. */
-const string OBJ_SEAFILE = "seafile"; /**< seafile object name, used to ignore seafile block. */
-const string QUOTE = "\"";
-
-//######################################### Class Separator ###########################################################
 /**
  * @brief The Parser class takes an input segment of strings and segments that segment.  It strips out comments.
  * It recognizes quotation marks and groups those segments together.  Parser finally returns a series of ObjectGroup
@@ -117,7 +97,7 @@ public:
      * @brief Provides direct access to the vector of ObjectGroup objects processed by the Parser object.
      * @return Returns reference to the vector of ObjectGroup objects.  Variable passed by reference.
      */
-    vector<ObjectGroup>& refObject();
+    vector<ObjectGroup> &refObject();
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -161,7 +141,7 @@ private:
     /**
      * @brief Pointer to the recursive object of this class.  This is necessary to allow recursive parsing of an object.
      */
-    Parser subParse;
+    Parser* subParse;
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -170,7 +150,7 @@ private:
      * @param infile The input file to parse.
      * @param prevString The string from the previous loop of parsing the input stream.
      */
-    void ParseCommands(istream& infile, string prevString);
+    void ParseCommands(istream &infile, string prevString);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -186,6 +166,22 @@ private:
      * @brief Tracks which object the parser is currently adding data to.  Handles situations of possible multiple
      */
     int curObject;
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    // Characters within Input files
+    const static string COMMENT_LINE; /**< Line Comment. */
+    const static string COMMENT_BLOCK_BEGIN; /**< Block Comment Begin. */
+    const static string COMMENT_BLOCK_END; /**< Block comment end. */
+    const static string END_STATEMENT; /**< End of statement. */
+    const static string OBJECT_BEGIN; /**< Object scope begin. */
+    const static string OBJECT_END; /**< Object scope end */
+    const static string LIST_BEGIN; /**< List scope begin. */
+    const static string LIST_END; /**< List scope end. */
+    const static string KEY_VAL_SEPARATOR; /**< Key/Val pair seperator. */
+    const static char EOL; /**< newline. */
+    const static int MAX_IGNORE; /**< Max # of chars to ignore. */
+    const static string OBJ_SEAFILE; /**< seafile object name, used to ignore seafile block. */
+    const static string QUOTE;
 };
 
 #endif // PARSER_H

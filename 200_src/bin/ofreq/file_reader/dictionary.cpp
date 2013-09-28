@@ -57,7 +57,7 @@ virtual void Dictionary::setObject(ObjectGroup input)
     int returnVal;
 
     //Proceed through each key / value pair defined for the ObjectGroup object.
-    for (unsigned int i = 0; i <= input.refListKey().size(); i++)
+    for (unsigned int i = 0; i <= input.listKey().size(); i++)
     {
         //define the key
         returnVal = defineKey(input.getKey(i), input.getVal(i));
@@ -65,10 +65,10 @@ virtual void Dictionary::setObject(ObjectGroup input)
     }
 
     //Next proceed through each of the sub classes defined for the ObjectGroup object.
-    for (unsigned int i = 0; i <= input.refListObject().size(); i++)
+    for (unsigned int i = 0; i <= input.listObject().size(); i++)
     {
         //define the class
-        returnVal = setObject(input.refListObject()[i]);
+        returnVal = setObject(input.listObject()[i]);
         //Need to create error handler later to handle what happens if returnVal not 0
     }
 }
@@ -81,6 +81,96 @@ virtual void Dictionary::setSystem(System* ptInput)
 
 //==========================================Section Separator =========================================================
 //Protected Functions
+
+//------------------------------------------Function Separator --------------------------------------------------------
+complex<double> Dictionary::convertComplex(string input)
+{
+    complex<double> output;
+
+    const string BRACKET = "<";
+    const string IMAGINARY = "i";
+    const string PLUS = "+";
+    const string MINUS = "-";
+
+    //First check if defined by amplitude and angle
+    int indexSep;
+    indexSep = input.find(BRACKET);
+    if (indexSep == std::string::npos)
+    {
+        //Not using bracket
+        int indPlus;
+        int indMinus;
+        int indImag;
+
+        //Get positions of plus, minus, and imaginary.
+        //Ignore the first character to avoid picking up any plus/minus indicators for real component.
+        indImag = input.find(IMAGINARY,1);
+        indPlus = input.find(PLUS,1);
+        indMinus = input.find(MINUS,1);
+
+        //Separate string by position of plus and minus signs.
+        if (indPlus == std::string::npos)
+        {
+            //No plus involved.  Minus sign.
+            //Check if imaginary symbol is at middel or end of input.
+            if (indImag == input.end())
+            {
+                //End of input
+                //Assign real part.
+                output.real() = atof(input.substr(0, indMinus).c_str());
+                //Assign imaginary part
+                output.imag() = -1.0 * atof(input.substr(indMinus + 1, indImag - indPlus).c_str());
+            }
+            else
+            {
+                //Middle of input
+                //Assign real part.
+                output.real() = atof(input.substr(0, indMinus).c_str());
+                //Assign imaginary part
+                output.imag() = -1.0 * atof(input.substr(indImag + 1, input.end() - indImag).c_str());
+            }
+        }
+        else
+        {
+            //Plus sign used.
+            //Check if imaginary symbol is at middle or end of input.
+            if (indImag == input.end())
+            {
+                //End of input.
+                //Assign real part.
+                output.real() = atof(input.substr(0, indPlus).c_str());
+                //Assign imaginary part
+                output.imag() = atof(input.substr(indPlus + 1, indImag - indPlus).c_str());
+            }
+            else
+            {
+                //Middle of input.
+                //Assign real part.
+                output.real() = atof(input.substr(0,indPlus).c_str());
+                //Assign imaginary part
+                output.imag() = atof(input.substr(indImag + 1, input.end() - indImag).c_str());
+            }
+        }
+    }
+    else
+    {
+        //using bracket.  Process as polar notation.
+        double amp;
+        double phase;
+
+        //Get amplitude
+        amp = atof(input.substr(0, indexSep).c_str());
+        //Get phase
+        phase = atof(input.substr(indexSep + 1).c_str());
+
+        //Convert to real and imaginary parts.
+        output.real() = amp * cos(phase);
+        output.imag() = amp * sin(phase);
+    }
+
+    //Return output
+    return output;
+}
 
 
 //==========================================Section Separator =========================================================

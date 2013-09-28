@@ -27,27 +27,27 @@
 #include "forcereact.h"
 
 //------------------------------------------Function Separator --------------------------------------------------------
-forceReact::forceReact() : Force()
+ForceReact::ForceReact() : Force()
 {}
 
 //------------------------------------------Function Separator --------------------------------------------------------
-forceReact::~forceReact()
+ForceReact::~ForceReact()
 {}
 
 //------------------------------------------Function Separator --------------------------------------------------------
-void forceReact::setCurDerivative(int newOrder)
+void ForceReact::setCurDerivative(int newOrder)
 {
 	currentDerivative = newOrder;
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-void forceReact::setCurEquationNum(int newEquationNum)
+void ForceReact::setCurEquationNum(int newEquationNum)
 {
 	currentEquation = newEquationNum -1;
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-void forceReact::setCoeff(vector<string> newList, bool isDirectList)
+void ForceReact::setCoeff(vector<string> newList, bool isDirectList)
 {
 	if(isDirectList) //key value pair
 	{
@@ -66,7 +66,7 @@ void forceReact::setCoeff(vector<string> newList, bool isDirectList)
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-void forceReact::testPrint()
+void ForceReact::testPrint()
 {
 	
 	cout << "##Reactive Forces##" << endl;
@@ -80,19 +80,13 @@ void forceReact::testPrint()
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-vector<Derivative> forceReact::getDerivatives()
-{
-    return pDerivative;
-}
-
-//------------------------------------------Function Separator --------------------------------------------------------
-vector<Derivative> &forceReact::Derivatives()
+vector<Derivative> &ForceReact::listDerivatives()
 {
     return this->getDerivatives();
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-Derivative forceReact::getDerivative(int num)
+Derivative ForceReact::getDerivative(int num)
 {
     //Return the derivative object specified.
 
@@ -108,7 +102,7 @@ Derivative forceReact::getDerivative(int num)
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-Derivative &forceReact::refDerivative(int num)
+Derivative &ForceReact::refDerivative(int num)
 {
     //Return the derivative object specified.
     //Value is a pointer to the derivative.
@@ -125,14 +119,14 @@ Derivative &forceReact::refDerivative(int num)
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-void forceReact::addDerivative()
+void ForceReact::addDerivative()
 {
     //Adds a new derivative object.
     pDerivative.push_back(Derivative());
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-void forceReact::addDerivative(Derivative derivIn, int ordIn)
+void ForceReact::addDerivative(Derivative derivIn, int ordIn)
 {
     //Adds a new derivative object
 
@@ -148,7 +142,7 @@ void forceReact::addDerivative(Derivative derivIn, int ordIn)
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-int forceReact::getMaxOrd()
+int ForceReact::getMaxOrd()
 {
     return pDerivative.size();
 }

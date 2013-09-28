@@ -27,25 +27,13 @@
 #include "forcecross.h"
 
 
-forceCross::forceCross() : forceReact()
+ForceCross::ForceCross() : ForceReact()
 {
 }
 
 
-forceCross::~forceCross()
+ForceCross::~ForceCross()
 {
-}
-
-void forceCross::testPrint()
-{
-	cout << "##Cross-Body Forces##" << endl;
-	cout << "Name: " << forceName << endl;
-	for(unsigned int i = 0l; i < MAX_ORDER_DERIVATIVE; i++)
-	{
-		cout << "Derivative Order#: " << i << endl;
-		pDerivative[i].testPrint();
-	}
-	cout<< endl;
 }
 
 

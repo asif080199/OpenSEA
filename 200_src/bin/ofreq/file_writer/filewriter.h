@@ -51,56 +51,6 @@
 using namespace std;
 using namespace boost::filesystem; //for using boost file system
 
-//##################################### VARIABLE DECLARATIONS #########################################################
-
-//==========================================Section Separator =========================================================
-//Reference File Declarations
-const string HEADER_FILENAME = "../../var/openseaheader.txt";
-
-//==========================================Section Separator =========================================================
-//Directory Specifications
-const string DIR_NAME = "d"; /**< The starting character for the wave direction directory.**/
-const string RES_NAME = "r"; /**< The starting character for the resonant frequency directory.**/
-#ifdef Q_OS_WIN
-    const string SLASH = "\"";  /**< Directory separator in a string path., windows version**/
-#elif defined Q_OS_LINUX
-    const string SLASH = "/";   /**< Directory separator in a string path., linux version**/
-#endif
-
-//==========================================Section Separator =========================================================
-//General File Content Marks
-const string LIST_BEGIN2 = "(";
-const string LIST_END2 = ");";
-const string OBJECT_BEGIN2 = "{";
-const string OBJECT_END2 = "}";
-const string END = ";";
-const string TAB = "  ";
-const string SPACE = " ";
-const string NAME = "name";
-const string DATA = "data";
-const string VALUE = "value";
-const string FREQUENCY = "frequency";
-const string DIRECTION = "direction";
-const string VERSION = "version";
-const string FORMAT = "format";
-const string OBJECT = "object";
-const string BODY = "body";
-const string VERSION_INFO = "1.0";
-const string FORMAT_INFO = "ascii";
-const string SEAFILE2 = "seafile";
-const string BREAK_TOP = "// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //\n";
-const string BREAK_BOTTOM = "// ************************************************************************* //";
-const int DIGIT = 15; /** The number of digits to use in precision of floating point numbers.*/
-
-//==========================================Section Separator =========================================================
-//Filename Markers
-const string DIRECTIONS_FILENAME = "directions.out";
-const string FREQUENCIES_FILENAME = "frequencies.out";
-const string GLOBAL_ACCELERATION_FILENAME = "accglobal.out";
-const string GLOBAL_MOTION_FILENAME = "motglobal.out";
-const string GLOBAL_VELOCITY_FILENAME = "velglobal.out";
-const string GLOBAL_SOLUTION_FILENAME = "solglobal.out";
-
 //######################################### Class Separator ###########################################################
 //Prototype class declarations
 class OutputsBody;
@@ -306,5 +256,54 @@ private:
      * from the OutputsBody object.
      */
     OutputsBody* pOutput;
+
+    //=================================== Variable Declarations =======================================================
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    //Reference File Declarations
+    static string HEADER_FILENAME;
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    //Directory Specifications
+    static string NAME_DIR; /**< The starting character for the wave direction directory.**/
+    static string NAME_RES; /**< The starting character for the resonant frequency directory.**/
+    static string SLASH; /**< The directory separator in a string path.*/
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    //General File Content Marks
+    static string LIST_BEGIN2;
+    static string LIST_END2;
+    static string OBJECT_BEGIN2;
+    static string OBJECT_END2;
+    static string END;
+    static string TAB;
+    static string SPACE;
+    static string BREAK_TOP;
+    static string BREAK_BOTTOM;
+    static int DIGIT; /** The number of digits to use in precision of floating point numbers.*/
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    //Key-Value Markers
+    static string KEY_NAME; /**< Key to mark name of object being described. */
+    static string KEY_DATA; /**< Key to mark data for an object */
+    static string KEY_VALUE; /**< Key to mark the values for an object */
+    static string KEY_FREQUENCY; /**< Key to mark a frequency value */
+    static string KEY_DIRECTION; /**< Key to mark a direction value */
+    static string KEY_VERSION; /**< Key to mark the version of the program */
+    static string KEY_FORMAT; /**< Key to mark the format of the output file */
+    static string KEY_OBJECT; /**< Key to mark the object of the output file */
+    static string KEY_BODY; /**< Key to mark a body object */
+    static string VAL_VERSION; /**< Value to denote current program version */
+    static string VAL_FORMAT; /**< Value to denote format of output */
+    static string VAL_SEAFILE; /**< Value to denote a seafile for output file */
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    //Filename Markers
+    static string FILE_DIRECTIONS; /**< Filename for directions output file */
+    static string FILE_FREQUENCIES; /**< Filename for frequencies output file */
+    static string FILE_GLOBAL_ACCELERATION; /**< Filename for global acceleration output file */
+    static string FILE_GLOBAL_MOTION; /**< Filename for global motion output file */
+    static string FILE_GLOBAL_VELOCITY; /**< Filename for global velocity output file */
+    static string FILE_GLOBAL_SOLUTION; /**< Filename for general global solution output file */
 };
 #endif

@@ -32,7 +32,53 @@
 //------------------------------------------Function Separator --------------------------------------------------------
 FileWriter::FileWriter()
 {
+    //------------------------------------------Function Separator ----------------------------------------------------
+    //Reference File Declarations
+    HEADER_FILENAME = "../../var/openseaheader.txt";
 
+    //------------------------------------------Function Separator ----------------------------------------------------
+    //Directory Specifications
+    NAME_DIR = "d"; /**< The starting character for the wave direction directory.**/
+    NAME_RES = "r"; /**< The starting character for the resonant frequency directory.**/
+    #ifdef Q_OS_WIN
+        SLASH = "\"";  /**< Directory separator in a string path., windows version**/
+    #elif defined Q_OS_LINUX
+        SLASH = "/";   /**< Directory separator in a string path., linux version**/
+    #endif
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    //General File Content Marks
+    LIST_BEGIN2 = "(";
+    LIST_END2 = ");";
+    OBJECT_BEGIN2 = "{";
+    OBJECT_END2 = "}";
+    END = ";";
+    TAB = "  ";
+    SPACE = " ";
+    KEY_NAME = "name";
+    KEY_DATA = "data";
+    KEY_VALUE = "value";
+    KEY_FREQUENCY = "frequency";
+    KEY_DIRECTION = "direction";
+    KEY_VERSION = "version";
+    KEY_FORMAT = "format";
+    KEY_OBJECT = "object";
+    KEY_BODY = "body";
+    VAL_VERSION = "1.0";
+    VAL_FORMAT = "ascii";
+    VAL_SEAFILE = "seafile";
+    BREAK_TOP = "// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //\n";
+    BREAK_BOTTOM = "// ************************************************************************* //";
+    DIGIT = 15; /** The number of digits to use in precision of floating point numbers.*/
+
+    //==========================================Section Separator =========================================================
+    //Filename Markers
+    FILE_DIRECTIONS = "directions.out";
+    FILE_FREQUENCIES = "frequencies.out";
+    FILE_GLOBAL_ACCELERATION = "accglobal.out";
+    FILE_GLOBAL_MOTION = "motglobal.out";
+    FILE_GLOBAL_VELOCITY = "velglobal.out";
+    FILE_GLOBAL_SOLUTION = "solglobal.out";
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
@@ -69,14 +115,14 @@ void FileWriter::setProjectDir(string dirIn)
 bool FileWriter::clearFiles()
 {
     string numToDelete = "0";
-    string curDirectoryPath = DIR_NAME + numToDelete; //start at directory "d0"
+    string curDirectoryPath = NAME_DIR + numToDelete; //start at directory "d0"
 
     //Remove the direcions & frequencies file outputs if they exist
-    if(exists(projectDirectory + SLASH + DIRECTIONS_FILENAME))
-        remove(projectDirectory + SLASH + DIRECTIONS_FILENAME);
+    if(exists(projectDirectory + SLASH + FILE_DIRECTIONS))
+        remove(projectDirectory + SLASH + FILE_DIRECTIONS);
 
-    if(exists(projectDirectory + SLASH + FREQUENCIES_FILENAME))
-        remove(projectDirectory + SLASH + FREQUENCIES_FILENAME);
+    if(exists(projectDirectory + SLASH + FILE_FREQUENCIES))
+        remove(projectDirectory + SLASH + FILE_FREQUENCIES);
 
     while(exists(projectDirectory + SLASH + curDirectoryPath)) //check if current directory exists
     {
@@ -90,7 +136,7 @@ bool FileWriter::clearFiles()
             int numToDeleteHelper = boost::lexical_cast<int>(numToDelete);
             ++numToDeleteHelper;
             numToDelete = boost::lexical_cast<string>(numToDeleteHelper);
-            curDirectoryPath = DIR_NAME + numToDelete;
+            curDirectoryPath = NAME_DIR + numToDelete;
         }
     }
     return true; //all directories deleted successfully
@@ -111,7 +157,7 @@ bool FileWriter::fileExists(string filename)
 
     convert << getCurWaveInd();
 
-    wavePath = DIR_NAME + convert.str();
+    wavePath = NAME_DIR + convert.str();
 
     wavePath = wavePath + SLASH + filename;
 
@@ -135,7 +181,7 @@ bool FileWriter::writeWaveDirection()
     string writeFilename;
 
     //Get filename
-    writeFilename = projectDirectory + SLASH + DIRECTIONS_FILENAME;
+    writeFilename = projectDirectory + SLASH + FILE_DIRECTIONS;
 
     //Open file
     output.open(writeFilename.c_str());
@@ -144,16 +190,16 @@ bool FileWriter::writeWaveDirection()
     output << header;
 
     //Add info block
-    output << getInfoBlock(DIRECTION);
+    output << getInfoBlock(KEY_DIRECTION);
     output << BREAK_TOP;
 
     //Add beginning of data
-    output << DIRECTION + SPACE + LIST_BEGIN2 << endl;
+    output << KEY_DIRECTION + SPACE + LIST_BEGIN2 << endl;
 
     //Write outputs
-    for(unsigned int i = 0; i < pOutput->reflistWaveDir().size(); i ++)
+    for(unsigned int i = 0; i < pOutput->listWaveDir().size(); i ++)
     {
-        output << TAB << pOutput->reflistWaveDir()[i] << endl;
+        output << TAB << pOutput->listWaveDir()[i] << endl;
     }
 
     //Close the list and finish
@@ -172,7 +218,7 @@ bool FileWriter::writeFrequency()
     string writeFilename;
 
     //Get filename
-    writeFilename = projectDirectory + SLASH + FREQUENCIES_FILENAME;
+    writeFilename = projectDirectory + SLASH + FILE_FREQUENCIES;
 
     //Open file
     output.open(writeFilename.c_str());
@@ -181,16 +227,16 @@ bool FileWriter::writeFrequency()
     output << header;
 
     //Add info block
-    output << getInfoBlock(FREQUENCY);
+    output << getInfoBlock(KEY_FREQUENCY);
     output << BREAK_TOP;
 
     //Add beginning of data
-    output << FREQUENCY + SPACE + LIST_BEGIN2 << endl;
+    output << KEY_FREQUENCY + SPACE + LIST_BEGIN2 << endl;
 
     //Write outputs
-    for(unsigned int i = 0; i < pOutput->reflistFreq().size(); i ++)
+    for(unsigned int i = 0; i < pOutput->listFreq().size(); i ++)
     {
-        output << TAB << pOutput->reflistFreq().at(i) << endl;
+        output << TAB << pOutput->listFreq().at(i) << endl;
     }
 
     //Close the list and finish
@@ -212,7 +258,7 @@ bool FileWriter::writeGlobalMotion()
     createDir(getCurWaveDir());
 
     //create filename and open file
-    writeFilename = projectDirectory + SLASH + getCurWaveDir() + GLOBAL_MOTION_FILENAME;
+    writeFilename = projectDirectory + SLASH + getCurWaveDir() + FILE_GLOBAL_MOTION;
     ofstream output;
 
     //Check if file already exists.
@@ -240,10 +286,10 @@ bool FileWriter::writeGlobalMotion()
     }
 
     //Write output for beginning of body
-    output << BODY << SPACE << OBJECT_BEGIN2 << endl;
-    output << NAME;
+    output << KEY_BODY << SPACE << OBJECT_BEGIN2 << endl;
+    output << KEY_NAME;
     output << SPACE;
-    output << pOutput->refCurBody().BodyName();
+    output << pOutput->refCurBody().refBodyName();
     output << END << endl;
 
     //Repeat process for each item in object list
@@ -252,20 +298,20 @@ bool FileWriter::writeGlobalMotion()
         //Start the output object.
         output << TAB << classname << OBJECT_BEGIN2 << endl;
         output << TAB;
-        output << NAME;
+        output << KEY_NAME;
         output << SPACE;
         output << pOutput->refGlobalMotion(i).getName();
         output << END << endl;
 
         //Iterate for each frequency in the list
-        for (unsigned int j = 0; j < pOutput->reflistFreq().size(); j++)
+        for (unsigned int j = 0; j < pOutput->listFreq().size(); j++)
         {
             //Create data signifier
-            output << TAB << TAB << DATA << SPACE << OBJECT_BEGIN2 << endl;
+            output << TAB << TAB << KEY_DATA << SPACE << OBJECT_BEGIN2 << endl;
             //Add frequency designator
-            output << TAB << TAB << FREQUENCY << SPACE << (j+1) << END << endl;
+            output << TAB << TAB << KEY_FREQUENCY << SPACE << (j+1) << END << endl;
             //Add value indicator
-            output << TAB << TAB << VALUE << SPACE << LIST_BEGIN2 << endl;
+            output << TAB << TAB << KEY_VALUE << SPACE << LIST_BEGIN2 << endl;
             for (unsigned int k = 0; j < pOutput->getGlobalMotion(i).size(); k++)
             {
                 //Set precision
@@ -308,7 +354,7 @@ bool FileWriter::writeGlobalVelocity()
     createDir(getCurWaveDir());
 
     //create filename and open file
-    writeFilename = projectDirectory + SLASH + getCurWaveDir() + GLOBAL_VELOCITY_FILENAME;
+    writeFilename = projectDirectory + SLASH + getCurWaveDir() + FILE_GLOBAL_VELOCITY;
     ofstream output;
 
     //Check if file already exists.
@@ -336,10 +382,10 @@ bool FileWriter::writeGlobalVelocity()
     }
 
     //Write output for beginning of body
-    output << BODY << SPACE << OBJECT_BEGIN2 << endl;
-    output << NAME;
+    output << KEY_BODY << SPACE << OBJECT_BEGIN2 << endl;
+    output << KEY_NAME;
     output << SPACE;
-    output << pOutput->refCurBody().BodyName();
+    output << pOutput->refCurBody().refBodyName();
     output << END << endl;
 
     //Repeat process for each item in object list
@@ -348,20 +394,20 @@ bool FileWriter::writeGlobalVelocity()
         //Start the output object.
         output << TAB << classname << OBJECT_BEGIN2 << endl;
         output << TAB;
-        output << NAME;
+        output << KEY_NAME;
         output << SPACE;
         output << pOutput->refGlobalVelocity(i).getName();
         output << END << endl;
 
         //Iterate for each frequency in the list
-        for (unsigned int j = 0; j < pOutput->reflistFreq().size(); j++)
+        for (unsigned int j = 0; j < pOutput->listFreq().size(); j++)
         {
             //Create data signifier
-            output << TAB << TAB << DATA << SPACE << OBJECT_BEGIN2 << endl;
+            output << TAB << TAB << KEY_DATA << SPACE << OBJECT_BEGIN2 << endl;
             //Add frequency designator
-            output << TAB << TAB << FREQUENCY << SPACE << (j+1) << END << endl;
+            output << TAB << TAB << KEY_FREQUENCY << SPACE << (j+1) << END << endl;
             //Add value indicator
-            output << TAB << TAB << VALUE << SPACE << LIST_BEGIN2 << endl;
+            output << TAB << TAB << KEY_VALUE << SPACE << LIST_BEGIN2 << endl;
             for (unsigned int k = 0; j < pOutput->getGlobalVelocity(i).size(); k++)
             {
                 //Set precision
@@ -404,7 +450,7 @@ bool FileWriter::writeGlobalAcceleration()
     createDir(getCurWaveDir());
 
     //create filename and open file
-    writeFilename = projectDirectory + SLASH + getCurWaveDir() + GLOBAL_ACCELERATION_FILENAME;
+    writeFilename = projectDirectory + SLASH + getCurWaveDir() + FILE_GLOBAL_ACCELERATION;
     ofstream output;
 
     //Check if file already exists.
@@ -432,10 +478,10 @@ bool FileWriter::writeGlobalAcceleration()
     }
 
     //Write output for beginning of body
-    output << BODY << SPACE << OBJECT_BEGIN2 << endl;
-    output << NAME;
+    output << KEY_BODY << SPACE << OBJECT_BEGIN2 << endl;
+    output << KEY_NAME;
     output << SPACE;
-    output << pOutput->refCurBody().BodyName();
+    output << pOutput->refCurBody().refBodyName();
     output << END << endl;
 
     //Repeat process for each item in object list
@@ -444,20 +490,20 @@ bool FileWriter::writeGlobalAcceleration()
         //Start the output object.
         output << TAB << classname << OBJECT_BEGIN2 << endl;
         output << TAB;
-        output << NAME;
+        output << KEY_NAME;
         output << SPACE;
         output << pOutput->refGlobalAcceleration(i).getName();
         output << END << endl;
 
         //Iterate for each frequency in the list
-        for (unsigned int j = 0; j < pOutput->reflistFreq().size(); j++)
+        for (unsigned int j = 0; j < pOutput->listFreq().size(); j++)
         {
             //Create data signifier
-            output << TAB << TAB << DATA << SPACE << OBJECT_BEGIN2 << endl;
+            output << TAB << TAB << KEY_DATA << SPACE << OBJECT_BEGIN2 << endl;
             //Add frequency designator
-            output << TAB << TAB << FREQUENCY << SPACE << (j+1) << END << endl;
+            output << TAB << TAB << KEY_FREQUENCY << SPACE << (j+1) << END << endl;
             //Add value indicator
-            output << TAB << TAB << VALUE << SPACE << LIST_BEGIN2 << endl;
+            output << TAB << TAB << KEY_VALUE << SPACE << LIST_BEGIN2 << endl;
             for (unsigned int k = 0; j < pOutput->getGlobalAcceleration(i).size(); k++)
             {
                 //Set precision
@@ -500,7 +546,7 @@ bool FileWriter::writeGlobalSolution()
     createDir(getCurWaveDir());
 
     //create filename and open file
-    writeFilename = projectDirectory + SLASH + getCurWaveDir() + GLOBAL_SOLUTION_FILENAME;
+    writeFilename = projectDirectory + SLASH + getCurWaveDir() + FILE_GLOBAL_SOLUTION;
     ofstream output;
 
     //Check if file already exists.
@@ -528,10 +574,10 @@ bool FileWriter::writeGlobalSolution()
     }
 
     //Write output for beginning of body
-    output << BODY << SPACE << OBJECT_BEGIN2 << endl;
-    output << NAME;
+    output << KEY_BODY << SPACE << OBJECT_BEGIN2 << endl;
+    output << KEY_NAME;
     output << SPACE;
-    output << pOutput->refCurBody().BodyName();
+    output << pOutput->refCurBody().refBodyName();
     output << END << endl;
 
     //Repeat process for each item in object list
@@ -540,20 +586,20 @@ bool FileWriter::writeGlobalSolution()
         //Start the output object.
         output << TAB << classname << OBJECT_BEGIN2 << endl;
         output << TAB;
-        output << NAME;
+        output << KEY_NAME;
         output << SPACE;
         output << pOutput->refGlobalSolution(i).getName();
         output << END << endl;
 
         //Iterate for each frequency in the list
-        for (unsigned int j = 0; j < pOutput->reflistFreq().size(); j++)
+        for (unsigned int j = 0; j < pOutput->listFreq().size(); j++)
         {
             //Create data signifier
-            output << TAB << TAB << DATA << SPACE << OBJECT_BEGIN2 << endl;
+            output << TAB << TAB << KEY_DATA << SPACE << OBJECT_BEGIN2 << endl;
             //Add frequency designator
-            output << TAB << TAB << FREQUENCY << SPACE << (j+1) << END << endl;
+            output << TAB << TAB << KEY_FREQUENCY << SPACE << (j+1) << END << endl;
             //Add value indicator
-            output << TAB << TAB << VALUE << SPACE << LIST_BEGIN2 << endl;
+            output << TAB << TAB << KEY_VALUE << SPACE << LIST_BEGIN2 << endl;
             for (unsigned int k = 0; j < pOutput->getGlobalSolution(i).size(); k++)
             {
                 //Set precision
@@ -602,7 +648,7 @@ string FileWriter::getCurWaveDir()
 
     convert << getCurWaveInd();
 
-    return DIR_NAME + convert.str() + SLASH;
+    return NAME_DIR + convert.str() + SLASH;
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
@@ -618,6 +664,11 @@ bool FileWriter::createDir(string path)
         }
         else
             return true;
+    }
+    else
+    {
+        //return false if any errors
+        return false;
     }
 }
 
@@ -640,8 +691,8 @@ void FileWriter::setHeader()
 //------------------------------------------Function Separator --------------------------------------------------------
 string FileWriter::getInfoBlock(string nameIn)
 {
-    return SEAFILE2 + "\n" + OBJECT_BEGIN2 + "\n    " + VERSION + "   " + VERSION_INFO + END + "\n    " + FORMAT + "    "
-        + FORMAT_INFO + END + "\n    " + OBJECT + "    " + nameIn + END + "\n" + OBJECT_END2 + "\n\n";
+    return VAL_SEAFILE + "\n" + OBJECT_BEGIN2 + "\n    " + KEY_VERSION + "   " + VAL_VERSION + END + "\n    " + KEY_FORMAT + "    "
+        + VAL_FORMAT + END + "\n    " + KEY_OBJECT + "    " + nameIn + END + "\n" + OBJECT_END2 + "\n\n";
 }
 
 //==========================================Section Separator =========================================================

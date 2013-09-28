@@ -24,34 +24,34 @@
  *along with OpenSEA.  If not, see <http://www.gnu.org/licenses/>.
 \*-------------------------------------------------------------------------------------------------------------------*/
 
-#include "listsolution.h"
+#include "solutionset.h"
 
 //------------------------------------------Function Separator --------------------------------------------------------
-listSolution::listSolution()
+SolutionSet::SolutionSet()
 {
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-listSolution::listSolution(int dir, int freq)
+SolutionSet::SolutionSet(int dir, int freq)
 {
     //Constructor with wave directions and frequencies specified.
     resize(dir, freq);
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-listSolution::~listSolution()
+SolutionSet::~SolutionSet()
 {
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-Solution &listSolution::refSolution(int dir, int freq)
+Solution &SolutionSet::refSolution(int dir, int freq)
 {
     //Return reference to specified solution object.
     return *(plist[dir][freq]);
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-void listSolution::setSolution(int dir, int freq, Solution soln)
+void SolutionSet::setSolnMat(int dir, int freq, Solution soln)
 {
     //Set the Solution object with the new value.
     //Create new solution object
@@ -66,25 +66,25 @@ void listSolution::setSolution(int dir, int freq, Solution soln)
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-Solution listSolution::getSolution(int dir, int freq)
+Solution SolutionSet::getSolution(int dir, int freq)
 {
     //Return the solution
     return *(plist[dir][freq]);
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-void listSolution::resize(int dir, int freq)
+void SolutionSet::resize(int dir, int freq)
 {
     //Resize the vector
     plist.resize(dir);
-    for (int i = 0; i < plist.size(); i++)
+    for (unsigned int i = 0; i < plist.size(); i++)
     {
         plist[i].reize(freq);
     }
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-vector<int> listSolution::size()
+vector<int> SolutionSet::size()
 {
     vector<int> output(2);
 
@@ -95,13 +95,13 @@ vector<int> listSolution::size()
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-int listSolution::n_dirs()
+int SolutionSet::n_dirs()
 {
     return size()[0];
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-int listSolution::n_dirs()
+int SolutionSet::n_dirs()
 {
     return size()[1];
 }

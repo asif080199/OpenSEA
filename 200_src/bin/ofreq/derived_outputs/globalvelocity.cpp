@@ -30,6 +30,9 @@
 GlobalVelocity::GlobalVelocity() 
 	: GlobalSolution()
 {
+    VELOCITY_NAME = "Global Velocity"; /**< Used for reference in file output. */
+    GLOBAL_VELOCITY_DERIVATIVE = 1;  /**< Specifies first order of the derivative. (velocity) */
+
     pName = VELOCITY_NAME;
 	orderDerivative = GLOBAL_VELOCITY_DERIVATIVE;
 }

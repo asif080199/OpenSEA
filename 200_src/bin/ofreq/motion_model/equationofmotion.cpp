@@ -28,44 +28,41 @@
 
 //######################################### Class Separator ###########################################################
 #include "equationofmotion.h"
+#include "motionmodel.h"        //Include motion model here to prevent recursive class definitions in headers, but
+                                //still access all members of class MotionModel.
 
 //==========================================Section Separator =========================================================
 //Public Members
 //------------------------------------------Function Separator --------------------------------------------------------
-EquationofMotion::EquationofMotion(motionModel &modelIn)
+EquationofMotion::EquationofMotion(MotionModel *modelIn)
 {
     //Default constructor.  Requires declaration
     //of the object which created the equation object.
-
-    //Assign the calling body to private variable.
-    pParentModel = &modelIn;
-
-    //Create default value for data index.
-    pDataIndex = -1;
-
-    //Set the private index as a backup to an unset Data index value.
-    pPrivateIndex = *pParentModel.listEquations.size() - 1;
+    ConstructorCommon(modelIn);
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-EquationofMotion::EquationofMotion(motionModel &modelIn, string NameIn)
+EquationofMotion::EquationofMotion(MotionModel *modelIn, string NameIn)
 {
     //Constructor with specifying name.
 
     //Assign the calling body to private variable.
-    this->EquationofMotion(modelIn);
+    ConstructorCommon(modelIn);
 
     //Assign the equation name
     pName = NameIn;
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-EquationofMotion::EquationofMotion(motionModel &modelIn, string NameIn, int IndexIn)
+EquationofMotion::EquationofMotion(MotionModel *modelIn, string NameIn, int IndexIn)
 {
     //Constructor with specifying name and data index of the equation.
 
-    //Assign the calling body and enter the name.
-    this->EquationofMotion(modelIn, NameIn);
+    //Assign the calling body to private variable.
+    ConstructorCommon(modelIn);
+
+    //Assign the equation name
+    pName = NameIn;
 
     //Assign the data index.
     pDataIndex = IndexIn;
@@ -89,7 +86,7 @@ complex<double> EquationofMotion::Evaluate()
      *of motion object.
      */
 
-    return this->Formula();
+    return this->setFormula();
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
@@ -107,10 +104,20 @@ int EquationofMotion::getDataIndex()
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-int &EquationofMotion::DataIndex()
+int &EquationofMotion::refDataIndex()
 {
     //Exposes the data index object.  Passed by reference.
-    return this->eqn();
+    //Get index of equation of motion.
+    if (pDataIndex < 0)
+    {
+        //Data index not defined.
+        //Use private index.
+        return pPrivateIndex;
+    }
+    else
+    {
+        return pDataIndex;
+    }
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
@@ -122,14 +129,14 @@ void EquationofMotion::setArguments(int argn, vector<double> argv)
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-void &EquationofMotion::Name()
+string &EquationofMotion::refName()
 {
     //Exposes the object name
     return pName;
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-void &EquationofMotion::Description()
+string &EquationofMotion::refDescription()
 {
     //Exposes the object description
     return pDescription;
@@ -139,17 +146,17 @@ void &EquationofMotion::Description()
 //Protected Members
 
 //------------------------------------------Function Separator --------------------------------------------------------
-complex<double> EquationofMotion::kronecker(int var1, int var2, bool anti)
+complex<double> EquationofMotion::Kronecker(int var1, int var2, bool anti)
 {
     complex<double> out(0,0);
 
-    //Implementation of the kronecker delta function.
+    //Implementation of the Kronecker delta function.
     if (var1 == var2)
         out.real() = 1.0;
     else
         out.real() = 0.0;
 
-    //Check if using reverse kronecker delta.
+    //Check if using reverse Kronecker delta.
     if (anti)
     {
         if (out.real() == 1.0)
@@ -163,7 +170,7 @@ complex<double> EquationofMotion::kronecker(int var1, int var2, bool anti)
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-complex<double> EquationofMotion::ddt(int var, int ord, int bodIn=-1)
+complex<double> EquationofMotion::Ddt(int var, int ord, int bodIn)
 {
     //set initial value for bodIn
     if (bodIn == -1)
@@ -173,7 +180,7 @@ complex<double> EquationofMotion::ddt(int var, int ord, int bodIn=-1)
     complex<double> out(0,0);
 
     //First check if calculating coefficients.
-    if (*pParentModel.calcCoeff)
+    if (pParentModel->CoefficientOnly())
     {
         //Only calculating coefficients.  Write out unit value.
         out.real() = 1.0;
@@ -185,12 +192,12 @@ complex<double> EquationofMotion::ddt(int var, int ord, int bodIn=-1)
         complex<double> imagI(0,1.0);
 
         //get wave frequency.
-        freq = *pParentModel.getFreq();
+        freq = pParentModel->getFreq();
         //get value to calculate refDerivative for.
-        out = *pParentModel.listData[bodIn].Solution()(var(), 1);
+        out = pParentModel->refData(bodIn).getSolution().at(var,1);
 
         //Calculate refDerivative
-        for (int i = 0; i <= ord; i++)
+        for (unsigned int i = 0; i <= ord; i++)
         {
             out = out * freq * imagI;
         }
@@ -201,35 +208,47 @@ complex<double> EquationofMotion::ddt(int var, int ord, int bodIn=-1)
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-complex<double> EquationofMotion::sum(complex<double> force, string index, int from = -1, int to = -1)
+complex<double> EquationofMotion::Sum(complex<double> force, string index, int from, int to)
 {
     //Create variable for output
     complex<double> output(0,0);        //Output variable
 
-    //Select which index to sum over.
-    switch (index)
+
+    //Select which index to Sum over.
+    if ((index.compare("var") == 0) ||
+            (index.compare("v") == 0) ||
+            (index.compare("V") == 0) ||
+            (index.compare("Var") == 0) ||
+            (index.compare("VAR") == 0))
     {
-    case "var" "v" "V" "Var" "VAR":
         //Sum for variable count.
         for (pCurVar = from ; pCurVar <= to; pCurVar++)
         {
             output = output + force;
         }
-        break;
-    case "ord" "o" "O" "Ord" "ORD":
+    }
+    else if ((index.compare("ord") == 0) ||
+             (index.compare("o") == 0) ||
+             (index.compare("O") == 0) ||
+             (index.compare("Ord") == 0) ||
+             (index.compare("ORD") == 0))
+    {
         //Sum for order of refDerivative.
         for (pCurOrd = from ; pCurOrd <= to; pCurOrd++)
         {
             output = output + force;
         }
-        break;
-    case "bod" "b" "B" "Bod" "BOD":
-        //Sum for bodies.
+    }
+    else if ( (index.compare("bod") == 0) ||
+              (index.compare("b") == 0) ||
+              (index.compare("B") == 0) ||
+              (index.compare("Bod") == 0) ||
+              (index.compare("BOD") == 0))
+    {
         for (pCurBod = from ; pCurBod <= to; pCurBod++)
         {
             output = output + force;
         }
-        break;
     }
     //write output
     return output;
@@ -246,7 +265,7 @@ complex<double> EquationofMotion::ForceActive_hydro()
     //set.  These are the reserved functions.
 
     //Check out of bounds for body.
-    if (pCurBod > *pParentModel.listData.size() - 1)
+    if (pCurBod > pParentModel->listData().size() - 1)
     {
         return output;
         exit;
@@ -256,26 +275,22 @@ complex<double> EquationofMotion::ForceActive_hydro()
     if (eqn() <= 5 )
     {
         //Add up for all forces
-        for (pCurForce = 0; pCurForce < *pParentModel.listData[pCurBod].listForceActive_hydro().size() ; pCurForce++)
+        for (pCurForce = 0; pCurForce < pParentModel->refData(pCurBod).listForceActive_hydro().size(); pCurForce ++)
         {
             //Get value and add.
             output +=
-                    *pParentModel.listData[pCurBod].
-                    listForceActive_hydro()[force()].
+                    pParentModel->refData(pCurBod).
+                    listForceActive_hydro(force())->
                     getEquation(eqn());
         }
     }
 
     //Check if need to reverse sign of variable.
-    if (*pParentModel.pActiveOnly)
+    if (pParentModel->getActiveOnly())
         output = output * reverse;
 
     //write output
     return output;
-
-    //cleanup
-    delete output;
-    delete reverse;
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
@@ -289,36 +304,35 @@ complex<double> EquationofMotion::ForceActive_user()
     //were entered.  Therefore, don't need the eqn object.  This defaults to the private variable.
 
     //Check out of bounds for body.
-    if (pCurBod > *pParentModel.listData.size() - 1)
+    if (pCurBod > pParentModel->listData().size() - 1)
     {
         return output;
         exit;
     }
 
     //Out of bounds check for equations
-    if (eqn() <= *pParentModel.listData[pCurBod].listForceActive_user()[force()].Equations.size() - 1)
+    if (eqn() <= pParentModel->listData()[pCurBod].
+            listForceActive_user(force())->
+            listEquations().size() - 1)
     {
         //Add up for all forces
-        for (pCurForce = 0; pCurForce < *pParentModel.listData[pCurBod].listForceActive_user().size() ; pCurForce++)
+        for (pCurForce = 0; pCurForce < pParentModel->listData()[pCurBod].listForceActive_user().size() ;
+             pCurForce++)
         {
             //get value
             output +=
-                    *pParentModel.listData[pCurBod].
-                    listForceActive_user()[force()].
+                    pParentModel->listData()[pCurBod].
+                    listForceActive_user()[force()]->
                     getEquation(pPrivateIndex);
         }
     }
 
     //Check if need to reverse sign of variable.
-    if (*pParentModel.pActiveOnly)
+    if (pParentModel->getActiveOnly())
         output = output * reverse;
 
     //write output
     return output;
-
-    //cleanup
-    delete output;
-    delete reverse;
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
@@ -328,27 +342,35 @@ complex<double> EquationofMotion::ForceReact_hydro(int ordIn, int varIn)
     complex<double> output(0,0);    //Temporary value for variable.
 
     //Check out of bounds for body.
-    if (pCurBod > *pParentModel.listData.size() - 1)
+    if (pCurBod > pParentModel->listData().size() - 1)
     {
         return output;
         exit;
     }
 
     //Out of bounds check for refDerivatives
-    if (ordIn <= *pParentModel.listData[pCurBod].listForceReact_hydro()[force()].refDerivatives.size() - 1)
+    if (ordIn <= pParentModel->
+            listData()[pCurBod].
+            listForceReact_hydro()[force()]->
+            listDerivatives().
+            size() - 1)
     {
         //Out of bounds check for variables
-        if (varIn <= *pParentModel.listData[pCurBod].listForceReact_hydro()[force()].refDerivative(ordIn).indexEquation(eqn()).getCoefficientListSize())
+        if (varIn <= pParentModel->listData()[pCurBod].
+                listForceReact_hydro()[force()]->
+                refDerivative(ordIn).
+                refIndexEquation(eqn()).
+                getCoefficientListSize())
         {
             //Add up for all force objects.
-            for (pCurForce ; pCurForce < *pParentModel.listData[pCurBod].listForceReact_hydro().size() ; pCurForce++)
+            for (pCurForce ; pCurForce < pParentModel->listData()[pCurBod].listForceReact_hydro().size() ; pCurForce++)
             {
                 //get value
                 output.real() = output.real() +
-                        *pParentModel.listData[pCurBod].
-                        listForceReact_hydro()[force()].
+                        pParentModel->listData()[pCurBod].
+                        listForceReact_hydro()[force()]->
                         refDerivative(ordIn).
-                        IndexEquation(eqn()).
+                        refEquation(eqn()).
                         getCoefficient(varIn);
             }
         }
@@ -365,27 +387,34 @@ complex<double> EquationofMotion::ForceReact_user(int ordIn, int varIn)
     complex<double> output(0,0);    //Temporary value for variable.
 
     //Check out of bounds for body.
-    if (pCurBod > *pParentModel.listData.size() - 1)
+    if (pCurBod > pParentModel->listData().size() - 1)
     {
         return output;
         exit;
     }
 
     //Out of bounds check for refDerivatives
-    if (ordIn <= *pParentModel.listData[pCurBod].listForceReact_user()[force()].refDerivatives.size() - 1)
+    if (ordIn <= pParentModel->listData()[pCurBod].
+            listForceReact_user()[force()]->
+            listDerivatives().
+            size() - 1)
     {
         //Out of bounds check for variables
-        if (varIn <= *pParentModel.listData[pCurBod].listForceReact_user()[force()].refDerivative(ordIn).indexEquation(eqn()).getCoefficientListSize())
+        if (varIn <= pParentModel->listData()[pCurBod].
+                listForceReact_user()[force()]->
+                refDerivative(ordIn).
+                refIndexEquation(eqn()).
+                getCoefficientListSize())
         {
             //Add up for all force objects.
-            for (pCurForce ; pCurForce < *pParentModel.listData[pCurBod].listForceReact_user().size() ; pCurForce++)
+            for (pCurForce ; pCurForce < pParentModel->listData()[pCurBod].listForceReact_user().size() ; pCurForce++)
             {
                 //get value
                 output.real() =
-                        *pParentModel.listData[pCurBod].
-                        listForceReact_user()[force()].
+                        pParentModel->listData()[pCurBod].
+                        listForceReact_user()[force()]->
                         refDerivative(ordIn).
-                        IndexEquation(eqn()).
+                        refEquation(eqn()).
                         getCoefficient(varIn);
             }
         }
@@ -402,37 +431,46 @@ complex<double> EquationofMotion::ForceCross_hydro(int bodIn, int ordIn, int var
     complex<double> output(0,0);    //Temporary value for variable.
 
     //Check out of bounds for body.
-    if (pCurBod > *pParentModel.listData.size() - 1)
+    if (pCurBod > pParentModel->listData().size() - 1)
     {
         return output;
         exit;
     }
 
     //Check out of bounds for bodIn
-    if (bodIn > *pParentModel.listData.size() - 1)
+    if (bodIn > pParentModel->listData().size() - 1)
     {
         return output;
         exit;
     }
 
     //Out of bounds check for refDerivatives
-    if (ordIn <= *pParentModel.listData[pCurBod].listForceCross_hydro()[force()].refDerivatives.size() - 1)
+    if (ordIn <= pParentModel->listData()[pCurBod].
+            listForceCross_hydro()[force()]->
+            listDerivatives().
+            size() - 1)
     {
         //Out of bounds check for variables
-        if (varIn <= *pParentModel.listData[pCurBod].listForceCross_hydro()[force()].refDerivative(ordIn).indexEquation(eqn()).getCoefficientListSize())
+        if (varIn <= pParentModel->listData()[pCurBod].
+                listForceCross_hydro()[force()]->
+                refDerivative(ordIn).
+                refIndexEquation(eqn()).
+                getCoefficientListSize())
         {
             //Add up for all force objects.
-            for (pCurForce ; pCurForce < *pParentModel.listData[pCurBod].listForceCross_hydro().size() ; pCurForce++)
+            for (pCurForce ; pCurForce < pParentModel->listData()[pCurBod].
+                 listForceCross_hydro().
+                 size() ; pCurForce++)
             {
                 //Check that bodIn matches the body specified by the cross body force.
-                if (bodIn == *pParentModel.pCompCrossBod_hydro[pCurForce])
+                if (bodIn == pParentModel->listCompCrossBod_hydro()[pCurForce])
                 {
                 //get value
                 output.real() = output.real() +
-                        *pParentModel.listData[pCurBod].
-                        listForceCross_hydro()[force()].
+                        pParentModel->listData()[pCurBod].
+                        listForceCross_hydro()[force()]->
                         refDerivative(ordIn).
-                        IndexEquation(eqn()).
+                        refEquation(eqn()).
                         getCoefficient(varIn);
                 }
             }
@@ -449,37 +487,44 @@ complex<double> EquationofMotion::ForceCross_user(int bodIn, int ordIn, int varI
     complex<double> output(0,0);    //Temporary value for variable.
 
     //Check out of bounds for body.
-    if (pCurBod > *pParentModel.listData.size() - 1)
+    if (pCurBod > pParentModel->listData().size() - 1)
     {
         return output;
         exit;
     }
 
     //Check out of bounds for bodIn
-    if (bodIn > *pParentModel.listData.size() - 1)
+    if (bodIn > pParentModel->listData().size() - 1)
     {
         return output;
         exit;
     }
 
     //Out of bounds check for refDerivatives
-    if (ordIn <= *pParentModel.listData[pCurBod].listForceCross_user()[force()].refDerivatives.size() - 1)
+    if (ordIn <= pParentModel->listData()[pCurBod].
+            listForceCross_user()[force()]->
+            listDerivatives().
+            size() - 1)
     {
         //Out of bounds check for variables
-        if (varIn <= *pParentModel.listData[pCurBod].listForceCross_user()[force()].refDerivative(ordIn).indexEquation(eqn()).getCoefficientListSize())
+        if (varIn <= pParentModel->listData()[pCurBod].
+                listForceCross_user()[force()]->
+                refDerivative(ordIn).
+                refIndexEquation(eqn()).
+                getCoefficientListSize())
         {
             //Add up for all force objects.
-            for (pCurForce ; pCurForce < *pParentModel.listData[pCurBod].listForceCross_user().size() ; pCurForce++)
+            for (pCurForce ; pCurForce < pParentModel->listData()[pCurBod].listForceCross_user().size() ; pCurForce++)
             {
                 //Check that bodIn matches the body specified by the cross body force.
-                if (bodIn == *pParentModel.pCompCrossBod_user[pCurForce])
+                if (bodIn == pParentModel->listCompCrossBod_user()[pCurForce])
                 {
                 //get value
                 output.real() = output.real() +
-                        *pParentModel.listData[pCurBod].
-                        listForceCross_user()[force()].
+                        pParentModel->listData()[pCurBod].
+                        listForceCross_user()[force()]->
                         refDerivative(ordIn).
-                        IndexEquation(eqn()).
+                        refEquation(eqn()).
                         getCoefficient(varIn);
                 }
             }
@@ -496,7 +541,7 @@ complex<double> EquationofMotion::ForceMass(int varIn)
     complex<double> output(0,0);    //Temporary value for variable.
 
     //Check out of bounds for body.
-    if (pCurBod > *pParentModel.listData.size() - 1)
+    if (pCurBod > pParentModel->listData().size() - 1)
     {
         return output;
         exit;
@@ -507,7 +552,7 @@ complex<double> EquationofMotion::ForceMass(int varIn)
     {
         //No need to check for out of bounds error.  Object creates enough entries by default.
         //No need to add multiple entries.  There can only be one mass object for each body.
-        output.real() = *pParentModel.listData[pCurBod].MassMatrix(eqn(), varIn);
+        output.real() = pParentModel->listData()[pCurBod].getMassMatrix()(eqn(), varIn);
     }
     //Write output
     return output;
@@ -521,7 +566,6 @@ int EquationofMotion::var()
     output = pCurVar;
 
     return output;
-    delete output;
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
@@ -565,7 +609,6 @@ int EquationofMotion::ord()
     output = pCurOrd;
 
     return output;
-    delete output;
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
@@ -576,14 +619,13 @@ int EquationofMotion::body()
     output = pCurBod;
 
     return output;
-    delete output;
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
 int EquationofMotion::maxbody()
 {
     //Returns the maximum index of body variable.
-    return *pParentModel.listData.size() - 1;
+    return pParentModel->listData().size() - 1;
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
@@ -597,10 +639,10 @@ int EquationofMotion::maxord()
     int temp;               //Retrieves value of order of refDerivative.
 
     //Check through Reactive forces.
-    for (int i = 0; i < *pParentModel[pCurBod].listForceReact_user().size(); i++)
+    for (unsigned int i = 0; i < pParentModel->listData()[pCurBod].listForceReact_user().size(); i++)
     {
         //Get maximum order
-        temp = *pParentModel[pCurBod].listForceReact_user[i].getMaxOrd();
+        temp = pParentModel->listData()[pCurBod].listForceReact_user()[i]->getMaxOrd();
 
         //Compare values.
         if (temp > maxme)
@@ -608,10 +650,10 @@ int EquationofMotion::maxord()
     }
 
     //Check through Cross-body forces
-    for (int i = 0; i < *pParentModel[pCurBod].listForceCross_user().size(); i++)
+    for (unsigned int i = 0; i < pParentModel->listData()[pCurBod].listForceCross_user().size(); i++)
     {
         //Get maximum order
-        temp = *pParentModel[pCurBod].listForceCross_user[i].getMaxOrd();
+        temp = pParentModel->listData()[pCurBod].listForceCross_user()[i]->getMaxOrd();
 
         //Compare values.
         if (temp > maxme)
@@ -620,17 +662,13 @@ int EquationofMotion::maxord()
 
     //Write output
     return maxme;
-
-    //Cleanup
-    delete temp;
-    delete maxme;
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
 int EquationofMotion::maxvar()
 {
     //Returns the maximum index of variables.
-    return *pParentModel.listEquations.size() - 1;
+    return pParentModel->listEquations().size() - 1;
 }
 
 //==========================================Section Separator =========================================================
@@ -644,5 +682,17 @@ int EquationofMotion::force()
     output = pCurForce;
 
     return output;
-    delete output;
+}
+
+//------------------------------------------Function Separator ----------------------------------------------------
+void EquationofMotion::ConstructorCommon(MotionModel *modelIn)
+{
+    //Assign the calling body to private variable.
+    pParentModel = modelIn;
+
+    //Create default value for data index.
+    pDataIndex = -1;
+
+    //Set the private index as a backup to an unset Data index value.
+    pPrivateIndex = pParentModel->listEquations().size() - 1;
 }

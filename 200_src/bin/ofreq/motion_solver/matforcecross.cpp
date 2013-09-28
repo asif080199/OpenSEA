@@ -24,10 +24,10 @@
  *along with OpenSEA.  If not, see <http://www.gnu.org/licenses/>.
 \*-------------------------------------------------------------------------------------------------------------------*/
 
-#include "matcrossforce.h"
+#include "matforcecross.h"
 
 //------------------------------------------Function Separator --------------------------------------------------------
-matCrossForce::matCrossForce()
+matForceCross::matForceCross()
 {
     //Add 3 matrices to derivative matrix
     for(unsigned int i = 0; i < 3; i++) //<---Fix, change to const
@@ -38,24 +38,24 @@ matCrossForce::matCrossForce()
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-matCrossForce::matCrossForce(vector<Derivative> forceIn)
+matForceCross::matForceCross(vector<Derivative> forceIn)
 {
-    for (int i; i <= forceIn.size(); i++)
+    for (unsigned int i; i <= forceIn.size(); i++)
     {
         this->pderiv.push_back(forceIn[i]);
     }
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-matCrossForce::~matCrossForce()
+matForceCross::~matForceCross()
 {
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-matCrossForce matCrossForce::operator+(const matCrossForce& forceOther)
+matForceCross matForceCross::operator+(const matForceCross& forceOther)
 {
     //define the output vector
-    matCrossForce output;
+    matForceCross output;
     //Check that the lnkedbody parameter is the same for both objects.
     if (this->plinkid == forceOther.plinkid)
     {
@@ -83,14 +83,14 @@ matCrossForce matCrossForce::operator+(const matCrossForce& forceOther)
             maxSizeTwo = forceOther.pderiv[0].n_rows;
 
         //Resize Matrices, initialize with zeros.
-        for (int i = 0; i <= maxOrdTwo; i++)
+        for (unsigned int i = 0; i <= maxOrdTwo; i++)
         {
             output.pderiv[i].zeros(maxSizeTwo);
 
             //Iterate through the matrix and add values.
-            for (int j = 0; j < maxSizeTwo; j++)
+            for (unsigned int j = 0; j < maxSizeTwo; j++)
             {
-                for (int k = 0; k < maxSizeTwo; k++)
+                for (unsigned int k = 0; k < maxSizeTwo; k++)
                 {
                     output.pderiv[i](k,j) = this->pderiv[i](k,j) + forceOther.pderiv[i](k,j);
                 }
@@ -108,10 +108,10 @@ matCrossForce matCrossForce::operator+(const matCrossForce& forceOther)
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-matCrossForce matCrossForce::operator-(const matCrossForce& forceOther)
+matForceCross matForceCross::operator-(const matForceCross& forceOther)
 {
     //define the output vector
-    matCrossForce output;
+    matForceCross output;
     //Check that the lnkedbody parameter is the same for both objects.
     if (this->plinkid == forceOther.plinkid)
     {
@@ -139,14 +139,14 @@ matCrossForce matCrossForce::operator-(const matCrossForce& forceOther)
             maxSizeTwo = forceOther.pderiv[0].n_rows;
 
         //Resize Matrices, initialize with zeros.
-        for (int i = 0; i <= maxOrdTwo; i++)
+        for (unsigned int i = 0; i <= maxOrdTwo; i++)
         {
             output.pderiv[i].zeros(maxSizeTwo);
 
             //Iterate through the matrix and add values.
-            for (int j = 0; j < maxSizeTwo; j++)
+            for (unsigned int j = 0; j < maxSizeTwo; j++)
             {
-                for (int k = 0; k < maxSizeTwo; k++)
+                for (unsigned int k = 0; k < maxSizeTwo; k++)
                 {
                     output.pderiv[i](k,j) = this->pderiv[i](k,j) - forceOther.pderiv[i](k,j);
                 }
@@ -164,7 +164,7 @@ matCrossForce matCrossForce::operator-(const matCrossForce& forceOther)
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-void matCrossForce::setLinkedBody(matBody &BodIn)
+void matForceCross::setLinkedBody(matBody &BodIn)
 {
     this->plinkbody = BodIn;
 
@@ -173,25 +173,25 @@ void matCrossForce::setLinkedBody(matBody &BodIn)
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-matReactForce matBody::getlinkedbody()
+matForceReact matBody::getlinkedbody()
 {
     return this->plinkbody;
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-void matCrossForce::setLinkedId(int bodId)
+void matForceCross::setLinkedId(int bodId)
 {
     this->plinkbody = bodId;
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-int matCrossForce::getLinkedId()
+int matForceCross::getLinkedId()
 {
     return this->plinkbody;
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-vector<int> matCrossForce::getmatDims()
+vector<int> matForceCross::getMatDims()
 {
     vector<int> output(2);
 

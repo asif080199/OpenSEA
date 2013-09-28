@@ -52,16 +52,10 @@ void Derivative::testPrint()
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-vector<Equation> &Derivative::EquationList()
+vector<Equation> &Derivative::listEquations()
 {
     //Return equation list pointer.
     return pEquationList;
-}
-
-//------------------------------------------Function Separator --------------------------------------------------------
-vector<Equation> &Derivative::Equations()
-{
-    return this->EquationList();
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
@@ -84,7 +78,7 @@ int Derivative::getEquationListSize()
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-Equation &Derivative::IndexEquation(int indexIn)
+Equation &Derivative::refIndexEquation(int indexIn)
 {
     //Get equation by data index, returns pointer to object.
     int i;       //get the integer for the object.

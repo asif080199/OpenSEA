@@ -30,6 +30,9 @@
 GlobalMotion::GlobalMotion() 
 	: GlobalSolution()
 {
+    MOTION_NAME = "Global Motion"; /**< Used for reference in file output. */
+    GLOBAL_MOTION_DERIVATIVE = 0;  /**< Specifies zero order of the derivative. (motion) */
+
     pName = MOTION_NAME;
 	orderDerivative = GLOBAL_MOTION_DERIVATIVE;
 }

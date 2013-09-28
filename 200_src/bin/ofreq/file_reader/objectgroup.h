@@ -106,14 +106,14 @@ public:
      * @brief Provides direct access to thelist of key words.
      * @return Returns a reference to the list of key words.  Variable passed by reference.
      */
-    vecKeyword& refListKey();
+    vecKeyword& listKey();
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
      * @brief Provides direct access to the list of key values.
      * @return Returns a reference to the list of key values.  Variable passed by reference.
      */
-    vecValue& refListVal();
+    vecValue& listVal();
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -121,7 +121,7 @@ public:
      * @return Returns a reference to the list of objects.  Variable passed by reference.  Returned variable is a
      * vector of pointers to ObjectGroup objects.
      */
-    vecObject& refListObject();
+    vecObject& listObject();
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**

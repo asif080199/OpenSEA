@@ -46,7 +46,7 @@
 #elif defined Q_OS_LINUX
     #include <armadillo>    //Armadillo library included with standard system libraries.
 #endif
-#include "../global_objects/listsolution.h"
+#include "../global_objects/solutionset.h"
 #include "../global_objects/solution.h"
 
 using namespace std;

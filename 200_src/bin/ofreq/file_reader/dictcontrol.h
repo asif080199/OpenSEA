@@ -41,19 +41,7 @@
 #include <string>
 #include "dictionary.h"
 
-//######################################### Class Separator ###########################################################
-//Put constant variables in this section.
-
-//==========================================Section Separator =========================================================
-//Class Names
-const string KEY_SYSTEM = "system"; /**< Keyword for system object.*/
-
-//==========================================Section Separator =========================================================
-//Keyword Value Pairs
-const string KEY_ANALYSIS = "analysis"; /**< Keyword for analysis specification */
-const string KEY_FREQUENCY = "frequency"; /**< Keyword for frequency specification */
-const string KEY_DIRECTION = "direction"; /**< Keyword for direction list specification. */
-const string KEY_WAVEMODEL = "wavemodel"; /**< Keyword for wave model specification. */
+using namespace std;
 
 //######################################### Class Separator ###########################################################
 //Put this at the beginning of each class definition, right before the Doxygen formatted explanation.
@@ -88,26 +76,43 @@ public slots:
 protected:
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
-     * @brief Pure virtual function that defines how to interpret the key values.  Contains a list of key names and
+     * @brief Function that defines how to interpret the key values.  Contains a list of key names and
      * corresponding actions to take for interpretting each key value.
      * @param keyIn String containing the key name.  Variable passed by value.
      * @param valIn Vector of strings containing the key values.  Variable passed by value.
-     * @return Returns 0 if definition found.  Returns 1 if no definition found.
+     * @return Returns status of assigning key.  Returned value is an integer, passed by value.
+     * See list of return codes below:
+     * 0:  Key definition found.  Success.
+     * 1:  No key found. / General error message.
+     * 2:  Key is invalid within current active object.
      */
     int defineKey(string keyIn, vector<string> valIn);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
-     * @brief Pure virtual function that defines how to interpret the class name.  Class name implies declaration of
+     * @brief Function that defines how to interpret the class name.  Class name implies declaration of
      * a new object of the class named by the class name.  This is a separate set of definitions to handle class
      * declarations.
      * @param nameIn String, variable passed by value.  The name of the class name.
-     * @return Returns 0 if definition found.  Returns 1 if no definition found.
+     * @return Returns status of assigning key.  Returned value is an integer, passed by value.
+     * See list of return codes below:
+     * 0:  Key definition found.  Success.
+     * 1:  No key found. / General error message.
+     * 2:  Key is invalid within current active object.
      */
     int defineClass(string nameIn);
 
 //==========================================Section Separator =========================================================
 private:
     //------------------------------------------Function Separator ----------------------------------------------------
+    //Class Names
+    static const string KEY_SYSTEM; /**< Keyword for system object.*/
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    //Keyword Value Pairs
+    static const string KEY_ANALYSIS; /**< Keyword for analysis specification */
+    static const string KEY_FREQUENCY; /**< Keyword for frequency specification */
+    static const string KEY_DIRECTION; /**< Keyword for direction list specification. */
+    static const string KEY_WAVEMODEL; /**< Keyword for wave model specification. */
 };
 #endif // DICTCONTROL_H

@@ -24,32 +24,32 @@
  *along with OpenSEA.  If not, see <http://www.gnu.org/licenses/>.
 \*-------------------------------------------------------------------------------------------------------------------*/
 
-#include "matreactforce.h"
+#include "matforcereact.h"
 
 //------------------------------------------Function Separator --------------------------------------------------------
-matReactForce::matReactForce()
+matForceReact::matForceReact()
 {
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-matReactForce::~matReactForce()
+matForceReact::~matForceReact()
 {
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-matReactForce::matReactForce(vector<Derivative> forceIn)
+matForceReact::matForceReact(vector<Derivative> forceIn)
 {
-    for (int i; i <= forceIn.size(); i++)
+    for (unsigned int i; i <= forceIn.size(); i++)
     {
         this->pderiv.push_back(forceIn[i]);
     }
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-matReactForce matReactForce::operator+(const matReactForce& forceOther)
+matForceReact matForceReact::operator+(const matForceReact& forceOther)
 {
     //define the output vector
-    matReactForce output;
+    matForceReact output;
     //find the max order of the derivatives.
     int maxOrdTwo;
     if (this->maxOrder() > forceOther.maxOrder())
@@ -79,9 +79,9 @@ matReactForce matReactForce::operator+(const matReactForce& forceOther)
         output.pderiv[i].zeros(maxSizeTwo);
 
         //Iterate through the matrix and add values.
-        for (int j = 0; j < maxSizeTwo; j++)
+        for (unsigned int j = 0; j < maxSizeTwo; j++)
         {
-            for (int k = 0; k < maxSizeTwo; k++)
+            for (unsigned int k = 0; k < maxSizeTwo; k++)
             {
                 output.pderiv[i](k,j) = this->pderiv[i](k,j) + forceOther.pderiv[i](k,j);
             }
@@ -93,10 +93,10 @@ matReactForce matReactForce::operator+(const matReactForce& forceOther)
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-matReactForce matReactForce::operator-(const matReactForce& forceOther)
+matForceReact matForceReact::operator-(const matForceReact& forceOther)
 {
     //define the output vector
-    matReactForce output;
+    matForceReact output;
     //find the max order of the derivatives.
     int maxOrdTwo;
     if (this->maxOrder() > forceOther.maxOrder())
@@ -126,9 +126,9 @@ matReactForce matReactForce::operator-(const matReactForce& forceOther)
         output.pderiv[i].zeros(maxSizeTwo);
 
         //Iterate through the matrix and add values.
-        for (int j = 0; j < maxSizeTwo; j++)
+        for (unsigned int j = 0; j < maxSizeTwo; j++)
         {
-            for (int k = 0; k < maxSizeTwo; k++)
+            for (unsigned int k = 0; k < maxSizeTwo; k++)
             {
                 output.pderiv[i](k,j) = this->pderiv[i](k,j) - forceOther.pderiv[i](k,j);
             }
@@ -140,49 +140,43 @@ matReactForce matReactForce::operator-(const matReactForce& forceOther)
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-int matReactForce::getmaxOrder()
+int matForceReact::getMaxOrder()
 {
     return pderiv.size() - 1;
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-vector<cx_mat> matReactForce::getDerivative()
-{
-    return pderiv;
-}
-
-//------------------------------------------Function Separator --------------------------------------------------------
-cx_mat matReactForce::getDerivative(int order)
+cx_mat matForceReact::getDerivative(int order)
 {
     return pderiv[order];
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-void matReactForce::setDerivative(int order, cx_mat Coeff)
+void matForceReact::setDerivative(int order, cx_mat Coeff)
 {
     pderiv[order] = Coeff;
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-vector<cx_mat> &matReactForce::Derivatives()
+vector<cx_mat> &matForceReact::listDerivatives()
 {
     return pderiv;
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-void matReactForce::setId(int num)
+void matForceReact::setId(int num)
 {
     pId = num;
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-int matReactForce::getId()
+int matForceReact::getId()
 {
     return pId;
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-int matReactForce::getMatSize()
+int matForceReact::getMatSize()
 {
     return pderiv[0].n_rows;
 }

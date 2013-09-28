@@ -38,34 +38,44 @@
 
 //######################################### Include Statements ########################################################
 #include <QCoreApplication>
-#include "./file_reader/controlinput.h"
-#include "./file_reader/seaenvinput.h"
-#include "./file_reader/datainput.h"
-#include "./file_reader/bodiesinput.h"
-#include "./file_reader/forcesinput.h"
 #include "./motion_solver/motionsolver.h"
 #include "./motion_model/motionmodel.h"
 #include "./motion_solver/matbody.h"
-#include "./motion_solver/matactiveforce.h"
-#include "./motion_solver/matcrossforce.h"
-#include "./motion_solver/matreactforce.h"
+#include "./motion_solver/matforceactive.h"
+#include "./motion_solver/matforcecross.h"
+#include "./motion_solver/matforcereact.h"
 #include "./file_writer/filewriter.h"
 #include "./derived_outputs/outputsbody.h"
-#include "./global_objects/listsolution.h"
+#include "./global_objects/solutionset.h"
 #include "./global_objects/solution.h"
+#include "./global_objects/system.h"
+#include "./file_reader/dictcontrol.h"
+#include "./file_reader/dictforces.h"
+#include "./file_reader/dictbodies.h"
+#include "./file_reader/filereader.h"
 #include <string>
 #include <iostream>
 #include <fstream>
+#include <stdio.h>
+#include <QtGlobal>
+#ifdef Q_OS_WIN
+    #include <direct.h>
+    #define GetCurrentDir _getcwd
+#elif defined Q_OS_LINUX
+    #include <unistd.h>
+    #define GetCurrentDir getcwd
+#endif
+
 
 //########################################## Global Variables #########################################################
 //Create matrix bodies.
 vector<matBody> listMatBody;
 
 //Vector containing various motion models available
-vector<motionModel> listModel;
+vector<MotionModel> listModel;
 
 //List of solutions from the motion model.  Each solution object is the list of solutions for one body.
-vector<listSolution> listSolutions;
+vector<SolutionSet> listSolutions;
 
 //System object.  Used to control entire execution.
 System sysofreq;
@@ -90,9 +100,22 @@ void buildMatBody(int bod, bool useCoeff=true);
  */
 void calcOutput(OutputsBody &OutputIn, FileWriter &WriterIn);
 
+//------------------------------------------Function Separator ----------------------------------------------------
+/**
+ * @brief Reads in all the input files.  Creates the necessary objects for file reading.  And connects those objects
+ * using Qt slots and signals.  Finally proceeds through each file and reads it.  All parsing is accomplished by
+ * the FileReader object.  File interpretation is processed through the Dictionary objects.
+ * @param runPath String.  The path to the root directory of the input files.
+ * @sa Dictionary
+ */
+void ReadFiles(string runPath);
+
 //############################################ Class Prototypes #######################################################
 
 
+//##################################### Constant Variables Declaration ################################################
+const string seperator = "/";
+string oFreq_Directory = "";
 
 //########################################### Main Function ###########################################################
 /**
@@ -113,11 +136,6 @@ void calcOutput(OutputsBody &OutputIn, FileWriter &WriterIn);
  */
 using namespace std;
 
-const string CONST_DIR = "constant";
-const string SYS_DIR = "system";
-string seperator = "/";
-string oFreq_Directory = "";
-
 int main(int argc, char *argv[])
 {
     QCoreApplication a(argc, argv);
@@ -126,85 +144,34 @@ int main(int argc, char *argv[])
 
 	//if command line arg supplied, use that directory
 	//or assume the current working directory
-	if(argc == 2)
+    if (argc == 2)
 		oFreq_Directory = argv[1];
-
-    //Set mypath for main inputs
-    mypath = oFreq_Directory + CONST_DIR + seperator;
-
-    //Set filename
-    filename = mypath + "forces.in";
-    ifstream forces_fileInput(filename.c_str());
-    filename = mypath + "bodies.in";
-    ifstream bodies_fileInput(filename.c_str());
-    filename = mypath + "data.in";
-    ifstream data_fileInput(filename.c_str());
-    filename = mypath + "seaenv.in";
-    ifstream seaenv_fileInput(filename.c_str());
-
-    //Set mypath for system inputs
-    mypath = oFreq_Directory + SYS_DIR + seperator;
-    filename = mypath + "control.in";
-    ifstream control_fileInput(filename.c_str());
-	
-    //Open input files
-    //---------------------------------------------------------------------------
-    if (!data_fileInput)
-	{
-		cerr << "data.in file does not exist." << endl;
-		return 1;
-	}
-
-	if(!forces_fileInput)
-	{
-		cerr << "forces.in file does not exist." << endl;
-		return 1;
-	}
-
-	if(!bodies_fileInput)
-	{
-		cerr << "bodies.in file does not exist." << endl;
-		return 1;
-	}
-
-	if(!seaenv_fileInput)
-	{
-		cerr << "seaenv.in file does not exist." << endl;
-		return 1;
-	}
-
-
+    else if (argc == 1)
+    {
+        //Get current working directory
+        char cCurrentPath[FILENAME_MAX];
+        if (!GetCurrentDir(cCurrentPath, sizeof(cCurrentPath)))
+        {
+            //Return error
+        }
+        //Set the path to the current working directory
+        oFreq_Directory = cCurrentPath;
+    }
 
     //Read input files and interpret data.
     //---------------------------------------------------------------------------
-	ControlInput controlInput;
-	controlInput.setData(control_fileInput);
-	//controlInput.testPrint();
-
-	SeaenvInput seaInput;
-	seaInput.setData(seaenv_fileInput);
-	//seaInput.testPrint();
-
-	DataInput dataInput;
-	dataInput.setData(data_fileInput);
-	//dataInput.testPrint();
-
-	ForcesInput forcesInput;
-	forcesInput.setData(forces_fileInput);
-	//forcesInput.testPrint();
-
-	Bodiesinput bodiesInput;
-	bodiesInput.setData(bodies_fileInput);
-	//bodiesInput.testPrint();
+    ReadFiles(oFreq_Directory);
 
     //Start creating main objects
     //---------------------------------------------------------------------------
     //Resize matrix bodies vector.
-    listMatBody.resize(sysofreq.reflistBody().size());
+    listMatBody.resize(sysofreq.listBody().size());
     //Resize the solution object.
-    for (unsigned int i = 0; i < sysofreq.reflistBody().size(); i++)
-        listSolutions.push_back(listSolution(sysofreq.refWaveDirections().size(),
+    for (unsigned int i = 0; i < sysofreq.listBody().size(); i++)
+    {
+        listSolutions.push_back(SolutionSet(sysofreq.refWaveDirections().size(),
                                              sysofreq.refWaveFrequencies().size()));
+    }
 
     //Iterate through each wave direction and wave frequency to solve
     //---------------------------------------------------------------------------
@@ -225,7 +192,7 @@ int main(int argc, char *argv[])
             //with wave frequency.
             bool coeffonly = true;              //Boolean to tell the motion model to only use coefficients.
             //Iterate through each body and build.
-            for (unsigned int i2 = 0; i2 < sysofreq.reflistBody().size(); i2++)
+            for (unsigned int i2 = 0; i2 < sysofreq.listBody().size(); i2++)
             {
                 //Build the body.
                 //Will automatically use the correct bodies.
@@ -237,14 +204,14 @@ int main(int argc, char *argv[])
             //Set the current wave frequency
             theMotionSolver.setWaveFreq(sysofreq.getCurFreq());
             //Solve the system of equations.
-            theMotionSolver.CalculateOutputs();
+            theMotionSolver.calculateOutputs();
 
 			//asign each solution per frequency to a body
-            for(unsigned int k = 0; k < sysofreq.reflistBody().size(); k++)
+            for(unsigned int k = 0; k < sysofreq.listBody().size(); k++)
 			{
-                Solution soln(sysofreq.reflistBody()[k]);
-                soln.setSolution(theMotionSolver.getSolution(k));
-                listSolutions[k].setSolution(i, j, soln);
+                Solution soln(sysofreq.listBody()[k]);
+                soln.setSolnMat(theMotionSolver.getSolution(k));
+                listSolutions[k].setSolnMat(i, j, soln);
 			}
 		}
     }
@@ -253,20 +220,20 @@ int main(int argc, char *argv[])
     //---------------------------------------------------------------------------
     //Iterate through each body output.  Setup the output and calculate outputs.
     //Resize list of outputs
-    if (sysofreq.reflistOutputs().size() != sysofreq.reflistBody().size())
-        sysofreq.reflistOutputs().resize(sysofreq.reflistBody().size());
+    if (sysofreq.listOutputs().size() != sysofreq.listBody().size())
+        sysofreq.listOutputs().resize(sysofreq.listBody().size());
 
-    for (unsigned int i = 0; i < sysofreq.reflistOutputs().size(); i++)
+    for (unsigned int i = 0; i < sysofreq.listOutputs().size(); i++)
     {
         //Setup variables for each OutputBody object.
-        sysofreq.reflistOutputs()[i].setlistBody(sysofreq.reflistBody());
-        sysofreq.reflistOutputs()[i].setlistSolution(listSolutions);
-        sysofreq.reflistOutputs()[i].setlistFreq(sysofreq.refWaveFrequencies());
-        sysofreq.reflistOutputs()[i].setlistWaveDir(sysofreq.refWaveDirections());
-        sysofreq.reflistOutputs()[i].setCurBody(i);
+        sysofreq.listOutputs()[i].setListBody(sysofreq.listBody());
+        sysofreq.listOutputs()[i].setSolutionSet(listSolutions);
+        sysofreq.listOutputs()[i].setListFreq(sysofreq.refWaveFrequencies());
+        sysofreq.listOutputs()[i].setListWaveDir(sysofreq.refWaveDirections());
+        sysofreq.listOutputs()[i].setCurBody(i);
 
         //Setup filewriter for outputs
-        FileWriter Writer(oFreq_Directory, sysofreq.reflistOutputs()[i]);
+        FileWriter Writer(oFreq_Directory, sysofreq.listOutputs()[i]);
 
         //Write frequency and wave direction list if this is the first iteration.
         if (i == 0)
@@ -288,7 +255,7 @@ int main(int argc, char *argv[])
 
         //Calculate outputs and write to file
         //Everything handled with the following function.
-        calcOutput(sysofreq.reflistOutputs()[i], Writer);
+        calcOutput(sysofreq.listOutputs()[i], Writer);
     }
 
     return a.exec();
@@ -304,7 +271,7 @@ void buildMatBody(int bod, bool useCoeff)
     //Search through the set of motion models to find the matching name.
     for (unsigned int i = 0; i < listModel.size(); i++)
     {
-        if (listModel[i].getName() == sysofreq.reflistBody()[bod].getMotionModel())
+        if (listModel[i].getName() == sysofreq.listBody()[bod].getMotionModel())
         {
             listMatBody[bod].setModelId(i);
             modelnum = i;
@@ -314,97 +281,97 @@ void buildMatBody(int bod, bool useCoeff)
 
     //Now know the correct motion model to use.
     //Create initial setup.
-    listModel[modelnum].setListBodies(sysofreq.reflistBody());        //Feed the list of bodies
+    listModel[modelnum].setListBodies(sysofreq.listBody());        //Feed the list of bodies
     listModel[modelnum].setBody(bod);                   //Set which body to use as the current body
-    listModel[modelnum].calcCoefficient(useCoeff);      //Let it know to only calculate coefficients.
+    listModel[modelnum].CoefficientOnly() = useCoeff;      //Let it know to only calculate coefficients.
     listModel[modelnum].Reset();                        //Give it a reset just for good measure.
 
     //Iterate through all the active forces, user
     //------------------------------------------
-    for (unsigned int i = 0; i < sysofreq.reflistBody()[bod].listForceActive_user().size(); i++)
+    for (unsigned int i = 0; i < sysofreq.listBody()[bod].listForceActive_user().size(); i++)
     {
-        listMatBody[bod].listActiveForce_user().push_back(matActiveForce());
-        listMatBody[bod].listActiveForce_user()[i].Coefficients() = listModel[modelnum].getMatForceActive_user(i);
+        listMatBody[bod].listForceActive_user().push_back(matForceActive());
+        listMatBody[bod].listForceActive_user()[i].listCoefficients() = listModel[modelnum].getMatForceActive_user(i);
         //Create force ID.
-        listMatBody[bod].listActiveForce_user()[i].setId(i);
+        listMatBody[bod].listForceActive_user()[i].setId(i);
     }
 
     //Iterate through all the active forces, hydro
     //------------------------------------------
-    for(unsigned int i = 0; i < sysofreq.reflistBody()[bod].listForceActive_hydro().size(); i++)
+    for(unsigned int i = 0; i < sysofreq.listBody()[bod].listForceActive_hydro().size(); i++)
     {
-        listMatBody[bod].listActiveForce_hydro().push_back(matActiveForce());
-        listMatBody[bod].listActiveForce_hydro()[i].Coefficients() = listModel[modelnum].getMatForceActive_hydro(i);
+        listMatBody[bod].listForceActive_hydro().push_back(matForceActive());
+        listMatBody[bod].listForceActive_hydro()[i].listCoefficients() = listModel[modelnum].getMatForceActive_hydro(i);
         //Create force ID.
-        listMatBody[bod].listActiveForce_hydro()[i].setId(i);
+        listMatBody[bod].listForceActive_hydro()[i].setId(i);
     }
 
     //Use this pointer for referencing the forces
-    matReactForce* ptForce;
-    forceReact* ptReact;
+    matForceReact* ptForce;
+    ForceReact* ptReact;
 
     //Iterate through all the reactive forces, user
     //------------------------------------------
-    for (unsigned int i = 0; i < sysofreq.reflistBody()[bod].listForceReact_user().size(); i++)
+    for (unsigned int i = 0; i < sysofreq.listBody()[bod].listForceReact_user().size(); i++)
     {
-        listMatBody[bod].listReactForce_user().push_back(matReactForce());
+        listMatBody[bod].listForceReact_user().push_back(matForceReact());
         //Create pointer
-        ptForce = &listMatBody[bod].listReactForce_user()[i];
+        ptForce = &listMatBody[bod].listForceReact_user()[i];
 
         //Assign id for force.
         ptForce->setId(i);
 
-        ptReact = sysofreq.reflistBody()[bod].listForceReact_user()[i];
+        ptReact = sysofreq.listBody()[bod].listForceReact_user()[i];
 
         //Iterate through each derivative.
         for (int j = 0; j <= ptReact->getMaxOrd(); j++)
         {
             //Assign matrices
-            ptForce->Derivatives().push_back(listModel[modelnum].getMatForceReact_user(i,j));
+            ptForce->listDerivatives().push_back(listModel[modelnum].getMatForceReact_user(i,j));
         }
     }
 
     //Iterate through all the reactive forces, hydro
     //------------------------------------------
-    for (unsigned int i = 0; i < sysofreq.reflistBody()[bod].listForceReact_hydro().size(); i++)
+    for (unsigned int i = 0; i < sysofreq.listBody()[bod].listForceReact_hydro().size(); i++)
     {
-        listMatBody[bod].listReactForce_hydro().push_back(matReactForce());
+        listMatBody[bod].listForceReact_hydro().push_back(matForceReact());
         //Create pointer
-        ptForce = & listMatBody[bod].listReactForce_hydro()[i];
+        ptForce = & listMatBody[bod].listForceReact_hydro()[i];
 
         //Assign id for force.
         ptForce->setId(i);
 
-        ptReact = sysofreq.reflistBody()[bod].listForceReact_user()[i];
+        ptReact = sysofreq.listBody()[bod].listForceReact_user()[i];
 
         //Iterate through each derivative.
         for (int j = 0; j <= ptReact->getMaxOrd(); j++)
         {
             //Assign matrices
-            ptForce->Derivatives().push_back(listModel[modelnum].getMatForceReact_hydro(i,j));
+            ptForce->listDerivatives().push_back(listModel[modelnum].getMatForceReact_hydro(i,j));
         }
     }
 
     delete ptForce;
     delete ptReact;
-    matCrossForce* ptForce2;
-    forceCross* ptCross;
+    matForceCross* ptForce2;
+    ForceCross* ptCross;
 
     //Iterate through all the cross body forces, user
     //------------------------------------------
-    for (unsigned int i = 0; i < sysofreq.reflistBody()[bod].listForceCross_user().size(); i++)
+    for (unsigned int i = 0; i < sysofreq.listBody()[bod].listForceCross_user().size(); i++)
     {
-        listMatBody[bod].listCrossForce_user().push_back(matCrossForce());
+        listMatBody[bod].listForceCross_user().push_back(matForceCross());
         //Create pointer
-        ptForce2 = &listMatBody[bod].listCrossForce_user()[i];
+        ptForce2 = &listMatBody[bod].listForceCross_user()[i];
 
         //Assign id for force.
         ptForce2->setId(i);
 
         //Assign cross body
-        for (unsigned int k = 0; k < sysofreq.reflistBody().size(); k++)
+        for (unsigned int k = 0; k < sysofreq.listBody().size(); k++)
         {
-            if (&sysofreq.reflistBody()[k] == sysofreq.reflistBody()[k].listCrossBody_user()[bod])
+            if (&sysofreq.listBody()[k] == sysofreq.listBody()[k].listCrossBody_user()[bod])
             {
                 //Assign cross body
                 ptForce2->setLinkedBody(listMatBody[k]);
@@ -414,31 +381,31 @@ void buildMatBody(int bod, bool useCoeff)
         }
 
         //Assign pointer
-        ptCross = sysofreq.reflistBody()[bod].listForceCross_user()[i];
+        ptCross = sysofreq.listBody()[bod].listForceCross_user()[i];
 
         //Iterate through each derivative.
         for (int j = 0; j <= ptCross->getMaxOrd(); j++)
         {
             //Assign matrices
-            ptForce2->Derivatives().push_back(listModel[modelnum].getMatForceCross_user(i,j));
+            ptForce2->listDerivatives().push_back(listModel[modelnum].getMatForceCross_user(i,j));
         }
     }
 
     //Iterate through all the cross body forces, hydro
     //------------------------------------------
-    for (unsigned int i = 0; i < sysofreq.reflistBody()[bod].listForceCross_hydro().size(); i++)
+    for (unsigned int i = 0; i < sysofreq.listBody()[bod].listForceCross_hydro().size(); i++)
     {
-        listMatBody[bod].listCrossForce_hydro().push_back(matCrossForce());
+        listMatBody[bod].listForceCross_hydro().push_back(matForceCross());
         //Create pointer
-        ptForce2 = &listMatBody[bod].listCrossForce_hydro()[i];
+        ptForce2 = &listMatBody[bod].listForceCross_hydro()[i];
 
         //Assign id for force.
         ptForce2->setId(i);
 
         //Assign cross body
-        for (unsigned int k = 0; k < sysofreq.reflistBody().size(); k++)
+        for (unsigned int k = 0; k < sysofreq.listBody().size(); k++)
         {
-            if (&sysofreq.reflistBody()[k] == sysofreq.reflistBody()[k].listCrossBody_hydro()[bod])
+            if (&sysofreq.listBody()[k] == sysofreq.listBody()[k].listCrossBody_hydro()[bod])
             {
                 //Assign cross body
                 ptForce2->setLinkedBody(listMatBody[k]);
@@ -448,19 +415,19 @@ void buildMatBody(int bod, bool useCoeff)
         }
 
         //Assign pointer
-        ptCross = sysofreq.reflistBody()[bod].listForceCross_user()[i];
+        ptCross = sysofreq.listBody()[bod].listForceCross_user()[i];
 
         //Iterate through each derivative.
         for (int j = 0; j <= ptCross->getMaxOrd(); j++)
         {
             //Assign matrices
-            ptForce2->Derivatives().push_back(listModel[modelnum].getMatForceCross_hydro(i,j));
+            ptForce2->listDerivatives().push_back(listModel[modelnum].getMatForceCross_hydro(i,j));
         }
     }
 
     //Get the mass matrix
     //------------------------------------------
-    listMatBody[bod].Mass() = listModel[modelnum].getMatForceMass();
+    listMatBody[bod].refMass() = listModel[modelnum].getMatForceMass();
 }
 
 //######################################## CalcOutput Function ########################################################
@@ -512,3 +479,33 @@ void calcOutput(OutputsBody &OutputIn, FileWriter &WriterIn)
     }
 }
 
+//######################################## ReadFiles Function #########################################################
+void ReadFiles(string runPath)
+{
+    //Reads in all the input files
+
+    FileReader fileIn;                  //Create file reading objects
+    dictBodies dictBod;                 //Create dictionary object for bodies.in
+    dictForces dictForce;               //Create dictionary object for forces.in
+    dictControl dictCont;               //Create dictionary object for control.in
+
+    //Connect the dictionary and FileReader objects.
+    QObject::connect(&fileIn, SIGNAL(outputBodiesFile(ObjectGroup)), &dictBod, SLOT(setObject(ObjectGroup)));
+    QObject::connect(&fileIn, SIGNAL(outputForcesFile(ObjectGroup)), &dictForce, SLOT(setObject(ObjectGroup)));
+    QObject::connect(&fileIn, SIGNAL(outputControlFile(ObjectGroup)), &dictCont, SLOT(setObject(ObjectGroup)));
+
+    //Create pointer to System object for each of the filereader objects
+    fileIn.setSystem( &sysofreq);
+    dictBod.setSystem( &sysofreq);
+    dictForce.setSystem( &sysofreq);
+    dictCont.setSystem( &sysofreq);
+
+    //Set path for file reading
+    fileIn.setPath(runPath);
+
+    //Read input files
+    //Sequence of file reading is important.
+    fileIn.readControl();       //Must be first.
+    fileIn.readForces();        //Must come before reading Bodies
+    fileIn.readBodies();        //Must come after reading forces.
+}

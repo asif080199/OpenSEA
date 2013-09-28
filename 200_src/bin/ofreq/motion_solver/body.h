@@ -51,6 +51,9 @@
 #elif defined Q_OS_LINUX
     #include <armadillo>    //Armadillo library included with standard system libraries.
 #endif
+#include "forceactive.h"
+#include "forcecross.h"
+#include "forcereact.h"
 
 using namespace std;
 using namespace arma;
@@ -59,9 +62,9 @@ using namespace arma;
 /*Create forward declarations of the force objects to include them in this class definition without including the
  *files.
  */
-class forceActive;
-class forceReact;
-class forceCross;
+//class ForceActive;
+//class ForceReact;
+//class ForceCross;
 
 //######################################### Class Separator ###########################################################
 /**
@@ -79,7 +82,20 @@ public:
 	~Body(); /**< The default destructor, nothing happens here. */
 
     //------------------------------------------Function Separator ----------------------------------------------------
-	void testPrint(); /**< Test print to console the values of all data members. */
+    /**
+     * @brief Overload for operator == to compare two Body objects.  Comparison is based on three criteria:
+     * 1.)  Do the two bodies have the same name.
+     * 2.)  Do they reference the same forces.
+     * 3.)  Do they have the same mass.
+     * If all three criteria return the same, the comparison returns true.  The two bodies are equal.
+     * @param bodIn The other body to compare to.
+     * @return Returns true if the bodies are equal based on three criteria:
+     * 1.)  Do the two bodies have the same name.
+     * 2.)  Do they reference the same forces.
+     * 3.)  Do they have the same mass.
+     * Returned variable is passed by value.
+     */
+    bool operator ==(Body &bodIn);
 
     //------------------------------------------Function Separator ----------------------------------------------------
 	/**
@@ -93,21 +109,28 @@ public:
      * @brief Exposes the body name property for operation.
      * @return Pointer to the body name property.
      */
-    string &BodyName();
+    string &refBodyName();
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
      * @brief Exposes the hydro body name property for operation.
      * @return Pointer to the hydro body name property.
      */
-    string &HydroBodyName();
+    string &refHydroBodName();
 
     //------------------------------------------Function Separator ----------------------------------------------------
 	/**
 	 * Sets the hydroBody.
 	 * @param newName The string passed in sets the hydroBody.
 	 */
-	void setHydroBodyName(string);
+    void setHydroBodName(string);
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * Gets the name of the hydro body.
+     * @return Returns string.  The name of the hydrobody object associated with the body.  Variable passed by value.
+     */
+    string getHydroBodName();
 
     //------------------------------------------Function Separator ----------------------------------------------------
 	/**
@@ -118,59 +141,53 @@ public:
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
+     * @brief Gets the heading for the body.  Heading is measured in radians.  Zero heading is True North, proceeding
+     * counter clockwise around the compass rose.
+     * @return Returns double variable.  Heading of the Body object.  Variable passed by value.
+     */
+    double getHeading();
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
      * @brief Exposes the heading property for operations.
      * @return Pointer to the heading property.
      */
-    double &Heading();
+    double &refHeading();
 
     //------------------------------------------Function Separator ----------------------------------------------------
 	/**
 	 * Sets the user active forces.
 	 * @param newForceList The vector of strings sets userActiveForces.
 	 */
-	void setUserActiveForces(vector<string>);
+    void setListForceActive_user(vector<string> newForceList);
 
     //------------------------------------------Function Separator ----------------------------------------------------
 	/**
 	 * Sets the user reactive forces.
 	 * @param newForceList The vector of strings sets userReactiveForces.
 	 */
-	void setUserReactiveForces(vector<string>);
-
-    //------------------------------------------Function Separator ----------------------------------------------------
-	/**
-	 * Sets the user cross body forces.
-	 * @param newCrossBodyList The vector of strings sets userCrossBodyForces.
-	 */
-	void setUserCrossBodyForces(vector<string>);
+    void setListForceReact_user(vector<string> newForceList);
 
     //------------------------------------------Function Separator ----------------------------------------------------
 	/**
 	 * Sets the hydro active forces.
 	 * @param newForceList The vector of strings sets hydroActiveForces.
 	 */
-	void setHydroActiveForces(vector<string>);
+    void setListForceActive_hydro(vector<string> newForceList);
 
     //------------------------------------------Function Separator ----------------------------------------------------
 	/**
 	 * Sets the hydro reactive forces.
 	 * @param newForceList The vector of strings sets hydroReactiveForce.
 	 */
-	void setHydroReactiveForces(vector<string>);
+    void setListForceReact_hydro(vector<string> newForceList);
 
     //------------------------------------------Function Separator ----------------------------------------------------
 	/**
 	 * Sets the hydro active forces.
 	 * @param newForceList The vector of strings sets hydroCrossBodyForces.
 	 */
-	void setHydroCrossBodyForces(vector<string>);
-
-    //------------------------------------------Function Separator ----------------------------------------------------
-	/**
-	 * Adds a linked body.
-	 * @param newLinkedBody The string passed in is added to the linkedBody vector.
-	 */
-	void addLinkedBody(string);
+    void setListForceCross_hydro(vector<string> newForceList);
 
     //------------------------------------------Function Separator ----------------------------------------------------
 	/**
@@ -438,7 +455,7 @@ public:
      * First entry (1,1) = Position in X-axis.  Second entry (2,1) = Position in Y-axis.  Third entry (3,1) = Position
      * in Z-axis.  Units are in meters.  Position is relative to the orientation of the world coordinate system.
      */
-    Mat<double> &Posn();
+    Mat<double> &refPosn();
 
     //------------------------------------------Function Separator ----------------------------------------------------
 	/**
@@ -464,7 +481,7 @@ public:
      * @param input Column matrix of complex numbers.  Matrix size is not hard coded.  Number of rows in matrix must match
      * number of equations for body property.
      */
-    void setSolution(cx_mat input);
+    void setSolnMat(cx_mat input);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -488,7 +505,7 @@ public:
      * @return Reference to column matrix of complex numbers.  Value returned by reference.  Matrix size is not
      * hard coded.  Number of rows in matrix must match number of equations for body property.
      */
-    cx_mat &Solution();
+    cx_mat &refSolution();
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -505,7 +522,18 @@ public:
      * these forces may be linked to other bodies as well and should not be changed.
      * @return A vector of pointers to various user active forces.
      */
-    vector<forceActive* > &listForceActive_user();
+    vector<ForceActive* > listForceActive_user();
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief A single active user force.
+     *
+     * A single active user force.  A pointer directing to the active user force.  Warning that
+     * these forces may be linked to other bodies as well and should not be changed.
+     * @param forceIn Integer.  Index of the ForceActive object requested.
+     * @return A single pointer to the user active forces requested by parameter forceIn.  Pointer passed by value.
+     */
+    ForceActive* listForceActive_user(int forceIn);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -515,7 +543,18 @@ public:
      * Warning that these forces may be linked to other bodies as well and should not be changed.
      * @return A vector of pointes to various hydrodynamic active forces.
      */
-    vector<forceActive* > &listForceActive_hydro();
+    vector<ForceActive* > &listForceActive_hydro();
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief A single active hydrodynamic force.
+     *
+     * A single active hydrodynamic force.  A pointer directing to the active hydrodynamic force.
+     * Warning that these forces may be linked to other bodies as well and should not be changed.
+     * @param forceIn Integer.  Index of the ForceActive object requested.
+     * @return A single pointer to the user active forces requested by parameter forceIn.  Pointer passed by value.
+     */
+    ForceActive* listForceActive_hydro(int forceIn);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -525,7 +564,18 @@ public:
      * these forces may be linked to other bodies as well and should not be changed.
      * @return A vector of pointers to various user reactive forces.
      */
-    vector<forceReact* > &listForceReact_user();
+    vector<ForceReact* > &listForceReact_user();
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief A single reactive user force.
+     *
+     * A single reactive user force.  A pointer directing to the reactive user force.  Warning that
+     * these forces may be linked to other bodies as well and should not be changed.
+     * @param forceIn Integer.  Index of the ForceReact object requested.
+     * @return A single pointer to the user reactive forces requested by parameter forceIn.  Pointer passed by value.
+     */
+    ForceReact *listForceReact_user(int forceIn);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -535,7 +585,18 @@ public:
      * forces.  Warning that these forces may be linked to other bodies as well and should not be changed.
      * @return A vector of pointers to various hydrodynamic reactive forces.
      */
-    vector<forceReact* > &listForceReact_hydro();
+    vector<ForceReact* > &listForceReact_hydro();
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief A single reactive hydrodynamic force.
+     *
+     * A single reactive hydrodynamic force.  A pointer directing to the reactive hydrodynamic force.
+     * Warning that these forces may be linked to other bodies as well and should not be changed.
+     * @param forceIn Integer.  Index of the ForceReact object requested.
+     * @return A single pointer to the user reactive forces requested by parameter forceIn.  Pointer passed by value.
+     */
+    ForceReact* listForceReact_hydro(int forceIn);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -548,7 +609,18 @@ public:
      * matching entry at index 5 in the listLinkedBody_usr.
      * @return A list of pointers to various user cross-body forces.
      */
-    vector<forceCross* > &listForceCross_user();
+    vector<ForceCross* > &listForceCross_user();
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief A single cross-body user force.
+     *
+     * A single cross-body user force.  A pointer directing to the cross-body user force.  Warning that
+     * these forces may be linked to other bodies as well and should not be changed.
+     * @param forceIn Integer.  Index of the ForceCross object requested.
+     * @return A single pointer to the user cross-body forces requested by parameter forceIn.  Pointer passed by value.
+     */
+    ForceCross *listForceCross_user(int forceIn);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -561,7 +633,18 @@ public:
      * have a matching entry at index 5 in the listLinkedBody_hydro.
      * @return A list of pointers to various hydrodynamic cross-body forces.
      */
-    vector<forceCross* > &listForceCross_hydro();
+    vector<ForceCross* > &listForceCross_hydro();
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief A single cross-body hydrodynamic force.
+     *
+     * A single cross-body hydrodynamic force.  A pointer directing to the cross-body hydrodynamic force.
+     * Warning that these forces may be linked to other bodies as well and should not be changed.
+     * @param forceIn Integer.  Index of the ForceCross object requested.
+     * @return A single pointer to the user cross-body forces requested by parameter forceIn.  Pointer passed by value.
+     */
+    ForceCross* listForceCross_hydro(int forceIn);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -627,7 +710,7 @@ private:
      * The list of active user forces.  A vector of pointers directing to the active user forces.  Warning that
      * these forces may be linked to other bodies as well and should not be changed.
      */
-    vector<forceActive*> plistForceActive_usr;
+    vector<ForceActive*> plistForceActive_usr;
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -636,7 +719,7 @@ private:
      * The list of active hydrodynamic forces.  A vector of pointers directing to the active hydrodynamic forces.
      * Warning that these forces may be linked to other bodies as well and should not be changed.
      */
-    vector<forceActive*> plistForceActive_hydro;
+    vector<ForceActive*> plistForceActive_hydro;
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -645,7 +728,7 @@ private:
      * The list of reactive user forces.  A vector of pointers directing to the reactive user forces.  Warning that
      * these forces may be linked to other bodies as well and should not be changed.
      */
-    vector<forceReact*> plistForceReact_usr;
+    vector<ForceReact*> plistForceReact_usr;
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -654,7 +737,7 @@ private:
      * The list of reactive hydrodynamic forces.  A vector of pointers directing to the reactive hydrodynamic
      * forces.  Warning that these forces may be linked to other bodies as well and should not be changed.
      */
-    vector<forceReact*> plistForceReact_hydro;
+    vector<ForceReact*> plistForceReact_hydro;
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -666,7 +749,7 @@ private:
      * lists should match.  So that when a force gets added at index 5 in the listForceCross_usr, it should have a
      * matching entry at index 5 in the listLinkedBody_usr.
      */
-    vector<forceCross*> plistForceCross_usr;
+    vector<ForceCross*> plistForceCross_usr;
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -678,7 +761,7 @@ private:
      * of the two lists should match.  So that when a force gets added at index 5 in the listForceCross_hydro, it should
      * have a matching entry at index 5 in the listLinkedBody_hydro.
      */
-    vector<forceCross*> plistForceCross_hydro;
+    vector<ForceCross*> plistForceCross_hydro;
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**

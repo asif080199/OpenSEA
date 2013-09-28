@@ -30,6 +30,9 @@
 GlobalAcceleration::GlobalAcceleration() 
 	: GlobalSolution()
 {
+    ACCELERATION_NAME = "Global Acceleration"; /**< Used for reference in file output. */
+    GLOBAL_ACCELERATION_DERIVATIVE = 2;  /**< Specifies 2nd order of the derivative. (acceleration) */
+
     pName = ACCELERATION_NAME;
 	orderDerivative = GLOBAL_ACCELERATION_DERIVATIVE;
 }

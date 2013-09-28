@@ -41,30 +41,102 @@ Body::~Body()
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-void Body::testPrint()
+bool Body::operator ==(Body &bodIn)
 {
-	cout << "bodyName: " << bodyName << endl;
-	cout << "hydrobody: " << hydroBody << endl;
-	cout << "heading: " << heading << endl;
-	cout << "motionModel: " << motionModel << endl;
-	cout << "mass: " << mass << endl;
-	cout << "ixx: " << momentOfInertiaXX << endl; //Ixx
-	cout << "iyy: " << momentOfInertiaYY << endl; //Iyy
-	cout << "izz: " << momentOfInertiaZZ << endl; //Izz
-	cout << "ixy: " << crossMomentOfInertiaXY << endl;
-	cout << "ixz" << crossMomentOfInertiaXZ << endl;
-	cout << "iyz: " << crossMomentOfInertiaYZ << endl;
-	cout << "centroidX: " << centroidX << endl;
-	cout << "centroidY: " << centroidY << endl;
-	cout << "centroidZ: " << centroidZ << endl;
-	for(unsigned int i = 0 ;i < userActiveForces.size(); i++)
-		cout << "activeForce[" << i << "]: " << userActiveForces[i] << endl;
-	for(unsigned int i = 0 ;i < userReactiveForces.size(); i++)
-		cout << "reactiveForce[" << i << "]: " << userReactiveForces[i] << endl;
-	//cout << "linkedBody: " << linkedBody << endl;
-	//cout << "crossBodyForceName: " << crossBodyName << endl;
-	//for(unsigned int i = 0 ;i < crossBodyForces.size(); i++)
-	//	cout << "crossBodyForce[" << i << "]: " << crossBodyForces[i] << endl;
+    //Create output and start with the initial assumption that bodies are equal.
+    bool bodEq = true;
+
+    //1.)  Check if they have the same body name.
+    if (this->bodyName == bodIn.bodyName)
+        bodEq *= true;
+    else
+        bodEq *= false;
+
+    //2.)  Check if they have the same force reference.
+    //2.1.1)  Check All active hydro forces
+    if (bodEq && (this->plistForceActive_hydro.size() == bodIn.plistForceActive_hydro.size()))
+    {
+        for (unsigned int i = 0; i < this->plistForceActive_hydro.size(); i++)
+        {
+            if(this->plistForceActive_hydro.at(i) == bodIn.plistForceActive_hydro.at(i))
+                bodEq *= true;
+            else
+                bodEq *= false;
+        }
+    }
+    //2.1.2)  Check all active user forces
+    if (bodEq && (this->plistForceActive_usr.size() == bodIn.plistForceActive_usr.size()))
+    {
+        for (unsigned int i = 0; i < this->plistForceActive_usr.size(); i++)
+        {
+            if(this->plistForceActive_usr.at(i) == bodIn.plistForceActive_usr.at(i))
+                bodEq *= true;
+            else
+                bodEq *= false;
+        }
+    }
+    //2.2.1)  Check all reactive hydro forces
+    if (bodEq && (this->plistForceReact_hydro.size() == bodIn.plistForceReact_hydro.size()))
+    {
+        for (unsigned int i = 0; i < this->plistForceReact_hydro.size(); i++)
+        {
+            if(this->plistForceReact_hydro.at(i) == bodIn.plistForceReact_hydro.at(i))
+                bodEq *= true;
+            else
+                bodEq *= false;
+        }
+    }
+    //2.2.2)  Check All reactive user forces
+    if (bodEq && (this->plistForceReact_usr.size() == bodIn.plistForceReact_usr.size()))
+    {
+        for (unsigned int i = 0; i < this->plistForceReact_usr.size(); i++)
+        {
+            if(this->plistForceReact_usr.at(i) == bodIn.plistForceReact_usr.at(i))
+                bodEq *= true;
+            else
+                bodEq *= false;
+        }
+    }
+    //2.3.1)  Check All cross-body hydro forces
+    if (bodEq && (this->plistForceCross_hydro.size() == bodIn.plistForceCross_hydro.size()))
+    {
+        for (unsigned int i = 0; i < this->plistForceCross_hydro.size(); i++)
+        {
+            if(this->plistForceCross_hydro.at(i) == bodIn.plistForceCross_hydro.at(i))
+                bodEq *= true;
+            else
+                bodEq *= false;
+        }
+    }
+    //2.3.2)  Check All cross-body user forces
+    if (bodEq && (this->plistForceCross_usr.size() == bodIn.plistForceCross_usr.size()))
+    {
+        for (unsigned int i = 0; i < this->plistForceCross_usr.size(); i++)
+        {
+            if(this->plistForceCross_usr.at(i) == bodIn.plistForceCross_usr.at(i))
+                bodEq *= true;
+            else
+                bodEq *= false;
+        }
+    }
+
+    //3.)  Check that the bodies have the same mass
+    if (bodEq)
+    {
+        for (unsigned int i = 0; i < this->MassMatrix().n_rows; i++)
+        {
+            for (unsigned int j = 0; j < this->MassMatrix().n_cols; j++)
+            {
+                if(this->MassMatrix()(i,j) == bodIn.MassMatrix()(i,j))
+                    bodEq *= true;
+                else
+                    bodEq *= false;
+            }
+        }
+    }
+
+    //Checks complete.  Return result.
+    return bodEq;
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
@@ -74,21 +146,27 @@ void Body::setBodyName(string newName)
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-string &Body::BodyName()
+string &Body::refBodyName()
 {
     return bodyName;
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-string &Body::HydroBodyName()
+string &Body::refHydroBodName()
 {
     return hydroBody;
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-void Body::setHydroBodyName(string newName)
+void Body::setHydroBodName(string newName)
 {
 	hydroBody = newName;
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+string Body::getHydroBodName()
+{
+    return hydroBody;
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
@@ -98,67 +176,49 @@ void Body::setHeading(double newHeading)
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-double &Body::Heading()
+double Body::getHeading()
 {
     return phead;
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-void Body::setUserActiveForces(vector<string> newForceList)
+double &Body::refHeading()
 {
-	userActiveForces = newForceList;
+    return phead;
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-void Body::setUserReactiveForces(vector<string> newForceList)
+void Body::setListForceActive_user(vector<string> newForceList)
 {
-	userReactiveForces = newForceList;
+
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-//Not used REMOVE after verify correct parsing
-void Body::setUserCrossBodyForces(vector<string> newCrossBodyList)
+void Body::setListForceReact_user(vector<string> newForceList)
 {
 
-	if(newCrossBodyList.size() % 2 == 0)
-	{
-	
-		for(unsigned int i = 0; i < newCrossBodyList.size(); i++)
-		{
-			if(i & 2 == 0) //even index, add to crossBodyForceLisyt
-				userCrossBodyForces.push_back(newCrossBodyList[i]);
-			else //Odd index, add to linkedBody List
-				addLinkedBody(newCrossBodyList[i]);
-		}
-	}
-	else
-		cout << "Error, must provide cross body force and linked body name as a pair" << endl;
-	
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-void Body::setHydroActiveForces(vector<string> newForceList)
+void Body::setListForceActive_hydro(vector<string> newForceList)
 {
-	hydroActiveForces = newForceList;
+
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-void Body::setHydroReactiveForces(vector<string> newForceList)
+void Body::setListForceReact_hydro(vector<string> newForceList)
 {
-	hydroReactiveForces = newForceList;
+
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-void Body::setHydroCrossBodyForces(vector<string> newForceList)
+void Body::setListForceCross_hydro(vector<string> newForceList)
 {
-	hydroCrossBodyForces = newForceList;
+
 }
 
-//------------------------------------------Function Separator --------------------------------------------------------
-void Body::addLinkedBody(string newLinkedBody)
-{
-	linkedBody.push_back(newLinkedBody);
-}
+//==========================================Section Separator =========================================================
+//Mass Functions
 
 //------------------------------------------Function Separator --------------------------------------------------------
 void Body::setMass(double newMass)
@@ -171,7 +231,7 @@ void Body::setMass(double newMass)
 //------------------------------------------Function Separator --------------------------------------------------------
 double Body::getMass()
 {
-    return pMass(0,0);
+    return pmassMat(0,0);
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
@@ -218,7 +278,7 @@ void Body::setMomIxy(double newXY)
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-void Body::getMomIxy()
+double Body::getMomIxy()
 {
     return pmassMat(3,4);
 }
@@ -231,7 +291,7 @@ void Body::setMomIxz(double newXZ)
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-void Body::getMomIxz()
+double Body::getMomIxz()
 {
     return pmassMat(3,5);
 }
@@ -244,7 +304,7 @@ void Body::setMomIyz(double newYZ)
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-void Body::getMomIyz()
+double Body::getMomIyz()
 {
     return pmassMat(4,5);
 }
@@ -258,7 +318,7 @@ Mat<double> Body::getMassMatrix()
 //------------------------------------------Function Separator --------------------------------------------------------
 Mat<double> &Body::MassMatrix()
 {
-    return this->getMassMatrix();
+    return pmassMat;
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
@@ -352,21 +412,19 @@ Mat<double> Body::getPosn()
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-Mat<double> &Body::Posn()
+Mat<double> &Body::refPosn()
 {
     return pPosn;
 }
 
-//------------------------------------------Function Separator --------------------------------------------------------
-string Body::getMotionModel()
-{
-	return motionModel;
-}
+
+//==========================================Section Separator =========================================================
+//Body Stuff
 
 //------------------------------------------Function Separator --------------------------------------------------------
 void Body::setCrossBodyName(string newName)
 {
-	userCrossBodyForces.push_back(newName);
+
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
@@ -376,7 +434,7 @@ string Body::getBodyName()
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-void Body::setSolution(cx_mat input)
+void Body::setSolnMat(cx_mat input)
 {
     pSoln = input;
 }
@@ -388,7 +446,7 @@ cx_mat Body::getSolution()
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-cx_mat &Body::Solution()
+cx_mat &Body::refSolution()
 {
     return pSoln;
 }
@@ -396,43 +454,99 @@ cx_mat &Body::Solution()
 //------------------------------------------Function Separator --------------------------------------------------------
 Body Body::Copy()
 {
-    return this;
+    return *this;
 }
 
+
+//==========================================Section Separator =========================================================
+//Force Lists
+
 //------------------------------------------Function Separator --------------------------------------------------------
-vector<forceActive *> &Body::listForceActive_user()
+vector<ForceActive *> Body::listForceActive_user()
 {
     return plistForceActive_usr;
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-vector<forceActive *> &Body::listForceActive_hydro()
+ForceActive* Body::listForceActive_user(int forceIn)
+{
+    return plistForceActive_usr[forceIn];
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+vector<ForceActive *> &Body::listForceActive_hydro()
 {
     return plistForceActive_hydro;
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-vector<forceReact *> &Body::listForceReact_user()
+ForceActive *Body::listForceActive_hydro(int forceIn)
+{
+    return plistForceActive_hydro[forceIn];
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+vector<ForceReact *> &Body::listForceReact_user()
 {
     return plistForceReact_usr;
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-vector<forceReact *> &Body::listForceReact_hydro()
+ForceReact* Body::listForceReact_user(int forceIn)
+{
+    return plistForceReact_usr[forceIn];
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+ForceReact *Body::listForceReact_hydro(int forceIn)
+{
+    return plistForceReact_usr[forceIn];
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+vector<ForceReact *> &Body::listForceReact_hydro()
 {
     return plistForceReact_hydro;
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-vector<Body *> &Body::listCrossBody_user()
+vector<ForceCross* > &Body::listForceCross_user()
 {
     return plistForceCross_usr;
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-vector<Body *> &Body::listCrossBody_hydro()
+ForceCross* Body::listForceCross_user(int forceIn)
+{
+    return plistForceCross_usr[forceIn];
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+vector<ForceCross* > &Body::listForceCross_hydro()
 {
     return plistForceCross_hydro;
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+ForceCross* Body::listForceCross_hydro(int forceIn)
+{
+    return plistForceCross_hydro[forceIn];
+}
+
+
+//==========================================Section Separator =========================================================
+//Miscellaneous
+
+//------------------------------------------Function Separator --------------------------------------------------------
+vector<Body *> &Body::listCrossBody_user()
+{
+    return plistLinkedBody_usr;
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+vector<Body *> &Body::listCrossBody_hydro()
+{
+    return plistLinkedBody_hydro;
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------

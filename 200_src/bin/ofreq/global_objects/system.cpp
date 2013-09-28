@@ -32,22 +32,14 @@
 //------------------------------------------Function Separator --------------------------------------------------------
 System::System() : pWaveDirections(), pWaveFrequencies()
 {
-	/*waveDirections = new WaveDirections();
-	waveFrequencies = new WaveFrequencies();*/
+    valForceActive_user = "forceActive_user";
+    valForceReact_user = "forceReact_user";
+    valForceCross_user = "forceCross_user";
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
 System::~System()
 {
-}
-
-//------------------------------------------Function Separator --------------------------------------------------------
-void System::testPrint()
-{
-	cout << "Analysis Type: " << analysisType << endl;
-	pWaveDirections.testPrint();
-	pWaveFrequencies.testPrint();
-	cout << endl;
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
@@ -65,7 +57,7 @@ void System::setWaveDirections(vector<double> vecIn)
 //------------------------------------------Function Separator --------------------------------------------------------
 void System::setSpreadModel(string spreadIn)
 {
-	pWaveDirections.setSpreadModel(spreadIn);
+
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
@@ -129,25 +121,25 @@ double System::getCurFreq()
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-vector<Body>& System::reflistBody()
+vector<Body>& System::listBody()
 {
     return plistBody;
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-vector<OutputsBody>& System::reflistOutputs()
+vector<OutputsBody>& System::listOutputs()
 {
     return plistOutputs;
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-Body& System::refBody(int input = 0)
+Body &System::refBody(int input)
 {
     return plistBody.at(input);
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-OutputsBody& System::refOutput(int input = 0)
+OutputsBody &System::refOutput(int input)
 {
     return plistOutputs.at(input);
 }
@@ -156,37 +148,35 @@ OutputsBody& System::refOutput(int input = 0)
 void System::clearForce(string forceClass)
 {
     //Clears the vector of force objects.
-    switch (forceClass)
+    if (forceClass == valForceActive_user)
     {
-    case valForceActive_user:
-        //clear forceActive objects class, under scope of user
+        //clear ForceActive objects class, under scope of user
         plistForceActive_user.clear();
-        break;
-    case valForceReact_user:
-        //Clear forceReact objects class, under scope of user
+    }
+    else if (forceClass == valForceReact_user)
+    {
+        //Clear ForceReact objects class, under scope of user
         plistForceReact_user.clear();
-        break;
-    case valForceCross_user:
-        //Clear forceCross objects class, under scope of user
+    }
+    else if (forceClass == valForceCross_user)
+    {
+        //Clear ForceCross objects class, under scope of user
         plistForceCross_user.clear();
-        break;
-    case "":
+    }
+    else if (forceClass == "")
+    {
         //Clear all three object types.
         plistForceActive_user.clear();
         plistForceReact_user.clear();
         plistForceCross_user.clear();
-        break;
-    default:
-        //Case for any unknown inputs.
-        //do nothing.
     }
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-forceActive System::getforceActive_user(string forceName)
+ForceActive System::getForceActive_user(string forceName)
 {
     //returns forceActive_user specified by forcename
-    int i = 0;      //counting variable
+    unsigned int i = 0;      //counting variable
     while (i <= plistForceActive_user.size() - 1)
     {
         //Check if forcename matches specified force.
@@ -202,20 +192,39 @@ forceActive System::getforceActive_user(string forceName)
         //return specified object
         return plistForceActive_user[i];
     }
+    else
+    {
+        //return error
+        return ForceActive();
+    }
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-vector<forceActive> &System::listforceActive_user()
+vector<ForceActive> &System::listForceActive_user()
 {
     //return vector
     return plistForceActive_user;
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-forceReact System::getforceReact_user(string forceName)
+ForceActive &System::refForceActive_user(unsigned int forceIndex)
+{
+    //Check if index is out of bounds.  If so, resize vector.
+    if (forceIndex > plistForceActive_user.size() - 1)
+    {
+        plistForceActive_user.resize(forceIndex + 1);
+        plistForceActive_user[forceIndex].setSystemIndex(forceIndex);
+    }
+
+    //Return object.
+    return plistForceActive_user[forceIndex];
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+ForceReact System::getforceReact_user(string forceName)
 {
     //returns forceReact_user specified by forcename
-    int i = 0;      //counting variable
+    unsigned int i = 0;      //counting variable
     while (i <= plistForceReact_user.size() - 1)
     {
         //Check if forcename matches specified force.
@@ -231,19 +240,37 @@ forceReact System::getforceReact_user(string forceName)
         //return specified object
         return plistForceReact_user[i];
     }
+    else
+    {
+        //return error
+        return ForceReact();
+    }
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-vector<forceReact> &System::listforceReact_user()
+vector<ForceReact> &System::listForceReact_user()
 {
     return plistForceReact_user;
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-forceActive System::getforceCross_user(string forceName)
+ForceReact &System::refForceReact_user(unsigned int forceIndex)
+{
+    //Check if index is out of bounds.  If so, resize vector.
+    if (forceIndex > plistForceReact_user.size() - 1)
+    {
+        plistForceReact_user.resize(forceIndex + 1);
+        plistForceReact_user[forceIndex].setSystemIndex(forceIndex);
+    }
+
+    return plistForceReact_user[forceIndex];
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+ForceCross System::getforceCross_user(string forceName)
 {
     //returns ForceCross_user specified by forcename
-    int i = 0;      //counting variable
+    unsigned int i = 0;      //counting variable
     while (i <= plistForceCross_user.size() - 1)
     {
         //Check if forcename matches specified force.
@@ -259,12 +286,30 @@ forceActive System::getforceCross_user(string forceName)
         //return specified object
         return plistForceCross_user[i];
     }
+    else
+    {
+        //return error
+        return ForceCross();
+    }
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-vector<forceActive> &System::listforceCross_user()
+vector<ForceCross> &System::listForceCross_user()
 {
     return plistForceCross_user;
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+ForceCross &System::refForceCross_user(unsigned int forceIndex)
+{
+    //Check if index is out of bounds.  If so, resize vector.
+    if (forceIndex > plistForceCross_user.size() - 1)
+    {
+        plistForceCross_user.resize(forceIndex + 1);
+        plistForceCross_user[forceIndex].setSystemIndex(forceIndex);
+    }
+
+    return plistForceCross_user[forceIndex];
 }
 
 //==========================================Section Separator =========================================================
@@ -307,39 +352,39 @@ void System::addOutput()
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-void System::addforceActive_user(forceActive input)
+void System::addForceActive_user(ForceActive input)
 {
     plistForceActive_user.push_back(input);
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-void System::addforceActive_user()
+void System::addForceActive_user()
 {
-    plistForceActive_user.push_back(forceActive());
+    plistForceActive_user.push_back(ForceActive());
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-void System::addforceReact_user(forceReact input)
+void System::addForceReact_user(ForceReact input)
 {
     plistForceReact_user.push_back(input);
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-void System::addforceReact_user()
+void System::addForceReact_user()
 {
-    plistForceReact_user.push_back(forceReact());
+    plistForceReact_user.push_back(ForceReact());
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-void System::addforceCross_user(forceCross input)
+void System::addForceCross_user(ForceCross input)
 {
-    plistForceCross_user.push_back(forceCross());
+    plistForceCross_user.push_back(input);
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-void System::addforceCross_user()
+void System::addForceCross_user()
 {
-    plistForceCross_user.push_back(forceReact());
+    plistForceCross_user.push_back(ForceCross());
 }
 
 //==========================================Section Separator =========================================================

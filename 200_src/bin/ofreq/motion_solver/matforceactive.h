@@ -10,9 +10,7 @@
  *---------------------------------------------------------------------------------------------------------------------
  *Date          Author				Description
  *---------------------------------------------------------------------------------------------------------------------
- *May 15, 2013	Shane Honanie       Initially created
- *Aug 02, 2013  Nicholas Barczak    Added operator overloads and more consistent matrix definition of forces.
- *                                  Also added methods for derivative access.
+ *May 15, 2013  Shane Honanie       Initially created.
  *
 \*-------------------------------------------------------------------------------------------------------------------*/
 
@@ -38,8 +36,8 @@
 
 
 //######################################### Class Separator ###########################################################
-#ifndef MATREACTFORCE_H
-#define MATREACTFORCE_H
+#ifndef MATACTIVEFORCE_H
+#define MATACTIVEFORCE_H
 #include <complex>
 #include <QtGlobal>
 #ifdef Q_OS_WIN
@@ -50,110 +48,36 @@
 
 using namespace arma;
 using namespace std;
-//const int MAX_ORDER_DERIVATIVE = 3;
-
-typedef complex<double> complexDouble;
 
 //######################################### Class Separator ###########################################################
 /**
- * This class holds data for reactive force matrix whch includes force coefficients.
+ * This class holds all data for an active force matrix.
  */
 
-class matReactForce
+class matForceActive
 {
 //==========================================Section Separator =========================================================
 public:
     //------------------------------------------Function Separator ----------------------------------------------------
-    matReactForce(); /**< The default constructor. */
+    matForceActive(); /**< The default constructor. */
 
     //------------------------------------------Function Separator ----------------------------------------------------
-	/**
-     * @brief The constructor.  Takes a vector of complex matrices and stores them as derivatives.
-     *
-     * The constructor.  Takes a vector of complex matrices and stores them as derivatives.  Assumes that the matrices
-     * in the vector are order in sequence of increasing order of derivative. (index 0 = derivative order 0.)
-     * @param forceIn The list of forces.
-	 */
-    matReactForce(vector<cx_mat> forceIn);
+    ~matForceActive(); /**< The default destructor, nothing happens here. */
 
     //------------------------------------------Function Separator ----------------------------------------------------
-    ~matReactForce(); /**< The default destructor, nothing happens here. */
+    matForceActive operator+(const matForceActive &forceOther);
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    matForceActive operator-(const matForceActive &forceOther);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
-     * @brief Operator overload to add two matReactForce objects together.
+     * @brief Returns the coefficients matrix.
      *
-     * This overloads the + operator to add two matReactForce objects together.  Functions are added on a per-derivative
-     * basis.  The function recognizes the derivative matrices contained within each object.  Only derivatives of the
-     * same order are added together.
-     * @param forceOther The other objects of type matReactForce that will be added.
-     * @return Returns an object of type matReactForce.  The new object will contain the same order of derivatives as
-     * the highest derivative of the two added functions.
+     * Returns the coefficients matrix.
+     * @return Returns the coefficients matrix.
      */
-    virtual matReactForce operator+(const matReactForce& forceOther);
-
-    //------------------------------------------Function Separator ----------------------------------------------------
-    /**
-     * @brief Operator overload to subtract two matReactForce objects together.
-     *
-     * This overloads the - operator to subtract two matReactForce objects together.  Functions are subtracted on a
-     * per-derivative basis.  The function recognizes the derivative matrices contained within each object.
-     * Only derivatives of the same order are subtracted together.  Order of operations does matter.
-     * @param forceOther The other objects of type matReactForce that will be subtracted.  forceOther is always
-     * subtracted from the calling object.
-     * @return Returns an object of type matReactForce.  The new object will contain the same order of derivatives as
-     * the highest derivative of the two subtracted functions.
-     */
-    virtual matReactForce operator-(const matReactForce& forceOther);
-
-    //------------------------------------------Function Separator ----------------------------------------------------
-    /**
-     * @brief The maximum order of the derivatives.
-     *
-     * The maximum order of the derivatives (Integer).  Also the total size of the vector containing the derivatives.
-     * @return Returns the maximum order of derivatives in the force.
-     */
-    int getmaxOrder();
-
-    //------------------------------------------Function Separator ----------------------------------------------------
-    /**
-     * @brief Derivative Returns the full vector of derivatives.
-     *
-     * Derivative Returns the full vector of derivatives.
-     * @return  Returns the full vector of derivatives.  Passed as values, not as references.
-     */
-    vector<cx_mat> getDerivative();
-
-    //------------------------------------------Function Separator ----------------------------------------------------
-    /**
-     * @brief Derivative Returns the complex matrix for only the order of derivative specified.
-     *
-     * Derivative Returns the complex matrix for only the order of derivative specified.
-     * @param order Integer input to specify the order of the derivative.
-     * @return Returns a complex matrix that contains the force coefficients for the given order of derivative.  Passed
-     * as a value.
-     */
-    cx_mat getDerivative(int order);
-
-    //------------------------------------------Function Separator ----------------------------------------------------
-    /**
-     * @brief Inputs a derivative matrix
-     * @param order The order of the derivative matrix.  Also is sequence in the vector that contains the matrices.
-     * @param Coeff The matrix of complex numbers that contains the force coefficients for the derivative.  Passed as a
-     * value, not a reference.
-     */
-    void setDerivative(int order, cx_mat Coeff);
-
-    //------------------------------------------Function Separator ----------------------------------------------------
-    /**
-     * @brief Provides direct access to the vector of derivatives.
-     *
-     * Provides direct access to the vector of derivatives.  Allows for use of vector operations on the derivatives
-     * object.
-     * @return Returns reference to the vector of complex matrices which contain the derivatives.  Variable passed by
-     * reference.
-     */
-    vector<cx_mat> &Derivatives();
+    cx_mat &listCoefficients();
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -191,14 +115,6 @@ protected:
 private:
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
-     * @brief Defines the vector of derivatives.
-     *
-     * Defines the vector of derivatives.  Each entry in vector represents the order of the derivative.
-     */
-    vector<cx_mat> pderiv;
-
-    //------------------------------------------Function Separator ----------------------------------------------------
-    /**
      * @brief the number of the object in the outside vector that contains it.
      *
      * This is similar to the name parameter in other force objects.  It is an identifier.  In this case, a numerical
@@ -206,5 +122,8 @@ private:
      */
     int pId;
 
+    //------------------------------------------Function Separator ----------------------------------------------------
+    cx_mat pCoeff; /**< Matrix of force coefficients. */
 };
 #endif
+

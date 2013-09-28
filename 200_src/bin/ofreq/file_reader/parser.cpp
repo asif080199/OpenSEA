@@ -32,6 +32,20 @@
 //------------------------------------------Function Separator --------------------------------------------------------
 Parser::Parser()
 {
+    COMMENT_LINE = "//"; /**< Line Comment. */
+    COMMENT_BLOCK_BEGIN = "/*"; /**< Block Comment Begin. */
+    COMMENT_BLOCK_END = "*/"; /**< Block comment end. */
+    END_STATEMENT = ";"; /**< End of statement. */
+    OBJECT_BEGIN = "{"; /**< Object scope begin. */
+    OBJECT_END = "}"; /**< Object scope end */
+    LIST_BEGIN = "("; /**< List scope begin. */
+    LIST_END = ");"; /**< List scope end. */
+    KEY_VAL_SEPARATOR= ":"; /**< Key/Val pair seperator. */
+    const char EOL = '\n'; /**< newline. */
+    const int MAX_IGNORE = 150000; /**< Max # of chars to ignore. */
+    OBJ_SEAFILE = "seafile"; /**< seafile object name, used to ignore seafile block. */
+    QUOTE = "\"";
+
     //Set initial value for curObject
     curObject = 0;
     //Resize list of objects.
@@ -118,13 +132,13 @@ vector<ObjectGroup>& Parser::refObject()
 //------------------------------------------Function Separator --------------------------------------------------------
 vector<ObjectGroup>& Parser::refSubObject(int index1)
 {
-    return plistObject.at(index1).refListObject();
+    return plistObject.at(index1).listObject();
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
 ObjectGroup Parser::getSubObject(int index, int index1)
 {
-    return plistObject.at(index1).refListObject().at(index);
+    return plistObject.at(index1).listObject().at(index);
 }
 
 //==========================================Section Separator =========================================================
@@ -149,6 +163,8 @@ void Parser::ParseCommands(istream& infile, string prevString)
         plistObject.push_back(ObjectGroup());
         curObject += 1;
         plistObject[curObject].setClassName(prevString);
+        //Initialize the subparser
+        subParse = new Parser();
 
         int bracket_count;      //THe number of object definition brackets.  Must add to zero
                                 //in the end.
@@ -173,8 +189,8 @@ void Parser::ParseCommands(istream& infile, string prevString)
             //Pass the string into a stream.
             buffer << tempString;
 
-            //Feed the information to a recursive instance of Parse function.
-            subParse.Parse(buffer);
+            //Feed the information to a recursive instance of Parse function.           
+            subParse->Parse(buffer);
 
             //Get next string
             infile >> tempString;
@@ -187,15 +203,15 @@ void Parser::ParseCommands(istream& infile, string prevString)
         }
 
         //Get the keysets from the parsed object.
-        for (unsigned int i = 0; i < subParse.getObject(0).refListKey().size(); i++)
+        for (unsigned int i = 0; i < subParse->getObject(0).listKey().size(); i++)
         {
-            plistObject[curObject].addKeySet(subParse.getObject(0).getKey(i), subParse.getObject(0).getVal(i));
+            plistObject[curObject].addKeySet(subParse->getObject(0).getKey(i), subParse->getObject(0).getVal(i));
         }
 
         //Parsing complete.  Get the parsed subobjects back.
-        for (unsigned int i = 0; i < subParse.refObject().size(); i++)
+        for (unsigned int i = 0; i < subParse->refObject().size(); i++)
         {
-            plistObject[curObject].addSubObject(subParse.getObject(i));
+            plistObject[curObject].addSubObject(subParse->getObject(i));
         }
     }
 

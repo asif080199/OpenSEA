@@ -75,7 +75,7 @@ using namespace arma;
  * 7.)  Evaluate the motion model to produce a single complex value result.
  */
 
-class motionModel
+class MotionModel
 {
 //==========================================Section Separator =========================================================
 public:
@@ -85,27 +85,27 @@ public:
      *
      * Default constructor.
      */
-    motionModel();
+    MotionModel();
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
      * @brief Constructor.  This is the preferred constructor as it supplies the body data.
      * @param listBodIn The vector of the body objects to input.
      */
-    motionModel(const vector<Body> &listBodIn);
+    MotionModel(vector<Body> &listBodIn);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
      * Default destructor.
      */
-    ~motionModel();
+    ~MotionModel();
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
      * @brief Inputs the list of body data.
      * @param listBodIn The vector of body objects to input.
      */
-    void setListBodies(const vector<Body> &listBodIn);
+    void setListBodies(vector<Body> &listBodIn);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -121,9 +121,104 @@ public:
      * True = Calculate force coefficients only.
      * False = Calculate force values.
      * Default = (False) Calculate force values.
-     * @param Boolean to determine whether should calculate coefficients or values.
+     * @return Boolean to determine whether should calculate coefficients or values.
      */
-    void calcCoefficient(bool calc);
+    bool &CoefficientOnly();
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Boolean to track whether only the active forces are requested.
+     *
+     * Boolean to track whether only the active forces are requested.  The active forces are included negatively in the
+     * equation of motion.  They should be on the opposite side of the equation and included as a positive constant.
+     * The final matrix body accomplishes this.  And when only active forces are requested, they should be sent out as
+     * positive values.
+     * However, when pulling the information out, the signs must be reversed.
+     * The boolean variable triggers to determine if this should happen.  If any reactive or cross-body forces are
+     * activated as well, this variable is set false.
+     * @return Returns boolean variable.  Variable passed by value.
+     * Returns true if only active forces are used in the equation of motion.
+     * Returns false if any reactive or cross-body forces are used in the equation of motion.
+     */
+    bool getActiveOnly();
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Records the index of the body object referenced by the cross body.
+     *
+     * Records the index of the body object referenced by the cross body.  Each body object contains a list of
+     * pointers for the cross-body objects.  Each cross-body force has a pointer associated with it.  This pointer
+     * points to another body object.  This allows comparison between memory addresses of different body objects.
+     * However, when the body objects are copied over, the pointers are now pointing to different, invalid memory
+     * addresses.  to eliminate this problem in the motion model, the model will record the position of the body object
+     * in the vector of body objects.  This forms a vector.  Each entry in the vector represents one cross-body force for
+     * the current body.  The integer entry in the vector is the integer index of the body that the cross-body force is
+     * linked to.
+     * @return Returns a vector of integers.  Returned variable is passed by reference.   Each entry in the vector
+     * represents one cross-body force for the current body.  The integer entry in the vector is the integer index of
+     * the body that the cross-body force is linked to.
+     */
+    vector<int> &listCompCrossBod_hydro();
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Records the index of the body object referenced by the cross body.
+     *
+     * Records the index of the body object referenced by the cross body.  Each body object contains a list of
+     * pointers for the cross-body objects.  Each cross-body force has a pointer associated with it.  This pointer
+     * points to another body object.  This allows comparison between memory addresses of different body objects.
+     * However, when the body objects are copied over, the pointers are now pointing to different, invalid memory
+     * addresses.  to eliminate this problem in the motion model, the model will record the position of the body object
+     * in the vector of body objects.  This forms a vector.  Each entry in the vector represents one cross-body force for
+     * the current body.  The integer entry in the vector is the integer index of the body that the cross-body force is
+     * linked to.
+     * @param crossbodIn Integer parameter.  Specified the index of which value to retrieve from the list of values
+     * for the CrossBod indices.
+     * @return Returns an integer.  Variable passed by reference.  Returned integer is the index of the Body object
+     * referenced by the cross-body force located at the index specified by CrossBod.
+     * Example:  CrossBod (index) -> (vector of cross body forces) -> Index of Body object that cross-body force
+     * points to.
+     */
+    int &listCompCrossBod_hydro(int crossbodIn);
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Records the index of the body object referenced by the cross body.
+     *
+     * Records the index of the body object referenced by the cross body.  Each body object contains a list of
+     * pointers for the cross-body objects.  Each cross-body force has a pointer associated with it.  This pointer
+     * points to another body object.  This allows comparison between memory addresses of different body objects.
+     * However, when the body objects are copied over, the pointers are now pointing to different, invalid memory
+     * addresses.  to eliminate this problem in the motion model, the model will record the position of the body object
+     * in the vector of body objects.  This forms a vector.  Each entry in the vector represents one cross-body force for
+     * the current body.  The integer entry in the vector is the integer index of the body that the cross-body force is
+     * linked to.
+     * @return Returns a vector of integers.  Returned variable is passed by reference.   Each entry in the vector
+     * represents one cross-body force for the current body.  The integer entry in the vector is the integer index of
+     * the body that the cross-body force is linked to.
+     */
+    vector<int> &listCompCrossBod_user();
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Records the index of the body object referenced by the cross body.
+     *
+     * Records the index of the body object referenced by the cross body.  Each body object contains a list of
+     * pointers for the cross-body objects.  Each cross-body force has a pointer associated with it.  This pointer
+     * points to another body object.  This allows comparison between memory addresses of different body objects.
+     * However, when the body objects are copied over, the pointers are now pointing to different, invalid memory
+     * addresses.  to eliminate this problem in the motion model, the model will record the position of the body object
+     * in the vector of body objects.  This forms a vector.  Each entry in the vector represents one cross-body force for
+     * the current body.  The integer entry in the vector is the integer index of the body that the cross-body force is
+     * linked to.
+     * @param crossbodIn Integer parameter.  Specified the index of which value to retrieve from the list of values
+     * for the CrossBod indices.
+     * @return Returns an integer.  Variable passed by reference.  Returned integer is the index of the Body object
+     * referenced by the cross-body force located at the index specified by CrossBod.
+     * Example:  CrossBod (index) -> (vector of cross body forces) -> Index of Body object that cross-body force
+     * points to.
+     */
+    int &listCompCrossBod_user(int crossbodIn);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -161,7 +256,7 @@ public:
      * @param force Integer specifying which force to use in the set of forces for the given force type.
      * @param eqn Integer specifying which equation to use in the selected force.
      */
-    void useForceActive_user(int force, int eqn);
+    void useForceActive_user(unsigned int force, unsigned int eqn);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -176,24 +271,7 @@ public:
      * @param force Integer specifying which force to use in the set of forces for the given force type.
      * @param eqn Integer specifying which equation to use in the selected force.
      */
-    void useForceActive_hydro(int force, int eqn);
-
-    //------------------------------------------Function Separator ----------------------------------------------------
-    /**
-     * @brief Passes information to the object to use input coefficients from the entry specified.
-     *
-     * Passes information to the object to use input coefficients from the entry specified.  Limits inputs to
-     * only the force object type specified by the method.  Calls to useForce methods are cumulative.  Sucessive calls
-     * to different entries in the same force sequence will add their coefficients to the sets for evaluation.  Can be
-     * combined with other useForce methods.  Multiple calls to the same useForce method with the same index coordinates
-     * are not cumulative.  An input coefficient can either be on or off, not multiple instances of the exact same
-     * coefficient.
-     * @param force Integer specifying which force to use in the set of forces for the given force type.
-     * @param ord Integer specifying which order of derviative to use for the selected force.
-     * @param eqn Integer specifying which equation to use in the selected force.
-     * @param var Integer specifying which variable to use from the selected equation.
-     */
-    void useForceReact_user(int force, int ord, int eqn, int var);
+    void useForceActive_hydro(unsigned int force, unsigned int eqn);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -210,7 +288,7 @@ public:
      * @param eqn Integer specifying which equation to use in the selected force.
      * @param var Integer specifying which variable to use from the selected equation.
      */
-    void useForceReact_hydro(int force, int ord, int eqn, int var);
+    void useForceReact_user(unsigned int force, unsigned int ord, unsigned int eqn, unsigned int var);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -227,7 +305,7 @@ public:
      * @param eqn Integer specifying which equation to use in the selected force.
      * @param var Integer specifying which variable to use from the selected equation.
      */
-    void useForceCross_user(int force, int ord, int eqn, int var);
+    void useForceReact_hydro(unsigned int force, unsigned int ord, unsigned int eqn, unsigned int var);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -244,7 +322,24 @@ public:
      * @param eqn Integer specifying which equation to use in the selected force.
      * @param var Integer specifying which variable to use from the selected equation.
      */
-    void useForceCross_hydro(int force, int ord, int eqn, int var);
+    void useForceCross_user(unsigned int force, unsigned int ord, unsigned int eqn, unsigned int var);
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Passes information to the object to use input coefficients from the entry specified.
+     *
+     * Passes information to the object to use input coefficients from the entry specified.  Limits inputs to
+     * only the force object type specified by the method.  Calls to useForce methods are cumulative.  Sucessive calls
+     * to different entries in the same force sequence will add their coefficients to the sets for evaluation.  Can be
+     * combined with other useForce methods.  Multiple calls to the same useForce method with the same index coordinates
+     * are not cumulative.  An input coefficient can either be on or off, not multiple instances of the exact same
+     * coefficient.
+     * @param force Integer specifying which force to use in the set of forces for the given force type.
+     * @param ord Integer specifying which order of derviative to use for the selected force.
+     * @param eqn Integer specifying which equation to use in the selected force.
+     * @param var Integer specifying which variable to use from the selected equation.
+     */
+    void useForceCross_hydro(unsigned int force, unsigned int ord, unsigned int eqn, unsigned int var);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -259,7 +354,7 @@ public:
      * @param eqn Integer specifying which equation to use in the selected force.
      * @param var Integer specifying which variable to use from the selected equation.
      */
-    void useForceMass(int eqn, int var);
+    void useForceMass(unsigned int eqn, unsigned int var);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -387,7 +482,7 @@ public:
      * are reserved for standard 6dof models.
      * @return Returns the highest count of the equation index.
      */
-    vector<int> DataIndex();
+    vector<int> &refDataIndex();
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -438,6 +533,57 @@ public:
      */
     string getDescription();
 
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Provides direct access to the list of Bodies referenced by the motion model.
+     * @return Reference to vector of Body objects.  Variable passed by reference.
+     * @sa Body
+     */
+    vector<Body> &listBodies();
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Provides direct access to the list of Bodies used as data for the motion model.
+     * @return Reference to the vector of Body objects used as data.  Variable passed by reference.
+     * @sa Body
+     */
+    vector<Body> &listData();
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Provides direct access to the list of equation of motion objects used in the motion model.
+     * @return Reference to the vector of EquationofMotion objects.  Variable passed by reference.
+     * @sa EquationofMotion
+     */
+    vector<EquationofMotion> &listEquations();
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Direct access to an individual Body from the list of Bodies contained in the motion model.
+     * @param bodIn Integer specifying which Body object to access in the list of Bodies.
+     * @return Returns reference to the Body object specified by input bodIn.
+     * @sa listBodies()
+     */
+    Body &refBody(int bodIn);
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Direct access to an individual Body from the list of Data contained in the motion model.
+     * @param dataIn Integer specifying which Body object to access from the list of Data.
+     * @return Returns reference to the Body object specified by dataIn.
+     * @sa listData()
+     */
+    Body &refData(int dataIn);
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Direct access to an individual EquationofMotion object from the list of Equations contained in the motion
+     * model.
+     * @param eqIn Integer specifying which EquationofMotion object to access from the list of Equations
+     * @return Returns reference to the EquationofMotion object specified by eqIn.
+     */
+    EquationofMotion &refEquation(int eqIn);
+
 //==========================================Section Separator =========================================================
 protected:
 
@@ -466,7 +612,7 @@ private:
      *
      * Pointer to the bodies vector.
      */
-    vector<Body>* listBody;
+    vector<Body>* plistBody;
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -474,7 +620,7 @@ private:
      * to this list and fills it with Body objects that contain the same number and sizes of forces as the originals,
      * but all entries within the copied objects are zeros.
      */
-    vector<Body> listData;
+    vector<Body> plistData;
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -487,13 +633,13 @@ private:
      * @brief The list of equations of motion to use in the motion model.  The sequence of equations in the list is
      * important.  Equations appear in the list as they appear in the matrix model of the body.
      */
-    vector<EquationofMotion> listEquations;
+    std::vector<EquationofMotion> plistEquations;
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
      * @brief Sets whether the force coefficients should be calculated, or values of response.
      */
-    bool calcCoeff;
+    bool pcalcCoeff;
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**

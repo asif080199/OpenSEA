@@ -41,7 +41,7 @@
 #include <vector>
 #include <complex>
 #include <string>
-#include <string>
+#include <QtGlobal>
 #ifdef Q_OS_WIN
     #include "armadillo.h"  //References the armadillo library in lib folder.
 #elif defined Q_OS_LINUX
@@ -53,7 +53,7 @@ using namespace arma;
 
 //######################################### Class Separator ###########################################################
 //Prototype class declarations
-class motionModel;
+class MotionModel;
 
 //######################################### Class Separator ###########################################################
 /**
@@ -81,7 +81,7 @@ public:
      * motion model class.
      * @param modelIn A pointer to the motion model object that created the equation of motion.
      */
-    EquationofMotion(motionModel &modelIn);
+    EquationofMotion(MotionModel *modelIn);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -94,7 +94,7 @@ public:
      * @param NameIn A name for what physical property the equation solves for.  Used for user output.  Not critical
      * to program execution.
      */
-    EquationofMotion(motionModel &modelIn, string NameIn);
+    EquationofMotion(MotionModel *modelIn, string NameIn);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -108,7 +108,7 @@ public:
      * to program execution.
      * @param IndexIn
      */
-    EquationofMotion(motionModel &modelIn, string NameIn, int IndexIn);
+    EquationofMotion(MotionModel *modelIn, string NameIn, int IndexIn);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -181,7 +181,7 @@ public:
      * 6:  Rotation about z-direction.
      * @return Returns a reference to the protected data index variable contained in the class.
      */
-    int &DataIndex();
+    int &refDataIndex();
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -200,9 +200,9 @@ public:
      *
      * The name for the equation object.  This is the short name that user will use to identify the meaning of the
      * equation.
-     * @return Returns pointer to the protected pName variable.
+     * @return Returns reference to the protected pName variable.
      */
-    string &Name();
+    string &refName();
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -212,9 +212,9 @@ public:
      * identification of the EquationofMotion object.  Brief names go under the Name property.  More extensive
      * descriptions go under this property.  These would be useful to the user for describing the physical meaning
      * behind the equation of motion.
-     * @return Returns pointer to the protected pDescription variable.
+     * @return Returns reference to the protected pDescription variable.
      */
-    string &Description();
+    string &refDescription();
 
 //==========================================Section Separator =========================================================
 protected:
@@ -229,27 +229,27 @@ protected:
      *
      * The formula can also make use of several math functions provided by the equation of motion object.
      */
-    virtual void Formula();
+    virtual complex<double> setFormula();
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
-     * @brief The mathematical kronecker delta function.
+     * @brief The mathematical Kronecker delta function.
      *
-     * The mathematical kronecker-delta function.  Used to filter out terms when doing a double summation between
+     * The mathematical Kronecker-delta function.  Used to filter out terms when doing a double summation between
      * two indices.  The function evaluates to one when the two indices are equal, and evaluates to zero any other time.
-     * Multiplying a term by the kronecker delta ensures that the results will be filtered to only have terms of
+     * Multiplying a term by the Kronecker delta ensures that the results will be filtered to only have terms of
      * equal indices.  If this relates back to a matrix, the kronecked delta filters the deta to only include diagonal
      * terms.
      * @param var1 Integer variable.  The first index that is being summed across.
      * @param var2 Integer variable.  The second index that is being summed across.
      * @param anti Boolean variable.  Sometimes the researcher may be interested in the off diagonal terms.  Cases
-     * when var1 does not equatl var2.  In those cases, the kronecker delta function should work in reverse and
-     * filter out the diagonal terms in a matrix.  The anti variable is a trigger for the kronecker delta function to
+     * when var1 does not equatl var2.  In those cases, the Kronecker delta function should work in reverse and
+     * filter out the diagonal terms in a matrix.  The anti variable is a trigger for the Kronecker delta function to
      * work in reverse of its normal method.  The default setting for this variable is false.  By default, the
-     * kronecker delta function evaluates with one when var1 = var2.
+     * Kronecker delta function evaluates with one when var1 = var2.
      * @return Complex number.  Evaluates to either zero (0 + 0j), or one (1 + 0j).
      */
-    complex<double> kronecker(int var1, int var2, bool anti = false);
+    complex<double> Kronecker(int var1, int var2, bool anti = false);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -258,22 +258,22 @@ protected:
      * Time differential function.  Used to calculate the time derivative of a reponse.  Can convert from response
      * amplitude to velocity to acceleration, and further.  Used to calculated amplitude of response.
      * @param var Index of the variable to use for the time differential.  If included with the function var(), the
-     * index is automatically determined by the summation functions that you include ddt() into.
+     * index is automatically determined by the summation functions that you include Ddt() into.
      * @param ord Integer.  The order of the differential.  If the function ord() is used, the order is automatically
-     * determined by the summation function that you include ddt() into.
+     * determined by the summation function that you include Ddt() into.
      * @param bodIn The body to retrieve variable data for.
      * @return Returns a complex value that is the time differential, transposed into a frequency domain.  If absolute
      * values of response were desired, the function will include the effects of response amplitude.
      */
-    complex<double> ddt(int var, int ord, int bodIn=-1);
+    complex<double> Ddt(int var, int ord, int bodIn=-1);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
      * @brief Sums across a variable.
      *
      * Sums across a variable.  The index limits can be specified.  Or the keyword functions can be used to
-     * automatically sum across the entire index range.
-     * @param force Input to specify which items the results should sum across.  Typically, this is one of the built-in
+     * automatically Sum across the entire index range.
+     * @param force Input to specify which items the results should Sum across.  Typically, this is one of the built-in
      * force functions. However, it can be any function, any item, any calculation.  The only catch is that the
      * input value must be a complex<double> data type.
      * @param index String specifying which variable should be summed on.  This may be any one of these options:
@@ -286,7 +286,7 @@ protected:
      * the summation will happen at the highest value of the variable index specified.
      * @return Returns a complex value that is the summation of the index and limits specified.
      */
-    complex<double> sum(complex<double> force, string index, int from = -1, int to = -1);
+    complex<double> Sum(complex<double> force, string index, int from = -1, int to = -1);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -455,7 +455,7 @@ private:
      * Reference to the motion model object which created the object.  This is necessary because the equation of motion
      * object needs to access several data members that are on the motion model which called it.
      */
-    motionModel* pParentModel;
+    MotionModel* pParentModel;
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -527,6 +527,9 @@ private:
      * @return Returns the index integer for iteration on equation number.
      */
     int eqn();
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    void ConstructorCommon(MotionModel *modelIn);
 };
 
 #endif // EQUATIONOFMOTION_H

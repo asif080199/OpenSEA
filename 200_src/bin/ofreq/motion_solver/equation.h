@@ -70,14 +70,11 @@ public:
 	~Equation(); /**< The default destructor, nothing happens here. */
 
     //------------------------------------------Function Separator ----------------------------------------------------
-	void testPrint(); /**< Test print to console the values of all data members. */
-
-    //------------------------------------------Function Separator ----------------------------------------------------
     /**
      * @brief Direct access to the list of coefficients.
      * @return Pointer to the list of coefficients.
      */
-    vector<double> &Coefficients();
+    vector<double> &listCoefficients();
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -134,7 +131,7 @@ public:
      * @brief Exposed access to the data access variable.
      * @return Returns the data access variable.  Return passed by reference.
      */
-    int &DataIndex();
+    int &refDataIndex();
 
 //==========================================Section Separator =========================================================
 protected:
