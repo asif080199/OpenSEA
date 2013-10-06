@@ -27,14 +27,17 @@
 #include "system.h"
 
 //==========================================Section Separator =========================================================
+//Static Initialization
+string System::valForceActive_user = "forceActive_user";
+string System::valForceReact_user = "forceReact_user";
+string System::valForceCross_user = "forceCross_user";
+
+//==========================================Section Separator =========================================================
 //Public methods
 
 //------------------------------------------Function Separator --------------------------------------------------------
 System::System() : pWaveDirections(), pWaveFrequencies()
-{
-    valForceActive_user = "forceActive_user";
-    valForceReact_user = "forceReact_user";
-    valForceCross_user = "forceCross_user";
+{   
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
@@ -385,6 +388,50 @@ void System::addForceCross_user(ForceCross input)
 void System::addForceCross_user()
 {
     plistForceCross_user.push_back(ForceCross());
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+void System::linkBodies(int bodID)
+{
+    //Iterate through all user linked bodies
+    for (unsigned int i = 0; i < plistBody[bodID].listNamedLink_user().size(); i++)
+    {
+        //Search for body with correct name
+        string name = plistBody[bodID].listNamedLink_user(i);   //Name of the body to search for.
+
+        for (unsigned int j = 0; j < listBody().size(); j++)
+        {
+            if (name == listBody()[j].refBodyName())
+            {
+                //Assign the pointer for the body
+                plistBody[bodID].listCrossBody_user()[i] = &(listBody()[j]);
+                //Quit the loop
+                break;
+            }
+        }
+    }
+    //Clear the list of named links.  Don't need it anymore.
+    plistBody[bodID].listNamedLink_user().clear();
+
+    //Iterate through all hydro linked bodies
+    for (unsigned int i = 0; i < plistBody[bodID].listNamedLink_hydro().size(); i++)
+    {
+        //Search for body with correct name
+        string name = plistBody[bodID].listNamedLink_hydro(i);   //Name of the body to search for.
+
+        for (unsigned int j = 0; j < listBody().size(); j++)
+        {
+            if (name == listBody()[j].refBodyName())
+            {
+                //Assign the pointer for the body
+                plistBody[bodID].listCrossBody_hydro()[i] = &(listBody()[j]);
+                //Quit the loop
+                break;
+            }
+        }
+    }
+    //Clear the list of named links.  Don't need it anymore.
+    plistBody[bodID].listNamedLink_hydro().clear();
 }
 
 //==========================================Section Separator =========================================================

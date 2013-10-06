@@ -209,8 +209,9 @@ int main(int argc, char *argv[])
 			//asign each solution per frequency to a body
             for(unsigned int k = 0; k < sysofreq.listBody().size(); k++)
 			{
-                Solution soln(sysofreq.listBody()[k]);
-                soln.setSolnMat(theMotionSolver.getSolution(k));
+                Solution soln;
+                soln.refBody() = sysofreq.listBody()[k];
+                soln.setSolnMat(theMotionSolver.listSolution(k));
                 listSolutions[k].setSolnMat(i, j, soln);
 			}
 		}

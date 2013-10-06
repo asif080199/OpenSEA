@@ -49,12 +49,13 @@
 #include <vector>
 #include "parser.h"
 #include "objectgroup.h"
+#include "../global_objects/system.h"
 
 using namespace std;
 
 //######################################### Class Separator ###########################################################
 //Prototype class declarations
-class System;       /** < Prototype class declaration of System object.  Allows reference to system object.*/
+//class System;       /** < Prototype class declaration of System object.  Allows reference to system object.*/
 
 //######################################### Class Separator ###########################################################
 /**
@@ -255,32 +256,38 @@ private:
     System* ptSystem;
 
     //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief private function to initialize variables and perform other functions common to all constructors.
+     */
+    void initClass();
+
+    //------------------------------------------Function Separator ----------------------------------------------------
     // Directory Names
-    const static string SYS; /**< The system directory name */
-    const static string CONST; /**< The const staticant directory name */
-    const static string SLASH; /**< Directory separator in a string path. */
+    static string SYS; /**< The system directory name */
+    static string CONST; /**< The const directory name */
+    static string SLASH; /**< Directory separator in a string path. */
 
     //------------------------------------------Function Separator ----------------------------------------------------
     // Input File Names
-    const static string CONTROL; /**< The filename for the control file. */
-    const static string BODIES; /**< The filename for the bodies control file. */
-    const static string DATA; /**< The filename for the data control file. */
-    const static string FORCES; /**< The filename for the forces control file. */
-    const static string SEAENV; /**< The filename for the sea environment control file. */
+    static string CONTROL; /**< The filename for the control file. */
+    static string BODIES; /**< The filename for the bodies control file. */
+    static string DATA; /**< The filename for the data control file. */
+    static string FORCES; /**< The filename for the forces control file. */
+    static string SEAENV; /**< The filename for the sea environment control file. */
 
     //------------------------------------------Function Separator ----------------------------------------------------
     // Class Name Designators
-    const static string OBJ_SEAFILE; /**< The string designation for a sea file object. */
-    const static string OBJ_SYSTEM; /**< The string designation for a system object. */
-    const static string OBJ_HYDROFILE; /**< The string designation for a hydrofile object. */
-    const static string OBJ_FORCE_ACTIVE; /**< The string designation for an active force object. */
-    const static string OBJ_FORCE_REACT; /**< The string designation for a reactive force object. */
-    const static string OBJ_FORCE_CROSS; /**< The string designation for a cross-body force object.*/
+    static string OBJ_SEAFILE; /**< The string designation for a sea file object. */
+    static string OBJ_SYSTEM; /**< The string designation for a system object. */
+    static string OBJ_HYDROFILE; /**< The string designation for a hydrofile object. */
+    static string OBJ_FORCE_ACTIVE; /**< The string designation for an active force object. */
+    static string OBJ_FORCE_REACT; /**< The string designation for a reactive force object. */
+    static string OBJ_FORCE_CROSS; /**< The string designation for a cross-body force object.*/
 
     // Key Value Pair Designators
     // ---------------------------------
-    const static string KEY_FORMAT;  /**< The key designator for a format value in the seafile object. */
-    const static string KEY_VERSION; /**< The key designator for a version value in the seafile object. */
+    static string KEY_FORMAT;  /**< The key designator for a format value in the seafile object. */
+    static string KEY_VERSION; /**< The key designator for a version value in the seafile object. */
 };
 
 #endif // FILEPARSER_H

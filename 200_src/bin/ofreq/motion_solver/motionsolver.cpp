@@ -26,6 +26,9 @@
 
 #include "motionsolver.h"
 
+//==========================================Section Separator =========================================================
+//Public Functions
+
 //------------------------------------------Function Separator --------------------------------------------------------
 MotionSolver::MotionSolver()
 {
@@ -359,3 +362,34 @@ void MotionSolver::calculateOutputs()
         plistSolution.push_back(globSolnMat.submat(matStart[i], 0, matEnd[i], 0));
     }
 }
+
+
+//------------------------------------------Function Separator --------------------------------------------------------
+vector<cx_mat> &MotionSolver::listSolution()
+{
+    return plistSolution;
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+cx_mat &MotionSolver::listSolution(unsigned int bod)
+{
+    //Check if outside bounds
+    if (bod < plistSolution.size())
+    {
+        return plistSolution[bod];
+    }
+    else
+    {
+        //Throw and error
+        cx_mat out;
+        out.zeros();
+        return out;
+    }
+}
+
+//==========================================Section Separator =========================================================
+//Protected Functions
+
+
+//==========================================Section Separator =========================================================
+//Private Functions

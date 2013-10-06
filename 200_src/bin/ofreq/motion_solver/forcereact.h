@@ -62,17 +62,6 @@ public:
     ~ForceReact(); /**< The default destructor, nothing happens here. */
 
     //------------------------------------------Function Separator ----------------------------------------------------
-	void testPrint(); /**< Test print to console the values of all data members. */
-
-    //------------------------------------------Function Separator ----------------------------------------------------
-	/**
-	 * Sets the list of coeffcients.
-	 * @param newList The list of coefficients.
-	 * @param isDirectList Specifies whether the list is direct or sequential.
-	 */
-	void setCoeff(vector<string>, bool);
-
-    //------------------------------------------Function Separator ----------------------------------------------------
 	/**
 	 * Sets the current derivative.
 	 * @param neworder The order of derivative.
@@ -101,7 +90,7 @@ public:
      * @param num The index number of the derivative object.
      * @return Returns the derivative object specified by integer num.  Returned value is by value.
      */
-    Derivative getDerivative(int num);
+    Derivative getDerivative(unsigned int num);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -111,7 +100,7 @@ public:
      * @param num The index number of the derivative object.
      * @return Returns a pointer to the derivative object specified by integer num.  Returned value is by reference.
      */
-    Derivative &refDerivative(int num);
+    Derivative &refDerivative(unsigned int num);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -128,7 +117,7 @@ public:
      * @param ordIn The order of the derivative.
      *
      */
-    void addDerivative(Derivative derivIn, int ordIn);
+    void addDerivative(Derivative derivIn, unsigned int ordIn);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**

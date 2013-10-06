@@ -46,6 +46,7 @@
 #endif
 
 using namespace std;
+using namespace arma;
 
 //######################################### Class Separator ###########################################################
 //Prototype class declarations.

@@ -25,20 +25,21 @@
 \*-------------------------------------------------------------------------------------------------------------------*/
 
 #include "matforcecross.h"
+#include "matbody.h"    //Include the matBody header here to avoid circular header inclusions.
 
 //------------------------------------------Function Separator --------------------------------------------------------
 matForceCross::matForceCross()
 {
     //Add 3 matrices to derivative matrix
-    for(unsigned int i = 0; i < 3; i++) //<---Fix, change to const
-    {
-        cx_mat temp(6,6);
-        derivativeMatrix.push_back(temp);
-    }
+//    for(unsigned int i = 0; i < 3; i++) //<---Fix, change to const
+//    {
+//        cx_mat temp(6,6);
+//        derivativeMatrix.push_back(temp);
+//    }
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-matForceCross::matForceCross(vector<Derivative> forceIn)
+matForceCross::matForceCross(vector<cx_mat> forceIn)
 {
     for (unsigned int i; i <= forceIn.size(); i++)
     {
@@ -52,7 +53,7 @@ matForceCross::~matForceCross()
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-matForceCross matForceCross::operator+(const matForceCross& forceOther)
+matForceCross matForceCross::operator+(matForceCross& forceOther)
 {
     //define the output vector
     matForceCross output;
@@ -61,20 +62,20 @@ matForceCross matForceCross::operator+(const matForceCross& forceOther)
     {
          //find the max order of the derivatives.
         int maxOrdTwo;
-        if (this->maxOrder() > forceOther.maxOrder())
-            maxOrdTwo = this->maxOrder();
+        if (this->getMaxOrder() > forceOther.getMaxOrder())
+            maxOrdTwo = this->getMaxOrder();
         else
-            maxOrdTwo = forceOther.maxOrder();
+            maxOrdTwo = forceOther.getMaxOrder();
 
         //Expand the size of the vector
         output.pderiv.resize(maxOrdTwo);
 
         //Get size of matrices.
-        maxSizeTwo;
-        if (this->matDims() > forceOther.matDims())
-            maxSizeTwo = this-> matDims();
+        unsigned int maxSizeTwo;
+        if (this->getMatSize() > forceOther.getMatSize())
+            maxSizeTwo = this-> getMatSize();
         else
-            maxSizeTwo = forceOther.matDims();
+            maxSizeTwo = forceOther.getMatSize();
 
         //Check that the maximum size is correct with the matrix size.
         if (this->pderiv[0].n_rows > maxSizeTwo)
@@ -83,7 +84,7 @@ matForceCross matForceCross::operator+(const matForceCross& forceOther)
             maxSizeTwo = forceOther.pderiv[0].n_rows;
 
         //Resize Matrices, initialize with zeros.
-        for (unsigned int i = 0; i <= maxOrdTwo; i++)
+        for (int i = 0; i <= maxOrdTwo; i++)
         {
             output.pderiv[i].zeros(maxSizeTwo);
 
@@ -96,19 +97,18 @@ matForceCross matForceCross::operator+(const matForceCross& forceOther)
                 }
             }
         }
+        //return output.
+        return output;
     }
     else
     {
         //linked body parameters did not match.  Return only this object.
-        output = this;
+        return *this;
     }
-
-    //return output
-    return output;
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-matForceCross matForceCross::operator-(const matForceCross& forceOther)
+matForceCross matForceCross::operator-(matForceCross& forceOther)
 {
     //define the output vector
     matForceCross output;
@@ -117,20 +117,20 @@ matForceCross matForceCross::operator-(const matForceCross& forceOther)
     {
          //find the max order of the derivatives.
         int maxOrdTwo;
-        if (this->maxOrder() > forceOther.maxOrder())
-            maxOrdTwo = this->maxOrder();
+        if (this->getMaxOrder() > forceOther.getMaxOrder())
+            maxOrdTwo = this->getMaxOrder();
         else
-            maxOrdTwo = forceOther.maxOrder();
+            maxOrdTwo = forceOther.getMaxOrder();
 
         //Expand the size of the vector
         output.pderiv.resize(maxOrdTwo);
 
         //Get size of matrices.
-        maxSizeTwo;
-        if (this->matDims() > forceOther.matDims())
-            maxSizeTwo = this-> matDims();
+        unsigned int maxSizeTwo;
+        if (this->getMatSize() > forceOther.getMatSize())
+            maxSizeTwo = this-> getMatSize();
         else
-            maxSizeTwo = forceOther.matDims();
+            maxSizeTwo = forceOther.getMatSize();
 
         //Check that the maximum size is correct with the matrix size.
         if (this->pderiv[0].n_rows > maxSizeTwo)
@@ -139,7 +139,7 @@ matForceCross matForceCross::operator-(const matForceCross& forceOther)
             maxSizeTwo = forceOther.pderiv[0].n_rows;
 
         //Resize Matrices, initialize with zeros.
-        for (unsigned int i = 0; i <= maxOrdTwo; i++)
+        for (int i = 0; i <= maxOrdTwo; i++)
         {
             output.pderiv[i].zeros(maxSizeTwo);
 
@@ -152,42 +152,41 @@ matForceCross matForceCross::operator-(const matForceCross& forceOther)
                 }
             }
         }
+        //return output
+        return output;
     }
     else
     {
         //linked body parameters did not match.  Return only this object.
-        output = this;
+        return *this;
     }
-
-    //return output
-    return output;
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
 void matForceCross::setLinkedBody(matBody &BodIn)
 {
-    this->plinkbody = BodIn;
+    plinkbody = &BodIn;
 
     //Also set the linkedId to the same thing.  Ensure the two are always in sync.
-    this->plinkid = BodIn.Id();
+    this->plinkid = BodIn.getId();
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-matForceReact matBody::getlinkedbody()
+matBody* matForceCross::getLinkedBody()
 {
-    return this->plinkbody;
+    return plinkbody;
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
 void matForceCross::setLinkedId(int bodId)
 {
-    this->plinkbody = bodId;
+    plinkid = bodId;
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
 int matForceCross::getLinkedId()
 {
-    return this->plinkbody;
+    return plinkid;
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
@@ -196,8 +195,8 @@ vector<int> matForceCross::getMatDims()
     vector<int> output(2);
 
     //Get number of rows and number of columns
-    output[0] = this->pderiv[0].n_rows;
-    output[1] = this->pderiv[0].n_cols;
+    output[0] = pderiv[0].n_rows;
+    output[1] = pderiv[0].n_cols;
 
     return output;
 }

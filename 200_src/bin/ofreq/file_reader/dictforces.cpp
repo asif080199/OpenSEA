@@ -27,27 +27,31 @@
 #include "dictforces.h"
 
 //==========================================Section Separator =========================================================
+//Static Initialization
+
+//------------------------------------------Function Separator ----------------------------------------------------
+//Class Names
+string dictForces::OBJECT_FORCE_ACTIVE = "force_active"; /**< Keyword for force_active definition.*/
+string dictForces::OBJECT_FORCE_REACT = "force_reactive"; /**< Keyword for force_react class definition.*/
+string dictForces::OBJECT_FORCE_CROSS = "force_crossbody"; /**< Keyword for force_cross class definition.*/
+string dictForces::OBJECT_DERIVATIVE = "derivative"; /**< Keyword for derivative class definition. */
+string dictForces::OBJECT_EQUATION = "equation"; /**< Keyword for equation designation.*/
+
+//------------------------------------------Function Separator ----------------------------------------------------
+//Keyword Names
+string dictForces::KEY_NAME = "name"; /**< Keyword for the name the user assigns for a force.*/
+string dictForces::KEY_COEFF = "coeff"; /**< Keyword for coefficient designation.*/
+string dictForces::KEY_NUMBER = "number"; /**< Keyword for equation number designation. */
+string dictForces::KEY_ORDER = "order"; /**< Keyword for order of derivative designation. */
+string dictForces::KEY_FORCE = "force"; /**< Keyword for force coefficients designation.*/
+string dictForces::KEY_EQUATION = "equation"; /**< Keyword for equation designation.*/
+
+//==========================================Section Separator =========================================================
 //Public Functions
 
 //------------------------------------------Function Separator --------------------------------------------------------
 dictForces::dictForces()
 {
-    //------------------------------------------Function Separator ----------------------------------------------------
-    //Class Names
-    OBJECT_FORCE_ACTIVE = "force_active"; /**< Keyword for force_active definition.*/
-    OBJECT_FORCE_REACT = "force_reactive"; /**< Keyword for force_react class definition.*/
-    OBJECT_FORCE_CROSS = "force_crossbody"; /**< Keyword for force_cross class definition.*/
-    OBJECT_DERIVATIVE = "derivative"; /**< Keyword for derivative class definition. */
-    OBJECT_EQUATION = "equation"; /**< Keyword for equation designation.*/
-
-    //------------------------------------------Function Separator ----------------------------------------------------
-    //Keyword Names
-    KEY_NAME = "name"; /**< Keyword for the name the user assigns for a force.*/
-    KEY_COEFF = "coeff"; /**< Keyword for coefficient designation.*/
-    KEY_NUMBER = "number"; /**< Keyword for equation number designation. */
-    KEY_ORDER = "order"; /**< Keyword for order of derivative designation. */
-    KEY_FORCE = "force"; /**< Keyword for force coefficients designation.*/
-    KEY_EQUATION = "equation"; /**< Keyword for equation designation.*/
 }
 
 //==========================================Section Separator =========================================================
@@ -62,30 +66,31 @@ dictForces::dictForces()
 //------------------------------------------Function Separator --------------------------------------------------------
 int dictForces::defineKey(string keyIn, vector<string> valIn)
 {
-    switch (keyIn)
+
+    if (keyIn == KEY_NAME)
     {
-    case KEY_NAME:
         //Set the name of the force object.
         if (pForceType == 1)
         {
             //Active force type.
-            ptSystem->refForceActive_user(pForceIndex).setForceName(valIn);
+            ptSystem->refForceActive_user(pForceIndex).setForceName(valIn[0]);
         }
         else if (pForceType == 2)
         {
             //Reactive force type
-            ptSystem->refForceReact_user(pForceIndex).setForceName(valIn);
+            ptSystem->refForceReact_user(pForceIndex).setForceName(valIn[0]);
         }
         else if (pForceType == 3)
         {
             //Cross-body force type
-            ptSystem->refForceCross_user(pForceIndex).setForceName(valIn);
+            ptSystem->refForceCross_user(pForceIndex).setForceName(valIn[0]);
         }
         //Report success
         return 0;
-        break;
+    }
 
-    case KEY_COEFF:
+    else if (keyIn == KEY_COEFF)
+    {
         //Set the coefficient of the current force equation specified.
         //Only applicable to ForceActive objects.
         if (pForceType == 1)
@@ -101,23 +106,26 @@ int dictForces::defineKey(string keyIn, vector<string> valIn)
             //Report error
             return 2;
         }
-        break;
+    }
 
-    case KEY_NUMBER:
+    else if (keyIn == KEY_NUMBER)
+    {
         //Set the equation number
         pEqn = atoi(valIn[0].c_str());
         //Report success
         return 0;
-        break;
+    }
 
-    case KEY_ORDER:
+    else if (keyIn == KEY_ORDER)
+    {
         //Set the derivative number
         pOrd = atoi(valIn[0].c_str());
         //Report success
         return 0;
-        break;
+    }
 
-    case KEY_FORCE:
+    else if (keyIn == KEY_FORCE)
+    {
         //Create a vector of force coefficients
         vector<double> coeffIn;
         for (unsigned int i = 0; i < valIn.size(); i++)
@@ -146,9 +154,10 @@ int dictForces::defineKey(string keyIn, vector<string> valIn)
             //Incorrect force object.  return error.
             return 2;
         }
-        break;
+    }
 
-    case KEY_EQUATION:
+    else if (keyIn == KEY_EQUATION)
+    {
         //Check that the current active force object is an active force.
         //Otherwise, the key is invalid.
         if (pForceType == 1)
@@ -168,21 +177,20 @@ int dictForces::defineKey(string keyIn, vector<string> valIn)
             //Invalid use of key.  Report error.
             return 2;
         }
-        break;
+    }
 
-    default:
+    else
+    {
         //Key not found.  Report error
         return 1;
-        break;
     }
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
 int dictForces::defineClass(string nameIn)
 {
-    switch (nameIn)
+    if (nameIn == OBJECT_FORCE_ACTIVE)
     {
-    case OBJECT_FORCE_ACTIVE:
         //Active force key.
         //Set variable for force type.
         pForceType = 1;
@@ -192,9 +200,10 @@ int dictForces::defineClass(string nameIn)
 
         //Report back success
         return 0;
-        break;
+    }
 
-    case OBJECT_FORCE_REACT:
+    else if (nameIn == OBJECT_FORCE_REACT)
+    {
         //Reactive force key.
         //Set variable for force type.
         pForceType = 2;
@@ -204,9 +213,10 @@ int dictForces::defineClass(string nameIn)
 
         //Report back success
         return 0;
-        break;
+    }
 
-    case OBJECT_FORCE_CROSS:
+    else if (nameIn == OBJECT_FORCE_CROSS)
+    {
         //Cross-body force key.
         //Set variable for force type.
         pForceType = 3;
@@ -216,9 +226,10 @@ int dictForces::defineClass(string nameIn)
 
         //Report back success
         return 0;
-        break;
+    }
 
-    case OBJECT_DERIVATIVE:
+    else if (nameIn == OBJECT_DERIVATIVE)
+    {
         //Add new derivative
         //Do nothing.  Not necessary to create new derivative object.
         //That will be done automatically when using the refDerivative function to
@@ -229,9 +240,10 @@ int dictForces::defineClass(string nameIn)
 
         //Report back success
         return 0;
-        break;
+    }
 
-    case OBJECT_EQUATION:
+    else if (nameIn == OBJECT_EQUATION)
+    {
         //Add new equation.
         //Do nothing.  Not necessary to create new equation object.
         //That will be done automatically when using the refEquation function to
@@ -242,9 +254,10 @@ int dictForces::defineClass(string nameIn)
 
         //Report back success
         return 0;
-        break;
+    }
 
-    default:
+    else
+    {
         //Case for no keyword found.
         //return an error code.
         return 1;
@@ -255,7 +268,7 @@ int dictForces::defineClass(string nameIn)
 //Private Functions
 
 //------------------------------------------Function Separator --------------------------------------------------------
- void dictForces::setForceIndex(int forceIn = -1)
+ void dictForces::setForceIndex(int forceIn)
  {
      if (forceIn < 0)
      {

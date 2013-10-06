@@ -83,16 +83,9 @@ public:
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
-     * @brief Overload for operator == to compare two Body objects.  Comparison is based on three criteria:
-     * 1.)  Do the two bodies have the same name.
-     * 2.)  Do they reference the same forces.
-     * 3.)  Do they have the same mass.
-     * If all three criteria return the same, the comparison returns true.  The two bodies are equal.
+     * @brief Overload for operator == to compare two Body objects.  Comparison is based on body names.
      * @param bodIn The other body to compare to.
-     * @return Returns true if the bodies are equal based on three criteria:
-     * 1.)  Do the two bodies have the same name.
-     * 2.)  Do they reference the same forces.
-     * 3.)  Do they have the same mass.
+     * @return Returns true if the body names are equal.
      * Returned variable is passed by value.
      */
     bool operator ==(Body &bodIn);
@@ -672,6 +665,72 @@ public:
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
+     * @brief The list of names of linked bodies for user cross-body forces.  This is a list of names of other bodies
+     * that a cross-body force references.  This corresponds to the vector listForceCross_usr.  The indices of the two
+     * vectors should match.  So that when a force gets added at index 5 in the listForceCross_user, it should have a
+     * matching entry at index 5 in listNamedLink_usr.  The list of names only is a temporary list used during the
+     * input stage of bodies.  This is required because the linked body may name a body which is not yet read from
+     * the input file.  Thus, the body is not currently defined.  Once all Bodies are defined, the System object calls
+     * a function to read through each name in the list and assign corresponding pointers in the listLinkedBody_usr.
+     * @return Returns the list of named bodies linked to the Cross-Body forces.  Returned object is a vector of
+     * string objects.  Returned variable passed by reference.
+     * @sa listLinkedBody_user()
+     * @sa System
+     */
+    vector<string> &listNamedLink_user();
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief The list of names of linked bodies for user cross-body forces.  This is a list of names of other bodies
+     * that a cross-body force references.  This corresponds to the vector listForceCross_usr.  The indices of the two
+     * vectors should match.  So that when a force gets added at index 5 in the listForceCross_user, it should have a
+     * matching entry at index 5 in listNamedLink_usr.  The list of names only is a temporary list used during the
+     * input stage of bodies.  This is required because the linked body may name a body which is not yet read from
+     * the input file.  Thus, the body is not currently defined.  Once all Bodies are defined, the System object calls
+     * a function to read through each name in the list and assign corresponding pointers in the listLinkedBody_usr.
+     * @param varIn Integer input specifying exactly which item in the list to return.
+     * @return Returns the named body linked to the Cross-Body forces.  Returned object is a string object.
+     * Returned variable passed by reference.
+     * @sa listLinkedBody_user()
+     * @sa System
+     */
+    string &listNamedLink_user(int varIn);
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief The list of names of linked bodies for hydro cross-body forces.  This is a list of names of other bodies
+     * that a cross-body force references.  This corresponds to the vector listForceCross_hydro.  The indices of the two
+     * vectors should match.  So that when a force gets added at index 5 in the listForceCross_hydro, it should have a
+     * matching entry at index 5 in listNamedLink_hydro.  The list of names only is a temporary list used during the
+     * input stage of bodies.  This is required because the linked body may name a body which is not yet read from
+     * the input file.  Thus, the body is not currently defined.  Once all Bodies are defined, the System object calls
+     * a function to read through each name in the list and assign corresponding pointers in the listLinkedBody_hydro.
+     * @return Returns the list of named bodies linked to the Cross-Body forces.  Returned object is a vector of
+     * string objects.  Returned variable passed by reference.
+     * @sa listLinkedBody_hydro()
+     * @sa System
+     */
+    vector<string> &listNamedLink_hydro();
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief The list of names of linked bodies for hydro cross-body forces.  This is a list of names of other bodies
+     * that a cross-body force references.  This corresponds to the vector listForceCross_hydro.  The indices of the two
+     * vectors should match.  So that when a force gets added at index 5 in the listForceCross_hydro, it should have a
+     * matching entry at index 5 in listNamedLink_hydro.  The list of names only is a temporary list used during the
+     * input stage of bodies.  This is required because the linked body may name a body which is not yet read from
+     * the input file.  Thus, the body is not currently defined.  Once all Bodies are defined, the System object calls
+     * a function to read through each name in the list and assign corresponding pointers in the listLinkedBody_hydro.
+     * @param varIn Integer input specifying exactly which item in the list to return.
+     * @return Returns the named body linked to the Cross-Body forces.  Returned object is a string object.
+     * Returned variable passed by reference.
+     * @sa listLinkedBody_hydro()
+     * @sa System
+     */
+    string &listNamedLink_hydro(int varIn);
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
      * @brief Sets the name of the motion model for lookup later.
      *
      * Sets the name of the motion model for lookup later.
@@ -784,6 +843,34 @@ private:
      * have a matching entry at index 5 in the listLinkedBody_hydro.
      */
     vector<Body*> plistLinkedBody_hydro;
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief The list of names of linked bodies for user cross-body forces.  This is a list of names of other bodies
+     * that a cross-body force references.  This corresponds to the vector listForceCross_usr.  The indices of the two
+     * vectors should match.  So that when a force gets added at index 5 in the listForceCross_user, it should have a
+     * matching entry at index 5 in listNamedLink_usr.  The list of names only is a temporary list used during the
+     * input stage of bodies.  This is required because the linked body may name a body which is not yet read from
+     * the input file.  Thus, the body is not currently defined.  Once all Bodies are defined, the System object calls
+     * a function to read through each name in the list and assign corresponding pointers in the listLinkedBody_usr.
+     * @sa listLinkedBody_user()
+     * @sa System
+     */
+    vector<string> plistNamedLink_usr;
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief The list of names of linked bodies for hydro cross-body forces.  This is a list of names of other bodies
+     * that a cross-body force references.  This corresponds to the vector listForceCross_hydro.  The indices of the two
+     * vectors should match.  So that when a force gets added at index 5 in the listForceCross_hydro, it should have a
+     * matching entry at index 5 in listNamedLink_hydro.  The list of names only is a temporary list used during the
+     * input stage of bodies.  This is required because the linked body may name a body which is not yet read from
+     * the input file.  Thus, the body is not currently defined.  Once all Bodies are defined, the System object calls
+     * a function to read through each name in the list and assign corresponding pointers in the listLinkedBody_hydro.
+     * @sa listLinkedBody_hydro()
+     * @sa System
+     */
+    vector<string> plistNamedLink_hydro;
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**

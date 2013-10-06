@@ -52,88 +52,88 @@ bool Body::operator ==(Body &bodIn)
     else
         bodEq *= false;
 
-    //2.)  Check if they have the same force reference.
-    //2.1.1)  Check All active hydro forces
-    if (bodEq && (this->plistForceActive_hydro.size() == bodIn.plistForceActive_hydro.size()))
-    {
-        for (unsigned int i = 0; i < this->plistForceActive_hydro.size(); i++)
-        {
-            if(this->plistForceActive_hydro.at(i) == bodIn.plistForceActive_hydro.at(i))
-                bodEq *= true;
-            else
-                bodEq *= false;
-        }
-    }
-    //2.1.2)  Check all active user forces
-    if (bodEq && (this->plistForceActive_usr.size() == bodIn.plistForceActive_usr.size()))
-    {
-        for (unsigned int i = 0; i < this->plistForceActive_usr.size(); i++)
-        {
-            if(this->plistForceActive_usr.at(i) == bodIn.plistForceActive_usr.at(i))
-                bodEq *= true;
-            else
-                bodEq *= false;
-        }
-    }
-    //2.2.1)  Check all reactive hydro forces
-    if (bodEq && (this->plistForceReact_hydro.size() == bodIn.plistForceReact_hydro.size()))
-    {
-        for (unsigned int i = 0; i < this->plistForceReact_hydro.size(); i++)
-        {
-            if(this->plistForceReact_hydro.at(i) == bodIn.plistForceReact_hydro.at(i))
-                bodEq *= true;
-            else
-                bodEq *= false;
-        }
-    }
-    //2.2.2)  Check All reactive user forces
-    if (bodEq && (this->plistForceReact_usr.size() == bodIn.plistForceReact_usr.size()))
-    {
-        for (unsigned int i = 0; i < this->plistForceReact_usr.size(); i++)
-        {
-            if(this->plistForceReact_usr.at(i) == bodIn.plistForceReact_usr.at(i))
-                bodEq *= true;
-            else
-                bodEq *= false;
-        }
-    }
-    //2.3.1)  Check All cross-body hydro forces
-    if (bodEq && (this->plistForceCross_hydro.size() == bodIn.plistForceCross_hydro.size()))
-    {
-        for (unsigned int i = 0; i < this->plistForceCross_hydro.size(); i++)
-        {
-            if(this->plistForceCross_hydro.at(i) == bodIn.plistForceCross_hydro.at(i))
-                bodEq *= true;
-            else
-                bodEq *= false;
-        }
-    }
-    //2.3.2)  Check All cross-body user forces
-    if (bodEq && (this->plistForceCross_usr.size() == bodIn.plistForceCross_usr.size()))
-    {
-        for (unsigned int i = 0; i < this->plistForceCross_usr.size(); i++)
-        {
-            if(this->plistForceCross_usr.at(i) == bodIn.plistForceCross_usr.at(i))
-                bodEq *= true;
-            else
-                bodEq *= false;
-        }
-    }
+//    //2.)  Check if they have the same force reference.
+//    //2.1.1)  Check All active hydro forces
+//    if (bodEq && (this->plistForceActive_hydro.size() == bodIn.plistForceActive_hydro.size()))
+//    {
+//        for (unsigned int i = 0; i < this->plistForceActive_hydro.size(); i++)
+//        {
+//            if(this->plistForceActive_hydro.at(i) == bodIn.plistForceActive_hydro.at(i))
+//                bodEq *= true;
+//            else
+//                bodEq *= false;
+//        }
+//    }
+//    //2.1.2)  Check all active user forces
+//    if (bodEq && (this->plistForceActive_usr.size() == bodIn.plistForceActive_usr.size()))
+//    {
+//        for (unsigned int i = 0; i < this->plistForceActive_usr.size(); i++)
+//        {
+//            if(this->plistForceActive_usr.at(i) == bodIn.plistForceActive_usr.at(i))
+//                bodEq *= true;
+//            else
+//                bodEq *= false;
+//        }
+//    }
+//    //2.2.1)  Check all reactive hydro forces
+//    if (bodEq && (this->plistForceReact_hydro.size() == bodIn.plistForceReact_hydro.size()))
+//    {
+//        for (unsigned int i = 0; i < this->plistForceReact_hydro.size(); i++)
+//        {
+//            if(this->plistForceReact_hydro.at(i) == bodIn.plistForceReact_hydro.at(i))
+//                bodEq *= true;
+//            else
+//                bodEq *= false;
+//        }
+//    }
+//    //2.2.2)  Check All reactive user forces
+//    if (bodEq && (this->plistForceReact_usr.size() == bodIn.plistForceReact_usr.size()))
+//    {
+//        for (unsigned int i = 0; i < this->plistForceReact_usr.size(); i++)
+//        {
+//            if(this->plistForceReact_usr.at(i) == bodIn.plistForceReact_usr.at(i))
+//                bodEq *= true;
+//            else
+//                bodEq *= false;
+//        }
+//    }
+//    //2.3.1)  Check All cross-body hydro forces
+//    if (bodEq && (this->plistForceCross_hydro.size() == bodIn.plistForceCross_hydro.size()))
+//    {
+//        for (unsigned int i = 0; i < this->plistForceCross_hydro.size(); i++)
+//        {
+//            if(this->plistForceCross_hydro.at(i) == bodIn.plistForceCross_hydro.at(i))
+//                bodEq *= true;
+//            else
+//                bodEq *= false;
+//        }
+//    }
+//    //2.3.2)  Check All cross-body user forces
+//    if (bodEq && (this->plistForceCross_usr.size() == bodIn.plistForceCross_usr.size()))
+//    {
+//        for (unsigned int i = 0; i < this->plistForceCross_usr.size(); i++)
+//        {
+//            if(this->plistForceCross_usr.at(i) == bodIn.plistForceCross_usr.at(i))
+//                bodEq *= true;
+//            else
+//                bodEq *= false;
+//        }
+//    }
 
-    //3.)  Check that the bodies have the same mass
-    if (bodEq)
-    {
-        for (unsigned int i = 0; i < this->MassMatrix().n_rows; i++)
-        {
-            for (unsigned int j = 0; j < this->MassMatrix().n_cols; j++)
-            {
-                if(this->MassMatrix()(i,j) == bodIn.MassMatrix()(i,j))
-                    bodEq *= true;
-                else
-                    bodEq *= false;
-            }
-        }
-    }
+//    //3.)  Check that the bodies have the same mass
+//    if (bodEq)
+//    {
+//        for (unsigned int i = 0; i < this->MassMatrix().n_rows; i++)
+//        {
+//            for (unsigned int j = 0; j < this->MassMatrix().n_cols; j++)
+//            {
+//                if(this->MassMatrix()(i,j) == bodIn.MassMatrix()(i,j))
+//                    bodEq *= true;
+//                else
+//                    bodEq *= false;
+//            }
+//        }
+//    }
 
     //Checks complete.  Return result.
     return bodEq;
@@ -547,6 +547,42 @@ vector<Body *> &Body::listCrossBody_user()
 vector<Body *> &Body::listCrossBody_hydro()
 {
     return plistLinkedBody_hydro;
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+vector<string> &Body::listNamedLink_user()
+{
+    return plistNamedLink_usr;
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+string &Body::listNamedLink_user(int varIn)
+{
+    //Check if need to resize the vector
+    if (varIn > plistLinkedBody_usr.size() - 1)
+    {
+        plistLinkedBody_usr.resize(varIn + 1);
+    }
+
+    return plistNamedLink_usr[varIn];
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+vector<string> &Body::listNamedLink_hydro()
+{
+    return plistNamedLink_hydro;
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+string &Body::listNamedLink_hydro(int varIn)
+{
+    //Check if need to resize the vector
+    if (varIn > plistLinkedBody_hydro.size() - 1)
+    {
+        plistLinkedBody_hydro.resize(varIn + 1);
+    }
+
+    return plistNamedLink_hydro[varIn];
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------

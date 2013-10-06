@@ -65,10 +65,10 @@ public:
     ~matForceActive(); /**< The default destructor, nothing happens here. */
 
     //------------------------------------------Function Separator ----------------------------------------------------
-    matForceActive operator+(const matForceActive &forceOther);
+    matForceActive operator+(matForceActive &forceOther);
 
     //------------------------------------------Function Separator ----------------------------------------------------
-    matForceActive operator-(const matForceActive &forceOther);
+    matForceActive operator-(matForceActive &forceOther);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**

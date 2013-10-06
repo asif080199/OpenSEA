@@ -89,7 +89,7 @@ public:
      * @return Returns an object of type matForceReact.  The new object will contain the same order of derivatives as
      * the highest derivative of the two added functions.
      */
-    virtual matForceReact operator+(const matForceReact& forceOther);
+    virtual matForceReact operator+(matForceReact& forceOther);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -103,7 +103,7 @@ public:
      * @return Returns an object of type matForceReact.  The new object will contain the same order of derivatives as
      * the highest derivative of the two subtracted functions.
      */
-    virtual matForceReact operator-(const matForceReact& forceOther);
+    virtual matForceReact operator-(matForceReact& forceOther);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -176,9 +176,6 @@ public:
 
 //==========================================Section Separator =========================================================
 protected:
-
-//==========================================Section Separator =========================================================
-private:
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
      * @brief Defines the vector of derivatives.
@@ -195,6 +192,10 @@ private:
      * identifier.  Normally correlates to the objects index in a vector of other objects of the same class.
      */
     int pId;
+
+//==========================================Section Separator =========================================================
+private:
+
 
 };
 #endif

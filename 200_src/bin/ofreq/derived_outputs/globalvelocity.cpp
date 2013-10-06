@@ -26,13 +26,18 @@
 
 #include "globalvelocity.h"
 
+//==========================================Section Separator =========================================================
+//Static initialization
+string GlobalVelocity::VELOCITY_NAME = "Global Velocity"; /**< Used for reference in file output. */
+int GlobalVelocity::GLOBAL_VELOCITY_DERIVATIVE = 1;  /**< Specifies first order of the derivative. (velocity) */
+
+//==========================================Section Separator =========================================================
+//Public Functions
+
 //------------------------------------------Function Separator --------------------------------------------------------
 GlobalVelocity::GlobalVelocity() 
 	: GlobalSolution()
 {
-    VELOCITY_NAME = "Global Velocity"; /**< Used for reference in file output. */
-    GLOBAL_VELOCITY_DERIVATIVE = 1;  /**< Specifies first order of the derivative. (velocity) */
-
     pName = VELOCITY_NAME;
 	orderDerivative = GLOBAL_VELOCITY_DERIVATIVE;
 }
@@ -47,3 +52,10 @@ void GlobalVelocity::setDerivative(int ord)
 {
     GlobalSolution::setDerivative(GLOBAL_VELOCITY_DERIVATIVE);
 }
+
+//==========================================Section Separator =========================================================
+//Protected Functions
+
+
+//==========================================Section Separator =========================================================
+//Private Functions

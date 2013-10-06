@@ -39,7 +39,11 @@
 #define PARSER_H
 #include <vector>
 #include <string>
-
+#include <istream>
+#include <iostream>
+#include <algorithm>
+#include <cstdlib>
+#include <fstream>
 #include "objectgroup.h"
 
 using namespace std;
@@ -80,7 +84,7 @@ public:
      * @brief Parses the input files into a vector of key-value pairs.
      * @param The input file to parse.
      */
-    void Parse(istream& infile);
+    void Parse(istream &infile);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -107,7 +111,7 @@ public:
      * @return Returns a reference to the list of SubObjects detected by the parser.  Returned variable passed by
      * reference.  Returned variable is a vector of pointers to the SubObjects.
      */
-    vector<ObjectGroup> &refSubObject(int index1 = 0);
+    vector<ObjectGroup*> &refSubObject(int index1 = 0);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -168,20 +172,36 @@ private:
     int curObject;
 
     //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief This function reads an istream input and counts the number of occurrences of an object declaration.
+     * Most importantly, it does this in a way to not eliminate the characters from the istream object.  It also ignores
+     * white spaces.
+     * @param infile The istream input to check for designated object characters.
+     * @return Returns an integer counter to add or decrease the count of object designators.  Valid returned values
+     * are:
+     * +1:  OBJECT_BEGIN detected.  Object count added.
+     * 0:   No object designator detected.  Nothing done.
+     * -1:  OBJECT_END detected.  Object count decreased.
+     */
+    int ObjectCheck(istream &infile);
+
+    //------------------------------------------Function Separator ----------------------------------------------------
     // Characters within Input files
-    const static string COMMENT_LINE; /**< Line Comment. */
-    const static string COMMENT_BLOCK_BEGIN; /**< Block Comment Begin. */
-    const static string COMMENT_BLOCK_END; /**< Block comment end. */
-    const static string END_STATEMENT; /**< End of statement. */
-    const static string OBJECT_BEGIN; /**< Object scope begin. */
-    const static string OBJECT_END; /**< Object scope end */
-    const static string LIST_BEGIN; /**< List scope begin. */
-    const static string LIST_END; /**< List scope end. */
-    const static string KEY_VAL_SEPARATOR; /**< Key/Val pair seperator. */
-    const static char EOL; /**< newline. */
-    const static int MAX_IGNORE; /**< Max # of chars to ignore. */
-    const static string OBJ_SEAFILE; /**< seafile object name, used to ignore seafile block. */
-    const static string QUOTE;
+    static string COMMENT_LINE; /**< Line Comment. */
+    static string COMMENT_BLOCK_BEGIN; /**< Block Comment Begin. */
+    static string COMMENT_BLOCK_END; /**< Block comment end. */
+    static string END_STATEMENT; /**< End of statement. */
+    static string OBJECT_BEGIN; /**< Object scope begin. */
+    static string OBJECT_END; /**< Object scope end */
+    static string LIST_BEGIN; /**< List scope begin. */
+    static string LIST_END; /**< List scope end. */
+    static string KEY_VAL_SEPARATOR; /**< Key/Val pair seperator. */
+    static char EOL; /**< newline. */
+    static int MAX_IGNORE; /**< Max # of chars to ignore. */
+    static string OBJ_SEAFILE; /**< seafile object name, used to ignore seafile block. */
+    static string QUOTE;    /**< Quotation symbol " */
+    static string SPACE; /**< Just a space " " */
+    static string RETURN; /**< The return character "\n" */
 };
 
 #endif // PARSER_H

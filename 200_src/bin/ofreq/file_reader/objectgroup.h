@@ -121,7 +121,7 @@ public:
      * @return Returns a reference to the list of objects.  Variable passed by reference.  Returned variable is a
      * vector of pointers to ObjectGroup objects.
      */
-    vecObject& listObject();
+    vector<ObjectGroup*> &listObject();
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -260,7 +260,7 @@ private:
     /**
      * @brief Vector of objects defined within this object group.
      */
-    vecObject plistObject;
+    vector<ObjectGroup*> plistObject;
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**

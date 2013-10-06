@@ -25,24 +25,29 @@
 \*-------------------------------------------------------------------------------------------------------------------*/
 
 #include "dictcontrol.h"
+
+//==========================================Section Separator =========================================================
+//Static Initialization
+
+//------------------------------------------Function Separator ----------------------------------------------------
+//Class Names
+string dictControl::KEY_SYSTEM = "system"; /**< Keyword for system object.*/
+
+//------------------------------------------Function Separator ----------------------------------------------------
+//Keyword Value Pairs
+string dictControl::KEY_ANALYSIS = "analysis"; /**< Keyword for analysis specification */
+string dictControl::KEY_FREQUENCY = "frequency"; /**< Keyword for frequency specification */
+string dictControl::KEY_DIRECTION = "direction"; /**< Keyword for direction list specification. */
+string dictControl::KEY_WAVEMODEL = "wavemodel"; /**< Keyword for wave model specification. */
+
 //==========================================Section Separator =========================================================
 //Public Functions
 
 //------------------------------------------Function Separator --------------------------------------------------------
-dictControl::dictControl(): Dictionary()
+dictControl::dictControl()
+    : Dictionary()
 {
-    //------------------------------------------Function Separator ----------------------------------------------------
-    //Class Names
-    KEY_SYSTEM = "system"; /**< Keyword for system object.*/
-
-    //------------------------------------------Function Separator ----------------------------------------------------
-    //Keyword Value Pairs
-    KEY_ANALYSIS = "analysis"; /**< Keyword for analysis specification */
-    KEY_FREQUENCY = "frequency"; /**< Keyword for frequency specification */
-    KEY_DIRECTION = "direction"; /**< Keyword for direction list specification. */
-    KEY_WAVEMODEL = "wavemodel"; /**< Keyword for wave model specification. */
 }
-
 
 //==========================================Section Separator =========================================================
 //Signals
@@ -57,17 +62,17 @@ dictControl::dictControl(): Dictionary()
 //------------------------------------------Function Separator --------------------------------------------------------
 int dictControl::defineKey(string keyIn, vector<string> valIn)
 {
-    switch (keyIn)
+    if (keyIn == KEY_ANALYSIS)
     {
-    case KEY_ANALYSIS:
         //Set the analysis type.
-        ptSystem->setAnalysisType(valInt[0]);
+        ptSystem->setAnalysisType(valIn[0]);
 
         //return success
         return 0;
-        break;
+    }
 
-    case KEY_FREQUENCY:
+    else if (keyIn == KEY_FREQUENCY)
+    {
         //Set the wave frequencies.
         //First convert them from strings to doubles.
         vector<double> freqIn;
@@ -83,9 +88,10 @@ int dictControl::defineKey(string keyIn, vector<string> valIn)
 
         //return success
         return 0;
-        break;
+    }
 
-    case KEY_DIRECTION:
+    else if (keyIn == KEY_DIRECTION)
+    {
         //Set the wave directions.
         //First convert them from strings to doubles.
         vector<double> dirIn;
@@ -101,37 +107,38 @@ int dictControl::defineKey(string keyIn, vector<string> valIn)
 
         //return success
         return 0;
-        break;
+    }
 
-    case KEY_WAVEMODEL:
+    else if (keyIn == KEY_WAVEMODEL)
+    {
         //Set the wave spread model
-        ptSystem->setSpreadModel(valIn);
+        //Implement later
 
         //return success
         return 0;
-        break;
+    }
 
-    default:
+    else
+    {
         //Word not found.  Return error code.
         return 1;
-        break;
     }
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
 int dictControl::defineClass(string nameIn)
 {
-    switch (nameIn)
+    if (nameIn == KEY_SYSTEM)
     {
-    case KEY_SYSTEM:
         //Don't need to do anything for the system object.
         //this one is so fundamental to the program that it automatically gets created at program start.
         return 0;
-        break;
-    default:
+    }
+
+    else
+    {
         //Word not found.  Return error code.
         return 1;
-        break;
     }
 }
 

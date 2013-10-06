@@ -65,7 +65,7 @@ vecValue& ObjectGroup::listVal()
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-vecObject& ObjectGroup::listObject()
+vector<ObjectGroup *> &ObjectGroup::listObject()
 {
     return plistObject;
 }
@@ -73,13 +73,13 @@ vecObject& ObjectGroup::listObject()
 //------------------------------------------Function Separator --------------------------------------------------------
 void ObjectGroup::addSubObject(ObjectGroup objIn)
 {
-    plistObject.push_back(objIn);
+    plistObject.push_back(&objIn);
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
 void ObjectGroup::addSubObject()
 {
-    plistObject.push_back(ObjectGroup());
+    plistObject.push_back(new ObjectGroup());
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------

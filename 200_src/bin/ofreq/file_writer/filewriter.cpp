@@ -27,58 +27,62 @@
 #include "filewriter.h"
 
 //==========================================Section Separator =========================================================
+//Static Initialization
+
+//------------------------------------------Function Separator ----------------------------------------------------
+//Reference File Declarations
+string FileWriter::HEADER_FILENAME = "../../var/openseaheader.txt";
+
+//------------------------------------------Function Separator ----------------------------------------------------
+//Directory Specifications
+string FileWriter::NAME_DIR = "d"; /**< The starting character for the wave direction directory.**/
+string FileWriter::NAME_RES = "r"; /**< The starting character for the resonant frequency directory.**/
+#ifdef Q_OS_WIN
+    string FileWriter::SLASH = "\"";  /**< Directory separator in a string path., windows version**/
+#elif defined Q_OS_LINUX
+    string FileWriter::SLASH = "/";   /**< Directory separator in a string path., linux version**/
+#endif
+
+//------------------------------------------Function Separator ----------------------------------------------------
+//General File Content Marks
+string FileWriter::LIST_BEGIN2 = "(";
+string FileWriter::LIST_END2 = ");";
+string FileWriter::OBJECT_BEGIN2 = "{";
+string FileWriter::OBJECT_END2 = "}";
+string FileWriter::END = ";";
+string FileWriter::TAB = "  ";
+string FileWriter::SPACE = " ";
+string FileWriter::KEY_NAME = "name";
+string FileWriter::KEY_DATA = "data";
+string FileWriter::KEY_VALUE = "value";
+string FileWriter::KEY_FREQUENCY = "frequency";
+string FileWriter::KEY_DIRECTION = "direction";
+string FileWriter::KEY_VERSION = "version";
+string FileWriter::KEY_FORMAT = "format";
+string FileWriter::KEY_OBJECT = "object";
+string FileWriter::KEY_BODY = "body";
+string FileWriter::VAL_VERSION = "1.0";
+string FileWriter::VAL_FORMAT = "ascii";
+string FileWriter::VAL_SEAFILE = "seafile";
+string FileWriter::BREAK_TOP = "// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //\n";
+string FileWriter::BREAK_BOTTOM = "// ************************************************************************* //";
+int FileWriter::DIGIT = 15; /** The number of digits to use in precision of floating point numbers.*/
+
+//==========================================Section Separator =========================================================
+//Filename Markers
+string FileWriter::FILE_DIRECTIONS = "directions.out";
+string FileWriter::FILE_FREQUENCIES = "frequencies.out";
+string FileWriter::FILE_GLOBAL_ACCELERATION = "accglobal.out";
+string FileWriter::FILE_GLOBAL_MOTION = "motglobal.out";
+string FileWriter::FILE_GLOBAL_VELOCITY = "velglobal.out";
+string FileWriter::FILE_GLOBAL_SOLUTION = "solglobal.out";
+
+//==========================================Section Separator =========================================================
 //Public Functions
 
 //------------------------------------------Function Separator --------------------------------------------------------
 FileWriter::FileWriter()
 {
-    //------------------------------------------Function Separator ----------------------------------------------------
-    //Reference File Declarations
-    HEADER_FILENAME = "../../var/openseaheader.txt";
-
-    //------------------------------------------Function Separator ----------------------------------------------------
-    //Directory Specifications
-    NAME_DIR = "d"; /**< The starting character for the wave direction directory.**/
-    NAME_RES = "r"; /**< The starting character for the resonant frequency directory.**/
-    #ifdef Q_OS_WIN
-        SLASH = "\"";  /**< Directory separator in a string path., windows version**/
-    #elif defined Q_OS_LINUX
-        SLASH = "/";   /**< Directory separator in a string path., linux version**/
-    #endif
-
-    //------------------------------------------Function Separator ----------------------------------------------------
-    //General File Content Marks
-    LIST_BEGIN2 = "(";
-    LIST_END2 = ");";
-    OBJECT_BEGIN2 = "{";
-    OBJECT_END2 = "}";
-    END = ";";
-    TAB = "  ";
-    SPACE = " ";
-    KEY_NAME = "name";
-    KEY_DATA = "data";
-    KEY_VALUE = "value";
-    KEY_FREQUENCY = "frequency";
-    KEY_DIRECTION = "direction";
-    KEY_VERSION = "version";
-    KEY_FORMAT = "format";
-    KEY_OBJECT = "object";
-    KEY_BODY = "body";
-    VAL_VERSION = "1.0";
-    VAL_FORMAT = "ascii";
-    VAL_SEAFILE = "seafile";
-    BREAK_TOP = "// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //\n";
-    BREAK_BOTTOM = "// ************************************************************************* //";
-    DIGIT = 15; /** The number of digits to use in precision of floating point numbers.*/
-
-    //==========================================Section Separator =========================================================
-    //Filename Markers
-    FILE_DIRECTIONS = "directions.out";
-    FILE_FREQUENCIES = "frequencies.out";
-    FILE_GLOBAL_ACCELERATION = "accglobal.out";
-    FILE_GLOBAL_MOTION = "motglobal.out";
-    FILE_GLOBAL_VELOCITY = "velglobal.out";
-    FILE_GLOBAL_SOLUTION = "solglobal.out";
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------

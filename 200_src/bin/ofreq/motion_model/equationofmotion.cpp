@@ -33,6 +33,7 @@
 
 //==========================================Section Separator =========================================================
 //Public Members
+
 //------------------------------------------Function Separator --------------------------------------------------------
 EquationofMotion::EquationofMotion(MotionModel *modelIn)
 {
@@ -146,6 +147,17 @@ string &EquationofMotion::refDescription()
 //Protected Members
 
 //------------------------------------------Function Separator --------------------------------------------------------
+complex<double> EquationofMotion::setFormula()
+{
+    //This is just a simple definition of the setFormula function to keep the compiler happy.
+    //Eventually, this definition will be overriden by the correct definition of the child
+    //class.
+    complex<double> output(0,0);
+
+    return output;
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
 complex<double> EquationofMotion::Kronecker(int var1, int var2, bool anti)
 {
     complex<double> out(0,0);
@@ -197,7 +209,7 @@ complex<double> EquationofMotion::Ddt(int var, int ord, int bodIn)
         out = pParentModel->refData(bodIn).getSolution().at(var,1);
 
         //Calculate refDerivative
-        for (unsigned int i = 0; i <= ord; i++)
+        for (int i = 0; i <= ord; i++)
         {
             out = out * freq * imagI;
         }

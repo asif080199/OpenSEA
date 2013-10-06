@@ -61,10 +61,7 @@ public:
     //------------------------------------------Function Separator ----------------------------------------------------
 	~Derivative(); /**< The default destructor, nothing happens here. */
 
-    //------------------------------------------Function Separator ----------------------------------------------------
-	void testPrint(); /**< Test print to console the values of all data members. */
-
-    //------------------------------------------Function Separator ----------------------------------------------------
+   //------------------------------------------Function Separator ----------------------------------------------------
     /**
      * @brief The list of equations.
      *
@@ -101,7 +98,7 @@ public:
      * @return Value returned is a pointer to the equation object.  Allows
      * editting of the equation object, or just data access.
      */
-    Equation &refEquation(int number);
+    Equation &refEquation(unsigned int number);
 
     //------------------------------------------Function Separator ----------------------------------------------------
 	/**

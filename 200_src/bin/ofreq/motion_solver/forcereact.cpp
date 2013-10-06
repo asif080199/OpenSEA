@@ -47,46 +47,13 @@ void ForceReact::setCurEquationNum(int newEquationNum)
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-void ForceReact::setCoeff(vector<string> newList, bool isDirectList)
-{
-	if(isDirectList) //key value pair
-	{
-		for(unsigned int i = 0; i <= newList.size()/2; i+=2)
-		{
-            pDerivative[currentDerivative].equationList[currentEquation].
-			coefficients[atoi(newList[i].c_str())-1] = atof(newList[i+1].c_str());
-		}
-	}
-	else //is sequential
-	{
-		for(unsigned int i = 0; i < MAX_COEFFICIENTS; i++)
-            pDerivative[currentDerivative].equationList[currentEquation].
-			coefficients[i] = atof(newList[i].c_str());
-	}
-}
-
-//------------------------------------------Function Separator --------------------------------------------------------
-void ForceReact::testPrint()
-{
-	
-	cout << "##Reactive Forces##" << endl;
-	cout << "Name: " << forceName << endl;
-    for(unsigned int i = 0l; i < pDerivative.size(); i++)
-	{
-		cout << "Derivative Order#: " << i << endl;
-        pDerivative[i].testPrint();
-	}
-	cout<< endl;
-}
-
-//------------------------------------------Function Separator --------------------------------------------------------
 vector<Derivative> &ForceReact::listDerivatives()
 {
-    return this->getDerivatives();
+    return pDerivative;
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-Derivative ForceReact::getDerivative(int num)
+Derivative ForceReact::getDerivative(unsigned int num)
 {
     //Return the derivative object specified.
 
@@ -102,7 +69,7 @@ Derivative ForceReact::getDerivative(int num)
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-Derivative &ForceReact::refDerivative(int num)
+Derivative &ForceReact::refDerivative(unsigned int num)
 {
     //Return the derivative object specified.
     //Value is a pointer to the derivative.
@@ -126,7 +93,7 @@ void ForceReact::addDerivative()
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-void ForceReact::addDerivative(Derivative derivIn, int ordIn)
+void ForceReact::addDerivative(Derivative derivIn, unsigned int ordIn)
 {
     //Adds a new derivative object
 

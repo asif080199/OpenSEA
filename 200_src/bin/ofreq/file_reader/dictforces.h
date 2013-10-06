@@ -93,6 +93,7 @@ protected:
      * 0:  Key definition found.  Success.
      * 1:  No key found. / General error message.
      * 2:  Key is invalid within current active object.
+     * 99: Function virtual definition only.  Not currently defined.
      */
     int defineKey(string keyIn, vector<string> valIn);
 
@@ -107,6 +108,7 @@ protected:
      * 0:  Key definition found.  Success.
      * 1:  No key found. / General error message.
      * 2:  Key is invalid within current active object.
+     * 99: Function virtual definition only.  Not currently defined.
      */
     int defineClass(string nameIn);
 
@@ -172,20 +174,20 @@ private:
 
     //------------------------------------------Function Separator ----------------------------------------------------
     //Class Names
-    const static string OBJECT_FORCE_ACTIVE; /**< Keyword for force_active definition.*/
-    const static string OBJECT_FORCE_REACT; /**< Keyword for force_react class definition.*/
-    const static string OBJECT_FORCE_CROSS; /**< Keyword for force_cross class definition.*/
-    const static string OBJECT_DERIVATIVE; /**< Keyword for derivative class definition. */
-    const static string OBJECT_EQUATION; /**< Keyword for equation designation.*/
+    static string OBJECT_FORCE_ACTIVE; /**< Keyword for force_active definition.*/
+    static string OBJECT_FORCE_REACT; /**< Keyword for force_react class definition.*/
+    static string OBJECT_FORCE_CROSS; /**< Keyword for force_cross class definition.*/
+    static string OBJECT_DERIVATIVE; /**< Keyword for derivative class definition. */
+    static string OBJECT_EQUATION; /**< Keyword for equation designation.*/
 
     //------------------------------------------Function Separator ----------------------------------------------------
     //Keyword Names
-    const static string KEY_NAME; /**< Keyword for the name the user assigns for a force.*/
-    const static string KEY_COEFF; /**< Keyword for coefficient designation.*/
-    const static string KEY_NUMBER; /**< Keyword for equation number designation. */
-    const static string KEY_ORDER; /**< Keyword for order of derivative designation. */
-    const static string KEY_FORCE; /**< Keyword for force coefficients designation.*/
-    const static string KEY_EQUATION; /**< Keyword for equation designation.*/
+    static string KEY_NAME; /**< Keyword for the name the user assigns for a force.*/
+    static string KEY_COEFF; /**< Keyword for coefficient designation.*/
+    static string KEY_NUMBER; /**< Keyword for equation number designation. */
+    static string KEY_ORDER; /**< Keyword for order of derivative designation. */
+    static string KEY_FORCE; /**< Keyword for force coefficients designation.*/
+    static string KEY_EQUATION; /**< Keyword for equation designation.*/
 };
 
 #endif // DICTFORCES_H

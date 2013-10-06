@@ -26,15 +26,21 @@
 
 #include "globalacceleration.h"
 
+//==========================================Section Separator =========================================================
+//Static variable initialization
+string GlobalAcceleration::ACCELERATION_NAME = "Global Acceleration"; /**< Used for reference in file output. */
+int GlobalAcceleration::GLOBAL_ACCELERATION_DERIVATIVE = 2;  /**< Specifies 2nd order of the derivative. (acceleration) */
+
+
+//==========================================Section Separator =========================================================
+//Public Functions
+
 //------------------------------------------Function Separator --------------------------------------------------------
 GlobalAcceleration::GlobalAcceleration() 
 	: GlobalSolution()
 {
-    ACCELERATION_NAME = "Global Acceleration"; /**< Used for reference in file output. */
-    GLOBAL_ACCELERATION_DERIVATIVE = 2;  /**< Specifies 2nd order of the derivative. (acceleration) */
-
     pName = ACCELERATION_NAME;
-	orderDerivative = GLOBAL_ACCELERATION_DERIVATIVE;
+    orderDerivative = GLOBAL_ACCELERATION_DERIVATIVE;
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
@@ -47,3 +53,10 @@ void GlobalAcceleration::setDerivative(int ord)
 {
     GlobalSolution::setDerivative(GLOBAL_ACCELERATION_DERIVATIVE);
 }
+
+//==========================================Section Separator =========================================================
+//Protected Functions
+
+
+//==========================================Section Separator =========================================================
+//Private Functions

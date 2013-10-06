@@ -66,7 +66,7 @@ class Dictionary : public QObject
 //==========================================Section Separator =========================================================
 public:
     //------------------------------------------Function Separator ----------------------------------------------------
-    explicit Dictionary(QObject *parent = 0);
+    explicit Dictionary(QObject *parent);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     Dictionary();
@@ -104,6 +104,7 @@ protected:
      * 0:  Key definition found.  Success.
      * 1:  No key found. / General error message.
      * 2:  Key is invalid within current active object.
+     * 99: Function virtual definition only.  Not currently defined.
      */
     virtual int defineKey(string keyIn, vector<string> valIn);
 
@@ -118,6 +119,7 @@ protected:
      * 0:  Key definition found.  Success.
      * 1:  No key found. / General error message.
      * 2:  Key is invalid within current active object.
+     * 99: Function virtual definition only.  Not currently defined.
      */
     virtual int defineClass(string nameIn);
 
@@ -135,14 +137,15 @@ protected:
      */
     complex<double> convertComplex(string input);
 
-//==========================================Section Separator =========================================================
-private:
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
      * @brief Pointer to the System object.  Used to reference any important variables in the System object.
      */
     System* ptSystem;
-    
+
+//==========================================Section Separator =========================================================
+private:
+
 };
 
 #endif // DICTIONARY_H

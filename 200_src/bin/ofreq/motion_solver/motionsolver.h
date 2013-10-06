@@ -178,15 +178,28 @@ public:
      *
      * Get the solution for the solved equation.  Returns the full vector of complex matrices.  Each element in the
      * vector is a solution matrix specific to the body.  The vector is ordered in the same sequence that the bodies
-     * were added to the motionsolver object.
+     * were added to the motionsolver object.  This is the vector of solutions for each Body object.  It applies to
+     * a single wave frequency and single wave direction.
      * @return Returns the full vector of complex matrices.  Each element in the
      * vector is a solution matrix specific to the body.  The vector is ordered in the same sequence that the bodies
-     * were added to the motionsolver object.
+     * were added to the motionsolver object.  Returned variable passed by reference.
      */
-    vector<cx_mat> getSolution();
+    vector<cx_mat> &listSolution();
 
     //------------------------------------------Function Separator ----------------------------------------------------
-    cx_mat getSolution(int bod);
+    /**
+     * @brief Get the solution for the solved equation, for a single body.
+     *
+     * Returns the solution for solved equations for a single Body object.  This is a matrix of solutions for equations
+     * of motion.  It applies to a single Body, single wave frequency, single wave direction.  The Bodies are ordered
+     * in the same sequence in which they were added to the motionsolver object.
+     * @param bod Integer.  Specifies which Body object the solution should be retrieved for.  The Bodies are ordered
+     * in the same sequence in which they were added to the motionsolver object.
+     * @return  Returns a matrix of complex doubles.  This matrix contains the solution of motions for the Body
+     * specified.  Returned variable passed by reference.
+     * @sa Body
+     */
+    cx_mat &listSolution(unsigned int bod);
 
 
 

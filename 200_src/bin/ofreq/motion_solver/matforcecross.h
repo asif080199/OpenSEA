@@ -39,7 +39,6 @@
 #ifndef MATCROSSFORCE_H
 #define MATCROSSFORCE_H
 #include "matforcereact.h"
-#include "matbody.h"
 #include <vector>
 #include <complex>
 #include <QtGlobal>
@@ -102,7 +101,7 @@ public:
      * @return Returns an object of type matForceCross.  The new object will contain the same order of derivatives as
      * the highest derivative of the two added functions.
      */
-    matForceCross operator+(const matForceCross& forceOther);
+    matForceCross operator+(matForceCross& forceOther);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -118,7 +117,7 @@ public:
      * @return Returns an object of type matForceCross.  The new object will contain the same order of derivatives as
      * the highest derivative of the two subtracted functions.
      */
-    matForceCross operator-(const matForceCross& forceOther);
+    matForceCross operator-(matForceCross& forceOther);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -132,7 +131,7 @@ public:
      * Return the linked body for the cross body object
      * @return Returns a pointer to the matBody object that this force relates to.
      */
-    matBody getLinkedBody();
+    matBody* getLinkedBody();
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -172,7 +171,7 @@ protected:
 
 //==========================================Section Separator =========================================================
 private:
-    int plinkbody;
+    matBody* plinkbody;
     int plinkid;
 
 };

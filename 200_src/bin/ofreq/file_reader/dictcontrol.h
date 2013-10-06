@@ -85,6 +85,7 @@ protected:
      * 0:  Key definition found.  Success.
      * 1:  No key found. / General error message.
      * 2:  Key is invalid within current active object.
+     * 99: Function virtual definition only.  Not currently defined.
      */
     int defineKey(string keyIn, vector<string> valIn);
 
@@ -99,6 +100,7 @@ protected:
      * 0:  Key definition found.  Success.
      * 1:  No key found. / General error message.
      * 2:  Key is invalid within current active object.
+     * 99: Function virtual definition only.  Not currently defined.
      */
     int defineClass(string nameIn);
 
@@ -106,13 +108,13 @@ protected:
 private:
     //------------------------------------------Function Separator ----------------------------------------------------
     //Class Names
-    static const string KEY_SYSTEM; /**< Keyword for system object.*/
+    static string KEY_SYSTEM; /**< Keyword for system object.*/
 
     //------------------------------------------Function Separator ----------------------------------------------------
     //Keyword Value Pairs
-    static const string KEY_ANALYSIS; /**< Keyword for analysis specification */
-    static const string KEY_FREQUENCY; /**< Keyword for frequency specification */
-    static const string KEY_DIRECTION; /**< Keyword for direction list specification. */
-    static const string KEY_WAVEMODEL; /**< Keyword for wave model specification. */
+    static string KEY_ANALYSIS; /**< Keyword for analysis specification */
+    static string KEY_FREQUENCY; /**< Keyword for frequency specification */
+    static string KEY_DIRECTION; /**< Keyword for direction list specification. */
+    static string KEY_WAVEMODEL; /**< Keyword for wave model specification. */
 };
 #endif // DICTCONTROL_H

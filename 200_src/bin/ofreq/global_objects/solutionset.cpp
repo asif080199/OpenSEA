@@ -55,7 +55,7 @@ void SolutionSet::setSolnMat(int dir, int freq, Solution soln)
 {
     //Set the Solution object with the new value.
     //Create new solution object
-    Solution* newSoln = soln;
+    Solution* newSoln = &soln;
 
     //Check that the specified index is the correct size.  If not, resize.
     if ((dir > n_dirs()) || (freq > n_freqs()))
@@ -79,7 +79,7 @@ void SolutionSet::resize(int dir, int freq)
     plist.resize(dir);
     for (unsigned int i = 0; i < plist.size(); i++)
     {
-        plist[i].reize(freq);
+        plist[i].resize(freq);
     }
 }
 
@@ -101,7 +101,7 @@ int SolutionSet::n_dirs()
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-int SolutionSet::n_dirs()
+int SolutionSet::n_freqs()
 {
     return size()[1];
 }

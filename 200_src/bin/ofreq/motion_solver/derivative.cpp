@@ -41,17 +41,6 @@ Derivative::~Derivative()
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-void Derivative::testPrint()
-{
-	
-    for(unsigned int i = 0; i < pEquationList.size(); i++)
-	{
-		cout << "Equation #: " << i+1 << endl;
-		equationList[i].testPrint();
-	}
-}
-
-//------------------------------------------Function Separator --------------------------------------------------------
 vector<Equation> &Derivative::listEquations()
 {
     //Return equation list pointer.
@@ -59,7 +48,7 @@ vector<Equation> &Derivative::listEquations()
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-Equation &Derivative::refEquation(int number)
+Equation &Derivative::refEquation(unsigned int number)
 {
     //Check to see if the equation is out of bounds.  If so, resize vector.
     if (number > pEquationList.size() - 1)

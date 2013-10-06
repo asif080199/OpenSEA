@@ -26,13 +26,18 @@
 
 #include "globalmotion.h"
 
+//==========================================Section Separator =========================================================
+//Static initializations
+string GlobalMotion::MOTION_NAME = "Global Motion"; /**< Used for reference in file output. */
+int GlobalMotion::GLOBAL_MOTION_DERIVATIVE = 0;  /**< Specifies zero order of the derivative. (motion) */
+
+//==========================================Section Separator =========================================================
+//Public Functions
+
 //------------------------------------------Function Separator --------------------------------------------------------
 GlobalMotion::GlobalMotion() 
 	: GlobalSolution()
 {
-    MOTION_NAME = "Global Motion"; /**< Used for reference in file output. */
-    GLOBAL_MOTION_DERIVATIVE = 0;  /**< Specifies zero order of the derivative. (motion) */
-
     pName = MOTION_NAME;
 	orderDerivative = GLOBAL_MOTION_DERIVATIVE;
 }
@@ -47,3 +52,10 @@ void GlobalMotion::setDerivative(int ord)
 {
     GlobalSolution::setDerivative(GLOBAL_MOTION_DERIVATIVE);
 }
+
+//==========================================Section Separator =========================================================
+//Protected Functions
+
+
+//==========================================Section Separator =========================================================
+//Private Functions

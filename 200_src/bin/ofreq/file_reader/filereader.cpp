@@ -27,48 +27,53 @@
 #include "filereader.h"
 
 //==========================================Section Separator =========================================================
+//Static Initialization
+
+//------------------------------------------Function Separator ----------------------------------------------------
+// Directory Names
+string FileReader::SYS = "system"; /**< The system directory name */
+string FileReader::CONST = "constant"; /**< The constant directory name */
+#ifdef Q_OS_WIN
+    string FileReader::SLASH = "\"";  /**< Directory separator in a string path., windows version**/
+#elif defined Q_OS_LINUX
+    string FileReader::SLASH = "/";   /**< Directory separator in a string path., linux version**/
+#endif
+
+//------------------------------------------Function Separator ----------------------------------------------------
+// Input File Names
+string FileReader::CONTROL = "control.in"; /**< The filename for the control file. */
+string FileReader::BODIES = "bodies.in"; /**< The filename for the bodies control file. */
+string FileReader::DATA = "data.in"; /**< The filename for the data control file. */
+string FileReader::FORCES = "forces.in"; /**< The filename for the forces control file. */
+string FileReader::SEAENV = "seaenv.in"; /**< The filename for the sea environment control file. */
+
+//------------------------------------------Function Separator ----------------------------------------------------
+// Class Name Designators
+string FileReader::OBJ_SEAFILE = "seafile"; /**< The string designation for a sea file object. */
+string FileReader::OBJ_SYSTEM = "system"; /**< The string designation for a system object. */
+string FileReader::OBJ_HYDROFILE = "hydrofiles"; /**< The string designation for a hydrofile object. */
+string FileReader::OBJ_FORCE_ACTIVE = "force_active"; /**< The string designation for an active force object. */
+string FileReader::OBJ_FORCE_REACT = "force_reactive"; /**< The string designation for a reactive force object. */
+string FileReader::OBJ_FORCE_CROSS = "force_crossbody"; /**< The string designation for a cross-body force object.*/
+
+// ---------------------------------
+// Key Value Pair Designators
+string FileReader::KEY_FORMAT = "format";  /**< The key designator for a format value in the seafile object. */
+string FileReader::KEY_VERSION = "version"; /**< The key designator for a version value in the seafile object. */
+
+//==========================================Section Separator =========================================================
 //Public Functions
 
 //------------------------------------------Function Separator --------------------------------------------------------
 FileReader::FileReader()
 {
-    //------------------------------------------Function Separator ----------------------------------------------------
-    // Directory Names
-    SYS = "system"; /**< The system directory name */
-    CONST = "constant"; /**< The constant directory name */
-    #ifdef Q_OS_WIN
-        SLASH = "\"";  /**< Directory separator in a string path., windows version**/
-    #elif defined Q_OS_LINUX
-        SLASH = "/";   /**< Directory separator in a string path., linux version**/
-    #endif
-
-    //------------------------------------------Function Separator ----------------------------------------------------
-    // Input File Names
-    CONTROL = "control.in"; /**< The filename for the control file. */
-    BODIES = "bodies.in"; /**< The filename for the bodies control file. */
-    DATA = "data.in"; /**< The filename for the data control file. */
-    FORCES = "forces.in"; /**< The filename for the forces control file. */
-    SEAENV = "seaenv.in"; /**< The filename for the sea environment control file. */
-
-    //------------------------------------------Function Separator ----------------------------------------------------
-    // Class Name Designators
-    OBJ_SEAFILE = "seafile"; /**< The string designation for a sea file object. */
-    OBJ_SYSTEM = "system"; /**< The string designation for a system object. */
-    OBJ_HYDROFILE = "hydrofiles"; /**< The string designation for a hydrofile object. */
-    OBJ_FORCE_ACTIVE = "force_active"; /**< The string designation for an active force object. */
-    OBJ_FORCE_REACT = "force_reactive"; /**< The string designation for a reactive force object. */
-    OBJ_FORCE_CROSS = "force_crossbody"; /**< The string designation for a cross-body force object.*/
-
-    // ---------------------------------
-    // Key Value Pair Designators
-    KEY_FORMAT = "format";  /**< The key designator for a format value in the seafile object. */
-    KEY_VERSION = "version"; /**< The key designator for a version value in the seafile object. */
+    initClass();
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-FileReader(string Path)
+FileReader::FileReader(string Path)
 {
-    FileReader();
+    initClass();
     this->setPath(Path);
 }
 
@@ -96,14 +101,14 @@ int FileReader::readControl()
     //clear the list of objects.
     plistObjects.clear();
 
-    //Read file
-    return readFile(filename);
-
     //Emit signal of objects that were read
     for (unsigned int i = 0; i < plistObjects.size(); i++)
     {
         emit outputControlFile(plistObjects[i]);
     }
+
+    //Read file
+    return readFile(filename);
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
@@ -118,14 +123,23 @@ int FileReader::readBodies()
     //clear the list of objects.
     plistObjects.clear();
 
-    //Read file
-    return readFile(filename);
-
     //Emit signal of objects that were read
     for (unsigned int i = 0; i < plistObjects.size(); i++)
     {
         emit outputBodiesFile(plistObjects[i]);
     }
+
+    //Read file
+    int out = readFile(filename);
+
+    for (unsigned int i; i < ptSystem->listBody().size(); i++)
+    {
+        //Link bodies for cross-body forces
+        ptSystem->linkBodies(i);
+    }
+
+    //write output
+    return out;
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
@@ -140,14 +154,14 @@ int FileReader::readForces()
     //clear the list of objects.
     plistObjects.clear();
 
-    //Read file
-    return readFile(filename);
-
     //Emit signal of objects that were read
     for (unsigned int i = 0; i < plistObjects.size(); i++)
     {
         emit outputForcesFile(plistObjects[i]);
     }
+
+    //Read file
+    return readFile(filename);
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
@@ -162,14 +176,14 @@ int FileReader::readSeaEnv()
     //clear the list of objects.
     plistObjects.clear();
 
-    //Read file
-    return readFile(filename);
-
     //Emit signal of objects that were read
     for (unsigned int i = 0; i < plistObjects.size(); i++)
     {
         emit outputSeaEnvFile(plistObjects[i]);
     }
+
+    //Read file
+    return readFile(filename);
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
@@ -184,14 +198,14 @@ int FileReader::readData()
     //clear the list of objects.
     plistObjects.clear();
 
-    //Read file
-    return readFile(filename);
-
     //Emit signal of objects that were read
     for (unsigned int i = 0; i < plistObjects.size(); i++)
     {
         emit outputDataFile(plistObjects[i]);
     }
+
+    //Read file
+    return readFile(filename);
 }
 
 //==========================================Section Separator =========================================================
@@ -253,16 +267,15 @@ int FileReader::readFile(string path)
             //True.  Process as a seafile object.
             for (unsigned int j = 0; j < myParse.refObject().at(sea_index).listKey().size(); j++)
             {
-                switch (myParse.refObject().at(sea_index).getKey(j))
+                if (myParse.refObject().at(sea_index).getKey(j) == KEY_VERSION)
                 {
-                case KEY_VERSION:
                     //Response if the key is the version number.
                     version = myParse.refObject().at(sea_index).getVal(j).at(0);
-                    break;
-                case KEY_FORMAT:
+                }
+                else if(myParse.refObject().at(sea_index).getKey(j) == KEY_FORMAT)
+                {
                     //Response if the key is the format designator.
                     format = myParse.refObject().at(sea_index).getVal(j).at(0);
-                    break;
                 }
             }
         }
@@ -282,4 +295,7 @@ int FileReader::readFile(string path)
     return 0;
 }
 
-
+//------------------------------------------Function Separator --------------------------------------------------------
+void FileReader::initClass()
+{
+}

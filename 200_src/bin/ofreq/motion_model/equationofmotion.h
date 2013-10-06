@@ -42,6 +42,7 @@
 #include <complex>
 #include <string>
 #include <QtGlobal>
+#include <QObject>
 #ifdef Q_OS_WIN
     #include "armadillo.h"  //References the armadillo library in lib folder.
 #elif defined Q_OS_LINUX
@@ -68,8 +69,9 @@ class MotionModel;
  * In addition to the regular object entries, the class also has provision for a list of arbitrary arguments.
  */
 
-class EquationofMotion
+class EquationofMotion : public QObject
 {
+    Q_OBJECT
 //==========================================Section Separator =========================================================
 public:
     //------------------------------------------Function Separator ----------------------------------------------------

@@ -297,7 +297,7 @@ public:
      * Variable passed by value.
      * @return Returns a reference to the ForceCross_user object.  Variable passed by reference
      */
-    ForceCross &refForceCross_user(unsigned int forceIndex);
+    ForceCross &refForceCross_user(unsigned int forceIndex);   
 
 //==========================================Section Separator =========================================================
 public slots:
@@ -393,6 +393,20 @@ public slots:
      * @sa ForceCross
      */
     void addForceCross_user();
+
+    //-----------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief This converts the cross-body force links from simple identification by name into actual pointers to
+     * each body.  The linkBodies command must exist so that all bodies can be read into the program before linking
+     * takes place.  This command searches through the list of bodies to get a matching body name and creates a pointer
+     * link to that body.  At the end, it clears the list of names for linked bodies, to reduce memory requirements.
+     * @param bodID An integer variable that describes the base body which the function should process all links for.
+     * parameter passed by value.
+     * @sa Body::listNamedLink_user()
+     * @sa Body::listNamedLink_hydro();
+     *
+     */
+    void linkBodies(int bodID);
 
 //==========================================Section Separator =========================================================
 signals:

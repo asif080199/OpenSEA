@@ -87,6 +87,7 @@ protected:
      * 0:  Key definition found.  Success.
      * 1:  No key found. / General error message.
      * 2:  Key is invalid within current active object.
+     * 99: Function virtual definition only.  Not currently defined.
      */
     int defineKey(string keyIn, vector<string> valIn);
 
@@ -101,6 +102,7 @@ protected:
      * 0:  Key definition found.  Success.
      * 1:  No key found. / General error message.
      * 2:  Key is invalid within current active object.
+     * 99: Function virtual definition only.  Not currently defined.
      */
     int defineClass(string nameIn);
 
@@ -175,32 +177,32 @@ private:
 
     //------------------------------------------Function Separator ----------------------------------------------------
     //Class Name constants
-    static const string OBJECT_BODY; /**< Object designator for new body object.*/
-    static const string OBJECT_MASSPROP; /**< Object designator for new mass property object. */
-    static const string OBJECT_CENTROID; /**< Object designator for new centroid object. */
-    static const string OBJECT_FORCE_ACTIVE; /**< Object designator for new ForceActive object. */
-    static const string OBJECT_FORCE_REACT; /**< Object designator for new ForceReact object. */
-    static const string OBJECT_FORCE_CROSS; /**< Object designator for new ForceCross object. */
-    static const string OBJECT_MODEL; /**< Object designator for model of ForceCross object. */
+    static string OBJECT_BODY; /**< Object designator for new body object.*/
+    static string OBJECT_MASSPROP; /**< Object designator for new mass property object. */
+    static string OBJECT_CENTROID; /**< Object designator for new centroid object. */
+    static string OBJECT_FORCE_ACTIVE; /**< Object designator for new ForceActive object. */
+    static string OBJECT_FORCE_REACT; /**< Object designator for new ForceReact object. */
+    static string OBJECT_FORCE_CROSS; /**< Object designator for new ForceCross object. */
+    static string OBJECT_MODEL; /**< Object designator for model of ForceCross object. */
 
     //------------------------------------------Function Separator ----------------------------------------------------
-    //Keyword name static constants
-    static const string KEY_NAME; /**< Key for body name */
-    static const string KEY_HYDROBODY; /**< Key for hydrobody name. */
-    static const string KEY_MASS; /**< Key for mass of body */
-    static const string KEY_IXX; /**< Key for moment of inertia, X-X axis */
-    static const string KEY_IYY; /**< Key for moment of inertia, Y-Y axis */
-    static const string KEY_IZZ; /**< Key for moment of inertia, Z-Z axis */
-    static const string KEY_IXY; /**< Key for cross-product of inertia, X-Y coupling */
-    static const string KEY_IXZ; /**< Key for cross-product of inertia, X-Z coupling */
-    static const string KEY_IYZ; /**< Key for cross-product of inertia, Y-Z coupling */
-    static const string KEY_COGX; /**< Key for center of gravity, X-axis coordinate */
-    static const string KEY_COGY; /**< Key for center of gravity, Y-axis coordinate */
-    static const string KEY_COGZ; /**< Key for center of gravity, Z-axis coordinate */
-    static const string KEY_HEADING; /**< Key for heading of body, Z-axis rotation */
-    static const string KEY_MOTION; /**< Key to specify motion model.*/
-    static const string KEY_LINKEDBODY; /**< Key for linked body */
-    static const string KEY_MODEL; /**< Key for model to use for force specification. */
+    //Keyword name staticants
+    static string KEY_NAME; /**< Key for body name */
+    static string KEY_HYDROBODY; /**< Key for hydrobody name. */
+    static string KEY_MASS; /**< Key for mass of body */
+    static string KEY_IXX; /**< Key for moment of inertia, X-X axis */
+    static string KEY_IYY; /**< Key for moment of inertia, Y-Y axis */
+    static string KEY_IZZ; /**< Key for moment of inertia, Z-Z axis */
+    static string KEY_IXY; /**< Key for cross-product of inertia, X-Y coupling */
+    static string KEY_IXZ; /**< Key for cross-product of inertia, X-Z coupling */
+    static string KEY_IYZ; /**< Key for cross-product of inertia, Y-Z coupling */
+    static string KEY_COGX; /**< Key for center of gravity, X-axis coordinate */
+    static string KEY_COGY; /**< Key for center of gravity, Y-axis coordinate */
+    static string KEY_COGZ; /**< Key for center of gravity, Z-axis coordinate */
+    static string KEY_HEADING; /**< Key for heading of body, Z-axis rotation */
+    static string KEY_MOTION; /**< Key to specify motion model.*/
+    static string KEY_LINKEDBODY; /**< Key for linked body */
+    static string KEY_MODEL; /**< Key for model to use for force specification. */
 };
 
 #endif // DICTBODIES_H

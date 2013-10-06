@@ -48,7 +48,7 @@ Dictionary::Dictionary()
 //==========================================Section Separator =========================================================
 //Public Slots
 //------------------------------------------Function Separator --------------------------------------------------------
-virtual void Dictionary::setObject(ObjectGroup input)
+void Dictionary::setObject(ObjectGroup input)
 {
     //Define the object based on its name
     defineClass(input.getClassName());
@@ -68,19 +68,35 @@ virtual void Dictionary::setObject(ObjectGroup input)
     for (unsigned int i = 0; i <= input.listObject().size(); i++)
     {
         //define the class
-        returnVal = setObject(input.listObject()[i]);
+        setObject(*(input.listObject()[i]));
         //Need to create error handler later to handle what happens if returnVal not 0
     }
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-virtual void Dictionary::setSystem(System* ptInput)
+void Dictionary::setSystem(System* ptInput)
 {
     ptSystem = ptInput;
 }
 
 //==========================================Section Separator =========================================================
 //Protected Functions
+
+//------------------------------------------Function Separator --------------------------------------------------------
+int Dictionary::defineKey(string keyIn, vector<string> valIn)
+{
+    //Simple definition of function to keep the compiler happy.
+    //This will be overriden by children classes.
+    return 99;
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+int Dictionary::defineClass(string nameIn)
+{
+    //Simple definition of function to keep the compiler happy.
+    //This will be overriden by children classes.
+    return 99;
+}
 
 //------------------------------------------Function Separator --------------------------------------------------------
 complex<double> Dictionary::convertComplex(string input)
@@ -112,12 +128,12 @@ complex<double> Dictionary::convertComplex(string input)
         if (indPlus == std::string::npos)
         {
             //No plus involved.  Minus sign.
-            //Check if imaginary symbol is at middel or end of input.
-            if (indImag == input.end())
+            //Check if imaginary symbol is at middle or end of input.
+            if (indImag == input.length() - 1)
             {
                 //End of input
                 //Assign real part.
-                output.real() = atof(input.substr(0, indMinus).c_str());
+                output.real() = atof(input.substr(0, indMinus + 1).c_str());
                 //Assign imaginary part
                 output.imag() = -1.0 * atof(input.substr(indMinus + 1, indImag - indPlus).c_str());
             }
@@ -127,14 +143,14 @@ complex<double> Dictionary::convertComplex(string input)
                 //Assign real part.
                 output.real() = atof(input.substr(0, indMinus).c_str());
                 //Assign imaginary part
-                output.imag() = -1.0 * atof(input.substr(indImag + 1, input.end() - indImag).c_str());
+                output.imag() = -1.0 * atof(input.substr(indImag + 1, input.length() - 1 - indImag).c_str());
             }
         }
         else
         {
             //Plus sign used.
             //Check if imaginary symbol is at middle or end of input.
-            if (indImag == input.end())
+            if (indImag == input.length() - 1)
             {
                 //End of input.
                 //Assign real part.
@@ -148,7 +164,7 @@ complex<double> Dictionary::convertComplex(string input)
                 //Assign real part.
                 output.real() = atof(input.substr(0,indPlus).c_str());
                 //Assign imaginary part
-                output.imag() = atof(input.substr(indImag + 1, input.end() - indImag).c_str());
+                output.imag() = atof(input.substr(indImag + 1, input.length() - 1 - indImag).c_str());
             }
         }
     }

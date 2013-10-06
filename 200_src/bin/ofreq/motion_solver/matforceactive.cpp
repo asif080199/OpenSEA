@@ -37,7 +37,7 @@ matForceActive::~matForceActive()
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-matForceActive matForceActive::operator+(const matForceActive &forceOther)
+matForceActive matForceActive::operator+(matForceActive &forceOther)
 {
     //Add two force objects together.
     matForceActive output;
@@ -61,14 +61,10 @@ matForceActive matForceActive::operator+(const matForceActive &forceOther)
 
     //Write output
     return output;
-
-    //cleanup
-    delete output;
-    delete maxsize;
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-matForceActive matForceActive::operator-(const matForceActive &forceOther)
+matForceActive matForceActive::operator-(matForceActive &forceOther)
 {
     //Add two force objects together.
     matForceActive output;
@@ -92,10 +88,6 @@ matForceActive matForceActive::operator-(const matForceActive &forceOther)
 
     //Write output
     return output;
-
-    //cleanup
-    delete output;
-    delete maxsize;
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
