@@ -24,81 +24,48 @@
  *along with OpenSEA.  If not, see <http://www.gnu.org/licenses/>.
 \*-------------------------------------------------------------------------------------------------------------------*/
 
-#include "equation.h"
+#include "forceactive.h"
 
 //------------------------------------------Function Separator --------------------------------------------------------
-Equation::Equation()
-{
-	initCoeff();
-
-    //Initialize default value of the data index
-    pDataIndex = -1;
-}
-
-//------------------------------------------Function Separator --------------------------------------------------------
-Equation::Equation(int IndexIn)
-{
-    //Initialize with Data Index.
-    Equation();
-    pDataIndex = IndexIn;
-}
-
-//------------------------------------------Function Separator --------------------------------------------------------
-Equation::~Equation()
+ForceActive::ForceActive(): Force()
 {
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-vector<double> &Equation::listCoefficients()
+ForceActive::~ForceActive()
 {
-    //Return pointer to the list of coefficients.
-    return pcoeffs;
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-double Equation::getCoefficient(int number)
+void ForceActive::setCoeff(complex<double> coeffIn, unsigned int index)
 {
-    //Return the coefficient at the specified number.
-    return pcoeffs[number];
+    //Check if list is large enough for specified index.
+    if (index > pCoefficients.size() - 1)
+    {
+        //Resize list
+        pCoefficients.resize(index + 1);
+    }
+
+    //Assign coefficient
+    pCoefficients[index] = coeffIn;
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-void Equation::setCoefficient(int number, double coeffIn)
+vector<complexDouble> &ForceActive::listCoefficients()
 {
-    //Set the coefficient at the specified number
-    pcoeffs[number] = coeffIn;
+    return pCoefficients;
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-int Equation::getCoefficientListSize()
+vector<complexDouble> &ForceActive::listEquations()
 {
-    return pcoeffs.size();
+    return this->listCoefficients();
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-void Equation::setDataIndex(int index)
+complexDouble ForceActive::getEquation(int number)
 {
-    pDataIndex = index;
+    //Return the input coefficient for the equation specified.
+    return pCoefficients[number];
 }
 
-//------------------------------------------Function Separator --------------------------------------------------------
-int Equation::getDataIndex()
-{
-    return pDataIndex;
-}
-
-//------------------------------------------Function Separator --------------------------------------------------------
-int &Equation::refDataIndex()
-{
-    return pDataIndex;
-}
-
-//==========================================Section Separator =========================================================
-//Private Functions
-
-//------------------------------------------Function Separator --------------------------------------------------------
-void Equation::initCoeff()
-{
-    for(unsigned int i = 0 ; i < pcoeffs.size(); i++)
-        pcoeffs[i] = 0;
-}

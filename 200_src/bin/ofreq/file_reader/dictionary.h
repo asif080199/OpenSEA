@@ -41,6 +41,7 @@
 #include <QObject>
 #include "objectgroup.h"
 #include "../global_objects/system.h"
+#include "../global_objects/ofreqcore.h"
 #include <complex>
 #include <vector>
 #include <string>
@@ -59,7 +60,7 @@ using namespace std;
  * @sa ObjectGroup
  */
 
-class Dictionary : public QObject
+class Dictionary : public QObject, public oFreqCore
 {
     Q_OBJECT
 

@@ -47,6 +47,7 @@
 #include "matbody.h"
 #include "matforcereact.h"
 #include "matforcecross.h"
+#include "../global_objects/ofreqcore.h"
 
 using namespace arma;
 using namespace std;
@@ -66,7 +67,7 @@ using namespace std;
  * 9.)  Redistribute the solution back to each body object.
  */
 
-class MotionSolver
+class MotionSolver : public oFreqCore
 {
 //==========================================Section Separator =========================================================
 public:

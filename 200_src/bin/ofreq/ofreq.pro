@@ -25,19 +25,12 @@ SOURCES += ofreq.cpp \
     file_writer/filewriter.cpp \
     global_objects/system.cpp \
     motion_solver/motionsolver.cpp \
-    motion_solver/forceactive.cpp \
-    motion_solver/force.cpp \
-    motion_solver/body.cpp \
     wave_calcs/wavespreadmodel.cpp \
     wave_calcs/wavespectrummodel.cpp \
     wave_calcs/seaenviroment.cpp \
     motion_solver/matbody.cpp \
     motion_model/equationofmotion.cpp \
     motion_model/motionmodel.cpp \
-    motion_solver/forcecross.cpp \
-    motion_solver/forcereact.cpp \
-    motion_solver/derivative.cpp \
-    motion_solver/equation.cpp \
     global_objects/solution.cpp \
     file_reader/filereader.cpp \
     file_reader/parser.cpp \
@@ -49,7 +42,15 @@ SOURCES += ofreq.cpp \
     global_objects/solutionset.cpp \
     motion_solver/matforcecross.cpp \
     motion_solver/matforceactive.cpp \
-    motion_solver/matforcereact.cpp
+    motion_solver/matforcereact.cpp \
+    global_objects/ofreqcore.cpp \
+    global_objects/forcereact.cpp \
+    global_objects/forcecross.cpp \
+    global_objects/forceactive.cpp \
+    global_objects/force.cpp \
+    global_objects/equation.cpp \
+    global_objects/derivative.cpp \
+    global_objects/body.cpp
 
 HEADERS += \
     derived_outputs/outputsbody.h \
@@ -61,19 +62,12 @@ HEADERS += \
     file_writer/filewriter.h \
     global_objects/system.h \
     motion_solver/motionsolver.h \
-    motion_solver/forceactive.h \
-    motion_solver/force.h \
-    motion_solver/body.h \
     wave_calcs/wavespreadmodel.h \
     wave_calcs/wavespectrummodel.h \
     wave_calcs/seaenviroment.h \
     motion_solver/matbody.h \
     motion_model/equationofmotion.h \
     motion_model/motionmodel.h \
-    motion_solver/forcecross.h \
-    motion_solver/forcereact.h \
-    motion_solver/derivative.h \
-    motion_solver/equation.h \
     global_objects/solution.h \
     file_reader/filereader.h \
     file_reader/parser.h \
@@ -85,7 +79,15 @@ HEADERS += \
     global_objects/solutionset.h \
     motion_solver/matforcecross.h \
     motion_solver/matforceactive.h \
-    motion_solver/matforcereact.h
+    motion_solver/matforcereact.h \
+    global_objects/ofreqcore.h \
+    global_objects/forcereact.h \
+    global_objects/forcecross.h \
+    global_objects/forceactive.h \
+    global_objects/force.h \
+    global_objects/equation.h \
+    global_objects/derivative.h \
+    global_objects/body.h
 
 # Include header files path for libraries
 INCLUDEPATH += \

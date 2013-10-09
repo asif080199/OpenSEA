@@ -47,6 +47,7 @@
 #elif defined Q_OS_LINUX
     #include <armadillo>    //Armadillo library included with standard system libraries.
 #endif
+#include "../global_objects/ofreqcore.h"
 
 using namespace arma;
 using namespace std;
@@ -58,7 +59,7 @@ typedef complex<double> complexDouble;
  * This class holds data for reactive force matrix whch includes force coefficients.
  */
 
-class matForceReact
+class matForceReact : public oFreqCore
 {
 //==========================================Section Separator =========================================================
 public:
@@ -76,7 +77,7 @@ public:
     matForceReact(vector<cx_mat> forceIn);
 
     //------------------------------------------Function Separator ----------------------------------------------------
-    ~matForceReact(); /**< The default destructor, nothing happens here. */
+    virtual ~matForceReact(); /**< The default destructor, nothing happens here. */
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**

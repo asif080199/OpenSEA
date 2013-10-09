@@ -45,8 +45,8 @@
 #elif defined Q_OS_LINUX
     #include <armadillo>    //Armadillo library included with standard system libraries.
 #endif
-#include "../motion_solver/body.h"
-//#include "../global_objects/solutionset.h"
+#include "../global_objects/body.h"
+#include "../global_objects/ofreqcore.h"
 
 using namespace std;
 using namespace arma;
@@ -76,7 +76,7 @@ class SolutionSet;
  * @sa OutputDerived::calcOutput();
  */
 
-class OutputDerived
+class OutputDerived : public oFreqCore
 {
 //==========================================Section Separator =========================================================
 public:

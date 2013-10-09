@@ -44,6 +44,7 @@
 #elif defined Q_OS_LINUX
     #include <armadillo>    //Armadillo library included with standard system libraries.
 #endif
+#include "./ofreqcore.h"
 
 using namespace std;
 using namespace arma;
@@ -58,7 +59,7 @@ class Body;
  * solution is translated back into body coordinate system.
  */
 
-class Solution
+class Solution : public oFreqCore
 {
 //==========================================Section Separator =========================================================
 public:

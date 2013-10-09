@@ -45,6 +45,7 @@
 #include <cstdlib>
 #include <fstream>
 #include "objectgroup.h"
+#include "../global_objects/ofreqcore.h"
 
 using namespace std;
 
@@ -63,7 +64,7 @@ class Parser;       //This forward declaration is required because the class def
  * define classes within classes in the input files, with no limits.
  *
  */
-class Parser
+class Parser : public oFreqCore
 {
 //==========================================Section Separator =========================================================
 public:

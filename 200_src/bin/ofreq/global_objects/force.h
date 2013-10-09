@@ -39,6 +39,7 @@
 #ifndef FORCE_H
 #define FORCE_H
 #include "equation.h"
+#include "../global_objects/ofreqcore.h"
 #include <string>
 #include <iostream>
 #include <fstream>
@@ -50,7 +51,7 @@ using namespace std;
  * This (base) class holds data for a force object.
  */
 
-class Force
+class Force : public oFreqCore
 {
 //==========================================Section Separator =========================================================
 public:
@@ -71,7 +72,7 @@ public:
     Force(int indexIn);
 
     //------------------------------------------Function Separator ----------------------------------------------------
-	~Force(); /**< The default destructor, nothing happens here. */
+    virtual ~Force(); /**< The default destructor, nothing happens here. */
 
     //------------------------------------------Function Separator ----------------------------------------------------
 	/**

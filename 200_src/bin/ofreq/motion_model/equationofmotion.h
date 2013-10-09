@@ -43,6 +43,7 @@
 #include <string>
 #include <QtGlobal>
 #include <QObject>
+#include "../global_objects/ofreqcore.h"
 #ifdef Q_OS_WIN
     #include "armadillo.h"  //References the armadillo library in lib folder.
 #elif defined Q_OS_LINUX
@@ -69,7 +70,7 @@ class MotionModel;
  * In addition to the regular object entries, the class also has provision for a list of arbitrary arguments.
  */
 
-class EquationofMotion : public QObject
+class EquationofMotion : public QObject, public oFreqCore
 {
     Q_OBJECT
 //==========================================Section Separator =========================================================
@@ -288,7 +289,7 @@ protected:
      * the summation will happen at the highest value of the variable index specified.
      * @return Returns a complex value that is the summation of the index and limits specified.
      */
-    complex<double> Sum(complex<double> force, string index, int from = -1, int to = -1);
+    complex<double> Sum(complex<double> force, string index, unsigned int from = -1, unsigned int to = -1);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -311,7 +312,7 @@ protected:
      * @param varIn Integer.  Represents the input varaible for the variable.
      * @return Returns the data set for the ForceReact_hydro.  Indices can be specified to access individual elements.
      */
-    complex<double> ForceReact_hydro(int ordIn, int varIn);
+    complex<double> ForceReact_hydro(unsigned int ordIn, unsigned int varIn);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -320,7 +321,7 @@ protected:
      * @param varIn Integer.  Represents the input varaible for the variable.
      * @return Returns the data set for the ForceReact_user.  Indices can be specified to access individual elements.
      */
-    complex<double> ForceReact_user(int ordIn, int varIn);
+    complex<double> ForceReact_user(unsigned int ordIn, unsigned int varIn);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -330,7 +331,7 @@ protected:
      * @param varIn Integer.  Represents the input varaible for the variable.
      * @return Returns the data set for the ForceCross_hydro.  Indices can be specified to access individual elements.
      */
-    complex<double> ForceCross_hydro(int bodIn, int ordIn, int varIn);
+    complex<double> ForceCross_hydro(unsigned int bodIn, unsigned int ordIn, unsigned int varIn);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -340,7 +341,7 @@ protected:
      * @param varIn Integer.  Represents the input varaible for the variable.
      * @return Returns the data set for the ForceCross_user.  Indices can be specified to access individual elements.
      */
-    complex<double> ForceCross_user(int bodIn, int ordIn, int varIn);
+    complex<double> ForceCross_user(unsigned int bodIn, unsigned int ordIn, unsigned int varIn);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -463,31 +464,31 @@ private:
     /**
      * @brief The integer of the current value of var() index.  Used for iteration and summation functions.
      */
-    int pCurVar;
+    unsigned int pCurVar;
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
      * @brief The integer of the current value of eqn() index.  Used for iteration and summation functions.
      */
-    int pCurEqn;
+    unsigned int pCurEqn;
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
      * @brief The integer of the current value of ord() index.  Used for iteration and summation functions.
      */
-    int pCurOrd;
+    unsigned int pCurOrd;
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
      * @brief The integer of the current value of force() index.  Used to track the forces recorded.
      */
-    int pCurForce;
+    unsigned int pCurForce;
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
      * @brief The integer of the current body.  Used for iteration and summation functions.
      */
-    int pCurBod;
+    unsigned int pCurBod;
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -521,14 +522,14 @@ private:
      * equation of motion can only depend on the type of force, not the individual force designation.
      * @return Returns integer value of the current force object.
      */
-    int force();
+    unsigned int force();
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
      * @brief Returns the index integer for iteration on equation number.
      * @return Returns the index integer for iteration on equation number.
      */
-    int eqn();
+    unsigned int eqn();
 
     //------------------------------------------Function Separator ----------------------------------------------------
     void ConstructorCommon(MotionModel *modelIn);

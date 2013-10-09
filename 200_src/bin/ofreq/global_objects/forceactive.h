@@ -11,7 +11,6 @@
  *Date          Author				Description
  *---------------------------------------------------------------------------------------------------------------------
  *May 15, 2013  Shane Honanie       Initially created.
- *Aug 04, 2013  Nicholas Barczak    Removed limits on number of equations in class.
  *
 \*-------------------------------------------------------------------------------------------------------------------*/
 
@@ -37,95 +36,75 @@
 
 
 //######################################### Class Separator ###########################################################
-#ifndef FORCEDERIVATIVE_H
-#define FORCEDERIVATIVE_H
+#ifndef FORCEACIVE_H
+#define FORCEACTIVE_H
+#include "force.h"
 #include "equation.h"
 #include <string>
 #include <iostream>
 #include <fstream>
 #include <vector>
+#include <complex>
 using namespace std;
+
+typedef complex<double> complexDouble;
 
 //######################################### Class Separator ###########################################################
 /**
- * This class holds data for a derivative.
+ * This class holds data for an active force.
  */
 
-class Derivative
+class ForceActive: public Force
 {
 //==========================================Section Separator =========================================================
 public:
     //------------------------------------------Function Separator ----------------------------------------------------
-	Derivative(); /**< This default constructor creates a Body object. */
+    ForceActive(); /**< The default constructor. */
 
     //------------------------------------------Function Separator ----------------------------------------------------
-	~Derivative(); /**< The default destructor, nothing happens here. */
-
-   //------------------------------------------Function Separator ----------------------------------------------------
-    /**
-     * @brief The list of equations.
-     *
-     * Pointer to the list vector list of equations.  Value returned by reference.
-     */
-    vector<Equation> &listEquations();
-    //------------------------------------------Function Separator ----------------------------------------------------
-    /**
-     * @brief Returns the equation requested.  Only specified by the data index property of the equation object.
-     *
-     * Returns the equation requested.  Only specified by the data index property of the equation object.
-     * @param indexIn The integer describing the data index for the equation requested.
-     * @return Pointer to the Equation object specified by the DataIndex of indexIn.  Value returned is by reference.
-     */
-    Equation &refIndexEquation(int indexIn);
+    virtual ~ForceActive(); /**< The default destructor, nothing happens here. */
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
-     * @brief Returns the equation requested.  Only specified by the data index property of the equation object.
-     *
-     * Returns the equation requested.  Only specified by the data index property of the equation object.
-     * @param indexIn The integer describing the data index for the equation requested.
-     * @return Equation object specified by the DataIndex of indexIn.  Value returned is by value.
+     * @brief Sets the coefficient for the specified index.
+     * @param coeffIn The value of the coefficient to specify.  Added as a complex number.  Variable passed by value.
+     * @param index The equation index of the coefficient to specify.
      */
-    Equation getIndexEquation(int indexIn);
-
-    //------------------------------------------Function Separator ----------------------------------------------------
-    /**
-     * @brief Retrieve the equation specified by the number.
-     *
-     * Retrieves the equation specified by the number.  Value returned is a pointer to the equation object.  Allows
-     * editting of the equation object, or just data access.
-     * @param number Integer representing which equation number should be returned.
-     * @return Value returned is a pointer to the equation object.  Allows
-     * editting of the equation object, or just data access.
-     */
-    Equation &refEquation(unsigned int number);
+    void setCoeff(complex<double> coeffIn, unsigned int index);
 
     //------------------------------------------Function Separator ----------------------------------------------------
 	/**
-	 * Retrieve the size of the equation list.
-	 * @return The size of the equation list.
+	 * Retrieve the list of coefficients.
+	 * @return The list of coefficients.
 	 */
-	int getEquationListSize();
-
-//==========================================Section Separator =========================================================
-protected:
-
-//==========================================Section Separator =========================================================
-private:
-    //------------------------------------------Function Separator ----------------------------------------------------
-    vector<Equation> pEquationList; /**< The list of equations. */
+    vector<complexDouble> &listCoefficients();
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
-     * @brief Searches through the list of equation objects to find the one specified by the indexIn parameter.
-     *
-     * Searches through the list of equation objects to find the one specified by the indexIn parameter.  Returns the
-     * integer specifying the position of the object in the vector of equation objects.
-     * @param indexIn The data index requested.
-     * @return Returns the integer specifying the position of the object in the vector of equation objects.
+     * @brief Another implementation of function listCoefficients.
+     * @return Vector containing the list of coefficients.  Argument passed by reference.
      */
-    int findIndex(int indexIn);
+    vector<complexDouble> &listEquations();
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Get a specific number from the list of coefficients.
+     *
+     * Get a specific number from the list of coefficients.  Similar to getCoefficients(), only instead of returning
+     * the entire vector of coefficients, this only returns a single value in the list.
+     * @param number Integer specifying which number should be retrieved from the list.
+     * @return Complex Double which is the input coefficient for the active force on the equation specified by number.
+     * Returns by value, not by reference.
+     */
+    complexDouble getEquation(int number);
+
+//==========================================Section Separator =========================================================
+protected:
+    //------------------------------------------Function Separator ----------------------------------------------------
+    vector<complexDouble> pCoefficients; /**< The list of force coeffients. */
+
+//==========================================Section Separator =========================================================
+private:
 
 };
 #endif
-

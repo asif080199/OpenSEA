@@ -43,6 +43,7 @@
 #include <iostream>
 #include <fstream>
 #include <vector>
+#include "../global_objects/ofreqcore.h"
 using namespace std;
 
 //######################################### Class Separator ###########################################################
@@ -50,7 +51,7 @@ using namespace std;
  * This class holds data for an equation.
  */
 
-class Equation
+class Equation : public oFreqCore
 {
 //==========================================Section Separator =========================================================
 public:
@@ -99,7 +100,7 @@ public:
 	 * Retrieve the size of the coefficient list.
 	 * @return The size of the coefficient list.
 	 */
-	int getCoefficientListSize();
+    unsigned int getCoefficientListSize();
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**

@@ -53,6 +53,7 @@
 #include "./file_reader/dictforces.h"
 #include "./file_reader/dictbodies.h"
 #include "./file_reader/filereader.h"
+#include "./global_objects/ofreqcore.h"
 #include <string>
 #include <iostream>
 #include <fstream>
@@ -114,7 +115,11 @@ void ReadFiles(string runPath);
 
 
 //##################################### Constant Variables Declaration ################################################
-const string seperator = "/";
+#ifdef Q_OS_WIN
+    const string seperator = "\\";  /**< Directory separator in a string path., windows version**/
+#elif defined Q_OS_LINUX
+    const string seperator = "/";   /**< Directory separator in a string path., linux version**/
+#endif
 string oFreq_Directory = "";
 
 //########################################### Main Function ###########################################################

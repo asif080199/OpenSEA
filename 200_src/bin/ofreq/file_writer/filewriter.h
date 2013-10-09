@@ -47,6 +47,7 @@
 #include "../derived_outputs/outputsbody.h"
 #include <boost/filesystem.hpp>
 #include <boost/lexical_cast.hpp>
+#include "../global_objects/ofreqcore.h"
 
 using namespace std;
 using namespace boost::filesystem; //for using boost file system
@@ -70,7 +71,7 @@ class OutputsBody;
  * updated before writing a new wave direction.
  */
 
-class FileWriter
+class FileWriter : public oFreqCore
 {
 //==========================================Section Separator =========================================================
 public:

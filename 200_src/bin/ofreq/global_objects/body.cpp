@@ -187,36 +187,6 @@ double &Body::refHeading()
     return phead;
 }
 
-//------------------------------------------Function Separator --------------------------------------------------------
-void Body::setListForceActive_user(vector<string> newForceList)
-{
-
-}
-
-//------------------------------------------Function Separator --------------------------------------------------------
-void Body::setListForceReact_user(vector<string> newForceList)
-{
-
-}
-
-//------------------------------------------Function Separator --------------------------------------------------------
-void Body::setListForceActive_hydro(vector<string> newForceList)
-{
-
-}
-
-//------------------------------------------Function Separator --------------------------------------------------------
-void Body::setListForceReact_hydro(vector<string> newForceList)
-{
-
-}
-
-//------------------------------------------Function Separator --------------------------------------------------------
-void Body::setListForceCross_hydro(vector<string> newForceList)
-{
-
-}
-
 //==========================================Section Separator =========================================================
 //Mass Functions
 
@@ -422,12 +392,6 @@ Mat<double> &Body::refPosn()
 //Body Stuff
 
 //------------------------------------------Function Separator --------------------------------------------------------
-void Body::setCrossBodyName(string newName)
-{
-
-}
-
-//------------------------------------------Function Separator --------------------------------------------------------
 string Body::getBodyName()
 {
 	return bodyName;
@@ -556,7 +520,7 @@ vector<string> &Body::listNamedLink_user()
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-string &Body::listNamedLink_user(int varIn)
+string &Body::listNamedLink_user(unsigned int varIn)
 {
     //Check if need to resize the vector
     if (varIn > plistLinkedBody_usr.size() - 1)
@@ -574,7 +538,7 @@ vector<string> &Body::listNamedLink_hydro()
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-string &Body::listNamedLink_hydro(int varIn)
+string &Body::listNamedLink_hydro(unsigned int varIn)
 {
     //Check if need to resize the vector
     if (varIn > plistLinkedBody_hydro.size() - 1)

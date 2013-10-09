@@ -39,6 +39,8 @@
 #define OBJECTGROUP_H
 #include <vector>
 #include <string>
+#include "../global_objects/ofreqcore.h"
+
 using namespace std;
 
 //######################################### Class Separator ###########################################################
@@ -70,7 +72,7 @@ typedef vector<ObjectGroup*> vecObject;
  *      lists.  A list will be as long as it needs to be for specification of all values in the list.  The index of
  *      the value is specified by its position in the vector list.  The value is the entry.
  */
-class ObjectGroup
+class ObjectGroup : public oFreqCore
 {
 //==========================================Section Separator =========================================================
 public:

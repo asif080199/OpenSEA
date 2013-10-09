@@ -51,8 +51,9 @@
 #elif defined Q_OS_LINUX
     #include <armadillo>    //Armadillo library included with standard system libraries.
 #endif
-#include "body.h"
-#include "derivative.h"
+#include "../global_objects/body.h"
+#include "../global_objects/derivative.h"
+#include "../global_objects/ofreqcore.h"
 #include "matforcereact.h"
 #include "matforceactive.h"
 #include "matforcecross.h"
@@ -77,7 +78,7 @@ typedef complex<double> complexDouble;
  * be to accomodate any forces from the body.
  */
 
-class matBody
+class matBody : public oFreqCore
 {
 //==========================================Section Separator =========================================================
 public: 

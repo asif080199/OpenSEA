@@ -54,7 +54,8 @@
 #include "globalmotion.h"
 #include "globalvelocity.h"
 #include "../global_objects/solutionset.h"
-#include "../motion_solver/body.h"
+#include "../global_objects/body.h"
+#include "../global_objects/ofreqcore.h"
 
 using namespace std;
 using namespace arma;
@@ -113,7 +114,7 @@ typedef vector< complex<double> > cx_vector;
  * And it allow compilation.  All data items are passed by reference to avoid excess memory duplication.
   */
 
-class OutputsBody
+class OutputsBody : public oFreqCore
 {
 //==========================================Section Separator =========================================================
 public:

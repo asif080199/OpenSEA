@@ -34,7 +34,7 @@
 string FileReader::SYS = "system"; /**< The system directory name */
 string FileReader::CONST = "constant"; /**< The constant directory name */
 #ifdef Q_OS_WIN
-    string FileReader::SLASH = "\"";  /**< Directory separator in a string path., windows version**/
+    string FileReader::SLASH = "\\";  /**< Directory separator in a string path., windows version**/
 #elif defined Q_OS_LINUX
     string FileReader::SLASH = "/";   /**< Directory separator in a string path., linux version**/
 #endif
@@ -86,6 +86,14 @@ FileReader::~FileReader()
 //------------------------------------------Function Separator --------------------------------------------------------
 void FileReader::setPath(string input)
 {
+    //check if input has a slash at the end.
+    //All functions assume no slash at the end.
+    if (input[input.length() - 1] == SLASH[0])
+    {
+        //End slash found.  Remove it.
+        input.erase(input.length() - 1, 1);
+    }
+
     pPath = input;
 }
 

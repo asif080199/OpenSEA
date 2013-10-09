@@ -40,14 +40,15 @@
 #define MOTIONMODEL_H
 #include <vector>
 #include <complex>
-#include "../motion_solver/body.h"
+#include "../global_objects/body.h"
 #include "equationofmotion.h"
 #ifdef Q_OS_WIN
     #include "armadillo.h"  //References the armadillo library in lib folder.
 #elif defined Q_OS_LINUX
     #include <armadillo>    //Armadillo library included with standard system libraries.
 #endif
-#include "../motion_solver/body.h"
+#include "../global_objects/body.h"
+#include "../global_objects/ofreqcore.h"
 
 using namespace std;
 using namespace arma;
@@ -75,7 +76,7 @@ using namespace arma;
  * 7.)  Evaluate the motion model to produce a single complex value result.
  */
 
-class MotionModel
+class MotionModel : public oFreqCore
 {
 //==========================================Section Separator =========================================================
 public:

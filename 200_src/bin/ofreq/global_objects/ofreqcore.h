@@ -8,9 +8,9 @@
 /*-------------------------------------------------------------------------------------------------------------------*\
  *Revision History
  *---------------------------------------------------------------------------------------------------------------------
- *Date          Author				Description
+ *Date		Author				Description
  *---------------------------------------------------------------------------------------------------------------------
- *May 15, 2013  Shane Honanie       Initially created.
+ *Mar 09 2013	Nicholas Barczak		Initially Created
  *
 \*-------------------------------------------------------------------------------------------------------------------*/
 
@@ -33,98 +33,119 @@
  *along with OpenSEA.  If not, see <http://www.gnu.org/licenses/>.
 \*-------------------------------------------------------------------------------------------------------------------*/
 
-
-
 //######################################### Class Separator ###########################################################
-#ifndef MATACTIVEFORCE_H
-#define MATACTIVEFORCE_H
-#include <complex>
-#include <QtGlobal>
-#ifdef Q_OS_WIN
-    #include "armadillo.h"  //References the armadillo library in lib folder.
-#elif defined Q_OS_LINUX
-    #include <armadillo>    //Armadillo library included with standard system libraries.
-#endif
-#include "../global_objects/ofreqcore.h"
+//Put header file includes and constant variables in here.
+#ifndef OFREQCORE_H
+#define OFREQCORE_H
 
-using namespace arma;
+#ifdef Q_OS_WIN
+    //Any windows specific inclusions go in here.
+#elif defined Q_OS_LINUX
+    //Any linux specific inclusions go in here.
+#endif
+#include <QDebug>   //Include for access to debugging objects.
+#include <fstream>
+#include <string>
+#include <time.h>
+#include <typeinfo>
+
 using namespace std;
 
 //######################################### Class Separator ###########################################################
 /**
- * This class holds all data for an active force matrix.
+ * @brief The core oFreq class.  All oFreq classes inherit from this class.
+ *
+ * Core oFreq class.  All oFreq classes inherit from this class.  Includes definition for anything fundamental
+ * and common to the entire program.  Major items are any code used for application debugging.  Also includes
+ * some objects to give everything access to log and error files for the program.
  */
-
-class matForceActive : public oFreqCore
+class oFreqCore
 {
+
 //==========================================Section Separator =========================================================
 public:
     //------------------------------------------Function Separator ----------------------------------------------------
-    matForceActive(); /**< The default constructor. */
-
-    //------------------------------------------Function Separator ----------------------------------------------------
-    ~matForceActive(); /**< The default destructor, nothing happens here. */
-
-    //------------------------------------------Function Separator ----------------------------------------------------
-    matForceActive operator+(matForceActive &forceOther);
-
-    //------------------------------------------Function Separator ----------------------------------------------------
-    matForceActive operator-(matForceActive &forceOther);
+    /**
+     * Default constructor.  Nothing happens here.
+     */
+    oFreqCore();
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
-     * @brief Returns the coefficients matrix.
-     *
-     * Returns the coefficients matrix.
-     * @return Returns the coefficients matrix.
+     * Default destructor.  Nothing happens here.
      */
-    cx_mat &listCoefficients();
+    virtual ~oFreqCore();
 
-    //------------------------------------------Function Separator ----------------------------------------------------
-    /**
-     * @brief Sets the force id number for the object.
-     *
-     * This is similar to the name parameter in other force objects.  It is an identifier.  In this case, a numerical
-     * identifier.  Normally correlates to the objects index in a vector of other objects of the same class.
-     * @param num The integer number to input as the objects integer id.
-     */
-    void setId(int num);
+//==========================================Section Separator =========================================================
+signals:
 
-    //------------------------------------------Function Separator ----------------------------------------------------
-    /**
-     * @brief Returns the force id number for the object.
-     *
-     * This is similar to the name parameter in other force objects.  It is an identifier.  In this case, a numerical
-     * identifier.  Normally correlates to the objects index in a vector of other objects of the same class.
-     * @return Returns the force id number, integer data type.
-     */
-    int getId();
 
-    //------------------------------------------Function Separator ----------------------------------------------------
-    /**
-     * @brief Returns the size of the matrix in each order of derivative.
-     *
-     * Returns the size of the matrix in each order of derivative.  Integer output type.
-     * @return Returns the size of the matrix in each order of derivative.
-     */
-    int getMatSize();
+//==========================================Section Separator =========================================================
+public slots:
 
 //==========================================Section Separator =========================================================
 protected:
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief The log file for an oFreq run.  Records normal actions for the program.  Informs user of regular program
+     * developments.  Through inheritence of the oFreqCore class, this object is available to every object in the
+     * oFreq application.
+     */
+    static std::ofstream OutLog;
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief The error log file for an oFreq run.  Records any errors or warnings for the program.  Informs user of
+     * errors and warnings and where they occurred.  Through inheritence of the oFreqCore class, this object is
+     * available for every object in the oFreq application.
+     */
+    static std::ofstream ErrLog;
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Opens the output log file and prepares it for writing.
+     * @param dirIn String parameter.  Designates the directory path to use for writing the log file.
+     */
+    void setOutLog(string dirIn);
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Opens the error log file and prepares it for writing.
+     * @param dirIn String parameter.  Designates the directory path to use for writing the error file.
+     */
+    void setErrLog(string dirIn);
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    static std::string DIR; /**< The full path for the directory of the oFreq run.*/
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Writes output of a log message to the log file.  Adds in a date and time stamp to the log.
+     * @param mesIn String variable.  The message to write to the log file.
+     */
+    void writeLog(string mesIn);
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Writes output of an error message to the error file.  Adds in a date, time, and class name to the log.
+     * @param mesIn String variable.  The message to write to the log file.
+     */
+    void writeError(string mesIn);
 
 //==========================================Section Separator =========================================================
 private:
+    static std::string FILE_OUTPUT; /**< The filename for the output file.*/
+    static std::string FILE_ERROR; /**< The filename for the error file.*/
+    static std::string SLASH; /**< Directory separator in a string path. */
+
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
-     * @brief the number of the object in the outside vector that contains it.
-     *
-     * This is similar to the name parameter in other force objects.  It is an identifier.  In this case, a numerical
-     * identifier.  Normally correlates to the objects index in a vector of other objects of the same class.
+     * @brief Generates a string that is the current date and time, as recorded from the system clock.  Format is:
+     * yyyy-mm-dd.hh:mm::ss
+     * @return Generates a string that is the current date and time, as recorded from the system clock.  Variable
+     * returned by value.
      */
-    int pId;
-
-    //------------------------------------------Function Separator ----------------------------------------------------
-    cx_mat pCoeff; /**< Matrix of force coefficients. */
+    const std::string Time();
 };
-#endif
 
+#endif // OFREQCORE_H

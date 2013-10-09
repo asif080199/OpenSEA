@@ -38,7 +38,7 @@ string FileWriter::HEADER_FILENAME = "../../var/openseaheader.txt";
 string FileWriter::NAME_DIR = "d"; /**< The starting character for the wave direction directory.**/
 string FileWriter::NAME_RES = "r"; /**< The starting character for the resonant frequency directory.**/
 #ifdef Q_OS_WIN
-    string FileWriter::SLASH = "\"";  /**< Directory separator in a string path., windows version**/
+    string FileWriter::SLASH = "\\";  /**< Directory separator in a string path., windows version**/
 #elif defined Q_OS_LINUX
     string FileWriter::SLASH = "/";   /**< Directory separator in a string path., linux version**/
 #endif

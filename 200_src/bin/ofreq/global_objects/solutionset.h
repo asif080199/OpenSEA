@@ -47,6 +47,7 @@
 #elif defined Q_OS_LINUX
     //References for linux go in here.
 #endif
+#include "./ofreqcore.h"
 
 typedef vector<Solution*> ptSoln; /**< Type definition for a vector of pointers to Solution object.*/
 
@@ -57,7 +58,7 @@ using namespace std;
  * This class records the list of solutions obtained for a single Body object.  It is essentially a 2D version of the
  * vector<object> class.  But since vector can't handle 2-d storage solutions, this class was created.
  */
-class SolutionSet
+class SolutionSet : public oFreqCore
 {
 //==========================================Section Separator =========================================================
 public:

@@ -50,6 +50,7 @@
 #include "parser.h"
 #include "objectgroup.h"
 #include "../global_objects/system.h"
+#include "../global_objects/ofreqcore.h"
 
 using namespace std;
 
@@ -79,7 +80,7 @@ using namespace std;
  *      filename, read it, parse it, and send the resulting keyword-value pairs to the appropriate Dictionary object.
  */
 
-class FileReader : public QObject
+class FileReader : public QObject, public oFreqCore
 {
     Q_OBJECT 
 //==========================================Section Separator =========================================================

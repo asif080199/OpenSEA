@@ -46,13 +46,14 @@
 #include <fstream>
 #include <vector>
 #include <QObject>
-#include "../motion_solver/body.h"
+#include "../global_objects/body.h"
 #include "../derived_outputs/outputsbody.h"
+#include "./ofreqcore.h"
 
 //The following definitions are included indirectly through inclusion of body.h
-//#include "../motion_solver/forceactive.h"
-//#include "../motion_solver/forcecross.h"
-//#include "../motion_solver/forcereact.h"
+//#include "./forceactive.h"
+//#include ".forcecross.h"
+//#include ".forcereact.h"
 
 using namespace std;
 
@@ -62,7 +63,7 @@ using namespace std;
  * It also decides which analysis type to run:  motion or resonant frequency.  The system object controls the current
  * wave environment settings.
  */
-class System : public QObject
+class System : public QObject, public oFreqCore
 {
     Q_OBJECT
 
@@ -73,9 +74,6 @@ public:
 
     //------------------------------------------Function Separator ----------------------------------------------------
 	~System(); /**< The default destructor, nothing happens here. */
-
-    //------------------------------------------Function Separator ----------------------------------------------------
-	void testPrint(); /**< Test print to console the values of all data members. */
 
     //------------------------------------------Function Separator ----------------------------------------------------
 	/**

@@ -54,6 +54,7 @@
 #include "forceactive.h"
 #include "forcecross.h"
 #include "forcereact.h"
+#include "../global_objects/ofreqcore.h"
 
 using namespace std;
 using namespace arma;
@@ -71,7 +72,7 @@ using namespace arma;
  * This class holds all of the data for the Body Input File.
  */
 
-class Body
+class Body : public oFreqCore
 {
 //==========================================Section Separator =========================================================
 public:
@@ -146,41 +147,6 @@ public:
      * @return Pointer to the heading property.
      */
     double &refHeading();
-
-    //------------------------------------------Function Separator ----------------------------------------------------
-	/**
-	 * Sets the user active forces.
-	 * @param newForceList The vector of strings sets userActiveForces.
-	 */
-    void setListForceActive_user(vector<string> newForceList);
-
-    //------------------------------------------Function Separator ----------------------------------------------------
-	/**
-	 * Sets the user reactive forces.
-	 * @param newForceList The vector of strings sets userReactiveForces.
-	 */
-    void setListForceReact_user(vector<string> newForceList);
-
-    //------------------------------------------Function Separator ----------------------------------------------------
-	/**
-	 * Sets the hydro active forces.
-	 * @param newForceList The vector of strings sets hydroActiveForces.
-	 */
-    void setListForceActive_hydro(vector<string> newForceList);
-
-    //------------------------------------------Function Separator ----------------------------------------------------
-	/**
-	 * Sets the hydro reactive forces.
-	 * @param newForceList The vector of strings sets hydroReactiveForce.
-	 */
-    void setListForceReact_hydro(vector<string> newForceList);
-
-    //------------------------------------------Function Separator ----------------------------------------------------
-	/**
-	 * Sets the hydro active forces.
-	 * @param newForceList The vector of strings sets hydroCrossBodyForces.
-	 */
-    void setListForceCross_hydro(vector<string> newForceList);
 
     //------------------------------------------Function Separator ----------------------------------------------------
 	/**
@@ -452,13 +418,6 @@ public:
 
     //------------------------------------------Function Separator ----------------------------------------------------
 	/**
-	 * Adds a cross body name.
-	 * @param newName The string passed in is added to the vector that holds the list of cross body forces.
-	 */
-	void setCrossBodyName(string);
-
-    //------------------------------------------Function Separator ----------------------------------------------------
-	/**
 	 * Get the name of the body.
 	 * @return The name of the body.
 	 */    
@@ -694,7 +653,7 @@ public:
      * @sa listLinkedBody_user()
      * @sa System
      */
-    string &listNamedLink_user(int varIn);
+    string &listNamedLink_user(unsigned int varIn);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -727,7 +686,7 @@ public:
      * @sa listLinkedBody_hydro()
      * @sa System
      */
-    string &listNamedLink_hydro(int varIn);
+    string &listNamedLink_hydro(unsigned int varIn);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
