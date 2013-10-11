@@ -68,7 +68,7 @@ void Dictionary::setObject(ObjectGroup input)
     for (unsigned int i = 0; i <= input.listObject().size(); i++)
     {
         //define the class
-        setObject(*(input.listObject()[i]));
+        setObject(*(input.listObject(i)));
         //Need to create error handler later to handle what happens if returnVal not 0
     }
 }

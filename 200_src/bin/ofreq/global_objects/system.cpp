@@ -70,7 +70,7 @@ vector<double> System::getWaveFrequencies()
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-vector<double> &System::refWaveFrequencies()
+vector<double> &System::listWaveFrequencies()
 {
     return pWaveFrequencies;
 }
@@ -82,7 +82,7 @@ vector<double> System::getWaveDirections()
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-vector<double> &System::refWaveDirections()
+vector<double> &System::listWaveDirections()
 {
     return pWaveDirections;
 }
@@ -130,19 +130,19 @@ vector<Body>& System::listBody()
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-vector<OutputsBody>& System::listOutputs()
-{
-    return plistOutputs;
-}
-
-//------------------------------------------Function Separator --------------------------------------------------------
-Body &System::refBody(int input)
+Body &System::listBody(int input)
 {
     return plistBody.at(input);
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-OutputsBody &System::refOutput(int input)
+vector<OutputsBody>& System::listOutput()
+{
+    return plistOutputs;
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+OutputsBody &System::listOutput(int input)
 {
     return plistOutputs.at(input);
 }
@@ -210,7 +210,7 @@ vector<ForceActive> &System::listForceActive_user()
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-ForceActive &System::refForceActive_user(unsigned int forceIndex)
+ForceActive &System::listForceActive_user(unsigned int forceIndex)
 {
     //Check if index is out of bounds.  If so, resize vector.
     if (forceIndex > plistForceActive_user.size() - 1)
@@ -257,7 +257,7 @@ vector<ForceReact> &System::listForceReact_user()
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-ForceReact &System::refForceReact_user(unsigned int forceIndex)
+ForceReact &System::listForceReact_user(unsigned int forceIndex)
 {
     //Check if index is out of bounds.  If so, resize vector.
     if (forceIndex > plistForceReact_user.size() - 1)
@@ -303,7 +303,7 @@ vector<ForceCross> &System::listForceCross_user()
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-ForceCross &System::refForceCross_user(unsigned int forceIndex)
+ForceCross &System::listForceCross_user(unsigned int forceIndex)
 {
     //Check if index is out of bounds.  If so, resize vector.
     if (forceIndex > plistForceCross_user.size() - 1)
@@ -401,10 +401,10 @@ void System::linkBodies(int bodID)
 
         for (unsigned int j = 0; j < listBody().size(); j++)
         {
-            if (name == listBody()[j].refBodyName())
+            if (name == listBody(j).refBodyName())
             {
                 //Assign the pointer for the body
-                plistBody[bodID].listCrossBody_user()[i] = &(listBody()[j]);
+                plistBody[bodID].listCrossBody_user(i) = listBody(j);
                 //Quit the loop
                 break;
             }
@@ -421,10 +421,10 @@ void System::linkBodies(int bodID)
 
         for (unsigned int j = 0; j < listBody().size(); j++)
         {
-            if (name == listBody()[j].refBodyName())
+            if (name == listBody(j).refBodyName())
             {
                 //Assign the pointer for the body
-                plistBody[bodID].listCrossBody_hydro()[i] = &(listBody()[j]);
+                plistBody[bodID].listCrossBody_hydro(i) = listBody(j);
                 //Quit the loop
                 break;
             }

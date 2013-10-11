@@ -106,7 +106,7 @@ public:
      * @brief Inputs the list of body data.
      * @param listBodIn The vector of body objects to input.
      */
-    void setListBodies(vector<Body> &listBodIn);
+    void setlistBody(vector<Body> &listBodIn);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -540,7 +540,16 @@ public:
      * @return Reference to vector of Body objects.  Variable passed by reference.
      * @sa Body
      */
-    vector<Body> &listBodies();
+    vector<Body> &listBody();
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Direct access to an individual Body from the list of Bodies contained in the motion model.
+     * @param bodIn Integer specifying which Body object to access in the list of Bodies.
+     * @return Returns reference to the Body object specified by input bodIn.
+     * @sa listBody()
+     */
+    Body &listBody(int bodIn);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -552,29 +561,20 @@ public:
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
-     * @brief Provides direct access to the list of equation of motion objects used in the motion model.
-     * @return Reference to the vector of EquationofMotion objects.  Variable passed by reference.
-     * @sa EquationofMotion
-     */
-    vector<EquationofMotion> &listEquations();
-
-    //------------------------------------------Function Separator ----------------------------------------------------
-    /**
-     * @brief Direct access to an individual Body from the list of Bodies contained in the motion model.
-     * @param bodIn Integer specifying which Body object to access in the list of Bodies.
-     * @return Returns reference to the Body object specified by input bodIn.
-     * @sa listBodies()
-     */
-    Body &refBody(int bodIn);
-
-    //------------------------------------------Function Separator ----------------------------------------------------
-    /**
      * @brief Direct access to an individual Body from the list of Data contained in the motion model.
      * @param dataIn Integer specifying which Body object to access from the list of Data.
      * @return Returns reference to the Body object specified by dataIn.
      * @sa listData()
      */
-    Body &refData(int dataIn);
+    Body &listData(int dataIn);
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Provides direct access to the list of equation of motion objects used in the motion model.
+     * @return Reference to the vector of EquationofMotion objects.  Variable passed by reference.
+     * @sa EquationofMotion
+     */
+    vector<EquationofMotion> &listEquation();
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -583,7 +583,7 @@ public:
      * @param eqIn Integer specifying which EquationofMotion object to access from the list of Equations
      * @return Returns reference to the EquationofMotion object specified by eqIn.
      */
-    EquationofMotion &refEquation(int eqIn);
+    EquationofMotion &listEquation(int eqIn);
 
 //==========================================Section Separator =========================================================
 protected:

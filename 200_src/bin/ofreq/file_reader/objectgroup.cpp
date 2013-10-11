@@ -59,15 +59,33 @@ vecKeyword& ObjectGroup::listKey()
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
+string &ObjectGroup::listKey(int index)
+{
+    return plistKey[index];
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
 vecValue& ObjectGroup::listVal()
 {
     return plistVal;
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
+vector<string> &ObjectGroup::listVal(int index)
+{
+    return plistVal[index];
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
 vector<ObjectGroup *> &ObjectGroup::listObject()
 {
     return plistObject;
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+ObjectGroup* ObjectGroup::listObject(int index)
+{
+    return plistObject[index];
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------

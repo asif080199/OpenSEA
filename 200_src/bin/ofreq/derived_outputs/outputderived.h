@@ -144,7 +144,7 @@ public:
      * @param bodIn The integer index of the body you wish to retrieve from the list of Body objects.
      * @return Returns the Body object requested.  Returned variable is passed by reference.
      */
-    Body &refBody(int bodIn);
+    Body &listBody(int bodIn);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -179,6 +179,17 @@ public:
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
+     * @brief Returns individual frequency from the list of wave frequencies.
+     *
+     * Returns the frequency specified by the index.
+     * @param index Integer.  The index which specifies which wave frequency to return.
+     * @return Double.  Returns individual frequency from the list of wave frequencies.  Returned variabled is passed
+     * by reference.
+     */
+    double &listFreq(int index);
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
      * @brief Sets the list of wave frequencies.  Frequencies are in radians per second.
      * @param Input The list of wave frequencies.  Variable is passed by reference.  Variable is stored internally as
      * a pointer.
@@ -193,6 +204,18 @@ public:
      * is stored internally as a pointer.
      */
     vector<double> &listWaveDir();
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Returns individual wave direction from the list of wave directions.
+     *
+     * Returns the wave direction specified by the index.  Wave directions are measured in radians.  True North is
+     * zero, with positive angles going counter-clockwise.
+     * @param index Integer.  The index which specifies which wave direction to return.
+     * @return Double.  Returns individual wave direction from the list of wave directions.  Returned variable is
+     * passed by reference.
+     */
+    double &listWaveDir(int index);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**

@@ -124,9 +124,15 @@ ObjectGroup Parser::getObject(int index)
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-vector<ObjectGroup> &Parser::refObject()
+vector<ObjectGroup> &Parser::listObject()
 {
     return plistObject;
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+ObjectGroup &Parser::listObject(unsigned int index)
+{
+    return plistObject[index];
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
@@ -138,7 +144,7 @@ vector<ObjectGroup*> &Parser::refSubObject(int index1)
 //------------------------------------------Function Separator --------------------------------------------------------
 ObjectGroup Parser::getSubObject(int index, int index1)
 {
-    return *(plistObject.at(index1).listObject().at(index));
+    return *(plistObject.at(index1).listObject(index));
 }
 
 //==========================================Section Separator =========================================================
@@ -191,7 +197,7 @@ void Parser::ParseCommands(istream &infile, string prevString)
             }
 
             //Parsing complete.  Get the parsed subobjects back.
-            for (unsigned int i = 0; i < subParse->refObject().size(); i++)
+            for (unsigned int i = 0; i < subParse->listObject().size(); i++)
             {
                 plistObject[curObject].addSubObject(subParse->getObject(i));
             }

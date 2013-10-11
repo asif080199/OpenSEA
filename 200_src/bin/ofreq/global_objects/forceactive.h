@@ -81,10 +81,33 @@ public:
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
+     * @brief Provides direct access to a coefficient from the list of coefficients.
+     *
+     * Returns a value from the list of coefficents.  Which value to return is specified by the input index.
+     * @param index Unsigned integer.  Specifies which value to return from the list of coefficients.
+     * @return Returns a complex double.  Returned variable is a value from the list of coefficients.  Returned
+     * variable is passed by reference.
+     */
+    complexDouble &listCoefficients(unsigned int index);
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
      * @brief Another implementation of function listCoefficients.
      * @return Vector containing the list of coefficients.  Argument passed by reference.
      */
-    vector<complexDouble> &listEquations();
+    vector<complexDouble> &listEquation();
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Another implementation of function listCoefficients(index).
+     *
+     * Provides direct access to items in the list of equations.  Returns a single variable from the list of
+     * coefficients.
+     * @param index Unsigned integer.  Specifies which value to return from the list of coefficients.
+     * @return Returns a complex double.  Returned variable is a value from the list of coefficients.  Returned
+     * variable is passed by reference.
+     */
+    complexDouble &listEquation(unsigned int index);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**

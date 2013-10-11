@@ -76,6 +76,12 @@ vector<double> &OutputsBody::listFreq()
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
+double &OutputsBody::listFreq(int index)
+{
+    return plistFreq->at(index);
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
 void OutputsBody::setListWaveDir(vector<double> &listIn)
 {
     plistWaveDir = & listIn;
@@ -85,6 +91,12 @@ void OutputsBody::setListWaveDir(vector<double> &listIn)
 vector<double> &OutputsBody::listWaveDir()
 {
     return * plistWaveDir;
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+double &OutputsBody::listWaveDir(int index)
+{
+    return plistWaveDir->at(index);
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------

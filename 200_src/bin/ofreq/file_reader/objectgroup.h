@@ -112,10 +112,30 @@ public:
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
+     * @brief Provides direct access to an individual item in the list of key words.
+     *
+     * Returns the key word specified by the index.
+     * @param index Integer.  The index of the key word to retrieve.
+     * @return String.  The key word specified by index.  Returned variable passed by reference.
+     */
+    string &listKey(int index);
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
      * @brief Provides direct access to the list of key values.
      * @return Returns a reference to the list of key values.  Variable passed by reference.
      */
-    vecValue& listVal();
+    vecValue &listVal();
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Provides direct access to an individual item in the list of key values.
+     *
+     * Returns the key value specified by the index.
+     * @param index Integer.  THe index of the key value to retrieve.
+     * @return Vector of strings.  The key value specified by the index.  Returned variable passed by reference.
+     */
+    vector<string> &listVal(int index);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -124,6 +144,17 @@ public:
      * vector of pointers to ObjectGroup objects.
      */
     vector<ObjectGroup*> &listObject();
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Provides direct access to an individual item in the list of ObjectGroup objects.
+     *
+     * Returns a pointer to the ObjectGroup object specified by the index.
+     * @param index Integer.  The index of the ObjectGroup object to retrieve.
+     * @return Returns a pointer to an ObjectGroup object.  The object specified by the index.  Returned pointer
+     * is passed by value.
+     */
+    ObjectGroup* listObject(int index);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**

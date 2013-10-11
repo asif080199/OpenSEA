@@ -68,7 +68,7 @@ public:
      *
      * Pointer to the list vector list of equations.  Value returned by reference.
      */
-    vector<Equation> &listEquations();
+    vector<Equation> &listEquation();
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
      * @brief Returns the equation requested.  Only specified by the data index property of the equation object.
@@ -93,13 +93,13 @@ public:
     /**
      * @brief Retrieve the equation specified by the number.
      *
-     * Retrieves the equation specified by the number.  Value returned is a pointer to the equation object.  Allows
+     * Retrieves the equation specified by the number.  Value returned is a reference to the equation object.  Allows
      * editting of the equation object, or just data access.
      * @param number Integer representing which equation number should be returned.
-     * @return Value returned is a pointer to the equation object.  Allows
+     * @return Value returned is a reference to the equation object.  Allows
      * editting of the equation object, or just data access.
      */
-    Equation &refEquation(unsigned int number);
+    Equation &listEquation(unsigned int number);
 
     //------------------------------------------Function Separator ----------------------------------------------------
 	/**

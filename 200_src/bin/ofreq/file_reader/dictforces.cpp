@@ -73,17 +73,17 @@ int dictForces::defineKey(string keyIn, vector<string> valIn)
         if (pForceType == 1)
         {
             //Active force type.
-            ptSystem->refForceActive_user(pForceIndex).setForceName(valIn[0]);
+            ptSystem->listForceActive_user(pForceIndex).setForceName(valIn[0]);
         }
         else if (pForceType == 2)
         {
             //Reactive force type
-            ptSystem->refForceReact_user(pForceIndex).setForceName(valIn[0]);
+            ptSystem->listForceReact_user(pForceIndex).setForceName(valIn[0]);
         }
         else if (pForceType == 3)
         {
             //Cross-body force type
-            ptSystem->refForceCross_user(pForceIndex).setForceName(valIn[0]);
+            ptSystem->listForceCross_user(pForceIndex).setForceName(valIn[0]);
         }
         //Report success
         return 0;
@@ -96,7 +96,7 @@ int dictForces::defineKey(string keyIn, vector<string> valIn)
         if (pForceType == 1)
         {
             //convert data type and input.
-            ptSystem->refForceActive_user(pForceIndex).setCoeff(
+            ptSystem->listForceActive_user(pForceIndex).setCoeff(
                         convertComplex(valIn[0].c_str()), pEqn);
             //Report success
             return 0;
@@ -136,16 +136,16 @@ int dictForces::defineKey(string keyIn, vector<string> valIn)
         if (pForceType == 2)
         {
             //Reactive force object
-            ptSystem->refForceReact_user(pForceIndex).refDerivative(pOrd).refEquation(pEqn).listCoefficients().clear();
-            ptSystem->refForceReact_user(pForceIndex).refDerivative(pOrd).refEquation(pEqn).listCoefficients() = coeffIn;
+            ptSystem->listForceReact_user(pForceIndex).listDerivative(pOrd).listEquation(pEqn).listCoefficients().clear();
+            ptSystem->listForceReact_user(pForceIndex).listDerivative(pOrd).listEquation(pEqn).listCoefficients() = coeffIn;
             //Report success
             return 0;
         }
         else if (pForceType == 3)
         {
             //Cross-body force object
-            ptSystem->refForceCross_user(pForceIndex).refDerivative(pOrd).refEquation(pEqn).listCoefficients().clear();
-            ptSystem->refForceCross_user(pForceIndex).refDerivative(pOrd).refEquation(pEqn).listCoefficients() = coeffIn;
+            ptSystem->listForceCross_user(pForceIndex).listDerivative(pOrd).listEquation(pEqn).listCoefficients().clear();
+            ptSystem->listForceCross_user(pForceIndex).listDerivative(pOrd).listEquation(pEqn).listCoefficients() = coeffIn;
             //Report success
             return 0;
         }
@@ -304,17 +304,17 @@ void dictForces::setEquation(int eqIn)
         {
             //Active force type.
             //Get latest equation
-            pEqn = ptSystem->listForceActive_user()[pForceIndex].listEquations().size();
+            pEqn = ptSystem->listForceActive_user(pForceIndex).listEquation().size();
         }
         else if (pForceType == 2)
         {
             //Reactive force type.
-            pEqn = ptSystem->listForceReact_user()[pForceIndex].refDerivative(pOrd).listEquations().size();
+            pEqn = ptSystem->listForceReact_user(pForceIndex).listDerivative(pOrd).listEquation().size();
         }
         else if (pForceType == 3)
         {
             //Cross-body force type.
-            pEqn = ptSystem->listForceReact_user()[pForceIndex].refDerivative(pOrd).listEquations().size();
+            pEqn = ptSystem->listForceReact_user(pForceIndex).listDerivative(pOrd).listEquation().size();
         }
     }
     else
@@ -337,12 +337,12 @@ void dictForces::setDerivative(int ordIn)
         {
             //Reactive force type.
             if (ordIn < 0)
-            pOrd = ptSystem->listForceReact_user()[pForceIndex].getMaxOrd() + 1;
+            pOrd = ptSystem->listForceReact_user(pForceIndex).getMaxOrd() + 1;
         }
         else if (pForceType == 3)
         {
             //Cross-body force type
-            pOrd = ptSystem->listForceCross_user()[pForceIndex].getMaxOrd() + 1;
+            pOrd = ptSystem->listForceCross_user(pForceIndex).getMaxOrd() + 1;
         }
     }
     else

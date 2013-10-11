@@ -612,6 +612,19 @@ public:
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
+     * @brief Returns reference to individual linked Body for the user cross-body force.
+     *
+     * Returns reference for linked Body specified by the index.  The index corresponds to the index of the cross-body
+     * force.  So that when a cross-body force is stored in its list at index 5, the linked Body can be retrieved
+     * from this method with index 5.  Body stored internally as a pointer to the Body object.
+     * @param index Integer.  The index of the linked Body to return.
+     * @return Returns reference to a Body object.  The reference points to the linked Body object that corresponds to
+     * the ForceCross object at the same index.
+     */
+    Body &listCrossBody_user(int index);
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
      * @brief The list of linked bodies for hydrodynamic cross-body forces.
      *
      * The list of linked bodies for hydrodynamic cross-body forces.  This is a list of pointers to the other bodies.
@@ -621,6 +634,19 @@ public:
      * @return A list of pointers to various linked bodies for hydro cross-body forces.
      */
     vector<Body* > &listCrossBody_hydro();
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Returns reference to individual linked Body for the hydro cross-body force.
+     *
+     * Returns reference for linked Body specified by the index.  The index corresponds to the index of the cross-body
+     * force.  So that when a cross-body force is stored in its list at index 5, the linked Body can be retrieved
+     * from this method with index 5.  Body stored internally as a pointer to the Body object.
+     * @param index Integer.  The index of the linked Body to return.
+     * @return Returns reference to a Body object.  The reference points to the linked Body object that corresponds to
+     * the ForceCross object at the same index.
+     */
+    Body &listCrossBody_hydro(int index);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**

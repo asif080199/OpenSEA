@@ -267,23 +267,23 @@ int FileReader::readFile(string path)
     int sea_index = 0;  //Index of where the sea file object is located.
 
     //Get results
-    for (unsigned int i = sea_index; i < myParse.refObject().size(); i++)
+    for (unsigned int i = sea_index; i < myParse.listObject().size(); i++)
     {
         //Check if the first object is an opensea file definition.
-        if (myParse.refObject()[sea_index].getClassName() == OBJ_SEAFILE)
+        if (myParse.listObject(sea_index).getClassName() == OBJ_SEAFILE)
         {
             //True.  Process as a seafile object.
-            for (unsigned int j = 0; j < myParse.refObject().at(sea_index).listKey().size(); j++)
+            for (unsigned int j = 0; j < myParse.listObject(sea_index).listKey().size(); j++)
             {
-                if (myParse.refObject().at(sea_index).getKey(j) == KEY_VERSION)
+                if (myParse.listObject(sea_index).getKey(j) == KEY_VERSION)
                 {
                     //Response if the key is the version number.
-                    version = myParse.refObject().at(sea_index).getVal(j).at(0);
+                    version = myParse.listObject(sea_index).getVal(j).at(0);
                 }
-                else if(myParse.refObject().at(sea_index).getKey(j) == KEY_FORMAT)
+                else if(myParse.listObject(sea_index).getKey(j) == KEY_FORMAT)
                 {
                     //Response if the key is the format designator.
-                    format = myParse.refObject().at(sea_index).getVal(j).at(0);
+                    format = myParse.listObject(sea_index).getVal(j).at(0);
                 }
             }
         }

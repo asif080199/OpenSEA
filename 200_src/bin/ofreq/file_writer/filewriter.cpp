@@ -203,7 +203,7 @@ bool FileWriter::writeWaveDirection()
     //Write outputs
     for(unsigned int i = 0; i < pOutput->listWaveDir().size(); i ++)
     {
-        output << TAB << pOutput->listWaveDir()[i] << endl;
+        output << TAB << pOutput->listWaveDir(i) << endl;
     }
 
     //Close the list and finish
@@ -240,7 +240,7 @@ bool FileWriter::writeFrequency()
     //Write outputs
     for(unsigned int i = 0; i < pOutput->listFreq().size(); i ++)
     {
-        output << TAB << pOutput->listFreq().at(i) << endl;
+        output << TAB << pOutput->listFreq(i) << endl;
     }
 
     //Close the list and finish

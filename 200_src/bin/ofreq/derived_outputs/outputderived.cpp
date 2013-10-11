@@ -55,7 +55,7 @@ vector<Body> &OutputDerived::listBody()
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-Body &OutputDerived::refBody(int bodIn)
+Body &OutputDerived::listBody(int bodIn)
 {
     return plistBody->at(bodIn);
 }
@@ -85,6 +85,12 @@ vector<double> &OutputDerived::listFreq()
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
+double &OutputDerived::listFreq(int index)
+{
+    return plistFreq->at(index);
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
 void OutputDerived::setListFreq(vector<double>& Input)
 {
     plistFreq = &Input;
@@ -94,6 +100,12 @@ void OutputDerived::setListFreq(vector<double>& Input)
 vector<double> &OutputDerived::listWaveDir()
 {
     return *plistWaveDir;
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+double &OutputDerived::listWaveDir(int index)
+{
+    return plistWaveDir->at(index);
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------

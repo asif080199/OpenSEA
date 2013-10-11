@@ -80,7 +80,7 @@ public:
      * @brief Another implementation of getDerivatives, under a different name.
      * @return Returns the vector of derviative objects.  Returned object is by reference.
      */
-    vector<Derivative> &listDerivatives();
+    vector<Derivative> &listDerivative();
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -100,7 +100,7 @@ public:
      * @param num The index number of the derivative object.
      * @return Returns a pointer to the derivative object specified by integer num.  Returned value is by reference.
      */
-    Derivative &refDerivative(unsigned int num);
+    Derivative &listDerivative(unsigned int num);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**

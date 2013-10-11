@@ -79,6 +79,17 @@ public:
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
+     * @brief Provides direct access to a coefficient from the list of coefficients.
+     *
+     * Returns a value from the list of coefficents.  Which value to return is specified by the input index.
+     * @param index Unsigned integer.  Specifies which value to return from the list of coefficients.
+     * @return Returns a double.  Returned variable is a value from the list of coefficients.  Returned variable is
+     * passed by reference.
+     */
+    double &listCoefficients(unsigned int index);
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
      * @brief Get the coefficient at the specified number.
      * @param number The index number of the coefficient to retrieve.
      * @return Returns a double precision floating point number of the coefficient at the index specified by number.

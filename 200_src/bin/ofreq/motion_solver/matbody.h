@@ -148,6 +148,18 @@ public:
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
+     * @brief Returns a reference to the Reactive Force, user object specified by the index.
+     *
+     * This is a single item from the vector list of the Reactive Force objects.
+     * Provides direct access to the variable.
+     * @param index Unsigned integer.  Index to specify which variable retrieve from the vector.
+     * @return Returns matForceReact object specified by index.  Returned variable passed by reference.
+     * @sa matForceReact
+     */
+    matForceReact &listForceReact_user(unsigned int index);
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
      * @brief Returns a reference to the Cross-Body Force, user objects.
      *
      * Returns a reference to the Cross-Body Force, user objects.  This is a vector list of the Cross-Body Force objects.
@@ -156,6 +168,18 @@ public:
      * the member functions of the vector class.  Variable passed by reference.
      */
     vector<matForceCross> &listForceCross_user();
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+    * @brief Returns a reference to the Cross-Body Force, user object specified by the index.
+    *
+    * This is a single item from the vector list of the Cross-Body Force objects.
+    * Provides direct access to the variable.
+    * @param index Unsigned integer.  Index to specify which variable retrieve from the vector.
+    * @return Returns matForceCross object specified by index.  Returned variable passed by reference.
+    * @sa matForceCross
+    */
+    matForceCross &listForceCross_user(unsigned int index);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -170,6 +194,18 @@ public:
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
+    * @brief Returns a reference to the Active Force, user object specified by the index.
+    *
+    * This is a single item from the vector list of the Active Force objects.
+    * Provides direct access to the variable.
+    * @param index Unsigned integer.  Index to specify which variable retrieve from the vector.
+    * @return Returns matForceActive object specified by index.  Returned variable passed by reference.
+    * @sa matForceActive
+     */
+    matForceActive &listForceActive_user(unsigned int index);
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
      * @brief Returns a reference to the Reactive Force, hydro objects.
      *
      * Returns a reference to the Reactive Force, hydro objects.  This is a vector list of the Reactive Force objects.
@@ -178,6 +214,18 @@ public:
      * the member functions of the vector class.  Variable passed by reference.
      */
     vector<matForceReact> &listForceReact_hydro();
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Returns a reference to the Reactive Force, hydro object specified by the index.
+     *
+     * This is a single item from the vector list of the Reactive Force objects.
+     * Provides direct access to the variable.
+     * @param index Unsigned integer.  Index to specify which variable retrieve from the vector.
+     * @return Returns matForceReact object specified by index.  Returned variable passed by reference.
+     * @sa matForceReact
+     */
+    matForceReact &listForceReact_hydro(unsigned int index);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -192,6 +240,18 @@ public:
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
+    * @brief Returns a reference to the Cross-Body Force, hydro object specified by the index.
+    *
+    * This is a single item from the vector list of the Cross-Body Force objects.
+    * Provides direct access to the variable.
+    * @param index Unsigned integer.  Index to specify which variable retrieve from the vector.
+    * @return Returns matForceCross object specified by index.  Returned variable passed by reference.
+    * @sa matForceCross
+    */
+    matForceCross &listForceCross_hydro(unsigned int index);
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
      * @brief Returns a reference to the Active Force, hydro objects.
      *
      * Returns a reference to the Active Force, hydro objects.  This is a vector list of the Active Force objects.
@@ -201,6 +261,17 @@ public:
      */
     vector<matForceActive> &listForceActive_hydro();
 
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+    * @brief Returns a reference to the Active Force, hydro object specified by the index.
+    *
+    * This is a single item from the vector list of the Active Force objects.
+    * Provides direct access to the variable.
+    * @param index Unsigned integer.  Index to specify which variable retrieve from the vector.
+    * @return Returns matForceActive object specified by index.  Returned variable passed by reference.
+    * @sa matForceActive
+     */
+    matForceActive &listForceActive_hydro(unsigned int index);
 
 
 //==========================================Section Separator =========================================================

@@ -57,9 +57,21 @@ vector<complexDouble> &ForceActive::listCoefficients()
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-vector<complexDouble> &ForceActive::listEquations()
+complexDouble &ForceActive::listCoefficients(unsigned int index)
+{
+    return pCoefficients[index];
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+vector<complexDouble> &ForceActive::listEquation()
 {
     return this->listCoefficients();
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+complexDouble &ForceActive::listEquation(unsigned int index)
+{
+    return this->listCoefficients(index);
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------

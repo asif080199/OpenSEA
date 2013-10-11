@@ -26,11 +26,15 @@
 
 #include "matbody.h"
 
+//==========================================Section Separator =========================================================
+//Public Functions
 
+//------------------------------------------Function Separator --------------------------------------------------------
 matBody::matBody()
 {
 }
 
+//------------------------------------------Function Separator --------------------------------------------------------
 matBody::~matBody()
 {
 }
@@ -72,9 +76,21 @@ vector<matForceReact> &matBody::listForceReact_user()
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
+matForceReact &matBody::listForceReact_user(unsigned int index)
+{
+    return plistForceReact_user[index];
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
 vector<matForceCross> &matBody::listForceCross_user()
 {
     return plistForceCross_user;
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+matForceCross &matBody::listForceCross_user(unsigned int index)
+{
+    return plistForceCross_user[index];
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
@@ -84,9 +100,21 @@ vector<matForceActive> &matBody::listForceActive_user()
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
+matForceActive &matBody::listForceActive_user(unsigned int index)
+{
+    return plistForceActive_user[index];
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
 vector<matForceReact> &matBody::listForceReact_hydro()
 {
     return plistForceReact_hydro;
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+matForceReact &matBody::listForceReact_hydro(unsigned int index)
+{
+    return plistForceReact_hydro[index];
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
@@ -96,7 +124,26 @@ vector<matForceCross> &matBody::listForceCross_hydro()
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
+matForceCross &matBody::listForceCross_hydro(unsigned int index)
+{
+    return plistForceCross_hydro[index];
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
 vector<matForceActive> &matBody::listForceActive_hydro()
 {
     return plistForceActive_hydro;
 }
+
+//------------------------------------------Function Separator --------------------------------------------------------
+matForceActive &matBody::listForceActive_hydro(unsigned int index)
+{
+    return plistForceActive_hydro[index];
+}
+
+//==========================================Section Separator =========================================================
+//Protected Functions
+
+
+//==========================================Section Separator =========================================================
+//Private Functions

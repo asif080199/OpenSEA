@@ -102,7 +102,18 @@ public:
      * @brief Provides direct access to the vector of ObjectGroup objects processed by the Parser object.
      * @return Returns reference to the vector of ObjectGroup objects.  Variable passed by reference.
      */
-    vector<ObjectGroup> &refObject();
+    vector<ObjectGroup> &listObject();
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Provides direct access to the ObjectGroup object specified by index.
+     *
+     * Returns entry from the list of ObjectGroup objects.  Returned entry is specified by index.
+     * @param index Unsigned integer.  The index of the ObjectGroup object to return from the list.
+     * @return Returns ObjectGroup object.  Returned variable is passed by reference.
+     * @sa ObjectGroup
+     */
+    ObjectGroup &listObject(unsigned int index);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**

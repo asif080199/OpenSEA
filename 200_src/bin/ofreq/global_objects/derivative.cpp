@@ -41,14 +41,14 @@ Derivative::~Derivative()
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-vector<Equation> &Derivative::listEquations()
+vector<Equation> &Derivative::listEquation()
 {
     //Return equation list pointer.
     return pEquationList;
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-Equation &Derivative::refEquation(unsigned int number)
+Equation &Derivative::listEquation(unsigned int number)
 {
     //Check to see if the equation is out of bounds.  If so, resize vector.
     if (number > pEquationList.size() - 1)

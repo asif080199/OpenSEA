@@ -56,6 +56,12 @@ vector<double> &Equation::listCoefficients()
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
+double &Equation::listCoefficients(unsigned int index)
+{
+    return pcoeffs[index];
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
 double Equation::getCoefficient(int number)
 {
     //Return the coefficient at the specified number.

@@ -184,6 +184,17 @@ public:
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
+     * @brief Returns individual frequency from the list of wave frequencies.
+     *
+     * Returns the frequency specified by the index.
+     * @param index Integer.  The index which specifies which wave frequency to return.
+     * @return Double.  Returns individual frequency from the list of wave frequencies.  Returned variabled is passed
+     * by reference.
+     */
+    double &listFreq(int index);
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
      * @brief Sets the list of wave directions.
      * @param listIn The vector of doubles representing the wave directions.  Directions entered in units of radians.
      * Input is passed by reference and held as a constant so that the class can not change the directions.
@@ -197,6 +208,18 @@ public:
      * Variable is passed by reference.
      */
     vector<double> &listWaveDir();
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Returns individual wave direction from the list of wave directions.
+     *
+     * Returns the wave direction specified by the index.  Wave directions are measured in radians.  True North is
+     * zero, with positive angles going counter-clockwise.
+     * @param index Integer.  The index which specifies which wave direction to return.
+     * @return Double.  Returns individual wave direction from the list of wave directions.  Returned variable is
+     * passed by reference.
+     */
+    double &listWaveDir(int index);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**

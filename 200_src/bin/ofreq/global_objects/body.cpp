@@ -508,9 +508,21 @@ vector<Body *> &Body::listCrossBody_user()
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
+Body &Body::listCrossBody_user(int index)
+{
+    return *(plistLinkedBody_usr[index]);
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
 vector<Body *> &Body::listCrossBody_hydro()
 {
     return plistLinkedBody_hydro;
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+Body &Body::listCrossBody_hydro(int index)
+{
+    return *(plistLinkedBody_hydro[index]);
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------

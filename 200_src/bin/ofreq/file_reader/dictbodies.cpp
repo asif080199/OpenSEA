@@ -82,7 +82,7 @@ int dictBodies::defineKey(string keyIn, vector<string> valIn)
     if (keyIn == KEY_NAME)
     {
         //Set body name
-        ptSystem->refBody(pBody).setBodyName(valIn[0]);
+        ptSystem->listBody(pBody).setBodyName(valIn[0]);
         //Return success
         return 0;
     }
@@ -90,7 +90,7 @@ int dictBodies::defineKey(string keyIn, vector<string> valIn)
     else if (keyIn == KEY_HYDROBODY)
     {
         //Set hydrobody name
-        ptSystem->refBody(pBody).setHydroBodName(valIn[0]);
+        ptSystem->listBody(pBody).setHydroBodName(valIn[0]);
         //Return success
         return 0;
     }
@@ -100,7 +100,7 @@ int dictBodies::defineKey(string keyIn, vector<string> valIn)
         //Set the mass
         double var;
         var = atof(valIn[0].c_str());
-        ptSystem->refBody(pBody).setMass(var);
+        ptSystem->listBody(pBody).setMass(var);
         //Update the mass definitions
         pMassProp[0] = true;
         //Return success
@@ -112,7 +112,7 @@ int dictBodies::defineKey(string keyIn, vector<string> valIn)
         //Set IXX
         double var;
         var = atof(valIn[0].c_str());
-        ptSystem->refBody(pBody).setMomIxx(var);
+        ptSystem->listBody(pBody).setMomIxx(var);
         //Update the mass definitions
         pMassProp[1] = true;
         //Return success
@@ -124,7 +124,7 @@ int dictBodies::defineKey(string keyIn, vector<string> valIn)
         //Set IYY
         double var;
         var = atof(valIn[0].c_str());
-        ptSystem->refBody(pBody).setMomIyy(var);
+        ptSystem->listBody(pBody).setMomIyy(var);
         //Update the mass definitions
         pMassProp[2] = true;
         //Return success
@@ -136,7 +136,7 @@ int dictBodies::defineKey(string keyIn, vector<string> valIn)
         //Set IZZ
         double var;
         var = atof(valIn[0].c_str());
-        ptSystem->refBody(pBody).setMomIzz(var);
+        ptSystem->listBody(pBody).setMomIzz(var);
         //Update the mass definitions
         pMassProp[3] = true;
         //Return success
@@ -148,7 +148,7 @@ int dictBodies::defineKey(string keyIn, vector<string> valIn)
         //Set IXY
         double var;
         var = atof(valIn[0].c_str());
-        ptSystem->refBody(pBody).setMomIxy(var);
+        ptSystem->listBody(pBody).setMomIxy(var);
         //Update the mass definitions
         pMassProp[4] = true;
         //Return success
@@ -160,7 +160,7 @@ int dictBodies::defineKey(string keyIn, vector<string> valIn)
         //Set IXZ
         double var;
         var = atof(valIn[0].c_str());
-        ptSystem->refBody(pBody).setMomIxz(var);
+        ptSystem->listBody(pBody).setMomIxz(var);
         //Update the mass definitions
         pMassProp[5] = true;
         //Return success
@@ -172,7 +172,7 @@ int dictBodies::defineKey(string keyIn, vector<string> valIn)
         //Set IYZ
         double var;
         var = atof(valIn[0].c_str());
-        ptSystem->refBody(pBody).setMomIxz(var);
+        ptSystem->listBody(pBody).setMomIxz(var);
         //Update the mass definitions
         pMassProp[6] = true;
         //Return success
@@ -184,7 +184,7 @@ int dictBodies::defineKey(string keyIn, vector<string> valIn)
         //Set COGX
         double var;
         var = atof(valIn[0].c_str());
-        ptSystem->refBody(pBody).setCenX(var);
+        ptSystem->listBody(pBody).setCenX(var);
         //Update the COG definitions
         pCOG[0] = true;
         //Return success
@@ -196,7 +196,7 @@ int dictBodies::defineKey(string keyIn, vector<string> valIn)
         //Set COGY
         double var;
         var = atof(valIn[0].c_str());
-        ptSystem->refBody(pBody).setCenY(var);
+        ptSystem->listBody(pBody).setCenY(var);
         //Update the COG definitions
         pCOG[1] = true;
         //Return success
@@ -208,7 +208,7 @@ int dictBodies::defineKey(string keyIn, vector<string> valIn)
         //Set COGZ
         double var;
         var = atof(valIn[0].c_str());
-        ptSystem->refBody(pBody).setCenZ(var);
+        ptSystem->listBody(pBody).setCenZ(var);
         //Update the COG definitions
         pCOG[2] = true;
         //Return success
@@ -220,7 +220,7 @@ int dictBodies::defineKey(string keyIn, vector<string> valIn)
         //Set the heading for the body
         double var;
         var = atof(valIn[0].c_str());
-        ptSystem->refBody(pBody).setHeading(var);
+        ptSystem->listBody(pBody).setHeading(var);
         //Return success
         return 0;
     }
@@ -228,7 +228,7 @@ int dictBodies::defineKey(string keyIn, vector<string> valIn)
     else if (keyIn == KEY_MOTION)
     {
         //Set the motion model name for the body
-        ptSystem->refBody(pBody).setMotionModel(valIn[0]);
+        ptSystem->listBody(pBody).setMotionModel(valIn[0]);
         //Return success
         return 0;
     }
@@ -240,7 +240,7 @@ int dictBodies::defineKey(string keyIn, vector<string> valIn)
         {
             //Set the linked body name
             ptSystem->
-                    refBody(pBody).
+                    listBody(pBody).
                     listNamedLink_user(pForceBodyIndex)
                     = valIn[0];
 
@@ -262,13 +262,13 @@ int dictBodies::defineKey(string keyIn, vector<string> valIn)
             //Active Force model
             int var;
             var = atoi(valIn[0].c_str());
-            ptSystem->refBody(pBody).listForceActive_user().push_back(
-                        &(ptSystem->refForceActive_user(var))
+            ptSystem->listBody(pBody).listForceActive_user().push_back(
+                        &(ptSystem->listForceActive_user(var))
                     );
             //Set body index
-            pForceBodyIndex = ptSystem->refBody(pBody).listForceActive_user().size() - 1;
+            pForceBodyIndex = ptSystem->listBody(pBody).listForceActive_user().size() - 1;
             //Set model index
-            pForceIndex = ptSystem->refBody(pBody).listForceActive_user()[pForceBodyIndex]->getSystemIndex();
+            pForceIndex = ptSystem->listBody(pBody).listForceActive_user(pForceBodyIndex)->getSystemIndex();
             //Return success
             return 0;
         }
@@ -277,13 +277,13 @@ int dictBodies::defineKey(string keyIn, vector<string> valIn)
             //Reactive force model
             int var;
             var = atoi(valIn[0].c_str());
-            ptSystem->refBody(pBody).listForceReact_user().push_back(
-                        &(ptSystem->refForceReact_user(var))
+            ptSystem->listBody(pBody).listForceReact_user().push_back(
+                        &(ptSystem->listForceReact_user(var))
                     );
             //Set body index
-            pForceBodyIndex = ptSystem->refBody(pBody).listForceReact_user().size() - 1;
+            pForceBodyIndex = ptSystem->listBody(pBody).listForceReact_user().size() - 1;
             //Set model index
-            pForceIndex = ptSystem->refBody(pBody).listForceReact_user()[pForceBodyIndex]->getSystemIndex();
+            pForceIndex = ptSystem->listBody(pBody).listForceReact_user(pForceBodyIndex)->getSystemIndex();
             //Return success
             return 0;
         }
@@ -292,13 +292,13 @@ int dictBodies::defineKey(string keyIn, vector<string> valIn)
             //Cross-body force type
             int var;
             var = atoi(valIn[0].c_str());
-            ptSystem->refBody(pBody).listForceCross_user().push_back(
-                        &(ptSystem->refForceCross_user(var))
+            ptSystem->listBody(pBody).listForceCross_user().push_back(
+                        &(ptSystem->listForceCross_user(var))
                     );
             //Set body index
-            pForceBodyIndex = ptSystem->refBody(pBody).listForceCross_user().size() - 1;
+            pForceBodyIndex = ptSystem->listBody(pBody).listForceCross_user().size() - 1;
             //Set model index
-            pForceIndex = ptSystem->refBody(pBody).listForceCross_user()[pForceBodyIndex]->getSystemIndex();
+            pForceIndex = ptSystem->listBody(pBody).listForceCross_user(pForceBodyIndex)->getSystemIndex();
             //Return success
             return 0;
         }

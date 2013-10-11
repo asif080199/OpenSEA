@@ -158,9 +158,15 @@ void matForceReact::setDerivative(int order, cx_mat Coeff)
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-vector<cx_mat> &matForceReact::listDerivatives()
+vector<cx_mat> &matForceReact::listDerivative()
 {
     return pderiv;
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+cx_mat &matForceReact::listDerivative(unsigned int index)
+{
+    return pderiv[index];
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------

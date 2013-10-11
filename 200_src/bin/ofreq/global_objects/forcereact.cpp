@@ -47,7 +47,7 @@ void ForceReact::setCurEquationNum(int newEquationNum)
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-vector<Derivative> &ForceReact::listDerivatives()
+vector<Derivative> &ForceReact::listDerivative()
 {
     return pDerivative;
 }
@@ -69,7 +69,7 @@ Derivative ForceReact::getDerivative(unsigned int num)
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-Derivative &ForceReact::refDerivative(unsigned int num)
+Derivative &ForceReact::listDerivative(unsigned int num)
 {
     //Return the derivative object specified.
     //Value is a pointer to the derivative.

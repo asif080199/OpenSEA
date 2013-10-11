@@ -144,7 +144,19 @@ public:
      * @return Returns reference to the vector of complex matrices which contain the derivatives.  Variable passed by
      * reference.
      */
-    vector<cx_mat> &listDerivatives();
+    vector<cx_mat> &listDerivative();
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Provides direct access to the derivative specified by the index.
+     *
+     * Allows for direct access to edit the derivative or just retrieve information from.  Index is also the order
+     * of the derivative.
+     * @param index Unsigned integer.  Specifies the index of which derivative to retrieve from the list.
+     * @return Complex matrix returned.  Returns the complex matrix for the derivative specified by the index.
+     * Returned variable is passed by reference.
+     */
+    cx_mat &listDerivative(unsigned int index);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**

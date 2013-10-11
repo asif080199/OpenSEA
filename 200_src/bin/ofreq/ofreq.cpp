@@ -174,18 +174,18 @@ int main(int argc, char *argv[])
     //Resize the solution object.
     for (unsigned int i = 0; i < sysofreq.listBody().size(); i++)
     {
-        listSolutions.push_back(SolutionSet(sysofreq.refWaveDirections().size(),
-                                             sysofreq.refWaveFrequencies().size()));
+        listSolutions.push_back(SolutionSet(sysofreq.listWaveDirections().size(),
+                                             sysofreq.listWaveFrequencies().size()));
     }
 
     //Iterate through each wave direction and wave frequency to solve
     //---------------------------------------------------------------------------
-    for(unsigned int i = 0; i < sysofreq.refWaveDirections().size(); i++)
+    for(unsigned int i = 0; i < sysofreq.listWaveDirections().size(); i++)
 	{
         //Set the current wave direction
         sysofreq.setCurWaveDirInd(i);
 
-        for(unsigned int j = 0; j < sysofreq.refWaveFrequencies().size(); j++)
+        for(unsigned int j = 0; j < sysofreq.listWaveFrequencies().size(); j++)
 		{
             //Set the current wave frequency
             sysofreq.setCurFreqInd(j);
@@ -215,7 +215,7 @@ int main(int argc, char *argv[])
             for(unsigned int k = 0; k < sysofreq.listBody().size(); k++)
 			{
                 Solution soln;
-                soln.refBody() = sysofreq.listBody()[k];
+                soln.refBody() = sysofreq.listBody(k);
                 soln.setSolnMat(theMotionSolver.listSolution(k));
                 listSolutions[k].setSolnMat(i, j, soln);
 			}
@@ -226,20 +226,20 @@ int main(int argc, char *argv[])
     //---------------------------------------------------------------------------
     //Iterate through each body output.  Setup the output and calculate outputs.
     //Resize list of outputs
-    if (sysofreq.listOutputs().size() != sysofreq.listBody().size())
-        sysofreq.listOutputs().resize(sysofreq.listBody().size());
+    if (sysofreq.listOutput().size() != sysofreq.listBody().size())
+        sysofreq.listOutput().resize(sysofreq.listBody().size());
 
-    for (unsigned int i = 0; i < sysofreq.listOutputs().size(); i++)
+    for (unsigned int i = 0; i < sysofreq.listOutput().size(); i++)
     {
         //Setup variables for each OutputBody object.
-        sysofreq.listOutputs()[i].setListBody(sysofreq.listBody());
-        sysofreq.listOutputs()[i].setSolutionSet(listSolutions);
-        sysofreq.listOutputs()[i].setListFreq(sysofreq.refWaveFrequencies());
-        sysofreq.listOutputs()[i].setListWaveDir(sysofreq.refWaveDirections());
-        sysofreq.listOutputs()[i].setCurBody(i);
+        sysofreq.listOutput(i).setListBody(sysofreq.listBody());
+        sysofreq.listOutput(i).setSolutionSet(listSolutions);
+        sysofreq.listOutput(i).setListFreq(sysofreq.listWaveFrequencies());
+        sysofreq.listOutput(i).setListWaveDir(sysofreq.listWaveDirections());
+        sysofreq.listOutput(i).setCurBody(i);
 
         //Setup filewriter for outputs
-        FileWriter Writer(oFreq_Directory, sysofreq.listOutputs()[i]);
+        FileWriter Writer(oFreq_Directory, sysofreq.listOutput(i));
 
         //Write frequency and wave direction list if this is the first iteration.
         if (i == 0)
@@ -261,7 +261,7 @@ int main(int argc, char *argv[])
 
         //Calculate outputs and write to file
         //Everything handled with the following function.
-        calcOutput(sysofreq.listOutputs()[i], Writer);
+        calcOutput(sysofreq.listOutput(i), Writer);
     }
 
     return a.exec();
@@ -277,7 +277,7 @@ void buildMatBody(int bod, bool useCoeff)
     //Search through the set of motion models to find the matching name.
     for (unsigned int i = 0; i < listModel.size(); i++)
     {
-        if (listModel[i].getName() == sysofreq.listBody()[bod].getMotionModel())
+        if (listModel[i].getName() == sysofreq.listBody(bod).getMotionModel())
         {
             listMatBody[bod].setModelId(i);
             modelnum = i;
@@ -287,29 +287,29 @@ void buildMatBody(int bod, bool useCoeff)
 
     //Now know the correct motion model to use.
     //Create initial setup.
-    listModel[modelnum].setListBodies(sysofreq.listBody());        //Feed the list of bodies
+    listModel[modelnum].setlistBody(sysofreq.listBody());        //Feed the list of bodies
     listModel[modelnum].setBody(bod);                   //Set which body to use as the current body
     listModel[modelnum].CoefficientOnly() = useCoeff;      //Let it know to only calculate coefficients.
     listModel[modelnum].Reset();                        //Give it a reset just for good measure.
 
     //Iterate through all the active forces, user
     //------------------------------------------
-    for (unsigned int i = 0; i < sysofreq.listBody()[bod].listForceActive_user().size(); i++)
+    for (unsigned int i = 0; i < sysofreq.listBody(bod).listForceActive_user().size(); i++)
     {
         listMatBody[bod].listForceActive_user().push_back(matForceActive());
-        listMatBody[bod].listForceActive_user()[i].listCoefficients() = listModel[modelnum].getMatForceActive_user(i);
+        listMatBody[bod].listForceActive_user(i).listCoefficients() = listModel[modelnum].getMatForceActive_user(i);
         //Create force ID.
-        listMatBody[bod].listForceActive_user()[i].setId(i);
+        listMatBody[bod].listForceActive_user(i).setId(i);
     }
 
     //Iterate through all the active forces, hydro
     //------------------------------------------
-    for(unsigned int i = 0; i < sysofreq.listBody()[bod].listForceActive_hydro().size(); i++)
+    for(unsigned int i = 0; i < sysofreq.listBody(bod).listForceActive_hydro().size(); i++)
     {
         listMatBody[bod].listForceActive_hydro().push_back(matForceActive());
-        listMatBody[bod].listForceActive_hydro()[i].listCoefficients() = listModel[modelnum].getMatForceActive_hydro(i);
+        listMatBody[bod].listForceActive_hydro(i).listCoefficients() = listModel[modelnum].getMatForceActive_hydro(i);
         //Create force ID.
-        listMatBody[bod].listForceActive_hydro()[i].setId(i);
+        listMatBody[bod].listForceActive_hydro(i).setId(i);
     }
 
     //Use this pointer for referencing the forces
@@ -318,43 +318,43 @@ void buildMatBody(int bod, bool useCoeff)
 
     //Iterate through all the reactive forces, user
     //------------------------------------------
-    for (unsigned int i = 0; i < sysofreq.listBody()[bod].listForceReact_user().size(); i++)
+    for (unsigned int i = 0; i < sysofreq.listBody(bod).listForceReact_user().size(); i++)
     {
         listMatBody[bod].listForceReact_user().push_back(matForceReact());
         //Create pointer
-        ptForce = &listMatBody[bod].listForceReact_user()[i];
+        ptForce = &listMatBody[bod].listForceReact_user(i);
 
         //Assign id for force.
         ptForce->setId(i);
 
-        ptReact = sysofreq.listBody()[bod].listForceReact_user()[i];
+        ptReact = sysofreq.listBody(bod).listForceReact_user(i);
 
         //Iterate through each derivative.
         for (int j = 0; j <= ptReact->getMaxOrd(); j++)
         {
             //Assign matrices
-            ptForce->listDerivatives().push_back(listModel[modelnum].getMatForceReact_user(i,j));
+            ptForce->listDerivative().push_back(listModel[modelnum].getMatForceReact_user(i,j));
         }
     }
 
     //Iterate through all the reactive forces, hydro
     //------------------------------------------
-    for (unsigned int i = 0; i < sysofreq.listBody()[bod].listForceReact_hydro().size(); i++)
+    for (unsigned int i = 0; i < sysofreq.listBody(bod).listForceReact_hydro().size(); i++)
     {
         listMatBody[bod].listForceReact_hydro().push_back(matForceReact());
         //Create pointer
-        ptForce = & listMatBody[bod].listForceReact_hydro()[i];
+        ptForce = & listMatBody[bod].listForceReact_hydro(i);
 
         //Assign id for force.
         ptForce->setId(i);
 
-        ptReact = sysofreq.listBody()[bod].listForceReact_user()[i];
+        ptReact = sysofreq.listBody(bod).listForceReact_user(i);
 
         //Iterate through each derivative.
         for (int j = 0; j <= ptReact->getMaxOrd(); j++)
         {
             //Assign matrices
-            ptForce->listDerivatives().push_back(listModel[modelnum].getMatForceReact_hydro(i,j));
+            ptForce->listDerivative().push_back(listModel[modelnum].getMatForceReact_hydro(i,j));
         }
     }
 
@@ -365,11 +365,11 @@ void buildMatBody(int bod, bool useCoeff)
 
     //Iterate through all the cross body forces, user
     //------------------------------------------
-    for (unsigned int i = 0; i < sysofreq.listBody()[bod].listForceCross_user().size(); i++)
+    for (unsigned int i = 0; i < sysofreq.listBody(bod).listForceCross_user().size(); i++)
     {
         listMatBody[bod].listForceCross_user().push_back(matForceCross());
         //Create pointer
-        ptForce2 = &listMatBody[bod].listForceCross_user()[i];
+        ptForce2 = &listMatBody[bod].listForceCross_user(i);
 
         //Assign id for force.
         ptForce2->setId(i);
@@ -377,7 +377,7 @@ void buildMatBody(int bod, bool useCoeff)
         //Assign cross body
         for (unsigned int k = 0; k < sysofreq.listBody().size(); k++)
         {
-            if (&sysofreq.listBody()[k] == sysofreq.listBody()[k].listCrossBody_user()[bod])
+            if (&sysofreq.listBody(k) == &(sysofreq.listBody(k).listCrossBody_user(bod)))
             {
                 //Assign cross body
                 ptForce2->setLinkedBody(listMatBody[k]);
@@ -387,23 +387,23 @@ void buildMatBody(int bod, bool useCoeff)
         }
 
         //Assign pointer
-        ptCross = sysofreq.listBody()[bod].listForceCross_user()[i];
+        ptCross = sysofreq.listBody(bod).listForceCross_user(i);
 
         //Iterate through each derivative.
         for (int j = 0; j <= ptCross->getMaxOrd(); j++)
         {
             //Assign matrices
-            ptForce2->listDerivatives().push_back(listModel[modelnum].getMatForceCross_user(i,j));
+            ptForce2->listDerivative().push_back(listModel[modelnum].getMatForceCross_user(i,j));
         }
     }
 
     //Iterate through all the cross body forces, hydro
     //------------------------------------------
-    for (unsigned int i = 0; i < sysofreq.listBody()[bod].listForceCross_hydro().size(); i++)
+    for (unsigned int i = 0; i < sysofreq.listBody(bod).listForceCross_hydro().size(); i++)
     {
         listMatBody[bod].listForceCross_hydro().push_back(matForceCross());
         //Create pointer
-        ptForce2 = &listMatBody[bod].listForceCross_hydro()[i];
+        ptForce2 = &listMatBody[bod].listForceCross_hydro(i);
 
         //Assign id for force.
         ptForce2->setId(i);
@@ -411,7 +411,7 @@ void buildMatBody(int bod, bool useCoeff)
         //Assign cross body
         for (unsigned int k = 0; k < sysofreq.listBody().size(); k++)
         {
-            if (&sysofreq.listBody()[k] == sysofreq.listBody()[k].listCrossBody_hydro()[bod])
+            if (&sysofreq.listBody(k) == &(sysofreq.listBody(k).listCrossBody_hydro(bod)))
             {
                 //Assign cross body
                 ptForce2->setLinkedBody(listMatBody[k]);
@@ -421,13 +421,13 @@ void buildMatBody(int bod, bool useCoeff)
         }
 
         //Assign pointer
-        ptCross = sysofreq.listBody()[bod].listForceCross_user()[i];
+        ptCross = sysofreq.listBody(bod).listForceCross_user(i);
 
         //Iterate through each derivative.
         for (int j = 0; j <= ptCross->getMaxOrd(); j++)
         {
             //Assign matrices
-            ptForce2->listDerivatives().push_back(listModel[modelnum].getMatForceCross_hydro(i,j));
+            ptForce2->listDerivative().push_back(listModel[modelnum].getMatForceCross_hydro(i,j));
         }
     }
 
@@ -445,7 +445,7 @@ void calcOutput(OutputsBody &OutputIn, FileWriter &WriterIn)
     WriterIn.refOutputsBody() = OutputIn;
 
     //Iterate through each wave direction and calculate outputs.
-    for (unsigned int j = 0; j < sysofreq.refWaveDirections().size(); j++)
+    for (unsigned int j = 0; j < sysofreq.listWaveDirections().size(); j++)
     {
         //Set current wave direction
         sysofreq.setCurWaveDirInd(j);

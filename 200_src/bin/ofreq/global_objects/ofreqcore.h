@@ -116,9 +116,6 @@ protected:
     void setErrLog(string dirIn);
 
     //------------------------------------------Function Separator ----------------------------------------------------
-    static std::string DIR; /**< The full path for the directory of the oFreq run.*/
-
-    //------------------------------------------Function Separator ----------------------------------------------------
     /**
      * @brief Writes output of a log message to the log file.  Adds in a date and time stamp to the log.
      * @param mesIn String variable.  The message to write to the log file.
@@ -137,6 +134,7 @@ private:
     static std::string FILE_OUTPUT; /**< The filename for the output file.*/
     static std::string FILE_ERROR; /**< The filename for the error file.*/
     static std::string SLASH; /**< Directory separator in a string path. */
+    static std::string DIR; /**< The full path for the directory of the oFreq run.*/
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**

@@ -108,7 +108,7 @@ public:
      * @brief Provides direct access to the list of wave frequencies.
      * @return Pointer to the list of wave frequencies.  Variable passed by reference.
      */
-    vector<double> &refWaveFrequencies();
+    vector<double> &listWaveFrequencies();
 
     //------------------------------------------Function Separator ----------------------------------------------------
 	/**
@@ -122,7 +122,7 @@ public:
      * @brief Provides direct access to the list of wave directions.
      * @return Pointer to the list of wave directions  Variable passed by reference.
      */
-    vector<double> &refWaveDirections();
+    vector<double> &listWaveDirections();
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -181,20 +181,20 @@ public:
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
+     * @brief Returns direct access to a single Body object.
+     * @param input Specifies index of which Body object to access in the list of Body objects.
+     * @return Returns a Body object. Returned variable is passed by reference.
+     */
+    Body &listBody(int input);
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
      * @brief Returns direct access to the list of OutputsBody objects.  Includes all the properties included by a
      * vector<> class.
      * @return Returns a vector of OutputsBody objects.  Returned variable passed by reference.
      * @sa OutputsBody
      */
-    vector<OutputsBody> &listOutputs();
-
-    //------------------------------------------Function Separator ----------------------------------------------------
-    /**
-     * @brief Returns direct access to a single Body object.
-     * @param input Specifies index of which Body object to access in the list of Body objects.
-     * @return Returns a Body object. Returned variable is passed by reference.
-     */
-    Body &refBody(int input = 0);
+    vector<OutputsBody> &listOutput();
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -202,7 +202,7 @@ public:
      * @param input Specifies the index of which OutputsBody object to access in the list of OutputsBody objects.
      * @return Returns an OutputsBody object.  Returned variable is passed by reference.
      */
-    OutputsBody &refOutput(int input = 0);
+    OutputsBody &listOutput(int input);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -243,7 +243,7 @@ public:
      * Variable passed by reference.
      * @return Returns a reference to the ForceActive_user object.  Variable passed by reference
      */
-    ForceActive &refForceActive_user(unsigned int forceIndex);
+    ForceActive &listForceActive_user(unsigned int forceIndex);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -269,7 +269,7 @@ public:
      * Variable passed by value.
      * @return Returns a reference to the ForceReact_user object.  Variable passed by reference
      */
-    ForceReact &refForceReact_user(unsigned int forceIndex);
+    ForceReact &listForceReact_user(unsigned int forceIndex);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -295,7 +295,7 @@ public:
      * Variable passed by value.
      * @return Returns a reference to the ForceCross_user object.  Variable passed by reference
      */
-    ForceCross &refForceCross_user(unsigned int forceIndex);   
+    ForceCross &listForceCross_user(unsigned int forceIndex);
 
 //==========================================Section Separator =========================================================
 public slots:
