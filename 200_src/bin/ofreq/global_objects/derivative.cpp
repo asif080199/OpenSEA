@@ -26,6 +26,9 @@
 
 #include "derivative.h"
 
+using namespace std;
+using namespace osea::ofreq;
+
 //==========================================Section Separator =========================================================
 //Public functions:
 
@@ -51,7 +54,7 @@ vector<Equation> &Derivative::listEquation()
 Equation &Derivative::listEquation(unsigned int number)
 {
     //Check to see if the equation is out of bounds.  If so, resize vector.
-    if (number > pEquationList.size() - 1)
+    if ((number > pEquationList.size() - 1) || (pEquationList.size() == 0))
     {
         pEquationList.resize(number + 1);
     }

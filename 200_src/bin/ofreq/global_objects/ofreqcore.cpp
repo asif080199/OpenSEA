@@ -26,6 +26,9 @@
 
 #include "ofreqcore.h"
 
+using namespace osea::ofreq;
+using namespace std;
+
 //==========================================Section Separator =========================================================
 //Static initialization
 std::string oFreqCore::FILE_OUTPUT = "output.log";
@@ -39,6 +42,8 @@ std::string oFreqCore::DIR = "";
 
 std::ofstream oFreqCore::OutLog;
 std::ofstream oFreqCore::ErrLog;
+std::ofstream &oFreqCore::seaout = OutLog;
+std::ofstream &oFreqCore::seaerr = ErrLog;
 
 //==========================================Section Separator =========================================================
 //Public Functions
@@ -105,6 +110,11 @@ void oFreqCore::writeLog(string mesIn)
     OutLog << Time() << "\t\t";
     //Then write message and end in a carriage return.
     OutLog << mesIn << endl;
+
+    //Write same message to output screen
+    std::cout << Time() << "\t\t";
+    //Write message to output screen and end in a carriage return.
+    cout << mesIn << endl;
 }
 
 //------------------------------------------Function Separator ----------------------------------------------------
@@ -114,6 +124,9 @@ void oFreqCore::writeError(string mesIn)
     ErrLog << Time() << "\t" << typeid(*this).name() << "\t\t\t";
     //Then write message and end in a carriage return.
     ErrLog << mesIn << endl;
+
+    //Write output to screen.
+    std::cout << endl << mesIn << endl << "Check Error log for details." << endl << endl;
 }
 
 //==========================================Section Separator =========================================================

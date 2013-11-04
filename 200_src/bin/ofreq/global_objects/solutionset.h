@@ -49,16 +49,44 @@
 #endif
 #include "./ofreqcore.h"
 
-typedef vector<Solution*> ptSoln; /**< Type definition for a vector of pointers to Solution object.*/
+//######################################### Class Separator ###########################################################
+//Namespace declarations
 
-using namespace std;
+//==========================================Section Separator =========================================================
+/**
+ * The namespace for all code created under the OpenSEA project.  There are also several sub-namespaces, one
+ * associated with each primary program under osea.
+ * 1.)  ohydro:  Code associated with the program ohydro.
+ * 2.)  ofreq:   Code associated with the program ofreq.
+ * 3.)  otime:   Code associated with the program otime.
+ * 4.)  ofourier:  Code associated with the program ofourier.
+ * 5.)  obatch:    Code associated with the program obatch.
+ * 6.)  guisea:    Code assocaited with the GUI that interacts with all OpenSEA programs.
+ * Any code that may have common utility amongst all programs, such as file reading objects, goes under the generic
+ * osea namespace.  Any code that is only useful within the specific program it serves, goes under the specific
+ * namespace.  When in doubt, default to just the osea namespace.
+ *
+ * The namespaces are not intended to create an organizational structure.  They are only intended to prevent
+ * name conflicts.
+ */
+namespace osea
+{
+
+//==========================================Section Separator =========================================================
+/**
+ * The namespace of all code specifically associated with ofreq.
+ */
+namespace ofreq
+{
+
+typedef std::vector<Solution*> ptSoln; /**< Type definition for a vector of pointers to Solution object.*/
 
 //######################################### Class Separator ###########################################################
 /**
  * This class records the list of solutions obtained for a single Body object.  It is essentially a 2D version of the
- * vector<object> class.  But since vector can't handle 2-d storage solutions, this class was created.
+ * std::vector<object> class.  But since vector can't handle 2-d storage solutions, this class was created.
  */
-class SolutionSet : public oFreqCore
+class SolutionSet : public osea::ofreq::oFreqCore
 {
 //==========================================Section Separator =========================================================
 public:
@@ -127,7 +155,7 @@ public:
      * @brief Returns the size of the matrix as a vector of two elements.
      * @return Integer.  Returns the size of the matrix as a vector of two elements.
      */
-    vector<int> size();
+    std::vector<int> size();
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -153,7 +181,11 @@ private:
      * @brief Array of Solution objects.  Dynamically  allocated.  The first index is the wave direction. (The rows
      * direction.)  The second index is the wave frequency (The columns direction.)
      */
-    vector< ptSoln > plist;
+    std::vector< ptSoln > plist;
 
 };
+
+}   //Namespace ofreq
+}   //Namespace osea
+
 #endif // LISTSOLUTION_H

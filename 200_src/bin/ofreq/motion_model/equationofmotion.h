@@ -50,8 +50,35 @@
     #include <armadillo>    //Armadillo library included with standard system libraries.
 #endif
 
-using namespace std;
-using namespace arma;
+//######################################### Class Separator ###########################################################
+//Namespace declarations
+
+//==========================================Section Separator =========================================================
+/**
+ * The namespace for all code created under the OpenSEA project.  There are also several sub-namespaces, one
+ * associated with each primary program under osea.
+ * 1.)  ohydro:  Code associated with the program ohydro.
+ * 2.)  ofreq:   Code associated with the program ofreq.
+ * 3.)  otime:   Code associated with the program otime.
+ * 4.)  ofourier:  Code associated with the program ofourier.
+ * 5.)  obatch:    Code associated with the program obatch.
+ * 6.)  guisea:    Code assocaited with the GUI that interacts with all OpenSEA programs.
+ * Any code that may have common utility amongst all programs, such as file reading objects, goes under the generic
+ * osea namespace.  Any code that is only useful within the specific program it serves, goes under the specific
+ * namespace.  When in doubt, default to just the osea namespace.
+ *
+ * The namespaces are not intended to create an organizational structure.  They are only intended to prevent
+ * name conflicts.
+ */
+namespace osea
+{
+
+//==========================================Section Separator =========================================================
+/**
+ * The namespace of all code specifically associated with ofreq.
+ */
+namespace ofreq
+{
 
 //######################################### Class Separator ###########################################################
 //Prototype class declarations
@@ -70,9 +97,8 @@ class MotionModel;
  * In addition to the regular object entries, the class also has provision for a list of arbitrary arguments.
  */
 
-class EquationofMotion : public QObject, public oFreqCore
+class EquationofMotion : public osea::ofreq::oFreqCore
 {
-    Q_OBJECT
 //==========================================Section Separator =========================================================
 public:
     //------------------------------------------Function Separator ----------------------------------------------------
@@ -97,7 +123,7 @@ public:
      * @param NameIn A name for what physical property the equation solves for.  Used for user output.  Not critical
      * to program execution.
      */
-    EquationofMotion(MotionModel *modelIn, string NameIn);
+    EquationofMotion(MotionModel *modelIn, std::string NameIn);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -109,22 +135,33 @@ public:
      * @param modelIn A pointer to the motion model object that created the equation of motion.
      * @param NameIn A name for what physical property the equation solves for.  Used for user output.  Not critical
      * to program execution.
-     * @param IndexIn
+     * @param IndexIn Sets the index for the Equation of Motion.  The index is how the equation determines which numbers to access
+     * on the data.  The following indices are used.  Any higher indices can extend beyond this range, and the program
+     * easily adapts.  But the following three are reserved.  Unused indices are not transferred to the matrices when
+     * solved.  So unused indices to not negatively impact calculation performance.  However, using excessively large
+     * indices (say 500 when you only have 3 equations) will result in large matrices and unecessary memory
+     * requirements.  THe following index reservations apply.
+     * 1:  Translation in x-direction.  Specific to rigid body motion.
+     * 2:  Translation in y-direction.  Specific to rigid body motion.
+     * 3:  Translation in z-direction.  Specific to rigid body motion.
+     * 4:  Rotation about x-direction.  Specific to rigid body motion.
+     * 5:  Rotation about y-direction.  Specific to rigid body motion.
+     * 6:  Rotation about z-direction.  Specific to rigid body motion.
      */
-    EquationofMotion(MotionModel *modelIn, string NameIn, int IndexIn);
+    EquationofMotion(MotionModel *modelIn, std::string NameIn, int IndexIn);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
      * @brief Default destructor.
      */
-    ~EquationofMotion();
+    virtual ~EquationofMotion();
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
      * @brief Triggers evaluation of the equation of motion object.
      * @return Returns a complex number that is the result of evaluating the equation of motion object.
      */
-    complex<double> Evaluate();
+    std::complex<double> Evaluate();
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -136,12 +173,12 @@ public:
      * solved.  So unused indices to not negatively impact calculation performance.  However, using excessively large
      * indices (say 500 when you only have 3 equations) will result in large matrices and unecessary memory
      * requirements.  THe following index reservations apply.
-     * 1:  Translation in x-direction.
-     * 2:  Translation in y-direction.
-     * 3:  Translation in z-direction.
-     * 4:  Rotation about x-direction.
-     * 5:  Rotation about y-direction.
-     * 6:  Rotation about z-direction.
+     * 1:  Translation in x-direction.  Specific to rigid body motion.
+     * 2:  Translation in y-direction.  Specific to rigid body motion.
+     * 3:  Translation in z-direction.  Specific to rigid body motion.
+     * 4:  Rotation about x-direction.  Specific to rigid body motion.
+     * 5:  Rotation about y-direction.  Specific to rigid body motion.
+     * 6:  Rotation about z-direction.  Specific to rigid body motion.
      * @param DataIn The integer of the data index to use.
      */
     void setDataIndex(int DataIn);
@@ -156,12 +193,12 @@ public:
      * solved.  So unused indices to not negatively impact calculation performance.  However, using excessively large
      * indices (say 500 when you only have 3 equations) will result in large matrices and unecessary memory
      * requirements.  THe following index reservations apply.
-     * 1:  Translation in x-direction.
-     * 2:  Translation in y-direction.
-     * 3:  Translation in z-direction.
-     * 4:  Rotation about x-direction.
-     * 5:  Rotation about y-direction.
-     * 6:  Rotation about z-direction.
+     * 1:  Translation in x-direction.  Specific to rigid body motion.
+     * 2:  Translation in y-direction.  Specific to rigid body motion.
+     * 3:  Translation in z-direction.  Specific to rigid body motion.
+     * 4:  Rotation about x-direction.  Specific to rigid body motion.
+     * 5:  Rotation about y-direction.  Specific to rigid body motion.
+     * 6:  Rotation about z-direction.  Specific to rigid body motion.
      * @return Returns an integer number representing the data index used by the equation.
      */
     int getDataIndex();
@@ -176,12 +213,12 @@ public:
      * solved.  So unused indices to not negatively impact calculation performance.  However, using excessively large
      * indices (say 500 when you only have 3 equations) will result in large matrices and unecessary memory
      * requirements.  THe following index reservations apply.
-     * 1:  Translation in x-direction.
-     * 2:  Translation in y-direction.
-     * 3:  Translation in z-direction.
-     * 4:  Rotation about x-direction.
-     * 5:  Rotation about y-direction.
-     * 6:  Rotation about z-direction.
+     * 1:  Translation in x-direction.  Specific to rigid body motion.
+     * 2:  Translation in y-direction.  Specific to rigid body motion.
+     * 3:  Translation in z-direction.  Specific to rigid body motion.
+     * 4:  Rotation about x-direction.  Specific to rigid body motion.
+     * 5:  Rotation about y-direction.  Specific to rigid body motion.
+     * 6:  Rotation about z-direction.  Specific to rigid body motion.
      * @return Returns a reference to the protected data index variable contained in the class.
      */
     int &refDataIndex();
@@ -195,7 +232,7 @@ public:
      * @param argn The number of arguments to expect.
      * @param argv The vector containing the argument values.
      */
-    void setArguments(int argn, vector<double> argv);
+    void setArguments(int argn, std::vector<double> argv);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -205,7 +242,17 @@ public:
      * equation.
      * @return Returns reference to the protected pName variable.
      */
-    string &refName();
+    std::string &refName();
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief The name for the equation object.
+     *
+     * This is the short name that user will use to identify the meaning of the equation.
+     * @param nameIn String.  The variable which specifies the short name for the equation of motion.  Variable
+     * passed by value.
+     */
+    void setName(std::string nameIn);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -217,7 +264,20 @@ public:
      * behind the equation of motion.
      * @return Returns reference to the protected pDescription variable.
      */
-    string &refDescription();
+    std::string &refDescription();
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief The description for the equation object.
+     *
+     * This is an expanded version of the name.  Again, purely for user
+     * identification of the EquationofMotion object.  Brief names go under the Name property.  More extensive
+     * descriptions go under this property.  These would be useful to the user for describing the physical meaning
+     * behind the equation of motion.
+     * @param descIn String.  The variable used to specify the description for the equation of motion.  Variable
+     * passed by value.
+     */
+    void setDescription(std::string descIn);
 
 //==========================================Section Separator =========================================================
 protected:
@@ -232,7 +292,7 @@ protected:
      *
      * The formula can also make use of several math functions provided by the equation of motion object.
      */
-    virtual complex<double> setFormula();
+    virtual std::complex<double> setFormula();
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -252,7 +312,7 @@ protected:
      * Kronecker delta function evaluates with one when var1 = var2.
      * @return Complex number.  Evaluates to either zero (0 + 0j), or one (1 + 0j).
      */
-    complex<double> Kronecker(int var1, int var2, bool anti = false);
+    std::complex<double> Kronecker(int var1, int var2, bool anti = false);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -268,7 +328,7 @@ protected:
      * @return Returns a complex value that is the time differential, transposed into a frequency domain.  If absolute
      * values of response were desired, the function will include the effects of response amplitude.
      */
-    complex<double> Ddt(int var, int ord, int bodIn=-1);
+    std::complex<double> Ddt(int var, int ord, int bodIn=-1);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -278,8 +338,8 @@ protected:
      * automatically Sum across the entire index range.
      * @param force Input to specify which items the results should Sum across.  Typically, this is one of the built-in
      * force functions. However, it can be any function, any item, any calculation.  The only catch is that the
-     * input value must be a complex<double> data type.
-     * @param index String specifying which variable should be summed on.  This may be any one of these options:
+     * input value must be a std::complex<double> data type.
+     * @param index std::string specifying which variable should be summed on.  This may be any one of these options:
      * Order of derivative = "ord"
      * Variable = "var"
      * Body = "bod"
@@ -289,21 +349,21 @@ protected:
      * the summation will happen at the highest value of the variable index specified.
      * @return Returns a complex value that is the summation of the index and limits specified.
      */
-    complex<double> Sum(complex<double> force, string index, unsigned int from = -1, unsigned int to = -1);
+    std::complex<double> Sum(std::complex<double> force, std::string index, unsigned int from = -1, unsigned int to = -1);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
      * @brief A reference to the data set of the ForceActive_hydro.
      * @return Returns the data set for the ForceActive_hydro.  Indices can be specified to access individual elements.
      */
-    complex<double> ForceActive_hydro();
+    std::complex<double> ForceActive_hydro();
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
      * @brief A reference to the data set of the ForceActive_user.
      * @return Returns the data set for the ForceActive_user.  Indices can be specified to access individual elements.
      */
-    complex<double> ForceActive_user();
+    std::complex<double> ForceActive_user();
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -312,7 +372,7 @@ protected:
      * @param varIn Integer.  Represents the input varaible for the variable.
      * @return Returns the data set for the ForceReact_hydro.  Indices can be specified to access individual elements.
      */
-    complex<double> ForceReact_hydro(unsigned int ordIn, unsigned int varIn);
+    std::complex<double> ForceReact_hydro(unsigned int ordIn, unsigned int varIn);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -321,7 +381,7 @@ protected:
      * @param varIn Integer.  Represents the input varaible for the variable.
      * @return Returns the data set for the ForceReact_user.  Indices can be specified to access individual elements.
      */
-    complex<double> ForceReact_user(unsigned int ordIn, unsigned int varIn);
+    std::complex<double> ForceReact_user(unsigned int ordIn, unsigned int varIn);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -331,7 +391,7 @@ protected:
      * @param varIn Integer.  Represents the input varaible for the variable.
      * @return Returns the data set for the ForceCross_hydro.  Indices can be specified to access individual elements.
      */
-    complex<double> ForceCross_hydro(unsigned int bodIn, unsigned int ordIn, unsigned int varIn);
+    std::complex<double> ForceCross_hydro(unsigned int bodIn, unsigned int ordIn, unsigned int varIn);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -341,7 +401,7 @@ protected:
      * @param varIn Integer.  Represents the input varaible for the variable.
      * @return Returns the data set for the ForceCross_user.  Indices can be specified to access individual elements.
      */
-    complex<double> ForceCross_user(unsigned int bodIn, unsigned int ordIn, unsigned int varIn);
+    std::complex<double> ForceCross_user(unsigned int bodIn, unsigned int ordIn, unsigned int varIn);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -349,7 +409,7 @@ protected:
      * @param varIn Integer.  Represents the input varaible for the variable.
      * @return Returns the data set for the ForceMass.  Indices can be specified to access individual elements.
      */
-    complex<double> ForceMass(int varIn);
+    std::complex<double> ForceMass(int varIn);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -368,7 +428,7 @@ protected:
      * Used to supply arguments to the equation of motion.  Uknown, arbitrary double precision values.
      * A vector of uknown size.  Not required for use fo the equation of motion object.
      */
-    vector<double> argvalue;
+    std::vector<double> argvalue;
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -386,15 +446,24 @@ protected:
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
-     * @brief Returns the index integer for the current body used by the motion model that created this equation of
-     * motions.
+     * @brief Retuns the index integer for the body in the list of bodies.
      *
-     * Returns the index integer for the current body used by the motion model that created this equation of
-     * motions.  This index cannot be modified through this function.  It is purely meant for access of the variable.
+     * This is used for summation functions when iterating through each body in the list of bodies.  This index
+     * cannot be modified through this function.  It is purely meant for access to the variable.
+     * @return Returns the index integer for each body in the list of bodies.
+     */
+    int body();
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Returns the index integer for the current body used by the motion model that created this equation of
+     * motion.
+     *
+     * This index cannot be modified through this function.  It is purely meant for access of the variable.
      * @return Returns the index integer for the current body used by the motion model that created this equation of
      * motions.
      */
-    int body();
+    int curbody();
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -436,7 +505,7 @@ protected:
      * The name for the equation object.  This is the short name that user will use to identify the meaning of the
      * equation.
      */
-    string pName;
+    std::string pName;
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -447,7 +516,7 @@ protected:
      * descriptions go under this property.  These would be useful to the user for describing the physical meaning
      * behind the equation of motion.
      */
-    string pDescription;
+    std::string pDescription;
 
 //==========================================Section Separator =========================================================
 private:
@@ -488,7 +557,7 @@ private:
     /**
      * @brief The integer of the current body.  Used for iteration and summation functions.
      */
-    unsigned int pCurBod;
+    unsigned int pBod;
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -506,10 +575,9 @@ private:
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
      * @brief Used to identify the Equation of Motion object if the DataIndex property doesn't get set.
-     *5
-     * Used to identify the Equation of Motion object if the DataIndex property doesn't get set.  This integer is set
-     * at object creation and then not changed.  If the object needs to lookup its position in the motionmodel object,
-     * it can use the private index to identify itself.
+     *
+     * This integer is set at object creation and then not changed.  If the object needs to lookup its position in
+     * the motionmodel object, it can use the private index to identify itself.
      */
     int pPrivateIndex;
 
@@ -534,5 +602,8 @@ private:
     //------------------------------------------Function Separator ----------------------------------------------------
     void ConstructorCommon(MotionModel *modelIn);
 };
+
+}   //Namespace ofreq
+}   //Namespace osea
 
 #endif // EQUATIONOFMOTION_H

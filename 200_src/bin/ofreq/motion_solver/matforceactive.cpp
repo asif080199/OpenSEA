@@ -26,6 +26,10 @@
 
 #include "matforceactive.h"
 
+using namespace arma;
+using namespace std;
+using namespace osea::ofreq;
+
 //------------------------------------------Function Separator --------------------------------------------------------
 matForceActive::matForceActive()
 {

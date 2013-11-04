@@ -48,8 +48,35 @@
 #include "../global_objects/body.h"
 #include "../global_objects/ofreqcore.h"
 
-using namespace std;
-using namespace arma;
+//######################################### Class Separator ###########################################################
+//Namespace declarations
+
+//==========================================Section Separator =========================================================
+/**
+ * The namespace for all code created under the OpenSEA project.  There are also several sub-namespaces, one
+ * associated with each primary program under osea.
+ * 1.)  ohydro:  Code associated with the program ohydro.
+ * 2.)  ofreq:   Code associated with the program ofreq.
+ * 3.)  otime:   Code associated with the program otime.
+ * 4.)  ofourier:  Code associated with the program ofourier.
+ * 5.)  obatch:    Code associated with the program obatch.
+ * 6.)  guisea:    Code assocaited with the GUI that interacts with all OpenSEA programs.
+ * Any code that may have common utility amongst all programs, such as file reading objects, goes under the generic
+ * osea namespace.  Any code that is only useful within the specific program it serves, goes under the specific
+ * namespace.  When in doubt, default to just the osea namespace.
+ *
+ * The namespaces are not intended to create an organizational structure.  They are only intended to prevent
+ * name conflicts.
+ */
+namespace osea
+{
+
+//==========================================Section Separator =========================================================
+/**
+ * The namespace of all code specifically associated with ofreq.
+ */
+namespace ofreq
+{
 
 //######################################### Class Separator ###########################################################
 //Forward declarations to keep the compiler happy.
@@ -76,7 +103,7 @@ class SolutionSet;
  * @sa OutputDerived::calcOutput();
  */
 
-class OutputDerived : public oFreqCore
+class OutputDerived : public osea::ofreq::oFreqCore
 {
 //==========================================Section Separator =========================================================
 public:
@@ -96,17 +123,17 @@ public:
     /**
      * @brief Returns the name of the OutputDerived object.  This is a name set by the user to idenfity the object.  If
      * multiple objects of the same type are created, the name can also distinguish between the various objects.
-     * @return Returns the name of the OutputDerived object.  String variable.  Variable passed by value.
+     * @return Returns the name of the OutputDerived object.  std::string variable.  Variable passed by value.
      */
-    string getName();
+    std::string getName();
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
      * @brief Sets the name of the OutputDerived object.  This is a name set by the user to idenfity the object.  If
      * multiple objects of the same type are created, the name can also distinguish between the various objects.
-     * @param nameIn String variable.  Sets the name of the OutputDerived object.  Variable passed by value.
+     * @param nameIn std::string variable.  Sets the name of the OutputDerived object.  Variable passed by value.
      */
-    void setName(string nameIn);
+    void setName(std::string nameIn);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -129,14 +156,14 @@ public:
      * data type is used because that is the most natural data type for the larges number of OutputDerived objects.
      * It isn't always the best, but it can usually work well for the intended purposes.
      */
-    virtual cx_mat calcOutput(double freqIn) = 0;
+    virtual arma::cx_mat calcOutput(double freqIn) = 0;
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
      * @brief Returns the list of body objects.  Only a c++ reference to the list of body objects.
      * @return Returns reference to the list of Body objects.  Variable passed by reference.
      */
-    vector<Body> &listBody();
+    std::vector<Body> &listBody();
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -151,7 +178,7 @@ public:
      * @brief Sets the list of Body objects.
      * @param Input THe list of Body objects.  Variable passed by reference.
      */
-    void setListBody(vector<Body> &Input);
+    void setListBody(std::vector<Body> &Input);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -159,7 +186,7 @@ public:
      * @return Returns a vector of SolutionSet objects.  Internal storage is just a set of pointers to the object.
      * Variable is passed by reference.
      */
-    vector<SolutionSet> &refSolutionSet();
+    std::vector<SolutionSet> &refSolutionSet();
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -167,7 +194,7 @@ public:
      * @param Input The vector list of SolutionSet objects.  Variable is passed by reference.  Variable is stored
      * internally as a pointer.
      */
-    void setSolutionSet(vector<SolutionSet> &Input);
+    void setSolutionSet(std::vector<SolutionSet> &Input);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -175,7 +202,7 @@ public:
      * @return Returns the list of wave frequencies.  Variable is passed by reference.  Variable is stored internally
      * as a pointer.
      */
-    vector<double> &listFreq();
+    std::vector<double> &listFreq();
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -194,7 +221,7 @@ public:
      * @param Input The list of wave frequencies.  Variable is passed by reference.  Variable is stored internally as
      * a pointer.
      */
-    void setListFreq(vector<double>& Input);
+    void setListFreq(std::vector<double>& Input);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -203,7 +230,7 @@ public:
      * @return Returns the vector of doubles containing the wave directions.  Variable passed by reference.  Variable
      * is stored internally as a pointer.
      */
-    vector<double> &listWaveDir();
+    std::vector<double> &listWaveDir();
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -224,7 +251,7 @@ public:
      * @param Input The vector of doubles containing the wave directions.  Variable is passed by reference.  Variable
      * is stored internally as a pointer.
      */
-    void setListWaveDir(vector<double>& Input);
+    void setListWaveDir(std::vector<double>& Input);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -267,32 +294,32 @@ protected:
      * @brief The name for the derived output object.  This is a name set by the user to idenfity the object.  If
      * multiple objects of the same type are created, the name can also distinguish between the various objects.
      */
-    string pName;
+    std::string pName;
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
      * @brief The vector list of Body objects.
      */
-    vector<Body>* plistBody;
+    std::vector<Body>* plistBody;
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
      * @brief The vector list of SolutionSet objects.
      */
-    vector<SolutionSet>* plistSolution;
+    std::vector<SolutionSet>* plistSolution;
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
      * @brief The list of wave frequencies.  Wave frequency recorded in units of radians per second.
      */
-    vector<double>* plistFreq;
+    std::vector<double>* plistFreq;
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
      * @brief The list of wave directions.  Wave direction recorded in units of radians.  Zero is true North direction.
      * Oriented positive counter-clockwise.
      */
-    vector<double>* plistWaveDir;
+    std::vector<double>* plistWaveDir;
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -311,4 +338,8 @@ protected:
 private:
 
 };
+
+}   //namespace ofreq
+}   //namespace osea
+
 #endif

@@ -67,8 +67,18 @@
     #define GetCurrentDir getcwd
 #endif
 
+//Motion Models
+//---------------------------------------
+#include "./motion_model/model6dof.h"
 
 //########################################## Global Variables #########################################################
+//Namespaces
+using namespace osea;
+using namespace osea::ofreq;
+using namespace std;
+
+//########################################## Global Variables #########################################################
+
 //Create matrix bodies.
 vector<matBody> listMatBody;
 
@@ -82,6 +92,7 @@ vector<SolutionSet> listSolutions;
 System sysofreq;
 
 //######################################### Function Prototypes #######################################################
+
 //------------------------------------------Function Separator ----------------------------------------------------
 /**
  * @brief Builds a matrix body object for the body specified by the integer.  Uses the motion model identified by the
@@ -111,6 +122,15 @@ void calcOutput(OutputsBody &OutputIn, FileWriter &WriterIn);
  */
 void ReadFiles(string runPath);
 
+//------------------------------------------Function Separator ----------------------------------------------------
+/**
+ * @brief Defines all motion models.
+ *
+ * Adds all defined motion models to the list of available motion models.  Each
+ * class of motion model has only one object defined in the list.
+ */
+void DefineModels();
+
 //############################################ Class Prototypes #######################################################
 
 
@@ -139,13 +159,18 @@ string oFreq_Directory = "";
  * 8.  Use the results to calculate derived outputs.
  * 9.  Write the calculated outputs to output files.
  */
-using namespace std;
 
 int main(int argc, char *argv[])
 {
     QCoreApplication a(argc, argv);
-    string mypath;
-    string filename;
+    ofreq::oFreqCore freqCore;
+
+//    //Create a header for output to the screen
+//    oFreqCore::OutLog << string(100,'\n');
+//    oFreqCore::OutLog << "==========================================================\n";
+//    oFreqCore::OutLog << "OpenSEA:  oFreq";
+//    oFreqCore::OutLog << "==========================================================\n";
+//    oFreqCore::OutLog << string(5,'\n');
 
 	//if command line arg supplied, use that directory
 	//or assume the current working directory
@@ -162,6 +187,10 @@ int main(int argc, char *argv[])
         //Set the path to the current working directory
         oFreq_Directory = cCurrentPath;
     }
+
+    //Generate motion models
+    //---------------------------------------------------------------------------
+    DefineModels();
 
     //Read input files and interpret data.
     //---------------------------------------------------------------------------
@@ -496,9 +525,9 @@ void ReadFiles(string runPath)
     dictControl dictCont;               //Create dictionary object for control.in
 
     //Connect the dictionary and FileReader objects.
-    QObject::connect(&fileIn, SIGNAL(outputBodiesFile(ObjectGroup)), &dictBod, SLOT(setObject(ObjectGroup)));
-    QObject::connect(&fileIn, SIGNAL(outputForcesFile(ObjectGroup)), &dictForce, SLOT(setObject(ObjectGroup)));
-    QObject::connect(&fileIn, SIGNAL(outputControlFile(ObjectGroup)), &dictCont, SLOT(setObject(ObjectGroup)));
+//    QObject::connect(&fileIn, SIGNAL(outputBodiesFile(ObjectGroup)), &dictBod, SLOT(setObject(ObjectGroup)));
+//    QObject::connect(&fileIn, SIGNAL(outputForcesFile(ObjectGroup)), &dictForce, SLOT(setObject(ObjectGroup)));
+//    QObject::connect(&fileIn, SIGNAL(outputControlFile(ObjectGroup)), &dictCont, SLOT(setObject(ObjectGroup)));
 
     //Create pointer to System object for each of the filereader objects
     fileIn.setSystem( &sysofreq);
@@ -511,7 +540,19 @@ void ReadFiles(string runPath)
 
     //Read input files
     //Sequence of file reading is important.
+    fileIn.setDictionary(dictCont);
     fileIn.readControl();       //Must be first.
+    fileIn.setDictionary(dictForce);
     fileIn.readForces();        //Must come before reading Bodies
+    fileIn.setDictionary(dictBod);
     fileIn.readBodies();        //Must come after reading forces.
+}
+
+//####################################### DefineModels Function #######################################################
+void DefineModels()
+{
+    //Create each motion model and add it to the list.
+    //Don't need to set any properties for the models.  All those get set at object creation.
+
+    listModel.push_back(Model6DOF());
 }

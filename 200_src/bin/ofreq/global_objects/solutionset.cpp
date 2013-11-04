@@ -26,6 +26,9 @@
 
 #include "solutionset.h"
 
+using namespace std;
+using namespace osea::ofreq;
+
 //------------------------------------------Function Separator --------------------------------------------------------
 SolutionSet::SolutionSet()
 {

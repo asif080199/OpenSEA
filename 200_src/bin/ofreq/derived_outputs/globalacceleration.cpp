@@ -26,6 +26,9 @@
 
 #include "globalacceleration.h"
 
+using namespace std;
+using namespace osea::ofreq;
+
 //==========================================Section Separator =========================================================
 //Static variable initialization
 string GlobalAcceleration::ACCELERATION_NAME = "Global Acceleration"; /**< Used for reference in file output. */

@@ -11,6 +11,7 @@
  *Date              Author				Description
  *---------------------------------------------------------------------------------------------------------------------
  *Aug 25 2013       Nicholas Barczak    Initially created
+ *Oct 31, 2013      Nicholas Barczak    Debugged and updated to rev 1.0
  *
 \*-------------------------------------------------------------------------------------------------------------------*/
 
@@ -41,7 +42,28 @@
 #include <string>
 #include "../global_objects/ofreqcore.h"
 
-using namespace std;
+//######################################### Class Separator ###########################################################
+//Namespace declarations
+
+//==========================================Section Separator =========================================================
+/**
+ * The namespace for all code created under the OpenSEA project.  There are also several sub-namespaces, one
+ * associated with each primary program under osea.
+ * 1.)  ohydro:  Code associated with the program ohydro.
+ * 2.)  ofreq:   Code associated with the program ofreq.
+ * 3.)  otime:   Code associated with the program otime.
+ * 4.)  ofourier:  Code associated with the program ofourier.
+ * 5.)  obatch:    Code associated with the program obatch.
+ * 6.)  guisea:    Code assocaited with the GUI that interacts with all OpenSEA programs.
+ * Any code that may have common utility amongst all programs, such as file reading objects, goes under the generic
+ * osea namespace.  Any code that is only useful within the specific program it serves, goes under the specific
+ * namespace.  When in doubt, default to just the osea namespace.
+ *
+ * The namespaces are not intended to create an organizational structure.  They are only intended to prevent
+ * name conflicts.
+ */
+namespace osea
+{
 
 //######################################### Class Separator ###########################################################
 //Prototype class declarations
@@ -53,14 +75,14 @@ class ObjectGroup;      //Forward declaration necessary to allow class recursion
  * @brief Type definition used to store key values.  Must be a vector of vectors because a value may also be a list
  * of values.
  */
-typedef vector< vector<string> > vecValue;
+typedef std::vector< std::vector<std::string> > vecValue;
 
 /**
  * @brief Type defintion used to store keywords.
  */
-typedef vector<string> vecKeyword;
+typedef std::vector<std::string> vecKeyword;
 
-typedef vector<ObjectGroup*> vecObject;
+typedef std::vector<ObjectGroup*> vecObject;
 
 //######################################### Class Separator ###########################################################
 /**
@@ -72,7 +94,7 @@ typedef vector<ObjectGroup*> vecObject;
  *      lists.  A list will be as long as it needs to be for specification of all values in the list.  The index of
  *      the value is specified by its position in the vector list.  The value is the entry.
  */
-class ObjectGroup : public oFreqCore
+class ObjectGroup : public osea::ofreq::oFreqCore
 {
 //==========================================Section Separator =========================================================
 public:
@@ -91,17 +113,17 @@ public:
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
      * @brief Sets the class name, as specified by the input file.
-     * @param input String.  The name of the class, as specified by the input file.  Variable passed by value.
+     * @param input std::string.  The name of the class, as specified by the input file.  Variable passed by value.
      */
-    void setClassName(string input);
+    void setClassName(std::string input);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
      * @brief Gets the class name, as specified by the input file.
-     * @return Returns string that represents the name of the class, as specified by the input file.  Variable passed
+     * @return Returns std::string that represents the name of the class, as specified by the input file.  Variable passed
      * by value.
      */
-    string getClassName();
+    std::string getClassName();
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -116,9 +138,9 @@ public:
      *
      * Returns the key word specified by the index.
      * @param index Integer.  The index of the key word to retrieve.
-     * @return String.  The key word specified by index.  Returned variable passed by reference.
+     * @return std::string.  The key word specified by index.  Returned variable passed by reference.
      */
-    string &listKey(int index);
+    std::string &listKey(int index);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -135,7 +157,7 @@ public:
      * @param index Integer.  THe index of the key value to retrieve.
      * @return Vector of strings.  The key value specified by the index.  Returned variable passed by reference.
      */
-    vector<string> &listVal(int index);
+    std::vector<std::string> &listVal(int index);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -143,7 +165,7 @@ public:
      * @return Returns a reference to the list of objects.  Variable passed by reference.  Returned variable is a
      * vector of pointers to ObjectGroup objects.
      */
-    vector<ObjectGroup*> &listObject();
+    std::vector<ObjectGroup*> &listObject();
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -175,7 +197,7 @@ public:
      * @param key The key word to input.  Variable passed by value.
      * @param val The key value to input.  Can only be a single value.  Variable passed by value.
      */
-    void addKeySet(string key, string val);
+    void addKeySet(std::string key, std::string val);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -186,83 +208,83 @@ public:
      * its index in the input file.  The value of the entry represents the value in the input file.  Blank entries
      * are allowed.
      */
-    void addKeySet(string key, vector<string> val);
+    void addKeySet(std::string key, std::vector<std::string> val);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
      * @brief Adds a key word to the list of key words.  Only adds the word.  Not the value.
-     * @param word String input.  The key word to add to the set.  Variable passed by value.
+     * @param word std::string input.  The key word to add to the set.  Variable passed by value.
      * @param index The index of where to add the key word to the set.  If left at the default setting, the word
      * is automatically added to the end of the current list.  Variable passed by value.
      */
-    void addKeyWord(string word, int index = -1);
+    void addKeyWord(std::string word, int index = -1);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
      * @brief addKeyVal Adds a key value to the list of key values.  Only adds the value.  Not the word.
-     * @param val String input.  The key value to add to the set.  Variable passed by value.  Assumes a single key
+     * @param val std::string input.  The key value to add to the set.  Variable passed by value.  Assumes a single key
      * value.
      * @param index The index of where to add the key value to the set.  If left at the default setting, the value
      * is automatically added to the end of the current list.  Variable passed by value.
      */
-    void addKeyVal(string val, int index = -1);
+    void addKeyVal(std::string val, int index = -1);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
      * @brief addKeyVal Adds a key value to the list of key values.  Only adds the value.  Not the word.  This
      * is a function overload that allows for adding vector lists of key values.
-     * @param val Vector of string inputs.  The vector of values to add to the key.  Variable passed by value.
+     * @param val Vector of std::string inputs.  The vector of values to add to the key.  Variable passed by value.
      * Assumes a vector of key values.
      * @param index The index of where to add the key value to the set.  If left at the default setting, the value
      * is automatically added to the end of the current list.  Variable passed by value.
      */
-    void addKeyVal(vector<string> val, int index = -1);
+    void addKeyVal(std::vector<std::string> val, int index = -1);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
      * @brief Gets a key word as specified by the index.
      * @param index Integer.  Specifies the index of which key word to grab.
-     * @return Returns a string object that represents the key word.  Variable passed by value.
+     * @return Returns a std::string object that represents the key word.  Variable passed by value.
      */
-    string getKey(int index);
+    std::string getKey(int index);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
      * @brief Gets the key value as specified by the index.
      * @param index Integer.  Specifies the index of which key word to grab.
-     * @return Returns a vector of string objects that represent the key value.  For cases of a single key value,
+     * @return Returns a vector of std::string objects that represent the key value.  For cases of a single key value,
      * the vector will only be one entry long.  For cases of lists, the vector has an unlimited length.  Variable
      * passed by value.
      */
-    vector<string> getVal(int index);
+    std::vector<std::string> getVal(int index);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
      * @brief Sets the version property of the object.
-     * @param input String input.  The version property of the object.  Variable passed by value.
+     * @param input std::string input.  The version property of the object.  Variable passed by value.
      */
-    void setVersion(string input);
+    void setVersion(std::string input);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
      * @brief Gets the version property of the object.
-     * @return Returns string output.  The version property of the object.  Variable passed by value.
+     * @return Returns std::string output.  The version property of the object.  Variable passed by value.
      */
-    string getVersion();
+    std::string getVersion();
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
      * @brief Sets the format property of the object.
-     * @param input String input.  The format property of the object.  Variable passed by value.
+     * @param input std::string input.  The format property of the object.  Variable passed by value.
      */
-    void setFormat(string input);
+    void setFormat(std::string input);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
      * @brief Gets the format property of the object.
-     * @return Returns string output.  The format property of the object.  Variable passed by value.
+     * @return Returns std::string output.  The format property of the object.  Variable passed by value.
      */
-    string getFormat();
+    std::string getFormat();
 
 //==========================================Section Separator =========================================================
 protected:
@@ -273,7 +295,7 @@ private:
     /**
      * @brief The name of the class object.
      */
-    string pClassName;
+    std::string pClassName;
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -293,14 +315,14 @@ private:
     /**
      * @brief Vector of objects defined within this object group.
      */
-    vector<ObjectGroup*> plistObject;
+    std::vector<ObjectGroup*> plistObject;
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
      * @brief Records the version of the class definition.  Currently only used to define the seafile class.  Not used
      * yet, but will be useful for future revisions to track any formatting differences between versions.
      */
-    string pVersion;
+    std::string pVersion;
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -308,7 +330,9 @@ private:
      * future.
      * ascii:  Normal text format.  Parse as normal.
      */
-    string pFormat;
+    std::string pFormat;
 };
 
-#endif // OBJECTGROUP_H
+}   //Namespace osea
+
+#endif

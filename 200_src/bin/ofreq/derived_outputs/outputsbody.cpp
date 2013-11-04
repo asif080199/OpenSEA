@@ -26,6 +26,10 @@
 
 #include "outputsbody.h"
 
+using namespace std;
+using namespace arma;
+using namespace osea::ofreq;
+
 //------------------------------------------Function Separator --------------------------------------------------------
 OutputsBody::OutputsBody()
 {

@@ -26,6 +26,10 @@
 
 #include "outputderived.h"
 
+using namespace arma;
+using namespace std;
+using namespace osea::ofreq;
+
 //------------------------------------------Function Separator --------------------------------------------------------
 OutputDerived::OutputDerived()
 {
@@ -37,13 +41,13 @@ OutputDerived::~OutputDerived()
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-string OutputDerived::getName()
+std::string OutputDerived::getName()
 {
     return pName;
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-void OutputDerived::setName(string nameIn)
+void OutputDerived::setName(std::string nameIn)
 {
     pName = nameIn;
 }

@@ -25,9 +25,6 @@ SOURCES += ofreq.cpp \
     file_writer/filewriter.cpp \
     global_objects/system.cpp \
     motion_solver/motionsolver.cpp \
-    wave_calcs/wavespreadmodel.cpp \
-    wave_calcs/wavespectrummodel.cpp \
-    wave_calcs/seaenviroment.cpp \
     motion_solver/matbody.cpp \
     motion_model/equationofmotion.cpp \
     motion_model/motionmodel.cpp \
@@ -50,7 +47,10 @@ SOURCES += ofreq.cpp \
     global_objects/force.cpp \
     global_objects/equation.cpp \
     global_objects/derivative.cpp \
-    global_objects/body.cpp
+    global_objects/body.cpp \
+    motion_model/eqntranslation.cpp \
+    motion_model/eqnrotation.cpp \
+    motion_model/model6dof.cpp
 
 HEADERS += \
     derived_outputs/outputsbody.h \
@@ -62,9 +62,6 @@ HEADERS += \
     file_writer/filewriter.h \
     global_objects/system.h \
     motion_solver/motionsolver.h \
-    wave_calcs/wavespreadmodel.h \
-    wave_calcs/wavespectrummodel.h \
-    wave_calcs/seaenviroment.h \
     motion_solver/matbody.h \
     motion_model/equationofmotion.h \
     motion_model/motionmodel.h \
@@ -87,7 +84,10 @@ HEADERS += \
     global_objects/force.h \
     global_objects/equation.h \
     global_objects/derivative.h \
-    global_objects/body.h
+    global_objects/body.h \
+    motion_model/eqntranslation.h \
+    motion_model/eqnrotation.h \
+    motion_model/model6dof.h
 
 # Include header files path for libraries
 INCLUDEPATH += \

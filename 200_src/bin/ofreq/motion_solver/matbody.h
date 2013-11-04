@@ -58,10 +58,37 @@
 #include "matforceactive.h"
 #include "matforcecross.h"
 
-using namespace arma;
-using namespace std;
+//######################################### Class Separator ###########################################################
+//Namespace declarations
 
-typedef complex<double> complexDouble;
+//==========================================Section Separator =========================================================
+/**
+ * The namespace for all code created under the OpenSEA project.  There are also several sub-namespaces, one
+ * associated with each primary program under osea.
+ * 1.)  ohydro:  Code associated with the program ohydro.
+ * 2.)  ofreq:   Code associated with the program ofreq.
+ * 3.)  otime:   Code associated with the program otime.
+ * 4.)  ofourier:  Code associated with the program ofourier.
+ * 5.)  obatch:    Code associated with the program obatch.
+ * 6.)  guisea:    Code assocaited with the GUI that interacts with all OpenSEA programs.
+ * Any code that may have common utility amongst all programs, such as file reading objects, goes under the generic
+ * osea namespace.  Any code that is only useful within the specific program it serves, goes under the specific
+ * namespace.  When in doubt, default to just the osea namespace.
+ *
+ * The namespaces are not intended to create an organizational structure.  They are only intended to prevent
+ * name conflicts.
+ */
+namespace osea
+{
+
+//==========================================Section Separator =========================================================
+/**
+ * The namespace of all code specifically associated with ofreq.
+ */
+namespace ofreq
+{
+
+typedef std::complex<double> complexDouble;
 
 //######################################### Class Separator ###########################################################
 /**
@@ -78,7 +105,7 @@ typedef complex<double> complexDouble;
  * be to accomodate any forces from the body.
  */
 
-class matBody : public oFreqCore
+class matBody : public osea::ofreq::oFreqCore
 {
 //==========================================Section Separator =========================================================
 public: 
@@ -133,7 +160,7 @@ public:
      * Returns a reference to the mass matrix.
      * @return Returns a reference to the mass matrix.  Variable passed by reference.
      */
-    cx_mat &refMass();
+    arma::cx_mat &refMass();
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -144,7 +171,7 @@ public:
      * @return This is a vector list of the Reactive Force objects. Provides direct access to the variable and all
      * the member functions of the vector class.  Variable passed by reference.
      */
-    vector<matForceReact> &listForceReact_user();
+    std::vector<matForceReact> &listForceReact_user();
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -167,7 +194,7 @@ public:
      * @return This is a vector list of the Cross-Body Force objects. Provides direct access to the variable and all
      * the member functions of the vector class.  Variable passed by reference.
      */
-    vector<matForceCross> &listForceCross_user();
+    std::vector<matForceCross> &listForceCross_user();
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -190,7 +217,7 @@ public:
      * @return This is a vector list of the Active Force objects. Provides direct access to the variable and all
      * the member functions of the vector class.  Variable passed by reference.
      */
-    vector<matForceActive> &listForceActive_user();
+    std::vector<matForceActive> &listForceActive_user();
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -213,7 +240,7 @@ public:
      * @return This is a vector list of the Reactive Force objects. Provides direct access to the variable and all
      * the member functions of the vector class.  Variable passed by reference.
      */
-    vector<matForceReact> &listForceReact_hydro();
+    std::vector<matForceReact> &listForceReact_hydro();
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -236,7 +263,7 @@ public:
      * @return This is a vector list of the Cross-Body Force objects. Provides direct access to the variable and all
      * the member functions of the vector class.  Variable passed by reference.
      */
-    vector<matForceCross> &listForceCross_hydro();
+    std::vector<matForceCross> &listForceCross_hydro();
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -259,7 +286,7 @@ public:
      * @return This is a vector list of the Active Force objects. Provides direct access to the variable and all
      * the member functions of the vector class.  Variable passed by reference.
      */
-    vector<matForceActive> &listForceActive_hydro();
+    std::vector<matForceActive> &listForceActive_hydro();
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -293,16 +320,20 @@ private:
     int pModelId;
 
     //Body Mass Matrix
-    cx_mat pMass; /**< The Mass Matrix. */
+    arma::cx_mat pMass; /**< The Mass Matrix. */
 
     //User Force Coefficient Matrices
-    vector<matForceReact> plistForceReact_user; /**< List of user reactive force matrices. */
-    vector<matForceCross> plistForceCross_user; /**< List of user cross body force matrices. */
-    vector<matForceActive> plistForceActive_user; /**< List of user active force matrices. */
+    std::vector<matForceReact> plistForceReact_user; /**< List of user reactive force matrices. */
+    std::vector<matForceCross> plistForceCross_user; /**< List of user cross body force matrices. */
+    std::vector<matForceActive> plistForceActive_user; /**< List of user active force matrices. */
 
     //Hydro Force Coefficient Matrices
-    vector<matForceReact> plistForceReact_hydro; /**< List of hydro reactive force matrices. */
-    vector<matForceCross> plistForceCross_hydro; /**< List of hydro cross body force matrices. */
-    vector<matForceActive> plistForceActive_hydro; /**< List of hydro active force matrices. */
+    std::vector<matForceReact> plistForceReact_hydro; /**< List of hydro reactive force matrices. */
+    std::vector<matForceCross> plistForceCross_hydro; /**< List of hydro cross body force matrices. */
+    std::vector<matForceActive> plistForceActive_hydro; /**< List of hydro active force matrices. */
 };
+
+}   //Namespace ofreq
+}   //Namespace osea
+
 #endif

@@ -26,6 +26,9 @@
 
 #include "parser.h"
 
+using namespace std;
+using namespace osea;
+
 //==========================================Section Separator =========================================================
 //Static Initialization
 string Parser::COMMENT_LINE = "//"; /**< Line Comment. */
@@ -35,7 +38,7 @@ string Parser::END_STATEMENT = ";"; /**< End of statement. */
 string Parser::OBJECT_BEGIN = "{"; /**< Object scope begin. */
 string Parser::OBJECT_END = "}"; /**< Object scope end */
 string Parser::LIST_BEGIN = "("; /**< List scope begin. */
-string Parser::LIST_END = ");"; /**< List scope end. */
+string Parser::LIST_END = ")"; /**< List scope end. */
 string Parser::KEY_VAL_SEPARATOR= ":"; /**< Key/Val pair seperator. */
 char Parser::EOL = '\n'; /**< newline. */
 int Parser::MAX_IGNORE = 150000; /**< Max # of chars to ignore. */
@@ -51,9 +54,10 @@ string Parser::RETURN = "\n";
 Parser::Parser()
 {
     //Set initial value for curObject
-    curObject = 0;
-    //Resize list of objects.
-    plistObject.resize(curObject + 1);
+    curObject = -1;
+
+    //Set initial value for curKeySet
+    curKeySet = 0;
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
@@ -63,57 +67,49 @@ Parser::~Parser()
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-void Parser::Parse(istream &infile)
+void Parser::Parse(istream &infile, int bracket_count)
 {
-    string curString = "";
-    string prevString = "";
+    string curString = "";  //curSring is the current string in the text file
+    string prevString = ""; //The previously read string in the text file
+    int minBracket = bracket_count;     //The current required number of minimum brackets to continue iterating.
+
+    //Ensure the keySet variable is reset
+    keySet = false;
+
+    //Read a line from the input file
+    infile >> curString;
+    //Set the previous string.
+    prevString = curString;
 
     //Loop through each line in the file and apply a series of possibilities for how to process the file.
-    for(;;)
+    //Check condition for bracket count.  Used as a termination criteria for recursive instances.
+    while (bracket_count >= minBracket)
     {
-        //Read a line from the input file.
-        infile >> curString; //curSring is the current string in the text file
-
-        //Check for a variety of conditions
-
         //Check for end of file
         //-----------------------------------
         if (infile.eof()) break; //End of File, end parsing
 
-        //Check for a single comment line mark.
+        //Check for comments
         //-----------------------------------
-        else if (curString.find(COMMENT_LINE) != std::string::npos)
-        {
-            infile.ignore(MAX_IGNORE, EOL);
-            if (infile.eof()) break;
-        }
-
-        //Check for a block comment.
-        //-----------------------------------
-        else if (curString == COMMENT_BLOCK_BEGIN)
-        {
-            for(;;)
-            {
-                infile >> curString;
-                if (infile.eof()) break;
-
-                if(curString == COMMENT_BLOCK_END)
-                {
-                    break;
-                }
-            }
-        }
+        curString = CommentFilter(curString, infile);
 
         //Found valid pairs of text that are true input.
         //-----------------------------------
-        else
-        {
-            ParseCommands(infile, prevString);  //Valid inputs detected.  Parse them with the set of rules
-                                                //For valid inputs.
-        }
+        if (!curString.empty())
+            ParseCommands(infile, curString, prevString, bracket_count);  //Valid inputs detected.
 
-        prevString = curString;  //Records the string from the last loop.  Used for list recognition and object
+        //If bracket count is below current count, don't pull out the next term.  Just go
+        //to the next loop.
+        if (bracket_count < minBracket)
+            continue;
+
+        //Only do this if the bracket count is not negative, and curString is not negative.
+        if (!curString.empty())
+            prevString = curString;  //Records the string from the last loop.  Used for list recognition and object
                                  //name recognition.
+
+        //Read a line from the input file.
+        infile >> curString; //curSring is the current string in the text file
     }
 }
 
@@ -136,6 +132,30 @@ ObjectGroup &Parser::listObject(unsigned int index)
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
+vecKeyword& Parser::listKey()
+{
+    return plistKey;
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+string &Parser::listKey(int index)
+{
+    return plistKey[index];
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+vecValue& Parser::listVal()
+{
+    return plistVal;
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+vector<string> &Parser::listVal(int index)
+{
+    return plistVal[index];
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
 vector<ObjectGroup*> &Parser::refSubObject(int index1)
 {
     return plistObject[index1].listObject();
@@ -154,58 +174,56 @@ ObjectGroup Parser::getSubObject(int index, int index1)
 //Private Functions
 
 //------------------------------------------Function Separator --------------------------------------------------------
-void Parser::ParseCommands(istream &infile, string prevString)
+std::string Parser::CommentFilter(std::string curString, std::istream &infile)
 {
-    string curString = "";      //Current string from input.
+    //Check for a single comment line mark.
+    //-----------------------------------
+    if (curString.find(COMMENT_LINE) != std::string::npos)
+    {
+        infile.ignore(MAX_IGNORE, EOL);
+
+        //return blank string
+        return "";
+    }
+
+    //Check for a block comment.
+    //-----------------------------------
+    else if ( curString.find(COMMENT_BLOCK_BEGIN) != std::string::npos)
+    {
+        for(;;)
+        {
+            infile >> curString;
+            if (infile.eof()) break;
+
+            if( curString.find(COMMENT_BLOCK_END) != std::string::npos)
+            {
+                break;
+            }
+        }
+        //return blank string
+        return "";
+    }
+
+    //Valid input.  Return string.
+    else
+    {
+        return curString;
+    }
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+void Parser::ParseCommands(istream &infile, string curString, string prevString, int &bracket_count)
+{
     char ignoreChars[2];        //Characters that will be ignored by the file
     ignoreChars[0] = END_STATEMENT[0];     //Ignore the characters for the end statement
     ignoreChars[1] = QUOTE[0];             //Ignore the characters for the quotation.
+    bool advanceKeySet = false;                     //Tracks whether we need to advance to the next key set.
 
-    infile >> curString;
-    if ( !infile.eof())
+    if (!infile.eof())
     {
-        //Check for object definition
-        //-----------------------------------
-        if (curString == OBJECT_BEGIN)
-        {
-            //create new object and store the name
-            plistObject.push_back(ObjectGroup());
-            curObject += 1;
-            plistObject[curObject].setClassName(prevString);
-            //Initialize the subparser
-            subParse = new Parser();
-
-            int bracket_count;      //THe number of object definition brackets.  Must add to zero
-                                    //in the end.
-            bracket_count += 1;     //Add one for the bracket already found.
-
-            while (bracket_count != 0)
-            {
-                //Loop through the object definition and isolate the object defined.
-
-                //Check for another object declaration
-                bracket_count += ObjectCheck(infile);
-
-                //Feed the information to a recursive instance of Parse function.
-                subParse->Parse(infile);
-            }
-
-            //Get the keysets from the parsed object.
-            for (unsigned int i = 0; i < subParse->getObject(0).listKey().size(); i++)
-            {
-                plistObject[curObject].addKeySet(subParse->getObject(0).getKey(i), subParse->getObject(0).getVal(i));
-            }
-
-            //Parsing complete.  Get the parsed subobjects back.
-            for (unsigned int i = 0; i < subParse->listObject().size(); i++)
-            {
-                plistObject[curObject].addSubObject(subParse->getObject(i));
-            }
-        }
-
         //Check for string enclosed in quotation marks.
         //-----------------------------------
-        if(curString[0] == QUOTE[0]) //the string will be enclosed in quotes
+        if(curString.find(QUOTE) != std::string::npos) //the string will be enclosed in quotes.  Evaluates to 0 if equal.
         {
             int quoteCount = std::count(curString.begin(), curString.end(), QUOTE[0]);//the count of quotes in this string
 
@@ -213,8 +231,7 @@ void Parser::ParseCommands(istream &infile, string prevString)
             {
                 string tempInput;
                 infile >> tempInput;
-                while((tempInput.at(tempInput.length() - 1) != *END_STATEMENT.data()) &&
-                      (tempInput.at(tempInput.length() - 1) != *QUOTE.data())) //keep going until find ";" or '\"'
+                while(tempInput.find(QUOTE) == std::string::npos)  //keep going until find '\"'
                 {
                     curString += " " + tempInput; //add to curString the rest of string
                     infile >> tempInput;
@@ -223,6 +240,14 @@ void Parser::ParseCommands(istream &infile, string prevString)
             }
         }
 
+        //Check if need to advance to the next key set.  Check for it now because the next step is to strip
+        //out the end statement data.
+        //-----------------------------------
+        if (curString.find(END_STATEMENT) != std::string::npos)
+            advanceKeySet = true;
+        else
+            advanceKeySet = false;
+
         //remove ignore chars from string
         //-----------------------------------
         for(unsigned int i = 0; i < 2; i++)
@@ -230,27 +255,79 @@ void Parser::ParseCommands(istream &infile, string prevString)
                         std::remove(curString.begin(), curString.end(), ignoreChars[i]),
                         curString.end());
 
-        //Check if this is a list
-        //-----------------------------------
         vector<string> theList;     //list of output items
 
-        if (curString == LIST_BEGIN) //check if is a list
+        //Check for object definition
+        //-----------------------------------
+        if (curString.find(OBJECT_BEGIN) != std::string::npos)
         {
-            while(curString != LIST_END)
+            //Only create new object if not already in an object.
+            //Create new object and store the name
+            plistObject.push_back(ObjectGroup());
+            curObject += 1;
+            plistObject[curObject].setClassName(prevString);
+
+            //Initialize the subparser
+            subParse = new Parser();
+
+            //Feed the information to a recursive instance of Parse function.
+            subParse->Parse(infile, bracket_count + 1);
+
+            //Get the keysets from the parsed object
+            for (unsigned int i = 0; i < subParse->listKey().size(); i++)
             {
-                infile >> curString;
+                plistObject[curObject].addKeySet(subParse->listKey(i), subParse->listVal(i));
+            }
+
+            //Get the sub-objects from the parsed object
+            for (unsigned int i = 0; i < subParse->listObject().size(); i++)
+            {
+                plistObject[curObject].addSubObject(subParse->listObject(i));
+            }
+
+            //Delete the subparser
+            delete subParse;
+        }
+
+        //Check if this is an object closing
+        //-----------------------------------
+        else if (curString.find(OBJECT_END) != std::string::npos)
+        {
+            //Reduce the bracket count
+            bracket_count -= 1;
+        }
+
+        //Check if this is a list
+        //-----------------------------------
+        else if (curString.find(LIST_BEGIN) != std::string::npos)
+        {
+            //Get next statement in list
+            infile >> curString;
+
+            //Filter out any comments
+            //curString = CommentFilter(curString, infile);
+
+            while(curString.find(LIST_END) == std::string::npos) //Evaluates to zero if equal
+            {
+                //Filter out any comments
+                curString = CommentFilter(curString, infile);
+                if (curString.empty())
+                {
+                    infile >> curString;
+                    continue;
+                }
 
                 int index = curString.find(KEY_VAL_SEPARATOR);  //Find the separator mark.
-                unsigned int listindex;                         //Index of the value in the list of values.
+                int listindex;                         //Index of the value in the list of values.
                 string listval;                                 //Value in the list of values.
 
                 //Check if this is a direct list.
-                if ((curString != LIST_END) && (index != std::string::npos))
+                if (index == std::string::npos)
                 {
                     //Direct list
                     theList.push_back(curString);
                 }
-                else if(curString != LIST_END)
+                else if(curString[0] != LIST_END[0])
                 {
                     //Not direct list
 
@@ -258,62 +335,101 @@ void Parser::ParseCommands(istream &infile, string prevString)
                     listindex = atoi(curString.substr(0, index + 1).c_str());
                     listval = curString.substr(index + 1, curString.length() - 1 - index);
 
-                    if (listindex > theList.size() - 1)
+                    //Remember, vector list starts counting at zero.
+                    //But user list starts counting at 1.
+
+                    if (listindex > theList.size())
                     {
                         //resize list vector
-                        theList.resize(listindex + 1);
+                        theList.resize(listindex);
                     }
 
                     //Assign value
-                    theList[listindex] = listval;
+                    theList[listindex - 1] = listval;
                 }
 
                 if (infile.eof())
                 {
-                    cerr << "ERROR: ILLEGAL LIST FORMAT" << endl;
+                    writeError("Error:  Illegal input list format");
                         break;
                 }
+
+                infile >> curString;    //Get the next character
             }
 
             if (keySet)
             {
                 //Write the output to the key value.
-                plistObject[curObject].addKeyVal(theList);
-
-                //Turn off the key value
-                keySet = false;
+                if ((curKeySet > plistVal.size() - 1) || (plistVal.size() == 0))
+                    plistVal.resize(curKeySet + 1);
+                plistVal[curKeySet] = theList;
             }
             else
             {
-                cerr << "Error:  No key word found to match key value." << endl;
+                writeError("Error:  No key word found to match key value.");
             }
 
             theList.clear();
+
+            //Check if need to advance to the next key set.
+            //-----------------------------------
+            if (curString.find(END_STATEMENT) != std::string::npos)
+                advanceKeySet = true;
+            else
+                advanceKeySet = false;
         }
 
         //Process as normal set of key words and values.
         //----------------------------------------------------------
         else
         {
-            //Check if processing key word or key value
-            if (keySet)
+            //First check if the next input will be an object declaration.
+            if (ObjectCheck(infile) != 1)
             {
-                //Key already set.  Processing as key value.
-                plistObject[curObject].addKeyVal(curString);
+                //Next input is not an object declaration.
+                //Safe to proceed.
 
-                //Reset key set value.
-                keySet = false;
+                //Check if processing key word or key value
+                if (keySet)
+                {
+                    //Key already set.  Processing as key value.
+
+                    //create vector of input
+                    vector<string> input(1);
+                    input[0] = curString;
+
+                    //Add input to the list of values
+                    if ((curKeySet > plistVal.size() - 1) || (plistVal.size() == 0))
+                        plistVal.resize(curKeySet + 1);
+                    plistVal[curKeySet] = input;
+                }
+
+                else
+                {
+                    //Key not set.  Process as key word.
+                    //Check if list is big enough
+                    if ((curKeySet > plistKey.size() - 1) || (plistKey.size() == 0))
+                        plistKey.resize(curKeySet + 1);
+                    plistKey[curKeySet] = curString;
+
+                    //Switch boolean to indicate key word set.
+                    keySet = true;
+                }
             }
+        }
 
-            else
-            {
-                //Key not set.  Process as key word.
-                plistObject[curObject].addKeyWord(curString);
+        //Handle values for statement ends.
+        //----------------------------------------------------------
+        if (advanceKeySet)
+        {
+            //Advance to next keyValueSet
+            curKeySet += 1;
 
-                //Switch boolean to indicate key word set.
-                keySet = true;
-            }
+            //Reset key word set
+            keySet = false;
 
+            //Reset advanceKeySet
+            advanceKeySet = false;
         }
     }
 }
@@ -335,6 +451,18 @@ int Parser::ObjectCheck(istream &infile)
     if (curChar == OBJECT_BEGIN[0])
         return 1;
     else if (curChar == OBJECT_END[0])
+        return -1;
+    else
+        return 0;
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+int Parser::ObjectCheck(std::string &inString)
+{
+    //read the data to see if it contains an object declaration.
+    if (inString.find(OBJECT_BEGIN) != std::string::npos)
+        return 1;
+    else if (inString.find(OBJECT_END) != std::string::npos)
         return -1;
     else
         return 0;

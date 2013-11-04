@@ -26,6 +26,10 @@
 
 #include "motionsolver.h"
 
+using namespace arma;
+using namespace std;
+using namespace osea::ofreq;
+
 //==========================================Section Separator =========================================================
 //Public Functions
 

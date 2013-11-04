@@ -50,8 +50,35 @@
 #include "../global_objects/body.h"
 #include "../global_objects/ofreqcore.h"
 
-using namespace std;
-using namespace arma;
+//######################################### Class Separator ###########################################################
+//Namespace declarations
+
+//==========================================Section Separator =========================================================
+/**
+ * The namespace for all code created under the OpenSEA project.  There are also several sub-namespaces, one
+ * associated with each primary program under osea.
+ * 1.)  ohydro:  Code associated with the program ohydro.
+ * 2.)  ofreq:   Code associated with the program ofreq.
+ * 3.)  otime:   Code associated with the program otime.
+ * 4.)  ofourier:  Code associated with the program ofourier.
+ * 5.)  obatch:    Code associated with the program obatch.
+ * 6.)  guisea:    Code assocaited with the GUI that interacts with all OpenSEA programs.
+ * Any code that may have common utility amongst all programs, such as file reading objects, goes under the generic
+ * osea namespace.  Any code that is only useful within the specific program it serves, goes under the specific
+ * namespace.  When in doubt, default to just the osea namespace.
+ *
+ * The namespaces are not intended to create an organizational structure.  They are only intended to prevent
+ * name conflicts.
+ */
+namespace osea
+{
+
+//==========================================Section Separator =========================================================
+/**
+ * The namespace of all code specifically associated with ofreq.
+ */
+namespace ofreq
+{
 
 //######################################### Class Separator ###########################################################
 /**
@@ -76,7 +103,7 @@ using namespace arma;
  * 7.)  Evaluate the motion model to produce a single complex value result.
  */
 
-class MotionModel : public oFreqCore
+class MotionModel : public osea::ofreq::oFreqCore
 {
 //==========================================Section Separator =========================================================
 public:
@@ -93,7 +120,7 @@ public:
      * @brief Constructor.  This is the preferred constructor as it supplies the body data.
      * @param listBodIn The vector of the body objects to input.
      */
-    MotionModel(vector<Body> &listBodIn);
+    MotionModel(std::vector<Body> &listBodIn);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -106,7 +133,7 @@ public:
      * @brief Inputs the list of body data.
      * @param listBodIn The vector of body objects to input.
      */
-    void setlistBody(vector<Body> &listBodIn);
+    void setlistBody(std::vector<Body> &listBodIn);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -115,6 +142,15 @@ public:
      * in the vector supplied with the body.
      */
     void setBody(int bod);
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Gets the index for the body that all calculations are based on.
+     * @return Returns integer specifying the number of the body currently in use.  Integer corresponds to the
+     * sequence of bodies in the vector supplied with the body.  If no Body is currently set, the function returns
+     * -1.
+     */
+    int getBody();
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -159,7 +195,7 @@ public:
      * represents one cross-body force for the current body.  The integer entry in the vector is the integer index of
      * the body that the cross-body force is linked to.
      */
-    vector<int> &listCompCrossBod_hydro();
+    std::vector<int> &listCompCrossBod_hydro();
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -198,7 +234,7 @@ public:
      * represents one cross-body force for the current body.  The integer entry in the vector is the integer index of
      * the body that the cross-body force is linked to.
      */
-    vector<int> &listCompCrossBod_user();
+    std::vector<int> &listCompCrossBod_user();
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -367,7 +403,7 @@ public:
      * @return Returns a complex matrix that contains the results of the entire evaluation.  Returned argument passed
      * by value.
      */
-    cx_mat getMatForceActive_user(int force);
+    arma::cx_mat getMatForceActive_user(int force);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -379,7 +415,7 @@ public:
      * @return Returns a complex matrix that contains the results of the entire evaluation.  Returned argument passed
      * by value.
      */
-    cx_mat getMatForceActive_hydro(int force);
+    arma::cx_mat getMatForceActive_hydro(int force);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -394,7 +430,7 @@ public:
      * @return Returns a complex matrix that contains the results of the entire evaluation.  Saves some time
      * on computing effort.
      */
-    cx_mat getMatForceReact_user(int force, int ord);
+    arma::cx_mat getMatForceReact_user(int force, int ord);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -409,7 +445,7 @@ public:
      * @return Returns a complex matrix that contains the results of the entire evaluation.  Saves some time
      * on computing effort.
      */
-    cx_mat getMatForceReact_hydro(int force, int ord);
+    arma::cx_mat getMatForceReact_hydro(int force, int ord);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -424,7 +460,7 @@ public:
      * @return Returns a complex matrix that contains the results of the entire evaluation.  Saves some time
      * on computing effort.
      */
-    cx_mat getMatForceCross_user(int force, int ord);
+    arma::cx_mat getMatForceCross_user(int force, int ord);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -439,7 +475,7 @@ public:
      * @return Returns a complex matrix that contains the results of the entire evaluation.  Saves some time
      * on computing effort.
      */
-    cx_mat getMatForceCross_hydro(int force, int ord);
+    arma::cx_mat getMatForceCross_hydro(int force, int ord);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -452,7 +488,7 @@ public:
      * @return Returns a complex matrix that contains the results of the entire evaluation.  Saves some time
      * on computing effort.
      */
-    cx_mat getMatForceMass();
+    arma::cx_mat getMatForceMass();
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -464,7 +500,7 @@ public:
      * @param eqn Integer representing which equation object to evaluate.
      * @return Returns a complex number representing the force under the currently set conditions.
      */
-    complex<double> Evaluate(int eqn);
+    std::complex<double> Evaluate(int eqn);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -483,7 +519,7 @@ public:
      * are reserved for standard 6dof models.
      * @return Returns the highest count of the equation index.
      */
-    vector<int> &refDataIndex();
+    std::vector<int> &refDataIndex();
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -501,18 +537,18 @@ public:
      * @brief Name for the motion model
      *
      * Name for the motion model.  Used by the user to identify the motion model.
-     * @param nameIn The name to set for the motion model.  String variable.  Variable passed by value.
+     * @param nameIn The name to set for the motion model.  std::string variable.  Variable passed by value.
      */
-    void setName(string nameIn);
+    void setName(std::string nameIn);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
      * @brief Name for the motion model
      *
      * Name for the motion model.  Used by the user to identify the motion model.
-     * @return The name to set for the motion model.  String variable.  Variable passed by value.
+     * @return The name to set for the motion model.  std::string variable.  Variable passed by value.
      */
-    string getName();
+    std::string getName();
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -520,9 +556,9 @@ public:
      *
      * Description for the motion model.  Used by the user to provide a more extensive description of the motion model.
      * Used purely for user information.  Not used for model identification.
-     * @param DescIn String.  The description for the motion model.  Variable passed by value.
+     * @param DescIn std::string.  The description for the motion model.  Variable passed by value.
      */
-    void setDescription(string DescIn);
+    void setDescription(std::string DescIn);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -530,9 +566,9 @@ public:
      *
      * Description for the motion model.  Used by the user to provide a more extensive description of the motion model.
      * Used purely for user information.  Not used for model identification.
-     * @return String.  The description for the motion model.  Variable passed by value.
+     * @return std::string.  The description for the motion model.  Variable passed by value.
      */
-    string getDescription();
+    std::string getDescription();
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -540,7 +576,7 @@ public:
      * @return Reference to vector of Body objects.  Variable passed by reference.
      * @sa Body
      */
-    vector<Body> &listBody();
+    std::vector<Body> &listBody();
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -557,7 +593,7 @@ public:
      * @return Reference to the vector of Body objects used as data.  Variable passed by reference.
      * @sa Body
      */
-    vector<Body> &listData();
+    std::vector<Body> &listData();
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -574,7 +610,7 @@ public:
      * @return Reference to the vector of EquationofMotion objects.  Variable passed by reference.
      * @sa EquationofMotion
      */
-    vector<EquationofMotion> &listEquation();
+    std::vector<EquationofMotion> &listEquation();
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -585,8 +621,53 @@ public:
      */
     EquationofMotion &listEquation(int eqIn);
 
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief This adds an equation of motion to the motion model.
+     *
+     * Adds the equation of motion on to the end of the vector of equation of motions.  Also works for any objects
+     * derived from the EquationofMotion object, which is how this method should really be used.
+     * @param eqIn EquationfMotion object.  The object that you want to add to the list of equations of motion.
+     * Also works for any object classes derived from the EquationOfMotion.  Variable passed by value, so it will
+     * make a copy of the input variable.
+     * @sa DefineEquations()
+     */
+    void AddEquation(EquationofMotion eqIn);
+
 //==========================================Section Separator =========================================================
 protected:
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief The function used to define the equation of motion objects.
+     *
+     * This function gets executed when the Motion model is first created.  It contains all the statements to add
+     * the appropriate equations to the motion model.  This is where each EquationofMotion object is created.  Can
+     * also be any object from a class that is derived from the EquationofMotion object.  Before definining equations
+     * within this motion model, the individual equation must be defined.  These will be new objects inheritted from
+     * the EquationofMotion object. Once those new equation clases are defined, they can be used in the motion model.
+     *
+     * Using an EquationofMotion in the motion model will generally follow the following sequence.  All step are
+     * executed within the DefineEquations function.
+     * 1.)  Create a new object from the appropriate class which is derived from the EquationofMotion.  When creating
+     *      the equation of motion, you must include the pointer to the existing motion model.  Use the keyword this
+     *      when creating the new object.
+     * 2.)  Set the data index for the equation.  This is probably the most important step.
+     *      Regardless of what name you give the equation, the program ofreq only sees the equation as one in a list
+     *      of equations, and refers to it by its index within that list.  Any input data (such as hydrodynamic
+     *      or user coefficients) is similarly referenced by that index.  When you set the data index, you tell
+     *      ofreq which index in the list of data is has available should correspond to this specific equation.
+     *      (Set the data index using the function setDataIndex().
+     * 3.)  Set the name for the new object.  This is just the short name or equation symbol. (Use the function
+     *      setName() to set it.)
+     * 4.)  Set the description for the new object.  This is the more extensive name for the equation.  (Use the
+     *      function setDescription() to set it.)
+     * 5.)  Now that you set all the appropriate information, add the equation of motion into the list of equations
+     *      used by this motion model.  (Use the function AddEquation()).
+     *
+     * @sa AddEquation()
+     * @sa EquationofMotion
+     */
+    virtual void DefineEquations();
 
 //==========================================Section Separator =========================================================
 private:
@@ -596,7 +677,7 @@ private:
      *
      * Name for the motion model.  Used by the user to identify the motion model.
      */
-    string pName;
+    std::string pName;
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -605,7 +686,7 @@ private:
      * Description for the motion model.  Used by the user to provide a more extensive description of the motion model.
      * Used purely for user information.  Not used for model identification.
      */
-    string pDesc;
+    std::string pDesc;
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -613,7 +694,7 @@ private:
      *
      * Pointer to the bodies vector.
      */
-    vector<Body>* plistBody;
+    std::vector<Body>* plistBody;
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -621,7 +702,7 @@ private:
      * to this list and fills it with Body objects that contain the same number and sizes of forces as the originals,
      * but all entries within the copied objects are zeros.
      */
-    vector<Body> plistData;
+    std::vector<Body> plistData;
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -647,7 +728,7 @@ private:
      * @brief Copies the matrix and outputs a matrix that is the same size, but filled with zeros.
      * @param The matrix to copy.  Matrix of double precision floating numbers.
      */
-    Mat<double> CopyZero(Mat<double> &copyMat);
+    arma::Mat<double> CopyZero(arma::Mat<double> &copyMat);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -677,7 +758,7 @@ private:
      * the current body.  The integer entry in the vector is the integer index of the body that the cross-body force is
      * linked to.
      */
-    vector<int> pCompCrossBod_hydro;
+    std::vector<int> pCompCrossBod_hydro;
 
     //------------------------------------------Function Separator --------------------------------------------------------
     /**
@@ -692,7 +773,7 @@ private:
      * the current body.  The integer entry in the vector is the integer index of the body that the cross-body force is
      * linked to.
      */
-    vector<int> pCompCrossBod_user;
+    std::vector<int> pCompCrossBod_user;
 
     //------------------------------------------Function Separator --------------------------------------------------------
     /**
@@ -707,6 +788,15 @@ private:
      * activated as well, this variable is set false.
      */
     bool pActiveOnly;
+
+    //------------------------------------------Function Separator --------------------------------------------------------
+    /**
+     * @brief Executes setup actions that are common to all versions of the object constructor.
+     */
+    void ConstructorCommon();
 };
+
+}   //Namespace ofreq
+}   //Namespace osea
 
 #endif // MOTIONMODEL_H

@@ -26,6 +26,10 @@
 
 #include "motionmodel.h"
 
+using namespace std;
+using namespace arma;
+using namespace osea::ofreq;
+
 //==========================================Section Separator =========================================================
 //Public Functions
 
@@ -33,17 +37,14 @@
 MotionModel::MotionModel()
 {
     //Default constructor.
-
-    //Initialize Active force variable.
-    pActiveOnly = true;
-
-    //Create initial value for wave frequency
-    pFreq = 0.0;
+    ConstructorCommon();
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
 MotionModel::MotionModel(vector<Body> &listBodIn)
 {
+    ConstructorCommon();
+
     //Constructor that sets the body reference.
     setlistBody(listBodIn);
 }
@@ -70,6 +71,15 @@ void MotionModel::setBody(int bod)
     //Erase the cross body objects.  No longer valid.
     pCompCrossBod_hydro.clear();
     pCompCrossBod_user.clear();
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+int MotionModel::getBody()
+{
+    if (curBody < 0)
+        return -1;
+    else
+        return curBody;
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
@@ -823,9 +833,21 @@ EquationofMotion &MotionModel::listEquation(int eqIn)
     return plistEquations.at(eqIn);
 }
 
+//------------------------------------------Function Separator --------------------------------------------------------
+void MotionModel::AddEquation(EquationofMotion eqIn)
+{
+    plistEquations.push_back(eqIn);
+}
+
+
 //==========================================Section Separator =========================================================
 //Protected Functions
 
+//------------------------------------------Function Separator --------------------------------------------------------
+void MotionModel::DefineEquations()
+{
+    //Just a basic definition to keep the compiler happy.
+}
 
 //==========================================Section Separator =========================================================
 //Private Functions
@@ -860,4 +882,20 @@ void MotionModel::fillBodies()
             plistData[i].refPosn() = plistBody->at(i).getPosn();
         }
     }
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+void MotionModel::ConstructorCommon()
+{
+    //Initialize Active force variable.
+    pActiveOnly = true;
+
+    //Create initial value for wave frequency
+    pFreq = 0.0;
+
+    //Create initial value for Body.
+    curBody = -1;
+
+    //Define the equations
+    DefineEquations();
 }

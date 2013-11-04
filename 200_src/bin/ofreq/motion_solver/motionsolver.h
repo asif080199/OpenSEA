@@ -49,8 +49,35 @@
 #include "matforcecross.h"
 #include "../global_objects/ofreqcore.h"
 
-using namespace arma;
-using namespace std;
+//######################################### Class Separator ###########################################################
+//Namespace declarations
+
+//==========================================Section Separator =========================================================
+/**
+ * The namespace for all code created under the OpenSEA project.  There are also several sub-namespaces, one
+ * associated with each primary program under osea.
+ * 1.)  ohydro:  Code associated with the program ohydro.
+ * 2.)  ofreq:   Code associated with the program ofreq.
+ * 3.)  otime:   Code associated with the program otime.
+ * 4.)  ofourier:  Code associated with the program ofourier.
+ * 5.)  obatch:    Code associated with the program obatch.
+ * 6.)  guisea:    Code assocaited with the GUI that interacts with all OpenSEA programs.
+ * Any code that may have common utility amongst all programs, such as file reading objects, goes under the generic
+ * osea namespace.  Any code that is only useful within the specific program it serves, goes under the specific
+ * namespace.  When in doubt, default to just the osea namespace.
+ *
+ * The namespaces are not intended to create an organizational structure.  They are only intended to prevent
+ * name conflicts.
+ */
+namespace osea
+{
+
+//==========================================Section Separator =========================================================
+/**
+ * The namespace of all code specifically associated with ofreq.
+ */
+namespace ofreq
+{
 
 //######################################### Class Separator ###########################################################
 /**
@@ -67,7 +94,7 @@ using namespace std;
  * 9.)  Redistribute the solution back to each body object.
  */
 
-class MotionSolver : public oFreqCore
+class MotionSolver : public osea::ofreq::oFreqCore
 {
 //==========================================Section Separator =========================================================
 public:
@@ -86,7 +113,7 @@ public:
      * passed by value, and not by reference.
      * @param listBodIn The vector list of bodies to add to the motion solver object.
      */
-    MotionSolver(vector<matBody> listBodIn);
+    MotionSolver(std::vector<matBody> listBodIn);
 
     //------------------------------------------Function Separator ----------------------------------------------------
 	~MotionSolver(); /**< The default destructor, nothing happens here. */
@@ -112,7 +139,7 @@ public:
      * zero to infinite number of entries.
      * @return The Sum of reactive force matrices.
 	 */
-    matForceReact sumReactSet(vector<matForceReact> listForces);
+    matForceReact sumReactSet(std::vector<matForceReact> listForces);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -125,7 +152,7 @@ public:
      * @return A vector of complex matrices, with each entry in the vectors representing a cross-body force linked to
      * a specific body.
      */
-    vector<matForceCross> sumCrossSet(vector<matForceCross> listForces);
+    std::vector<matForceCross> sumCrossSet(std::vector<matForceCross> listForces);
 
     //------------------------------------------Function Separator ----------------------------------------------------
 	/**
@@ -135,7 +162,7 @@ public:
      * @param listForces The active force matrix.
 	 * @return The Sum of active force matrix.
 	 */
-    cx_mat sumActiveSet(vector<matForceActive> listForces);
+    arma::cx_mat sumActiveSet(std::vector<matForceActive> listForces);
 
     //------------------------------------------Function Separator ----------------------------------------------------
 	/**
@@ -145,7 +172,7 @@ public:
 	 * @param theReactiveForceMatrix The reactive force matrix.
 	 * @return TSingle matrix that is the Sum of Matrices passed in.
 	 */
-    cx_mat sumDerivative(matForceReact forceIn);
+    arma::cx_mat sumDerivative(matForceReact forceIn);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -155,7 +182,7 @@ public:
      * @param forceIn the matrix that contains the set of cross body forces.
      * @return Single matrix that contains the cross body forces for a single definition.
      */
-    vector<cx_mat> sumDerivative(vector<matForceCross> forceIn);
+    std::vector<arma::cx_mat> sumDerivative(std::vector<matForceCross> forceIn);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -185,7 +212,7 @@ public:
      * vector is a solution matrix specific to the body.  The vector is ordered in the same sequence that the bodies
      * were added to the motionsolver object.  Returned variable passed by reference.
      */
-    vector<cx_mat> &listSolution();
+    std::vector<arma::cx_mat> &listSolution();
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -200,7 +227,7 @@ public:
      * specified.  Returned variable passed by reference.
      * @sa Body
      */
-    cx_mat &listSolution(unsigned int bod);
+    arma::cx_mat &listSolution(unsigned int bod);
 
 
 
@@ -212,9 +239,9 @@ private:
     double curWaveFrequency; /**< The current wave frequency */
 
     //Global Matrices
-    cx_mat globReactiveMat; /**< A Matrix (Reactive Force Matrix Global)*/
-    cx_mat globActiveMat;   /**< F Matrix (Active Force Matirx Global)*/
-    cx_mat globSolnMat;	  /**< X Matrix (Solution Column Matrix)*/
+    arma::cx_mat globReactiveMat; /**< A Matrix (Reactive Force Matrix Global)*/
+    arma::cx_mat globActiveMat;   /**< F Matrix (Active Force Matirx Global)*/
+    arma::cx_mat globSolnMat;	  /**< X Matrix (Solution Column Matrix)*/
 
     //Output solution values
     /**
@@ -222,10 +249,14 @@ private:
      *
      * The vector list of solutions.  Each entry in the vector contains a matrix of a size specific to each body.
      */
-    vector<cx_mat> plistSolution;
+    std::vector<arma::cx_mat> plistSolution;
 
     //------------------------------------------Function Separator ----------------------------------------------------
-    vector<matBody> plistBody; /**< Body with Force Coefficients */
+    std::vector<matBody> plistBody; /**< Body with Force Coefficients */
 
 };
+
+}   //Namespace ofreq
+}   //Namespace osea
+
 #endif

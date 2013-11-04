@@ -26,6 +26,9 @@
 
 #include "forceactive.h"
 
+using namespace std;
+using namespace osea::ofreq;
+
 //------------------------------------------Function Separator --------------------------------------------------------
 ForceActive::ForceActive(): Force()
 {
@@ -40,7 +43,7 @@ ForceActive::~ForceActive()
 void ForceActive::setCoeff(complex<double> coeffIn, unsigned int index)
 {
     //Check if list is large enough for specified index.
-    if (index > pCoefficients.size() - 1)
+    if ((index > pCoefficients.size() - 1) || (pCoefficients.size() == 0))
     {
         //Resize list
         pCoefficients.resize(index + 1);

@@ -26,6 +26,10 @@
 
 #include "globalsolution.h"
 
+using namespace std;
+using namespace arma;
+using namespace osea::ofreq;
+
 //==========================================Section Separator =========================================================
 //Public Functions
 

@@ -57,13 +57,40 @@
 #include "../global_objects/body.h"
 #include "../global_objects/ofreqcore.h"
 
-using namespace std;
-using namespace arma;
+//######################################### Class Separator ###########################################################
+//Namespace declarations
+
+//==========================================Section Separator =========================================================
+/**
+ * The namespace for all code created under the OpenSEA project.  There are also several sub-namespaces, one
+ * associated with each primary program under osea.
+ * 1.)  ohydro:  Code associated with the program ohydro.
+ * 2.)  ofreq:   Code associated with the program ofreq.
+ * 3.)  otime:   Code associated with the program otime.
+ * 4.)  ofourier:  Code associated with the program ofourier.
+ * 5.)  obatch:    Code associated with the program obatch.
+ * 6.)  guisea:    Code assocaited with the GUI that interacts with all OpenSEA programs.
+ * Any code that may have common utility amongst all programs, such as file reading objects, goes under the generic
+ * osea namespace.  Any code that is only useful within the specific program it serves, goes under the specific
+ * namespace.  When in doubt, default to just the osea namespace.
+ *
+ * The namespaces are not intended to create an organizational structure.  They are only intended to prevent
+ * name conflicts.
+ */
+namespace osea
+{
+
+//==========================================Section Separator =========================================================
+/**
+ * The namespace of all code specifically associated with ofreq.
+ */
+namespace ofreq
+{
 
 /**
  * @brief Type definition for a vector of complex numbers.  Used to return the calculated output.
  */
-typedef vector< complex<double> > cx_vector;
+typedef std::vector< std::complex<double> > cx_vector;
 
 //######################################### Class Separator ###########################################################
 //Forward declarations of classes
@@ -114,7 +141,7 @@ typedef vector< complex<double> > cx_vector;
  * And it allow compilation.  All data items are passed by reference to avoid excess memory duplication.
   */
 
-class OutputsBody : public oFreqCore
+class OutputsBody : public osea::ofreq::oFreqCore
 {
 //==========================================Section Separator =========================================================
 public:
@@ -137,10 +164,10 @@ public:
      * Solution object in the SolutionSet object.
      * @param listWaveDir The vector of wave directions to use for the object.  This is provided mostly for reference.
      */
-    OutputsBody(vector<Body> &listBod,
-                vector<SolutionSet> &listSoln,
-                vector<double> &listFreq,
-                vector<double> &listWaveDir);
+    OutputsBody(std::vector<Body> &listBod,
+                std::vector<SolutionSet> &listSoln,
+                std::vector<double> &listFreq,
+                std::vector<double> &listWaveDir);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -155,7 +182,7 @@ public:
      * @param listIn The vector of Body objects to assign to this OutputsBody.  Input is passed by reference.  Input
      * is held as a constant value, so that it can not be modified by the class.
      */
-    void setListBody(vector<Body> &listIn);
+    void setListBody(std::vector<Body> &listIn);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -164,7 +191,7 @@ public:
      * @param listIn The vector of SolutionSet objects to assign to this OutputsBody.  Input is passed by reference.
      * Inputs is held as a constant value, so that it can not be modified by the class.
      */
-    void setSolutionSet(vector<SolutionSet> &listIn);
+    void setSolutionSet(std::vector<SolutionSet> &listIn);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -172,7 +199,7 @@ public:
      * @param listIn The vector of doubles representing the wave frequencies.  Frequencies entered in units of radians
      * per second.  Input is passed by reference and held as a constant so that the class can not change the frequencies.
      */
-    void setListFreq(vector<double> &listIn);
+    void setListFreq(std::vector<double> &listIn);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -180,7 +207,7 @@ public:
      * @return Returns the vector of doubles representing the wave frequencies.  Frequencies entered in units of radians
      * per second.  Variable is passed by reference.
      */
-    vector<double> &listFreq();
+    std::vector<double> &listFreq();
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -199,7 +226,7 @@ public:
      * @param listIn The vector of doubles representing the wave directions.  Directions entered in units of radians.
      * Input is passed by reference and held as a constant so that the class can not change the directions.
      */
-    void setListWaveDir(vector<double> &listIn);
+    void setListWaveDir(std::vector<double> &listIn);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -207,7 +234,7 @@ public:
      * @return Returns the vector of doubles representing the wave directions.  Directions entered in units of radians.
      * Variable is passed by reference.
      */
-    vector<double> &listWaveDir();
+    std::vector<double> &listWaveDir();
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -306,7 +333,7 @@ public:
      * of freedom.  All entries are complex numbers.  Returned variable is passed by value.  Value is not stored in
      * memory and must be calculated new each time method is called.
      */
-    vector<cx_vector> getGlobalMotion(int index = 0);
+    std::vector<cx_vector> getGlobalMotion(int index = 0);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -354,7 +381,7 @@ public:
      * of freedom.  All entries are complex numbers.  Returned variable is passed by value.  Value is not stored in
      * memory and must be calculated new each time method is called.
      */
-    vector<cx_vector> getGlobalVelocity(int index = 0);
+    std::vector<cx_vector> getGlobalVelocity(int index = 0);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -402,7 +429,7 @@ public:
      * of freedom.  All entries are complex numbers.  Returned variable is passed by value.  Value is not stored in
      * memory and must be calculated new each time method is called.
      */
-    vector<cx_vector> getGlobalAcceleration(int index = 0);
+    std::vector<cx_vector> getGlobalAcceleration(int index = 0);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -450,7 +477,7 @@ public:
      * of freedom.  All entries are complex numbers.  Returned variable is passed by value.  Value is not stored in
      * memory and must be calculated new each time method is called.
      */
-    vector<cx_vector> getGlobalSolution(int index = 0);
+    std::vector<cx_vector> getGlobalSolution(int index = 0);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -477,26 +504,26 @@ private:
     /**
      * @brief The vector list of Body objects.
      */
-    vector<Body>* plistBody;
+    std::vector<Body>* plistBody;
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
      * @brief The vector list of SolutionSet objects.
      */
-    vector<SolutionSet>* plistSolution;
+    std::vector<SolutionSet>* plistSolution;
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
      * @brief The list of wave frequencies.  Wave frequency recorded in units of radians per second.
      */
-    vector<double>* plistFreq;
+    std::vector<double>* plistFreq;
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
      * @brief The list of wave directions.  Wave direction recorded in units of radians.  Zero is true North direction.
      * Oriented positive counter-clockwise.
      */
-    vector<double>* plistWaveDir;
+    std::vector<double>* plistWaveDir;
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -521,26 +548,30 @@ private:
     /**
      * @brief The list of GlobalMotion objects.  Records the amplitude of motions for the Body.
      */
-    vector<GlobalMotion> pGlobalMotion;
+    std::vector<GlobalMotion> pGlobalMotion;
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
      * @brief The list of GlobalVelocity objects.  Records the velocity of motions for the Body.
      */
-    vector<GlobalVelocity> pGlobalVelocity;
+    std::vector<GlobalVelocity> pGlobalVelocity;
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
      * @brief The list of GlobalAcceleration objects.  Records the acceleration of motions for the Body.
      */
-    vector<GlobalAcceleration> pGlobalAcceleration;
+    std::vector<GlobalAcceleration> pGlobalAcceleration;
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
      * @brief The list of GlobalSolution objects.  Records the output of any derivative of solve motion amplitude
      * for the Body.
      */
-    vector<GlobalSolution> pGlobalSolution;
+    std::vector<GlobalSolution> pGlobalSolution;
 
 };
+
+}   //namespace ofreq
+}   //namespace osea
+
 #endif

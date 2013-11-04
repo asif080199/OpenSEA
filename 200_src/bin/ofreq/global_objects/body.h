@@ -56,8 +56,35 @@
 #include "forcereact.h"
 #include "../global_objects/ofreqcore.h"
 
-using namespace std;
-using namespace arma;
+//######################################### Class Separator ###########################################################
+//Namespace declarations
+
+//==========================================Section Separator =========================================================
+/**
+ * The namespace for all code created under the OpenSEA project.  There are also several sub-namespaces, one
+ * associated with each primary program under osea.
+ * 1.)  ohydro:  Code associated with the program ohydro.
+ * 2.)  ofreq:   Code associated with the program ofreq.
+ * 3.)  otime:   Code associated with the program otime.
+ * 4.)  ofourier:  Code associated with the program ofourier.
+ * 5.)  obatch:    Code associated with the program obatch.
+ * 6.)  guisea:    Code assocaited with the GUI that interacts with all OpenSEA programs.
+ * Any code that may have common utility amongst all programs, such as file reading objects, goes under the generic
+ * osea namespace.  Any code that is only useful within the specific program it serves, goes under the specific
+ * namespace.  When in doubt, default to just the osea namespace.
+ *
+ * The namespaces are not intended to create an organizational structure.  They are only intended to prevent
+ * name conflicts.
+ */
+namespace osea
+{
+
+//==========================================Section Separator =========================================================
+/**
+ * The namespace of all code specifically associated with ofreq.
+ */
+namespace ofreq
+{
 
 //######################################### Class Separator ###########################################################
 /*Create forward declarations of the force objects to include them in this class definition without including the
@@ -72,7 +99,7 @@ using namespace arma;
  * This class holds all of the data for the Body Input File.
  */
 
-class Body : public oFreqCore
+class Body : public osea::ofreq::oFreqCore
 {
 //==========================================Section Separator =========================================================
 public:
@@ -94,37 +121,37 @@ public:
     //------------------------------------------Function Separator ----------------------------------------------------
 	/**
 	 * Sets the bodyName.
-	 * @param newName The string passed in sets bodyName.
+	 * @param newName The std::string passed in sets bodyName.
 	 */
-	void setBodyName(string);
+	void setBodyName(std::string);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
      * @brief Exposes the body name property for operation.
      * @return Pointer to the body name property.
      */
-    string &refBodyName();
+    std::string &refBodyName();
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
      * @brief Exposes the hydro body name property for operation.
      * @return Pointer to the hydro body name property.
      */
-    string &refHydroBodName();
+    std::string &refHydroBodName();
 
     //------------------------------------------Function Separator ----------------------------------------------------
 	/**
 	 * Sets the hydroBody.
-	 * @param newName The string passed in sets the hydroBody.
+	 * @param newName The std::string passed in sets the hydroBody.
 	 */
-    void setHydroBodName(string);
+    void setHydroBodName(std::string);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
      * Gets the name of the hydro body.
-     * @return Returns string.  The name of the hydrobody object associated with the body.  Variable passed by value.
+     * @return Returns std::string.  The name of the hydrobody object associated with the body.  Variable passed by value.
      */
-    string getHydroBodName();
+    std::string getHydroBodName();
 
     //------------------------------------------Function Separator ----------------------------------------------------
 	/**
@@ -258,21 +285,21 @@ public:
      * @brief Gets the mass matrix for the body.
      * @return Returns the mass matrix for the body, as a single matrix.  Returned by value.
      */
-    Mat<double> getMassMatrix();
+    arma::Mat<double> getMassMatrix();
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
      * @brief Implements the method getMassMatrix(), just under a different name.
      * @return Returns the mass matrix for the body, as a single matrix.
      */
-    Mat<double> &MassMatrix();
+    arma::Mat<double> &MassMatrix();
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
      * @brief Set the mass matrix for the body.
      * @param MassMatIn The input mass matrix for the body.  A 6x6 matrix.
      */
-    void setMassMatrix(Mat<double> MassMatIn);
+    void setMassMatrix(arma::Mat<double> MassMatIn);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -327,7 +354,7 @@ public:
      * @return Returns the entire mass centroid matrix.  Output is a 3x1 matrix of the body centroid, relative to
      * body coordinate system.
      */
-    Mat<double> getCen();
+    arma::Mat<double> getCen();
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -400,7 +427,7 @@ public:
      * First entry (1,1) = Position in X-axis.  Second entry (2,1) = Position in Y-axis.  Third entry (3,1) = Position
      * in Z-axis.  Units are in meters.  Position is relative to the orientation of the world coordinate system.
      */
-    Mat<double> getPosn();
+    arma::Mat<double> getPosn();
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -414,14 +441,14 @@ public:
      * First entry (1,1) = Position in X-axis.  Second entry (2,1) = Position in Y-axis.  Third entry (3,1) = Position
      * in Z-axis.  Units are in meters.  Position is relative to the orientation of the world coordinate system.
      */
-    Mat<double> &refPosn();
+    arma::Mat<double> &refPosn();
 
     //------------------------------------------Function Separator ----------------------------------------------------
 	/**
 	 * Get the name of the body.
 	 * @return The name of the body.
 	 */    
-	string getBodyName();
+	std::string getBodyName();
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -433,7 +460,7 @@ public:
      * @param input Column matrix of complex numbers.  Matrix size is not hard coded.  Number of rows in matrix must match
      * number of equations for body property.
      */
-    void setSolnMat(cx_mat input);
+    void setSolnMat(arma::cx_mat input);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -445,7 +472,7 @@ public:
      * @return Column matrix of complex numbers.  Matrix size is not hard coded.  Number of rows in matrix must match
      * number of equations for body property.
      */
-    cx_mat getSolution();
+    arma::cx_mat getSolution();
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -457,7 +484,7 @@ public:
      * @return Reference to column matrix of complex numbers.  Value returned by reference.  Matrix size is not
      * hard coded.  Number of rows in matrix must match number of equations for body property.
      */
-    cx_mat &refSolution();
+    arma::cx_mat &refSolution();
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -474,7 +501,7 @@ public:
      * these forces may be linked to other bodies as well and should not be changed.
      * @return A vector of pointers to various user active forces.
      */
-    vector<ForceActive* > listForceActive_user();
+    std::vector<ForceActive* > &listForceActive_user();
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -495,7 +522,7 @@ public:
      * Warning that these forces may be linked to other bodies as well and should not be changed.
      * @return A vector of pointes to various hydrodynamic active forces.
      */
-    vector<ForceActive* > &listForceActive_hydro();
+    std::vector<ForceActive* > &listForceActive_hydro();
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -516,7 +543,7 @@ public:
      * these forces may be linked to other bodies as well and should not be changed.
      * @return A vector of pointers to various user reactive forces.
      */
-    vector<ForceReact* > &listForceReact_user();
+    std::vector<ForceReact* > &listForceReact_user();
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -537,7 +564,7 @@ public:
      * forces.  Warning that these forces may be linked to other bodies as well and should not be changed.
      * @return A vector of pointers to various hydrodynamic reactive forces.
      */
-    vector<ForceReact* > &listForceReact_hydro();
+    std::vector<ForceReact* > &listForceReact_hydro();
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -561,7 +588,7 @@ public:
      * matching entry at index 5 in the listLinkedBody_usr.
      * @return A list of pointers to various user cross-body forces.
      */
-    vector<ForceCross* > &listForceCross_user();
+    std::vector<ForceCross* > &listForceCross_user();
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -585,7 +612,7 @@ public:
      * have a matching entry at index 5 in the listLinkedBody_hydro.
      * @return A list of pointers to various hydrodynamic cross-body forces.
      */
-    vector<ForceCross* > &listForceCross_hydro();
+    std::vector<ForceCross* > &listForceCross_hydro();
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -608,7 +635,7 @@ public:
      * have a matching entry at index 5 in the listLinkedBody_usr.
      * @return A list of pointers to various linked bodies for user cross-body forces.
      */
-    vector<Body* > &listCrossBody_user();
+    std::vector<Body* > &listCrossBody_user();
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -633,7 +660,7 @@ public:
      * have a matching entry at index 5 in the listLinkedBody_hydro.
      * @return A list of pointers to various linked bodies for hydro cross-body forces.
      */
-    vector<Body* > &listCrossBody_hydro();
+    std::vector<Body* > &listCrossBody_hydro();
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -658,11 +685,11 @@ public:
      * the input file.  Thus, the body is not currently defined.  Once all Bodies are defined, the System object calls
      * a function to read through each name in the list and assign corresponding pointers in the listLinkedBody_usr.
      * @return Returns the list of named bodies linked to the Cross-Body forces.  Returned object is a vector of
-     * string objects.  Returned variable passed by reference.
+     * std::string objects.  Returned variable passed by reference.
      * @sa listLinkedBody_user()
      * @sa System
      */
-    vector<string> &listNamedLink_user();
+    std::vector<std::string> &listNamedLink_user();
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -674,12 +701,12 @@ public:
      * the input file.  Thus, the body is not currently defined.  Once all Bodies are defined, the System object calls
      * a function to read through each name in the list and assign corresponding pointers in the listLinkedBody_usr.
      * @param varIn Integer input specifying exactly which item in the list to return.
-     * @return Returns the named body linked to the Cross-Body forces.  Returned object is a string object.
+     * @return Returns the named body linked to the Cross-Body forces.  Returned object is a std::string object.
      * Returned variable passed by reference.
      * @sa listLinkedBody_user()
      * @sa System
      */
-    string &listNamedLink_user(unsigned int varIn);
+    std::string &listNamedLink_user(unsigned int varIn);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -691,11 +718,11 @@ public:
      * the input file.  Thus, the body is not currently defined.  Once all Bodies are defined, the System object calls
      * a function to read through each name in the list and assign corresponding pointers in the listLinkedBody_hydro.
      * @return Returns the list of named bodies linked to the Cross-Body forces.  Returned object is a vector of
-     * string objects.  Returned variable passed by reference.
+     * std::string objects.  Returned variable passed by reference.
      * @sa listLinkedBody_hydro()
      * @sa System
      */
-    vector<string> &listNamedLink_hydro();
+    std::vector<std::string> &listNamedLink_hydro();
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -707,31 +734,31 @@ public:
      * the input file.  Thus, the body is not currently defined.  Once all Bodies are defined, the System object calls
      * a function to read through each name in the list and assign corresponding pointers in the listLinkedBody_hydro.
      * @param varIn Integer input specifying exactly which item in the list to return.
-     * @return Returns the named body linked to the Cross-Body forces.  Returned object is a string object.
+     * @return Returns the named body linked to the Cross-Body forces.  Returned object is a std::string object.
      * Returned variable passed by reference.
      * @sa listLinkedBody_hydro()
      * @sa System
      */
-    string &listNamedLink_hydro(unsigned int varIn);
+    std::string &listNamedLink_hydro(unsigned int varIn);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
      * @brief Sets the name of the motion model for lookup later.
      *
      * Sets the name of the motion model for lookup later.
-     * @param modelName String input that is the name of the motion model.  This must match exactly one of the entries
+     * @param modelName std::string input that is the name of the motion model.  This must match exactly one of the entries
      * in the list of motion models avaiable at run time.
      */
-    void setMotionModel(string modelName);
+    void setMotionModel(std::string modelName);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
      * @brief Gets the name of the motion model.
      *
-     * Gets string output that is the name of the motion model assigned to this body.
-     * @return String output that is the name of the motion model assigned to this body.
+     * Gets std::string output that is the name of the motion model assigned to this body.
+     * @return std::string output that is the name of the motion model assigned to this body.
      */
-    string getMotionModel();
+    std::string getMotionModel();
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -754,7 +781,7 @@ private:
      * The list of active user forces.  A vector of pointers directing to the active user forces.  Warning that
      * these forces may be linked to other bodies as well and should not be changed.
      */
-    vector<ForceActive*> plistForceActive_usr;
+    std::vector<ForceActive*> plistForceActive_usr;
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -763,7 +790,7 @@ private:
      * The list of active hydrodynamic forces.  A vector of pointers directing to the active hydrodynamic forces.
      * Warning that these forces may be linked to other bodies as well and should not be changed.
      */
-    vector<ForceActive*> plistForceActive_hydro;
+    std::vector<ForceActive*> plistForceActive_hydro;
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -772,7 +799,7 @@ private:
      * The list of reactive user forces.  A vector of pointers directing to the reactive user forces.  Warning that
      * these forces may be linked to other bodies as well and should not be changed.
      */
-    vector<ForceReact*> plistForceReact_usr;
+    std::vector<ForceReact*> plistForceReact_usr;
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -781,7 +808,7 @@ private:
      * The list of reactive hydrodynamic forces.  A vector of pointers directing to the reactive hydrodynamic
      * forces.  Warning that these forces may be linked to other bodies as well and should not be changed.
      */
-    vector<ForceReact*> plistForceReact_hydro;
+    std::vector<ForceReact*> plistForceReact_hydro;
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -793,7 +820,7 @@ private:
      * lists should match.  So that when a force gets added at index 5 in the listForceCross_usr, it should have a
      * matching entry at index 5 in the listLinkedBody_usr.
      */
-    vector<ForceCross*> plistForceCross_usr;
+    std::vector<ForceCross*> plistForceCross_usr;
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -805,7 +832,7 @@ private:
      * of the two lists should match.  So that when a force gets added at index 5 in the listForceCross_hydro, it should
      * have a matching entry at index 5 in the listLinkedBody_hydro.
      */
-    vector<ForceCross*> plistForceCross_hydro;
+    std::vector<ForceCross*> plistForceCross_hydro;
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -816,7 +843,7 @@ private:
      * of the two lists should match.  So that when a force gets added at index 5 in the listForceCross_usr, it should
      * have a matching entry at index 5 in the listLinkedBody_usr.
      */
-    vector<Body*> plistLinkedBody_usr;
+    std::vector<Body*> plistLinkedBody_usr;
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -827,7 +854,7 @@ private:
      * of the two lists should match.  So that when a force gets added at index 5 in the listForceCross_hydro, it should
      * have a matching entry at index 5 in the listLinkedBody_hydro.
      */
-    vector<Body*> plistLinkedBody_hydro;
+    std::vector<Body*> plistLinkedBody_hydro;
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -841,7 +868,7 @@ private:
      * @sa listLinkedBody_user()
      * @sa System
      */
-    vector<string> plistNamedLink_usr;
+    std::vector<std::string> plistNamedLink_usr;
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -855,7 +882,7 @@ private:
      * @sa listLinkedBody_hydro()
      * @sa System
      */
-    vector<string> plistNamedLink_hydro;
+    std::vector<std::string> plistNamedLink_hydro;
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -865,7 +892,7 @@ private:
      * However, this is acceptable because the transition to the motion model object decides which elements
      * to pick out and put into equations.  Mass is units of kilograms.  Moments of inertia are in kg-m^2.
      */
-    Mat<double> pmassMat;
+    arma::Mat<double> pMassMat;
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -873,7 +900,7 @@ private:
      *
      * The name for this body object.  An identifier that the user creates.  Also used to locate the body in a list.
      */
-    string bodyName;
+    std::string pBodyName;
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -883,7 +910,7 @@ private:
      * a standard 6dof motion model.  However, this is acceptable because the transition to the motion model object
      * decides which elements to pick out and put into equations.  Centroid is measured in units of meters.
      */
-    Mat<double> pCentroid;
+    arma::Mat<double> pCentroid;
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -893,7 +920,7 @@ private:
      * initially empty on body creation.  It gets filled with the output from the motion solver.  Output is a column
      * matrix (n by 1) of complex numbers.  Output is in units of meters.
      */
-    cx_mat pSoln;
+    arma::cx_mat pSoln;
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -903,7 +930,7 @@ private:
      * be at a position relative to the world coordinate system.  Any coordintes entered for the body are relative to
      * this body position value.  Position is measured in units of meters.
      */
-    Mat<double> pPosn;
+    arma::Mat<double> pPosn;
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -913,10 +940,10 @@ private:
      * specified in the world coordinate system and then motions are translated relative to the body heading.  Angle
      * is measured in units of radians.
      */
-    double phead;
+    double pHead;
 
     //------------------------------------------Function Separator ----------------------------------------------------
-    string hydroBody; /**< The name of this hydro body object. */
+    std::string hydroBody; /**< The name of this hydro body object. */
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -927,6 +954,23 @@ private:
     int eqnCount;
 
     //------------------------------------------Function Separator ----------------------------------------------------
-    string motModel; /**< The name of the motion model object to use */
+    std::string motModel; /**< The name of the motion model object to use */
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Sets the coupling terms for the mass matrix.
+     *
+     * When a body has a center of gravity not located exactly at the origin of a coordinate system, the mathematics
+     * for force balance create a coupling between momentum in linear motion and momentum in angular motion.  This
+     * coupling induces additional equations in the mass matrix.  The user does not need to explicitely define these
+     * coupling terms.  They can be automatically derived from just the mass and center of gravity for the Body.
+     *
+     * This functions calculates those coupling terms and adds them into the mass matrix.
+     */
+    void setMassCouple();
 };
+
+}   //Namespace ofreq
+}   //Namespace osea
+
 #endif

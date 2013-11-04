@@ -26,6 +26,10 @@
 
 #include "solution.h"
 
+using namespace std;
+using namespace arma;
+using namespace osea::ofreq;
+
 //------------------------------------------Function Separator --------------------------------------------------------
 Solution::Solution()
 {

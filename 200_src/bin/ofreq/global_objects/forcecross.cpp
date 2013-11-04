@@ -26,6 +26,8 @@
 
 #include "forcecross.h"
 
+using namespace std;
+using namespace osea::ofreq;
 
 ForceCross::ForceCross() : ForceReact()
 {

@@ -26,6 +26,9 @@
 
 #include "filereader.h"
 
+using namespace std;
+using namespace osea;
+
 //==========================================Section Separator =========================================================
 //Static Initialization
 
@@ -101,6 +104,7 @@ void FileReader::setPath(string input)
 int FileReader::readControl()
 {
     //Read control input file
+    writeLog("Reading input file.");
 
     //Set filename
     string filename;
@@ -109,20 +113,18 @@ int FileReader::readControl()
     //clear the list of objects.
     plistObjects.clear();
 
-    //Emit signal of objects that were read
-    for (unsigned int i = 0; i < plistObjects.size(); i++)
-    {
-        emit outputControlFile(plistObjects[i]);
-    }
-
     //Read file
-    return readFile(filename);
+    int out = readFile(filename);
+
+    //Write output
+    return out;
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
 int FileReader::readBodies()
 {
     //Read Bodies input file
+    writeLog("Reading Bodies file.");
 
     //Set filename
     string filename;
@@ -130,12 +132,6 @@ int FileReader::readBodies()
 
     //clear the list of objects.
     plistObjects.clear();
-
-    //Emit signal of objects that were read
-    for (unsigned int i = 0; i < plistObjects.size(); i++)
-    {
-        emit outputBodiesFile(plistObjects[i]);
-    }
 
     //Read file
     int out = readFile(filename);
@@ -154,6 +150,7 @@ int FileReader::readBodies()
 int FileReader::readForces()
 {
     //Read forces input file
+    writeLog("Reading Forces file.");
 
     //Set filename
     string filename;
@@ -162,42 +159,38 @@ int FileReader::readForces()
     //clear the list of objects.
     plistObjects.clear();
 
-    //Emit signal of objects that were read
-    for (unsigned int i = 0; i < plistObjects.size(); i++)
-    {
-        emit outputForcesFile(plistObjects[i]);
-    }
-
     //Read file
-    return readFile(filename);
+    int out = readFile(filename);
+
+    //Write output
+    return out;
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
 int FileReader::readSeaEnv()
 {
     //Read sea environment input file
+    writeLog("Reading Environment File.");
 
     //Set filename
     string filename;
     filename = pPath + SLASH + CONST + SLASH + SEAENV;
 
     //clear the list of objects.
-    plistObjects.clear();
-
-    //Emit signal of objects that were read
-    for (unsigned int i = 0; i < plistObjects.size(); i++)
-    {
-        emit outputSeaEnvFile(plistObjects[i]);
-    }
+    plistObjects.clear();   
 
     //Read file
-    return readFile(filename);
+    int out = readFile(filename);
+
+    //Write output
+    return out;
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
 int FileReader::readData()
 {
     //Read data input file
+    writeLog("Reading data file.");
 
     //Set filename
     string filename;
@@ -206,14 +199,17 @@ int FileReader::readData()
     //clear the list of objects.
     plistObjects.clear();
 
-    //Emit signal of objects that were read
-    for (unsigned int i = 0; i < plistObjects.size(); i++)
-    {
-        emit outputDataFile(plistObjects[i]);
-    }
-
     //Read file
-    return readFile(filename);
+    int out = readFile(filename);
+
+    //Write output
+    return out;
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+void FileReader::setDictionary(osea::Dictionary &dictIn)
+{
+    ptDict = &dictIn;
 }
 
 //==========================================Section Separator =========================================================
@@ -230,13 +226,19 @@ int FileReader::readHydroFile(string path)
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-void FileReader::setSystem(System* ptInput)
+void FileReader::setSystem(ofreq::System* ptInput)
 {
     ptSystem = ptInput;
 }
 
 //==========================================Section Separator =========================================================
 //Protected Functions
+
+//------------------------------------------Function Separator --------------------------------------------------------
+void FileReader::sendOutput(int index)
+{
+    ptDict->setObject(plistObjects[index]);
+}
 
 //==========================================Section Separator =========================================================
 //Private Functions
@@ -252,7 +254,8 @@ int FileReader::readFile(string path)
     //Test if file exists
     if(!InputFile)
     {
-        cerr << "control.in file does not exist." << endl;
+        writeError("file does not exist:  " + path);
+        writeLog("file does not exist:  " + path);
         return 1;
         exit(1);
     }
@@ -270,7 +273,7 @@ int FileReader::readFile(string path)
     for (unsigned int i = sea_index; i < myParse.listObject().size(); i++)
     {
         //Check if the first object is an opensea file definition.
-        if (myParse.listObject(sea_index).getClassName() == OBJ_SEAFILE)
+        if (myParse.listObject(i).getClassName().find(OBJ_SEAFILE) != std::string::npos)
         {
             //True.  Process as a seafile object.
             for (unsigned int j = 0; j < myParse.listObject(sea_index).listKey().size(); j++)
@@ -294,9 +297,19 @@ int FileReader::readFile(string path)
             plistObjects.push_back(myParse.getObject(i));
 
             //Add version and format to object.
-            plistObjects[i].setVersion(version);
-            plistObjects[i].setFormat(format);
+            plistObjects.at(i - 1).setVersion(version);     //Assumes the sea_index is 0
+            plistObjects.at(i - 1).setFormat(format);       //Assumes the sea_index is 0
         }
+    }
+
+    //Close file
+    InputFile.close();
+
+    //Emit signal of objects that were read
+    for (unsigned int i = 0; i < plistObjects.size(); i++)
+    {
+        //emit outputSeaEnvFile(plistObjects[i]);
+        sendOutput(i);
     }
 
     //Report success of file reading.

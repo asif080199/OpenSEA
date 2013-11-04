@@ -26,6 +26,9 @@
 
 #include "globalvelocity.h"
 
+using namespace std;
+using namespace osea::ofreq;
+
 //==========================================Section Separator =========================================================
 //Static initialization
 string GlobalVelocity::VELOCITY_NAME = "Global Velocity"; /**< Used for reference in file output. */

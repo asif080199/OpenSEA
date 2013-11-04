@@ -26,6 +26,10 @@
 
 #include "filewriter.h"
 
+using namespace std;
+using namespace boost::filesystem; //for using boost file system
+using namespace osea::ofreq;
+
 //==========================================Section Separator =========================================================
 //Static Initialization
 

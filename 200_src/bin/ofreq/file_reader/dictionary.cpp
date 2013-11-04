@@ -26,6 +26,9 @@
 
 #include "dictionary.h"
 
+using namespace std;
+using namespace osea;
+
 //==========================================Section Separator =========================================================
 //Public Functions
 
@@ -57,7 +60,7 @@ void Dictionary::setObject(ObjectGroup input)
     int returnVal;
 
     //Proceed through each key / value pair defined for the ObjectGroup object.
-    for (unsigned int i = 0; i <= input.listKey().size(); i++)
+    for (unsigned int i = 0; i < input.listKey().size(); i++)
     {
         //define the key
         returnVal = defineKey(input.getKey(i), input.getVal(i));
@@ -65,7 +68,7 @@ void Dictionary::setObject(ObjectGroup input)
     }
 
     //Next proceed through each of the sub classes defined for the ObjectGroup object.
-    for (unsigned int i = 0; i <= input.listObject().size(); i++)
+    for (unsigned int i = 0; i < input.listObject().size(); i++)
     {
         //define the class
         setObject(*(input.listObject(i)));
@@ -74,7 +77,7 @@ void Dictionary::setObject(ObjectGroup input)
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-void Dictionary::setSystem(System* ptInput)
+void Dictionary::setSystem(ofreq::System* ptInput)
 {
     ptSystem = ptInput;
 }

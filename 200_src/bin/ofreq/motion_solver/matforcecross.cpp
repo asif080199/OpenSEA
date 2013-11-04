@@ -27,6 +27,10 @@
 #include "matforcecross.h"
 #include "matbody.h"    //Include the matBody header here to avoid circular header inclusions.
 
+using namespace arma;
+using namespace std;
+using namespace osea::ofreq;
+
 //------------------------------------------Function Separator --------------------------------------------------------
 matForceCross::matForceCross()
 {

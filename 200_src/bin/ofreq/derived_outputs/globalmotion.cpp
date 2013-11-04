@@ -26,6 +26,9 @@
 
 #include "globalmotion.h"
 
+using namespace std;
+using namespace osea::ofreq;
+
 //==========================================Section Separator =========================================================
 //Static initializations
 string GlobalMotion::MOTION_NAME = "Global Motion"; /**< Used for reference in file output. */

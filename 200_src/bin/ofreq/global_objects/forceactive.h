@@ -45,9 +45,38 @@
 #include <fstream>
 #include <vector>
 #include <complex>
-using namespace std;
 
-typedef complex<double> complexDouble;
+//######################################### Class Separator ###########################################################
+//Namespace declarations
+
+//==========================================Section Separator =========================================================
+/**
+ * The namespace for all code created under the OpenSEA project.  There are also several sub-namespaces, one
+ * associated with each primary program under osea.
+ * 1.)  ohydro:  Code associated with the program ohydro.
+ * 2.)  ofreq:   Code associated with the program ofreq.
+ * 3.)  otime:   Code associated with the program otime.
+ * 4.)  ofourier:  Code associated with the program ofourier.
+ * 5.)  obatch:    Code associated with the program obatch.
+ * 6.)  guisea:    Code assocaited with the GUI that interacts with all OpenSEA programs.
+ * Any code that may have common utility amongst all programs, such as file reading objects, goes under the generic
+ * osea namespace.  Any code that is only useful within the specific program it serves, goes under the specific
+ * namespace.  When in doubt, default to just the osea namespace.
+ *
+ * The namespaces are not intended to create an organizational structure.  They are only intended to prevent
+ * name conflicts.
+ */
+namespace osea
+{
+
+//==========================================Section Separator =========================================================
+/**
+ * The namespace of all code specifically associated with ofreq.
+ */
+namespace ofreq
+{
+
+typedef std::complex<double> complexDouble;
 
 //######################################### Class Separator ###########################################################
 /**
@@ -70,14 +99,14 @@ public:
      * @param coeffIn The value of the coefficient to specify.  Added as a complex number.  Variable passed by value.
      * @param index The equation index of the coefficient to specify.
      */
-    void setCoeff(complex<double> coeffIn, unsigned int index);
+    void setCoeff(std::complex<double> coeffIn, unsigned int index);
 
     //------------------------------------------Function Separator ----------------------------------------------------
 	/**
 	 * Retrieve the list of coefficients.
 	 * @return The list of coefficients.
 	 */
-    vector<complexDouble> &listCoefficients();
+    std::vector<complexDouble> &listCoefficients();
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -95,7 +124,7 @@ public:
      * @brief Another implementation of function listCoefficients.
      * @return Vector containing the list of coefficients.  Argument passed by reference.
      */
-    vector<complexDouble> &listEquation();
+    std::vector<complexDouble> &listEquation();
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -124,10 +153,14 @@ public:
 //==========================================Section Separator =========================================================
 protected:
     //------------------------------------------Function Separator ----------------------------------------------------
-    vector<complexDouble> pCoefficients; /**< The list of force coeffients. */
+    std::vector<complexDouble> pCoefficients; /**< The list of force coeffients. */
 
 //==========================================Section Separator =========================================================
 private:
 
 };
+
+}   //Namespace ofreq
+}   //Namespace osea
+
 #endif

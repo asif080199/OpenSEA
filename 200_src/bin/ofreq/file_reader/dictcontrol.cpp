@@ -26,6 +26,9 @@
 
 #include "dictcontrol.h"
 
+using namespace std;
+using namespace osea::ofreq;
+
 //==========================================Section Separator =========================================================
 //Static Initialization
 

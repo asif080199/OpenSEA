@@ -44,7 +44,36 @@
 #include <fstream>
 #include <vector>
 #include "derivative.h"
-using namespace std;
+
+//######################################### Class Separator ###########################################################
+//Namespace declarations
+
+//==========================================Section Separator =========================================================
+/**
+ * The namespace for all code created under the OpenSEA project.  There are also several sub-namespaces, one
+ * associated with each primary program under osea.
+ * 1.)  ohydro:  Code associated with the program ohydro.
+ * 2.)  ofreq:   Code associated with the program ofreq.
+ * 3.)  otime:   Code associated with the program otime.
+ * 4.)  ofourier:  Code associated with the program ofourier.
+ * 5.)  obatch:    Code associated with the program obatch.
+ * 6.)  guisea:    Code assocaited with the GUI that interacts with all OpenSEA programs.
+ * Any code that may have common utility amongst all programs, such as file reading objects, goes under the generic
+ * osea namespace.  Any code that is only useful within the specific program it serves, goes under the specific
+ * namespace.  When in doubt, default to just the osea namespace.
+ *
+ * The namespaces are not intended to create an organizational structure.  They are only intended to prevent
+ * name conflicts.
+ */
+namespace osea
+{
+
+//==========================================Section Separator =========================================================
+/**
+ * The namespace of all code specifically associated with ofreq.
+ */
+namespace ofreq
+{
 
 //######################################### Class Separator ###########################################################
 /**
@@ -80,7 +109,7 @@ public:
      * @brief Another implementation of getDerivatives, under a different name.
      * @return Returns the vector of derviative objects.  Returned object is by reference.
      */
-    vector<Derivative> &listDerivative();
+    std::vector<Derivative> &listDerivative();
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -132,7 +161,7 @@ public:
 //==========================================Section Separator =========================================================
 protected:
     //------------------------------------------Function Separator ----------------------------------------------------
-    vector<Derivative> pDerivative; /**< This list of derivatives. */
+    std::vector<Derivative> pDerivative; /**< This list of derivatives. */
 	int currentDerivative; /**< The current order derivative. */
 	int currentEquation; /**< This current equation number. */
 
@@ -140,5 +169,9 @@ protected:
 private:
 
 };
+
+}   //Namespace ofreq
+}   //Namespace osea
+
 #endif
 

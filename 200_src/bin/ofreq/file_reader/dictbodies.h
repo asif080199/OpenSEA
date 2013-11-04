@@ -39,7 +39,41 @@
 #define DICTBODIES_H
 #include "dictionary.h"
 
-using namespace std;
+//######################################### Class Separator ###########################################################
+//Namespace declarations
+
+//==========================================Section Separator =========================================================
+/**
+ * The namespace for all code created under the OpenSEA project.  There are also several sub-namespaces, one
+ * associated with each primary program under osea.
+ * 1.)  ohydro:  Code associated with the program ohydro.
+ * 2.)  ofreq:   Code associated with the program ofreq.
+ * 3.)  otime:   Code associated with the program otime.
+ * 4.)  ofourier:  Code associated with the program ofourier.
+ * 5.)  obatch:    Code associated with the program obatch.
+ * 6.)  guisea:    Code assocaited with the GUI that interacts with all OpenSEA programs.
+ * Any code that may have common utility amongst all programs, such as file reading objects, goes under the generic
+ * osea namespace.  Any code that is only useful within the specific program it serves, goes under the specific
+ * namespace.  When in doubt, default to just the osea namespace.
+ *
+ * The namespaces are not intended to create an organizational structure.  They are only intended to prevent
+ * name conflicts.
+ */
+namespace osea
+{
+
+//==========================================Section Separator =========================================================
+/**
+ * The namespace of all code specifically associated with ofreq.
+ */
+namespace ofreq
+{
+
+//######################################### Class Separator ###########################################################
+//Prototype class declarations
+class ForceActive;
+class ForceReact;
+class ForceCross;
 
 //######################################### Class Separator ###########################################################
 /**
@@ -80,7 +114,7 @@ protected:
     /**
      * @brief Function that defines how to interpret the key values.  Contains a list of key names and
      * corresponding actions to take for interpretting each key value.
-     * @param keyIn String containing the key name.  Variable passed by value.
+     * @param keyIn std::string containing the key name.  Variable passed by value.
      * @param valIn Vector of strings containing the key values.  Variable passed by value.
      * @return Returns status of assigning key.  Returned value is an integer, passed by value.
      * See list of return codes below:
@@ -89,14 +123,14 @@ protected:
      * 2:  Key is invalid within current active object.
      * 99: Function virtual definition only.  Not currently defined.
      */
-    int defineKey(string keyIn, vector<string> valIn);
+    int defineKey(std::string keyIn, std::vector<std::string> valIn);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
      * @brief Function that defines how to interpret the class name.  Class name implies declaration of
      * a new object of the class named by the class name.  This is a separate set of definitions to handle class
      * declarations.
-     * @param nameIn String, variable passed by value.  The name of the class name.
+     * @param nameIn std::string, variable passed by value.  The name of the class name.
      * @return Returns status of assigning key.  Returned value is an integer, passed by value.
      * See list of return codes below:
      * 0:  Key definition found.  Success.
@@ -104,7 +138,7 @@ protected:
      * 2:  Key is invalid within current active object.
      * 99: Function virtual definition only.  Not currently defined.
      */
-    int defineClass(string nameIn);
+    int defineClass(std::string nameIn);
 
 //==========================================Section Separator =========================================================
 private:
@@ -177,32 +211,35 @@ private:
 
     //------------------------------------------Function Separator ----------------------------------------------------
     //Class Name constants
-    static string OBJECT_BODY; /**< Object designator for new body object.*/
-    static string OBJECT_MASSPROP; /**< Object designator for new mass property object. */
-    static string OBJECT_CENTROID; /**< Object designator for new centroid object. */
-    static string OBJECT_FORCE_ACTIVE; /**< Object designator for new ForceActive object. */
-    static string OBJECT_FORCE_REACT; /**< Object designator for new ForceReact object. */
-    static string OBJECT_FORCE_CROSS; /**< Object designator for new ForceCross object. */
-    static string OBJECT_MODEL; /**< Object designator for model of ForceCross object. */
+    static std::string OBJECT_BODY; /**< Object designator for new body object.*/
+    static std::string OBJECT_MASSPROP; /**< Object designator for new mass property object. */
+    static std::string OBJECT_CENTROID; /**< Object designator for new centroid object. */
+    static std::string OBJECT_FORCE_ACTIVE; /**< Object designator for new ForceActive object. */
+    static std::string OBJECT_FORCE_REACT; /**< Object designator for new ForceReact object. */
+    static std::string OBJECT_FORCE_CROSS; /**< Object designator for new ForceCross object. */
+    static std::string OBJECT_MODEL; /**< Object designator for model of ForceCross object. */
 
     //------------------------------------------Function Separator ----------------------------------------------------
     //Keyword name staticants
-    static string KEY_NAME; /**< Key for body name */
-    static string KEY_HYDROBODY; /**< Key for hydrobody name. */
-    static string KEY_MASS; /**< Key for mass of body */
-    static string KEY_IXX; /**< Key for moment of inertia, X-X axis */
-    static string KEY_IYY; /**< Key for moment of inertia, Y-Y axis */
-    static string KEY_IZZ; /**< Key for moment of inertia, Z-Z axis */
-    static string KEY_IXY; /**< Key for cross-product of inertia, X-Y coupling */
-    static string KEY_IXZ; /**< Key for cross-product of inertia, X-Z coupling */
-    static string KEY_IYZ; /**< Key for cross-product of inertia, Y-Z coupling */
-    static string KEY_COGX; /**< Key for center of gravity, X-axis coordinate */
-    static string KEY_COGY; /**< Key for center of gravity, Y-axis coordinate */
-    static string KEY_COGZ; /**< Key for center of gravity, Z-axis coordinate */
-    static string KEY_HEADING; /**< Key for heading of body, Z-axis rotation */
-    static string KEY_MOTION; /**< Key to specify motion model.*/
-    static string KEY_LINKEDBODY; /**< Key for linked body */
-    static string KEY_MODEL; /**< Key for model to use for force specification. */
+    static std::string KEY_NAME; /**< Key for body name */
+    static std::string KEY_HYDROBODY; /**< Key for hydrobody name. */
+    static std::string KEY_MASS; /**< Key for mass of body */
+    static std::string KEY_IXX; /**< Key for moment of inertia, X-X axis */
+    static std::string KEY_IYY; /**< Key for moment of inertia, Y-Y axis */
+    static std::string KEY_IZZ; /**< Key for moment of inertia, Z-Z axis */
+    static std::string KEY_IXY; /**< Key for cross-product of inertia, X-Y coupling */
+    static std::string KEY_IXZ; /**< Key for cross-product of inertia, X-Z coupling */
+    static std::string KEY_IYZ; /**< Key for cross-product of inertia, Y-Z coupling */
+    static std::string KEY_COGX; /**< Key for center of gravity, X-axis coordinate */
+    static std::string KEY_COGY; /**< Key for center of gravity, Y-axis coordinate */
+    static std::string KEY_COGZ; /**< Key for center of gravity, Z-axis coordinate */
+    static std::string KEY_HEADING; /**< Key for heading of body, Z-axis rotation */
+    static std::string KEY_MOTION; /**< Key to specify motion model.*/
+    static std::string KEY_LINKEDBODY; /**< Key for linked body */
+    static std::string KEY_MODEL; /**< Key for model to use for force specification. */
 };
 
-#endif // DICTBODIES_H
+}   //Namespace ofreq
+}   //Namespace osea
+
+#endif

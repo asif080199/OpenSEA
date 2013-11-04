@@ -26,6 +26,9 @@
 
 #include "forcereact.h"
 
+using namespace std;
+using namespace osea::ofreq;
+
 //------------------------------------------Function Separator --------------------------------------------------------
 ForceReact::ForceReact() : Force()
 {}
@@ -59,7 +62,7 @@ Derivative ForceReact::getDerivative(unsigned int num)
 
     //Also checks to ensure that the request will not return an out of bounds error.  If requested index
     //is greater than current vector size, the vector size is increased.
-    if(num > pDerivative.size() - 1)
+    if ((num > pDerivative.size() - 1) || (pDerivative.size() == 0))
     {
         //resize vector
         pDerivative.resize(num + 1);
@@ -76,7 +79,7 @@ Derivative &ForceReact::listDerivative(unsigned int num)
 
     //Also checks to ensure that the request will not return an out of bounds error.  If requested index
     //is greater than current vector size, the vector size is increased.
-    if(num > pDerivative.size() - 1)
+    if ((num > pDerivative.size() - 1) || (pDerivative.size() == 0))
     {
         //resize vector
         pDerivative.resize(num + 1);
@@ -98,7 +101,7 @@ void ForceReact::addDerivative(Derivative derivIn, unsigned int ordIn)
     //Adds a new derivative object
 
     //Check if the order is high enough.
-    if (ordIn > pDerivative.size() - 1)
+    if ((ordIn > pDerivative.size() - 1) || (pDerivative.size() == 0))
     {
         //Resize vector
         pDerivative.resize(ordIn + 1);

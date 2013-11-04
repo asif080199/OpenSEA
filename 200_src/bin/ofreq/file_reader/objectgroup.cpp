@@ -26,6 +26,9 @@
 
 #include "objectgroup.h"
 
+using namespace std;
+using namespace osea;
+
 //==========================================Section Separator =========================================================
 //Public Functions
 
@@ -91,7 +94,9 @@ ObjectGroup* ObjectGroup::listObject(int index)
 //------------------------------------------Function Separator --------------------------------------------------------
 void ObjectGroup::addSubObject(ObjectGroup objIn)
 {
-    plistObject.push_back(&objIn);
+    ObjectGroup *newObj = new ObjectGroup();
+    *newObj = objIn;
+    plistObject.push_back(newObj);
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
@@ -123,13 +128,13 @@ void ObjectGroup::addKeyWord(string word, int index)
 {
     if (index < 0)
     {
-        //Specify key at specific index.
-        plistKey.at(index) = word;
+        //Add key to the end of the list.
+        plistKey.push_back(word);
     }
     else
     {
-        //Add key to the end of the list.
-        plistKey.push_back(word);
+        //Specify key at specific index.
+        plistKey.at(index) = word;
     }
 }
 
@@ -146,14 +151,14 @@ void ObjectGroup::addKeyVal(string val, int index)
 void ObjectGroup::addKeyVal(vector<string> val, int index)
 {
     if (index < 0)
-    {
-        //Specify value at specific index.
-        plistVal.at(index) = val;
+    {       
+        //Add value to the end of the list.
+        plistVal.push_back(val);
     }
     else
     {
-        //Add value to the end of the list.
-        plistVal.push_back(val);
+        //Specify value at specific index.
+        plistVal.at(index) = val;
     }
 }
 
@@ -170,7 +175,7 @@ vector<string> ObjectGroup::getVal(int index)
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-void ObjectGroup::setVersion(string input)
+void ObjectGroup::setVersion(std::string input)
 {
     pVersion = input;
 }
@@ -182,7 +187,7 @@ string ObjectGroup::getVersion()
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-void ObjectGroup::setFormat(string input)
+void ObjectGroup::setFormat(std::string input)
 {
     pFormat = input;
 }

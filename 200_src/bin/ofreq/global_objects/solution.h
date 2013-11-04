@@ -46,8 +46,35 @@
 #endif
 #include "./ofreqcore.h"
 
-using namespace std;
-using namespace arma;
+//######################################### Class Separator ###########################################################
+//Namespace declarations
+
+//==========================================Section Separator =========================================================
+/**
+ * The namespace for all code created under the OpenSEA project.  There are also several sub-namespaces, one
+ * associated with each primary program under osea.
+ * 1.)  ohydro:  Code associated with the program ohydro.
+ * 2.)  ofreq:   Code associated with the program ofreq.
+ * 3.)  otime:   Code associated with the program otime.
+ * 4.)  ofourier:  Code associated with the program ofourier.
+ * 5.)  obatch:    Code associated with the program obatch.
+ * 6.)  guisea:    Code assocaited with the GUI that interacts with all OpenSEA programs.
+ * Any code that may have common utility amongst all programs, such as file reading objects, goes under the generic
+ * osea namespace.  Any code that is only useful within the specific program it serves, goes under the specific
+ * namespace.  When in doubt, default to just the osea namespace.
+ *
+ * The namespaces are not intended to create an organizational structure.  They are only intended to prevent
+ * name conflicts.
+ */
+namespace osea
+{
+
+//==========================================Section Separator =========================================================
+/**
+ * The namespace of all code specifically associated with ofreq.
+ */
+namespace ofreq
+{
 
 //######################################### Class Separator ###########################################################
 //Prototype class declarations.
@@ -59,7 +86,7 @@ class Body;
  * solution is translated back into body coordinate system.
  */
 
-class Solution : public oFreqCore
+class Solution : public osea::ofreq::oFreqCore
 {
 //==========================================Section Separator =========================================================
 public:
@@ -98,7 +125,7 @@ public:
      * @return Returns direct access to the solution matrix.  Provides a pointer to the solution matrix.  Returned
      * variable is passed by reference.
      */
-    cx_mat &refSolnMat();
+    arma::cx_mat &refSolnMat();
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -110,7 +137,7 @@ public:
      * Returns the solution matrix as a whole.
      * @return Returned value is a complex number matrix.  Returned variable is passed by value.
      */
-    cx_mat getSolnMat();
+    arma::cx_mat getSolnMat();
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -119,14 +146,14 @@ public:
      * @return Returns a complex number data type.  Single value from the solution matrix.  Value specified by the
      * index input.  Variable passed by value.
      */
-    complex<double> getSolnMat(int index);
+    std::complex<double> getSolnMat(int index);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
      * @brief Sets the solution matrix as a whole.
      * @param matIn The input matrix to set as the solution matrix.
      */
-    void setSolnMat(cx_mat matIn);
+    void setSolnMat(arma::cx_mat matIn);
 
 //    //------------------------------------------Function Separator ----------------------------------------------------
 //    /**
@@ -158,7 +185,7 @@ private:
      * initially empty on body creation.  It gets filled with the output from the motion solver.  Output is a column
      * matrix (n by 1) of complex numbers.  Output is in units of meters.
      */
-    cx_mat pSoln;
+    arma::cx_mat pSoln;
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -169,5 +196,8 @@ private:
      */
     Body* pBod;
 };
+
+}   //Namespace ofreq
+}   //Namespace osea
 
 #endif // SOLUTION_H

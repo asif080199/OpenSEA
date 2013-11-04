@@ -26,6 +26,9 @@
 
 #include "system.h"
 
+using namespace std;
+using namespace osea::ofreq;
+
 //==========================================Section Separator =========================================================
 //Static Initialization
 string System::valForceActive_user = "forceActive_user";
@@ -213,7 +216,7 @@ vector<ForceActive> &System::listForceActive_user()
 ForceActive &System::listForceActive_user(unsigned int forceIndex)
 {
     //Check if index is out of bounds.  If so, resize vector.
-    if (forceIndex > plistForceActive_user.size() - 1)
+    if ((forceIndex > plistForceActive_user.size() - 1) || (plistForceActive_user.size() == 0))
     {
         plistForceActive_user.resize(forceIndex + 1);
         plistForceActive_user[forceIndex].setSystemIndex(forceIndex);
@@ -260,7 +263,7 @@ vector<ForceReact> &System::listForceReact_user()
 ForceReact &System::listForceReact_user(unsigned int forceIndex)
 {
     //Check if index is out of bounds.  If so, resize vector.
-    if (forceIndex > plistForceReact_user.size() - 1)
+    if ((forceIndex > plistForceReact_user.size() - 1) || (plistForceReact_user.size() == 0))
     {
         plistForceReact_user.resize(forceIndex + 1);
         plistForceReact_user[forceIndex].setSystemIndex(forceIndex);
@@ -306,7 +309,7 @@ vector<ForceCross> &System::listForceCross_user()
 ForceCross &System::listForceCross_user(unsigned int forceIndex)
 {
     //Check if index is out of bounds.  If so, resize vector.
-    if (forceIndex > plistForceCross_user.size() - 1)
+    if ((forceIndex > plistForceCross_user.size() - 1) || (plistForceCross_user.size() == 0))
     {
         plistForceCross_user.resize(forceIndex + 1);
         plistForceCross_user[forceIndex].setSystemIndex(forceIndex);

@@ -44,12 +44,41 @@
     //Any linux specific inclusions go in here.
 #endif
 #include <QDebug>   //Include for access to debugging objects.
+#include <iostream>
 #include <fstream>
 #include <string>
 #include <time.h>
 #include <typeinfo>
 
-using namespace std;
+//######################################### Class Separator ###########################################################
+//Namespace declarations
+
+//==========================================Section Separator =========================================================
+/**
+ * The namespace for all code created under the OpenSEA project.  There are also several sub-namespaces, one
+ * associated with each primary program under osea.
+ * 1.)  ohydro:  Code associated with the program ohydro.
+ * 2.)  ofreq:   Code associated with the program ofreq.
+ * 3.)  otime:   Code associated with the program otime.
+ * 4.)  ofourier:  Code associated with the program ofourier.
+ * 5.)  obatch:    Code associated with the program obatch.
+ * 6.)  guisea:    Code assocaited with the GUI that interacts with all OpenSEA programs.
+ * Any code that may have common utility amongst all programs, such as file reading objects, goes under the generic
+ * osea namespace.  Any code that is only useful within the specific program it serves, goes under the specific
+ * namespace.  When in doubt, default to just the osea namespace.
+ *
+ * The namespaces are not intended to create an organizational structure.  They are only intended to prevent
+ * name conflicts.
+ */
+namespace osea
+{
+
+//==========================================Section Separator =========================================================
+/**
+ * The namespace of all code specifically associated with ofreq.
+ */
+namespace ofreq
+{
 
 //######################################### Class Separator ###########################################################
 /**
@@ -89,61 +118,66 @@ protected:
     /**
      * @brief The log file for an oFreq run.  Records normal actions for the program.  Informs user of regular program
      * developments.  Through inheritence of the oFreqCore class, this object is available to every object in the
-     * oFreq application.
+     * oFreq application.  Also provided with a second name of seaout.
      */
     static std::ofstream OutLog;
+    static std::ofstream &seaout;
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
      * @brief The error log file for an oFreq run.  Records any errors or warnings for the program.  Informs user of
      * errors and warnings and where they occurred.  Through inheritence of the oFreqCore class, this object is
-     * available for every object in the oFreq application.
+     * available for every object in the oFreq application.  Also provided with a second name of seaerr.
      */
     static std::ofstream ErrLog;
+    static std::ofstream &seaerr;
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
      * @brief Opens the output log file and prepares it for writing.
-     * @param dirIn String parameter.  Designates the directory path to use for writing the log file.
+     * @param dirIn std::string parameter.  Designates the directory path to use for writing the log file.
      */
-    void setOutLog(string dirIn);
+    void setOutLog(std::string dirIn);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
      * @brief Opens the error log file and prepares it for writing.
-     * @param dirIn String parameter.  Designates the directory path to use for writing the error file.
+     * @param dirIn std::string parameter.  Designates the directory path to use for writing the error file.
      */
-    void setErrLog(string dirIn);
+    void setErrLog(std::string dirIn);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
      * @brief Writes output of a log message to the log file.  Adds in a date and time stamp to the log.
-     * @param mesIn String variable.  The message to write to the log file.
+     * @param mesIn std::string variable.  The message to write to the log file.
      */
-    void writeLog(string mesIn);
+    void writeLog(std::string mesIn);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
      * @brief Writes output of an error message to the error file.  Adds in a date, time, and class name to the log.
-     * @param mesIn String variable.  The message to write to the log file.
+     * @param mesIn std::string variable.  The message to write to the log file.
      */
-    void writeError(string mesIn);
+    void writeError(std::string mesIn);
 
 //==========================================Section Separator =========================================================
 private:
     static std::string FILE_OUTPUT; /**< The filename for the output file.*/
     static std::string FILE_ERROR; /**< The filename for the error file.*/
-    static std::string SLASH; /**< Directory separator in a string path. */
+    static std::string SLASH; /**< Directory separator in a std::string path. */
     static std::string DIR; /**< The full path for the directory of the oFreq run.*/
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
-     * @brief Generates a string that is the current date and time, as recorded from the system clock.  Format is:
+     * @brief Generates a std::string that is the current date and time, as recorded from the system clock.  Format is:
      * yyyy-mm-dd.hh:mm::ss
-     * @return Generates a string that is the current date and time, as recorded from the system clock.  Variable
+     * @return Generates a std::string that is the current date and time, as recorded from the system clock.  Variable
      * returned by value.
      */
     const std::string Time();
 };
+
+}   //Namespace ofreq
+}   //Namespace osea
 
 #endif // OFREQCORE_H

@@ -25,6 +25,9 @@
 \*-------------------------------------------------------------------------------------------------------------------*/
 #include "dictbodies.h"
 
+using namespace std;
+using namespace osea::ofreq;
+
 //==========================================Section Separator =========================================================
 //Static Initialization
 
@@ -261,10 +264,11 @@ int dictBodies::defineKey(string keyIn, vector<string> valIn)
         {
             //Active Force model
             int var;
+            ForceActive* ptForce;
             var = atoi(valIn[0].c_str());
             ptSystem->listBody(pBody).listForceActive_user().push_back(
                         &(ptSystem->listForceActive_user(var))
-                    );
+                        );
             //Set body index
             pForceBodyIndex = ptSystem->listBody(pBody).listForceActive_user().size() - 1;
             //Set model index

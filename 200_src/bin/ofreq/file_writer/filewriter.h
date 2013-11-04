@@ -49,8 +49,35 @@
 #include <boost/lexical_cast.hpp>
 #include "../global_objects/ofreqcore.h"
 
-using namespace std;
-using namespace boost::filesystem; //for using boost file system
+//######################################### Class Separator ###########################################################
+//Namespace declarations
+
+//==========================================Section Separator =========================================================
+/**
+ * The namespace for all code created under the OpenSEA project.  There are also several sub-namespaces, one
+ * associated with each primary program under osea.
+ * 1.)  ohydro:  Code associated with the program ohydro.
+ * 2.)  ofreq:   Code associated with the program ofreq.
+ * 3.)  otime:   Code associated with the program otime.
+ * 4.)  ofourier:  Code associated with the program ofourier.
+ * 5.)  obatch:    Code associated with the program obatch.
+ * 6.)  guisea:    Code assocaited with the GUI that interacts with all OpenSEA programs.
+ * Any code that may have common utility amongst all programs, such as file reading objects, goes under the generic
+ * osea namespace.  Any code that is only useful within the specific program it serves, goes under the specific
+ * namespace.  When in doubt, default to just the osea namespace.
+ *
+ * The namespaces are not intended to create an organizational structure.  They are only intended to prevent
+ * name conflicts.
+ */
+namespace osea
+{
+
+//==========================================Section Separator =========================================================
+/**
+ * The namespace of all code specifically associated with ofreq.
+ */
+namespace ofreq
+{
 
 //######################################### Class Separator ###########################################################
 //Prototype class declarations
@@ -71,7 +98,7 @@ class OutputsBody;
  * updated before writing a new wave direction.
  */
 
-class FileWriter : public oFreqCore
+class FileWriter : public osea::ofreq::oFreqCore
 {
 //==========================================Section Separator =========================================================
 public:
@@ -94,19 +121,19 @@ public:
      * writing a new wave direction.
      * @sa OutputsBody
      */
-    FileWriter(string rootPath, OutputsBody &BodyIn);
+    FileWriter(std::string rootPath, OutputsBody &BodyIn);
 
     //------------------------------------------Function Separator ----------------------------------------------------
 	~FileWriter(); /**< The default destructor, nothing happens here. */
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
-     * @brief Sets the path to the project directory.  Assumes the string specifying the path does not end with a slash
+     * @brief Sets the path to the project directory.  Assumes the std::string specifying the path does not end with a slash
      * mark.  The class will automatically add the slash mark.  If a slash mark is present, the function will
      * automatically remove it.
-     * @param dirIn String specifying the path to the project directory.  Variable passed by value.
+     * @param dirIn std::string specifying the path to the project directory.  Variable passed by value.
      */
-    void setProjectDir(string dirIn);
+    void setProjectDir(std::string dirIn);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -128,13 +155,13 @@ public:
      * @brief Test is a file exists.  Function automatically assumes that the file is located in the directory
      * associated with the getCurWaveInd() function.  Returns true if the file exists and is valid.  Returns false
      * if the file does not exist or the directory does not exist.
-     * @param filename String.  Specifies the filename to search for.  Only needs to specify local filename.  Directory
+     * @param filename std::string.  Specifies the filename to search for.  Only needs to specify local filename.  Directory
      * information is already inferred from previous settings with the OutputsBody object.
      * @return Returns boolean variable.  True if the file exists.  False if the file or any required directories
      * do not exist.
      * @sa FileWriter::getCurWaveInd()
      */
-    bool fileExists(string filename);
+    bool fileExists(std::string filename);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     //------------------------------------------Function Separator ----------------------------------------------------
@@ -202,20 +229,20 @@ protected:
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
-     * @brief Returns the string containing the folder path for the current wave direction.  Path name includes the
-     * slash mark.  For example, if using wave index 0, the string output would be:  "d0/"
-     * @return String output.  Has the path name for the current wave directory.
+     * @brief Returns the std::string containing the folder path for the current wave direction.  Path name includes the
+     * slash mark.  For example, if using wave index 0, the std::string output would be:  "d0/"
+     * @return std::string output.  Has the path name for the current wave directory.
      */
-    string getCurWaveDir();
+    std::string getCurWaveDir();
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
-     * @brief Creates the directory specified by the string path.  Assumes any specified directory is under the root
+     * @brief Creates the directory specified by the std::string path.  Assumes any specified directory is under the root
      * project directory.
-     * @param path String.  The path of the directory to create.
+     * @param path std::string.  The path of the directory to create.
      * @return Returns true if creation sucessful.
      */
-    bool createDir(string path);
+    bool createDir(std::string path);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -228,10 +255,10 @@ protected:
     /**
      * Set information about the file to be written after header and above data, included in the seafile block.
      * @param nameIn The name of the object.
-     * @return Returns string.  String contains the file info for the output file.  Everything written into the
+     * @return Returns std::string.  std::string contains the file info for the output file.  Everything written into the
      * seafile block.  Variable passed by value.
      */
-    string getInfoBlock(string nameIn);
+    std::string getInfoBlock(std::string nameIn);
 
 //==========================================Section Separator =========================================================
 private:
@@ -239,16 +266,16 @@ private:
     /**
      * @brief The path to the root directory for the current project run of oFreq.
      */
-    string projectDirectory;
+    std::string projectDirectory;
 
     //------------------------------------------Function Separator ----------------------------------------------------
-	string header; /**< The header to be included in all files */
+	std::string header; /**< The header to be included in all files */
 
     //------------------------------------------Function Separator ----------------------------------------------------
-    vector<double>* thefrequenciesList; /**< List of all wave frequencies. */
+    std::vector<double>* thefrequenciesList; /**< List of all wave frequencies. */
 
     //------------------------------------------Function Separator ----------------------------------------------------
-    vector<double>* theDirectionsList; /**< List of of wave directions. */
+    std::vector<double>* theDirectionsList; /**< List of of wave directions. */
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -262,49 +289,53 @@ private:
 
     //------------------------------------------Function Separator ----------------------------------------------------
     //Reference File Declarations
-    static string HEADER_FILENAME;
+    static std::string HEADER_FILENAME;
 
     //------------------------------------------Function Separator ----------------------------------------------------
     //Directory Specifications
-    static string NAME_DIR; /**< The starting character for the wave direction directory.**/
-    static string NAME_RES; /**< The starting character for the resonant frequency directory.**/
-    static string SLASH; /**< The directory separator in a string path.*/
+    static std::string NAME_DIR; /**< The starting character for the wave direction directory.**/
+    static std::string NAME_RES; /**< The starting character for the resonant frequency directory.**/
+    static std::string SLASH; /**< The directory separator in a std::string path.*/
 
     //------------------------------------------Function Separator ----------------------------------------------------
     //General File Content Marks
-    static string LIST_BEGIN2;
-    static string LIST_END2;
-    static string OBJECT_BEGIN2;
-    static string OBJECT_END2;
-    static string END;
-    static string TAB;
-    static string SPACE;
-    static string BREAK_TOP;
-    static string BREAK_BOTTOM;
+    static std::string LIST_BEGIN2;
+    static std::string LIST_END2;
+    static std::string OBJECT_BEGIN2;
+    static std::string OBJECT_END2;
+    static std::string END;
+    static std::string TAB;
+    static std::string SPACE;
+    static std::string BREAK_TOP;
+    static std::string BREAK_BOTTOM;
     static int DIGIT; /** The number of digits to use in precision of floating point numbers.*/
 
     //------------------------------------------Function Separator ----------------------------------------------------
     //Key-Value Markers
-    static string KEY_NAME; /**< Key to mark name of object being described. */
-    static string KEY_DATA; /**< Key to mark data for an object */
-    static string KEY_VALUE; /**< Key to mark the values for an object */
-    static string KEY_FREQUENCY; /**< Key to mark a frequency value */
-    static string KEY_DIRECTION; /**< Key to mark a direction value */
-    static string KEY_VERSION; /**< Key to mark the version of the program */
-    static string KEY_FORMAT; /**< Key to mark the format of the output file */
-    static string KEY_OBJECT; /**< Key to mark the object of the output file */
-    static string KEY_BODY; /**< Key to mark a body object */
-    static string VAL_VERSION; /**< Value to denote current program version */
-    static string VAL_FORMAT; /**< Value to denote format of output */
-    static string VAL_SEAFILE; /**< Value to denote a seafile for output file */
+    static std::string KEY_NAME; /**< Key to mark name of object being described. */
+    static std::string KEY_DATA; /**< Key to mark data for an object */
+    static std::string KEY_VALUE; /**< Key to mark the values for an object */
+    static std::string KEY_FREQUENCY; /**< Key to mark a frequency value */
+    static std::string KEY_DIRECTION; /**< Key to mark a direction value */
+    static std::string KEY_VERSION; /**< Key to mark the version of the program */
+    static std::string KEY_FORMAT; /**< Key to mark the format of the output file */
+    static std::string KEY_OBJECT; /**< Key to mark the object of the output file */
+    static std::string KEY_BODY; /**< Key to mark a body object */
+    static std::string VAL_VERSION; /**< Value to denote current program version */
+    static std::string VAL_FORMAT; /**< Value to denote format of output */
+    static std::string VAL_SEAFILE; /**< Value to denote a seafile for output file */
 
     //------------------------------------------Function Separator ----------------------------------------------------
     //Filename Markers
-    static string FILE_DIRECTIONS; /**< Filename for directions output file */
-    static string FILE_FREQUENCIES; /**< Filename for frequencies output file */
-    static string FILE_GLOBAL_ACCELERATION; /**< Filename for global acceleration output file */
-    static string FILE_GLOBAL_MOTION; /**< Filename for global motion output file */
-    static string FILE_GLOBAL_VELOCITY; /**< Filename for global velocity output file */
-    static string FILE_GLOBAL_SOLUTION; /**< Filename for general global solution output file */
+    static std::string FILE_DIRECTIONS; /**< Filename for directions output file */
+    static std::string FILE_FREQUENCIES; /**< Filename for frequencies output file */
+    static std::string FILE_GLOBAL_ACCELERATION; /**< Filename for global acceleration output file */
+    static std::string FILE_GLOBAL_MOTION; /**< Filename for global motion output file */
+    static std::string FILE_GLOBAL_VELOCITY; /**< Filename for global velocity output file */
+    static std::string FILE_GLOBAL_SOLUTION; /**< Filename for general global solution output file */
 };
+
+}   //namespace ofreq
+}   //namespace osea
+
 #endif

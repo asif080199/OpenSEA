@@ -51,12 +51,34 @@
 #include "objectgroup.h"
 #include "../global_objects/system.h"
 #include "../global_objects/ofreqcore.h"
+#include "dictionary.h"
 
-using namespace std;
+//######################################### Class Separator ###########################################################
+//Namespace declarations
+
+//==========================================Section Separator =========================================================
+/**
+ * The namespace for all code created under the OpenSEA project.  There are also several sub-namespaces, one
+ * associated with each primary program under osea.
+ * 1.)  ohydro:  Code associated with the program ohydro.
+ * 2.)  ofreq:   Code associated with the program ofreq.
+ * 3.)  otime:   Code associated with the program otime.
+ * 4.)  ofourier:  Code associated with the program ofourier.
+ * 5.)  obatch:    Code associated with the program obatch.
+ * 6.)  guisea:    Code assocaited with the GUI that interacts with all OpenSEA programs.
+ * Any code that may have common utility amongst all programs, such as file reading objects, goes under the generic
+ * osea namespace.  Any code that is only useful within the specific program it serves, goes under the specific
+ * namespace.  When in doubt, default to just the osea namespace.
+ *
+ * The namespaces are not intended to create an organizational structure.  They are only intended to prevent
+ * name conflicts.
+ */
+namespace osea
+{
 
 //######################################### Class Separator ###########################################################
 //Prototype class declarations
-//class System;       /** < Prototype class declaration of System object.  Allows reference to system object.*/
+class Dictionary;
 
 //######################################### Class Separator ###########################################################
 /**
@@ -80,7 +102,7 @@ using namespace std;
  *      filename, read it, parse it, and send the resulting keyword-value pairs to the appropriate Dictionary object.
  */
 
-class FileReader : public QObject, public oFreqCore
+class FileReader : public QObject, public osea::ofreq::oFreqCore
 {
     Q_OBJECT 
 //==========================================Section Separator =========================================================
@@ -96,7 +118,7 @@ public:
      * @brief Constructor with input for file path that holds input files.
      * @param Path The full path to the working directory.  Variable passed by value.
      */
-    FileReader(string Path);
+    FileReader(std::string Path);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -108,9 +130,9 @@ public:
     /**
      * @brief Sets the path to the working directory that all control files are located in.
      * @param input The full path to the working directory.  Do not include directory separator (SLASH, "/") at end
-     * of string.  Variable passed by value.
+     * of std::string.  Variable passed by value.
      */
-    void setPath(string input);
+    void setPath(std::string input);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -152,6 +174,14 @@ public:
      */
     int readData();
 
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Sets the dictionary object to be used for processing any data read from the input files.
+     * @param dictIn The dictionary object that you want to use for processing the file.  This can change between
+     * reading individual files.  Variable is passed by reference and stored as a pointer in the object.
+     */
+    void setDictionary(osea::Dictionary &dictIn);
+
 //==========================================Section Separator =========================================================
 public slots:
         //------------------------------------------Function Separator ----------------------------------------------------
@@ -161,14 +191,14 @@ public slots:
          * @return Returns integer to report success or failure of file parsing.  Returns 0 for success.
          * Returns 1 for file does not exist.
          */
-        int readHydroFile(string path);
+        int readHydroFile(std::string path);
 
         //------------------------------------------Function Separator ----------------------------------------------------
         /**
          * @brief Sets the system object for the dictionary to reference.
          * @param ptSystem Pointer to the System object.  Variable passed by value.
          */
-        void setSystem(System* ptInput);
+        void setSystem(ofreq::System* ptInput);
 
 //==========================================Section Separator =========================================================
 signals:
@@ -222,6 +252,14 @@ signals:
 
 //==========================================Section Separator =========================================================
 protected:
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Sends the results of parsing the input file onto the dictionary object.  Use for processing the input
+     * file.
+     * @param index Integer.  The index which specifies which object in the list of recognized objects to use.
+     * Variable passed by value.
+     */
+    void sendOutput(int index);
 
 //==========================================Section Separator =========================================================
 private:
@@ -230,14 +268,14 @@ private:
      * @brief The filepath to the directory that contains the input files.  Always the path to the root directory
      * of the project.  This will be the folder which then contains the other "system" and "constant" folders.
      */
-    string pPath;   
+    std::string pPath;   
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
      * @brief The list of ObjectGroup objects retrieved from parsing the file.  This variable gets reused each time
      * a new file is parsed.
      */
-    vector<ObjectGroup> plistObjects;
+    std::vector<ObjectGroup> plistObjects;
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -248,13 +286,22 @@ private:
      * @return Returns integer to report success or failure of file reading.  Returns 0 for success.
      * Returns 1 for file does not exist.
      */
-    int readFile(string path);
+    int readFile(std::string path);
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Pointer to a dictionary object used to process the ObjectGroup's recorded.  Used to send the Object
+     * group objects to the Dictionary object for reading.
+     * @sa ObjectGroup
+     * @sa Dictionary
+     */
+    osea::Dictionary* ptDict;
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
      * @brief Pointer to the System object.  Used to reference any important variables in the System object.
      */
-    System* ptSystem;
+    ofreq::System* ptSystem;
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -264,31 +311,33 @@ private:
 
     //------------------------------------------Function Separator ----------------------------------------------------
     // Directory Names
-    static string SYS; /**< The system directory name */
-    static string CONST; /**< The const directory name */
-    static string SLASH; /**< Directory separator in a string path. */
+    static std::string SYS; /**< The system directory name */
+    static std::string CONST; /**< The const directory name */
+    static std::string SLASH; /**< Directory separator in a std::string path. */
 
     //------------------------------------------Function Separator ----------------------------------------------------
     // Input File Names
-    static string CONTROL; /**< The filename for the control file. */
-    static string BODIES; /**< The filename for the bodies control file. */
-    static string DATA; /**< The filename for the data control file. */
-    static string FORCES; /**< The filename for the forces control file. */
-    static string SEAENV; /**< The filename for the sea environment control file. */
+    static std::string CONTROL; /**< The filename for the control file. */
+    static std::string BODIES; /**< The filename for the bodies control file. */
+    static std::string DATA; /**< The filename for the data control file. */
+    static std::string FORCES; /**< The filename for the forces control file. */
+    static std::string SEAENV; /**< The filename for the sea environment control file. */
 
     //------------------------------------------Function Separator ----------------------------------------------------
     // Class Name Designators
-    static string OBJ_SEAFILE; /**< The string designation for a sea file object. */
-    static string OBJ_SYSTEM; /**< The string designation for a system object. */
-    static string OBJ_HYDROFILE; /**< The string designation for a hydrofile object. */
-    static string OBJ_FORCE_ACTIVE; /**< The string designation for an active force object. */
-    static string OBJ_FORCE_REACT; /**< The string designation for a reactive force object. */
-    static string OBJ_FORCE_CROSS; /**< The string designation for a cross-body force object.*/
+    static std::string OBJ_SEAFILE; /**< The std::string designation for a sea file object. */
+    static std::string OBJ_SYSTEM; /**< The std::string designation for a system object. */
+    static std::string OBJ_HYDROFILE; /**< The std::string designation for a hydrofile object. */
+    static std::string OBJ_FORCE_ACTIVE; /**< The std::string designation for an active force object. */
+    static std::string OBJ_FORCE_REACT; /**< The std::string designation for a reactive force object. */
+    static std::string OBJ_FORCE_CROSS; /**< The std::string designation for a cross-body force object.*/
 
     // Key Value Pair Designators
     // ---------------------------------
-    static string KEY_FORMAT;  /**< The key designator for a format value in the seafile object. */
-    static string KEY_VERSION; /**< The key designator for a version value in the seafile object. */
+    static std::string KEY_FORMAT;  /**< The key designator for a format value in the seafile object. */
+    static std::string KEY_VERSION; /**< The key designator for a version value in the seafile object. */
 };
+
+}   // End of namespace osea
 
 #endif // FILEPARSER_H

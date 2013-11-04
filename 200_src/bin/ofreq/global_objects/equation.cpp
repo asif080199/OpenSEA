@@ -26,6 +26,9 @@
 
 #include "equation.h"
 
+using namespace std;
+using namespace osea::ofreq;
+
 //------------------------------------------Function Separator --------------------------------------------------------
 Equation::Equation()
 {

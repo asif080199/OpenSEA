@@ -55,7 +55,35 @@
 //#include ".forcecross.h"
 //#include ".forcereact.h"
 
-using namespace std;
+//######################################### Class Separator ###########################################################
+//Namespace declarations
+
+//==========================================Section Separator =========================================================
+/**
+ * The namespace for all code created under the OpenSEA project.  There are also several sub-namespaces, one
+ * associated with each primary program under osea.
+ * 1.)  ohydro:  Code associated with the program ohydro.
+ * 2.)  ofreq:   Code associated with the program ofreq.
+ * 3.)  otime:   Code associated with the program otime.
+ * 4.)  ofourier:  Code associated with the program ofourier.
+ * 5.)  obatch:    Code associated with the program obatch.
+ * 6.)  guisea:    Code assocaited with the GUI that interacts with all OpenSEA programs.
+ * Any code that may have common utility amongst all programs, such as file reading objects, goes under the generic
+ * osea namespace.  Any code that is only useful within the specific program it serves, goes under the specific
+ * namespace.  When in doubt, default to just the osea namespace.
+ *
+ * The namespaces are not intended to create an organizational structure.  They are only intended to prevent
+ * name conflicts.
+ */
+namespace osea
+{
+
+//==========================================Section Separator =========================================================
+/**
+ * The namespace of all code specifically associated with ofreq.
+ */
+namespace ofreq
+{
 
 //######################################### Class Separator ###########################################################
 /**
@@ -63,7 +91,7 @@ using namespace std;
  * It also decides which analysis type to run:  motion or resonant frequency.  The system object controls the current
  * wave environment settings.
  */
-class System : public QObject, public oFreqCore
+class System : public QObject, public osea::ofreq::oFreqCore
 {
     Q_OBJECT
 
@@ -80,49 +108,49 @@ public:
 	 * Sets the wave frequencies.
 	 * @param vecIn The list of wave frequencies.
 	 */
-	void setWaveFrequencies(vector<double>);
+	void setWaveFrequencies(std::vector<double>);
 
     //------------------------------------------Function Separator ----------------------------------------------------
 	/**
 	 * Sets the wave directions.
 	 * @param vecIn The list of wave directions.
 	 */
-	void setWaveDirections(vector<double>);
+	void setWaveDirections(std::vector<double>);
 
     //------------------------------------------Function Separator ----------------------------------------------------
 	/**
 	 * Sets the spread model.
 	 * @param spreadIn The spread model.
 	 */
-	void setSpreadModel(string);
+	void setSpreadModel(std::string);
 
     //------------------------------------------Function Separator ----------------------------------------------------
 	/**
 	 * Retrieve the list of wave frequencies.
 	 * @return The list of wave frequencies.
 	 */
-	vector<double> getWaveFrequencies();
+	std::vector<double> getWaveFrequencies();
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
      * @brief Provides direct access to the list of wave frequencies.
      * @return Pointer to the list of wave frequencies.  Variable passed by reference.
      */
-    vector<double> &listWaveFrequencies();
+    std::vector<double> &listWaveFrequencies();
 
     //------------------------------------------Function Separator ----------------------------------------------------
 	/**
 	 * Retrieve the list of wave directions.
 	 * @return The list of wave directions.
 	 */
-	vector<double> getWaveDirections();
+	std::vector<double> getWaveDirections();
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
      * @brief Provides direct access to the list of wave directions.
      * @return Pointer to the list of wave directions  Variable passed by reference.
      */
-    vector<double> &listWaveDirections();
+    std::vector<double> &listWaveDirections();
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -172,12 +200,12 @@ public:
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
-     * @brief Returns direct access to the list of Body objects.  Includes all the properties included by a vector<>
+     * @brief Returns direct access to the list of Body objects.  Includes all the properties included by a std::vector<>
      * class.
      * @return Returns a vector of Body objects.  Returned variable passed by reference.
      * @sa Body
      */
-    vector<Body> &listBody();
+    std::vector<Body> &listBody();
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -190,11 +218,11 @@ public:
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
      * @brief Returns direct access to the list of OutputsBody objects.  Includes all the properties included by a
-     * vector<> class.
+     * std::vector<> class.
      * @return Returns a vector of OutputsBody objects.  Returned variable passed by reference.
      * @sa OutputsBody
      */
-    vector<OutputsBody> &listOutput();
+    std::vector<OutputsBody> &listOutput();
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -207,34 +235,34 @@ public:
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
      * @brief Clears the vector of force objects for the specified force type.
-     * This is useful to free system memory.  Force type is specified by a string
-     * input.  If no string input is supplied, all force objects are cleared from the system object.  All force objects
+     * This is useful to free system memory.  Force type is specified by a std::string
+     * input.  If no std::string input is supplied, all force objects are cleared from the system object.  All force objects
      * should already be copied to their respective Body objects before issuing this function.
-     * @param forceClass String input designating which force object type to clear.  Valid values are:
+     * @param forceClass std::string input designating which force object type to clear.  Valid values are:
      * ForceActive:  Clears the ForceActive class of objects.
      * ForceReact:   Clears the ForceReact class of objects.
      * ForceCross:   Clears the ForceCross class of objects.
      * "":           Clears all three object classes of objects.
      * other:        If an unknown input is encountered, no objects are cleared.
      */
-    void clearForce(string forceClass = "");
+    void clearForce(std::string forceClass = "");
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
      * @brief Gets the forceActive_user object referenced by the name specified in the input.  The Bodies input file
      * will define the forceActive_user object by a name.  This uses that name to retrieve the forceActive_user object.
-     * @param forceName String input.  Variable passed by value.  The name of the forceActive_user object.  Must match
+     * @param forceName std::string input.  Variable passed by value.  The name of the forceActive_user object.  Must match
      * exactly what is defined in the Forces.in input file which defines the forceActive_user object.
      * @return Returns a forceActive_user object as requested.  Variable passed by value.
      */
-    ForceActive getForceActive_user(string forceName);
+    ForceActive getForceActive_user(std::string forceName);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
      * @brief Exposes the vector of forceActive_user objects.  Provides direct access to the vector.
      * @return Returns a reference to the vector of forceActive_user objects.  Variable passed by reference.
      */
-    vector<ForceActive> &listForceActive_user();
+    std::vector<ForceActive> &listForceActive_user();
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -249,18 +277,18 @@ public:
     /**
      * @brief Gets the forceReact_user object referenced by the name specified in the input.  The Bodies input file
      * will define the forceReact_user object by a name.  This uses that name to retrieve the forceReact_user object.
-     * @param forceName String input.  Variable passed by value.  The name of the forceReact_user object.  Must match
+     * @param forceName std::string input.  Variable passed by value.  The name of the forceReact_user object.  Must match
      * exactly what is defined in the Forces.in input file which defines the forceReact_user object.
      * @return Returns a forceReact_user object as requested.  Variable passed by value.
      */
-    ForceReact getforceReact_user(string forceName);
+    ForceReact getforceReact_user(std::string forceName);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
      * @brief Exposes the vector of forceReact_user objects.  Provides direct access to the vector.
      * @return Returns a reference to the vector of forceReact_user objects.  Variable passed by reference.
      */
-    vector<ForceReact> &listForceReact_user();
+    std::vector<ForceReact> &listForceReact_user();
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -275,18 +303,18 @@ public:
     /**
      * @brief Gets the forceCross_user object referenced by the name specified in the input.  The Bodies input file
      * will define the forceCross_user object by a name.  This uses that name to retrieve the forceCross_user object.
-     * @param forceName String input.  Variable passed by value.  The name of the forceCross_user object.  Must match
+     * @param forceName std::string input.  Variable passed by value.  The name of the forceCross_user object.  Must match
      * exactly what is defined in the Forces.in input file which defines the forceCross_user object.
      * @return Returns a forceCross_user object as requested.  Variable passed by value.
      */
-    ForceCross getforceCross_user(string forceName);
+    ForceCross getforceCross_user(std::string forceName);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
      * @brief Exposes the vector of forceCross_user objects.  Provides direct access to the vector.
      * @return Returns a reference to the vector of forceCross_user objects.  Variable passed by reference.
      */
-    vector<ForceCross> &listForceCross_user();
+    std::vector<ForceCross> &listForceCross_user();
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -304,7 +332,7 @@ public slots:
      * Sets the analysis ype.
      * @param analysisTypeIn The analysis type.
      */
-    void setAnalysisType(string);
+    void setAnalysisType(std::string);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -421,20 +449,20 @@ protected:
 //==========================================Section Separator =========================================================
 private:
     //------------------------------------------Function Separator ----------------------------------------------------
-	string analysisType; /**< The analysis type. */
+	std::string analysisType; /**< The analysis type. */
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
      * @brief The list of wave directions.  Directions measured in radians.  True North is zero, with positive going
      * counter clockwise.
      */
-    vector<double> pWaveDirections;
+    std::vector<double> pWaveDirections;
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
      * @brief The list of wave frequencies.  Each frequency measured in radians per second.
      */
-    vector<double> pWaveFrequencies;
+    std::vector<double> pWaveFrequencies;
 
     //------------------------------------------Function Separator ----------------------------------------------------
     int pCurWaveDir; /**< The index of the current wave direction. */
@@ -447,7 +475,7 @@ private:
      * @brief The list of Body objects.  Inputs set by file reader go to this list of Body objects.
      * @sa Body
      */
-    vector<Body> plistBody;
+    std::vector<Body> plistBody;
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -456,7 +484,7 @@ private:
      * @sa OutputsBody
      * @sa OutputDerived
      */
-    vector<OutputsBody> plistOutputs;
+    std::vector<OutputsBody> plistOutputs;
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -466,7 +494,7 @@ private:
      * copied to their respective Body objects.  The list of force objects can then be safely deleted.
      * @sa Body
      */
-    vector<ForceActive> plistForceActive_user;
+    std::vector<ForceActive> plistForceActive_user;
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -476,7 +504,7 @@ private:
      * copied to their respective Body objects.  The list of force objects can then be safely deleted.
      * @sa Body
      */
-    vector<ForceReact> plistForceReact_user;
+    std::vector<ForceReact> plistForceReact_user;
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -486,7 +514,7 @@ private:
      * copied to their respective Body objects.  The list of force objects can then be safely deleted.
      * @sa Body
      */
-    vector<ForceCross> plistForceCross_user;
+    std::vector<ForceCross> plistForceCross_user;
 
     //Constant Variables declaration
     //------------------------------------------Function Separator ----------------------------------------------------
@@ -494,21 +522,24 @@ private:
      * @brief Designator for the vector of ForceActive class of objects, under the scope of the user.  These are force
      * objects defined by the Forces input file.
      */
-    static string valForceActive_user;
+    static std::string valForceActive_user;
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
      * @brief Designator for the vector of ForceReact class of objects, under the scope of the user.  These are force
      * objects defined by the Forces input file.
      */
-    static string valForceReact_user;
+    static std::string valForceReact_user;
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
      * @brief Designator for the vector of ForceCross class of objects, under the scope of the user.  These are force
      * objects defined by the Forces input file.
      */
-    static string valForceCross_user;
+    static std::string valForceCross_user;
 };
-#endif
 
+}   //Namespace ofreq
+}   //Namespace osea
+
+#endif

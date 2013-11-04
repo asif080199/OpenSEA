@@ -26,6 +26,9 @@
 
 #include "force.h"
 
+using namespace std;
+using namespace osea::ofreq;
+
 //------------------------------------------Function Separator --------------------------------------------------------
 Force::Force()
 {

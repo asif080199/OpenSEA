@@ -26,6 +26,10 @@
 
 #include "matforcereact.h"
 
+using namespace arma;
+using namespace std;
+using namespace osea::ofreq;
+
 //------------------------------------------Function Separator --------------------------------------------------------
 matForceReact::matForceReact()
 {

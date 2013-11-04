@@ -26,11 +26,15 @@
 
 #include "body.h"
 
+using namespace std;
+using namespace arma;
+using namespace osea::ofreq;
+
 //------------------------------------------Function Separator --------------------------------------------------------
 Body::Body()
 {
     //Initialize private variables with zeros
-    pmassMat.zeros(6,6);
+    pMassMat.zeros(6,6);
     pCentroid.zeros(3,1);
     pPosn.zeros(3,1);
 }
@@ -47,7 +51,7 @@ bool Body::operator ==(Body &bodIn)
     bool bodEq = true;
 
     //1.)  Check if they have the same body name.
-    if (this->bodyName == bodIn.bodyName)
+    if (this->pBodyName == bodIn.pBodyName)
         bodEq *= true;
     else
         bodEq *= false;
@@ -142,13 +146,13 @@ bool Body::operator ==(Body &bodIn)
 //------------------------------------------Function Separator --------------------------------------------------------
 void Body::setBodyName(string newName)
 {
-	bodyName = newName;
+    pBodyName = newName;
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
 string &Body::refBodyName()
 {
-    return bodyName;
+    return pBodyName;
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
@@ -172,19 +176,19 @@ string Body::getHydroBodName()
 //------------------------------------------Function Separator --------------------------------------------------------
 void Body::setHeading(double newHeading)
 {
-    phead = newHeading;
+    pHead = newHeading;
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
 double Body::getHeading()
 {
-    return phead;
+    return pHead;
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
 double &Body::refHeading()
 {
-    return phead;
+    return pHead;
 }
 
 //==========================================Section Separator =========================================================
@@ -193,114 +197,123 @@ double &Body::refHeading()
 //------------------------------------------Function Separator --------------------------------------------------------
 void Body::setMass(double newMass)
 {
-    pmassMat(0,0) = newMass;   //X position mass.
-    pmassMat(1,1) = newMass;   //Y position mass.
-    pmassMat(2,2) = newMass;   //Z position mass.
+    pMassMat(0,0) = newMass;   //X position mass.
+    pMassMat(1,1) = newMass;   //Y position mass.
+    pMassMat(2,2) = newMass;   //Z position mass.
+
+    //Calculate mass coupling.
+    setMassCouple();
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
 double Body::getMass()
 {
-    return pmassMat(0,0);
+    return pMassMat(0,0);
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
 void Body::setMomIxx(double newXX)
 {
-    pmassMat(3,3) = newXX;
+    pMassMat(3,3) = newXX;
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
 double Body::getMomIxx()
 {
-    return pmassMat(3,3);
+    return pMassMat(3,3);
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
 void Body::setMomIyy(double newYY)
 {
-    pmassMat(4,4) = newYY;
+    pMassMat(4,4) = newYY;
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
 double Body::getMomIyy()
 {
-    return pmassMat(4,4);
+    return pMassMat(4,4);
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
 void Body::setMomIzz(double newZZ)
 {
-    pmassMat(5,5) = newZZ;
+    pMassMat(5,5) = newZZ;
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
 double Body::getMomIzz()
 {
-    return pmassMat(5,5);
+    return pMassMat(5,5);
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
 void Body::setMomIxy(double newXY)
 {
-    pmassMat(3,4) = newXY;
-    pmassMat(4,3) = newXY;
+    pMassMat(3,4) = newXY;
+    pMassMat(4,3) = newXY;
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
 double Body::getMomIxy()
 {
-    return pmassMat(3,4);
+    return pMassMat(3,4);
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
 void Body::setMomIxz(double newXZ)
 {
-    pmassMat(3,5) = newXZ;
-    pmassMat(5,3) = newXZ;
+    pMassMat(3,5) = newXZ;
+    pMassMat(5,3) = newXZ;
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
 double Body::getMomIxz()
 {
-    return pmassMat(3,5);
+    return pMassMat(3,5);
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
 void Body::setMomIyz(double newYZ)
 {
-    pmassMat(4,5) = newYZ;
-    pmassMat(5,4) = newYZ;
+    pMassMat(4,5) = newYZ;
+    pMassMat(5,4) = newYZ;
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
 double Body::getMomIyz()
 {
-    return pmassMat(4,5);
+    return pMassMat(4,5);
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
 Mat<double> Body::getMassMatrix()
 {
-    return pmassMat;
+    return pMassMat;
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
 Mat<double> &Body::MassMatrix()
 {
-    return pmassMat;
+    return pMassMat;
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
 void Body::setMassMatrix(Mat<double> MassMatIn)
 {
-    pmassMat = MassMatIn;
+    pMassMat = MassMatIn;
+
+    //Add mass coupling
+    setMassCouple();
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
 void Body::setCenX(double newCenX)
 {
     pCentroid(0,0) = newCenX;
+
+    //Add mass coupling
+    setMassCouple();
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
@@ -313,18 +326,24 @@ double Body::getCenX()
 void Body::setCenY(double newCenY)
 {
     pCentroid(1,0) = newCenY;
+
+    //Add mass coupling
+    setMassCouple();
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
 double Body::getCenY()
 {
-    return pCentroid(1,0);
+    return pCentroid(1,0);   
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
 void Body::setCenZ(double newCenZ)
 {
     pCentroid(2,0) = newCenZ;
+
+    //Add mass coupling
+    setMassCouple();
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
@@ -343,6 +362,9 @@ Mat<double> Body::getCen()
 void Body::setPosnX(double input)
 {
     pPosn(0,0) = input;
+
+    //Add mass coupling
+    setMassCouple();
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
@@ -355,6 +377,9 @@ double Body::getPosnX()
 void Body::setPosnY(double input)
 {
     pPosn(1,0) = input;
+
+    //Add mass coupling
+    setMassCouple();
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
@@ -367,6 +392,9 @@ double Body::getPosnY()
 void Body::setPosnZ(double input)
 {
     pPosn(2,0) = input;
+
+    //Add mass coupling
+    setMassCouple();
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
@@ -394,7 +422,7 @@ Mat<double> &Body::refPosn()
 //------------------------------------------Function Separator --------------------------------------------------------
 string Body::getBodyName()
 {
-	return bodyName;
+    return pBodyName;
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
@@ -426,7 +454,7 @@ Body Body::Copy()
 //Force Lists
 
 //------------------------------------------Function Separator --------------------------------------------------------
-vector<ForceActive *> Body::listForceActive_user()
+vector<ForceActive *> &Body::listForceActive_user()
 {
     return plistForceActive_usr;
 }
@@ -434,18 +462,46 @@ vector<ForceActive *> Body::listForceActive_user()
 //------------------------------------------Function Separator --------------------------------------------------------
 ForceActive* Body::listForceActive_user(int forceIn)
 {
+    //Resize if the vector is too small.
+    if ((forceIn > plistForceActive_usr.size() - 1) || (plistForceActive_usr.size() == 0))
+    {
+        plistForceActive_usr.resize(forceIn + 1);
+    }
+
+    //Add one if no index specified.
+    if (forceIn < 0)
+    {
+        plistForceActive_usr.resize(plistForceActive_usr.size() + 1);
+        //Get the index of the last element.
+        forceIn = plistForceActive_usr.size() - 1;
+    }
+
     return plistForceActive_usr[forceIn];
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
 vector<ForceActive *> &Body::listForceActive_hydro()
-{
+{   
     return plistForceActive_hydro;
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
 ForceActive *Body::listForceActive_hydro(int forceIn)
 {
+    //Resize if the vector is too small.
+    if ((forceIn > plistForceActive_hydro.size() - 1) || (plistForceActive_hydro.size() == 0))
+    {
+        plistForceActive_hydro.resize(forceIn + 1);
+    }
+
+    //Add one if no index specified.
+    if (forceIn < 0)
+    {
+        plistForceActive_hydro.resize(plistForceActive_hydro.size() + 1);
+        //Get the index of the last element.
+        forceIn = plistForceActive_hydro.size() - 1;
+    }
+
     return plistForceActive_hydro[forceIn];
 }
 
@@ -458,13 +514,41 @@ vector<ForceReact *> &Body::listForceReact_user()
 //------------------------------------------Function Separator --------------------------------------------------------
 ForceReact* Body::listForceReact_user(int forceIn)
 {
+    //Resize if the vector is too small.
+    if ((forceIn > plistForceReact_usr.size() - 1) || (plistForceReact_usr.size() == 0))
+    {
+        plistForceReact_usr.resize(forceIn + 1);
+    }
+
+    //Add one if no index specified.
+    if (forceIn < 0)
+    {
+        plistForceReact_usr.resize(plistForceReact_usr.size() + 1);
+        //Get the index of the last element.
+        forceIn = plistForceReact_usr.size() - 1;
+    }
+
     return plistForceReact_usr[forceIn];
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
 ForceReact *Body::listForceReact_hydro(int forceIn)
 {
-    return plistForceReact_usr[forceIn];
+    //Resize if the vector is too small.
+    if ((forceIn > plistForceReact_hydro.size() - 1) || (plistForceReact_hydro.size() == 0))
+    {
+        plistForceReact_hydro.resize(forceIn + 1);
+    }
+
+    //Add one if no index specified.
+    if (forceIn < 0)
+    {
+        plistForceReact_hydro.resize(plistForceReact_hydro.size() + 1);
+        //Get the index of the last element.
+        forceIn = plistForceReact_hydro.size() - 1;
+    }
+
+    return plistForceReact_hydro[forceIn];
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
@@ -482,6 +566,20 @@ vector<ForceCross* > &Body::listForceCross_user()
 //------------------------------------------Function Separator --------------------------------------------------------
 ForceCross* Body::listForceCross_user(int forceIn)
 {
+    //Resize if the vector is too small.
+    if ((forceIn > plistForceCross_usr.size() - 1) || (plistForceCross_usr.size() == 0))
+    {
+        plistForceCross_usr.resize(forceIn + 1);
+    }
+
+    //Add one if no index specified.
+    if (forceIn < 0)
+    {
+        plistForceCross_usr.resize(plistForceCross_usr.size() + 1);
+        //Get the index of the last element.
+        forceIn = plistForceCross_usr.size() - 1;
+    }
+
     return plistForceCross_usr[forceIn];
 }
 
@@ -494,6 +592,20 @@ vector<ForceCross* > &Body::listForceCross_hydro()
 //------------------------------------------Function Separator --------------------------------------------------------
 ForceCross* Body::listForceCross_hydro(int forceIn)
 {
+    //Resize if the vector is too small.
+    if ((forceIn > plistForceCross_hydro.size() - 1) || (plistForceCross_hydro.size() == 0) || (forceIn < 0))
+    {
+        plistForceCross_hydro.resize(forceIn + 1);
+    }
+
+    //Add one if no index specified.
+    if (forceIn < 0)
+    {
+        plistForceCross_hydro.resize(plistForceCross_hydro.size() + 1);
+        //Get the index of the last element.
+        forceIn = plistForceCross_hydro.size() - 1;
+    }
+
     return plistForceCross_hydro[forceIn];
 }
 
@@ -535,7 +647,7 @@ vector<string> &Body::listNamedLink_user()
 string &Body::listNamedLink_user(unsigned int varIn)
 {
     //Check if need to resize the vector
-    if (varIn > plistLinkedBody_usr.size() - 1)
+    if ((varIn > plistLinkedBody_usr.size() - 1) || (plistLinkedBody_usr.size() == 0))
     {
         plistLinkedBody_usr.resize(varIn + 1);
     }
@@ -553,7 +665,7 @@ vector<string> &Body::listNamedLink_hydro()
 string &Body::listNamedLink_hydro(unsigned int varIn)
 {
     //Check if need to resize the vector
-    if (varIn > plistLinkedBody_hydro.size() - 1)
+    if ((varIn > plistLinkedBody_hydro.size() - 1) || (plistLinkedBody_hydro.size() == 0))
     {
         plistLinkedBody_hydro.resize(varIn + 1);
     }
@@ -577,4 +689,41 @@ string Body::getMotionModel()
 int Body::getEquationCount()
 {
     return eqnCount;
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+void Body::setMassCouple()
+{
+    //Sets the coupling between mass and moment terms.
+    //Should be run any time the mass is set or the centroid is set.
+
+    //Mass coupling for force X
+    pMassMat(0,3) = 0;
+    pMassMat(0,4) = pMassMat(0,0) * pCentroid(2,0);
+    pMassMat(0,5) = -1 * pMassMat(0,0) * pCentroid(1,0);
+
+    //Mass coupling for force Y
+    pMassMat(1,3) = -1 * pMassMat(1,1) * pCentroid(2,0);
+    pMassMat(1,4) = 0;
+    pMassMat(1,5) = pMassMat(1,1) * pCentroid(0,0);
+
+    //Mass coupling for force Z
+    pMassMat(2,3) = pMassMat(2,2) * pCentroid(1,0);
+    pMassMat(2,4) = -1 * pMassMat(2,2) * pCentroid(0,0);
+    pMassMat(2,5) = 0;
+
+    //Mass coupling for moment X
+    pMassMat(3,0) = 0;
+    pMassMat(3,1) = -1 * pMassMat(0,0) * pCentroid(2,0);
+    pMassMat(3,2) = pMassMat(0,0) * pCentroid(1,0);
+
+    //Mass coupling for moment Y
+    pMassMat(4,0) = -1 * pMassMat(1,1) * pCentroid(2,0);
+    pMassMat(4,1) = 0;
+    pMassMat(4,2) = pMassMat(1,1) * pCentroid(0,0);
+
+    //Mass coupling for moment Z
+    pMassMat(5,0) = -1 * pMassMat(2,2) * pCentroid(1,0);
+    pMassMat(5,1) = pMassMat(2,2) * pCentroid(0,0);
+    pMassMat(5,2) = 0;
 }
