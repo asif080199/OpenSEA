@@ -236,7 +236,7 @@ private:
     static std::string KEY_HEADING; /**< Key for heading of body, Z-axis rotation */
     static std::string KEY_MOTION; /**< Key to specify motion model.*/
     static std::string KEY_LINKEDBODY; /**< Key for linked body */
-    static std::string KEY_MODEL; /**< Key for model to use for force specification. */
+    static std::string KEY_MODEL; /**< Key for model to use for force specification. Selects from list of forces defined*/
 };
 
 }   //Namespace ofreq

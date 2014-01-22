@@ -32,15 +32,16 @@ using namespace osea::ofreq;
 //==========================================Section Separator =========================================================
 //Static Initialization
 
-//------------------------------------------Function Separator ----------------------------------------------------
+//------------------------------------------Function Separator --------------------------------------------------------
 //Class Names
 string dictForces::OBJECT_FORCE_ACTIVE = "force_active"; /**< Keyword for force_active definition.*/
 string dictForces::OBJECT_FORCE_REACT = "force_reactive"; /**< Keyword for force_react class definition.*/
 string dictForces::OBJECT_FORCE_CROSS = "force_crossbody"; /**< Keyword for force_cross class definition.*/
 string dictForces::OBJECT_DERIVATIVE = "derivative"; /**< Keyword for derivative class definition. */
 string dictForces::OBJECT_EQUATION = "equation"; /**< Keyword for equation designation.*/
+string dictForces::OBJECT_FORCE = "force"; /**< Keyword for force designation as part of force_active definition. */
 
-//------------------------------------------Function Separator ----------------------------------------------------
+//------------------------------------------Function Separator --------------------------------------------------------
 //Keyword Names
 string dictForces::KEY_NAME = "name"; /**< Keyword for the name the user assigns for a force.*/
 string dictForces::KEY_COEFF = "coeff"; /**< Keyword for coefficient designation.*/
@@ -114,7 +115,7 @@ int dictForces::defineKey(string keyIn, vector<string> valIn)
     else if (keyIn == KEY_NUMBER)
     {
         //Set the equation number
-        pEqn = atoi(valIn[0].c_str());
+        pEqn = atoi(valIn[0].c_str()) - 1;
         //Report success
         return 0;
     }
@@ -167,10 +168,14 @@ int dictForces::defineKey(string keyIn, vector<string> valIn)
         {
             //Convert value
             int indexIn;
-            indexIn = atoi(valIn[0].c_str());
+            indexIn = atoi(valIn[0].c_str()) - 1;
 
             //Active force type.  Set the equation index.
             setEquation(indexIn);
+
+            //Resize the vector for number of coefficients on the Active Force object.
+            if (ptSystem->listForceActive_user(pForceIndex).listCoefficients().size() < (pEqn + 1))
+                ptSystem->listForceActive_user(pForceIndex).listCoefficients().resize(pEqn + 1);
 
             //Report success
             return 0;
@@ -229,6 +234,19 @@ int dictForces::defineClass(string nameIn)
 
         //Report back success
         return 0;
+    }
+
+    else if (nameIn == OBJECT_FORCE)
+    {
+        //Force designation for entry in active force object.
+
+        //Currently no action required.  All the actions get handled in the keyword triggers.
+        //Simply issue a check to ensure this was used within the active force object.
+        if (pForceType != 1)
+        {
+            //Return error message about using keyword in wrong location.
+            writeError("force object designation can only be used within an active force object.");
+        }
     }
 
     else if (nameIn == OBJECT_DERIVATIVE)

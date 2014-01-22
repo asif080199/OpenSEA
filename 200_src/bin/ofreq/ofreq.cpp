@@ -82,14 +82,14 @@ using namespace std;
 //Create matrix bodies.
 vector<matBody> listMatBody;
 
-//Vector containing various motion models available
-vector<MotionModel> listModel;
-
 //List of solutions from the motion model.  Each solution object is the list of solutions for one body.
 vector<SolutionSet> listSolutions;
 
 //System object.  Used to control entire execution.
 System sysofreq;
+
+//ofreqcore object.  For writing error messages.
+oFreqCore Logs;
 
 //######################################### Function Prototypes #######################################################
 
@@ -121,15 +121,6 @@ void calcOutput(OutputsBody &OutputIn, FileWriter &WriterIn);
  * @sa Dictionary
  */
 void ReadFiles(string runPath);
-
-//------------------------------------------Function Separator ----------------------------------------------------
-/**
- * @brief Defines all motion models.
- *
- * Adds all defined motion models to the list of available motion models.  Each
- * class of motion model has only one object defined in the list.
- */
-void DefineModels();
 
 //############################################ Class Prototypes #######################################################
 
@@ -188,10 +179,6 @@ int main(int argc, char *argv[])
         oFreq_Directory = cCurrentPath;
     }
 
-    //Generate motion models
-    //---------------------------------------------------------------------------
-    DefineModels();
-
     //Read input files and interpret data.
     //---------------------------------------------------------------------------
     ReadFiles(oFreq_Directory);
@@ -240,7 +227,7 @@ int main(int argc, char *argv[])
             //Solve the system of equations.
             theMotionSolver.calculateOutputs();
 
-			//asign each solution per frequency to a body
+            //assign each solution per frequency to a body
             for(unsigned int k = 0; k < sysofreq.listBody().size(); k++)
 			{
                 Solution soln;
@@ -301,42 +288,35 @@ void buildMatBody(int bod, bool useCoeff)
 {
     //First assign the basic properties for the matbody.
     listMatBody[bod].setId(bod);
-    int modelnum;       //Tracks which model to use
+    Body* MyBod;         //The current body that I am working with
+    MotionModel* MyModel; //The current motion model that I am working with
 
-    //Search through the set of motion models to find the matching name.
-    for (unsigned int i = 0; i < listModel.size(); i++)
-    {
-        if (listModel[i].getName() == sysofreq.listBody(bod).getMotionModel())
-        {
-            listMatBody[bod].setModelId(i);
-            modelnum = i;
-            break;
-        }
-    }
+    MyBod = &(sysofreq.listBody(bod));   //Get the current body to work with.
+    MyModel = &(MyBod->getMotionModel());  //Get the current motion model to work with.
 
     //Now know the correct motion model to use.
     //Create initial setup.
-    listModel[modelnum].setlistBody(sysofreq.listBody());        //Feed the list of bodies
-    listModel[modelnum].setBody(bod);                   //Set which body to use as the current body
-    listModel[modelnum].CoefficientOnly() = useCoeff;      //Let it know to only calculate coefficients.
-    listModel[modelnum].Reset();                        //Give it a reset just for good measure.
+    MyModel->setlistBody(sysofreq.listBody());   //Feed the list of bodies
+    MyModel->setBody(bod);       //Set which body to use as the current body
+    MyModel->CoefficientOnly() = useCoeff;  //Let it know to only calculate coefficients.
+    MyModel->Reset();   //Give it a reset just for good measure.
 
     //Iterate through all the active forces, user
     //------------------------------------------
-    for (unsigned int i = 0; i < sysofreq.listBody(bod).listForceActive_user().size(); i++)
+    for (unsigned int i = 0; i < MyBod->listForceActive_user().size(); i++)
     {
         listMatBody[bod].listForceActive_user().push_back(matForceActive());
-        listMatBody[bod].listForceActive_user(i).listCoefficients() = listModel[modelnum].getMatForceActive_user(i);
+        listMatBody[bod].listForceActive_user(i).listCoefficients() = MyModel->getMatForceActive_user(i);
         //Create force ID.
         listMatBody[bod].listForceActive_user(i).setId(i);
     }
 
     //Iterate through all the active forces, hydro
     //------------------------------------------
-    for(unsigned int i = 0; i < sysofreq.listBody(bod).listForceActive_hydro().size(); i++)
+    for(unsigned int i = 0; i < MyBod->listForceActive_hydro().size(); i++)
     {
         listMatBody[bod].listForceActive_hydro().push_back(matForceActive());
-        listMatBody[bod].listForceActive_hydro(i).listCoefficients() = listModel[modelnum].getMatForceActive_hydro(i);
+        listMatBody[bod].listForceActive_hydro(i).listCoefficients() = MyModel->getMatForceActive_hydro(i);
         //Create force ID.
         listMatBody[bod].listForceActive_hydro(i).setId(i);
     }
@@ -347,7 +327,7 @@ void buildMatBody(int bod, bool useCoeff)
 
     //Iterate through all the reactive forces, user
     //------------------------------------------
-    for (unsigned int i = 0; i < sysofreq.listBody(bod).listForceReact_user().size(); i++)
+    for (unsigned int i = 0; i < MyBod->listForceReact_user().size(); i++)
     {
         listMatBody[bod].listForceReact_user().push_back(matForceReact());
         //Create pointer
@@ -356,19 +336,19 @@ void buildMatBody(int bod, bool useCoeff)
         //Assign id for force.
         ptForce->setId(i);
 
-        ptReact = sysofreq.listBody(bod).listForceReact_user(i);
+        ptReact = MyBod->listForceReact_user(i);
 
         //Iterate through each derivative.
         for (int j = 0; j <= ptReact->getMaxOrd(); j++)
         {
             //Assign matrices
-            ptForce->listDerivative().push_back(listModel[modelnum].getMatForceReact_user(i,j));
+            ptForce->listDerivative().push_back(MyModel->getMatForceReact_user(i,j));
         }
     }
 
     //Iterate through all the reactive forces, hydro
     //------------------------------------------
-    for (unsigned int i = 0; i < sysofreq.listBody(bod).listForceReact_hydro().size(); i++)
+    for (unsigned int i = 0; i < MyBod->listForceReact_hydro().size(); i++)
     {
         listMatBody[bod].listForceReact_hydro().push_back(matForceReact());
         //Create pointer
@@ -377,24 +357,22 @@ void buildMatBody(int bod, bool useCoeff)
         //Assign id for force.
         ptForce->setId(i);
 
-        ptReact = sysofreq.listBody(bod).listForceReact_user(i);
+        ptReact = MyBod->listForceReact_user(i);
 
         //Iterate through each derivative.
         for (int j = 0; j <= ptReact->getMaxOrd(); j++)
         {
             //Assign matrices
-            ptForce->listDerivative().push_back(listModel[modelnum].getMatForceReact_hydro(i,j));
+            ptForce->listDerivative().push_back(MyModel->getMatForceReact_hydro(i,j));
         }
     }
 
-    delete ptForce;
-    delete ptReact;
     matForceCross* ptForce2;
     ForceCross* ptCross;
 
     //Iterate through all the cross body forces, user
     //------------------------------------------
-    for (unsigned int i = 0; i < sysofreq.listBody(bod).listForceCross_user().size(); i++)
+    for (unsigned int i = 0; i < MyBod->listForceCross_user().size(); i++)
     {
         listMatBody[bod].listForceCross_user().push_back(matForceCross());
         //Create pointer
@@ -422,13 +400,13 @@ void buildMatBody(int bod, bool useCoeff)
         for (int j = 0; j <= ptCross->getMaxOrd(); j++)
         {
             //Assign matrices
-            ptForce2->listDerivative().push_back(listModel[modelnum].getMatForceCross_user(i,j));
+            ptForce2->listDerivative().push_back(MyModel->getMatForceCross_user(i,j));
         }
     }
 
     //Iterate through all the cross body forces, hydro
     //------------------------------------------
-    for (unsigned int i = 0; i < sysofreq.listBody(bod).listForceCross_hydro().size(); i++)
+    for (unsigned int i = 0; i < MyBod->listForceCross_hydro().size(); i++)
     {
         listMatBody[bod].listForceCross_hydro().push_back(matForceCross());
         //Create pointer
@@ -456,13 +434,13 @@ void buildMatBody(int bod, bool useCoeff)
         for (int j = 0; j <= ptCross->getMaxOrd(); j++)
         {
             //Assign matrices
-            ptForce2->listDerivative().push_back(listModel[modelnum].getMatForceCross_hydro(i,j));
+            ptForce2->listDerivative().push_back(MyModel->getMatForceCross_hydro(i,j));
         }
     }
 
     //Get the mass matrix
     //------------------------------------------
-    listMatBody[bod].refMass() = listModel[modelnum].getMatForceMass();
+    listMatBody[bod].refMass() = MyModel->getMatForceMass();
 }
 
 //######################################## CalcOutput Function ########################################################
@@ -546,13 +524,4 @@ void ReadFiles(string runPath)
     fileIn.readForces();        //Must come before reading Bodies
     fileIn.setDictionary(dictBod);
     fileIn.readBodies();        //Must come after reading forces.
-}
-
-//####################################### DefineModels Function #######################################################
-void DefineModels()
-{
-    //Create each motion model and add it to the list.
-    //Don't need to set any properties for the models.  All those get set at object creation.
-
-    listModel.push_back(Model6DOF());
 }

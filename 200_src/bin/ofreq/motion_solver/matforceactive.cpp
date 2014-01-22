@@ -46,21 +46,36 @@ matForceActive matForceActive::operator+(matForceActive &forceOther)
     //Add two force objects together.
     matForceActive output;
 
-    //Find max size
-    int maxsize;
-
-    if (this->getMatSize() > forceOther.getMatSize())
-        maxsize = this->getMatSize();
-    else
-        maxsize = forceOther.getMatSize();
-
-    //Resize matrix and initialize with zeros.
-    output.pCoeff.zeros(maxsize,1);
-
-    //Iterate through matrix and add the two together.
-    for (unsigned int i = 0; i < pCoeff.n_rows; i++)
+    if (this->pCoeff.n_rows == 0)
     {
-        output.pCoeff(i,1) = pCoeff(i,1) + forceOther.pCoeff(i,1);
+        //Nothing defined for first object.
+        output = forceOther;
+    }
+
+    else if (forceOther.pCoeff.n_rows == 0)
+    {
+        //Nothing defined for the other object.
+        output = *this;
+    }
+
+    else
+    {
+        //Find max size
+        int maxsize;
+
+        if (this->getMatSize() > forceOther.getMatSize())
+            maxsize = this->getMatSize();
+        else
+            maxsize = forceOther.getMatSize();
+
+        //Resize matrix and initialize with zeros.
+        output.pCoeff.zeros(maxsize,1);
+
+        //Iterate through matrix and add the two together.
+        for (unsigned int i = 0; i < pCoeff.n_rows; i++)
+        {
+            output.pCoeff(i,1) = pCoeff(i,1) + forceOther.pCoeff(i,1);
+        }
     }
 
     //Write output
@@ -73,21 +88,36 @@ matForceActive matForceActive::operator-(matForceActive &forceOther)
     //Add two force objects together.
     matForceActive output;
 
-    //Find max size
-    int maxsize;
-
-    if (this->getMatSize() > forceOther.getMatSize())
-        maxsize = this->getMatSize();
-    else
-        maxsize = forceOther.getMatSize();
-
-    //Resize matrix and initialize with zeros.
-    output.pCoeff.zeros(maxsize,1);
-
-    //Iterate through matrix and add the two together.
-    for (unsigned int i = 0; i < pCoeff.n_rows; i++)
+    if (this->pCoeff.n_rows == 0)
     {
-        output.pCoeff(i,1) = pCoeff(i,1) - forceOther.pCoeff(i,1);
+        //Nothing defined for first object.
+        output = forceOther;
+    }
+
+    else if (forceOther.pCoeff.n_rows == 0)
+    {
+        //Nothing defined for the other object.
+        output = *this;
+    }
+
+    else
+    {
+        //Find max size
+        int maxsize;
+
+        if (this->getMatSize() > forceOther.getMatSize())
+            maxsize = this->getMatSize();
+        else
+            maxsize = forceOther.getMatSize();
+
+        //Resize matrix and initialize with zeros.
+        output.pCoeff.zeros(maxsize,1);
+
+        //Iterate through matrix and add the two together.
+        for (unsigned int i = 0; i < pCoeff.n_rows; i++)
+        {
+            output.pCoeff(i,1) = pCoeff(i,1) - forceOther.pCoeff(i,1);
+        }
     }
 
     //Write output

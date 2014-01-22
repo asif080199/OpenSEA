@@ -50,6 +50,10 @@
 #include "../derived_outputs/outputsbody.h"
 #include "./ofreqcore.h"
 
+//Motion Models to include
+#include "./motion_model/motionmodel.h"
+#include "./motion_model/model6dof.h"
+
 //The following definitions are included indirectly through inclusion of body.h
 //#include "./forceactive.h"
 //#include ".forcecross.h"
@@ -101,7 +105,7 @@ public:
 	System(); /**< The default constructor. */
 
     //------------------------------------------Function Separator ----------------------------------------------------
-	~System(); /**< The default destructor, nothing happens here. */
+    virtual ~System(); /**< The default destructor, clears any dynamic memory. */
 
     //------------------------------------------Function Separator ----------------------------------------------------
 	/**
@@ -434,6 +438,44 @@ public slots:
      */
     void linkBodies(int bodID);
 
+    //-----------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Provides access to the full list of motion models.
+     *
+     * Returns a vector to the full list of motion models.  The list of motion models are all the various model
+     * classes available to the system at run time.  Each object in the vector is a different class, but all
+     * classes in the vector are derived from the MotionModel class.
+     * @sa MotionModel
+     * @return Returns a vector of objects of different types.  Each object is derived from the MotionModel class.
+     * Returned variable is passed by reference.
+     */
+    std::vector<MotionModel *> &listModel();
+
+    //-----------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Provides access to one item in the list of motion models.
+     *
+     * Returns a single MotionModel based object.  Each model will be a different class, but all classes are derived
+     * from the MotionModel object.  Each object in the vector is a different class of motion model.
+     * @param index Integer.  The index of which item in the vector you want.
+     * @return Returns an object of a class derived from the MotionModel class.  Returned variable is passed by
+     * reference.
+     */
+    ofreq::MotionModel &listModel(unsigned int index);
+
+    //-----------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Provides access to one item in the list of motion models.
+     *
+     * Returns a single MotionModel based object.  Each model will be a different class, but all classes are derived
+     * from the MotionModel object.  Each object in the vector is a different class of motion model.
+     * @param modelName String input.  The name of the motion model, as specified by the user.  Must match the
+     * predefined name of the model exactly.
+     * @return Returns an object of a class derived from the MotionModel class.  Returned variable is passed by
+     * reference.
+     */
+    ofreq::MotionModel &listModel(std::string modelName);
+
 //==========================================Section Separator =========================================================
 signals:
     /**
@@ -537,6 +579,24 @@ private:
      * objects defined by the Forces input file.
      */
     static std::string valForceCross_user;
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief The list of motion models available to the system.  Each object in this list is from a different class.
+     * All classes are derived from the MotionModel class.
+     * Vector must use a list of pointer objects to allow correct polymorphism to overload any functions of derived
+     * classes.
+     */
+    std::vector<ofreq::MotionModel *> plistModels;
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Defines all motion models.
+     *
+     * Adds all defined motion models to the list of available motion models.  Each
+     * class of motion model has only one object defined in the list.
+     */
+    void DefineModels();
 };
 
 }   //Namespace ofreq

@@ -161,7 +161,7 @@ public:
      * @brief Triggers evaluation of the equation of motion object.
      * @return Returns a complex number that is the result of evaluating the equation of motion object.
      */
-    std::complex<double> Evaluate();
+    virtual std::complex<double> Evaluate();
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -332,38 +332,17 @@ protected:
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
-     * @brief Sums across a variable.
-     *
-     * Sums across a variable.  The index limits can be specified.  Or the keyword functions can be used to
-     * automatically Sum across the entire index range.
-     * @param force Input to specify which items the results should Sum across.  Typically, this is one of the built-in
-     * force functions. However, it can be any function, any item, any calculation.  The only catch is that the
-     * input value must be a std::complex<double> data type.
-     * @param index std::string specifying which variable should be summed on.  This may be any one of these options:
-     * Order of derivative = "ord"
-     * Variable = "var"
-     * Body = "bod"
-     * @param from Integer for the beginning value of the summation.  Default value of negative one (-1) indicates that
-     * the summation will happen at the lowest value of the variable index specified.
-     * @param to Integer for the ending value of the summation.  Default value of negative one (-1) indicates that
-     * the summation will happen at the highest value of the variable index specified.
-     * @return Returns a complex value that is the summation of the index and limits specified.
-     */
-    std::complex<double> Sum(std::complex<double> force, std::string index, unsigned int from = -1, unsigned int to = -1);
-
-    //------------------------------------------Function Separator ----------------------------------------------------
-    /**
      * @brief A reference to the data set of the ForceActive_hydro.
      * @return Returns the data set for the ForceActive_hydro.  Indices can be specified to access individual elements.
      */
-    std::complex<double> ForceActive_hydro();
+    std::complex<double> &ForceActive_hydro();
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
      * @brief A reference to the data set of the ForceActive_user.
      * @return Returns the data set for the ForceActive_user.  Indices can be specified to access individual elements.
      */
-    std::complex<double> ForceActive_user();
+    std::complex<double> &ForceActive_user();
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -372,7 +351,7 @@ protected:
      * @param varIn Integer.  Represents the input varaible for the variable.
      * @return Returns the data set for the ForceReact_hydro.  Indices can be specified to access individual elements.
      */
-    std::complex<double> ForceReact_hydro(unsigned int ordIn, unsigned int varIn);
+    std::complex<double> &ForceReact_hydro(unsigned int ordIn, unsigned int varIn);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -381,7 +360,7 @@ protected:
      * @param varIn Integer.  Represents the input varaible for the variable.
      * @return Returns the data set for the ForceReact_user.  Indices can be specified to access individual elements.
      */
-    std::complex<double> ForceReact_user(unsigned int ordIn, unsigned int varIn);
+    std::complex<double> &ForceReact_user(unsigned int ordIn, unsigned int varIn);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -391,7 +370,7 @@ protected:
      * @param varIn Integer.  Represents the input varaible for the variable.
      * @return Returns the data set for the ForceCross_hydro.  Indices can be specified to access individual elements.
      */
-    std::complex<double> ForceCross_hydro(unsigned int bodIn, unsigned int ordIn, unsigned int varIn);
+    std::complex<double> &ForceCross_hydro(unsigned int bodIn, unsigned int ordIn, unsigned int varIn);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -401,7 +380,7 @@ protected:
      * @param varIn Integer.  Represents the input varaible for the variable.
      * @return Returns the data set for the ForceCross_user.  Indices can be specified to access individual elements.
      */
-    std::complex<double> ForceCross_user(unsigned int bodIn, unsigned int ordIn, unsigned int varIn);
+    std::complex<double> &ForceCross_user(unsigned int bodIn, unsigned int ordIn, unsigned int varIn);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -409,7 +388,7 @@ protected:
      * @param varIn Integer.  Represents the input varaible for the variable.
      * @return Returns the data set for the ForceMass.  Indices can be specified to access individual elements.
      */
-    std::complex<double> ForceMass(int varIn);
+    std::complex<double> &ForceMass(int varIn);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -518,6 +497,31 @@ protected:
      */
     std::string pDescription;
 
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Sums across a variable.
+     *
+     * Sums across a variable.  The index limits can be specified.  Or the keyword functions can be used to
+     * automatically Sum across the entire index range.  This implementation accepts a function pointer with no
+     * parameters.  When using lambda functions, you can add in extra parameters.  The compiler won't care.  It only
+     * cares about the returned value.
+     * @param force Input to specify which items the results should Sum across.  Typically, this is one of the built-in
+     * force functions. However, it can be any function, any item, any calculation.  The only catch is that the
+     * input value must be a std::complex<double> data type.  Input format is a function pointer.  This allows
+     * the Sum function to update as it performs iterations.  The only catch is that you can not combine multiple
+     * values into one.  You must define a single function for each input argument you want.
+     * @param index std::string specifying which variable should be summed on.  This may be any one of these options:
+     * Order of derivative = "ord"
+     * Variable = "var"
+     * Body = "bod"
+     * @param from Integer for the beginning value of the summation.  Default value of negative one (-1) indicates that
+     * the summation will happen at the lowest value of the variable index specified.
+     * @param to Integer for the ending value of the summation.  Default value of negative one (-1) indicates that
+     * the summation will happen at the highest value of the variable index specified.
+     * @return Returns a complex value that is the summation of the index and limits specified.
+     */
+    std::complex<double> Sum(std::complex<double> (*force)(void), std::string index, int from = -1, int to = -1);
+
 //==========================================Section Separator =========================================================
 private:
     //------------------------------------------Function Separator ----------------------------------------------------
@@ -601,6 +605,10 @@ private:
 
     //------------------------------------------Function Separator ----------------------------------------------------
     void ConstructorCommon(MotionModel *modelIn);
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    //Static variables
+    static int undefArg;   /**< Integer value for undefined argument in the summation function.*/
 };
 
 }   //Namespace ofreq

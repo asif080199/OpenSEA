@@ -79,42 +79,41 @@ void Model6DOF::DefineEquations()
     //Defines all equations for a six-degree of freedom (6DOF) rigid body dynamics motion model.
 
     //First create an equation object for translation.
-    EqnTranslation MotTrans1 = EqnTranslation(this);     //Creation statement included adding a pointer to the current
-                                                        //motion model.
-    MotTrans1.setDataIndex(1);   //Set data index.  Data index for X-axis translation.
-    MotTrans1.setName("TransX");     //Set short name for equation.
-    MotTrans1.setDescription("Linear translation, X-axis");  //Set long description for equation.
+    EqnTranslation *MotTrans1 = new EqnTranslation(this);     //Creation statement
+    MotTrans1->setDataIndex(1);   //Set data index.  Data index for X-axis translation.
+    MotTrans1->setName("TransX");     //Set short name for equation.
+    MotTrans1->setDescription("Linear translation, X-axis");  //Set long description for equation.
     AddEquation(MotTrans1);  //Add the Equation to the list of equations.
 
-    EqnTranslation MotTrans2 = EqnTranslation(this);    //Create next equation.
-    MotTrans2.setDataIndex(2);  //Set data index.  Data index for Y-axis translation.
-    MotTrans2.setName("TransY");    //Set short name for equation.
-    MotTrans2.setDescription("Linear translation, Y-axis"); //Set long description for equation.
+    EqnTranslation *MotTrans2 = new EqnTranslation(this);    //Create next equation.
+    MotTrans2->setDataIndex(2);  //Set data index.  Data index for Y-axis translation.
+    MotTrans2->setName("TransY");    //Set short name for equation.
+    MotTrans2->setDescription("Linear translation, Y-axis"); //Set long description for equation.
     AddEquation(MotTrans2); //Add the equation to the list of equations.
 
-    EqnTranslation MotTrans3 = EqnTranslation(this);    //Create next equation.
-    MotTrans3.setDataIndex(3);  //Set data index.  Data index for Z-axis translation.
-    MotTrans3.setName("TransZ");    //Set short name for equation.
-    MotTrans3.setDescription("Linear translation, Z-axis"); //Set long description for equation.
+    EqnTranslation *MotTrans3 = new EqnTranslation(this);    //Create next equation.
+    MotTrans3->setDataIndex(3);  //Set data index.  Data index for Z-axis translation.
+    MotTrans3->setName("TransZ");    //Set short name for equation.
+    MotTrans3->setDescription("Linear translation, Z-axis"); //Set long description for equation.
     AddEquation(MotTrans3); //Add the equation to the list of equations.
 
 
-    EqnRotation MotRot1 = EqnRotation(this);    //Create next equation.
-    MotRot1.setDataIndex(4);    //Set data index.  Data index for X-axis rotation.
-    MotRot1.setName("RotX");    //Set short name for equation.
-    MotRot1.setDescription("Angular rotation, about X-axis");   //Set description for equation.
+    EqnRotation *MotRot1 = new EqnRotation(this);    //Create next equation.
+    MotRot1->setDataIndex(4);    //Set data index.  Data index for X-axis rotation.
+    MotRot1->setName("RotX");    //Set short name for equation.
+    MotRot1->setDescription("Angular rotation, about X-axis");   //Set description for equation.
     AddEquation(MotRot1);   //Add the equation ot the list of equations.
 
-    EqnRotation MotRot2 = EqnRotation(this);    //Create next equation.
-    MotRot2.setDataIndex(5);    //Set data index.  Data index for Y-axis rotation.
-    MotRot2.setName("RotY");    //Set short name for equation.
-    MotRot2.setDescription("Angular rotation, about Y-axis");   //Set description for equation.
+    EqnRotation *MotRot2 = new EqnRotation(this);    //Create next equation.
+    MotRot2->setDataIndex(5);    //Set data index.  Data index for Y-axis rotation.
+    MotRot2->setName("RotY");    //Set short name for equation.
+    MotRot2->setDescription("Angular rotation, about Y-axis");   //Set description for equation.
     AddEquation(MotRot2);   //Add the equation ot the list of equations.
 
-    EqnRotation MotRot3 = EqnRotation(this);    //Create next equation.
-    MotRot3.setDataIndex(6);    //Set data index.  Data index for Z-axis rotation.
-    MotRot3.setName("RotZ");    //Set short name for equation.
-    MotRot3.setDescription("Angular rotation, about Z-axis");   //Set description for equation.
+    EqnRotation *MotRot3 = new EqnRotation(this);    //Create next equation.
+    MotRot3->setDataIndex(6);    //Set data index.  Data index for Z-axis rotation.
+    MotRot3->setName("RotZ");    //Set short name for equation.
+    MotRot3->setDescription("Angular rotation, about Z-axis");   //Set description for equation.
     AddEquation(MotRot3);   //Add the equation ot the list of equations.
 
     //All equations added.

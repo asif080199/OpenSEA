@@ -207,6 +207,7 @@ private:
     static std::string OBJECT_FORCE_CROSS; /**< Keyword for force_cross class definition.*/
     static std::string OBJECT_DERIVATIVE; /**< Keyword for derivative class definition. */
     static std::string OBJECT_EQUATION; /**< Keyword for equation designation.*/
+    static std::string OBJECT_FORCE; /**< Keyword for force designation as part of force_active definition. */
 
     //------------------------------------------Function Separator ----------------------------------------------------
     //Keyword Names

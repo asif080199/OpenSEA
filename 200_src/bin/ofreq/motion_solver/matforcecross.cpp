@@ -61,53 +61,69 @@ matForceCross matForceCross::operator+(matForceCross& forceOther)
 {
     //define the output vector
     matForceCross output;
-    //Check that the lnkedbody parameter is the same for both objects.
-    if (this->plinkid == forceOther.plinkid)
+
+    if (this->pderiv.size() == 0)
     {
-         //find the max order of the derivatives.
-        int maxOrdTwo;
-        if (this->getMaxOrder() > forceOther.getMaxOrder())
-            maxOrdTwo = this->getMaxOrder();
-        else
-            maxOrdTwo = forceOther.getMaxOrder();
-
-        //Expand the size of the vector
-        output.pderiv.resize(maxOrdTwo);
-
-        //Get size of matrices.
-        unsigned int maxSizeTwo;
-        if (this->getMatSize() > forceOther.getMatSize())
-            maxSizeTwo = this-> getMatSize();
-        else
-            maxSizeTwo = forceOther.getMatSize();
-
-        //Check that the maximum size is correct with the matrix size.
-        if (this->pderiv[0].n_rows > maxSizeTwo)
-            maxSizeTwo = this->pderiv[0].n_rows;
-        if (forceOther.pderiv[0].n_rows > maxSizeTwo)
-            maxSizeTwo = forceOther.pderiv[0].n_rows;
-
-        //Resize Matrices, initialize with zeros.
-        for (int i = 0; i <= maxOrdTwo; i++)
-        {
-            output.pderiv[i].zeros(maxSizeTwo);
-
-            //Iterate through the matrix and add values.
-            for (unsigned int j = 0; j < maxSizeTwo; j++)
-            {
-                for (unsigned int k = 0; k < maxSizeTwo; k++)
-                {
-                    output.pderiv[i](k,j) = this->pderiv[i](k,j) + forceOther.pderiv[i](k,j);
-                }
-            }
-        }
-        //return output.
-        return output;
+        //Nothing defined for first object.
+        output = forceOther;
     }
+
+    else if (forceOther.pderiv.size() == 0)
+    {
+        //Nothing defined for the other object.
+        output = *this;
+    }
+
     else
     {
-        //linked body parameters did not match.  Return only this object.
-        return *this;
+        //Check that the lnkedbody parameter is the same for both objects.
+        if (this->plinkid == forceOther.plinkid)
+        {
+             //find the max order of the derivatives.
+            int maxOrdTwo;
+            if (this->getMaxOrder() > forceOther.getMaxOrder())
+                maxOrdTwo = this->getMaxOrder();
+            else
+                maxOrdTwo = forceOther.getMaxOrder();
+
+            //Expand the size of the vector
+            output.pderiv.resize(maxOrdTwo);
+
+            //Get size of matrices.
+            unsigned int maxSizeTwo;
+            if (this->getMatSize() > forceOther.getMatSize())
+                maxSizeTwo = this-> getMatSize();
+            else
+                maxSizeTwo = forceOther.getMatSize();
+
+            //Check that the maximum size is correct with the matrix size.
+            if (this->pderiv[0].n_rows > maxSizeTwo)
+                maxSizeTwo = this->pderiv[0].n_rows;
+            if (forceOther.pderiv[0].n_rows > maxSizeTwo)
+                maxSizeTwo = forceOther.pderiv[0].n_rows;
+
+            //Resize Matrices, initialize with zeros.
+            for (int i = 0; i <= maxOrdTwo; i++)
+            {
+                output.pderiv[i].zeros(maxSizeTwo);
+
+                //Iterate through the matrix and add values.
+                for (unsigned int j = 0; j < maxSizeTwo; j++)
+                {
+                    for (unsigned int k = 0; k < maxSizeTwo; k++)
+                    {
+                        output.pderiv[i](k,j) = this->pderiv[i](k,j) + forceOther.pderiv[i](k,j);
+                    }
+                }
+            }
+            //return output.
+            return output;
+        }
+        else
+        {
+            //linked body parameters did not match.  Return only this object.
+            return *this;
+        }
     }
 }
 
@@ -116,53 +132,69 @@ matForceCross matForceCross::operator-(matForceCross& forceOther)
 {
     //define the output vector
     matForceCross output;
-    //Check that the lnkedbody parameter is the same for both objects.
-    if (this->plinkid == forceOther.plinkid)
+
+    if (this->pderiv.size() == 0)
     {
-         //find the max order of the derivatives.
-        int maxOrdTwo;
-        if (this->getMaxOrder() > forceOther.getMaxOrder())
-            maxOrdTwo = this->getMaxOrder();
-        else
-            maxOrdTwo = forceOther.getMaxOrder();
-
-        //Expand the size of the vector
-        output.pderiv.resize(maxOrdTwo);
-
-        //Get size of matrices.
-        unsigned int maxSizeTwo;
-        if (this->getMatSize() > forceOther.getMatSize())
-            maxSizeTwo = this-> getMatSize();
-        else
-            maxSizeTwo = forceOther.getMatSize();
-
-        //Check that the maximum size is correct with the matrix size.
-        if (this->pderiv[0].n_rows > maxSizeTwo)
-            maxSizeTwo = this->pderiv[0].n_rows;
-        if (forceOther.pderiv[0].n_rows > maxSizeTwo)
-            maxSizeTwo = forceOther.pderiv[0].n_rows;
-
-        //Resize Matrices, initialize with zeros.
-        for (int i = 0; i <= maxOrdTwo; i++)
-        {
-            output.pderiv[i].zeros(maxSizeTwo);
-
-            //Iterate through the matrix and add values.
-            for (unsigned int j = 0; j < maxSizeTwo; j++)
-            {
-                for (unsigned int k = 0; k < maxSizeTwo; k++)
-                {
-                    output.pderiv[i](k,j) = this->pderiv[i](k,j) - forceOther.pderiv[i](k,j);
-                }
-            }
-        }
-        //return output
-        return output;
+        //Nothing defined for first object.
+        output = forceOther;
     }
+
+    else if (forceOther.pderiv.size() == 0)
+    {
+        //Nothing defined for the other object.
+        output = *this;
+    }
+
     else
     {
-        //linked body parameters did not match.  Return only this object.
-        return *this;
+        //Check that the lnkedbody parameter is the same for both objects.
+        if (this->plinkid == forceOther.plinkid)
+        {
+             //find the max order of the derivatives.
+            int maxOrdTwo;
+            if (this->getMaxOrder() > forceOther.getMaxOrder())
+                maxOrdTwo = this->getMaxOrder();
+            else
+                maxOrdTwo = forceOther.getMaxOrder();
+
+            //Expand the size of the vector
+            output.pderiv.resize(maxOrdTwo);
+
+            //Get size of matrices.
+            unsigned int maxSizeTwo;
+            if (this->getMatSize() > forceOther.getMatSize())
+                maxSizeTwo = this-> getMatSize();
+            else
+                maxSizeTwo = forceOther.getMatSize();
+
+            //Check that the maximum size is correct with the matrix size.
+            if (this->pderiv[0].n_rows > maxSizeTwo)
+                maxSizeTwo = this->pderiv[0].n_rows;
+            if (forceOther.pderiv[0].n_rows > maxSizeTwo)
+                maxSizeTwo = forceOther.pderiv[0].n_rows;
+
+            //Resize Matrices, initialize with zeros.
+            for (int i = 0; i <= maxOrdTwo; i++)
+            {
+                output.pderiv[i].zeros(maxSizeTwo);
+
+                //Iterate through the matrix and add values.
+                for (unsigned int j = 0; j < maxSizeTwo; j++)
+                {
+                    for (unsigned int k = 0; k < maxSizeTwo; k++)
+                    {
+                        output.pderiv[i](k,j) = this->pderiv[i](k,j) - forceOther.pderiv[i](k,j);
+                    }
+                }
+            }
+            //return output
+            return output;
+        }
+        else
+        {
+            //linked body parameters did not match.  Return only this object.
+            return *this;
+        }
     }
 }
 

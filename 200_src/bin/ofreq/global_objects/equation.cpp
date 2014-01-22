@@ -74,6 +74,12 @@ double Equation::getCoefficient(int number)
 //------------------------------------------Function Separator --------------------------------------------------------
 void Equation::setCoefficient(int number, double coeffIn)
 {
+    //Check for out of bounds error
+    if ((pcoeffs.size() < number) || (pcoeffs.size() == 0))
+    {
+        pcoeffs.resize(number + 1);
+    }
+
     //Set the coefficient at the specified number
     pcoeffs[number] = coeffIn;
 }

@@ -77,6 +77,10 @@ EqnRotation::~EqnRotation()
 //*********************************************************************************************************************
 
 //==========================================Section Separator =========================================================
+//Custom function definitions
+
+
+//==========================================Section Separator =========================================================
 //Protected Members
 
 //------------------------------------------Function Separator --------------------------------------------------------
@@ -86,34 +90,47 @@ std::complex<double> EqnRotation::setFormula()
 
     //Add in mass objects
     valOut = Sum(
-                 ForceMass(var()) * Ddt(var(),2),
-                 "var");
+                 [&]() -> std::complex<double> {return ForceMass(var()) * Ddt(var(),2);},
+                 "var"
+                 );
 
     //Add in reactive force objects
-    valOut += Sum( Sum(
-                      ForceReact_hydro(ord(),var()) * Ddt(var(),ord()),
-                       "var",0,5),
-                  "ord",0,2);
-    valOut += Sum( Sum(
-                       ForceReact_user(ord(),var()) * Ddt(var(),ord()),
+    valOut += Sum(
+                  Sum(
+                       [&]() -> std::complex<double> {return ForceReact_hydro(ord(),var()) * Ddt(var(),ord());},
+                       "var",
+                       0,
+                       5),
+                  "ord",
+                   0,
+                   2);
+    valOut += Sum(
+                  Sum(
+                       [&]() -> std::complex<double> {return ForceReact_user(ord(),var()) * Ddt(var(),ord());},
                        "var"),
-                   "ord");
+                  "ord");
 
     //Add in cross-body force objects
     valOut += Sum(
-                  Kronecker(curbody(),body(),true) *
-                  Sum( Sum(
-                            ForceCross_hydro(body(),ord(),var()) * Ddt(var(),ord(),body()),
-                            "var",0,5),
-                        "ord"),
+                  [&]() -> std::complex<double> {return Kronecker(curbody(),body(),true) *
+                  Sum(
+                      Sum(
+                           [&]() -> std::complex<double> {return ForceCross_hydro(body(),ord(),var()) *
+                                                         Ddt(var(),ord(),body());},
+                           "var",
+                           0,
+                           5),
+                      "ord");},
                   "body");
 
     valOut += Sum(
-                  Kronecker(curbody(),body(),true) *
-                  Sum( Sum(
-                           ForceCross_user(body(),ord(),var()) * Ddt(var(),ord(),body()),
-                           "var"),
-                       "ord"),
+                  [&]() -> std::complex<double> {return Kronecker(curbody(),body(),true) *
+                  Sum(
+                      Sum(
+                          [&]() -> std::complex<double> {return ForceCross_user(body(),ord(),var()) *
+                                                        Ddt(var(),ord(),body());},
+                          "var"),
+                      "ord");},
                   "body");
 
     //Add in active force objects.

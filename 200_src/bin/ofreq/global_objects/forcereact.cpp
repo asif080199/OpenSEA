@@ -114,5 +114,5 @@ void ForceReact::addDerivative(Derivative derivIn, unsigned int ordIn)
 //------------------------------------------Function Separator --------------------------------------------------------
 int ForceReact::getMaxOrd()
 {
-    return pDerivative.size();
+    return pDerivative.size() - 1;
 }

@@ -41,11 +41,19 @@ string System::valForceCross_user = "forceCross_user";
 //------------------------------------------Function Separator --------------------------------------------------------
 System::System() : pWaveDirections(), pWaveFrequencies()
 {   
+    //Create the list of motion models
+    DefineModels();
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
 System::~System()
 {
+    //Delete the list of motion models
+    for (unsigned int i = 0; i < plistModels.size(); i++)
+    {
+        delete plistModels[i];
+    }
+    plistModels.clear();
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
@@ -437,6 +445,31 @@ void System::linkBodies(int bodID)
     plistBody[bodID].listNamedLink_hydro().clear();
 }
 
+//------------------------------------------Function Separator --------------------------------------------------------
+std::vector<MotionModel *> &System::listModel()
+{
+    return plistModels;
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+MotionModel &System::listModel(unsigned int index)
+{
+    return *(plistModels[index]);
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+MotionModel &System::listModel(std::string modelName)
+{
+    for (unsigned int i = 0; i < plistModels.size(); i++)
+    {
+        if (modelName.compare(plistModels[i]->getName()) == 0)    //Equals zero when string are identical.
+        {
+            return *(plistModels[i]);
+            break;
+        }
+    }
+}
+
 //==========================================Section Separator =========================================================
 //Signals
 
@@ -445,3 +478,12 @@ void System::linkBodies(int bodID)
 
 //==========================================Section Separator =========================================================
 //Private methods
+
+//------------------------------------------Function Separator --------------------------------------------------------
+void System::DefineModels()
+{
+    //Create each motion model and add it to the list.
+    //Don't need to set any properties for the models.  All those get set at object creation.
+
+    plistModels.push_back(new Model6DOF());
+}

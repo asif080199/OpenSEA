@@ -53,6 +53,13 @@ MotionModel::MotionModel(vector<Body> &listBodIn)
 MotionModel::~MotionModel()
 {
     //Default destructor.
+
+    //Memory cleanup of equations
+    for (unsigned int i = 0; i < plistEquations.size(); i++)
+    {
+        delete plistEquations[i];
+    }
+    plistEquations.clear();
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
@@ -164,7 +171,11 @@ void MotionModel::useForceActive_user(unsigned int force, unsigned int eqn)
     if (plistData[curBody].listForceActive_user().size() < force + 1)
     {
         //Add enough forces.
-        plistData[curBody].listForceActive_user().resize(force + 1);
+        for (unsigned int i = 0; i <= force; i++)
+        {
+            ForceActive* temp = new ForceActive();
+            plistData[curBody].listForceActive_user().push_back(temp);
+        }
     }
 
     //Check if the designed body has enough equations in the force for the specified number.
@@ -198,7 +209,11 @@ void MotionModel::useForceActive_hydro(unsigned int force, unsigned int eqn)
     if (plistData[curBody].listForceActive_hydro().size() < force + 1)
     {
         //Add enough forces.
-        plistData[curBody].listForceActive_hydro().resize(force + 1);
+        for (unsigned int i = 0; i <= force; i++)
+        {
+            ForceActive* temp = new ForceActive();
+            plistData[curBody].listForceActive_hydro().push_back(temp);
+        }
     }
 
     //Check if the designed body has enough equations in the force for the specified number.
@@ -232,7 +247,11 @@ void MotionModel::useForceReact_user(unsigned int force, unsigned int ord, unsig
     if (plistData[curBody].listForceReact_user().size() < force + 1)
     {
         //Add enough forces.
-        plistData[curBody].listForceReact_user().resize(force + 1);
+        for (unsigned int i = 0; i <= force; i++)
+        {
+            ForceReact* temp = new ForceReact();
+            plistData[curBody].listForceReact_user().push_back(temp);
+        }
     }
 
     //Check if the designated force has enough derivatives for the current number specified.
@@ -263,7 +282,7 @@ void MotionModel::useForceReact_user(unsigned int force, unsigned int ord, unsig
     //temporary variable for data transfer
     double input;
 
-    //Getthe input value.
+    //Get the input value.
     input = plistBody->at(curBody).listForceReact_user(force)->getDerivative(ord).listEquation(eqn).getCoefficient(var);
 
     //Write the input value.
@@ -292,7 +311,11 @@ void MotionModel::useForceReact_hydro(unsigned int force, unsigned int ord, unsi
     if (plistData[curBody].listForceReact_hydro().size() < force + 1)
     {
         //Add enough forces.
-        plistData[curBody].listForceReact_hydro().resize(force + 1);
+        for (unsigned int i = 0; i <= force; i++)
+        {
+            ForceReact* temp = new ForceReact();
+            plistData[curBody].listForceReact_hydro().push_back(temp);
+        }
     }
 
     //Check if the designated force has enough derivatives for the current number specified.
@@ -348,7 +371,11 @@ void MotionModel::useForceCross_user(unsigned int force, unsigned int ord, unsig
     if (plistData[curBody].listForceCross_user().size() < force + 1)
     {
         //Add enough forces.
-        plistData[curBody].listForceCross_user().resize(force + 1);
+        for (unsigned int i = 0; i <= force; i++)
+        {
+            ForceCross* temp = new ForceCross();
+            plistData[curBody].listForceCross_user().push_back(temp);
+        }
     }
 
     //Check if the list of linked cross-bodies has enough entries for the current number specified.
@@ -426,7 +453,11 @@ void MotionModel::useForceCross_hydro(unsigned int force, unsigned int ord, unsi
     if (plistData[curBody].listForceCross_hydro().size() < force + 1)
     {
         //Add enough forces.
-        plistData[curBody].listForceCross_hydro().resize(force + 1);
+        for (unsigned int i = 0; i <= force; i++)
+        {
+            ForceCross* temp = new ForceCross();
+            plistData[curBody].listForceCross_hydro().push_back(temp);
+        }
     }
 
     //Check if the designated body has enough linking cross body entries for the current specified number.
@@ -726,7 +757,7 @@ cx_mat MotionModel::getMatForceMass()
 complex<double> MotionModel::Evaluate(int eqn)
 {
     //Trigger evaluation of the equation objects.
-    return plistEquations[eqn].Evaluate();
+    return plistEquations[eqn]->Evaluate();
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
@@ -744,7 +775,7 @@ vector<int> &MotionModel::refDataIndex()
 
     for (int i = 0; i < this->numEquations(); i++)
     {
-        dataOut[i] = plistEquations[i].refDataIndex();
+        dataOut[i] = plistEquations[i]->refDataIndex();
     }
 
     //Write output
@@ -822,7 +853,7 @@ Body &MotionModel::listData(int dataIn)
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-vector<EquationofMotion> &MotionModel::listEquation()
+vector<EquationofMotion *> &MotionModel::listEquation()
 {
     return plistEquations;
 }
@@ -830,12 +861,14 @@ vector<EquationofMotion> &MotionModel::listEquation()
 //------------------------------------------Function Separator --------------------------------------------------------
 EquationofMotion &MotionModel::listEquation(int eqIn)
 {
-    return plistEquations.at(eqIn);
+    return *plistEquations.at(eqIn);
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-void MotionModel::AddEquation(EquationofMotion eqIn)
+void MotionModel::AddEquation(EquationofMotion *eqIn)
 {
+    //EquationofMotion *eqTemp = new EquationofMotion(this);
+    //*eqTemp = eqIn;
     plistEquations.push_back(eqIn);
 }
 

@@ -59,146 +59,192 @@ void MotionSolver::addBody(matBody bodIn)
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-matForceReact MotionSolver::sumReactSet(vector<matForceReact> listForces)
+matForceReact *MotionSolver::sumReactSet(vector<matForceReact> listForces)
 {
-    //Create output object.
-    matForceReact output;
-
-    //Iterate through the list and Sum the forces in each item.
-    for (unsigned int i; i < listForces.size(); i++)
+    //Check if the list of forces is empty
+    if (listForces.size() == 0)
     {
-        output = output + listForces[i];
+        return NULL;
     }
 
-    //Write output
-    return output;
-}
-
-//------------------------------------------Function Separator --------------------------------------------------------
-vector<matForceCross> MotionSolver::sumCrossSet(vector<matForceCross> listForces)
-{
-    //Create output object
-    vector<matForceCross> output(this->plistBody.size());
-
-    //Run through the list and set the link id to the index of the cell.
-    for (unsigned int i = 0; i < output.size(); i++)
+    else
     {
-        output[i].setLinkedId(i);
-    }
+        //Create output object.
+        matForceReact *output = new matForceReact();
 
-    //Go through the list.  For each entry in the list, also run through
-    //the full forces list and add all forces to each entry.
-    //The class for matForceCross automatically handles the filtering
-    //to ensure only the correct items are added together.
-    //(those with matching linkedid's).
-    for (unsigned int i = 0; i < output.size(); i++)
-    {
-        for (unsigned int j = 0; j < listForces.size(); j++)
+        //Iterate through the list and Sum the forces in each item.
+        for (unsigned int i = 0; i < listForces.size(); i++)
         {
-            output[i] = output[i] + listForces[j];
+            *output = *output + listForces[i];
         }
-    }
 
-    //Write output
-    return output;
+        //Write output
+        return output;
+    }
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-cx_mat MotionSolver::sumActiveSet(vector<matForceActive> listForces)
+vector<matForceCross *> MotionSolver::sumCrossSet(vector<matForceCross> listForces)
 {
-    int MaxMatrixSize;
-    //Get max size of matrix
-    for (unsigned int i = 0; i < listForces.size(); i++)
+    vector<matForceCross *> output;
+    //Check if the list of forces is empty
+    if (listForces.size() == 0)
     {
-        if (MaxMatrixSize > listForces[i].getMatSize())
+        output.resize(1);
+        output[1] = NULL;
+        return output;
+    }
+
+    else
+    {
+        //Create output object
+        output.resize(this->plistBody.size());
+
+        //Run through the list and set the link id to the index of the cell.
+        for (unsigned int i = 0; i < output.size(); i++)
         {
-            MaxMatrixSize = listForces[i].getMatSize();
+            output[i]->setLinkedId(i);
         }
-    }
 
-    matForceActive tempOutput;
-    cx_mat singleForceMarix(MaxMatrixSize,1);
-
-    //Sum each force entry.
-    for(unsigned int i = 0; i < listForces.size(); i++)
-    {
-        tempOutput = tempOutput + listForces[i];
-    }
-
-    singleForceMarix = tempOutput.listCoefficients();
-
-    return singleForceMarix;
-}
-
-//------------------------------------------Function Separator --------------------------------------------------------
-cx_mat MotionSolver::sumDerivative(matForceReact forceIn)
-{
-    //complex version of current wave frequency.
-    complexDouble waveFreq(this->curWaveFrequency, 0.0);
-    //Complex version of imaginary variable i.
-    complexDouble imagI(0.0, 1.0);
-    //complex scalar multiple.  Will calculate later.
-    complexDouble scalarMult;
-
-    cx_mat output;
-
-    //resize output matrix
-    output.zeros(forceIn.getMatSize());
-
-    //Iterate through each derivative order and add them together.
-    for (int i = 0 ; i <= forceIn.getMaxOrder() ; i++)
-    {
-        //Calculate scalar product.
-        scalarMult = pow(waveFreq, i) * pow(imagI, i);
-
-        //Multiply through to derivative terms and add to total.
-        for (unsigned int row = 0 ; row < forceIn.getDerivative(i).n_rows ; row++)
+        //Go through the list.  For each entry in the list, also run through
+        //the full forces list and add all forces to each entry.
+        //The class for matForceCross automatically handles the filtering
+        //to ensure only the correct items are added together.
+        //(those with matching linkedid's).
+        for (unsigned int i = 0; i < output.size(); i++)
         {
-            for (unsigned int col = 0 ; col < forceIn.getDerivative(i).n_cols ; col++)
+            for (unsigned int j = 0; j < listForces.size(); j++)
             {
-                output.at(row,col) += scalarMult * forceIn.getDerivative(i).at(row,col);
+                *output[i] = output[i]->operator+(listForces[j]);
             }
         }
-    }
 
-    //Write output
-    return output;
+        //Write output
+        return output;
+    }
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-vector<cx_mat> MotionSolver::sumDerivative(vector<matForceCross> forceIn)
+cx_mat *MotionSolver::sumActiveSet(vector<matForceActive> listForces)
 {
-    //complex version of current wave frequency.
-    complexDouble waveFreq(this->curWaveFrequency, 0.0);
-    //Complex version of imaginary variable i.
-    complexDouble imagI(0.0, 1.0);
-    //complex scalar multiple.  Will calculate later.
-    complexDouble scalarMult;
-
-    vector<cx_mat> output;
-
-    for (unsigned int x = 0 ; x < forceIn.size() ; x++)
+    //Check for empty list of forces
+    if (listForces.size() == 0)
     {
+        return NULL;
+    }
+
+    else
+    {
+        int MaxMatrixSize;
+        //Get max size of matrix
+        for (unsigned int i = 0; i < listForces.size(); i++)
+        {
+            if (MaxMatrixSize > listForces[i].getMatSize())
+            {
+                MaxMatrixSize = listForces[i].getMatSize();
+            }
+        }
+
+        matForceActive tempOutput;
+        cx_mat* singleForceMatrix = new cx_mat(MaxMatrixSize,1);
+
+        //Sum each force entry.
+        for(unsigned int i = 0; i < listForces.size(); i++)
+        {
+            tempOutput = tempOutput + listForces[i];
+        }
+
+        *singleForceMatrix = tempOutput.listCoefficients();
+
+        return singleForceMatrix;
+    }
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+cx_mat *MotionSolver::sumDerivative(matForceReact *forceIn)
+{
+    if (forceIn == NULL)
+    {
+        //No inputs.  Return NULL
+        return NULL;
+    }
+
+    else
+    {
+        //complex version of current wave frequency.
+        complexDouble waveFreq(this->curWaveFrequency, 0.0);
+        //Complex version of imaginary variable i.
+        complexDouble imagI(0.0, 1.0);
+        //complex scalar multiple.  Will calculate later.
+        complexDouble scalarMult;
+
+        cx_mat *output = new cx_mat;
+
         //resize output matrix
-        output[x].zeros(forceIn[x].getMatSize());
+        output->zeros(forceIn->getMatSize(), forceIn->getMatSize());
 
         //Iterate through each derivative order and add them together.
-        for (int i = 0 ; i <= forceIn[x].getMaxOrder() ; i++)
+        for (int i = 0 ; i <= forceIn->getMaxOrder() ; i++)
         {
             //Calculate scalar product.
             scalarMult = pow(waveFreq, i) * pow(imagI, i);
 
             //Multiply through to derivative terms and add to total.
-            for (unsigned int row = 0 ; row < forceIn[x].getDerivative(i).n_rows ; row++)
+            for (unsigned int row = 0 ; row < forceIn->getDerivative(i).n_rows ; row++)
             {
-                for (unsigned int col = 0 ; col < forceIn[x].getDerivative(i).n_cols ; col++)
+                for (unsigned int col = 0 ; col < forceIn->getDerivative(i).n_cols ; col++)
                 {
-                    output[x].at(row,col) += scalarMult * forceIn[x].getDerivative(i).at(row,col);
+                    output->at(row,col) += scalarMult * forceIn->getDerivative(i).at(row,col);
+                }
+            }
+        }
+        //Write output
+        return output;
+    }
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+vector<cx_mat *> MotionSolver::sumDerivative(std::vector<matForceCross *> forceIn)
+{
+    vector<cx_mat *> output;
+    output.resize(forceIn.size());
+
+    for (unsigned int i = 0; i < forceIn.size(); i++)
+    {
+        if (forceIn[i] == NULL)
+        {
+            output[i] = NULL;
+        }
+
+        else
+        {
+            //complex version of current wave frequency.
+            complexDouble waveFreq(this->curWaveFrequency, 0.0);
+            //Complex version of imaginary variable i.
+            complexDouble imagI(0.0, 1.0);
+            //complex scalar multiple.  Will calculate later.
+            complexDouble scalarMult;
+
+            //resize output matrix
+            output[i]->zeros(forceIn[i]->getMatSize(), forceIn[i]->getMatSize());
+
+            //Iterate through each derivative order and add them together.
+            for (int j = 0 ; j <= forceIn[i]->getMaxOrder() ; j++)
+            {
+                //Calculate scalar product.
+                scalarMult = pow(waveFreq, j) * pow(imagI, j);
+
+                //Multiply through to derivative terms and add to total.
+                for (unsigned int row = 0 ; row < forceIn[i]->getDerivative(j).n_rows ; row++)
+                {
+                    for (unsigned int col = 0 ; col < forceIn[i]->getDerivative(j).n_cols ; col++)
+                    {
+                        output[i]->at(row,col) += scalarMult * forceIn[i]->getDerivative(j).at(row,col);
+                    }
                 }
             }
         }
     }
-
     //Write output
     return output;
 }
@@ -214,57 +260,74 @@ void MotionSolver::setWaveFreq(double freqIn)
 void MotionSolver::calculateOutputs()
 {
     //create a temporary vector to hold outputs of summations - user forces
-    vector<matForceReact> tempReactList_usr(plistBody.size());
-    vector<cx_mat> ActiveList_usr(plistBody.size());
-    vector < vector<matForceCross> > tempCrossList_usr(plistBody.size(), vector<matForceCross>(plistBody.size()));
+    vector<matForceReact*> tempReactList_usr(plistBody.size());
+    vector<cx_mat*> ActiveList_usr(plistBody.size());
+    vector<matForceCross *> input(plistBody.size()); //Temporary vector for input into cross-body
+    vector < vector<matForceCross *> > tempCrossList_usr(plistBody.size(), input);
 
     //create a temporary vector to hold outputs of summations - hydro forces
-    vector<matForceReact> tempReactList_hydro(plistBody.size());
-    vector<cx_mat> ActiveList_hydro(plistBody.size());
-    vector < vector<matForceCross> > tempCrossList_hydro(plistBody.size(), vector<matForceCross>(plistBody.size()));
+    vector<matForceReact*> tempReactList_hydro(plistBody.size());
+    vector<cx_mat*> ActiveList_hydro(plistBody.size());
+    vector<matForceCross *> input2(plistBody.size()); //Temporary vector for input into cross-body
+    vector < vector<matForceCross *> > tempCrossList_hydro(plistBody.size(), input2);
 
     //Sum forces for each body in the list.
-    for (unsigned int i = 0; i< plistBody.size(); i++)
+    for (curSumBody = 0; curSumBody < plistBody.size(); curSumBody++)
     {
         //Add user forces.
-        tempReactList_usr[i] = sumReactSet(plistBody[i].listForceReact_user());
-        ActiveList_usr[i] = sumActiveSet(plistBody[i].listForceActive_user());
-        tempCrossList_usr[i] = sumCrossSet(plistBody[i].listForceCross_user());
+        tempReactList_usr[curSumBody] = sumReactSet(plistBody[curSumBody].listForceReact_user());
+        ActiveList_usr[curSumBody] = sumActiveSet(plistBody[curSumBody].listForceActive_user());
+        tempCrossList_usr[curSumBody] = sumCrossSet(plistBody[curSumBody].listForceCross_user());
 
         //Add hydro forces.
-        tempReactList_hydro[i] = sumReactSet(plistBody[i].listForceReact_hydro());
-        ActiveList_hydro[i] = sumActiveSet(plistBody[i].listForceActive_hydro());
-        tempCrossList_hydro[i] = sumCrossSet(plistBody[i].listForceCross_hydro());
+        tempReactList_hydro[curSumBody] = sumReactSet(plistBody[curSumBody].listForceReact_hydro());
+        ActiveList_hydro[curSumBody] = sumActiveSet(plistBody[curSumBody].listForceActive_hydro());
+        tempCrossList_hydro[curSumBody] = sumCrossSet(plistBody[curSumBody].listForceCross_hydro());
     }
     //Each set now reduced to a single force object, for each body.
 
     //Create temporary matrices to hold outputs of derivative summation - user forces
-    vector<cx_mat> ReactList_usr;
+    vector<cx_mat*> ReactList_usr;
+    vector< vector<cx_mat*> > CrossList_usr;
     // No need to Sum for active forces.  Already independent of derivative.
-    vector< vector<cx_mat> > CrossList_usr;
 
-    //Create temporary matrices to hold outputs ot derivative summation - hydro forces
-    vector<cx_mat> ReactList_hydro;
+    //Create temporary matrices to hold outputs of derivative summation - hydro forces
+    vector<cx_mat*> ReactList_hydro;
     // No need to Sum for active forces.  Already independent of derivative.
-    vector< vector<cx_mat> > CrossList_hydro;
+    vector< vector<cx_mat*> > CrossList_hydro;
 
     //Sum derivatives within each force.
-    for (unsigned int i = 0; i < plistBody.size(); i++)
+    for (curSumBody = 0; curSumBody < plistBody.size(); curSumBody++)
     {
         //Sum for user forces
-        ReactList_usr.push_back(sumDerivative(tempReactList_usr[i]));
-        CrossList_usr.push_back(sumDerivative(tempCrossList_usr[i]));
+        ReactList_usr.push_back(sumDerivative(tempReactList_usr[curSumBody]));
+        CrossList_usr.push_back(sumDerivative(tempCrossList_usr[curSumBody]));
 
         //Sum for hydro forces
-        ReactList_hydro.push_back(sumDerivative(tempReactList_hydro[i]));
-        CrossList_hydro.push_back(sumDerivative(tempCrossList_hydro[i]));
+        ReactList_hydro.push_back(sumDerivative(tempReactList_hydro[curSumBody]));
+        CrossList_hydro.push_back(sumDerivative(tempCrossList_hydro[curSumBody]));
     }
 
     //Delete uneeded variables
-    tempReactList_usr.clear();
-    tempCrossList_usr.clear();
+    for (curSumBody = 0; curSumBody < plistBody.size(); curSumBody++)
+    {
+        delete tempReactList_hydro[curSumBody];
+        delete tempReactList_usr[curSumBody];
+        delete input[curSumBody];
+        delete input2[curSumBody];
+
+        for (unsigned int p = 0; p < tempCrossList_hydro[curSumBody].size(); p++)
+            delete tempCrossList_hydro[curSumBody][p];
+
+        for (unsigned int p = 0; p < tempCrossList_usr[curSumBody].size(); p++)
+            delete tempCrossList_usr[curSumBody][p];
+    }
     tempReactList_hydro.clear();
+    tempReactList_usr.clear();
+    input.clear();
+    input2.clear();
     tempCrossList_hydro.clear();
+    tempCrossList_usr.clear();
 
     //Create temporary variables for total of all forces.
     vector<cx_mat> ReactList;
@@ -273,26 +336,50 @@ void MotionSolver::calculateOutputs()
     vector<cx_mat> tempCross;
 
     //Add different force types for each body object.
-    for (unsigned int i = 0; i < plistBody.size(); i++)
+    for (curSumBody = 0; curSumBody < plistBody.size(); curSumBody++)
     {
-        ReactList.push_back(ReactList_usr[i] + ReactList_hydro[i]);
-        ActiveList.push_back(ActiveList_usr[i] + ActiveList_hydro[i]);
+        //Add active force objects
+        ActiveList.push_back(
+                    SumSingle(ActiveList_usr[curSumBody], ActiveList_hydro[curSumBody], -2)
+                    );
+
+        //Add reactive force objects
+        ReactList.push_back(
+                    SumSingle(ReactList_usr[curSumBody], ReactList_hydro[curSumBody], -1)
+                    );
+
+        //Add cross-body force objects
         for (unsigned int j = 0; j < plistBody.size(); j++)
         {
-            tempCross.push_back(CrossList_usr[i][j] + CrossList_hydro[i][j]);
+            tempCross.push_back(
+                        SumSingle(CrossList_usr[curSumBody][j], CrossList_hydro[curSumBody][j], j)
+                        );
         }
         CrossList.push_back( tempCross );
         tempCross.clear();
     }
 
     //Delete uneeded variables
-    ReactList_usr.clear();
-    ActiveList_usr.clear();
-    CrossList_usr.clear();
-    ReactList_hydro.clear();
-    ActiveList_hydro.clear();
-    CrossList_hydro.clear();
+    for (curSumBody = 0; curSumBody < plistBody.size(); curSumBody++)
+    {
+        delete ReactList_hydro[curSumBody];
+        delete ReactList_usr[curSumBody];
+        delete ActiveList_hydro[curSumBody];
+        delete ActiveList_usr[curSumBody];
+
+        for (unsigned int p = 0; p < CrossList_hydro[curSumBody].size(); p++)
+            delete CrossList_hydro[curSumBody][p];
+
+        for (unsigned int p = 0; p < CrossList_usr[curSumBody].size(); p++)
+            delete CrossList_usr[curSumBody][p];
+    }
     tempCross.clear();
+    ReactList_hydro.clear();
+    ReactList_usr.clear();
+    ActiveList_hydro.clear();
+    ActiveList_usr.clear();
+    CrossList_hydro.clear();
+    CrossList_usr.clear();
 
     //"Assemble Global Matrix"
     vector<int> matStart;
@@ -384,7 +471,7 @@ cx_mat &MotionSolver::listSolution(unsigned int bod)
     }
     else
     {
-        //Throw and error
+        //Throw an error
         cx_mat out;
         out.zeros();
         return out;
@@ -397,3 +484,42 @@ cx_mat &MotionSolver::listSolution(unsigned int bod)
 
 //==========================================Section Separator =========================================================
 //Private Functions
+
+//------------------------------------------Function Separator --------------------------------------------------------
+cx_mat MotionSolver::SumSingle(cx_mat *Input1, cx_mat *Input2, int ForceType)
+{
+    //Create default matrix of zeros.
+    cx_mat output;
+    if (ForceType == -2)
+    {
+        //Active force matrix were the inputs.  Create a column matrix.
+        //Get the dimensions for the output matrix.
+        int rows = plistBody[curSumBody].refMass().n_rows;
+        output.zeros(rows, 1);
+    }
+
+    else if (ForceType == -1)
+    {
+        //Reactive force matrix.  Create a square matrix.
+        int rows = plistBody[curSumBody].refMass().n_rows;
+        output.zeros(rows,rows);
+    }
+
+    else
+    {
+        //Cross Body force matrix.  The integer of the input specifies the second body index.
+        int rows = plistBody[curSumBody].refMass().n_rows;
+        int cols = plistBody[ForceType].refMass().n_rows;
+        output.zeros(rows,cols);
+    }
+
+    //Add in inputs, depending on whether any of them are NULL values.
+    if (Input1 != NULL)
+        output = output + *Input1;
+
+    if (Input2 != NULL)
+        output = output + *Input2;
+
+    //Write output
+    return output;
+}

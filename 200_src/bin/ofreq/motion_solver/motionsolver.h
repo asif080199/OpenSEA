@@ -134,55 +134,76 @@ public:
      * @brief Sum Reactive forces for each set.
      *
      * Sum Reactive forces for each set.  This iterates through each reactive force in a set and adds the forces
-     * together.  It respects derivatives in the summation.
+     * together.  It respects derivatives in the summation.  If the input list of forces is empty (listForces), the
+     * function returns a NULL pointer.
      * @param listForces The list of reactive forces associated with each body.  This list may be anything from
      * zero to infinite number of entries.
-     * @return The Sum of reactive force matrices.
+     * @return The Sum of reactive force matrices.  Returned variable is a pointer.
 	 */
-    matForceReact sumReactSet(std::vector<matForceReact> listForces);
+    matForceReact *sumReactSet(std::vector<matForceReact> listForces);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
      * @brief Sum cross-body forces for each set.
      *
-     * Sum cross-body forces for each set.  This gets handled a little differently from reactive forces, as the linked
+     * This gets handled a little differently from reactive forces, as the linked
      * body for the force depends on whether two objects are summed together.  Output from this function is a
-     * vector of cross-body forces.  Each entry in the vector contains a cross-body force object.
+     * vector of cross-body forces.  Each entry in the vector contains a cross-body force object.  If the input list
+     * of forces (listForces) is empty, the function returns a NULL pointer.
      * @param CrossBodMat The vector of cross-body force matrices.
      * @return A vector of complex matrices, with each entry in the vectors representing a cross-body force linked to
-     * a specific body.
+     * a specific body.  Returned variable is a pointer.
      */
-    std::vector<matForceCross> sumCrossSet(std::vector<matForceCross> listForces);
+    std::vector<matForceCross *> sumCrossSet(std::vector<matForceCross> listForces);
 
     //------------------------------------------Function Separator ----------------------------------------------------
 	/**
      * @brief Sum active forces for each set.
      *
-	 * Sum active forces for each set.
-     * @param listForces The active force matrix.
-	 * @return The Sum of active force matrix.
+     * Takes the input vector and sums all force objects together to create an aggregate force that is the total of
+     * all force objects supplied in the input vector (listForces).  If the input vector is empty, the function
+     * returns a NULL pointer.
+     * @param listForces Vector of matForceActive objects.  Vector can be unlimited size.  Each entry in the vector
+     * is one of the active forces to be added into the total aggregate active force.
+     * @return The Sum of active force matrix.  Variable is returned as pointer.
 	 */
-    arma::cx_mat sumActiveSet(std::vector<matForceActive> listForces);
+    arma::cx_mat *sumActiveSet(std::vector<matForceActive> listForces);
 
     //------------------------------------------Function Separator ----------------------------------------------------
 	/**
-     * @brief Sum listDerivatives for reactive force matrix.
+     * @brief Sums all derivatives for the reactive force object entered.
      *
-	 * Sum listDerivatives for reactive force matrix.
-	 * @param theReactiveForceMatrix The reactive force matrix.
-	 * @return TSingle matrix that is the Sum of Matrices passed in.
+     * Matrix force objects normally store a separate matrix of coefficients for each derivative.  However, to solve
+     * for object motions at a given frequency, it is necessary to combine the various derivatives into a single
+     * matrix.  The function uses a formula to combine the various derivative formulas into a single output matrix.
+     * The output matrix is only valid for the specific frequency set at the time of calling this function.  If the
+     * input object is a NULL pointer, the function also returns a NULL pointer.
+     * @param forceIn The reactive force matrix.  Variable is a pointer to a matForceReact object.
+     * Variable passed by value.
+     * @return Single matrix that is the derivative sum of each matrix for each derivative contained within the input
+     * object.  Returned variable is a pointer.  Returned pointer is set to NULL if input pointer is NULL.
 	 */
-    arma::cx_mat sumDerivative(matForceReact forceIn);
+    arma::cx_mat *sumDerivative(matForceReact *forceIn);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
-     * @brief Sum listDerivatives for reactive force matrix.
+     * @brief Sums all derivatives for the cross-body force objects entered.
      *
-     * Sum listDerivatives for reactive force matrix.
-     * @param forceIn the matrix that contains the set of cross body forces.
-     * @return Single matrix that contains the cross body forces for a single definition.
+     * Matrix force objects normally store a separate matrix of coefficients for each derivative.  However, to solve
+     * for object motions at a given frequency, it is necessary to combine the various derivatives into a single
+     * matrix.  The function uses a formula to combine the various derivative formulas into a single output matrix.
+     * The output matrix is only valid for the specific frequency set at the time of calling this function.  If the
+     * input object is a NULL pointer, the function also returns a NULL pointer.  For the cross-body forces, the
+     * function expects a vector of cross-body forces.  These are all for a single Body object.  Each matForceCross
+     * object in the vector represents a cross-body force that depends on the motions of another body.  So for N
+     * bodies, it is possible for the vector to contain up to N - 1 matForceCross objects.
+     * @param forceIn The cross-body force matrix.  Variable is a vector of pointers to matForceCross objects.
+     * Variable passed by value.
+     * @return Returns vector of single matrices.  Each matrix in the vector is the derivative sum of each matrix
+     * for each derivative contained within the input matForceCross object.  Returned variable is a pointer to a
+     * vector of single matrices.  Returned pointer is set to NULL if input pointer is NULL.
      */
-    std::vector<arma::cx_mat> sumDerivative(std::vector<matForceCross> forceIn);
+    std::vector<arma::cx_mat *> sumDerivative(std::vector<matForceCross *> forceIn);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -254,6 +275,43 @@ private:
     //------------------------------------------Function Separator ----------------------------------------------------
     std::vector<matBody> plistBody; /**< Body with Force Coefficients */
 
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief The current body that all force summations are associated.
+     *
+     * At some points in the summation, it is necessary for the various summation functions to know which body from
+     * the list of bodies the forces are currently summing for.  This variable provides a common reference for all
+     * the functions to reference.
+     */
+    int curSumBody;
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Adds the two matrices together, anticipating possibilities for various combinations of pointers.
+     *
+     * This function should be applied to matForceActive and matForceReact objects that were already summed into
+     * complex matrix objects.  The inputs are two pointers to the objects.  Depending on the state of the pointers
+     * changes how the function adds the two together.  If a pointer is NULL, that pointer is replaced with an
+     * appropriately sized matrix of zeros.  If both pointers are NULL, the function returns a matrix of zeros.  If
+     * only one pointer is NULL, just the other matrix is returned.  If neither pointer is NULL, the two matrices
+     * are added together.
+     * @param Input1 Pointer to a complex matrix.  The pointer can have a NULL value.  If NULL, the input is replaced
+     * with a matrix of zeros.
+     * @param Input2 Pointer to a complex matrix.  The pointer can have a NULL value.  If NULL, the input is replaced
+     * with a matrix of zeros.
+     * @param ForceType Specifies which type of force the input matrices represent.  If both pointers are NULL values
+     * the function will have no way to know what size to make the output matrix of zeros.  By specifying the force
+     * type, the function knows which shape to make the output matrix of zeros.  The following values are used to
+     * specify the force types.
+     * -2:  Active force types.  Column matrix of zeros should be created.
+     * -1:  Reactive force type.  Square matrix of zeros should be created.
+     * >=0:   Cross-body force type.  Non-square matrix of zeros should be created.  The currently active body
+     * is already known.  In this case, the integer of ForceType specifies the index of the other body object, the
+     * one that the cross-body forces pick their body motions from.
+     * @return Returns a complex matrix that is the summation of the two inputs.  Returned variable passed by value.
+     * Even if both inputs are NULL pointers, the function will return a matrix of zeros.
+     */
+    arma::cx_mat SumSingle(arma::cx_mat *Input1, arma::cx_mat *Input2, int ForceType);
 };
 
 }   //Namespace ofreq

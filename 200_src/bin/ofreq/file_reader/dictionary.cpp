@@ -136,17 +136,25 @@ complex<double> Dictionary::convertComplex(string input)
             {
                 //End of input
                 //Assign real part.
-                output.real() = atof(input.substr(0, indMinus + 1).c_str());
+                output.real(
+                            atof(input.substr(0, indMinus + 1).c_str())
+                            );
                 //Assign imaginary part
-                output.imag() = -1.0 * atof(input.substr(indMinus + 1, indImag - indPlus).c_str());
+                output.imag(
+                            -1.0 * atof(input.substr(indMinus + 1, indImag - indPlus).c_str())
+                            );
             }
             else
             {
                 //Middle of input
                 //Assign real part.
-                output.real() = atof(input.substr(0, indMinus).c_str());
+                output.real(
+                            atof(input.substr(0, indMinus).c_str())
+                            );
                 //Assign imaginary part
-                output.imag() = -1.0 * atof(input.substr(indImag + 1, input.length() - 1 - indImag).c_str());
+                output.imag(
+                            -1.0 * atof(input.substr(indImag + 1, input.length() - 1 - indImag).c_str())
+                            );
             }
         }
         else
@@ -157,17 +165,25 @@ complex<double> Dictionary::convertComplex(string input)
             {
                 //End of input.
                 //Assign real part.
-                output.real() = atof(input.substr(0, indPlus).c_str());
+                output.real(
+                            atof(input.substr(0, indPlus).c_str())
+                            );
                 //Assign imaginary part
-                output.imag() = atof(input.substr(indPlus + 1, indImag - indPlus).c_str());
+                output.imag(
+                            atof(input.substr(indPlus + 1, indImag - indPlus).c_str())
+                            );
             }
             else
             {
                 //Middle of input.
                 //Assign real part.
-                output.real() = atof(input.substr(0,indPlus).c_str());
+                output.real(
+                            atof(input.substr(0,indPlus).c_str())
+                            );
                 //Assign imaginary part
-                output.imag() = atof(input.substr(indImag + 1, input.length() - 1 - indImag).c_str());
+                output.imag(
+                            atof(input.substr(indImag + 1, input.length() - 1 - indImag).c_str())
+                            );
             }
         }
     }
@@ -183,8 +199,8 @@ complex<double> Dictionary::convertComplex(string input)
         phase = atof(input.substr(indexSep + 1).c_str());
 
         //Convert to real and imaginary parts.
-        output.real() = amp * cos(phase);
-        output.imag() = amp * sin(phase);
+        output.real(amp * cos(phase));
+        output.imag(amp * sin(phase));
     }
 
     //Return output

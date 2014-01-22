@@ -14,6 +14,9 @@ CONFIG   -= app_bundle
 
 TEMPLATE = app
 
+# Force C++11 build.  This is required by equantionofmotion.h and derived classes
+# These derived classes may implement lambda functions.
+QMAKE_CXXFLAGS += -std=c++11
 
 SOURCES += ofreq.cpp \
     derived_outputs/outputsbody.cpp \

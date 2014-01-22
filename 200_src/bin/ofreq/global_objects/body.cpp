@@ -25,6 +25,7 @@
 \*-------------------------------------------------------------------------------------------------------------------*/
 
 #include "body.h"
+#include "../motion_model/motionmodel.h"        //Include motion model in .cpp file to prevent recursive definitions.
 
 using namespace std;
 using namespace arma;
@@ -674,21 +675,21 @@ string &Body::listNamedLink_hydro(unsigned int varIn)
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-void Body::setMotionModel(string modelName)
+void Body::setMotionModel(ofreq::MotionModel &modelIn)
 {
-    motModel = modelName;
+    motModel = &modelIn;
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-string Body::getMotionModel()
+MotionModel &Body::getMotionModel()
 {
-    return motModel;
+    return *motModel;
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
 int Body::getEquationCount()
 {
-    return eqnCount;
+    return motModel->listEquation().size();
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------

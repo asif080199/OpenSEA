@@ -27,6 +27,7 @@
 
 //######################################### Class Separator ###########################################################
 using namespace osea::ofreq;
+using namespace std;
 
 //######################################### Class Separator ###########################################################
 
@@ -77,6 +78,10 @@ EqnTranslation::~EqnTranslation()
 //*********************************************************************************************************************
 
 //==========================================Section Separator =========================================================
+//Custom function definitions
+
+
+//==========================================Section Separator =========================================================
 //Protected Members
 
 //------------------------------------------Function Separator --------------------------------------------------------
@@ -109,30 +114,69 @@ std::complex<double> EqnTranslation::setFormula()
     }
 
     //Add in reactive force objects
-    valOut += Sum( Sum(
-                      ForceReact_hydro(ord(),var()) * Ddt(var(),ord()),
-                       "var",0,5),
-                  "ord",0,2);
-    valOut += Sum( Sum(
-                       ForceReact_user(ord(),var()) * Ddt(var(),ord()),
-                       "var"),
-                   "ord");
+    //Sum hydrodynamic reactive forces for derivative orders 0 - 2
+    valOut += Sum(
+                  [&]() -> std::complex<double>
+                  {return Sum(
+                              [&]() -> std::complex<double>
+                              {return ForceReact_hydro(ord(),var()) * Ddt(var(),ord());},
+                              "var",
+                              0,
+                              5);},
+                  "ord",
+                  0,
+                  2);
+
+    //Sum user reactive forces for however high the derivative order goes.
+    valOut += Sum(
+                  [&]() -> std::complex<double>
+                  {return Sum(
+                              [&]() -> std::complex<double>
+                              {return ForceReact_user(ord(),var()) * Ddt(var(),ord());},
+                              "var");},
+                  "ord");
+
 
     //Add in cross-body force objects
+    //Add cross-body forces for hydrodynamic forces.  Sum for order from 0 to 2.
     valOut += Sum(
-                  Kronecker(curbody(),body(),true) *
-                  Sum( Sum(
-                            ForceCross_hydro(body(),ord(),var()) * Ddt(var(),ord(),body()),
-                            "var",0,5),
-                        "ord"),
+                  [&]() -> std::complex<double>
+                  {return Kronecker(curbody(),body(),true) *
+                  Sum(
+                      [&]() -> std::complex<double>
+                      {return
+                      Sum(
+                          [&]() -> std::complex<double>
+                          {return
+                          ForceCross_hydro(body(),ord(),var()) * Ddt(var(),ord(),body());
+                          },
+                          "var",
+                          0,
+                          5);
+                      },
+                      "ord",
+                      0,
+                      2);
+                  },
                   "body");
 
     valOut += Sum(
-                  Kronecker(curbody(),body(),true) *
-                  Sum( Sum(
-                           ForceCross_user(body(),ord(),var()) * Ddt(var(),ord(),body()),
-                           "var"),
-                       "ord"),
+                  [&]() -> std::complex<double>
+                  {
+                   return Kronecker(curbody(),body(),true) *
+                   Sum(
+                       [&]() -> std::complex<double>
+                       {
+                        return
+                        Sum(
+                            [&]() -> std::complex<double>
+                            {
+                             return ForceCross_user(body(),ord(),var()) * Ddt(var(),ord(),body());
+                            },
+                            "var");
+                      },
+                      "ord");
+                  },
                   "body");
 
     //Add in active force objects.

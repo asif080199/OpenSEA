@@ -107,8 +107,10 @@ namespace ofreq
  *
  * 3.)  Only define your equation within the function setFormula().
  *
- * 4.)  Do not define your own functions unless you are familiar with C++ class programming and know how to safely
- *      add the function into the class definition.
+ * 4.)  Do not add function definitions to the header file unless you are familiar with C++ class programming and
+ *      know how to safely add the function into the class definition.  If you need to define custom functions
+ *      for your equstions, the safest thing is to define them strictly within your source code file (.cpp file).
+ *      Just remember that all functions must be fully defined before they get used within the code.
  *
  * 5.)  There are several functions inheritted from the EquationofMotion class.  You can use these to refer to the
  *      different forces when developing your own equation of motion.  oFreq recognizes seven (7) basic force types
@@ -141,6 +143,51 @@ namespace ofreq
  *           body problem.  The user subcategory refers to reactive forces defined by the user.
  *           This might include external forces such as a mooring line or dynamic positioning system.  In any
  *           case, these are reactive forces defined at run time in the ofreq input files.
+ *
+ * 6.)  Use of the Sum() Function.  The Sum function expects a function pointer to be supplied as the equation it
+ *      will sum over.  The function pointer is necessary due to limitations of the C++ programming language.
+ *      Any functions supplied to the sum function can not have any arguments supplied.  To use a function in
+ *      the Sum function, follow these steps:
+ *      6.1) Define the function as normal.  Remember that the function must have a full code supplied before
+ *           its first use.  The safest approach is to define this function wholly within the source code file
+ *           (the .cpp file).  That keeps the function isolated from the rest of the oFreq program.
+ *           The function data type must be complex, double.  So a typical function definition would look like
+ *           the following.  (Capitals are the parts you change for your specific function).
+ *
+ *           std::complex<double> FUNCTION_NAME() {
+ *              *FUNCTION CODE*
+ *              return FUNCTION_VALUE;
+ *           }
+ *
+ *      6.2) Once you have defined the function, you must use it in the Sum function.  The Sum function expects
+ *           a pointer to a function.  You would enter it as follows (all capitals are the terms you change for
+ *           your specific function:
+ *
+ *           output = Sum( &FUNCTION_NAME, index, from, to);
+ *
+ *           Two key points to notice:  The function name was preceded with a reference symbol ( & ); and I only
+ *           stated the function name.  I did not include the brackets to explicitely state that its a function.
+ *           Don't include the brackets.  You will get a compiler error if you do.
+ *
+ *      6.3) If you have advanced C++ programming experience, you can use lambda functions to define and implement
+ *           your function pointer in line.  This requires a basic understand of lambda functions, but it does
+ *           produce more streamlined code which better shows the intended functionality.  Note that C++11 is
+ *           required for lambda functions.  This is already implemented in the Qt project supplied with the
+ *           source code.  For a quick tutorial on how to use lambda functions, visit:
+ *           <http://www.cprogramming.com/c++11/c++11-lambda-closures.html>
+ *           For an example, a typical lambda implementation in this program would look like this:
+ *
+ *           [&] () -> complex<double> {return ForceReact_hydro(ord(),var()) * Ddt(var(),ord());}
+ *
+ *           The square brackets denote the lambda function.  The () marks show that the function has no inputs.
+ *           The -> specifies the returned variable type.  Everything in the curly brakets is the actual function
+ *           definition.  This lambda function would be implemented in the Sum() function in the following manner
+ *           Sum(
+ *                  [&] () -> std::complex<double> {return ForceReact_hydro(ord(),var()) * Ddt(var(),ord());},
+ *                  "ord",
+ *                  0,
+ *                  2
+ *           );
  *
  * @sa EquationofMotion
  * @sa MotionModel

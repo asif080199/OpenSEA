@@ -231,7 +231,9 @@ int dictBodies::defineKey(string keyIn, vector<string> valIn)
     else if (keyIn == KEY_MOTION)
     {
         //Set the motion model name for the body
-        ptSystem->listBody(pBody).setMotionModel(valIn[0]);
+        ptSystem->listBody(pBody).setMotionModel(
+                    ptSystem->listModel(valIn[0])
+                );
         //Return success
         return 0;
     }

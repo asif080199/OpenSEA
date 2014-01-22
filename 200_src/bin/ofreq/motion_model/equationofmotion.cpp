@@ -36,6 +36,10 @@ using namespace arma;
 using namespace osea::ofreq;
 
 //==========================================Section Separator =========================================================
+//Static Members
+int EquationofMotion::undefArg = -1;   /**< Integer value for undefined argument in the summation function.*/
+
+//==========================================Section Separator =========================================================
 //Public Members
 
 //------------------------------------------Function Separator --------------------------------------------------------
@@ -180,17 +184,17 @@ complex<double> EquationofMotion::Kronecker(int var1, int var2, bool anti)
 
     //Implementation of the Kronecker delta function.
     if (var1 == var2)
-        out.real() = 1.0;
+        out.real(1.0);
     else
-        out.real() = 0.0;
+        out.real(0.0);
 
     //Check if using reverse Kronecker delta.
     if (anti)
     {
         if (out.real() == 1.0)
-            out.real() = 0.0;
+            out.real(0.0);
         else
-            out.real() = 1.0;
+            out.real(1.0);
     }
 
     //write output
@@ -211,7 +215,7 @@ complex<double> EquationofMotion::Ddt(int var, int ord, int bodIn)
     if (pParentModel->CoefficientOnly())
     {
         //Only calculating coefficients.  Write out unit value.
-        out.real() = 1.0;
+        out.real(1.0);
     }
     else
     {
@@ -236,104 +240,7 @@ complex<double> EquationofMotion::Ddt(int var, int ord, int bodIn)
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-complex<double> EquationofMotion::Sum(complex<double> force, string index, unsigned int from, unsigned int to)
-{
-    //Create variable for output
-    complex<double> output(0,0);        //Output variable
-
-
-    //Select which index to Sum over.
-    //Sum for variable
-    //-----------------------------------
-    if ((index.compare("var") == 0) ||
-            (index.compare("v") == 0) ||
-            (index.compare("V") == 0) ||
-            (index.compare("Var") == 0) ||
-            (index.compare("VAR") == 0))
-    {
-        //Check for summation limits
-        if (from == -1)
-        {
-            //Get limit
-            from = 0;
-        }
-
-        if (to == -1)
-        {
-            //Get limit
-            to = maxvar();
-        }
-
-        //Sum for variable count.
-        for (pCurVar = from ; pCurVar <= to; pCurVar++)
-        {
-            output += force;
-        }
-    }
-
-    //Sum for Derivative Order
-    //-----------------------------------
-    else if ((index.compare("ord") == 0) ||
-             (index.compare("o") == 0) ||
-             (index.compare("O") == 0) ||
-             (index.compare("Ord") == 0) ||
-             (index.compare("ORD") == 0))
-    {
-        //Check for summation limits
-        if (from == -1)
-        {
-            //Get limit
-            from = 0;
-        }
-
-        if (to == -1)
-        {
-            //Get limit
-            to = maxord();
-        }
-
-        //Sum for order of refDerivative.
-        for (pCurOrd = from ; pCurOrd <= to; pCurOrd++)
-        {
-            output += force;
-        }
-    }
-
-    //Sum for Body
-    //-----------------------------------
-    else if ( (index.compare("bod") == 0) ||
-              (index.compare("b") == 0) ||
-              (index.compare("B") == 0) ||
-              (index.compare("Bod") == 0) ||
-              (index.compare("BOD") == 0) ||
-              (index.compare("body") == 0) ||
-              (index.compare("Body") == 0))
-    {
-        //Check for summation limits
-        if (from == -1)
-        {
-            //Get limit
-            from = 0;
-        }
-
-        if (to == -1)
-        {
-            //Get limit
-            to = maxbody();
-        }
-
-        //Sum for bodies
-        for (pBod = from ; pBod <= to; pBod++)
-        {
-            output += force;
-        }
-    }
-    //write output
-    return output;
-}
-
-//------------------------------------------Function Separator --------------------------------------------------------
-complex<double> EquationofMotion::ForceActive_hydro()
+complex<double> &EquationofMotion::ForceActive_hydro()
 {
     //Returns the active force object for the currently defined indices.
     complex<double> output(0,0);         //Temporary value for variable.
@@ -345,23 +252,27 @@ complex<double> EquationofMotion::ForceActive_hydro()
     //Check out of bounds for body.
     if (pBod > pParentModel->listData().size() - 1)
     {
-        //Out of bounds check.  Ensure that the requested data index is not out of bounds.
-        if (eqn() <= 5 )
+        //Out of bounds check for forces
+        if (!(pParentModel->listData(pBod).listForceActive_hydro().empty()))
         {
-            //Add up for all forces
-            for (pCurForce = 0; pCurForce < pParentModel->listData(pBod).listForceActive_hydro().size(); pCurForce ++)
+            //Out of bounds check.  Ensure that the requested data index is not out of bounds.
+            if (eqn() <= 5 )
             {
-                //Get value and add.
-                output +=
-                        pParentModel->listData(pBod).
-                        listForceActive_hydro(force())->
-                        getEquation(eqn());
+                //Add up for all forces
+                for (pCurForce = 0; pCurForce < pParentModel->listData(pBod).listForceActive_hydro().size(); pCurForce ++)
+                {
+                    //Get value and add.
+                    output +=
+                            pParentModel->listData(pBod).
+                            listForceActive_hydro(force())->
+                            getEquation(eqn());
+                }
             }
-        }
 
-        //Check if need to reverse sign of variable.
-        if (pParentModel->getActiveOnly())
-            output = output * reverse;
+            //Check if need to reverse sign of variable.
+            if (pParentModel->getActiveOnly())
+                output = output * reverse;
+        }
     }
 
     //write output
@@ -369,7 +280,7 @@ complex<double> EquationofMotion::ForceActive_hydro()
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-complex<double> EquationofMotion::ForceActive_user()
+complex<double> &EquationofMotion::ForceActive_user()
 {
     //Returns the active force object for the currently defined indices.  User force.
     complex<double> output(0,0);    //Temporary value for variable.
@@ -381,26 +292,30 @@ complex<double> EquationofMotion::ForceActive_user()
     //Check out of bounds for body.
     if (pBod > pParentModel->listData().size() - 1)
     {
-        //Out of bounds check for equations
-        if (eqn() <= pParentModel->listData(pBod).
-                listForceActive_user(force())->
-                listEquation().size() - 1)
+        //Out of bounds check for forces
+        if (!(pParentModel->listData(pBod).listForceActive_user().empty()))
         {
-            //Add up for all forces
-            for (pCurForce = 0; pCurForce < pParentModel->listData(pBod).listForceActive_user().size() ;
-                 pCurForce++)
+            //Out of bounds check for equations
+            if (eqn() <= pParentModel->listData(pBod).
+                    listForceActive_user(force())->
+                    listEquation().size() - 1)
             {
-                //get value
-                output +=
-                        pParentModel->listData(pBod).
-                        listForceActive_user(force())->
-                        getEquation(pPrivateIndex);
+                //Add up for all forces
+                for (pCurForce = 0; pCurForce < pParentModel->listData(pBod).listForceActive_user().size() ;
+                     pCurForce++)
+                {
+                    //get value
+                    output +=
+                            pParentModel->listData(pBod).
+                            listForceActive_user(force())->
+                            getEquation(pPrivateIndex);
+                }
             }
-        }
 
-        //Check if need to reverse sign of variable.
-        if (pParentModel->getActiveOnly())
-            output = output * reverse;
+            //Check if need to reverse sign of variable.
+            if (pParentModel->getActiveOnly())
+                output = output * reverse;
+        }
     }
 
     //write output
@@ -408,7 +323,7 @@ complex<double> EquationofMotion::ForceActive_user()
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-complex<double> EquationofMotion::ForceReact_hydro(unsigned int ordIn, unsigned int varIn)
+complex<double> &EquationofMotion::ForceReact_hydro(unsigned int ordIn, unsigned int varIn)
 {
     //Returns the reactive force value for the indices specified by the input variables.
     complex<double> output(0,0);    //Temporary value for variable.
@@ -416,30 +331,40 @@ complex<double> EquationofMotion::ForceReact_hydro(unsigned int ordIn, unsigned 
     //Check out of bounds for body.
     if (pBod > pParentModel->listData().size() - 1)
     {
-        //Out of bounds check for refDerivatives
-        if (ordIn <= pParentModel->
-                listData(pBod).
-                listForceReact_hydro(force())->
-                listDerivative().
-                size() - 1)
+        //Out of bounds check for forces
+        if ((force() <= pParentModel->listData(pBod).
+                listForceReact_hydro().
+                size() - 1) &&
+                !(pParentModel->listData(pBod).listForceReact_hydro().empty())
+                )
         {
-            //Out of bounds check for variables
-            if (varIn <= pParentModel->listData(pBod).
+            //Out of bounds check for refDerivatives
+            if (ordIn <= pParentModel->
+                    listData(pBod).
                     listForceReact_hydro(force())->
-                    listDerivative(ordIn).
-                    refIndexEquation(eqn()).
-                    getCoefficientListSize())
+                    listDerivative().
+                    size() - 1)
             {
-                //Add up for all force objects.
-                for (pCurForce = 0 ; pCurForce < pParentModel->listData(pBod).listForceReact_hydro().size() ; pCurForce++)
+                //Out of bounds check for variables
+                if (varIn <= pParentModel->listData(pBod).
+                        listForceReact_hydro(force())->
+                        listDerivative(ordIn).
+                        refIndexEquation(eqn()).
+                        getCoefficientListSize())
                 {
-                    //get value
-                    output.real() = output.real() +
-                            pParentModel->listData(pBod).
-                            listForceReact_hydro(force())->
-                            listDerivative(ordIn).
-                            listEquation(eqn()).
-                            getCoefficient(varIn);
+                    //Add up for all force objects.
+                    for (pCurForce = 0 ; pCurForce < pParentModel->listData(pBod).listForceReact_hydro().size() ; pCurForce++)
+                    {
+                        //get value
+                        output.real(
+                                    output.real() +
+                                    pParentModel->listData(pBod).
+                                    listForceReact_hydro(force())->
+                                    listDerivative(ordIn).
+                                    listEquation(eqn()).
+                                    getCoefficient(varIn)
+                                    );
+                    }
                 }
             }
         }
@@ -450,7 +375,7 @@ complex<double> EquationofMotion::ForceReact_hydro(unsigned int ordIn, unsigned 
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-complex<double> EquationofMotion::ForceReact_user(unsigned int ordIn, unsigned int varIn)
+complex<double> &EquationofMotion::ForceReact_user(unsigned int ordIn, unsigned int varIn)
 {
     //Returns the reactive force value for the indices specified by the input variables.
     complex<double> output(0,0);    //Temporary value for variable.
@@ -458,29 +383,38 @@ complex<double> EquationofMotion::ForceReact_user(unsigned int ordIn, unsigned i
     //Check out of bounds for body.
     if (pBod > pParentModel->listData().size() - 1)
     {
-        //Out of bounds check for refDerivatives
-        if (ordIn <= pParentModel->listData(pBod).
-                listForceReact_user(force())->
-                listDerivative().
-                size() - 1)
+        //Out of bounds check for forces
+        if ((force() <= pParentModel->listData(pBod).
+                listForceReact_user().
+                size() - 1) &&
+                !(pParentModel->listData(pBod).listForceReact_user().empty())
+                )
         {
-            //Out of bounds check for variables
-            if (varIn <= pParentModel->listData(pBod).
+            //Out of bounds check for refDerivatives
+            if (ordIn <= pParentModel->listData(pBod).
                     listForceReact_user(force())->
-                    listDerivative(ordIn).
-                    refIndexEquation(eqn()).
-                    getCoefficientListSize())
+                    listDerivative().
+                    size() - 1)
             {
-                //Add up for all force objects.
-                for (pCurForce = 0 ; pCurForce < pParentModel->listData(pBod).listForceReact_user().size() ; pCurForce++)
+                //Out of bounds check for variables
+                if (varIn <= pParentModel->listData(pBod).
+                        listForceReact_user(force())->
+                        listDerivative(ordIn).
+                        refIndexEquation(eqn()).
+                        getCoefficientListSize())
                 {
-                    //get value
-                    output.real() =
-                            pParentModel->listData(pBod).
-                            listForceReact_user(force())->
-                            listDerivative(ordIn).
-                            listEquation(eqn()).
-                            getCoefficient(varIn);
+                    //Add up for all force objects.
+                    for (pCurForce = 0 ; pCurForce < pParentModel->listData(pBod).listForceReact_user().size() ; pCurForce++)
+                    {
+                        //get value
+                        output.real(
+                                    pParentModel->listData(pBod).
+                                    listForceReact_user(force())->
+                                    listDerivative(ordIn).
+                                    listEquation(eqn()).
+                                    getCoefficient(varIn)
+                                    );
+                    }
                 }
             }
         }
@@ -491,16 +425,20 @@ complex<double> EquationofMotion::ForceReact_user(unsigned int ordIn, unsigned i
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-complex<double> EquationofMotion::ForceCross_hydro(unsigned int bodIn, unsigned int ordIn, unsigned int varIn)
+complex<double> &EquationofMotion::ForceCross_hydro(unsigned int bodIn, unsigned int ordIn, unsigned int varIn)
 {
     //Returns the reactive force value for the indices specified by the input variables.
     complex<double> output(0,0);    //Temporary value for variable.
 
-    //Check out of bounds for body.
-    if (pBod > pParentModel->listData().size() - 1)
+    //Check out of bounds for bodIn
+    if (bodIn <= pParentModel->listData().size() - 1)
     {
-        //Check out of bounds for bodIn
-        if (bodIn > pParentModel->listData().size() - 1)
+        //Out of bounds check for forces
+        if ((force() <= pParentModel->listData(pBod).
+                listForceCross_hydro().
+                size() - 1) &&
+                !(pParentModel->listData(pBod).listForceCross_hydro().empty())
+                )
         {
             //Out of bounds check for refDerivatives
             if (ordIn <= pParentModel->listData(pBod).
@@ -524,12 +462,14 @@ complex<double> EquationofMotion::ForceCross_hydro(unsigned int bodIn, unsigned 
                         if (bodIn == pParentModel->listCompCrossBod_hydro(pCurForce))
                         {
                         //get value
-                        output.real() = output.real() +
-                                pParentModel->listData(pBod).
-                                listForceCross_hydro(force())->
-                                listDerivative(ordIn).
-                                listEquation(eqn()).
-                                getCoefficient(varIn);
+                        output.real(
+                                    output.real() +
+                                    pParentModel->listData(pBod).
+                                    listForceCross_hydro(force())->
+                                    listDerivative(ordIn).
+                                    listEquation(eqn()).
+                                    getCoefficient(varIn)
+                                    );
                         }
                     }
                 }
@@ -542,16 +482,20 @@ complex<double> EquationofMotion::ForceCross_hydro(unsigned int bodIn, unsigned 
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-complex<double> EquationofMotion::ForceCross_user(unsigned int bodIn, unsigned int ordIn, unsigned int varIn)
+complex<double> &EquationofMotion::ForceCross_user(unsigned int bodIn, unsigned int ordIn, unsigned int varIn)
 {
     //Returns the reactive force value for the indices specified by the input variables.
     complex<double> output(0,0);    //Temporary value for variable.
 
-    //Check out of bounds for body.
-    if (pBod > pParentModel->listData().size() - 1)
+    //Check out of bounds for bodIn
+    if (bodIn <= pParentModel->listData().size() - 1)
     {
-        //Check out of bounds for bodIn
-        if (bodIn > pParentModel->listData().size() - 1)
+        //Out of bounds check for force count
+        if ((force() <= pParentModel->listData(pBod).
+                listForceCross_user().
+                size() - 1) &&
+                !(pParentModel->listData(pBod).listForceCross_user().empty())
+                )
         {
             //Out of bounds check for refDerivatives
             if (ordIn <= pParentModel->listData(pBod).
@@ -573,12 +517,14 @@ complex<double> EquationofMotion::ForceCross_user(unsigned int bodIn, unsigned i
                         if (bodIn == pParentModel->listCompCrossBod_user(pCurForce))
                         {
                         //get value
-                        output.real() = output.real() +
-                                pParentModel->listData(pBod).
-                                listForceCross_user(force())->
-                                listDerivative(ordIn).
-                                listEquation(eqn()).
-                                getCoefficient(varIn);
+                        output.real(
+                                    output.real() +
+                                    pParentModel->listData(pBod).
+                                    listForceCross_user(force())->
+                                    listDerivative(ordIn).
+                                    listEquation(eqn()).
+                                    getCoefficient(varIn)
+                                    );
                         }
                     }
                 }
@@ -591,7 +537,7 @@ complex<double> EquationofMotion::ForceCross_user(unsigned int bodIn, unsigned i
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-complex<double> EquationofMotion::ForceMass(int varIn)
+complex<double> &EquationofMotion::ForceMass(int varIn)
 {
     //Returns the mass object.
     complex<double> output(0,0);    //Temporary value for variable.
@@ -599,12 +545,14 @@ complex<double> EquationofMotion::ForceMass(int varIn)
     //Check out of bounds for body.
     if (pBod > pParentModel->listData().size() - 1)
     {
-    //Check out of bounds for equation
+        //Check out of bounds for equation
         if (eqn() <= 5)
         {
             //No need to check for out of bounds error.  Object creates enough entries by default.
             //No need to add multiple entries.  There can only be one mass object for each body.
-            output.real() = pParentModel->listData(pBod).getMassMatrix()(eqn(), varIn);
+            output.real(
+                        pParentModel->listData(pBod).getMassMatrix()(eqn(), varIn)
+                        );
         }
     }
 
@@ -721,6 +669,109 @@ int EquationofMotion::maxvar()
 {
     //Returns the maximum index of variables.
     return pParentModel->listEquation().size() - 1;
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+std::complex<double> EquationofMotion::Sum(std::complex<double> (*force)(void),
+                                           std::string index, int from, int to)
+{
+    //Create variable for output
+    std::complex<double> output(0,0);        //Output variable
+
+    //Select which index to Sum over.
+    //Sum for variable
+    //-----------------------------------
+    if ((index.compare("var") == 0) ||
+            (index.compare("v") == 0) ||
+            (index.compare("V") == 0) ||
+            (index.compare("Var") == 0) ||
+            (index.compare("VAR") == 0))
+    {
+        //Check for summation limits
+        if (from == undefArg)
+        {
+            //Get limit
+            from = 0;
+        }
+
+        if (to == undefArg)
+        {
+            //Get limit
+            to = maxvar();
+        }
+
+        //Sum for variable count.
+        for (pCurVar = from ; pCurVar <= to; pCurVar++)
+        {
+            output = output + force();
+        }
+        //Return counter to max limit
+        pCurVar = to;
+    }
+
+    //Sum for Derivative Order
+    //-----------------------------------
+    else if ((index.compare("ord") == 0) ||
+             (index.compare("o") == 0) ||
+             (index.compare("O") == 0) ||
+             (index.compare("Ord") == 0) ||
+             (index.compare("ORD") == 0))
+    {
+        //Check for summation limits
+        if (from == undefArg)
+        {
+            //Get limit
+            from = 0;
+        }
+
+        if (to == undefArg)
+        {
+            //Get limit
+            to = maxord();
+        }
+
+        //Sum for order of refDerivative.
+        for (pCurOrd = from ; pCurOrd <= to; pCurOrd++)
+        {
+            output = output + force();
+        }
+        //Return counter to max limit
+        pCurOrd = to;
+    }
+
+    //Sum for Body
+    //-----------------------------------
+    else if ( (index.compare("bod") == 0) ||
+              (index.compare("b") == 0) ||
+              (index.compare("B") == 0) ||
+              (index.compare("Bod") == 0) ||
+              (index.compare("BOD") == 0) ||
+              (index.compare("body") == 0) ||
+              (index.compare("Body") == 0))
+    {
+        //Check for summation limits
+        if (from == undefArg)
+        {
+            //Get limit
+            from = 0;
+        }
+
+        if (to == undefArg)
+        {
+            //Get limit
+            to = maxbody();
+        }
+
+        //Sum for bodies
+        for (pBod = from ; pBod <= to; pBod++)
+        {
+            output = output + force();
+        }
+        //Return counter to max limit
+        pBod = to;
+    }
+    //write output
+    return output;
 }
 
 //==========================================Section Separator =========================================================

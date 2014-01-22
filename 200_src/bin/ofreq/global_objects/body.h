@@ -93,6 +93,7 @@ namespace ofreq
 //class ForceActive;
 //class ForceReact;
 //class ForceCross;
+class MotionModel;
 
 //######################################### Class Separator ###########################################################
 /**
@@ -743,22 +744,21 @@ public:
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
-     * @brief Sets the name of the motion model for lookup later.
+     * @brief Sets the motion model for lookup later.
      *
-     * Sets the name of the motion model for lookup later.
-     * @param modelName std::string input that is the name of the motion model.  This must match exactly one of the entries
-     * in the list of motion models avaiable at run time.
+     * @param modelIn Variable input that is the motion model object.  Variable passed by reference.  Stored
+     * internally as a pointer.
      */
-    void setMotionModel(std::string modelName);
+    void setMotionModel(ofreq::MotionModel &modelIn);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
-     * @brief Gets the name of the motion model.
+     * @brief Gets the motion model.
      *
-     * Gets std::string output that is the name of the motion model assigned to this body.
-     * @return std::string output that is the name of the motion model assigned to this body.
+     * Returns the motion model object used by this body object.
+     * @return Returns MotinModel object.  Variable passed by reference.
      */
-    std::string getMotionModel();
+    ofreq::MotionModel &getMotionModel();
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -954,7 +954,7 @@ private:
     int eqnCount;
 
     //------------------------------------------Function Separator ----------------------------------------------------
-    std::string motModel; /**< The name of the motion model object to use */
+    ofreq::MotionModel* motModel; /**< Pointer to the motion model used by the body. */
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**

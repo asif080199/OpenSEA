@@ -54,40 +54,56 @@ matForceReact matForceReact::operator+(matForceReact& forceOther)
 {
     //define the output vector
     matForceReact output;
-    //find the max order of the derivatives.
-    int maxOrdTwo;
-    if (this->getMaxOrder() > forceOther.getMaxOrder())
-        maxOrdTwo = this->getMaxOrder();
-    else
-        maxOrdTwo = forceOther.getMaxOrder();
 
-    //Expand the size of the vector
-    output.pderiv.resize(maxOrdTwo);
-
-    //Get size of matrices.
-    unsigned int maxSizeTwo;
-    if (this->getMatSize() > forceOther.getMatSize())
-        maxSizeTwo = this-> getMatSize();
-    else
-        maxSizeTwo = forceOther.getMatSize();
-
-    //Check that the maximum size is correct with the matrix size.
-    if (this->pderiv[0].n_rows > maxSizeTwo)
-        maxSizeTwo = this->pderiv[0].n_rows;
-    if (forceOther.pderiv[0].n_rows > maxSizeTwo)
-        maxSizeTwo = forceOther.pderiv[0].n_rows;
-
-    //Resize Matrices, initialize with zeros.
-    for (int i = 0; i <= maxOrdTwo; i++)
+    if (this->pderiv.size() == 0)
     {
-        output.pderiv[i].zeros(maxSizeTwo);
+        //Nothing defined for first object.
+        output = forceOther;
+    }
 
-        //Iterate through the matrix and add values.
-        for (unsigned int j = 0; j < maxSizeTwo; j++)
+    else if (forceOther.pderiv.size() == 0)
+    {
+        //Nothing defined for the other object.
+        output = *this;
+    }
+
+    else
+    {
+        //find the max order of the derivatives.
+        int maxOrdTwo;
+        if (this->getMaxOrder() > forceOther.getMaxOrder())
+            maxOrdTwo = this->getMaxOrder();
+        else
+            maxOrdTwo = forceOther.getMaxOrder();
+
+        //Expand the size of the vector
+        output.pderiv.resize(maxOrdTwo);
+
+        //Get size of matrices.
+        unsigned int maxSizeTwo;
+        if (this->getMatSize() > forceOther.getMatSize())
+            maxSizeTwo = this-> getMatSize();
+        else
+            maxSizeTwo = forceOther.getMatSize();
+
+        //Check that the maximum size is correct with the matrix size.
+        if (this->pderiv[0].n_rows > maxSizeTwo)
+            maxSizeTwo = this->pderiv[0].n_rows;
+        if (forceOther.pderiv[0].n_rows > maxSizeTwo)
+            maxSizeTwo = forceOther.pderiv[0].n_rows;
+
+        //Resize Matrices, initialize with zeros.
+        for (int i = 0; i <= maxOrdTwo; i++)
         {
-            for (unsigned int k = 0; k < maxSizeTwo; k++)
+            output.pderiv[i].zeros(maxSizeTwo);
+
+            //Iterate through the matrix and add values.
+            for (unsigned int j = 0; j < maxSizeTwo; j++)
             {
-                output.pderiv[i](k,j) = this->pderiv[i](k,j) + forceOther.pderiv[i](k,j);
+                for (unsigned int k = 0; k < maxSizeTwo; k++)
+                {
+                    output.pderiv[i](k,j) = this->pderiv[i](k,j) + forceOther.pderiv[i](k,j);
+                }
             }
         }
     }
@@ -101,40 +117,56 @@ matForceReact matForceReact::operator-(matForceReact& forceOther)
 {
     //define the output vector
     matForceReact output;
-    //find the max order of the derivatives.
-    int maxOrdTwo;
-    if (this->getMaxOrder() > forceOther.getMaxOrder())
-        maxOrdTwo = this->getMaxOrder();
-    else
-        maxOrdTwo = forceOther.getMaxOrder();
 
-    //Expand the size of the vector
-    output.pderiv.resize(maxOrdTwo);
-
-    //Get size of matrices.
-    unsigned int maxSizeTwo;
-    if (this->getMatSize() > forceOther.getMatSize())
-        maxSizeTwo = this-> getMatSize();
-    else
-        maxSizeTwo = forceOther.getMatSize();
-
-    //Check that the maximum size is correct with the matrix size.
-    if (this->pderiv[0].n_rows > maxSizeTwo)
-        maxSizeTwo = this->pderiv[0].n_rows;
-    if (forceOther.pderiv[0].n_rows > maxSizeTwo)
-        maxSizeTwo = forceOther.pderiv[0].n_rows;
-
-    //Resize Matrices, initialize with zeros.
-    for (int i = 0; i <= maxOrdTwo; i++)
+    if (this->pderiv.size() == 0)
     {
-        output.pderiv[i].zeros(maxSizeTwo);
+        //Nothing defined for first object.
+        output = forceOther;
+    }
 
-        //Iterate through the matrix and add values.
-        for (unsigned int j = 0; j < maxSizeTwo; j++)
+    else if (forceOther.pderiv.size() == 0)
+    {
+        //Nothing defined for the other object.
+        output = *this;
+    }
+
+    else
+    {
+        //find the max order of the derivatives.
+        int maxOrdTwo;
+        if (this->getMaxOrder() > forceOther.getMaxOrder())
+            maxOrdTwo = this->getMaxOrder();
+        else
+            maxOrdTwo = forceOther.getMaxOrder();
+
+        //Expand the size of the vector
+        output.pderiv.resize(maxOrdTwo);
+
+        //Get size of matrices.
+        unsigned int maxSizeTwo;
+        if (this->getMatSize() > forceOther.getMatSize())
+            maxSizeTwo = this-> getMatSize();
+        else
+            maxSizeTwo = forceOther.getMatSize();
+
+        //Check that the maximum size is correct with the matrix size.
+        if (this->pderiv[0].n_rows > maxSizeTwo)
+            maxSizeTwo = this->pderiv[0].n_rows;
+        if (forceOther.pderiv[0].n_rows > maxSizeTwo)
+            maxSizeTwo = forceOther.pderiv[0].n_rows;
+
+        //Resize Matrices, initialize with zeros.
+        for (int i = 0; i <= maxOrdTwo; i++)
         {
-            for (unsigned int k = 0; k < maxSizeTwo; k++)
+            output.pderiv[i].zeros(maxSizeTwo);
+
+            //Iterate through the matrix and add values.
+            for (unsigned int j = 0; j < maxSizeTwo; j++)
             {
-                output.pderiv[i](k,j) = this->pderiv[i](k,j) - forceOther.pderiv[i](k,j);
+                for (unsigned int k = 0; k < maxSizeTwo; k++)
+                {
+                    output.pderiv[i](k,j) = this->pderiv[i](k,j) - forceOther.pderiv[i](k,j);
+                }
             }
         }
     }
@@ -146,7 +178,10 @@ matForceReact matForceReact::operator-(matForceReact& forceOther)
 //------------------------------------------Function Separator --------------------------------------------------------
 int matForceReact::getMaxOrder()
 {
-    return pderiv.size() - 1;
+    if (pderiv.size() == 0)
+        return 0;
+    else
+        return pderiv.size() - 1;
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
@@ -188,5 +223,8 @@ int matForceReact::getId()
 //------------------------------------------Function Separator --------------------------------------------------------
 int matForceReact::getMatSize()
 {
-    return pderiv[0].n_rows;
+    if (pderiv.size() == 0)
+        return 0;
+    else
+        return pderiv[0].n_rows;
 }

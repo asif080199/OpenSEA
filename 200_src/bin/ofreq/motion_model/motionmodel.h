@@ -610,7 +610,7 @@ public:
      * @return Reference to the vector of EquationofMotion objects.  Variable passed by reference.
      * @sa EquationofMotion
      */
-    std::vector<EquationofMotion> &listEquation();
+    std::vector<EquationofMotion *> &listEquation();
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -632,7 +632,7 @@ public:
      * make a copy of the input variable.
      * @sa DefineEquations()
      */
-    void AddEquation(EquationofMotion eqIn);
+    void AddEquation(EquationofMotion *eqIn);
 
 //==========================================Section Separator =========================================================
 protected:
@@ -694,7 +694,7 @@ private:
      *
      * Pointer to the bodies vector.
      */
-    std::vector<Body>* plistBody;
+    std::vector<ofreq::Body> *plistBody;
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -713,9 +713,12 @@ private:
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
      * @brief The list of equations of motion to use in the motion model.  The sequence of equations in the list is
-     * important.  Equations appear in the list as they appear in the matrix model of the body.
+     * important.  Equations appear in the list in the order as they appear in the matrix model of the body.
+     * Vector must use a list of pointer objects to allow correct polymorphism to overload the setFormula() function
+     * of derived classes and have that derived class formula used.
+     * @sa setFormula()
      */
-    std::vector<EquationofMotion> plistEquations;
+    std::vector<EquationofMotion*> plistEquations;
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
