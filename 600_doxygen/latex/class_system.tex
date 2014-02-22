@@ -5,16 +5,62 @@
 
 {\ttfamily \#include $<$system.\-h$>$}
 
+
+
+Inheritance diagram for System\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=217pt]{class_system__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for System\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=217pt]{class_system__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_system_ae58c969c9ba0a1ec4bebff64b88a22ed}{set\-Analysis\-Type} (string)
+\item 
+void \hyperlink{class_system_a0e146c46e245b3222a77fbcf93901630}{add\-Body} (\hyperlink{class_body}{Body} input)
+\begin{DoxyCompactList}\small\item\em Adds another \hyperlink{class_body}{Body} object to the list of \hyperlink{class_body}{Body} objects. Sets the new \hyperlink{class_body}{Body} object equal to the input. \end{DoxyCompactList}\item 
+void \hyperlink{class_system_a31949bbe2fceb1df4ba99f9c9c9465cd}{add\-Body} ()
+\begin{DoxyCompactList}\small\item\em Adds another \hyperlink{class_body}{Body} object to the list of \hyperlink{class_body}{Body} objects. Uses a blank new \hyperlink{class_body}{Body} object. \end{DoxyCompactList}\item 
+void \hyperlink{class_system_a439bada214bf663084c15939a1793e02}{add\-Output} (\hyperlink{class_outputs_body}{Outputs\-Body} input)
+\begin{DoxyCompactList}\small\item\em Adds another \hyperlink{class_outputs_body}{Outputs\-Body} object to the list of \hyperlink{class_outputs_body}{Outputs\-Body} objects. Sets the object equal to the input. \end{DoxyCompactList}\item 
+void \hyperlink{class_system_a4f84d2819d8a095818cb08bc84fa92f9}{add\-Output} ()
+\begin{DoxyCompactList}\small\item\em Adds another \hyperlink{class_outputs_body}{Outputs\-Body} object to the list of \hyperlink{class_outputs_body}{Outputs\-Body} objects. Uses a blank new \hyperlink{class_outputs_body}{Outputs\-Body} object. \end{DoxyCompactList}\item 
+void \hyperlink{class_system_a66aaf1fda6d136711c53b0196fd2a50f}{add\-Force\-Active\-\_\-user} (\hyperlink{class_force_active}{Force\-Active} input)
+\begin{DoxyCompactList}\small\item\em Adds another \hyperlink{class_force_active}{Force\-Active} object to the list of force\-Active\-\_\-user objects. Sets the object equal to the input. \end{DoxyCompactList}\item 
+void \hyperlink{class_system_ad6cb91afdaca6870cafda01933fa85ea}{add\-Force\-Active\-\_\-user} ()
+\begin{DoxyCompactList}\small\item\em Adds another \hyperlink{class_force_active}{Force\-Active} Object to the list of force\-Active\-\_\-user objects. Uses a blank new \hyperlink{class_force_active}{Force\-Active} object. \end{DoxyCompactList}\item 
+void \hyperlink{class_system_aa51930622fa8340b03e6905b23358982}{add\-Force\-React\-\_\-user} (\hyperlink{class_force_react}{Force\-React} input)
+\begin{DoxyCompactList}\small\item\em Adds another \hyperlink{class_force_react}{Force\-React} object to the list of force\-React\-\_\-user objects. Sets the object equal to the input. \end{DoxyCompactList}\item 
+void \hyperlink{class_system_aef2d7a3af23839f8c104058f2e4e11e2}{add\-Force\-React\-\_\-user} ()
+\begin{DoxyCompactList}\small\item\em Adds another \hyperlink{class_force_react}{Force\-React} Object to the list of force\-React\-\_\-user objects. Uses a blank new \hyperlink{class_force_react}{Force\-React} object. \end{DoxyCompactList}\item 
+void \hyperlink{class_system_afa58e77f961286c082e18193aeb14fc7}{add\-Force\-Cross\-\_\-user} (\hyperlink{class_force_cross}{Force\-Cross} input)
+\begin{DoxyCompactList}\small\item\em Adds another \hyperlink{class_force_cross}{Force\-Cross} object to the list of force\-Cross\-\_\-user objects. Sets the object equal to the input. \end{DoxyCompactList}\item 
+void \hyperlink{class_system_abc3ad01f3fb22863565a8643202347f4}{add\-Force\-Cross\-\_\-user} ()
+\begin{DoxyCompactList}\small\item\em Adds another \hyperlink{class_force_cross}{Force\-Cross} Object to the list of force\-Cross\-\_\-user objects. Uses a blank new \hyperlink{class_force_cross}{Force\-Cross} object. \end{DoxyCompactList}\item 
+void \hyperlink{class_system_a280d384672341228d20181ea390118b9}{link\-Bodies} (int bod\-I\-D)
+\begin{DoxyCompactList}\small\item\em This converts the cross-\/body force links from simple identification by name into actual pointers to each body. The link\-Bodies command must exist so that all bodies can be read into the program before linking takes place. This command searches through the list of bodies to get a matching body name and creates a pointer link to that body. At the end, it clears the list of names for linked bodies, to reduce memory requirements. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_system_a5f20031d9a9b7ee89e035da6dcec6243}{Reference\-System} (\hyperlink{class_system}{System} $\ast$my\-System)
+\begin{DoxyCompactList}\small\item\em Returns the \hyperlink{class_system}{System} object for information. Used mainly to access the list of forced defined for the system object. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \hyperlink{class_system_ae317936c9bcf1374d61745572e0f2f8a}{System} ()
 \item 
 \hyperlink{class_system_a3be70bb338e3f062f821173fd15680d0}{$\sim$\-System} ()
-\item 
-void \hyperlink{class_system_a20bda2428f8aef211bf8787e1efeeeee}{test\-Print} ()
-\item 
-void \hyperlink{class_system_ae58c969c9ba0a1ec4bebff64b88a22ed}{set\-Analysis\-Type} (string)
 \item 
 void \hyperlink{class_system_ab1bfe916791d4c61bb807c930f73930c}{set\-Wave\-Frequencies} (vector$<$ double $>$)
 \item 
@@ -24,11 +70,11 @@ void \hyperlink{class_system_a2c26340bdbd94e6bed0f75dba991b49c}{set\-Spread\-Mod
 \item 
 vector$<$ double $>$ \hyperlink{class_system_a18b18022b6468a41dfdbfc49c881b933}{get\-Wave\-Frequencies} ()
 \item 
-vector$<$ double $>$ \& \hyperlink{class_system_aa8af03fa5a3e8d6154d88987060a03e8}{ref\-Wave\-Frequencies} ()
+vector$<$ double $>$ \& \hyperlink{class_system_a02a78c7751da784608be2dc2afbb4022}{list\-Wave\-Frequencies} ()
 \begin{DoxyCompactList}\small\item\em Provides direct access to the list of wave frequencies. \end{DoxyCompactList}\item 
 vector$<$ double $>$ \hyperlink{class_system_a8e1d633a4b604223236e4cc4de35bd70}{get\-Wave\-Directions} ()
 \item 
-vector$<$ double $>$ \& \hyperlink{class_system_a660da11fb839d3efe76f4ab62be8bb23}{ref\-Wave\-Directions} ()
+vector$<$ double $>$ \& \hyperlink{class_system_a18cbe26b239cf4ee83210ac6679f773f}{list\-Wave\-Directions} ()
 \begin{DoxyCompactList}\small\item\em Provides direct access to the list of wave directions. \end{DoxyCompactList}\item 
 void \hyperlink{class_system_a1bdee1bedde63db2d813fda1036f8299}{set\-Cur\-Wave\-Dir\-Ind} (int input)
 \begin{DoxyCompactList}\small\item\em Sets the current wave index. \end{DoxyCompactList}\item 
@@ -42,22 +88,35 @@ double \hyperlink{class_system_aea8c3cb08e84051a4325c06c5a7185fa}{get\-Cur\-Wave
 \begin{DoxyCompactList}\small\item\em Returns the current wave direction. Actual value of wave direction angle. Angle specified as radians with zero as True North, positive counter-\/clockwise. \end{DoxyCompactList}\item 
 double \hyperlink{class_system_ac4dec1ad6e8745d87f18dfb91bbd8f6b}{get\-Cur\-Freq} ()
 \begin{DoxyCompactList}\small\item\em Returns the current wave frequency. Actual value of the wave frequency. Value specified with units of radians per second. \end{DoxyCompactList}\item 
-vector$<$ \hyperlink{class_body}{Body} $>$ \& \hyperlink{class_system_a18bd5c0db7e2cf00404ee9791fa7344a}{reflist\-Body} ()
+vector$<$ \hyperlink{class_body}{Body} $>$ \& \hyperlink{class_system_adf2b36b23ce4bca11639f8dd8bb48918}{list\-Body} ()
 \begin{DoxyCompactList}\small\item\em Returns direct access to the list of \hyperlink{class_body}{Body} objects. Includes all the properties included by a vector$<$$>$ class. \end{DoxyCompactList}\item 
-vector$<$ \hyperlink{class_outputs_body}{Outputs\-Body} $>$ \& \hyperlink{class_system_aea22bb014c1b994c336842076cc86483}{reflist\-Outputs} ()
-\begin{DoxyCompactList}\small\item\em Returns direct access to the list of \hyperlink{class_outputs_body}{Outputs\-Body} objects. Includes all the properties included by a vector$<$$>$ class. \end{DoxyCompactList}\item 
-\hyperlink{class_body}{Body} \& \hyperlink{class_system_a3bb2a6aaa71a7b4b58afc8d92a67e214}{ref\-Body} (int input=0)
+\hyperlink{class_body}{Body} \& \hyperlink{class_system_af91978b3309a287948fc55773c4193e5}{list\-Body} (int input)
 \begin{DoxyCompactList}\small\item\em Returns direct access to a single \hyperlink{class_body}{Body} object. \end{DoxyCompactList}\item 
-\hyperlink{class_outputs_body}{Outputs\-Body} \& \hyperlink{class_system_af5cdbac74348f475cc5a529134ac418d}{ref\-Output} (int input=0)
+vector$<$ \hyperlink{class_outputs_body}{Outputs\-Body} $>$ \& \hyperlink{class_system_ad2c5c4c5be9ed1b30651a267df67c466}{list\-Output} ()
+\begin{DoxyCompactList}\small\item\em Returns direct access to the list of \hyperlink{class_outputs_body}{Outputs\-Body} objects. Includes all the properties included by a vector$<$$>$ class. \end{DoxyCompactList}\item 
+\hyperlink{class_outputs_body}{Outputs\-Body} \& \hyperlink{class_system_a25b21c2fe11293ecf46ee3f9371afe21}{list\-Output} (int input)
 \begin{DoxyCompactList}\small\item\em Returns direct access to a single \hyperlink{class_outputs_body}{Outputs\-Body} object. \end{DoxyCompactList}\item 
-void \hyperlink{class_system_a0e146c46e245b3222a77fbcf93901630}{add\-Body} (\hyperlink{class_body}{Body} input)
-\begin{DoxyCompactList}\small\item\em Adds another \hyperlink{class_body}{Body} object to the list of \hyperlink{class_body}{Body} objects. Sets the new \hyperlink{class_body}{Body} object equal to the input. \end{DoxyCompactList}\item 
-void \hyperlink{class_system_a31949bbe2fceb1df4ba99f9c9c9465cd}{add\-Body} ()
-\begin{DoxyCompactList}\small\item\em Adds another \hyperlink{class_body}{Body} object to the list of \hyperlink{class_body}{Body} objects. Uses a blank new \hyperlink{class_body}{Body} object. \end{DoxyCompactList}\item 
-void \hyperlink{class_system_a439bada214bf663084c15939a1793e02}{add\-Output} (\hyperlink{class_outputs_body}{Outputs\-Body} input)
-\begin{DoxyCompactList}\small\item\em Adds another \hyperlink{class_outputs_body}{Outputs\-Body} object to the list of \hyperlink{class_outputs_body}{Outputs\-Body} objects. Sets the object equal to the input. \end{DoxyCompactList}\item 
-void \hyperlink{class_system_a4f84d2819d8a095818cb08bc84fa92f9}{add\-Output} ()
-\begin{DoxyCompactList}\small\item\em Adds another \hyperlink{class_outputs_body}{Outputs\-Body} object to the list of \hyperlink{class_outputs_body}{Outputs\-Body} objects. Uses a blank new \hyperlink{class_outputs_body}{Outputs\-Body} object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+void \hyperlink{class_system_af2b3029eb59ffa5fab95e9528592c111}{clear\-Force} (string force\-Class=\char`\"{}\char`\"{})
+\begin{DoxyCompactList}\small\item\em Clears the vector of force objects for the specified force type. This is useful to free system memory. \hyperlink{class_force}{Force} type is specified by a string input. If no string input is supplied, all force objects are cleared from the system object. All force objects should already be copied to their respective \hyperlink{class_body}{Body} objects before issuing this function. \end{DoxyCompactList}\item 
+\hyperlink{class_force_active}{Force\-Active} \hyperlink{class_system_abec70f59e8adc1d3df942c7893b0736a}{get\-Force\-Active\-\_\-user} (string force\-Name)
+\begin{DoxyCompactList}\small\item\em Gets the force\-Active\-\_\-user object referenced by the name specified in the input. The Bodies input file will define the force\-Active\-\_\-user object by a name. This uses that name to retrieve the force\-Active\-\_\-user object. \end{DoxyCompactList}\item 
+vector$<$ \hyperlink{class_force_active}{Force\-Active} $>$ \& \hyperlink{class_system_ac50ce91b4ad00fd7748c316ba5fe70a6}{list\-Force\-Active\-\_\-user} ()
+\begin{DoxyCompactList}\small\item\em Exposes the vector of force\-Active\-\_\-user objects. Provides direct access to the vector. \end{DoxyCompactList}\item 
+\hyperlink{class_force_active}{Force\-Active} \& \hyperlink{class_system_a6166a2799a6b6419f5a91d90c98851a5}{list\-Force\-Active\-\_\-user} (unsigned int force\-Index)
+\begin{DoxyCompactList}\small\item\em Returns reference to the force\-Active\-\_\-user object referenced by the index specified in the input. \end{DoxyCompactList}\item 
+\hyperlink{class_force_react}{Force\-React} \hyperlink{class_system_a908dbb83c3a65a4f997881a6942ee546}{getforce\-React\-\_\-user} (string force\-Name)
+\begin{DoxyCompactList}\small\item\em Gets the force\-React\-\_\-user object referenced by the name specified in the input. The Bodies input file will define the force\-React\-\_\-user object by a name. This uses that name to retrieve the force\-React\-\_\-user object. \end{DoxyCompactList}\item 
+vector$<$ \hyperlink{class_force_react}{Force\-React} $>$ \& \hyperlink{class_system_a5f567e325139744bc80fd1653b50b0e3}{list\-Force\-React\-\_\-user} ()
+\begin{DoxyCompactList}\small\item\em Exposes the vector of force\-React\-\_\-user objects. Provides direct access to the vector. \end{DoxyCompactList}\item 
+\hyperlink{class_force_react}{Force\-React} \& \hyperlink{class_system_a863fea51fba8362e69486bdfdf632ccb}{list\-Force\-React\-\_\-user} (unsigned int force\-Index)
+\begin{DoxyCompactList}\small\item\em Returns reference to the force\-React\-\_\-user object referenced by the index specified in the input. \end{DoxyCompactList}\item 
+\hyperlink{class_force_cross}{Force\-Cross} \hyperlink{class_system_a05dcad8de0f203adfda7b531e39fe37e}{getforce\-Cross\-\_\-user} (string force\-Name)
+\begin{DoxyCompactList}\small\item\em Gets the force\-Cross\-\_\-user object referenced by the name specified in the input. The Bodies input file will define the force\-Cross\-\_\-user object by a name. This uses that name to retrieve the force\-Cross\-\_\-user object. \end{DoxyCompactList}\item 
+vector$<$ \hyperlink{class_force_cross}{Force\-Cross} $>$ \& \hyperlink{class_system_aae7cb5596f9d3a44f0bc6fe58b58410a}{list\-Force\-Cross\-\_\-user} ()
+\begin{DoxyCompactList}\small\item\em Exposes the vector of force\-Cross\-\_\-user objects. Provides direct access to the vector. \end{DoxyCompactList}\item 
+\hyperlink{class_force_cross}{Force\-Cross} \& \hyperlink{class_system_adcde247d6fe68ee68a65f1a5f2dc8e13}{list\-Force\-Cross\-\_\-user} (unsigned int force\-Index)
+\begin{DoxyCompactList}\small\item\em Returns reference to the force\-Cross\-\_\-user object referenced by the index specified in the input. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
 
 
 \subsection{Detailed Description}
@@ -87,7 +146,7 @@ The default destructor, nothing happens here.
 \begin{DoxyParamCaption}
 \item[{{\bf Body}}]{input}
 \end{DoxyParamCaption}
-)}}\label{class_system_a0e146c46e245b3222a77fbcf93901630}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{class_system_a0e146c46e245b3222a77fbcf93901630}
 
 
 Adds another \hyperlink{class_body}{Body} object to the list of \hyperlink{class_body}{Body} objects. Sets the new \hyperlink{class_body}{Body} object equal to the input. 
@@ -100,13 +159,35 @@ Adds another \hyperlink{class_body}{Body} object to the list of \hyperlink{class
 \begin{DoxySeeAlso}{See Also}
 \hyperlink{class_body}{Body} 
 \end{DoxySeeAlso}
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_system_a0e146c46e245b3222a77fbcf93901630_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=340pt]{class_system_a0e146c46e245b3222a77fbcf93901630_icgraph}
+\end{center}
+\end{figure}
+
+
 \hypertarget{class_system_a31949bbe2fceb1df4ba99f9c9c9465cd}{\index{System@{System}!add\-Body@{add\-Body}}
 \index{add\-Body@{add\-Body}!System@{System}}
 \subsubsection[{add\-Body}]{\setlength{\rightskip}{0pt plus 5cm}void System\-::add\-Body (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)}}\label{class_system_a31949bbe2fceb1df4ba99f9c9c9465cd}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{class_system_a31949bbe2fceb1df4ba99f9c9c9465cd}
 
 
 Adds another \hyperlink{class_body}{Body} object to the list of \hyperlink{class_body}{Body} objects. Uses a blank new \hyperlink{class_body}{Body} object. 
@@ -114,13 +195,123 @@ Adds another \hyperlink{class_body}{Body} object to the list of \hyperlink{class
 \begin{DoxySeeAlso}{See Also}
 \hyperlink{class_body}{Body} 
 \end{DoxySeeAlso}
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_system_a31949bbe2fceb1df4ba99f9c9c9465cd_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_system_a66aaf1fda6d136711c53b0196fd2a50f}{\index{System@{System}!add\-Force\-Active\-\_\-user@{add\-Force\-Active\-\_\-user}}
+\index{add\-Force\-Active\-\_\-user@{add\-Force\-Active\-\_\-user}!System@{System}}
+\subsubsection[{add\-Force\-Active\-\_\-user}]{\setlength{\rightskip}{0pt plus 5cm}void System\-::add\-Force\-Active\-\_\-user (
+\begin{DoxyParamCaption}
+\item[{{\bf Force\-Active}}]{input}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{class_system_a66aaf1fda6d136711c53b0196fd2a50f}
+
+
+Adds another \hyperlink{class_force_active}{Force\-Active} object to the list of force\-Active\-\_\-user objects. Sets the object equal to the input. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em input} & \hyperlink{class_force_active}{Force\-Active} object to add to the list of force\-Active\-\_\-user objects. Variable is passed by value and stored independant inside the \hyperlink{class_system}{System} class. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{class_force_active}{Force\-Active} 
+\end{DoxySeeAlso}
+\hypertarget{class_system_ad6cb91afdaca6870cafda01933fa85ea}{\index{System@{System}!add\-Force\-Active\-\_\-user@{add\-Force\-Active\-\_\-user}}
+\index{add\-Force\-Active\-\_\-user@{add\-Force\-Active\-\_\-user}!System@{System}}
+\subsubsection[{add\-Force\-Active\-\_\-user}]{\setlength{\rightskip}{0pt plus 5cm}void System\-::add\-Force\-Active\-\_\-user (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{class_system_ad6cb91afdaca6870cafda01933fa85ea}
+
+
+Adds another \hyperlink{class_force_active}{Force\-Active} Object to the list of force\-Active\-\_\-user objects. Uses a blank new \hyperlink{class_force_active}{Force\-Active} object. 
+
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{class_force_active}{Force\-Active} 
+\end{DoxySeeAlso}
+\hypertarget{class_system_afa58e77f961286c082e18193aeb14fc7}{\index{System@{System}!add\-Force\-Cross\-\_\-user@{add\-Force\-Cross\-\_\-user}}
+\index{add\-Force\-Cross\-\_\-user@{add\-Force\-Cross\-\_\-user}!System@{System}}
+\subsubsection[{add\-Force\-Cross\-\_\-user}]{\setlength{\rightskip}{0pt plus 5cm}void System\-::add\-Force\-Cross\-\_\-user (
+\begin{DoxyParamCaption}
+\item[{{\bf Force\-Cross}}]{input}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{class_system_afa58e77f961286c082e18193aeb14fc7}
+
+
+Adds another \hyperlink{class_force_cross}{Force\-Cross} object to the list of force\-Cross\-\_\-user objects. Sets the object equal to the input. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em input} & \hyperlink{class_force_cross}{Force\-Cross} object to add to the list of force\-Cross\-\_\-user objects. Variable is passed by value and stored independant inside the \hyperlink{class_system}{System} class. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{class_force_cross}{Force\-Cross} 
+\end{DoxySeeAlso}
+\hypertarget{class_system_abc3ad01f3fb22863565a8643202347f4}{\index{System@{System}!add\-Force\-Cross\-\_\-user@{add\-Force\-Cross\-\_\-user}}
+\index{add\-Force\-Cross\-\_\-user@{add\-Force\-Cross\-\_\-user}!System@{System}}
+\subsubsection[{add\-Force\-Cross\-\_\-user}]{\setlength{\rightskip}{0pt plus 5cm}void System\-::add\-Force\-Cross\-\_\-user (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{class_system_abc3ad01f3fb22863565a8643202347f4}
+
+
+Adds another \hyperlink{class_force_cross}{Force\-Cross} Object to the list of force\-Cross\-\_\-user objects. Uses a blank new \hyperlink{class_force_cross}{Force\-Cross} object. 
+
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{class_force_cross}{Force\-Cross} 
+\end{DoxySeeAlso}
+\hypertarget{class_system_aa51930622fa8340b03e6905b23358982}{\index{System@{System}!add\-Force\-React\-\_\-user@{add\-Force\-React\-\_\-user}}
+\index{add\-Force\-React\-\_\-user@{add\-Force\-React\-\_\-user}!System@{System}}
+\subsubsection[{add\-Force\-React\-\_\-user}]{\setlength{\rightskip}{0pt plus 5cm}void System\-::add\-Force\-React\-\_\-user (
+\begin{DoxyParamCaption}
+\item[{{\bf Force\-React}}]{input}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{class_system_aa51930622fa8340b03e6905b23358982}
+
+
+Adds another \hyperlink{class_force_react}{Force\-React} object to the list of force\-React\-\_\-user objects. Sets the object equal to the input. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em input} & \hyperlink{class_force_react}{Force\-React} object to add to the list of force\-React\-\_\-user objects. Variable is passed by value and stored independant inside the \hyperlink{class_system}{System} class. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{class_force_react}{Force\-React} 
+\end{DoxySeeAlso}
+\hypertarget{class_system_aef2d7a3af23839f8c104058f2e4e11e2}{\index{System@{System}!add\-Force\-React\-\_\-user@{add\-Force\-React\-\_\-user}}
+\index{add\-Force\-React\-\_\-user@{add\-Force\-React\-\_\-user}!System@{System}}
+\subsubsection[{add\-Force\-React\-\_\-user}]{\setlength{\rightskip}{0pt plus 5cm}void System\-::add\-Force\-React\-\_\-user (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{class_system_aef2d7a3af23839f8c104058f2e4e11e2}
+
+
+Adds another \hyperlink{class_force_react}{Force\-React} Object to the list of force\-React\-\_\-user objects. Uses a blank new \hyperlink{class_force_react}{Force\-React} object. 
+
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{class_force_react}{Force\-React} 
+\end{DoxySeeAlso}
 \hypertarget{class_system_a439bada214bf663084c15939a1793e02}{\index{System@{System}!add\-Output@{add\-Output}}
 \index{add\-Output@{add\-Output}!System@{System}}
 \subsubsection[{add\-Output}]{\setlength{\rightskip}{0pt plus 5cm}void System\-::add\-Output (
 \begin{DoxyParamCaption}
 \item[{{\bf Outputs\-Body}}]{input}
 \end{DoxyParamCaption}
-)}}\label{class_system_a439bada214bf663084c15939a1793e02}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{class_system_a439bada214bf663084c15939a1793e02}
 
 
 Adds another \hyperlink{class_outputs_body}{Outputs\-Body} object to the list of \hyperlink{class_outputs_body}{Outputs\-Body} objects. Sets the object equal to the input. 
@@ -139,7 +330,7 @@ Adds another \hyperlink{class_outputs_body}{Outputs\-Body} object to the list of
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)}}\label{class_system_a4f84d2819d8a095818cb08bc84fa92f9}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{class_system_a4f84d2819d8a095818cb08bc84fa92f9}
 
 
 Adds another \hyperlink{class_outputs_body}{Outputs\-Body} object to the list of \hyperlink{class_outputs_body}{Outputs\-Body} objects. Uses a blank new \hyperlink{class_outputs_body}{Outputs\-Body} object. 
@@ -147,6 +338,22 @@ Adds another \hyperlink{class_outputs_body}{Outputs\-Body} object to the list of
 \begin{DoxySeeAlso}{See Also}
 \hyperlink{class_outputs_body}{Outputs\-Body} 
 \end{DoxySeeAlso}
+\hypertarget{class_system_af2b3029eb59ffa5fab95e9528592c111}{\index{System@{System}!clear\-Force@{clear\-Force}}
+\index{clear\-Force@{clear\-Force}!System@{System}}
+\subsubsection[{clear\-Force}]{\setlength{\rightskip}{0pt plus 5cm}void System\-::clear\-Force (
+\begin{DoxyParamCaption}
+\item[{string}]{force\-Class = {\ttfamily \char`\"{}\char`\"{}}}
+\end{DoxyParamCaption}
+)}}\label{class_system_af2b3029eb59ffa5fab95e9528592c111}
+
+
+Clears the vector of force objects for the specified force type. This is useful to free system memory. \hyperlink{class_force}{Force} type is specified by a string input. If no string input is supplied, all force objects are cleared from the system object. All force objects should already be copied to their respective \hyperlink{class_body}{Body} objects before issuing this function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em force\-Class} & String input designating which force object type to clear. Valid values are\-: \hyperlink{class_force_active}{Force\-Active}\-: Clears the \hyperlink{class_force_active}{Force\-Active} class of objects. \hyperlink{class_force_react}{Force\-React}\-: Clears the \hyperlink{class_force_react}{Force\-React} class of objects. \hyperlink{class_force_cross}{Force\-Cross}\-: Clears the \hyperlink{class_force_cross}{Force\-Cross} class of objects. \char`\"{}\char`\"{}\-: Clears all three object classes of objects. other\-: If an unknown input is encountered, no objects are cleared. \\
+\hline
+\end{DoxyParams}
 \hypertarget{class_system_ac4dec1ad6e8745d87f18dfb91bbd8f6b}{\index{System@{System}!get\-Cur\-Freq@{get\-Cur\-Freq}}
 \index{get\-Cur\-Freq@{get\-Cur\-Freq}!System@{System}}
 \subsubsection[{get\-Cur\-Freq}]{\setlength{\rightskip}{0pt plus 5cm}double System\-::get\-Cur\-Freq (
@@ -161,17 +368,6 @@ Returns the current wave frequency. Actual value of the wave frequency. Value sp
 \begin{DoxyReturn}{Returns}
 Double. Returns the current wave frequency. Actual value of the wave frequency. Value specified with units of radians per second. 
 \end{DoxyReturn}
-
-
-Here is the call graph for this function\-:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{class_system_ac4dec1ad6e8745d87f18dfb91bbd8f6b_cgraph}
-\end{center}
-\end{figure}
-
-
 \hypertarget{class_system_ae348a554ad912c084343e96c3a7b8647}{\index{System@{System}!get\-Cur\-Freq\-Ind@{get\-Cur\-Freq\-Ind}}
 \index{get\-Cur\-Freq\-Ind@{get\-Cur\-Freq\-Ind}!System@{System}}
 \subsubsection[{get\-Cur\-Freq\-Ind}]{\setlength{\rightskip}{0pt plus 5cm}int System\-::get\-Cur\-Freq\-Ind (
@@ -200,17 +396,6 @@ Returns the current wave direction. Actual value of wave direction angle. Angle 
 \begin{DoxyReturn}{Returns}
 Double. Returns the current wave direction. Actual value of wave direction angle. Angle specified as radians with zero as True North, positive counter-\/clockwise. Variable passed by value. 
 \end{DoxyReturn}
-
-
-Here is the call graph for this function\-:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{class_system_aea8c3cb08e84051a4325c06c5a7185fa_cgraph}
-\end{center}
-\end{figure}
-
-
 \hypertarget{class_system_aff94e0e384f1c55cccfa0f0238e445b8}{\index{System@{System}!get\-Cur\-Wave\-Dir\-Ind@{get\-Cur\-Wave\-Dir\-Ind}}
 \index{get\-Cur\-Wave\-Dir\-Ind@{get\-Cur\-Wave\-Dir\-Ind}!System@{System}}
 \subsubsection[{get\-Cur\-Wave\-Dir\-Ind}]{\setlength{\rightskip}{0pt plus 5cm}int System\-::get\-Cur\-Wave\-Dir\-Ind (
@@ -225,6 +410,63 @@ Returns the current wave direction index.
 \begin{DoxyReturn}{Returns}
 Integer. Returns the current wave direction index. Variable passed by value. 
 \end{DoxyReturn}
+\hypertarget{class_system_abec70f59e8adc1d3df942c7893b0736a}{\index{System@{System}!get\-Force\-Active\-\_\-user@{get\-Force\-Active\-\_\-user}}
+\index{get\-Force\-Active\-\_\-user@{get\-Force\-Active\-\_\-user}!System@{System}}
+\subsubsection[{get\-Force\-Active\-\_\-user}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Force\-Active} System\-::get\-Force\-Active\-\_\-user (
+\begin{DoxyParamCaption}
+\item[{string}]{force\-Name}
+\end{DoxyParamCaption}
+)}}\label{class_system_abec70f59e8adc1d3df942c7893b0736a}
+
+
+Gets the force\-Active\-\_\-user object referenced by the name specified in the input. The Bodies input file will define the force\-Active\-\_\-user object by a name. This uses that name to retrieve the force\-Active\-\_\-user object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em force\-Name} & String input. Variable passed by value. The name of the force\-Active\-\_\-user object. Must match exactly what is defined in the Forces.\-in input file which defines the force\-Active\-\_\-user object. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns a force\-Active\-\_\-user object as requested. Variable passed by value. 
+\end{DoxyReturn}
+\hypertarget{class_system_a05dcad8de0f203adfda7b531e39fe37e}{\index{System@{System}!getforce\-Cross\-\_\-user@{getforce\-Cross\-\_\-user}}
+\index{getforce\-Cross\-\_\-user@{getforce\-Cross\-\_\-user}!System@{System}}
+\subsubsection[{getforce\-Cross\-\_\-user}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Force\-Cross} System\-::getforce\-Cross\-\_\-user (
+\begin{DoxyParamCaption}
+\item[{string}]{force\-Name}
+\end{DoxyParamCaption}
+)}}\label{class_system_a05dcad8de0f203adfda7b531e39fe37e}
+
+
+Gets the force\-Cross\-\_\-user object referenced by the name specified in the input. The Bodies input file will define the force\-Cross\-\_\-user object by a name. This uses that name to retrieve the force\-Cross\-\_\-user object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em force\-Name} & String input. Variable passed by value. The name of the force\-Cross\-\_\-user object. Must match exactly what is defined in the Forces.\-in input file which defines the force\-Cross\-\_\-user object. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns a force\-Cross\-\_\-user object as requested. Variable passed by value. 
+\end{DoxyReturn}
+\hypertarget{class_system_a908dbb83c3a65a4f997881a6942ee546}{\index{System@{System}!getforce\-React\-\_\-user@{getforce\-React\-\_\-user}}
+\index{getforce\-React\-\_\-user@{getforce\-React\-\_\-user}!System@{System}}
+\subsubsection[{getforce\-React\-\_\-user}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Force\-React} System\-::getforce\-React\-\_\-user (
+\begin{DoxyParamCaption}
+\item[{string}]{force\-Name}
+\end{DoxyParamCaption}
+)}}\label{class_system_a908dbb83c3a65a4f997881a6942ee546}
+
+
+Gets the force\-React\-\_\-user object referenced by the name specified in the input. The Bodies input file will define the force\-React\-\_\-user object by a name. This uses that name to retrieve the force\-React\-\_\-user object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em force\-Name} & String input. Variable passed by value. The name of the force\-React\-\_\-user object. Must match exactly what is defined in the Forces.\-in input file which defines the force\-React\-\_\-user object. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns a force\-React\-\_\-user object as requested. Variable passed by value. 
+\end{DoxyReturn}
 \hypertarget{class_system_a8e1d633a4b604223236e4cc4de35bd70}{\index{System@{System}!get\-Wave\-Directions@{get\-Wave\-Directions}}
 \index{get\-Wave\-Directions@{get\-Wave\-Directions}!System@{System}}
 \subsubsection[{get\-Wave\-Directions}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ double $>$ System\-::get\-Wave\-Directions (
@@ -235,28 +477,6 @@ Integer. Returns the current wave direction index. Variable passed by value.
 Retrieve the list of wave directions. \begin{DoxyReturn}{Returns}
 The list of wave directions. 
 \end{DoxyReturn}
-
-
-Here is the call graph for this function\-:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{class_system_a8e1d633a4b604223236e4cc4de35bd70_cgraph}
-\end{center}
-\end{figure}
-
-
-
-
-Here is the caller graph for this function\-:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{class_system_a8e1d633a4b604223236e4cc4de35bd70_icgraph}
-\end{center}
-\end{figure}
-
-
 \hypertarget{class_system_a18b18022b6468a41dfdbfc49c881b933}{\index{System@{System}!get\-Wave\-Frequencies@{get\-Wave\-Frequencies}}
 \index{get\-Wave\-Frequencies@{get\-Wave\-Frequencies}!System@{System}}
 \subsubsection[{get\-Wave\-Frequencies}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ double $>$ System\-::get\-Wave\-Frequencies (
@@ -267,35 +487,74 @@ Here is the caller graph for this function\-:\nopagebreak
 Retrieve the list of wave frequencies. \begin{DoxyReturn}{Returns}
 The list of wave frequencies. 
 \end{DoxyReturn}
+\hypertarget{class_system_a280d384672341228d20181ea390118b9}{\index{System@{System}!link\-Bodies@{link\-Bodies}}
+\index{link\-Bodies@{link\-Bodies}!System@{System}}
+\subsubsection[{link\-Bodies}]{\setlength{\rightskip}{0pt plus 5cm}void System\-::link\-Bodies (
+\begin{DoxyParamCaption}
+\item[{int}]{bod\-I\-D}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{class_system_a280d384672341228d20181ea390118b9}
+
+
+This converts the cross-\/body force links from simple identification by name into actual pointers to each body. The link\-Bodies command must exist so that all bodies can be read into the program before linking takes place. This command searches through the list of bodies to get a matching body name and creates a pointer link to that body. At the end, it clears the list of names for linked bodies, to reduce memory requirements. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em bod\-I\-D} & An integer variable that describes the base body which the function should process all links for. parameter passed by value. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{class_body_a07d8ed6fdf5a4c6ef73b2d39b58403ce}{Body\-::list\-Named\-Link\-\_\-user()} 
+
+\hyperlink{class_body_abc4abd052a3776123df114c6faf34bae}{Body\-::list\-Named\-Link\-\_\-hydro()}; 
+\end{DoxySeeAlso}
 
 
 Here is the call graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{class_system_a18b18022b6468a41dfdbfc49c881b933_cgraph}
+\includegraphics[width=312pt]{class_system_a280d384672341228d20181ea390118b9_cgraph}
 \end{center}
 \end{figure}
 
 
+\hypertarget{class_system_adf2b36b23ce4bca11639f8dd8bb48918}{\index{System@{System}!list\-Body@{list\-Body}}
+\index{list\-Body@{list\-Body}!System@{System}}
+\subsubsection[{list\-Body}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ {\bf Body} $>$ \& System\-::list\-Body (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_system_adf2b36b23ce4bca11639f8dd8bb48918}
 
 
-Here is the caller graph for this function\-:\nopagebreak
+Returns direct access to the list of \hyperlink{class_body}{Body} objects. Includes all the properties included by a vector$<$$>$ class. 
+
+\begin{DoxyReturn}{Returns}
+Returns a vector of \hyperlink{class_body}{Body} objects. Returned variable passed by reference. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{class_body}{Body} 
+\end{DoxySeeAlso}
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{class_system_a18b18022b6468a41dfdbfc49c881b933_icgraph}
+\includegraphics[width=334pt]{class_system_adf2b36b23ce4bca11639f8dd8bb48918_icgraph}
 \end{center}
 \end{figure}
 
 
-\hypertarget{class_system_a3bb2a6aaa71a7b4b58afc8d92a67e214}{\index{System@{System}!ref\-Body@{ref\-Body}}
-\index{ref\-Body@{ref\-Body}!System@{System}}
-\subsubsection[{ref\-Body}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Body} \& System\-::ref\-Body (
+\hypertarget{class_system_af91978b3309a287948fc55773c4193e5}{\index{System@{System}!list\-Body@{list\-Body}}
+\index{list\-Body@{list\-Body}!System@{System}}
+\subsubsection[{list\-Body}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Body} \& System\-::list\-Body (
 \begin{DoxyParamCaption}
-\item[{int}]{input = {\ttfamily 0}}
+\item[{int}]{input}
 \end{DoxyParamCaption}
-)}}\label{class_system_a3bb2a6aaa71a7b4b58afc8d92a67e214}
+)}}\label{class_system_af91978b3309a287948fc55773c4193e5}
 
 
 Returns direct access to a single \hyperlink{class_body}{Body} object. 
@@ -308,30 +567,148 @@ Returns direct access to a single \hyperlink{class_body}{Body} object.
 \begin{DoxyReturn}{Returns}
 Returns a \hyperlink{class_body}{Body} object. Returned variable is passed by reference. 
 \end{DoxyReturn}
-\hypertarget{class_system_a18bd5c0db7e2cf00404ee9791fa7344a}{\index{System@{System}!reflist\-Body@{reflist\-Body}}
-\index{reflist\-Body@{reflist\-Body}!System@{System}}
-\subsubsection[{reflist\-Body}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ {\bf Body} $>$ \& System\-::reflist\-Body (
+\hypertarget{class_system_ac50ce91b4ad00fd7748c316ba5fe70a6}{\index{System@{System}!list\-Force\-Active\-\_\-user@{list\-Force\-Active\-\_\-user}}
+\index{list\-Force\-Active\-\_\-user@{list\-Force\-Active\-\_\-user}!System@{System}}
+\subsubsection[{list\-Force\-Active\-\_\-user}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ {\bf Force\-Active} $>$ \& System\-::list\-Force\-Active\-\_\-user (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)}}\label{class_system_a18bd5c0db7e2cf00404ee9791fa7344a}
+)}}\label{class_system_ac50ce91b4ad00fd7748c316ba5fe70a6}
 
 
-Returns direct access to the list of \hyperlink{class_body}{Body} objects. Includes all the properties included by a vector$<$$>$ class. 
+Exposes the vector of force\-Active\-\_\-user objects. Provides direct access to the vector. 
 
 \begin{DoxyReturn}{Returns}
-Returns a vector of \hyperlink{class_body}{Body} objects. Returned variable passed by reference. 
+Returns a reference to the vector of force\-Active\-\_\-user objects. Variable passed by reference. 
 \end{DoxyReturn}
-\begin{DoxySeeAlso}{See Also}
-\hyperlink{class_body}{Body} 
-\end{DoxySeeAlso}
-\hypertarget{class_system_aea22bb014c1b994c336842076cc86483}{\index{System@{System}!reflist\-Outputs@{reflist\-Outputs}}
-\index{reflist\-Outputs@{reflist\-Outputs}!System@{System}}
-\subsubsection[{reflist\-Outputs}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ {\bf Outputs\-Body} $>$ \& System\-::reflist\-Outputs (
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_system_ac50ce91b4ad00fd7748c316ba5fe70a6_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_system_a6166a2799a6b6419f5a91d90c98851a5}{\index{System@{System}!list\-Force\-Active\-\_\-user@{list\-Force\-Active\-\_\-user}}
+\index{list\-Force\-Active\-\_\-user@{list\-Force\-Active\-\_\-user}!System@{System}}
+\subsubsection[{list\-Force\-Active\-\_\-user}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Force\-Active} \& System\-::list\-Force\-Active\-\_\-user (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{force\-Index}
+\end{DoxyParamCaption}
+)}}\label{class_system_a6166a2799a6b6419f5a91d90c98851a5}
+
+
+Returns reference to the force\-Active\-\_\-user object referenced by the index specified in the input. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em force\-Index} & Integer variable which defines the index of which force\-Active\-\_\-user object to retrieve. Variable passed by reference. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns a reference to the Force\-Active\-\_\-user object. Variable passed by reference 
+\end{DoxyReturn}
+\hypertarget{class_system_aae7cb5596f9d3a44f0bc6fe58b58410a}{\index{System@{System}!list\-Force\-Cross\-\_\-user@{list\-Force\-Cross\-\_\-user}}
+\index{list\-Force\-Cross\-\_\-user@{list\-Force\-Cross\-\_\-user}!System@{System}}
+\subsubsection[{list\-Force\-Cross\-\_\-user}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ {\bf Force\-Cross} $>$ \& System\-::list\-Force\-Cross\-\_\-user (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)}}\label{class_system_aea22bb014c1b994c336842076cc86483}
+)}}\label{class_system_aae7cb5596f9d3a44f0bc6fe58b58410a}
+
+
+Exposes the vector of force\-Cross\-\_\-user objects. Provides direct access to the vector. 
+
+\begin{DoxyReturn}{Returns}
+Returns a reference to the vector of force\-Cross\-\_\-user objects. Variable passed by reference. 
+\end{DoxyReturn}
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_system_aae7cb5596f9d3a44f0bc6fe58b58410a_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_system_adcde247d6fe68ee68a65f1a5f2dc8e13}{\index{System@{System}!list\-Force\-Cross\-\_\-user@{list\-Force\-Cross\-\_\-user}}
+\index{list\-Force\-Cross\-\_\-user@{list\-Force\-Cross\-\_\-user}!System@{System}}
+\subsubsection[{list\-Force\-Cross\-\_\-user}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Force\-Cross} \& System\-::list\-Force\-Cross\-\_\-user (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{force\-Index}
+\end{DoxyParamCaption}
+)}}\label{class_system_adcde247d6fe68ee68a65f1a5f2dc8e13}
+
+
+Returns reference to the force\-Cross\-\_\-user object referenced by the index specified in the input. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em force\-Index} & Integer variable which defines the index of which force\-Cross\-\_\-user object to retrieve. Variable passed by value. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns a reference to the Force\-Cross\-\_\-user object. Variable passed by reference 
+\end{DoxyReturn}
+\hypertarget{class_system_a5f567e325139744bc80fd1653b50b0e3}{\index{System@{System}!list\-Force\-React\-\_\-user@{list\-Force\-React\-\_\-user}}
+\index{list\-Force\-React\-\_\-user@{list\-Force\-React\-\_\-user}!System@{System}}
+\subsubsection[{list\-Force\-React\-\_\-user}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ {\bf Force\-React} $>$ \& System\-::list\-Force\-React\-\_\-user (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_system_a5f567e325139744bc80fd1653b50b0e3}
+
+
+Exposes the vector of force\-React\-\_\-user objects. Provides direct access to the vector. 
+
+\begin{DoxyReturn}{Returns}
+Returns a reference to the vector of force\-React\-\_\-user objects. Variable passed by reference. 
+\end{DoxyReturn}
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_system_a5f567e325139744bc80fd1653b50b0e3_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_system_a863fea51fba8362e69486bdfdf632ccb}{\index{System@{System}!list\-Force\-React\-\_\-user@{list\-Force\-React\-\_\-user}}
+\index{list\-Force\-React\-\_\-user@{list\-Force\-React\-\_\-user}!System@{System}}
+\subsubsection[{list\-Force\-React\-\_\-user}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Force\-React} \& System\-::list\-Force\-React\-\_\-user (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{force\-Index}
+\end{DoxyParamCaption}
+)}}\label{class_system_a863fea51fba8362e69486bdfdf632ccb}
+
+
+Returns reference to the force\-React\-\_\-user object referenced by the index specified in the input. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em force\-Index} & Integer variable which defines the index of which force\-React\-\_\-user object to retrieve. Variable passed by value. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns a reference to the Force\-React\-\_\-user object. Variable passed by reference 
+\end{DoxyReturn}
+\hypertarget{class_system_ad2c5c4c5be9ed1b30651a267df67c466}{\index{System@{System}!list\-Output@{list\-Output}}
+\index{list\-Output@{list\-Output}!System@{System}}
+\subsubsection[{list\-Output}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ {\bf Outputs\-Body} $>$ \& System\-::list\-Output (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_system_ad2c5c4c5be9ed1b30651a267df67c466}
 
 
 Returns direct access to the list of \hyperlink{class_outputs_body}{Outputs\-Body} objects. Includes all the properties included by a vector$<$$>$ class. 
@@ -342,13 +719,13 @@ Returns a vector of \hyperlink{class_outputs_body}{Outputs\-Body} objects. Retur
 \begin{DoxySeeAlso}{See Also}
 \hyperlink{class_outputs_body}{Outputs\-Body} 
 \end{DoxySeeAlso}
-\hypertarget{class_system_af5cdbac74348f475cc5a529134ac418d}{\index{System@{System}!ref\-Output@{ref\-Output}}
-\index{ref\-Output@{ref\-Output}!System@{System}}
-\subsubsection[{ref\-Output}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Outputs\-Body} \& System\-::ref\-Output (
+\hypertarget{class_system_a25b21c2fe11293ecf46ee3f9371afe21}{\index{System@{System}!list\-Output@{list\-Output}}
+\index{list\-Output@{list\-Output}!System@{System}}
+\subsubsection[{list\-Output}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Outputs\-Body} \& System\-::list\-Output (
 \begin{DoxyParamCaption}
-\item[{int}]{input = {\ttfamily 0}}
+\item[{int}]{input}
 \end{DoxyParamCaption}
-)}}\label{class_system_af5cdbac74348f475cc5a529134ac418d}
+)}}\label{class_system_a25b21c2fe11293ecf46ee3f9371afe21}
 
 
 Returns direct access to a single \hyperlink{class_outputs_body}{Outputs\-Body} object. 
@@ -361,13 +738,13 @@ Returns direct access to a single \hyperlink{class_outputs_body}{Outputs\-Body} 
 \begin{DoxyReturn}{Returns}
 Returns an \hyperlink{class_outputs_body}{Outputs\-Body} object. Returned variable is passed by reference. 
 \end{DoxyReturn}
-\hypertarget{class_system_a660da11fb839d3efe76f4ab62be8bb23}{\index{System@{System}!ref\-Wave\-Directions@{ref\-Wave\-Directions}}
-\index{ref\-Wave\-Directions@{ref\-Wave\-Directions}!System@{System}}
-\subsubsection[{ref\-Wave\-Directions}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ double $>$ \& System\-::ref\-Wave\-Directions (
+\hypertarget{class_system_a18cbe26b239cf4ee83210ac6679f773f}{\index{System@{System}!list\-Wave\-Directions@{list\-Wave\-Directions}}
+\index{list\-Wave\-Directions@{list\-Wave\-Directions}!System@{System}}
+\subsubsection[{list\-Wave\-Directions}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ double $>$ \& System\-::list\-Wave\-Directions (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)}}\label{class_system_a660da11fb839d3efe76f4ab62be8bb23}
+)}}\label{class_system_a18cbe26b239cf4ee83210ac6679f773f}
 
 
 Provides direct access to the list of wave directions. 
@@ -375,24 +752,13 @@ Provides direct access to the list of wave directions.
 \begin{DoxyReturn}{Returns}
 Pointer to the list of wave directions Variable passed by reference. 
 \end{DoxyReturn}
-
-
-Here is the call graph for this function\-:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{class_system_a660da11fb839d3efe76f4ab62be8bb23_cgraph}
-\end{center}
-\end{figure}
-
-
-\hypertarget{class_system_aa8af03fa5a3e8d6154d88987060a03e8}{\index{System@{System}!ref\-Wave\-Frequencies@{ref\-Wave\-Frequencies}}
-\index{ref\-Wave\-Frequencies@{ref\-Wave\-Frequencies}!System@{System}}
-\subsubsection[{ref\-Wave\-Frequencies}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ double $>$ \& System\-::ref\-Wave\-Frequencies (
+\hypertarget{class_system_a02a78c7751da784608be2dc2afbb4022}{\index{System@{System}!list\-Wave\-Frequencies@{list\-Wave\-Frequencies}}
+\index{list\-Wave\-Frequencies@{list\-Wave\-Frequencies}!System@{System}}
+\subsubsection[{list\-Wave\-Frequencies}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ double $>$ \& System\-::list\-Wave\-Frequencies (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)}}\label{class_system_aa8af03fa5a3e8d6154d88987060a03e8}
+)}}\label{class_system_a02a78c7751da784608be2dc2afbb4022}
 
 
 Provides direct access to the list of wave frequencies. 
@@ -400,13 +766,29 @@ Provides direct access to the list of wave frequencies.
 \begin{DoxyReturn}{Returns}
 Pointer to the list of wave frequencies. Variable passed by reference. 
 \end{DoxyReturn}
+\hypertarget{class_system_a5f20031d9a9b7ee89e035da6dcec6243}{\index{System@{System}!Reference\-System@{Reference\-System}}
+\index{Reference\-System@{Reference\-System}!System@{System}}
+\subsubsection[{Reference\-System}]{\setlength{\rightskip}{0pt plus 5cm}void System\-::\-Reference\-System (
+\begin{DoxyParamCaption}
+\item[{{\bf System} $\ast$}]{my\-System}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{class_system_a5f20031d9a9b7ee89e035da6dcec6243}
 
 
-Here is the call graph for this function\-:\nopagebreak
+Returns the \hyperlink{class_system}{System} object for information. Used mainly to access the list of forced defined for the system object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Returns} & a pointer to the \hyperlink{class_system}{System} object. Variable passed by reference. \\
+\hline
+\end{DoxyParams}
+
+
+Here is the caller graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{class_system_aa8af03fa5a3e8d6154d88987060a03e8_cgraph}
+\includegraphics[width=350pt]{class_system_a5f20031d9a9b7ee89e035da6dcec6243_icgraph}
 \end{center}
 \end{figure}
 
@@ -417,7 +799,7 @@ Here is the call graph for this function\-:\nopagebreak
 \begin{DoxyParamCaption}
 \item[{string}]{analysis\-Type\-In}
 \end{DoxyParamCaption}
-)}}\label{class_system_ae58c969c9ba0a1ec4bebff64b88a22ed}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{class_system_ae58c969c9ba0a1ec4bebff64b88a22ed}
 Sets the analysis ype. 
 \begin{DoxyParams}{Parameters}
 {\em analysis\-Type\-In} & The analysis type. \\
@@ -478,28 +860,6 @@ Sets the spread model.
 {\em spread\-In} & The spread model. \\
 \hline
 \end{DoxyParams}
-
-
-Here is the call graph for this function\-:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{class_system_a2c26340bdbd94e6bed0f75dba991b49c_cgraph}
-\end{center}
-\end{figure}
-
-
-
-
-Here is the caller graph for this function\-:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{class_system_a2c26340bdbd94e6bed0f75dba991b49c_icgraph}
-\end{center}
-\end{figure}
-
-
 \hypertarget{class_system_a492b1dc5f789192ff6207f2555b23138}{\index{System@{System}!set\-Wave\-Directions@{set\-Wave\-Directions}}
 \index{set\-Wave\-Directions@{set\-Wave\-Directions}!System@{System}}
 \subsubsection[{set\-Wave\-Directions}]{\setlength{\rightskip}{0pt plus 5cm}void System\-::set\-Wave\-Directions (
@@ -512,17 +872,6 @@ Sets the wave directions.
 {\em vec\-In} & The list of wave directions. \\
 \hline
 \end{DoxyParams}
-
-
-Here is the call graph for this function\-:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{class_system_a492b1dc5f789192ff6207f2555b23138_cgraph}
-\end{center}
-\end{figure}
-
-
 
 
 Here is the caller graph for this function\-:\nopagebreak
@@ -548,17 +897,6 @@ Sets the wave frequencies.
 \end{DoxyParams}
 
 
-Here is the call graph for this function\-:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{class_system_ab1bfe916791d4c61bb807c930f73930c_cgraph}
-\end{center}
-\end{figure}
-
-
-
-
 Here is the caller graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
@@ -568,38 +906,9 @@ Here is the caller graph for this function\-:\nopagebreak
 \end{figure}
 
 
-\hypertarget{class_system_a20bda2428f8aef211bf8787e1efeeeee}{\index{System@{System}!test\-Print@{test\-Print}}
-\index{test\-Print@{test\-Print}!System@{System}}
-\subsubsection[{test\-Print}]{\setlength{\rightskip}{0pt plus 5cm}void System\-::test\-Print (
-\begin{DoxyParamCaption}
-{}
-\end{DoxyParamCaption}
-)}}\label{class_system_a20bda2428f8aef211bf8787e1efeeeee}
-Test print to console the values of all data members. 
-
-Here is the call graph for this function\-:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{class_system_a20bda2428f8aef211bf8787e1efeeeee_cgraph}
-\end{center}
-\end{figure}
-
-
-
-
-Here is the caller graph for this function\-:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=318pt]{class_system_a20bda2428f8aef211bf8787e1efeeeee_icgraph}
-\end{center}
-\end{figure}
-
-
 
 
 The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
 \item 
-/home/nicholas/\-Ship Design/\-Projects/\-D\-M\-S1305 Open\-S\-E\-A/master/200\-\_\-src/bin/ofreq/global\-\_\-objects/system.\-h\item 
-/home/nicholas/\-Ship Design/\-Projects/\-D\-M\-S1305 Open\-S\-E\-A/master/200\-\_\-src/bin/ofreq/global\-\_\-objects/system.\-cpp\end{DoxyCompactItemize}
+system.\-h\item 
+system.\-cpp\end{DoxyCompactItemize}

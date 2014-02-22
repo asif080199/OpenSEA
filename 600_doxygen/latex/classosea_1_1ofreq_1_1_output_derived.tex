@@ -1,0 +1,433 @@
+\hypertarget{classosea_1_1ofreq_1_1_output_derived}{\section{osea\-:\-:ofreq\-:\-:Output\-Derived Class Reference}
+\label{classosea_1_1ofreq_1_1_output_derived}\index{osea\-::ofreq\-::\-Output\-Derived@{osea\-::ofreq\-::\-Output\-Derived}}
+}
+
+
+{\ttfamily \#include $<$outputderived.\-h$>$}
+
+
+
+Inheritance diagram for osea\-:\-:ofreq\-:\-:Output\-Derived\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classosea_1_1ofreq_1_1_output_derived__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for osea\-:\-:ofreq\-:\-:Output\-Derived\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=218pt]{classosea_1_1ofreq_1_1_output_derived__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classosea_1_1ofreq_1_1_output_derived_af8b70b70b8a5089f2b673da8b59a7b6a}{\hyperlink{classosea_1_1ofreq_1_1_output_derived_af8b70b70b8a5089f2b673da8b59a7b6a}{Output\-Derived} ()}\label{classosea_1_1ofreq_1_1_output_derived_af8b70b70b8a5089f2b673da8b59a7b6a}
+
+\begin{DoxyCompactList}\small\item\em Default constructor. Nothing happens here. \end{DoxyCompactList}\item 
+\hyperlink{classosea_1_1ofreq_1_1_output_derived_a4dde733443e52964c74d8bb6477f85f7}{$\sim$\-Output\-Derived} ()
+\item 
+std\-::string \hyperlink{classosea_1_1ofreq_1_1_output_derived_a354f906f29b96022141afba02a50fbfe}{get\-Name} ()
+\begin{DoxyCompactList}\small\item\em Returns the name of the \hyperlink{classosea_1_1ofreq_1_1_output_derived}{Output\-Derived} object. This is a name set by the user to idenfity the object. If multiple objects of the same type are created, the name can also distinguish between the various objects. \end{DoxyCompactList}\item 
+void \hyperlink{classosea_1_1ofreq_1_1_output_derived_ac4db0b795c3bbb79072bce39e78b4d44}{set\-Name} (std\-::string name\-In)
+\begin{DoxyCompactList}\small\item\em Sets the name of the \hyperlink{classosea_1_1ofreq_1_1_output_derived}{Output\-Derived} object. This is a name set by the user to idenfity the object. If multiple objects of the same type are created, the name can also distinguish between the various objects. \end{DoxyCompactList}\item 
+int \hyperlink{classosea_1_1ofreq_1_1_output_derived_ad4bb95c9693b2f34a40eb0136f2a13f4}{get\-Cur\-Wave\-Ind} ()
+\begin{DoxyCompactList}\small\item\em Gets the index of the current wave direction used by the \hyperlink{classosea_1_1ofreq_1_1_output_derived}{Output\-Derived} object. Some child classes will need this to determine proper calculation of output. This differs from the \hyperlink{classosea_1_1ofreq_1_1_output_derived_ad59fff8dc8f1772039aff4950a3cdf18}{get\-Cur\-Wave\-Dir()} method in that the other method returns the actual value of the angle. This returns the index of the current angle in the list of wave directions. \end{DoxyCompactList}\item 
+virtual arma\-::cx\-\_\-mat \hyperlink{classosea_1_1ofreq_1_1_output_derived_a5600a2c7f70052a8bafce79e15e1aa92}{calc\-Output} (double freq\-In)=0
+\begin{DoxyCompactList}\small\item\em Pure virtual member. Calculates the output from the \hyperlink{classosea_1_1ofreq_1_1_output_derived}{Output\-Derived} object. \end{DoxyCompactList}\item 
+std\-::vector$<$ \hyperlink{classosea_1_1ofreq_1_1_body}{Body} $>$ \& \hyperlink{classosea_1_1ofreq_1_1_output_derived_a525d8eb4dbed1fd130614521c5d602c1}{list\-Body} ()
+\begin{DoxyCompactList}\small\item\em Returns the list of body objects. Only a c++ reference to the list of body objects. \end{DoxyCompactList}\item 
+\hyperlink{classosea_1_1ofreq_1_1_body}{Body} \& \hyperlink{classosea_1_1ofreq_1_1_output_derived_abda178375c603cd2d2efcc0c5f9c1f10}{list\-Body} (int bod\-In)
+\begin{DoxyCompactList}\small\item\em Returns a reference to an individual \hyperlink{classosea_1_1ofreq_1_1_body}{Body} in the list of \hyperlink{classosea_1_1ofreq_1_1_body}{Body} objects. \end{DoxyCompactList}\item 
+void \hyperlink{classosea_1_1ofreq_1_1_output_derived_ac2783796f37019b87df8b2fc58b21d31}{set\-List\-Body} (std\-::vector$<$ \hyperlink{classosea_1_1ofreq_1_1_body}{Body} $>$ \&Input)
+\begin{DoxyCompactList}\small\item\em Sets the list of \hyperlink{classosea_1_1ofreq_1_1_body}{Body} objects. \end{DoxyCompactList}\item 
+std\-::vector$<$ \hyperlink{classosea_1_1ofreq_1_1_solution_set}{Solution\-Set} $>$ \& \hyperlink{classosea_1_1ofreq_1_1_output_derived_ae94d577f4f58c2c1f8cb2c9c650d505c}{ref\-Solution\-Set} ()
+\begin{DoxyCompactList}\small\item\em Returns a vector of \hyperlink{classosea_1_1ofreq_1_1_solution_set}{Solution\-Set} objects. \end{DoxyCompactList}\item 
+void \hyperlink{classosea_1_1ofreq_1_1_output_derived_a370efe39cc1262ee1ccb73394c28fc15}{set\-Solution\-Set} (std\-::vector$<$ \hyperlink{classosea_1_1ofreq_1_1_solution_set}{Solution\-Set} $>$ \&Input)
+\begin{DoxyCompactList}\small\item\em Sets the list of solutions. \end{DoxyCompactList}\item 
+std\-::vector$<$ double $>$ \& \hyperlink{classosea_1_1ofreq_1_1_output_derived_aeca7e08a1c561ae61a7a97a59b05cbdf}{list\-Freq} ()
+\begin{DoxyCompactList}\small\item\em Gets the list of frequencies. Frequencies are in radians per second. \end{DoxyCompactList}\item 
+double \& \hyperlink{classosea_1_1ofreq_1_1_output_derived_ae630f20aca768c789851b82020e2a8c3}{list\-Freq} (int index)
+\begin{DoxyCompactList}\small\item\em Returns individual frequency from the list of wave frequencies. \end{DoxyCompactList}\item 
+void \hyperlink{classosea_1_1ofreq_1_1_output_derived_af2a183ee4e75c6de6af8cc2d27512ac4}{set\-List\-Freq} (std\-::vector$<$ double $>$ \&Input)
+\begin{DoxyCompactList}\small\item\em Sets the list of wave frequencies. Frequencies are in radians per second. \end{DoxyCompactList}\item 
+std\-::vector$<$ double $>$ \& \hyperlink{classosea_1_1ofreq_1_1_output_derived_a114e057d84f34e5138d077fd7f053898}{list\-Wave\-Dir} ()
+\begin{DoxyCompactList}\small\item\em Gets the list of wave directions. Wave directions are measured in radians. True North is zero, with positive angles going counter-\/clockwise. \end{DoxyCompactList}\item 
+double \& \hyperlink{classosea_1_1ofreq_1_1_output_derived_a043a3621ac94b69cd16170a550bb3905}{list\-Wave\-Dir} (int index)
+\begin{DoxyCompactList}\small\item\em Returns individual wave direction from the list of wave directions. \end{DoxyCompactList}\item 
+void \hyperlink{classosea_1_1ofreq_1_1_output_derived_ad482f0254c9886599e25495c88707efe}{set\-List\-Wave\-Dir} (std\-::vector$<$ double $>$ \&Input)
+\begin{DoxyCompactList}\small\item\em Sets the list of wave directions. Wave directions are measured in radians. True North is zero, with positive angles going counter-\/clockwise. \end{DoxyCompactList}\item 
+int \& \hyperlink{classosea_1_1ofreq_1_1_output_derived_ad59fff8dc8f1772039aff4950a3cdf18}{get\-Cur\-Wave\-Dir} ()
+\begin{DoxyCompactList}\small\item\em Gets the integer index of the current wave direction. \end{DoxyCompactList}\item 
+void \hyperlink{classosea_1_1ofreq_1_1_output_derived_a174188431586c269edca5f17db16b498}{set\-Cur\-Wave\-Dir} (int \&Input)
+\begin{DoxyCompactList}\small\item\em Sets the integer index of the current wave direction. \end{DoxyCompactList}\item 
+int \hyperlink{classosea_1_1ofreq_1_1_output_derived_ac3a9e37f0f7bc0ac003d2662db3d17bb}{get\-Cur\-Body} ()
+\begin{DoxyCompactList}\small\item\em Gets the integer index of the current body. This represents the \hyperlink{classosea_1_1ofreq_1_1_body}{Body} object that the derived output is associated with. \end{DoxyCompactList}\item 
+void \hyperlink{classosea_1_1ofreq_1_1_output_derived_a56aa87d4a9aec5e21842bf614920c1dc}{set\-Cur\-Body} (int Input)
+\begin{DoxyCompactList}\small\item\em Sets the integer index of the current body. This represents the \hyperlink{classosea_1_1ofreq_1_1_body}{Body} object that the derived output is associated with. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classosea_1_1ofreq_1_1_output_derived_a4ab81d265885b1c9fb9b4596dc9cd093}{std\-::string \hyperlink{classosea_1_1ofreq_1_1_output_derived_a4ab81d265885b1c9fb9b4596dc9cd093}{p\-Name}}\label{classosea_1_1ofreq_1_1_output_derived_a4ab81d265885b1c9fb9b4596dc9cd093}
+
+\begin{DoxyCompactList}\small\item\em The name for the derived output object. This is a name set by the user to idenfity the object. If multiple objects of the same type are created, the name can also distinguish between the various objects. \end{DoxyCompactList}\item 
+\hypertarget{classosea_1_1ofreq_1_1_output_derived_ae1a331fca04d90685ab5a33670c90aeb}{std\-::vector$<$ \hyperlink{classosea_1_1ofreq_1_1_body}{Body} $>$ $\ast$ \hyperlink{classosea_1_1ofreq_1_1_output_derived_ae1a331fca04d90685ab5a33670c90aeb}{plist\-Body}}\label{classosea_1_1ofreq_1_1_output_derived_ae1a331fca04d90685ab5a33670c90aeb}
+
+\begin{DoxyCompactList}\small\item\em The vector list of \hyperlink{classosea_1_1ofreq_1_1_body}{Body} objects. \end{DoxyCompactList}\item 
+\hypertarget{classosea_1_1ofreq_1_1_output_derived_aeb19c45257cd6e4aac209bbeca5a7de0}{std\-::vector$<$ \hyperlink{classosea_1_1ofreq_1_1_solution_set}{Solution\-Set} $>$ $\ast$ \hyperlink{classosea_1_1ofreq_1_1_output_derived_aeb19c45257cd6e4aac209bbeca5a7de0}{plist\-Solution}}\label{classosea_1_1ofreq_1_1_output_derived_aeb19c45257cd6e4aac209bbeca5a7de0}
+
+\begin{DoxyCompactList}\small\item\em The vector list of \hyperlink{classosea_1_1ofreq_1_1_solution_set}{Solution\-Set} objects. \end{DoxyCompactList}\item 
+\hypertarget{classosea_1_1ofreq_1_1_output_derived_a5c5c94e05e212fad48aee82daed14738}{std\-::vector$<$ double $>$ $\ast$ \hyperlink{classosea_1_1ofreq_1_1_output_derived_a5c5c94e05e212fad48aee82daed14738}{plist\-Freq}}\label{classosea_1_1ofreq_1_1_output_derived_a5c5c94e05e212fad48aee82daed14738}
+
+\begin{DoxyCompactList}\small\item\em The list of wave frequencies. Wave frequency recorded in units of radians per second. \end{DoxyCompactList}\item 
+\hypertarget{classosea_1_1ofreq_1_1_output_derived_af552007def83b95df23524d02bbe0d56}{std\-::vector$<$ double $>$ $\ast$ \hyperlink{classosea_1_1ofreq_1_1_output_derived_af552007def83b95df23524d02bbe0d56}{plist\-Wave\-Dir}}\label{classosea_1_1ofreq_1_1_output_derived_af552007def83b95df23524d02bbe0d56}
+
+\begin{DoxyCompactList}\small\item\em The list of wave directions. Wave direction recorded in units of radians. Zero is true North direction. Oriented positive counter-\/clockwise. \end{DoxyCompactList}\item 
+\hypertarget{classosea_1_1ofreq_1_1_output_derived_a8c56d46309f2c0bef72485ae4d7077e4}{int $\ast$ \hyperlink{classosea_1_1ofreq_1_1_output_derived_a8c56d46309f2c0bef72485ae4d7077e4}{p\-Cur\-Wave\-Dir}}\label{classosea_1_1ofreq_1_1_output_derived_a8c56d46309f2c0bef72485ae4d7077e4}
+
+\begin{DoxyCompactList}\small\item\em The current wave direction used for calculating the Derived\-Output objects. \end{DoxyCompactList}\item 
+\hypertarget{classosea_1_1ofreq_1_1_output_derived_ae6f0acd108dfc56531d7b2cc0bd900eb}{int \hyperlink{classosea_1_1ofreq_1_1_output_derived_ae6f0acd108dfc56531d7b2cc0bd900eb}{p\-Cur\-Body}}\label{classosea_1_1ofreq_1_1_output_derived_ae6f0acd108dfc56531d7b2cc0bd900eb}
+
+\begin{DoxyCompactList}\small\item\em The index of the current body used for calculating derived outputs. This index is the position of the current body in the list of \hyperlink{classosea_1_1ofreq_1_1_body}{Body} objects. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+This abstract class represents the Derived Outputs. Derived outputs are any additional information that needs to be calculated from basic information within a body. That can be anything from taking derivatives to calculating an empirical equation for motion sickness incidence. The constructor for this class requires a pointer to the parent class to access any further information required for calculation.
+
+The Derived Output class can not be used directly. Individual types of Derived Outputs must be developed and inherit this Derived Output class. This abstract class provides a common framework that all Derived Outputs must share. The most important part is the \hyperlink{classosea_1_1ofreq_1_1_output_derived_a5600a2c7f70052a8bafce79e15e1aa92}{calc\-Output()} method. Everything that uses a Derived Output object expects to have this \hyperlink{classosea_1_1ofreq_1_1_output_derived_a5600a2c7f70052a8bafce79e15e1aa92}{calc\-Output()} method, and will call it by that name.
+
+Developers note\-: The original scheme had the \hyperlink{classosea_1_1ofreq_1_1_output_derived}{Output\-Derived} class include a pointer to the contain parent class, \hyperlink{classosea_1_1ofreq_1_1_outputs_body}{Outputs\-Body}. But this creates a cyclic dependency of header files, and will not compile. The only resolution I found to this was to not include the parent class and pass all the necessary information to each individual \hyperlink{classosea_1_1ofreq_1_1_output_derived}{Output\-Derived} object. This is tedious, but within the reasons of the methods defined by the \hyperlink{classosea_1_1ofreq_1_1_outputs_body}{Outputs\-Body} class. And it allow compilation. All data items are passed by reference to avoid excess memory duplication.
+
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classosea_1_1ofreq_1_1_output_derived_a5600a2c7f70052a8bafce79e15e1aa92}{Output\-Derived\-::calc\-Output()}; 
+\end{DoxySeeAlso}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classosea_1_1ofreq_1_1_output_derived_a4dde733443e52964c74d8bb6477f85f7}{\index{osea\-::ofreq\-::\-Output\-Derived@{osea\-::ofreq\-::\-Output\-Derived}!$\sim$\-Output\-Derived@{$\sim$\-Output\-Derived}}
+\index{$\sim$\-Output\-Derived@{$\sim$\-Output\-Derived}!osea::ofreq::OutputDerived@{osea\-::ofreq\-::\-Output\-Derived}}
+\subsubsection[{$\sim$\-Output\-Derived}]{\setlength{\rightskip}{0pt plus 5cm}Output\-Derived\-::$\sim$\-Output\-Derived (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_output_derived_a4dde733443e52964c74d8bb6477f85f7}
+The default destructor. Nothing happens here. 
+
+\subsection{Member Function Documentation}
+\hypertarget{classosea_1_1ofreq_1_1_output_derived_a5600a2c7f70052a8bafce79e15e1aa92}{\index{osea\-::ofreq\-::\-Output\-Derived@{osea\-::ofreq\-::\-Output\-Derived}!calc\-Output@{calc\-Output}}
+\index{calc\-Output@{calc\-Output}!osea::ofreq::OutputDerived@{osea\-::ofreq\-::\-Output\-Derived}}
+\subsubsection[{calc\-Output}]{\setlength{\rightskip}{0pt plus 5cm}virtual arma\-::cx\-\_\-mat osea\-::ofreq\-::\-Output\-Derived\-::calc\-Output (
+\begin{DoxyParamCaption}
+\item[{double}]{freq\-In}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classosea_1_1ofreq_1_1_output_derived_a5600a2c7f70052a8bafce79e15e1aa92}
+
+
+Pure virtual member. Calculates the output from the \hyperlink{classosea_1_1ofreq_1_1_output_derived}{Output\-Derived} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em freq\-In} & The wave frequency to use for calculating the \hyperlink{classosea_1_1ofreq_1_1_output_derived}{Output\-Derived} object. Most outputs will depend on the wave frequency. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns a complex matrix that is the \hyperlink{classosea_1_1ofreq_1_1_output_derived}{Output\-Derived} result. The exact meaning and organization of the complex matrix changes with each type of \hyperlink{classosea_1_1ofreq_1_1_output_derived}{Output\-Derived} object created as a child of this class. The cx\-\_\-mat data type is used because that is the most natural data type for the larges number of \hyperlink{classosea_1_1ofreq_1_1_output_derived}{Output\-Derived} objects. It isn't always the best, but it can usually work well for the intended purposes. 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classosea_1_1ofreq_1_1_global_solution_adf90922a97153ce858da530e20bc3f4d}{osea\-::ofreq\-::\-Global\-Solution}.
+
+\hypertarget{classosea_1_1ofreq_1_1_output_derived_ac3a9e37f0f7bc0ac003d2662db3d17bb}{\index{osea\-::ofreq\-::\-Output\-Derived@{osea\-::ofreq\-::\-Output\-Derived}!get\-Cur\-Body@{get\-Cur\-Body}}
+\index{get\-Cur\-Body@{get\-Cur\-Body}!osea::ofreq::OutputDerived@{osea\-::ofreq\-::\-Output\-Derived}}
+\subsubsection[{get\-Cur\-Body}]{\setlength{\rightskip}{0pt plus 5cm}int Output\-Derived\-::get\-Cur\-Body (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_output_derived_ac3a9e37f0f7bc0ac003d2662db3d17bb}
+
+
+Gets the integer index of the current body. This represents the \hyperlink{classosea_1_1ofreq_1_1_body}{Body} object that the derived output is associated with. 
+
+\begin{DoxyReturn}{Returns}
+Returns the integer index of the current \hyperlink{classosea_1_1ofreq_1_1_body}{Body} object associated with this derived output object. Variable is passed by value. 
+\end{DoxyReturn}
+\hypertarget{classosea_1_1ofreq_1_1_output_derived_ad59fff8dc8f1772039aff4950a3cdf18}{\index{osea\-::ofreq\-::\-Output\-Derived@{osea\-::ofreq\-::\-Output\-Derived}!get\-Cur\-Wave\-Dir@{get\-Cur\-Wave\-Dir}}
+\index{get\-Cur\-Wave\-Dir@{get\-Cur\-Wave\-Dir}!osea::ofreq::OutputDerived@{osea\-::ofreq\-::\-Output\-Derived}}
+\subsubsection[{get\-Cur\-Wave\-Dir}]{\setlength{\rightskip}{0pt plus 5cm}int \& Output\-Derived\-::get\-Cur\-Wave\-Dir (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_output_derived_ad59fff8dc8f1772039aff4950a3cdf18}
+
+
+Gets the integer index of the current wave direction. 
+
+\begin{DoxyReturn}{Returns}
+Gets the integer index of the current wave direction. Variable is passed by reference. Variable is stored internally as a pointer. 
+\end{DoxyReturn}
+\hypertarget{classosea_1_1ofreq_1_1_output_derived_ad4bb95c9693b2f34a40eb0136f2a13f4}{\index{osea\-::ofreq\-::\-Output\-Derived@{osea\-::ofreq\-::\-Output\-Derived}!get\-Cur\-Wave\-Ind@{get\-Cur\-Wave\-Ind}}
+\index{get\-Cur\-Wave\-Ind@{get\-Cur\-Wave\-Ind}!osea::ofreq::OutputDerived@{osea\-::ofreq\-::\-Output\-Derived}}
+\subsubsection[{get\-Cur\-Wave\-Ind}]{\setlength{\rightskip}{0pt plus 5cm}int Output\-Derived\-::get\-Cur\-Wave\-Ind (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_output_derived_ad4bb95c9693b2f34a40eb0136f2a13f4}
+
+
+Gets the index of the current wave direction used by the \hyperlink{classosea_1_1ofreq_1_1_output_derived}{Output\-Derived} object. Some child classes will need this to determine proper calculation of output. This differs from the \hyperlink{classosea_1_1ofreq_1_1_output_derived_ad59fff8dc8f1772039aff4950a3cdf18}{get\-Cur\-Wave\-Dir()} method in that the other method returns the actual value of the angle. This returns the index of the current angle in the list of wave directions. 
+
+\begin{DoxyReturn}{Returns}
+Returns an integer that represents the index of the current angle in the list of wave directions. Variable passed by value. 
+\end{DoxyReturn}
+\hypertarget{classosea_1_1ofreq_1_1_output_derived_a354f906f29b96022141afba02a50fbfe}{\index{osea\-::ofreq\-::\-Output\-Derived@{osea\-::ofreq\-::\-Output\-Derived}!get\-Name@{get\-Name}}
+\index{get\-Name@{get\-Name}!osea::ofreq::OutputDerived@{osea\-::ofreq\-::\-Output\-Derived}}
+\subsubsection[{get\-Name}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string Output\-Derived\-::get\-Name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_output_derived_a354f906f29b96022141afba02a50fbfe}
+
+
+Returns the name of the \hyperlink{classosea_1_1ofreq_1_1_output_derived}{Output\-Derived} object. This is a name set by the user to idenfity the object. If multiple objects of the same type are created, the name can also distinguish between the various objects. 
+
+\begin{DoxyReturn}{Returns}
+Returns the name of the \hyperlink{classosea_1_1ofreq_1_1_output_derived}{Output\-Derived} object. std\-::string variable. Variable passed by value. 
+\end{DoxyReturn}
+\hypertarget{classosea_1_1ofreq_1_1_output_derived_a525d8eb4dbed1fd130614521c5d602c1}{\index{osea\-::ofreq\-::\-Output\-Derived@{osea\-::ofreq\-::\-Output\-Derived}!list\-Body@{list\-Body}}
+\index{list\-Body@{list\-Body}!osea::ofreq::OutputDerived@{osea\-::ofreq\-::\-Output\-Derived}}
+\subsubsection[{list\-Body}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ {\bf Body} $>$ \& Output\-Derived\-::list\-Body (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_output_derived_a525d8eb4dbed1fd130614521c5d602c1}
+
+
+Returns the list of body objects. Only a c++ reference to the list of body objects. 
+
+\begin{DoxyReturn}{Returns}
+Returns reference to the list of \hyperlink{classosea_1_1ofreq_1_1_body}{Body} objects. Variable passed by reference. 
+\end{DoxyReturn}
+\hypertarget{classosea_1_1ofreq_1_1_output_derived_abda178375c603cd2d2efcc0c5f9c1f10}{\index{osea\-::ofreq\-::\-Output\-Derived@{osea\-::ofreq\-::\-Output\-Derived}!list\-Body@{list\-Body}}
+\index{list\-Body@{list\-Body}!osea::ofreq::OutputDerived@{osea\-::ofreq\-::\-Output\-Derived}}
+\subsubsection[{list\-Body}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Body} \& Output\-Derived\-::list\-Body (
+\begin{DoxyParamCaption}
+\item[{int}]{bod\-In}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_output_derived_abda178375c603cd2d2efcc0c5f9c1f10}
+
+
+Returns a reference to an individual \hyperlink{classosea_1_1ofreq_1_1_body}{Body} in the list of \hyperlink{classosea_1_1ofreq_1_1_body}{Body} objects. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em bod\-In} & The integer index of the body you wish to retrieve from the list of \hyperlink{classosea_1_1ofreq_1_1_body}{Body} objects. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns the \hyperlink{classosea_1_1ofreq_1_1_body}{Body} object requested. Returned variable is passed by reference. 
+\end{DoxyReturn}
+\hypertarget{classosea_1_1ofreq_1_1_output_derived_aeca7e08a1c561ae61a7a97a59b05cbdf}{\index{osea\-::ofreq\-::\-Output\-Derived@{osea\-::ofreq\-::\-Output\-Derived}!list\-Freq@{list\-Freq}}
+\index{list\-Freq@{list\-Freq}!osea::ofreq::OutputDerived@{osea\-::ofreq\-::\-Output\-Derived}}
+\subsubsection[{list\-Freq}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ double $>$ \& Output\-Derived\-::list\-Freq (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_output_derived_aeca7e08a1c561ae61a7a97a59b05cbdf}
+
+
+Gets the list of frequencies. Frequencies are in radians per second. 
+
+\begin{DoxyReturn}{Returns}
+Returns the list of wave frequencies. Variable is passed by reference. Variable is stored internally as a pointer. 
+\end{DoxyReturn}
+\hypertarget{classosea_1_1ofreq_1_1_output_derived_ae630f20aca768c789851b82020e2a8c3}{\index{osea\-::ofreq\-::\-Output\-Derived@{osea\-::ofreq\-::\-Output\-Derived}!list\-Freq@{list\-Freq}}
+\index{list\-Freq@{list\-Freq}!osea::ofreq::OutputDerived@{osea\-::ofreq\-::\-Output\-Derived}}
+\subsubsection[{list\-Freq}]{\setlength{\rightskip}{0pt plus 5cm}double \& Output\-Derived\-::list\-Freq (
+\begin{DoxyParamCaption}
+\item[{int}]{index}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_output_derived_ae630f20aca768c789851b82020e2a8c3}
+
+
+Returns individual frequency from the list of wave frequencies. 
+
+Returns the frequency specified by the index. 
+\begin{DoxyParams}{Parameters}
+{\em index} & Integer. The index which specifies which wave frequency to return. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Double. Returns individual frequency from the list of wave frequencies. Returned variabled is passed by reference. 
+\end{DoxyReturn}
+\hypertarget{classosea_1_1ofreq_1_1_output_derived_a114e057d84f34e5138d077fd7f053898}{\index{osea\-::ofreq\-::\-Output\-Derived@{osea\-::ofreq\-::\-Output\-Derived}!list\-Wave\-Dir@{list\-Wave\-Dir}}
+\index{list\-Wave\-Dir@{list\-Wave\-Dir}!osea::ofreq::OutputDerived@{osea\-::ofreq\-::\-Output\-Derived}}
+\subsubsection[{list\-Wave\-Dir}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ double $>$ \& Output\-Derived\-::list\-Wave\-Dir (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_output_derived_a114e057d84f34e5138d077fd7f053898}
+
+
+Gets the list of wave directions. Wave directions are measured in radians. True North is zero, with positive angles going counter-\/clockwise. 
+
+\begin{DoxyReturn}{Returns}
+Returns the vector of doubles containing the wave directions. Variable passed by reference. Variable is stored internally as a pointer. 
+\end{DoxyReturn}
+\hypertarget{classosea_1_1ofreq_1_1_output_derived_a043a3621ac94b69cd16170a550bb3905}{\index{osea\-::ofreq\-::\-Output\-Derived@{osea\-::ofreq\-::\-Output\-Derived}!list\-Wave\-Dir@{list\-Wave\-Dir}}
+\index{list\-Wave\-Dir@{list\-Wave\-Dir}!osea::ofreq::OutputDerived@{osea\-::ofreq\-::\-Output\-Derived}}
+\subsubsection[{list\-Wave\-Dir}]{\setlength{\rightskip}{0pt plus 5cm}double \& Output\-Derived\-::list\-Wave\-Dir (
+\begin{DoxyParamCaption}
+\item[{int}]{index}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_output_derived_a043a3621ac94b69cd16170a550bb3905}
+
+
+Returns individual wave direction from the list of wave directions. 
+
+Returns the wave direction specified by the index. Wave directions are measured in radians. True North is zero, with positive angles going counter-\/clockwise. 
+\begin{DoxyParams}{Parameters}
+{\em index} & Integer. The index which specifies which wave direction to return. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Double. Returns individual wave direction from the list of wave directions. Returned variable is passed by reference. 
+\end{DoxyReturn}
+\hypertarget{classosea_1_1ofreq_1_1_output_derived_ae94d577f4f58c2c1f8cb2c9c650d505c}{\index{osea\-::ofreq\-::\-Output\-Derived@{osea\-::ofreq\-::\-Output\-Derived}!ref\-Solution\-Set@{ref\-Solution\-Set}}
+\index{ref\-Solution\-Set@{ref\-Solution\-Set}!osea::ofreq::OutputDerived@{osea\-::ofreq\-::\-Output\-Derived}}
+\subsubsection[{ref\-Solution\-Set}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ {\bf Solution\-Set} $>$ \& Output\-Derived\-::ref\-Solution\-Set (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_output_derived_ae94d577f4f58c2c1f8cb2c9c650d505c}
+
+
+Returns a vector of \hyperlink{classosea_1_1ofreq_1_1_solution_set}{Solution\-Set} objects. 
+
+\begin{DoxyReturn}{Returns}
+Returns a vector of \hyperlink{classosea_1_1ofreq_1_1_solution_set}{Solution\-Set} objects. Internal storage is just a set of pointers to the object. Variable is passed by reference. 
+\end{DoxyReturn}
+\hypertarget{classosea_1_1ofreq_1_1_output_derived_a56aa87d4a9aec5e21842bf614920c1dc}{\index{osea\-::ofreq\-::\-Output\-Derived@{osea\-::ofreq\-::\-Output\-Derived}!set\-Cur\-Body@{set\-Cur\-Body}}
+\index{set\-Cur\-Body@{set\-Cur\-Body}!osea::ofreq::OutputDerived@{osea\-::ofreq\-::\-Output\-Derived}}
+\subsubsection[{set\-Cur\-Body}]{\setlength{\rightskip}{0pt plus 5cm}void Output\-Derived\-::set\-Cur\-Body (
+\begin{DoxyParamCaption}
+\item[{int}]{Input}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_output_derived_a56aa87d4a9aec5e21842bf614920c1dc}
+
+
+Sets the integer index of the current body. This represents the \hyperlink{classosea_1_1ofreq_1_1_body}{Body} object that the derived output is associated with. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Input} & The integer index of the current \hyperlink{classosea_1_1ofreq_1_1_body}{Body} object associated with this derived output object. Variable is passed by value \\
+\hline
+\end{DoxyParams}
+\hypertarget{classosea_1_1ofreq_1_1_output_derived_a174188431586c269edca5f17db16b498}{\index{osea\-::ofreq\-::\-Output\-Derived@{osea\-::ofreq\-::\-Output\-Derived}!set\-Cur\-Wave\-Dir@{set\-Cur\-Wave\-Dir}}
+\index{set\-Cur\-Wave\-Dir@{set\-Cur\-Wave\-Dir}!osea::ofreq::OutputDerived@{osea\-::ofreq\-::\-Output\-Derived}}
+\subsubsection[{set\-Cur\-Wave\-Dir}]{\setlength{\rightskip}{0pt plus 5cm}void Output\-Derived\-::set\-Cur\-Wave\-Dir (
+\begin{DoxyParamCaption}
+\item[{int \&}]{Input}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_output_derived_a174188431586c269edca5f17db16b498}
+
+
+Sets the integer index of the current wave direction. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Input} & The integer index of the current wave direction in the vector list of wave directions. Variable is passed by reference. Variable is stored internally as a pointer. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classosea_1_1ofreq_1_1_output_derived_ac2783796f37019b87df8b2fc58b21d31}{\index{osea\-::ofreq\-::\-Output\-Derived@{osea\-::ofreq\-::\-Output\-Derived}!set\-List\-Body@{set\-List\-Body}}
+\index{set\-List\-Body@{set\-List\-Body}!osea::ofreq::OutputDerived@{osea\-::ofreq\-::\-Output\-Derived}}
+\subsubsection[{set\-List\-Body}]{\setlength{\rightskip}{0pt plus 5cm}void Output\-Derived\-::set\-List\-Body (
+\begin{DoxyParamCaption}
+\item[{std\-::vector$<$ {\bf Body} $>$ \&}]{Input}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_output_derived_ac2783796f37019b87df8b2fc58b21d31}
+
+
+Sets the list of \hyperlink{classosea_1_1ofreq_1_1_body}{Body} objects. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Input} & T\-He list of \hyperlink{classosea_1_1ofreq_1_1_body}{Body} objects. Variable passed by reference. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classosea_1_1ofreq_1_1_output_derived_af2a183ee4e75c6de6af8cc2d27512ac4}{\index{osea\-::ofreq\-::\-Output\-Derived@{osea\-::ofreq\-::\-Output\-Derived}!set\-List\-Freq@{set\-List\-Freq}}
+\index{set\-List\-Freq@{set\-List\-Freq}!osea::ofreq::OutputDerived@{osea\-::ofreq\-::\-Output\-Derived}}
+\subsubsection[{set\-List\-Freq}]{\setlength{\rightskip}{0pt plus 5cm}void Output\-Derived\-::set\-List\-Freq (
+\begin{DoxyParamCaption}
+\item[{std\-::vector$<$ double $>$ \&}]{Input}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_output_derived_af2a183ee4e75c6de6af8cc2d27512ac4}
+
+
+Sets the list of wave frequencies. Frequencies are in radians per second. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Input} & The list of wave frequencies. Variable is passed by reference. Variable is stored internally as a pointer. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classosea_1_1ofreq_1_1_output_derived_ad482f0254c9886599e25495c88707efe}{\index{osea\-::ofreq\-::\-Output\-Derived@{osea\-::ofreq\-::\-Output\-Derived}!set\-List\-Wave\-Dir@{set\-List\-Wave\-Dir}}
+\index{set\-List\-Wave\-Dir@{set\-List\-Wave\-Dir}!osea::ofreq::OutputDerived@{osea\-::ofreq\-::\-Output\-Derived}}
+\subsubsection[{set\-List\-Wave\-Dir}]{\setlength{\rightskip}{0pt plus 5cm}void Output\-Derived\-::set\-List\-Wave\-Dir (
+\begin{DoxyParamCaption}
+\item[{std\-::vector$<$ double $>$ \&}]{Input}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_output_derived_ad482f0254c9886599e25495c88707efe}
+
+
+Sets the list of wave directions. Wave directions are measured in radians. True North is zero, with positive angles going counter-\/clockwise. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Input} & The vector of doubles containing the wave directions. Variable is passed by reference. Variable is stored internally as a pointer. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classosea_1_1ofreq_1_1_output_derived_ac4db0b795c3bbb79072bce39e78b4d44}{\index{osea\-::ofreq\-::\-Output\-Derived@{osea\-::ofreq\-::\-Output\-Derived}!set\-Name@{set\-Name}}
+\index{set\-Name@{set\-Name}!osea::ofreq::OutputDerived@{osea\-::ofreq\-::\-Output\-Derived}}
+\subsubsection[{set\-Name}]{\setlength{\rightskip}{0pt plus 5cm}void Output\-Derived\-::set\-Name (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{name\-In}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_output_derived_ac4db0b795c3bbb79072bce39e78b4d44}
+
+
+Sets the name of the \hyperlink{classosea_1_1ofreq_1_1_output_derived}{Output\-Derived} object. This is a name set by the user to idenfity the object. If multiple objects of the same type are created, the name can also distinguish between the various objects. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name\-In} & std\-::string variable. Sets the name of the \hyperlink{classosea_1_1ofreq_1_1_output_derived}{Output\-Derived} object. Variable passed by value. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classosea_1_1ofreq_1_1_output_derived_a370efe39cc1262ee1ccb73394c28fc15}{\index{osea\-::ofreq\-::\-Output\-Derived@{osea\-::ofreq\-::\-Output\-Derived}!set\-Solution\-Set@{set\-Solution\-Set}}
+\index{set\-Solution\-Set@{set\-Solution\-Set}!osea::ofreq::OutputDerived@{osea\-::ofreq\-::\-Output\-Derived}}
+\subsubsection[{set\-Solution\-Set}]{\setlength{\rightskip}{0pt plus 5cm}void Output\-Derived\-::set\-Solution\-Set (
+\begin{DoxyParamCaption}
+\item[{std\-::vector$<$ {\bf Solution\-Set} $>$ \&}]{Input}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_output_derived_a370efe39cc1262ee1ccb73394c28fc15}
+
+
+Sets the list of solutions. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Input} & The vector list of \hyperlink{classosea_1_1ofreq_1_1_solution_set}{Solution\-Set} objects. Variable is passed by reference. Variable is stored internally as a pointer. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+outputderived.\-h\item 
+outputderived.\-cpp\end{DoxyCompactItemize}

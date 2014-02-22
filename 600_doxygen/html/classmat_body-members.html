@@ -45,6 +45,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -93,7 +94,7 @@ $(document).ready(function(){initNavTree('classmat_body.html','');});
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Variables</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -110,25 +111,39 @@ $(document).ready(function(){initNavTree('classmat_body.html','');});
 
 <p>This is the complete list of members for <a class="el" href="classmat_body.html">matBody</a>, including all inherited members.</p>
 <table class="directory">
-  <tr class="even"><td class="entry"><a class="el" href="classmat_body.html#a551183ad56eeba71ea4690574b1841e4">getId</a>()</td><td class="entry"><a class="el" href="classmat_body.html">matBody</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="classmat_body.html#ae4c339b7ce6a93cf6e54bc998cbd5903">getModelId</a>()</td><td class="entry"><a class="el" href="classmat_body.html">matBody</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classmat_body.html#af5e93e715ac8c15cf7a8b29ab6f4a930">listActiveForce_hydro</a>()</td><td class="entry"><a class="el" href="classmat_body.html">matBody</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="classmat_body.html#a6cce7e3a5be94a9fd7b58ae76809271f">listActiveForce_user</a>()</td><td class="entry"><a class="el" href="classmat_body.html">matBody</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classmat_body.html#ac4e3b6e287af37f0bc89195ed93a3670">listCrossForce_hydro</a>()</td><td class="entry"><a class="el" href="classmat_body.html">matBody</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="classmat_body.html#a644f523eb34ce98ebbee3a52b35f13f0">listCrossForce_user</a>()</td><td class="entry"><a class="el" href="classmat_body.html">matBody</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classmat_body.html#a09da411ea6f2934fc36b84c34da8f63d">listReactForce_hydro</a>()</td><td class="entry"><a class="el" href="classmat_body.html">matBody</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="classmat_body.html#a9a477bda31517ad2454c34c0a1942308">listReactForce_user</a>()</td><td class="entry"><a class="el" href="classmat_body.html">matBody</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classmat_body.html#ad1f7a689d28f2201cf9455495536fa8b">Mass</a>()</td><td class="entry"><a class="el" href="classmat_body.html">matBody</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classo_freq_core.html#a5e31044ee80fa436289e569c8080b21e">ErrLog</a></td><td class="entry"><a class="el" href="classo_freq_core.html">oFreqCore</a></td><td class="entry"><span class="mlabel">protected</span><span class="mlabel">static</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classmat_body.html#a551183ad56eeba71ea4690574b1841e4">getId</a>()</td><td class="entry"><a class="el" href="classmat_body.html">matBody</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classmat_body.html#ae4c339b7ce6a93cf6e54bc998cbd5903">getModelId</a>()</td><td class="entry"><a class="el" href="classmat_body.html">matBody</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classmat_body.html#a9733e23db05aac47a42cfca88fc9d679">listForceActive_hydro</a>()</td><td class="entry"><a class="el" href="classmat_body.html">matBody</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classmat_body.html#aa1c0587dc82254db28ff71a9cc3261d7">listForceActive_hydro</a>(unsigned int index)</td><td class="entry"><a class="el" href="classmat_body.html">matBody</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classmat_body.html#a6a51e55baec56037eee824ec53af9b5d">listForceActive_user</a>()</td><td class="entry"><a class="el" href="classmat_body.html">matBody</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classmat_body.html#a7d79de764dd75ad606a1cc9346b58676">listForceActive_user</a>(unsigned int index)</td><td class="entry"><a class="el" href="classmat_body.html">matBody</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classmat_body.html#a40e3fc33bc7b1685b7f1400312f88f88">listForceCross_hydro</a>()</td><td class="entry"><a class="el" href="classmat_body.html">matBody</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classmat_body.html#ad8ce408c1042c080cda0d50a3864fa54">listForceCross_hydro</a>(unsigned int index)</td><td class="entry"><a class="el" href="classmat_body.html">matBody</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classmat_body.html#a5dc37a8bb5143f2034ef6491969b2abe">listForceCross_user</a>()</td><td class="entry"><a class="el" href="classmat_body.html">matBody</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classmat_body.html#ae508a1904283a46d1fc5893da4080630">listForceCross_user</a>(unsigned int index)</td><td class="entry"><a class="el" href="classmat_body.html">matBody</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classmat_body.html#abead59c1604f4581a977e086874b2e7a">listForceReact_hydro</a>()</td><td class="entry"><a class="el" href="classmat_body.html">matBody</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classmat_body.html#a052f37c59ad093d92e1155e0b300d1aa">listForceReact_hydro</a>(unsigned int index)</td><td class="entry"><a class="el" href="classmat_body.html">matBody</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classmat_body.html#aeb296f7c56b523b32ca12b58de56ef37">listForceReact_user</a>()</td><td class="entry"><a class="el" href="classmat_body.html">matBody</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classmat_body.html#a53cbb789ae423084375b024954bf21f0">listForceReact_user</a>(unsigned int index)</td><td class="entry"><a class="el" href="classmat_body.html">matBody</a></td><td class="entry"></td></tr>
   <tr><td class="entry"><a class="el" href="classmat_body.html#adbcb73fc9873660ca781493b2b2742a2">matBody</a>()</td><td class="entry"><a class="el" href="classmat_body.html">matBody</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classo_freq_core.html#a5c882c0d8e78706270e377b749a647f5">oFreqCore</a>()</td><td class="entry"><a class="el" href="classo_freq_core.html">oFreqCore</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classo_freq_core.html#a85b3e812b6d78c064ba375d5101bb053">OutLog</a></td><td class="entry"><a class="el" href="classo_freq_core.html">oFreqCore</a></td><td class="entry"><span class="mlabel">protected</span><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classmat_body.html#a7c0b44be2aa75ae270168849c06e6067">refMass</a>()</td><td class="entry"><a class="el" href="classmat_body.html">matBody</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classo_freq_core.html#a8af56bbec3689f5d2252da1787a910e3">setErrLog</a>(string dirIn)</td><td class="entry"><a class="el" href="classo_freq_core.html">oFreqCore</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classmat_body.html#abb86318fbd7300ed01eae308551f9e96">setId</a>(int num)</td><td class="entry"><a class="el" href="classmat_body.html">matBody</a></td><td class="entry"></td></tr>
   <tr><td class="entry"><a class="el" href="classmat_body.html#abb8ea32c84153da5dfc53d7b0dc836a5">setModelId</a>(int num)</td><td class="entry"><a class="el" href="classmat_body.html">matBody</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classmat_body.html#afcc3a6a87689dfbb5dfa72648a46c355">~matBody</a>()</td><td class="entry"><a class="el" href="classmat_body.html">matBody</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classo_freq_core.html#a2912584189c4abd84498450b7c5908c2">setOutLog</a>(string dirIn)</td><td class="entry"><a class="el" href="classo_freq_core.html">oFreqCore</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classo_freq_core.html#a7272d265451eb63bb371f9b9c02f4883">writeError</a>(string mesIn)</td><td class="entry"><a class="el" href="classo_freq_core.html">oFreqCore</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classo_freq_core.html#a74a938eae7e51de72bc752ad83382a11">writeLog</a>(string mesIn)</td><td class="entry"><a class="el" href="classo_freq_core.html">oFreqCore</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classmat_body.html#afcc3a6a87689dfbb5dfa72648a46c355">~matBody</a>()</td><td class="entry"><a class="el" href="classmat_body.html">matBody</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classo_freq_core.html#aea5887547dbd17fc2d4f1a99fe217918">~oFreqCore</a>()</td><td class="entry"><a class="el" href="classo_freq_core.html">oFreqCore</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
 </table></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Thu Aug 22 2013 20:08:05 for oFreq by
+    <li class="footer">Generated on Sat Oct 12 2013 09:37:40 for oFreq by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.2 </li>
   </ul>

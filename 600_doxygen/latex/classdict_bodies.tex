@@ -1,0 +1,124 @@
+\hypertarget{classdict_bodies}{\section{dict\-Bodies Class Reference}
+\label{classdict_bodies}\index{dict\-Bodies@{dict\-Bodies}}
+}
+
+
+{\ttfamily \#include $<$dictbodies.\-h$>$}
+
+
+
+Inheritance diagram for dict\-Bodies\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=217pt]{classdict_bodies__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for dict\-Bodies\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=224pt]{classdict_bodies__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{classdict_bodies_a532b7006f9278ee79718670ea6bf7d06}{define\-Key} (string key\-In, vector$<$ string $>$ val\-In)
+\begin{DoxyCompactList}\small\item\em Function that defines how to interpret the key values. Contains a list of key names and corresponding actions to take for interpretting each key value. \end{DoxyCompactList}\item 
+int \hyperlink{classdict_bodies_aa3bd29546245bcbf593053e4ef163267}{define\-Class} (string name\-In)
+\begin{DoxyCompactList}\small\item\em Function that defines how to interpret the class name. Class name implies declaration of a new object of the class named by the class name. This is a separate set of definitions to handle class declarations. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+The \hyperlink{classdict_bodies}{dict\-Bodies} class defines the key-\/word value pairs associated with the Bodies.\-in input file. Just as a normal dictionary defines the meaning of words, the \hyperlink{classdict_bodies}{dict\-Bodies} class works in the same way. The \hyperlink{classdict_bodies}{dict\-Bodies} class takes individual pairs of keywords and values. It has a definition for each of these keywords. The definition is whatever actions are necessary to process the value of key-\/pair and apply it to the program. This may include variable type conversions. It will also use slots and signals to retrieve pointers to any appropriate objects that the \hyperlink{classdict_bodies}{dict\-Bodies} object needs to interact with. It will use the properties of those objects to apply the values it finds in the key-\/value pair. Any objects created in the \hyperlink{classdict_bodies}{dict\-Bodies} class can be safely deleted once all file reading is done.
+
+Note\-: The code for the \hyperlink{classdict_bodies}{dict\-Bodies} object always references the last object in the list. This assumes that no other commands get issued in the input file between the creation of an object and the definition of key-\/value pairs associated with that object. Currently, I can not imagine any situation where this assumption would be violated. But do consider this when planning error recovery methods. \begin{DoxySeeAlso}{See Also}
+\hyperlink{class_dictionary}{Dictionary} 
+
+File\-Reader 
+\end{DoxySeeAlso}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classdict_bodies_aa3bd29546245bcbf593053e4ef163267}{\index{dict\-Bodies@{dict\-Bodies}!define\-Class@{define\-Class}}
+\index{define\-Class@{define\-Class}!dictBodies@{dict\-Bodies}}
+\subsubsection[{define\-Class}]{\setlength{\rightskip}{0pt plus 5cm}int dict\-Bodies\-::define\-Class (
+\begin{DoxyParamCaption}
+\item[{string}]{name\-In}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{classdict_bodies_aa3bd29546245bcbf593053e4ef163267}
+
+
+Function that defines how to interpret the class name. Class name implies declaration of a new object of the class named by the class name. This is a separate set of definitions to handle class declarations. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name\-In} & String, variable passed by value. The name of the class name. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns status of assigning key. Returned value is an integer, passed by value. See list of return codes below\-: 0\-: Key definition found. Success. 1\-: No key found. / General error message. 2\-: Key is invalid within current active object. 99\-: Function virtual definition only. Not currently defined. 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{class_dictionary_ad6715664e1f51882a3a45db82127e6fd}{Dictionary}.
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classdict_bodies_aa3bd29546245bcbf593053e4ef163267_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classdict_bodies_a532b7006f9278ee79718670ea6bf7d06}{\index{dict\-Bodies@{dict\-Bodies}!define\-Key@{define\-Key}}
+\index{define\-Key@{define\-Key}!dictBodies@{dict\-Bodies}}
+\subsubsection[{define\-Key}]{\setlength{\rightskip}{0pt plus 5cm}int dict\-Bodies\-::define\-Key (
+\begin{DoxyParamCaption}
+\item[{string}]{key\-In, }
+\item[{vector$<$ string $>$}]{val\-In}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{classdict_bodies_a532b7006f9278ee79718670ea6bf7d06}
+
+
+Function that defines how to interpret the key values. Contains a list of key names and corresponding actions to take for interpretting each key value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key\-In} & String containing the key name. Variable passed by value. \\
+\hline
+{\em val\-In} & Vector of strings containing the key values. Variable passed by value. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns status of assigning key. Returned value is an integer, passed by value. See list of return codes below\-: 0\-: Key definition found. Success. 1\-: No key found. / General error message. 2\-: Key is invalid within current active object. 99\-: Function virtual definition only. Not currently defined. 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{class_dictionary_ad80581bdcda172a72ab700c968ba56bc}{Dictionary}.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classdict_bodies_a532b7006f9278ee79718670ea6bf7d06_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+dictbodies.\-h\item 
+dictbodies.\-cpp\end{DoxyCompactItemize}

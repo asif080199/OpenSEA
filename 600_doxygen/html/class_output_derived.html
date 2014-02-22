@@ -45,6 +45,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -93,7 +94,7 @@ $(document).ready(function(){initNavTree('class_output_derived.html','');});
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Variables</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -118,7 +119,14 @@ Inheritance diagram for OutputDerived:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_output_derived__inherit__graph.png" border="0" usemap="#_output_derived_inherit__map" alt="Inheritance graph"/></div>
 <map name="_output_derived_inherit__map" id="_output_derived_inherit__map">
-<area shape="rect" id="node3" href="class_global_solution.html" title="GlobalSolution" alt="" coords="162,80,272,107"/><area shape="rect" id="node5" href="class_global_acceleration.html" title="GlobalAcceleration" alt="" coords="5,155,141,181"/><area shape="rect" id="node7" href="class_global_motion.html" title="GlobalMotion" alt="" coords="166,155,268,181"/><area shape="rect" id="node9" href="class_global_velocity.html" title="GlobalVelocity" alt="" coords="293,155,403,181"/></map>
+<area shape="rect" id="node5" href="classosea_1_1ofreq_1_1_global_solution.html" title="osea::ofreq::GlobalSolution" alt="" coords="129,155,316,181"/><area shape="rect" id="node2" href="classo_freq_core.html" title="The core oFreq class. All oFreq classes inherit from this class." alt="" coords="179,5,267,32"/><area shape="rect" id="node7" href="classosea_1_1ofreq_1_1_global_acceleration.html" title="osea::ofreq::GlobalAcceleration" alt="" coords="5,229,219,256"/><area shape="rect" id="node9" href="classosea_1_1ofreq_1_1_global_motion.html" title="osea::ofreq::GlobalMotion" alt="" coords="243,229,423,256"/></map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
+<div class="dynheader">
+Collaboration diagram for OutputDerived:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_output_derived__coll__graph.png" border="0" usemap="#_output_derived_coll__map" alt="Collaboration graph"/></div>
+<map name="_output_derived_coll__map" id="_output_derived_coll__map">
+<area shape="rect" id="node2" href="classo_freq_core.html" title="The core oFreq class. All oFreq classes inherit from this class." alt="" coords="15,5,103,32"/></map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
@@ -141,30 +149,39 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a7a65864e45519edfe7fe45c408457f41"><td class="memItemLeft" align="right" valign="top">virtual cx_mat&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_output_derived.html#a7a65864e45519edfe7fe45c408457f41">calcOutput</a> (double freqIn)=0</td></tr>
 <tr class="memdesc:a7a65864e45519edfe7fe45c408457f41"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pure virtual member. Calculates the output from the <a class="el" href="class_output_derived.html">OutputDerived</a> object.  <a href="#a7a65864e45519edfe7fe45c408457f41"></a><br/></td></tr>
 <tr class="separator:a7a65864e45519edfe7fe45c408457f41"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac6a77d28934026f473f89cc65126d95c"><td class="memItemLeft" align="right" valign="top">vector&lt; <a class="el" href="class_body.html">Body</a> &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_output_derived.html#ac6a77d28934026f473f89cc65126d95c">getlistBody</a> ()</td></tr>
-<tr class="memdesc:ac6a77d28934026f473f89cc65126d95c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the list of body objects. Only a c++ reference to the list of body objects.  <a href="#ac6a77d28934026f473f89cc65126d95c"></a><br/></td></tr>
-<tr class="separator:ac6a77d28934026f473f89cc65126d95c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a261f8d51928fa5aa497cfe8ccd47fb16"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_output_derived.html#a261f8d51928fa5aa497cfe8ccd47fb16">setlistBody</a> (vector&lt; <a class="el" href="class_body.html">Body</a> &gt; &amp;Input)</td></tr>
-<tr class="memdesc:a261f8d51928fa5aa497cfe8ccd47fb16"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the list of <a class="el" href="class_body.html">Body</a> objects.  <a href="#a261f8d51928fa5aa497cfe8ccd47fb16"></a><br/></td></tr>
-<tr class="separator:a261f8d51928fa5aa497cfe8ccd47fb16"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a49a581a23397a24893db0990d3b67bfa"><td class="memItemLeft" align="right" valign="top">vector&lt; <a class="el" href="classlist_solution.html">listSolution</a> &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_output_derived.html#a49a581a23397a24893db0990d3b67bfa">getlistSolution</a> ()</td></tr>
-<tr class="memdesc:a49a581a23397a24893db0990d3b67bfa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a vector of <a class="el" href="classlist_solution.html">listSolution</a> objects.  <a href="#a49a581a23397a24893db0990d3b67bfa"></a><br/></td></tr>
-<tr class="separator:a49a581a23397a24893db0990d3b67bfa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6689e121641bb37ddb1620416b7ccd3c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_output_derived.html#a6689e121641bb37ddb1620416b7ccd3c">setlistSolution</a> (vector&lt; <a class="el" href="classlist_solution.html">listSolution</a> &gt; &amp;Input)</td></tr>
-<tr class="memdesc:a6689e121641bb37ddb1620416b7ccd3c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the list of solutions.  <a href="#a6689e121641bb37ddb1620416b7ccd3c"></a><br/></td></tr>
-<tr class="separator:a6689e121641bb37ddb1620416b7ccd3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a355046fc651296105375693479d57687"><td class="memItemLeft" align="right" valign="top">vector&lt; double &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_output_derived.html#a355046fc651296105375693479d57687">getlistFreq</a> ()</td></tr>
-<tr class="memdesc:a355046fc651296105375693479d57687"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the list of frequencies. Frequencies are in radians per second.  <a href="#a355046fc651296105375693479d57687"></a><br/></td></tr>
-<tr class="separator:a355046fc651296105375693479d57687"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0d7ed0123c1af843d2c257630e26595e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_output_derived.html#a0d7ed0123c1af843d2c257630e26595e">setlistFreq</a> (vector&lt; double &gt; &amp;Input)</td></tr>
-<tr class="memdesc:a0d7ed0123c1af843d2c257630e26595e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the list of wave frequencies. Frequencies are in radians per second.  <a href="#a0d7ed0123c1af843d2c257630e26595e"></a><br/></td></tr>
-<tr class="separator:a0d7ed0123c1af843d2c257630e26595e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae52ca63f6ad9b7b99913fd071adda371"><td class="memItemLeft" align="right" valign="top">vector&lt; double &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_output_derived.html#ae52ca63f6ad9b7b99913fd071adda371">getlistWaveDir</a> ()</td></tr>
-<tr class="memdesc:ae52ca63f6ad9b7b99913fd071adda371"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the list of wave directions. Wave directions are measured in radians. True North is zero, with positive angles going counter-clockwise.  <a href="#ae52ca63f6ad9b7b99913fd071adda371"></a><br/></td></tr>
-<tr class="separator:ae52ca63f6ad9b7b99913fd071adda371"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab809f8db22894f657c6b3256253395bf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_output_derived.html#ab809f8db22894f657c6b3256253395bf">setlistWaveDir</a> (vector&lt; double &gt; &amp;Input)</td></tr>
-<tr class="memdesc:ab809f8db22894f657c6b3256253395bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the list of wave directions. Wave directions are measured in radians. True North is zero, with positive angles going counter-clockwise.  <a href="#ab809f8db22894f657c6b3256253395bf"></a><br/></td></tr>
-<tr class="separator:ab809f8db22894f657c6b3256253395bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a525d8eb4dbed1fd130614521c5d602c1"><td class="memItemLeft" align="right" valign="top">vector&lt; <a class="el" href="class_body.html">Body</a> &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_output_derived.html#a525d8eb4dbed1fd130614521c5d602c1">listBody</a> ()</td></tr>
+<tr class="memdesc:a525d8eb4dbed1fd130614521c5d602c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the list of body objects. Only a c++ reference to the list of body objects.  <a href="#a525d8eb4dbed1fd130614521c5d602c1"></a><br/></td></tr>
+<tr class="separator:a525d8eb4dbed1fd130614521c5d602c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abda178375c603cd2d2efcc0c5f9c1f10"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_body.html">Body</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_output_derived.html#abda178375c603cd2d2efcc0c5f9c1f10">listBody</a> (int bodIn)</td></tr>
+<tr class="memdesc:abda178375c603cd2d2efcc0c5f9c1f10"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a reference to an individual <a class="el" href="class_body.html">Body</a> in the list of <a class="el" href="class_body.html">Body</a> objects.  <a href="#abda178375c603cd2d2efcc0c5f9c1f10"></a><br/></td></tr>
+<tr class="separator:abda178375c603cd2d2efcc0c5f9c1f10"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac5a137e45b7ff144d9c5d1a9d7e51a24"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_output_derived.html#ac5a137e45b7ff144d9c5d1a9d7e51a24">setListBody</a> (vector&lt; <a class="el" href="class_body.html">Body</a> &gt; &amp;Input)</td></tr>
+<tr class="memdesc:ac5a137e45b7ff144d9c5d1a9d7e51a24"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the list of <a class="el" href="class_body.html">Body</a> objects.  <a href="#ac5a137e45b7ff144d9c5d1a9d7e51a24"></a><br/></td></tr>
+<tr class="separator:ac5a137e45b7ff144d9c5d1a9d7e51a24"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae94d577f4f58c2c1f8cb2c9c650d505c"><td class="memItemLeft" align="right" valign="top">vector&lt; <a class="el" href="class_solution_set.html">SolutionSet</a> &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_output_derived.html#ae94d577f4f58c2c1f8cb2c9c650d505c">refSolutionSet</a> ()</td></tr>
+<tr class="memdesc:ae94d577f4f58c2c1f8cb2c9c650d505c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a vector of <a class="el" href="class_solution_set.html">SolutionSet</a> objects.  <a href="#ae94d577f4f58c2c1f8cb2c9c650d505c"></a><br/></td></tr>
+<tr class="separator:ae94d577f4f58c2c1f8cb2c9c650d505c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa61b7866cca2a734af62fd8806bb1bc2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_output_derived.html#aa61b7866cca2a734af62fd8806bb1bc2">setSolutionSet</a> (vector&lt; <a class="el" href="class_solution_set.html">SolutionSet</a> &gt; &amp;Input)</td></tr>
+<tr class="memdesc:aa61b7866cca2a734af62fd8806bb1bc2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the list of solutions.  <a href="#aa61b7866cca2a734af62fd8806bb1bc2"></a><br/></td></tr>
+<tr class="separator:aa61b7866cca2a734af62fd8806bb1bc2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeca7e08a1c561ae61a7a97a59b05cbdf"><td class="memItemLeft" align="right" valign="top">vector&lt; double &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_output_derived.html#aeca7e08a1c561ae61a7a97a59b05cbdf">listFreq</a> ()</td></tr>
+<tr class="memdesc:aeca7e08a1c561ae61a7a97a59b05cbdf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the list of frequencies. Frequencies are in radians per second.  <a href="#aeca7e08a1c561ae61a7a97a59b05cbdf"></a><br/></td></tr>
+<tr class="separator:aeca7e08a1c561ae61a7a97a59b05cbdf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae630f20aca768c789851b82020e2a8c3"><td class="memItemLeft" align="right" valign="top">double &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_output_derived.html#ae630f20aca768c789851b82020e2a8c3">listFreq</a> (int index)</td></tr>
+<tr class="memdesc:ae630f20aca768c789851b82020e2a8c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns individual frequency from the list of wave frequencies.  <a href="#ae630f20aca768c789851b82020e2a8c3"></a><br/></td></tr>
+<tr class="separator:ae630f20aca768c789851b82020e2a8c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a40c5ed80faa1c509be5348c9765a756a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_output_derived.html#a40c5ed80faa1c509be5348c9765a756a">setListFreq</a> (vector&lt; double &gt; &amp;Input)</td></tr>
+<tr class="memdesc:a40c5ed80faa1c509be5348c9765a756a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the list of wave frequencies. Frequencies are in radians per second.  <a href="#a40c5ed80faa1c509be5348c9765a756a"></a><br/></td></tr>
+<tr class="separator:a40c5ed80faa1c509be5348c9765a756a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a114e057d84f34e5138d077fd7f053898"><td class="memItemLeft" align="right" valign="top">vector&lt; double &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_output_derived.html#a114e057d84f34e5138d077fd7f053898">listWaveDir</a> ()</td></tr>
+<tr class="memdesc:a114e057d84f34e5138d077fd7f053898"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the list of wave directions. Wave directions are measured in radians. True North is zero, with positive angles going counter-clockwise.  <a href="#a114e057d84f34e5138d077fd7f053898"></a><br/></td></tr>
+<tr class="separator:a114e057d84f34e5138d077fd7f053898"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a043a3621ac94b69cd16170a550bb3905"><td class="memItemLeft" align="right" valign="top">double &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_output_derived.html#a043a3621ac94b69cd16170a550bb3905">listWaveDir</a> (int index)</td></tr>
+<tr class="memdesc:a043a3621ac94b69cd16170a550bb3905"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns individual wave direction from the list of wave directions.  <a href="#a043a3621ac94b69cd16170a550bb3905"></a><br/></td></tr>
+<tr class="separator:a043a3621ac94b69cd16170a550bb3905"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4c6c59f99a371d7cae9a4930ef1cd094"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_output_derived.html#a4c6c59f99a371d7cae9a4930ef1cd094">setListWaveDir</a> (vector&lt; double &gt; &amp;Input)</td></tr>
+<tr class="memdesc:a4c6c59f99a371d7cae9a4930ef1cd094"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the list of wave directions. Wave directions are measured in radians. True North is zero, with positive angles going counter-clockwise.  <a href="#a4c6c59f99a371d7cae9a4930ef1cd094"></a><br/></td></tr>
+<tr class="separator:a4c6c59f99a371d7cae9a4930ef1cd094"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad59fff8dc8f1772039aff4950a3cdf18"><td class="memItemLeft" align="right" valign="top">int &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_output_derived.html#ad59fff8dc8f1772039aff4950a3cdf18">getCurWaveDir</a> ()</td></tr>
 <tr class="memdesc:ad59fff8dc8f1772039aff4950a3cdf18"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the integer index of the current wave direction.  <a href="#ad59fff8dc8f1772039aff4950a3cdf18"></a><br/></td></tr>
 <tr class="separator:ad59fff8dc8f1772039aff4950a3cdf18"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -177,6 +194,11 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a56aa87d4a9aec5e21842bf614920c1dc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_output_derived.html#a56aa87d4a9aec5e21842bf614920c1dc">setCurBody</a> (int Input)</td></tr>
 <tr class="memdesc:a56aa87d4a9aec5e21842bf614920c1dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the integer index of the current body. This represents the <a class="el" href="class_body.html">Body</a> object that the derived output is associated with.  <a href="#a56aa87d4a9aec5e21842bf614920c1dc"></a><br/></td></tr>
 <tr class="separator:a56aa87d4a9aec5e21842bf614920c1dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classo_freq_core"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classo_freq_core')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classo_freq_core.html">oFreqCore</a></td></tr>
+<tr class="memitem:a5c882c0d8e78706270e377b749a647f5 inherit pub_methods_classo_freq_core"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classo_freq_core.html#a5c882c0d8e78706270e377b749a647f5">oFreqCore</a> ()</td></tr>
+<tr class="separator:a5c882c0d8e78706270e377b749a647f5 inherit pub_methods_classo_freq_core"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aea5887547dbd17fc2d4f1a99fe217918 inherit pub_methods_classo_freq_core"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classo_freq_core.html#aea5887547dbd17fc2d4f1a99fe217918">~oFreqCore</a> ()</td></tr>
+<tr class="separator:aea5887547dbd17fc2d4f1a99fe217918 inherit pub_methods_classo_freq_core"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
@@ -188,10 +210,10 @@ string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cl
 vector&lt; <a class="el" href="class_body.html">Body</a> &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_output_derived.html#a584a7b228dfc4ea3830631763e0a36fa">plistBody</a></td></tr>
 <tr class="memdesc:a584a7b228dfc4ea3830631763e0a36fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">The vector list of <a class="el" href="class_body.html">Body</a> objects. <br/></td></tr>
 <tr class="separator:a584a7b228dfc4ea3830631763e0a36fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3d5228713e1711a3ab57fe3bd0887c6e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3d5228713e1711a3ab57fe3bd0887c6e"></a>
-vector&lt; <a class="el" href="classlist_solution.html">listSolution</a> &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_output_derived.html#a3d5228713e1711a3ab57fe3bd0887c6e">plistSolution</a></td></tr>
-<tr class="memdesc:a3d5228713e1711a3ab57fe3bd0887c6e"><td class="mdescLeft">&#160;</td><td class="mdescRight">The vector list of <a class="el" href="classlist_solution.html">listSolution</a> objects. <br/></td></tr>
-<tr class="separator:a3d5228713e1711a3ab57fe3bd0887c6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9d9db93854507b677f78301376438415"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9d9db93854507b677f78301376438415"></a>
+vector&lt; <a class="el" href="class_solution_set.html">SolutionSet</a> &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_output_derived.html#a9d9db93854507b677f78301376438415">plistSolution</a></td></tr>
+<tr class="memdesc:a9d9db93854507b677f78301376438415"><td class="mdescLeft">&#160;</td><td class="mdescRight">The vector list of <a class="el" href="class_solution_set.html">SolutionSet</a> objects. <br/></td></tr>
+<tr class="separator:a9d9db93854507b677f78301376438415"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2c367aa51c34c8eb43dc226be92c3d07"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2c367aa51c34c8eb43dc226be92c3d07"></a>
 vector&lt; double &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_output_derived.html#a2c367aa51c34c8eb43dc226be92c3d07">plistFreq</a></td></tr>
 <tr class="memdesc:a2c367aa51c34c8eb43dc226be92c3d07"><td class="mdescLeft">&#160;</td><td class="mdescRight">The list of wave frequencies. Wave frequency recorded in units of radians per second. <br/></td></tr>
@@ -208,6 +230,31 @@ int *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cla
 int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_output_derived.html#acf0ac8dbd4ead154a92d7d77d8893c1b">pCurBody</a></td></tr>
 <tr class="memdesc:acf0ac8dbd4ead154a92d7d77d8893c1b"><td class="mdescLeft">&#160;</td><td class="mdescRight">The index of the current body used for calculating derived outputs. This index is the position of the current body in the list of <a class="el" href="class_body.html">Body</a> objects. <br/></td></tr>
 <tr class="separator:acf0ac8dbd4ead154a92d7d77d8893c1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
+Additional Inherited Members</h2></td></tr>
+<tr class="inherit_header pro_methods_classo_freq_core"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classo_freq_core')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classo_freq_core.html">oFreqCore</a></td></tr>
+<tr class="memitem:a2912584189c4abd84498450b7c5908c2 inherit pro_methods_classo_freq_core"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classo_freq_core.html#a2912584189c4abd84498450b7c5908c2">setOutLog</a> (string dirIn)</td></tr>
+<tr class="memdesc:a2912584189c4abd84498450b7c5908c2 inherit pro_methods_classo_freq_core"><td class="mdescLeft">&#160;</td><td class="mdescRight">Opens the output log file and prepares it for writing.  <a href="#a2912584189c4abd84498450b7c5908c2"></a><br/></td></tr>
+<tr class="separator:a2912584189c4abd84498450b7c5908c2 inherit pro_methods_classo_freq_core"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8af56bbec3689f5d2252da1787a910e3 inherit pro_methods_classo_freq_core"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classo_freq_core.html#a8af56bbec3689f5d2252da1787a910e3">setErrLog</a> (string dirIn)</td></tr>
+<tr class="memdesc:a8af56bbec3689f5d2252da1787a910e3 inherit pro_methods_classo_freq_core"><td class="mdescLeft">&#160;</td><td class="mdescRight">Opens the error log file and prepares it for writing.  <a href="#a8af56bbec3689f5d2252da1787a910e3"></a><br/></td></tr>
+<tr class="separator:a8af56bbec3689f5d2252da1787a910e3 inherit pro_methods_classo_freq_core"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a74a938eae7e51de72bc752ad83382a11 inherit pro_methods_classo_freq_core"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classo_freq_core.html#a74a938eae7e51de72bc752ad83382a11">writeLog</a> (string mesIn)</td></tr>
+<tr class="memdesc:a74a938eae7e51de72bc752ad83382a11 inherit pro_methods_classo_freq_core"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes output of a log message to the log file. Adds in a date and time stamp to the log.  <a href="#a74a938eae7e51de72bc752ad83382a11"></a><br/></td></tr>
+<tr class="separator:a74a938eae7e51de72bc752ad83382a11 inherit pro_methods_classo_freq_core"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7272d265451eb63bb371f9b9c02f4883 inherit pro_methods_classo_freq_core"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classo_freq_core.html#a7272d265451eb63bb371f9b9c02f4883">writeError</a> (string mesIn)</td></tr>
+<tr class="memdesc:a7272d265451eb63bb371f9b9c02f4883 inherit pro_methods_classo_freq_core"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes output of an error message to the error file. Adds in a date, time, and class name to the log.  <a href="#a7272d265451eb63bb371f9b9c02f4883"></a><br/></td></tr>
+<tr class="separator:a7272d265451eb63bb371f9b9c02f4883 inherit pro_methods_classo_freq_core"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_static_attribs_classo_freq_core"><td colspan="2" onclick="javascript:toggleInherit('pro_static_attribs_classo_freq_core')"><img src="closed.png" alt="-"/>&#160;Static Protected Attributes inherited from <a class="el" href="classo_freq_core.html">oFreqCore</a></td></tr>
+<tr class="memitem:a85b3e812b6d78c064ba375d5101bb053 inherit pro_static_attribs_classo_freq_core"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a85b3e812b6d78c064ba375d5101bb053"></a>
+static std::ofstream&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classo_freq_core.html#a85b3e812b6d78c064ba375d5101bb053">OutLog</a></td></tr>
+<tr class="memdesc:a85b3e812b6d78c064ba375d5101bb053 inherit pro_static_attribs_classo_freq_core"><td class="mdescLeft">&#160;</td><td class="mdescRight">The log file for an oFreq run. Records normal actions for the program. Informs user of regular program developments. Through inheritence of the <a class="el" href="classo_freq_core.html" title="The core oFreq class. All oFreq classes inherit from this class.">oFreqCore</a> class, this object is available to every object in the oFreq application. <br/></td></tr>
+<tr class="separator:a85b3e812b6d78c064ba375d5101bb053 inherit pro_static_attribs_classo_freq_core"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5e31044ee80fa436289e569c8080b21e inherit pro_static_attribs_classo_freq_core"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5e31044ee80fa436289e569c8080b21e"></a>
+static std::ofstream&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classo_freq_core.html#a5e31044ee80fa436289e569c8080b21e">ErrLog</a></td></tr>
+<tr class="memdesc:a5e31044ee80fa436289e569c8080b21e inherit pro_static_attribs_classo_freq_core"><td class="mdescLeft">&#160;</td><td class="mdescRight">The error log file for an oFreq run. Records any errors or warnings for the program. Informs user of errors and warnings and where they occurred. Through inheritence of the <a class="el" href="classo_freq_core.html" title="The core oFreq class. All oFreq classes inherit from this class.">oFreqCore</a> class, this object is available for every object in the oFreq application. <br/></td></tr>
+<tr class="separator:a5e31044ee80fa436289e569c8080b21e inherit pro_static_attribs_classo_freq_core"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>This abstract class represents the Derived Outputs. Derived outputs are any additional information that needs to be calculated from basic information within a body. That can be anything from taking derivatives to calculating an empirical equation for motion sickness incidence. The constructor for this class requires a pointer to the parent class to access any further information required for calculation.</p>
@@ -263,7 +310,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Returns a complex matrix that is the <a class="el" href="class_output_derived.html">OutputDerived</a> result. The exact meaning and organization of the complex matrix changes with each type of <a class="el" href="class_output_derived.html">OutputDerived</a> object created as a child of this class. The cx_mat data type is used because that is the most natural data type for the larges number of <a class="el" href="class_output_derived.html">OutputDerived</a> objects. It isn't always the best, but it can usually work well for the intended purposes. </dd></dl>
 
-<p>Implemented in <a class="el" href="class_global_solution.html#adf90922a97153ce858da530e20bc3f4d">GlobalSolution</a>.</p>
+<p>Implemented in <a class="el" href="classosea_1_1ofreq_1_1_global_solution.html#adf90922a97153ce858da530e20bc3f4d">osea::ofreq::GlobalSolution</a>.</p>
 
 </div>
 </div>
@@ -321,78 +368,6 @@ int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class
 
 </div>
 </div>
-<a class="anchor" id="ac6a77d28934026f473f89cc65126d95c"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">vector&lt; <a class="el" href="class_body.html">Body</a> &gt; &amp; OutputDerived::getlistBody </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Returns the list of body objects. Only a c++ reference to the list of body objects. </p>
-<dl class="section return"><dt>Returns</dt><dd>Returns reference to the list of <a class="el" href="class_body.html">Body</a> objects. Variable passed by reference. </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="a355046fc651296105375693479d57687"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">vector&lt; double &gt; &amp; OutputDerived::getlistFreq </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Gets the list of frequencies. Frequencies are in radians per second. </p>
-<dl class="section return"><dt>Returns</dt><dd>Returns the list of wave frequencies. Variable is passed by reference. Variable is stored internally as a pointer. </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="a49a581a23397a24893db0990d3b67bfa"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">vector&lt; <a class="el" href="classlist_solution.html">listSolution</a> &gt; &amp; OutputDerived::getlistSolution </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Returns a vector of <a class="el" href="classlist_solution.html">listSolution</a> objects. </p>
-<dl class="section return"><dt>Returns</dt><dd>Returns a vector of <a class="el" href="classlist_solution.html">listSolution</a> objects. Internal storage is just a set of pointers to the object. Variable is passed by reference. </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="ae52ca63f6ad9b7b99913fd071adda371"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">vector&lt; double &gt; &amp; OutputDerived::getlistWaveDir </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Gets the list of wave directions. Wave directions are measured in radians. True North is zero, with positive angles going counter-clockwise. </p>
-<dl class="section return"><dt>Returns</dt><dd>Returns the vector of doubles containing the wave directions. Variable passed by reference. Variable is stored internally as a pointer. </dd></dl>
-
-</div>
-</div>
 <a class="anchor" id="a31aeafb442ffc032f4e3e8a48285ebef"></a>
 <div class="memitem">
 <div class="memproto">
@@ -409,14 +384,154 @@ int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class
 <p>Returns the name of the <a class="el" href="class_output_derived.html">OutputDerived</a> object. This is a name set by the user to idenfity the object. If multiple objects of the same type are created, the name can also distinguish between the various objects. </p>
 <dl class="section return"><dt>Returns</dt><dd>Returns the name of the <a class="el" href="class_output_derived.html">OutputDerived</a> object. String variable. Variable passed by value. </dd></dl>
 
-<p><div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_output_derived_a31aeafb442ffc032f4e3e8a48285ebef_icgraph.png" border="0" usemap="#class_output_derived_a31aeafb442ffc032f4e3e8a48285ebef_icgraph" alt=""/></div>
-<map name="class_output_derived_a31aeafb442ffc032f4e3e8a48285ebef_icgraph" id="class_output_derived_a31aeafb442ffc032f4e3e8a48285ebef_icgraph">
-<area shape="rect" id="node3" href="class_file_writer.html#a5c921b5ae92039cf50458e2c46e204da" title="Writes the output file of global motions. If file exists, appends to the file, assuming the appended ..." alt="" coords="243,5,437,32"/><area shape="rect" id="node5" href="class_file_writer.html#a2078a50dbd21946aeed86d8e0bccd50e" title="Writes the output file of global velocities. If file exists, appends to the file, assuming the append..." alt="" coords="239,56,441,83"/><area shape="rect" id="node7" href="class_file_writer.html#aaff553c2e03cb1c1639e107cfeac3038" title="Writes the output file of global accelerations. If file exists, appends to the file, assuming the appended file is a new body object." alt="" coords="225,107,455,133"/><area shape="rect" id="node9" href="class_file_writer.html#a317649499b8c16dd529e2bf588e3be88" title="Writes the output file of global solutions. If file exists, appends to the file, assuming the appende..." alt="" coords="239,157,441,184"/></map>
 </div>
-</p>
+</div>
+<a class="anchor" id="a525d8eb4dbed1fd130614521c5d602c1"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">vector&lt; <a class="el" href="class_body.html">Body</a> &gt; &amp; OutputDerived::listBody </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns the list of body objects. Only a c++ reference to the list of body objects. </p>
+<dl class="section return"><dt>Returns</dt><dd>Returns reference to the list of <a class="el" href="class_body.html">Body</a> objects. Variable passed by reference. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="abda178375c603cd2d2efcc0c5f9c1f10"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_body.html">Body</a> &amp; OutputDerived::listBody </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>bodIn</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns a reference to an individual <a class="el" href="class_body.html">Body</a> in the list of <a class="el" href="class_body.html">Body</a> objects. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">bodIn</td><td>The integer index of the body you wish to retrieve from the list of <a class="el" href="class_body.html">Body</a> objects. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Returns the <a class="el" href="class_body.html">Body</a> object requested. Returned variable is passed by reference. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="aeca7e08a1c561ae61a7a97a59b05cbdf"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">vector&lt; double &gt; &amp; OutputDerived::listFreq </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gets the list of frequencies. Frequencies are in radians per second. </p>
+<dl class="section return"><dt>Returns</dt><dd>Returns the list of wave frequencies. Variable is passed by reference. Variable is stored internally as a pointer. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ae630f20aca768c789851b82020e2a8c3"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double &amp; OutputDerived::listFreq </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>index</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns individual frequency from the list of wave frequencies. </p>
+<p>Returns the frequency specified by the index. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">index</td><td>Integer. The index which specifies which wave frequency to return. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Double. Returns individual frequency from the list of wave frequencies. Returned variabled is passed by reference. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a114e057d84f34e5138d077fd7f053898"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">vector&lt; double &gt; &amp; OutputDerived::listWaveDir </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gets the list of wave directions. Wave directions are measured in radians. True North is zero, with positive angles going counter-clockwise. </p>
+<dl class="section return"><dt>Returns</dt><dd>Returns the vector of doubles containing the wave directions. Variable passed by reference. Variable is stored internally as a pointer. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a043a3621ac94b69cd16170a550bb3905"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double &amp; OutputDerived::listWaveDir </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>index</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns individual wave direction from the list of wave directions. </p>
+<p>Returns the wave direction specified by the index. Wave directions are measured in radians. True North is zero, with positive angles going counter-clockwise. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">index</td><td>Integer. The index which specifies which wave direction to return. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Double. Returns individual wave direction from the list of wave directions. Returned variable is passed by reference. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ae94d577f4f58c2c1f8cb2c9c650d505c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">vector&lt; <a class="el" href="class_solution_set.html">SolutionSet</a> &gt; &amp; OutputDerived::refSolutionSet </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns a vector of <a class="el" href="class_solution_set.html">SolutionSet</a> objects. </p>
+<dl class="section return"><dt>Returns</dt><dd>Returns a vector of <a class="el" href="class_solution_set.html">SolutionSet</a> objects. Internal storage is just a set of pointers to the object. Variable is passed by reference. </dd></dl>
 
 </div>
 </div>
@@ -468,12 +583,12 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a class="anchor" id="a261f8d51928fa5aa497cfe8ccd47fb16"></a>
+<a class="anchor" id="ac5a137e45b7ff144d9c5d1a9d7e51a24"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void OutputDerived::setlistBody </td>
+          <td class="memname">void OutputDerived::setListBody </td>
           <td>(</td>
           <td class="paramtype">vector&lt; <a class="el" href="class_body.html">Body</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>Input</em></td><td>)</td>
@@ -492,12 +607,12 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a class="anchor" id="a0d7ed0123c1af843d2c257630e26595e"></a>
+<a class="anchor" id="a40c5ed80faa1c509be5348c9765a756a"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void OutputDerived::setlistFreq </td>
+          <td class="memname">void OutputDerived::setListFreq </td>
           <td>(</td>
           <td class="paramtype">vector&lt; double &gt; &amp;&#160;</td>
           <td class="paramname"><em>Input</em></td><td>)</td>
@@ -516,36 +631,12 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a class="anchor" id="a6689e121641bb37ddb1620416b7ccd3c"></a>
+<a class="anchor" id="a4c6c59f99a371d7cae9a4930ef1cd094"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void OutputDerived::setlistSolution </td>
-          <td>(</td>
-          <td class="paramtype">vector&lt; <a class="el" href="classlist_solution.html">listSolution</a> &gt; &amp;&#160;</td>
-          <td class="paramname"><em>Input</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Sets the list of solutions. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">Input</td><td>The vector list of <a class="el" href="classlist_solution.html">listSolution</a> objects. Variable is passed by reference. Variable is stored internally as a pointer. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a class="anchor" id="ab809f8db22894f657c6b3256253395bf"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void OutputDerived::setlistWaveDir </td>
+          <td class="memname">void OutputDerived::setListWaveDir </td>
           <td>(</td>
           <td class="paramtype">vector&lt; double &gt; &amp;&#160;</td>
           <td class="paramname"><em>Input</em></td><td>)</td>
@@ -588,9 +679,33 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
+<a class="anchor" id="aa61b7866cca2a734af62fd8806bb1bc2"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void OutputDerived::setSolutionSet </td>
+          <td>(</td>
+          <td class="paramtype">vector&lt; <a class="el" href="class_solution_set.html">SolutionSet</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>Input</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets the list of solutions. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">Input</td><td>The vector list of <a class="el" href="class_solution_set.html">SolutionSet</a> objects. Variable is passed by reference. Variable is stored internally as a pointer. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>/home/nicholas/Ship Design/Projects/DMS1305 OpenSEA/master/200_src/bin/ofreq/derived_outputs/<a class="el" href="outputderived_8h_source.html">outputderived.h</a></li>
-<li>/home/nicholas/Ship Design/Projects/DMS1305 OpenSEA/master/200_src/bin/ofreq/derived_outputs/outputderived.cpp</li>
+<li><a class="el" href="outputderived_8h_source.html">outputderived.h</a></li>
+<li>outputderived.cpp</li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -598,7 +713,7 @@ Here is the caller graph for this function:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="class_output_derived.html">OutputDerived</a></li>
-    <li class="footer">Generated on Thu Aug 22 2013 20:08:11 for oFreq by
+    <li class="footer">Generated on Sat Oct 12 2013 09:37:55 for oFreq by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.2 </li>
   </ul>

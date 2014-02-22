@@ -1,0 +1,213 @@
+\hypertarget{class_dictionary}{\section{Dictionary Class Reference}
+\label{class_dictionary}\index{Dictionary@{Dictionary}}
+}
+
+
+{\ttfamily \#include $<$dictionary.\-h$>$}
+
+
+
+Inheritance diagram for Dictionary\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=310pt]{class_dictionary__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Dictionary\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=224pt]{class_dictionary__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{class_dictionary_a900221a385d133644aedcadbae90c2be}{set\-Object} (\hyperlink{class_object_group}{Object\-Group} input)
+\begin{DoxyCompactList}\small\item\em Public signal for the \hyperlink{class_object_group}{Object\-Group} object that is sent to the \hyperlink{class_dictionary}{Dictionary} object for procesing. \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_dictionary_a5fc7a78aa9aeb0c22ab5de54c7f7790f}{set\-System} (\hyperlink{class_system}{System} $\ast$pt\-Input)
+\begin{DoxyCompactList}\small\item\em Sets the system object for the dictionary to reference. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_dictionary_a6ff9dd5005c8796e0cc13a8bc4cb2288}{{\bfseries Dictionary} (Q\-Object $\ast$parent)}\label{class_dictionary_a6ff9dd5005c8796e0cc13a8bc4cb2288}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual int \hyperlink{class_dictionary_ad80581bdcda172a72ab700c968ba56bc}{define\-Key} (string key\-In, vector$<$ string $>$ val\-In)
+\begin{DoxyCompactList}\small\item\em Pure virtual function that defines how to interpret the key values. Contains a list of key names and corresponding actions to take for interpretting each key value. \end{DoxyCompactList}\item 
+virtual int \hyperlink{class_dictionary_ad6715664e1f51882a3a45db82127e6fd}{define\-Class} (string name\-In)
+\begin{DoxyCompactList}\small\item\em Pure virtual function that defines how to interpret the class name. Class name implies declaration of a new object of the class named by the class name. This is a separate set of definitions to handle class declarations. \end{DoxyCompactList}\item 
+complex$<$ double $>$ \hyperlink{class_dictionary_a0fd256ce693372451aedfa15853557c2}{convert\-Complex} (string input)
+\begin{DoxyCompactList}\small\item\em Converts a string of a complex number into a complex object (double base type) i.\-e. complex$<$double$>$. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_dictionary_a18782430a408c043bf666294cb9bcd40}{\hyperlink{class_system}{System} $\ast$ \hyperlink{class_dictionary_a18782430a408c043bf666294cb9bcd40}{pt\-System}}\label{class_dictionary_a18782430a408c043bf666294cb9bcd40}
+
+\begin{DoxyCompactList}\small\item\em Pointer to the \hyperlink{class_system}{System} object. Used to reference any important variables in the \hyperlink{class_system}{System} object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+This is a virtual class definition, inheritted by each file\-Dictionary object. Contains the basic functions for how to recursively progress through the definitions for an \hyperlink{class_object_group}{Object\-Group} object that is fed in. \begin{DoxySeeAlso}{See Also}
+\hyperlink{class_object_group}{Object\-Group} 
+\end{DoxySeeAlso}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_dictionary_a0fd256ce693372451aedfa15853557c2}{\index{Dictionary@{Dictionary}!convert\-Complex@{convert\-Complex}}
+\index{convert\-Complex@{convert\-Complex}!Dictionary@{Dictionary}}
+\subsubsection[{convert\-Complex}]{\setlength{\rightskip}{0pt plus 5cm}complex$<$ double $>$ Dictionary\-::convert\-Complex (
+\begin{DoxyParamCaption}
+\item[{string}]{input}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_dictionary_a0fd256ce693372451aedfa15853557c2}
+
+
+Converts a string of a complex number into a complex object (double base type) i.\-e. complex$<$double$>$. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em input} & The string which holds the complex number. Valid input formats are\-: 1.\-00+1.00i 1.\-00-\/1.\-00i 1.\-00+i1.00 1.\-00-\/i1.\-00 1.\-414$<$0.\-785398 (angle must be in radians) 1.\-414$<$-\/0.\-785398 (angle must be in radians) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns a complex$<$double$>$ object. Variable passed by value. 
+\end{DoxyReturn}
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_dictionary_a0fd256ce693372451aedfa15853557c2_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_dictionary_ad6715664e1f51882a3a45db82127e6fd}{\index{Dictionary@{Dictionary}!define\-Class@{define\-Class}}
+\index{define\-Class@{define\-Class}!Dictionary@{Dictionary}}
+\subsubsection[{define\-Class}]{\setlength{\rightskip}{0pt plus 5cm}int Dictionary\-::define\-Class (
+\begin{DoxyParamCaption}
+\item[{string}]{name\-In}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{class_dictionary_ad6715664e1f51882a3a45db82127e6fd}
+
+
+Pure virtual function that defines how to interpret the class name. Class name implies declaration of a new object of the class named by the class name. This is a separate set of definitions to handle class declarations. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name\-In} & String, variable passed by value. The name of the class name. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns status of assigning key. Returned value is an integer, passed by value. See list of return codes below\-: 0\-: Key definition found. Success. 1\-: No key found. / General error message. 2\-: Key is invalid within current active object. 99\-: Function virtual definition only. Not currently defined. 
+\end{DoxyReturn}
+
+
+Reimplemented in \hyperlink{classdict_forces_a1cd2da00aa2b4198af32786dd27eaf10}{dict\-Forces}, \hyperlink{classdict_bodies_aa3bd29546245bcbf593053e4ef163267}{dict\-Bodies}, and \hyperlink{classdict_control_a77dea969cac1ad6cdd61358ebb4b5ea1}{dict\-Control}.
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=348pt]{class_dictionary_ad6715664e1f51882a3a45db82127e6fd_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_dictionary_ad80581bdcda172a72ab700c968ba56bc}{\index{Dictionary@{Dictionary}!define\-Key@{define\-Key}}
+\index{define\-Key@{define\-Key}!Dictionary@{Dictionary}}
+\subsubsection[{define\-Key}]{\setlength{\rightskip}{0pt plus 5cm}int Dictionary\-::define\-Key (
+\begin{DoxyParamCaption}
+\item[{string}]{key\-In, }
+\item[{vector$<$ string $>$}]{val\-In}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{class_dictionary_ad80581bdcda172a72ab700c968ba56bc}
+
+
+Pure virtual function that defines how to interpret the key values. Contains a list of key names and corresponding actions to take for interpretting each key value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key\-In} & String containing the key name. Variable passed by value. \\
+\hline
+{\em val\-In} & Vector of strings containing the key values. Variable passed by value. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns status of assigning key. Returned value is an integer, passed by value. See list of return codes below\-: 0\-: Key definition found. Success. 1\-: No key found. / General error message. 2\-: Key is invalid within current active object. 99\-: Function virtual definition only. Not currently defined. 
+\end{DoxyReturn}
+
+
+Reimplemented in \hyperlink{classdict_forces_aa063da3300249600b1fcb60622d06759}{dict\-Forces}, \hyperlink{classdict_bodies_a532b7006f9278ee79718670ea6bf7d06}{dict\-Bodies}, and \hyperlink{classdict_control_a8acd1846982a698adab13e790121b1ad}{dict\-Control}.
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=340pt]{class_dictionary_ad80581bdcda172a72ab700c968ba56bc_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_dictionary_a900221a385d133644aedcadbae90c2be}{\index{Dictionary@{Dictionary}!set\-Object@{set\-Object}}
+\index{set\-Object@{set\-Object}!Dictionary@{Dictionary}}
+\subsubsection[{set\-Object}]{\setlength{\rightskip}{0pt plus 5cm}void Dictionary\-::set\-Object (
+\begin{DoxyParamCaption}
+\item[{{\bf Object\-Group}}]{input}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [slot]}}}\label{class_dictionary_a900221a385d133644aedcadbae90c2be}
+
+
+Public signal for the \hyperlink{class_object_group}{Object\-Group} object that is sent to the \hyperlink{class_dictionary}{Dictionary} object for procesing. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em input} & The \hyperlink{class_object_group}{Object\-Group} object that contains the class definitions. Variable passed by value. \\
+\hline
+\end{DoxyParams}
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_dictionary_a900221a385d133644aedcadbae90c2be_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_dictionary_a5fc7a78aa9aeb0c22ab5de54c7f7790f}{\index{Dictionary@{Dictionary}!set\-System@{set\-System}}
+\index{set\-System@{set\-System}!Dictionary@{Dictionary}}
+\subsubsection[{set\-System}]{\setlength{\rightskip}{0pt plus 5cm}void Dictionary\-::set\-System (
+\begin{DoxyParamCaption}
+\item[{{\bf System} $\ast$}]{pt\-Input}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [slot]}}}\label{class_dictionary_a5fc7a78aa9aeb0c22ab5de54c7f7790f}
+
+
+Sets the system object for the dictionary to reference. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pt\-System} & Pointer to the \hyperlink{class_system}{System} object. Variable passed by value. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+dictionary.\-h\item 
+dictionary.\-cpp\end{DoxyCompactItemize}

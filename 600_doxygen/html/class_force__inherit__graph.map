@@ -1,5 +1,6 @@
 <map id="Force" name="Force">
-<area shape="rect" id="node3" href="$classforce_active.html" title="forceActive" alt="" coords="5,80,93,107"/>
-<area shape="rect" id="node5" href="$classforce_react.html" title="forceReact" alt="" coords="118,80,204,107"/>
-<area shape="rect" id="node7" href="$classforce_cross.html" title="forceCross" alt="" coords="117,155,205,181"/>
+<area shape="rect" id="node5" href="$class_force_active.html" title="ForceActive" alt="" coords="5,155,99,181"/>
+<area shape="rect" id="node7" href="$class_force_react.html" title="ForceReact" alt="" coords="123,155,215,181"/>
+<area shape="rect" id="node2" href="$classo_freq_core.html" title="The core oFreq class. All oFreq classes inherit from this class." alt="" coords="67,5,155,32"/>
+<area shape="rect" id="node9" href="$class_force_cross.html" title="ForceCross" alt="" coords="123,229,216,256"/>
 </map>

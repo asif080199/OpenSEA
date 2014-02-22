@@ -5,6 +5,24 @@
 
 {\ttfamily \#include $<$derivative.\-h$>$}
 
+
+
+Inheritance diagram for Derivative\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=146pt]{class_derivative__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Derivative\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=146pt]{class_derivative__coll__graph}
+\end{center}
+\end{figure}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -12,23 +30,17 @@
 \item 
 \hyperlink{class_derivative_a7fc4ee53f460dfb98b3db2e9c9830cf9}{$\sim$\-Derivative} ()
 \item 
-void \hyperlink{class_derivative_afe00a18765c0d70c3232a41f5ac663dd}{test\-Print} ()
-\item 
-\hyperlink{class_equation}{Equation} \& \hyperlink{class_derivative_a67683204d8c601c9a78e4459dd05ce86}{Index\-Equation} (int index\-In)
+vector$<$ \hyperlink{class_equation}{Equation} $>$ \& \hyperlink{class_derivative_a7fa63ee738fcafcf3fccb796da095946}{list\-Equation} ()
+\begin{DoxyCompactList}\small\item\em The list of equations. \end{DoxyCompactList}\item 
+\hyperlink{class_equation}{Equation} \& \hyperlink{class_derivative_a432dcf928635e6f77801ae7b546656fe}{ref\-Index\-Equation} (int index\-In)
 \begin{DoxyCompactList}\small\item\em Returns the equation requested. Only specified by the data index property of the equation object. \end{DoxyCompactList}\item 
 \hyperlink{class_equation}{Equation} \hyperlink{class_derivative_af9b75e66d998bc3ad82250c6667d0c17}{get\-Index\-Equation} (int index\-In)
 \begin{DoxyCompactList}\small\item\em Returns the equation requested. Only specified by the data index property of the equation object. \end{DoxyCompactList}\item 
-\hyperlink{class_equation}{Equation} \& \hyperlink{class_derivative_ad3bda57577b0e540eb02612610a20156}{get\-Equation} (int number)
+\hyperlink{class_equation}{Equation} \& \hyperlink{class_derivative_a57fc9f8fc2bb6b416b9ade4f79f2bf1d}{list\-Equation} (unsigned int number)
 \begin{DoxyCompactList}\small\item\em Retrieve the equation specified by the number. \end{DoxyCompactList}\item 
 int \hyperlink{class_derivative_ac95af6fb993314a578b3f0d3cd57a9cc}{get\-Equation\-List\-Size} ()
 \end{DoxyCompactItemize}
-\subsection*{Public Attributes}
-\begin{DoxyCompactItemize}
-\item 
-vector$<$ \hyperlink{class_equation}{Equation} $>$ \& \hyperlink{class_derivative_aed6f05c911e91ef4690784072eeff9f1}{Equation\-List}
-\begin{DoxyCompactList}\small\item\em The list of equations. \end{DoxyCompactList}\item 
-vector$<$ \hyperlink{class_equation}{Equation} $>$ \& \hyperlink{class_derivative_ade93a5b5e1f55b428b9e674f8ac02c9e}{Equations}
-\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
 
 
 \subsection{Detailed Description}
@@ -52,25 +64,6 @@ This default constructor creates a \hyperlink{class_body}{Body} object. \hyperta
 The default destructor, nothing happens here. 
 
 \subsection{Member Function Documentation}
-\hypertarget{class_derivative_ad3bda57577b0e540eb02612610a20156}{\index{Derivative@{Derivative}!get\-Equation@{get\-Equation}}
-\index{get\-Equation@{get\-Equation}!Derivative@{Derivative}}
-\subsubsection[{get\-Equation}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Equation} \& Derivative\-::get\-Equation (
-\begin{DoxyParamCaption}
-\item[{int}]{number}
-\end{DoxyParamCaption}
-)}}\label{class_derivative_ad3bda57577b0e540eb02612610a20156}
-
-
-Retrieve the equation specified by the number. 
-
-Retrieves the equation specified by the number. Value returned is a pointer to the equation object. Allows editting of the equation object, or just data access. 
-\begin{DoxyParams}{Parameters}
-{\em number} & Integer representing which equation number should be returned. \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-Value returned is a pointer to the equation object. Allows editting of the equation object, or just data access. 
-\end{DoxyReturn}
 \hypertarget{class_derivative_ac95af6fb993314a578b3f0d3cd57a9cc}{\index{Derivative@{Derivative}!get\-Equation\-List\-Size@{get\-Equation\-List\-Size}}
 \index{get\-Equation\-List\-Size@{get\-Equation\-List\-Size}!Derivative@{Derivative}}
 \subsubsection[{get\-Equation\-List\-Size}]{\setlength{\rightskip}{0pt plus 5cm}int Derivative\-::get\-Equation\-List\-Size (
@@ -100,13 +93,43 @@ Returns the equation requested. Only specified by the data index property of the
 \begin{DoxyReturn}{Returns}
 \hyperlink{class_equation}{Equation} object specified by the Data\-Index of index\-In. Value returned is by value. 
 \end{DoxyReturn}
-\hypertarget{class_derivative_a67683204d8c601c9a78e4459dd05ce86}{\index{Derivative@{Derivative}!Index\-Equation@{Index\-Equation}}
-\index{Index\-Equation@{Index\-Equation}!Derivative@{Derivative}}
-\subsubsection[{Index\-Equation}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Equation} \& Derivative\-::\-Index\-Equation (
+\hypertarget{class_derivative_a7fa63ee738fcafcf3fccb796da095946}{\index{Derivative@{Derivative}!list\-Equation@{list\-Equation}}
+\index{list\-Equation@{list\-Equation}!Derivative@{Derivative}}
+\subsubsection[{list\-Equation}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ {\bf Equation} $>$ \& Derivative\-::list\-Equation (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_derivative_a7fa63ee738fcafcf3fccb796da095946}
+
+
+The list of equations. 
+
+Pointer to the list vector list of equations. Value returned by reference. \hypertarget{class_derivative_a57fc9f8fc2bb6b416b9ade4f79f2bf1d}{\index{Derivative@{Derivative}!list\-Equation@{list\-Equation}}
+\index{list\-Equation@{list\-Equation}!Derivative@{Derivative}}
+\subsubsection[{list\-Equation}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Equation} \& Derivative\-::list\-Equation (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{number}
+\end{DoxyParamCaption}
+)}}\label{class_derivative_a57fc9f8fc2bb6b416b9ade4f79f2bf1d}
+
+
+Retrieve the equation specified by the number. 
+
+Retrieves the equation specified by the number. Value returned is a reference to the equation object. Allows editting of the equation object, or just data access. 
+\begin{DoxyParams}{Parameters}
+{\em number} & Integer representing which equation number should be returned. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Value returned is a reference to the equation object. Allows editting of the equation object, or just data access. 
+\end{DoxyReturn}
+\hypertarget{class_derivative_a432dcf928635e6f77801ae7b546656fe}{\index{Derivative@{Derivative}!ref\-Index\-Equation@{ref\-Index\-Equation}}
+\index{ref\-Index\-Equation@{ref\-Index\-Equation}!Derivative@{Derivative}}
+\subsubsection[{ref\-Index\-Equation}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Equation} \& Derivative\-::ref\-Index\-Equation (
 \begin{DoxyParamCaption}
 \item[{int}]{index\-In}
 \end{DoxyParamCaption}
-)}}\label{class_derivative_a67683204d8c601c9a78e4459dd05ce86}
+)}}\label{class_derivative_a432dcf928635e6f77801ae7b546656fe}
 
 
 Returns the equation requested. Only specified by the data index property of the equation object. 
@@ -119,29 +142,9 @@ Returns the equation requested. Only specified by the data index property of the
 \begin{DoxyReturn}{Returns}
 Pointer to the \hyperlink{class_equation}{Equation} object specified by the Data\-Index of index\-In. Value returned is by reference. 
 \end{DoxyReturn}
-\hypertarget{class_derivative_afe00a18765c0d70c3232a41f5ac663dd}{\index{Derivative@{Derivative}!test\-Print@{test\-Print}}
-\index{test\-Print@{test\-Print}!Derivative@{Derivative}}
-\subsubsection[{test\-Print}]{\setlength{\rightskip}{0pt plus 5cm}void Derivative\-::test\-Print (
-\begin{DoxyParamCaption}
-{}
-\end{DoxyParamCaption}
-)}}\label{class_derivative_afe00a18765c0d70c3232a41f5ac663dd}
-Test print to console the values of all data members. 
 
-\subsection{Member Data Documentation}
-\hypertarget{class_derivative_aed6f05c911e91ef4690784072eeff9f1}{\index{Derivative@{Derivative}!Equation\-List@{Equation\-List}}
-\index{Equation\-List@{Equation\-List}!Derivative@{Derivative}}
-\subsubsection[{Equation\-List}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ {\bf Equation} $>$ \& Derivative\-::\-Equation\-List}}\label{class_derivative_aed6f05c911e91ef4690784072eeff9f1}
-
-
-The list of equations. 
-
-Pointer to the list vector list of equations. Value returned by reference. \hypertarget{class_derivative_ade93a5b5e1f55b428b9e674f8ac02c9e}{\index{Derivative@{Derivative}!Equations@{Equations}}
-\index{Equations@{Equations}!Derivative@{Derivative}}
-\subsubsection[{Equations}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ {\bf Equation} $>$ \& Derivative\-::\-Equations}}\label{class_derivative_ade93a5b5e1f55b428b9e674f8ac02c9e}
-Just another implementation of Equation\-List property, under a different name. 
 
 The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
 \item 
-/home/nicholas/\-Ship Design/\-Projects/\-D\-M\-S1305 Open\-S\-E\-A/master/200\-\_\-src/bin/ofreq/motion\-\_\-solver/derivative.\-h\item 
-/home/nicholas/\-Ship Design/\-Projects/\-D\-M\-S1305 Open\-S\-E\-A/master/200\-\_\-src/bin/ofreq/motion\-\_\-solver/derivative.\-cpp\end{DoxyCompactItemize}
+derivative.\-h\item 
+derivative.\-cpp\end{DoxyCompactItemize}

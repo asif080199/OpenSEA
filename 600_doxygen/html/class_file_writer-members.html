@@ -45,6 +45,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -93,7 +94,7 @@ $(document).ready(function(){initNavTree('class_file_writer.html','');});
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Variables</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -112,28 +113,36 @@ $(document).ready(function(){initNavTree('class_file_writer.html','');});
 <table class="directory">
   <tr class="even"><td class="entry"><a class="el" href="class_file_writer.html#a74a40c3c47b4d12582a2aa44c38d9d07">clearFiles</a>()</td><td class="entry"><a class="el" href="class_file_writer.html">FileWriter</a></td><td class="entry"></td></tr>
   <tr><td class="entry"><a class="el" href="class_file_writer.html#ae6e5afc50484694d033628c954c62df3">createDir</a>(string path)</td><td class="entry"><a class="el" href="class_file_writer.html">FileWriter</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_file_writer.html#a268a7349181f2d8c739a0809ba0eede2">fileExists</a>(string filename)</td><td class="entry"><a class="el" href="class_file_writer.html">FileWriter</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="class_file_writer.html#aa6b362f5b306dd3409af81a463e97f40">FileWriter</a>()</td><td class="entry"><a class="el" href="class_file_writer.html">FileWriter</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_file_writer.html#a08b98dceafbf0cd0875197072dfd7d58">FileWriter</a>(string rootPath, OutputsBody &amp;BodyIn)</td><td class="entry"><a class="el" href="class_file_writer.html">FileWriter</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="class_file_writer.html#a82a3acb66bd5c0396836386258608a40">getCurWaveDir</a>()</td><td class="entry"><a class="el" href="class_file_writer.html">FileWriter</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_file_writer.html#a9748d987475a225b49e14f48b8be0cd6">getCurWaveInd</a>()</td><td class="entry"><a class="el" href="class_file_writer.html">FileWriter</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
-  <tr><td class="entry"><a class="el" href="class_file_writer.html#a419b9ba153151766c7a8c68717a11778">getInfoBlock</a>(string nameIn)</td><td class="entry"><a class="el" href="class_file_writer.html">FileWriter</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_file_writer.html#a77da1b41e1332209f39243fcca4d1287">refOutputsBody</a>()</td><td class="entry"><a class="el" href="class_file_writer.html">FileWriter</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classo_freq_core.html#a5e31044ee80fa436289e569c8080b21e">ErrLog</a></td><td class="entry"><a class="el" href="classo_freq_core.html">oFreqCore</a></td><td class="entry"><span class="mlabel">protected</span><span class="mlabel">static</span></td></tr>
+  <tr><td class="entry"><a class="el" href="class_file_writer.html#a268a7349181f2d8c739a0809ba0eede2">fileExists</a>(string filename)</td><td class="entry"><a class="el" href="class_file_writer.html">FileWriter</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_file_writer.html#aa6b362f5b306dd3409af81a463e97f40">FileWriter</a>()</td><td class="entry"><a class="el" href="class_file_writer.html">FileWriter</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="class_file_writer.html#a08b98dceafbf0cd0875197072dfd7d58">FileWriter</a>(string rootPath, OutputsBody &amp;BodyIn)</td><td class="entry"><a class="el" href="class_file_writer.html">FileWriter</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_file_writer.html#a82a3acb66bd5c0396836386258608a40">getCurWaveDir</a>()</td><td class="entry"><a class="el" href="class_file_writer.html">FileWriter</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr><td class="entry"><a class="el" href="class_file_writer.html#a9748d987475a225b49e14f48b8be0cd6">getCurWaveInd</a>()</td><td class="entry"><a class="el" href="class_file_writer.html">FileWriter</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_file_writer.html#a419b9ba153151766c7a8c68717a11778">getInfoBlock</a>(string nameIn)</td><td class="entry"><a class="el" href="class_file_writer.html">FileWriter</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classo_freq_core.html#a5c882c0d8e78706270e377b749a647f5">oFreqCore</a>()</td><td class="entry"><a class="el" href="classo_freq_core.html">oFreqCore</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classo_freq_core.html#a85b3e812b6d78c064ba375d5101bb053">OutLog</a></td><td class="entry"><a class="el" href="classo_freq_core.html">oFreqCore</a></td><td class="entry"><span class="mlabel">protected</span><span class="mlabel">static</span></td></tr>
+  <tr><td class="entry"><a class="el" href="class_file_writer.html#a77da1b41e1332209f39243fcca4d1287">refOutputsBody</a>()</td><td class="entry"><a class="el" href="class_file_writer.html">FileWriter</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classo_freq_core.html#a8af56bbec3689f5d2252da1787a910e3">setErrLog</a>(string dirIn)</td><td class="entry"><a class="el" href="classo_freq_core.html">oFreqCore</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
   <tr><td class="entry"><a class="el" href="class_file_writer.html#aeea3ca877f0c5280b22ea7ff653db233">setHeader</a>()</td><td class="entry"><a class="el" href="class_file_writer.html">FileWriter</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_file_writer.html#a15370335402192f7e5342a6049f664fc">setProjectDir</a>(string dirIn)</td><td class="entry"><a class="el" href="class_file_writer.html">FileWriter</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classo_freq_core.html#a2912584189c4abd84498450b7c5908c2">setOutLog</a>(string dirIn)</td><td class="entry"><a class="el" href="classo_freq_core.html">oFreqCore</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr><td class="entry"><a class="el" href="class_file_writer.html#a15370335402192f7e5342a6049f664fc">setProjectDir</a>(string dirIn)</td><td class="entry"><a class="el" href="class_file_writer.html">FileWriter</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classo_freq_core.html#a7272d265451eb63bb371f9b9c02f4883">writeError</a>(string mesIn)</td><td class="entry"><a class="el" href="classo_freq_core.html">oFreqCore</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
   <tr><td class="entry"><a class="el" href="class_file_writer.html#ac6df31af71020a41adb6ecd6ff136532">writeFrequency</a>()</td><td class="entry"><a class="el" href="class_file_writer.html">FileWriter</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="class_file_writer.html#aaff553c2e03cb1c1639e107cfeac3038">writeGlobalAcceleration</a>()</td><td class="entry"><a class="el" href="class_file_writer.html">FileWriter</a></td><td class="entry"></td></tr>
   <tr><td class="entry"><a class="el" href="class_file_writer.html#a5c921b5ae92039cf50458e2c46e204da">writeGlobalMotion</a>()</td><td class="entry"><a class="el" href="class_file_writer.html">FileWriter</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="class_file_writer.html#a317649499b8c16dd529e2bf588e3be88">writeGlobalSolution</a>()</td><td class="entry"><a class="el" href="class_file_writer.html">FileWriter</a></td><td class="entry"></td></tr>
   <tr><td class="entry"><a class="el" href="class_file_writer.html#a2078a50dbd21946aeed86d8e0bccd50e">writeGlobalVelocity</a>()</td><td class="entry"><a class="el" href="class_file_writer.html">FileWriter</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_file_writer.html#a0428a4f8ad72d01ff5316bfa3e4ce631">writeWaveDirection</a>()</td><td class="entry"><a class="el" href="class_file_writer.html">FileWriter</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="class_file_writer.html#ae5490307dcaf9237f4c1b8b8df433e03">~FileWriter</a>()</td><td class="entry"><a class="el" href="class_file_writer.html">FileWriter</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classo_freq_core.html#a74a938eae7e51de72bc752ad83382a11">writeLog</a>(string mesIn)</td><td class="entry"><a class="el" href="classo_freq_core.html">oFreqCore</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr><td class="entry"><a class="el" href="class_file_writer.html#a0428a4f8ad72d01ff5316bfa3e4ce631">writeWaveDirection</a>()</td><td class="entry"><a class="el" href="class_file_writer.html">FileWriter</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_file_writer.html#ae5490307dcaf9237f4c1b8b8df433e03">~FileWriter</a>()</td><td class="entry"><a class="el" href="class_file_writer.html">FileWriter</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classo_freq_core.html#aea5887547dbd17fc2d4f1a99fe217918">~oFreqCore</a>()</td><td class="entry"><a class="el" href="classo_freq_core.html">oFreqCore</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
 </table></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Thu Aug 22 2013 20:07:54 for oFreq by
+    <li class="footer">Generated on Sat Oct 12 2013 09:37:35 for oFreq by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.2 </li>
   </ul>

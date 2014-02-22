@@ -1,0 +1,4 @@
+<map id="osea::ObjectGroup::listObject" name="osea::ObjectGroup::listObject">
+<area shape="rect" id="node3" href="$classosea_1_1_dictionary.html#a900221a385d133644aedcadbae90c2be" title="Public signal for the ObjectGroup object that is sent to the Dictionary object for procesing..." alt="" coords="198,5,383,32"/>
+<area shape="rect" id="node5" href="$classosea_1_1_parser.html#a4e0dcef1ae5785c46f2fb6d935090595" title="Provides direct access to the list of SubObjects." alt="" coords="198,56,383,83"/>
+</map>

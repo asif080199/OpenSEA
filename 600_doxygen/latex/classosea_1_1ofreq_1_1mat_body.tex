@@ -1,0 +1,402 @@
+\hypertarget{classosea_1_1ofreq_1_1mat_body}{\section{osea\-:\-:ofreq\-:\-:mat\-Body Class Reference}
+\label{classosea_1_1ofreq_1_1mat_body}\index{osea\-::ofreq\-::mat\-Body@{osea\-::ofreq\-::mat\-Body}}
+}
+
+
+{\ttfamily \#include $<$matbody.\-h$>$}
+
+
+
+Inheritance diagram for osea\-:\-:ofreq\-:\-:mat\-Body\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=204pt]{classosea_1_1ofreq_1_1mat_body__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for osea\-:\-:ofreq\-:\-:mat\-Body\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=204pt]{classosea_1_1ofreq_1_1mat_body__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classosea_1_1ofreq_1_1mat_body_adbcb73fc9873660ca781493b2b2742a2}{mat\-Body} ()
+\item 
+\hyperlink{classosea_1_1ofreq_1_1mat_body_afcc3a6a87689dfbb5dfa72648a46c355}{$\sim$mat\-Body} ()
+\item 
+void \hyperlink{classosea_1_1ofreq_1_1mat_body_abb86318fbd7300ed01eae308551f9e96}{set\-Id} (int num)
+\begin{DoxyCompactList}\small\item\em Sets the force id number for the object. \end{DoxyCompactList}\item 
+int \hyperlink{classosea_1_1ofreq_1_1mat_body_a551183ad56eeba71ea4690574b1841e4}{get\-Id} ()
+\begin{DoxyCompactList}\small\item\em Returns the force id number for the object. \end{DoxyCompactList}\item 
+void \hyperlink{classosea_1_1ofreq_1_1mat_body_abb8ea32c84153da5dfc53d7b0dc836a5}{set\-Model\-Id} (int num)
+\begin{DoxyCompactList}\small\item\em Sets the integer id of the motion model used by the \hyperlink{classosea_1_1ofreq_1_1mat_body}{mat\-Body} object. \end{DoxyCompactList}\item 
+int \hyperlink{classosea_1_1ofreq_1_1mat_body_ae4c339b7ce6a93cf6e54bc998cbd5903}{get\-Model\-Id} ()
+\begin{DoxyCompactList}\small\item\em Gets the integer id of the motion model used by the \hyperlink{classosea_1_1ofreq_1_1mat_body}{mat\-Body} object. \end{DoxyCompactList}\item 
+arma\-::cx\-\_\-mat \& \hyperlink{classosea_1_1ofreq_1_1mat_body_a7c0b44be2aa75ae270168849c06e6067}{ref\-Mass} ()
+\begin{DoxyCompactList}\small\item\em Returns a reference to the mass matrix. \end{DoxyCompactList}\item 
+std\-::vector$<$ \hyperlink{classosea_1_1ofreq_1_1mat_force_react}{mat\-Force\-React} $>$ \& \hyperlink{classosea_1_1ofreq_1_1mat_body_aeb296f7c56b523b32ca12b58de56ef37}{list\-Force\-React\-\_\-user} ()
+\begin{DoxyCompactList}\small\item\em Returns a reference to the Reactive \hyperlink{classosea_1_1ofreq_1_1_force}{Force}, user objects. \end{DoxyCompactList}\item 
+\hyperlink{classosea_1_1ofreq_1_1mat_force_react}{mat\-Force\-React} \& \hyperlink{classosea_1_1ofreq_1_1mat_body_a53cbb789ae423084375b024954bf21f0}{list\-Force\-React\-\_\-user} (unsigned int index)
+\begin{DoxyCompactList}\small\item\em Returns a reference to the Reactive \hyperlink{classosea_1_1ofreq_1_1_force}{Force}, user object specified by the index. \end{DoxyCompactList}\item 
+std\-::vector$<$ \hyperlink{classosea_1_1ofreq_1_1mat_force_cross}{mat\-Force\-Cross} $>$ \& \hyperlink{classosea_1_1ofreq_1_1mat_body_a5dc37a8bb5143f2034ef6491969b2abe}{list\-Force\-Cross\-\_\-user} ()
+\begin{DoxyCompactList}\small\item\em Returns a reference to the Cross-\/\-Body \hyperlink{classosea_1_1ofreq_1_1_force}{Force}, user objects. \end{DoxyCompactList}\item 
+\hyperlink{classosea_1_1ofreq_1_1mat_force_cross}{mat\-Force\-Cross} \& \hyperlink{classosea_1_1ofreq_1_1mat_body_ae508a1904283a46d1fc5893da4080630}{list\-Force\-Cross\-\_\-user} (unsigned int index)
+\begin{DoxyCompactList}\small\item\em Returns a reference to the Cross-\/\-Body \hyperlink{classosea_1_1ofreq_1_1_force}{Force}, user object specified by the index. \end{DoxyCompactList}\item 
+std\-::vector$<$ \hyperlink{classosea_1_1ofreq_1_1mat_force_active}{mat\-Force\-Active} $>$ \& \hyperlink{classosea_1_1ofreq_1_1mat_body_a6a51e55baec56037eee824ec53af9b5d}{list\-Force\-Active\-\_\-user} ()
+\begin{DoxyCompactList}\small\item\em Returns a reference to the Active \hyperlink{classosea_1_1ofreq_1_1_force}{Force}, user objects. \end{DoxyCompactList}\item 
+\hyperlink{classosea_1_1ofreq_1_1mat_force_active}{mat\-Force\-Active} \& \hyperlink{classosea_1_1ofreq_1_1mat_body_a7d79de764dd75ad606a1cc9346b58676}{list\-Force\-Active\-\_\-user} (unsigned int index)
+\begin{DoxyCompactList}\small\item\em Returns a reference to the Active \hyperlink{classosea_1_1ofreq_1_1_force}{Force}, user object specified by the index. \end{DoxyCompactList}\item 
+std\-::vector$<$ \hyperlink{classosea_1_1ofreq_1_1mat_force_react}{mat\-Force\-React} $>$ \& \hyperlink{classosea_1_1ofreq_1_1mat_body_abead59c1604f4581a977e086874b2e7a}{list\-Force\-React\-\_\-hydro} ()
+\begin{DoxyCompactList}\small\item\em Returns a reference to the Reactive \hyperlink{classosea_1_1ofreq_1_1_force}{Force}, hydro objects. \end{DoxyCompactList}\item 
+\hyperlink{classosea_1_1ofreq_1_1mat_force_react}{mat\-Force\-React} \& \hyperlink{classosea_1_1ofreq_1_1mat_body_a052f37c59ad093d92e1155e0b300d1aa}{list\-Force\-React\-\_\-hydro} (unsigned int index)
+\begin{DoxyCompactList}\small\item\em Returns a reference to the Reactive \hyperlink{classosea_1_1ofreq_1_1_force}{Force}, hydro object specified by the index. \end{DoxyCompactList}\item 
+std\-::vector$<$ \hyperlink{classosea_1_1ofreq_1_1mat_force_cross}{mat\-Force\-Cross} $>$ \& \hyperlink{classosea_1_1ofreq_1_1mat_body_a40e3fc33bc7b1685b7f1400312f88f88}{list\-Force\-Cross\-\_\-hydro} ()
+\begin{DoxyCompactList}\small\item\em Returns a reference to the Cross-\/\-Body \hyperlink{classosea_1_1ofreq_1_1_force}{Force}, hydro objects. \end{DoxyCompactList}\item 
+\hyperlink{classosea_1_1ofreq_1_1mat_force_cross}{mat\-Force\-Cross} \& \hyperlink{classosea_1_1ofreq_1_1mat_body_ad8ce408c1042c080cda0d50a3864fa54}{list\-Force\-Cross\-\_\-hydro} (unsigned int index)
+\begin{DoxyCompactList}\small\item\em Returns a reference to the Cross-\/\-Body \hyperlink{classosea_1_1ofreq_1_1_force}{Force}, hydro object specified by the index. \end{DoxyCompactList}\item 
+std\-::vector$<$ \hyperlink{classosea_1_1ofreq_1_1mat_force_active}{mat\-Force\-Active} $>$ \& \hyperlink{classosea_1_1ofreq_1_1mat_body_a9733e23db05aac47a42cfca88fc9d679}{list\-Force\-Active\-\_\-hydro} ()
+\begin{DoxyCompactList}\small\item\em Returns a reference to the Active \hyperlink{classosea_1_1ofreq_1_1_force}{Force}, hydro objects. \end{DoxyCompactList}\item 
+\hyperlink{classosea_1_1ofreq_1_1mat_force_active}{mat\-Force\-Active} \& \hyperlink{classosea_1_1ofreq_1_1mat_body_aa1c0587dc82254db28ff71a9cc3261d7}{list\-Force\-Active\-\_\-hydro} (unsigned int index)
+\begin{DoxyCompactList}\small\item\em Returns a reference to the Active \hyperlink{classosea_1_1ofreq_1_1_force}{Force}, hydro object specified by the index. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+This class holds all data for a body and related force matrices. The \hyperlink{classosea_1_1ofreq_1_1mat_body}{mat\-Body} class contains data defined in a pure mathematical context. It is prepared for combination and solution. User interface items, such as relative coordinates and body names are stripped out. Definitions of equations, derivatives, and variables are replaced by sets of matrices. The body still contains force objects, but the objects are defined in terms of matrices. Each force object contains a vector of matrices, denoted by the derivative property. Each matrix within that vector represents a derivative, starting with order 0 (index 0 in the vector.) Each matrix is organized so that rows = equations, and columns = variables.
+
+The class definition also includes a number and size property. The number denotes the body's position within a vector of bodies. The size denotes the number of equations used. This in turn notes how big the matrices must be to accomodate any forces from the body. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classosea_1_1ofreq_1_1mat_body_adbcb73fc9873660ca781493b2b2742a2}{\index{osea\-::ofreq\-::mat\-Body@{osea\-::ofreq\-::mat\-Body}!mat\-Body@{mat\-Body}}
+\index{mat\-Body@{mat\-Body}!osea::ofreq::matBody@{osea\-::ofreq\-::mat\-Body}}
+\subsubsection[{mat\-Body}]{\setlength{\rightskip}{0pt plus 5cm}mat\-Body\-::mat\-Body (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1mat_body_adbcb73fc9873660ca781493b2b2742a2}
+The default constructor. \hypertarget{classosea_1_1ofreq_1_1mat_body_afcc3a6a87689dfbb5dfa72648a46c355}{\index{osea\-::ofreq\-::mat\-Body@{osea\-::ofreq\-::mat\-Body}!$\sim$mat\-Body@{$\sim$mat\-Body}}
+\index{$\sim$mat\-Body@{$\sim$mat\-Body}!osea::ofreq::matBody@{osea\-::ofreq\-::mat\-Body}}
+\subsubsection[{$\sim$mat\-Body}]{\setlength{\rightskip}{0pt plus 5cm}mat\-Body\-::$\sim$mat\-Body (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1mat_body_afcc3a6a87689dfbb5dfa72648a46c355}
+The default destructor, nothing happens here. 
+
+\subsection{Member Function Documentation}
+\hypertarget{classosea_1_1ofreq_1_1mat_body_a551183ad56eeba71ea4690574b1841e4}{\index{osea\-::ofreq\-::mat\-Body@{osea\-::ofreq\-::mat\-Body}!get\-Id@{get\-Id}}
+\index{get\-Id@{get\-Id}!osea::ofreq::matBody@{osea\-::ofreq\-::mat\-Body}}
+\subsubsection[{get\-Id}]{\setlength{\rightskip}{0pt plus 5cm}int mat\-Body\-::get\-Id (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1mat_body_a551183ad56eeba71ea4690574b1841e4}
+
+
+Returns the force id number for the object. 
+
+This is similar to the name parameter in other force objects. It is an identifier. In this case, a numerical identifier. Normally correlates to the objects index in a vector of other objects of the same class. \begin{DoxyReturn}{Returns}
+Returns the force id number, integer data type. 
+\end{DoxyReturn}
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classosea_1_1ofreq_1_1mat_body_a551183ad56eeba71ea4690574b1841e4_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classosea_1_1ofreq_1_1mat_body_ae4c339b7ce6a93cf6e54bc998cbd5903}{\index{osea\-::ofreq\-::mat\-Body@{osea\-::ofreq\-::mat\-Body}!get\-Model\-Id@{get\-Model\-Id}}
+\index{get\-Model\-Id@{get\-Model\-Id}!osea::ofreq::matBody@{osea\-::ofreq\-::mat\-Body}}
+\subsubsection[{get\-Model\-Id}]{\setlength{\rightskip}{0pt plus 5cm}int mat\-Body\-::get\-Model\-Id (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1mat_body_ae4c339b7ce6a93cf6e54bc998cbd5903}
+
+
+Gets the integer id of the motion model used by the \hyperlink{classosea_1_1ofreq_1_1mat_body}{mat\-Body} object. 
+
+Gets the integer id of the motion model used by the \hyperlink{classosea_1_1ofreq_1_1mat_body}{mat\-Body} object. \begin{DoxyReturn}{Returns}
+Returns the integer id of the motion model used by the \hyperlink{classosea_1_1ofreq_1_1mat_body}{mat\-Body} object. Variable is passed by value. 
+\end{DoxyReturn}
+\hypertarget{classosea_1_1ofreq_1_1mat_body_a9733e23db05aac47a42cfca88fc9d679}{\index{osea\-::ofreq\-::mat\-Body@{osea\-::ofreq\-::mat\-Body}!list\-Force\-Active\-\_\-hydro@{list\-Force\-Active\-\_\-hydro}}
+\index{list\-Force\-Active\-\_\-hydro@{list\-Force\-Active\-\_\-hydro}!osea::ofreq::matBody@{osea\-::ofreq\-::mat\-Body}}
+\subsubsection[{list\-Force\-Active\-\_\-hydro}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ {\bf mat\-Force\-Active} $>$ \& mat\-Body\-::list\-Force\-Active\-\_\-hydro (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1mat_body_a9733e23db05aac47a42cfca88fc9d679}
+
+
+Returns a reference to the Active \hyperlink{classosea_1_1ofreq_1_1_force}{Force}, hydro objects. 
+
+Returns a reference to the Active \hyperlink{classosea_1_1ofreq_1_1_force}{Force}, hydro objects. This is a vector list of the Active \hyperlink{classosea_1_1ofreq_1_1_force}{Force} objects. Provides direct access to the variable and all the member functions of the vector class. \begin{DoxyReturn}{Returns}
+This is a vector list of the Active \hyperlink{classosea_1_1ofreq_1_1_force}{Force} objects. Provides direct access to the variable and all the member functions of the vector class. Variable passed by reference. 
+\end{DoxyReturn}
+\hypertarget{classosea_1_1ofreq_1_1mat_body_aa1c0587dc82254db28ff71a9cc3261d7}{\index{osea\-::ofreq\-::mat\-Body@{osea\-::ofreq\-::mat\-Body}!list\-Force\-Active\-\_\-hydro@{list\-Force\-Active\-\_\-hydro}}
+\index{list\-Force\-Active\-\_\-hydro@{list\-Force\-Active\-\_\-hydro}!osea::ofreq::matBody@{osea\-::ofreq\-::mat\-Body}}
+\subsubsection[{list\-Force\-Active\-\_\-hydro}]{\setlength{\rightskip}{0pt plus 5cm}{\bf mat\-Force\-Active} \& mat\-Body\-::list\-Force\-Active\-\_\-hydro (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{index}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1mat_body_aa1c0587dc82254db28ff71a9cc3261d7}
+
+
+Returns a reference to the Active \hyperlink{classosea_1_1ofreq_1_1_force}{Force}, hydro object specified by the index. 
+
+This is a single item from the vector list of the Active \hyperlink{classosea_1_1ofreq_1_1_force}{Force} objects. Provides direct access to the variable. 
+\begin{DoxyParams}{Parameters}
+{\em index} & Unsigned integer. Index to specify which variable retrieve from the vector. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns \hyperlink{classosea_1_1ofreq_1_1mat_force_active}{mat\-Force\-Active} object specified by index. Returned variable passed by reference. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classosea_1_1ofreq_1_1mat_force_active}{mat\-Force\-Active} 
+\end{DoxySeeAlso}
+\hypertarget{classosea_1_1ofreq_1_1mat_body_a6a51e55baec56037eee824ec53af9b5d}{\index{osea\-::ofreq\-::mat\-Body@{osea\-::ofreq\-::mat\-Body}!list\-Force\-Active\-\_\-user@{list\-Force\-Active\-\_\-user}}
+\index{list\-Force\-Active\-\_\-user@{list\-Force\-Active\-\_\-user}!osea::ofreq::matBody@{osea\-::ofreq\-::mat\-Body}}
+\subsubsection[{list\-Force\-Active\-\_\-user}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ {\bf mat\-Force\-Active} $>$ \& mat\-Body\-::list\-Force\-Active\-\_\-user (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1mat_body_a6a51e55baec56037eee824ec53af9b5d}
+
+
+Returns a reference to the Active \hyperlink{classosea_1_1ofreq_1_1_force}{Force}, user objects. 
+
+Returns a reference to the Active \hyperlink{classosea_1_1ofreq_1_1_force}{Force}, user objects. This is a vector list of the Active \hyperlink{classosea_1_1ofreq_1_1_force}{Force} objects. Provides direct access to the variable and all the member functions of the vector class. \begin{DoxyReturn}{Returns}
+This is a vector list of the Active \hyperlink{classosea_1_1ofreq_1_1_force}{Force} objects. Provides direct access to the variable and all the member functions of the vector class. Variable passed by reference. 
+\end{DoxyReturn}
+\hypertarget{classosea_1_1ofreq_1_1mat_body_a7d79de764dd75ad606a1cc9346b58676}{\index{osea\-::ofreq\-::mat\-Body@{osea\-::ofreq\-::mat\-Body}!list\-Force\-Active\-\_\-user@{list\-Force\-Active\-\_\-user}}
+\index{list\-Force\-Active\-\_\-user@{list\-Force\-Active\-\_\-user}!osea::ofreq::matBody@{osea\-::ofreq\-::mat\-Body}}
+\subsubsection[{list\-Force\-Active\-\_\-user}]{\setlength{\rightskip}{0pt plus 5cm}{\bf mat\-Force\-Active} \& mat\-Body\-::list\-Force\-Active\-\_\-user (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{index}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1mat_body_a7d79de764dd75ad606a1cc9346b58676}
+
+
+Returns a reference to the Active \hyperlink{classosea_1_1ofreq_1_1_force}{Force}, user object specified by the index. 
+
+This is a single item from the vector list of the Active \hyperlink{classosea_1_1ofreq_1_1_force}{Force} objects. Provides direct access to the variable. 
+\begin{DoxyParams}{Parameters}
+{\em index} & Unsigned integer. Index to specify which variable retrieve from the vector. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns \hyperlink{classosea_1_1ofreq_1_1mat_force_active}{mat\-Force\-Active} object specified by index. Returned variable passed by reference. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classosea_1_1ofreq_1_1mat_force_active}{mat\-Force\-Active} 
+\end{DoxySeeAlso}
+\hypertarget{classosea_1_1ofreq_1_1mat_body_a40e3fc33bc7b1685b7f1400312f88f88}{\index{osea\-::ofreq\-::mat\-Body@{osea\-::ofreq\-::mat\-Body}!list\-Force\-Cross\-\_\-hydro@{list\-Force\-Cross\-\_\-hydro}}
+\index{list\-Force\-Cross\-\_\-hydro@{list\-Force\-Cross\-\_\-hydro}!osea::ofreq::matBody@{osea\-::ofreq\-::mat\-Body}}
+\subsubsection[{list\-Force\-Cross\-\_\-hydro}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ {\bf mat\-Force\-Cross} $>$ \& mat\-Body\-::list\-Force\-Cross\-\_\-hydro (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1mat_body_a40e3fc33bc7b1685b7f1400312f88f88}
+
+
+Returns a reference to the Cross-\/\-Body \hyperlink{classosea_1_1ofreq_1_1_force}{Force}, hydro objects. 
+
+Returns a reference to the Cross-\/\-Body \hyperlink{classosea_1_1ofreq_1_1_force}{Force}, hydro objects. This is a vector list of the Cross-\/\-Body \hyperlink{classosea_1_1ofreq_1_1_force}{Force} objects. Provides direct access to the variable and all the member functions of the vector class. \begin{DoxyReturn}{Returns}
+This is a vector list of the Cross-\/\-Body \hyperlink{classosea_1_1ofreq_1_1_force}{Force} objects. Provides direct access to the variable and all the member functions of the vector class. Variable passed by reference. 
+\end{DoxyReturn}
+\hypertarget{classosea_1_1ofreq_1_1mat_body_ad8ce408c1042c080cda0d50a3864fa54}{\index{osea\-::ofreq\-::mat\-Body@{osea\-::ofreq\-::mat\-Body}!list\-Force\-Cross\-\_\-hydro@{list\-Force\-Cross\-\_\-hydro}}
+\index{list\-Force\-Cross\-\_\-hydro@{list\-Force\-Cross\-\_\-hydro}!osea::ofreq::matBody@{osea\-::ofreq\-::mat\-Body}}
+\subsubsection[{list\-Force\-Cross\-\_\-hydro}]{\setlength{\rightskip}{0pt plus 5cm}{\bf mat\-Force\-Cross} \& mat\-Body\-::list\-Force\-Cross\-\_\-hydro (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{index}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1mat_body_ad8ce408c1042c080cda0d50a3864fa54}
+
+
+Returns a reference to the Cross-\/\-Body \hyperlink{classosea_1_1ofreq_1_1_force}{Force}, hydro object specified by the index. 
+
+This is a single item from the vector list of the Cross-\/\-Body \hyperlink{classosea_1_1ofreq_1_1_force}{Force} objects. Provides direct access to the variable. 
+\begin{DoxyParams}{Parameters}
+{\em index} & Unsigned integer. Index to specify which variable retrieve from the vector. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns \hyperlink{classosea_1_1ofreq_1_1mat_force_cross}{mat\-Force\-Cross} object specified by index. Returned variable passed by reference. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classosea_1_1ofreq_1_1mat_force_cross}{mat\-Force\-Cross} 
+\end{DoxySeeAlso}
+\hypertarget{classosea_1_1ofreq_1_1mat_body_a5dc37a8bb5143f2034ef6491969b2abe}{\index{osea\-::ofreq\-::mat\-Body@{osea\-::ofreq\-::mat\-Body}!list\-Force\-Cross\-\_\-user@{list\-Force\-Cross\-\_\-user}}
+\index{list\-Force\-Cross\-\_\-user@{list\-Force\-Cross\-\_\-user}!osea::ofreq::matBody@{osea\-::ofreq\-::mat\-Body}}
+\subsubsection[{list\-Force\-Cross\-\_\-user}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ {\bf mat\-Force\-Cross} $>$ \& mat\-Body\-::list\-Force\-Cross\-\_\-user (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1mat_body_a5dc37a8bb5143f2034ef6491969b2abe}
+
+
+Returns a reference to the Cross-\/\-Body \hyperlink{classosea_1_1ofreq_1_1_force}{Force}, user objects. 
+
+Returns a reference to the Cross-\/\-Body \hyperlink{classosea_1_1ofreq_1_1_force}{Force}, user objects. This is a vector list of the Cross-\/\-Body \hyperlink{classosea_1_1ofreq_1_1_force}{Force} objects. Provides direct access to the variable and all the member functions of the vector class. \begin{DoxyReturn}{Returns}
+This is a vector list of the Cross-\/\-Body \hyperlink{classosea_1_1ofreq_1_1_force}{Force} objects. Provides direct access to the variable and all the member functions of the vector class. Variable passed by reference. 
+\end{DoxyReturn}
+\hypertarget{classosea_1_1ofreq_1_1mat_body_ae508a1904283a46d1fc5893da4080630}{\index{osea\-::ofreq\-::mat\-Body@{osea\-::ofreq\-::mat\-Body}!list\-Force\-Cross\-\_\-user@{list\-Force\-Cross\-\_\-user}}
+\index{list\-Force\-Cross\-\_\-user@{list\-Force\-Cross\-\_\-user}!osea::ofreq::matBody@{osea\-::ofreq\-::mat\-Body}}
+\subsubsection[{list\-Force\-Cross\-\_\-user}]{\setlength{\rightskip}{0pt plus 5cm}{\bf mat\-Force\-Cross} \& mat\-Body\-::list\-Force\-Cross\-\_\-user (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{index}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1mat_body_ae508a1904283a46d1fc5893da4080630}
+
+
+Returns a reference to the Cross-\/\-Body \hyperlink{classosea_1_1ofreq_1_1_force}{Force}, user object specified by the index. 
+
+This is a single item from the vector list of the Cross-\/\-Body \hyperlink{classosea_1_1ofreq_1_1_force}{Force} objects. Provides direct access to the variable. 
+\begin{DoxyParams}{Parameters}
+{\em index} & Unsigned integer. Index to specify which variable retrieve from the vector. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns \hyperlink{classosea_1_1ofreq_1_1mat_force_cross}{mat\-Force\-Cross} object specified by index. Returned variable passed by reference. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classosea_1_1ofreq_1_1mat_force_cross}{mat\-Force\-Cross} 
+\end{DoxySeeAlso}
+\hypertarget{classosea_1_1ofreq_1_1mat_body_abead59c1604f4581a977e086874b2e7a}{\index{osea\-::ofreq\-::mat\-Body@{osea\-::ofreq\-::mat\-Body}!list\-Force\-React\-\_\-hydro@{list\-Force\-React\-\_\-hydro}}
+\index{list\-Force\-React\-\_\-hydro@{list\-Force\-React\-\_\-hydro}!osea::ofreq::matBody@{osea\-::ofreq\-::mat\-Body}}
+\subsubsection[{list\-Force\-React\-\_\-hydro}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ {\bf mat\-Force\-React} $>$ \& mat\-Body\-::list\-Force\-React\-\_\-hydro (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1mat_body_abead59c1604f4581a977e086874b2e7a}
+
+
+Returns a reference to the Reactive \hyperlink{classosea_1_1ofreq_1_1_force}{Force}, hydro objects. 
+
+Returns a reference to the Reactive \hyperlink{classosea_1_1ofreq_1_1_force}{Force}, hydro objects. This is a vector list of the Reactive \hyperlink{classosea_1_1ofreq_1_1_force}{Force} objects. Provides direct access to the variable and all the member functions of the vector class. \begin{DoxyReturn}{Returns}
+This is a vector list of the Reactive \hyperlink{classosea_1_1ofreq_1_1_force}{Force} objects. Provides direct access to the variable and all the member functions of the vector class. Variable passed by reference. 
+\end{DoxyReturn}
+\hypertarget{classosea_1_1ofreq_1_1mat_body_a052f37c59ad093d92e1155e0b300d1aa}{\index{osea\-::ofreq\-::mat\-Body@{osea\-::ofreq\-::mat\-Body}!list\-Force\-React\-\_\-hydro@{list\-Force\-React\-\_\-hydro}}
+\index{list\-Force\-React\-\_\-hydro@{list\-Force\-React\-\_\-hydro}!osea::ofreq::matBody@{osea\-::ofreq\-::mat\-Body}}
+\subsubsection[{list\-Force\-React\-\_\-hydro}]{\setlength{\rightskip}{0pt plus 5cm}{\bf mat\-Force\-React} \& mat\-Body\-::list\-Force\-React\-\_\-hydro (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{index}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1mat_body_a052f37c59ad093d92e1155e0b300d1aa}
+
+
+Returns a reference to the Reactive \hyperlink{classosea_1_1ofreq_1_1_force}{Force}, hydro object specified by the index. 
+
+This is a single item from the vector list of the Reactive \hyperlink{classosea_1_1ofreq_1_1_force}{Force} objects. Provides direct access to the variable. 
+\begin{DoxyParams}{Parameters}
+{\em index} & Unsigned integer. Index to specify which variable retrieve from the vector. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns \hyperlink{classosea_1_1ofreq_1_1mat_force_react}{mat\-Force\-React} object specified by index. Returned variable passed by reference. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classosea_1_1ofreq_1_1mat_force_react}{mat\-Force\-React} 
+\end{DoxySeeAlso}
+\hypertarget{classosea_1_1ofreq_1_1mat_body_aeb296f7c56b523b32ca12b58de56ef37}{\index{osea\-::ofreq\-::mat\-Body@{osea\-::ofreq\-::mat\-Body}!list\-Force\-React\-\_\-user@{list\-Force\-React\-\_\-user}}
+\index{list\-Force\-React\-\_\-user@{list\-Force\-React\-\_\-user}!osea::ofreq::matBody@{osea\-::ofreq\-::mat\-Body}}
+\subsubsection[{list\-Force\-React\-\_\-user}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ {\bf mat\-Force\-React} $>$ \& mat\-Body\-::list\-Force\-React\-\_\-user (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1mat_body_aeb296f7c56b523b32ca12b58de56ef37}
+
+
+Returns a reference to the Reactive \hyperlink{classosea_1_1ofreq_1_1_force}{Force}, user objects. 
+
+Returns a reference to the Reactive \hyperlink{classosea_1_1ofreq_1_1_force}{Force}, user objects. This is a vector list of the Reactive \hyperlink{classosea_1_1ofreq_1_1_force}{Force} objects. Provides direct access to the variable and all the member functions of the vector class. \begin{DoxyReturn}{Returns}
+This is a vector list of the Reactive \hyperlink{classosea_1_1ofreq_1_1_force}{Force} objects. Provides direct access to the variable and all the member functions of the vector class. Variable passed by reference. 
+\end{DoxyReturn}
+\hypertarget{classosea_1_1ofreq_1_1mat_body_a53cbb789ae423084375b024954bf21f0}{\index{osea\-::ofreq\-::mat\-Body@{osea\-::ofreq\-::mat\-Body}!list\-Force\-React\-\_\-user@{list\-Force\-React\-\_\-user}}
+\index{list\-Force\-React\-\_\-user@{list\-Force\-React\-\_\-user}!osea::ofreq::matBody@{osea\-::ofreq\-::mat\-Body}}
+\subsubsection[{list\-Force\-React\-\_\-user}]{\setlength{\rightskip}{0pt plus 5cm}{\bf mat\-Force\-React} \& mat\-Body\-::list\-Force\-React\-\_\-user (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{index}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1mat_body_a53cbb789ae423084375b024954bf21f0}
+
+
+Returns a reference to the Reactive \hyperlink{classosea_1_1ofreq_1_1_force}{Force}, user object specified by the index. 
+
+This is a single item from the vector list of the Reactive \hyperlink{classosea_1_1ofreq_1_1_force}{Force} objects. Provides direct access to the variable. 
+\begin{DoxyParams}{Parameters}
+{\em index} & Unsigned integer. Index to specify which variable retrieve from the vector. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns \hyperlink{classosea_1_1ofreq_1_1mat_force_react}{mat\-Force\-React} object specified by index. Returned variable passed by reference. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classosea_1_1ofreq_1_1mat_force_react}{mat\-Force\-React} 
+\end{DoxySeeAlso}
+\hypertarget{classosea_1_1ofreq_1_1mat_body_a7c0b44be2aa75ae270168849c06e6067}{\index{osea\-::ofreq\-::mat\-Body@{osea\-::ofreq\-::mat\-Body}!ref\-Mass@{ref\-Mass}}
+\index{ref\-Mass@{ref\-Mass}!osea::ofreq::matBody@{osea\-::ofreq\-::mat\-Body}}
+\subsubsection[{ref\-Mass}]{\setlength{\rightskip}{0pt plus 5cm}cx\-\_\-mat \& mat\-Body\-::ref\-Mass (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1mat_body_a7c0b44be2aa75ae270168849c06e6067}
+
+
+Returns a reference to the mass matrix. 
+
+Returns a reference to the mass matrix. \begin{DoxyReturn}{Returns}
+Returns a reference to the mass matrix. Variable passed by reference. 
+\end{DoxyReturn}
+\hypertarget{classosea_1_1ofreq_1_1mat_body_abb86318fbd7300ed01eae308551f9e96}{\index{osea\-::ofreq\-::mat\-Body@{osea\-::ofreq\-::mat\-Body}!set\-Id@{set\-Id}}
+\index{set\-Id@{set\-Id}!osea::ofreq::matBody@{osea\-::ofreq\-::mat\-Body}}
+\subsubsection[{set\-Id}]{\setlength{\rightskip}{0pt plus 5cm}void mat\-Body\-::set\-Id (
+\begin{DoxyParamCaption}
+\item[{int}]{num}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1mat_body_abb86318fbd7300ed01eae308551f9e96}
+
+
+Sets the force id number for the object. 
+
+This is similar to the name parameter in other force objects. It is an identifier. In this case, a numerical identifier. Normally correlates to the objects index in a vector of other objects of the same class. 
+\begin{DoxyParams}{Parameters}
+{\em num} & The integer number to input as the objects integer id. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classosea_1_1ofreq_1_1mat_body_abb8ea32c84153da5dfc53d7b0dc836a5}{\index{osea\-::ofreq\-::mat\-Body@{osea\-::ofreq\-::mat\-Body}!set\-Model\-Id@{set\-Model\-Id}}
+\index{set\-Model\-Id@{set\-Model\-Id}!osea::ofreq::matBody@{osea\-::ofreq\-::mat\-Body}}
+\subsubsection[{set\-Model\-Id}]{\setlength{\rightskip}{0pt plus 5cm}void mat\-Body\-::set\-Model\-Id (
+\begin{DoxyParamCaption}
+\item[{int}]{num}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1mat_body_abb8ea32c84153da5dfc53d7b0dc836a5}
+
+
+Sets the integer id of the motion model used by the \hyperlink{classosea_1_1ofreq_1_1mat_body}{mat\-Body} object. 
+
+Sets the integer id of the motion model used by the \hyperlink{classosea_1_1ofreq_1_1mat_body}{mat\-Body} object. 
+\begin{DoxyParams}{Parameters}
+{\em num} & Integer. The integer id of the motion model used by the \hyperlink{classosea_1_1ofreq_1_1mat_body}{mat\-Body} object. Variable is passed by value. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+matbody.\-h\item 
+matbody.\-cpp\end{DoxyCompactItemize}

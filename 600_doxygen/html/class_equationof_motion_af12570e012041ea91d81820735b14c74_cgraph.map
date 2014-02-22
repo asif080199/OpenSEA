@@ -1,0 +1,6 @@
+<map id="EquationofMotion::Ddt" name="EquationofMotion::Ddt">
+<area shape="rect" id="node3" href="$class_motion_model.html#af4d34bfa133e77f1527cee1aa36b02f4" title="Determines whether the class should calculate force coefficients or actual force values. True = Calculate force coefficients only. False = Calculate force values. Default = (False) Calculate force values." alt="" coords="209,5,407,32"/>
+<area shape="rect" id="node5" href="$class_motion_model.html#a3461ede3739b468b6bab3a05f94093cc" title="Gets the current operating frequency for the function. Only necessary when calculating true forces an..." alt="" coords="231,56,385,83"/>
+<area shape="rect" id="node7" href="$class_motion_model.html#ae63712716bcaff9ff263d9728f39323a" title="Provides direct access to the list of Bodies used as data for the motion model." alt="" coords="231,107,385,133"/>
+<area shape="rect" id="node9" href="$class_equationof_motion.html#a31f904818ce75c9e2a2b5cff9fc707a5" title="Returns the index integer for iteration on order of derviative." alt="" coords="231,157,385,184"/>
+</map>

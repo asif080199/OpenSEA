@@ -5,6 +5,24 @@
 
 {\ttfamily \#include $<$body.\-h$>$}
 
+
+
+Inheritance diagram for Body\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=146pt]{class_body__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Body\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=146pt]{class_body__coll__graph}
+\end{center}
+\end{figure}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -12,34 +30,24 @@
 \item 
 \hyperlink{class_body_abe1c4da65568cf7978b6247affc461e3}{$\sim$\-Body} ()
 \item 
-void \hyperlink{class_body_a31b959b6f30e3c9c6ebc3f0a325fec9d}{test\-Print} ()
-\item 
+bool \hyperlink{class_body_ad4580795d6db4b4ffd23db2a21ace9c7}{operator==} (\hyperlink{class_body}{Body} \&bod\-In)
+\begin{DoxyCompactList}\small\item\em Overload for operator == to compare two \hyperlink{class_body}{Body} objects. Comparison is based on body names. \end{DoxyCompactList}\item 
 void \hyperlink{class_body_a21190f9d796d631202db6caf768beae1}{set\-Body\-Name} (string)
 \item 
-string \& \hyperlink{class_body_aaeacf4b8d79625bc8c6d77544c6ecfb7}{Body\-Name} ()
+string \& \hyperlink{class_body_ae1f5ffd42ba3b276a056eb56ec6ed5a9}{ref\-Body\-Name} ()
 \begin{DoxyCompactList}\small\item\em Exposes the body name property for operation. \end{DoxyCompactList}\item 
-string \& \hyperlink{class_body_aaf7cbd04e863d70e71c3de1819df9c37}{Hydro\-Body\-Name} ()
+string \& \hyperlink{class_body_aef09a9c9b037e1b4e42fbdd1fa61c65d}{ref\-Hydro\-Bod\-Name} ()
 \begin{DoxyCompactList}\small\item\em Exposes the hydro body name property for operation. \end{DoxyCompactList}\item 
-void \hyperlink{class_body_ac2cb95c1a4d24e6b456db9bfe3e6dea3}{set\-Hydro\-Body\-Name} (string)
+void \hyperlink{class_body_a423511decfb427835d6734e1c21e1856}{set\-Hydro\-Bod\-Name} (string)
+\item 
+string \hyperlink{class_body_ada5245142768e7b4cdc74504651438bb}{get\-Hydro\-Bod\-Name} ()
 \item 
 void \hyperlink{class_body_a7bba55a8fd4aea7a17ce7bd5f54d6ab8}{set\-Heading} (double)
 \item 
-double \& \hyperlink{class_body_aef98ce381a5f74886a082dbaf40810c2}{Heading} ()
+double \hyperlink{class_body_ac34e65deb4894bd5c2b5d4089be0dcb0}{get\-Heading} ()
+\begin{DoxyCompactList}\small\item\em Gets the heading for the body. Heading is measured in radians. Zero heading is True North, proceeding counter clockwise around the compass rose. \end{DoxyCompactList}\item 
+double \& \hyperlink{class_body_a7aef7cce12d2dbdd3e5ab789ba8fe669}{ref\-Heading} ()
 \begin{DoxyCompactList}\small\item\em Exposes the heading property for operations. \end{DoxyCompactList}\item 
-void \hyperlink{class_body_aaa26153bd320830684e65bbf538b139d}{set\-User\-Active\-Forces} (vector$<$ string $>$)
-\item 
-void \hyperlink{class_body_aa3b532c91892c7336309df492cad39d6}{set\-User\-Reactive\-Forces} (vector$<$ string $>$)
-\item 
-void \hyperlink{class_body_af409e4b49b838e118a57a753879685dc}{set\-User\-Cross\-Body\-Forces} (vector$<$ string $>$)
-\item 
-void \hyperlink{class_body_a34950bfba0878d2488f91a0f5a1ae918}{set\-Hydro\-Active\-Forces} (vector$<$ string $>$)
-\item 
-void \hyperlink{class_body_ae26fc5ecce5fd1803ce26bf87d1d2a2b}{set\-Hydro\-Reactive\-Forces} (vector$<$ string $>$)
-\item 
-void \hyperlink{class_body_a47aed2abb4a77b9da93a803f7fdd5e31}{set\-Hydro\-Cross\-Body\-Forces} (vector$<$ string $>$)
-\item 
-void \hyperlink{class_body_a1bcd87df62f0cdd063c01799c1631ebd}{add\-Linked\-Body} (string)
-\item 
 void \hyperlink{class_body_a896b660a9d001422f5d2b0b4e6d77b98}{set\-Mass} (double)
 \item 
 double \hyperlink{class_body_ac58abb2931cc56f2c0ff85700175a4d9}{get\-Mass} ()
@@ -58,15 +66,15 @@ double \hyperlink{class_body_a00f9b6c0dfc59de42bb4ba6eaa80d707}{get\-Mom\-Izz} (
 \begin{DoxyCompactList}\small\item\em Returns the mass moment of inertia on the Z\-Z axis for the body. \end{DoxyCompactList}\item 
 void \hyperlink{class_body_ad21041419756e97484ef399181e4b668}{set\-Mom\-Ixy} (double)
 \item 
-double \hyperlink{class_body_ad441c69196f118ba60f51951e82a5929}{get\-Mom\-Ixy} ()
+double \hyperlink{class_body_a1acaae4a9731de146aabcb9482ff3f0b}{get\-Mom\-Ixy} ()
 \begin{DoxyCompactList}\small\item\em Returns the cross product of intertia on the X\-Y axis for the body. \end{DoxyCompactList}\item 
 void \hyperlink{class_body_ab76083304777794dd27769e1a35955b5}{set\-Mom\-Ixz} (double)
 \item 
-double \hyperlink{class_body_a6f9191a86fe6be241aa2278186926767}{get\-Mom\-Ixz} ()
+double \hyperlink{class_body_a946ad48ed4493008f4afbc5e89690bb5}{get\-Mom\-Ixz} ()
 \begin{DoxyCompactList}\small\item\em Returns the cross product of intertia on the X\-Z axis for the body. \end{DoxyCompactList}\item 
 void \hyperlink{class_body_a21a26c218ddbb7ee5b20e9ccdb0736f7}{set\-Mom\-Iyz} (double)
 \item 
-double \hyperlink{class_body_afa233bb2f555c54ca2697f796548668e}{get\-Mom\-Iyz} ()
+double \hyperlink{class_body_a5178058d29b5eaac87f21f26d5e935f6}{get\-Mom\-Iyz} ()
 \begin{DoxyCompactList}\small\item\em Returns the cross product of intertia on the Y\-Z axis for the body. \end{DoxyCompactList}\item 
 void \hyperlink{class_body_aeaacc5db3052196de8a6f7f61a8b6278}{set\-Cen\-X} (double)
 \item 
@@ -102,42 +110,65 @@ double \hyperlink{class_body_aaeddfd614683a8bc7fe81383667314a9}{get\-Posn\-Z} ()
 \begin{DoxyCompactList}\small\item\em Gets the body position in the Z-\/axis. \end{DoxyCompactList}\item 
 Mat$<$ double $>$ \hyperlink{class_body_a09987e449c77ba11fb66cf81de88220a}{get\-Posn} ()
 \begin{DoxyCompactList}\small\item\em Returns the entire matrix for position of the body. \end{DoxyCompactList}\item 
-Mat$<$ double $>$ \& \hyperlink{class_body_ab78f6612c15b27617175bb385a051667}{Posn} ()
+Mat$<$ double $>$ \& \hyperlink{class_body_ad34f38992e14d5bda02c481c311b66b3}{ref\-Posn} ()
 \begin{DoxyCompactList}\small\item\em Exposes the position property for operation. The entire matrix for position of the body. \end{DoxyCompactList}\item 
-void \hyperlink{class_body_a38933b2aec94873355dcecc8f8b41db2}{set\-Cross\-Body\-Name} (string)
-\item 
 string \hyperlink{class_body_aab63febbe35984d8551a188b40ee3c3f}{get\-Body\-Name} ()
 \item 
-void \hyperlink{class_body_ac1534f2032bc04ff9c118f5f47f3ef8e}{set\-Solution} (cx\-\_\-mat input)
+void \hyperlink{class_body_a202cf4dbcc9b1cbd268f02905ddebbb2}{set\-Soln\-Mat} (cx\-\_\-mat input)
 \begin{DoxyCompactList}\small\item\em Set the solution matrix for the body. \end{DoxyCompactList}\item 
 cx\-\_\-mat \hyperlink{class_body_a5153b4cfad5bf12ae6f279a5e7190c31}{get\-Solution} ()
 \begin{DoxyCompactList}\small\item\em Get the solution matrix for the body. \end{DoxyCompactList}\item 
-cx\-\_\-mat \& \hyperlink{class_body_abca1fdefd8fd12c9548c5e0d157d00ac}{Solution} ()
+cx\-\_\-mat \& \hyperlink{class_body_ae799af5531c35381830061f6abc0bb17}{ref\-Solution} ()
 \begin{DoxyCompactList}\small\item\em Get the solution matrix for the body. \end{DoxyCompactList}\item 
 \hyperlink{class_body}{Body} \hyperlink{class_body_a370dc9a5702d93d9295a9618ebdef456}{Copy} ()
 \begin{DoxyCompactList}\small\item\em Copies the body object, complete with all current data. \end{DoxyCompactList}\item 
-vector$<$ \hyperlink{classforce_active}{force\-Active} $\ast$ $>$ \& \hyperlink{class_body_a09cc32078919b282e5077f18f3343b35}{list\-Force\-Active\-\_\-user} ()
+vector$<$ \hyperlink{class_force_active}{Force\-Active} $\ast$ $>$ \hyperlink{class_body_acc646c06517d67b4d8dba821b5f87d8e}{list\-Force\-Active\-\_\-user} ()
 \begin{DoxyCompactList}\small\item\em The list of active user forces. \end{DoxyCompactList}\item 
-vector$<$ \hyperlink{classforce_active}{force\-Active} $\ast$ $>$ \& \hyperlink{class_body_a2e7a45fefe1c449e333891bdfea0b264}{list\-Force\-Active\-\_\-hydro} ()
+\hyperlink{class_force_active}{Force\-Active} $\ast$ \hyperlink{class_body_ad55994a87e95520959a2d236e02168ea}{list\-Force\-Active\-\_\-user} (int force\-In)
+\begin{DoxyCompactList}\small\item\em A single active user force. \end{DoxyCompactList}\item 
+vector$<$ \hyperlink{class_force_active}{Force\-Active} $\ast$ $>$ \& \hyperlink{class_body_a2169495533eebe0f4f05d9e2cb71f42b}{list\-Force\-Active\-\_\-hydro} ()
 \begin{DoxyCompactList}\small\item\em The list of active hydrodynamic forces. \end{DoxyCompactList}\item 
-vector$<$ \hyperlink{classforce_react}{force\-React} $\ast$ $>$ \& \hyperlink{class_body_abf20f5bfe14f6c831db9718682d7857d}{list\-Force\-React\-\_\-user} ()
+\hyperlink{class_force_active}{Force\-Active} $\ast$ \hyperlink{class_body_aa83129940f0eb3a27686b35292bf3339}{list\-Force\-Active\-\_\-hydro} (int force\-In)
+\begin{DoxyCompactList}\small\item\em A single active hydrodynamic force. \end{DoxyCompactList}\item 
+vector$<$ \hyperlink{class_force_react}{Force\-React} $\ast$ $>$ \& \hyperlink{class_body_afc1e6e0018dd26cc3702b74aea12ed9b}{list\-Force\-React\-\_\-user} ()
 \begin{DoxyCompactList}\small\item\em The list of reactive user forces. \end{DoxyCompactList}\item 
-vector$<$ \hyperlink{classforce_react}{force\-React} $\ast$ $>$ \& \hyperlink{class_body_a6d728e1c27df4498ffe3b270bc2bd4b6}{list\-Force\-React\-\_\-hydro} ()
+\hyperlink{class_force_react}{Force\-React} $\ast$ \hyperlink{class_body_a8afe32e16a7869395083de6cb0aca63e}{list\-Force\-React\-\_\-user} (int force\-In)
+\begin{DoxyCompactList}\small\item\em A single reactive user force. \end{DoxyCompactList}\item 
+vector$<$ \hyperlink{class_force_react}{Force\-React} $\ast$ $>$ \& \hyperlink{class_body_ad68893d21ecf337242d68936132ad25a}{list\-Force\-React\-\_\-hydro} ()
 \begin{DoxyCompactList}\small\item\em The list of reactive hydrodynamic forces. \end{DoxyCompactList}\item 
-vector$<$ \hyperlink{classforce_cross}{force\-Cross} $\ast$ $>$ \& \hyperlink{class_body_ad44837d77c6b6c0b0f3f4d5b2658627a}{list\-Force\-Cross\-\_\-user} ()
+\hyperlink{class_force_react}{Force\-React} $\ast$ \hyperlink{class_body_a774fe4681465ee5a8ea344f4ec7c18e2}{list\-Force\-React\-\_\-hydro} (int force\-In)
+\begin{DoxyCompactList}\small\item\em A single reactive hydrodynamic force. \end{DoxyCompactList}\item 
+vector$<$ \hyperlink{class_force_cross}{Force\-Cross} $\ast$ $>$ \& \hyperlink{class_body_ac428c19730346a51bde800e0cbc2e281}{list\-Force\-Cross\-\_\-user} ()
 \begin{DoxyCompactList}\small\item\em The list of user cross-\/body forces. \end{DoxyCompactList}\item 
-vector$<$ \hyperlink{classforce_cross}{force\-Cross} $\ast$ $>$ \& \hyperlink{class_body_a6d71490a913c0ed97ade7bb2976d426a}{list\-Force\-Cross\-\_\-hydro} ()
+\hyperlink{class_force_cross}{Force\-Cross} $\ast$ \hyperlink{class_body_af01cd5dc37ebd7969f4f2bc10ba3d76b}{list\-Force\-Cross\-\_\-user} (int force\-In)
+\begin{DoxyCompactList}\small\item\em A single cross-\/body user force. \end{DoxyCompactList}\item 
+vector$<$ \hyperlink{class_force_cross}{Force\-Cross} $\ast$ $>$ \& \hyperlink{class_body_a0dc70d3a67ad921a022f48a2fdf37526}{list\-Force\-Cross\-\_\-hydro} ()
 \begin{DoxyCompactList}\small\item\em The list of hydrodynamic cross-\/body forces. \end{DoxyCompactList}\item 
+\hyperlink{class_force_cross}{Force\-Cross} $\ast$ \hyperlink{class_body_ab814600b31abd49c0a8de29a0fb597b4}{list\-Force\-Cross\-\_\-hydro} (int force\-In)
+\begin{DoxyCompactList}\small\item\em A single cross-\/body hydrodynamic force. \end{DoxyCompactList}\item 
 vector$<$ \hyperlink{class_body}{Body} $\ast$ $>$ \& \hyperlink{class_body_a56ad2b60555f24df3feb5889974b27b2}{list\-Cross\-Body\-\_\-user} ()
 \begin{DoxyCompactList}\small\item\em The list of linked bodies for user cross-\/body forces. \end{DoxyCompactList}\item 
+\hyperlink{class_body}{Body} \& \hyperlink{class_body_afaf64ab1b477ff157f31e6824be1b767}{list\-Cross\-Body\-\_\-user} (int index)
+\begin{DoxyCompactList}\small\item\em Returns reference to individual linked \hyperlink{class_body}{Body} for the user cross-\/body force. \end{DoxyCompactList}\item 
 vector$<$ \hyperlink{class_body}{Body} $\ast$ $>$ \& \hyperlink{class_body_a7c930213d83962d4248068c38c589113}{list\-Cross\-Body\-\_\-hydro} ()
 \begin{DoxyCompactList}\small\item\em The list of linked bodies for hydrodynamic cross-\/body forces. \end{DoxyCompactList}\item 
+\hyperlink{class_body}{Body} \& \hyperlink{class_body_a9aaac9391781c67198f7b8b5785d4745}{list\-Cross\-Body\-\_\-hydro} (int index)
+\begin{DoxyCompactList}\small\item\em Returns reference to individual linked \hyperlink{class_body}{Body} for the hydro cross-\/body force. \end{DoxyCompactList}\item 
+vector$<$ string $>$ \& \hyperlink{class_body_a07d8ed6fdf5a4c6ef73b2d39b58403ce}{list\-Named\-Link\-\_\-user} ()
+\begin{DoxyCompactList}\small\item\em The list of names of linked bodies for user cross-\/body forces. This is a list of names of other bodies that a cross-\/body force references. This corresponds to the vector list\-Force\-Cross\-\_\-usr. The indices of the two vectors should match. So that when a force gets added at index 5 in the list\-Force\-Cross\-\_\-user, it should have a matching entry at index 5 in list\-Named\-Link\-\_\-usr. The list of names only is a temporary list used during the input stage of bodies. This is required because the linked body may name a body which is not yet read from the input file. Thus, the body is not currently defined. Once all Bodies are defined, the \hyperlink{class_system}{System} object calls a function to read through each name in the list and assign corresponding pointers in the list\-Linked\-Body\-\_\-usr. \end{DoxyCompactList}\item 
+string \& \hyperlink{class_body_a1fd7e672b9768351f9a53523d7b5c798}{list\-Named\-Link\-\_\-user} (unsigned int var\-In)
+\begin{DoxyCompactList}\small\item\em The list of names of linked bodies for user cross-\/body forces. This is a list of names of other bodies that a cross-\/body force references. This corresponds to the vector list\-Force\-Cross\-\_\-usr. The indices of the two vectors should match. So that when a force gets added at index 5 in the list\-Force\-Cross\-\_\-user, it should have a matching entry at index 5 in list\-Named\-Link\-\_\-usr. The list of names only is a temporary list used during the input stage of bodies. This is required because the linked body may name a body which is not yet read from the input file. Thus, the body is not currently defined. Once all Bodies are defined, the \hyperlink{class_system}{System} object calls a function to read through each name in the list and assign corresponding pointers in the list\-Linked\-Body\-\_\-usr. \end{DoxyCompactList}\item 
+vector$<$ string $>$ \& \hyperlink{class_body_abc4abd052a3776123df114c6faf34bae}{list\-Named\-Link\-\_\-hydro} ()
+\begin{DoxyCompactList}\small\item\em The list of names of linked bodies for hydro cross-\/body forces. This is a list of names of other bodies that a cross-\/body force references. This corresponds to the vector list\-Force\-Cross\-\_\-hydro. The indices of the two vectors should match. So that when a force gets added at index 5 in the list\-Force\-Cross\-\_\-hydro, it should have a matching entry at index 5 in list\-Named\-Link\-\_\-hydro. The list of names only is a temporary list used during the input stage of bodies. This is required because the linked body may name a body which is not yet read from the input file. Thus, the body is not currently defined. Once all Bodies are defined, the \hyperlink{class_system}{System} object calls a function to read through each name in the list and assign corresponding pointers in the list\-Linked\-Body\-\_\-hydro. \end{DoxyCompactList}\item 
+string \& \hyperlink{class_body_ad01b96bf575dde9f75f489c7118ca574}{list\-Named\-Link\-\_\-hydro} (unsigned int var\-In)
+\begin{DoxyCompactList}\small\item\em The list of names of linked bodies for hydro cross-\/body forces. This is a list of names of other bodies that a cross-\/body force references. This corresponds to the vector list\-Force\-Cross\-\_\-hydro. The indices of the two vectors should match. So that when a force gets added at index 5 in the list\-Force\-Cross\-\_\-hydro, it should have a matching entry at index 5 in list\-Named\-Link\-\_\-hydro. The list of names only is a temporary list used during the input stage of bodies. This is required because the linked body may name a body which is not yet read from the input file. Thus, the body is not currently defined. Once all Bodies are defined, the \hyperlink{class_system}{System} object calls a function to read through each name in the list and assign corresponding pointers in the list\-Linked\-Body\-\_\-hydro. \end{DoxyCompactList}\item 
 void \hyperlink{class_body_ae6fe245f2504eac2e3486f28df3c0ca3}{set\-Motion\-Model} (string model\-Name)
 \begin{DoxyCompactList}\small\item\em Sets the name of the motion model for lookup later. \end{DoxyCompactList}\item 
 string \hyperlink{class_body_ab4340cac445ae26ae751a08c35155386}{get\-Motion\-Model} ()
 \begin{DoxyCompactList}\small\item\em Gets the name of the motion model. \end{DoxyCompactList}\item 
 int \hyperlink{class_body_a07a8f186c02f0d5bad4beded83949571}{get\-Equation\-Count} ()
 \begin{DoxyCompactList}\small\item\em Gets the number of equations used in the body. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
 
 
 \subsection{Detailed Description}
@@ -161,54 +192,6 @@ The default constructor \hypertarget{class_body_abe1c4da65568cf7978b6247affc461e
 The default destructor, nothing happens here. 
 
 \subsection{Member Function Documentation}
-\hypertarget{class_body_a1bcd87df62f0cdd063c01799c1631ebd}{\index{Body@{Body}!add\-Linked\-Body@{add\-Linked\-Body}}
-\index{add\-Linked\-Body@{add\-Linked\-Body}!Body@{Body}}
-\subsubsection[{add\-Linked\-Body}]{\setlength{\rightskip}{0pt plus 5cm}void Body\-::add\-Linked\-Body (
-\begin{DoxyParamCaption}
-\item[{string}]{new\-Linked\-Body}
-\end{DoxyParamCaption}
-)}}\label{class_body_a1bcd87df62f0cdd063c01799c1631ebd}
-Adds a linked body. 
-\begin{DoxyParams}{Parameters}
-{\em new\-Linked\-Body} & The string passed in is added to the linked\-Body vector. \\
-\hline
-\end{DoxyParams}
-
-
-Here is the caller graph for this function\-:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{class_body_a1bcd87df62f0cdd063c01799c1631ebd_icgraph}
-\end{center}
-\end{figure}
-
-
-\hypertarget{class_body_aaeacf4b8d79625bc8c6d77544c6ecfb7}{\index{Body@{Body}!Body\-Name@{Body\-Name}}
-\index{Body\-Name@{Body\-Name}!Body@{Body}}
-\subsubsection[{Body\-Name}]{\setlength{\rightskip}{0pt plus 5cm}string \& Body\-::\-Body\-Name (
-\begin{DoxyParamCaption}
-{}
-\end{DoxyParamCaption}
-)}}\label{class_body_aaeacf4b8d79625bc8c6d77544c6ecfb7}
-
-
-Exposes the body name property for operation. 
-
-\begin{DoxyReturn}{Returns}
-Pointer to the body name property. 
-\end{DoxyReturn}
-
-
-Here is the caller graph for this function\-:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{class_body_aaeacf4b8d79625bc8c6d77544c6ecfb7_icgraph}
-\end{center}
-\end{figure}
-
-
 \hypertarget{class_body_a370dc9a5702d93d9295a9618ebdef456}{\index{Body@{Body}!Copy@{Copy}}
 \index{Copy@{Copy}!Body@{Body}}
 \subsubsection[{Copy}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Body} Body\-::\-Copy (
@@ -314,6 +297,30 @@ Here is the caller graph for this function\-:\nopagebreak
 \end{figure}
 
 
+\hypertarget{class_body_ac34e65deb4894bd5c2b5d4089be0dcb0}{\index{Body@{Body}!get\-Heading@{get\-Heading}}
+\index{get\-Heading@{get\-Heading}!Body@{Body}}
+\subsubsection[{get\-Heading}]{\setlength{\rightskip}{0pt plus 5cm}double Body\-::get\-Heading (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_body_ac34e65deb4894bd5c2b5d4089be0dcb0}
+
+
+Gets the heading for the body. Heading is measured in radians. Zero heading is True North, proceeding counter clockwise around the compass rose. 
+
+\begin{DoxyReturn}{Returns}
+Returns double variable. Heading of the \hyperlink{class_body}{Body} object. Variable passed by value. 
+\end{DoxyReturn}
+\hypertarget{class_body_ada5245142768e7b4cdc74504651438bb}{\index{Body@{Body}!get\-Hydro\-Bod\-Name@{get\-Hydro\-Bod\-Name}}
+\index{get\-Hydro\-Bod\-Name@{get\-Hydro\-Bod\-Name}!Body@{Body}}
+\subsubsection[{get\-Hydro\-Bod\-Name}]{\setlength{\rightskip}{0pt plus 5cm}string Body\-::get\-Hydro\-Bod\-Name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_body_ada5245142768e7b4cdc74504651438bb}
+Gets the name of the hydro body. \begin{DoxyReturn}{Returns}
+Returns string. The name of the hydrobody object associated with the body. Variable passed by value. 
+\end{DoxyReturn}
 \hypertarget{class_body_ac58abb2931cc56f2c0ff85700175a4d9}{\index{Body@{Body}!get\-Mass@{get\-Mass}}
 \index{get\-Mass@{get\-Mass}!Body@{Body}}
 \subsubsection[{get\-Mass}]{\setlength{\rightskip}{0pt plus 5cm}double Body\-::get\-Mass (
@@ -342,17 +349,6 @@ Gets the mass matrix for the body.
 \begin{DoxyReturn}{Returns}
 Returns the mass matrix for the body, as a single matrix. Returned by value. 
 \end{DoxyReturn}
-
-
-Here is the caller graph for this function\-:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=328pt]{class_body_a4201150aa57d9d6f3aa245d8eca231d3_icgraph}
-\end{center}
-\end{figure}
-
-
 \hypertarget{class_body_ac95aca5c89a30c42db96a8cfacecd89d}{\index{Body@{Body}!get\-Mom\-Ixx@{get\-Mom\-Ixx}}
 \index{get\-Mom\-Ixx@{get\-Mom\-Ixx}!Body@{Body}}
 \subsubsection[{get\-Mom\-Ixx}]{\setlength{\rightskip}{0pt plus 5cm}double Body\-::get\-Mom\-Ixx (
@@ -367,13 +363,13 @@ Returns the mass moment of inertia on the X\-X axis for the body.
 \begin{DoxyReturn}{Returns}
 Returns the mass moment of inertia on the X\-X axis for the body. Output is in units of kilogram-\/m$^\wedge$2. 
 \end{DoxyReturn}
-\hypertarget{class_body_ad441c69196f118ba60f51951e82a5929}{\index{Body@{Body}!get\-Mom\-Ixy@{get\-Mom\-Ixy}}
+\hypertarget{class_body_a1acaae4a9731de146aabcb9482ff3f0b}{\index{Body@{Body}!get\-Mom\-Ixy@{get\-Mom\-Ixy}}
 \index{get\-Mom\-Ixy@{get\-Mom\-Ixy}!Body@{Body}}
-\subsubsection[{get\-Mom\-Ixy}]{\setlength{\rightskip}{0pt plus 5cm}void Body\-::get\-Mom\-Ixy (
+\subsubsection[{get\-Mom\-Ixy}]{\setlength{\rightskip}{0pt plus 5cm}double Body\-::get\-Mom\-Ixy (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)}}\label{class_body_ad441c69196f118ba60f51951e82a5929}
+)}}\label{class_body_a1acaae4a9731de146aabcb9482ff3f0b}
 
 
 Returns the cross product of intertia on the X\-Y axis for the body. 
@@ -381,13 +377,13 @@ Returns the cross product of intertia on the X\-Y axis for the body.
 \begin{DoxyReturn}{Returns}
 Returns the cross product of intertia on the X\-Y axis for the body. O\-Utput is in units of kilogram-\/m$^\wedge$2. 
 \end{DoxyReturn}
-\hypertarget{class_body_a6f9191a86fe6be241aa2278186926767}{\index{Body@{Body}!get\-Mom\-Ixz@{get\-Mom\-Ixz}}
+\hypertarget{class_body_a946ad48ed4493008f4afbc5e89690bb5}{\index{Body@{Body}!get\-Mom\-Ixz@{get\-Mom\-Ixz}}
 \index{get\-Mom\-Ixz@{get\-Mom\-Ixz}!Body@{Body}}
-\subsubsection[{get\-Mom\-Ixz}]{\setlength{\rightskip}{0pt plus 5cm}void Body\-::get\-Mom\-Ixz (
+\subsubsection[{get\-Mom\-Ixz}]{\setlength{\rightskip}{0pt plus 5cm}double Body\-::get\-Mom\-Ixz (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)}}\label{class_body_a6f9191a86fe6be241aa2278186926767}
+)}}\label{class_body_a946ad48ed4493008f4afbc5e89690bb5}
 
 
 Returns the cross product of intertia on the X\-Z axis for the body. 
@@ -409,13 +405,13 @@ Returns the mass moment of inertia on the Y\-Y axis for the body.
 \begin{DoxyReturn}{Returns}
 Returns the mass moment of inertia on the Y\-Y axis for the body. Output is in units of kilogram-\/m$^\wedge$2. 
 \end{DoxyReturn}
-\hypertarget{class_body_afa233bb2f555c54ca2697f796548668e}{\index{Body@{Body}!get\-Mom\-Iyz@{get\-Mom\-Iyz}}
+\hypertarget{class_body_a5178058d29b5eaac87f21f26d5e935f6}{\index{Body@{Body}!get\-Mom\-Iyz@{get\-Mom\-Iyz}}
 \index{get\-Mom\-Iyz@{get\-Mom\-Iyz}!Body@{Body}}
-\subsubsection[{get\-Mom\-Iyz}]{\setlength{\rightskip}{0pt plus 5cm}void Body\-::get\-Mom\-Iyz (
+\subsubsection[{get\-Mom\-Iyz}]{\setlength{\rightskip}{0pt plus 5cm}double Body\-::get\-Mom\-Iyz (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)}}\label{class_body_afa233bb2f555c54ca2697f796548668e}
+)}}\label{class_body_a5178058d29b5eaac87f21f26d5e935f6}
 
 
 Returns the cross product of intertia on the Y\-Z axis for the body. 
@@ -521,34 +517,6 @@ Get the solution matrix for the body.
 Gets the solution matrix for the body. Used to store the solution from the motion solver. This variable is initially empty on body creation. It gets filled with the output from the motion solver. Output is a column matrix (n by 1) of complex numbers. Output is in units of meters. \begin{DoxyReturn}{Returns}
 Column matrix of complex numbers. Matrix size is not hard coded. Number of rows in matrix must match number of equations for body property. 
 \end{DoxyReturn}
-\hypertarget{class_body_aef98ce381a5f74886a082dbaf40810c2}{\index{Body@{Body}!Heading@{Heading}}
-\index{Heading@{Heading}!Body@{Body}}
-\subsubsection[{Heading}]{\setlength{\rightskip}{0pt plus 5cm}double \& Body\-::\-Heading (
-\begin{DoxyParamCaption}
-{}
-\end{DoxyParamCaption}
-)}}\label{class_body_aef98ce381a5f74886a082dbaf40810c2}
-
-
-Exposes the heading property for operations. 
-
-\begin{DoxyReturn}{Returns}
-Pointer to the heading property. 
-\end{DoxyReturn}
-\hypertarget{class_body_aaf7cbd04e863d70e71c3de1819df9c37}{\index{Body@{Body}!Hydro\-Body\-Name@{Hydro\-Body\-Name}}
-\index{Hydro\-Body\-Name@{Hydro\-Body\-Name}!Body@{Body}}
-\subsubsection[{Hydro\-Body\-Name}]{\setlength{\rightskip}{0pt plus 5cm}string \& Body\-::\-Hydro\-Body\-Name (
-\begin{DoxyParamCaption}
-{}
-\end{DoxyParamCaption}
-)}}\label{class_body_aaf7cbd04e863d70e71c3de1819df9c37}
-
-
-Exposes the hydro body name property for operation. 
-
-\begin{DoxyReturn}{Returns}
-Pointer to the hydro body name property. 
-\end{DoxyReturn}
 \hypertarget{class_body_a7c930213d83962d4248068c38c589113}{\index{Body@{Body}!list\-Cross\-Body\-\_\-hydro@{list\-Cross\-Body\-\_\-hydro}}
 \index{list\-Cross\-Body\-\_\-hydro@{list\-Cross\-Body\-\_\-hydro}!Body@{Body}}
 \subsubsection[{list\-Cross\-Body\-\_\-hydro}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ {\bf Body} $\ast$ $>$ \& Body\-::list\-Cross\-Body\-\_\-hydro (
@@ -562,6 +530,25 @@ The list of linked bodies for hydrodynamic cross-\/body forces.
 
 The list of linked bodies for hydrodynamic cross-\/body forces. This is a list of pointers to the other bodies. This corresponds with the vector list\-Force\-Cross\-\_\-usr. The indices of the two vectors should match. The indices of the two lists should match. So that when a force gets added at index 5 in the list\-Force\-Cross\-\_\-hydro, it should have a matching entry at index 5 in the list\-Linked\-Body\-\_\-hydro. \begin{DoxyReturn}{Returns}
 A list of pointers to various linked bodies for hydro cross-\/body forces. 
+\end{DoxyReturn}
+\hypertarget{class_body_a9aaac9391781c67198f7b8b5785d4745}{\index{Body@{Body}!list\-Cross\-Body\-\_\-hydro@{list\-Cross\-Body\-\_\-hydro}}
+\index{list\-Cross\-Body\-\_\-hydro@{list\-Cross\-Body\-\_\-hydro}!Body@{Body}}
+\subsubsection[{list\-Cross\-Body\-\_\-hydro}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Body} \& Body\-::list\-Cross\-Body\-\_\-hydro (
+\begin{DoxyParamCaption}
+\item[{int}]{index}
+\end{DoxyParamCaption}
+)}}\label{class_body_a9aaac9391781c67198f7b8b5785d4745}
+
+
+Returns reference to individual linked \hyperlink{class_body}{Body} for the hydro cross-\/body force. 
+
+Returns reference for linked \hyperlink{class_body}{Body} specified by the index. The index corresponds to the index of the cross-\/body force. So that when a cross-\/body force is stored in its list at index 5, the linked \hyperlink{class_body}{Body} can be retrieved from this method with index 5. \hyperlink{class_body}{Body} stored internally as a pointer to the \hyperlink{class_body}{Body} object. 
+\begin{DoxyParams}{Parameters}
+{\em index} & Integer. The index of the linked \hyperlink{class_body}{Body} to return. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns reference to a \hyperlink{class_body}{Body} object. The reference points to the linked \hyperlink{class_body}{Body} object that corresponds to the \hyperlink{class_force_cross}{Force\-Cross} object at the same index. 
 \end{DoxyReturn}
 \hypertarget{class_body_a56ad2b60555f24df3feb5889974b27b2}{\index{Body@{Body}!list\-Cross\-Body\-\_\-user@{list\-Cross\-Body\-\_\-user}}
 \index{list\-Cross\-Body\-\_\-user@{list\-Cross\-Body\-\_\-user}!Body@{Body}}
@@ -577,13 +564,32 @@ The list of linked bodies for user cross-\/body forces.
 The list of linked bodies for user cross-\/body forces. This is a list of pointers to the other bodies. This corresponds with the vector list\-Force\-Cross\-\_\-usr. The indices of the two vectors should match. The indices of the two lists should match. So that when a force gets added at index 5 in the list\-Force\-Cross\-\_\-usr, it should have a matching entry at index 5 in the list\-Linked\-Body\-\_\-usr. \begin{DoxyReturn}{Returns}
 A list of pointers to various linked bodies for user cross-\/body forces. 
 \end{DoxyReturn}
-\hypertarget{class_body_a2e7a45fefe1c449e333891bdfea0b264}{\index{Body@{Body}!list\-Force\-Active\-\_\-hydro@{list\-Force\-Active\-\_\-hydro}}
+\hypertarget{class_body_afaf64ab1b477ff157f31e6824be1b767}{\index{Body@{Body}!list\-Cross\-Body\-\_\-user@{list\-Cross\-Body\-\_\-user}}
+\index{list\-Cross\-Body\-\_\-user@{list\-Cross\-Body\-\_\-user}!Body@{Body}}
+\subsubsection[{list\-Cross\-Body\-\_\-user}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Body} \& Body\-::list\-Cross\-Body\-\_\-user (
+\begin{DoxyParamCaption}
+\item[{int}]{index}
+\end{DoxyParamCaption}
+)}}\label{class_body_afaf64ab1b477ff157f31e6824be1b767}
+
+
+Returns reference to individual linked \hyperlink{class_body}{Body} for the user cross-\/body force. 
+
+Returns reference for linked \hyperlink{class_body}{Body} specified by the index. The index corresponds to the index of the cross-\/body force. So that when a cross-\/body force is stored in its list at index 5, the linked \hyperlink{class_body}{Body} can be retrieved from this method with index 5. \hyperlink{class_body}{Body} stored internally as a pointer to the \hyperlink{class_body}{Body} object. 
+\begin{DoxyParams}{Parameters}
+{\em index} & Integer. The index of the linked \hyperlink{class_body}{Body} to return. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns reference to a \hyperlink{class_body}{Body} object. The reference points to the linked \hyperlink{class_body}{Body} object that corresponds to the \hyperlink{class_force_cross}{Force\-Cross} object at the same index. 
+\end{DoxyReturn}
+\hypertarget{class_body_a2169495533eebe0f4f05d9e2cb71f42b}{\index{Body@{Body}!list\-Force\-Active\-\_\-hydro@{list\-Force\-Active\-\_\-hydro}}
 \index{list\-Force\-Active\-\_\-hydro@{list\-Force\-Active\-\_\-hydro}!Body@{Body}}
-\subsubsection[{list\-Force\-Active\-\_\-hydro}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ {\bf force\-Active} $\ast$ $>$ \& Body\-::list\-Force\-Active\-\_\-hydro (
+\subsubsection[{list\-Force\-Active\-\_\-hydro}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ {\bf Force\-Active} $\ast$ $>$ \& Body\-::list\-Force\-Active\-\_\-hydro (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)}}\label{class_body_a2e7a45fefe1c449e333891bdfea0b264}
+)}}\label{class_body_a2169495533eebe0f4f05d9e2cb71f42b}
 
 
 The list of active hydrodynamic forces. 
@@ -591,13 +597,32 @@ The list of active hydrodynamic forces.
 The list of active hydrodynamic forces. A vector of pointers directing to the active hydrodynamic forces. Warning that these forces may be linked to other bodies as well and should not be changed. \begin{DoxyReturn}{Returns}
 A vector of pointes to various hydrodynamic active forces. 
 \end{DoxyReturn}
-\hypertarget{class_body_a09cc32078919b282e5077f18f3343b35}{\index{Body@{Body}!list\-Force\-Active\-\_\-user@{list\-Force\-Active\-\_\-user}}
+\hypertarget{class_body_aa83129940f0eb3a27686b35292bf3339}{\index{Body@{Body}!list\-Force\-Active\-\_\-hydro@{list\-Force\-Active\-\_\-hydro}}
+\index{list\-Force\-Active\-\_\-hydro@{list\-Force\-Active\-\_\-hydro}!Body@{Body}}
+\subsubsection[{list\-Force\-Active\-\_\-hydro}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Force\-Active} $\ast$ Body\-::list\-Force\-Active\-\_\-hydro (
+\begin{DoxyParamCaption}
+\item[{int}]{force\-In}
+\end{DoxyParamCaption}
+)}}\label{class_body_aa83129940f0eb3a27686b35292bf3339}
+
+
+A single active hydrodynamic force. 
+
+A single active hydrodynamic force. A pointer directing to the active hydrodynamic force. Warning that these forces may be linked to other bodies as well and should not be changed. 
+\begin{DoxyParams}{Parameters}
+{\em force\-In} & Integer. Index of the \hyperlink{class_force_active}{Force\-Active} object requested. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A single pointer to the user active forces requested by parameter force\-In. Pointer passed by value. 
+\end{DoxyReturn}
+\hypertarget{class_body_acc646c06517d67b4d8dba821b5f87d8e}{\index{Body@{Body}!list\-Force\-Active\-\_\-user@{list\-Force\-Active\-\_\-user}}
 \index{list\-Force\-Active\-\_\-user@{list\-Force\-Active\-\_\-user}!Body@{Body}}
-\subsubsection[{list\-Force\-Active\-\_\-user}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ {\bf force\-Active} $\ast$ $>$ \& Body\-::list\-Force\-Active\-\_\-user (
+\subsubsection[{list\-Force\-Active\-\_\-user}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ {\bf Force\-Active} $\ast$ $>$ Body\-::list\-Force\-Active\-\_\-user (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)}}\label{class_body_a09cc32078919b282e5077f18f3343b35}
+)}}\label{class_body_acc646c06517d67b4d8dba821b5f87d8e}
 
 
 The list of active user forces. 
@@ -605,13 +630,32 @@ The list of active user forces.
 The list of active user forces. A vector of pointers directing to the active user forces. Warning that these forces may be linked to other bodies as well and should not be changed. \begin{DoxyReturn}{Returns}
 A vector of pointers to various user active forces. 
 \end{DoxyReturn}
-\hypertarget{class_body_a6d71490a913c0ed97ade7bb2976d426a}{\index{Body@{Body}!list\-Force\-Cross\-\_\-hydro@{list\-Force\-Cross\-\_\-hydro}}
+\hypertarget{class_body_ad55994a87e95520959a2d236e02168ea}{\index{Body@{Body}!list\-Force\-Active\-\_\-user@{list\-Force\-Active\-\_\-user}}
+\index{list\-Force\-Active\-\_\-user@{list\-Force\-Active\-\_\-user}!Body@{Body}}
+\subsubsection[{list\-Force\-Active\-\_\-user}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Force\-Active} $\ast$ Body\-::list\-Force\-Active\-\_\-user (
+\begin{DoxyParamCaption}
+\item[{int}]{force\-In}
+\end{DoxyParamCaption}
+)}}\label{class_body_ad55994a87e95520959a2d236e02168ea}
+
+
+A single active user force. 
+
+A single active user force. A pointer directing to the active user force. Warning that these forces may be linked to other bodies as well and should not be changed. 
+\begin{DoxyParams}{Parameters}
+{\em force\-In} & Integer. Index of the \hyperlink{class_force_active}{Force\-Active} object requested. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A single pointer to the user active forces requested by parameter force\-In. Pointer passed by value. 
+\end{DoxyReturn}
+\hypertarget{class_body_a0dc70d3a67ad921a022f48a2fdf37526}{\index{Body@{Body}!list\-Force\-Cross\-\_\-hydro@{list\-Force\-Cross\-\_\-hydro}}
 \index{list\-Force\-Cross\-\_\-hydro@{list\-Force\-Cross\-\_\-hydro}!Body@{Body}}
-\subsubsection[{list\-Force\-Cross\-\_\-hydro}]{\setlength{\rightskip}{0pt plus 5cm}vector$<${\bf force\-Cross}$\ast$ $>$\& Body\-::list\-Force\-Cross\-\_\-hydro (
+\subsubsection[{list\-Force\-Cross\-\_\-hydro}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ {\bf Force\-Cross} $\ast$ $>$ \& Body\-::list\-Force\-Cross\-\_\-hydro (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)}}\label{class_body_a6d71490a913c0ed97ade7bb2976d426a}
+)}}\label{class_body_a0dc70d3a67ad921a022f48a2fdf37526}
 
 
 The list of hydrodynamic cross-\/body forces. 
@@ -619,13 +663,32 @@ The list of hydrodynamic cross-\/body forces.
 The list of hydrodynamic cross-\/body forces. A vector of pointers directing to the hydrodynamic cross-\/body forces. Warning that these forces may be linked to other bodies as well and should not be changed. There is another vector\-: the list\-Linked\-Body\-\_\-usr. That determines which body each cross-\/body force links to. The indices of the two lists should match. So that when a force gets added at index 5 in the list\-Force\-Cross\-\_\-hydro, it should have a matching entry at index 5 in the list\-Linked\-Body\-\_\-hydro. \begin{DoxyReturn}{Returns}
 A list of pointers to various hydrodynamic cross-\/body forces. 
 \end{DoxyReturn}
-\hypertarget{class_body_ad44837d77c6b6c0b0f3f4d5b2658627a}{\index{Body@{Body}!list\-Force\-Cross\-\_\-user@{list\-Force\-Cross\-\_\-user}}
+\hypertarget{class_body_ab814600b31abd49c0a8de29a0fb597b4}{\index{Body@{Body}!list\-Force\-Cross\-\_\-hydro@{list\-Force\-Cross\-\_\-hydro}}
+\index{list\-Force\-Cross\-\_\-hydro@{list\-Force\-Cross\-\_\-hydro}!Body@{Body}}
+\subsubsection[{list\-Force\-Cross\-\_\-hydro}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Force\-Cross} $\ast$ Body\-::list\-Force\-Cross\-\_\-hydro (
+\begin{DoxyParamCaption}
+\item[{int}]{force\-In}
+\end{DoxyParamCaption}
+)}}\label{class_body_ab814600b31abd49c0a8de29a0fb597b4}
+
+
+A single cross-\/body hydrodynamic force. 
+
+A single cross-\/body hydrodynamic force. A pointer directing to the cross-\/body hydrodynamic force. Warning that these forces may be linked to other bodies as well and should not be changed. 
+\begin{DoxyParams}{Parameters}
+{\em force\-In} & Integer. Index of the \hyperlink{class_force_cross}{Force\-Cross} object requested. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A single pointer to the user cross-\/body forces requested by parameter force\-In. Pointer passed by value. 
+\end{DoxyReturn}
+\hypertarget{class_body_ac428c19730346a51bde800e0cbc2e281}{\index{Body@{Body}!list\-Force\-Cross\-\_\-user@{list\-Force\-Cross\-\_\-user}}
 \index{list\-Force\-Cross\-\_\-user@{list\-Force\-Cross\-\_\-user}!Body@{Body}}
-\subsubsection[{list\-Force\-Cross\-\_\-user}]{\setlength{\rightskip}{0pt plus 5cm}vector$<${\bf force\-Cross}$\ast$ $>$\& Body\-::list\-Force\-Cross\-\_\-user (
+\subsubsection[{list\-Force\-Cross\-\_\-user}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ {\bf Force\-Cross} $\ast$ $>$ \& Body\-::list\-Force\-Cross\-\_\-user (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)}}\label{class_body_ad44837d77c6b6c0b0f3f4d5b2658627a}
+)}}\label{class_body_ac428c19730346a51bde800e0cbc2e281}
 
 
 The list of user cross-\/body forces. 
@@ -633,13 +696,32 @@ The list of user cross-\/body forces.
 The list of user cross-\/body forces. A vector of pointers directing to the user cross-\/body forces. Warning that these forces may be linked to other bodies as well and should not be changed. There is another vector\-: the list\-Linked\-Body\-\_\-usr. That determines which body each cross-\/body force links to. The indices of the two lists should match. So that when a force gets added at index 5 in the list\-Force\-Cross\-\_\-usr, it should have a matching entry at index 5 in the list\-Linked\-Body\-\_\-usr. \begin{DoxyReturn}{Returns}
 A list of pointers to various user cross-\/body forces. 
 \end{DoxyReturn}
-\hypertarget{class_body_a6d728e1c27df4498ffe3b270bc2bd4b6}{\index{Body@{Body}!list\-Force\-React\-\_\-hydro@{list\-Force\-React\-\_\-hydro}}
+\hypertarget{class_body_af01cd5dc37ebd7969f4f2bc10ba3d76b}{\index{Body@{Body}!list\-Force\-Cross\-\_\-user@{list\-Force\-Cross\-\_\-user}}
+\index{list\-Force\-Cross\-\_\-user@{list\-Force\-Cross\-\_\-user}!Body@{Body}}
+\subsubsection[{list\-Force\-Cross\-\_\-user}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Force\-Cross} $\ast$ Body\-::list\-Force\-Cross\-\_\-user (
+\begin{DoxyParamCaption}
+\item[{int}]{force\-In}
+\end{DoxyParamCaption}
+)}}\label{class_body_af01cd5dc37ebd7969f4f2bc10ba3d76b}
+
+
+A single cross-\/body user force. 
+
+A single cross-\/body user force. A pointer directing to the cross-\/body user force. Warning that these forces may be linked to other bodies as well and should not be changed. 
+\begin{DoxyParams}{Parameters}
+{\em force\-In} & Integer. Index of the \hyperlink{class_force_cross}{Force\-Cross} object requested. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A single pointer to the user cross-\/body forces requested by parameter force\-In. Pointer passed by value. 
+\end{DoxyReturn}
+\hypertarget{class_body_ad68893d21ecf337242d68936132ad25a}{\index{Body@{Body}!list\-Force\-React\-\_\-hydro@{list\-Force\-React\-\_\-hydro}}
 \index{list\-Force\-React\-\_\-hydro@{list\-Force\-React\-\_\-hydro}!Body@{Body}}
-\subsubsection[{list\-Force\-React\-\_\-hydro}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ {\bf force\-React} $\ast$ $>$ \& Body\-::list\-Force\-React\-\_\-hydro (
+\subsubsection[{list\-Force\-React\-\_\-hydro}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ {\bf Force\-React} $\ast$ $>$ \& Body\-::list\-Force\-React\-\_\-hydro (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)}}\label{class_body_a6d728e1c27df4498ffe3b270bc2bd4b6}
+)}}\label{class_body_ad68893d21ecf337242d68936132ad25a}
 
 
 The list of reactive hydrodynamic forces. 
@@ -647,13 +729,32 @@ The list of reactive hydrodynamic forces.
 The list of reactive hydrodynamic forces. A vector of pointers directing to the reactive hydrodynamic forces. Warning that these forces may be linked to other bodies as well and should not be changed. \begin{DoxyReturn}{Returns}
 A vector of pointers to various hydrodynamic reactive forces. 
 \end{DoxyReturn}
-\hypertarget{class_body_abf20f5bfe14f6c831db9718682d7857d}{\index{Body@{Body}!list\-Force\-React\-\_\-user@{list\-Force\-React\-\_\-user}}
+\hypertarget{class_body_a774fe4681465ee5a8ea344f4ec7c18e2}{\index{Body@{Body}!list\-Force\-React\-\_\-hydro@{list\-Force\-React\-\_\-hydro}}
+\index{list\-Force\-React\-\_\-hydro@{list\-Force\-React\-\_\-hydro}!Body@{Body}}
+\subsubsection[{list\-Force\-React\-\_\-hydro}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Force\-React} $\ast$ Body\-::list\-Force\-React\-\_\-hydro (
+\begin{DoxyParamCaption}
+\item[{int}]{force\-In}
+\end{DoxyParamCaption}
+)}}\label{class_body_a774fe4681465ee5a8ea344f4ec7c18e2}
+
+
+A single reactive hydrodynamic force. 
+
+A single reactive hydrodynamic force. A pointer directing to the reactive hydrodynamic force. Warning that these forces may be linked to other bodies as well and should not be changed. 
+\begin{DoxyParams}{Parameters}
+{\em force\-In} & Integer. Index of the \hyperlink{class_force_react}{Force\-React} object requested. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A single pointer to the user reactive forces requested by parameter force\-In. Pointer passed by value. 
+\end{DoxyReturn}
+\hypertarget{class_body_afc1e6e0018dd26cc3702b74aea12ed9b}{\index{Body@{Body}!list\-Force\-React\-\_\-user@{list\-Force\-React\-\_\-user}}
 \index{list\-Force\-React\-\_\-user@{list\-Force\-React\-\_\-user}!Body@{Body}}
-\subsubsection[{list\-Force\-React\-\_\-user}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ {\bf force\-React} $\ast$ $>$ \& Body\-::list\-Force\-React\-\_\-user (
+\subsubsection[{list\-Force\-React\-\_\-user}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ {\bf Force\-React} $\ast$ $>$ \& Body\-::list\-Force\-React\-\_\-user (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)}}\label{class_body_abf20f5bfe14f6c831db9718682d7857d}
+)}}\label{class_body_afc1e6e0018dd26cc3702b74aea12ed9b}
 
 
 The list of reactive user forces. 
@@ -661,6 +762,111 @@ The list of reactive user forces.
 The list of reactive user forces. A vector of pointers directing to the reactive user forces. Warning that these forces may be linked to other bodies as well and should not be changed. \begin{DoxyReturn}{Returns}
 A vector of pointers to various user reactive forces. 
 \end{DoxyReturn}
+\hypertarget{class_body_a8afe32e16a7869395083de6cb0aca63e}{\index{Body@{Body}!list\-Force\-React\-\_\-user@{list\-Force\-React\-\_\-user}}
+\index{list\-Force\-React\-\_\-user@{list\-Force\-React\-\_\-user}!Body@{Body}}
+\subsubsection[{list\-Force\-React\-\_\-user}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Force\-React} $\ast$ Body\-::list\-Force\-React\-\_\-user (
+\begin{DoxyParamCaption}
+\item[{int}]{force\-In}
+\end{DoxyParamCaption}
+)}}\label{class_body_a8afe32e16a7869395083de6cb0aca63e}
+
+
+A single reactive user force. 
+
+A single reactive user force. A pointer directing to the reactive user force. Warning that these forces may be linked to other bodies as well and should not be changed. 
+\begin{DoxyParams}{Parameters}
+{\em force\-In} & Integer. Index of the \hyperlink{class_force_react}{Force\-React} object requested. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A single pointer to the user reactive forces requested by parameter force\-In. Pointer passed by value. 
+\end{DoxyReturn}
+\hypertarget{class_body_abc4abd052a3776123df114c6faf34bae}{\index{Body@{Body}!list\-Named\-Link\-\_\-hydro@{list\-Named\-Link\-\_\-hydro}}
+\index{list\-Named\-Link\-\_\-hydro@{list\-Named\-Link\-\_\-hydro}!Body@{Body}}
+\subsubsection[{list\-Named\-Link\-\_\-hydro}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ string $>$ \& Body\-::list\-Named\-Link\-\_\-hydro (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_body_abc4abd052a3776123df114c6faf34bae}
+
+
+The list of names of linked bodies for hydro cross-\/body forces. This is a list of names of other bodies that a cross-\/body force references. This corresponds to the vector list\-Force\-Cross\-\_\-hydro. The indices of the two vectors should match. So that when a force gets added at index 5 in the list\-Force\-Cross\-\_\-hydro, it should have a matching entry at index 5 in list\-Named\-Link\-\_\-hydro. The list of names only is a temporary list used during the input stage of bodies. This is required because the linked body may name a body which is not yet read from the input file. Thus, the body is not currently defined. Once all Bodies are defined, the \hyperlink{class_system}{System} object calls a function to read through each name in the list and assign corresponding pointers in the list\-Linked\-Body\-\_\-hydro. 
+
+\begin{DoxyReturn}{Returns}
+Returns the list of named bodies linked to the Cross-\/\-Body forces. Returned object is a vector of string objects. Returned variable passed by reference. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See Also}
+list\-Linked\-Body\-\_\-hydro() 
+
+\hyperlink{class_system}{System} 
+\end{DoxySeeAlso}
+\hypertarget{class_body_ad01b96bf575dde9f75f489c7118ca574}{\index{Body@{Body}!list\-Named\-Link\-\_\-hydro@{list\-Named\-Link\-\_\-hydro}}
+\index{list\-Named\-Link\-\_\-hydro@{list\-Named\-Link\-\_\-hydro}!Body@{Body}}
+\subsubsection[{list\-Named\-Link\-\_\-hydro}]{\setlength{\rightskip}{0pt plus 5cm}string \& Body\-::list\-Named\-Link\-\_\-hydro (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{var\-In}
+\end{DoxyParamCaption}
+)}}\label{class_body_ad01b96bf575dde9f75f489c7118ca574}
+
+
+The list of names of linked bodies for hydro cross-\/body forces. This is a list of names of other bodies that a cross-\/body force references. This corresponds to the vector list\-Force\-Cross\-\_\-hydro. The indices of the two vectors should match. So that when a force gets added at index 5 in the list\-Force\-Cross\-\_\-hydro, it should have a matching entry at index 5 in list\-Named\-Link\-\_\-hydro. The list of names only is a temporary list used during the input stage of bodies. This is required because the linked body may name a body which is not yet read from the input file. Thus, the body is not currently defined. Once all Bodies are defined, the \hyperlink{class_system}{System} object calls a function to read through each name in the list and assign corresponding pointers in the list\-Linked\-Body\-\_\-hydro. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em var\-In} & Integer input specifying exactly which item in the list to return. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns the named body linked to the Cross-\/\-Body forces. Returned object is a string object. Returned variable passed by reference. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See Also}
+list\-Linked\-Body\-\_\-hydro() 
+
+\hyperlink{class_system}{System} 
+\end{DoxySeeAlso}
+\hypertarget{class_body_a07d8ed6fdf5a4c6ef73b2d39b58403ce}{\index{Body@{Body}!list\-Named\-Link\-\_\-user@{list\-Named\-Link\-\_\-user}}
+\index{list\-Named\-Link\-\_\-user@{list\-Named\-Link\-\_\-user}!Body@{Body}}
+\subsubsection[{list\-Named\-Link\-\_\-user}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ string $>$ \& Body\-::list\-Named\-Link\-\_\-user (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_body_a07d8ed6fdf5a4c6ef73b2d39b58403ce}
+
+
+The list of names of linked bodies for user cross-\/body forces. This is a list of names of other bodies that a cross-\/body force references. This corresponds to the vector list\-Force\-Cross\-\_\-usr. The indices of the two vectors should match. So that when a force gets added at index 5 in the list\-Force\-Cross\-\_\-user, it should have a matching entry at index 5 in list\-Named\-Link\-\_\-usr. The list of names only is a temporary list used during the input stage of bodies. This is required because the linked body may name a body which is not yet read from the input file. Thus, the body is not currently defined. Once all Bodies are defined, the \hyperlink{class_system}{System} object calls a function to read through each name in the list and assign corresponding pointers in the list\-Linked\-Body\-\_\-usr. 
+
+\begin{DoxyReturn}{Returns}
+Returns the list of named bodies linked to the Cross-\/\-Body forces. Returned object is a vector of string objects. Returned variable passed by reference. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See Also}
+list\-Linked\-Body\-\_\-user() 
+
+\hyperlink{class_system}{System} 
+\end{DoxySeeAlso}
+\hypertarget{class_body_a1fd7e672b9768351f9a53523d7b5c798}{\index{Body@{Body}!list\-Named\-Link\-\_\-user@{list\-Named\-Link\-\_\-user}}
+\index{list\-Named\-Link\-\_\-user@{list\-Named\-Link\-\_\-user}!Body@{Body}}
+\subsubsection[{list\-Named\-Link\-\_\-user}]{\setlength{\rightskip}{0pt plus 5cm}string \& Body\-::list\-Named\-Link\-\_\-user (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{var\-In}
+\end{DoxyParamCaption}
+)}}\label{class_body_a1fd7e672b9768351f9a53523d7b5c798}
+
+
+The list of names of linked bodies for user cross-\/body forces. This is a list of names of other bodies that a cross-\/body force references. This corresponds to the vector list\-Force\-Cross\-\_\-usr. The indices of the two vectors should match. So that when a force gets added at index 5 in the list\-Force\-Cross\-\_\-user, it should have a matching entry at index 5 in list\-Named\-Link\-\_\-usr. The list of names only is a temporary list used during the input stage of bodies. This is required because the linked body may name a body which is not yet read from the input file. Thus, the body is not currently defined. Once all Bodies are defined, the \hyperlink{class_system}{System} object calls a function to read through each name in the list and assign corresponding pointers in the list\-Linked\-Body\-\_\-usr. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em var\-In} & Integer input specifying exactly which item in the list to return. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns the named body linked to the Cross-\/\-Body forces. Returned object is a string object. Returned variable passed by reference. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See Also}
+list\-Linked\-Body\-\_\-user() 
+
+\hyperlink{class_system}{System} 
+\end{DoxySeeAlso}
 \hypertarget{class_body_acb2895e81a595c7d168db48ff5dc766c}{\index{Body@{Body}!Mass\-Matrix@{Mass\-Matrix}}
 \index{Mass\-Matrix@{Mass\-Matrix}!Body@{Body}}
 \subsubsection[{Mass\-Matrix}]{\setlength{\rightskip}{0pt plus 5cm}Mat$<$ double $>$ \& Body\-::\-Mass\-Matrix (
@@ -675,30 +881,105 @@ Implements the method \hyperlink{class_body_a4201150aa57d9d6f3aa245d8eca231d3}{g
 \begin{DoxyReturn}{Returns}
 Returns the mass matrix for the body, as a single matrix. 
 \end{DoxyReturn}
+\hypertarget{class_body_ad4580795d6db4b4ffd23db2a21ace9c7}{\index{Body@{Body}!operator==@{operator==}}
+\index{operator==@{operator==}!Body@{Body}}
+\subsubsection[{operator==}]{\setlength{\rightskip}{0pt plus 5cm}bool Body\-::operator== (
+\begin{DoxyParamCaption}
+\item[{{\bf Body} \&}]{bod\-In}
+\end{DoxyParamCaption}
+)}}\label{class_body_ad4580795d6db4b4ffd23db2a21ace9c7}
 
 
-Here is the call graph for this function\-:\nopagebreak
+Overload for operator == to compare two \hyperlink{class_body}{Body} objects. Comparison is based on body names. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em bod\-In} & The other body to compare to. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns true if the body names are equal. Returned variable is passed by value. 
+\end{DoxyReturn}
+\hypertarget{class_body_ae1f5ffd42ba3b276a056eb56ec6ed5a9}{\index{Body@{Body}!ref\-Body\-Name@{ref\-Body\-Name}}
+\index{ref\-Body\-Name@{ref\-Body\-Name}!Body@{Body}}
+\subsubsection[{ref\-Body\-Name}]{\setlength{\rightskip}{0pt plus 5cm}string \& Body\-::ref\-Body\-Name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_body_ae1f5ffd42ba3b276a056eb56ec6ed5a9}
+
+
+Exposes the body name property for operation. 
+
+\begin{DoxyReturn}{Returns}
+Pointer to the body name property. 
+\end{DoxyReturn}
+
+
+Here is the caller graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=328pt]{class_body_acb2895e81a595c7d168db48ff5dc766c_cgraph}
+\includegraphics[width=350pt]{class_body_ae1f5ffd42ba3b276a056eb56ec6ed5a9_icgraph}
 \end{center}
 \end{figure}
 
 
-\hypertarget{class_body_ab78f6612c15b27617175bb385a051667}{\index{Body@{Body}!Posn@{Posn}}
-\index{Posn@{Posn}!Body@{Body}}
-\subsubsection[{Posn}]{\setlength{\rightskip}{0pt plus 5cm}Mat$<$ double $>$ \& Body\-::\-Posn (
+\hypertarget{class_body_a7aef7cce12d2dbdd3e5ab789ba8fe669}{\index{Body@{Body}!ref\-Heading@{ref\-Heading}}
+\index{ref\-Heading@{ref\-Heading}!Body@{Body}}
+\subsubsection[{ref\-Heading}]{\setlength{\rightskip}{0pt plus 5cm}double \& Body\-::ref\-Heading (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)}}\label{class_body_ab78f6612c15b27617175bb385a051667}
+)}}\label{class_body_a7aef7cce12d2dbdd3e5ab789ba8fe669}
+
+
+Exposes the heading property for operations. 
+
+\begin{DoxyReturn}{Returns}
+Pointer to the heading property. 
+\end{DoxyReturn}
+\hypertarget{class_body_aef09a9c9b037e1b4e42fbdd1fa61c65d}{\index{Body@{Body}!ref\-Hydro\-Bod\-Name@{ref\-Hydro\-Bod\-Name}}
+\index{ref\-Hydro\-Bod\-Name@{ref\-Hydro\-Bod\-Name}!Body@{Body}}
+\subsubsection[{ref\-Hydro\-Bod\-Name}]{\setlength{\rightskip}{0pt plus 5cm}string \& Body\-::ref\-Hydro\-Bod\-Name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_body_aef09a9c9b037e1b4e42fbdd1fa61c65d}
+
+
+Exposes the hydro body name property for operation. 
+
+\begin{DoxyReturn}{Returns}
+Pointer to the hydro body name property. 
+\end{DoxyReturn}
+\hypertarget{class_body_ad34f38992e14d5bda02c481c311b66b3}{\index{Body@{Body}!ref\-Posn@{ref\-Posn}}
+\index{ref\-Posn@{ref\-Posn}!Body@{Body}}
+\subsubsection[{ref\-Posn}]{\setlength{\rightskip}{0pt plus 5cm}Mat$<$ double $>$ \& Body\-::ref\-Posn (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_body_ad34f38992e14d5bda02c481c311b66b3}
 
 
 Exposes the position property for operation. The entire matrix for position of the body. 
 
 Returns the entire matrix for the position of the body. Output is a 3x1 matrix with double point precision. First entry (1,1) = Position in X-\/axis. Second entry (2,1) = Position in Y-\/axis. Third entry (3,1) = Position in Z-\/axis. Units are in meters. Position is relative to the orientation of the world coordinate system. \begin{DoxyReturn}{Returns}
 Returns a pointer to the the entire matrix for the position of the body. Output is a 3x1 matrix with double point precision. First entry (1,1) = Position in X-\/axis. Second entry (2,1) = Position in Y-\/axis. Third entry (3,1) = Position in Z-\/axis. Units are in meters. Position is relative to the orientation of the world coordinate system. 
+\end{DoxyReturn}
+\hypertarget{class_body_ae799af5531c35381830061f6abc0bb17}{\index{Body@{Body}!ref\-Solution@{ref\-Solution}}
+\index{ref\-Solution@{ref\-Solution}!Body@{Body}}
+\subsubsection[{ref\-Solution}]{\setlength{\rightskip}{0pt plus 5cm}cx\-\_\-mat \& Body\-::ref\-Solution (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_body_ae799af5531c35381830061f6abc0bb17}
+
+
+Get the solution matrix for the body. 
+
+Gets the solution matrix for the body. Used to store the solution from the motion solver. This variable is initially empty on body creation. It gets filled with the output from the motion solver. Output is a column matrix (n by 1) of complex numbers. Output is in units of meters. \begin{DoxyReturn}{Returns}
+Reference to column matrix of complex numbers. Value returned by reference. Matrix size is not hard coded. Number of rows in matrix must match number of equations for body property. 
 \end{DoxyReturn}
 \hypertarget{class_body_a21190f9d796d631202db6caf768beae1}{\index{Body@{Body}!set\-Body\-Name@{set\-Body\-Name}}
 \index{set\-Body\-Name@{set\-Body\-Name}!Body@{Body}}
@@ -712,17 +993,6 @@ Sets the body\-Name.
 {\em new\-Name} & The string passed in sets body\-Name. \\
 \hline
 \end{DoxyParams}
-
-
-Here is the caller graph for this function\-:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{class_body_a21190f9d796d631202db6caf768beae1_icgraph}
-\end{center}
-\end{figure}
-
-
 \hypertarget{class_body_aeaacc5db3052196de8a6f7f61a8b6278}{\index{Body@{Body}!set\-Cen\-X@{set\-Cen\-X}}
 \index{set\-Cen\-X@{set\-Cen\-X}!Body@{Body}}
 \subsubsection[{set\-Cen\-X}]{\setlength{\rightskip}{0pt plus 5cm}void Body\-::set\-Cen\-X (
@@ -759,18 +1029,6 @@ Sets the Centroid Z.
 {\em new\-Cen\-Z} & The double passed in sets centroid\-Z. \\
 \hline
 \end{DoxyParams}
-\hypertarget{class_body_a38933b2aec94873355dcecc8f8b41db2}{\index{Body@{Body}!set\-Cross\-Body\-Name@{set\-Cross\-Body\-Name}}
-\index{set\-Cross\-Body\-Name@{set\-Cross\-Body\-Name}!Body@{Body}}
-\subsubsection[{set\-Cross\-Body\-Name}]{\setlength{\rightskip}{0pt plus 5cm}void Body\-::set\-Cross\-Body\-Name (
-\begin{DoxyParamCaption}
-\item[{string}]{new\-Name}
-\end{DoxyParamCaption}
-)}}\label{class_body_a38933b2aec94873355dcecc8f8b41db2}
-Adds a cross body name. 
-\begin{DoxyParams}{Parameters}
-{\em new\-Name} & The string passed in is added to the vector that holds the list of cross body forces. \\
-\hline
-\end{DoxyParams}
 \hypertarget{class_body_a7bba55a8fd4aea7a17ce7bd5f54d6ab8}{\index{Body@{Body}!set\-Heading@{set\-Heading}}
 \index{set\-Heading@{set\-Heading}!Body@{Body}}
 \subsubsection[{set\-Heading}]{\setlength{\rightskip}{0pt plus 5cm}void Body\-::set\-Heading (
@@ -783,52 +1041,16 @@ Sets the heading.
 {\em new\-Heading} & The double passed in sets the heading. \\
 \hline
 \end{DoxyParams}
-\hypertarget{class_body_a34950bfba0878d2488f91a0f5a1ae918}{\index{Body@{Body}!set\-Hydro\-Active\-Forces@{set\-Hydro\-Active\-Forces}}
-\index{set\-Hydro\-Active\-Forces@{set\-Hydro\-Active\-Forces}!Body@{Body}}
-\subsubsection[{set\-Hydro\-Active\-Forces}]{\setlength{\rightskip}{0pt plus 5cm}void Body\-::set\-Hydro\-Active\-Forces (
-\begin{DoxyParamCaption}
-\item[{vector$<$ string $>$}]{new\-Force\-List}
-\end{DoxyParamCaption}
-)}}\label{class_body_a34950bfba0878d2488f91a0f5a1ae918}
-Sets the hydro active forces. 
-\begin{DoxyParams}{Parameters}
-{\em new\-Force\-List} & The vector of strings sets hydro\-Active\-Forces. \\
-\hline
-\end{DoxyParams}
-\hypertarget{class_body_ac2cb95c1a4d24e6b456db9bfe3e6dea3}{\index{Body@{Body}!set\-Hydro\-Body\-Name@{set\-Hydro\-Body\-Name}}
-\index{set\-Hydro\-Body\-Name@{set\-Hydro\-Body\-Name}!Body@{Body}}
-\subsubsection[{set\-Hydro\-Body\-Name}]{\setlength{\rightskip}{0pt plus 5cm}void Body\-::set\-Hydro\-Body\-Name (
+\hypertarget{class_body_a423511decfb427835d6734e1c21e1856}{\index{Body@{Body}!set\-Hydro\-Bod\-Name@{set\-Hydro\-Bod\-Name}}
+\index{set\-Hydro\-Bod\-Name@{set\-Hydro\-Bod\-Name}!Body@{Body}}
+\subsubsection[{set\-Hydro\-Bod\-Name}]{\setlength{\rightskip}{0pt plus 5cm}void Body\-::set\-Hydro\-Bod\-Name (
 \begin{DoxyParamCaption}
 \item[{string}]{new\-Name}
 \end{DoxyParamCaption}
-)}}\label{class_body_ac2cb95c1a4d24e6b456db9bfe3e6dea3}
+)}}\label{class_body_a423511decfb427835d6734e1c21e1856}
 Sets the hydro\-Body. 
 \begin{DoxyParams}{Parameters}
 {\em new\-Name} & The string passed in sets the hydro\-Body. \\
-\hline
-\end{DoxyParams}
-\hypertarget{class_body_a47aed2abb4a77b9da93a803f7fdd5e31}{\index{Body@{Body}!set\-Hydro\-Cross\-Body\-Forces@{set\-Hydro\-Cross\-Body\-Forces}}
-\index{set\-Hydro\-Cross\-Body\-Forces@{set\-Hydro\-Cross\-Body\-Forces}!Body@{Body}}
-\subsubsection[{set\-Hydro\-Cross\-Body\-Forces}]{\setlength{\rightskip}{0pt plus 5cm}void Body\-::set\-Hydro\-Cross\-Body\-Forces (
-\begin{DoxyParamCaption}
-\item[{vector$<$ string $>$}]{new\-Force\-List}
-\end{DoxyParamCaption}
-)}}\label{class_body_a47aed2abb4a77b9da93a803f7fdd5e31}
-Sets the hydro active forces. 
-\begin{DoxyParams}{Parameters}
-{\em new\-Force\-List} & The vector of strings sets hydro\-Cross\-Body\-Forces. \\
-\hline
-\end{DoxyParams}
-\hypertarget{class_body_ae26fc5ecce5fd1803ce26bf87d1d2a2b}{\index{Body@{Body}!set\-Hydro\-Reactive\-Forces@{set\-Hydro\-Reactive\-Forces}}
-\index{set\-Hydro\-Reactive\-Forces@{set\-Hydro\-Reactive\-Forces}!Body@{Body}}
-\subsubsection[{set\-Hydro\-Reactive\-Forces}]{\setlength{\rightskip}{0pt plus 5cm}void Body\-::set\-Hydro\-Reactive\-Forces (
-\begin{DoxyParamCaption}
-\item[{vector$<$ string $>$}]{new\-Force\-List}
-\end{DoxyParamCaption}
-)}}\label{class_body_ae26fc5ecce5fd1803ce26bf87d1d2a2b}
-Sets the hydro reactive forces. 
-\begin{DoxyParams}{Parameters}
-{\em new\-Force\-List} & The vector of strings sets hydro\-Reactive\-Force. \\
 \hline
 \end{DoxyParams}
 \hypertarget{class_body_a896b660a9d001422f5d2b0b4e6d77b98}{\index{Body@{Body}!set\-Mass@{set\-Mass}}
@@ -995,13 +1217,13 @@ Sets the body position in the Z-\/axis. Position is set relative to the world co
 {\em input} & Double input specifying the position on the Z-\/axis, units of meters. \\
 \hline
 \end{DoxyParams}
-\hypertarget{class_body_ac1534f2032bc04ff9c118f5f47f3ef8e}{\index{Body@{Body}!set\-Solution@{set\-Solution}}
-\index{set\-Solution@{set\-Solution}!Body@{Body}}
-\subsubsection[{set\-Solution}]{\setlength{\rightskip}{0pt plus 5cm}void Body\-::set\-Solution (
+\hypertarget{class_body_a202cf4dbcc9b1cbd268f02905ddebbb2}{\index{Body@{Body}!set\-Soln\-Mat@{set\-Soln\-Mat}}
+\index{set\-Soln\-Mat@{set\-Soln\-Mat}!Body@{Body}}
+\subsubsection[{set\-Soln\-Mat}]{\setlength{\rightskip}{0pt plus 5cm}void Body\-::set\-Soln\-Mat (
 \begin{DoxyParamCaption}
 \item[{cx\-\_\-mat}]{input}
 \end{DoxyParamCaption}
-)}}\label{class_body_ac1534f2032bc04ff9c118f5f47f3ef8e}
+)}}\label{class_body_a202cf4dbcc9b1cbd268f02905ddebbb2}
 
 
 Set the solution matrix for the body. 
@@ -1011,77 +1233,9 @@ Sets the solution matrix for the body. Used to store the solution from the motio
 {\em input} & Column matrix of complex numbers. Matrix size is not hard coded. Number of rows in matrix must match number of equations for body property. \\
 \hline
 \end{DoxyParams}
-\hypertarget{class_body_aaa26153bd320830684e65bbf538b139d}{\index{Body@{Body}!set\-User\-Active\-Forces@{set\-User\-Active\-Forces}}
-\index{set\-User\-Active\-Forces@{set\-User\-Active\-Forces}!Body@{Body}}
-\subsubsection[{set\-User\-Active\-Forces}]{\setlength{\rightskip}{0pt plus 5cm}void Body\-::set\-User\-Active\-Forces (
-\begin{DoxyParamCaption}
-\item[{vector$<$ string $>$}]{new\-Force\-List}
-\end{DoxyParamCaption}
-)}}\label{class_body_aaa26153bd320830684e65bbf538b139d}
-Sets the user active forces. 
-\begin{DoxyParams}{Parameters}
-{\em new\-Force\-List} & The vector of strings sets user\-Active\-Forces. \\
-\hline
-\end{DoxyParams}
-\hypertarget{class_body_af409e4b49b838e118a57a753879685dc}{\index{Body@{Body}!set\-User\-Cross\-Body\-Forces@{set\-User\-Cross\-Body\-Forces}}
-\index{set\-User\-Cross\-Body\-Forces@{set\-User\-Cross\-Body\-Forces}!Body@{Body}}
-\subsubsection[{set\-User\-Cross\-Body\-Forces}]{\setlength{\rightskip}{0pt plus 5cm}void Body\-::set\-User\-Cross\-Body\-Forces (
-\begin{DoxyParamCaption}
-\item[{vector$<$ string $>$}]{new\-Cross\-Body\-List}
-\end{DoxyParamCaption}
-)}}\label{class_body_af409e4b49b838e118a57a753879685dc}
-Sets the user cross body forces. 
-\begin{DoxyParams}{Parameters}
-{\em new\-Cross\-Body\-List} & The vector of strings sets user\-Cross\-Body\-Forces. \\
-\hline
-\end{DoxyParams}
 
-
-Here is the call graph for this function\-:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{class_body_af409e4b49b838e118a57a753879685dc_cgraph}
-\end{center}
-\end{figure}
-
-
-\hypertarget{class_body_aa3b532c91892c7336309df492cad39d6}{\index{Body@{Body}!set\-User\-Reactive\-Forces@{set\-User\-Reactive\-Forces}}
-\index{set\-User\-Reactive\-Forces@{set\-User\-Reactive\-Forces}!Body@{Body}}
-\subsubsection[{set\-User\-Reactive\-Forces}]{\setlength{\rightskip}{0pt plus 5cm}void Body\-::set\-User\-Reactive\-Forces (
-\begin{DoxyParamCaption}
-\item[{vector$<$ string $>$}]{new\-Force\-List}
-\end{DoxyParamCaption}
-)}}\label{class_body_aa3b532c91892c7336309df492cad39d6}
-Sets the user reactive forces. 
-\begin{DoxyParams}{Parameters}
-{\em new\-Force\-List} & The vector of strings sets user\-Reactive\-Forces. \\
-\hline
-\end{DoxyParams}
-\hypertarget{class_body_abca1fdefd8fd12c9548c5e0d157d00ac}{\index{Body@{Body}!Solution@{Solution}}
-\index{Solution@{Solution}!Body@{Body}}
-\subsubsection[{Solution}]{\setlength{\rightskip}{0pt plus 5cm}cx\-\_\-mat \& Body\-::\-Solution (
-\begin{DoxyParamCaption}
-{}
-\end{DoxyParamCaption}
-)}}\label{class_body_abca1fdefd8fd12c9548c5e0d157d00ac}
-
-
-Get the solution matrix for the body. 
-
-Gets the solution matrix for the body. Used to store the solution from the motion solver. This variable is initially empty on body creation. It gets filled with the output from the motion solver. Output is a column matrix (n by 1) of complex numbers. Output is in units of meters. \begin{DoxyReturn}{Returns}
-Reference to column matrix of complex numbers. Value returned by reference. Matrix size is not hard coded. Number of rows in matrix must match number of equations for body property. 
-\end{DoxyReturn}
-\hypertarget{class_body_a31b959b6f30e3c9c6ebc3f0a325fec9d}{\index{Body@{Body}!test\-Print@{test\-Print}}
-\index{test\-Print@{test\-Print}!Body@{Body}}
-\subsubsection[{test\-Print}]{\setlength{\rightskip}{0pt plus 5cm}void Body\-::test\-Print (
-\begin{DoxyParamCaption}
-{}
-\end{DoxyParamCaption}
-)}}\label{class_body_a31b959b6f30e3c9c6ebc3f0a325fec9d}
-Test print to console the values of all data members. 
 
 The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
 \item 
-/home/nicholas/\-Ship Design/\-Projects/\-D\-M\-S1305 Open\-S\-E\-A/master/200\-\_\-src/bin/ofreq/motion\-\_\-solver/body.\-h\item 
-/home/nicholas/\-Ship Design/\-Projects/\-D\-M\-S1305 Open\-S\-E\-A/master/200\-\_\-src/bin/ofreq/motion\-\_\-solver/body.\-cpp\end{DoxyCompactItemize}
+body.\-h\item 
+body.\-cpp\end{DoxyCompactItemize}

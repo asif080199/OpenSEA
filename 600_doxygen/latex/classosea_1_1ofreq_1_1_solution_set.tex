@@ -1,0 +1,220 @@
+\hypertarget{classosea_1_1ofreq_1_1_solution_set}{\section{osea\-:\-:ofreq\-:\-:Solution\-Set Class Reference}
+\label{classosea_1_1ofreq_1_1_solution_set}\index{osea\-::ofreq\-::\-Solution\-Set@{osea\-::ofreq\-::\-Solution\-Set}}
+}
+
+
+{\ttfamily \#include $<$solutionset.\-h$>$}
+
+
+
+Inheritance diagram for osea\-:\-:ofreq\-:\-:Solution\-Set\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=206pt]{classosea_1_1ofreq_1_1_solution_set__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for osea\-:\-:ofreq\-:\-:Solution\-Set\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=206pt]{classosea_1_1ofreq_1_1_solution_set__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classosea_1_1ofreq_1_1_solution_set_a0f7bf3b0ffbc11e1eea127614bf668a4}{\hyperlink{classosea_1_1ofreq_1_1_solution_set_a0f7bf3b0ffbc11e1eea127614bf668a4}{Solution\-Set} ()}\label{classosea_1_1ofreq_1_1_solution_set_a0f7bf3b0ffbc11e1eea127614bf668a4}
+
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\hyperlink{classosea_1_1ofreq_1_1_solution_set_ac4a508cd109ea0e7726aa47a3c868814}{Solution\-Set} (int dir, int freq)
+\begin{DoxyCompactList}\small\item\em Constructor with number of wave directions and wave frequencies specified. Automatically allocates dynamic memory for the specified number of wave directions and wave frequencies. \end{DoxyCompactList}\item 
+\hyperlink{classosea_1_1ofreq_1_1_solution_set_af016abf25e2e0ba50336449b12b88423}{$\sim$\-Solution\-Set} ()
+\item 
+\hyperlink{classosea_1_1ofreq_1_1_solution}{Solution} \& \hyperlink{classosea_1_1ofreq_1_1_solution_set_a5bbd01ec83ef72d924d13d9437407880}{ref\-Solution} (int dir, int freq)
+\begin{DoxyCompactList}\small\item\em Returns a pointer to the solution object at the specified wave direction and frequency. \end{DoxyCompactList}\item 
+void \hyperlink{classosea_1_1ofreq_1_1_solution_set_abfd970f3f5b875cdc193281c4a5f6f21}{set\-Soln\-Mat} (int dir, int freq, \hyperlink{classosea_1_1ofreq_1_1_solution}{Solution} soln)
+\begin{DoxyCompactList}\small\item\em Sets the solution object at the specified wave direction and frequency. \end{DoxyCompactList}\item 
+\hyperlink{classosea_1_1ofreq_1_1_solution}{Solution} \hyperlink{classosea_1_1ofreq_1_1_solution_set_aef977b8cf522b4d24cdd08df70d372f0}{get\-Solution} (int dir, int freq)
+\begin{DoxyCompactList}\small\item\em Gets the solution object at the specified wave direction and frequency. \end{DoxyCompactList}\item 
+void \hyperlink{classosea_1_1ofreq_1_1_solution_set_a1f01e0b7d5b72c8b225f15dc8d921315}{resize} (int dir, int freq)
+\begin{DoxyCompactList}\small\item\em Resizes the 2-\/\-D array of \hyperlink{classosea_1_1ofreq_1_1_solution}{Solution} objects. Any existing objects in the array are preserved. If the array is sized smaller than the existing number of \hyperlink{classosea_1_1ofreq_1_1_solution}{Solution} objects, any object beyond the new index range are deleted. \end{DoxyCompactList}\item 
+std\-::vector$<$ int $>$ \hyperlink{classosea_1_1ofreq_1_1_solution_set_a2484020f280cce582ae20f7631963adb}{size} ()
+\begin{DoxyCompactList}\small\item\em Returns the size of the matrix as a vector of two elements. \end{DoxyCompactList}\item 
+int \hyperlink{classosea_1_1ofreq_1_1_solution_set_a8cfe38b972cb389453a5251767c0defa}{n\-\_\-dirs} ()
+\begin{DoxyCompactList}\small\item\em Returns the number of rows as an integer. This is the number of wave directions. \end{DoxyCompactList}\item 
+int \hyperlink{classosea_1_1ofreq_1_1_solution_set_a03842750155f8eb60f1cc6ec46b8e85e}{n\-\_\-freqs} ()
+\begin{DoxyCompactList}\small\item\em Returns the number of columns as an integer. This is the number of wave frequencies. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+This class records the list of solutions obtained for a single \hyperlink{classosea_1_1ofreq_1_1_body}{Body} object. It is essentially a 2\-D version of the std\-::vector$<$object$>$ class. But since vector can't handle 2-\/d storage solutions, this class was created. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classosea_1_1ofreq_1_1_solution_set_ac4a508cd109ea0e7726aa47a3c868814}{\index{osea\-::ofreq\-::\-Solution\-Set@{osea\-::ofreq\-::\-Solution\-Set}!Solution\-Set@{Solution\-Set}}
+\index{Solution\-Set@{Solution\-Set}!osea::ofreq::SolutionSet@{osea\-::ofreq\-::\-Solution\-Set}}
+\subsubsection[{Solution\-Set}]{\setlength{\rightskip}{0pt plus 5cm}Solution\-Set\-::\-Solution\-Set (
+\begin{DoxyParamCaption}
+\item[{int}]{dir, }
+\item[{int}]{freq}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_solution_set_ac4a508cd109ea0e7726aa47a3c868814}
+
+
+Constructor with number of wave directions and wave frequencies specified. Automatically allocates dynamic memory for the specified number of wave directions and wave frequencies. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dir} & The new number of wave directions to resize the array to. \\
+\hline
+{\em freq} & The new number of wave frequencies to resize the array to. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classosea_1_1ofreq_1_1_solution_set_af016abf25e2e0ba50336449b12b88423}{\index{osea\-::ofreq\-::\-Solution\-Set@{osea\-::ofreq\-::\-Solution\-Set}!$\sim$\-Solution\-Set@{$\sim$\-Solution\-Set}}
+\index{$\sim$\-Solution\-Set@{$\sim$\-Solution\-Set}!osea::ofreq::SolutionSet@{osea\-::ofreq\-::\-Solution\-Set}}
+\subsubsection[{$\sim$\-Solution\-Set}]{\setlength{\rightskip}{0pt plus 5cm}Solution\-Set\-::$\sim$\-Solution\-Set (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_solution_set_af016abf25e2e0ba50336449b12b88423}
+Default destructor. Frees any memory dynamically assigned. 
+
+\subsection{Member Function Documentation}
+\hypertarget{classosea_1_1ofreq_1_1_solution_set_aef977b8cf522b4d24cdd08df70d372f0}{\index{osea\-::ofreq\-::\-Solution\-Set@{osea\-::ofreq\-::\-Solution\-Set}!get\-Solution@{get\-Solution}}
+\index{get\-Solution@{get\-Solution}!osea::ofreq::SolutionSet@{osea\-::ofreq\-::\-Solution\-Set}}
+\subsubsection[{get\-Solution}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Solution} Solution\-Set\-::get\-Solution (
+\begin{DoxyParamCaption}
+\item[{int}]{dir, }
+\item[{int}]{freq}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_solution_set_aef977b8cf522b4d24cdd08df70d372f0}
+
+
+Gets the solution object at the specified wave direction and frequency. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dir} & Integer. Index of the wave direction desired. \\
+\hline
+{\em freq} & Integer. Index of the wave frequency desired. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns the \hyperlink{classosea_1_1ofreq_1_1_solution}{Solution} object at the specified wave direction and wave frequency. Returned variable is passed by value. 
+\end{DoxyReturn}
+\hypertarget{classosea_1_1ofreq_1_1_solution_set_a8cfe38b972cb389453a5251767c0defa}{\index{osea\-::ofreq\-::\-Solution\-Set@{osea\-::ofreq\-::\-Solution\-Set}!n\-\_\-dirs@{n\-\_\-dirs}}
+\index{n\-\_\-dirs@{n\-\_\-dirs}!osea::ofreq::SolutionSet@{osea\-::ofreq\-::\-Solution\-Set}}
+\subsubsection[{n\-\_\-dirs}]{\setlength{\rightskip}{0pt plus 5cm}int Solution\-Set\-::n\-\_\-dirs (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_solution_set_a8cfe38b972cb389453a5251767c0defa}
+
+
+Returns the number of rows as an integer. This is the number of wave directions. 
+
+\begin{DoxyReturn}{Returns}
+Integer. Returns the number of rows as an integer. This is the number of wave directions. 
+\end{DoxyReturn}
+\hypertarget{classosea_1_1ofreq_1_1_solution_set_a03842750155f8eb60f1cc6ec46b8e85e}{\index{osea\-::ofreq\-::\-Solution\-Set@{osea\-::ofreq\-::\-Solution\-Set}!n\-\_\-freqs@{n\-\_\-freqs}}
+\index{n\-\_\-freqs@{n\-\_\-freqs}!osea::ofreq::SolutionSet@{osea\-::ofreq\-::\-Solution\-Set}}
+\subsubsection[{n\-\_\-freqs}]{\setlength{\rightskip}{0pt plus 5cm}int Solution\-Set\-::n\-\_\-freqs (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_solution_set_a03842750155f8eb60f1cc6ec46b8e85e}
+
+
+Returns the number of columns as an integer. This is the number of wave frequencies. 
+
+\begin{DoxyReturn}{Returns}
+Integer. Returns the number of columns as an integer. This is the number of wave frequencies. 
+\end{DoxyReturn}
+\hypertarget{classosea_1_1ofreq_1_1_solution_set_a5bbd01ec83ef72d924d13d9437407880}{\index{osea\-::ofreq\-::\-Solution\-Set@{osea\-::ofreq\-::\-Solution\-Set}!ref\-Solution@{ref\-Solution}}
+\index{ref\-Solution@{ref\-Solution}!osea::ofreq::SolutionSet@{osea\-::ofreq\-::\-Solution\-Set}}
+\subsubsection[{ref\-Solution}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Solution} \& Solution\-Set\-::ref\-Solution (
+\begin{DoxyParamCaption}
+\item[{int}]{dir, }
+\item[{int}]{freq}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_solution_set_a5bbd01ec83ef72d924d13d9437407880}
+
+
+Returns a pointer to the solution object at the specified wave direction and frequency. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dir} & Integer. Index of the wave direction desired. \\
+\hline
+{\em freq} & Integer. Index of the wave frequency desired. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns a pointer to the \hyperlink{classosea_1_1ofreq_1_1_solution}{Solution} object at the specified wave direction and wave frequency. Returned variable is passed by reference. 
+\end{DoxyReturn}
+\hypertarget{classosea_1_1ofreq_1_1_solution_set_a1f01e0b7d5b72c8b225f15dc8d921315}{\index{osea\-::ofreq\-::\-Solution\-Set@{osea\-::ofreq\-::\-Solution\-Set}!resize@{resize}}
+\index{resize@{resize}!osea::ofreq::SolutionSet@{osea\-::ofreq\-::\-Solution\-Set}}
+\subsubsection[{resize}]{\setlength{\rightskip}{0pt plus 5cm}void Solution\-Set\-::resize (
+\begin{DoxyParamCaption}
+\item[{int}]{dir, }
+\item[{int}]{freq}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_solution_set_a1f01e0b7d5b72c8b225f15dc8d921315}
+
+
+Resizes the 2-\/\-D array of \hyperlink{classosea_1_1ofreq_1_1_solution}{Solution} objects. Any existing objects in the array are preserved. If the array is sized smaller than the existing number of \hyperlink{classosea_1_1ofreq_1_1_solution}{Solution} objects, any object beyond the new index range are deleted. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dir} & The new number of wave directions to resize the array to. \\
+\hline
+{\em freq} & The new number of wave frequencies to resize the array to. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classosea_1_1ofreq_1_1_solution_set_abfd970f3f5b875cdc193281c4a5f6f21}{\index{osea\-::ofreq\-::\-Solution\-Set@{osea\-::ofreq\-::\-Solution\-Set}!set\-Soln\-Mat@{set\-Soln\-Mat}}
+\index{set\-Soln\-Mat@{set\-Soln\-Mat}!osea::ofreq::SolutionSet@{osea\-::ofreq\-::\-Solution\-Set}}
+\subsubsection[{set\-Soln\-Mat}]{\setlength{\rightskip}{0pt plus 5cm}void Solution\-Set\-::set\-Soln\-Mat (
+\begin{DoxyParamCaption}
+\item[{int}]{dir, }
+\item[{int}]{freq, }
+\item[{{\bf Solution}}]{soln}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_solution_set_abfd970f3f5b875cdc193281c4a5f6f21}
+
+
+Sets the solution object at the specified wave direction and frequency. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dir} & Integer. Index of the wave direction desired. \\
+\hline
+{\em freq} & Integer. Index of the wave frequency desired. \\
+\hline
+{\em soln} & The solution object to pass in. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classosea_1_1ofreq_1_1_solution_set_a2484020f280cce582ae20f7631963adb}{\index{osea\-::ofreq\-::\-Solution\-Set@{osea\-::ofreq\-::\-Solution\-Set}!size@{size}}
+\index{size@{size}!osea::ofreq::SolutionSet@{osea\-::ofreq\-::\-Solution\-Set}}
+\subsubsection[{size}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ int $>$ Solution\-Set\-::size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_solution_set_a2484020f280cce582ae20f7631963adb}
+
+
+Returns the size of the matrix as a vector of two elements. 
+
+\begin{DoxyReturn}{Returns}
+Integer. Returns the size of the matrix as a vector of two elements. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+solutionset.\-h\item 
+solutionset.\-cpp\end{DoxyCompactItemize}

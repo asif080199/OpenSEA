@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>oFreq: /home/nicholas/Ship Design/Projects/DMS1305 OpenSEA/master/200_src/bin/ofreq/derived_outputs/globalmotion.h Source File</title>
+<title>oFreq: globalmotion.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -45,6 +45,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -90,7 +91,7 @@ $(document).ready(function(){initNavTree('globalmotion_8h_source.html','');});
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Variables</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -106,7 +107,7 @@ $(document).ready(function(){initNavTree('globalmotion_8h_source.html','');});
 <div class="contents">
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*----------------------------------------*- C++ -*------------------------------------------------------------------*\</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">| O pen         | OpenSea: The Open Source Seakeeping Suite                                                           |</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">| S eakeeping   | Web:     www.opensea.dmsonline.us                                                                   |</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">| S eakeeping | Web:     www.opensea.dmsonline.us                                                                   |</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">| E valuation   |                                                                                                     |</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">| A nalysis     |                                                                                                     |</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">\*-------------------------------------------------------------------------------------------------------------------*/</span></div>
@@ -114,7 +115,7 @@ $(document).ready(function(){initNavTree('globalmotion_8h_source.html','');});
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">/*-------------------------------------------------------------------------------------------------------------------*\</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"> *Revision History</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"> *---------------------------------------------------------------------------------------------------------------------</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment"> *Date              Author              Description</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment"> *Date              Author        Description</span></div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment"> *---------------------------------------------------------------------------------------------------------------------</span></div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"> *May 15 2013       Shane Honanie       Initially created</span></div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"> *Aug 13, 2013      Nicholas Barczak    Updated to reflect new motion model and motion solver paradigm.</span></div>
@@ -147,40 +148,52 @@ $(document).ready(function(){initNavTree('globalmotion_8h_source.html','');});
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define GLOBALMOTION_H</span></div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#include &quot;globalsolution.h&quot;</span></div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="keyword">using namespace </span>std;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="keyword">const</span> <span class="keywordtype">string</span> MOTION_NAME = <span class="stringliteral">&quot;Global Motion&quot;</span>; </div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="keyword">const</span> <span class="keywordtype">int</span> GLOBAL_MOTION_DERIVATIVE = 0;  </div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="comment">//######################################### Class Separator ###########################################################</span></div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="comment">//Prototype class declarations</span></div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="keyword">class </span><a class="code" href="class_output_derived.html">OutputDerived</a>;    <span class="comment">//Include prototype declaration to allow proper class definition.</span></div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="comment">//######################################### Class Separator ###########################################################</span></div>
-<div class="line"><a name="l00057"></a><span class="lineno"><a class="code" href="class_global_motion.html">   57</a></span>&#160;<span class="comment"></span><span class="keyword">class </span><a class="code" href="class_global_motion.html">GlobalMotion</a> : <span class="keyword">public</span> <a class="code" href="class_global_solution.html">GlobalSolution</a></div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;{</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="comment">//==========================================Section Separator =========================================================</span></div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="comment">//------------------------------------------Function Separator ----------------------------------------------------</span></div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <a class="code" href="class_global_motion.html">GlobalMotion</a>(); </div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="comment">//------------------------------------------Function Separator ----------------------------------------------------</span></div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    ~<a class="code" href="class_global_motion.html">GlobalMotion</a>(); </div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="comment">//------------------------------------------Function Separator ----------------------------------------------------</span></div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keywordtype">void</span> setDerivative(<span class="keywordtype">int</span> ord);</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="comment">//==========================================Section Separator =========================================================</span></div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="comment">//==========================================Section Separator =========================================================</span></div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;};</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="comment">//######################################### Class Separator ###########################################################</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment">//Namespace declarations</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="comment">//==========================================Section Separator =========================================================</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="comment"></span><span class="keyword">namespace </span>osea</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;{</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="comment">//==========================================Section Separator =========================================================</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="comment"></span><span class="keyword">namespace </span>ofreq</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;{</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="comment">//######################################### Class Separator ###########################################################</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="comment">//Prototype class declarations</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="keyword">class </span>OutputDerived;    <span class="comment">//Include prototype declaration to allow proper class definition.</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="comment">//######################################### Class Separator ###########################################################</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno"><a class="code" href="classosea_1_1ofreq_1_1_global_motion.html">   83</a></span>&#160;<span class="comment"></span><span class="keyword">class </span><a class="code" href="classosea_1_1ofreq_1_1_global_motion.html">GlobalMotion</a> : <span class="keyword">public</span> <a class="code" href="classosea_1_1ofreq_1_1_global_solution.html">GlobalSolution</a></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;{</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="comment">//==========================================Section Separator =========================================================</span></div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="comment">//------------------------------------------Function Separator ----------------------------------------------------</span></div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;  <a class="code" href="classosea_1_1ofreq_1_1_global_motion.html#afe0b801895608782addf27d231bce572">GlobalMotion</a>(); </div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="comment">//------------------------------------------Function Separator ----------------------------------------------------</span></div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;  <a class="code" href="classosea_1_1ofreq_1_1_global_motion.html#aee21eade3de9cb666a6b8fa42cf1e9e1">~GlobalMotion</a>(); </div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="comment">//------------------------------------------Function Separator ----------------------------------------------------</span></div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classosea_1_1ofreq_1_1_global_motion.html#a15a8c0d57ffedf65a1cd84154cdaa6ae" title="Sets the order of the derivative for the object.">setDerivative</a>(<span class="keywordtype">int</span> ord);</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="comment">//==========================================Section Separator =========================================================</span></div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;<span class="comment">//==========================================Section Separator =========================================================</span></div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <span class="keyword">static</span> std::string MOTION_NAME; </div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">int</span> GLOBAL_MOTION_DERIVATIVE;  </div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;};</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;}   <span class="comment">//namespace ofreq</span></div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;}   <span class="comment">//namespace osea</span></div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_56b368c6d4f28ed1479bff4e7a7f6001.html">200_src</a></li><li class="navelem"><a class="el" href="dir_54a29c8b735a6b519070134aed29f600.html">bin</a></li><li class="navelem"><a class="el" href="dir_e8f29f456f9bc8f0b8059295bf8d5395.html">ofreq</a></li><li class="navelem"><a class="el" href="dir_831e37b3c27fad4182b937b98502757f.html">derived_outputs</a></li><li class="navelem"><b>globalmotion.h</b></li>
-    <li class="footer">Generated on Thu Aug 22 2013 20:07:41 for oFreq by
+    <li class="navelem"><a class="el" href="dir_f391ca716ffc5f73e26bbfbd1c386d7a.html">nicholas</a></li><li class="navelem"><a class="el" href="dir_56714be5f44c632f096dc98161cfe0bc.html">Projects</a></li><li class="navelem"><a class="el" href="dir_a9660f870cd78d147631dbe8401fc122.html">DMS1305 OpenSEA</a></li><li class="navelem"><a class="el" href="dir_57862b7a2e6c493336b5eba4fa7a08ad.html">master</a></li><li class="navelem"><a class="el" href="dir_93879df78e79e3db9dadcce0364173a5.html">200_src</a></li><li class="navelem"><a class="el" href="dir_c68d9c97f52ca4a921fcfe2b9a5c2169.html">bin</a></li><li class="navelem"><a class="el" href="dir_de13d08a2e5fe03c0504c97f3e0a2dbd.html">ofreq</a></li><li class="navelem"><a class="el" href="dir_1ce876e76920f08631d108c0a9a78611.html">derived_outputs</a></li><li class="navelem"><b>globalmotion.h</b></li>
+    <li class="footer">Generated on Sat Oct 12 2013 10:41:17 for oFreq by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.2 </li>
   </ul>

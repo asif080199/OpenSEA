@@ -3,13 +3,12 @@
 <area shape="rect" id="node5" href="$class_file_writer.html#a82a3acb66bd5c0396836386258608a40" title="Returns the string containing the folder path for the current wave direction. Path name includes the ..." alt="" coords="275,56,455,83"/>
 <area shape="rect" id="node11" href="$class_outputs_body.html#a7480b88e4d67c84a2c540127c93a15d2" title="Returns the GlobalSolution object from the list of GlobalSolution objects." alt="" coords="261,107,470,133"/>
 <area shape="rect" id="node13" href="$class_file_writer.html#a419b9ba153151766c7a8c68717a11778" title="FileWriter::getInfoBlock" alt="" coords="285,157,446,184"/>
-<area shape="rect" id="node15" href="$class_outputs_body.html#afdb3f49b84baf1a6b2de8a5d014abfe5" title="Gets the current Body objects used by the class for calculating Derived Outputs. The returned value d..." alt="" coords="526,309,701,336"/>
-<area shape="rect" id="node17" href="$class_body.html#aaeacf4b8d79625bc8c6d77544c6ecfb7" title="Exposes the body name property for operation." alt="" coords="300,259,431,285"/>
+<area shape="rect" id="node15" href="$class_outputs_body.html#afdb3f49b84baf1a6b2de8a5d014abfe5" title="Gets the current Body objects used by the class for calculating Derived Outputs. The returned value d..." alt="" coords="526,284,701,311"/>
+<area shape="rect" id="node17" href="$class_body.html#ae1f5ffd42ba3b276a056eb56ec6ed5a9" title="Exposes the body name property for operation." alt="" coords="293,259,438,285"/>
 <area shape="rect" id="node19" href="$class_outputs_body.html#abe9227589bf83ee0ff40251e6e0d8d27" title="returns the number of entries for the vector of GlobalSolution outputs." alt="" coords="256,309,475,336"/>
-<area shape="rect" id="node21" href="$class_output_derived.html#a31aeafb442ffc032f4e3e8a48285ebef" title="Returns the name of the OutputDerived object. This is a name set by the user to idenfity the object..." alt="" coords="280,360,451,387"/>
-<area shape="rect" id="node23" href="$class_outputs_body.html#a880542382668134727cb312757c11d07" title="Gets the list of wave frequencies. Provides direct access to the list." alt="" coords="283,411,448,437"/>
-<area shape="rect" id="node25" href="$class_outputs_body.html#a0f669819a398d64524a4aff29e20aa8b" title="Calculates the GlobalSolution object from the list of GlobalSolution objects and returns the output..." alt="" coords="259,461,472,488"/>
+<area shape="rect" id="node21" href="$class_outputs_body.html#a6b28621ef475c1d917270e2259e1629f" title="Gets the list of wave frequencies. Provides direct access to the list." alt="" coords="290,360,441,387"/>
+<area shape="rect" id="node23" href="$class_outputs_body.html#a0f669819a398d64524a4aff29e20aa8b" title="Calculates the GlobalSolution object from the list of GlobalSolution objects and returns the output..." alt="" coords="259,411,472,437"/>
 <area shape="rect" id="node7" href="$class_file_writer.html#a9748d987475a225b49e14f48b8be0cd6" title="Gets the index of the current wave direction. The index is used to specify which directory to write t..." alt="" coords="523,56,704,83"/>
 <area shape="rect" id="node9" href="$class_outputs_body.html#a21deeef0aaace27fa376c6222bc8b0a4" title="Gets the current wave direction. Output is the actual value for the current wave direction, in units of radians." alt="" coords="753,56,951,83"/>
-<area shape="rect" id="node28" href="$class_body.html#a07a8f186c02f0d5bad4beded83949571" title="Gets the number of equations used in the body." alt="" coords="529,461,697,488"/>
+<area shape="rect" id="node26" href="$class_body.html#a07a8f186c02f0d5bad4beded83949571" title="Gets the number of equations used in the body." alt="" coords="529,411,697,437"/>
 </map>

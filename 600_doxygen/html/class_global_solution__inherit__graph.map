@@ -1,6 +1,7 @@
 <map id="GlobalSolution" name="GlobalSolution">
-<area shape="rect" id="node5" href="$class_global_acceleration.html" title="GlobalAcceleration" alt="" coords="5,155,141,181"/>
-<area shape="rect" id="node7" href="$class_global_motion.html" title="GlobalMotion" alt="" coords="166,155,268,181"/>
-<area shape="rect" id="node9" href="$class_global_velocity.html" title="GlobalVelocity" alt="" coords="293,155,403,181"/>
-<area shape="rect" id="node2" href="$class_output_derived.html" title="OutputDerived" alt="" coords="164,5,271,32"/>
+<area shape="rect" id="node7" href="$class_global_acceleration.html" title="GlobalAcceleration" alt="" coords="5,229,141,256"/>
+<area shape="rect" id="node9" href="$class_global_motion.html" title="GlobalMotion" alt="" coords="166,229,268,256"/>
+<area shape="rect" id="node11" href="$class_global_velocity.html" title="GlobalVelocity" alt="" coords="293,229,403,256"/>
+<area shape="rect" id="node2" href="$class_output_derived.html" title="OutputDerived" alt="" coords="164,80,271,107"/>
+<area shape="rect" id="node4" href="$classo_freq_core.html" title="The core oFreq class. All oFreq classes inherit from this class." alt="" coords="173,5,261,32"/>
 </map>

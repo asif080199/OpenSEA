@@ -45,6 +45,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -93,7 +94,7 @@ $(document).ready(function(){initNavTree('class_outputs_body.html','');});
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Variables</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -112,6 +113,20 @@ $(document).ready(function(){initNavTree('class_outputs_body.html','');});
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="outputsbody_8h_source.html">outputsbody.h</a>&gt;</code></p>
+<div class="dynheader">
+Inheritance diagram for OutputsBody:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_outputs_body__inherit__graph.png" border="0" usemap="#_outputs_body_inherit__map" alt="Inheritance graph"/></div>
+<map name="_outputs_body_inherit__map" id="_outputs_body_inherit__map">
+<area shape="rect" id="node2" href="classo_freq_core.html" title="The core oFreq class. All oFreq classes inherit from this class." alt="" coords="11,5,99,32"/></map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
+<div class="dynheader">
+Collaboration diagram for OutputsBody:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_outputs_body__coll__graph.png" border="0" usemap="#_outputs_body_coll__map" alt="Collaboration graph"/></div>
+<map name="_outputs_body_coll__map" id="_outputs_body_coll__map">
+<area shape="rect" id="node2" href="classo_freq_core.html" title="The core oFreq class. All oFreq classes inherit from this class." alt="" coords="11,5,99,32"/></map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -119,31 +134,37 @@ Public Member Functions</h2></td></tr>
 &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_outputs_body.html#a6898483a0919f9bb9cd82e3036a59a14">OutputsBody</a> ()</td></tr>
 <tr class="memdesc:a6898483a0919f9bb9cd82e3036a59a14"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor for the <a class="el" href="class_outputs_body.html">OutputsBody</a> object. Nothing happens here. <br/></td></tr>
 <tr class="separator:a6898483a0919f9bb9cd82e3036a59a14"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab60bf40c068f1dc57e7fc34ef289d297"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_outputs_body.html#ab60bf40c068f1dc57e7fc34ef289d297">OutputsBody</a> (vector&lt; <a class="el" href="class_body.html">Body</a> &gt; &amp;listBod, vector&lt; <a class="el" href="classlist_solution.html">listSolution</a> &gt; &amp;listSoln, vector&lt; double &gt; &amp;listFreq, vector&lt; double &gt; &amp;listWaveDir)</td></tr>
-<tr class="memdesc:ab60bf40c068f1dc57e7fc34ef289d297"><td class="mdescLeft">&#160;</td><td class="mdescRight">Overloaded constructor for the <a class="el" href="class_outputs_body.html">OutputsBody</a> object. Includes inputs for <a class="el" href="class_body.html">Body</a> list, <a class="el" href="class_solution.html">Solution</a> list, frequencies list, and wave directions list. All inputs are passed by reference and held as constant variables to avoid changing the referenced variables.  <a href="#ab60bf40c068f1dc57e7fc34ef289d297"></a><br/></td></tr>
-<tr class="separator:ab60bf40c068f1dc57e7fc34ef289d297"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2055cae4d0cd0ae53ec3afc6b05f0b70"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_outputs_body.html#a2055cae4d0cd0ae53ec3afc6b05f0b70">OutputsBody</a> (vector&lt; <a class="el" href="class_body.html">Body</a> &gt; &amp;listBod, vector&lt; <a class="el" href="class_solution_set.html">SolutionSet</a> &gt; &amp;listSoln, vector&lt; double &gt; &amp;<a class="el" href="class_outputs_body.html#a6b28621ef475c1d917270e2259e1629f">listFreq</a>, vector&lt; double &gt; &amp;<a class="el" href="class_outputs_body.html#a710a66d19fb8ba5a6c9c15e0143f832e">listWaveDir</a>)</td></tr>
+<tr class="memdesc:a2055cae4d0cd0ae53ec3afc6b05f0b70"><td class="mdescLeft">&#160;</td><td class="mdescRight">Overloaded constructor for the <a class="el" href="class_outputs_body.html">OutputsBody</a> object. Includes inputs for <a class="el" href="class_body.html">Body</a> list, <a class="el" href="class_solution.html">Solution</a> list, frequencies list, and wave directions list. All inputs are passed by reference and held as constant variables to avoid changing the referenced variables.  <a href="#a2055cae4d0cd0ae53ec3afc6b05f0b70"></a><br/></td></tr>
+<tr class="separator:a2055cae4d0cd0ae53ec3afc6b05f0b70"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9ec0c3721f511168c425b792bdaf2d62"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9ec0c3721f511168c425b792bdaf2d62"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_outputs_body.html#a9ec0c3721f511168c425b792bdaf2d62">~OutputsBody</a> ()</td></tr>
 <tr class="memdesc:a9ec0c3721f511168c425b792bdaf2d62"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default destructor. Nothing happens here. <br/></td></tr>
 <tr class="separator:a9ec0c3721f511168c425b792bdaf2d62"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7be4a4a8ebdd43a7f0c8b56a9cf0d800"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_outputs_body.html#a7be4a4a8ebdd43a7f0c8b56a9cf0d800">setlistBody</a> (vector&lt; <a class="el" href="class_body.html">Body</a> &gt; &amp;listIn)</td></tr>
-<tr class="memdesc:a7be4a4a8ebdd43a7f0c8b56a9cf0d800"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the list of <a class="el" href="class_body.html">Body</a> objects to calculate derived outputs for. Derived outputs are calculated for only one <a class="el" href="class_body.html">Body</a> object in the list. The rest are included as reference for cross-body forces.  <a href="#a7be4a4a8ebdd43a7f0c8b56a9cf0d800"></a><br/></td></tr>
-<tr class="separator:a7be4a4a8ebdd43a7f0c8b56a9cf0d800"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a555b87de16dbb48444dcef24de08c70d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_outputs_body.html#a555b87de16dbb48444dcef24de08c70d">setlistSolution</a> (vector&lt; <a class="el" href="classlist_solution.html">listSolution</a> &gt; &amp;listIn)</td></tr>
-<tr class="memdesc:a555b87de16dbb48444dcef24de08c70d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the list of <a class="el" href="classlist_solution.html">listSolution</a> objects to calculate derived outputs for. Derived outputs are calculated for only one <a class="el" href="classlist_solution.html">listSolution</a> object in the list. The rest are included as reference for cross-body forces.  <a href="#a555b87de16dbb48444dcef24de08c70d"></a><br/></td></tr>
-<tr class="separator:a555b87de16dbb48444dcef24de08c70d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a876c62a76404b2a963d78d3753456fc3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_outputs_body.html#a876c62a76404b2a963d78d3753456fc3">setlistFreq</a> (vector&lt; double &gt; &amp;listIn)</td></tr>
-<tr class="memdesc:a876c62a76404b2a963d78d3753456fc3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the list of wave frequencies.  <a href="#a876c62a76404b2a963d78d3753456fc3"></a><br/></td></tr>
-<tr class="separator:a876c62a76404b2a963d78d3753456fc3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a880542382668134727cb312757c11d07"><td class="memItemLeft" align="right" valign="top">vector&lt; double &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_outputs_body.html#a880542382668134727cb312757c11d07">reflistFreq</a> ()</td></tr>
-<tr class="memdesc:a880542382668134727cb312757c11d07"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the list of wave frequencies. Provides direct access to the list.  <a href="#a880542382668134727cb312757c11d07"></a><br/></td></tr>
-<tr class="separator:a880542382668134727cb312757c11d07"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3cfa70c13f0330d7ce94b5755243aac4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_outputs_body.html#a3cfa70c13f0330d7ce94b5755243aac4">setlistWaveDir</a> (vector&lt; double &gt; &amp;listIn)</td></tr>
-<tr class="memdesc:a3cfa70c13f0330d7ce94b5755243aac4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the list of wave directions.  <a href="#a3cfa70c13f0330d7ce94b5755243aac4"></a><br/></td></tr>
-<tr class="separator:a3cfa70c13f0330d7ce94b5755243aac4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a76439db0a461f51b572c0d011cf405b7"><td class="memItemLeft" align="right" valign="top">vector&lt; double &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_outputs_body.html#a76439db0a461f51b572c0d011cf405b7">reflistWaveDir</a> ()</td></tr>
-<tr class="memdesc:a76439db0a461f51b572c0d011cf405b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the list of wave directions. Provides direct access to the list.  <a href="#a76439db0a461f51b572c0d011cf405b7"></a><br/></td></tr>
-<tr class="separator:a76439db0a461f51b572c0d011cf405b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adf05eb2fc8ffba1c18825163305aea4d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_outputs_body.html#adf05eb2fc8ffba1c18825163305aea4d">setListBody</a> (vector&lt; <a class="el" href="class_body.html">Body</a> &gt; &amp;listIn)</td></tr>
+<tr class="memdesc:adf05eb2fc8ffba1c18825163305aea4d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the list of <a class="el" href="class_body.html">Body</a> objects to calculate derived outputs for. Derived outputs are calculated for only one <a class="el" href="class_body.html">Body</a> object in the list. The rest are included as reference for cross-body forces.  <a href="#adf05eb2fc8ffba1c18825163305aea4d"></a><br/></td></tr>
+<tr class="separator:adf05eb2fc8ffba1c18825163305aea4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0d7b68e5b9726370ad3e6522aa9328f4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_outputs_body.html#a0d7b68e5b9726370ad3e6522aa9328f4">setSolutionSet</a> (vector&lt; <a class="el" href="class_solution_set.html">SolutionSet</a> &gt; &amp;listIn)</td></tr>
+<tr class="memdesc:a0d7b68e5b9726370ad3e6522aa9328f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the list of <a class="el" href="class_solution_set.html">SolutionSet</a> objects to calculate derived outputs for. Derived outputs are calculated for only one <a class="el" href="class_solution_set.html">SolutionSet</a> object in the list. The rest are included as reference for cross-body forces.  <a href="#a0d7b68e5b9726370ad3e6522aa9328f4"></a><br/></td></tr>
+<tr class="separator:a0d7b68e5b9726370ad3e6522aa9328f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a14e8b435963f1772b48c7038658685ee"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_outputs_body.html#a14e8b435963f1772b48c7038658685ee">setListFreq</a> (vector&lt; double &gt; &amp;listIn)</td></tr>
+<tr class="memdesc:a14e8b435963f1772b48c7038658685ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the list of wave frequencies.  <a href="#a14e8b435963f1772b48c7038658685ee"></a><br/></td></tr>
+<tr class="separator:a14e8b435963f1772b48c7038658685ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6b28621ef475c1d917270e2259e1629f"><td class="memItemLeft" align="right" valign="top">vector&lt; double &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_outputs_body.html#a6b28621ef475c1d917270e2259e1629f">listFreq</a> ()</td></tr>
+<tr class="memdesc:a6b28621ef475c1d917270e2259e1629f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the list of wave frequencies. Provides direct access to the list.  <a href="#a6b28621ef475c1d917270e2259e1629f"></a><br/></td></tr>
+<tr class="separator:a6b28621ef475c1d917270e2259e1629f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aea5ac6ef687c5dc979817b967bc9dfe2"><td class="memItemLeft" align="right" valign="top">double &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_outputs_body.html#aea5ac6ef687c5dc979817b967bc9dfe2">listFreq</a> (int index)</td></tr>
+<tr class="memdesc:aea5ac6ef687c5dc979817b967bc9dfe2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns individual frequency from the list of wave frequencies.  <a href="#aea5ac6ef687c5dc979817b967bc9dfe2"></a><br/></td></tr>
+<tr class="separator:aea5ac6ef687c5dc979817b967bc9dfe2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aea1ad7f17db0392354f1617c59b8d1fc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_outputs_body.html#aea1ad7f17db0392354f1617c59b8d1fc">setListWaveDir</a> (vector&lt; double &gt; &amp;listIn)</td></tr>
+<tr class="memdesc:aea1ad7f17db0392354f1617c59b8d1fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the list of wave directions.  <a href="#aea1ad7f17db0392354f1617c59b8d1fc"></a><br/></td></tr>
+<tr class="separator:aea1ad7f17db0392354f1617c59b8d1fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a710a66d19fb8ba5a6c9c15e0143f832e"><td class="memItemLeft" align="right" valign="top">vector&lt; double &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_outputs_body.html#a710a66d19fb8ba5a6c9c15e0143f832e">listWaveDir</a> ()</td></tr>
+<tr class="memdesc:a710a66d19fb8ba5a6c9c15e0143f832e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the list of wave directions. Provides direct access to the list.  <a href="#a710a66d19fb8ba5a6c9c15e0143f832e"></a><br/></td></tr>
+<tr class="separator:a710a66d19fb8ba5a6c9c15e0143f832e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abc0b04ccd535145e9c9528cde8cd4d15"><td class="memItemLeft" align="right" valign="top">double &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_outputs_body.html#abc0b04ccd535145e9c9528cde8cd4d15">listWaveDir</a> (int index)</td></tr>
+<tr class="memdesc:abc0b04ccd535145e9c9528cde8cd4d15"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns individual wave direction from the list of wave directions.  <a href="#abc0b04ccd535145e9c9528cde8cd4d15"></a><br/></td></tr>
+<tr class="separator:abc0b04ccd535145e9c9528cde8cd4d15"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7d2b93ecaf1fa39257444bdf3194eacc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_outputs_body.html#a7d2b93ecaf1fa39257444bdf3194eacc">setCurWaveDir</a> (int index)</td></tr>
 <tr class="memdesc:a7d2b93ecaf1fa39257444bdf3194eacc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the current wave direction.  <a href="#a7d2b93ecaf1fa39257444bdf3194eacc"></a><br/></td></tr>
 <tr class="separator:a7d2b93ecaf1fa39257444bdf3194eacc"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -163,20 +184,20 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:afdb3f49b84baf1a6b2de8a5d014abfe5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the current <a class="el" href="class_body.html">Body</a> objects used by the class for calculating Derived Outputs. The returned value depends on the last input of setCurBody.  <a href="#afdb3f49b84baf1a6b2de8a5d014abfe5"></a><br/></td></tr>
 <tr class="separator:afdb3f49b84baf1a6b2de8a5d014abfe5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acf20f3cfb2baee6c93a2e17d7e27aa0c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_outputs_body.html#acf20f3cfb2baee6c93a2e17d7e27aa0c">sizeGlobalMotion</a> ()</td></tr>
-<tr class="memdesc:acf20f3cfb2baee6c93a2e17d7e27aa0c"><td class="mdescLeft">&#160;</td><td class="mdescRight">returns the number of entries for the vector of <a class="el" href="class_global_motion.html">GlobalMotion</a> outputs.  <a href="#acf20f3cfb2baee6c93a2e17d7e27aa0c"></a><br/></td></tr>
+<tr class="memdesc:acf20f3cfb2baee6c93a2e17d7e27aa0c"><td class="mdescLeft">&#160;</td><td class="mdescRight">returns the number of entries for the vector of GlobalMotion outputs.  <a href="#acf20f3cfb2baee6c93a2e17d7e27aa0c"></a><br/></td></tr>
 <tr class="separator:acf20f3cfb2baee6c93a2e17d7e27aa0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a54325e076109111454b5ed0633c85660"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_global_motion.html">GlobalMotion</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_outputs_body.html#a54325e076109111454b5ed0633c85660">refGlobalMotion</a> (int index=0)</td></tr>
-<tr class="memdesc:a54325e076109111454b5ed0633c85660"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the <a class="el" href="class_global_motion.html">GlobalMotion</a> object from the list of <a class="el" href="class_global_motion.html">GlobalMotion</a> objects.  <a href="#a54325e076109111454b5ed0633c85660"></a><br/></td></tr>
+<tr class="memitem:a54325e076109111454b5ed0633c85660"><td class="memItemLeft" align="right" valign="top">GlobalMotion &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_outputs_body.html#a54325e076109111454b5ed0633c85660">refGlobalMotion</a> (int index=0)</td></tr>
+<tr class="memdesc:a54325e076109111454b5ed0633c85660"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the GlobalMotion object from the list of GlobalMotion objects.  <a href="#a54325e076109111454b5ed0633c85660"></a><br/></td></tr>
 <tr class="separator:a54325e076109111454b5ed0633c85660"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7450d306af9db6bb159a1186f017ce6e"><td class="memItemLeft" align="right" valign="top">vector&lt; cx_vector &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_outputs_body.html#a7450d306af9db6bb159a1186f017ce6e">getGlobalMotion</a> (int index=0)</td></tr>
-<tr class="memdesc:a7450d306af9db6bb159a1186f017ce6e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates the <a class="el" href="class_global_motion.html">GlobalMotion</a> object from the list of <a class="el" href="class_global_motion.html">GlobalMotion</a> objects and returns the output.  <a href="#a7450d306af9db6bb159a1186f017ce6e"></a><br/></td></tr>
+<tr class="memdesc:a7450d306af9db6bb159a1186f017ce6e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates the GlobalMotion object from the list of GlobalMotion objects and returns the output.  <a href="#a7450d306af9db6bb159a1186f017ce6e"></a><br/></td></tr>
 <tr class="separator:a7450d306af9db6bb159a1186f017ce6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a29af17e822ec8fe1a397403752d0ff1a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_outputs_body.html#a29af17e822ec8fe1a397403752d0ff1a">addGlobalMotion</a> (<a class="el" href="class_global_motion.html">GlobalMotion</a> input)</td></tr>
-<tr class="memdesc:a29af17e822ec8fe1a397403752d0ff1a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a new <a class="el" href="class_global_motion.html">GlobalMotion</a> object to the list of <a class="el" href="class_global_motion.html">GlobalMotion</a> objects. This version sets the new <a class="el" href="class_global_motion.html">GlobalMotion</a> object equal to the information passed in.  <a href="#a29af17e822ec8fe1a397403752d0ff1a"></a><br/></td></tr>
+<tr class="memitem:a29af17e822ec8fe1a397403752d0ff1a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_outputs_body.html#a29af17e822ec8fe1a397403752d0ff1a">addGlobalMotion</a> (GlobalMotion input)</td></tr>
+<tr class="memdesc:a29af17e822ec8fe1a397403752d0ff1a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a new GlobalMotion object to the list of GlobalMotion objects. This version sets the new GlobalMotion object equal to the information passed in.  <a href="#a29af17e822ec8fe1a397403752d0ff1a"></a><br/></td></tr>
 <tr class="separator:a29af17e822ec8fe1a397403752d0ff1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a889dcf6d9be6e910c110018e0a309eae"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a889dcf6d9be6e910c110018e0a309eae"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_outputs_body.html#a889dcf6d9be6e910c110018e0a309eae">addGlobalMotion</a> ()</td></tr>
-<tr class="memdesc:a889dcf6d9be6e910c110018e0a309eae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Overloaded function for adding a <a class="el" href="class_global_motion.html">GlobalMotion</a> object to the list of <a class="el" href="class_global_motion.html">GlobalMotion</a> objects. This version has no input <a class="el" href="class_global_motion.html">GlobalMotion</a> object and automatically creates a blank <a class="el" href="class_global_motion.html">GlobalMotion</a> object. <br/></td></tr>
+<tr class="memdesc:a889dcf6d9be6e910c110018e0a309eae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Overloaded function for adding a GlobalMotion object to the list of GlobalMotion objects. This version has no input GlobalMotion object and automatically creates a blank GlobalMotion object. <br/></td></tr>
 <tr class="separator:a889dcf6d9be6e910c110018e0a309eae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af41b4423bd40c87fa87ae0af53bc96e5"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_outputs_body.html#af41b4423bd40c87fa87ae0af53bc96e5">sizeGlobalVelocity</a> ()</td></tr>
 <tr class="memdesc:af41b4423bd40c87fa87ae0af53bc96e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">returns the number of entries for the vector of <a class="el" href="class_global_velocity.html">GlobalVelocity</a> outputs.  <a href="#af41b4423bd40c87fa87ae0af53bc96e5"></a><br/></td></tr>
@@ -195,37 +216,67 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <tr class="memdesc:a07a548f3df9fa5aff4223a60f5f1b56c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Overloaded function for adding a <a class="el" href="class_global_velocity.html">GlobalVelocity</a> object to the list of <a class="el" href="class_global_velocity.html">GlobalVelocity</a> objects. This version has no input <a class="el" href="class_global_velocity.html">GlobalVelocity</a> object and automatically creates a blank <a class="el" href="class_global_velocity.html">GlobalVelocity</a> object. <br/></td></tr>
 <tr class="separator:a07a548f3df9fa5aff4223a60f5f1b56c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4265e0ece0f65f6ee6b3e36fc66bf960"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_outputs_body.html#a4265e0ece0f65f6ee6b3e36fc66bf960">sizeGlobalAcceleration</a> ()</td></tr>
-<tr class="memdesc:a4265e0ece0f65f6ee6b3e36fc66bf960"><td class="mdescLeft">&#160;</td><td class="mdescRight">returns the number of entries for the vector of <a class="el" href="class_global_acceleration.html">GlobalAcceleration</a> outputs.  <a href="#a4265e0ece0f65f6ee6b3e36fc66bf960"></a><br/></td></tr>
+<tr class="memdesc:a4265e0ece0f65f6ee6b3e36fc66bf960"><td class="mdescLeft">&#160;</td><td class="mdescRight">returns the number of entries for the vector of GlobalAcceleration outputs.  <a href="#a4265e0ece0f65f6ee6b3e36fc66bf960"></a><br/></td></tr>
 <tr class="separator:a4265e0ece0f65f6ee6b3e36fc66bf960"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7be24ef361c2dcd9c6b9c62d58ee34bd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_global_acceleration.html">GlobalAcceleration</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_outputs_body.html#a7be24ef361c2dcd9c6b9c62d58ee34bd">refGlobalAcceleration</a> (int index=0)</td></tr>
-<tr class="memdesc:a7be24ef361c2dcd9c6b9c62d58ee34bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the <a class="el" href="class_global_acceleration.html">GlobalAcceleration</a> object from the list of <a class="el" href="class_global_acceleration.html">GlobalAcceleration</a> objects.  <a href="#a7be24ef361c2dcd9c6b9c62d58ee34bd"></a><br/></td></tr>
+<tr class="memitem:a7be24ef361c2dcd9c6b9c62d58ee34bd"><td class="memItemLeft" align="right" valign="top">GlobalAcceleration &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_outputs_body.html#a7be24ef361c2dcd9c6b9c62d58ee34bd">refGlobalAcceleration</a> (int index=0)</td></tr>
+<tr class="memdesc:a7be24ef361c2dcd9c6b9c62d58ee34bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the GlobalAcceleration object from the list of GlobalAcceleration objects.  <a href="#a7be24ef361c2dcd9c6b9c62d58ee34bd"></a><br/></td></tr>
 <tr class="separator:a7be24ef361c2dcd9c6b9c62d58ee34bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9c4de0023e30be8e03c4f910a3848bdc"><td class="memItemLeft" align="right" valign="top">vector&lt; cx_vector &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_outputs_body.html#a9c4de0023e30be8e03c4f910a3848bdc">getGlobalAcceleration</a> (int index=0)</td></tr>
-<tr class="memdesc:a9c4de0023e30be8e03c4f910a3848bdc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates the <a class="el" href="class_global_acceleration.html">GlobalAcceleration</a> object from the list of <a class="el" href="class_global_acceleration.html">GlobalAcceleration</a> objects and returns the output.  <a href="#a9c4de0023e30be8e03c4f910a3848bdc"></a><br/></td></tr>
+<tr class="memdesc:a9c4de0023e30be8e03c4f910a3848bdc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates the GlobalAcceleration object from the list of GlobalAcceleration objects and returns the output.  <a href="#a9c4de0023e30be8e03c4f910a3848bdc"></a><br/></td></tr>
 <tr class="separator:a9c4de0023e30be8e03c4f910a3848bdc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a38f7909d116feefc04acc11f58515c8c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_outputs_body.html#a38f7909d116feefc04acc11f58515c8c">addGlobalAcceleration</a> (<a class="el" href="class_global_acceleration.html">GlobalAcceleration</a> input)</td></tr>
-<tr class="memdesc:a38f7909d116feefc04acc11f58515c8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a new <a class="el" href="class_global_acceleration.html">GlobalAcceleration</a> object to the list of <a class="el" href="class_global_acceleration.html">GlobalAcceleration</a> objects. This version sets the new <a class="el" href="class_global_acceleration.html">GlobalAcceleration</a> object equal to the information passed in.  <a href="#a38f7909d116feefc04acc11f58515c8c"></a><br/></td></tr>
+<tr class="memitem:a38f7909d116feefc04acc11f58515c8c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_outputs_body.html#a38f7909d116feefc04acc11f58515c8c">addGlobalAcceleration</a> (GlobalAcceleration input)</td></tr>
+<tr class="memdesc:a38f7909d116feefc04acc11f58515c8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a new GlobalAcceleration object to the list of GlobalAcceleration objects. This version sets the new GlobalAcceleration object equal to the information passed in.  <a href="#a38f7909d116feefc04acc11f58515c8c"></a><br/></td></tr>
 <tr class="separator:a38f7909d116feefc04acc11f58515c8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3205155873f5db270a71377e5ff80bb4"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3205155873f5db270a71377e5ff80bb4"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_outputs_body.html#a3205155873f5db270a71377e5ff80bb4">addGlobalAcceleration</a> ()</td></tr>
-<tr class="memdesc:a3205155873f5db270a71377e5ff80bb4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Overloaded function for adding a <a class="el" href="class_global_acceleration.html">GlobalAcceleration</a> object to the list of <a class="el" href="class_global_acceleration.html">GlobalAcceleration</a> objects. This version has no input <a class="el" href="class_global_acceleration.html">GlobalAcceleration</a> object and automatically creates a blank <a class="el" href="class_global_acceleration.html">GlobalAcceleration</a> object. <br/></td></tr>
+<tr class="memdesc:a3205155873f5db270a71377e5ff80bb4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Overloaded function for adding a GlobalAcceleration object to the list of GlobalAcceleration objects. This version has no input GlobalAcceleration object and automatically creates a blank GlobalAcceleration object. <br/></td></tr>
 <tr class="separator:a3205155873f5db270a71377e5ff80bb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abe9227589bf83ee0ff40251e6e0d8d27"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_outputs_body.html#abe9227589bf83ee0ff40251e6e0d8d27">sizeGlobalSolution</a> ()</td></tr>
-<tr class="memdesc:abe9227589bf83ee0ff40251e6e0d8d27"><td class="mdescLeft">&#160;</td><td class="mdescRight">returns the number of entries for the vector of <a class="el" href="class_global_solution.html">GlobalSolution</a> outputs.  <a href="#abe9227589bf83ee0ff40251e6e0d8d27"></a><br/></td></tr>
+<tr class="memdesc:abe9227589bf83ee0ff40251e6e0d8d27"><td class="mdescLeft">&#160;</td><td class="mdescRight">returns the number of entries for the vector of GlobalSolution outputs.  <a href="#abe9227589bf83ee0ff40251e6e0d8d27"></a><br/></td></tr>
 <tr class="separator:abe9227589bf83ee0ff40251e6e0d8d27"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7480b88e4d67c84a2c540127c93a15d2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_global_solution.html">GlobalSolution</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_outputs_body.html#a7480b88e4d67c84a2c540127c93a15d2">refGlobalSolution</a> (int index=0)</td></tr>
-<tr class="memdesc:a7480b88e4d67c84a2c540127c93a15d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the <a class="el" href="class_global_solution.html">GlobalSolution</a> object from the list of <a class="el" href="class_global_solution.html">GlobalSolution</a> objects.  <a href="#a7480b88e4d67c84a2c540127c93a15d2"></a><br/></td></tr>
+<tr class="memitem:a7480b88e4d67c84a2c540127c93a15d2"><td class="memItemLeft" align="right" valign="top">GlobalSolution &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_outputs_body.html#a7480b88e4d67c84a2c540127c93a15d2">refGlobalSolution</a> (int index=0)</td></tr>
+<tr class="memdesc:a7480b88e4d67c84a2c540127c93a15d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the GlobalSolution object from the list of GlobalSolution objects.  <a href="#a7480b88e4d67c84a2c540127c93a15d2"></a><br/></td></tr>
 <tr class="separator:a7480b88e4d67c84a2c540127c93a15d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0f669819a398d64524a4aff29e20aa8b"><td class="memItemLeft" align="right" valign="top">vector&lt; cx_vector &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_outputs_body.html#a0f669819a398d64524a4aff29e20aa8b">getGlobalSolution</a> (int index=0)</td></tr>
-<tr class="memdesc:a0f669819a398d64524a4aff29e20aa8b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates the <a class="el" href="class_global_solution.html">GlobalSolution</a> object from the list of <a class="el" href="class_global_solution.html">GlobalSolution</a> objects and returns the output.  <a href="#a0f669819a398d64524a4aff29e20aa8b"></a><br/></td></tr>
+<tr class="memdesc:a0f669819a398d64524a4aff29e20aa8b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates the GlobalSolution object from the list of GlobalSolution objects and returns the output.  <a href="#a0f669819a398d64524a4aff29e20aa8b"></a><br/></td></tr>
 <tr class="separator:a0f669819a398d64524a4aff29e20aa8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a75283b4dd4533851008431eb84341919"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_outputs_body.html#a75283b4dd4533851008431eb84341919">addGlobalSolution</a> (<a class="el" href="class_global_solution.html">GlobalSolution</a> input)</td></tr>
-<tr class="memdesc:a75283b4dd4533851008431eb84341919"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a new <a class="el" href="class_global_solution.html">GlobalSolution</a> object to the list of <a class="el" href="class_global_solution.html">GlobalSolution</a> objects. This version sets the new <a class="el" href="class_global_solution.html">GlobalSolution</a> object equal to the information passed in.  <a href="#a75283b4dd4533851008431eb84341919"></a><br/></td></tr>
+<tr class="memitem:a75283b4dd4533851008431eb84341919"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_outputs_body.html#a75283b4dd4533851008431eb84341919">addGlobalSolution</a> (GlobalSolution input)</td></tr>
+<tr class="memdesc:a75283b4dd4533851008431eb84341919"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a new GlobalSolution object to the list of GlobalSolution objects. This version sets the new GlobalSolution object equal to the information passed in.  <a href="#a75283b4dd4533851008431eb84341919"></a><br/></td></tr>
 <tr class="separator:a75283b4dd4533851008431eb84341919"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a13ae87153fcf43774b970aad94f0ca27"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a13ae87153fcf43774b970aad94f0ca27"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_outputs_body.html#a13ae87153fcf43774b970aad94f0ca27">addGlobalSolution</a> ()</td></tr>
-<tr class="memdesc:a13ae87153fcf43774b970aad94f0ca27"><td class="mdescLeft">&#160;</td><td class="mdescRight">Overloaded function for adding a <a class="el" href="class_global_solution.html">GlobalSolution</a> object to the list of <a class="el" href="class_global_solution.html">GlobalSolution</a> objects. This version has no input <a class="el" href="class_global_solution.html">GlobalSolution</a> object and automatically creates a blank <a class="el" href="class_global_solution.html">GlobalSolution</a> object. <br/></td></tr>
+<tr class="memdesc:a13ae87153fcf43774b970aad94f0ca27"><td class="mdescLeft">&#160;</td><td class="mdescRight">Overloaded function for adding a GlobalSolution object to the list of GlobalSolution objects. This version has no input GlobalSolution object and automatically creates a blank GlobalSolution object. <br/></td></tr>
 <tr class="separator:a13ae87153fcf43774b970aad94f0ca27"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classo_freq_core"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classo_freq_core')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classo_freq_core.html">oFreqCore</a></td></tr>
+<tr class="memitem:a5c882c0d8e78706270e377b749a647f5 inherit pub_methods_classo_freq_core"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classo_freq_core.html#a5c882c0d8e78706270e377b749a647f5">oFreqCore</a> ()</td></tr>
+<tr class="separator:a5c882c0d8e78706270e377b749a647f5 inherit pub_methods_classo_freq_core"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aea5887547dbd17fc2d4f1a99fe217918 inherit pub_methods_classo_freq_core"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classo_freq_core.html#aea5887547dbd17fc2d4f1a99fe217918">~oFreqCore</a> ()</td></tr>
+<tr class="separator:aea5887547dbd17fc2d4f1a99fe217918 inherit pub_methods_classo_freq_core"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
+Additional Inherited Members</h2></td></tr>
+<tr class="inherit_header pro_methods_classo_freq_core"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classo_freq_core')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classo_freq_core.html">oFreqCore</a></td></tr>
+<tr class="memitem:a2912584189c4abd84498450b7c5908c2 inherit pro_methods_classo_freq_core"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classo_freq_core.html#a2912584189c4abd84498450b7c5908c2">setOutLog</a> (string dirIn)</td></tr>
+<tr class="memdesc:a2912584189c4abd84498450b7c5908c2 inherit pro_methods_classo_freq_core"><td class="mdescLeft">&#160;</td><td class="mdescRight">Opens the output log file and prepares it for writing.  <a href="#a2912584189c4abd84498450b7c5908c2"></a><br/></td></tr>
+<tr class="separator:a2912584189c4abd84498450b7c5908c2 inherit pro_methods_classo_freq_core"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8af56bbec3689f5d2252da1787a910e3 inherit pro_methods_classo_freq_core"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classo_freq_core.html#a8af56bbec3689f5d2252da1787a910e3">setErrLog</a> (string dirIn)</td></tr>
+<tr class="memdesc:a8af56bbec3689f5d2252da1787a910e3 inherit pro_methods_classo_freq_core"><td class="mdescLeft">&#160;</td><td class="mdescRight">Opens the error log file and prepares it for writing.  <a href="#a8af56bbec3689f5d2252da1787a910e3"></a><br/></td></tr>
+<tr class="separator:a8af56bbec3689f5d2252da1787a910e3 inherit pro_methods_classo_freq_core"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a74a938eae7e51de72bc752ad83382a11 inherit pro_methods_classo_freq_core"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classo_freq_core.html#a74a938eae7e51de72bc752ad83382a11">writeLog</a> (string mesIn)</td></tr>
+<tr class="memdesc:a74a938eae7e51de72bc752ad83382a11 inherit pro_methods_classo_freq_core"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes output of a log message to the log file. Adds in a date and time stamp to the log.  <a href="#a74a938eae7e51de72bc752ad83382a11"></a><br/></td></tr>
+<tr class="separator:a74a938eae7e51de72bc752ad83382a11 inherit pro_methods_classo_freq_core"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7272d265451eb63bb371f9b9c02f4883 inherit pro_methods_classo_freq_core"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classo_freq_core.html#a7272d265451eb63bb371f9b9c02f4883">writeError</a> (string mesIn)</td></tr>
+<tr class="memdesc:a7272d265451eb63bb371f9b9c02f4883 inherit pro_methods_classo_freq_core"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes output of an error message to the error file. Adds in a date, time, and class name to the log.  <a href="#a7272d265451eb63bb371f9b9c02f4883"></a><br/></td></tr>
+<tr class="separator:a7272d265451eb63bb371f9b9c02f4883 inherit pro_methods_classo_freq_core"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_static_attribs_classo_freq_core"><td colspan="2" onclick="javascript:toggleInherit('pro_static_attribs_classo_freq_core')"><img src="closed.png" alt="-"/>&#160;Static Protected Attributes inherited from <a class="el" href="classo_freq_core.html">oFreqCore</a></td></tr>
+<tr class="memitem:a85b3e812b6d78c064ba375d5101bb053 inherit pro_static_attribs_classo_freq_core"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a85b3e812b6d78c064ba375d5101bb053"></a>
+static std::ofstream&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classo_freq_core.html#a85b3e812b6d78c064ba375d5101bb053">OutLog</a></td></tr>
+<tr class="memdesc:a85b3e812b6d78c064ba375d5101bb053 inherit pro_static_attribs_classo_freq_core"><td class="mdescLeft">&#160;</td><td class="mdescRight">The log file for an oFreq run. Records normal actions for the program. Informs user of regular program developments. Through inheritence of the <a class="el" href="classo_freq_core.html" title="The core oFreq class. All oFreq classes inherit from this class.">oFreqCore</a> class, this object is available to every object in the oFreq application. <br/></td></tr>
+<tr class="separator:a85b3e812b6d78c064ba375d5101bb053 inherit pro_static_attribs_classo_freq_core"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5e31044ee80fa436289e569c8080b21e inherit pro_static_attribs_classo_freq_core"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5e31044ee80fa436289e569c8080b21e"></a>
+static std::ofstream&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classo_freq_core.html#a5e31044ee80fa436289e569c8080b21e">ErrLog</a></td></tr>
+<tr class="memdesc:a5e31044ee80fa436289e569c8080b21e inherit pro_static_attribs_classo_freq_core"><td class="mdescLeft">&#160;</td><td class="mdescRight">The error log file for an oFreq run. Records any errors or warnings for the program. Informs user of errors and warnings and where they occurred. Through inheritence of the <a class="el" href="classo_freq_core.html" title="The core oFreq class. All oFreq classes inherit from this class.">oFreqCore</a> class, this object is available for every object in the oFreq application. <br/></td></tr>
+<tr class="separator:a5e31044ee80fa436289e569c8080b21e inherit pro_static_attribs_classo_freq_core"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>This class holds all types of derived outputs for a single body object. Each derived output type is contained in a vector. This allows multiple instances of each output type. To save on memory, an output type is not calculated until it is requested. And then the derived output immediately returns the calculations. Outputs are typically returned as a vector of objects. Each row in the vectorrepresents a different wave frequency. THe object contained in the returned vector The meaning may change with each derived output type. You should check the documentation for each derived output.</p>
@@ -250,18 +301,18 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 </ol>
 <p>Once these properties are set, you may calculate derived outputs. Inputs for derived outputs may be set before all these properties are set.</p>
 <p>The following derived outputs are available: </p>
-<dl class="section see"><dt>See Also</dt><dd><a class="el" href="class_global_solution.html">GlobalSolution</a> </dd>
+<dl class="section see"><dt>See Also</dt><dd>GlobalSolution </dd>
 <dd>
-<a class="el" href="class_global_motion.html">GlobalMotion</a> </dd>
+GlobalMotion </dd>
 <dd>
 <a class="el" href="class_global_velocity.html">GlobalVelocity</a> </dd>
 <dd>
-<a class="el" href="class_global_acceleration.html">GlobalAcceleration</a></dd></dl>
+GlobalAcceleration</dd></dl>
 <ul>
 <li>Developers note: The original scheme had the <a class="el" href="class_output_derived.html">OutputDerived</a> class include a pointer to the contain parent class, <a class="el" href="class_outputs_body.html">OutputsBody</a>. But this creates a cyclic dependency of header files, and will not compile. The only resolution I found to this was to not include the parent class and pass all the necessary information to each individual <a class="el" href="class_output_derived.html">OutputDerived</a> object. This is tedious, but within the reasons of the methods defined by the <a class="el" href="class_outputs_body.html">OutputsBody</a> class. And it allow compilation. All data items are passed by reference to avoid excess memory duplication. </li>
 </ul>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="ab60bf40c068f1dc57e7fc34ef289d297"></a>
+<a class="anchor" id="a2055cae4d0cd0ae53ec3afc6b05f0b70"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -274,7 +325,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">vector&lt; <a class="el" href="classlist_solution.html">listSolution</a> &gt; &amp;&#160;</td>
+          <td class="paramtype">vector&lt; <a class="el" href="class_solution_set.html">SolutionSet</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>listSoln</em>, </td>
         </tr>
         <tr>
@@ -301,12 +352,21 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">listBod</td><td>The vector of <a class="el" href="class_body.html">Body</a> objects to use for the object. Contains all the information about <a class="el" href="class_body.html">Body</a> forces. </td></tr>
-    <tr><td class="paramname">listSoln</td><td>The vector of <a class="el" href="classlist_solution.html">listSolution</a> objects to use for the object. Contains all the information about solutions for each body. Each <a class="el" href="classlist_solution.html">listSolution</a> object in the vector represents the solutions for all frequencies for a single <a class="el" href="class_body.html">Body</a> object. </td></tr>
-    <tr><td class="paramname">listFreq</td><td>The vector of wave frequencies to use for the object. Each wave frequency corresponds to a <a class="el" href="class_solution.html">Solution</a> object in the <a class="el" href="classlist_solution.html">listSolution</a> object. </td></tr>
+    <tr><td class="paramname">listSoln</td><td>The vector of <a class="el" href="class_solution_set.html">SolutionSet</a> objects to use for the object. Contains all the information about solutions for each body. Each <a class="el" href="class_solution_set.html">SolutionSet</a> object in the vector represents the solutions for all frequencies for a single <a class="el" href="class_body.html">Body</a> object. </td></tr>
+    <tr><td class="paramname">listFreq</td><td>The vector of wave frequencies to use for the object. Each wave frequency corresponds to a <a class="el" href="class_solution.html">Solution</a> object in the <a class="el" href="class_solution_set.html">SolutionSet</a> object. </td></tr>
     <tr><td class="paramname">listWaveDir</td><td>The vector of wave directions to use for the object. This is provided mostly for reference. </td></tr>
   </table>
   </dd>
 </dl>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_outputs_body_a2055cae4d0cd0ae53ec3afc6b05f0b70_cgraph.png" border="0" usemap="#class_outputs_body_a2055cae4d0cd0ae53ec3afc6b05f0b70_cgraph" alt=""/></div>
+<map name="class_outputs_body_a2055cae4d0cd0ae53ec3afc6b05f0b70_cgraph" id="class_outputs_body_a2055cae4d0cd0ae53ec3afc6b05f0b70_cgraph">
+<area shape="rect" id="node3" href="class_outputs_body.html#a6b28621ef475c1d917270e2259e1629f" title="Gets the list of wave frequencies. Provides direct access to the list." alt="" coords="250,5,401,32"/><area shape="rect" id="node5" href="class_outputs_body.html#a710a66d19fb8ba5a6c9c15e0143f832e" title="Gets the list of wave directions. Provides direct access to the list." alt="" coords="238,56,413,83"/></map>
+</div>
+</p>
 
 </div>
 </div>
@@ -318,17 +378,17 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
         <tr>
           <td class="memname">void OutputsBody::addGlobalAcceleration </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="class_global_acceleration.html">GlobalAcceleration</a>&#160;</td>
+          <td class="paramtype">GlobalAcceleration&#160;</td>
           <td class="paramname"><em>input</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Adds a new <a class="el" href="class_global_acceleration.html">GlobalAcceleration</a> object to the list of <a class="el" href="class_global_acceleration.html">GlobalAcceleration</a> objects. This version sets the new <a class="el" href="class_global_acceleration.html">GlobalAcceleration</a> object equal to the information passed in. </p>
+<p>Adds a new GlobalAcceleration object to the list of GlobalAcceleration objects. This version sets the new GlobalAcceleration object equal to the information passed in. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">input</td><td>The new <a class="el" href="class_global_acceleration.html">GlobalAcceleration</a> object to add to the list of <a class="el" href="class_global_acceleration.html">GlobalAcceleration</a> objects. Variable is passed by value. </td></tr>
+    <tr><td class="paramname">input</td><td>The new GlobalAcceleration object to add to the list of GlobalAcceleration objects. Variable is passed by value. </td></tr>
   </table>
   </dd>
 </dl>
@@ -342,17 +402,17 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
         <tr>
           <td class="memname">void OutputsBody::addGlobalMotion </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="class_global_motion.html">GlobalMotion</a>&#160;</td>
+          <td class="paramtype">GlobalMotion&#160;</td>
           <td class="paramname"><em>input</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Adds a new <a class="el" href="class_global_motion.html">GlobalMotion</a> object to the list of <a class="el" href="class_global_motion.html">GlobalMotion</a> objects. This version sets the new <a class="el" href="class_global_motion.html">GlobalMotion</a> object equal to the information passed in. </p>
+<p>Adds a new GlobalMotion object to the list of GlobalMotion objects. This version sets the new GlobalMotion object equal to the information passed in. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">input</td><td>The new <a class="el" href="class_global_motion.html">GlobalMotion</a> object to add to the list of <a class="el" href="class_global_motion.html">GlobalMotion</a> objects. Variable is passed by value. </td></tr>
+    <tr><td class="paramname">input</td><td>The new GlobalMotion object to add to the list of GlobalMotion objects. Variable is passed by value. </td></tr>
   </table>
   </dd>
 </dl>
@@ -366,17 +426,17 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
         <tr>
           <td class="memname">void OutputsBody::addGlobalSolution </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="class_global_solution.html">GlobalSolution</a>&#160;</td>
+          <td class="paramtype">GlobalSolution&#160;</td>
           <td class="paramname"><em>input</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Adds a new <a class="el" href="class_global_solution.html">GlobalSolution</a> object to the list of <a class="el" href="class_global_solution.html">GlobalSolution</a> objects. This version sets the new <a class="el" href="class_global_solution.html">GlobalSolution</a> object equal to the information passed in. </p>
+<p>Adds a new GlobalSolution object to the list of GlobalSolution objects. This version sets the new GlobalSolution object equal to the information passed in. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">input</td><td>The new <a class="el" href="class_global_solution.html">GlobalSolution</a> object to add to the list of <a class="el" href="class_global_solution.html">GlobalSolution</a> objects. Variable is passed by value. </td></tr>
+    <tr><td class="paramname">input</td><td>The new GlobalSolution object to add to the list of GlobalSolution objects. Variable is passed by value. </td></tr>
   </table>
   </dd>
 </dl>
@@ -484,15 +544,15 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p>Calculates the <a class="el" href="class_global_acceleration.html">GlobalAcceleration</a> object from the list of <a class="el" href="class_global_acceleration.html">GlobalAcceleration</a> objects and returns the output. </p>
-<dl class="section see"><dt>See Also</dt><dd><a class="el" href="class_global_acceleration.html">GlobalAcceleration</a> </dd></dl>
+<p>Calculates the GlobalAcceleration object from the list of GlobalAcceleration objects and returns the output. </p>
+<dl class="section see"><dt>See Also</dt><dd>GlobalAcceleration </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">index</td><td>The index of which <a class="el" href="class_global_acceleration.html">GlobalAcceleration</a> object to retrieve from the list of objects. For this Derived Output, there is only one <a class="el" href="class_global_acceleration.html">GlobalAcceleration</a> object per <a class="el" href="class_outputs_body.html">OutputsBody</a>. The default value selects this object. </td></tr>
+    <tr><td class="paramname">index</td><td>The index of which GlobalAcceleration object to retrieve from the list of objects. For this Derived Output, there is only one GlobalAcceleration object per <a class="el" href="class_outputs_body.html">OutputsBody</a>. The default value selects this object. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Returns a vector of vectors, which is the <a class="el" href="class_global_acceleration.html">GlobalAcceleration</a> Results. Each row in the vector represents a wave frequency. Each entry in the vector for that frequency represents a result for one of the degrees of freedom. All entries are complex numbers. Returned variable is passed by value. Value is not stored in memory and must be calculated new each time method is called. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Returns a vector of vectors, which is the GlobalAcceleration Results. Each row in the vector represents a wave frequency. Each entry in the vector for that frequency represents a result for one of the degrees of freedom. All entries are complex numbers. Returned variable is passed by value. Value is not stored in memory and must be calculated new each time method is called. </dd></dl>
 
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
@@ -528,15 +588,15 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p>Calculates the <a class="el" href="class_global_motion.html">GlobalMotion</a> object from the list of <a class="el" href="class_global_motion.html">GlobalMotion</a> objects and returns the output. </p>
-<dl class="section see"><dt>See Also</dt><dd><a class="el" href="class_global_motion.html">GlobalMotion</a> </dd></dl>
+<p>Calculates the GlobalMotion object from the list of GlobalMotion objects and returns the output. </p>
+<dl class="section see"><dt>See Also</dt><dd>GlobalMotion </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">index</td><td>The index of which <a class="el" href="class_global_motion.html">GlobalMotion</a> object to retrieve from the list of objects. For this Derived Output, there is only one <a class="el" href="class_global_motion.html">GlobalMotion</a> object per <a class="el" href="class_outputs_body.html">OutputsBody</a>. The default value selects this object. </td></tr>
+    <tr><td class="paramname">index</td><td>The index of which GlobalMotion object to retrieve from the list of objects. For this Derived Output, there is only one GlobalMotion object per <a class="el" href="class_outputs_body.html">OutputsBody</a>. The default value selects this object. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Returns a vector of vectors, which is the <a class="el" href="class_global_motion.html">GlobalMotion</a> Results. Each row in the vector represents a wave frequency. Each entry in the vector for that frequency represents a result for one of the degrees of freedom. All entries are complex numbers. Returned variable is passed by value. Value is not stored in memory and must be calculated new each time method is called. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Returns a vector of vectors, which is the GlobalMotion Results. Each row in the vector represents a wave frequency. Each entry in the vector for that frequency represents a result for one of the degrees of freedom. All entries are complex numbers. Returned variable is passed by value. Value is not stored in memory and must be calculated new each time method is called. </dd></dl>
 
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
@@ -572,15 +632,15 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p>Calculates the <a class="el" href="class_global_solution.html">GlobalSolution</a> object from the list of <a class="el" href="class_global_solution.html">GlobalSolution</a> objects and returns the output. </p>
-<dl class="section see"><dt>See Also</dt><dd><a class="el" href="class_global_solution.html">GlobalSolution</a> </dd></dl>
+<p>Calculates the GlobalSolution object from the list of GlobalSolution objects and returns the output. </p>
+<dl class="section see"><dt>See Also</dt><dd>GlobalSolution </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">index</td><td>The index of which <a class="el" href="class_global_solution.html">GlobalSolution</a> object to retrieve from the list of objects. For this Derived Output, there is only one <a class="el" href="class_global_solution.html">GlobalSolution</a> object per <a class="el" href="class_outputs_body.html">OutputsBody</a>. The default value selects this object. </td></tr>
+    <tr><td class="paramname">index</td><td>The index of which GlobalSolution object to retrieve from the list of objects. For this Derived Output, there is only one GlobalSolution object per <a class="el" href="class_outputs_body.html">OutputsBody</a>. The default value selects this object. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Returns a vector of vectors, which is the <a class="el" href="class_global_solution.html">GlobalSolution</a> Results. Each row in the vector represents a wave frequency. Each entry in the vector for that frequency represents a result for one of the degrees of freedom. All entries are complex numbers. Returned variable is passed by value. Value is not stored in memory and must be calculated new each time method is called. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Returns a vector of vectors, which is the GlobalSolution Results. Each row in the vector represents a wave frequency. Each entry in the vector for that frequency represents a result for one of the degrees of freedom. All entries are complex numbers. Returned variable is passed by value. Value is not stored in memory and must be calculated new each time method is called. </dd></dl>
 
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
@@ -646,6 +706,112 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
+<a class="anchor" id="a6b28621ef475c1d917270e2259e1629f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">vector&lt; double &gt; &amp; OutputsBody::listFreq </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gets the list of wave frequencies. Provides direct access to the list. </p>
+<dl class="section return"><dt>Returns</dt><dd>Returns the vector of doubles representing the wave frequencies. Frequencies entered in units of radians per second. Variable is passed by reference. </dd></dl>
+
+<p><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_outputs_body_a6b28621ef475c1d917270e2259e1629f_icgraph.png" border="0" usemap="#class_outputs_body_a6b28621ef475c1d917270e2259e1629f_icgraph" alt=""/></div>
+<map name="class_outputs_body_a6b28621ef475c1d917270e2259e1629f_icgraph" id="class_outputs_body_a6b28621ef475c1d917270e2259e1629f_icgraph">
+<area shape="rect" id="node3" href="class_file_writer.html#ac6df31af71020a41adb6ecd6ff136532" title="FileWriter::writeFrequency" alt="" coords="232,5,411,32"/><area shape="rect" id="node5" href="class_file_writer.html#a5c921b5ae92039cf50458e2c46e204da" title="Writes the output file of global motions. If file exists, appends to the file, assuming the appended ..." alt="" coords="224,56,419,83"/><area shape="rect" id="node7" href="class_file_writer.html#a2078a50dbd21946aeed86d8e0bccd50e" title="Writes the output file of global velocities. If file exists, appends to the file, assuming the append..." alt="" coords="220,107,423,133"/><area shape="rect" id="node9" href="class_file_writer.html#aaff553c2e03cb1c1639e107cfeac3038" title="Writes the output file of global accelerations. If file exists, appends to the file, assuming the appended file is a new body object." alt="" coords="206,157,437,184"/><area shape="rect" id="node11" href="class_file_writer.html#a317649499b8c16dd529e2bf588e3be88" title="Writes the output file of global solutions. If file exists, appends to the file, assuming the appende..." alt="" coords="220,208,423,235"/><area shape="rect" id="node13" href="class_outputs_body.html#a2055cae4d0cd0ae53ec3afc6b05f0b70" title="Overloaded constructor for the OutputsBody object. Includes inputs for Body list, Solution list..." alt="" coords="230,259,413,285"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="aea5ac6ef687c5dc979817b967bc9dfe2"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double &amp; OutputsBody::listFreq </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>index</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns individual frequency from the list of wave frequencies. </p>
+<p>Returns the frequency specified by the index. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">index</td><td>Integer. The index which specifies which wave frequency to return. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Double. Returns individual frequency from the list of wave frequencies. Returned variabled is passed by reference. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a710a66d19fb8ba5a6c9c15e0143f832e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">vector&lt; double &gt; &amp; OutputsBody::listWaveDir </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gets the list of wave directions. Provides direct access to the list. </p>
+<dl class="section return"><dt>Returns</dt><dd>Returns the vector of doubles representing the wave directions. Directions entered in units of radians. Variable is passed by reference. </dd></dl>
+
+<p><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_outputs_body_a710a66d19fb8ba5a6c9c15e0143f832e_icgraph.png" border="0" usemap="#class_outputs_body_a710a66d19fb8ba5a6c9c15e0143f832e_icgraph" alt=""/></div>
+<map name="class_outputs_body_a710a66d19fb8ba5a6c9c15e0143f832e_icgraph" id="class_outputs_body_a710a66d19fb8ba5a6c9c15e0143f832e_icgraph">
+<area shape="rect" id="node3" href="class_file_writer.html#a0428a4f8ad72d01ff5316bfa3e4ce631" title="Writes the directions list to file." alt="" coords="230,5,434,32"/><area shape="rect" id="node5" href="class_outputs_body.html#a2055cae4d0cd0ae53ec3afc6b05f0b70" title="Overloaded constructor for the OutputsBody object. Includes inputs for Body list, Solution list..." alt="" coords="241,56,423,83"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="abc0b04ccd535145e9c9528cde8cd4d15"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double &amp; OutputsBody::listWaveDir </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>index</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns individual wave direction from the list of wave directions. </p>
+<p>Returns the wave direction specified by the index. Wave directions are measured in radians. True North is zero, with positive angles going counter-clockwise. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">index</td><td>Integer. The index which specifies which wave direction to return. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Double. Returns individual wave direction from the list of wave directions. Returned variable is passed by reference. </dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="afdb3f49b84baf1a6b2de8a5d014abfe5"></a>
 <div class="memitem">
 <div class="memproto">
@@ -667,7 +833,7 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_outputs_body_afdb3f49b84baf1a6b2de8a5d014abfe5_icgraph.png" border="0" usemap="#class_outputs_body_afdb3f49b84baf1a6b2de8a5d014abfe5_icgraph" alt=""/></div>
 <map name="class_outputs_body_afdb3f49b84baf1a6b2de8a5d014abfe5_icgraph" id="class_outputs_body_afdb3f49b84baf1a6b2de8a5d014abfe5_icgraph">
-<area shape="rect" id="node3" href="class_outputs_body.html#a7450d306af9db6bb159a1186f017ce6e" title="Calculates the GlobalMotion object from the list of GlobalMotion objects and returns the output..." alt="" coords="247,5,452,32"/><area shape="rect" id="node5" href="class_file_writer.html#a5c921b5ae92039cf50458e2c46e204da" title="Writes the output file of global motions. If file exists, appends to the file, assuming the appended ..." alt="" coords="536,31,731,57"/><area shape="rect" id="node7" href="class_outputs_body.html#a16d63ba2343caa9244a461fb3d539843" title="Calculates the GlobalVelocity object from the list of GlobalVelocity objects and returns the output..." alt="" coords="243,107,456,133"/><area shape="rect" id="node9" href="class_file_writer.html#a2078a50dbd21946aeed86d8e0bccd50e" title="Writes the output file of global velocities. If file exists, appends to the file, assuming the append..." alt="" coords="532,132,735,159"/><area shape="rect" id="node11" href="class_outputs_body.html#a9c4de0023e30be8e03c4f910a3848bdc" title="Calculates the GlobalAcceleration object from the list of GlobalAcceleration objects and returns the ..." alt="" coords="229,208,469,235"/><area shape="rect" id="node13" href="class_file_writer.html#aaff553c2e03cb1c1639e107cfeac3038" title="Writes the output file of global accelerations. If file exists, appends to the file, assuming the appended file is a new body object." alt="" coords="518,247,749,273"/><area shape="rect" id="node15" href="class_outputs_body.html#a0f669819a398d64524a4aff29e20aa8b" title="Calculates the GlobalSolution object from the list of GlobalSolution objects and returns the output..." alt="" coords="243,309,456,336"/><area shape="rect" id="node17" href="class_file_writer.html#a317649499b8c16dd529e2bf588e3be88" title="Writes the output file of global solutions. If file exists, appends to the file, assuming the appende..." alt="" coords="532,323,735,349"/></map>
+<area shape="rect" id="node3" href="class_file_writer.html#a5c921b5ae92039cf50458e2c46e204da" title="Writes the output file of global motions. If file exists, appends to the file, assuming the appended ..." alt="" coords="536,25,731,51"/><area shape="rect" id="node5" href="class_file_writer.html#a2078a50dbd21946aeed86d8e0bccd50e" title="Writes the output file of global velocities. If file exists, appends to the file, assuming the append..." alt="" coords="532,126,735,153"/><area shape="rect" id="node7" href="class_file_writer.html#aaff553c2e03cb1c1639e107cfeac3038" title="Writes the output file of global accelerations. If file exists, appends to the file, assuming the appended file is a new body object." alt="" coords="518,241,749,267"/><area shape="rect" id="node9" href="class_file_writer.html#a317649499b8c16dd529e2bf588e3be88" title="Writes the output file of global solutions. If file exists, appends to the file, assuming the appende..." alt="" coords="532,317,735,343"/><area shape="rect" id="node11" href="class_outputs_body.html#a7450d306af9db6bb159a1186f017ce6e" title="Calculates the GlobalMotion object from the list of GlobalMotion objects and returns the output..." alt="" coords="247,50,452,77"/><area shape="rect" id="node14" href="class_outputs_body.html#a16d63ba2343caa9244a461fb3d539843" title="Calculates the GlobalVelocity object from the list of GlobalVelocity objects and returns the output..." alt="" coords="243,151,456,178"/><area shape="rect" id="node17" href="class_outputs_body.html#a9c4de0023e30be8e03c4f910a3848bdc" title="Calculates the GlobalAcceleration object from the list of GlobalAcceleration objects and returns the ..." alt="" coords="229,253,469,279"/><area shape="rect" id="node20" href="class_outputs_body.html#a0f669819a398d64524a4aff29e20aa8b" title="Calculates the GlobalSolution object from the list of GlobalSolution objects and returns the output..." alt="" coords="243,354,456,381"/></map>
 </div>
 </p>
 
@@ -678,7 +844,7 @@ Here is the caller graph for this function:</div>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_global_acceleration.html">GlobalAcceleration</a> &amp; OutputsBody::refGlobalAcceleration </td>
+          <td class="memname">GlobalAcceleration &amp; OutputsBody::refGlobalAcceleration </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>index</em> = <code>0</code></td><td>)</td>
@@ -687,15 +853,15 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p>Returns the <a class="el" href="class_global_acceleration.html">GlobalAcceleration</a> object from the list of <a class="el" href="class_global_acceleration.html">GlobalAcceleration</a> objects. </p>
-<dl class="section see"><dt>See Also</dt><dd><a class="el" href="class_global_acceleration.html">GlobalAcceleration</a> </dd></dl>
+<p>Returns the GlobalAcceleration object from the list of GlobalAcceleration objects. </p>
+<dl class="section see"><dt>See Also</dt><dd>GlobalAcceleration </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">index</td><td>The index of which <a class="el" href="class_global_acceleration.html">GlobalAcceleration</a> object to retrieve from the list of objects. For this Derived Output, there is only one <a class="el" href="class_global_acceleration.html">GlobalAcceleration</a> object per <a class="el" href="class_outputs_body.html">OutputsBody</a>. The default value selects this object. </td></tr>
+    <tr><td class="paramname">index</td><td>The index of which GlobalAcceleration object to retrieve from the list of objects. For this Derived Output, there is only one GlobalAcceleration object per <a class="el" href="class_outputs_body.html">OutputsBody</a>. The default value selects this object. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Returns the <a class="el" href="class_global_acceleration.html">GlobalAcceleration</a> object from the list of <a class="el" href="class_global_acceleration.html">GlobalAcceleration</a> objects. Returned variable is passed by reference. Returns only the object specified by the input index. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Returns the GlobalAcceleration object from the list of GlobalAcceleration objects. Returned variable is passed by reference. Returns only the object specified by the input index. </dd></dl>
 
 <p><div class="dynheader">
 Here is the caller graph for this function:</div>
@@ -713,7 +879,7 @@ Here is the caller graph for this function:</div>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_global_motion.html">GlobalMotion</a> &amp; OutputsBody::refGlobalMotion </td>
+          <td class="memname">GlobalMotion &amp; OutputsBody::refGlobalMotion </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>index</em> = <code>0</code></td><td>)</td>
@@ -722,15 +888,15 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p>Returns the <a class="el" href="class_global_motion.html">GlobalMotion</a> object from the list of <a class="el" href="class_global_motion.html">GlobalMotion</a> objects. </p>
-<dl class="section see"><dt>See Also</dt><dd><a class="el" href="class_global_motion.html">GlobalMotion</a> </dd></dl>
+<p>Returns the GlobalMotion object from the list of GlobalMotion objects. </p>
+<dl class="section see"><dt>See Also</dt><dd>GlobalMotion </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">index</td><td>The index of which <a class="el" href="class_global_motion.html">GlobalMotion</a> object to retrieve from the list of objects. For this Derived Output, there is only one <a class="el" href="class_global_motion.html">GlobalMotion</a> object per <a class="el" href="class_outputs_body.html">OutputsBody</a>. The default value selects this object. </td></tr>
+    <tr><td class="paramname">index</td><td>The index of which GlobalMotion object to retrieve from the list of objects. For this Derived Output, there is only one GlobalMotion object per <a class="el" href="class_outputs_body.html">OutputsBody</a>. The default value selects this object. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Returns the <a class="el" href="class_global_motion.html">GlobalMotion</a> object from the list of <a class="el" href="class_global_motion.html">GlobalMotion</a> objects. Returned variable is passed by reference. Returns only the object specified by the input index. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Returns the GlobalMotion object from the list of GlobalMotion objects. Returned variable is passed by reference. Returns only the object specified by the input index. </dd></dl>
 
 <p><div class="dynheader">
 Here is the caller graph for this function:</div>
@@ -748,7 +914,7 @@ Here is the caller graph for this function:</div>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_global_solution.html">GlobalSolution</a> &amp; OutputsBody::refGlobalSolution </td>
+          <td class="memname">GlobalSolution &amp; OutputsBody::refGlobalSolution </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>index</em> = <code>0</code></td><td>)</td>
@@ -757,15 +923,15 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p>Returns the <a class="el" href="class_global_solution.html">GlobalSolution</a> object from the list of <a class="el" href="class_global_solution.html">GlobalSolution</a> objects. </p>
-<dl class="section see"><dt>See Also</dt><dd><a class="el" href="class_global_solution.html">GlobalSolution</a> </dd></dl>
+<p>Returns the GlobalSolution object from the list of GlobalSolution objects. </p>
+<dl class="section see"><dt>See Also</dt><dd>GlobalSolution </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">index</td><td>The index of which <a class="el" href="class_global_solution.html">GlobalSolution</a> object to retrieve from the list of objects. For this Derived Output, there is only one <a class="el" href="class_global_solution.html">GlobalSolution</a> object per <a class="el" href="class_outputs_body.html">OutputsBody</a>. The default value selects this object. </td></tr>
+    <tr><td class="paramname">index</td><td>The index of which GlobalSolution object to retrieve from the list of objects. For this Derived Output, there is only one GlobalSolution object per <a class="el" href="class_outputs_body.html">OutputsBody</a>. The default value selects this object. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Returns the <a class="el" href="class_global_solution.html">GlobalSolution</a> object from the list of <a class="el" href="class_global_solution.html">GlobalSolution</a> objects. Returned variable is passed by reference. Returns only the object specified by the input index. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Returns the GlobalSolution object from the list of GlobalSolution objects. Returned variable is passed by reference. Returns only the object specified by the input index. </dd></dl>
 
 <p><div class="dynheader">
 Here is the caller graph for this function:</div>
@@ -813,60 +979,6 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a class="anchor" id="a880542382668134727cb312757c11d07"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">vector&lt; double &gt; &amp; OutputsBody::reflistFreq </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Gets the list of wave frequencies. Provides direct access to the list. </p>
-<dl class="section return"><dt>Returns</dt><dd>Returns the vector of doubles representing the wave frequencies. Frequencies entered in units of radians per second. Variable is passed by reference. </dd></dl>
-
-<p><div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_outputs_body_a880542382668134727cb312757c11d07_icgraph.png" border="0" usemap="#class_outputs_body_a880542382668134727cb312757c11d07_icgraph" alt=""/></div>
-<map name="class_outputs_body_a880542382668134727cb312757c11d07_icgraph" id="class_outputs_body_a880542382668134727cb312757c11d07_icgraph">
-<area shape="rect" id="node3" href="class_file_writer.html#ac6df31af71020a41adb6ecd6ff136532" title="FileWriter::writeFrequency" alt="" coords="245,5,424,32"/><area shape="rect" id="node5" href="class_file_writer.html#a5c921b5ae92039cf50458e2c46e204da" title="Writes the output file of global motions. If file exists, appends to the file, assuming the appended ..." alt="" coords="237,56,432,83"/><area shape="rect" id="node7" href="class_file_writer.html#a2078a50dbd21946aeed86d8e0bccd50e" title="Writes the output file of global velocities. If file exists, appends to the file, assuming the append..." alt="" coords="233,107,436,133"/><area shape="rect" id="node9" href="class_file_writer.html#aaff553c2e03cb1c1639e107cfeac3038" title="Writes the output file of global accelerations. If file exists, appends to the file, assuming the appended file is a new body object." alt="" coords="219,157,450,184"/><area shape="rect" id="node11" href="class_file_writer.html#a317649499b8c16dd529e2bf588e3be88" title="Writes the output file of global solutions. If file exists, appends to the file, assuming the appende..." alt="" coords="233,208,436,235"/></map>
-</div>
-</p>
-
-</div>
-</div>
-<a class="anchor" id="a76439db0a461f51b572c0d011cf405b7"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">vector&lt; double &gt; &amp; OutputsBody::reflistWaveDir </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Gets the list of wave directions. Provides direct access to the list. </p>
-<dl class="section return"><dt>Returns</dt><dd>Returns the vector of doubles representing the wave directions. Directions entered in units of radians. Variable is passed by reference. </dd></dl>
-
-<p><div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_outputs_body_a76439db0a461f51b572c0d011cf405b7_icgraph.png" border="0" usemap="#class_outputs_body_a76439db0a461f51b572c0d011cf405b7_icgraph" alt=""/></div>
-<map name="class_outputs_body_a76439db0a461f51b572c0d011cf405b7_icgraph" id="class_outputs_body_a76439db0a461f51b572c0d011cf405b7_icgraph">
-<area shape="rect" id="node3" href="class_file_writer.html#a0428a4f8ad72d01ff5316bfa3e4ce631" title="Writes the directions list to file." alt="" coords="246,5,450,32"/></map>
-</div>
-</p>
-
-</div>
-</div>
 <a class="anchor" id="a4b33361c2888937d2aa450f3e6df200d"></a>
 <div class="memitem">
 <div class="memproto">
@@ -908,19 +1020,19 @@ Here is the caller graph for this function:</div>
 <p>Sets the current wave direction. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">index</td><td>Integer input specifying the index of the current wave direction from the list set by setlistWaveDir. </td></tr>
+    <tr><td class="paramname">index</td><td>Integer input specifying the index of the current wave direction from the list set by setListWaveDir. </td></tr>
   </table>
   </dd>
 </dl>
 
 </div>
 </div>
-<a class="anchor" id="a7be4a4a8ebdd43a7f0c8b56a9cf0d800"></a>
+<a class="anchor" id="adf05eb2fc8ffba1c18825163305aea4d"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void OutputsBody::setlistBody </td>
+          <td class="memname">void OutputsBody::setListBody </td>
           <td>(</td>
           <td class="paramtype">vector&lt; <a class="el" href="class_body.html">Body</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>listIn</em></td><td>)</td>
@@ -939,12 +1051,12 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a class="anchor" id="a876c62a76404b2a963d78d3753456fc3"></a>
+<a class="anchor" id="a14e8b435963f1772b48c7038658685ee"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void OutputsBody::setlistFreq </td>
+          <td class="memname">void OutputsBody::setListFreq </td>
           <td>(</td>
           <td class="paramtype">vector&lt; double &gt; &amp;&#160;</td>
           <td class="paramname"><em>listIn</em></td><td>)</td>
@@ -963,36 +1075,12 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a class="anchor" id="a555b87de16dbb48444dcef24de08c70d"></a>
+<a class="anchor" id="aea1ad7f17db0392354f1617c59b8d1fc"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void OutputsBody::setlistSolution </td>
-          <td>(</td>
-          <td class="paramtype">vector&lt; <a class="el" href="classlist_solution.html">listSolution</a> &gt; &amp;&#160;</td>
-          <td class="paramname"><em>listIn</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Sets the list of <a class="el" href="classlist_solution.html">listSolution</a> objects to calculate derived outputs for. Derived outputs are calculated for only one <a class="el" href="classlist_solution.html">listSolution</a> object in the list. The rest are included as reference for cross-body forces. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">listIn</td><td>The vector of <a class="el" href="classlist_solution.html">listSolution</a> objects to assign to this <a class="el" href="class_outputs_body.html">OutputsBody</a>. Input is passed by reference. Inputs is held as a constant value, so that it can not be modified by the class. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a class="anchor" id="a3cfa70c13f0330d7ce94b5755243aac4"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void OutputsBody::setlistWaveDir </td>
+          <td class="memname">void OutputsBody::setListWaveDir </td>
           <td>(</td>
           <td class="paramtype">vector&lt; double &gt; &amp;&#160;</td>
           <td class="paramname"><em>listIn</em></td><td>)</td>
@@ -1005,6 +1093,30 @@ Here is the caller graph for this function:</div>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">listIn</td><td>The vector of doubles representing the wave directions. Directions entered in units of radians. Input is passed by reference and held as a constant so that the class can not change the directions. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a0d7b68e5b9726370ad3e6522aa9328f4"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void OutputsBody::setSolutionSet </td>
+          <td>(</td>
+          <td class="paramtype">vector&lt; <a class="el" href="class_solution_set.html">SolutionSet</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>listIn</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets the list of <a class="el" href="class_solution_set.html">SolutionSet</a> objects to calculate derived outputs for. Derived outputs are calculated for only one <a class="el" href="class_solution_set.html">SolutionSet</a> object in the list. The rest are included as reference for cross-body forces. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">listIn</td><td>The vector of <a class="el" href="class_solution_set.html">SolutionSet</a> objects to assign to this <a class="el" href="class_outputs_body.html">OutputsBody</a>. Input is passed by reference. Inputs is held as a constant value, so that it can not be modified by the class. </td></tr>
   </table>
   </dd>
 </dl>
@@ -1024,8 +1136,8 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p>returns the number of entries for the vector of <a class="el" href="class_global_acceleration.html">GlobalAcceleration</a> outputs. </p>
-<dl class="section return"><dt>Returns</dt><dd>Integer. Returns the number of entries for the vector of <a class="el" href="class_global_acceleration.html">GlobalAcceleration</a> outputs. Variable passed by value. </dd></dl>
+<p>returns the number of entries for the vector of GlobalAcceleration outputs. </p>
+<dl class="section return"><dt>Returns</dt><dd>Integer. Returns the number of entries for the vector of GlobalAcceleration outputs. Variable passed by value. </dd></dl>
 
 <p><div class="dynheader">
 Here is the caller graph for this function:</div>
@@ -1051,8 +1163,8 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p>returns the number of entries for the vector of <a class="el" href="class_global_motion.html">GlobalMotion</a> outputs. </p>
-<dl class="section return"><dt>Returns</dt><dd>Integer. Returns the number of entries for the vector of <a class="el" href="class_global_motion.html">GlobalMotion</a> outputs. Variable passed by value. </dd></dl>
+<p>returns the number of entries for the vector of GlobalMotion outputs. </p>
+<dl class="section return"><dt>Returns</dt><dd>Integer. Returns the number of entries for the vector of GlobalMotion outputs. Variable passed by value. </dd></dl>
 
 <p><div class="dynheader">
 Here is the caller graph for this function:</div>
@@ -1078,8 +1190,8 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p>returns the number of entries for the vector of <a class="el" href="class_global_solution.html">GlobalSolution</a> outputs. </p>
-<dl class="section return"><dt>Returns</dt><dd>Integer. Returns the number of entries for the vector of <a class="el" href="class_global_solution.html">GlobalSolution</a> outputs. Variable passed by value. </dd></dl>
+<p>returns the number of entries for the vector of GlobalSolution outputs. </p>
+<dl class="section return"><dt>Returns</dt><dd>Integer. Returns the number of entries for the vector of GlobalSolution outputs. Variable passed by value. </dd></dl>
 
 <p><div class="dynheader">
 Here is the caller graph for this function:</div>
@@ -1120,8 +1232,8 @@ Here is the caller graph for this function:</div>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>/home/nicholas/Ship Design/Projects/DMS1305 OpenSEA/master/200_src/bin/ofreq/derived_outputs/<a class="el" href="outputsbody_8h_source.html">outputsbody.h</a></li>
-<li>/home/nicholas/Ship Design/Projects/DMS1305 OpenSEA/master/200_src/bin/ofreq/derived_outputs/outputsbody.cpp</li>
+<li><a class="el" href="outputsbody_8h_source.html">outputsbody.h</a></li>
+<li>outputsbody.cpp</li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -1129,7 +1241,7 @@ Here is the caller graph for this function:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="class_outputs_body.html">OutputsBody</a></li>
-    <li class="footer">Generated on Thu Aug 22 2013 20:08:15 for oFreq by
+    <li class="footer">Generated on Sat Oct 12 2013 09:37:59 for oFreq by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.2 </li>
   </ul>

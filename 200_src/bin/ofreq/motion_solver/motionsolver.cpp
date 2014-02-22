@@ -308,6 +308,8 @@ void MotionSolver::calculateOutputs()
         CrossList_hydro.push_back(sumDerivative(tempCrossList_hydro[curSumBody]));
     }
 
+    DebugMatrix("Reactive Matrix", *ReactList_usr.at(0));
+
     //Delete uneeded variables
     for (curSumBody = 0; curSumBody < plistBody.size(); curSumBody++)
     {
@@ -444,6 +446,9 @@ void MotionSolver::calculateOutputs()
         }
     }
 
+    //Debug print out matrix values
+    DebugMatrix("Global Reactive Matrix", globReactiveMat);
+    DebugMatrix("Global Active Matrix", globActiveMat);
     //Solve for Unknown Matrix (the X Matrix) --    A*X=B where X is the unknown
     globSolnMat = solve(globReactiveMat, globActiveMat, true); //true arg for more precise calculations
 
@@ -522,4 +527,25 @@ cx_mat MotionSolver::SumSingle(cx_mat *Input1, cx_mat *Input2, int ForceType)
 
     //Write output
     return output;
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+void MotionSolver::DebugMatrix(std::string Name, cx_mat& input)
+{
+    //Write output of name
+    cout << endl << Name << " = " << endl;
+
+    //Write matrix for output
+    for (int i = 0; i < input.n_rows; i++)
+    {
+        //Print out Some bounds
+        cout << "\t| ";
+        for (int j = 0; j < input.n_cols; j++)
+        {
+            //Print out individual entries
+            cout << input(i,j) << "\t";
+        }
+        //Finish with end bounds
+        cout << "|" << endl;
+    }
 }

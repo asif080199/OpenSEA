@@ -1,0 +1,7 @@
+<map id="osea::Dictionary::setObject" name="osea::Dictionary::setObject">
+<area shape="rect" id="node3" href="$classosea_1_1_object_group.html#aa158e9516621ab6e2b690bad6c6619b5" title="Gets the class name, as specified by the input file." alt="" coords="240,5,384,46"/>
+<area shape="rect" id="node5" href="$classosea_1_1_object_group.html#a0f44d28c868ba60971af1a7aceb2e5bd" title="Provides direct access to thelist of key words." alt="" coords="240,70,384,111"/>
+<area shape="rect" id="node7" href="$classosea_1_1_object_group.html#a818bd77a51e5617fb26481d09eb16714" title="Gets a key word as specified by the index." alt="" coords="240,135,384,177"/>
+<area shape="rect" id="node9" href="$classosea_1_1_object_group.html#a35ccc728179fdc3db8712f553746caf9" title="Gets the key value as specified by the index." alt="" coords="240,201,384,242"/>
+<area shape="rect" id="node11" href="$classosea_1_1_object_group.html#a13cd6186adf626bf61b279f1f6f75790" title="Provides direct access to the list of sub object definitions." alt="" coords="240,266,384,307"/>
+</map>

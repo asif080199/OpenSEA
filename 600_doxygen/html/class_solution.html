@@ -45,6 +45,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -93,7 +94,7 @@ $(document).ready(function(){initNavTree('class_solution.html','');});
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Variables</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -112,6 +113,20 @@ $(document).ready(function(){initNavTree('class_solution.html','');});
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="solution_8h_source.html">solution.h</a>&gt;</code></p>
+<div class="dynheader">
+Inheritance diagram for Solution:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_solution__inherit__graph.png" border="0" usemap="#_solution_inherit__map" alt="Inheritance graph"/></div>
+<map name="_solution_inherit__map" id="_solution_inherit__map">
+<area shape="rect" id="node2" href="classo_freq_core.html" title="The core oFreq class. All oFreq classes inherit from this class." alt="" coords="5,5,93,32"/></map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
+<div class="dynheader">
+Collaboration diagram for Solution:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_solution__coll__graph.png" border="0" usemap="#_solution_coll__map" alt="Collaboration graph"/></div>
+<map name="_solution_coll__map" id="_solution_coll__map">
+<area shape="rect" id="node2" href="classo_freq_core.html" title="The core oFreq class. All oFreq classes inherit from this class." alt="" coords="5,5,93,32"/></map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -124,27 +139,51 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a5d245f7409aacf6ace5e965b7879a580"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_solution.html#a5d245f7409aacf6ace5e965b7879a580">~Solution</a> ()</td></tr>
 <tr class="memdesc:a5d245f7409aacf6ace5e965b7879a580"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default destructor.  <a href="#a5d245f7409aacf6ace5e965b7879a580"></a><br/></td></tr>
 <tr class="separator:a5d245f7409aacf6ace5e965b7879a580"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa224465c8237cd395681164bee0d7f8d"><td class="memItemLeft" align="right" valign="top">cx_mat &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_solution.html#aa224465c8237cd395681164bee0d7f8d">refSolution</a> ()</td></tr>
-<tr class="memdesc:aa224465c8237cd395681164bee0d7f8d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns direct access to the solution matrix.  <a href="#aa224465c8237cd395681164bee0d7f8d"></a><br/></td></tr>
-<tr class="separator:aa224465c8237cd395681164bee0d7f8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a631b5866d3df132464a7d1ec70cc6028"><td class="memItemLeft" align="right" valign="top">cx_mat&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_solution.html#a631b5866d3df132464a7d1ec70cc6028">getSolution</a> ()</td></tr>
-<tr class="memdesc:a631b5866d3df132464a7d1ec70cc6028"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the solution matrix.  <a href="#a631b5866d3df132464a7d1ec70cc6028"></a><br/></td></tr>
-<tr class="separator:a631b5866d3df132464a7d1ec70cc6028"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abf5f82f209b6a3295b89ef3a6fad293d"><td class="memItemLeft" align="right" valign="top">complex&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_solution.html#abf5f82f209b6a3295b89ef3a6fad293d">getSolution</a> (int index)</td></tr>
-<tr class="memdesc:abf5f82f209b6a3295b89ef3a6fad293d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a single entry in the solution matrix. Entry specified by index.  <a href="#abf5f82f209b6a3295b89ef3a6fad293d"></a><br/></td></tr>
-<tr class="separator:abf5f82f209b6a3295b89ef3a6fad293d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a610e36c0d33e9bd359b24828bdd1292c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_solution.html#a610e36c0d33e9bd359b24828bdd1292c">setSolution</a> (cx_mat matIn)</td></tr>
-<tr class="memdesc:a610e36c0d33e9bd359b24828bdd1292c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the solution matrix as a whole.  <a href="#a610e36c0d33e9bd359b24828bdd1292c"></a><br/></td></tr>
-<tr class="separator:a610e36c0d33e9bd359b24828bdd1292c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac55bc97e20a2177483d673ee919a732a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_solution.html#ac55bc97e20a2177483d673ee919a732a">setBody</a> (<a class="el" href="class_body.html">Body</a> &amp;bodIn)</td></tr>
-<tr class="memdesc:ac55bc97e20a2177483d673ee919a732a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the pointer to the reference body.  <a href="#ac55bc97e20a2177483d673ee919a732a"></a><br/></td></tr>
-<tr class="separator:ac55bc97e20a2177483d673ee919a732a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4bee06699b6942bfa9202f92235bbb96"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_body.html">Body</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_solution.html#a4bee06699b6942bfa9202f92235bbb96">getBody</a> ()</td></tr>
-<tr class="memdesc:a4bee06699b6942bfa9202f92235bbb96"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the body object used as the reference body. Variable passed by value.  <a href="#a4bee06699b6942bfa9202f92235bbb96"></a><br/></td></tr>
-<tr class="separator:a4bee06699b6942bfa9202f92235bbb96"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a97e6a64afec87dd0fa217f1d49449ac9"><td class="memItemLeft" align="right" valign="top">cx_mat &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_solution.html#a97e6a64afec87dd0fa217f1d49449ac9">refSolnMat</a> ()</td></tr>
+<tr class="memdesc:a97e6a64afec87dd0fa217f1d49449ac9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns direct access to the solution matrix.  <a href="#a97e6a64afec87dd0fa217f1d49449ac9"></a><br/></td></tr>
+<tr class="separator:a97e6a64afec87dd0fa217f1d49449ac9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a00801ca01862410a65fba3215bc8a789"><td class="memItemLeft" align="right" valign="top">cx_mat&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_solution.html#a00801ca01862410a65fba3215bc8a789">getSolnMat</a> ()</td></tr>
+<tr class="memdesc:a00801ca01862410a65fba3215bc8a789"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the solution matrix.  <a href="#a00801ca01862410a65fba3215bc8a789"></a><br/></td></tr>
+<tr class="separator:a00801ca01862410a65fba3215bc8a789"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8f850820d65445470f4a0a5351f990e7"><td class="memItemLeft" align="right" valign="top">complex&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_solution.html#a8f850820d65445470f4a0a5351f990e7">getSolnMat</a> (int index)</td></tr>
+<tr class="memdesc:a8f850820d65445470f4a0a5351f990e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a single entry in the solution matrix. Entry specified by index.  <a href="#a8f850820d65445470f4a0a5351f990e7"></a><br/></td></tr>
+<tr class="separator:a8f850820d65445470f4a0a5351f990e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a501a04b48ca1e5150dcef9b898085deb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_solution.html#a501a04b48ca1e5150dcef9b898085deb">setSolnMat</a> (cx_mat matIn)</td></tr>
+<tr class="memdesc:a501a04b48ca1e5150dcef9b898085deb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the solution matrix as a whole.  <a href="#a501a04b48ca1e5150dcef9b898085deb"></a><br/></td></tr>
+<tr class="separator:a501a04b48ca1e5150dcef9b898085deb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a95519db148bcece14c88aab53f4ced0e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_body.html">Body</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_solution.html#a95519db148bcece14c88aab53f4ced0e">refBody</a> ()</td></tr>
-<tr class="memdesc:a95519db148bcece14c88aab53f4ced0e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns reference pointer to the reference body. Variable passed by reference.  <a href="#a95519db148bcece14c88aab53f4ced0e"></a><br/></td></tr>
+<tr class="memdesc:a95519db148bcece14c88aab53f4ced0e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the body object used as the reference body. Variable passed by value.  <a href="#a95519db148bcece14c88aab53f4ced0e"></a><br/></td></tr>
 <tr class="separator:a95519db148bcece14c88aab53f4ced0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classo_freq_core"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classo_freq_core')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classo_freq_core.html">oFreqCore</a></td></tr>
+<tr class="memitem:a5c882c0d8e78706270e377b749a647f5 inherit pub_methods_classo_freq_core"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classo_freq_core.html#a5c882c0d8e78706270e377b749a647f5">oFreqCore</a> ()</td></tr>
+<tr class="separator:a5c882c0d8e78706270e377b749a647f5 inherit pub_methods_classo_freq_core"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aea5887547dbd17fc2d4f1a99fe217918 inherit pub_methods_classo_freq_core"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classo_freq_core.html#aea5887547dbd17fc2d4f1a99fe217918">~oFreqCore</a> ()</td></tr>
+<tr class="separator:aea5887547dbd17fc2d4f1a99fe217918 inherit pub_methods_classo_freq_core"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
+Additional Inherited Members</h2></td></tr>
+<tr class="inherit_header pro_methods_classo_freq_core"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classo_freq_core')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classo_freq_core.html">oFreqCore</a></td></tr>
+<tr class="memitem:a2912584189c4abd84498450b7c5908c2 inherit pro_methods_classo_freq_core"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classo_freq_core.html#a2912584189c4abd84498450b7c5908c2">setOutLog</a> (string dirIn)</td></tr>
+<tr class="memdesc:a2912584189c4abd84498450b7c5908c2 inherit pro_methods_classo_freq_core"><td class="mdescLeft">&#160;</td><td class="mdescRight">Opens the output log file and prepares it for writing.  <a href="#a2912584189c4abd84498450b7c5908c2"></a><br/></td></tr>
+<tr class="separator:a2912584189c4abd84498450b7c5908c2 inherit pro_methods_classo_freq_core"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8af56bbec3689f5d2252da1787a910e3 inherit pro_methods_classo_freq_core"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classo_freq_core.html#a8af56bbec3689f5d2252da1787a910e3">setErrLog</a> (string dirIn)</td></tr>
+<tr class="memdesc:a8af56bbec3689f5d2252da1787a910e3 inherit pro_methods_classo_freq_core"><td class="mdescLeft">&#160;</td><td class="mdescRight">Opens the error log file and prepares it for writing.  <a href="#a8af56bbec3689f5d2252da1787a910e3"></a><br/></td></tr>
+<tr class="separator:a8af56bbec3689f5d2252da1787a910e3 inherit pro_methods_classo_freq_core"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a74a938eae7e51de72bc752ad83382a11 inherit pro_methods_classo_freq_core"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classo_freq_core.html#a74a938eae7e51de72bc752ad83382a11">writeLog</a> (string mesIn)</td></tr>
+<tr class="memdesc:a74a938eae7e51de72bc752ad83382a11 inherit pro_methods_classo_freq_core"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes output of a log message to the log file. Adds in a date and time stamp to the log.  <a href="#a74a938eae7e51de72bc752ad83382a11"></a><br/></td></tr>
+<tr class="separator:a74a938eae7e51de72bc752ad83382a11 inherit pro_methods_classo_freq_core"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7272d265451eb63bb371f9b9c02f4883 inherit pro_methods_classo_freq_core"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classo_freq_core.html#a7272d265451eb63bb371f9b9c02f4883">writeError</a> (string mesIn)</td></tr>
+<tr class="memdesc:a7272d265451eb63bb371f9b9c02f4883 inherit pro_methods_classo_freq_core"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes output of an error message to the error file. Adds in a date, time, and class name to the log.  <a href="#a7272d265451eb63bb371f9b9c02f4883"></a><br/></td></tr>
+<tr class="separator:a7272d265451eb63bb371f9b9c02f4883 inherit pro_methods_classo_freq_core"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_static_attribs_classo_freq_core"><td colspan="2" onclick="javascript:toggleInherit('pro_static_attribs_classo_freq_core')"><img src="closed.png" alt="-"/>&#160;Static Protected Attributes inherited from <a class="el" href="classo_freq_core.html">oFreqCore</a></td></tr>
+<tr class="memitem:a85b3e812b6d78c064ba375d5101bb053 inherit pro_static_attribs_classo_freq_core"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a85b3e812b6d78c064ba375d5101bb053"></a>
+static std::ofstream&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classo_freq_core.html#a85b3e812b6d78c064ba375d5101bb053">OutLog</a></td></tr>
+<tr class="memdesc:a85b3e812b6d78c064ba375d5101bb053 inherit pro_static_attribs_classo_freq_core"><td class="mdescLeft">&#160;</td><td class="mdescRight">The log file for an oFreq run. Records normal actions for the program. Informs user of regular program developments. Through inheritence of the <a class="el" href="classo_freq_core.html" title="The core oFreq class. All oFreq classes inherit from this class.">oFreqCore</a> class, this object is available to every object in the oFreq application. <br/></td></tr>
+<tr class="separator:a85b3e812b6d78c064ba375d5101bb053 inherit pro_static_attribs_classo_freq_core"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5e31044ee80fa436289e569c8080b21e inherit pro_static_attribs_classo_freq_core"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5e31044ee80fa436289e569c8080b21e"></a>
+static std::ofstream&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classo_freq_core.html#a5e31044ee80fa436289e569c8080b21e">ErrLog</a></td></tr>
+<tr class="memdesc:a5e31044ee80fa436289e569c8080b21e inherit pro_static_attribs_classo_freq_core"><td class="mdescLeft">&#160;</td><td class="mdescRight">The error log file for an oFreq run. Records any errors or warnings for the program. Informs user of errors and warnings and where they occurred. Through inheritence of the <a class="el" href="classo_freq_core.html" title="The core oFreq class. All oFreq classes inherit from this class.">oFreqCore</a> class, this object is available for every object in the oFreq application. <br/></td></tr>
+<tr class="separator:a5e31044ee80fa436289e569c8080b21e inherit pro_static_attribs_classo_freq_core"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>This class defines a solution object. The solution object records the basic value of motion solution. The motion solution is translated back into body coordinate system. </p>
@@ -211,30 +250,12 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a4bee06699b6942bfa9202f92235bbb96"></a>
+<a class="anchor" id="a00801ca01862410a65fba3215bc8a789"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_body.html">Body</a> Solution::getBody </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Gets the body object used as the reference body. Variable passed by value. </p>
-<dl class="section return"><dt>Returns</dt><dd>Gets the body object used as the reference body. Variable passed by value. </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="a631b5866d3df132464a7d1ec70cc6028"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">cx_mat Solution::getSolution </td>
+          <td class="memname">cx_mat Solution::getSolnMat </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -247,23 +268,14 @@ Public Member Functions</h2></td></tr>
 <p>Returns the solution matrix as a whole. </p>
 <dl class="section return"><dt>Returns</dt><dd>Returned value is a complex number matrix. Returned variable is passed by value. </dd></dl>
 
-<p><div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_solution_a631b5866d3df132464a7d1ec70cc6028_icgraph.png" border="0" usemap="#class_solution_a631b5866d3df132464a7d1ec70cc6028_icgraph" alt=""/></div>
-<map name="class_solution_a631b5866d3df132464a7d1ec70cc6028_icgraph" id="class_solution_a631b5866d3df132464a7d1ec70cc6028_icgraph">
-<area shape="rect" id="node3" href="class_global_solution.html#adf90922a97153ce858da530e20bc3f4d" title="Calculates the GlobalSolution output. GlobalSolution is the direct output of the solution for each bo..." alt="" coords="201,5,381,32"/></map>
-</div>
-</p>
-
 </div>
 </div>
-<a class="anchor" id="abf5f82f209b6a3295b89ef3a6fad293d"></a>
+<a class="anchor" id="a8f850820d65445470f4a0a5351f990e7"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">complex&lt; double &gt; Solution::getSolution </td>
+          <td class="memname">complex&lt; double &gt; Solution::getSolnMat </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>index</em></td><td>)</td>
@@ -296,18 +308,19 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p>Returns reference pointer to the reference body. Variable passed by reference. </p>
+<p>Gets the body object used as the reference body. Variable passed by value. </p>
+<dl class="section return"><dt>Returns</dt><dd>Gets the body object used as the reference body. Variable passed by value. Returns reference pointer to the reference body. Variable passed by reference.</dd></dl>
 <p>Returns reference pointer to the reference body. Variable passed by reference. Used for direct access to the reference body and all its member functions. </p>
 <dl class="section return"><dt>Returns</dt><dd>Returns reference pointer to the reference body. Variable passed by reference. </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="aa224465c8237cd395681164bee0d7f8d"></a>
+<a class="anchor" id="a97e6a64afec87dd0fa217f1d49449ac9"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">cx_mat &amp; Solution::refSolution </td>
+          <td class="memname">cx_mat &amp; Solution::refSolnMat </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -319,47 +332,14 @@ Here is the caller graph for this function:</div>
 <p>Returns direct access to the solution matrix. Provides a pointer to the solution matrix. It gets filled with the output from the motion solver. Output is a column matrix (n by 1) of complex numbers. Output is in units of meters. </p>
 <dl class="section return"><dt>Returns</dt><dd>Returns direct access to the solution matrix. Provides a pointer to the solution matrix. Returned variable is passed by reference. </dd></dl>
 
-<p><div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_solution_aa224465c8237cd395681164bee0d7f8d_icgraph.png" border="0" usemap="#class_solution_aa224465c8237cd395681164bee0d7f8d_icgraph" alt=""/></div>
-<map name="class_solution_aa224465c8237cd395681164bee0d7f8d_icgraph" id="class_solution_aa224465c8237cd395681164bee0d7f8d_icgraph">
-<area shape="rect" id="node3" href="class_global_solution.html#adf90922a97153ce858da530e20bc3f4d" title="Calculates the GlobalSolution output. GlobalSolution is the direct output of the solution for each bo..." alt="" coords="195,5,375,32"/></map>
-</div>
-</p>
-
 </div>
 </div>
-<a class="anchor" id="ac55bc97e20a2177483d673ee919a732a"></a>
+<a class="anchor" id="a501a04b48ca1e5150dcef9b898085deb"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_body.html">Body</a> Solution::setBody </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="class_body.html">Body</a> &amp;&#160;</td>
-          <td class="paramname"><em>bodIn</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Sets the pointer to the reference body. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">bodIn</td><td>The reference body. Variabled passed by reference. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a class="anchor" id="a610e36c0d33e9bd359b24828bdd1292c"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Solution::setSolution </td>
+          <td class="memname">void Solution::setSolnMat </td>
           <td>(</td>
           <td class="paramtype">cx_mat&#160;</td>
           <td class="paramname"><em>matIn</em></td><td>)</td>
@@ -379,8 +359,8 @@ Here is the caller graph for this function:</div>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>/home/nicholas/Ship Design/Projects/DMS1305 OpenSEA/master/200_src/bin/ofreq/global_objects/<a class="el" href="solution_8h_source.html">solution.h</a></li>
-<li>/home/nicholas/Ship Design/Projects/DMS1305 OpenSEA/master/200_src/bin/ofreq/global_objects/solution.cpp</li>
+<li><a class="el" href="solution_8h_source.html">solution.h</a></li>
+<li>solution.cpp</li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -388,7 +368,7 @@ Here is the caller graph for this function:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="class_solution.html">Solution</a></li>
-    <li class="footer">Generated on Thu Aug 22 2013 20:08:20 for oFreq by
+    <li class="footer">Generated on Sat Oct 12 2013 09:38:00 for oFreq by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.2 </li>
   </ul>

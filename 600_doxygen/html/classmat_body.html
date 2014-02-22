@@ -45,6 +45,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -93,7 +94,7 @@ $(document).ready(function(){initNavTree('classmat_body.html','');});
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Variables</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -112,6 +113,20 @@ $(document).ready(function(){initNavTree('classmat_body.html','');});
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="matbody_8h_source.html">matbody.h</a>&gt;</code></p>
+<div class="dynheader">
+Inheritance diagram for matBody:</div>
+<div class="dyncontent">
+<div class="center"><img src="classmat_body__inherit__graph.png" border="0" usemap="#mat_body_inherit__map" alt="Inheritance graph"/></div>
+<map name="mat_body_inherit__map" id="mat_body_inherit__map">
+<area shape="rect" id="node2" href="classo_freq_core.html" title="The core oFreq class. All oFreq classes inherit from this class." alt="" coords="5,5,93,32"/></map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
+<div class="dynheader">
+Collaboration diagram for matBody:</div>
+<div class="dyncontent">
+<div class="center"><img src="classmat_body__coll__graph.png" border="0" usemap="#mat_body_coll__map" alt="Collaboration graph"/></div>
+<map name="mat_body_coll__map" id="mat_body_coll__map">
+<area shape="rect" id="node2" href="classo_freq_core.html" title="The core oFreq class. All oFreq classes inherit from this class." alt="" coords="5,5,93,32"/></map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -131,27 +146,75 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ae4c339b7ce6a93cf6e54bc998cbd5903"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmat_body.html#ae4c339b7ce6a93cf6e54bc998cbd5903">getModelId</a> ()</td></tr>
 <tr class="memdesc:ae4c339b7ce6a93cf6e54bc998cbd5903"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the integer id of the motion model used by the <a class="el" href="classmat_body.html">matBody</a> object.  <a href="#ae4c339b7ce6a93cf6e54bc998cbd5903"></a><br/></td></tr>
 <tr class="separator:ae4c339b7ce6a93cf6e54bc998cbd5903"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad1f7a689d28f2201cf9455495536fa8b"><td class="memItemLeft" align="right" valign="top">cx_mat &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmat_body.html#ad1f7a689d28f2201cf9455495536fa8b">Mass</a> ()</td></tr>
-<tr class="memdesc:ad1f7a689d28f2201cf9455495536fa8b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a reference to the mass matrix.  <a href="#ad1f7a689d28f2201cf9455495536fa8b"></a><br/></td></tr>
-<tr class="separator:ad1f7a689d28f2201cf9455495536fa8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9a477bda31517ad2454c34c0a1942308"><td class="memItemLeft" align="right" valign="top">vector&lt; <a class="el" href="classmat_react_force.html">matReactForce</a> &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmat_body.html#a9a477bda31517ad2454c34c0a1942308">listReactForce_user</a> ()</td></tr>
-<tr class="memdesc:a9a477bda31517ad2454c34c0a1942308"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a reference to the Reactive <a class="el" href="class_force.html">Force</a>, user objects.  <a href="#a9a477bda31517ad2454c34c0a1942308"></a><br/></td></tr>
-<tr class="separator:a9a477bda31517ad2454c34c0a1942308"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a644f523eb34ce98ebbee3a52b35f13f0"><td class="memItemLeft" align="right" valign="top">vector&lt; <a class="el" href="classmat_cross_force.html">matCrossForce</a> &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmat_body.html#a644f523eb34ce98ebbee3a52b35f13f0">listCrossForce_user</a> ()</td></tr>
-<tr class="memdesc:a644f523eb34ce98ebbee3a52b35f13f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a reference to the Cross-Body <a class="el" href="class_force.html">Force</a>, user objects.  <a href="#a644f523eb34ce98ebbee3a52b35f13f0"></a><br/></td></tr>
-<tr class="separator:a644f523eb34ce98ebbee3a52b35f13f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6cce7e3a5be94a9fd7b58ae76809271f"><td class="memItemLeft" align="right" valign="top">vector&lt; <a class="el" href="classmat_active_force.html">matActiveForce</a> &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmat_body.html#a6cce7e3a5be94a9fd7b58ae76809271f">listActiveForce_user</a> ()</td></tr>
-<tr class="memdesc:a6cce7e3a5be94a9fd7b58ae76809271f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a reference to the Active <a class="el" href="class_force.html">Force</a>, user objects.  <a href="#a6cce7e3a5be94a9fd7b58ae76809271f"></a><br/></td></tr>
-<tr class="separator:a6cce7e3a5be94a9fd7b58ae76809271f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a09da411ea6f2934fc36b84c34da8f63d"><td class="memItemLeft" align="right" valign="top">vector&lt; <a class="el" href="classmat_react_force.html">matReactForce</a> &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmat_body.html#a09da411ea6f2934fc36b84c34da8f63d">listReactForce_hydro</a> ()</td></tr>
-<tr class="memdesc:a09da411ea6f2934fc36b84c34da8f63d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a reference to the Reactive <a class="el" href="class_force.html">Force</a>, hydro objects.  <a href="#a09da411ea6f2934fc36b84c34da8f63d"></a><br/></td></tr>
-<tr class="separator:a09da411ea6f2934fc36b84c34da8f63d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac4e3b6e287af37f0bc89195ed93a3670"><td class="memItemLeft" align="right" valign="top">vector&lt; <a class="el" href="classmat_cross_force.html">matCrossForce</a> &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmat_body.html#ac4e3b6e287af37f0bc89195ed93a3670">listCrossForce_hydro</a> ()</td></tr>
-<tr class="memdesc:ac4e3b6e287af37f0bc89195ed93a3670"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a reference to the Cross-Body <a class="el" href="class_force.html">Force</a>, hydro objects.  <a href="#ac4e3b6e287af37f0bc89195ed93a3670"></a><br/></td></tr>
-<tr class="separator:ac4e3b6e287af37f0bc89195ed93a3670"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af5e93e715ac8c15cf7a8b29ab6f4a930"><td class="memItemLeft" align="right" valign="top">vector&lt; <a class="el" href="classmat_active_force.html">matActiveForce</a> &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmat_body.html#af5e93e715ac8c15cf7a8b29ab6f4a930">listActiveForce_hydro</a> ()</td></tr>
-<tr class="memdesc:af5e93e715ac8c15cf7a8b29ab6f4a930"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a reference to the Active <a class="el" href="class_force.html">Force</a>, hydro objects.  <a href="#af5e93e715ac8c15cf7a8b29ab6f4a930"></a><br/></td></tr>
-<tr class="separator:af5e93e715ac8c15cf7a8b29ab6f4a930"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7c0b44be2aa75ae270168849c06e6067"><td class="memItemLeft" align="right" valign="top">cx_mat &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmat_body.html#a7c0b44be2aa75ae270168849c06e6067">refMass</a> ()</td></tr>
+<tr class="memdesc:a7c0b44be2aa75ae270168849c06e6067"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a reference to the mass matrix.  <a href="#a7c0b44be2aa75ae270168849c06e6067"></a><br/></td></tr>
+<tr class="separator:a7c0b44be2aa75ae270168849c06e6067"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeb296f7c56b523b32ca12b58de56ef37"><td class="memItemLeft" align="right" valign="top">vector&lt; <a class="el" href="classmat_force_react.html">matForceReact</a> &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmat_body.html#aeb296f7c56b523b32ca12b58de56ef37">listForceReact_user</a> ()</td></tr>
+<tr class="memdesc:aeb296f7c56b523b32ca12b58de56ef37"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a reference to the Reactive <a class="el" href="class_force.html">Force</a>, user objects.  <a href="#aeb296f7c56b523b32ca12b58de56ef37"></a><br/></td></tr>
+<tr class="separator:aeb296f7c56b523b32ca12b58de56ef37"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a53cbb789ae423084375b024954bf21f0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classmat_force_react.html">matForceReact</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmat_body.html#a53cbb789ae423084375b024954bf21f0">listForceReact_user</a> (unsigned int index)</td></tr>
+<tr class="memdesc:a53cbb789ae423084375b024954bf21f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a reference to the Reactive <a class="el" href="class_force.html">Force</a>, user object specified by the index.  <a href="#a53cbb789ae423084375b024954bf21f0"></a><br/></td></tr>
+<tr class="separator:a53cbb789ae423084375b024954bf21f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5dc37a8bb5143f2034ef6491969b2abe"><td class="memItemLeft" align="right" valign="top">vector&lt; <a class="el" href="classmat_force_cross.html">matForceCross</a> &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmat_body.html#a5dc37a8bb5143f2034ef6491969b2abe">listForceCross_user</a> ()</td></tr>
+<tr class="memdesc:a5dc37a8bb5143f2034ef6491969b2abe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a reference to the Cross-Body <a class="el" href="class_force.html">Force</a>, user objects.  <a href="#a5dc37a8bb5143f2034ef6491969b2abe"></a><br/></td></tr>
+<tr class="separator:a5dc37a8bb5143f2034ef6491969b2abe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae508a1904283a46d1fc5893da4080630"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classmat_force_cross.html">matForceCross</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmat_body.html#ae508a1904283a46d1fc5893da4080630">listForceCross_user</a> (unsigned int index)</td></tr>
+<tr class="memdesc:ae508a1904283a46d1fc5893da4080630"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a reference to the Cross-Body <a class="el" href="class_force.html">Force</a>, user object specified by the index.  <a href="#ae508a1904283a46d1fc5893da4080630"></a><br/></td></tr>
+<tr class="separator:ae508a1904283a46d1fc5893da4080630"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6a51e55baec56037eee824ec53af9b5d"><td class="memItemLeft" align="right" valign="top">vector&lt; <a class="el" href="classmat_force_active.html">matForceActive</a> &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmat_body.html#a6a51e55baec56037eee824ec53af9b5d">listForceActive_user</a> ()</td></tr>
+<tr class="memdesc:a6a51e55baec56037eee824ec53af9b5d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a reference to the Active <a class="el" href="class_force.html">Force</a>, user objects.  <a href="#a6a51e55baec56037eee824ec53af9b5d"></a><br/></td></tr>
+<tr class="separator:a6a51e55baec56037eee824ec53af9b5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7d79de764dd75ad606a1cc9346b58676"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classmat_force_active.html">matForceActive</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmat_body.html#a7d79de764dd75ad606a1cc9346b58676">listForceActive_user</a> (unsigned int index)</td></tr>
+<tr class="memdesc:a7d79de764dd75ad606a1cc9346b58676"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a reference to the Active <a class="el" href="class_force.html">Force</a>, user object specified by the index.  <a href="#a7d79de764dd75ad606a1cc9346b58676"></a><br/></td></tr>
+<tr class="separator:a7d79de764dd75ad606a1cc9346b58676"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abead59c1604f4581a977e086874b2e7a"><td class="memItemLeft" align="right" valign="top">vector&lt; <a class="el" href="classmat_force_react.html">matForceReact</a> &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmat_body.html#abead59c1604f4581a977e086874b2e7a">listForceReact_hydro</a> ()</td></tr>
+<tr class="memdesc:abead59c1604f4581a977e086874b2e7a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a reference to the Reactive <a class="el" href="class_force.html">Force</a>, hydro objects.  <a href="#abead59c1604f4581a977e086874b2e7a"></a><br/></td></tr>
+<tr class="separator:abead59c1604f4581a977e086874b2e7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a052f37c59ad093d92e1155e0b300d1aa"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classmat_force_react.html">matForceReact</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmat_body.html#a052f37c59ad093d92e1155e0b300d1aa">listForceReact_hydro</a> (unsigned int index)</td></tr>
+<tr class="memdesc:a052f37c59ad093d92e1155e0b300d1aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a reference to the Reactive <a class="el" href="class_force.html">Force</a>, hydro object specified by the index.  <a href="#a052f37c59ad093d92e1155e0b300d1aa"></a><br/></td></tr>
+<tr class="separator:a052f37c59ad093d92e1155e0b300d1aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a40e3fc33bc7b1685b7f1400312f88f88"><td class="memItemLeft" align="right" valign="top">vector&lt; <a class="el" href="classmat_force_cross.html">matForceCross</a> &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmat_body.html#a40e3fc33bc7b1685b7f1400312f88f88">listForceCross_hydro</a> ()</td></tr>
+<tr class="memdesc:a40e3fc33bc7b1685b7f1400312f88f88"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a reference to the Cross-Body <a class="el" href="class_force.html">Force</a>, hydro objects.  <a href="#a40e3fc33bc7b1685b7f1400312f88f88"></a><br/></td></tr>
+<tr class="separator:a40e3fc33bc7b1685b7f1400312f88f88"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad8ce408c1042c080cda0d50a3864fa54"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classmat_force_cross.html">matForceCross</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmat_body.html#ad8ce408c1042c080cda0d50a3864fa54">listForceCross_hydro</a> (unsigned int index)</td></tr>
+<tr class="memdesc:ad8ce408c1042c080cda0d50a3864fa54"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a reference to the Cross-Body <a class="el" href="class_force.html">Force</a>, hydro object specified by the index.  <a href="#ad8ce408c1042c080cda0d50a3864fa54"></a><br/></td></tr>
+<tr class="separator:ad8ce408c1042c080cda0d50a3864fa54"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9733e23db05aac47a42cfca88fc9d679"><td class="memItemLeft" align="right" valign="top">vector&lt; <a class="el" href="classmat_force_active.html">matForceActive</a> &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmat_body.html#a9733e23db05aac47a42cfca88fc9d679">listForceActive_hydro</a> ()</td></tr>
+<tr class="memdesc:a9733e23db05aac47a42cfca88fc9d679"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a reference to the Active <a class="el" href="class_force.html">Force</a>, hydro objects.  <a href="#a9733e23db05aac47a42cfca88fc9d679"></a><br/></td></tr>
+<tr class="separator:a9733e23db05aac47a42cfca88fc9d679"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa1c0587dc82254db28ff71a9cc3261d7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classmat_force_active.html">matForceActive</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmat_body.html#aa1c0587dc82254db28ff71a9cc3261d7">listForceActive_hydro</a> (unsigned int index)</td></tr>
+<tr class="memdesc:aa1c0587dc82254db28ff71a9cc3261d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a reference to the Active <a class="el" href="class_force.html">Force</a>, hydro object specified by the index.  <a href="#aa1c0587dc82254db28ff71a9cc3261d7"></a><br/></td></tr>
+<tr class="separator:aa1c0587dc82254db28ff71a9cc3261d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classo_freq_core"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classo_freq_core')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classo_freq_core.html">oFreqCore</a></td></tr>
+<tr class="memitem:a5c882c0d8e78706270e377b749a647f5 inherit pub_methods_classo_freq_core"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classo_freq_core.html#a5c882c0d8e78706270e377b749a647f5">oFreqCore</a> ()</td></tr>
+<tr class="separator:a5c882c0d8e78706270e377b749a647f5 inherit pub_methods_classo_freq_core"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aea5887547dbd17fc2d4f1a99fe217918 inherit pub_methods_classo_freq_core"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classo_freq_core.html#aea5887547dbd17fc2d4f1a99fe217918">~oFreqCore</a> ()</td></tr>
+<tr class="separator:aea5887547dbd17fc2d4f1a99fe217918 inherit pub_methods_classo_freq_core"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
+Additional Inherited Members</h2></td></tr>
+<tr class="inherit_header pro_methods_classo_freq_core"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classo_freq_core')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classo_freq_core.html">oFreqCore</a></td></tr>
+<tr class="memitem:a2912584189c4abd84498450b7c5908c2 inherit pro_methods_classo_freq_core"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classo_freq_core.html#a2912584189c4abd84498450b7c5908c2">setOutLog</a> (string dirIn)</td></tr>
+<tr class="memdesc:a2912584189c4abd84498450b7c5908c2 inherit pro_methods_classo_freq_core"><td class="mdescLeft">&#160;</td><td class="mdescRight">Opens the output log file and prepares it for writing.  <a href="#a2912584189c4abd84498450b7c5908c2"></a><br/></td></tr>
+<tr class="separator:a2912584189c4abd84498450b7c5908c2 inherit pro_methods_classo_freq_core"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8af56bbec3689f5d2252da1787a910e3 inherit pro_methods_classo_freq_core"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classo_freq_core.html#a8af56bbec3689f5d2252da1787a910e3">setErrLog</a> (string dirIn)</td></tr>
+<tr class="memdesc:a8af56bbec3689f5d2252da1787a910e3 inherit pro_methods_classo_freq_core"><td class="mdescLeft">&#160;</td><td class="mdescRight">Opens the error log file and prepares it for writing.  <a href="#a8af56bbec3689f5d2252da1787a910e3"></a><br/></td></tr>
+<tr class="separator:a8af56bbec3689f5d2252da1787a910e3 inherit pro_methods_classo_freq_core"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a74a938eae7e51de72bc752ad83382a11 inherit pro_methods_classo_freq_core"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classo_freq_core.html#a74a938eae7e51de72bc752ad83382a11">writeLog</a> (string mesIn)</td></tr>
+<tr class="memdesc:a74a938eae7e51de72bc752ad83382a11 inherit pro_methods_classo_freq_core"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes output of a log message to the log file. Adds in a date and time stamp to the log.  <a href="#a74a938eae7e51de72bc752ad83382a11"></a><br/></td></tr>
+<tr class="separator:a74a938eae7e51de72bc752ad83382a11 inherit pro_methods_classo_freq_core"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7272d265451eb63bb371f9b9c02f4883 inherit pro_methods_classo_freq_core"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classo_freq_core.html#a7272d265451eb63bb371f9b9c02f4883">writeError</a> (string mesIn)</td></tr>
+<tr class="memdesc:a7272d265451eb63bb371f9b9c02f4883 inherit pro_methods_classo_freq_core"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes output of an error message to the error file. Adds in a date, time, and class name to the log.  <a href="#a7272d265451eb63bb371f9b9c02f4883"></a><br/></td></tr>
+<tr class="separator:a7272d265451eb63bb371f9b9c02f4883 inherit pro_methods_classo_freq_core"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_static_attribs_classo_freq_core"><td colspan="2" onclick="javascript:toggleInherit('pro_static_attribs_classo_freq_core')"><img src="closed.png" alt="-"/>&#160;Static Protected Attributes inherited from <a class="el" href="classo_freq_core.html">oFreqCore</a></td></tr>
+<tr class="memitem:a85b3e812b6d78c064ba375d5101bb053 inherit pro_static_attribs_classo_freq_core"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a85b3e812b6d78c064ba375d5101bb053"></a>
+static std::ofstream&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classo_freq_core.html#a85b3e812b6d78c064ba375d5101bb053">OutLog</a></td></tr>
+<tr class="memdesc:a85b3e812b6d78c064ba375d5101bb053 inherit pro_static_attribs_classo_freq_core"><td class="mdescLeft">&#160;</td><td class="mdescRight">The log file for an oFreq run. Records normal actions for the program. Informs user of regular program developments. Through inheritence of the <a class="el" href="classo_freq_core.html" title="The core oFreq class. All oFreq classes inherit from this class.">oFreqCore</a> class, this object is available to every object in the oFreq application. <br/></td></tr>
+<tr class="separator:a85b3e812b6d78c064ba375d5101bb053 inherit pro_static_attribs_classo_freq_core"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5e31044ee80fa436289e569c8080b21e inherit pro_static_attribs_classo_freq_core"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5e31044ee80fa436289e569c8080b21e"></a>
+static std::ofstream&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classo_freq_core.html#a5e31044ee80fa436289e569c8080b21e">ErrLog</a></td></tr>
+<tr class="memdesc:a5e31044ee80fa436289e569c8080b21e inherit pro_static_attribs_classo_freq_core"><td class="mdescLeft">&#160;</td><td class="mdescRight">The error log file for an oFreq run. Records any errors or warnings for the program. Informs user of errors and warnings and where they occurred. Through inheritence of the <a class="el" href="classo_freq_core.html" title="The core oFreq class. All oFreq classes inherit from this class.">oFreqCore</a> class, this object is available for every object in the oFreq application. <br/></td></tr>
+<tr class="separator:a5e31044ee80fa436289e569c8080b21e inherit pro_static_attribs_classo_freq_core"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>This class holds all data for a body and related force matrices. The <a class="el" href="classmat_body.html">matBody</a> class contains data defined in a pure mathematical context. It is prepared for combination and solution. User interface items, such as relative coordinates and body names are stripped out. Definitions of equations, derivatives, and variables are replaced by sets of matrices. The body still contains force objects, but the objects are defined in terms of matrices. Each force object contains a vector of matrices, denoted by the derivative property. Each matrix within that vector represents a derivative, starting with order 0 (index 0 in the vector.) Each matrix is organized so that rows = equations, and columns = variables.</p>
@@ -207,6 +270,15 @@ Public Member Functions</h2></td></tr>
 <p>This is similar to the name parameter in other force objects. It is an identifier. In this case, a numerical identifier. Normally correlates to the objects index in a vector of other objects of the same class. </p>
 <dl class="section return"><dt>Returns</dt><dd>Returns the force id number, integer data type. </dd></dl>
 
+<p><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classmat_body_a551183ad56eeba71ea4690574b1841e4_icgraph.png" border="0" usemap="#classmat_body_a551183ad56eeba71ea4690574b1841e4_icgraph" alt=""/></div>
+<map name="classmat_body_a551183ad56eeba71ea4690574b1841e4_icgraph" id="classmat_body_a551183ad56eeba71ea4690574b1841e4_icgraph">
+<area shape="rect" id="node3" href="classmat_force_cross.html#a546ca085994682e1e8160ce3014ffaae" title="matForceCross::setLinkedBody" alt="" coords="168,5,381,32"/></map>
+</div>
+</p>
+
 </div>
 </div>
 <a class="anchor" id="ae4c339b7ce6a93cf6e54bc998cbd5903"></a>
@@ -228,12 +300,12 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="af5e93e715ac8c15cf7a8b29ab6f4a930"></a>
+<a class="anchor" id="a9733e23db05aac47a42cfca88fc9d679"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">vector&lt; <a class="el" href="classmat_active_force.html">matActiveForce</a> &gt; &amp; matBody::listActiveForce_hydro </td>
+          <td class="memname">vector&lt; <a class="el" href="classmat_force_active.html">matForceActive</a> &gt; &amp; matBody::listForceActive_hydro </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -247,12 +319,39 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a6cce7e3a5be94a9fd7b58ae76809271f"></a>
+<a class="anchor" id="aa1c0587dc82254db28ff71a9cc3261d7"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">vector&lt; <a class="el" href="classmat_active_force.html">matActiveForce</a> &gt; &amp; matBody::listActiveForce_user </td>
+          <td class="memname"><a class="el" href="classmat_force_active.html">matForceActive</a> &amp; matBody::listForceActive_hydro </td>
+          <td>(</td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>index</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns a reference to the Active <a class="el" href="class_force.html">Force</a>, hydro object specified by the index. </p>
+<p>This is a single item from the vector list of the Active <a class="el" href="class_force.html">Force</a> objects. Provides direct access to the variable. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">index</td><td>Unsigned integer. Index to specify which variable retrieve from the vector. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Returns <a class="el" href="classmat_force_active.html">matForceActive</a> object specified by index. Returned variable passed by reference. </dd></dl>
+<dl class="section see"><dt>See Also</dt><dd><a class="el" href="classmat_force_active.html">matForceActive</a> </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a6a51e55baec56037eee824ec53af9b5d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">vector&lt; <a class="el" href="classmat_force_active.html">matForceActive</a> &gt; &amp; matBody::listForceActive_user </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -266,12 +365,39 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="ac4e3b6e287af37f0bc89195ed93a3670"></a>
+<a class="anchor" id="a7d79de764dd75ad606a1cc9346b58676"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">vector&lt; <a class="el" href="classmat_cross_force.html">matCrossForce</a> &gt; &amp; matBody::listCrossForce_hydro </td>
+          <td class="memname"><a class="el" href="classmat_force_active.html">matForceActive</a> &amp; matBody::listForceActive_user </td>
+          <td>(</td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>index</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns a reference to the Active <a class="el" href="class_force.html">Force</a>, user object specified by the index. </p>
+<p>This is a single item from the vector list of the Active <a class="el" href="class_force.html">Force</a> objects. Provides direct access to the variable. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">index</td><td>Unsigned integer. Index to specify which variable retrieve from the vector. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Returns <a class="el" href="classmat_force_active.html">matForceActive</a> object specified by index. Returned variable passed by reference. </dd></dl>
+<dl class="section see"><dt>See Also</dt><dd><a class="el" href="classmat_force_active.html">matForceActive</a> </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a40e3fc33bc7b1685b7f1400312f88f88"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">vector&lt; <a class="el" href="classmat_force_cross.html">matForceCross</a> &gt; &amp; matBody::listForceCross_hydro </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -285,12 +411,39 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a644f523eb34ce98ebbee3a52b35f13f0"></a>
+<a class="anchor" id="ad8ce408c1042c080cda0d50a3864fa54"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">vector&lt; <a class="el" href="classmat_cross_force.html">matCrossForce</a> &gt; &amp; matBody::listCrossForce_user </td>
+          <td class="memname"><a class="el" href="classmat_force_cross.html">matForceCross</a> &amp; matBody::listForceCross_hydro </td>
+          <td>(</td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>index</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns a reference to the Cross-Body <a class="el" href="class_force.html">Force</a>, hydro object specified by the index. </p>
+<p>This is a single item from the vector list of the Cross-Body <a class="el" href="class_force.html">Force</a> objects. Provides direct access to the variable. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">index</td><td>Unsigned integer. Index to specify which variable retrieve from the vector. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Returns <a class="el" href="classmat_force_cross.html">matForceCross</a> object specified by index. Returned variable passed by reference. </dd></dl>
+<dl class="section see"><dt>See Also</dt><dd><a class="el" href="classmat_force_cross.html">matForceCross</a> </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a5dc37a8bb5143f2034ef6491969b2abe"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">vector&lt; <a class="el" href="classmat_force_cross.html">matForceCross</a> &gt; &amp; matBody::listForceCross_user </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -304,12 +457,39 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a09da411ea6f2934fc36b84c34da8f63d"></a>
+<a class="anchor" id="ae508a1904283a46d1fc5893da4080630"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">vector&lt; <a class="el" href="classmat_react_force.html">matReactForce</a> &gt; &amp; matBody::listReactForce_hydro </td>
+          <td class="memname"><a class="el" href="classmat_force_cross.html">matForceCross</a> &amp; matBody::listForceCross_user </td>
+          <td>(</td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>index</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns a reference to the Cross-Body <a class="el" href="class_force.html">Force</a>, user object specified by the index. </p>
+<p>This is a single item from the vector list of the Cross-Body <a class="el" href="class_force.html">Force</a> objects. Provides direct access to the variable. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">index</td><td>Unsigned integer. Index to specify which variable retrieve from the vector. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Returns <a class="el" href="classmat_force_cross.html">matForceCross</a> object specified by index. Returned variable passed by reference. </dd></dl>
+<dl class="section see"><dt>See Also</dt><dd><a class="el" href="classmat_force_cross.html">matForceCross</a> </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="abead59c1604f4581a977e086874b2e7a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">vector&lt; <a class="el" href="classmat_force_react.html">matForceReact</a> &gt; &amp; matBody::listForceReact_hydro </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -323,12 +503,39 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a9a477bda31517ad2454c34c0a1942308"></a>
+<a class="anchor" id="a052f37c59ad093d92e1155e0b300d1aa"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">vector&lt; <a class="el" href="classmat_react_force.html">matReactForce</a> &gt; &amp; matBody::listReactForce_user </td>
+          <td class="memname"><a class="el" href="classmat_force_react.html">matForceReact</a> &amp; matBody::listForceReact_hydro </td>
+          <td>(</td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>index</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns a reference to the Reactive <a class="el" href="class_force.html">Force</a>, hydro object specified by the index. </p>
+<p>This is a single item from the vector list of the Reactive <a class="el" href="class_force.html">Force</a> objects. Provides direct access to the variable. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">index</td><td>Unsigned integer. Index to specify which variable retrieve from the vector. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Returns <a class="el" href="classmat_force_react.html">matForceReact</a> object specified by index. Returned variable passed by reference. </dd></dl>
+<dl class="section see"><dt>See Also</dt><dd><a class="el" href="classmat_force_react.html">matForceReact</a> </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="aeb296f7c56b523b32ca12b58de56ef37"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">vector&lt; <a class="el" href="classmat_force_react.html">matForceReact</a> &gt; &amp; matBody::listForceReact_user </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -342,12 +549,39 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="ad1f7a689d28f2201cf9455495536fa8b"></a>
+<a class="anchor" id="a53cbb789ae423084375b024954bf21f0"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">cx_mat &amp; matBody::Mass </td>
+          <td class="memname"><a class="el" href="classmat_force_react.html">matForceReact</a> &amp; matBody::listForceReact_user </td>
+          <td>(</td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>index</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns a reference to the Reactive <a class="el" href="class_force.html">Force</a>, user object specified by the index. </p>
+<p>This is a single item from the vector list of the Reactive <a class="el" href="class_force.html">Force</a> objects. Provides direct access to the variable. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">index</td><td>Unsigned integer. Index to specify which variable retrieve from the vector. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Returns <a class="el" href="classmat_force_react.html">matForceReact</a> object specified by index. Returned variable passed by reference. </dd></dl>
+<dl class="section see"><dt>See Also</dt><dd><a class="el" href="classmat_force_react.html">matForceReact</a> </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a7c0b44be2aa75ae270168849c06e6067"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">cx_mat &amp; matBody::refMass </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -412,8 +646,8 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>/home/nicholas/Ship Design/Projects/DMS1305 OpenSEA/master/200_src/bin/ofreq/motion_solver/<a class="el" href="matbody_8h_source.html">matbody.h</a></li>
-<li>/home/nicholas/Ship Design/Projects/DMS1305 OpenSEA/master/200_src/bin/ofreq/motion_solver/matbody.cpp</li>
+<li><a class="el" href="matbody_8h_source.html">matbody.h</a></li>
+<li>matbody.cpp</li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -421,7 +655,7 @@ Public Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="classmat_body.html">matBody</a></li>
-    <li class="footer">Generated on Thu Aug 22 2013 20:08:05 for oFreq by
+    <li class="footer">Generated on Sat Oct 12 2013 09:37:40 for oFreq by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.2 </li>
   </ul>

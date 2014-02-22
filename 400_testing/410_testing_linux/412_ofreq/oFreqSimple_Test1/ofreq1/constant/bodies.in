@@ -48,7 +48,7 @@ body {
 
 
   //Specify motion model to use
-  motion "6dof";
+  motion "6DOF";
 
   //Specify user active forces.  Multiple forces can be added with multiple
   //models specified.

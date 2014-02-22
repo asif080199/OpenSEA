@@ -1,4 +1,5 @@
 <map id="GlobalMotion" name="GlobalMotion">
-<area shape="rect" id="node2" href="$class_global_solution.html" title="GlobalSolution" alt="" coords="5,80,115,107"/>
-<area shape="rect" id="node4" href="$class_output_derived.html" title="OutputDerived" alt="" coords="7,5,113,32"/>
+<area shape="rect" id="node2" href="$class_global_solution.html" title="GlobalSolution" alt="" coords="5,155,115,181"/>
+<area shape="rect" id="node4" href="$class_output_derived.html" title="OutputDerived" alt="" coords="7,80,113,107"/>
+<area shape="rect" id="node6" href="$classo_freq_core.html" title="The core oFreq class. All oFreq classes inherit from this class." alt="" coords="16,5,104,32"/>
 </map>

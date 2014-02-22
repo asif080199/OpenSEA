@@ -1,0 +1,110 @@
+\hypertarget{classdict_control}{\section{dict\-Control Class Reference}
+\label{classdict_control}\index{dict\-Control@{dict\-Control}}
+}
+
+
+{\ttfamily \#include $<$dictcontrol.\-h$>$}
+
+
+
+Inheritance diagram for dict\-Control\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=217pt]{classdict_control__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for dict\-Control\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=224pt]{classdict_control__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{classdict_control_a8acd1846982a698adab13e790121b1ad}{define\-Key} (string key\-In, vector$<$ string $>$ val\-In)
+\begin{DoxyCompactList}\small\item\em Function that defines how to interpret the key values. Contains a list of key names and corresponding actions to take for interpretting each key value. \end{DoxyCompactList}\item 
+int \hyperlink{classdict_control_a77dea969cac1ad6cdd61358ebb4b5ea1}{define\-Class} (string name\-In)
+\begin{DoxyCompactList}\small\item\em Function that defines how to interpret the class name. Class name implies declaration of a new object of the class named by the class name. This is a separate set of definitions to handle class declarations. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+The \hyperlink{classdict_control}{dict\-Control} class defines the key-\/word value pairs associated with the Control.\-in input file. Just as a normal dictionary defines the meaning of words, the \hyperlink{classdict_control}{dict\-Control} class works in the same way. The \hyperlink{classdict_control}{dict\-Control} class takes individual pairs of keywords and values. It has a definition for each of these keywords. The definition is whatever actions are necessary to process the value of key-\/pair and apply it to the program. This may include variable type conversions. It will also use slots and signals to retrieve pointers to any appropriate objects that the \hyperlink{classdict_control}{dict\-Control} object needs to interact with. It will use the properties of those objects to apply the values it finds in the key-\/value pair. Any objects created in the \hyperlink{classdict_control}{dict\-Control} object can be safely deleted once all file reading is done. \begin{DoxySeeAlso}{See Also}
+\hyperlink{class_dictionary}{Dictionary} 
+
+File\-Reader 
+\end{DoxySeeAlso}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classdict_control_a77dea969cac1ad6cdd61358ebb4b5ea1}{\index{dict\-Control@{dict\-Control}!define\-Class@{define\-Class}}
+\index{define\-Class@{define\-Class}!dictControl@{dict\-Control}}
+\subsubsection[{define\-Class}]{\setlength{\rightskip}{0pt plus 5cm}int dict\-Control\-::define\-Class (
+\begin{DoxyParamCaption}
+\item[{string}]{name\-In}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{classdict_control_a77dea969cac1ad6cdd61358ebb4b5ea1}
+
+
+Function that defines how to interpret the class name. Class name implies declaration of a new object of the class named by the class name. This is a separate set of definitions to handle class declarations. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name\-In} & String, variable passed by value. The name of the class name. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns status of assigning key. Returned value is an integer, passed by value. See list of return codes below\-: 0\-: Key definition found. Success. 1\-: No key found. / General error message. 2\-: Key is invalid within current active object. 99\-: Function virtual definition only. Not currently defined. 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{class_dictionary_ad6715664e1f51882a3a45db82127e6fd}{Dictionary}.
+
+\hypertarget{classdict_control_a8acd1846982a698adab13e790121b1ad}{\index{dict\-Control@{dict\-Control}!define\-Key@{define\-Key}}
+\index{define\-Key@{define\-Key}!dictControl@{dict\-Control}}
+\subsubsection[{define\-Key}]{\setlength{\rightskip}{0pt plus 5cm}int dict\-Control\-::define\-Key (
+\begin{DoxyParamCaption}
+\item[{string}]{key\-In, }
+\item[{vector$<$ string $>$}]{val\-In}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{classdict_control_a8acd1846982a698adab13e790121b1ad}
+
+
+Function that defines how to interpret the key values. Contains a list of key names and corresponding actions to take for interpretting each key value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key\-In} & String containing the key name. Variable passed by value. \\
+\hline
+{\em val\-In} & Vector of strings containing the key values. Variable passed by value. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns status of assigning key. Returned value is an integer, passed by value. See list of return codes below\-: 0\-: Key definition found. Success. 1\-: No key found. / General error message. 2\-: Key is invalid within current active object. 99\-: Function virtual definition only. Not currently defined. 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{class_dictionary_ad80581bdcda172a72ab700c968ba56bc}{Dictionary}.
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classdict_control_a8acd1846982a698adab13e790121b1ad_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+dictcontrol.\-h\item 
+dictcontrol.\-cpp\end{DoxyCompactItemize}

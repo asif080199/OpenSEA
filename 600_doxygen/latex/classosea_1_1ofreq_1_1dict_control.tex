@@ -1,0 +1,113 @@
+\hypertarget{classosea_1_1ofreq_1_1dict_control}{\section{osea\-:\-:ofreq\-:\-:dict\-Control Class Reference}
+\label{classosea_1_1ofreq_1_1dict_control}\index{osea\-::ofreq\-::dict\-Control@{osea\-::ofreq\-::dict\-Control}}
+}
+
+
+{\ttfamily \#include $<$dictcontrol.\-h$>$}
+
+
+
+Inheritance diagram for osea\-:\-:ofreq\-:\-:dict\-Control\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=275pt]{classosea_1_1ofreq_1_1dict_control__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for osea\-:\-:ofreq\-:\-:dict\-Control\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=291pt]{classosea_1_1ofreq_1_1dict_control__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{classosea_1_1ofreq_1_1dict_control_a048421f7c1bc9b8a023a159c59407bb9}{define\-Key} (std\-::string key\-In, std\-::vector$<$ std\-::string $>$ val\-In)
+\begin{DoxyCompactList}\small\item\em Function that defines how to interpret the key values. Contains a list of key names and corresponding actions to take for interpretting each key value. \end{DoxyCompactList}\item 
+int \hyperlink{classosea_1_1ofreq_1_1dict_control_a8c9cbaf3a2d4601dca4ad74667594a9e}{define\-Class} (std\-::string name\-In)
+\begin{DoxyCompactList}\small\item\em Function that defines how to interpret the class name. Class name implies declaration of a new object of the class named by the class name. This is a separate set of definitions to handle class declarations. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+The \hyperlink{classosea_1_1ofreq_1_1dict_control}{dict\-Control} class defines the key-\/word value pairs associated with the Control.\-in input file. Just as a normal dictionary defines the meaning of words, the \hyperlink{classosea_1_1ofreq_1_1dict_control}{dict\-Control} class works in the same way. The \hyperlink{classosea_1_1ofreq_1_1dict_control}{dict\-Control} class takes individual pairs of keywords and values. It has a definition for each of these keywords. The definition is whatever actions are necessary to process the value of key-\/pair and apply it to the program. This may include variable type conversions. It will also use slots and signals to retrieve pointers to any appropriate objects that the \hyperlink{classosea_1_1ofreq_1_1dict_control}{dict\-Control} object needs to interact with. It will use the properties of those objects to apply the values it finds in the key-\/value pair. Any objects created in the \hyperlink{classosea_1_1ofreq_1_1dict_control}{dict\-Control} object can be safely deleted once all file reading is done. \begin{DoxySeeAlso}{See Also}
+\hyperlink{classosea_1_1_dictionary}{Dictionary} 
+
+\hyperlink{classosea_1_1_file_reader}{File\-Reader} 
+\end{DoxySeeAlso}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classosea_1_1ofreq_1_1dict_control_a8c9cbaf3a2d4601dca4ad74667594a9e}{\index{osea\-::ofreq\-::dict\-Control@{osea\-::ofreq\-::dict\-Control}!define\-Class@{define\-Class}}
+\index{define\-Class@{define\-Class}!osea::ofreq::dictControl@{osea\-::ofreq\-::dict\-Control}}
+\subsubsection[{define\-Class}]{\setlength{\rightskip}{0pt plus 5cm}int dict\-Control\-::define\-Class (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{name\-In}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{classosea_1_1ofreq_1_1dict_control_a8c9cbaf3a2d4601dca4ad74667594a9e}
+
+
+Function that defines how to interpret the class name. Class name implies declaration of a new object of the class named by the class name. This is a separate set of definitions to handle class declarations. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name\-In} & std\-::string, variable passed by value. The name of the class name. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns status of assigning key. Returned value is an integer, passed by value. See list of return codes below\-: 0\-: Key definition found. Success. 1\-: No key found. / General error message. 2\-: Key is invalid within current active object. 99\-: Function virtual definition only. Not currently defined. 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classosea_1_1_dictionary_a42843f64aa966b8c686d9e3750cbdb4b}{osea\-::\-Dictionary}.
+
+\hypertarget{classosea_1_1ofreq_1_1dict_control_a048421f7c1bc9b8a023a159c59407bb9}{\index{osea\-::ofreq\-::dict\-Control@{osea\-::ofreq\-::dict\-Control}!define\-Key@{define\-Key}}
+\index{define\-Key@{define\-Key}!osea::ofreq::dictControl@{osea\-::ofreq\-::dict\-Control}}
+\subsubsection[{define\-Key}]{\setlength{\rightskip}{0pt plus 5cm}int dict\-Control\-::define\-Key (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{key\-In, }
+\item[{std\-::vector$<$ std\-::string $>$}]{val\-In}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{classosea_1_1ofreq_1_1dict_control_a048421f7c1bc9b8a023a159c59407bb9}
+
+
+Function that defines how to interpret the key values. Contains a list of key names and corresponding actions to take for interpretting each key value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key\-In} & std\-::string containing the key name. Variable passed by value. \\
+\hline
+{\em val\-In} & Vector of strings containing the key values. Variable passed by value. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns status of assigning key. Returned value is an integer, passed by value. See list of return codes below\-: 0\-: Key definition found. Success. 1\-: No key found. / General error message. 2\-: Key is invalid within current active object. 99\-: Function virtual definition only. Not currently defined. 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classosea_1_1_dictionary_ae96470181c8b1762204493fa45e96d7c}{osea\-::\-Dictionary}.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classosea_1_1ofreq_1_1dict_control_a048421f7c1bc9b8a023a159c59407bb9_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+dictcontrol.\-h\item 
+dictcontrol.\-cpp\end{DoxyCompactItemize}

@@ -1,0 +1,113 @@
+\hypertarget{classdict_forces}{\section{dict\-Forces Class Reference}
+\label{classdict_forces}\index{dict\-Forces@{dict\-Forces}}
+}
+
+
+{\ttfamily \#include $<$dictforces.\-h$>$}
+
+
+
+Inheritance diagram for dict\-Forces\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=217pt]{classdict_forces__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for dict\-Forces\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=224pt]{classdict_forces__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{classdict_forces_aa063da3300249600b1fcb60622d06759}{define\-Key} (string key\-In, vector$<$ string $>$ val\-In)
+\begin{DoxyCompactList}\small\item\em Function that defines how to interpret the key values. Contains a list of key names and corresponding actions to take for interpretting each key value. \end{DoxyCompactList}\item 
+int \hyperlink{classdict_forces_a1cd2da00aa2b4198af32786dd27eaf10}{define\-Class} (string name\-In)
+\begin{DoxyCompactList}\small\item\em Function that defines how to interpret the class name. Class name implies declaration of a new object of the class named by the class name. This is a separate set of definitions to handle class declarations. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+The \hyperlink{classdict_forces}{dict\-Forces} class defines the key-\/word value pairs associated with the Forces.\-in input file. Just as a normal dictionary defines the meaning of words, the \hyperlink{classdict_forces}{dict\-Forces} class works in the same way. The \hyperlink{classdict_forces}{dict\-Forces} class takes individual pairs of keywords and values. It has a definition for each of these keywords. The definition is whatever actions are necessary to process the value of key-\/pair and apply it to the program. This may include variable type conversions. It will also use slots and signals to retrieve pointers to any appropriate objects that the \hyperlink{classdict_forces}{dict\-Forces} object needs to interact with. It will use the properties of those objects to apply the values it finds in the key-\/value pair. Any objects created in the \hyperlink{classdict_forces}{dict\-Forces} class can be safely deleted once all file reading is done.
+
+Note\-: The code for the \hyperlink{classdict_forces}{dict\-Forces} object always references the last object in the list. This assumes that no other commands get issued in the input file between the creation of an object and the definition of key-\/value pairs associated with that object. Currently, I can not imagine any situation where this assumption would be violated. But do consider this when planning error recovery methods. \begin{DoxySeeAlso}{See Also}
+\hyperlink{class_dictionary}{Dictionary} 
+
+File\-Reader 
+\end{DoxySeeAlso}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classdict_forces_a1cd2da00aa2b4198af32786dd27eaf10}{\index{dict\-Forces@{dict\-Forces}!define\-Class@{define\-Class}}
+\index{define\-Class@{define\-Class}!dictForces@{dict\-Forces}}
+\subsubsection[{define\-Class}]{\setlength{\rightskip}{0pt plus 5cm}int dict\-Forces\-::define\-Class (
+\begin{DoxyParamCaption}
+\item[{string}]{name\-In}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{classdict_forces_a1cd2da00aa2b4198af32786dd27eaf10}
+
+
+Function that defines how to interpret the class name. Class name implies declaration of a new object of the class named by the class name. This is a separate set of definitions to handle class declarations. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name\-In} & String, variable passed by value. The name of the class name. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns status of assigning key. Returned value is an integer, passed by value. See list of return codes below\-: 0\-: Key definition found. Success. 1\-: No key found. / General error message. 2\-: Key is invalid within current active object. 99\-: Function virtual definition only. Not currently defined. 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{class_dictionary_ad6715664e1f51882a3a45db82127e6fd}{Dictionary}.
+
+\hypertarget{classdict_forces_aa063da3300249600b1fcb60622d06759}{\index{dict\-Forces@{dict\-Forces}!define\-Key@{define\-Key}}
+\index{define\-Key@{define\-Key}!dictForces@{dict\-Forces}}
+\subsubsection[{define\-Key}]{\setlength{\rightskip}{0pt plus 5cm}int dict\-Forces\-::define\-Key (
+\begin{DoxyParamCaption}
+\item[{string}]{key\-In, }
+\item[{vector$<$ string $>$}]{val\-In}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{classdict_forces_aa063da3300249600b1fcb60622d06759}
+
+
+Function that defines how to interpret the key values. Contains a list of key names and corresponding actions to take for interpretting each key value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key\-In} & String containing the key name. Variable passed by value. \\
+\hline
+{\em val\-In} & Vector of strings containing the key values. Variable passed by value. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns status of assigning key. Returned value is an integer, passed by value. See list of return codes below\-: 0\-: Key definition found. Success. 1\-: No key found. / General error message. 2\-: Key is invalid within current active object. 99\-: Function virtual definition only. Not currently defined. 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{class_dictionary_ad80581bdcda172a72ab700c968ba56bc}{Dictionary}.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classdict_forces_aa063da3300249600b1fcb60622d06759_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+dictforces.\-h\item 
+dictforces.\-cpp\end{DoxyCompactItemize}

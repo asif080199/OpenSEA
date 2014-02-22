@@ -1,0 +1,7 @@
+<map id="osea::ofreq::OutputDerived" name="osea::ofreq::OutputDerived">
+<area shape="rect" id="node5" href="$classosea_1_1ofreq_1_1_global_solution.html" title="osea::ofreq::GlobalSolution" alt="" coords="457,56,645,83"/>
+<area shape="rect" id="node2" href="$classosea_1_1ofreq_1_1o_freq_core.html" title="The core oFreq class. All oFreq classes inherit from this class." alt="" coords="6,56,173,83"/>
+<area shape="rect" id="node7" href="$classosea_1_1ofreq_1_1_global_acceleration.html" title="osea::ofreq::GlobalAcceleration" alt="" coords="694,5,909,32"/>
+<area shape="rect" id="node9" href="$classosea_1_1ofreq_1_1_global_motion.html" title="osea::ofreq::GlobalMotion" alt="" coords="711,56,891,83"/>
+<area shape="rect" id="node11" href="$classosea_1_1ofreq_1_1_global_velocity.html" title="osea::ofreq::GlobalVelocity" alt="" coords="707,107,895,133"/>
+</map>

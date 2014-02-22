@@ -1,0 +1,225 @@
+\hypertarget{classosea_1_1ofreq_1_1_equation}{\section{osea\-:\-:ofreq\-:\-:Equation Class Reference}
+\label{classosea_1_1ofreq_1_1_equation}\index{osea\-::ofreq\-::\-Equation@{osea\-::ofreq\-::\-Equation}}
+}
+
+
+{\ttfamily \#include $<$equation.\-h$>$}
+
+
+
+Inheritance diagram for osea\-:\-:ofreq\-:\-:Equation\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=204pt]{classosea_1_1ofreq_1_1_equation__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for osea\-:\-:ofreq\-:\-:Equation\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=204pt]{classosea_1_1ofreq_1_1_equation__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classosea_1_1ofreq_1_1_equation_a68511fc719250ed80f86c50de9136733}{Equation} ()
+\item 
+\hyperlink{classosea_1_1ofreq_1_1_equation_a37fec641aec75302c37590d191421790}{Equation} (int Index\-In)
+\begin{DoxyCompactList}\small\item\em Constructor with setting the data index. \end{DoxyCompactList}\item 
+\hyperlink{classosea_1_1ofreq_1_1_equation_a097243d0dfd608330fc91f115a0d15bb}{$\sim$\-Equation} ()
+\item 
+std\-::vector$<$ double $>$ \& \hyperlink{classosea_1_1ofreq_1_1_equation_a4277bda09b538c1523d451afcc55787a}{list\-Coefficients} ()
+\begin{DoxyCompactList}\small\item\em Direct access to the list of coefficients. \end{DoxyCompactList}\item 
+double \& \hyperlink{classosea_1_1ofreq_1_1_equation_a198eb9e2816a5cd316b8bdc07d505568}{list\-Coefficients} (unsigned int index)
+\begin{DoxyCompactList}\small\item\em Provides direct access to a coefficient from the list of coefficients. \end{DoxyCompactList}\item 
+double \hyperlink{classosea_1_1ofreq_1_1_equation_a6aa77458d50e80de2a31708756c7925b}{get\-Coefficient} (int number)
+\begin{DoxyCompactList}\small\item\em Get the coefficient at the specified number. \end{DoxyCompactList}\item 
+void \hyperlink{classosea_1_1ofreq_1_1_equation_a96dd6f24624703a1ff3ffb4d19a76582}{set\-Coefficient} (int number, double coeff\-In)
+\begin{DoxyCompactList}\small\item\em Set the coefficient value at the specified index number. \end{DoxyCompactList}\item 
+unsigned int \hyperlink{classosea_1_1ofreq_1_1_equation_aa3ceaac689d9cfef1a1b3123d8ec4027}{get\-Coefficient\-List\-Size} ()
+\item 
+void \hyperlink{classosea_1_1ofreq_1_1_equation_aa9e40c1cc6fb3cb030e9956663025a87}{set\-Data\-Index} (int index)
+\begin{DoxyCompactList}\small\item\em Set the index number of any equation data that should be retrieved. \end{DoxyCompactList}\item 
+int \hyperlink{classosea_1_1ofreq_1_1_equation_ac5fd13eba76ddbbf4813823fad4166e2}{get\-Data\-Index} ()
+\begin{DoxyCompactList}\small\item\em Get the index number of any equation data that should be retrieved. \end{DoxyCompactList}\item 
+int \& \hyperlink{classosea_1_1ofreq_1_1_equation_a5964477a42f3941a968f249b89742d73}{ref\-Data\-Index} ()
+\begin{DoxyCompactList}\small\item\em Exposed access to the data access variable. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+This class holds data for an equation. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classosea_1_1ofreq_1_1_equation_a68511fc719250ed80f86c50de9136733}{\index{osea\-::ofreq\-::\-Equation@{osea\-::ofreq\-::\-Equation}!Equation@{Equation}}
+\index{Equation@{Equation}!osea::ofreq::Equation@{osea\-::ofreq\-::\-Equation}}
+\subsubsection[{Equation}]{\setlength{\rightskip}{0pt plus 5cm}Equation\-::\-Equation (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_equation_a68511fc719250ed80f86c50de9136733}
+This default constructor. \hypertarget{classosea_1_1ofreq_1_1_equation_a37fec641aec75302c37590d191421790}{\index{osea\-::ofreq\-::\-Equation@{osea\-::ofreq\-::\-Equation}!Equation@{Equation}}
+\index{Equation@{Equation}!osea::ofreq::Equation@{osea\-::ofreq\-::\-Equation}}
+\subsubsection[{Equation}]{\setlength{\rightskip}{0pt plus 5cm}Equation\-::\-Equation (
+\begin{DoxyParamCaption}
+\item[{int}]{Index\-In}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_equation_a37fec641aec75302c37590d191421790}
+
+
+Constructor with setting the data index. 
+
+Constructor with setting the data index. 
+\begin{DoxyParams}{Parameters}
+{\em Index\-In} & The integer specifying the data index number. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classosea_1_1ofreq_1_1_equation_a097243d0dfd608330fc91f115a0d15bb}{\index{osea\-::ofreq\-::\-Equation@{osea\-::ofreq\-::\-Equation}!$\sim$\-Equation@{$\sim$\-Equation}}
+\index{$\sim$\-Equation@{$\sim$\-Equation}!osea::ofreq::Equation@{osea\-::ofreq\-::\-Equation}}
+\subsubsection[{$\sim$\-Equation}]{\setlength{\rightskip}{0pt plus 5cm}Equation\-::$\sim$\-Equation (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_equation_a097243d0dfd608330fc91f115a0d15bb}
+The default destructor, nothing happens here. 
+
+\subsection{Member Function Documentation}
+\hypertarget{classosea_1_1ofreq_1_1_equation_a6aa77458d50e80de2a31708756c7925b}{\index{osea\-::ofreq\-::\-Equation@{osea\-::ofreq\-::\-Equation}!get\-Coefficient@{get\-Coefficient}}
+\index{get\-Coefficient@{get\-Coefficient}!osea::ofreq::Equation@{osea\-::ofreq\-::\-Equation}}
+\subsubsection[{get\-Coefficient}]{\setlength{\rightskip}{0pt plus 5cm}double Equation\-::get\-Coefficient (
+\begin{DoxyParamCaption}
+\item[{int}]{number}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_equation_a6aa77458d50e80de2a31708756c7925b}
+
+
+Get the coefficient at the specified number. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em number} & The index number of the coefficient to retrieve. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns a double precision floating point number of the coefficient at the index specified by number. 
+\end{DoxyReturn}
+\hypertarget{classosea_1_1ofreq_1_1_equation_aa3ceaac689d9cfef1a1b3123d8ec4027}{\index{osea\-::ofreq\-::\-Equation@{osea\-::ofreq\-::\-Equation}!get\-Coefficient\-List\-Size@{get\-Coefficient\-List\-Size}}
+\index{get\-Coefficient\-List\-Size@{get\-Coefficient\-List\-Size}!osea::ofreq::Equation@{osea\-::ofreq\-::\-Equation}}
+\subsubsection[{get\-Coefficient\-List\-Size}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Equation\-::get\-Coefficient\-List\-Size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_equation_aa3ceaac689d9cfef1a1b3123d8ec4027}
+Retrieve the size of the coefficient list. \begin{DoxyReturn}{Returns}
+The size of the coefficient list. 
+\end{DoxyReturn}
+\hypertarget{classosea_1_1ofreq_1_1_equation_ac5fd13eba76ddbbf4813823fad4166e2}{\index{osea\-::ofreq\-::\-Equation@{osea\-::ofreq\-::\-Equation}!get\-Data\-Index@{get\-Data\-Index}}
+\index{get\-Data\-Index@{get\-Data\-Index}!osea::ofreq::Equation@{osea\-::ofreq\-::\-Equation}}
+\subsubsection[{get\-Data\-Index}]{\setlength{\rightskip}{0pt plus 5cm}int Equation\-::get\-Data\-Index (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_equation_ac5fd13eba76ddbbf4813823fad4166e2}
+
+
+Get the index number of any equation data that should be retrieved. 
+
+Get the index number of any equation data that should be retrieved. Because the first six values in the index are reserved for 6\-D\-O\-F, it is necessary that equation objects should be able to specify their index as something other than their place in a containing vector. The default initialization value for this is -\/1, which indicates the index is not set. Any number less than zero indicates the index is not set. 
+\begin{DoxyParams}{Parameters}
+{\em index} & Integer. The index number that should be retrieved. Any number less than zero indicates the index is not set. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classosea_1_1ofreq_1_1_equation_a4277bda09b538c1523d451afcc55787a}{\index{osea\-::ofreq\-::\-Equation@{osea\-::ofreq\-::\-Equation}!list\-Coefficients@{list\-Coefficients}}
+\index{list\-Coefficients@{list\-Coefficients}!osea::ofreq::Equation@{osea\-::ofreq\-::\-Equation}}
+\subsubsection[{list\-Coefficients}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ double $>$ \& Equation\-::list\-Coefficients (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_equation_a4277bda09b538c1523d451afcc55787a}
+
+
+Direct access to the list of coefficients. 
+
+\begin{DoxyReturn}{Returns}
+Pointer to the list of coefficients. 
+\end{DoxyReturn}
+\hypertarget{classosea_1_1ofreq_1_1_equation_a198eb9e2816a5cd316b8bdc07d505568}{\index{osea\-::ofreq\-::\-Equation@{osea\-::ofreq\-::\-Equation}!list\-Coefficients@{list\-Coefficients}}
+\index{list\-Coefficients@{list\-Coefficients}!osea::ofreq::Equation@{osea\-::ofreq\-::\-Equation}}
+\subsubsection[{list\-Coefficients}]{\setlength{\rightskip}{0pt plus 5cm}double \& Equation\-::list\-Coefficients (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{index}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_equation_a198eb9e2816a5cd316b8bdc07d505568}
+
+
+Provides direct access to a coefficient from the list of coefficients. 
+
+Returns a value from the list of coefficents. Which value to return is specified by the input index. 
+\begin{DoxyParams}{Parameters}
+{\em index} & Unsigned integer. Specifies which value to return from the list of coefficients. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns a double. Returned variable is a value from the list of coefficients. Returned variable is passed by reference. 
+\end{DoxyReturn}
+\hypertarget{classosea_1_1ofreq_1_1_equation_a5964477a42f3941a968f249b89742d73}{\index{osea\-::ofreq\-::\-Equation@{osea\-::ofreq\-::\-Equation}!ref\-Data\-Index@{ref\-Data\-Index}}
+\index{ref\-Data\-Index@{ref\-Data\-Index}!osea::ofreq::Equation@{osea\-::ofreq\-::\-Equation}}
+\subsubsection[{ref\-Data\-Index}]{\setlength{\rightskip}{0pt plus 5cm}int \& Equation\-::ref\-Data\-Index (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_equation_a5964477a42f3941a968f249b89742d73}
+
+
+Exposed access to the data access variable. 
+
+\begin{DoxyReturn}{Returns}
+Returns the data access variable. Return passed by reference. 
+\end{DoxyReturn}
+\hypertarget{classosea_1_1ofreq_1_1_equation_a96dd6f24624703a1ff3ffb4d19a76582}{\index{osea\-::ofreq\-::\-Equation@{osea\-::ofreq\-::\-Equation}!set\-Coefficient@{set\-Coefficient}}
+\index{set\-Coefficient@{set\-Coefficient}!osea::ofreq::Equation@{osea\-::ofreq\-::\-Equation}}
+\subsubsection[{set\-Coefficient}]{\setlength{\rightskip}{0pt plus 5cm}void Equation\-::set\-Coefficient (
+\begin{DoxyParamCaption}
+\item[{int}]{number, }
+\item[{double}]{coeff\-In}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_equation_a96dd6f24624703a1ff3ffb4d19a76582}
+
+
+Set the coefficient value at the specified index number. 
+
+Set the coefficient value at the specified index number. 
+\begin{DoxyParams}{Parameters}
+{\em number} & Integer. The index number of the coefficient to set. \\
+\hline
+{\em coeff\-In} & Double precision floating number. The value of the coefficient to set at the specified index. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classosea_1_1ofreq_1_1_equation_aa9e40c1cc6fb3cb030e9956663025a87}{\index{osea\-::ofreq\-::\-Equation@{osea\-::ofreq\-::\-Equation}!set\-Data\-Index@{set\-Data\-Index}}
+\index{set\-Data\-Index@{set\-Data\-Index}!osea::ofreq::Equation@{osea\-::ofreq\-::\-Equation}}
+\subsubsection[{set\-Data\-Index}]{\setlength{\rightskip}{0pt plus 5cm}void Equation\-::set\-Data\-Index (
+\begin{DoxyParamCaption}
+\item[{int}]{index}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_equation_aa9e40c1cc6fb3cb030e9956663025a87}
+
+
+Set the index number of any equation data that should be retrieved. 
+
+Set the index number of any equation data that should be retrieved. Because the first six values in the index are reserved for 6\-D\-O\-F, it is necessary that equation objects should be able to specify their index as something other than their place in a containing vector. The default initialization value for this is -\/1, which indicates the index is not set. Any number less than zero indicates the index is not set. 
+\begin{DoxyParams}{Parameters}
+{\em index} & The index number that should be set. Any number less than zero indicates the index is not set. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+equation.\-h\item 
+equation.\-cpp\end{DoxyCompactItemize}

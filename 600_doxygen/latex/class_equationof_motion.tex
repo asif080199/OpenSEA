@@ -5,14 +5,32 @@
 
 {\ttfamily \#include $<$equationofmotion.\-h$>$}
 
+
+
+Inheritance diagram for Equationof\-Motion\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=217pt]{class_equationof_motion__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Equationof\-Motion\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=217pt]{class_equationof_motion__coll__graph}
+\end{center}
+\end{figure}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{class_equationof_motion_a1ce981d00a6700309d03bb3d483acf90}{Equationof\-Motion} (\hyperlink{classmotion_model}{motion\-Model} \&model\-In)
+\hyperlink{class_equationof_motion_a61c6e25419cf9c5402a4e30496ef6b19}{Equationof\-Motion} (\hyperlink{class_motion_model}{Motion\-Model} $\ast$model\-In)
 \begin{DoxyCompactList}\small\item\em Default contrustor. Contains a reference to the motion model class which constructs it. \end{DoxyCompactList}\item 
-\hyperlink{class_equationof_motion_ad3a5fda48c60aa668a620cf2afecaad8}{Equationof\-Motion} (\hyperlink{classmotion_model}{motion\-Model} \&model\-In, string Name\-In)
+\hyperlink{class_equationof_motion_ab14c4d8fe983c227f2da6f0d0a616ce2}{Equationof\-Motion} (\hyperlink{class_motion_model}{Motion\-Model} $\ast$model\-In, string Name\-In)
 \begin{DoxyCompactList}\small\item\em Contrustor with name. Contains a reference to the motion model class which constructs it. \end{DoxyCompactList}\item 
-\hyperlink{class_equationof_motion_acaeddec0f4205e9dca93db2edefa0a3c}{Equationof\-Motion} (\hyperlink{classmotion_model}{motion\-Model} \&model\-In, string Name\-In, int Index\-In)
+\hyperlink{class_equationof_motion_a401237a25c78282de0640c5175d02943}{Equationof\-Motion} (\hyperlink{class_motion_model}{Motion\-Model} $\ast$model\-In, string Name\-In, int Index\-In)
 \begin{DoxyCompactList}\small\item\em Contrustor with name and index. Contains a reference to the motion model class which constructs it. \end{DoxyCompactList}\item 
 \hypertarget{class_equationof_motion_ab06097df1a54719d7a5682babbd9f233}{\hyperlink{class_equationof_motion_ab06097df1a54719d7a5682babbd9f233}{$\sim$\-Equationof\-Motion} ()}\label{class_equationof_motion_ab06097df1a54719d7a5682babbd9f233}
 
@@ -23,36 +41,36 @@ void \hyperlink{class_equationof_motion_a5a8674f3d8715973fa0affc162ae677c}{set\-
 \begin{DoxyCompactList}\small\item\em Sets the index for the equation of motion. \end{DoxyCompactList}\item 
 int \hyperlink{class_equationof_motion_a45052d6a9814ffa899d1824f5d8e8cee}{get\-Data\-Index} ()
 \begin{DoxyCompactList}\small\item\em Gets the index for the equation of motion. \end{DoxyCompactList}\item 
-int \& \hyperlink{class_equationof_motion_a800370248e44d12120e541b3409071ca}{Data\-Index} ()
+int \& \hyperlink{class_equationof_motion_ae16051cbf725210aa44941d41d8800e2}{ref\-Data\-Index} ()
 \begin{DoxyCompactList}\small\item\em Gets the index for the equation of motion. \end{DoxyCompactList}\item 
 void \hyperlink{class_equationof_motion_ad93006b4658c7b2809770866511581ad}{set\-Arguments} (int argn, vector$<$ double $>$ argv)
 \begin{DoxyCompactList}\small\item\em Sets any values for arguments that may be used by the equation of motion. \end{DoxyCompactList}\item 
-string \& \hyperlink{class_equationof_motion_a5ec937219e70f278a8f2271b7cdb38f2}{Name} ()
+string \& \hyperlink{class_equationof_motion_abb7b1a4295e8406ea4f155b1f03689f6}{ref\-Name} ()
 \begin{DoxyCompactList}\small\item\em The name for the equation object. \end{DoxyCompactList}\item 
-string \& \hyperlink{class_equationof_motion_a347e77f27a30636e25e6c9eb1fec7b2e}{Description} ()
+string \& \hyperlink{class_equationof_motion_a5be5a333dd1a5a65eaadec4b32c68fb5}{ref\-Description} ()
 \begin{DoxyCompactList}\small\item\em The description for the equation object. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-virtual void \hyperlink{class_equationof_motion_a6f198d1a20c00e3f757b0729eb2c6854}{Formula} ()
+virtual complex$<$ double $>$ \hyperlink{class_equationof_motion_a1d8614b11de9396f3795e4b560e6c368}{set\-Formula} ()
 \begin{DoxyCompactList}\small\item\em The formula used by the equation of motion. \end{DoxyCompactList}\item 
-complex$<$ double $>$ \hyperlink{class_equationof_motion_a4d3a5ac1f92007d33678b4fdd5321e6e}{kronecker} (int var1, int var2, bool anti=false)
-\begin{DoxyCompactList}\small\item\em The mathematical kronecker delta function. \end{DoxyCompactList}\item 
-complex$<$ double $>$ \hyperlink{class_equationof_motion_acf593f85f406ab3a21d128f65fccfd85}{ddt} (int \hyperlink{class_equationof_motion_ab69511cc5037376cf7da80ce30d9eaab}{var}, int \hyperlink{class_equationof_motion_a31f904818ce75c9e2a2b5cff9fc707a5}{ord}, int bod\-In=-\/1)
+complex$<$ double $>$ \hyperlink{class_equationof_motion_ad4ba6707460a9db7f8103157af0cae65}{Kronecker} (int var1, int var2, bool anti=false)
+\begin{DoxyCompactList}\small\item\em The mathematical Kronecker delta function. \end{DoxyCompactList}\item 
+complex$<$ double $>$ \hyperlink{class_equationof_motion_af12570e012041ea91d81820735b14c74}{Ddt} (int \hyperlink{class_equationof_motion_ab69511cc5037376cf7da80ce30d9eaab}{var}, int \hyperlink{class_equationof_motion_a31f904818ce75c9e2a2b5cff9fc707a5}{ord}, int bod\-In=-\/1)
 \begin{DoxyCompactList}\small\item\em Time differential function. \end{DoxyCompactList}\item 
-complex$<$ double $>$ \hyperlink{class_equationof_motion_a96e7591eda1ff48af511e20c0f132312}{sum} (complex$<$ double $>$ force, string index, int from=-\/1, int to=-\/1)
+complex$<$ double $>$ \hyperlink{class_equationof_motion_a1f81cfba0e5b2e2ab9e3b70a9930208d}{Sum} (complex$<$ double $>$ force, string index, unsigned int from=-\/1, unsigned int to=-\/1)
 \begin{DoxyCompactList}\small\item\em Sums across a variable. \end{DoxyCompactList}\item 
 complex$<$ double $>$ \hyperlink{class_equationof_motion_a61f33c3fd47ae2b66db1982b9c973ec1}{Force\-Active\-\_\-hydro} ()
 \begin{DoxyCompactList}\small\item\em A reference to the data set of the Force\-Active\-\_\-hydro. \end{DoxyCompactList}\item 
 complex$<$ double $>$ \hyperlink{class_equationof_motion_a238df115825cbe08522bdc10b84880b9}{Force\-Active\-\_\-user} ()
 \begin{DoxyCompactList}\small\item\em A reference to the data set of the Force\-Active\-\_\-user. \end{DoxyCompactList}\item 
-complex$<$ double $>$ \hyperlink{class_equationof_motion_a2295d1980a94d2e0ba3bc893850030b2}{Force\-React\-\_\-hydro} (int ord\-In, int var\-In)
+complex$<$ double $>$ \hyperlink{class_equationof_motion_a4962df48c786fced4e953e50f1d82a3a}{Force\-React\-\_\-hydro} (unsigned int ord\-In, unsigned int var\-In)
 \begin{DoxyCompactList}\small\item\em A reference to the data set of the Force\-React\-\_\-hydro. \end{DoxyCompactList}\item 
-complex$<$ double $>$ \hyperlink{class_equationof_motion_a0a7bbf64f137a2a170a4a5795b09cc5d}{Force\-React\-\_\-user} (int ord\-In, int var\-In)
+complex$<$ double $>$ \hyperlink{class_equationof_motion_ac1f572e423c09b9e9fa955f52434a8f7}{Force\-React\-\_\-user} (unsigned int ord\-In, unsigned int var\-In)
 \begin{DoxyCompactList}\small\item\em A reference to the data set of the Force\-React\-\_\-user. \end{DoxyCompactList}\item 
-complex$<$ double $>$ \hyperlink{class_equationof_motion_a69d0270703f14a1ddeb6b73120642943}{Force\-Cross\-\_\-hydro} (int bod\-In, int ord\-In, int var\-In)
+complex$<$ double $>$ \hyperlink{class_equationof_motion_af1d1f42b77561e9f1c4110e16af309da}{Force\-Cross\-\_\-hydro} (unsigned int bod\-In, unsigned int ord\-In, unsigned int var\-In)
 \begin{DoxyCompactList}\small\item\em A reference to the data set of the Force\-Cross\-\_\-hydro. \end{DoxyCompactList}\item 
-complex$<$ double $>$ \hyperlink{class_equationof_motion_a96bae9e3c360a4b9ddf3b41726a89736}{Force\-Cross\-\_\-user} (int bod\-In, int ord\-In, int var\-In)
+complex$<$ double $>$ \hyperlink{class_equationof_motion_a3b06b1ff4b792ad3a3d3c0274426d5ed}{Force\-Cross\-\_\-user} (unsigned int bod\-In, unsigned int ord\-In, unsigned int var\-In)
 \begin{DoxyCompactList}\small\item\em A reference to the data set of the Force\-Cross\-\_\-user. \end{DoxyCompactList}\item 
 complex$<$ double $>$ \hyperlink{class_equationof_motion_a848b45b70d29d793b86a7c1ca8f97ed6}{Force\-Mass} (int var\-In)
 \begin{DoxyCompactList}\small\item\em A reference to the data set of the Force\-Mass. \end{DoxyCompactList}\item 
@@ -79,6 +97,7 @@ string \hyperlink{class_equationof_motion_ad4657581e962d18d09c02734c9568006}{p\-
 \begin{DoxyCompactList}\small\item\em The name for the equation object. \end{DoxyCompactList}\item 
 string \hyperlink{class_equationof_motion_a042a6741c1b526dcb40348dd89a6c5d5}{p\-Description}
 \begin{DoxyCompactList}\small\item\em The description for the equation object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
 
 
 \subsection{Detailed Description}
@@ -87,13 +106,13 @@ The \hyperlink{class_equation}{Equation} of motion class defines a single equati
 In addition to the regular object entries, the class also has provision for a list of arbitrary arguments. 
 
 \subsection{Constructor \& Destructor Documentation}
-\hypertarget{class_equationof_motion_a1ce981d00a6700309d03bb3d483acf90}{\index{Equationof\-Motion@{Equationof\-Motion}!Equationof\-Motion@{Equationof\-Motion}}
+\hypertarget{class_equationof_motion_a61c6e25419cf9c5402a4e30496ef6b19}{\index{Equationof\-Motion@{Equationof\-Motion}!Equationof\-Motion@{Equationof\-Motion}}
 \index{Equationof\-Motion@{Equationof\-Motion}!EquationofMotion@{Equationof\-Motion}}
 \subsubsection[{Equationof\-Motion}]{\setlength{\rightskip}{0pt plus 5cm}Equationof\-Motion\-::\-Equationof\-Motion (
 \begin{DoxyParamCaption}
-\item[{{\bf motion\-Model} \&}]{model\-In}
+\item[{{\bf Motion\-Model} $\ast$}]{model\-In}
 \end{DoxyParamCaption}
-)}}\label{class_equationof_motion_a1ce981d00a6700309d03bb3d483acf90}
+)}}\label{class_equationof_motion_a61c6e25419cf9c5402a4e30496ef6b19}
 
 
 Default contrustor. Contains a reference to the motion model class which constructs it. 
@@ -103,25 +122,14 @@ Default contrustor. Contains a reference to the motion model class which constru
 {\em model\-In} & A pointer to the motion model object that created the equation of motion. \\
 \hline
 \end{DoxyParams}
-
-
-Here is the caller graph for this function\-:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{class_equationof_motion_a1ce981d00a6700309d03bb3d483acf90_icgraph}
-\end{center}
-\end{figure}
-
-
-\hypertarget{class_equationof_motion_ad3a5fda48c60aa668a620cf2afecaad8}{\index{Equationof\-Motion@{Equationof\-Motion}!Equationof\-Motion@{Equationof\-Motion}}
+\hypertarget{class_equationof_motion_ab14c4d8fe983c227f2da6f0d0a616ce2}{\index{Equationof\-Motion@{Equationof\-Motion}!Equationof\-Motion@{Equationof\-Motion}}
 \index{Equationof\-Motion@{Equationof\-Motion}!EquationofMotion@{Equationof\-Motion}}
 \subsubsection[{Equationof\-Motion}]{\setlength{\rightskip}{0pt plus 5cm}Equationof\-Motion\-::\-Equationof\-Motion (
 \begin{DoxyParamCaption}
-\item[{{\bf motion\-Model} \&}]{model\-In, }
+\item[{{\bf Motion\-Model} $\ast$}]{model\-In, }
 \item[{string}]{Name\-In}
 \end{DoxyParamCaption}
-)}}\label{class_equationof_motion_ad3a5fda48c60aa668a620cf2afecaad8}
+)}}\label{class_equationof_motion_ab14c4d8fe983c227f2da6f0d0a616ce2}
 
 
 Contrustor with name. Contains a reference to the motion model class which constructs it. 
@@ -133,26 +141,15 @@ Default contrustor. Contains a reference to the motion model class which constru
 {\em Name\-In} & A name for what physical property the equation solves for. Used for user output. Not critical to program execution. \\
 \hline
 \end{DoxyParams}
-
-
-Here is the call graph for this function\-:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{class_equationof_motion_ad3a5fda48c60aa668a620cf2afecaad8_cgraph}
-\end{center}
-\end{figure}
-
-
-\hypertarget{class_equationof_motion_acaeddec0f4205e9dca93db2edefa0a3c}{\index{Equationof\-Motion@{Equationof\-Motion}!Equationof\-Motion@{Equationof\-Motion}}
+\hypertarget{class_equationof_motion_a401237a25c78282de0640c5175d02943}{\index{Equationof\-Motion@{Equationof\-Motion}!Equationof\-Motion@{Equationof\-Motion}}
 \index{Equationof\-Motion@{Equationof\-Motion}!EquationofMotion@{Equationof\-Motion}}
 \subsubsection[{Equationof\-Motion}]{\setlength{\rightskip}{0pt plus 5cm}Equationof\-Motion\-::\-Equationof\-Motion (
 \begin{DoxyParamCaption}
-\item[{{\bf motion\-Model} \&}]{model\-In, }
+\item[{{\bf Motion\-Model} $\ast$}]{model\-In, }
 \item[{string}]{Name\-In, }
 \item[{int}]{Index\-In}
 \end{DoxyParamCaption}
-)}}\label{class_equationof_motion_acaeddec0f4205e9dca93db2edefa0a3c}
+)}}\label{class_equationof_motion_a401237a25c78282de0640c5175d02943}
 
 
 Contrustor with name and index. Contains a reference to the motion model class which constructs it. 
@@ -166,17 +163,6 @@ Default contrustor. Contains a reference to the motion model class which constru
 {\em Index\-In} & \\
 \hline
 \end{DoxyParams}
-
-
-Here is the call graph for this function\-:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{class_equationof_motion_acaeddec0f4205e9dca93db2edefa0a3c_cgraph}
-\end{center}
-\end{figure}
-
-
 
 
 \subsection{Member Function Documentation}
@@ -194,38 +180,24 @@ Returns the index integer for the current body used by the motion model that cre
 Returns the index integer for the current body used by the motion model that created this equation of motions. This index cannot be modified through this function. It is purely meant for access of the variable. \begin{DoxyReturn}{Returns}
 Returns the index integer for the current body used by the motion model that created this equation of motions. 
 \end{DoxyReturn}
-\hypertarget{class_equationof_motion_a800370248e44d12120e541b3409071ca}{\index{Equationof\-Motion@{Equationof\-Motion}!Data\-Index@{Data\-Index}}
-\index{Data\-Index@{Data\-Index}!EquationofMotion@{Equationof\-Motion}}
-\subsubsection[{Data\-Index}]{\setlength{\rightskip}{0pt plus 5cm}int \& Equationof\-Motion\-::\-Data\-Index (
-\begin{DoxyParamCaption}
-{}
-\end{DoxyParamCaption}
-)}}\label{class_equationof_motion_a800370248e44d12120e541b3409071ca}
-
-
-Gets the index for the equation of motion. 
-
-Gets the index for the equation of motion. The index is how the equation determines which numbers to access on the data. The following indices are used. Any higher indices can extend beyond this range, and the program easily adapts. But the following three are reserved. Unused indices are not transferred to the matrices when solved. So unused indices to not negatively impact calculation performance. However, using excessively large indices (say 500 when you only have 3 equations) will result in large matrices and unecessary memory requirements. T\-He following index reservations apply. 1\-: Translation in x-\/direction. 2\-: Translation in y-\/direction. 3\-: Translation in z-\/direction. 4\-: Rotation about x-\/direction. 5\-: Rotation about y-\/direction. 6\-: Rotation about z-\/direction. \begin{DoxyReturn}{Returns}
-Returns a reference to the protected data index variable contained in the class. 
-\end{DoxyReturn}
-\hypertarget{class_equationof_motion_acf593f85f406ab3a21d128f65fccfd85}{\index{Equationof\-Motion@{Equationof\-Motion}!ddt@{ddt}}
-\index{ddt@{ddt}!EquationofMotion@{Equationof\-Motion}}
-\subsubsection[{ddt}]{\setlength{\rightskip}{0pt plus 5cm}complex$<$ double $>$ Equationof\-Motion\-::ddt (
+\hypertarget{class_equationof_motion_af12570e012041ea91d81820735b14c74}{\index{Equationof\-Motion@{Equationof\-Motion}!Ddt@{Ddt}}
+\index{Ddt@{Ddt}!EquationofMotion@{Equationof\-Motion}}
+\subsubsection[{Ddt}]{\setlength{\rightskip}{0pt plus 5cm}complex$<$ double $>$ Equationof\-Motion\-::\-Ddt (
 \begin{DoxyParamCaption}
 \item[{int}]{var, }
 \item[{int}]{ord, }
 \item[{int}]{bod\-In = {\ttfamily -\/1}}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_equationof_motion_acf593f85f406ab3a21d128f65fccfd85}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_equationof_motion_af12570e012041ea91d81820735b14c74}
 
 
 Time differential function. 
 
 Time differential function. Used to calculate the time derivative of a reponse. Can convert from response amplitude to velocity to acceleration, and further. Used to calculated amplitude of response. 
 \begin{DoxyParams}{Parameters}
-{\em var} & Index of the variable to use for the time differential. If included with the function \hyperlink{class_equationof_motion_ab69511cc5037376cf7da80ce30d9eaab}{var()}, the index is automatically determined by the summation functions that you include \hyperlink{class_equationof_motion_acf593f85f406ab3a21d128f65fccfd85}{ddt()} into. \\
+{\em var} & Index of the variable to use for the time differential. If included with the function \hyperlink{class_equationof_motion_ab69511cc5037376cf7da80ce30d9eaab}{var()}, the index is automatically determined by the summation functions that you include \hyperlink{class_equationof_motion_af12570e012041ea91d81820735b14c74}{Ddt()} into. \\
 \hline
-{\em ord} & Integer. The order of the differential. If the function \hyperlink{class_equationof_motion_a31f904818ce75c9e2a2b5cff9fc707a5}{ord()} is used, the order is automatically determined by the summation function that you include \hyperlink{class_equationof_motion_acf593f85f406ab3a21d128f65fccfd85}{ddt()} into. \\
+{\em ord} & Integer. The order of the differential. If the function \hyperlink{class_equationof_motion_a31f904818ce75c9e2a2b5cff9fc707a5}{ord()} is used, the order is automatically determined by the summation function that you include \hyperlink{class_equationof_motion_af12570e012041ea91d81820735b14c74}{Ddt()} into. \\
 \hline
 {\em bod\-In} & The body to retrieve variable data for. \\
 \hline
@@ -235,29 +207,16 @@ Returns a complex value that is the time differential, transposed into a frequen
 \end{DoxyReturn}
 
 
-Here is the call graph for this function\-:\nopagebreak
+Here is the call graph for this function\-:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=346pt]{class_equationof_motion_acf593f85f406ab3a21d128f65fccfd85_cgraph}
+\includegraphics[width=350pt]{class_equationof_motion_af12570e012041ea91d81820735b14c74_cgraph}
 \end{center}
 \end{figure}
 
 
-\hypertarget{class_equationof_motion_a347e77f27a30636e25e6c9eb1fec7b2e}{\index{Equationof\-Motion@{Equationof\-Motion}!Description@{Description}}
-\index{Description@{Description}!EquationofMotion@{Equationof\-Motion}}
-\subsubsection[{Description}]{\setlength{\rightskip}{0pt plus 5cm}void \& Equationof\-Motion\-::\-Description (
-\begin{DoxyParamCaption}
-{}
-\end{DoxyParamCaption}
-)}}\label{class_equationof_motion_a347e77f27a30636e25e6c9eb1fec7b2e}
-
-
-The description for the equation object. 
-
-The description for the equation object. This is an expanded version of the name. Again, purely for user identification of the \hyperlink{class_equationof_motion}{Equationof\-Motion} object. Brief names go under the Name property. More extensive descriptions go under this property. These would be useful to the user for describing the physical meaning behind the equation of motion. \begin{DoxyReturn}{Returns}
-Returns pointer to the protected p\-Description variable. 
-\end{DoxyReturn}
 \hypertarget{class_equationof_motion_a7198b4661f6c0a4c1f280863228bd63c}{\index{Equationof\-Motion@{Equationof\-Motion}!Evaluate@{Evaluate}}
 \index{Evaluate@{Evaluate}!EquationofMotion@{Equationof\-Motion}}
 \subsubsection[{Evaluate}]{\setlength{\rightskip}{0pt plus 5cm}complex$<$ double $>$ Equationof\-Motion\-::\-Evaluate (
@@ -297,6 +256,18 @@ A reference to the data set of the Force\-Active\-\_\-hydro.
 \begin{DoxyReturn}{Returns}
 Returns the data set for the Force\-Active\-\_\-hydro. Indices can be specified to access individual elements. 
 \end{DoxyReturn}
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_equationof_motion_a61f33c3fd47ae2b66db1982b9c973ec1_cgraph}
+\end{center}
+\end{figure}
+
+
 \hypertarget{class_equationof_motion_a238df115825cbe08522bdc10b84880b9}{\index{Equationof\-Motion@{Equationof\-Motion}!Force\-Active\-\_\-user@{Force\-Active\-\_\-user}}
 \index{Force\-Active\-\_\-user@{Force\-Active\-\_\-user}!EquationofMotion@{Equationof\-Motion}}
 \subsubsection[{Force\-Active\-\_\-user}]{\setlength{\rightskip}{0pt plus 5cm}complex$<$ double $>$ Equationof\-Motion\-::\-Force\-Active\-\_\-user (
@@ -311,15 +282,26 @@ A reference to the data set of the Force\-Active\-\_\-user.
 \begin{DoxyReturn}{Returns}
 Returns the data set for the Force\-Active\-\_\-user. Indices can be specified to access individual elements. 
 \end{DoxyReturn}
-\hypertarget{class_equationof_motion_a69d0270703f14a1ddeb6b73120642943}{\index{Equationof\-Motion@{Equationof\-Motion}!Force\-Cross\-\_\-hydro@{Force\-Cross\-\_\-hydro}}
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_equationof_motion_a238df115825cbe08522bdc10b84880b9_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_equationof_motion_af1d1f42b77561e9f1c4110e16af309da}{\index{Equationof\-Motion@{Equationof\-Motion}!Force\-Cross\-\_\-hydro@{Force\-Cross\-\_\-hydro}}
 \index{Force\-Cross\-\_\-hydro@{Force\-Cross\-\_\-hydro}!EquationofMotion@{Equationof\-Motion}}
 \subsubsection[{Force\-Cross\-\_\-hydro}]{\setlength{\rightskip}{0pt plus 5cm}complex$<$ double $>$ Equationof\-Motion\-::\-Force\-Cross\-\_\-hydro (
 \begin{DoxyParamCaption}
-\item[{int}]{bod\-In, }
-\item[{int}]{ord\-In, }
-\item[{int}]{var\-In}
+\item[{unsigned int}]{bod\-In, }
+\item[{unsigned int}]{ord\-In, }
+\item[{unsigned int}]{var\-In}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_equationof_motion_a69d0270703f14a1ddeb6b73120642943}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_equationof_motion_af1d1f42b77561e9f1c4110e16af309da}
 
 
 A reference to the data set of the Force\-Cross\-\_\-hydro. 
@@ -336,15 +318,26 @@ A reference to the data set of the Force\-Cross\-\_\-hydro.
 \begin{DoxyReturn}{Returns}
 Returns the data set for the Force\-Cross\-\_\-hydro. Indices can be specified to access individual elements. 
 \end{DoxyReturn}
-\hypertarget{class_equationof_motion_a96bae9e3c360a4b9ddf3b41726a89736}{\index{Equationof\-Motion@{Equationof\-Motion}!Force\-Cross\-\_\-user@{Force\-Cross\-\_\-user}}
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_equationof_motion_af1d1f42b77561e9f1c4110e16af309da_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_equationof_motion_a3b06b1ff4b792ad3a3d3c0274426d5ed}{\index{Equationof\-Motion@{Equationof\-Motion}!Force\-Cross\-\_\-user@{Force\-Cross\-\_\-user}}
 \index{Force\-Cross\-\_\-user@{Force\-Cross\-\_\-user}!EquationofMotion@{Equationof\-Motion}}
 \subsubsection[{Force\-Cross\-\_\-user}]{\setlength{\rightskip}{0pt plus 5cm}complex$<$ double $>$ Equationof\-Motion\-::\-Force\-Cross\-\_\-user (
 \begin{DoxyParamCaption}
-\item[{int}]{bod\-In, }
-\item[{int}]{ord\-In, }
-\item[{int}]{var\-In}
+\item[{unsigned int}]{bod\-In, }
+\item[{unsigned int}]{ord\-In, }
+\item[{unsigned int}]{var\-In}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_equationof_motion_a96bae9e3c360a4b9ddf3b41726a89736}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_equationof_motion_a3b06b1ff4b792ad3a3d3c0274426d5ed}
 
 
 A reference to the data set of the Force\-Cross\-\_\-user. 
@@ -361,6 +354,17 @@ A reference to the data set of the Force\-Cross\-\_\-user.
 \begin{DoxyReturn}{Returns}
 Returns the data set for the Force\-Cross\-\_\-user. Indices can be specified to access individual elements. 
 \end{DoxyReturn}
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_equationof_motion_a3b06b1ff4b792ad3a3d3c0274426d5ed_cgraph}
+\end{center}
+\end{figure}
+
+
 \hypertarget{class_equationof_motion_a848b45b70d29d793b86a7c1ca8f97ed6}{\index{Equationof\-Motion@{Equationof\-Motion}!Force\-Mass@{Force\-Mass}}
 \index{Force\-Mass@{Force\-Mass}!EquationofMotion@{Equationof\-Motion}}
 \subsubsection[{Force\-Mass}]{\setlength{\rightskip}{0pt plus 5cm}complex$<$ double $>$ Equationof\-Motion\-::\-Force\-Mass (
@@ -380,14 +384,25 @@ A reference to the data set of the Force\-Mass.
 \begin{DoxyReturn}{Returns}
 Returns the data set for the Force\-Mass. Indices can be specified to access individual elements. 
 \end{DoxyReturn}
-\hypertarget{class_equationof_motion_a2295d1980a94d2e0ba3bc893850030b2}{\index{Equationof\-Motion@{Equationof\-Motion}!Force\-React\-\_\-hydro@{Force\-React\-\_\-hydro}}
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_equationof_motion_a848b45b70d29d793b86a7c1ca8f97ed6_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_equationof_motion_a4962df48c786fced4e953e50f1d82a3a}{\index{Equationof\-Motion@{Equationof\-Motion}!Force\-React\-\_\-hydro@{Force\-React\-\_\-hydro}}
 \index{Force\-React\-\_\-hydro@{Force\-React\-\_\-hydro}!EquationofMotion@{Equationof\-Motion}}
 \subsubsection[{Force\-React\-\_\-hydro}]{\setlength{\rightskip}{0pt plus 5cm}complex$<$ double $>$ Equationof\-Motion\-::\-Force\-React\-\_\-hydro (
 \begin{DoxyParamCaption}
-\item[{int}]{ord\-In, }
-\item[{int}]{var\-In}
+\item[{unsigned int}]{ord\-In, }
+\item[{unsigned int}]{var\-In}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_equationof_motion_a2295d1980a94d2e0ba3bc893850030b2}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_equationof_motion_a4962df48c786fced4e953e50f1d82a3a}
 
 
 A reference to the data set of the Force\-React\-\_\-hydro. 
@@ -402,14 +417,25 @@ A reference to the data set of the Force\-React\-\_\-hydro.
 \begin{DoxyReturn}{Returns}
 Returns the data set for the Force\-React\-\_\-hydro. Indices can be specified to access individual elements. 
 \end{DoxyReturn}
-\hypertarget{class_equationof_motion_a0a7bbf64f137a2a170a4a5795b09cc5d}{\index{Equationof\-Motion@{Equationof\-Motion}!Force\-React\-\_\-user@{Force\-React\-\_\-user}}
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_equationof_motion_a4962df48c786fced4e953e50f1d82a3a_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_equationof_motion_ac1f572e423c09b9e9fa955f52434a8f7}{\index{Equationof\-Motion@{Equationof\-Motion}!Force\-React\-\_\-user@{Force\-React\-\_\-user}}
 \index{Force\-React\-\_\-user@{Force\-React\-\_\-user}!EquationofMotion@{Equationof\-Motion}}
 \subsubsection[{Force\-React\-\_\-user}]{\setlength{\rightskip}{0pt plus 5cm}complex$<$ double $>$ Equationof\-Motion\-::\-Force\-React\-\_\-user (
 \begin{DoxyParamCaption}
-\item[{int}]{ord\-In, }
-\item[{int}]{var\-In}
+\item[{unsigned int}]{ord\-In, }
+\item[{unsigned int}]{var\-In}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_equationof_motion_a0a7bbf64f137a2a170a4a5795b09cc5d}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_equationof_motion_ac1f572e423c09b9e9fa955f52434a8f7}
 
 
 A reference to the data set of the Force\-React\-\_\-user. 
@@ -424,28 +450,13 @@ A reference to the data set of the Force\-React\-\_\-user.
 \begin{DoxyReturn}{Returns}
 Returns the data set for the Force\-React\-\_\-user. Indices can be specified to access individual elements. 
 \end{DoxyReturn}
-\hypertarget{class_equationof_motion_a6f198d1a20c00e3f757b0729eb2c6854}{\index{Equationof\-Motion@{Equationof\-Motion}!Formula@{Formula}}
-\index{Formula@{Formula}!EquationofMotion@{Equationof\-Motion}}
-\subsubsection[{Formula}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Equationof\-Motion\-::\-Formula (
-\begin{DoxyParamCaption}
-{}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{class_equationof_motion_a6f198d1a20c00e3f757b0729eb2c6854}
 
 
-The formula used by the equation of motion. 
-
-The formula used by the equation of motion. The formula gets rewritten in a unique form. Rearrange any equations so that they have zero on the right hand size.
-
-Example\-: If the formula were Ax + By = F, it must be rearranged to\-: Ax + By -\/ F = 0
-
-The formula can also make use of several math functions provided by the equation of motion object. 
-
-Here is the caller graph for this function\-:\nopagebreak
+Here is the call graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{class_equationof_motion_a6f198d1a20c00e3f757b0729eb2c6854_icgraph}
+\includegraphics[width=350pt]{class_equationof_motion_ac1f572e423c09b9e9fa955f52434a8f7_cgraph}
 \end{center}
 \end{figure}
 
@@ -464,26 +475,26 @@ Gets the index for the equation of motion.
 Gets the index for the equation of motion. The index is how the equation determines which numbers to access on the data. The following indices are used. Any higher indices can extend beyond this range, and the program easily adapts. But the following three are reserved. Unused indices are not transferred to the matrices when solved. So unused indices to not negatively impact calculation performance. However, using excessively large indices (say 500 when you only have 3 equations) will result in large matrices and unecessary memory requirements. T\-He following index reservations apply. 1\-: Translation in x-\/direction. 2\-: Translation in y-\/direction. 3\-: Translation in z-\/direction. 4\-: Rotation about x-\/direction. 5\-: Rotation about y-\/direction. 6\-: Rotation about z-\/direction. \begin{DoxyReturn}{Returns}
 Returns an integer number representing the data index used by the equation. 
 \end{DoxyReturn}
-\hypertarget{class_equationof_motion_a4d3a5ac1f92007d33678b4fdd5321e6e}{\index{Equationof\-Motion@{Equationof\-Motion}!kronecker@{kronecker}}
-\index{kronecker@{kronecker}!EquationofMotion@{Equationof\-Motion}}
-\subsubsection[{kronecker}]{\setlength{\rightskip}{0pt plus 5cm}complex$<$ double $>$ Equationof\-Motion\-::kronecker (
+\hypertarget{class_equationof_motion_ad4ba6707460a9db7f8103157af0cae65}{\index{Equationof\-Motion@{Equationof\-Motion}!Kronecker@{Kronecker}}
+\index{Kronecker@{Kronecker}!EquationofMotion@{Equationof\-Motion}}
+\subsubsection[{Kronecker}]{\setlength{\rightskip}{0pt plus 5cm}complex$<$ double $>$ Equationof\-Motion\-::\-Kronecker (
 \begin{DoxyParamCaption}
 \item[{int}]{var1, }
 \item[{int}]{var2, }
 \item[{bool}]{anti = {\ttfamily false}}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_equationof_motion_a4d3a5ac1f92007d33678b4fdd5321e6e}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_equationof_motion_ad4ba6707460a9db7f8103157af0cae65}
 
 
-The mathematical kronecker delta function. 
+The mathematical Kronecker delta function. 
 
-The mathematical kronecker-\/delta function. Used to filter out terms when doing a double summation between two indices. The function evaluates to one when the two indices are equal, and evaluates to zero any other time. Multiplying a term by the kronecker delta ensures that the results will be filtered to only have terms of equal indices. If this relates back to a matrix, the kronecked delta filters the deta to only include diagonal terms. 
+The mathematical Kronecker-\/delta function. Used to filter out terms when doing a double summation between two indices. The function evaluates to one when the two indices are equal, and evaluates to zero any other time. Multiplying a term by the Kronecker delta ensures that the results will be filtered to only have terms of equal indices. If this relates back to a matrix, the kronecked delta filters the deta to only include diagonal terms. 
 \begin{DoxyParams}{Parameters}
 {\em var1} & Integer variable. The first index that is being summed across. \\
 \hline
 {\em var2} & Integer variable. The second index that is being summed across. \\
 \hline
-{\em anti} & Boolean variable. Sometimes the researcher may be interested in the off diagonal terms. Cases when var1 does not equatl var2. In those cases, the kronecker delta function should work in reverse and filter out the diagonal terms in a matrix. The anti variable is a trigger for the kronecker delta function to work in reverse of its normal method. The default setting for this variable is false. By default, the kronecker delta function evaluates with one when var1 = var2. \\
+{\em anti} & Boolean variable. Sometimes the researcher may be interested in the off diagonal terms. Cases when var1 does not equatl var2. In those cases, the Kronecker delta function should work in reverse and filter out the diagonal terms in a matrix. The anti variable is a trigger for the Kronecker delta function to work in reverse of its normal method. The default setting for this variable is false. By default, the Kronecker delta function evaluates with one when var1 = var2. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -503,6 +514,17 @@ Returns the maximum number of items that can be iterated through on the body ind
 Returns the maximum number of items that can be iterated through on the body index. Used for summation functions. Automatically finds the upper limit of any summation loops. The lower limit is always 0 and does not require a special function. \begin{DoxyReturn}{Returns}
 Returns the maximum number of items that can be iterated through on the body index. 
 \end{DoxyReturn}
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_equationof_motion_a0fea5098961fce0004b978223b4a501b_cgraph}
+\end{center}
+\end{figure}
+
+
 \hypertarget{class_equationof_motion_ad8271e1cc1d78b7bf80a90fe3c3b06b4}{\index{Equationof\-Motion@{Equationof\-Motion}!maxord@{maxord}}
 \index{maxord@{maxord}!EquationofMotion@{Equationof\-Motion}}
 \subsubsection[{maxord}]{\setlength{\rightskip}{0pt plus 5cm}int Equationof\-Motion\-::maxord (
@@ -517,6 +539,17 @@ Returns the maximum number of items that can be iterated through on the order of
 Returns the maximum number of items that can be iterated through on the order of derivative index. Used for summation functions. Automatically finds the upper limit of any summation loops. The lower limit is always 0 and does not require a special function. \begin{DoxyReturn}{Returns}
 Returns the maximum number of items that can be iterated through on the order of derivative index. 
 \end{DoxyReturn}
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_equationof_motion_ad8271e1cc1d78b7bf80a90fe3c3b06b4_cgraph}
+\end{center}
+\end{figure}
+
+
 \hypertarget{class_equationof_motion_a8c6367e13c8f027f4a0936b821ff9363}{\index{Equationof\-Motion@{Equationof\-Motion}!maxvar@{maxvar}}
 \index{maxvar@{maxvar}!EquationofMotion@{Equationof\-Motion}}
 \subsubsection[{maxvar}]{\setlength{\rightskip}{0pt plus 5cm}int Equationof\-Motion\-::maxvar (
@@ -531,20 +564,18 @@ Returns the maximum number of items that can be iterated through on the variable
 Returns the maximum number of items that can be iterated through on the variable index. Used for summation functions. Automatically finds the upper limit of any summation loops. The lower limit is always 0 and does not require a special function. \begin{DoxyReturn}{Returns}
 Returns the maximum number of items that can be iterated through on the variable index. 
 \end{DoxyReturn}
-\hypertarget{class_equationof_motion_a5ec937219e70f278a8f2271b7cdb38f2}{\index{Equationof\-Motion@{Equationof\-Motion}!Name@{Name}}
-\index{Name@{Name}!EquationofMotion@{Equationof\-Motion}}
-\subsubsection[{Name}]{\setlength{\rightskip}{0pt plus 5cm}void \& Equationof\-Motion\-::\-Name (
-\begin{DoxyParamCaption}
-{}
-\end{DoxyParamCaption}
-)}}\label{class_equationof_motion_a5ec937219e70f278a8f2271b7cdb38f2}
 
 
-The name for the equation object. 
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_equationof_motion_a8c6367e13c8f027f4a0936b821ff9363_cgraph}
+\end{center}
+\end{figure}
 
-The name for the equation object. This is the short name that user will use to identify the meaning of the equation. \begin{DoxyReturn}{Returns}
-Returns pointer to the protected p\-Name variable. 
-\end{DoxyReturn}
+
 \hypertarget{class_equationof_motion_a31f904818ce75c9e2a2b5cff9fc707a5}{\index{Equationof\-Motion@{Equationof\-Motion}!ord@{ord}}
 \index{ord@{ord}!EquationofMotion@{Equationof\-Motion}}
 \subsubsection[{ord}]{\setlength{\rightskip}{0pt plus 5cm}int Equationof\-Motion\-::ord (
@@ -565,11 +596,53 @@ Here is the caller graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=346pt]{class_equationof_motion_a31f904818ce75c9e2a2b5cff9fc707a5_icgraph}
+\includegraphics[width=348pt]{class_equationof_motion_a31f904818ce75c9e2a2b5cff9fc707a5_icgraph}
 \end{center}
 \end{figure}
 
 
+\hypertarget{class_equationof_motion_ae16051cbf725210aa44941d41d8800e2}{\index{Equationof\-Motion@{Equationof\-Motion}!ref\-Data\-Index@{ref\-Data\-Index}}
+\index{ref\-Data\-Index@{ref\-Data\-Index}!EquationofMotion@{Equationof\-Motion}}
+\subsubsection[{ref\-Data\-Index}]{\setlength{\rightskip}{0pt plus 5cm}int \& Equationof\-Motion\-::ref\-Data\-Index (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_equationof_motion_ae16051cbf725210aa44941d41d8800e2}
+
+
+Gets the index for the equation of motion. 
+
+Gets the index for the equation of motion. The index is how the equation determines which numbers to access on the data. The following indices are used. Any higher indices can extend beyond this range, and the program easily adapts. But the following three are reserved. Unused indices are not transferred to the matrices when solved. So unused indices to not negatively impact calculation performance. However, using excessively large indices (say 500 when you only have 3 equations) will result in large matrices and unecessary memory requirements. T\-He following index reservations apply. 1\-: Translation in x-\/direction. 2\-: Translation in y-\/direction. 3\-: Translation in z-\/direction. 4\-: Rotation about x-\/direction. 5\-: Rotation about y-\/direction. 6\-: Rotation about z-\/direction. \begin{DoxyReturn}{Returns}
+Returns a reference to the protected data index variable contained in the class. 
+\end{DoxyReturn}
+\hypertarget{class_equationof_motion_a5be5a333dd1a5a65eaadec4b32c68fb5}{\index{Equationof\-Motion@{Equationof\-Motion}!ref\-Description@{ref\-Description}}
+\index{ref\-Description@{ref\-Description}!EquationofMotion@{Equationof\-Motion}}
+\subsubsection[{ref\-Description}]{\setlength{\rightskip}{0pt plus 5cm}string \& Equationof\-Motion\-::ref\-Description (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_equationof_motion_a5be5a333dd1a5a65eaadec4b32c68fb5}
+
+
+The description for the equation object. 
+
+The description for the equation object. This is an expanded version of the name. Again, purely for user identification of the \hyperlink{class_equationof_motion}{Equationof\-Motion} object. Brief names go under the Name property. More extensive descriptions go under this property. These would be useful to the user for describing the physical meaning behind the equation of motion. \begin{DoxyReturn}{Returns}
+Returns reference to the protected p\-Description variable. 
+\end{DoxyReturn}
+\hypertarget{class_equationof_motion_abb7b1a4295e8406ea4f155b1f03689f6}{\index{Equationof\-Motion@{Equationof\-Motion}!ref\-Name@{ref\-Name}}
+\index{ref\-Name@{ref\-Name}!EquationofMotion@{Equationof\-Motion}}
+\subsubsection[{ref\-Name}]{\setlength{\rightskip}{0pt plus 5cm}string \& Equationof\-Motion\-::ref\-Name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_equationof_motion_abb7b1a4295e8406ea4f155b1f03689f6}
+
+
+The name for the equation object. 
+
+The name for the equation object. This is the short name that user will use to identify the meaning of the equation. \begin{DoxyReturn}{Returns}
+Returns reference to the protected p\-Name variable. 
+\end{DoxyReturn}
 \hypertarget{class_equationof_motion_ad93006b4658c7b2809770866511581ad}{\index{Equationof\-Motion@{Equationof\-Motion}!set\-Arguments@{set\-Arguments}}
 \index{set\-Arguments@{set\-Arguments}!EquationofMotion@{Equationof\-Motion}}
 \subsubsection[{set\-Arguments}]{\setlength{\rightskip}{0pt plus 5cm}void Equationof\-Motion\-::set\-Arguments (
@@ -605,23 +678,49 @@ Sets the index for the equation of motion. The index is how the equation determi
 {\em Data\-In} & The integer of the data index to use. \\
 \hline
 \end{DoxyParams}
-\hypertarget{class_equationof_motion_a96e7591eda1ff48af511e20c0f132312}{\index{Equationof\-Motion@{Equationof\-Motion}!sum@{sum}}
-\index{sum@{sum}!EquationofMotion@{Equationof\-Motion}}
-\subsubsection[{sum}]{\setlength{\rightskip}{0pt plus 5cm}complex$<$ double $>$ Equationof\-Motion\-::sum (
+\hypertarget{class_equationof_motion_a1d8614b11de9396f3795e4b560e6c368}{\index{Equationof\-Motion@{Equationof\-Motion}!set\-Formula@{set\-Formula}}
+\index{set\-Formula@{set\-Formula}!EquationofMotion@{Equationof\-Motion}}
+\subsubsection[{set\-Formula}]{\setlength{\rightskip}{0pt plus 5cm}complex$<$ double $>$ Equationof\-Motion\-::set\-Formula (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{class_equationof_motion_a1d8614b11de9396f3795e4b560e6c368}
+
+
+The formula used by the equation of motion. 
+
+The formula used by the equation of motion. The formula gets rewritten in a unique form. Rearrange any equations so that they have zero on the right hand size.
+
+Example\-: If the formula were Ax + By = F, it must be rearranged to\-: Ax + By -\/ F = 0
+
+The formula can also make use of several math functions provided by the equation of motion object. 
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_equationof_motion_a1d8614b11de9396f3795e4b560e6c368_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_equationof_motion_a1f81cfba0e5b2e2ab9e3b70a9930208d}{\index{Equationof\-Motion@{Equationof\-Motion}!Sum@{Sum}}
+\index{Sum@{Sum}!EquationofMotion@{Equationof\-Motion}}
+\subsubsection[{Sum}]{\setlength{\rightskip}{0pt plus 5cm}complex$<$ double $>$ Equationof\-Motion\-::\-Sum (
 \begin{DoxyParamCaption}
 \item[{complex$<$ double $>$}]{force, }
 \item[{string}]{index, }
-\item[{int}]{from = {\ttfamily -\/1}, }
-\item[{int}]{to = {\ttfamily -\/1}}
+\item[{unsigned int}]{from = {\ttfamily -\/1}, }
+\item[{unsigned int}]{to = {\ttfamily -\/1}}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_equationof_motion_a96e7591eda1ff48af511e20c0f132312}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_equationof_motion_a1f81cfba0e5b2e2ab9e3b70a9930208d}
 
 
 Sums across a variable. 
 
-Sums across a variable. The index limits can be specified. Or the keyword functions can be used to automatically sum across the entire index range. 
+Sums across a variable. The index limits can be specified. Or the keyword functions can be used to automatically Sum across the entire index range. 
 \begin{DoxyParams}{Parameters}
-{\em force} & Input to specify which items the results should sum across. Typically, this is one of the built-\/in force functions. However, it can be any function, any item, any calculation. The only catch is that the input value must be a complex$<$double$>$ data type. \\
+{\em force} & Input to specify which items the results should Sum across. Typically, this is one of the built-\/in force functions. However, it can be any function, any item, any calculation. The only catch is that the input value must be a complex$<$double$>$ data type. \\
 \hline
 {\em index} & String specifying which variable should be summed on. This may be any one of these options\-: Order of derivative = \char`\"{}ord\char`\"{} Variable = \char`\"{}var\char`\"{} \hyperlink{class_body}{Body} = \char`\"{}bod\char`\"{} \\
 \hline
@@ -647,17 +746,6 @@ Returns the index integer for iteration on variable.
 \begin{DoxyReturn}{Returns}
 Returns the index integer for iteration on variable. 
 \end{DoxyReturn}
-
-
-Here is the caller graph for this function\-:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=344pt]{class_equationof_motion_ab69511cc5037376cf7da80ce30d9eaab_icgraph}
-\end{center}
-\end{figure}
-
-
 
 
 \subsection{Member Data Documentation}
@@ -693,5 +781,5 @@ The name for the equation object. This is the short name that user will use to i
 
 The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
 \item 
-/home/nicholas/\-Ship Design/\-Projects/\-D\-M\-S1305 Open\-S\-E\-A/master/200\-\_\-src/bin/ofreq/motion\-\_\-model/equationofmotion.\-h\item 
-/home/nicholas/\-Ship Design/\-Projects/\-D\-M\-S1305 Open\-S\-E\-A/master/200\-\_\-src/bin/ofreq/motion\-\_\-model/equationofmotion.\-cpp\end{DoxyCompactItemize}
+equationofmotion.\-h\item 
+equationofmotion.\-cpp\end{DoxyCompactItemize}

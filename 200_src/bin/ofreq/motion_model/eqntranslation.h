@@ -117,28 +117,28 @@ namespace ofreq
  *      different forces when developing your own equation of motion.  oFreq recognizes seven (7) basic force types
  *      shown below, with the function name to reference them in the EquationofMotion. (Arguments for each function
  *      are not shown, for sake of clarity.
- *      5.1) ForceMass(...) = The forces associated with the mass of an object.  This includes direct mass for
+ *      5.1) ForceMass() = The forces associated with the mass of an object.  This includes direct mass for
  *           straight linear motion, and moment of inertia for rotational motion.
- *      5.2) ForceActive_hydro(...) = The forces which are independant of body motions.  The hydro subcategory
+ *      5.2) ForceActive_hydro() = The forces which are independant of body motions.  The hydro subcategory
  *           refers to active forces that specifically come from hydrodynamic forces.  This includes the forces
  *           from incident waves.  Sometimes call the Froude-Krylov forces.
- *      5.3) ForceActive_user(...) = The forces which are independant of body motions.  The user subcategory
+ *      5.3) ForceActive_user() = The forces which are independant of body motions.  The user subcategory
  *           refers to active forces specifically defined by the user in the ofreq run file.  These may be
  *           some external force such as an active control system.  Regardless, it is customed defined by the user.
- *      5.4) ForceReact_hydro(...) = The forces which are reactive and dependant on body motions.  This includes
+ *      5.4) ForceReact_hydro() = The forces which are reactive and dependant on body motions.  This includes
  *           derivatives of body motions.  The hydro subcategory refers to reactive forces hydrodynamic in
  *           origin.  This would include body hydrostatic properties, added damping, and added mass.
- *      5.5) ForceReact_user(...) = The forces which are reactive and dependant on body motions.  This includes
+ *      5.5) ForceReact_user() = The forces which are reactive and dependant on body motions.  This includes
  *           derivatives of body motions.  The user subcategory refers to reactive forces defined by the user.
  *           This might include external forces such as a mooring line or dynamic positioning system.  In any
  *           case, these are reactive forces defined at run time in the ofreq input files.
- *      5.6) ForceCross_hydro(...) = The forces which are reactive and dependant on the body motions of another
+ *      5.6) ForceCross_hydro() = The forces which are reactive and dependant on the body motions of another
  *           body.  This is only applicable to multi-body systems.  Examples might be two vessels near each other.
  *           The program can accept equations that use the cross-body forces but are only applied to a single
  *           body problem.  The hydro subcategory refers to reactive forces hydrodynamic in
  *           origin.  This would include body hydrostatic properties, added damping, and added mass, except that
  *           these forces would be dependant on the motions of another body.
- *      5.7) ForceCross_user(...) = The forces which are reactive and dependant on the body motions of another
+ *      5.7) ForceCross_user() = The forces which are reactive and dependant on the body motions of another
  *           body.  This is only applicable to multi-body systems.  Examples might be two vessels near each other.
  *           The program can accept equations that use the cross-body forces but are only applied to a single
  *           body problem.  The user subcategory refers to reactive forces defined by the user.
@@ -266,6 +266,93 @@ protected:
      * The formula can also make use of several math functions provided by the equation of motion object.
      */
     std::complex<double> setFormula();
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Func1 through Func50 provide user custom defined functions.
+     *
+     * These are custom functions that the user may need to create to define their equations of motion.  The only
+     * restriction is that the functions can not take any arguments.  Any arguments required must be supplied through
+     * a set of global variables.  Sorry, that's just a restriction of how the code is written and the use of the C++
+     * language.
+     * @return Returns a complex<double> variable.  Returned variabled passed by value.
+     */
+    std::complex<double> Func1();
+    std::complex<double> Func2();
+    std::complex<double> Func3();
+    std::complex<double> Func4();
+    std::complex<double> Func5();
+    std::complex<double> Func6();
+    std::complex<double> Func7();
+    std::complex<double> Func8();
+    std::complex<double> Func9();
+    std::complex<double> Func10();
+    std::complex<double> Func11();
+    std::complex<double> Func12();
+    std::complex<double> Func13();
+    std::complex<double> Func14();
+    std::complex<double> Func15();
+    std::complex<double> Func16();
+    std::complex<double> Func17();
+    std::complex<double> Func18();
+    std::complex<double> Func19();
+    std::complex<double> Func20();
+    std::complex<double> Func21();
+    std::complex<double> Func22();
+    std::complex<double> Func23();
+    std::complex<double> Func24();
+    std::complex<double> Func25();
+    std::complex<double> Func26();
+    std::complex<double> Func27();
+    std::complex<double> Func28();
+    std::complex<double> Func29();
+    std::complex<double> Func30();
+    std::complex<double> Func31();
+    std::complex<double> Func32();
+    std::complex<double> Func33();
+    std::complex<double> Func34();
+    std::complex<double> Func35();
+    std::complex<double> Func36();
+    std::complex<double> Func37();
+    std::complex<double> Func38();
+    std::complex<double> Func39();
+    std::complex<double> Func40();
+    std::complex<double> Func41();
+    std::complex<double> Func42();
+    std::complex<double> Func43();
+    std::complex<double> Func44();
+    std::complex<double> Func45();
+    std::complex<double> Func46();
+    std::complex<double> Func47();
+    std::complex<double> Func48();
+    std::complex<double> Func49();
+    std::complex<double> Func50();
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Sums across a variable.
+     *
+     * Sums across a variable.  The index limits can be specified.  Or the keyword functions can be used to
+     * automatically Sum across the entire index range.  This implementation accepts a function pointer with no
+     * parameters.  When using lambda functions, you can add in extra parameters.  The compiler won't care.  It only
+     * cares about the returned value.
+     * @param force Input to specify which items the results should Sum across.  Typically, this is one of the built-in
+     * force functions. However, it can be any function, any item, any calculation.  The only catch is that the
+     * input value must be a std::complex<double> data type.  Input format is a function pointer.  This allows
+     * the Sum function to update as it performs iterations.  The only catch is that you can not combine multiple
+     * values into one.  You must define a single function for each input argument you want.
+     * @param index std::string specifying which variable should be summed on.  This may be any one of these options:
+     * Order of derivative = "ord"
+     * Variable = "var"
+     * Body = "bod"
+     * @param from Integer for the beginning value of the summation.  Default value of negative one (-1) indicates that
+     * the summation will happen at the lowest value of the variable index specified.
+     * @param to Integer for the ending value of the summation.  Default value of negative one (-1) indicates that
+     * the summation will happen at the highest value of the variable index specified.
+     * @return Returns a complex value that is the summation of the index and limits specified.
+     */
+    virtual std::complex<double> Sum(std::complex<double> (EqnTranslation::*force)(void),
+                             std::string index, int from = -1, int to = -1);
 
 //==========================================Section Separator =========================================================
 private:

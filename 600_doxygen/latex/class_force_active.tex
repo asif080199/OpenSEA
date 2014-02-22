@@ -1,0 +1,221 @@
+\hypertarget{class_force_active}{\section{Force\-Active Class Reference}
+\label{class_force_active}\index{Force\-Active@{Force\-Active}}
+}
+
+
+{\ttfamily \#include $<$forceactive.\-h$>$}
+
+
+
+Inheritance diagram for Force\-Active\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=150pt]{class_force_active__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Force\-Active\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=150pt]{class_force_active__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_force_active_ae006e3394f8c925c6a3218686c5cc8ae}{Force\-Active} ()
+\item 
+virtual \hyperlink{class_force_active_aa2db4bc1fb74ecb6e0ee46c59a40dd2a}{$\sim$\-Force\-Active} ()
+\item 
+void \hyperlink{class_force_active_a1775530282b1d473cd95afd7f01619bb}{set\-Coeff} (complex$<$ double $>$ coeff\-In, unsigned int index)
+\begin{DoxyCompactList}\small\item\em Sets the coefficient for the specified index. \end{DoxyCompactList}\item 
+vector$<$ complex\-Double $>$ \& \hyperlink{class_force_active_a752a48e1f4dfc483a1cdb18754f8e630}{list\-Coefficients} ()
+\item 
+complex\-Double \& \hyperlink{class_force_active_af96d4a0a2f0aa28911d8798f62d3b8bd}{list\-Coefficients} (unsigned int index)
+\begin{DoxyCompactList}\small\item\em Provides direct access to a coefficient from the list of coefficients. \end{DoxyCompactList}\item 
+vector$<$ complex\-Double $>$ \& \hyperlink{class_force_active_a931628f3a5c5d9b142726697a96e1407}{list\-Equation} ()
+\begin{DoxyCompactList}\small\item\em Another implementation of function list\-Coefficients. \end{DoxyCompactList}\item 
+complex\-Double \& \hyperlink{class_force_active_a573a98979938dd6bfbaf5d40ae17a058}{list\-Equation} (unsigned int index)
+\begin{DoxyCompactList}\small\item\em Another implementation of function list\-Coefficients(index). \end{DoxyCompactList}\item 
+complex\-Double \hyperlink{class_force_active_a2e01f54c3071d2f8831fb7763cf14500}{get\-Equation} (int number)
+\begin{DoxyCompactList}\small\item\em Get a specific number from the list of coefficients. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+vector$<$ complex\-Double $>$ \hyperlink{class_force_active_a8850c1b1145e5eb76f7d545466ef0ec6}{p\-Coefficients}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+This class holds data for an active force. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_force_active_ae006e3394f8c925c6a3218686c5cc8ae}{\index{Force\-Active@{Force\-Active}!Force\-Active@{Force\-Active}}
+\index{Force\-Active@{Force\-Active}!ForceActive@{Force\-Active}}
+\subsubsection[{Force\-Active}]{\setlength{\rightskip}{0pt plus 5cm}Force\-Active\-::\-Force\-Active (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_force_active_ae006e3394f8c925c6a3218686c5cc8ae}
+The default constructor. \hypertarget{class_force_active_aa2db4bc1fb74ecb6e0ee46c59a40dd2a}{\index{Force\-Active@{Force\-Active}!$\sim$\-Force\-Active@{$\sim$\-Force\-Active}}
+\index{$\sim$\-Force\-Active@{$\sim$\-Force\-Active}!ForceActive@{Force\-Active}}
+\subsubsection[{$\sim$\-Force\-Active}]{\setlength{\rightskip}{0pt plus 5cm}Force\-Active\-::$\sim$\-Force\-Active (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_force_active_aa2db4bc1fb74ecb6e0ee46c59a40dd2a}
+The default destructor, nothing happens here. 
+
+\subsection{Member Function Documentation}
+\hypertarget{class_force_active_a2e01f54c3071d2f8831fb7763cf14500}{\index{Force\-Active@{Force\-Active}!get\-Equation@{get\-Equation}}
+\index{get\-Equation@{get\-Equation}!ForceActive@{Force\-Active}}
+\subsubsection[{get\-Equation}]{\setlength{\rightskip}{0pt plus 5cm}complex\-Double Force\-Active\-::get\-Equation (
+\begin{DoxyParamCaption}
+\item[{int}]{number}
+\end{DoxyParamCaption}
+)}}\label{class_force_active_a2e01f54c3071d2f8831fb7763cf14500}
+
+
+Get a specific number from the list of coefficients. 
+
+Get a specific number from the list of coefficients. Similar to get\-Coefficients(), only instead of returning the entire vector of coefficients, this only returns a single value in the list. 
+\begin{DoxyParams}{Parameters}
+{\em number} & Integer specifying which number should be retrieved from the list. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Complex Double which is the input coefficient for the active force on the equation specified by number. Returns by value, not by reference. 
+\end{DoxyReturn}
+\hypertarget{class_force_active_a752a48e1f4dfc483a1cdb18754f8e630}{\index{Force\-Active@{Force\-Active}!list\-Coefficients@{list\-Coefficients}}
+\index{list\-Coefficients@{list\-Coefficients}!ForceActive@{Force\-Active}}
+\subsubsection[{list\-Coefficients}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ complex\-Double $>$ \& Force\-Active\-::list\-Coefficients (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_force_active_a752a48e1f4dfc483a1cdb18754f8e630}
+Retrieve the list of coefficients. \begin{DoxyReturn}{Returns}
+The list of coefficients. 
+\end{DoxyReturn}
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_force_active_a752a48e1f4dfc483a1cdb18754f8e630_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_force_active_af96d4a0a2f0aa28911d8798f62d3b8bd}{\index{Force\-Active@{Force\-Active}!list\-Coefficients@{list\-Coefficients}}
+\index{list\-Coefficients@{list\-Coefficients}!ForceActive@{Force\-Active}}
+\subsubsection[{list\-Coefficients}]{\setlength{\rightskip}{0pt plus 5cm}complex\-Double \& Force\-Active\-::list\-Coefficients (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{index}
+\end{DoxyParamCaption}
+)}}\label{class_force_active_af96d4a0a2f0aa28911d8798f62d3b8bd}
+
+
+Provides direct access to a coefficient from the list of coefficients. 
+
+Returns a value from the list of coefficents. Which value to return is specified by the input index. 
+\begin{DoxyParams}{Parameters}
+{\em index} & Unsigned integer. Specifies which value to return from the list of coefficients. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns a complex double. Returned variable is a value from the list of coefficients. Returned variable is passed by reference. 
+\end{DoxyReturn}
+\hypertarget{class_force_active_a931628f3a5c5d9b142726697a96e1407}{\index{Force\-Active@{Force\-Active}!list\-Equation@{list\-Equation}}
+\index{list\-Equation@{list\-Equation}!ForceActive@{Force\-Active}}
+\subsubsection[{list\-Equation}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ complex\-Double $>$ \& Force\-Active\-::list\-Equation (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_force_active_a931628f3a5c5d9b142726697a96e1407}
+
+
+Another implementation of function list\-Coefficients. 
+
+\begin{DoxyReturn}{Returns}
+Vector containing the list of coefficients. Argument passed by reference. 
+\end{DoxyReturn}
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_force_active_a931628f3a5c5d9b142726697a96e1407_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_force_active_a573a98979938dd6bfbaf5d40ae17a058}{\index{Force\-Active@{Force\-Active}!list\-Equation@{list\-Equation}}
+\index{list\-Equation@{list\-Equation}!ForceActive@{Force\-Active}}
+\subsubsection[{list\-Equation}]{\setlength{\rightskip}{0pt plus 5cm}complex\-Double \& Force\-Active\-::list\-Equation (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{index}
+\end{DoxyParamCaption}
+)}}\label{class_force_active_a573a98979938dd6bfbaf5d40ae17a058}
+
+
+Another implementation of function list\-Coefficients(index). 
+
+Provides direct access to items in the list of equations. Returns a single variable from the list of coefficients. 
+\begin{DoxyParams}{Parameters}
+{\em index} & Unsigned integer. Specifies which value to return from the list of coefficients. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns a complex double. Returned variable is a value from the list of coefficients. Returned variable is passed by reference. 
+\end{DoxyReturn}
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_force_active_a573a98979938dd6bfbaf5d40ae17a058_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_force_active_a1775530282b1d473cd95afd7f01619bb}{\index{Force\-Active@{Force\-Active}!set\-Coeff@{set\-Coeff}}
+\index{set\-Coeff@{set\-Coeff}!ForceActive@{Force\-Active}}
+\subsubsection[{set\-Coeff}]{\setlength{\rightskip}{0pt plus 5cm}void Force\-Active\-::set\-Coeff (
+\begin{DoxyParamCaption}
+\item[{complex$<$ double $>$}]{coeff\-In, }
+\item[{unsigned int}]{index}
+\end{DoxyParamCaption}
+)}}\label{class_force_active_a1775530282b1d473cd95afd7f01619bb}
+
+
+Sets the coefficient for the specified index. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em coeff\-In} & The value of the coefficient to specify. Added as a complex number. Variable passed by value. \\
+\hline
+{\em index} & The equation index of the coefficient to specify. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_force_active_a8850c1b1145e5eb76f7d545466ef0ec6}{\index{Force\-Active@{Force\-Active}!p\-Coefficients@{p\-Coefficients}}
+\index{p\-Coefficients@{p\-Coefficients}!ForceActive@{Force\-Active}}
+\subsubsection[{p\-Coefficients}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$complex\-Double$>$ Force\-Active\-::p\-Coefficients\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_force_active_a8850c1b1145e5eb76f7d545466ef0ec6}
+The list of force coeffients. 
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+forceactive.\-h\item 
+forceactive.\-cpp\end{DoxyCompactItemize}

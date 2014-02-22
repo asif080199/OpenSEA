@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['coefficients',['coefficients',['../classforce_active.html#a3fe0e79a07d544a436359694d3589d4e',1,'forceActive']]],
-  ['currentderivative',['currentDerivative',['../classforce_react.html#a603631183ab10df81b658791657d3b4a',1,'forceReact']]],
-  ['currentequation',['currentEquation',['../classforce_react.html#ae90fedade4c66ee2fc45a73885187aa6',1,'forceReact']]]
+  ['currentderivative',['currentDerivative',['../classosea_1_1ofreq_1_1_force_react.html#a56c47ef95ad9ac1876b832dbf75297dd',1,'osea::ofreq::ForceReact']]],
+  ['currentequation',['currentEquation',['../classosea_1_1ofreq_1_1_force_react.html#a35b2a5464dd0135961e04a8389f5967f',1,'osea::ofreq::ForceReact']]]
 ];

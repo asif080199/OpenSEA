@@ -1,0 +1,284 @@
+\hypertarget{classosea_1_1ofreq_1_1_motion_solver}{\section{osea\-:\-:ofreq\-:\-:Motion\-Solver Class Reference}
+\label{classosea_1_1ofreq_1_1_motion_solver}\index{osea\-::ofreq\-::\-Motion\-Solver@{osea\-::ofreq\-::\-Motion\-Solver}}
+}
+
+
+{\ttfamily \#include $<$motionsolver.\-h$>$}
+
+
+
+Inheritance diagram for osea\-:\-:ofreq\-:\-:Motion\-Solver\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=214pt]{classosea_1_1ofreq_1_1_motion_solver__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for osea\-:\-:ofreq\-:\-:Motion\-Solver\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=214pt]{classosea_1_1ofreq_1_1_motion_solver__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classosea_1_1ofreq_1_1_motion_solver_a4dbc64bfeff4aab69a723c142292f787}{\hyperlink{classosea_1_1ofreq_1_1_motion_solver_a4dbc64bfeff4aab69a723c142292f787}{Motion\-Solver} ()}\label{classosea_1_1ofreq_1_1_motion_solver_a4dbc64bfeff4aab69a723c142292f787}
+
+\begin{DoxyCompactList}\small\item\em The default constructor. \end{DoxyCompactList}\item 
+\hyperlink{classosea_1_1ofreq_1_1_motion_solver_ab36901f6e752808a439890cde1c210ce}{Motion\-Solver} (std\-::vector$<$ \hyperlink{classosea_1_1ofreq_1_1mat_body}{mat\-Body} $>$ list\-Bod\-In)
+\begin{DoxyCompactList}\small\item\em Constructor. Initialize with objects already added. \end{DoxyCompactList}\item 
+\hyperlink{classosea_1_1ofreq_1_1_motion_solver_ae1fb5f389752a21a6d65ce41599b9b91}{$\sim$\-Motion\-Solver} ()
+\item 
+void \hyperlink{classosea_1_1ofreq_1_1_motion_solver_a79603cb6fede30d405f247a4d37256c1}{add\-Body} (\hyperlink{classosea_1_1ofreq_1_1mat_body}{mat\-Body} bod\-In)
+\begin{DoxyCompactList}\small\item\em Add a body to the motion solver set. \end{DoxyCompactList}\item 
+\hyperlink{classosea_1_1ofreq_1_1mat_force_react}{mat\-Force\-React} \hyperlink{classosea_1_1ofreq_1_1_motion_solver_a2345f18f82f306010659124421d5fe34}{sum\-React\-Set} (std\-::vector$<$ \hyperlink{classosea_1_1ofreq_1_1mat_force_react}{mat\-Force\-React} $>$ list\-Forces)
+\begin{DoxyCompactList}\small\item\em Sum Reactive forces for each set. \end{DoxyCompactList}\item 
+std\-::vector$<$ \hyperlink{classosea_1_1ofreq_1_1mat_force_cross}{mat\-Force\-Cross} $>$ \hyperlink{classosea_1_1ofreq_1_1_motion_solver_a3b8939bbea9a8a260a022ed175d25d6d}{sum\-Cross\-Set} (std\-::vector$<$ \hyperlink{classosea_1_1ofreq_1_1mat_force_cross}{mat\-Force\-Cross} $>$ list\-Forces)
+\begin{DoxyCompactList}\small\item\em Sum cross-\/body forces for each set. \end{DoxyCompactList}\item 
+arma\-::cx\-\_\-mat \hyperlink{classosea_1_1ofreq_1_1_motion_solver_a0546fbdb4b4c80b1eb8e13c8fb799217}{sum\-Active\-Set} (std\-::vector$<$ \hyperlink{classosea_1_1ofreq_1_1mat_force_active}{mat\-Force\-Active} $>$ list\-Forces)
+\begin{DoxyCompactList}\small\item\em Sum active forces for each set. \end{DoxyCompactList}\item 
+arma\-::cx\-\_\-mat \hyperlink{classosea_1_1ofreq_1_1_motion_solver_a07eeaf738ebae2ce078de86e61132220}{sum\-Derivative} (\hyperlink{classosea_1_1ofreq_1_1mat_force_react}{mat\-Force\-React} force\-In)
+\begin{DoxyCompactList}\small\item\em Sum list\-Derivatives for reactive force matrix. \end{DoxyCompactList}\item 
+std\-::vector$<$ arma\-::cx\-\_\-mat $>$ \hyperlink{classosea_1_1ofreq_1_1_motion_solver_a07a30b3c6011f6e86d71ba03f738c510}{sum\-Derivative} (std\-::vector$<$ \hyperlink{classosea_1_1ofreq_1_1mat_force_cross}{mat\-Force\-Cross} $>$ force\-In)
+\begin{DoxyCompactList}\small\item\em Sum list\-Derivatives for reactive force matrix. \end{DoxyCompactList}\item 
+void \hyperlink{classosea_1_1ofreq_1_1_motion_solver_a5deee421d26ef9729e0a870fd48b4403}{set\-Wave\-Freq} (double freq\-In)
+\begin{DoxyCompactList}\small\item\em Sets the current wave frequency. \end{DoxyCompactList}\item 
+\hypertarget{classosea_1_1ofreq_1_1_motion_solver_a28190e2b9c937f8889ba37db35069c52}{void \hyperlink{classosea_1_1ofreq_1_1_motion_solver_a28190e2b9c937f8889ba37db35069c52}{calculate\-Outputs} ()}\label{classosea_1_1ofreq_1_1_motion_solver_a28190e2b9c937f8889ba37db35069c52}
+
+\begin{DoxyCompactList}\small\item\em Calculate the \hyperlink{classosea_1_1ofreq_1_1_solution}{Solution}. \end{DoxyCompactList}\item 
+std\-::vector$<$ arma\-::cx\-\_\-mat $>$ \& \hyperlink{classosea_1_1ofreq_1_1_motion_solver_a8391c0f67d1d711294f2e6f44363b9bf}{list\-Solution} ()
+\begin{DoxyCompactList}\small\item\em Get the solution for the solved equation. \end{DoxyCompactList}\item 
+arma\-::cx\-\_\-mat \& \hyperlink{classosea_1_1ofreq_1_1_motion_solver_a20a5c24bd163adb5654eceee6030f898}{list\-Solution} (unsigned int bod)
+\begin{DoxyCompactList}\small\item\em Get the solution for the solved equation, for a single body. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+This class holds data for the motion solver and performs calculations on all of the data to get the solution matrix. The motion solver performs a series of operations. 1.) Sum each force object for all forces within a set. 2.) Sum each force object for all the derivatives defined within each force. Applied frequency dependence. 3.) Sum user reactive forces, hydro reactive forces, and body mass into a single object for each body. 4.) Sum user cross-\/body forces, hydro cross-\/body forces into a single object for each body. 5.) Sum user active forces and hydro active forces into a single object for each body. 6.) Assemble reactive forces and cross-\/body forces into a single global response matrix. (\mbox{[}A\mbox{]}) 7.) Assemble active forces into a single global active force matrix. (\mbox{[}F\mbox{]}) 8.) Solve the linear system system of equations formed by the equation \mbox{[}A\mbox{]} $\ast$ \mbox{[}x\mbox{]} = \mbox{[}F\mbox{]} 9.) Redistribute the solution back to each body object. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classosea_1_1ofreq_1_1_motion_solver_ab36901f6e752808a439890cde1c210ce}{\index{osea\-::ofreq\-::\-Motion\-Solver@{osea\-::ofreq\-::\-Motion\-Solver}!Motion\-Solver@{Motion\-Solver}}
+\index{Motion\-Solver@{Motion\-Solver}!osea::ofreq::MotionSolver@{osea\-::ofreq\-::\-Motion\-Solver}}
+\subsubsection[{Motion\-Solver}]{\setlength{\rightskip}{0pt plus 5cm}osea\-::ofreq\-::\-Motion\-Solver\-::\-Motion\-Solver (
+\begin{DoxyParamCaption}
+\item[{std\-::vector$<$ {\bf mat\-Body} $>$}]{list\-Bod\-In}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_motion_solver_ab36901f6e752808a439890cde1c210ce}
+
+
+Constructor. Initialize with objects already added. 
+
+This constructor combines creation of the class with adding the body objects to the class at the same time. The list of \hyperlink{classosea_1_1ofreq_1_1mat_body}{mat\-Body} objects is added to the set of bodies that the motion solver solves. Bodies inputs are passed by value, and not by reference. 
+\begin{DoxyParams}{Parameters}
+{\em list\-Bod\-In} & The vector list of bodies to add to the motion solver object. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classosea_1_1ofreq_1_1_motion_solver_ae1fb5f389752a21a6d65ce41599b9b91}{\index{osea\-::ofreq\-::\-Motion\-Solver@{osea\-::ofreq\-::\-Motion\-Solver}!$\sim$\-Motion\-Solver@{$\sim$\-Motion\-Solver}}
+\index{$\sim$\-Motion\-Solver@{$\sim$\-Motion\-Solver}!osea::ofreq::MotionSolver@{osea\-::ofreq\-::\-Motion\-Solver}}
+\subsubsection[{$\sim$\-Motion\-Solver}]{\setlength{\rightskip}{0pt plus 5cm}Motion\-Solver\-::$\sim$\-Motion\-Solver (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_motion_solver_ae1fb5f389752a21a6d65ce41599b9b91}
+The default destructor, nothing happens here. 
+
+\subsection{Member Function Documentation}
+\hypertarget{classosea_1_1ofreq_1_1_motion_solver_a79603cb6fede30d405f247a4d37256c1}{\index{osea\-::ofreq\-::\-Motion\-Solver@{osea\-::ofreq\-::\-Motion\-Solver}!add\-Body@{add\-Body}}
+\index{add\-Body@{add\-Body}!osea::ofreq::MotionSolver@{osea\-::ofreq\-::\-Motion\-Solver}}
+\subsubsection[{add\-Body}]{\setlength{\rightskip}{0pt plus 5cm}void Motion\-Solver\-::add\-Body (
+\begin{DoxyParamCaption}
+\item[{{\bf mat\-Body}}]{bod\-In}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_motion_solver_a79603cb6fede30d405f247a4d37256c1}
+
+
+Add a body to the motion solver set. 
+
+Add a body to the motion solver set. After initialization, this is how the motion solver gets the correct data to perform math operations on. 
+\begin{DoxyParams}{Parameters}
+{\em The} & \hyperlink{classosea_1_1ofreq_1_1mat_body}{mat\-Body} object to add the motion solver set. \hyperlink{classosea_1_1ofreq_1_1_body}{Body} inputs are added passed by value, and not by reference. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classosea_1_1ofreq_1_1_motion_solver_a8391c0f67d1d711294f2e6f44363b9bf}{\index{osea\-::ofreq\-::\-Motion\-Solver@{osea\-::ofreq\-::\-Motion\-Solver}!list\-Solution@{list\-Solution}}
+\index{list\-Solution@{list\-Solution}!osea::ofreq::MotionSolver@{osea\-::ofreq\-::\-Motion\-Solver}}
+\subsubsection[{list\-Solution}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ cx\-\_\-mat $>$ \& Motion\-Solver\-::list\-Solution (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_motion_solver_a8391c0f67d1d711294f2e6f44363b9bf}
+
+
+Get the solution for the solved equation. 
+
+Get the solution for the solved equation. Returns the full vector of complex matrices. Each element in the vector is a solution matrix specific to the body. The vector is ordered in the same sequence that the bodies were added to the motionsolver object. This is the vector of solutions for each \hyperlink{classosea_1_1ofreq_1_1_body}{Body} object. It applies to a single wave frequency and single wave direction. \begin{DoxyReturn}{Returns}
+Returns the full vector of complex matrices. Each element in the vector is a solution matrix specific to the body. The vector is ordered in the same sequence that the bodies were added to the motionsolver object. Returned variable passed by reference. 
+\end{DoxyReturn}
+\hypertarget{classosea_1_1ofreq_1_1_motion_solver_a20a5c24bd163adb5654eceee6030f898}{\index{osea\-::ofreq\-::\-Motion\-Solver@{osea\-::ofreq\-::\-Motion\-Solver}!list\-Solution@{list\-Solution}}
+\index{list\-Solution@{list\-Solution}!osea::ofreq::MotionSolver@{osea\-::ofreq\-::\-Motion\-Solver}}
+\subsubsection[{list\-Solution}]{\setlength{\rightskip}{0pt plus 5cm}cx\-\_\-mat \& Motion\-Solver\-::list\-Solution (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{bod}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_motion_solver_a20a5c24bd163adb5654eceee6030f898}
+
+
+Get the solution for the solved equation, for a single body. 
+
+Returns the solution for solved equations for a single \hyperlink{classosea_1_1ofreq_1_1_body}{Body} object. This is a matrix of solutions for equations of motion. It applies to a single \hyperlink{classosea_1_1ofreq_1_1_body}{Body}, single wave frequency, single wave direction. The Bodies are ordered in the same sequence in which they were added to the motionsolver object. 
+\begin{DoxyParams}{Parameters}
+{\em bod} & Integer. Specifies which \hyperlink{classosea_1_1ofreq_1_1_body}{Body} object the solution should be retrieved for. The Bodies are ordered in the same sequence in which they were added to the motionsolver object. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns a matrix of complex doubles. This matrix contains the solution of motions for the \hyperlink{classosea_1_1ofreq_1_1_body}{Body} specified. Returned variable passed by reference. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classosea_1_1ofreq_1_1_body}{Body} 
+\end{DoxySeeAlso}
+\hypertarget{classosea_1_1ofreq_1_1_motion_solver_a5deee421d26ef9729e0a870fd48b4403}{\index{osea\-::ofreq\-::\-Motion\-Solver@{osea\-::ofreq\-::\-Motion\-Solver}!set\-Wave\-Freq@{set\-Wave\-Freq}}
+\index{set\-Wave\-Freq@{set\-Wave\-Freq}!osea::ofreq::MotionSolver@{osea\-::ofreq\-::\-Motion\-Solver}}
+\subsubsection[{set\-Wave\-Freq}]{\setlength{\rightskip}{0pt plus 5cm}void Motion\-Solver\-::set\-Wave\-Freq (
+\begin{DoxyParamCaption}
+\item[{double}]{freq\-In}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_motion_solver_a5deee421d26ef9729e0a870fd48b4403}
+
+
+Sets the current wave frequency. 
+
+Sets the current wave frequency. This is used in calculating the summations and must be set before calling the solve method. 
+\begin{DoxyParams}{Parameters}
+{\em freq\-In} & The input wave frequency. A double precision floating point value. Used when summing derivatives. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classosea_1_1ofreq_1_1_motion_solver_a0546fbdb4b4c80b1eb8e13c8fb799217}{\index{osea\-::ofreq\-::\-Motion\-Solver@{osea\-::ofreq\-::\-Motion\-Solver}!sum\-Active\-Set@{sum\-Active\-Set}}
+\index{sum\-Active\-Set@{sum\-Active\-Set}!osea::ofreq::MotionSolver@{osea\-::ofreq\-::\-Motion\-Solver}}
+\subsubsection[{sum\-Active\-Set}]{\setlength{\rightskip}{0pt plus 5cm}cx\-\_\-mat Motion\-Solver\-::sum\-Active\-Set (
+\begin{DoxyParamCaption}
+\item[{std\-::vector$<$ {\bf mat\-Force\-Active} $>$}]{list\-Forces}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_motion_solver_a0546fbdb4b4c80b1eb8e13c8fb799217}
+
+
+Sum active forces for each set. 
+
+Sum active forces for each set. 
+\begin{DoxyParams}{Parameters}
+{\em list\-Forces} & The active force matrix. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The Sum of active force matrix. 
+\end{DoxyReturn}
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classosea_1_1ofreq_1_1_motion_solver_a0546fbdb4b4c80b1eb8e13c8fb799217_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classosea_1_1ofreq_1_1_motion_solver_a3b8939bbea9a8a260a022ed175d25d6d}{\index{osea\-::ofreq\-::\-Motion\-Solver@{osea\-::ofreq\-::\-Motion\-Solver}!sum\-Cross\-Set@{sum\-Cross\-Set}}
+\index{sum\-Cross\-Set@{sum\-Cross\-Set}!osea::ofreq::MotionSolver@{osea\-::ofreq\-::\-Motion\-Solver}}
+\subsubsection[{sum\-Cross\-Set}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ {\bf mat\-Force\-Cross} $>$ Motion\-Solver\-::sum\-Cross\-Set (
+\begin{DoxyParamCaption}
+\item[{std\-::vector$<$ {\bf mat\-Force\-Cross} $>$}]{list\-Forces}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_motion_solver_a3b8939bbea9a8a260a022ed175d25d6d}
+
+
+Sum cross-\/body forces for each set. 
+
+Sum cross-\/body forces for each set. This gets handled a little differently from reactive forces, as the linked body for the force depends on whether two objects are summed together. Output from this function is a vector of cross-\/body forces. Each entry in the vector contains a cross-\/body force object. 
+\begin{DoxyParams}{Parameters}
+{\em Cross\-Bod\-Mat} & The vector of cross-\/body force matrices. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A vector of complex matrices, with each entry in the vectors representing a cross-\/body force linked to a specific body. 
+\end{DoxyReturn}
+\hypertarget{classosea_1_1ofreq_1_1_motion_solver_a07eeaf738ebae2ce078de86e61132220}{\index{osea\-::ofreq\-::\-Motion\-Solver@{osea\-::ofreq\-::\-Motion\-Solver}!sum\-Derivative@{sum\-Derivative}}
+\index{sum\-Derivative@{sum\-Derivative}!osea::ofreq::MotionSolver@{osea\-::ofreq\-::\-Motion\-Solver}}
+\subsubsection[{sum\-Derivative}]{\setlength{\rightskip}{0pt plus 5cm}cx\-\_\-mat Motion\-Solver\-::sum\-Derivative (
+\begin{DoxyParamCaption}
+\item[{{\bf mat\-Force\-React}}]{force\-In}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_motion_solver_a07eeaf738ebae2ce078de86e61132220}
+
+
+Sum list\-Derivatives for reactive force matrix. 
+
+Sum list\-Derivatives for reactive force matrix. 
+\begin{DoxyParams}{Parameters}
+{\em the\-Reactive\-Force\-Matrix} & The reactive force matrix. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+T\-Single matrix that is the Sum of Matrices passed in. 
+\end{DoxyReturn}
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classosea_1_1ofreq_1_1_motion_solver_a07eeaf738ebae2ce078de86e61132220_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classosea_1_1ofreq_1_1_motion_solver_a07a30b3c6011f6e86d71ba03f738c510}{\index{osea\-::ofreq\-::\-Motion\-Solver@{osea\-::ofreq\-::\-Motion\-Solver}!sum\-Derivative@{sum\-Derivative}}
+\index{sum\-Derivative@{sum\-Derivative}!osea::ofreq::MotionSolver@{osea\-::ofreq\-::\-Motion\-Solver}}
+\subsubsection[{sum\-Derivative}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<$arma\-::cx\-\_\-mat$>$ osea\-::ofreq\-::\-Motion\-Solver\-::sum\-Derivative (
+\begin{DoxyParamCaption}
+\item[{std\-::vector$<$ {\bf mat\-Force\-Cross} $>$}]{force\-In}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_motion_solver_a07a30b3c6011f6e86d71ba03f738c510}
+
+
+Sum list\-Derivatives for reactive force matrix. 
+
+Sum list\-Derivatives for reactive force matrix. 
+\begin{DoxyParams}{Parameters}
+{\em force\-In} & the matrix that contains the set of cross body forces. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Single matrix that contains the cross body forces for a single definition. 
+\end{DoxyReturn}
+\hypertarget{classosea_1_1ofreq_1_1_motion_solver_a2345f18f82f306010659124421d5fe34}{\index{osea\-::ofreq\-::\-Motion\-Solver@{osea\-::ofreq\-::\-Motion\-Solver}!sum\-React\-Set@{sum\-React\-Set}}
+\index{sum\-React\-Set@{sum\-React\-Set}!osea::ofreq::MotionSolver@{osea\-::ofreq\-::\-Motion\-Solver}}
+\subsubsection[{sum\-React\-Set}]{\setlength{\rightskip}{0pt plus 5cm}{\bf mat\-Force\-React} Motion\-Solver\-::sum\-React\-Set (
+\begin{DoxyParamCaption}
+\item[{std\-::vector$<$ {\bf mat\-Force\-React} $>$}]{list\-Forces}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_motion_solver_a2345f18f82f306010659124421d5fe34}
+
+
+Sum Reactive forces for each set. 
+
+Sum Reactive forces for each set. This iterates through each reactive force in a set and adds the forces together. It respects derivatives in the summation. 
+\begin{DoxyParams}{Parameters}
+{\em list\-Forces} & The list of reactive forces associated with each body. This list may be anything from zero to infinite number of entries. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The Sum of reactive force matrices. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+motionsolver.\-h\item 
+motionsolver.\-cpp\end{DoxyCompactItemize}

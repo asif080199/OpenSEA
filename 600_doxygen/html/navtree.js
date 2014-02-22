@@ -1,6 +1,13 @@
 var NAVTREE =
 [
   [ "oFreq", "index.html", [
+    [ "Namespaces", null, [
+      [ "Namespace List", "namespaces.html", "namespaces" ],
+      [ "Namespace Members", "namespacemembers.html", [
+        [ "All", "namespacemembers.html", null ],
+        [ "Typedefs", "namespacemembers_type.html", null ]
+      ] ]
+    ] ],
     [ "Classes", null, [
       [ "Class List", "annotated.html", "annotated" ],
       [ "Class Index", "classes.html", null ],
@@ -20,8 +27,8 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "annotated.html",
-"class_output_derived.html#ae52ca63f6ad9b7b99913fd071adda371",
-"classmotion_model.html#ad21c4a3b448d3e1c0d220eaac66964a2"
+"classosea_1_1ofreq_1_1_force_react.html#ac387126f0628a06b24f53012725e384f",
+"classosea_1_1ofreq_1_1mat_force_active.html#aba1957829e2109f03c6fc03990258210"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

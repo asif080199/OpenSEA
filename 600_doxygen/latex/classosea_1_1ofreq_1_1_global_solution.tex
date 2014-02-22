@@ -1,0 +1,188 @@
+\hypertarget{classosea_1_1ofreq_1_1_global_solution}{\section{osea\-:\-:ofreq\-:\-:Global\-Solution Class Reference}
+\label{classosea_1_1ofreq_1_1_global_solution}\index{osea\-::ofreq\-::\-Global\-Solution@{osea\-::ofreq\-::\-Global\-Solution}}
+}
+
+
+{\ttfamily \#include $<$globalsolution.\-h$>$}
+
+
+
+Inheritance diagram for osea\-:\-:ofreq\-:\-:Global\-Solution\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classosea_1_1ofreq_1_1_global_solution__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for osea\-:\-:ofreq\-:\-:Global\-Solution\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=220pt]{classosea_1_1ofreq_1_1_global_solution__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classosea_1_1ofreq_1_1_global_solution_a27fcfb056c30fc07f8937bc71ec677e6}{Global\-Solution} ()
+\item 
+\hyperlink{classosea_1_1ofreq_1_1_global_solution_aea630b237ced06e04c5ea00bf1bb9398}{$\sim$\-Global\-Solution} ()
+\item 
+virtual void \hyperlink{classosea_1_1ofreq_1_1_global_solution_a537163391f1f55d073720b20f69acfa5}{set\-Derivative} (int ord)
+\begin{DoxyCompactList}\small\item\em Sets the order of the derivative for the object. \end{DoxyCompactList}\item 
+int \hyperlink{classosea_1_1ofreq_1_1_global_solution_abf8fa956895f2728820d65fda2f5304d}{get\-Derivative} ()
+\begin{DoxyCompactList}\small\item\em Gets the order of derivative set for the object. \end{DoxyCompactList}\item 
+arma\-::cx\-\_\-mat \hyperlink{classosea_1_1ofreq_1_1_global_solution_adf90922a97153ce858da530e20bc3f4d}{calc\-Output} (double freq\-In)
+\begin{DoxyCompactList}\small\item\em Calculates the \hyperlink{classosea_1_1ofreq_1_1_global_solution}{Global\-Solution} output. \hyperlink{classosea_1_1ofreq_1_1_global_solution}{Global\-Solution} is the direct output of the solution for each body, translated into body coordinates. The output is modified to provide the specified order of derivative for the solution. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classosea_1_1ofreq_1_1_solution}{Solution} \& \hyperlink{classosea_1_1ofreq_1_1_global_solution_a43a8caad9f88e3b468c3e9a364b45500}{get\-Solution} (double freq\-In)
+\begin{DoxyCompactList}\small\item\em Gets the solution matrix to perform operations on. Accesses the solution matrix from the parent body. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classosea_1_1ofreq_1_1_global_solution_a935843ad9f4fd2de2a2ec407de45a20d}{int \hyperlink{classosea_1_1ofreq_1_1_global_solution_a935843ad9f4fd2de2a2ec407de45a20d}{order\-Derivative}}\label{classosea_1_1ofreq_1_1_global_solution_a935843ad9f4fd2de2a2ec407de45a20d}
+
+\begin{DoxyCompactList}\small\item\em The order of derivative to use for calculating output. Set by child classes for specifying specific outputs. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+This class represents the Global \hyperlink{classosea_1_1ofreq_1_1_solution}{Solution}. The Global \hyperlink{classosea_1_1ofreq_1_1_solution}{Solution} is the direct output of the solved values for each body. It provides the motions calculated for each body, translated back to body coordinate system. The \hyperlink{classosea_1_1ofreq_1_1_global_solution}{Global\-Solution} can output any desired derivative of the solved motions. Several other child classes are derived from this class. The only difference is that for those other classes, the order of derivative is predefined. \begin{DoxySeeAlso}{See Also}
+\hyperlink{classosea_1_1ofreq_1_1_global_motion}{Global\-Motion} 
+
+\hyperlink{classosea_1_1ofreq_1_1_global_velocity}{Global\-Velocity} 
+
+\hyperlink{classosea_1_1ofreq_1_1_global_acceleration}{Global\-Acceleration} 
+\end{DoxySeeAlso}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classosea_1_1ofreq_1_1_global_solution_a27fcfb056c30fc07f8937bc71ec677e6}{\index{osea\-::ofreq\-::\-Global\-Solution@{osea\-::ofreq\-::\-Global\-Solution}!Global\-Solution@{Global\-Solution}}
+\index{Global\-Solution@{Global\-Solution}!osea::ofreq::GlobalSolution@{osea\-::ofreq\-::\-Global\-Solution}}
+\subsubsection[{Global\-Solution}]{\setlength{\rightskip}{0pt plus 5cm}Global\-Solution\-::\-Global\-Solution (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_global_solution_a27fcfb056c30fc07f8937bc71ec677e6}
+This default constructor creates a Global \hyperlink{classosea_1_1ofreq_1_1_solution}{Solution} object. \hypertarget{classosea_1_1ofreq_1_1_global_solution_aea630b237ced06e04c5ea00bf1bb9398}{\index{osea\-::ofreq\-::\-Global\-Solution@{osea\-::ofreq\-::\-Global\-Solution}!$\sim$\-Global\-Solution@{$\sim$\-Global\-Solution}}
+\index{$\sim$\-Global\-Solution@{$\sim$\-Global\-Solution}!osea::ofreq::GlobalSolution@{osea\-::ofreq\-::\-Global\-Solution}}
+\subsubsection[{$\sim$\-Global\-Solution}]{\setlength{\rightskip}{0pt plus 5cm}Global\-Solution\-::$\sim$\-Global\-Solution (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_global_solution_aea630b237ced06e04c5ea00bf1bb9398}
+The default destructor, nothing happens here. 
+
+\subsection{Member Function Documentation}
+\hypertarget{classosea_1_1ofreq_1_1_global_solution_adf90922a97153ce858da530e20bc3f4d}{\index{osea\-::ofreq\-::\-Global\-Solution@{osea\-::ofreq\-::\-Global\-Solution}!calc\-Output@{calc\-Output}}
+\index{calc\-Output@{calc\-Output}!osea::ofreq::GlobalSolution@{osea\-::ofreq\-::\-Global\-Solution}}
+\subsubsection[{calc\-Output}]{\setlength{\rightskip}{0pt plus 5cm}cx\-\_\-mat Global\-Solution\-::calc\-Output (
+\begin{DoxyParamCaption}
+\item[{double}]{freq\-In}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classosea_1_1ofreq_1_1_global_solution_adf90922a97153ce858da530e20bc3f4d}
+
+
+Calculates the \hyperlink{classosea_1_1ofreq_1_1_global_solution}{Global\-Solution} output. \hyperlink{classosea_1_1ofreq_1_1_global_solution}{Global\-Solution} is the direct output of the solution for each body, translated into body coordinates. The output is modified to provide the specified order of derivative for the solution. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em freq\-In} & The wave frequency to use for calculating the \hyperlink{classosea_1_1ofreq_1_1_output_derived}{Output\-Derived} object. Most outputs will depend on the wave frequency. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns a complex matrix that is the \hyperlink{classosea_1_1ofreq_1_1_global_solution}{Global\-Solution} object. The complex matrix is a single row matrix. Each column in the row matrix represents a new degree of freedom variable. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classosea_1_1ofreq_1_1_output_derived_a5600a2c7f70052a8bafce79e15e1aa92}{osea\-::ofreq\-::\-Output\-Derived}.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classosea_1_1ofreq_1_1_global_solution_adf90922a97153ce858da530e20bc3f4d_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classosea_1_1ofreq_1_1_global_solution_abf8fa956895f2728820d65fda2f5304d}{\index{osea\-::ofreq\-::\-Global\-Solution@{osea\-::ofreq\-::\-Global\-Solution}!get\-Derivative@{get\-Derivative}}
+\index{get\-Derivative@{get\-Derivative}!osea::ofreq::GlobalSolution@{osea\-::ofreq\-::\-Global\-Solution}}
+\subsubsection[{get\-Derivative}]{\setlength{\rightskip}{0pt plus 5cm}int Global\-Solution\-::get\-Derivative (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_global_solution_abf8fa956895f2728820d65fda2f5304d}
+
+
+Gets the order of derivative set for the object. 
+
+\begin{DoxyReturn}{Returns}
+Integer that specifies the order of the derivative. Value can be anything from 0 or larger. Variable is passed by value. 
+\end{DoxyReturn}
+\hypertarget{classosea_1_1ofreq_1_1_global_solution_a43a8caad9f88e3b468c3e9a364b45500}{\index{osea\-::ofreq\-::\-Global\-Solution@{osea\-::ofreq\-::\-Global\-Solution}!get\-Solution@{get\-Solution}}
+\index{get\-Solution@{get\-Solution}!osea::ofreq::GlobalSolution@{osea\-::ofreq\-::\-Global\-Solution}}
+\subsubsection[{get\-Solution}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Solution} \& Global\-Solution\-::get\-Solution (
+\begin{DoxyParamCaption}
+\item[{double}]{freq\-In}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classosea_1_1ofreq_1_1_global_solution_a43a8caad9f88e3b468c3e9a364b45500}
+
+
+Gets the solution matrix to perform operations on. Accesses the solution matrix from the parent body. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em freq\-In} & The wave frequency. Used to identify which variable to access in the solution matrix. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns the \hyperlink{classosea_1_1ofreq_1_1_solution}{Solution} object to use for calculations. Variable is passed by reference. 
+\end{DoxyReturn}
+\hypertarget{classosea_1_1ofreq_1_1_global_solution_a537163391f1f55d073720b20f69acfa5}{\index{osea\-::ofreq\-::\-Global\-Solution@{osea\-::ofreq\-::\-Global\-Solution}!set\-Derivative@{set\-Derivative}}
+\index{set\-Derivative@{set\-Derivative}!osea::ofreq::GlobalSolution@{osea\-::ofreq\-::\-Global\-Solution}}
+\subsubsection[{set\-Derivative}]{\setlength{\rightskip}{0pt plus 5cm}void Global\-Solution\-::set\-Derivative (
+\begin{DoxyParamCaption}
+\item[{int}]{ord}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classosea_1_1ofreq_1_1_global_solution_a537163391f1f55d073720b20f69acfa5}
+
+
+Sets the order of the derivative for the object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ord} & Integer input that specifies the order of the derivative. Value can be anything from 0 or larger. Variable is passed by value. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \hyperlink{classosea_1_1ofreq_1_1_global_acceleration_a14a041ea42d4c1bc10211c9a44aa3431}{osea\-::ofreq\-::\-Global\-Acceleration}, \hyperlink{classosea_1_1ofreq_1_1_global_motion_a15a8c0d57ffedf65a1cd84154cdaa6ae}{osea\-::ofreq\-::\-Global\-Motion}, and \hyperlink{classosea_1_1ofreq_1_1_global_velocity_a11229a6dbc7f85f3c321b5eddb127f10}{osea\-::ofreq\-::\-Global\-Velocity}.
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classosea_1_1ofreq_1_1_global_solution_a537163391f1f55d073720b20f69acfa5_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+globalsolution.\-h\item 
+globalsolution.\-cpp\end{DoxyCompactItemize}

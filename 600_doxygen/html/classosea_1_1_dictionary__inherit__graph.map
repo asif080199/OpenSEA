@@ -1,0 +1,6 @@
+<map id="osea::Dictionary" name="osea::Dictionary">
+<area shape="rect" id="node7" href="$classosea_1_1ofreq_1_1dict_bodies.html" title="osea::ofreq::dictBodies" alt="" coords="5,155,168,181"/>
+<area shape="rect" id="node9" href="$classosea_1_1ofreq_1_1dict_control.html" title="osea::ofreq::dictControl" alt="" coords="193,155,356,181"/>
+<area shape="rect" id="node11" href="$classosea_1_1ofreq_1_1dict_forces.html" title="osea::ofreq::dictForces" alt="" coords="381,155,544,181"/>
+<area shape="rect" id="node4" href="$classosea_1_1ofreq_1_1o_freq_core.html" title="The core oFreq class. All oFreq classes inherit from this class." alt="" coords="263,5,429,32"/>
+</map>

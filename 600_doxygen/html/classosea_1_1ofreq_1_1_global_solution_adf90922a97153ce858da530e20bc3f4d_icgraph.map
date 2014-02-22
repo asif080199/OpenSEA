@@ -1,0 +1,6 @@
+<map id="osea::ofreq::GlobalSolution::calcOutput" name="osea::ofreq::GlobalSolution::calcOutput">
+<area shape="rect" id="node3" href="$classosea_1_1ofreq_1_1_outputs_body.html#a7450d306af9db6bb159a1186f017ce6e" title="Calculates the GlobalMotion object from the list of GlobalMotion objects and returns the output..." alt="" coords="243,5,419,46"/>
+<area shape="rect" id="node5" href="$classosea_1_1ofreq_1_1_outputs_body.html#a16d63ba2343caa9244a461fb3d539843" title="Calculates the GlobalVelocity object from the list of GlobalVelocity objects and returns the output..." alt="" coords="243,70,419,111"/>
+<area shape="rect" id="node7" href="$classosea_1_1ofreq_1_1_outputs_body.html#a9c4de0023e30be8e03c4f910a3848bdc" title="Calculates the GlobalAcceleration object from the list of GlobalAcceleration objects and returns the ..." alt="" coords="243,135,419,177"/>
+<area shape="rect" id="node9" href="$classosea_1_1ofreq_1_1_outputs_body.html#a0f669819a398d64524a4aff29e20aa8b" title="Calculates the GlobalSolution object from the list of GlobalSolution objects and returns the output..." alt="" coords="243,201,419,242"/>
+</map>

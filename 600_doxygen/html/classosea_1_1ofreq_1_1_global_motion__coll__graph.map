@@ -1,0 +1,5 @@
+<map id="osea::ofreq::GlobalMotion" name="osea::ofreq::GlobalMotion">
+<area shape="rect" id="node2" href="$classosea_1_1ofreq_1_1_global_solution.html" title="osea::ofreq::GlobalSolution" alt="" coords="5,155,192,181"/>
+<area shape="rect" id="node4" href="$classosea_1_1ofreq_1_1_output_derived.html" title="osea::ofreq::OutputDerived" alt="" coords="6,80,191,107"/>
+<area shape="rect" id="node6" href="$classosea_1_1ofreq_1_1o_freq_core.html" title="The core oFreq class. All oFreq classes inherit from this class." alt="" coords="15,5,181,32"/>
+</map>

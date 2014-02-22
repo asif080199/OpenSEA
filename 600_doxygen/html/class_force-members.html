@@ -45,6 +45,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -93,7 +94,7 @@ $(document).ready(function(){initNavTree('class_force.html','');});
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Variables</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -110,17 +111,29 @@ $(document).ready(function(){initNavTree('class_force.html','');});
 
 <p>This is the complete list of members for <a class="el" href="class_force.html">Force</a>, including all inherited members.</p>
 <table class="directory">
-  <tr class="even"><td class="entry"><a class="el" href="class_force.html#a00983e3bbc206a00bb9253deafc4e424">Force</a>()</td><td class="entry"><a class="el" href="class_force.html">Force</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classo_freq_core.html#a5e31044ee80fa436289e569c8080b21e">ErrLog</a></td><td class="entry"><a class="el" href="classo_freq_core.html">oFreqCore</a></td><td class="entry"><span class="mlabel">protected</span><span class="mlabel">static</span></td></tr>
+  <tr><td class="entry"><a class="el" href="class_force.html#a00983e3bbc206a00bb9253deafc4e424">Force</a>()</td><td class="entry"><a class="el" href="class_force.html">Force</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_force.html#a17b130fe437ef6c78162f6d4fb7fc909">Force</a>(int indexIn)</td><td class="entry"><a class="el" href="class_force.html">Force</a></td><td class="entry"></td></tr>
   <tr><td class="entry"><a class="el" href="class_force.html#a50b8739b17f549bd250936b0251ca571">forceName</a></td><td class="entry"><a class="el" href="class_force.html">Force</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="class_force.html#a8431fcc0edd27e3edb77f8176bec6908">getForceName</a>()</td><td class="entry"><a class="el" href="class_force.html">Force</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="class_force.html#aefb0b71694f6ffbfe1ee06516f5536c3">setForceName</a>(string)</td><td class="entry"><a class="el" href="class_force.html">Force</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_force.html#a8767ca332cee738a462befe1bfbfa454">~Force</a>()</td><td class="entry"><a class="el" href="class_force.html">Force</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="class_force.html#a8cce0e20d734d02c5c52c8ca1f1bde54">getSystemIndex</a>()</td><td class="entry"><a class="el" href="class_force.html">Force</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classo_freq_core.html#a5c882c0d8e78706270e377b749a647f5">oFreqCore</a>()</td><td class="entry"><a class="el" href="classo_freq_core.html">oFreqCore</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classo_freq_core.html#a85b3e812b6d78c064ba375d5101bb053">OutLog</a></td><td class="entry"><a class="el" href="classo_freq_core.html">oFreqCore</a></td><td class="entry"><span class="mlabel">protected</span><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_force.html#a26d7a21a41c57ff7040b244c6585b764">pSysIndex</a></td><td class="entry"><a class="el" href="class_force.html">Force</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classo_freq_core.html#a8af56bbec3689f5d2252da1787a910e3">setErrLog</a>(string dirIn)</td><td class="entry"><a class="el" href="classo_freq_core.html">oFreqCore</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_force.html#aefb0b71694f6ffbfe1ee06516f5536c3">setForceName</a>(string)</td><td class="entry"><a class="el" href="class_force.html">Force</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classo_freq_core.html#a2912584189c4abd84498450b7c5908c2">setOutLog</a>(string dirIn)</td><td class="entry"><a class="el" href="classo_freq_core.html">oFreqCore</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_force.html#aee052df1c632a6dfb323b5deac443684">setSystemIndex</a>(int indexIn)</td><td class="entry"><a class="el" href="class_force.html">Force</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classo_freq_core.html#a7272d265451eb63bb371f9b9c02f4883">writeError</a>(string mesIn)</td><td class="entry"><a class="el" href="classo_freq_core.html">oFreqCore</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classo_freq_core.html#a74a938eae7e51de72bc752ad83382a11">writeLog</a>(string mesIn)</td><td class="entry"><a class="el" href="classo_freq_core.html">oFreqCore</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr><td class="entry"><a class="el" href="class_force.html#a8767ca332cee738a462befe1bfbfa454">~Force</a>()</td><td class="entry"><a class="el" href="class_force.html">Force</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classo_freq_core.html#aea5887547dbd17fc2d4f1a99fe217918">~oFreqCore</a>()</td><td class="entry"><a class="el" href="classo_freq_core.html">oFreqCore</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
 </table></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Thu Aug 22 2013 20:07:55 for oFreq by
+    <li class="footer">Generated on Sat Oct 12 2013 09:37:36 for oFreq by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.2 </li>
   </ul>

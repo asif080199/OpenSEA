@@ -1,0 +1,630 @@
+\hypertarget{classosea_1_1ofreq_1_1_equationof_motion}{\section{osea\-:\-:ofreq\-:\-:Equationof\-Motion Class Reference}
+\label{classosea_1_1ofreq_1_1_equationof_motion}\index{osea\-::ofreq\-::\-Equationof\-Motion@{osea\-::ofreq\-::\-Equationof\-Motion}}
+}
+
+
+{\ttfamily \#include $<$equationofmotion.\-h$>$}
+
+
+
+Inheritance diagram for osea\-:\-:ofreq\-:\-:Equationof\-Motion\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=275pt]{classosea_1_1ofreq_1_1_equationof_motion__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for osea\-:\-:ofreq\-:\-:Equationof\-Motion\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=275pt]{classosea_1_1ofreq_1_1_equationof_motion__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classosea_1_1ofreq_1_1_equationof_motion_a61c6e25419cf9c5402a4e30496ef6b19}{Equationof\-Motion} (\hyperlink{classosea_1_1ofreq_1_1_motion_model}{Motion\-Model} $\ast$model\-In)
+\begin{DoxyCompactList}\small\item\em Default contrustor. Contains a reference to the motion model class which constructs it. \end{DoxyCompactList}\item 
+\hyperlink{classosea_1_1ofreq_1_1_equationof_motion_adb22faa7fbb72f4ee01931fe6b9571ee}{Equationof\-Motion} (\hyperlink{classosea_1_1ofreq_1_1_motion_model}{Motion\-Model} $\ast$model\-In, std\-::string Name\-In)
+\begin{DoxyCompactList}\small\item\em Contrustor with name. Contains a reference to the motion model class which constructs it. \end{DoxyCompactList}\item 
+\hyperlink{classosea_1_1ofreq_1_1_equationof_motion_a334a999be59f6cba06cbbb2cf3134ad9}{Equationof\-Motion} (\hyperlink{classosea_1_1ofreq_1_1_motion_model}{Motion\-Model} $\ast$model\-In, std\-::string Name\-In, int Index\-In)
+\begin{DoxyCompactList}\small\item\em Contrustor with name and index. Contains a reference to the motion model class which constructs it. \end{DoxyCompactList}\item 
+\hypertarget{classosea_1_1ofreq_1_1_equationof_motion_ab06097df1a54719d7a5682babbd9f233}{\hyperlink{classosea_1_1ofreq_1_1_equationof_motion_ab06097df1a54719d7a5682babbd9f233}{$\sim$\-Equationof\-Motion} ()}\label{classosea_1_1ofreq_1_1_equationof_motion_ab06097df1a54719d7a5682babbd9f233}
+
+\begin{DoxyCompactList}\small\item\em Default destructor. \end{DoxyCompactList}\item 
+std\-::complex$<$ double $>$ \hyperlink{classosea_1_1ofreq_1_1_equationof_motion_a7198b4661f6c0a4c1f280863228bd63c}{Evaluate} ()
+\begin{DoxyCompactList}\small\item\em Triggers evaluation of the equation of motion object. \end{DoxyCompactList}\item 
+void \hyperlink{classosea_1_1ofreq_1_1_equationof_motion_a5a8674f3d8715973fa0affc162ae677c}{set\-Data\-Index} (int Data\-In)
+\begin{DoxyCompactList}\small\item\em Sets the index for the equation of motion. \end{DoxyCompactList}\item 
+int \hyperlink{classosea_1_1ofreq_1_1_equationof_motion_a45052d6a9814ffa899d1824f5d8e8cee}{get\-Data\-Index} ()
+\begin{DoxyCompactList}\small\item\em Gets the index for the equation of motion. \end{DoxyCompactList}\item 
+int \& \hyperlink{classosea_1_1ofreq_1_1_equationof_motion_ae16051cbf725210aa44941d41d8800e2}{ref\-Data\-Index} ()
+\begin{DoxyCompactList}\small\item\em Gets the index for the equation of motion. \end{DoxyCompactList}\item 
+void \hyperlink{classosea_1_1ofreq_1_1_equationof_motion_a154640d80a23348fa9183b6c4ebe3f37}{set\-Arguments} (int argn, std\-::vector$<$ double $>$ argv)
+\begin{DoxyCompactList}\small\item\em Sets any values for arguments that may be used by the equation of motion. \end{DoxyCompactList}\item 
+std\-::string \& \hyperlink{classosea_1_1ofreq_1_1_equationof_motion_abb7b1a4295e8406ea4f155b1f03689f6}{ref\-Name} ()
+\begin{DoxyCompactList}\small\item\em The name for the equation object. \end{DoxyCompactList}\item 
+std\-::string \& \hyperlink{classosea_1_1ofreq_1_1_equationof_motion_a5be5a333dd1a5a65eaadec4b32c68fb5}{ref\-Description} ()
+\begin{DoxyCompactList}\small\item\em The description for the equation object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual std\-::complex$<$ double $>$ \hyperlink{classosea_1_1ofreq_1_1_equationof_motion_a1d8614b11de9396f3795e4b560e6c368}{set\-Formula} ()
+\begin{DoxyCompactList}\small\item\em The formula used by the equation of motion. \end{DoxyCompactList}\item 
+std\-::complex$<$ double $>$ \hyperlink{classosea_1_1ofreq_1_1_equationof_motion_ad4ba6707460a9db7f8103157af0cae65}{Kronecker} (int var1, int var2, bool anti=false)
+\begin{DoxyCompactList}\small\item\em The mathematical Kronecker delta function. \end{DoxyCompactList}\item 
+std\-::complex$<$ double $>$ \hyperlink{classosea_1_1ofreq_1_1_equationof_motion_af12570e012041ea91d81820735b14c74}{Ddt} (int \hyperlink{classosea_1_1ofreq_1_1_equationof_motion_ab69511cc5037376cf7da80ce30d9eaab}{var}, int \hyperlink{classosea_1_1ofreq_1_1_equationof_motion_a31f904818ce75c9e2a2b5cff9fc707a5}{ord}, int bod\-In=-\/1)
+\begin{DoxyCompactList}\small\item\em Time differential function. \end{DoxyCompactList}\item 
+std\-::complex$<$ double $>$ \hyperlink{classosea_1_1ofreq_1_1_equationof_motion_a3538522faed2b449a93f34485eda5c17}{Sum} (std\-::complex$<$ double $>$ force, std\-::string index, unsigned int from=-\/1, unsigned int to=-\/1)
+\begin{DoxyCompactList}\small\item\em Sums across a variable. \end{DoxyCompactList}\item 
+std\-::complex$<$ double $>$ \hyperlink{classosea_1_1ofreq_1_1_equationof_motion_a61f33c3fd47ae2b66db1982b9c973ec1}{Force\-Active\-\_\-hydro} ()
+\begin{DoxyCompactList}\small\item\em A reference to the data set of the Force\-Active\-\_\-hydro. \end{DoxyCompactList}\item 
+std\-::complex$<$ double $>$ \hyperlink{classosea_1_1ofreq_1_1_equationof_motion_a238df115825cbe08522bdc10b84880b9}{Force\-Active\-\_\-user} ()
+\begin{DoxyCompactList}\small\item\em A reference to the data set of the Force\-Active\-\_\-user. \end{DoxyCompactList}\item 
+std\-::complex$<$ double $>$ \hyperlink{classosea_1_1ofreq_1_1_equationof_motion_a4962df48c786fced4e953e50f1d82a3a}{Force\-React\-\_\-hydro} (unsigned int ord\-In, unsigned int var\-In)
+\begin{DoxyCompactList}\small\item\em A reference to the data set of the Force\-React\-\_\-hydro. \end{DoxyCompactList}\item 
+std\-::complex$<$ double $>$ \hyperlink{classosea_1_1ofreq_1_1_equationof_motion_ac1f572e423c09b9e9fa955f52434a8f7}{Force\-React\-\_\-user} (unsigned int ord\-In, unsigned int var\-In)
+\begin{DoxyCompactList}\small\item\em A reference to the data set of the Force\-React\-\_\-user. \end{DoxyCompactList}\item 
+std\-::complex$<$ double $>$ \hyperlink{classosea_1_1ofreq_1_1_equationof_motion_af1d1f42b77561e9f1c4110e16af309da}{Force\-Cross\-\_\-hydro} (unsigned int bod\-In, unsigned int ord\-In, unsigned int var\-In)
+\begin{DoxyCompactList}\small\item\em A reference to the data set of the Force\-Cross\-\_\-hydro. \end{DoxyCompactList}\item 
+std\-::complex$<$ double $>$ \hyperlink{classosea_1_1ofreq_1_1_equationof_motion_a3b06b1ff4b792ad3a3d3c0274426d5ed}{Force\-Cross\-\_\-user} (unsigned int bod\-In, unsigned int ord\-In, unsigned int var\-In)
+\begin{DoxyCompactList}\small\item\em A reference to the data set of the Force\-Cross\-\_\-user. \end{DoxyCompactList}\item 
+std\-::complex$<$ double $>$ \hyperlink{classosea_1_1ofreq_1_1_equationof_motion_a848b45b70d29d793b86a7c1ca8f97ed6}{Force\-Mass} (int var\-In)
+\begin{DoxyCompactList}\small\item\em A reference to the data set of the Force\-Mass. \end{DoxyCompactList}\item 
+int \hyperlink{classosea_1_1ofreq_1_1_equationof_motion_ab69511cc5037376cf7da80ce30d9eaab}{var} ()
+\begin{DoxyCompactList}\small\item\em Returns the index integer for iteration on variable. \end{DoxyCompactList}\item 
+int \hyperlink{classosea_1_1ofreq_1_1_equationof_motion_a31f904818ce75c9e2a2b5cff9fc707a5}{ord} ()
+\begin{DoxyCompactList}\small\item\em Returns the index integer for iteration on order of derviative. \end{DoxyCompactList}\item 
+int \hyperlink{classosea_1_1ofreq_1_1_equationof_motion_ac87fe1d5112f5b42f9afd5f1c3b9002c}{body} ()
+\begin{DoxyCompactList}\small\item\em Returns the index integer for the current body used by the motion model that created this equation of motions. \end{DoxyCompactList}\item 
+int \hyperlink{classosea_1_1ofreq_1_1_equationof_motion_a8c6367e13c8f027f4a0936b821ff9363}{maxvar} ()
+\begin{DoxyCompactList}\small\item\em Returns the maximum number of items that can be iterated through on the variable index. \end{DoxyCompactList}\item 
+int \hyperlink{classosea_1_1ofreq_1_1_equationof_motion_ad8271e1cc1d78b7bf80a90fe3c3b06b4}{maxord} ()
+\begin{DoxyCompactList}\small\item\em Returns the maximum number of items that can be iterated through on the order of derivative index. \end{DoxyCompactList}\item 
+int \hyperlink{classosea_1_1ofreq_1_1_equationof_motion_a0fea5098961fce0004b978223b4a501b}{maxbody} ()
+\begin{DoxyCompactList}\small\item\em Returns the maximum number of items that can be iterated through on the body index. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{classosea_1_1ofreq_1_1_equationof_motion_a13a15811fd575ac0fccf0d463218657b}{argcount}
+\begin{DoxyCompactList}\small\item\em Used to supply arguments to the equation of motion. Recods the number of arguments. \end{DoxyCompactList}\item 
+std\-::vector$<$ double $>$ \hyperlink{classosea_1_1ofreq_1_1_equationof_motion_a1a9bf7f3460368c102aa8d4edec9b500}{argvalue}
+\begin{DoxyCompactList}\small\item\em Used to supply arguments to the equation of motion. Uknown, arbitrary double precision values. A vector of uknown size. \end{DoxyCompactList}\item 
+std\-::string \hyperlink{classosea_1_1ofreq_1_1_equationof_motion_a5848a1ad14d31556fd1b62b4e3de3643}{p\-Name}
+\begin{DoxyCompactList}\small\item\em The name for the equation object. \end{DoxyCompactList}\item 
+std\-::string \hyperlink{classosea_1_1ofreq_1_1_equationof_motion_aa6ce10dacd47441d445a9170bd355792}{p\-Description}
+\begin{DoxyCompactList}\small\item\em The description for the equation object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+The \hyperlink{classosea_1_1ofreq_1_1_equation}{Equation} of motion class defines a single equation of motion. Each object of the class represents a new instance. This is the base class, which gets inheritted by any custom class. The only major definition added to any inherrited class is the actual formula definition for the equation. It may be that the equation are repetitions of the same sequence, just with a different equation index. In that case, multiple instances of the same class can be created and the equation index changed. This can save on typing. Or, if the equations are truly different for each equation, you can create a separate equation of motion class for each equation, and initiate with just one object from each class.
+
+In addition to the regular object entries, the class also has provision for a list of arbitrary arguments. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classosea_1_1ofreq_1_1_equationof_motion_a61c6e25419cf9c5402a4e30496ef6b19}{\index{osea\-::ofreq\-::\-Equationof\-Motion@{osea\-::ofreq\-::\-Equationof\-Motion}!Equationof\-Motion@{Equationof\-Motion}}
+\index{Equationof\-Motion@{Equationof\-Motion}!osea::ofreq::EquationofMotion@{osea\-::ofreq\-::\-Equationof\-Motion}}
+\subsubsection[{Equationof\-Motion}]{\setlength{\rightskip}{0pt plus 5cm}Equationof\-Motion\-::\-Equationof\-Motion (
+\begin{DoxyParamCaption}
+\item[{{\bf Motion\-Model} $\ast$}]{model\-In}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_equationof_motion_a61c6e25419cf9c5402a4e30496ef6b19}
+
+
+Default contrustor. Contains a reference to the motion model class which constructs it. 
+
+Default contrustor. Contains a reference to the motion model class which constructs it. The constructing class is necessary because several functions in the Equation\-Of\-Motion class use data in the constructing class, the motion model class. 
+\begin{DoxyParams}{Parameters}
+{\em model\-In} & A pointer to the motion model object that created the equation of motion. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classosea_1_1ofreq_1_1_equationof_motion_adb22faa7fbb72f4ee01931fe6b9571ee}{\index{osea\-::ofreq\-::\-Equationof\-Motion@{osea\-::ofreq\-::\-Equationof\-Motion}!Equationof\-Motion@{Equationof\-Motion}}
+\index{Equationof\-Motion@{Equationof\-Motion}!osea::ofreq::EquationofMotion@{osea\-::ofreq\-::\-Equationof\-Motion}}
+\subsubsection[{Equationof\-Motion}]{\setlength{\rightskip}{0pt plus 5cm}osea\-::ofreq\-::\-Equationof\-Motion\-::\-Equationof\-Motion (
+\begin{DoxyParamCaption}
+\item[{{\bf Motion\-Model} $\ast$}]{model\-In, }
+\item[{std\-::string}]{Name\-In}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_equationof_motion_adb22faa7fbb72f4ee01931fe6b9571ee}
+
+
+Contrustor with name. Contains a reference to the motion model class which constructs it. 
+
+Default contrustor. Contains a reference to the motion model class which constructs it. The constructing class is necessary because several functions in the Equation\-Of\-Motion class use data in the constructing class, the motion model class. 
+\begin{DoxyParams}{Parameters}
+{\em model\-In} & A pointer to the motion model object that created the equation of motion. \\
+\hline
+{\em Name\-In} & A name for what physical property the equation solves for. Used for user output. Not critical to program execution. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classosea_1_1ofreq_1_1_equationof_motion_a334a999be59f6cba06cbbb2cf3134ad9}{\index{osea\-::ofreq\-::\-Equationof\-Motion@{osea\-::ofreq\-::\-Equationof\-Motion}!Equationof\-Motion@{Equationof\-Motion}}
+\index{Equationof\-Motion@{Equationof\-Motion}!osea::ofreq::EquationofMotion@{osea\-::ofreq\-::\-Equationof\-Motion}}
+\subsubsection[{Equationof\-Motion}]{\setlength{\rightskip}{0pt plus 5cm}osea\-::ofreq\-::\-Equationof\-Motion\-::\-Equationof\-Motion (
+\begin{DoxyParamCaption}
+\item[{{\bf Motion\-Model} $\ast$}]{model\-In, }
+\item[{std\-::string}]{Name\-In, }
+\item[{int}]{Index\-In}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_equationof_motion_a334a999be59f6cba06cbbb2cf3134ad9}
+
+
+Contrustor with name and index. Contains a reference to the motion model class which constructs it. 
+
+Default contrustor. Contains a reference to the motion model class which constructs it. The constructing class is necessary because several functions in the Equation\-Of\-Motion class use data in the constructing class, the motion model class. 
+\begin{DoxyParams}{Parameters}
+{\em model\-In} & A pointer to the motion model object that created the equation of motion. \\
+\hline
+{\em Name\-In} & A name for what physical property the equation solves for. Used for user output. Not critical to program execution. \\
+\hline
+{\em Index\-In} & \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classosea_1_1ofreq_1_1_equationof_motion_ac87fe1d5112f5b42f9afd5f1c3b9002c}{\index{osea\-::ofreq\-::\-Equationof\-Motion@{osea\-::ofreq\-::\-Equationof\-Motion}!body@{body}}
+\index{body@{body}!osea::ofreq::EquationofMotion@{osea\-::ofreq\-::\-Equationof\-Motion}}
+\subsubsection[{body}]{\setlength{\rightskip}{0pt plus 5cm}int Equationof\-Motion\-::body (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classosea_1_1ofreq_1_1_equationof_motion_ac87fe1d5112f5b42f9afd5f1c3b9002c}
+
+
+Returns the index integer for the current body used by the motion model that created this equation of motions. 
+
+Returns the index integer for the current body used by the motion model that created this equation of motions. This index cannot be modified through this function. It is purely meant for access of the variable. \begin{DoxyReturn}{Returns}
+Returns the index integer for the current body used by the motion model that created this equation of motions. 
+\end{DoxyReturn}
+\hypertarget{classosea_1_1ofreq_1_1_equationof_motion_af12570e012041ea91d81820735b14c74}{\index{osea\-::ofreq\-::\-Equationof\-Motion@{osea\-::ofreq\-::\-Equationof\-Motion}!Ddt@{Ddt}}
+\index{Ddt@{Ddt}!osea::ofreq::EquationofMotion@{osea\-::ofreq\-::\-Equationof\-Motion}}
+\subsubsection[{Ddt}]{\setlength{\rightskip}{0pt plus 5cm}complex$<$ double $>$ Equationof\-Motion\-::\-Ddt (
+\begin{DoxyParamCaption}
+\item[{int}]{var, }
+\item[{int}]{ord, }
+\item[{int}]{bod\-In = {\ttfamily -\/1}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classosea_1_1ofreq_1_1_equationof_motion_af12570e012041ea91d81820735b14c74}
+
+
+Time differential function. 
+
+Time differential function. Used to calculate the time derivative of a reponse. Can convert from response amplitude to velocity to acceleration, and further. Used to calculated amplitude of response. 
+\begin{DoxyParams}{Parameters}
+{\em var} & Index of the variable to use for the time differential. If included with the function \hyperlink{classosea_1_1ofreq_1_1_equationof_motion_ab69511cc5037376cf7da80ce30d9eaab}{var()}, the index is automatically determined by the summation functions that you include \hyperlink{classosea_1_1ofreq_1_1_equationof_motion_af12570e012041ea91d81820735b14c74}{Ddt()} into. \\
+\hline
+{\em ord} & Integer. The order of the differential. If the function \hyperlink{classosea_1_1ofreq_1_1_equationof_motion_a31f904818ce75c9e2a2b5cff9fc707a5}{ord()} is used, the order is automatically determined by the summation function that you include \hyperlink{classosea_1_1ofreq_1_1_equationof_motion_af12570e012041ea91d81820735b14c74}{Ddt()} into. \\
+\hline
+{\em bod\-In} & The body to retrieve variable data for. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns a complex value that is the time differential, transposed into a frequency domain. If absolute values of response were desired, the function will include the effects of response amplitude. 
+\end{DoxyReturn}
+\hypertarget{classosea_1_1ofreq_1_1_equationof_motion_a7198b4661f6c0a4c1f280863228bd63c}{\index{osea\-::ofreq\-::\-Equationof\-Motion@{osea\-::ofreq\-::\-Equationof\-Motion}!Evaluate@{Evaluate}}
+\index{Evaluate@{Evaluate}!osea::ofreq::EquationofMotion@{osea\-::ofreq\-::\-Equationof\-Motion}}
+\subsubsection[{Evaluate}]{\setlength{\rightskip}{0pt plus 5cm}complex$<$ double $>$ Equationof\-Motion\-::\-Evaluate (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_equationof_motion_a7198b4661f6c0a4c1f280863228bd63c}
+
+
+Triggers evaluation of the equation of motion object. 
+
+\begin{DoxyReturn}{Returns}
+Returns a complex number that is the result of evaluating the equation of motion object. 
+\end{DoxyReturn}
+\hypertarget{classosea_1_1ofreq_1_1_equationof_motion_a61f33c3fd47ae2b66db1982b9c973ec1}{\index{osea\-::ofreq\-::\-Equationof\-Motion@{osea\-::ofreq\-::\-Equationof\-Motion}!Force\-Active\-\_\-hydro@{Force\-Active\-\_\-hydro}}
+\index{Force\-Active\-\_\-hydro@{Force\-Active\-\_\-hydro}!osea::ofreq::EquationofMotion@{osea\-::ofreq\-::\-Equationof\-Motion}}
+\subsubsection[{Force\-Active\-\_\-hydro}]{\setlength{\rightskip}{0pt plus 5cm}complex$<$ double $>$ Equationof\-Motion\-::\-Force\-Active\-\_\-hydro (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classosea_1_1ofreq_1_1_equationof_motion_a61f33c3fd47ae2b66db1982b9c973ec1}
+
+
+A reference to the data set of the Force\-Active\-\_\-hydro. 
+
+\begin{DoxyReturn}{Returns}
+Returns the data set for the Force\-Active\-\_\-hydro. Indices can be specified to access individual elements. 
+\end{DoxyReturn}
+\hypertarget{classosea_1_1ofreq_1_1_equationof_motion_a238df115825cbe08522bdc10b84880b9}{\index{osea\-::ofreq\-::\-Equationof\-Motion@{osea\-::ofreq\-::\-Equationof\-Motion}!Force\-Active\-\_\-user@{Force\-Active\-\_\-user}}
+\index{Force\-Active\-\_\-user@{Force\-Active\-\_\-user}!osea::ofreq::EquationofMotion@{osea\-::ofreq\-::\-Equationof\-Motion}}
+\subsubsection[{Force\-Active\-\_\-user}]{\setlength{\rightskip}{0pt plus 5cm}complex$<$ double $>$ Equationof\-Motion\-::\-Force\-Active\-\_\-user (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classosea_1_1ofreq_1_1_equationof_motion_a238df115825cbe08522bdc10b84880b9}
+
+
+A reference to the data set of the Force\-Active\-\_\-user. 
+
+\begin{DoxyReturn}{Returns}
+Returns the data set for the Force\-Active\-\_\-user. Indices can be specified to access individual elements. 
+\end{DoxyReturn}
+\hypertarget{classosea_1_1ofreq_1_1_equationof_motion_af1d1f42b77561e9f1c4110e16af309da}{\index{osea\-::ofreq\-::\-Equationof\-Motion@{osea\-::ofreq\-::\-Equationof\-Motion}!Force\-Cross\-\_\-hydro@{Force\-Cross\-\_\-hydro}}
+\index{Force\-Cross\-\_\-hydro@{Force\-Cross\-\_\-hydro}!osea::ofreq::EquationofMotion@{osea\-::ofreq\-::\-Equationof\-Motion}}
+\subsubsection[{Force\-Cross\-\_\-hydro}]{\setlength{\rightskip}{0pt plus 5cm}complex$<$ double $>$ Equationof\-Motion\-::\-Force\-Cross\-\_\-hydro (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{bod\-In, }
+\item[{unsigned int}]{ord\-In, }
+\item[{unsigned int}]{var\-In}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classosea_1_1ofreq_1_1_equationof_motion_af1d1f42b77561e9f1c4110e16af309da}
+
+
+A reference to the data set of the Force\-Cross\-\_\-hydro. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em bod\-In} & Integer. Represents the input variable for the body that the cross body force is linked to. \\
+\hline
+{\em ord\-In} & Integer. Represents the input variable for the order of derivative. \\
+\hline
+{\em var\-In} & Integer. Represents the input varaible for the variable. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns the data set for the Force\-Cross\-\_\-hydro. Indices can be specified to access individual elements. 
+\end{DoxyReturn}
+\hypertarget{classosea_1_1ofreq_1_1_equationof_motion_a3b06b1ff4b792ad3a3d3c0274426d5ed}{\index{osea\-::ofreq\-::\-Equationof\-Motion@{osea\-::ofreq\-::\-Equationof\-Motion}!Force\-Cross\-\_\-user@{Force\-Cross\-\_\-user}}
+\index{Force\-Cross\-\_\-user@{Force\-Cross\-\_\-user}!osea::ofreq::EquationofMotion@{osea\-::ofreq\-::\-Equationof\-Motion}}
+\subsubsection[{Force\-Cross\-\_\-user}]{\setlength{\rightskip}{0pt plus 5cm}complex$<$ double $>$ Equationof\-Motion\-::\-Force\-Cross\-\_\-user (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{bod\-In, }
+\item[{unsigned int}]{ord\-In, }
+\item[{unsigned int}]{var\-In}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classosea_1_1ofreq_1_1_equationof_motion_a3b06b1ff4b792ad3a3d3c0274426d5ed}
+
+
+A reference to the data set of the Force\-Cross\-\_\-user. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em bod\-In} & Integer. Represents the input variable for the body that the cross body force is linked to. \\
+\hline
+{\em ord\-In} & Integer. Represents the input variable for the order of derivative. \\
+\hline
+{\em var\-In} & Integer. Represents the input varaible for the variable. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns the data set for the Force\-Cross\-\_\-user. Indices can be specified to access individual elements. 
+\end{DoxyReturn}
+\hypertarget{classosea_1_1ofreq_1_1_equationof_motion_a848b45b70d29d793b86a7c1ca8f97ed6}{\index{osea\-::ofreq\-::\-Equationof\-Motion@{osea\-::ofreq\-::\-Equationof\-Motion}!Force\-Mass@{Force\-Mass}}
+\index{Force\-Mass@{Force\-Mass}!osea::ofreq::EquationofMotion@{osea\-::ofreq\-::\-Equationof\-Motion}}
+\subsubsection[{Force\-Mass}]{\setlength{\rightskip}{0pt plus 5cm}complex$<$ double $>$ Equationof\-Motion\-::\-Force\-Mass (
+\begin{DoxyParamCaption}
+\item[{int}]{var\-In}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classosea_1_1ofreq_1_1_equationof_motion_a848b45b70d29d793b86a7c1ca8f97ed6}
+
+
+A reference to the data set of the Force\-Mass. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em var\-In} & Integer. Represents the input varaible for the variable. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns the data set for the Force\-Mass. Indices can be specified to access individual elements. 
+\end{DoxyReturn}
+\hypertarget{classosea_1_1ofreq_1_1_equationof_motion_a4962df48c786fced4e953e50f1d82a3a}{\index{osea\-::ofreq\-::\-Equationof\-Motion@{osea\-::ofreq\-::\-Equationof\-Motion}!Force\-React\-\_\-hydro@{Force\-React\-\_\-hydro}}
+\index{Force\-React\-\_\-hydro@{Force\-React\-\_\-hydro}!osea::ofreq::EquationofMotion@{osea\-::ofreq\-::\-Equationof\-Motion}}
+\subsubsection[{Force\-React\-\_\-hydro}]{\setlength{\rightskip}{0pt plus 5cm}complex$<$ double $>$ Equationof\-Motion\-::\-Force\-React\-\_\-hydro (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{ord\-In, }
+\item[{unsigned int}]{var\-In}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classosea_1_1ofreq_1_1_equationof_motion_a4962df48c786fced4e953e50f1d82a3a}
+
+
+A reference to the data set of the Force\-React\-\_\-hydro. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ord\-In} & Integer. Represents the input variable for the order of derivative. \\
+\hline
+{\em var\-In} & Integer. Represents the input varaible for the variable. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns the data set for the Force\-React\-\_\-hydro. Indices can be specified to access individual elements. 
+\end{DoxyReturn}
+\hypertarget{classosea_1_1ofreq_1_1_equationof_motion_ac1f572e423c09b9e9fa955f52434a8f7}{\index{osea\-::ofreq\-::\-Equationof\-Motion@{osea\-::ofreq\-::\-Equationof\-Motion}!Force\-React\-\_\-user@{Force\-React\-\_\-user}}
+\index{Force\-React\-\_\-user@{Force\-React\-\_\-user}!osea::ofreq::EquationofMotion@{osea\-::ofreq\-::\-Equationof\-Motion}}
+\subsubsection[{Force\-React\-\_\-user}]{\setlength{\rightskip}{0pt plus 5cm}complex$<$ double $>$ Equationof\-Motion\-::\-Force\-React\-\_\-user (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{ord\-In, }
+\item[{unsigned int}]{var\-In}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classosea_1_1ofreq_1_1_equationof_motion_ac1f572e423c09b9e9fa955f52434a8f7}
+
+
+A reference to the data set of the Force\-React\-\_\-user. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ord\-In} & Integer. Represents the input variable for the order of derivative. \\
+\hline
+{\em var\-In} & Integer. Represents the input varaible for the variable. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns the data set for the Force\-React\-\_\-user. Indices can be specified to access individual elements. 
+\end{DoxyReturn}
+\hypertarget{classosea_1_1ofreq_1_1_equationof_motion_a45052d6a9814ffa899d1824f5d8e8cee}{\index{osea\-::ofreq\-::\-Equationof\-Motion@{osea\-::ofreq\-::\-Equationof\-Motion}!get\-Data\-Index@{get\-Data\-Index}}
+\index{get\-Data\-Index@{get\-Data\-Index}!osea::ofreq::EquationofMotion@{osea\-::ofreq\-::\-Equationof\-Motion}}
+\subsubsection[{get\-Data\-Index}]{\setlength{\rightskip}{0pt plus 5cm}int Equationof\-Motion\-::get\-Data\-Index (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_equationof_motion_a45052d6a9814ffa899d1824f5d8e8cee}
+
+
+Gets the index for the equation of motion. 
+
+Gets the index for the equation of motion. The index is how the equation determines which numbers to access on the data. The following indices are used. Any higher indices can extend beyond this range, and the program easily adapts. But the following three are reserved. Unused indices are not transferred to the matrices when solved. So unused indices to not negatively impact calculation performance. However, using excessively large indices (say 500 when you only have 3 equations) will result in large matrices and unecessary memory requirements. T\-He following index reservations apply. 1\-: Translation in x-\/direction. 2\-: Translation in y-\/direction. 3\-: Translation in z-\/direction. 4\-: Rotation about x-\/direction. 5\-: Rotation about y-\/direction. 6\-: Rotation about z-\/direction. \begin{DoxyReturn}{Returns}
+Returns an integer number representing the data index used by the equation. 
+\end{DoxyReturn}
+\hypertarget{classosea_1_1ofreq_1_1_equationof_motion_ad4ba6707460a9db7f8103157af0cae65}{\index{osea\-::ofreq\-::\-Equationof\-Motion@{osea\-::ofreq\-::\-Equationof\-Motion}!Kronecker@{Kronecker}}
+\index{Kronecker@{Kronecker}!osea::ofreq::EquationofMotion@{osea\-::ofreq\-::\-Equationof\-Motion}}
+\subsubsection[{Kronecker}]{\setlength{\rightskip}{0pt plus 5cm}complex$<$ double $>$ Equationof\-Motion\-::\-Kronecker (
+\begin{DoxyParamCaption}
+\item[{int}]{var1, }
+\item[{int}]{var2, }
+\item[{bool}]{anti = {\ttfamily false}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classosea_1_1ofreq_1_1_equationof_motion_ad4ba6707460a9db7f8103157af0cae65}
+
+
+The mathematical Kronecker delta function. 
+
+The mathematical Kronecker-\/delta function. Used to filter out terms when doing a double summation between two indices. The function evaluates to one when the two indices are equal, and evaluates to zero any other time. Multiplying a term by the Kronecker delta ensures that the results will be filtered to only have terms of equal indices. If this relates back to a matrix, the kronecked delta filters the deta to only include diagonal terms. 
+\begin{DoxyParams}{Parameters}
+{\em var1} & Integer variable. The first index that is being summed across. \\
+\hline
+{\em var2} & Integer variable. The second index that is being summed across. \\
+\hline
+{\em anti} & Boolean variable. Sometimes the researcher may be interested in the off diagonal terms. Cases when var1 does not equatl var2. In those cases, the Kronecker delta function should work in reverse and filter out the diagonal terms in a matrix. The anti variable is a trigger for the Kronecker delta function to work in reverse of its normal method. The default setting for this variable is false. By default, the Kronecker delta function evaluates with one when var1 = var2. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Complex number. Evaluates to either zero (0 + 0j), or one (1 + 0j). 
+\end{DoxyReturn}
+\hypertarget{classosea_1_1ofreq_1_1_equationof_motion_a0fea5098961fce0004b978223b4a501b}{\index{osea\-::ofreq\-::\-Equationof\-Motion@{osea\-::ofreq\-::\-Equationof\-Motion}!maxbody@{maxbody}}
+\index{maxbody@{maxbody}!osea::ofreq::EquationofMotion@{osea\-::ofreq\-::\-Equationof\-Motion}}
+\subsubsection[{maxbody}]{\setlength{\rightskip}{0pt plus 5cm}int Equationof\-Motion\-::maxbody (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classosea_1_1ofreq_1_1_equationof_motion_a0fea5098961fce0004b978223b4a501b}
+
+
+Returns the maximum number of items that can be iterated through on the body index. 
+
+Returns the maximum number of items that can be iterated through on the body index. Used for summation functions. Automatically finds the upper limit of any summation loops. The lower limit is always 0 and does not require a special function. \begin{DoxyReturn}{Returns}
+Returns the maximum number of items that can be iterated through on the body index. 
+\end{DoxyReturn}
+\hypertarget{classosea_1_1ofreq_1_1_equationof_motion_ad8271e1cc1d78b7bf80a90fe3c3b06b4}{\index{osea\-::ofreq\-::\-Equationof\-Motion@{osea\-::ofreq\-::\-Equationof\-Motion}!maxord@{maxord}}
+\index{maxord@{maxord}!osea::ofreq::EquationofMotion@{osea\-::ofreq\-::\-Equationof\-Motion}}
+\subsubsection[{maxord}]{\setlength{\rightskip}{0pt plus 5cm}int Equationof\-Motion\-::maxord (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classosea_1_1ofreq_1_1_equationof_motion_ad8271e1cc1d78b7bf80a90fe3c3b06b4}
+
+
+Returns the maximum number of items that can be iterated through on the order of derivative index. 
+
+Returns the maximum number of items that can be iterated through on the order of derivative index. Used for summation functions. Automatically finds the upper limit of any summation loops. The lower limit is always 0 and does not require a special function. \begin{DoxyReturn}{Returns}
+Returns the maximum number of items that can be iterated through on the order of derivative index. 
+\end{DoxyReturn}
+\hypertarget{classosea_1_1ofreq_1_1_equationof_motion_a8c6367e13c8f027f4a0936b821ff9363}{\index{osea\-::ofreq\-::\-Equationof\-Motion@{osea\-::ofreq\-::\-Equationof\-Motion}!maxvar@{maxvar}}
+\index{maxvar@{maxvar}!osea::ofreq::EquationofMotion@{osea\-::ofreq\-::\-Equationof\-Motion}}
+\subsubsection[{maxvar}]{\setlength{\rightskip}{0pt plus 5cm}int Equationof\-Motion\-::maxvar (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classosea_1_1ofreq_1_1_equationof_motion_a8c6367e13c8f027f4a0936b821ff9363}
+
+
+Returns the maximum number of items that can be iterated through on the variable index. 
+
+Returns the maximum number of items that can be iterated through on the variable index. Used for summation functions. Automatically finds the upper limit of any summation loops. The lower limit is always 0 and does not require a special function. \begin{DoxyReturn}{Returns}
+Returns the maximum number of items that can be iterated through on the variable index. 
+\end{DoxyReturn}
+\hypertarget{classosea_1_1ofreq_1_1_equationof_motion_a31f904818ce75c9e2a2b5cff9fc707a5}{\index{osea\-::ofreq\-::\-Equationof\-Motion@{osea\-::ofreq\-::\-Equationof\-Motion}!ord@{ord}}
+\index{ord@{ord}!osea::ofreq::EquationofMotion@{osea\-::ofreq\-::\-Equationof\-Motion}}
+\subsubsection[{ord}]{\setlength{\rightskip}{0pt plus 5cm}int Equationof\-Motion\-::ord (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classosea_1_1ofreq_1_1_equationof_motion_a31f904818ce75c9e2a2b5cff9fc707a5}
+
+
+Returns the index integer for iteration on order of derviative. 
+
+\begin{DoxyReturn}{Returns}
+Returns the index integer for iteration on order of derviative. 
+\end{DoxyReturn}
+\hypertarget{classosea_1_1ofreq_1_1_equationof_motion_ae16051cbf725210aa44941d41d8800e2}{\index{osea\-::ofreq\-::\-Equationof\-Motion@{osea\-::ofreq\-::\-Equationof\-Motion}!ref\-Data\-Index@{ref\-Data\-Index}}
+\index{ref\-Data\-Index@{ref\-Data\-Index}!osea::ofreq::EquationofMotion@{osea\-::ofreq\-::\-Equationof\-Motion}}
+\subsubsection[{ref\-Data\-Index}]{\setlength{\rightskip}{0pt plus 5cm}int \& Equationof\-Motion\-::ref\-Data\-Index (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_equationof_motion_ae16051cbf725210aa44941d41d8800e2}
+
+
+Gets the index for the equation of motion. 
+
+Gets the index for the equation of motion. The index is how the equation determines which numbers to access on the data. The following indices are used. Any higher indices can extend beyond this range, and the program easily adapts. But the following three are reserved. Unused indices are not transferred to the matrices when solved. So unused indices to not negatively impact calculation performance. However, using excessively large indices (say 500 when you only have 3 equations) will result in large matrices and unecessary memory requirements. T\-He following index reservations apply. 1\-: Translation in x-\/direction. 2\-: Translation in y-\/direction. 3\-: Translation in z-\/direction. 4\-: Rotation about x-\/direction. 5\-: Rotation about y-\/direction. 6\-: Rotation about z-\/direction. \begin{DoxyReturn}{Returns}
+Returns a reference to the protected data index variable contained in the class. 
+\end{DoxyReturn}
+\hypertarget{classosea_1_1ofreq_1_1_equationof_motion_a5be5a333dd1a5a65eaadec4b32c68fb5}{\index{osea\-::ofreq\-::\-Equationof\-Motion@{osea\-::ofreq\-::\-Equationof\-Motion}!ref\-Description@{ref\-Description}}
+\index{ref\-Description@{ref\-Description}!osea::ofreq::EquationofMotion@{osea\-::ofreq\-::\-Equationof\-Motion}}
+\subsubsection[{ref\-Description}]{\setlength{\rightskip}{0pt plus 5cm}string \& Equationof\-Motion\-::ref\-Description (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_equationof_motion_a5be5a333dd1a5a65eaadec4b32c68fb5}
+
+
+The description for the equation object. 
+
+The description for the equation object. This is an expanded version of the name. Again, purely for user identification of the \hyperlink{classosea_1_1ofreq_1_1_equationof_motion}{Equationof\-Motion} object. Brief names go under the Name property. More extensive descriptions go under this property. These would be useful to the user for describing the physical meaning behind the equation of motion. \begin{DoxyReturn}{Returns}
+Returns reference to the protected p\-Description variable. 
+\end{DoxyReturn}
+\hypertarget{classosea_1_1ofreq_1_1_equationof_motion_abb7b1a4295e8406ea4f155b1f03689f6}{\index{osea\-::ofreq\-::\-Equationof\-Motion@{osea\-::ofreq\-::\-Equationof\-Motion}!ref\-Name@{ref\-Name}}
+\index{ref\-Name@{ref\-Name}!osea::ofreq::EquationofMotion@{osea\-::ofreq\-::\-Equationof\-Motion}}
+\subsubsection[{ref\-Name}]{\setlength{\rightskip}{0pt plus 5cm}string \& Equationof\-Motion\-::ref\-Name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_equationof_motion_abb7b1a4295e8406ea4f155b1f03689f6}
+
+
+The name for the equation object. 
+
+The name for the equation object. This is the short name that user will use to identify the meaning of the equation. \begin{DoxyReturn}{Returns}
+Returns reference to the protected p\-Name variable. 
+\end{DoxyReturn}
+\hypertarget{classosea_1_1ofreq_1_1_equationof_motion_a154640d80a23348fa9183b6c4ebe3f37}{\index{osea\-::ofreq\-::\-Equationof\-Motion@{osea\-::ofreq\-::\-Equationof\-Motion}!set\-Arguments@{set\-Arguments}}
+\index{set\-Arguments@{set\-Arguments}!osea::ofreq::EquationofMotion@{osea\-::ofreq\-::\-Equationof\-Motion}}
+\subsubsection[{set\-Arguments}]{\setlength{\rightskip}{0pt plus 5cm}void Equationof\-Motion\-::set\-Arguments (
+\begin{DoxyParamCaption}
+\item[{int}]{argn, }
+\item[{std\-::vector$<$ double $>$}]{argv}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_equationof_motion_a154640d80a23348fa9183b6c4ebe3f37}
+
+
+Sets any values for arguments that may be used by the equation of motion. 
+
+Sets any values for arguments that may be used by the equation of motion. These can be any numerical value as needed by the equation of motion. 
+\begin{DoxyParams}{Parameters}
+{\em argn} & The number of arguments to expect. \\
+\hline
+{\em argv} & The vector containing the argument values. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classosea_1_1ofreq_1_1_equationof_motion_a5a8674f3d8715973fa0affc162ae677c}{\index{osea\-::ofreq\-::\-Equationof\-Motion@{osea\-::ofreq\-::\-Equationof\-Motion}!set\-Data\-Index@{set\-Data\-Index}}
+\index{set\-Data\-Index@{set\-Data\-Index}!osea::ofreq::EquationofMotion@{osea\-::ofreq\-::\-Equationof\-Motion}}
+\subsubsection[{set\-Data\-Index}]{\setlength{\rightskip}{0pt plus 5cm}void Equationof\-Motion\-::set\-Data\-Index (
+\begin{DoxyParamCaption}
+\item[{int}]{Data\-In}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_equationof_motion_a5a8674f3d8715973fa0affc162ae677c}
+
+
+Sets the index for the equation of motion. 
+
+Sets the index for the equation of motion. The index is how the equation determines which numbers to access on the data. The following indices are used. Any higher indices can extend beyond this range, and the program easily adapts. But the following three are reserved. Unused indices are not transferred to the matrices when solved. So unused indices to not negatively impact calculation performance. However, using excessively large indices (say 500 when you only have 3 equations) will result in large matrices and unecessary memory requirements. T\-He following index reservations apply. 1\-: Translation in x-\/direction. 2\-: Translation in y-\/direction. 3\-: Translation in z-\/direction. 4\-: Rotation about x-\/direction. 5\-: Rotation about y-\/direction. 6\-: Rotation about z-\/direction. 
+\begin{DoxyParams}{Parameters}
+{\em Data\-In} & The integer of the data index to use. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classosea_1_1ofreq_1_1_equationof_motion_a1d8614b11de9396f3795e4b560e6c368}{\index{osea\-::ofreq\-::\-Equationof\-Motion@{osea\-::ofreq\-::\-Equationof\-Motion}!set\-Formula@{set\-Formula}}
+\index{set\-Formula@{set\-Formula}!osea::ofreq::EquationofMotion@{osea\-::ofreq\-::\-Equationof\-Motion}}
+\subsubsection[{set\-Formula}]{\setlength{\rightskip}{0pt plus 5cm}complex$<$ double $>$ Equationof\-Motion\-::set\-Formula (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{classosea_1_1ofreq_1_1_equationof_motion_a1d8614b11de9396f3795e4b560e6c368}
+
+
+The formula used by the equation of motion. 
+
+The formula used by the equation of motion. The formula gets rewritten in a unique form. Rearrange any equations so that they have zero on the right hand size.
+
+Example\-: If the formula were Ax + By = F, it must be rearranged to\-: Ax + By -\/ F = 0
+
+The formula can also make use of several math functions provided by the equation of motion object. \hypertarget{classosea_1_1ofreq_1_1_equationof_motion_a3538522faed2b449a93f34485eda5c17}{\index{osea\-::ofreq\-::\-Equationof\-Motion@{osea\-::ofreq\-::\-Equationof\-Motion}!Sum@{Sum}}
+\index{Sum@{Sum}!osea::ofreq::EquationofMotion@{osea\-::ofreq\-::\-Equationof\-Motion}}
+\subsubsection[{Sum}]{\setlength{\rightskip}{0pt plus 5cm}complex$<$ double $>$ Equationof\-Motion\-::\-Sum (
+\begin{DoxyParamCaption}
+\item[{std\-::complex$<$ double $>$}]{force, }
+\item[{std\-::string}]{index, }
+\item[{unsigned int}]{from = {\ttfamily -\/1}, }
+\item[{unsigned int}]{to = {\ttfamily -\/1}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classosea_1_1ofreq_1_1_equationof_motion_a3538522faed2b449a93f34485eda5c17}
+
+
+Sums across a variable. 
+
+Sums across a variable. The index limits can be specified. Or the keyword functions can be used to automatically Sum across the entire index range. 
+\begin{DoxyParams}{Parameters}
+{\em force} & Input to specify which items the results should Sum across. Typically, this is one of the built-\/in force functions. However, it can be any function, any item, any calculation. The only catch is that the input value must be a std\-::complex$<$double$>$ data type. \\
+\hline
+{\em index} & std\-::string specifying which variable should be summed on. This may be any one of these options\-: Order of derivative = \char`\"{}ord\char`\"{} Variable = \char`\"{}var\char`\"{} \hyperlink{classosea_1_1ofreq_1_1_body}{Body} = \char`\"{}bod\char`\"{} \\
+\hline
+{\em from} & Integer for the beginning value of the summation. Default value of negative one (-\/1) indicates that the summation will happen at the lowest value of the variable index specified. \\
+\hline
+{\em to} & Integer for the ending value of the summation. Default value of negative one (-\/1) indicates that the summation will happen at the highest value of the variable index specified. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns a complex value that is the summation of the index and limits specified. 
+\end{DoxyReturn}
+\hypertarget{classosea_1_1ofreq_1_1_equationof_motion_ab69511cc5037376cf7da80ce30d9eaab}{\index{osea\-::ofreq\-::\-Equationof\-Motion@{osea\-::ofreq\-::\-Equationof\-Motion}!var@{var}}
+\index{var@{var}!osea::ofreq::EquationofMotion@{osea\-::ofreq\-::\-Equationof\-Motion}}
+\subsubsection[{var}]{\setlength{\rightskip}{0pt plus 5cm}int Equationof\-Motion\-::var (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classosea_1_1ofreq_1_1_equationof_motion_ab69511cc5037376cf7da80ce30d9eaab}
+
+
+Returns the index integer for iteration on variable. 
+
+\begin{DoxyReturn}{Returns}
+Returns the index integer for iteration on variable. 
+\end{DoxyReturn}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classosea_1_1ofreq_1_1_equationof_motion_a13a15811fd575ac0fccf0d463218657b}{\index{osea\-::ofreq\-::\-Equationof\-Motion@{osea\-::ofreq\-::\-Equationof\-Motion}!argcount@{argcount}}
+\index{argcount@{argcount}!osea::ofreq::EquationofMotion@{osea\-::ofreq\-::\-Equationof\-Motion}}
+\subsubsection[{argcount}]{\setlength{\rightskip}{0pt plus 5cm}int osea\-::ofreq\-::\-Equationof\-Motion\-::argcount\hspace{0.3cm}{\ttfamily [protected]}}}\label{classosea_1_1ofreq_1_1_equationof_motion_a13a15811fd575ac0fccf0d463218657b}
+
+
+Used to supply arguments to the equation of motion. Recods the number of arguments. 
+
+Used to supply arguments to the equation of motion. Recods the number of arguments. Not required for use of the equation of motion object. \hypertarget{classosea_1_1ofreq_1_1_equationof_motion_a1a9bf7f3460368c102aa8d4edec9b500}{\index{osea\-::ofreq\-::\-Equationof\-Motion@{osea\-::ofreq\-::\-Equationof\-Motion}!argvalue@{argvalue}}
+\index{argvalue@{argvalue}!osea::ofreq::EquationofMotion@{osea\-::ofreq\-::\-Equationof\-Motion}}
+\subsubsection[{argvalue}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<$double$>$ osea\-::ofreq\-::\-Equationof\-Motion\-::argvalue\hspace{0.3cm}{\ttfamily [protected]}}}\label{classosea_1_1ofreq_1_1_equationof_motion_a1a9bf7f3460368c102aa8d4edec9b500}
+
+
+Used to supply arguments to the equation of motion. Uknown, arbitrary double precision values. A vector of uknown size. 
+
+Used to supply arguments to the equation of motion. Uknown, arbitrary double precision values. A vector of uknown size. Not required for use fo the equation of motion object. \hypertarget{classosea_1_1ofreq_1_1_equationof_motion_aa6ce10dacd47441d445a9170bd355792}{\index{osea\-::ofreq\-::\-Equationof\-Motion@{osea\-::ofreq\-::\-Equationof\-Motion}!p\-Description@{p\-Description}}
+\index{p\-Description@{p\-Description}!osea::ofreq::EquationofMotion@{osea\-::ofreq\-::\-Equationof\-Motion}}
+\subsubsection[{p\-Description}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string osea\-::ofreq\-::\-Equationof\-Motion\-::p\-Description\hspace{0.3cm}{\ttfamily [protected]}}}\label{classosea_1_1ofreq_1_1_equationof_motion_aa6ce10dacd47441d445a9170bd355792}
+
+
+The description for the equation object. 
+
+The description for the equation object. This is an expanded version of the name. Again, purely for user identification of the \hyperlink{classosea_1_1ofreq_1_1_equationof_motion}{Equationof\-Motion} object. Brief names go under the Name property. More extensive descriptions go under this property. These would be useful to the user for describing the physical meaning behind the equation of motion. \hypertarget{classosea_1_1ofreq_1_1_equationof_motion_a5848a1ad14d31556fd1b62b4e3de3643}{\index{osea\-::ofreq\-::\-Equationof\-Motion@{osea\-::ofreq\-::\-Equationof\-Motion}!p\-Name@{p\-Name}}
+\index{p\-Name@{p\-Name}!osea::ofreq::EquationofMotion@{osea\-::ofreq\-::\-Equationof\-Motion}}
+\subsubsection[{p\-Name}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string osea\-::ofreq\-::\-Equationof\-Motion\-::p\-Name\hspace{0.3cm}{\ttfamily [protected]}}}\label{classosea_1_1ofreq_1_1_equationof_motion_a5848a1ad14d31556fd1b62b4e3de3643}
+
+
+The name for the equation object. 
+
+The name for the equation object. This is the short name that user will use to identify the meaning of the equation. 
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+equationofmotion.\-h\item 
+equationofmotion.\-cpp\end{DoxyCompactItemize}

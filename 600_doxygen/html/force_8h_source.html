@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>oFreq: /home/nicholas/Ship Design/Projects/DMS1305 OpenSEA/master/200_src/bin/ofreq/motion_solver/force.h Source File</title>
+<title>oFreq: force.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -45,6 +45,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -90,7 +91,7 @@ $(document).ready(function(){initNavTree('force_8h_source.html','');});
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Variables</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -106,7 +107,7 @@ $(document).ready(function(){initNavTree('force_8h_source.html','');});
 <div class="contents">
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*----------------------------------------*- C++ -*------------------------------------------------------------------*\</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">| O pen         | OpenSea: The Open Source Seakeeping Suite                                                           |</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">| S eakeeping   | Web:     www.opensea.dmsonline.us                                                                   |</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">| S eakeeping | Web:     www.opensea.dmsonline.us                                                                   |</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">| E valuation   |                                                                                                     |</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">| A nalysis     |                                                                                                     |</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">\*-------------------------------------------------------------------------------------------------------------------*/</span></div>
@@ -114,7 +115,7 @@ $(document).ready(function(){initNavTree('force_8h_source.html','');});
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">/*-------------------------------------------------------------------------------------------------------------------*\</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"> *Revision History</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"> *---------------------------------------------------------------------------------------------------------------------</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment"> *Date          Author              Description</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment"> *Date          Author        Description</span></div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment"> *---------------------------------------------------------------------------------------------------------------------</span></div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"> *May 15, 2013  Shane Honanie       Initially created.</span></div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"> *</span></div>
@@ -144,46 +145,71 @@ $(document).ready(function(){initNavTree('force_8h_source.html','');});
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="comment">//######################################### Class Separator ###########################################################</span></div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#ifndef FORCE_H</span></div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define FORCE_H</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#include &quot;../file_reader/readinputfile.h&quot;</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor">#include &quot;equation.h&quot;</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#include &quot;equation.h&quot;</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor">#include &quot;../global_objects/ofreqcore.h&quot;</span></div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="preprocessor">#include &lt;fstream&gt;</span></div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="keyword">using namespace </span>std;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="comment">//######################################### Class Separator ###########################################################</span></div>
-<div class="line"><a name="l00054"></a><span class="lineno"><a class="code" href="class_force.html">   54</a></span>&#160;<span class="comment"></span><span class="keyword">class </span><a class="code" href="class_force.html">Force</a></div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;{</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="comment">//==========================================Section Separator =========================================================</span></div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="comment">//------------------------------------------Function Separator ----------------------------------------------------</span></div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <a class="code" href="class_force.html">Force</a>(); </div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="comment">//------------------------------------------Function Separator ----------------------------------------------------</span></div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    ~<a class="code" href="class_force.html">Force</a>(); </div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="comment">//------------------------------------------Function Separator ----------------------------------------------------</span></div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="comment"></span>    <span class="keywordtype">void</span> setForceName(<span class="keywordtype">string</span>);</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="comment">//######################################### Class Separator ###########################################################</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="comment">//Namespace declarations</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="comment">//==========================================Section Separator =========================================================</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="comment"></span><span class="keyword">namespace </span>osea</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;{</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="comment">//------------------------------------------Function Separator ----------------------------------------------------</span></div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="comment"></span>    <span class="comment">//------------------------------------------Function Separator ----------------------------------------------------</span></div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keywordtype">string</span> getForceName();</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="comment">//==========================================Section Separator =========================================================</span></div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="comment">//------------------------------------------Function Separator ----------------------------------------------------</span></div>
-<div class="line"><a name="l00083"></a><span class="lineno"><a class="code" href="class_force.html#a50b8739b17f549bd250936b0251ca571">   83</a></span>&#160;    <span class="keywordtype">string</span> <a class="code" href="class_force.html#a50b8739b17f549bd250936b0251ca571">forceName</a>; </div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="comment">//==========================================Section Separator =========================================================</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="comment"></span><span class="keyword">namespace </span>ofreq</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;{</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="comment">//######################################### Class Separator ###########################################################</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno"><a class="code" href="classosea_1_1ofreq_1_1_force.html">   83</a></span>&#160;<span class="comment"></span><span class="keyword">class </span><a class="code" href="classosea_1_1ofreq_1_1_force.html">Force</a> : <span class="keyword">public</span> <a class="code" href="classosea_1_1ofreq_1_1o_freq_core.html" title="The core oFreq class. All oFreq classes inherit from this class.">osea::ofreq::oFreqCore</a></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;{</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="comment">//==========================================Section Separator =========================================================</span></div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;};</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="comment">//------------------------------------------Function Separator ----------------------------------------------------</span></div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;  <a class="code" href="classosea_1_1ofreq_1_1_force.html#a00983e3bbc206a00bb9253deafc4e424">Force</a>(); </div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="comment">//------------------------------------------Function Separator ----------------------------------------------------</span></div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;<span class="comment"></span>    <a class="code" href="classosea_1_1ofreq_1_1_force.html#a00983e3bbc206a00bb9253deafc4e424">Force</a>(<span class="keywordtype">int</span> indexIn);</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <span class="comment">//------------------------------------------Function Separator ----------------------------------------------------</span></div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <span class="keyword">virtual</span> <a class="code" href="classosea_1_1ofreq_1_1_force.html#a8767ca332cee738a462befe1bfbfa454">~Force</a>(); </div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <span class="comment">//------------------------------------------Function Separator ----------------------------------------------------</span></div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;<span class="comment"></span>  <span class="keywordtype">void</span> <a class="code" href="classosea_1_1ofreq_1_1_force.html#afda991c33f4b65e82b246b24c39f0923">setForceName</a>(std::string);</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <span class="comment">//------------------------------------------Function Separator ----------------------------------------------------</span></div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;<span class="comment"></span>  std::string <a class="code" href="classosea_1_1ofreq_1_1_force.html#a8431fcc0edd27e3edb77f8176bec6908">getForceName</a>();</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    <span class="comment">//------------------------------------------Function Separator ----------------------------------------------------</span></div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;<span class="comment"></span>    <span class="keywordtype">void</span> <a class="code" href="classosea_1_1ofreq_1_1_force.html#aee052df1c632a6dfb323b5deac443684" title="Sets the system index. The index of the Force object as it exists in the list of other similar Force ...">setSystemIndex</a>(<span class="keywordtype">int</span> indexIn);</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    <span class="comment">//------------------------------------------Function Separator ----------------------------------------------------</span></div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;<span class="comment"></span>    <span class="keywordtype">int</span> <a class="code" href="classosea_1_1ofreq_1_1_force.html#a8cce0e20d734d02c5c52c8ca1f1bde54" title="Gets the system index. The index of the Force object as it exists in the list of other similar Force ...">getSystemIndex</a>();</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;<span class="comment">//==========================================Section Separator =========================================================</span></div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;<span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    <span class="comment">//------------------------------------------Function Separator ----------------------------------------------------</span></div>
+<div class="line"><a name="l00141"></a><span class="lineno"><a class="code" href="classosea_1_1ofreq_1_1_force.html#af7cab6c2ebbe013f407570136a5cb8e7">  141</a></span>&#160;    std::string <a class="code" href="classosea_1_1ofreq_1_1_force.html#af7cab6c2ebbe013f407570136a5cb8e7">forceName</a>; </div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    <span class="comment">//------------------------------------------Function Separator ----------------------------------------------------</span></div>
+<div class="line"><a name="l00148"></a><span class="lineno"><a class="code" href="classosea_1_1ofreq_1_1_force.html#ae93d98d3c25ed841450d2a839b936aad">  148</a></span>&#160;<span class="comment"></span>    <span class="keywordtype">int</span> <a class="code" href="classosea_1_1ofreq_1_1_force.html#ae93d98d3c25ed841450d2a839b936aad" title="The index of the Force object as it exists in the list of other similar Force objects contained under...">pSysIndex</a>;</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;<span class="comment">//==========================================Section Separator =========================================================</span></div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;};</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;}   <span class="comment">//Namespace ofreq</span></div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;}   <span class="comment">//Namespace osea</span></div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_56b368c6d4f28ed1479bff4e7a7f6001.html">200_src</a></li><li class="navelem"><a class="el" href="dir_54a29c8b735a6b519070134aed29f600.html">bin</a></li><li class="navelem"><a class="el" href="dir_e8f29f456f9bc8f0b8059295bf8d5395.html">ofreq</a></li><li class="navelem"><a class="el" href="dir_fe41e39bc89f4379412444629b16a43f.html">motion_solver</a></li><li class="navelem"><b>force.h</b></li>
-    <li class="footer">Generated on Thu Aug 22 2013 20:07:44 for oFreq by
+    <li class="navelem"><a class="el" href="dir_f391ca716ffc5f73e26bbfbd1c386d7a.html">nicholas</a></li><li class="navelem"><a class="el" href="dir_56714be5f44c632f096dc98161cfe0bc.html">Projects</a></li><li class="navelem"><a class="el" href="dir_a9660f870cd78d147631dbe8401fc122.html">DMS1305 OpenSEA</a></li><li class="navelem"><a class="el" href="dir_57862b7a2e6c493336b5eba4fa7a08ad.html">master</a></li><li class="navelem"><a class="el" href="dir_93879df78e79e3db9dadcce0364173a5.html">200_src</a></li><li class="navelem"><a class="el" href="dir_c68d9c97f52ca4a921fcfe2b9a5c2169.html">bin</a></li><li class="navelem"><a class="el" href="dir_de13d08a2e5fe03c0504c97f3e0a2dbd.html">ofreq</a></li><li class="navelem"><a class="el" href="dir_513b2cb281ea4cbac81376ef834372cc.html">global_objects</a></li><li class="navelem"><b>force.h</b></li>
+    <li class="footer">Generated on Sat Oct 12 2013 10:41:16 for oFreq by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.2 </li>
   </ul>

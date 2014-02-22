@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>oFreq: /home/nicholas/Ship Design/Projects/DMS1305 OpenSEA/master/200_src/bin/ofreq/motion_solver/matbody.h Source File</title>
+<title>oFreq: matbody.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -45,6 +45,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -90,7 +91,7 @@ $(document).ready(function(){initNavTree('matbody_8h_source.html','');});
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Variables</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -106,7 +107,7 @@ $(document).ready(function(){initNavTree('matbody_8h_source.html','');});
 <div class="contents">
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*----------------------------------------*- C++ -*------------------------------------------------------------------*\</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">| O pen         | OpenSea: The Open Source Seakeeping Suite                                                           |</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">| S eakeeping   | Web:     www.opensea.dmsonline.us                                                                   |</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">| S eakeeping | Web:     www.opensea.dmsonline.us                                                                   |</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">| E valuation   |                                                                                                     |</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">| A nalysis     |                                                                                                     |</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">\*-------------------------------------------------------------------------------------------------------------------*/</span></div>
@@ -114,7 +115,7 @@ $(document).ready(function(){initNavTree('matbody_8h_source.html','');});
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">/*-------------------------------------------------------------------------------------------------------------------*\</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"> *Revision History</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"> *---------------------------------------------------------------------------------------------------------------------</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment"> *Date          Author              Description</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment"> *Date          Author        Description</span></div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment"> *---------------------------------------------------------------------------------------------------------------------</span></div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"> *May 15, 2013  Shane Honanie       Initially created</span></div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"> *Aug 01 2013   Nicholas Barczak    Added header comments</span></div>
@@ -157,89 +158,119 @@ $(document).ready(function(){initNavTree('matbody_8h_source.html','');});
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="preprocessor">#elif defined Q_OS_LINUX</span></div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="preprocessor"></span><span class="preprocessor">    #include &lt;armadillo&gt;</span>    <span class="comment">//Armadillo library included with standard system libraries.</span></div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#include &quot;body.h&quot;</span></div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="preprocessor">#include &quot;derivative.h&quot;</span></div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="preprocessor">#include &quot;matreactforce.h&quot;</span></div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="preprocessor">#include &quot;matactiveforce.h&quot;</span></div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="preprocessor">#include &quot;matcrossforce.h&quot;</span></div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="keyword">using namespace </span>arma;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="keyword">using namespace </span>std;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="keyword">typedef</span> complex&lt;double&gt; complexDouble;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="comment">//######################################### Class Separator ###########################################################</span></div>
-<div class="line"><a name="l00080"></a><span class="lineno"><a class="code" href="classmat_body.html">   80</a></span>&#160;<span class="comment"></span><span class="keyword">class </span><a class="code" href="classmat_body.html">matBody</a></div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;{</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="comment">//==========================================Section Separator =========================================================</span></div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="keyword">public</span>: </div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="comment">//------------------------------------------Function Separator ----------------------------------------------------</span></div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <a class="code" href="classmat_body.html">matBody</a>(); </div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="comment">//------------------------------------------Function Separator ----------------------------------------------------</span></div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    ~<a class="code" href="classmat_body.html">matBody</a>(); </div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="comment">//------------------------------------------Function Separator ----------------------------------------------------</span></div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="comment"></span>    <span class="keywordtype">void</span> setId(<span class="keywordtype">int</span> num);</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="comment">//------------------------------------------Function Separator ----------------------------------------------------</span></div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;<span class="comment"></span>    <span class="keywordtype">int</span> getId();</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <span class="comment">//------------------------------------------Function Separator ----------------------------------------------------</span></div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;<span class="comment"></span>    <span class="keywordtype">void</span> setModelId(<span class="keywordtype">int</span> num);</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    <span class="comment">//------------------------------------------Function Separator ----------------------------------------------------</span></div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;<span class="comment"></span>    <span class="keywordtype">int</span> getModelId();</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#include &quot;../global_objects/body.h&quot;</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="preprocessor">#include &quot;../global_objects/derivative.h&quot;</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="preprocessor">#include &quot;../global_objects/ofreqcore.h&quot;</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="preprocessor">#include &quot;matforcereact.h&quot;</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="preprocessor">#include &quot;matforceactive.h&quot;</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="preprocessor">#include &quot;matforcecross.h&quot;</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="comment">//######################################### Class Separator ###########################################################</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="comment">//Namespace declarations</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="comment">//==========================================Section Separator =========================================================</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="comment"></span><span class="keyword">namespace </span>osea</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;{</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="comment">//==========================================Section Separator =========================================================</span></div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="comment"></span><span class="keyword">namespace </span>ofreq</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;{</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="keyword">typedef</span> std::complex&lt;double&gt; <a class="code" href="namespaceosea_1_1ofreq.html#a40cad4695a41123a7ae6ab0b6e8b1664">complexDouble</a>;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="comment">//######################################### Class Separator ###########################################################</span></div>
+<div class="line"><a name="l00108"></a><span class="lineno"><a class="code" href="classosea_1_1ofreq_1_1mat_body.html">  108</a></span>&#160;<span class="comment"></span><span class="keyword">class </span><a class="code" href="classosea_1_1ofreq_1_1mat_body.html">matBody</a> : <span class="keyword">public</span> <a class="code" href="classosea_1_1ofreq_1_1o_freq_core.html" title="The core oFreq class. All oFreq classes inherit from this class.">osea::ofreq::oFreqCore</a></div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;{</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;<span class="comment">//==========================================Section Separator =========================================================</span></div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;<span class="keyword">public</span>: </div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    <span class="comment">//------------------------------------------Function Separator ----------------------------------------------------</span></div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <a class="code" href="classosea_1_1ofreq_1_1mat_body.html#adbcb73fc9873660ca781493b2b2742a2">matBody</a>(); </div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    <span class="comment">//------------------------------------------Function Separator ----------------------------------------------------</span></div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    <a class="code" href="classosea_1_1ofreq_1_1mat_body.html#afcc3a6a87689dfbb5dfa72648a46c355">~matBody</a>(); </div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    <span class="comment">//------------------------------------------Function Separator ----------------------------------------------------</span></div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;<span class="comment"></span>    <span class="keywordtype">void</span> <a class="code" href="classosea_1_1ofreq_1_1mat_body.html#abb86318fbd7300ed01eae308551f9e96" title="Sets the force id number for the object.">setId</a>(<span class="keywordtype">int</span> num);</div>
 <div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;</div>
 <div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    <span class="comment">//------------------------------------------Function Separator ----------------------------------------------------</span></div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;<span class="comment"></span>    cx_mat &amp;Mass();</div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    <span class="comment">//------------------------------------------Function Separator ----------------------------------------------------</span></div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;<span class="comment"></span>    vector&lt;matReactForce&gt; &amp;listReactForce_user();</div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    <span class="comment">//------------------------------------------Function Separator ----------------------------------------------------</span></div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;<span class="comment"></span>    vector&lt;matCrossForce&gt; &amp;listCrossForce_user();</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;</div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    <span class="comment">//------------------------------------------Function Separator ----------------------------------------------------</span></div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;<span class="comment"></span>    vector&lt;matActiveForce&gt; &amp;listActiveForce_user();</div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;</div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;    <span class="comment">//------------------------------------------Function Separator ----------------------------------------------------</span></div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;<span class="comment"></span>    vector&lt;matReactForce&gt; &amp;listReactForce_hydro();</div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;</div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;    <span class="comment">//------------------------------------------Function Separator ----------------------------------------------------</span></div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;<span class="comment"></span>    vector&lt;matCrossForce&gt; &amp;listCrossForce_hydro();</div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;</div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    <span class="comment">//------------------------------------------Function Separator ----------------------------------------------------</span></div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;<span class="comment"></span>    vector&lt;matActiveForce&gt; &amp;listActiveForce_hydro();</div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;</div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;</div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;</div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;<span class="comment">//==========================================Section Separator =========================================================</span></div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;<span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;</div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;<span class="comment">//==========================================Section Separator =========================================================</span></div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;    <span class="keywordtype">int</span> pId;</div>
-<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;</div>
-<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;    <span class="keywordtype">int</span> pModelId;</div>
-<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;</div>
-<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;    <span class="comment">//Body Mass Matrix</span></div>
-<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;    cx_mat pMass; </div>
-<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;    <span class="comment">//User Force Coefficient Matrices</span></div>
-<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;    vector&lt;matReactForce&gt; plistReactForce_user; </div>
-<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;    vector&lt;matCrossForce&gt; plistCrossForce_user; </div>
-<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;    vector&lt;matActiveForce&gt; plistActiveForce_user; </div>
-<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;    <span class="comment">//Hydro Force Coefficient Matrices</span></div>
-<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;    vector&lt;matReactForce&gt; plistReactForce_hydro; </div>
-<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;    vector&lt;matCrossForce&gt; plistCrossForce_hydro; </div>
-<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;    vector&lt;matActiveForce&gt; plistActiveForce_hydro; </div>
-<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;};</div>
-<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;<span class="comment"></span>    <span class="keywordtype">int</span> <a class="code" href="classosea_1_1ofreq_1_1mat_body.html#a551183ad56eeba71ea4690574b1841e4" title="Returns the force id number for the object.">getId</a>();</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    <span class="comment">//------------------------------------------Function Separator ----------------------------------------------------</span></div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;<span class="comment"></span>    <span class="keywordtype">void</span> <a class="code" href="classosea_1_1ofreq_1_1mat_body.html#abb8ea32c84153da5dfc53d7b0dc836a5" title="Sets the integer id of the motion model used by the matBody object.">setModelId</a>(<span class="keywordtype">int</span> num);</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    <span class="comment">//------------------------------------------Function Separator ----------------------------------------------------</span></div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;<span class="comment"></span>    <span class="keywordtype">int</span> <a class="code" href="classosea_1_1ofreq_1_1mat_body.html#ae4c339b7ce6a93cf6e54bc998cbd5903" title="Gets the integer id of the motion model used by the matBody object.">getModelId</a>();</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    <span class="comment">//------------------------------------------Function Separator ----------------------------------------------------</span></div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;<span class="comment"></span>    arma::cx_mat &amp;<a class="code" href="classosea_1_1ofreq_1_1mat_body.html#a7c0b44be2aa75ae270168849c06e6067" title="Returns a reference to the mass matrix.">refMass</a>();</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    <span class="comment">//------------------------------------------Function Separator ----------------------------------------------------</span></div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;<span class="comment"></span>    std::vector&lt;matForceReact&gt; &amp;<a class="code" href="classosea_1_1ofreq_1_1mat_body.html#aeb296f7c56b523b32ca12b58de56ef37" title="Returns a reference to the Reactive Force, user objects.">listForceReact_user</a>();</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    <span class="comment">//------------------------------------------Function Separator ----------------------------------------------------</span></div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;<span class="comment"></span>    <a class="code" href="classosea_1_1ofreq_1_1mat_force_react.html">matForceReact</a> &amp;<a class="code" href="classosea_1_1ofreq_1_1mat_body.html#aeb296f7c56b523b32ca12b58de56ef37" title="Returns a reference to the Reactive Force, user objects.">listForceReact_user</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> index);</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;    <span class="comment">//------------------------------------------Function Separator ----------------------------------------------------</span></div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;<span class="comment"></span>    std::vector&lt;matForceCross&gt; &amp;<a class="code" href="classosea_1_1ofreq_1_1mat_body.html#a5dc37a8bb5143f2034ef6491969b2abe" title="Returns a reference to the Cross-Body Force, user objects.">listForceCross_user</a>();</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;    <span class="comment">//------------------------------------------Function Separator ----------------------------------------------------</span></div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;<span class="comment"></span>    <a class="code" href="classosea_1_1ofreq_1_1mat_force_cross.html">matForceCross</a> &amp;<a class="code" href="classosea_1_1ofreq_1_1mat_body.html#a5dc37a8bb5143f2034ef6491969b2abe" title="Returns a reference to the Cross-Body Force, user objects.">listForceCross_user</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> index);</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;    <span class="comment">//------------------------------------------Function Separator ----------------------------------------------------</span></div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;<span class="comment"></span>    std::vector&lt;matForceActive&gt; &amp;<a class="code" href="classosea_1_1ofreq_1_1mat_body.html#a6a51e55baec56037eee824ec53af9b5d" title="Returns a reference to the Active Force, user objects.">listForceActive_user</a>();</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;    <span class="comment">//------------------------------------------Function Separator ----------------------------------------------------</span></div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;<span class="comment"></span>    <a class="code" href="classosea_1_1ofreq_1_1mat_force_active.html">matForceActive</a> &amp;<a class="code" href="classosea_1_1ofreq_1_1mat_body.html#a6a51e55baec56037eee824ec53af9b5d" title="Returns a reference to the Active Force, user objects.">listForceActive_user</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> index);</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;    <span class="comment">//------------------------------------------Function Separator ----------------------------------------------------</span></div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;<span class="comment"></span>    std::vector&lt;matForceReact&gt; &amp;<a class="code" href="classosea_1_1ofreq_1_1mat_body.html#abead59c1604f4581a977e086874b2e7a" title="Returns a reference to the Reactive Force, hydro objects.">listForceReact_hydro</a>();</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;    <span class="comment">//------------------------------------------Function Separator ----------------------------------------------------</span></div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;<span class="comment"></span>    <a class="code" href="classosea_1_1ofreq_1_1mat_force_react.html">matForceReact</a> &amp;<a class="code" href="classosea_1_1ofreq_1_1mat_body.html#abead59c1604f4581a977e086874b2e7a" title="Returns a reference to the Reactive Force, hydro objects.">listForceReact_hydro</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> index);</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;    <span class="comment">//------------------------------------------Function Separator ----------------------------------------------------</span></div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;<span class="comment"></span>    std::vector&lt;matForceCross&gt; &amp;<a class="code" href="classosea_1_1ofreq_1_1mat_body.html#a40e3fc33bc7b1685b7f1400312f88f88" title="Returns a reference to the Cross-Body Force, hydro objects.">listForceCross_hydro</a>();</div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;</div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;    <span class="comment">//------------------------------------------Function Separator ----------------------------------------------------</span></div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;<span class="comment"></span>    <a class="code" href="classosea_1_1ofreq_1_1mat_force_cross.html">matForceCross</a> &amp;<a class="code" href="classosea_1_1ofreq_1_1mat_body.html#a40e3fc33bc7b1685b7f1400312f88f88" title="Returns a reference to the Cross-Body Force, hydro objects.">listForceCross_hydro</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> index);</div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;</div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;    <span class="comment">//------------------------------------------Function Separator ----------------------------------------------------</span></div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;<span class="comment"></span>    std::vector&lt;matForceActive&gt; &amp;<a class="code" href="classosea_1_1ofreq_1_1mat_body.html#a9733e23db05aac47a42cfca88fc9d679" title="Returns a reference to the Active Force, hydro objects.">listForceActive_hydro</a>();</div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;</div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;    <span class="comment">//------------------------------------------Function Separator ----------------------------------------------------</span></div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;<span class="comment"></span>    <a class="code" href="classosea_1_1ofreq_1_1mat_force_active.html">matForceActive</a> &amp;<a class="code" href="classosea_1_1ofreq_1_1mat_body.html#a9733e23db05aac47a42cfca88fc9d679" title="Returns a reference to the Active Force, hydro objects.">listForceActive_hydro</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> index);</div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;</div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;</div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;<span class="comment">//==========================================Section Separator =========================================================</span></div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;<span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;</div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;<span class="comment">//==========================================Section Separator =========================================================</span></div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;    <span class="keywordtype">int</span> pId;</div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;</div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;    <span class="keywordtype">int</span> pModelId;</div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;</div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;    <span class="comment">//Body Mass Matrix</span></div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;    arma::cx_mat pMass; </div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;    <span class="comment">//User Force Coefficient Matrices</span></div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;    std::vector&lt;matForceReact&gt; plistForceReact_user; </div>
+<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;    std::vector&lt;matForceCross&gt; plistForceCross_user; </div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;    std::vector&lt;matForceActive&gt; plistForceActive_user; </div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;    <span class="comment">//Hydro Force Coefficient Matrices</span></div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;    std::vector&lt;matForceReact&gt; plistForceReact_hydro; </div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;    std::vector&lt;matForceCross&gt; plistForceCross_hydro; </div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;    std::vector&lt;matForceActive&gt; plistForceActive_hydro; </div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;};</div>
+<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;</div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;}   <span class="comment">//Namespace ofreq</span></div>
+<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;}   <span class="comment">//Namespace osea</span></div>
+<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;</div>
+<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_56b368c6d4f28ed1479bff4e7a7f6001.html">200_src</a></li><li class="navelem"><a class="el" href="dir_54a29c8b735a6b519070134aed29f600.html">bin</a></li><li class="navelem"><a class="el" href="dir_e8f29f456f9bc8f0b8059295bf8d5395.html">ofreq</a></li><li class="navelem"><a class="el" href="dir_fe41e39bc89f4379412444629b16a43f.html">motion_solver</a></li><li class="navelem"><b>matbody.h</b></li>
-    <li class="footer">Generated on Thu Aug 22 2013 20:07:44 for oFreq by
+    <li class="navelem"><a class="el" href="dir_f391ca716ffc5f73e26bbfbd1c386d7a.html">nicholas</a></li><li class="navelem"><a class="el" href="dir_56714be5f44c632f096dc98161cfe0bc.html">Projects</a></li><li class="navelem"><a class="el" href="dir_a9660f870cd78d147631dbe8401fc122.html">DMS1305 OpenSEA</a></li><li class="navelem"><a class="el" href="dir_57862b7a2e6c493336b5eba4fa7a08ad.html">master</a></li><li class="navelem"><a class="el" href="dir_93879df78e79e3db9dadcce0364173a5.html">200_src</a></li><li class="navelem"><a class="el" href="dir_c68d9c97f52ca4a921fcfe2b9a5c2169.html">bin</a></li><li class="navelem"><a class="el" href="dir_de13d08a2e5fe03c0504c97f3e0a2dbd.html">ofreq</a></li><li class="navelem"><a class="el" href="dir_b2eb6ed7c0aadfa7bb23bf512ca4deb5.html">motion_solver</a></li><li class="navelem"><b>matbody.h</b></li>
+    <li class="footer">Generated on Sat Oct 12 2013 10:41:17 for oFreq by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.2 </li>
   </ul>

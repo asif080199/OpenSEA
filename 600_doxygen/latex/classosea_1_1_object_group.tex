@@ -1,0 +1,495 @@
+\hypertarget{classosea_1_1_object_group}{\section{osea\-:\-:Object\-Group Class Reference}
+\label{classosea_1_1_object_group}\index{osea\-::\-Object\-Group@{osea\-::\-Object\-Group}}
+}
+
+
+The \hyperlink{classosea_1_1_object_group}{Object\-Group} class contains groupings of object definitions captured from an input file. It is a data container to hold the segmented input file for interpretation. The container contains three things\-: 1.) Object class name (as specified by input file) 2.) Vector of keyword names 3.) Vector of keyword values. Each entry in the vector of values is also a vector. This allows the definition of lists. A list will be as long as it needs to be for specification of all values in the list. The index of the value is specified by its position in the vector list. The value is the entry.  
+
+
+
+
+{\ttfamily \#include $<$objectgroup.\-h$>$}
+
+
+
+Inheritance diagram for osea\-:\-:Object\-Group\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=204pt]{classosea_1_1_object_group__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for osea\-:\-:Object\-Group\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=204pt]{classosea_1_1_object_group__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classosea_1_1_object_group_af4d309432161dab231e33e83acaf4161}{\hyperlink{classosea_1_1_object_group_af4d309432161dab231e33e83acaf4161}{Object\-Group} ()}\label{classosea_1_1_object_group_af4d309432161dab231e33e83acaf4161}
+
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\hypertarget{classosea_1_1_object_group_a58c2e7cf18338d3fbe47f30fafca3c77}{\hyperlink{classosea_1_1_object_group_a58c2e7cf18338d3fbe47f30fafca3c77}{$\sim$\-Object\-Group} ()}\label{classosea_1_1_object_group_a58c2e7cf18338d3fbe47f30fafca3c77}
+
+\begin{DoxyCompactList}\small\item\em Default destructor. \end{DoxyCompactList}\item 
+void \hyperlink{classosea_1_1_object_group_afe112da71222da5ed206dc81636b3ca7}{set\-Class\-Name} (std\-::string input)
+\begin{DoxyCompactList}\small\item\em Sets the class name, as specified by the input file. \end{DoxyCompactList}\item 
+std\-::string \hyperlink{classosea_1_1_object_group_aa158e9516621ab6e2b690bad6c6619b5}{get\-Class\-Name} ()
+\begin{DoxyCompactList}\small\item\em Gets the class name, as specified by the input file. \end{DoxyCompactList}\item 
+\hyperlink{namespaceosea_a752ba1895c2932eda28076a8a467ae37}{vec\-Keyword} \& \hyperlink{classosea_1_1_object_group_a0f44d28c868ba60971af1a7aceb2e5bd}{list\-Key} ()
+\begin{DoxyCompactList}\small\item\em Provides direct access to thelist of key words. \end{DoxyCompactList}\item 
+std\-::string \& \hyperlink{classosea_1_1_object_group_a4b52a556b4404a1d13d50d0a3808eec2}{list\-Key} (int index)
+\begin{DoxyCompactList}\small\item\em Provides direct access to an individual item in the list of key words. \end{DoxyCompactList}\item 
+\hyperlink{namespaceosea_a32445ae8bddcf230ef3a16926ffd0f98}{vec\-Value} \& \hyperlink{classosea_1_1_object_group_a6c3064de310a852551d438a5f31f987f}{list\-Val} ()
+\begin{DoxyCompactList}\small\item\em Provides direct access to the list of key values. \end{DoxyCompactList}\item 
+std\-::vector$<$ std\-::string $>$ \& \hyperlink{classosea_1_1_object_group_af23637baa7d1b46b34dcb5e5de4b68bd}{list\-Val} (int index)
+\begin{DoxyCompactList}\small\item\em Provides direct access to an individual item in the list of key values. \end{DoxyCompactList}\item 
+std\-::vector$<$ \hyperlink{classosea_1_1_object_group}{Object\-Group} $\ast$ $>$ \& \hyperlink{classosea_1_1_object_group_a13cd6186adf626bf61b279f1f6f75790}{list\-Object} ()
+\begin{DoxyCompactList}\small\item\em Provides direct access to the list of sub object definitions. \end{DoxyCompactList}\item 
+\hyperlink{classosea_1_1_object_group}{Object\-Group} $\ast$ \hyperlink{classosea_1_1_object_group_a0a080e78f85ad74d3920d8d4d2896ff4}{list\-Object} (int index)
+\begin{DoxyCompactList}\small\item\em Provides direct access to an individual item in the list of \hyperlink{classosea_1_1_object_group}{Object\-Group} objects. \end{DoxyCompactList}\item 
+void \hyperlink{classosea_1_1_object_group_ab705c0409d674106c28518368e5108ad}{add\-Sub\-Object} (\hyperlink{classosea_1_1_object_group}{Object\-Group} obj\-In)
+\begin{DoxyCompactList}\small\item\em Adds an object to the list of \hyperlink{classosea_1_1_object_group}{Object\-Group} objects defined under this existing \hyperlink{classosea_1_1_object_group}{Object\-Group}. \end{DoxyCompactList}\item 
+\hypertarget{classosea_1_1_object_group_a71804670b83abe0c161f5fdebc598373}{void \hyperlink{classosea_1_1_object_group_a71804670b83abe0c161f5fdebc598373}{add\-Sub\-Object} ()}\label{classosea_1_1_object_group_a71804670b83abe0c161f5fdebc598373}
+
+\begin{DoxyCompactList}\small\item\em Adds an object to the list of \hyperlink{classosea_1_1_object_group}{Object\-Group} objects defined under this existing \hyperlink{classosea_1_1_object_group}{Object\-Group}. \end{DoxyCompactList}\item 
+void \hyperlink{classosea_1_1_object_group_a83f133e49aa52b4b649872def6d77260}{add\-Key\-Set} (std\-::string key, std\-::string val)
+\begin{DoxyCompactList}\small\item\em Adds a new keyword-\/value set to the \hyperlink{classosea_1_1_object_group}{Object\-Group} definition. \end{DoxyCompactList}\item 
+void \hyperlink{classosea_1_1_object_group_a6cd45569ea88e9363894e1c14d8ed09b}{add\-Key\-Set} (std\-::string key, std\-::vector$<$ std\-::string $>$ val)
+\begin{DoxyCompactList}\small\item\em Overloaded function that adds a new keyword-\/value set to the \hyperlink{classosea_1_1_object_group}{Object\-Group} definition. This version of the method is used for passing lists in the keyword-\/value set definition. \end{DoxyCompactList}\item 
+void \hyperlink{classosea_1_1_object_group_a8bd69589a25fe6a666ae71e926c0a9d0}{add\-Key\-Word} (std\-::string word, int index=-\/1)
+\begin{DoxyCompactList}\small\item\em Adds a key word to the list of key words. Only adds the word. Not the value. \end{DoxyCompactList}\item 
+void \hyperlink{classosea_1_1_object_group_a7340f605d054830056666531e748093a}{add\-Key\-Val} (std\-::string val, int index=-\/1)
+\begin{DoxyCompactList}\small\item\em add\-Key\-Val Adds a key value to the list of key values. Only adds the value. Not the word. \end{DoxyCompactList}\item 
+void \hyperlink{classosea_1_1_object_group_ac8f27751c5a2a53c23b6333d69fae28b}{add\-Key\-Val} (std\-::vector$<$ std\-::string $>$ val, int index=-\/1)
+\begin{DoxyCompactList}\small\item\em add\-Key\-Val Adds a key value to the list of key values. Only adds the value. Not the word. This is a function overload that allows for adding vector lists of key values. \end{DoxyCompactList}\item 
+std\-::string \hyperlink{classosea_1_1_object_group_a818bd77a51e5617fb26481d09eb16714}{get\-Key} (int index)
+\begin{DoxyCompactList}\small\item\em Gets a key word as specified by the index. \end{DoxyCompactList}\item 
+std\-::vector$<$ std\-::string $>$ \hyperlink{classosea_1_1_object_group_a35ccc728179fdc3db8712f553746caf9}{get\-Val} (int index)
+\begin{DoxyCompactList}\small\item\em Gets the key value as specified by the index. \end{DoxyCompactList}\item 
+void \hyperlink{classosea_1_1_object_group_a33955b7630b2709483c2f635cbff2ac7}{set\-Version} (std\-::string input)
+\begin{DoxyCompactList}\small\item\em Sets the version property of the object. \end{DoxyCompactList}\item 
+std\-::string \hyperlink{classosea_1_1_object_group_aa3603cc9c8ae5a0d3e1dc73cc531cb6b}{get\-Version} ()
+\begin{DoxyCompactList}\small\item\em Gets the version property of the object. \end{DoxyCompactList}\item 
+void \hyperlink{classosea_1_1_object_group_a41a1aa49d18643e322f0ca1917c08bff}{set\-Format} (std\-::string input)
+\begin{DoxyCompactList}\small\item\em Sets the format property of the object. \end{DoxyCompactList}\item 
+std\-::string \hyperlink{classosea_1_1_object_group_a8e08f57a3e0bcaa7e81ba45173ef6e55}{get\-Format} ()
+\begin{DoxyCompactList}\small\item\em Gets the format property of the object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+The \hyperlink{classosea_1_1_object_group}{Object\-Group} class contains groupings of object definitions captured from an input file. It is a data container to hold the segmented input file for interpretation. The container contains three things\-: 1.) Object class name (as specified by input file) 2.) Vector of keyword names 3.) Vector of keyword values. Each entry in the vector of values is also a vector. This allows the definition of lists. A list will be as long as it needs to be for specification of all values in the list. The index of the value is specified by its position in the vector list. The value is the entry. 
+
+\subsection{Member Function Documentation}
+\hypertarget{classosea_1_1_object_group_a83f133e49aa52b4b649872def6d77260}{\index{osea\-::\-Object\-Group@{osea\-::\-Object\-Group}!add\-Key\-Set@{add\-Key\-Set}}
+\index{add\-Key\-Set@{add\-Key\-Set}!osea::ObjectGroup@{osea\-::\-Object\-Group}}
+\subsubsection[{add\-Key\-Set}]{\setlength{\rightskip}{0pt plus 5cm}void osea\-::\-Object\-Group\-::add\-Key\-Set (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{key, }
+\item[{std\-::string}]{val}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1_object_group_a83f133e49aa52b4b649872def6d77260}
+
+
+Adds a new keyword-\/value set to the \hyperlink{classosea_1_1_object_group}{Object\-Group} definition. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & The key word to input. Variable passed by value. \\
+\hline
+{\em val} & The key value to input. Can only be a single value. Variable passed by value. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classosea_1_1_object_group_a6cd45569ea88e9363894e1c14d8ed09b}{\index{osea\-::\-Object\-Group@{osea\-::\-Object\-Group}!add\-Key\-Set@{add\-Key\-Set}}
+\index{add\-Key\-Set@{add\-Key\-Set}!osea::ObjectGroup@{osea\-::\-Object\-Group}}
+\subsubsection[{add\-Key\-Set}]{\setlength{\rightskip}{0pt plus 5cm}void osea\-::\-Object\-Group\-::add\-Key\-Set (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{key, }
+\item[{std\-::vector$<$ std\-::string $>$}]{val}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1_object_group_a6cd45569ea88e9363894e1c14d8ed09b}
+
+
+Overloaded function that adds a new keyword-\/value set to the \hyperlink{classosea_1_1_object_group}{Object\-Group} definition. This version of the method is used for passing lists in the keyword-\/value set definition. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & The key word to input. Variable passed by value. \\
+\hline
+{\em val} & The list of key values to input. Vector list. The index of each entry in the vector represents its index in the input file. The value of the entry represents the value in the input file. Blank entries are allowed. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classosea_1_1_object_group_a7340f605d054830056666531e748093a}{\index{osea\-::\-Object\-Group@{osea\-::\-Object\-Group}!add\-Key\-Val@{add\-Key\-Val}}
+\index{add\-Key\-Val@{add\-Key\-Val}!osea::ObjectGroup@{osea\-::\-Object\-Group}}
+\subsubsection[{add\-Key\-Val}]{\setlength{\rightskip}{0pt plus 5cm}void osea\-::\-Object\-Group\-::add\-Key\-Val (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{val, }
+\item[{int}]{index = {\ttfamily -\/1}}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1_object_group_a7340f605d054830056666531e748093a}
+
+
+add\-Key\-Val Adds a key value to the list of key values. Only adds the value. Not the word. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em val} & std\-::string input. The key value to add to the set. Variable passed by value. Assumes a single key value. \\
+\hline
+{\em index} & The index of where to add the key value to the set. If left at the default setting, the value is automatically added to the end of the current list. Variable passed by value. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classosea_1_1_object_group_ac8f27751c5a2a53c23b6333d69fae28b}{\index{osea\-::\-Object\-Group@{osea\-::\-Object\-Group}!add\-Key\-Val@{add\-Key\-Val}}
+\index{add\-Key\-Val@{add\-Key\-Val}!osea::ObjectGroup@{osea\-::\-Object\-Group}}
+\subsubsection[{add\-Key\-Val}]{\setlength{\rightskip}{0pt plus 5cm}void osea\-::\-Object\-Group\-::add\-Key\-Val (
+\begin{DoxyParamCaption}
+\item[{std\-::vector$<$ std\-::string $>$}]{val, }
+\item[{int}]{index = {\ttfamily -\/1}}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1_object_group_ac8f27751c5a2a53c23b6333d69fae28b}
+
+
+add\-Key\-Val Adds a key value to the list of key values. Only adds the value. Not the word. This is a function overload that allows for adding vector lists of key values. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em val} & Vector of std\-::string inputs. The vector of values to add to the key. Variable passed by value. Assumes a vector of key values. \\
+\hline
+{\em index} & The index of where to add the key value to the set. If left at the default setting, the value is automatically added to the end of the current list. Variable passed by value. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classosea_1_1_object_group_a8bd69589a25fe6a666ae71e926c0a9d0}{\index{osea\-::\-Object\-Group@{osea\-::\-Object\-Group}!add\-Key\-Word@{add\-Key\-Word}}
+\index{add\-Key\-Word@{add\-Key\-Word}!osea::ObjectGroup@{osea\-::\-Object\-Group}}
+\subsubsection[{add\-Key\-Word}]{\setlength{\rightskip}{0pt plus 5cm}void Object\-Group\-::add\-Key\-Word (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{word, }
+\item[{int}]{index = {\ttfamily -\/1}}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1_object_group_a8bd69589a25fe6a666ae71e926c0a9d0}
+
+
+Adds a key word to the list of key words. Only adds the word. Not the value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em word} & std\-::string input. The key word to add to the set. Variable passed by value. \\
+\hline
+{\em index} & The index of where to add the key word to the set. If left at the default setting, the word is automatically added to the end of the current list. Variable passed by value. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classosea_1_1_object_group_ab705c0409d674106c28518368e5108ad}{\index{osea\-::\-Object\-Group@{osea\-::\-Object\-Group}!add\-Sub\-Object@{add\-Sub\-Object}}
+\index{add\-Sub\-Object@{add\-Sub\-Object}!osea::ObjectGroup@{osea\-::\-Object\-Group}}
+\subsubsection[{add\-Sub\-Object}]{\setlength{\rightskip}{0pt plus 5cm}void Object\-Group\-::add\-Sub\-Object (
+\begin{DoxyParamCaption}
+\item[{{\bf Object\-Group}}]{obj\-In}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1_object_group_ab705c0409d674106c28518368e5108ad}
+
+
+Adds an object to the list of \hyperlink{classosea_1_1_object_group}{Object\-Group} objects defined under this existing \hyperlink{classosea_1_1_object_group}{Object\-Group}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em obj\-In} & An \hyperlink{classosea_1_1_object_group}{Object\-Group} object. Variable passed by value. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classosea_1_1_object_group_aa158e9516621ab6e2b690bad6c6619b5}{\index{osea\-::\-Object\-Group@{osea\-::\-Object\-Group}!get\-Class\-Name@{get\-Class\-Name}}
+\index{get\-Class\-Name@{get\-Class\-Name}!osea::ObjectGroup@{osea\-::\-Object\-Group}}
+\subsubsection[{get\-Class\-Name}]{\setlength{\rightskip}{0pt plus 5cm}string Object\-Group\-::get\-Class\-Name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1_object_group_aa158e9516621ab6e2b690bad6c6619b5}
+
+
+Gets the class name, as specified by the input file. 
+
+\begin{DoxyReturn}{Returns}
+Returns std\-::string that represents the name of the class, as specified by the input file. Variable passed by value. 
+\end{DoxyReturn}
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classosea_1_1_object_group_aa158e9516621ab6e2b690bad6c6619b5_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classosea_1_1_object_group_a8e08f57a3e0bcaa7e81ba45173ef6e55}{\index{osea\-::\-Object\-Group@{osea\-::\-Object\-Group}!get\-Format@{get\-Format}}
+\index{get\-Format@{get\-Format}!osea::ObjectGroup@{osea\-::\-Object\-Group}}
+\subsubsection[{get\-Format}]{\setlength{\rightskip}{0pt plus 5cm}string Object\-Group\-::get\-Format (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1_object_group_a8e08f57a3e0bcaa7e81ba45173ef6e55}
+
+
+Gets the format property of the object. 
+
+\begin{DoxyReturn}{Returns}
+Returns std\-::string output. The format property of the object. Variable passed by value. 
+\end{DoxyReturn}
+\hypertarget{classosea_1_1_object_group_a818bd77a51e5617fb26481d09eb16714}{\index{osea\-::\-Object\-Group@{osea\-::\-Object\-Group}!get\-Key@{get\-Key}}
+\index{get\-Key@{get\-Key}!osea::ObjectGroup@{osea\-::\-Object\-Group}}
+\subsubsection[{get\-Key}]{\setlength{\rightskip}{0pt plus 5cm}string Object\-Group\-::get\-Key (
+\begin{DoxyParamCaption}
+\item[{int}]{index}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1_object_group_a818bd77a51e5617fb26481d09eb16714}
+
+
+Gets a key word as specified by the index. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & Integer. Specifies the index of which key word to grab. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns a std\-::string object that represents the key word. Variable passed by value. 
+\end{DoxyReturn}
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classosea_1_1_object_group_a818bd77a51e5617fb26481d09eb16714_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classosea_1_1_object_group_a35ccc728179fdc3db8712f553746caf9}{\index{osea\-::\-Object\-Group@{osea\-::\-Object\-Group}!get\-Val@{get\-Val}}
+\index{get\-Val@{get\-Val}!osea::ObjectGroup@{osea\-::\-Object\-Group}}
+\subsubsection[{get\-Val}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ string $>$ Object\-Group\-::get\-Val (
+\begin{DoxyParamCaption}
+\item[{int}]{index}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1_object_group_a35ccc728179fdc3db8712f553746caf9}
+
+
+Gets the key value as specified by the index. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & Integer. Specifies the index of which key word to grab. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns a vector of std\-::string objects that represent the key value. For cases of a single key value, the vector will only be one entry long. For cases of lists, the vector has an unlimited length. Variable passed by value. 
+\end{DoxyReturn}
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classosea_1_1_object_group_a35ccc728179fdc3db8712f553746caf9_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classosea_1_1_object_group_aa3603cc9c8ae5a0d3e1dc73cc531cb6b}{\index{osea\-::\-Object\-Group@{osea\-::\-Object\-Group}!get\-Version@{get\-Version}}
+\index{get\-Version@{get\-Version}!osea::ObjectGroup@{osea\-::\-Object\-Group}}
+\subsubsection[{get\-Version}]{\setlength{\rightskip}{0pt plus 5cm}string Object\-Group\-::get\-Version (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1_object_group_aa3603cc9c8ae5a0d3e1dc73cc531cb6b}
+
+
+Gets the version property of the object. 
+
+\begin{DoxyReturn}{Returns}
+Returns std\-::string output. The version property of the object. Variable passed by value. 
+\end{DoxyReturn}
+\hypertarget{classosea_1_1_object_group_a0f44d28c868ba60971af1a7aceb2e5bd}{\index{osea\-::\-Object\-Group@{osea\-::\-Object\-Group}!list\-Key@{list\-Key}}
+\index{list\-Key@{list\-Key}!osea::ObjectGroup@{osea\-::\-Object\-Group}}
+\subsubsection[{list\-Key}]{\setlength{\rightskip}{0pt plus 5cm}{\bf vec\-Keyword} \& Object\-Group\-::list\-Key (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1_object_group_a0f44d28c868ba60971af1a7aceb2e5bd}
+
+
+Provides direct access to thelist of key words. 
+
+\begin{DoxyReturn}{Returns}
+Returns a reference to the list of key words. Variable passed by reference. 
+\end{DoxyReturn}
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classosea_1_1_object_group_a0f44d28c868ba60971af1a7aceb2e5bd_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classosea_1_1_object_group_a4b52a556b4404a1d13d50d0a3808eec2}{\index{osea\-::\-Object\-Group@{osea\-::\-Object\-Group}!list\-Key@{list\-Key}}
+\index{list\-Key@{list\-Key}!osea::ObjectGroup@{osea\-::\-Object\-Group}}
+\subsubsection[{list\-Key}]{\setlength{\rightskip}{0pt plus 5cm}string \& Object\-Group\-::list\-Key (
+\begin{DoxyParamCaption}
+\item[{int}]{index}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1_object_group_a4b52a556b4404a1d13d50d0a3808eec2}
+
+
+Provides direct access to an individual item in the list of key words. 
+
+Returns the key word specified by the index. 
+\begin{DoxyParams}{Parameters}
+{\em index} & Integer. The index of the key word to retrieve. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\-::string. The key word specified by index. Returned variable passed by reference. 
+\end{DoxyReturn}
+\hypertarget{classosea_1_1_object_group_a13cd6186adf626bf61b279f1f6f75790}{\index{osea\-::\-Object\-Group@{osea\-::\-Object\-Group}!list\-Object@{list\-Object}}
+\index{list\-Object@{list\-Object}!osea::ObjectGroup@{osea\-::\-Object\-Group}}
+\subsubsection[{list\-Object}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ {\bf Object\-Group} $\ast$ $>$ \& Object\-Group\-::list\-Object (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1_object_group_a13cd6186adf626bf61b279f1f6f75790}
+
+
+Provides direct access to the list of sub object definitions. 
+
+\begin{DoxyReturn}{Returns}
+Returns a reference to the list of objects. Variable passed by reference. Returned variable is a vector of pointers to \hyperlink{classosea_1_1_object_group}{Object\-Group} objects. 
+\end{DoxyReturn}
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classosea_1_1_object_group_a13cd6186adf626bf61b279f1f6f75790_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classosea_1_1_object_group_a0a080e78f85ad74d3920d8d4d2896ff4}{\index{osea\-::\-Object\-Group@{osea\-::\-Object\-Group}!list\-Object@{list\-Object}}
+\index{list\-Object@{list\-Object}!osea::ObjectGroup@{osea\-::\-Object\-Group}}
+\subsubsection[{list\-Object}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Object\-Group} $\ast$ Object\-Group\-::list\-Object (
+\begin{DoxyParamCaption}
+\item[{int}]{index}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1_object_group_a0a080e78f85ad74d3920d8d4d2896ff4}
+
+
+Provides direct access to an individual item in the list of \hyperlink{classosea_1_1_object_group}{Object\-Group} objects. 
+
+Returns a pointer to the \hyperlink{classosea_1_1_object_group}{Object\-Group} object specified by the index. 
+\begin{DoxyParams}{Parameters}
+{\em index} & Integer. The index of the \hyperlink{classosea_1_1_object_group}{Object\-Group} object to retrieve. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns a pointer to an \hyperlink{classosea_1_1_object_group}{Object\-Group} object. The object specified by the index. Returned pointer is passed by value. 
+\end{DoxyReturn}
+\hypertarget{classosea_1_1_object_group_a6c3064de310a852551d438a5f31f987f}{\index{osea\-::\-Object\-Group@{osea\-::\-Object\-Group}!list\-Val@{list\-Val}}
+\index{list\-Val@{list\-Val}!osea::ObjectGroup@{osea\-::\-Object\-Group}}
+\subsubsection[{list\-Val}]{\setlength{\rightskip}{0pt plus 5cm}{\bf vec\-Value} \& Object\-Group\-::list\-Val (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1_object_group_a6c3064de310a852551d438a5f31f987f}
+
+
+Provides direct access to the list of key values. 
+
+\begin{DoxyReturn}{Returns}
+Returns a reference to the list of key values. Variable passed by reference. 
+\end{DoxyReturn}
+\hypertarget{classosea_1_1_object_group_af23637baa7d1b46b34dcb5e5de4b68bd}{\index{osea\-::\-Object\-Group@{osea\-::\-Object\-Group}!list\-Val@{list\-Val}}
+\index{list\-Val@{list\-Val}!osea::ObjectGroup@{osea\-::\-Object\-Group}}
+\subsubsection[{list\-Val}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ string $>$ \& Object\-Group\-::list\-Val (
+\begin{DoxyParamCaption}
+\item[{int}]{index}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1_object_group_af23637baa7d1b46b34dcb5e5de4b68bd}
+
+
+Provides direct access to an individual item in the list of key values. 
+
+Returns the key value specified by the index. 
+\begin{DoxyParams}{Parameters}
+{\em index} & Integer. T\-He index of the key value to retrieve. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Vector of strings. The key value specified by the index. Returned variable passed by reference. 
+\end{DoxyReturn}
+\hypertarget{classosea_1_1_object_group_afe112da71222da5ed206dc81636b3ca7}{\index{osea\-::\-Object\-Group@{osea\-::\-Object\-Group}!set\-Class\-Name@{set\-Class\-Name}}
+\index{set\-Class\-Name@{set\-Class\-Name}!osea::ObjectGroup@{osea\-::\-Object\-Group}}
+\subsubsection[{set\-Class\-Name}]{\setlength{\rightskip}{0pt plus 5cm}void Object\-Group\-::set\-Class\-Name (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{input}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1_object_group_afe112da71222da5ed206dc81636b3ca7}
+
+
+Sets the class name, as specified by the input file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em input} & std\-::string. The name of the class, as specified by the input file. Variable passed by value. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classosea_1_1_object_group_a41a1aa49d18643e322f0ca1917c08bff}{\index{osea\-::\-Object\-Group@{osea\-::\-Object\-Group}!set\-Format@{set\-Format}}
+\index{set\-Format@{set\-Format}!osea::ObjectGroup@{osea\-::\-Object\-Group}}
+\subsubsection[{set\-Format}]{\setlength{\rightskip}{0pt plus 5cm}void Object\-Group\-::set\-Format (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{input}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1_object_group_a41a1aa49d18643e322f0ca1917c08bff}
+
+
+Sets the format property of the object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em input} & std\-::string input. The format property of the object. Variable passed by value. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classosea_1_1_object_group_a33955b7630b2709483c2f635cbff2ac7}{\index{osea\-::\-Object\-Group@{osea\-::\-Object\-Group}!set\-Version@{set\-Version}}
+\index{set\-Version@{set\-Version}!osea::ObjectGroup@{osea\-::\-Object\-Group}}
+\subsubsection[{set\-Version}]{\setlength{\rightskip}{0pt plus 5cm}void Object\-Group\-::set\-Version (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{input}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1_object_group_a33955b7630b2709483c2f635cbff2ac7}
+
+
+Sets the version property of the object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em input} & std\-::string input. The version property of the object. Variable passed by value. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+objectgroup.\-h\item 
+objectgroup.\-cpp\end{DoxyCompactItemize}

@@ -1,45 +1,49 @@
 var hierarchy =
 [
-    [ "Body", "class_body.html", null ],
-    [ "Derivative", "class_derivative.html", null ],
-    [ "Equation", "class_equation.html", null ],
-    [ "EquationofMotion", "class_equationof_motion.html", null ],
-    [ "FileWriter", "class_file_writer.html", null ],
-    [ "Force", "class_force.html", [
-      [ "forceActive", "classforce_active.html", null ],
-      [ "forceReact", "classforce_react.html", [
-        [ "forceCross", "classforce_cross.html", null ]
-      ] ]
+    [ "osea::ofreq::oFreqCore", "classosea_1_1ofreq_1_1o_freq_core.html", [
+      [ "osea::Dictionary", "classosea_1_1_dictionary.html", [
+        [ "osea::ofreq::dictBodies", "classosea_1_1ofreq_1_1dict_bodies.html", null ],
+        [ "osea::ofreq::dictControl", "classosea_1_1ofreq_1_1dict_control.html", null ],
+        [ "osea::ofreq::dictForces", "classosea_1_1ofreq_1_1dict_forces.html", null ]
+      ] ],
+      [ "osea::FileReader", "classosea_1_1_file_reader.html", null ],
+      [ "osea::ObjectGroup", "classosea_1_1_object_group.html", null ],
+      [ "osea::ofreq::Body", "classosea_1_1ofreq_1_1_body.html", null ],
+      [ "osea::ofreq::Derivative", "classosea_1_1ofreq_1_1_derivative.html", null ],
+      [ "osea::ofreq::Equation", "classosea_1_1ofreq_1_1_equation.html", null ],
+      [ "osea::ofreq::EquationofMotion", "classosea_1_1ofreq_1_1_equationof_motion.html", null ],
+      [ "osea::ofreq::FileWriter", "classosea_1_1ofreq_1_1_file_writer.html", null ],
+      [ "osea::ofreq::Force", "classosea_1_1ofreq_1_1_force.html", [
+        [ "osea::ofreq::ForceActive", "classosea_1_1ofreq_1_1_force_active.html", null ],
+        [ "osea::ofreq::ForceReact", "classosea_1_1ofreq_1_1_force_react.html", [
+          [ "osea::ofreq::ForceCross", "classosea_1_1ofreq_1_1_force_cross.html", null ]
+        ] ]
+      ] ],
+      [ "osea::ofreq::matBody", "classosea_1_1ofreq_1_1mat_body.html", null ],
+      [ "osea::ofreq::matForceActive", "classosea_1_1ofreq_1_1mat_force_active.html", null ],
+      [ "osea::ofreq::matForceReact", "classosea_1_1ofreq_1_1mat_force_react.html", [
+        [ "osea::ofreq::matForceCross", "classosea_1_1ofreq_1_1mat_force_cross.html", null ]
+      ] ],
+      [ "osea::ofreq::MotionModel", "classosea_1_1ofreq_1_1_motion_model.html", null ],
+      [ "osea::ofreq::MotionSolver", "classosea_1_1ofreq_1_1_motion_solver.html", null ],
+      [ "osea::ofreq::OutputDerived", "classosea_1_1ofreq_1_1_output_derived.html", [
+        [ "osea::ofreq::GlobalSolution", "classosea_1_1ofreq_1_1_global_solution.html", [
+          [ "osea::ofreq::GlobalAcceleration", "classosea_1_1ofreq_1_1_global_acceleration.html", null ],
+          [ "osea::ofreq::GlobalMotion", "classosea_1_1ofreq_1_1_global_motion.html", null ],
+          [ "osea::ofreq::GlobalVelocity", "classosea_1_1ofreq_1_1_global_velocity.html", null ]
+        ] ]
+      ] ],
+      [ "osea::ofreq::OutputsBody", "classosea_1_1ofreq_1_1_outputs_body.html", null ],
+      [ "osea::ofreq::Solution", "classosea_1_1ofreq_1_1_solution.html", null ],
+      [ "osea::ofreq::SolutionSet", "classosea_1_1ofreq_1_1_solution_set.html", null ],
+      [ "osea::ofreq::System", "classosea_1_1ofreq_1_1_system.html", null ],
+      [ "osea::Parser", "classosea_1_1_parser.html", null ]
     ] ],
-    [ "listSolution", "classlist_solution.html", null ],
-    [ "matActiveForce", "classmat_active_force.html", null ],
-    [ "matBody", "classmat_body.html", null ],
-    [ "matReactForce", "classmat_react_force.html", [
-      [ "matCrossForce", "classmat_cross_force.html", null ]
+    [ "QObject", null, [
+      [ "osea::Dictionary", "classosea_1_1_dictionary.html", null ],
+      [ "osea::FileReader", "classosea_1_1_file_reader.html", null ],
+      [ "osea::ofreq::EquationofMotion", "classosea_1_1ofreq_1_1_equationof_motion.html", null ],
+      [ "osea::ofreq::System", "classosea_1_1ofreq_1_1_system.html", null ]
     ] ],
-    [ "motionModel", "classmotion_model.html", null ],
-    [ "MotionSolver", "class_motion_solver.html", null ],
-    [ "OutputDerived", "class_output_derived.html", [
-      [ "GlobalSolution", "class_global_solution.html", [
-        [ "GlobalAcceleration", "class_global_acceleration.html", null ],
-        [ "GlobalMotion", "class_global_motion.html", null ],
-        [ "GlobalVelocity", "class_global_velocity.html", null ]
-      ] ]
-    ] ],
-    [ "OutputsBody", "class_outputs_body.html", null ],
-    [ "ReadInput", "class_read_input.html", [
-      [ "Bodiesinput", "class_bodiesinput.html", null ],
-      [ "ControlInput", "class_control_input.html", null ],
-      [ "DataInput", "class_data_input.html", null ],
-      [ "ForcesInput", "class_forces_input.html", null ],
-      [ "HydrodynamicInput", "class_hydrodynamic_input.html", null ],
-      [ "SeaenvInput", "class_seaenv_input.html", null ]
-    ] ],
-    [ "SeaEnviroment", "class_sea_enviroment.html", null ],
-    [ "Solution", "class_solution.html", null ],
-    [ "System", "class_system.html", null ],
-    [ "WaveDirections", "class_wave_directions.html", null ],
-    [ "WaveFrequencies", "class_wave_frequencies.html", null ],
-    [ "WaveSpectrumModel", "class_wave_spectrum_model.html", null ],
-    [ "WaveSpreadModel", "class_wave_spread_model.html", null ]
+    [ "SeaEnviroment", "class_sea_enviroment.html", null ]
 ];

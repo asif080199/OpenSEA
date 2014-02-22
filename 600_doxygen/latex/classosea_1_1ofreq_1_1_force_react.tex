@@ -1,0 +1,211 @@
+\hypertarget{classosea_1_1ofreq_1_1_force_react}{\section{osea\-:\-:ofreq\-:\-:Force\-React Class Reference}
+\label{classosea_1_1ofreq_1_1_force_react}\index{osea\-::ofreq\-::\-Force\-React@{osea\-::ofreq\-::\-Force\-React}}
+}
+
+
+{\ttfamily \#include $<$forcereact.\-h$>$}
+
+
+
+Inheritance diagram for osea\-:\-:ofreq\-:\-:Force\-React\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=208pt]{classosea_1_1ofreq_1_1_force_react__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for osea\-:\-:ofreq\-:\-:Force\-React\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=208pt]{classosea_1_1ofreq_1_1_force_react__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classosea_1_1ofreq_1_1_force_react_ac8f8b24f67f93f43ae1bb9c464a2d8d4}{Force\-React} ()
+\item 
+\hyperlink{classosea_1_1ofreq_1_1_force_react_a585f55d5c31c4951824bce98b6582afb}{$\sim$\-Force\-React} ()
+\item 
+void \hyperlink{classosea_1_1ofreq_1_1_force_react_ac387126f0628a06b24f53012725e384f}{set\-Cur\-Derivative} (int)
+\item 
+void \hyperlink{classosea_1_1ofreq_1_1_force_react_aca5dc15ce68dd63183aced244c13992c}{set\-Cur\-Equation\-Num} (int)
+\item 
+std\-::vector$<$ \hyperlink{classosea_1_1ofreq_1_1_derivative}{Derivative} $>$ \& \hyperlink{classosea_1_1ofreq_1_1_force_react_a3c399af8c10b2dbf374c13d85917275e}{list\-Derivative} ()
+\begin{DoxyCompactList}\small\item\em Another implementation of get\-Derivatives, under a different name. \end{DoxyCompactList}\item 
+\hyperlink{classosea_1_1ofreq_1_1_derivative}{Derivative} \hyperlink{classosea_1_1ofreq_1_1_force_react_aaa5876da8ade31366fc75e3bb5d6ba42}{get\-Derivative} (unsigned int num)
+\begin{DoxyCompactList}\small\item\em Retrieve the derivative object specified by the index number. \end{DoxyCompactList}\item 
+\hyperlink{classosea_1_1ofreq_1_1_derivative}{Derivative} \& \hyperlink{classosea_1_1ofreq_1_1_force_react_a9966751cff2a417cfe04658a0038aa1b}{list\-Derivative} (unsigned int num)
+\begin{DoxyCompactList}\small\item\em Retrieve the derivative object specified by the index number. \end{DoxyCompactList}\item 
+\hypertarget{classosea_1_1ofreq_1_1_force_react_a1aad01d74720d18fd21dd9f70a8b6702}{void \hyperlink{classosea_1_1ofreq_1_1_force_react_a1aad01d74720d18fd21dd9f70a8b6702}{add\-Derivative} ()}\label{classosea_1_1ofreq_1_1_force_react_a1aad01d74720d18fd21dd9f70a8b6702}
+
+\begin{DoxyCompactList}\small\item\em Adds a \hyperlink{classosea_1_1ofreq_1_1_derivative}{Derivative} object to the list of derivatives. Creates a blank derivative object. Assumed to be the latest order of derivative in the list. \end{DoxyCompactList}\item 
+void \hyperlink{classosea_1_1ofreq_1_1_force_react_a7f860f5726f2f9f9baba9775dc72f1ff}{add\-Derivative} (\hyperlink{classosea_1_1ofreq_1_1_derivative}{Derivative} deriv\-In, unsigned int ord\-In)
+\begin{DoxyCompactList}\small\item\em Adds a \hyperlink{classosea_1_1ofreq_1_1_derivative}{Derivative} object in the list of derivatives. Sets the new objects as the input for the new derivative object. Uses the properties of the \hyperlink{classosea_1_1ofreq_1_1_derivative}{Derivative} object to set the correct index. \end{DoxyCompactList}\item 
+int \hyperlink{classosea_1_1ofreq_1_1_force_react_ae11cdc98d818ca97f710ed13e584c53f}{get\-Max\-Ord} ()
+\begin{DoxyCompactList}\small\item\em Returns the maximum order of the derivatives included in the force object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\-::vector$<$ \hyperlink{classosea_1_1ofreq_1_1_derivative}{Derivative} $>$ \hyperlink{classosea_1_1ofreq_1_1_force_react_a28d2bfdc97809181be4d21713cc52181}{p\-Derivative}
+\item 
+int \hyperlink{classosea_1_1ofreq_1_1_force_react_a56c47ef95ad9ac1876b832dbf75297dd}{current\-Derivative}
+\item 
+int \hyperlink{classosea_1_1ofreq_1_1_force_react_a35b2a5464dd0135961e04a8389f5967f}{current\-Equation}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+This class holds all of the data for a reactive force. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classosea_1_1ofreq_1_1_force_react_ac8f8b24f67f93f43ae1bb9c464a2d8d4}{\index{osea\-::ofreq\-::\-Force\-React@{osea\-::ofreq\-::\-Force\-React}!Force\-React@{Force\-React}}
+\index{Force\-React@{Force\-React}!osea::ofreq::ForceReact@{osea\-::ofreq\-::\-Force\-React}}
+\subsubsection[{Force\-React}]{\setlength{\rightskip}{0pt plus 5cm}Force\-React\-::\-Force\-React (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_force_react_ac8f8b24f67f93f43ae1bb9c464a2d8d4}
+This default constructor. \hypertarget{classosea_1_1ofreq_1_1_force_react_a585f55d5c31c4951824bce98b6582afb}{\index{osea\-::ofreq\-::\-Force\-React@{osea\-::ofreq\-::\-Force\-React}!$\sim$\-Force\-React@{$\sim$\-Force\-React}}
+\index{$\sim$\-Force\-React@{$\sim$\-Force\-React}!osea::ofreq::ForceReact@{osea\-::ofreq\-::\-Force\-React}}
+\subsubsection[{$\sim$\-Force\-React}]{\setlength{\rightskip}{0pt plus 5cm}Force\-React\-::$\sim$\-Force\-React (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_force_react_a585f55d5c31c4951824bce98b6582afb}
+The default destructor, nothing happens here. 
+
+\subsection{Member Function Documentation}
+\hypertarget{classosea_1_1ofreq_1_1_force_react_a7f860f5726f2f9f9baba9775dc72f1ff}{\index{osea\-::ofreq\-::\-Force\-React@{osea\-::ofreq\-::\-Force\-React}!add\-Derivative@{add\-Derivative}}
+\index{add\-Derivative@{add\-Derivative}!osea::ofreq::ForceReact@{osea\-::ofreq\-::\-Force\-React}}
+\subsubsection[{add\-Derivative}]{\setlength{\rightskip}{0pt plus 5cm}void Force\-React\-::add\-Derivative (
+\begin{DoxyParamCaption}
+\item[{{\bf Derivative}}]{deriv\-In, }
+\item[{unsigned int}]{ord\-In}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_force_react_a7f860f5726f2f9f9baba9775dc72f1ff}
+
+
+Adds a \hyperlink{classosea_1_1ofreq_1_1_derivative}{Derivative} object in the list of derivatives. Sets the new objects as the input for the new derivative object. Uses the properties of the \hyperlink{classosea_1_1ofreq_1_1_derivative}{Derivative} object to set the correct index. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em deriv\-In} & The derivative object to add to the list of derivatives. \\
+\hline
+{\em ord\-In} & The order of the derivative. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classosea_1_1ofreq_1_1_force_react_aaa5876da8ade31366fc75e3bb5d6ba42}{\index{osea\-::ofreq\-::\-Force\-React@{osea\-::ofreq\-::\-Force\-React}!get\-Derivative@{get\-Derivative}}
+\index{get\-Derivative@{get\-Derivative}!osea::ofreq::ForceReact@{osea\-::ofreq\-::\-Force\-React}}
+\subsubsection[{get\-Derivative}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Derivative} Force\-React\-::get\-Derivative (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{num}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_force_react_aaa5876da8ade31366fc75e3bb5d6ba42}
+
+
+Retrieve the derivative object specified by the index number. 
+
+Retrieve the derivative object specified by the index number. 
+\begin{DoxyParams}{Parameters}
+{\em num} & The index number of the derivative object. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns the derivative object specified by integer num. Returned value is by value. 
+\end{DoxyReturn}
+\hypertarget{classosea_1_1ofreq_1_1_force_react_ae11cdc98d818ca97f710ed13e584c53f}{\index{osea\-::ofreq\-::\-Force\-React@{osea\-::ofreq\-::\-Force\-React}!get\-Max\-Ord@{get\-Max\-Ord}}
+\index{get\-Max\-Ord@{get\-Max\-Ord}!osea::ofreq::ForceReact@{osea\-::ofreq\-::\-Force\-React}}
+\subsubsection[{get\-Max\-Ord}]{\setlength{\rightskip}{0pt plus 5cm}int Force\-React\-::get\-Max\-Ord (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_force_react_ae11cdc98d818ca97f710ed13e584c53f}
+
+
+Returns the maximum order of the derivatives included in the force object. 
+
+Returns the maximum order of the derivatives included in the force object. \begin{DoxyReturn}{Returns}
+Returns integer. Returns the maximum order of the derivatives included in the force object. Returned result passed by value. 
+\end{DoxyReturn}
+\hypertarget{classosea_1_1ofreq_1_1_force_react_a3c399af8c10b2dbf374c13d85917275e}{\index{osea\-::ofreq\-::\-Force\-React@{osea\-::ofreq\-::\-Force\-React}!list\-Derivative@{list\-Derivative}}
+\index{list\-Derivative@{list\-Derivative}!osea::ofreq::ForceReact@{osea\-::ofreq\-::\-Force\-React}}
+\subsubsection[{list\-Derivative}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ {\bf Derivative} $>$ \& Force\-React\-::list\-Derivative (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_force_react_a3c399af8c10b2dbf374c13d85917275e}
+
+
+Another implementation of get\-Derivatives, under a different name. 
+
+\begin{DoxyReturn}{Returns}
+Returns the vector of derviative objects. Returned object is by reference. 
+\end{DoxyReturn}
+\hypertarget{classosea_1_1ofreq_1_1_force_react_a9966751cff2a417cfe04658a0038aa1b}{\index{osea\-::ofreq\-::\-Force\-React@{osea\-::ofreq\-::\-Force\-React}!list\-Derivative@{list\-Derivative}}
+\index{list\-Derivative@{list\-Derivative}!osea::ofreq::ForceReact@{osea\-::ofreq\-::\-Force\-React}}
+\subsubsection[{list\-Derivative}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Derivative} \& Force\-React\-::list\-Derivative (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{num}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_force_react_a9966751cff2a417cfe04658a0038aa1b}
+
+
+Retrieve the derivative object specified by the index number. 
+
+Retrieve the derivative object specified by the index number. Retrieves a pointer to the derivative object. 
+\begin{DoxyParams}{Parameters}
+{\em num} & The index number of the derivative object. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns a pointer to the derivative object specified by integer num. Returned value is by reference. 
+\end{DoxyReturn}
+\hypertarget{classosea_1_1ofreq_1_1_force_react_ac387126f0628a06b24f53012725e384f}{\index{osea\-::ofreq\-::\-Force\-React@{osea\-::ofreq\-::\-Force\-React}!set\-Cur\-Derivative@{set\-Cur\-Derivative}}
+\index{set\-Cur\-Derivative@{set\-Cur\-Derivative}!osea::ofreq::ForceReact@{osea\-::ofreq\-::\-Force\-React}}
+\subsubsection[{set\-Cur\-Derivative}]{\setlength{\rightskip}{0pt plus 5cm}void Force\-React\-::set\-Cur\-Derivative (
+\begin{DoxyParamCaption}
+\item[{int}]{new\-Order}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_force_react_ac387126f0628a06b24f53012725e384f}
+Sets the current derivative. 
+\begin{DoxyParams}{Parameters}
+{\em neworder} & The order of derivative. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classosea_1_1ofreq_1_1_force_react_aca5dc15ce68dd63183aced244c13992c}{\index{osea\-::ofreq\-::\-Force\-React@{osea\-::ofreq\-::\-Force\-React}!set\-Cur\-Equation\-Num@{set\-Cur\-Equation\-Num}}
+\index{set\-Cur\-Equation\-Num@{set\-Cur\-Equation\-Num}!osea::ofreq::ForceReact@{osea\-::ofreq\-::\-Force\-React}}
+\subsubsection[{set\-Cur\-Equation\-Num}]{\setlength{\rightskip}{0pt plus 5cm}void Force\-React\-::set\-Cur\-Equation\-Num (
+\begin{DoxyParamCaption}
+\item[{int}]{new\-Equation\-Num}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_force_react_aca5dc15ce68dd63183aced244c13992c}
+Sets the current number of the equation. 
+\begin{DoxyParams}{Parameters}
+{\em new\-Equation\-Num} & The number of the equation. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classosea_1_1ofreq_1_1_force_react_a56c47ef95ad9ac1876b832dbf75297dd}{\index{osea\-::ofreq\-::\-Force\-React@{osea\-::ofreq\-::\-Force\-React}!current\-Derivative@{current\-Derivative}}
+\index{current\-Derivative@{current\-Derivative}!osea::ofreq::ForceReact@{osea\-::ofreq\-::\-Force\-React}}
+\subsubsection[{current\-Derivative}]{\setlength{\rightskip}{0pt plus 5cm}int osea\-::ofreq\-::\-Force\-React\-::current\-Derivative\hspace{0.3cm}{\ttfamily [protected]}}}\label{classosea_1_1ofreq_1_1_force_react_a56c47ef95ad9ac1876b832dbf75297dd}
+The current order derivative. \hypertarget{classosea_1_1ofreq_1_1_force_react_a35b2a5464dd0135961e04a8389f5967f}{\index{osea\-::ofreq\-::\-Force\-React@{osea\-::ofreq\-::\-Force\-React}!current\-Equation@{current\-Equation}}
+\index{current\-Equation@{current\-Equation}!osea::ofreq::ForceReact@{osea\-::ofreq\-::\-Force\-React}}
+\subsubsection[{current\-Equation}]{\setlength{\rightskip}{0pt plus 5cm}int osea\-::ofreq\-::\-Force\-React\-::current\-Equation\hspace{0.3cm}{\ttfamily [protected]}}}\label{classosea_1_1ofreq_1_1_force_react_a35b2a5464dd0135961e04a8389f5967f}
+This current equation number. \hypertarget{classosea_1_1ofreq_1_1_force_react_a28d2bfdc97809181be4d21713cc52181}{\index{osea\-::ofreq\-::\-Force\-React@{osea\-::ofreq\-::\-Force\-React}!p\-Derivative@{p\-Derivative}}
+\index{p\-Derivative@{p\-Derivative}!osea::ofreq::ForceReact@{osea\-::ofreq\-::\-Force\-React}}
+\subsubsection[{p\-Derivative}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<${\bf Derivative}$>$ osea\-::ofreq\-::\-Force\-React\-::p\-Derivative\hspace{0.3cm}{\ttfamily [protected]}}}\label{classosea_1_1ofreq_1_1_force_react_a28d2bfdc97809181be4d21713cc52181}
+This list of derivatives. 
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+forcereact.\-h\item 
+forcereact.\-cpp\end{DoxyCompactItemize}

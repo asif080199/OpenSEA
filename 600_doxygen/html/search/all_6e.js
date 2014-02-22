@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['n_5fdirs',['n_dirs',['../classlist_solution.html#a73345469dee89ca2073fb70df1e2a972',1,'listSolution']]],
-  ['n_5ffreqs',['n_freqs',['../classlist_solution.html#a3a0ce41a07718eca37ecccddf632a3c2',1,'listSolution']]],
-  ['name',['Name',['../class_equationof_motion.html#a5ec937219e70f278a8f2271b7cdb38f2',1,'EquationofMotion']]],
-  ['numequations',['numEquations',['../classmotion_model.html#ac0f0cef68dc8d4751ba3f6e5c48345ec',1,'motionModel']]]
+  ['n_5fdirs',['n_dirs',['../classosea_1_1ofreq_1_1_solution_set.html#a8cfe38b972cb389453a5251767c0defa',1,'osea::ofreq::SolutionSet']]],
+  ['n_5ffreqs',['n_freqs',['../classosea_1_1ofreq_1_1_solution_set.html#a03842750155f8eb60f1cc6ec46b8e85e',1,'osea::ofreq::SolutionSet']]],
+  ['numequations',['numEquations',['../classosea_1_1ofreq_1_1_motion_model.html#a0a228c24a524e2a1c6636d3121a842be',1,'osea::ofreq::MotionModel']]]
 ];

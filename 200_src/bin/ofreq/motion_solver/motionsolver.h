@@ -312,6 +312,16 @@ private:
      * Even if both inputs are NULL pointers, the function will return a matrix of zeros.
      */
     arma::cx_mat SumSingle(arma::cx_mat *Input1, arma::cx_mat *Input2, int ForceType);
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief A debugging function to write out the values of the matrix.  Values are written to the debug log.
+     * @param Name The variable name of the matrix that will have its values written out.  This variable name will
+     *              be printed to describe what the matrix is, just before creating the list of values.
+     * @param input The variable of the matrix to print out.  Complex double matrix expected.  Value passed by
+     *              reference.
+     */
+    void DebugMatrix(std::string Name, arma::cx_mat& input);
 };
 
 }   //Namespace ofreq

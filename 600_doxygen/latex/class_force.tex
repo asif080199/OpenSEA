@@ -11,7 +11,16 @@ Inheritance diagram for Force\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=230pt]{class_force__inherit__graph}
+\includegraphics[width=238pt]{class_force__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Force\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=146pt]{class_force__coll__graph}
 \end{center}
 \end{figure}
 \subsection*{Public Member Functions}
@@ -19,17 +28,27 @@ Inheritance diagram for Force\-:\nopagebreak
 \item 
 \hyperlink{class_force_a00983e3bbc206a00bb9253deafc4e424}{Force} ()
 \item 
-\hyperlink{class_force_a8767ca332cee738a462befe1bfbfa454}{$\sim$\-Force} ()
+\hyperlink{class_force_a17b130fe437ef6c78162f6d4fb7fc909}{Force} (int index\-In)
+\begin{DoxyCompactList}\small\item\em Overloaded constructor for \hyperlink{class_force}{Force} object. Allows the \hyperlink{class_system}{System} object to pass the index of the newly created \hyperlink{class_force}{Force} object in the list of other similar \hyperlink{class_force}{Force} objects. Used during object creation for proper association with \hyperlink{class_body}{Body} object. \end{DoxyCompactList}\item 
+virtual \hyperlink{class_force_a8767ca332cee738a462befe1bfbfa454}{$\sim$\-Force} ()
 \item 
 void \hyperlink{class_force_aefb0b71694f6ffbfe1ee06516f5536c3}{set\-Force\-Name} (string)
 \item 
 string \hyperlink{class_force_a8431fcc0edd27e3edb77f8176bec6908}{get\-Force\-Name} ()
-\end{DoxyCompactItemize}
+\item 
+void \hyperlink{class_force_aee052df1c632a6dfb323b5deac443684}{set\-System\-Index} (int index\-In)
+\begin{DoxyCompactList}\small\item\em Sets the system index. The index of the \hyperlink{class_force}{Force} object as it exists in the list of other similar \hyperlink{class_force}{Force} objects contained under the \hyperlink{class_system}{System} object. \end{DoxyCompactList}\item 
+int \hyperlink{class_force_a8cce0e20d734d02c5c52c8ca1f1bde54}{get\-System\-Index} ()
+\begin{DoxyCompactList}\small\item\em Gets the system index. The index of the \hyperlink{class_force}{Force} object as it exists in the list of other similar \hyperlink{class_force}{Force} objects contained under the \hyperlink{class_system}{System} object. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
 string \hyperlink{class_force_a50b8739b17f549bd250936b0251ca571}{force\-Name}
-\end{DoxyCompactItemize}
+\item 
+\hypertarget{class_force_a26d7a21a41c57ff7040b244c6585b764}{int \hyperlink{class_force_a26d7a21a41c57ff7040b244c6585b764}{p\-Sys\-Index}}\label{class_force_a26d7a21a41c57ff7040b244c6585b764}
+
+\begin{DoxyCompactList}\small\item\em The index of the \hyperlink{class_force}{Force} object as it exists in the list of other similar \hyperlink{class_force}{Force} objects contained under the \hyperlink{class_system}{System} object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
 
 
 \subsection{Detailed Description}
@@ -43,13 +62,47 @@ This (base) class holds data for a force object.
 {}
 \end{DoxyParamCaption}
 )}}\label{class_force_a00983e3bbc206a00bb9253deafc4e424}
-The default constructor. \hypertarget{class_force_a8767ca332cee738a462befe1bfbfa454}{\index{Force@{Force}!$\sim$\-Force@{$\sim$\-Force}}
+The default constructor. \hypertarget{class_force_a17b130fe437ef6c78162f6d4fb7fc909}{\index{Force@{Force}!Force@{Force}}
+\index{Force@{Force}!Force@{Force}}
+\subsubsection[{Force}]{\setlength{\rightskip}{0pt plus 5cm}Force\-::\-Force (
+\begin{DoxyParamCaption}
+\item[{int}]{index\-In}
+\end{DoxyParamCaption}
+)}}\label{class_force_a17b130fe437ef6c78162f6d4fb7fc909}
+
+
+Overloaded constructor for \hyperlink{class_force}{Force} object. Allows the \hyperlink{class_system}{System} object to pass the index of the newly created \hyperlink{class_force}{Force} object in the list of other similar \hyperlink{class_force}{Force} objects. Used during object creation for proper association with \hyperlink{class_body}{Body} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index\-In} & Integer. The index of the \hyperlink{class_force}{Force} object as it exists in the list of other similar \hyperlink{class_force}{Force} objects contained under the \hyperlink{class_system}{System} object. Variable passed by value. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classdict_bodies}{dict\-Bodies} 
+
+\hyperlink{class_system}{System} 
+
+\hyperlink{class_body}{Body} 
+\end{DoxySeeAlso}
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=314pt]{class_force_a17b130fe437ef6c78162f6d4fb7fc909_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_force_a8767ca332cee738a462befe1bfbfa454}{\index{Force@{Force}!$\sim$\-Force@{$\sim$\-Force}}
 \index{$\sim$\-Force@{$\sim$\-Force}!Force@{Force}}
 \subsubsection[{$\sim$\-Force}]{\setlength{\rightskip}{0pt plus 5cm}Force\-::$\sim$\-Force (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)}}\label{class_force_a8767ca332cee738a462befe1bfbfa454}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_force_a8767ca332cee738a462befe1bfbfa454}
 The default destructor, nothing happens here. 
 
 \subsection{Member Function Documentation}
@@ -63,6 +116,20 @@ The default destructor, nothing happens here.
 Retrieve the name of the force. \begin{DoxyReturn}{Returns}
 new\-Name The name of the force. 
 \end{DoxyReturn}
+\hypertarget{class_force_a8cce0e20d734d02c5c52c8ca1f1bde54}{\index{Force@{Force}!get\-System\-Index@{get\-System\-Index}}
+\index{get\-System\-Index@{get\-System\-Index}!Force@{Force}}
+\subsubsection[{get\-System\-Index}]{\setlength{\rightskip}{0pt plus 5cm}int Force\-::get\-System\-Index (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_force_a8cce0e20d734d02c5c52c8ca1f1bde54}
+
+
+Gets the system index. The index of the \hyperlink{class_force}{Force} object as it exists in the list of other similar \hyperlink{class_force}{Force} objects contained under the \hyperlink{class_system}{System} object. 
+
+\begin{DoxyReturn}{Returns}
+Integer. The index of the \hyperlink{class_force}{Force} object as it exists in the list of other similar \hyperlink{class_force}{Force} objects contained under the \hyperlink{class_system}{System} object. Variable passed by value. 
+\end{DoxyReturn}
 \hypertarget{class_force_aefb0b71694f6ffbfe1ee06516f5536c3}{\index{Force@{Force}!set\-Force\-Name@{set\-Force\-Name}}
 \index{set\-Force\-Name@{set\-Force\-Name}!Force@{Force}}
 \subsubsection[{set\-Force\-Name}]{\setlength{\rightskip}{0pt plus 5cm}void Force\-::set\-Force\-Name (
@@ -75,6 +142,33 @@ Sets the name of the force.
 {\em new\-Name} & The name of the force. \\
 \hline
 \end{DoxyParams}
+\hypertarget{class_force_aee052df1c632a6dfb323b5deac443684}{\index{Force@{Force}!set\-System\-Index@{set\-System\-Index}}
+\index{set\-System\-Index@{set\-System\-Index}!Force@{Force}}
+\subsubsection[{set\-System\-Index}]{\setlength{\rightskip}{0pt plus 5cm}void Force\-::set\-System\-Index (
+\begin{DoxyParamCaption}
+\item[{int}]{index\-In}
+\end{DoxyParamCaption}
+)}}\label{class_force_aee052df1c632a6dfb323b5deac443684}
+
+
+Sets the system index. The index of the \hyperlink{class_force}{Force} object as it exists in the list of other similar \hyperlink{class_force}{Force} objects contained under the \hyperlink{class_system}{System} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index\-In} & Integer. The index of the \hyperlink{class_force}{Force} object as it exists in the list of other similar \hyperlink{class_force}{Force} objects contained under the \hyperlink{class_system}{System} object. Variable passed by value. \\
+\hline
+\end{DoxyParams}
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=314pt]{class_force_aee052df1c632a6dfb323b5deac443684_icgraph}
+\end{center}
+\end{figure}
+
+
 
 
 \subsection{Member Data Documentation}
@@ -85,5 +179,5 @@ The force name.
 
 The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
 \item 
-/home/nicholas/\-Ship Design/\-Projects/\-D\-M\-S1305 Open\-S\-E\-A/master/200\-\_\-src/bin/ofreq/motion\-\_\-solver/force.\-h\item 
-/home/nicholas/\-Ship Design/\-Projects/\-D\-M\-S1305 Open\-S\-E\-A/master/200\-\_\-src/bin/ofreq/motion\-\_\-solver/force.\-cpp\end{DoxyCompactItemize}
+force.\-h\item 
+force.\-cpp\end{DoxyCompactItemize}

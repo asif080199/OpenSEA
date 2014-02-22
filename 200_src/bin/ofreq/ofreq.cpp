@@ -307,6 +307,9 @@ void buildMatBody(int bod, bool useCoeff)
     {
         listMatBody[bod].listForceActive_user().push_back(matForceActive());
         listMatBody[bod].listForceActive_user(i).listCoefficients() = MyModel->getMatForceActive_user(i);
+
+        //Print output
+        MyModel->getMatForceActive_user(i).print();
         //Create force ID.
         listMatBody[bod].listForceActive_user(i).setId(i);
     }

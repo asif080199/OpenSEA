@@ -5,6 +5,24 @@
 
 {\ttfamily \#include $<$solution.\-h$>$}
 
+
+
+Inheritance diagram for Solution\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=146pt]{class_solution__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Solution\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=146pt]{class_solution__coll__graph}
+\end{center}
+\end{figure}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -14,20 +32,17 @@
 \begin{DoxyCompactList}\small\item\em Creates the object and sets the reference body for the object. \end{DoxyCompactList}\item 
 \hyperlink{class_solution_a5d245f7409aacf6ace5e965b7879a580}{$\sim$\-Solution} ()
 \begin{DoxyCompactList}\small\item\em Default destructor. \end{DoxyCompactList}\item 
-cx\-\_\-mat \& \hyperlink{class_solution_aa224465c8237cd395681164bee0d7f8d}{ref\-Solution} ()
+cx\-\_\-mat \& \hyperlink{class_solution_a97e6a64afec87dd0fa217f1d49449ac9}{ref\-Soln\-Mat} ()
 \begin{DoxyCompactList}\small\item\em Returns direct access to the solution matrix. \end{DoxyCompactList}\item 
-cx\-\_\-mat \hyperlink{class_solution_a631b5866d3df132464a7d1ec70cc6028}{get\-Solution} ()
+cx\-\_\-mat \hyperlink{class_solution_a00801ca01862410a65fba3215bc8a789}{get\-Soln\-Mat} ()
 \begin{DoxyCompactList}\small\item\em Returns the solution matrix. \end{DoxyCompactList}\item 
-complex$<$ double $>$ \hyperlink{class_solution_abf5f82f209b6a3295b89ef3a6fad293d}{get\-Solution} (int index)
+complex$<$ double $>$ \hyperlink{class_solution_a8f850820d65445470f4a0a5351f990e7}{get\-Soln\-Mat} (int index)
 \begin{DoxyCompactList}\small\item\em Returns a single entry in the solution matrix. Entry specified by index. \end{DoxyCompactList}\item 
-void \hyperlink{class_solution_a610e36c0d33e9bd359b24828bdd1292c}{set\-Solution} (cx\-\_\-mat mat\-In)
+void \hyperlink{class_solution_a501a04b48ca1e5150dcef9b898085deb}{set\-Soln\-Mat} (cx\-\_\-mat mat\-In)
 \begin{DoxyCompactList}\small\item\em Sets the solution matrix as a whole. \end{DoxyCompactList}\item 
-void \hyperlink{class_solution_ac55bc97e20a2177483d673ee919a732a}{set\-Body} (\hyperlink{class_body}{Body} \&bod\-In)
-\begin{DoxyCompactList}\small\item\em Sets the pointer to the reference body. \end{DoxyCompactList}\item 
-\hyperlink{class_body}{Body} \hyperlink{class_solution_a4bee06699b6942bfa9202f92235bbb96}{get\-Body} ()
-\begin{DoxyCompactList}\small\item\em Gets the body object used as the reference body. Variable passed by value. \end{DoxyCompactList}\item 
 \hyperlink{class_body}{Body} \& \hyperlink{class_solution_a95519db148bcece14c88aab53f4ced0e}{ref\-Body} ()
-\begin{DoxyCompactList}\small\item\em Returns reference pointer to the reference body. Variable passed by reference. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Gets the body object used as the reference body. Variable passed by value. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
 
 
 \subsection{Detailed Description}
@@ -75,27 +90,13 @@ Default destructor.
 Default destructor. Nothing done here. 
 
 \subsection{Member Function Documentation}
-\hypertarget{class_solution_a4bee06699b6942bfa9202f92235bbb96}{\index{Solution@{Solution}!get\-Body@{get\-Body}}
-\index{get\-Body@{get\-Body}!Solution@{Solution}}
-\subsubsection[{get\-Body}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Body} Solution\-::get\-Body (
+\hypertarget{class_solution_a00801ca01862410a65fba3215bc8a789}{\index{Solution@{Solution}!get\-Soln\-Mat@{get\-Soln\-Mat}}
+\index{get\-Soln\-Mat@{get\-Soln\-Mat}!Solution@{Solution}}
+\subsubsection[{get\-Soln\-Mat}]{\setlength{\rightskip}{0pt plus 5cm}cx\-\_\-mat Solution\-::get\-Soln\-Mat (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)}}\label{class_solution_a4bee06699b6942bfa9202f92235bbb96}
-
-
-Gets the body object used as the reference body. Variable passed by value. 
-
-\begin{DoxyReturn}{Returns}
-Gets the body object used as the reference body. Variable passed by value. 
-\end{DoxyReturn}
-\hypertarget{class_solution_a631b5866d3df132464a7d1ec70cc6028}{\index{Solution@{Solution}!get\-Solution@{get\-Solution}}
-\index{get\-Solution@{get\-Solution}!Solution@{Solution}}
-\subsubsection[{get\-Solution}]{\setlength{\rightskip}{0pt plus 5cm}cx\-\_\-mat Solution\-::get\-Solution (
-\begin{DoxyParamCaption}
-{}
-\end{DoxyParamCaption}
-)}}\label{class_solution_a631b5866d3df132464a7d1ec70cc6028}
+)}}\label{class_solution_a00801ca01862410a65fba3215bc8a789}
 
 
 Returns the solution matrix. 
@@ -105,24 +106,13 @@ It gets filled with the output from the motion solver. Output is a column matrix
 Returns the solution matrix as a whole. \begin{DoxyReturn}{Returns}
 Returned value is a complex number matrix. Returned variable is passed by value. 
 \end{DoxyReturn}
-
-
-Here is the caller graph for this function\-:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{class_solution_a631b5866d3df132464a7d1ec70cc6028_icgraph}
-\end{center}
-\end{figure}
-
-
-\hypertarget{class_solution_abf5f82f209b6a3295b89ef3a6fad293d}{\index{Solution@{Solution}!get\-Solution@{get\-Solution}}
-\index{get\-Solution@{get\-Solution}!Solution@{Solution}}
-\subsubsection[{get\-Solution}]{\setlength{\rightskip}{0pt plus 5cm}complex$<$ double $>$ Solution\-::get\-Solution (
+\hypertarget{class_solution_a8f850820d65445470f4a0a5351f990e7}{\index{Solution@{Solution}!get\-Soln\-Mat@{get\-Soln\-Mat}}
+\index{get\-Soln\-Mat@{get\-Soln\-Mat}!Solution@{Solution}}
+\subsubsection[{get\-Soln\-Mat}]{\setlength{\rightskip}{0pt plus 5cm}complex$<$ double $>$ Solution\-::get\-Soln\-Mat (
 \begin{DoxyParamCaption}
 \item[{int}]{index}
 \end{DoxyParamCaption}
-)}}\label{class_solution_abf5f82f209b6a3295b89ef3a6fad293d}
+)}}\label{class_solution_a8f850820d65445470f4a0a5351f990e7}
 
 
 Returns a single entry in the solution matrix. Entry specified by index. 
@@ -144,18 +134,21 @@ Returns a complex number data type. Single value from the solution matrix. Value
 )}}\label{class_solution_a95519db148bcece14c88aab53f4ced0e}
 
 
-Returns reference pointer to the reference body. Variable passed by reference. 
+Gets the body object used as the reference body. Variable passed by value. 
 
+\begin{DoxyReturn}{Returns}
+Gets the body object used as the reference body. Variable passed by value. Returns reference pointer to the reference body. Variable passed by reference.
+\end{DoxyReturn}
 Returns reference pointer to the reference body. Variable passed by reference. Used for direct access to the reference body and all its member functions. \begin{DoxyReturn}{Returns}
 Returns reference pointer to the reference body. Variable passed by reference. 
 \end{DoxyReturn}
-\hypertarget{class_solution_aa224465c8237cd395681164bee0d7f8d}{\index{Solution@{Solution}!ref\-Solution@{ref\-Solution}}
-\index{ref\-Solution@{ref\-Solution}!Solution@{Solution}}
-\subsubsection[{ref\-Solution}]{\setlength{\rightskip}{0pt plus 5cm}cx\-\_\-mat \& Solution\-::ref\-Solution (
+\hypertarget{class_solution_a97e6a64afec87dd0fa217f1d49449ac9}{\index{Solution@{Solution}!ref\-Soln\-Mat@{ref\-Soln\-Mat}}
+\index{ref\-Soln\-Mat@{ref\-Soln\-Mat}!Solution@{Solution}}
+\subsubsection[{ref\-Soln\-Mat}]{\setlength{\rightskip}{0pt plus 5cm}cx\-\_\-mat \& Solution\-::ref\-Soln\-Mat (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)}}\label{class_solution_aa224465c8237cd395681164bee0d7f8d}
+)}}\label{class_solution_a97e6a64afec87dd0fa217f1d49449ac9}
 
 
 Returns direct access to the solution matrix. 
@@ -163,40 +156,13 @@ Returns direct access to the solution matrix.
 Returns direct access to the solution matrix. Provides a pointer to the solution matrix. It gets filled with the output from the motion solver. Output is a column matrix (n by 1) of complex numbers. Output is in units of meters. \begin{DoxyReturn}{Returns}
 Returns direct access to the solution matrix. Provides a pointer to the solution matrix. Returned variable is passed by reference. 
 \end{DoxyReturn}
-
-
-Here is the caller graph for this function\-:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{class_solution_aa224465c8237cd395681164bee0d7f8d_icgraph}
-\end{center}
-\end{figure}
-
-
-\hypertarget{class_solution_ac55bc97e20a2177483d673ee919a732a}{\index{Solution@{Solution}!set\-Body@{set\-Body}}
-\index{set\-Body@{set\-Body}!Solution@{Solution}}
-\subsubsection[{set\-Body}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Body} Solution\-::set\-Body (
-\begin{DoxyParamCaption}
-\item[{{\bf Body} \&}]{bod\-In}
-\end{DoxyParamCaption}
-)}}\label{class_solution_ac55bc97e20a2177483d673ee919a732a}
-
-
-Sets the pointer to the reference body. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em bod\-In} & The reference body. Variabled passed by reference. \\
-\hline
-\end{DoxyParams}
-\hypertarget{class_solution_a610e36c0d33e9bd359b24828bdd1292c}{\index{Solution@{Solution}!set\-Solution@{set\-Solution}}
-\index{set\-Solution@{set\-Solution}!Solution@{Solution}}
-\subsubsection[{set\-Solution}]{\setlength{\rightskip}{0pt plus 5cm}void Solution\-::set\-Solution (
+\hypertarget{class_solution_a501a04b48ca1e5150dcef9b898085deb}{\index{Solution@{Solution}!set\-Soln\-Mat@{set\-Soln\-Mat}}
+\index{set\-Soln\-Mat@{set\-Soln\-Mat}!Solution@{Solution}}
+\subsubsection[{set\-Soln\-Mat}]{\setlength{\rightskip}{0pt plus 5cm}void Solution\-::set\-Soln\-Mat (
 \begin{DoxyParamCaption}
 \item[{cx\-\_\-mat}]{mat\-In}
 \end{DoxyParamCaption}
-)}}\label{class_solution_a610e36c0d33e9bd359b24828bdd1292c}
+)}}\label{class_solution_a501a04b48ca1e5150dcef9b898085deb}
 
 
 Sets the solution matrix as a whole. 
@@ -210,5 +176,5 @@ Sets the solution matrix as a whole.
 
 The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
 \item 
-/home/nicholas/\-Ship Design/\-Projects/\-D\-M\-S1305 Open\-S\-E\-A/master/200\-\_\-src/bin/ofreq/global\-\_\-objects/solution.\-h\item 
-/home/nicholas/\-Ship Design/\-Projects/\-D\-M\-S1305 Open\-S\-E\-A/master/200\-\_\-src/bin/ofreq/global\-\_\-objects/solution.\-cpp\end{DoxyCompactItemize}
+solution.\-h\item 
+solution.\-cpp\end{DoxyCompactItemize}

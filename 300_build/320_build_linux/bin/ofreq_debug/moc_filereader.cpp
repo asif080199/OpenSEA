@@ -17,7 +17,7 @@
 #endif
 
 QT_BEGIN_MOC_NAMESPACE
-static const uint qt_meta_data_FileReader[] = {
+static const uint qt_meta_data_osea__FileReader[] = {
 
  // content:
        6,       // revision
@@ -31,30 +31,31 @@ static const uint qt_meta_data_FileReader[] = {
        5,       // signalCount
 
  // signals: signature, parameters, type, tag, flags
-      19,   12,   11,   11, 0x05,
-      50,   12,   11,   11, 0x05,
-      80,   12,   11,   11, 0x05,
-     108,   12,   11,   11, 0x05,
-     138,   12,   11,   11, 0x05,
+      25,   18,   17,   17, 0x05,
+      56,   18,   17,   17, 0x05,
+      86,   18,   17,   17, 0x05,
+     114,   18,   17,   17, 0x05,
+     144,   18,   17,   17, 0x05,
 
  // slots: signature, parameters, type, tag, flags
-     177,  172,  168,   11, 0x0a,
-     207,  199,   11,   11, 0x0a,
+     183,  178,  174,   17, 0x0a,
+     218,  210,   17,   17, 0x0a,
 
        0        // eod
 };
 
-static const char qt_meta_stringdata_FileReader[] = {
-    "FileReader\0\0output\0outputControlFile(ObjectGroup)\0"
+static const char qt_meta_stringdata_osea__FileReader[] = {
+    "osea::FileReader\0\0output\0"
+    "outputControlFile(ObjectGroup)\0"
     "outputBodiesFile(ObjectGroup)\0"
     "outputDataFile(ObjectGroup)\0"
     "outputForcesFile(ObjectGroup)\0"
     "outputSeaEnvFile(ObjectGroup)\0int\0"
-    "path\0readHydroFile(string)\0ptInput\0"
-    "setSystem(System*)\0"
+    "path\0readHydroFile(std::string)\0ptInput\0"
+    "setSystem(ofreq::System*)\0"
 };
 
-void FileReader::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
+void osea::FileReader::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
 {
     if (_c == QMetaObject::InvokeMetaMethod) {
         Q_ASSERT(staticMetaObject.cast(_o));
@@ -65,41 +66,43 @@ void FileReader::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 2: _t->outputDataFile((*reinterpret_cast< ObjectGroup(*)>(_a[1]))); break;
         case 3: _t->outputForcesFile((*reinterpret_cast< ObjectGroup(*)>(_a[1]))); break;
         case 4: _t->outputSeaEnvFile((*reinterpret_cast< ObjectGroup(*)>(_a[1]))); break;
-        case 5: { int _r = _t->readHydroFile((*reinterpret_cast< string(*)>(_a[1])));
+        case 5: { int _r = _t->readHydroFile((*reinterpret_cast< std::string(*)>(_a[1])));
             if (_a[0]) *reinterpret_cast< int*>(_a[0]) = _r; }  break;
-        case 6: _t->setSystem((*reinterpret_cast< System*(*)>(_a[1]))); break;
+        case 6: _t->setSystem((*reinterpret_cast< ofreq::System*(*)>(_a[1]))); break;
         default: ;
         }
     }
 }
 
-const QMetaObjectExtraData FileReader::staticMetaObjectExtraData = {
+const QMetaObjectExtraData osea::FileReader::staticMetaObjectExtraData = {
     0,  qt_static_metacall 
 };
 
-const QMetaObject FileReader::staticMetaObject = {
-    { &QObject::staticMetaObject, qt_meta_stringdata_FileReader,
-      qt_meta_data_FileReader, &staticMetaObjectExtraData }
+const QMetaObject osea::FileReader::staticMetaObject = {
+    { &QObject::staticMetaObject, qt_meta_stringdata_osea__FileReader,
+      qt_meta_data_osea__FileReader, &staticMetaObjectExtraData }
 };
 
 #ifdef Q_NO_DATA_RELOCATION
-const QMetaObject &FileReader::getStaticMetaObject() { return staticMetaObject; }
+const QMetaObject &osea::FileReader::getStaticMetaObject() { return staticMetaObject; }
 #endif //Q_NO_DATA_RELOCATION
 
-const QMetaObject *FileReader::metaObject() const
+const QMetaObject *osea::FileReader::metaObject() const
 {
     return QObject::d_ptr->metaObject ? QObject::d_ptr->metaObject : &staticMetaObject;
 }
 
-void *FileReader::qt_metacast(const char *_clname)
+void *osea::FileReader::qt_metacast(const char *_clname)
 {
     if (!_clname) return 0;
-    if (!strcmp(_clname, qt_meta_stringdata_FileReader))
+    if (!strcmp(_clname, qt_meta_stringdata_osea__FileReader))
         return static_cast<void*>(const_cast< FileReader*>(this));
+    if (!strcmp(_clname, "osea::ofreq::oFreqCore"))
+        return static_cast< osea::ofreq::oFreqCore*>(const_cast< FileReader*>(this));
     return QObject::qt_metacast(_clname);
 }
 
-int FileReader::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
+int osea::FileReader::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 {
     _id = QObject::qt_metacall(_c, _id, _a);
     if (_id < 0)
@@ -113,35 +116,35 @@ int FileReader::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 }
 
 // SIGNAL 0
-void FileReader::outputControlFile(ObjectGroup _t1)
+void osea::FileReader::outputControlFile(ObjectGroup _t1)
 {
     void *_a[] = { 0, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
     QMetaObject::activate(this, &staticMetaObject, 0, _a);
 }
 
 // SIGNAL 1
-void FileReader::outputBodiesFile(ObjectGroup _t1)
+void osea::FileReader::outputBodiesFile(ObjectGroup _t1)
 {
     void *_a[] = { 0, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
     QMetaObject::activate(this, &staticMetaObject, 1, _a);
 }
 
 // SIGNAL 2
-void FileReader::outputDataFile(ObjectGroup _t1)
+void osea::FileReader::outputDataFile(ObjectGroup _t1)
 {
     void *_a[] = { 0, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
     QMetaObject::activate(this, &staticMetaObject, 2, _a);
 }
 
 // SIGNAL 3
-void FileReader::outputForcesFile(ObjectGroup _t1)
+void osea::FileReader::outputForcesFile(ObjectGroup _t1)
 {
     void *_a[] = { 0, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
     QMetaObject::activate(this, &staticMetaObject, 3, _a);
 }
 
 // SIGNAL 4
-void FileReader::outputSeaEnvFile(ObjectGroup _t1)
+void osea::FileReader::outputSeaEnvFile(ObjectGroup _t1)
 {
     void *_a[] = { 0, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
     QMetaObject::activate(this, &staticMetaObject, 4, _a);

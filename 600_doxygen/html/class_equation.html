@@ -45,6 +45,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -93,7 +94,7 @@ $(document).ready(function(){initNavTree('class_equation.html','');});
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Variables</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -112,6 +113,20 @@ $(document).ready(function(){initNavTree('class_equation.html','');});
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="equation_8h_source.html">equation.h</a>&gt;</code></p>
+<div class="dynheader">
+Inheritance diagram for Equation:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_equation__inherit__graph.png" border="0" usemap="#_equation_inherit__map" alt="Inheritance graph"/></div>
+<map name="_equation_inherit__map" id="_equation_inherit__map">
+<area shape="rect" id="node2" href="classo_freq_core.html" title="The core oFreq class. All oFreq classes inherit from this class." alt="" coords="5,5,93,32"/></map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
+<div class="dynheader">
+Collaboration diagram for Equation:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_equation__coll__graph.png" border="0" usemap="#_equation_coll__map" alt="Collaboration graph"/></div>
+<map name="_equation_coll__map" id="_equation_coll__map">
+<area shape="rect" id="node2" href="classo_freq_core.html" title="The core oFreq class. All oFreq classes inherit from this class." alt="" coords="5,5,93,32"/></map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -122,28 +137,59 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a37fec641aec75302c37590d191421790"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a097243d0dfd608330fc91f115a0d15bb"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_equation.html#a097243d0dfd608330fc91f115a0d15bb">~Equation</a> ()</td></tr>
 <tr class="separator:a097243d0dfd608330fc91f115a0d15bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af6c9148998a4abe47f4a4215c51ce3c8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_equation.html#af6c9148998a4abe47f4a4215c51ce3c8">testPrint</a> ()</td></tr>
-<tr class="separator:af6c9148998a4abe47f4a4215c51ce3c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abe2b02e37a07bddaf1040d2d24c3564c"><td class="memItemLeft" align="right" valign="top">vector&lt; double &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_equation.html#abe2b02e37a07bddaf1040d2d24c3564c">Coefficients</a> ()</td></tr>
-<tr class="memdesc:abe2b02e37a07bddaf1040d2d24c3564c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Direct access to the list of coefficients.  <a href="#abe2b02e37a07bddaf1040d2d24c3564c"></a><br/></td></tr>
-<tr class="separator:abe2b02e37a07bddaf1040d2d24c3564c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4277bda09b538c1523d451afcc55787a"><td class="memItemLeft" align="right" valign="top">vector&lt; double &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_equation.html#a4277bda09b538c1523d451afcc55787a">listCoefficients</a> ()</td></tr>
+<tr class="memdesc:a4277bda09b538c1523d451afcc55787a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Direct access to the list of coefficients.  <a href="#a4277bda09b538c1523d451afcc55787a"></a><br/></td></tr>
+<tr class="separator:a4277bda09b538c1523d451afcc55787a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a198eb9e2816a5cd316b8bdc07d505568"><td class="memItemLeft" align="right" valign="top">double &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_equation.html#a198eb9e2816a5cd316b8bdc07d505568">listCoefficients</a> (unsigned int index)</td></tr>
+<tr class="memdesc:a198eb9e2816a5cd316b8bdc07d505568"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides direct access to a coefficient from the list of coefficients.  <a href="#a198eb9e2816a5cd316b8bdc07d505568"></a><br/></td></tr>
+<tr class="separator:a198eb9e2816a5cd316b8bdc07d505568"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6aa77458d50e80de2a31708756c7925b"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_equation.html#a6aa77458d50e80de2a31708756c7925b">getCoefficient</a> (int number)</td></tr>
 <tr class="memdesc:a6aa77458d50e80de2a31708756c7925b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the coefficient at the specified number.  <a href="#a6aa77458d50e80de2a31708756c7925b"></a><br/></td></tr>
 <tr class="separator:a6aa77458d50e80de2a31708756c7925b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a96dd6f24624703a1ff3ffb4d19a76582"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_equation.html#a96dd6f24624703a1ff3ffb4d19a76582">setCoefficient</a> (int number, double coeffIn)</td></tr>
 <tr class="memdesc:a96dd6f24624703a1ff3ffb4d19a76582"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the coefficient value at the specified index number.  <a href="#a96dd6f24624703a1ff3ffb4d19a76582"></a><br/></td></tr>
 <tr class="separator:a96dd6f24624703a1ff3ffb4d19a76582"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abb01745ac8c816354d72ee529d2bddc0"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_equation.html#abb01745ac8c816354d72ee529d2bddc0">getCoefficientListSize</a> ()</td></tr>
-<tr class="separator:abb01745ac8c816354d72ee529d2bddc0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa3ceaac689d9cfef1a1b3123d8ec4027"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_equation.html#aa3ceaac689d9cfef1a1b3123d8ec4027">getCoefficientListSize</a> ()</td></tr>
+<tr class="separator:aa3ceaac689d9cfef1a1b3123d8ec4027"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa9e40c1cc6fb3cb030e9956663025a87"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_equation.html#aa9e40c1cc6fb3cb030e9956663025a87">setDataIndex</a> (int index)</td></tr>
 <tr class="memdesc:aa9e40c1cc6fb3cb030e9956663025a87"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the index number of any equation data that should be retrieved.  <a href="#aa9e40c1cc6fb3cb030e9956663025a87"></a><br/></td></tr>
 <tr class="separator:aa9e40c1cc6fb3cb030e9956663025a87"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac5fd13eba76ddbbf4813823fad4166e2"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_equation.html#ac5fd13eba76ddbbf4813823fad4166e2">getDataIndex</a> ()</td></tr>
 <tr class="memdesc:ac5fd13eba76ddbbf4813823fad4166e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the index number of any equation data that should be retrieved.  <a href="#ac5fd13eba76ddbbf4813823fad4166e2"></a><br/></td></tr>
 <tr class="separator:ac5fd13eba76ddbbf4813823fad4166e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad3c7c4766cf4b17eaf4f07e0792f012a"><td class="memItemLeft" align="right" valign="top">int &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_equation.html#ad3c7c4766cf4b17eaf4f07e0792f012a">DataIndex</a> ()</td></tr>
-<tr class="memdesc:ad3c7c4766cf4b17eaf4f07e0792f012a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Exposed access to the data access variable.  <a href="#ad3c7c4766cf4b17eaf4f07e0792f012a"></a><br/></td></tr>
-<tr class="separator:ad3c7c4766cf4b17eaf4f07e0792f012a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5964477a42f3941a968f249b89742d73"><td class="memItemLeft" align="right" valign="top">int &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_equation.html#a5964477a42f3941a968f249b89742d73">refDataIndex</a> ()</td></tr>
+<tr class="memdesc:a5964477a42f3941a968f249b89742d73"><td class="mdescLeft">&#160;</td><td class="mdescRight">Exposed access to the data access variable.  <a href="#a5964477a42f3941a968f249b89742d73"></a><br/></td></tr>
+<tr class="separator:a5964477a42f3941a968f249b89742d73"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classo_freq_core"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classo_freq_core')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classo_freq_core.html">oFreqCore</a></td></tr>
+<tr class="memitem:a5c882c0d8e78706270e377b749a647f5 inherit pub_methods_classo_freq_core"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classo_freq_core.html#a5c882c0d8e78706270e377b749a647f5">oFreqCore</a> ()</td></tr>
+<tr class="separator:a5c882c0d8e78706270e377b749a647f5 inherit pub_methods_classo_freq_core"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aea5887547dbd17fc2d4f1a99fe217918 inherit pub_methods_classo_freq_core"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classo_freq_core.html#aea5887547dbd17fc2d4f1a99fe217918">~oFreqCore</a> ()</td></tr>
+<tr class="separator:aea5887547dbd17fc2d4f1a99fe217918 inherit pub_methods_classo_freq_core"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
+Additional Inherited Members</h2></td></tr>
+<tr class="inherit_header pro_methods_classo_freq_core"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classo_freq_core')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classo_freq_core.html">oFreqCore</a></td></tr>
+<tr class="memitem:a2912584189c4abd84498450b7c5908c2 inherit pro_methods_classo_freq_core"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classo_freq_core.html#a2912584189c4abd84498450b7c5908c2">setOutLog</a> (string dirIn)</td></tr>
+<tr class="memdesc:a2912584189c4abd84498450b7c5908c2 inherit pro_methods_classo_freq_core"><td class="mdescLeft">&#160;</td><td class="mdescRight">Opens the output log file and prepares it for writing.  <a href="#a2912584189c4abd84498450b7c5908c2"></a><br/></td></tr>
+<tr class="separator:a2912584189c4abd84498450b7c5908c2 inherit pro_methods_classo_freq_core"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8af56bbec3689f5d2252da1787a910e3 inherit pro_methods_classo_freq_core"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classo_freq_core.html#a8af56bbec3689f5d2252da1787a910e3">setErrLog</a> (string dirIn)</td></tr>
+<tr class="memdesc:a8af56bbec3689f5d2252da1787a910e3 inherit pro_methods_classo_freq_core"><td class="mdescLeft">&#160;</td><td class="mdescRight">Opens the error log file and prepares it for writing.  <a href="#a8af56bbec3689f5d2252da1787a910e3"></a><br/></td></tr>
+<tr class="separator:a8af56bbec3689f5d2252da1787a910e3 inherit pro_methods_classo_freq_core"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a74a938eae7e51de72bc752ad83382a11 inherit pro_methods_classo_freq_core"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classo_freq_core.html#a74a938eae7e51de72bc752ad83382a11">writeLog</a> (string mesIn)</td></tr>
+<tr class="memdesc:a74a938eae7e51de72bc752ad83382a11 inherit pro_methods_classo_freq_core"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes output of a log message to the log file. Adds in a date and time stamp to the log.  <a href="#a74a938eae7e51de72bc752ad83382a11"></a><br/></td></tr>
+<tr class="separator:a74a938eae7e51de72bc752ad83382a11 inherit pro_methods_classo_freq_core"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7272d265451eb63bb371f9b9c02f4883 inherit pro_methods_classo_freq_core"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classo_freq_core.html#a7272d265451eb63bb371f9b9c02f4883">writeError</a> (string mesIn)</td></tr>
+<tr class="memdesc:a7272d265451eb63bb371f9b9c02f4883 inherit pro_methods_classo_freq_core"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes output of an error message to the error file. Adds in a date, time, and class name to the log.  <a href="#a7272d265451eb63bb371f9b9c02f4883"></a><br/></td></tr>
+<tr class="separator:a7272d265451eb63bb371f9b9c02f4883 inherit pro_methods_classo_freq_core"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_static_attribs_classo_freq_core"><td colspan="2" onclick="javascript:toggleInherit('pro_static_attribs_classo_freq_core')"><img src="closed.png" alt="-"/>&#160;Static Protected Attributes inherited from <a class="el" href="classo_freq_core.html">oFreqCore</a></td></tr>
+<tr class="memitem:a85b3e812b6d78c064ba375d5101bb053 inherit pro_static_attribs_classo_freq_core"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a85b3e812b6d78c064ba375d5101bb053"></a>
+static std::ofstream&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classo_freq_core.html#a85b3e812b6d78c064ba375d5101bb053">OutLog</a></td></tr>
+<tr class="memdesc:a85b3e812b6d78c064ba375d5101bb053 inherit pro_static_attribs_classo_freq_core"><td class="mdescLeft">&#160;</td><td class="mdescRight">The log file for an oFreq run. Records normal actions for the program. Informs user of regular program developments. Through inheritence of the <a class="el" href="classo_freq_core.html" title="The core oFreq class. All oFreq classes inherit from this class.">oFreqCore</a> class, this object is available to every object in the oFreq application. <br/></td></tr>
+<tr class="separator:a85b3e812b6d78c064ba375d5101bb053 inherit pro_static_attribs_classo_freq_core"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5e31044ee80fa436289e569c8080b21e inherit pro_static_attribs_classo_freq_core"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5e31044ee80fa436289e569c8080b21e"></a>
+static std::ofstream&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classo_freq_core.html#a5e31044ee80fa436289e569c8080b21e">ErrLog</a></td></tr>
+<tr class="memdesc:a5e31044ee80fa436289e569c8080b21e inherit pro_static_attribs_classo_freq_core"><td class="mdescLeft">&#160;</td><td class="mdescRight">The error log file for an oFreq run. Records any errors or warnings for the program. Informs user of errors and warnings and where they occurred. Through inheritence of the <a class="el" href="classo_freq_core.html" title="The core oFreq class. All oFreq classes inherit from this class.">oFreqCore</a> class, this object is available for every object in the oFreq application. <br/></td></tr>
+<tr class="separator:a5e31044ee80fa436289e569c8080b21e inherit pro_static_attribs_classo_freq_core"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>This class holds data for an equation. </p>
@@ -224,42 +270,6 @@ Here is the call graph for this function:</div>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="abe2b02e37a07bddaf1040d2d24c3564c"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">vector&lt; double &gt; &amp; Equation::Coefficients </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Direct access to the list of coefficients. </p>
-<dl class="section return"><dt>Returns</dt><dd>Pointer to the list of coefficients. </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="ad3c7c4766cf4b17eaf4f07e0792f012a"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int &amp; Equation::DataIndex </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Exposed access to the data access variable. </p>
-<dl class="section return"><dt>Returns</dt><dd>Returns the data access variable. Return passed by reference. </dd></dl>
-
-</div>
-</div>
 <a class="anchor" id="a6aa77458d50e80de2a31708756c7925b"></a>
 <div class="memitem">
 <div class="memproto">
@@ -285,12 +295,12 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
-<a class="anchor" id="abb01745ac8c816354d72ee529d2bddc0"></a>
+<a class="anchor" id="aa3ceaac689d9cfef1a1b3123d8ec4027"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int Equation::getCoefficientListSize </td>
+          <td class="memname">unsigned int Equation::getCoefficientListSize </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -323,6 +333,68 @@ Here is the call graph for this function:</div>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a class="anchor" id="a4277bda09b538c1523d451afcc55787a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">vector&lt; double &gt; &amp; Equation::listCoefficients </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Direct access to the list of coefficients. </p>
+<dl class="section return"><dt>Returns</dt><dd>Pointer to the list of coefficients. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a198eb9e2816a5cd316b8bdc07d505568"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double &amp; Equation::listCoefficients </td>
+          <td>(</td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>index</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Provides direct access to a coefficient from the list of coefficients. </p>
+<p>Returns a value from the list of coefficents. Which value to return is specified by the input index. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">index</td><td>Unsigned integer. Specifies which value to return from the list of coefficients. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Returns a double. Returned variable is a value from the list of coefficients. Returned variable is passed by reference. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a5964477a42f3941a968f249b89742d73"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int &amp; Equation::refDataIndex </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Exposed access to the data access variable. </p>
+<dl class="section return"><dt>Returns</dt><dd>Returns the data access variable. Return passed by reference. </dd></dl>
 
 </div>
 </div>
@@ -387,25 +459,9 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
-<a class="anchor" id="af6c9148998a4abe47f4a4215c51ce3c8"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Equation::testPrint </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Test print to console the values of all data members. </p>
-
-</div>
-</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>/home/nicholas/Ship Design/Projects/DMS1305 OpenSEA/master/200_src/bin/ofreq/motion_solver/<a class="el" href="equation_8h_source.html">equation.h</a></li>
-<li>/home/nicholas/Ship Design/Projects/DMS1305 OpenSEA/master/200_src/bin/ofreq/motion_solver/equation.cpp</li>
+<li><a class="el" href="equation_8h_source.html">equation.h</a></li>
+<li>equation.cpp</li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -413,7 +469,7 @@ Here is the call graph for this function:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="class_equation.html">Equation</a></li>
-    <li class="footer">Generated on Thu Aug 22 2013 20:07:50 for oFreq by
+    <li class="footer">Generated on Sat Oct 12 2013 09:37:28 for oFreq by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.2 </li>
   </ul>

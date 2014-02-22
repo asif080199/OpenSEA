@@ -17,7 +17,7 @@
 #endif
 
 QT_BEGIN_MOC_NAMESPACE
-static const uint qt_meta_data_dictForces[] = {
+static const uint qt_meta_data_osea__ofreq__dictForces[] = {
 
  // content:
        6,       // revision
@@ -33,11 +33,11 @@ static const uint qt_meta_data_dictForces[] = {
        0        // eod
 };
 
-static const char qt_meta_stringdata_dictForces[] = {
-    "dictForces\0"
+static const char qt_meta_stringdata_osea__ofreq__dictForces[] = {
+    "osea::ofreq::dictForces\0"
 };
 
-void dictForces::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
+void osea::ofreq::dictForces::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
 {
     Q_UNUSED(_o);
     Q_UNUSED(_id);
@@ -45,33 +45,33 @@ void dictForces::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
     Q_UNUSED(_a);
 }
 
-const QMetaObjectExtraData dictForces::staticMetaObjectExtraData = {
+const QMetaObjectExtraData osea::ofreq::dictForces::staticMetaObjectExtraData = {
     0,  qt_static_metacall 
 };
 
-const QMetaObject dictForces::staticMetaObject = {
-    { &Dictionary::staticMetaObject, qt_meta_stringdata_dictForces,
-      qt_meta_data_dictForces, &staticMetaObjectExtraData }
+const QMetaObject osea::ofreq::dictForces::staticMetaObject = {
+    { &Dictionary::staticMetaObject, qt_meta_stringdata_osea__ofreq__dictForces,
+      qt_meta_data_osea__ofreq__dictForces, &staticMetaObjectExtraData }
 };
 
 #ifdef Q_NO_DATA_RELOCATION
-const QMetaObject &dictForces::getStaticMetaObject() { return staticMetaObject; }
+const QMetaObject &osea::ofreq::dictForces::getStaticMetaObject() { return staticMetaObject; }
 #endif //Q_NO_DATA_RELOCATION
 
-const QMetaObject *dictForces::metaObject() const
+const QMetaObject *osea::ofreq::dictForces::metaObject() const
 {
     return QObject::d_ptr->metaObject ? QObject::d_ptr->metaObject : &staticMetaObject;
 }
 
-void *dictForces::qt_metacast(const char *_clname)
+void *osea::ofreq::dictForces::qt_metacast(const char *_clname)
 {
     if (!_clname) return 0;
-    if (!strcmp(_clname, qt_meta_stringdata_dictForces))
+    if (!strcmp(_clname, qt_meta_stringdata_osea__ofreq__dictForces))
         return static_cast<void*>(const_cast< dictForces*>(this));
     return Dictionary::qt_metacast(_clname);
 }
 
-int dictForces::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
+int osea::ofreq::dictForces::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 {
     _id = Dictionary::qt_metacall(_c, _id, _a);
     if (_id < 0)

@@ -31,7 +31,7 @@ force_active {
 
   force {
     equation 1;
-    coeff /*F1 = */ 0.00+0.00i;
+    coeff /*F1 = */ 0.00+2.00i;
   }
 
   force {
@@ -41,17 +41,18 @@ force_active {
 
   force {
     equation 3;
-    coeff /*F3 = */ 0.00+0.00i;
+    coeff /*F3 = */ 0.00+1.00i;
   }
 
   force {
     equation 4;
-    coeff /*F4 = */ 0.00+0.00i;
+    coeff /*F4 = */ 0.00+1.00i;
   }
 
   force {
     equation 5;
     coeff /*F5 = */ 1.00+0.00i;
+  }
 
   force {
     equation 6;
@@ -91,31 +92,31 @@ force_reactive {
     equation {
       number 2;
       force (
-      /*C_x1 = */ 2:2.00      
+      /*C_x1 = */ 2:3.00      
       );
     }
     equation {
       number 3;
       force (
-      /*C_x1 = */ 3:2.00      
+      /*C_x1 = */ 3:4.00      
       );
     }
     equation {
       number 4;
       force (
-      /*C_x1 = */ 4:2.00      
+      /*C_x1 = */ 4:5.00      
       );
     }
     equation {
       number 5;
       force (
-      /*C_x1 = */ 5:2.00      
+      /*C_x1 = */ 5:6.00      
       );
     }
     equation {
       number 6;
       force (
-      /*C_x1 = */ 6:2.00      
+      /*C_x1 = */ 6:7.00      
       );
     }
   }

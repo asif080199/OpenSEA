@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>oFreq: /home/nicholas/Ship Design/Projects/DMS1305 OpenSEA/master/200_src/bin/ofreq/derived_outputs/outputderived.h Source File</title>
+<title>oFreq: outputderived.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -45,6 +45,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -90,7 +91,7 @@ $(document).ready(function(){initNavTree('outputderived_8h_source.html','');});
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Variables</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -106,7 +107,7 @@ $(document).ready(function(){initNavTree('outputderived_8h_source.html','');});
 <div class="contents">
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*----------------------------------------*- C++ -*------------------------------------------------------------------*\</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">| O pen         | OpenSea: The Open Source Seakeeping Suite                                                           |</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">| S eakeeping   | Web:     www.opensea.dmsonline.us                                                                   |</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">| S eakeeping | Web:     www.opensea.dmsonline.us                                                                   |</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">| E valuation   |                                                                                                     |</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">| A nalysis     |                                                                                                     |</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">\*-------------------------------------------------------------------------------------------------------------------*/</span></div>
@@ -114,7 +115,7 @@ $(document).ready(function(){initNavTree('outputderived_8h_source.html','');});
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">/*-------------------------------------------------------------------------------------------------------------------*\</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"> *Revision History</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"> *---------------------------------------------------------------------------------------------------------------------</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment"> *Date              Author              Description</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment"> *Date              Author        Description</span></div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment"> *---------------------------------------------------------------------------------------------------------------------</span></div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"> *May 15 2013       Shane Honanie       Initially created</span></div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"> *Aug 13, 2013      Nicholas Barczak    Updated to reflect new motion model and motion solver paradigm.</span></div>
@@ -151,111 +152,131 @@ $(document).ready(function(){initNavTree('outputderived_8h_source.html','');});
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="preprocessor">#elif defined Q_OS_LINUX</span></div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor"></span><span class="preprocessor">    #include &lt;armadillo&gt;</span>    <span class="comment">//Armadillo library included with standard system libraries.</span></div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="preprocessor"></span><span class="comment">//#include &quot;../motion_solver/body.h&quot;</span></div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="comment">//#include &quot;../global_objects/listsolution.h&quot;</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#include &quot;../global_objects/body.h&quot;</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="preprocessor">#include &quot;../global_objects/ofreqcore.h&quot;</span></div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="keyword">using namespace </span>std;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="keyword">using namespace </span>arma;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="comment">//######################################### Class Separator ###########################################################</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="comment">//Namespace declarations</span></div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="comment">//######################################### Class Separator ###########################################################</span></div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="comment">//Forward declarations to keep the compiler happy.</span></div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="keyword">class </span><a class="code" href="class_body.html">Body</a>;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="keyword">class </span><a class="code" href="classlist_solution.html">listSolution</a>;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="comment">//######################################### Class Separator ###########################################################</span></div>
-<div class="line"><a name="l00080"></a><span class="lineno"><a class="code" href="class_output_derived.html">   80</a></span>&#160;<span class="comment"></span><span class="keyword">class </span><a class="code" href="class_output_derived.html">OutputDerived</a></div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;{</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="comment">//==========================================Section Separator =========================================================</span></div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="comment">//------------------------------------------Function Separator ----------------------------------------------------</span></div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="comment"></span>    <a class="code" href="class_output_derived.html">OutputDerived</a>();</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="comment">//------------------------------------------Function Separator ----------------------------------------------------</span></div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="comment"></span>    ~<a class="code" href="class_output_derived.html">OutputDerived</a>();</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="comment">//------------------------------------------Function Separator ----------------------------------------------------</span></div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;<span class="comment"></span>    <span class="keywordtype">string</span> getName();</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <span class="comment">//------------------------------------------Function Separator ----------------------------------------------------</span></div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;<span class="comment"></span>    <span class="keywordtype">void</span> setName(<span class="keywordtype">string</span> nameIn);</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    <span class="comment">//------------------------------------------Function Separator ----------------------------------------------------</span></div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;<span class="comment"></span>    <span class="keywordtype">int</span> getCurWaveInd();</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    <span class="comment">//------------------------------------------Function Separator ----------------------------------------------------</span></div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;<span class="comment"></span>    <span class="keyword">virtual</span> cx_mat calcOutput(<span class="keywordtype">double</span> freqIn) = 0;</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;</div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    <span class="comment">//------------------------------------------Function Separator ----------------------------------------------------</span></div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;<span class="comment"></span>    vector&lt;Body&gt; &amp;getlistBody();</div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;</div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    <span class="comment">//------------------------------------------Function Separator ----------------------------------------------------</span></div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;<span class="comment"></span>    <span class="keywordtype">void</span> setlistBody(vector&lt;Body&gt; &amp;Input);</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="comment">//==========================================Section Separator =========================================================</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="comment"></span><span class="keyword">namespace </span>osea</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;{</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="comment">//==========================================Section Separator =========================================================</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="comment"></span><span class="keyword">namespace </span>ofreq</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;{</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="comment">//######################################### Class Separator ###########################################################</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="comment">//Forward declarations to keep the compiler happy.</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="keyword">class </span>SolutionSet;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="comment">//######################################### Class Separator ###########################################################</span></div>
+<div class="line"><a name="l00106"></a><span class="lineno"><a class="code" href="classosea_1_1ofreq_1_1_output_derived.html">  106</a></span>&#160;<span class="comment"></span><span class="keyword">class </span><a class="code" href="classosea_1_1ofreq_1_1_output_derived.html">OutputDerived</a> : <span class="keyword">public</span> <a class="code" href="classosea_1_1ofreq_1_1o_freq_core.html" title="The core oFreq class. All oFreq classes inherit from this class.">osea::ofreq::oFreqCore</a></div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;{</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;<span class="comment">//==========================================Section Separator =========================================================</span></div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <span class="comment">//------------------------------------------Function Separator ----------------------------------------------------</span></div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;<span class="comment"></span>    <a class="code" href="classosea_1_1ofreq_1_1_output_derived.html#af8b70b70b8a5089f2b673da8b59a7b6a" title="Default constructor. Nothing happens here.">OutputDerived</a>();</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    <span class="comment">//------------------------------------------Function Separator ----------------------------------------------------</span></div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;<span class="comment"></span>    <a class="code" href="classosea_1_1ofreq_1_1_output_derived.html#a4dde733443e52964c74d8bb6477f85f7">~OutputDerived</a>();</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    <span class="comment">//------------------------------------------Function Separator ----------------------------------------------------</span></div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;<span class="comment"></span>    std::string <a class="code" href="classosea_1_1ofreq_1_1_output_derived.html#a354f906f29b96022141afba02a50fbfe" title="Returns the name of the OutputDerived object. This is a name set by the user to idenfity the object...">getName</a>();</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    <span class="comment">//------------------------------------------Function Separator ----------------------------------------------------</span></div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;<span class="comment"></span>    <span class="keywordtype">void</span> <a class="code" href="classosea_1_1ofreq_1_1_output_derived.html#ac4db0b795c3bbb79072bce39e78b4d44" title="Sets the name of the OutputDerived object. This is a name set by the user to idenfity the object...">setName</a>(std::string nameIn);</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    <span class="comment">//------------------------------------------Function Separator ----------------------------------------------------</span></div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;<span class="comment"></span>    <span class="keywordtype">int</span> <a class="code" href="classosea_1_1ofreq_1_1_output_derived.html#ad4bb95c9693b2f34a40eb0136f2a13f4" title="Gets the index of the current wave direction used by the OutputDerived object. Some child classes wil...">getCurWaveInd</a>();</div>
 <div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;</div>
 <div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    <span class="comment">//------------------------------------------Function Separator ----------------------------------------------------</span></div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;<span class="comment"></span>    vector&lt;listSolution&gt; &amp;getlistSolution();</div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    <span class="comment">//------------------------------------------Function Separator ----------------------------------------------------</span></div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;<span class="comment"></span>    <span class="keywordtype">void</span> setlistSolution(vector&lt;listSolution&gt;&amp; Input);</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    <span class="comment">//------------------------------------------Function Separator ----------------------------------------------------</span></div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;<span class="comment"></span>    vector&lt;double&gt; &amp;getlistFreq();</div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;</div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;    <span class="comment">//------------------------------------------Function Separator ----------------------------------------------------</span></div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;<span class="comment"></span>    <span class="keywordtype">void</span> setlistFreq(vector&lt;double&gt;&amp; Input);</div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;</div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;    <span class="comment">//------------------------------------------Function Separator ----------------------------------------------------</span></div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;<span class="comment"></span>    vector&lt;double&gt; &amp;getlistWaveDir();</div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;</div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;    <span class="comment">//------------------------------------------Function Separator ----------------------------------------------------</span></div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;<span class="comment"></span>    <span class="keywordtype">void</span> setlistWaveDir(vector&lt;double&gt;&amp; Input);</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;<span class="comment"></span>    <span class="keyword">virtual</span> arma::cx_mat <a class="code" href="classosea_1_1ofreq_1_1_output_derived.html#a5600a2c7f70052a8bafce79e15e1aa92" title="Pure virtual member. Calculates the output from the OutputDerived object.">calcOutput</a>(<span class="keywordtype">double</span> freqIn) = 0;</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    <span class="comment">//------------------------------------------Function Separator ----------------------------------------------------</span></div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;<span class="comment"></span>    std::vector&lt;Body&gt; &amp;<a class="code" href="classosea_1_1ofreq_1_1_output_derived.html#a525d8eb4dbed1fd130614521c5d602c1" title="Returns the list of body objects. Only a c++ reference to the list of body objects.">listBody</a>();</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    <span class="comment">//------------------------------------------Function Separator ----------------------------------------------------</span></div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;<span class="comment"></span>    <a class="code" href="classosea_1_1ofreq_1_1_body.html">Body</a> &amp;<a class="code" href="classosea_1_1ofreq_1_1_output_derived.html#a525d8eb4dbed1fd130614521c5d602c1" title="Returns the list of body objects. Only a c++ reference to the list of body objects.">listBody</a>(<span class="keywordtype">int</span> bodIn);</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    <span class="comment">//------------------------------------------Function Separator ----------------------------------------------------</span></div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;<span class="comment"></span>    <span class="keywordtype">void</span> <a class="code" href="classosea_1_1ofreq_1_1_output_derived.html#ac2783796f37019b87df8b2fc58b21d31" title="Sets the list of Body objects.">setListBody</a>(std::vector&lt;Body&gt; &amp;Input);</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;    <span class="comment">//------------------------------------------Function Separator ----------------------------------------------------</span></div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;<span class="comment"></span>    std::vector&lt;SolutionSet&gt; &amp;<a class="code" href="classosea_1_1ofreq_1_1_output_derived.html#ae94d577f4f58c2c1f8cb2c9c650d505c" title="Returns a vector of SolutionSet objects.">refSolutionSet</a>();</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    <span class="comment">//------------------------------------------Function Separator ----------------------------------------------------</span></div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;<span class="comment"></span>    <span class="keywordtype">void</span> <a class="code" href="classosea_1_1ofreq_1_1_output_derived.html#a370efe39cc1262ee1ccb73394c28fc15" title="Sets the list of solutions.">setSolutionSet</a>(std::vector&lt;SolutionSet&gt; &amp;Input);</div>
 <div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;</div>
 <div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;    <span class="comment">//------------------------------------------Function Separator ----------------------------------------------------</span></div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;<span class="comment"></span>    <span class="keywordtype">int</span> &amp;getCurWaveDir();</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;<span class="comment"></span>    std::vector&lt;double&gt; &amp;<a class="code" href="classosea_1_1ofreq_1_1_output_derived.html#aeca7e08a1c561ae61a7a97a59b05cbdf" title="Gets the list of frequencies. Frequencies are in radians per second.">listFreq</a>();</div>
 <div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;</div>
 <div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;    <span class="comment">//------------------------------------------Function Separator ----------------------------------------------------</span></div>
-<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;<span class="comment"></span>    <span class="keywordtype">void</span> setCurWaveDir(<span class="keywordtype">int</span> &amp;Input);</div>
-<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;</div>
-<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;    <span class="comment">//------------------------------------------Function Separator ----------------------------------------------------</span></div>
-<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;<span class="comment"></span>    <span class="keywordtype">int</span> getCurBody();</div>
-<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;</div>
-<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;    <span class="comment">//------------------------------------------Function Separator ----------------------------------------------------</span></div>
-<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;<span class="comment"></span>    <span class="keywordtype">void</span> setCurBody(<span class="keywordtype">int</span> Input);</div>
-<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;</div>
-<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;<span class="comment">//==========================================Section Separator =========================================================</span></div>
-<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;<span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;<span class="comment"></span>    <span class="keywordtype">double</span> &amp;<a class="code" href="classosea_1_1ofreq_1_1_output_derived.html#aeca7e08a1c561ae61a7a97a59b05cbdf" title="Gets the list of frequencies. Frequencies are in radians per second.">listFreq</a>(<span class="keywordtype">int</span> index);</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;    <span class="comment">//------------------------------------------Function Separator ----------------------------------------------------</span></div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;<span class="comment"></span>    <span class="keywordtype">void</span> <a class="code" href="classosea_1_1ofreq_1_1_output_derived.html#af2a183ee4e75c6de6af8cc2d27512ac4" title="Sets the list of wave frequencies. Frequencies are in radians per second.">setListFreq</a>(std::vector&lt;double&gt;&amp; Input);</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;    <span class="comment">//------------------------------------------Function Separator ----------------------------------------------------</span></div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;<span class="comment"></span>    std::vector&lt;double&gt; &amp;<a class="code" href="classosea_1_1ofreq_1_1_output_derived.html#a114e057d84f34e5138d077fd7f053898" title="Gets the list of wave directions. Wave directions are measured in radians. True North is zero...">listWaveDir</a>();</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;</div>
 <div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;    <span class="comment">//------------------------------------------Function Separator ----------------------------------------------------</span></div>
-<div class="line"><a name="l00240"></a><span class="lineno"><a class="code" href="class_output_derived.html#a54e3e1356bd379db875c0ce8ee223ef6">  240</a></span>&#160;<span class="comment"></span>    <span class="keywordtype">string</span> <a class="code" href="class_output_derived.html#a54e3e1356bd379db875c0ce8ee223ef6" title="The name for the derived output object. This is a name set by the user to idenfity the object...">pName</a>;</div>
-<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;</div>
-<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;    <span class="comment">//------------------------------------------Function Separator ----------------------------------------------------</span></div>
-<div class="line"><a name="l00246"></a><span class="lineno"><a class="code" href="class_output_derived.html#a584a7b228dfc4ea3830631763e0a36fa">  246</a></span>&#160;<span class="comment"></span>    vector&lt;Body&gt;* <a class="code" href="class_output_derived.html#a584a7b228dfc4ea3830631763e0a36fa" title="The vector list of Body objects.">plistBody</a>;</div>
-<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;</div>
-<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;    <span class="comment">//------------------------------------------Function Separator ----------------------------------------------------</span></div>
-<div class="line"><a name="l00252"></a><span class="lineno"><a class="code" href="class_output_derived.html#a3d5228713e1711a3ab57fe3bd0887c6e">  252</a></span>&#160;<span class="comment"></span>    vector&lt;listSolution&gt;* <a class="code" href="class_output_derived.html#a3d5228713e1711a3ab57fe3bd0887c6e" title="The vector list of listSolution objects.">plistSolution</a>;</div>
-<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;</div>
-<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;    <span class="comment">//------------------------------------------Function Separator ----------------------------------------------------</span></div>
-<div class="line"><a name="l00258"></a><span class="lineno"><a class="code" href="class_output_derived.html#a2c367aa51c34c8eb43dc226be92c3d07">  258</a></span>&#160;<span class="comment"></span>    vector&lt;double&gt;* <a class="code" href="class_output_derived.html#a2c367aa51c34c8eb43dc226be92c3d07" title="The list of wave frequencies. Wave frequency recorded in units of radians per second.">plistFreq</a>;</div>
-<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;</div>
-<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;    <span class="comment">//------------------------------------------Function Separator ----------------------------------------------------</span></div>
-<div class="line"><a name="l00265"></a><span class="lineno"><a class="code" href="class_output_derived.html#a10727e0eabf2b6f22940cb2c9f510772">  265</a></span>&#160;<span class="comment"></span>    vector&lt;double&gt;* <a class="code" href="class_output_derived.html#a10727e0eabf2b6f22940cb2c9f510772" title="The list of wave directions. Wave direction recorded in units of radians. Zero is true North directio...">plistWaveDir</a>;</div>
-<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;</div>
-<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;    <span class="comment">//------------------------------------------Function Separator ----------------------------------------------------</span></div>
-<div class="line"><a name="l00271"></a><span class="lineno"><a class="code" href="class_output_derived.html#a408bb4755c3f283773bc3d8923f7e7f4">  271</a></span>&#160;<span class="comment"></span>    <span class="keywordtype">int</span>* <a class="code" href="class_output_derived.html#a408bb4755c3f283773bc3d8923f7e7f4" title="The current wave direction used for calculating the DerivedOutput objects.">pCurWaveDir</a>;</div>
-<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;</div>
-<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;    <span class="comment">//------------------------------------------Function Separator ----------------------------------------------------</span></div>
-<div class="line"><a name="l00278"></a><span class="lineno"><a class="code" href="class_output_derived.html#acf0ac8dbd4ead154a92d7d77d8893c1b">  278</a></span>&#160;<span class="comment"></span>    <span class="keywordtype">int</span> <a class="code" href="class_output_derived.html#acf0ac8dbd4ead154a92d7d77d8893c1b" title="The index of the current body used for calculating derived outputs. This index is the position of the...">pCurBody</a>;</div>
-<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;</div>
-<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;<span class="comment">//==========================================Section Separator =========================================================</span></div>
-<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;</div>
-<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;};</div>
-<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;<span class="comment"></span>    <span class="keywordtype">double</span> &amp;<a class="code" href="classosea_1_1ofreq_1_1_output_derived.html#a114e057d84f34e5138d077fd7f053898" title="Gets the list of wave directions. Wave directions are measured in radians. True North is zero...">listWaveDir</a>(<span class="keywordtype">int</span> index);</div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;    <span class="comment">//------------------------------------------Function Separator ----------------------------------------------------</span></div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;<span class="comment"></span>    <span class="keywordtype">void</span> <a class="code" href="classosea_1_1ofreq_1_1_output_derived.html#ad482f0254c9886599e25495c88707efe" title="Sets the list of wave directions. Wave directions are measured in radians. True North is zero...">setListWaveDir</a>(std::vector&lt;double&gt;&amp; Input);</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;    <span class="comment">//------------------------------------------Function Separator ----------------------------------------------------</span></div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;<span class="comment"></span>    <span class="keywordtype">int</span> &amp;<a class="code" href="classosea_1_1ofreq_1_1_output_derived.html#ad59fff8dc8f1772039aff4950a3cdf18" title="Gets the integer index of the current wave direction.">getCurWaveDir</a>();</div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;    <span class="comment">//------------------------------------------Function Separator ----------------------------------------------------</span></div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;<span class="comment"></span>    <span class="keywordtype">void</span> <a class="code" href="classosea_1_1ofreq_1_1_output_derived.html#a174188431586c269edca5f17db16b498" title="Sets the integer index of the current wave direction.">setCurWaveDir</a>(<span class="keywordtype">int</span> &amp;Input);</div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;</div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;    <span class="comment">//------------------------------------------Function Separator ----------------------------------------------------</span></div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;<span class="comment"></span>    <span class="keywordtype">int</span> <a class="code" href="classosea_1_1ofreq_1_1_output_derived.html#ac3a9e37f0f7bc0ac003d2662db3d17bb" title="Gets the integer index of the current body. This represents the Body object that the derived output i...">getCurBody</a>();</div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;</div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;    <span class="comment">//------------------------------------------Function Separator ----------------------------------------------------</span></div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;<span class="comment"></span>    <span class="keywordtype">void</span> <a class="code" href="classosea_1_1ofreq_1_1_output_derived.html#a56aa87d4a9aec5e21842bf614920c1dc" title="Sets the integer index of the current body. This represents the Body object that the derived output i...">setCurBody</a>(<span class="keywordtype">int</span> Input);</div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;</div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;<span class="comment">//==========================================Section Separator =========================================================</span></div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;<span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;    <span class="comment">//------------------------------------------Function Separator ----------------------------------------------------</span></div>
+<div class="line"><a name="l00297"></a><span class="lineno"><a class="code" href="classosea_1_1ofreq_1_1_output_derived.html#a4ab81d265885b1c9fb9b4596dc9cd093">  297</a></span>&#160;<span class="comment"></span>    std::string <a class="code" href="classosea_1_1ofreq_1_1_output_derived.html#a4ab81d265885b1c9fb9b4596dc9cd093" title="The name for the derived output object. This is a name set by the user to idenfity the object...">pName</a>;</div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;</div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;    <span class="comment">//------------------------------------------Function Separator ----------------------------------------------------</span></div>
+<div class="line"><a name="l00303"></a><span class="lineno"><a class="code" href="classosea_1_1ofreq_1_1_output_derived.html#ae1a331fca04d90685ab5a33670c90aeb">  303</a></span>&#160;<span class="comment"></span>    std::vector&lt;Body&gt;* <a class="code" href="classosea_1_1ofreq_1_1_output_derived.html#ae1a331fca04d90685ab5a33670c90aeb" title="The vector list of Body objects.">plistBody</a>;</div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;</div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;    <span class="comment">//------------------------------------------Function Separator ----------------------------------------------------</span></div>
+<div class="line"><a name="l00309"></a><span class="lineno"><a class="code" href="classosea_1_1ofreq_1_1_output_derived.html#aeb19c45257cd6e4aac209bbeca5a7de0">  309</a></span>&#160;<span class="comment"></span>    std::vector&lt;SolutionSet&gt;* <a class="code" href="classosea_1_1ofreq_1_1_output_derived.html#aeb19c45257cd6e4aac209bbeca5a7de0" title="The vector list of SolutionSet objects.">plistSolution</a>;</div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;</div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;    <span class="comment">//------------------------------------------Function Separator ----------------------------------------------------</span></div>
+<div class="line"><a name="l00315"></a><span class="lineno"><a class="code" href="classosea_1_1ofreq_1_1_output_derived.html#a5c5c94e05e212fad48aee82daed14738">  315</a></span>&#160;<span class="comment"></span>    std::vector&lt;double&gt;* <a class="code" href="classosea_1_1ofreq_1_1_output_derived.html#a5c5c94e05e212fad48aee82daed14738" title="The list of wave frequencies. Wave frequency recorded in units of radians per second.">plistFreq</a>;</div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;</div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;    <span class="comment">//------------------------------------------Function Separator ----------------------------------------------------</span></div>
+<div class="line"><a name="l00322"></a><span class="lineno"><a class="code" href="classosea_1_1ofreq_1_1_output_derived.html#af552007def83b95df23524d02bbe0d56">  322</a></span>&#160;<span class="comment"></span>    std::vector&lt;double&gt;* <a class="code" href="classosea_1_1ofreq_1_1_output_derived.html#af552007def83b95df23524d02bbe0d56" title="The list of wave directions. Wave direction recorded in units of radians. Zero is true North directio...">plistWaveDir</a>;</div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;</div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;    <span class="comment">//------------------------------------------Function Separator ----------------------------------------------------</span></div>
+<div class="line"><a name="l00328"></a><span class="lineno"><a class="code" href="classosea_1_1ofreq_1_1_output_derived.html#a8c56d46309f2c0bef72485ae4d7077e4">  328</a></span>&#160;<span class="comment"></span>    <span class="keywordtype">int</span>* <a class="code" href="classosea_1_1ofreq_1_1_output_derived.html#a8c56d46309f2c0bef72485ae4d7077e4" title="The current wave direction used for calculating the DerivedOutput objects.">pCurWaveDir</a>;</div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;</div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;    <span class="comment">//------------------------------------------Function Separator ----------------------------------------------------</span></div>
+<div class="line"><a name="l00335"></a><span class="lineno"><a class="code" href="classosea_1_1ofreq_1_1_output_derived.html#ae6f0acd108dfc56531d7b2cc0bd900eb">  335</a></span>&#160;<span class="comment"></span>    <span class="keywordtype">int</span> <a class="code" href="classosea_1_1ofreq_1_1_output_derived.html#ae6f0acd108dfc56531d7b2cc0bd900eb" title="The index of the current body used for calculating derived outputs. This index is the position of the...">pCurBody</a>;</div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;</div>
+<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;<span class="comment">//==========================================Section Separator =========================================================</span></div>
+<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;</div>
+<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;};</div>
+<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;</div>
+<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;}   <span class="comment">//namespace ofreq</span></div>
+<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;}   <span class="comment">//namespace osea</span></div>
+<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;</div>
+<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_56b368c6d4f28ed1479bff4e7a7f6001.html">200_src</a></li><li class="navelem"><a class="el" href="dir_54a29c8b735a6b519070134aed29f600.html">bin</a></li><li class="navelem"><a class="el" href="dir_e8f29f456f9bc8f0b8059295bf8d5395.html">ofreq</a></li><li class="navelem"><a class="el" href="dir_831e37b3c27fad4182b937b98502757f.html">derived_outputs</a></li><li class="navelem"><b>outputderived.h</b></li>
-    <li class="footer">Generated on Thu Aug 22 2013 20:07:41 for oFreq by
+    <li class="navelem"><a class="el" href="dir_f391ca716ffc5f73e26bbfbd1c386d7a.html">nicholas</a></li><li class="navelem"><a class="el" href="dir_56714be5f44c632f096dc98161cfe0bc.html">Projects</a></li><li class="navelem"><a class="el" href="dir_a9660f870cd78d147631dbe8401fc122.html">DMS1305 OpenSEA</a></li><li class="navelem"><a class="el" href="dir_57862b7a2e6c493336b5eba4fa7a08ad.html">master</a></li><li class="navelem"><a class="el" href="dir_93879df78e79e3db9dadcce0364173a5.html">200_src</a></li><li class="navelem"><a class="el" href="dir_c68d9c97f52ca4a921fcfe2b9a5c2169.html">bin</a></li><li class="navelem"><a class="el" href="dir_de13d08a2e5fe03c0504c97f3e0a2dbd.html">ofreq</a></li><li class="navelem"><a class="el" href="dir_1ce876e76920f08631d108c0a9a78611.html">derived_outputs</a></li><li class="navelem"><b>outputderived.h</b></li>
+    <li class="footer">Generated on Sat Oct 12 2013 10:41:18 for oFreq by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.2 </li>
   </ul>

@@ -1,0 +1,474 @@
+\hypertarget{class_file_reader}{\section{File\-Reader Class Reference}
+\label{class_file_reader}\index{File\-Reader@{File\-Reader}}
+}
+
+
+{\ttfamily \#include $<$filereader.\-h$>$}
+
+
+
+Inheritance diagram for File\-Reader\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=217pt]{class_file_reader__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for File\-Reader\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=217pt]{class_file_reader__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{class_file_reader_af2a8096f301a0fcf86497726c939515c}{read\-Hydro\-File} (string path)
+\begin{DoxyCompactList}\small\item\em Reads hydrodynamic input files. \end{DoxyCompactList}\item 
+void \hyperlink{class_file_reader_a0f14a8038fdac70d032c1708463eef2c}{set\-System} (\hyperlink{class_system}{System} $\ast$pt\-Input)
+\begin{DoxyCompactList}\small\item\em Sets the system object for the dictionary to reference. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_file_reader_a2fda21435e4f7ef58c93f8b64f05ee8c}{output\-Control\-File} (\hyperlink{class_object_group}{Object\-Group} output)
+\begin{DoxyCompactList}\small\item\em Sends output of objects discovered when reading the Control file. Top level objects can include\-: \end{DoxyCompactList}\item 
+void \hyperlink{class_file_reader_a73b19269f357de1af5e5c6eb853166cb}{output\-Bodies\-File} (\hyperlink{class_object_group}{Object\-Group} output)
+\begin{DoxyCompactList}\small\item\em Sends output of objects discovered when reading the Bodies file. Top level objects can include\-: \end{DoxyCompactList}\item 
+void \hyperlink{class_file_reader_a4eb74832371513a52a171496c8a0b57e}{output\-Data\-File} (\hyperlink{class_object_group}{Object\-Group} output)
+\begin{DoxyCompactList}\small\item\em Sends output of objects discovered when reading the Data file. Top level objects can include\-: \end{DoxyCompactList}\item 
+void \hyperlink{class_file_reader_a5d7638af68315cafeb8798f6e3afff4a}{output\-Forces\-File} (\hyperlink{class_object_group}{Object\-Group} output)
+\begin{DoxyCompactList}\small\item\em Sends output of objects discovered when reading the Forces file. Top level objects can include\-: \end{DoxyCompactList}\item 
+void \hyperlink{class_file_reader_a4dfb029654b8b5095f3d389a643278b8}{output\-Sea\-Env\-File} (\hyperlink{class_object_group}{Object\-Group} output)
+\begin{DoxyCompactList}\small\item\em Sends output of objects discovered when reading the Sea\-Env file. Top level objects can include\-: \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_file_reader_a615dcb2443cad1f2ca123c7c0c334480}{\hyperlink{class_file_reader_a615dcb2443cad1f2ca123c7c0c334480}{File\-Reader} ()}\label{class_file_reader_a615dcb2443cad1f2ca123c7c0c334480}
+
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\hyperlink{class_file_reader_a3e5fd243a8d70627d414eea39f8a7543}{File\-Reader} (string Path)
+\begin{DoxyCompactList}\small\item\em Constructor with input for file path that holds input files. \end{DoxyCompactList}\item 
+\hyperlink{class_file_reader_a1382969e8f1468f3b04ad4b44ab39dee}{$\sim$\-File\-Reader} ()
+\item 
+void \hyperlink{class_file_reader_a14f05351af5426de8c30dfcfc79c92d1}{set\-Path} (string input)
+\begin{DoxyCompactList}\small\item\em Sets the path to the working directory that all control files are located in. \end{DoxyCompactList}\item 
+int \hyperlink{class_file_reader_a967cab6ec0822fd8bcf392873a8a82b1}{read\-Control} ()
+\begin{DoxyCompactList}\small\item\em Reads in the control file and parses its inputs. \end{DoxyCompactList}\item 
+int \hyperlink{class_file_reader_a44770836db4ab430139118727ace6547}{read\-Bodies} ()
+\begin{DoxyCompactList}\small\item\em Reads in the Bodies file and parses its inputs. \end{DoxyCompactList}\item 
+int \hyperlink{class_file_reader_ab78d2f631eb8e64b0a68d25eeca80be5}{read\-Forces} ()
+\begin{DoxyCompactList}\small\item\em Reads in the Forces file and parses its inputs. \end{DoxyCompactList}\item 
+int \hyperlink{class_file_reader_a1f8a6bd4b5c53f80cc94d64d6dd1f2da}{read\-Sea\-Env} ()
+\begin{DoxyCompactList}\small\item\em Reads in the Sea Environment input file and parses its inputs. \end{DoxyCompactList}\item 
+int \hyperlink{class_file_reader_a814f8b06adcc190d4042509797eef6d2}{read\-Data} ()
+\begin{DoxyCompactList}\small\item\em Reads in the Data input file and parses its inputs. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\hyperlink{class_file_reader}{File\-Reader} is the next generation of superseded class\-: Read\-Input\-File. \hyperlink{class_file_reader}{File\-Reader} simply reads the text file and parses it into keword value pairs. \hyperlink{class_file_reader}{File\-Reader} reads in the input files. It then passes those input files to the \hyperlink{class_parser}{Parser} object. \hyperlink{class_parser}{Parser} then segments the file in a series of object groupings with a vector list of keyword value pairs. The file reader interprets a limited number of those keywords to recognize new object declarations. It creates the new objects. It then parses the information in that object into a series of keyword-\/value pairs. Each pair is sent to a \hyperlink{class_dictionary}{Dictionary} object that interprets the information. Information is sent using Qt Slots and Signals.
+
+To use this class, the following sequence must be followed. 1.) Create \hyperlink{class_file_reader}{File\-Reader} object. 2.) Create \hyperlink{class_dictionary}{Dictionary} objects for each file type you will read. 3.) Satisfy any follow on dependencies for \hyperlink{class_dictionary}{Dictionary} objects. 4.) Qt Connect \hyperlink{class_file_reader}{File\-Reader} to \hyperlink{class_dictionary}{Dictionary} objects. 5.) Qt Connect \hyperlink{class_file_reader}{File\-Reader} to \hyperlink{class_system}{System} object. 6.) Feed in the target path to the \hyperlink{class_file_reader}{File\-Reader} object. 7.) Read each file type in turn. The \hyperlink{class_file_reader}{File\-Reader} object will automatically find the file with the correct filename, read it, parse it, and send the resulting keyword-\/value pairs to the appropriate \hyperlink{class_dictionary}{Dictionary} object. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_file_reader_a3e5fd243a8d70627d414eea39f8a7543}{\index{File\-Reader@{File\-Reader}!File\-Reader@{File\-Reader}}
+\index{File\-Reader@{File\-Reader}!FileReader@{File\-Reader}}
+\subsubsection[{File\-Reader}]{\setlength{\rightskip}{0pt plus 5cm}File\-Reader\-::\-File\-Reader (
+\begin{DoxyParamCaption}
+\item[{string}]{Path}
+\end{DoxyParamCaption}
+)}}\label{class_file_reader_a3e5fd243a8d70627d414eea39f8a7543}
+
+
+Constructor with input for file path that holds input files. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Path} & The full path to the working directory. Variable passed by value. \\
+\hline
+\end{DoxyParams}
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=348pt]{class_file_reader_a3e5fd243a8d70627d414eea39f8a7543_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_file_reader_a1382969e8f1468f3b04ad4b44ab39dee}{\index{File\-Reader@{File\-Reader}!$\sim$\-File\-Reader@{$\sim$\-File\-Reader}}
+\index{$\sim$\-File\-Reader@{$\sim$\-File\-Reader}!FileReader@{File\-Reader}}
+\subsubsection[{$\sim$\-File\-Reader}]{\setlength{\rightskip}{0pt plus 5cm}File\-Reader\-::$\sim$\-File\-Reader (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_file_reader_a1382969e8f1468f3b04ad4b44ab39dee}
+Default destructor. Nothing happens here. 
+
+\subsection{Member Function Documentation}
+\hypertarget{class_file_reader_a73b19269f357de1af5e5c6eb853166cb}{\index{File\-Reader@{File\-Reader}!output\-Bodies\-File@{output\-Bodies\-File}}
+\index{output\-Bodies\-File@{output\-Bodies\-File}!FileReader@{File\-Reader}}
+\subsubsection[{output\-Bodies\-File}]{\setlength{\rightskip}{0pt plus 5cm}void File\-Reader\-::output\-Bodies\-File (
+\begin{DoxyParamCaption}
+\item[{{\bf Object\-Group}}]{output}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{class_file_reader_a73b19269f357de1af5e5c6eb853166cb}
+
+
+Sends output of objects discovered when reading the Bodies file. Top level objects can include\-: 
+
+
+\begin{DoxyEnumerate}
+\item \hyperlink{class_body}{Body} object. \begin{DoxySeeAlso}{See Also}
+\hyperlink{class_body}{Body} 
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em output} & The \hyperlink{class_object_group}{Object\-Group} object parsed out of the file. Variable passed by value. \\
+\hline
+\end{DoxyParams}
+
+\end{DoxyEnumerate}
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_file_reader_a73b19269f357de1af5e5c6eb853166cb_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_file_reader_a2fda21435e4f7ef58c93f8b64f05ee8c}{\index{File\-Reader@{File\-Reader}!output\-Control\-File@{output\-Control\-File}}
+\index{output\-Control\-File@{output\-Control\-File}!FileReader@{File\-Reader}}
+\subsubsection[{output\-Control\-File}]{\setlength{\rightskip}{0pt plus 5cm}void File\-Reader\-::output\-Control\-File (
+\begin{DoxyParamCaption}
+\item[{{\bf Object\-Group}}]{output}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{class_file_reader_a2fda21435e4f7ef58c93f8b64f05ee8c}
+
+
+Sends output of objects discovered when reading the Control file. Top level objects can include\-: 
+
+
+\begin{DoxyEnumerate}
+\item \hyperlink{class_system}{System} object. \begin{DoxySeeAlso}{See Also}
+\hyperlink{class_system}{System} 
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em output} & The \hyperlink{class_object_group}{Object\-Group} object parsed out of the file. Variable passed by value. \\
+\hline
+\end{DoxyParams}
+
+\end{DoxyEnumerate}
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_file_reader_a2fda21435e4f7ef58c93f8b64f05ee8c_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_file_reader_a4eb74832371513a52a171496c8a0b57e}{\index{File\-Reader@{File\-Reader}!output\-Data\-File@{output\-Data\-File}}
+\index{output\-Data\-File@{output\-Data\-File}!FileReader@{File\-Reader}}
+\subsubsection[{output\-Data\-File}]{\setlength{\rightskip}{0pt plus 5cm}void File\-Reader\-::output\-Data\-File (
+\begin{DoxyParamCaption}
+\item[{{\bf Object\-Group}}]{output}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{class_file_reader_a4eb74832371513a52a171496c8a0b57e}
+
+
+Sends output of objects discovered when reading the Data file. Top level objects can include\-: 
+
+
+\begin{DoxyEnumerate}
+\item hydrofiles 
+\begin{DoxyParams}{Parameters}
+{\em output} & The \hyperlink{class_object_group}{Object\-Group} object parsed out of the file. Variable passed by value. \\
+\hline
+\end{DoxyParams}
+
+\end{DoxyEnumerate}
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_file_reader_a4eb74832371513a52a171496c8a0b57e_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_file_reader_a5d7638af68315cafeb8798f6e3afff4a}{\index{File\-Reader@{File\-Reader}!output\-Forces\-File@{output\-Forces\-File}}
+\index{output\-Forces\-File@{output\-Forces\-File}!FileReader@{File\-Reader}}
+\subsubsection[{output\-Forces\-File}]{\setlength{\rightskip}{0pt plus 5cm}void File\-Reader\-::output\-Forces\-File (
+\begin{DoxyParamCaption}
+\item[{{\bf Object\-Group}}]{output}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{class_file_reader_a5d7638af68315cafeb8798f6e3afff4a}
+
+
+Sends output of objects discovered when reading the Forces file. Top level objects can include\-: 
+
+
+\begin{DoxyEnumerate}
+\item \hyperlink{class_force_active}{Force\-Active}
+\item Force\-Reactive
+\item Force\-Cross\-Body \begin{DoxySeeAlso}{See Also}
+\hyperlink{class_force_active}{Force\-Active} 
+
+\hyperlink{class_force_cross}{Force\-Cross} 
+
+\hyperlink{class_force_react}{Force\-React} 
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em output} & The \hyperlink{class_object_group}{Object\-Group} object parsed out of the file. Variable passed by value. \\
+\hline
+\end{DoxyParams}
+
+\end{DoxyEnumerate}
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_file_reader_a5d7638af68315cafeb8798f6e3afff4a_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_file_reader_a4dfb029654b8b5095f3d389a643278b8}{\index{File\-Reader@{File\-Reader}!output\-Sea\-Env\-File@{output\-Sea\-Env\-File}}
+\index{output\-Sea\-Env\-File@{output\-Sea\-Env\-File}!FileReader@{File\-Reader}}
+\subsubsection[{output\-Sea\-Env\-File}]{\setlength{\rightskip}{0pt plus 5cm}void File\-Reader\-::output\-Sea\-Env\-File (
+\begin{DoxyParamCaption}
+\item[{{\bf Object\-Group}}]{output}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{class_file_reader_a4dfb029654b8b5095f3d389a643278b8}
+
+
+Sends output of objects discovered when reading the Sea\-Env file. Top level objects can include\-: 
+
+
+\begin{DoxyEnumerate}
+\item Wave\-\_\-\-Custom
+\item Sea\-\_\-\-Custom 
+\begin{DoxyParams}{Parameters}
+{\em output} & The \hyperlink{class_object_group}{Object\-Group} object parsed out of the file. Variable passed by value. \\
+\hline
+\end{DoxyParams}
+
+\end{DoxyEnumerate}
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_file_reader_a4dfb029654b8b5095f3d389a643278b8_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_file_reader_a44770836db4ab430139118727ace6547}{\index{File\-Reader@{File\-Reader}!read\-Bodies@{read\-Bodies}}
+\index{read\-Bodies@{read\-Bodies}!FileReader@{File\-Reader}}
+\subsubsection[{read\-Bodies}]{\setlength{\rightskip}{0pt plus 5cm}int File\-Reader\-::read\-Bodies (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_file_reader_a44770836db4ab430139118727ace6547}
+
+
+Reads in the Bodies file and parses its inputs. 
+
+\begin{DoxyReturn}{Returns}
+Returns integer to report success or failure of file parsing. Returns 0 for success. Returns 1 for file does not exist. 
+\end{DoxyReturn}
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_file_reader_a44770836db4ab430139118727ace6547_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_file_reader_a967cab6ec0822fd8bcf392873a8a82b1}{\index{File\-Reader@{File\-Reader}!read\-Control@{read\-Control}}
+\index{read\-Control@{read\-Control}!FileReader@{File\-Reader}}
+\subsubsection[{read\-Control}]{\setlength{\rightskip}{0pt plus 5cm}int File\-Reader\-::read\-Control (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_file_reader_a967cab6ec0822fd8bcf392873a8a82b1}
+
+
+Reads in the control file and parses its inputs. 
+
+\begin{DoxyReturn}{Returns}
+Returns integer to report success or failure of file parsing. Returns 0 for success. Returns 1 for file does not exist. 
+\end{DoxyReturn}
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_file_reader_a967cab6ec0822fd8bcf392873a8a82b1_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_file_reader_a814f8b06adcc190d4042509797eef6d2}{\index{File\-Reader@{File\-Reader}!read\-Data@{read\-Data}}
+\index{read\-Data@{read\-Data}!FileReader@{File\-Reader}}
+\subsubsection[{read\-Data}]{\setlength{\rightskip}{0pt plus 5cm}int File\-Reader\-::read\-Data (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_file_reader_a814f8b06adcc190d4042509797eef6d2}
+
+
+Reads in the Data input file and parses its inputs. 
+
+\begin{DoxyReturn}{Returns}
+Returns integer to report success or failure of file parsing. Returns 0 for success. Returns 1 for file does not exist. 
+\end{DoxyReturn}
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_file_reader_a814f8b06adcc190d4042509797eef6d2_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_file_reader_ab78d2f631eb8e64b0a68d25eeca80be5}{\index{File\-Reader@{File\-Reader}!read\-Forces@{read\-Forces}}
+\index{read\-Forces@{read\-Forces}!FileReader@{File\-Reader}}
+\subsubsection[{read\-Forces}]{\setlength{\rightskip}{0pt plus 5cm}int File\-Reader\-::read\-Forces (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_file_reader_ab78d2f631eb8e64b0a68d25eeca80be5}
+
+
+Reads in the Forces file and parses its inputs. 
+
+\begin{DoxyReturn}{Returns}
+Returns integer to report success or failure of file parsing. Returns 0 for success. Returns 1 for file does not exist. 
+\end{DoxyReturn}
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_file_reader_ab78d2f631eb8e64b0a68d25eeca80be5_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_file_reader_af2a8096f301a0fcf86497726c939515c}{\index{File\-Reader@{File\-Reader}!read\-Hydro\-File@{read\-Hydro\-File}}
+\index{read\-Hydro\-File@{read\-Hydro\-File}!FileReader@{File\-Reader}}
+\subsubsection[{read\-Hydro\-File}]{\setlength{\rightskip}{0pt plus 5cm}int File\-Reader\-::read\-Hydro\-File (
+\begin{DoxyParamCaption}
+\item[{string}]{path}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{class_file_reader_af2a8096f301a0fcf86497726c939515c}
+
+
+Reads hydrodynamic input files. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & The full path to the hydrodynamic input file to read. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns integer to report success or failure of file parsing. Returns 0 for success. Returns 1 for file does not exist. 
+\end{DoxyReturn}
+\hypertarget{class_file_reader_a1f8a6bd4b5c53f80cc94d64d6dd1f2da}{\index{File\-Reader@{File\-Reader}!read\-Sea\-Env@{read\-Sea\-Env}}
+\index{read\-Sea\-Env@{read\-Sea\-Env}!FileReader@{File\-Reader}}
+\subsubsection[{read\-Sea\-Env}]{\setlength{\rightskip}{0pt plus 5cm}int File\-Reader\-::read\-Sea\-Env (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_file_reader_a1f8a6bd4b5c53f80cc94d64d6dd1f2da}
+
+
+Reads in the Sea Environment input file and parses its inputs. 
+
+\begin{DoxyReturn}{Returns}
+Returns integer to report success or failure of file parsing. Returns 0 for success. Returns 1 for file does not exist. 
+\end{DoxyReturn}
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_file_reader_a1f8a6bd4b5c53f80cc94d64d6dd1f2da_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_file_reader_a14f05351af5426de8c30dfcfc79c92d1}{\index{File\-Reader@{File\-Reader}!set\-Path@{set\-Path}}
+\index{set\-Path@{set\-Path}!FileReader@{File\-Reader}}
+\subsubsection[{set\-Path}]{\setlength{\rightskip}{0pt plus 5cm}void File\-Reader\-::set\-Path (
+\begin{DoxyParamCaption}
+\item[{string}]{input}
+\end{DoxyParamCaption}
+)}}\label{class_file_reader_a14f05351af5426de8c30dfcfc79c92d1}
+
+
+Sets the path to the working directory that all control files are located in. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em input} & The full path to the working directory. Do not include directory separator (S\-L\-A\-S\-H, \char`\"{}/\char`\"{}) at end of string. Variable passed by value. \\
+\hline
+\end{DoxyParams}
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=348pt]{class_file_reader_a14f05351af5426de8c30dfcfc79c92d1_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_file_reader_a0f14a8038fdac70d032c1708463eef2c}{\index{File\-Reader@{File\-Reader}!set\-System@{set\-System}}
+\index{set\-System@{set\-System}!FileReader@{File\-Reader}}
+\subsubsection[{set\-System}]{\setlength{\rightskip}{0pt plus 5cm}void File\-Reader\-::set\-System (
+\begin{DoxyParamCaption}
+\item[{{\bf System} $\ast$}]{pt\-Input}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{class_file_reader_a0f14a8038fdac70d032c1708463eef2c}
+
+
+Sets the system object for the dictionary to reference. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pt\-System} & Pointer to the \hyperlink{class_system}{System} object. Variable passed by value. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+filereader.\-h\item 
+filereader.\-cpp\end{DoxyCompactItemize}

@@ -1,0 +1,849 @@
+\hypertarget{classosea_1_1ofreq_1_1_motion_model}{\section{osea\-:\-:ofreq\-:\-:Motion\-Model Class Reference}
+\label{classosea_1_1ofreq_1_1_motion_model}\index{osea\-::ofreq\-::\-Motion\-Model@{osea\-::ofreq\-::\-Motion\-Model}}
+}
+
+
+{\ttfamily \#include $<$motionmodel.\-h$>$}
+
+
+
+Inheritance diagram for osea\-:\-:ofreq\-:\-:Motion\-Model\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=214pt]{classosea_1_1ofreq_1_1_motion_model__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for osea\-:\-:ofreq\-:\-:Motion\-Model\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=214pt]{classosea_1_1ofreq_1_1_motion_model__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classosea_1_1ofreq_1_1_motion_model_a5a5e4bba0f6ca24e1fdd316458f4f824}{Motion\-Model} ()
+\item 
+\hyperlink{classosea_1_1ofreq_1_1_motion_model_aace42c5711b5486181e986add9a72b8f}{Motion\-Model} (std\-::vector$<$ \hyperlink{classosea_1_1ofreq_1_1_body}{Body} $>$ \&list\-Bod\-In)
+\begin{DoxyCompactList}\small\item\em Constructor. This is the preferred constructor as it supplies the body data. \end{DoxyCompactList}\item 
+\hyperlink{classosea_1_1ofreq_1_1_motion_model_ac48a359c77d9efe39d4ec8c9e862a1cd}{$\sim$\-Motion\-Model} ()
+\item 
+void \hyperlink{classosea_1_1ofreq_1_1_motion_model_a92f6b9639a82aef868dbaf8445276d3c}{setlist\-Body} (std\-::vector$<$ \hyperlink{classosea_1_1ofreq_1_1_body}{Body} $>$ \&list\-Bod\-In)
+\begin{DoxyCompactList}\small\item\em Inputs the list of body data. \end{DoxyCompactList}\item 
+void \hyperlink{classosea_1_1ofreq_1_1_motion_model_a713b903a3e78141fff2af9c045755ffb}{set\-Body} (int bod)
+\begin{DoxyCompactList}\small\item\em Sets the index for the body that all calculations are based on. \end{DoxyCompactList}\item 
+bool \& \hyperlink{classosea_1_1ofreq_1_1_motion_model_af4d34bfa133e77f1527cee1aa36b02f4}{Coefficient\-Only} ()
+\begin{DoxyCompactList}\small\item\em Determines whether the class should calculate force coefficients or actual force values. True = Calculate force coefficients only. False = Calculate force values. Default = (False) Calculate force values. \end{DoxyCompactList}\item 
+bool \hyperlink{classosea_1_1ofreq_1_1_motion_model_afc54a14912e56315505ef5dbec28bd39}{get\-Active\-Only} ()
+\begin{DoxyCompactList}\small\item\em Boolean to track whether only the active forces are requested. \end{DoxyCompactList}\item 
+std\-::vector$<$ int $>$ \& \hyperlink{classosea_1_1ofreq_1_1_motion_model_ac4169ab37ab7d69f5030a0d67cb3dc86}{list\-Comp\-Cross\-Bod\-\_\-hydro} ()
+\begin{DoxyCompactList}\small\item\em Records the index of the body object referenced by the cross body. \end{DoxyCompactList}\item 
+int \& \hyperlink{classosea_1_1ofreq_1_1_motion_model_abe445279c6f964b5a64e046945249ea9}{list\-Comp\-Cross\-Bod\-\_\-hydro} (int crossbod\-In)
+\begin{DoxyCompactList}\small\item\em Records the index of the body object referenced by the cross body. \end{DoxyCompactList}\item 
+std\-::vector$<$ int $>$ \& \hyperlink{classosea_1_1ofreq_1_1_motion_model_a873a325f0017d73989cee1cdf8285b3c}{list\-Comp\-Cross\-Bod\-\_\-user} ()
+\begin{DoxyCompactList}\small\item\em Records the index of the body object referenced by the cross body. \end{DoxyCompactList}\item 
+int \& \hyperlink{classosea_1_1ofreq_1_1_motion_model_a63d9e54f8cbb434f67753fe737a89ee6}{list\-Comp\-Cross\-Bod\-\_\-user} (int crossbod\-In)
+\begin{DoxyCompactList}\small\item\em Records the index of the body object referenced by the cross body. \end{DoxyCompactList}\item 
+\hypertarget{classosea_1_1ofreq_1_1_motion_model_a27842d2b76ab078534c0626601da446b}{void \hyperlink{classosea_1_1ofreq_1_1_motion_model_a27842d2b76ab078534c0626601da446b}{Reset} ()}\label{classosea_1_1ofreq_1_1_motion_model_a27842d2b76ab078534c0626601da446b}
+
+\begin{DoxyCompactList}\small\item\em Resets the class data to have all input coefficients. Any evaluation after a reset will produce a value of zero. \hyperlink{classosea_1_1ofreq_1_1_force}{Force} coefficients will be zero and force values will be zero. \end{DoxyCompactList}\item 
+void \hyperlink{classosea_1_1ofreq_1_1_motion_model_a18e880b4a0b1a1d1c385bc3be3524440}{set\-Freq} (double freq)
+\begin{DoxyCompactList}\small\item\em Sets the current operating frequency for the function. Only necessary when calculating true forces and using derivatives defined in the motion model. Otherwise, you can safely ignore this function. \end{DoxyCompactList}\item 
+double \hyperlink{classosea_1_1ofreq_1_1_motion_model_a3461ede3739b468b6bab3a05f94093cc}{get\-Freq} ()
+\begin{DoxyCompactList}\small\item\em Gets the current operating frequency for the function. Only necessary when calculating true forces and using derivatives defined in the motion model. Otherwise, you can safely ignore this function. \end{DoxyCompactList}\item 
+void \hyperlink{classosea_1_1ofreq_1_1_motion_model_aaf761fac4693612a10771e38993431a0}{use\-Force\-Active\-\_\-user} (unsigned int force, unsigned int eqn)
+\begin{DoxyCompactList}\small\item\em Passes information to the object to use input coefficients from the entry specified. \end{DoxyCompactList}\item 
+void \hyperlink{classosea_1_1ofreq_1_1_motion_model_a4d3e0590135e1a9f7ce954406f99ff44}{use\-Force\-Active\-\_\-hydro} (unsigned int force, unsigned int eqn)
+\begin{DoxyCompactList}\small\item\em Passes information to the object to use input coefficients from the entry specified. \end{DoxyCompactList}\item 
+void \hyperlink{classosea_1_1ofreq_1_1_motion_model_a7db1d1ebebe216d17efd7b38f2e9deec}{use\-Force\-React\-\_\-user} (unsigned int force, unsigned int ord, unsigned int eqn, unsigned int var)
+\begin{DoxyCompactList}\small\item\em Passes information to the object to use input coefficients from the entry specified. \end{DoxyCompactList}\item 
+void \hyperlink{classosea_1_1ofreq_1_1_motion_model_ae3d2c7527ea2daddc6a85b6e02febb45}{use\-Force\-React\-\_\-hydro} (unsigned int force, unsigned int ord, unsigned int eqn, unsigned int var)
+\begin{DoxyCompactList}\small\item\em Passes information to the object to use input coefficients from the entry specified. \end{DoxyCompactList}\item 
+void \hyperlink{classosea_1_1ofreq_1_1_motion_model_a1159117995080d2b62e50fceaeb29778}{use\-Force\-Cross\-\_\-user} (unsigned int force, unsigned int ord, unsigned int eqn, unsigned int var)
+\begin{DoxyCompactList}\small\item\em Passes information to the object to use input coefficients from the entry specified. \end{DoxyCompactList}\item 
+void \hyperlink{classosea_1_1ofreq_1_1_motion_model_abfd6e4a22ec23d7ee462adb737fab3f2}{use\-Force\-Cross\-\_\-hydro} (unsigned int force, unsigned int ord, unsigned int eqn, unsigned int var)
+\begin{DoxyCompactList}\small\item\em Passes information to the object to use input coefficients from the entry specified. \end{DoxyCompactList}\item 
+void \hyperlink{classosea_1_1ofreq_1_1_motion_model_aecaf9f0261355cff2acf602acd728644}{use\-Force\-Mass} (unsigned int eqn, unsigned int var)
+\begin{DoxyCompactList}\small\item\em Passes information to the object to use input coefficients from the entry specified. \end{DoxyCompactList}\item 
+arma\-::cx\-\_\-mat \hyperlink{classosea_1_1ofreq_1_1_motion_model_af9d30b6afa16093429fab496d18c5d00}{get\-Mat\-Force\-Active\-\_\-user} (int force)
+\begin{DoxyCompactList}\small\item\em Evaluates the motion model for a whole range of equations on the specified force. \end{DoxyCompactList}\item 
+arma\-::cx\-\_\-mat \hyperlink{classosea_1_1ofreq_1_1_motion_model_a56059a3d7f37c9dad5f906714ba159de}{get\-Mat\-Force\-Active\-\_\-hydro} (int force)
+\begin{DoxyCompactList}\small\item\em Evaluates the motion model for a whole range of equations on the specified force. \end{DoxyCompactList}\item 
+arma\-::cx\-\_\-mat \hyperlink{classosea_1_1ofreq_1_1_motion_model_a44e885c0255e74d82664c785499138f0}{get\-Mat\-Force\-React\-\_\-user} (int force, int ord)
+\begin{DoxyCompactList}\small\item\em Evaluates the motion model for a whole range of equations and variable on the specified force and order of derivative. \end{DoxyCompactList}\item 
+arma\-::cx\-\_\-mat \hyperlink{classosea_1_1ofreq_1_1_motion_model_af239389973af6d198a21ee0c07db19c6}{get\-Mat\-Force\-React\-\_\-hydro} (int force, int ord)
+\begin{DoxyCompactList}\small\item\em Evaluates the motion model for a whole range of equations and variable on the specified force and order of derivative. \end{DoxyCompactList}\item 
+arma\-::cx\-\_\-mat \hyperlink{classosea_1_1ofreq_1_1_motion_model_addbd875f2fc266823f645fc7f2d207e8}{get\-Mat\-Force\-Cross\-\_\-user} (int force, int ord)
+\begin{DoxyCompactList}\small\item\em Evaluates the motion model for a whole range of equations and variable on the specified force and order of derivative. \end{DoxyCompactList}\item 
+arma\-::cx\-\_\-mat \hyperlink{classosea_1_1ofreq_1_1_motion_model_a7d661c296c3fe5c97322a62cceabb5d4}{get\-Mat\-Force\-Cross\-\_\-hydro} (int force, int ord)
+\begin{DoxyCompactList}\small\item\em Evaluates the motion model for a whole range of equations and variable on the specified force and order of derivative. \end{DoxyCompactList}\item 
+arma\-::cx\-\_\-mat \hyperlink{classosea_1_1ofreq_1_1_motion_model_a7215db9f6f0c3e79f4559a4b9eadbcfc}{get\-Mat\-Force\-Mass} ()
+\begin{DoxyCompactList}\small\item\em Evaluates the motion model for a whole range of equations and variable on the specified force and order of derivative. \end{DoxyCompactList}\item 
+std\-::complex$<$ double $>$ \hyperlink{classosea_1_1ofreq_1_1_motion_model_a331d96a45df8ca0911fc4610705c3a30}{Evaluate} (int eqn)
+\begin{DoxyCompactList}\small\item\em Triggers evaluation of the currently activated set of input coefficients. \end{DoxyCompactList}\item 
+int \hyperlink{classosea_1_1ofreq_1_1_motion_model_a0a228c24a524e2a1c6636d3121a842be}{num\-Equations} ()
+\begin{DoxyCompactList}\small\item\em Reports the number of equations used in the motion model. \end{DoxyCompactList}\item 
+std\-::vector$<$ int $>$ \& \hyperlink{classosea_1_1ofreq_1_1_motion_model_ac62401cfe337e9404867819c529f2300}{ref\-Data\-Index} ()
+\begin{DoxyCompactList}\small\item\em Returns a vector containing all equation indices. This may be the same as the number of equations. Very few equations may be used. However, if they are custom equations, they must avoid the first six indices, which are reserved for standard 6dof models. \end{DoxyCompactList}\item 
+int \hyperlink{classosea_1_1ofreq_1_1_motion_model_a81ed21162a09ffce06043f3a7fb4213d}{Max\-Data\-Index} ()
+\begin{DoxyCompactList}\small\item\em Returns the maximum number of the data index. \end{DoxyCompactList}\item 
+void \hyperlink{classosea_1_1ofreq_1_1_motion_model_a42d989727028c18c59ba04f958bc7b74}{set\-Name} (std\-::string name\-In)
+\begin{DoxyCompactList}\small\item\em Name for the motion model. \end{DoxyCompactList}\item 
+std\-::string \hyperlink{classosea_1_1ofreq_1_1_motion_model_af9fd1e58735b7f47bc5d5257bdca9139}{get\-Name} ()
+\begin{DoxyCompactList}\small\item\em Name for the motion model. \end{DoxyCompactList}\item 
+void \hyperlink{classosea_1_1ofreq_1_1_motion_model_a5097540bb98ad753594d41890e6ef30d}{set\-Description} (std\-::string Desc\-In)
+\begin{DoxyCompactList}\small\item\em Description for the motion model. \end{DoxyCompactList}\item 
+std\-::string \hyperlink{classosea_1_1ofreq_1_1_motion_model_a8594356137407b25d03927a68a422dc9}{get\-Description} ()
+\begin{DoxyCompactList}\small\item\em Description for the motion model. \end{DoxyCompactList}\item 
+std\-::vector$<$ \hyperlink{classosea_1_1ofreq_1_1_body}{Body} $>$ \& \hyperlink{classosea_1_1ofreq_1_1_motion_model_a67ad0e6b993a20af61170cdebe8f418f}{list\-Body} ()
+\begin{DoxyCompactList}\small\item\em Provides direct access to the list of Bodies referenced by the motion model. \end{DoxyCompactList}\item 
+\hyperlink{classosea_1_1ofreq_1_1_body}{Body} \& \hyperlink{classosea_1_1ofreq_1_1_motion_model_a3c08da3c6cb3e959b53f2cf6f614d3c0}{list\-Body} (int bod\-In)
+\begin{DoxyCompactList}\small\item\em Direct access to an individual \hyperlink{classosea_1_1ofreq_1_1_body}{Body} from the list of Bodies contained in the motion model. \end{DoxyCompactList}\item 
+std\-::vector$<$ \hyperlink{classosea_1_1ofreq_1_1_body}{Body} $>$ \& \hyperlink{classosea_1_1ofreq_1_1_motion_model_ae63712716bcaff9ff263d9728f39323a}{list\-Data} ()
+\begin{DoxyCompactList}\small\item\em Provides direct access to the list of Bodies used as data for the motion model. \end{DoxyCompactList}\item 
+\hyperlink{classosea_1_1ofreq_1_1_body}{Body} \& \hyperlink{classosea_1_1ofreq_1_1_motion_model_a1d7e2b929c15789259aaf732efd7f752}{list\-Data} (int data\-In)
+\begin{DoxyCompactList}\small\item\em Direct access to an individual \hyperlink{classosea_1_1ofreq_1_1_body}{Body} from the list of Data contained in the motion model. \end{DoxyCompactList}\item 
+std\-::vector$<$ \hyperlink{classosea_1_1ofreq_1_1_equationof_motion}{Equationof\-Motion} $>$ \& \hyperlink{classosea_1_1ofreq_1_1_motion_model_a608c356b5eb21fee5036a44124497815}{list\-Equation} ()
+\begin{DoxyCompactList}\small\item\em Provides direct access to the list of equation of motion objects used in the motion model. \end{DoxyCompactList}\item 
+\hyperlink{classosea_1_1ofreq_1_1_equationof_motion}{Equationof\-Motion} \& \hyperlink{classosea_1_1ofreq_1_1_motion_model_a444cd6e6ca1aea0822545b732118aeb9}{list\-Equation} (int eq\-In)
+\begin{DoxyCompactList}\small\item\em Direct access to an individual \hyperlink{classosea_1_1ofreq_1_1_equationof_motion}{Equationof\-Motion} object from the list of Equations contained in the motion model. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+This class provides the functionality to translate between input coefficients in the body class and the force coefficients in the \hyperlink{classosea_1_1ofreq_1_1mat_body}{mat\-Body} class. Most important, it acts as an interface for advanced users to enter their own equations of motion. This was devised to create a very generic interface that could allow any sort of definition for equations. The use of functions for the class should use the following sequence. 1.) Create class\-: constructor 2.) Set body data (if not already done in constructor)\-: set\-List\-Bodies 3.) Set the current body working with\-: set\-Body 4.) Set the current wave frequency working with\-: set\-Freq 5.) Set whether calculating coefficients or values (default\-: Values)\-: calc\-Coefficient 6.) Reset the forces you wish to use. 7.) Set the new list of forces you wish to use.\-: use\-Force\-Act\-\_\-usr use\-Force\-Act\-\_\-hydro use\-Force\-React\-\_\-usr use\-Force\-React\-\_\-hydro use\-Force\-Cross\-\_\-usr use\-Force\-Cross\-\_\-hydro use\-Force\-Mass 7.) Evaluate the motion model to produce a single complex value result. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classosea_1_1ofreq_1_1_motion_model_a5a5e4bba0f6ca24e1fdd316458f4f824}{\index{osea\-::ofreq\-::\-Motion\-Model@{osea\-::ofreq\-::\-Motion\-Model}!Motion\-Model@{Motion\-Model}}
+\index{Motion\-Model@{Motion\-Model}!osea::ofreq::MotionModel@{osea\-::ofreq\-::\-Motion\-Model}}
+\subsubsection[{Motion\-Model}]{\setlength{\rightskip}{0pt plus 5cm}Motion\-Model\-::\-Motion\-Model (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_motion_model_a5a5e4bba0f6ca24e1fdd316458f4f824}
+Default constructor. \hypertarget{classosea_1_1ofreq_1_1_motion_model_aace42c5711b5486181e986add9a72b8f}{\index{osea\-::ofreq\-::\-Motion\-Model@{osea\-::ofreq\-::\-Motion\-Model}!Motion\-Model@{Motion\-Model}}
+\index{Motion\-Model@{Motion\-Model}!osea::ofreq::MotionModel@{osea\-::ofreq\-::\-Motion\-Model}}
+\subsubsection[{Motion\-Model}]{\setlength{\rightskip}{0pt plus 5cm}osea\-::ofreq\-::\-Motion\-Model\-::\-Motion\-Model (
+\begin{DoxyParamCaption}
+\item[{std\-::vector$<$ {\bf Body} $>$ \&}]{list\-Bod\-In}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_motion_model_aace42c5711b5486181e986add9a72b8f}
+
+
+Constructor. This is the preferred constructor as it supplies the body data. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em list\-Bod\-In} & The vector of the body objects to input. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classosea_1_1ofreq_1_1_motion_model_ac48a359c77d9efe39d4ec8c9e862a1cd}{\index{osea\-::ofreq\-::\-Motion\-Model@{osea\-::ofreq\-::\-Motion\-Model}!$\sim$\-Motion\-Model@{$\sim$\-Motion\-Model}}
+\index{$\sim$\-Motion\-Model@{$\sim$\-Motion\-Model}!osea::ofreq::MotionModel@{osea\-::ofreq\-::\-Motion\-Model}}
+\subsubsection[{$\sim$\-Motion\-Model}]{\setlength{\rightskip}{0pt plus 5cm}Motion\-Model\-::$\sim$\-Motion\-Model (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_motion_model_ac48a359c77d9efe39d4ec8c9e862a1cd}
+Default destructor. 
+
+\subsection{Member Function Documentation}
+\hypertarget{classosea_1_1ofreq_1_1_motion_model_af4d34bfa133e77f1527cee1aa36b02f4}{\index{osea\-::ofreq\-::\-Motion\-Model@{osea\-::ofreq\-::\-Motion\-Model}!Coefficient\-Only@{Coefficient\-Only}}
+\index{Coefficient\-Only@{Coefficient\-Only}!osea::ofreq::MotionModel@{osea\-::ofreq\-::\-Motion\-Model}}
+\subsubsection[{Coefficient\-Only}]{\setlength{\rightskip}{0pt plus 5cm}bool \& Motion\-Model\-::\-Coefficient\-Only (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_motion_model_af4d34bfa133e77f1527cee1aa36b02f4}
+
+
+Determines whether the class should calculate force coefficients or actual force values. True = Calculate force coefficients only. False = Calculate force values. Default = (False) Calculate force values. 
+
+\begin{DoxyReturn}{Returns}
+Boolean to determine whether should calculate coefficients or values. 
+\end{DoxyReturn}
+\hypertarget{classosea_1_1ofreq_1_1_motion_model_a331d96a45df8ca0911fc4610705c3a30}{\index{osea\-::ofreq\-::\-Motion\-Model@{osea\-::ofreq\-::\-Motion\-Model}!Evaluate@{Evaluate}}
+\index{Evaluate@{Evaluate}!osea::ofreq::MotionModel@{osea\-::ofreq\-::\-Motion\-Model}}
+\subsubsection[{Evaluate}]{\setlength{\rightskip}{0pt plus 5cm}complex$<$ double $>$ Motion\-Model\-::\-Evaluate (
+\begin{DoxyParamCaption}
+\item[{int}]{eqn}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_motion_model_a331d96a45df8ca0911fc4610705c3a30}
+
+
+Triggers evaluation of the currently activated set of input coefficients. 
+
+Triggers evaluation of the currently activated set of input coefficients. If Calc\-\_\-\-Coeff is set to True, then evaluation will only generate the force coefficients from the resulting evaluation. Otherwise, the evaluation will use the currently defined solution data and evaluate for force values. 
+\begin{DoxyParams}{Parameters}
+{\em eqn} & Integer representing which equation object to evaluate. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns a complex number representing the force under the currently set conditions. 
+\end{DoxyReturn}
+\hypertarget{classosea_1_1ofreq_1_1_motion_model_afc54a14912e56315505ef5dbec28bd39}{\index{osea\-::ofreq\-::\-Motion\-Model@{osea\-::ofreq\-::\-Motion\-Model}!get\-Active\-Only@{get\-Active\-Only}}
+\index{get\-Active\-Only@{get\-Active\-Only}!osea::ofreq::MotionModel@{osea\-::ofreq\-::\-Motion\-Model}}
+\subsubsection[{get\-Active\-Only}]{\setlength{\rightskip}{0pt plus 5cm}bool Motion\-Model\-::get\-Active\-Only (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_motion_model_afc54a14912e56315505ef5dbec28bd39}
+
+
+Boolean to track whether only the active forces are requested. 
+
+Boolean to track whether only the active forces are requested. The active forces are included negatively in the equation of motion. They should be on the opposite side of the equation and included as a positive constant. The final matrix body accomplishes this. And when only active forces are requested, they should be sent out as positive values. However, when pulling the information out, the signs must be reversed. The boolean variable triggers to determine if this should happen. If any reactive or cross-\/body forces are activated as well, this variable is set false. \begin{DoxyReturn}{Returns}
+Returns boolean variable. Variable passed by value. Returns true if only active forces are used in the equation of motion. Returns false if any reactive or cross-\/body forces are used in the equation of motion. 
+\end{DoxyReturn}
+\hypertarget{classosea_1_1ofreq_1_1_motion_model_a8594356137407b25d03927a68a422dc9}{\index{osea\-::ofreq\-::\-Motion\-Model@{osea\-::ofreq\-::\-Motion\-Model}!get\-Description@{get\-Description}}
+\index{get\-Description@{get\-Description}!osea::ofreq::MotionModel@{osea\-::ofreq\-::\-Motion\-Model}}
+\subsubsection[{get\-Description}]{\setlength{\rightskip}{0pt plus 5cm}string Motion\-Model\-::get\-Description (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_motion_model_a8594356137407b25d03927a68a422dc9}
+
+
+Description for the motion model. 
+
+Description for the motion model. Used by the user to provide a more extensive description of the motion model. Used purely for user information. Not used for model identification. \begin{DoxyReturn}{Returns}
+std\-::string. The description for the motion model. Variable passed by value. 
+\end{DoxyReturn}
+\hypertarget{classosea_1_1ofreq_1_1_motion_model_a3461ede3739b468b6bab3a05f94093cc}{\index{osea\-::ofreq\-::\-Motion\-Model@{osea\-::ofreq\-::\-Motion\-Model}!get\-Freq@{get\-Freq}}
+\index{get\-Freq@{get\-Freq}!osea::ofreq::MotionModel@{osea\-::ofreq\-::\-Motion\-Model}}
+\subsubsection[{get\-Freq}]{\setlength{\rightskip}{0pt plus 5cm}double Motion\-Model\-::get\-Freq (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_motion_model_a3461ede3739b468b6bab3a05f94093cc}
+
+
+Gets the current operating frequency for the function. Only necessary when calculating true forces and using derivatives defined in the motion model. Otherwise, you can safely ignore this function. 
+
+\begin{DoxyReturn}{Returns}
+Double precision variable that is the current wave frequency value. Variable returned by value. 
+\end{DoxyReturn}
+\hypertarget{classosea_1_1ofreq_1_1_motion_model_a56059a3d7f37c9dad5f906714ba159de}{\index{osea\-::ofreq\-::\-Motion\-Model@{osea\-::ofreq\-::\-Motion\-Model}!get\-Mat\-Force\-Active\-\_\-hydro@{get\-Mat\-Force\-Active\-\_\-hydro}}
+\index{get\-Mat\-Force\-Active\-\_\-hydro@{get\-Mat\-Force\-Active\-\_\-hydro}!osea::ofreq::MotionModel@{osea\-::ofreq\-::\-Motion\-Model}}
+\subsubsection[{get\-Mat\-Force\-Active\-\_\-hydro}]{\setlength{\rightskip}{0pt plus 5cm}cx\-\_\-mat Motion\-Model\-::get\-Mat\-Force\-Active\-\_\-hydro (
+\begin{DoxyParamCaption}
+\item[{int}]{force}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_motion_model_a56059a3d7f37c9dad5f906714ba159de}
+
+
+Evaluates the motion model for a whole range of equations on the specified force. 
+
+Evaluates the motion model for a whole range of equations on the specified force. Returns a complex matrix that contains the results of the entire evaluation. 
+\begin{DoxyParams}{Parameters}
+{\em force} & Integer specifying which force object to evaluate. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns a complex matrix that contains the results of the entire evaluation. Returned argument passed by value. 
+\end{DoxyReturn}
+\hypertarget{classosea_1_1ofreq_1_1_motion_model_af9d30b6afa16093429fab496d18c5d00}{\index{osea\-::ofreq\-::\-Motion\-Model@{osea\-::ofreq\-::\-Motion\-Model}!get\-Mat\-Force\-Active\-\_\-user@{get\-Mat\-Force\-Active\-\_\-user}}
+\index{get\-Mat\-Force\-Active\-\_\-user@{get\-Mat\-Force\-Active\-\_\-user}!osea::ofreq::MotionModel@{osea\-::ofreq\-::\-Motion\-Model}}
+\subsubsection[{get\-Mat\-Force\-Active\-\_\-user}]{\setlength{\rightskip}{0pt plus 5cm}cx\-\_\-mat Motion\-Model\-::get\-Mat\-Force\-Active\-\_\-user (
+\begin{DoxyParamCaption}
+\item[{int}]{force}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_motion_model_af9d30b6afa16093429fab496d18c5d00}
+
+
+Evaluates the motion model for a whole range of equations on the specified force. 
+
+Evaluates the motion model for a whole range of equations on the specified force. Returns a complex matrix that contains the results of the entire evaluation. 
+\begin{DoxyParams}{Parameters}
+{\em force} & Integer specifying which force object to evaluate. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns a complex matrix that contains the results of the entire evaluation. Returned argument passed by value. 
+\end{DoxyReturn}
+\hypertarget{classosea_1_1ofreq_1_1_motion_model_a7d661c296c3fe5c97322a62cceabb5d4}{\index{osea\-::ofreq\-::\-Motion\-Model@{osea\-::ofreq\-::\-Motion\-Model}!get\-Mat\-Force\-Cross\-\_\-hydro@{get\-Mat\-Force\-Cross\-\_\-hydro}}
+\index{get\-Mat\-Force\-Cross\-\_\-hydro@{get\-Mat\-Force\-Cross\-\_\-hydro}!osea::ofreq::MotionModel@{osea\-::ofreq\-::\-Motion\-Model}}
+\subsubsection[{get\-Mat\-Force\-Cross\-\_\-hydro}]{\setlength{\rightskip}{0pt plus 5cm}cx\-\_\-mat Motion\-Model\-::get\-Mat\-Force\-Cross\-\_\-hydro (
+\begin{DoxyParamCaption}
+\item[{int}]{force, }
+\item[{int}]{ord}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_motion_model_a7d661c296c3fe5c97322a62cceabb5d4}
+
+
+Evaluates the motion model for a whole range of equations and variable on the specified force and order of derivative. 
+
+Evaluates the motion model for a whole range of equations and variable on the specified force and order of derivative. Returns a complex matrix that contains the results of the entire evaluation. Saves some time on computing effort. 
+\begin{DoxyParams}{Parameters}
+{\em force} & Integer specifying the force object to use. \\
+\hline
+{\em ord} & Integer specifying which order of derivative to use on the specified force object. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns a complex matrix that contains the results of the entire evaluation. Saves some time on computing effort. 
+\end{DoxyReturn}
+\hypertarget{classosea_1_1ofreq_1_1_motion_model_addbd875f2fc266823f645fc7f2d207e8}{\index{osea\-::ofreq\-::\-Motion\-Model@{osea\-::ofreq\-::\-Motion\-Model}!get\-Mat\-Force\-Cross\-\_\-user@{get\-Mat\-Force\-Cross\-\_\-user}}
+\index{get\-Mat\-Force\-Cross\-\_\-user@{get\-Mat\-Force\-Cross\-\_\-user}!osea::ofreq::MotionModel@{osea\-::ofreq\-::\-Motion\-Model}}
+\subsubsection[{get\-Mat\-Force\-Cross\-\_\-user}]{\setlength{\rightskip}{0pt plus 5cm}cx\-\_\-mat Motion\-Model\-::get\-Mat\-Force\-Cross\-\_\-user (
+\begin{DoxyParamCaption}
+\item[{int}]{force, }
+\item[{int}]{ord}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_motion_model_addbd875f2fc266823f645fc7f2d207e8}
+
+
+Evaluates the motion model for a whole range of equations and variable on the specified force and order of derivative. 
+
+Evaluates the motion model for a whole range of equations and variable on the specified force and order of derivative. Returns a complex matrix that contains the results of the entire evaluation. Saves some time on computing effort. 
+\begin{DoxyParams}{Parameters}
+{\em force} & Integer specifying the force object to use. \\
+\hline
+{\em ord} & Integer specifying which order of derivative to use on the specified force object. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns a complex matrix that contains the results of the entire evaluation. Saves some time on computing effort. 
+\end{DoxyReturn}
+\hypertarget{classosea_1_1ofreq_1_1_motion_model_a7215db9f6f0c3e79f4559a4b9eadbcfc}{\index{osea\-::ofreq\-::\-Motion\-Model@{osea\-::ofreq\-::\-Motion\-Model}!get\-Mat\-Force\-Mass@{get\-Mat\-Force\-Mass}}
+\index{get\-Mat\-Force\-Mass@{get\-Mat\-Force\-Mass}!osea::ofreq::MotionModel@{osea\-::ofreq\-::\-Motion\-Model}}
+\subsubsection[{get\-Mat\-Force\-Mass}]{\setlength{\rightskip}{0pt plus 5cm}cx\-\_\-mat Motion\-Model\-::get\-Mat\-Force\-Mass (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_motion_model_a7215db9f6f0c3e79f4559a4b9eadbcfc}
+
+
+Evaluates the motion model for a whole range of equations and variable on the specified force and order of derivative. 
+
+Evaluates the motion model for a whole range of equations and variable on the specified force and order of derivative. Returns a complex matrix that contains the results of the entire evaluation. Saves some time on computing effort. \begin{DoxyReturn}{Returns}
+Returns a complex matrix that contains the results of the entire evaluation. Saves some time on computing effort. 
+\end{DoxyReturn}
+\hypertarget{classosea_1_1ofreq_1_1_motion_model_af239389973af6d198a21ee0c07db19c6}{\index{osea\-::ofreq\-::\-Motion\-Model@{osea\-::ofreq\-::\-Motion\-Model}!get\-Mat\-Force\-React\-\_\-hydro@{get\-Mat\-Force\-React\-\_\-hydro}}
+\index{get\-Mat\-Force\-React\-\_\-hydro@{get\-Mat\-Force\-React\-\_\-hydro}!osea::ofreq::MotionModel@{osea\-::ofreq\-::\-Motion\-Model}}
+\subsubsection[{get\-Mat\-Force\-React\-\_\-hydro}]{\setlength{\rightskip}{0pt plus 5cm}cx\-\_\-mat Motion\-Model\-::get\-Mat\-Force\-React\-\_\-hydro (
+\begin{DoxyParamCaption}
+\item[{int}]{force, }
+\item[{int}]{ord}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_motion_model_af239389973af6d198a21ee0c07db19c6}
+
+
+Evaluates the motion model for a whole range of equations and variable on the specified force and order of derivative. 
+
+Evaluates the motion model for a whole range of equations and variable on the specified force and order of derivative. Returns a complex matrix that contains the results of the entire evaluation. Saves some time on computing effort. 
+\begin{DoxyParams}{Parameters}
+{\em force} & Integer specifying the force object to use. \\
+\hline
+{\em ord} & Integer specifying which order of derivative to use on the specified force object. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns a complex matrix that contains the results of the entire evaluation. Saves some time on computing effort. 
+\end{DoxyReturn}
+\hypertarget{classosea_1_1ofreq_1_1_motion_model_a44e885c0255e74d82664c785499138f0}{\index{osea\-::ofreq\-::\-Motion\-Model@{osea\-::ofreq\-::\-Motion\-Model}!get\-Mat\-Force\-React\-\_\-user@{get\-Mat\-Force\-React\-\_\-user}}
+\index{get\-Mat\-Force\-React\-\_\-user@{get\-Mat\-Force\-React\-\_\-user}!osea::ofreq::MotionModel@{osea\-::ofreq\-::\-Motion\-Model}}
+\subsubsection[{get\-Mat\-Force\-React\-\_\-user}]{\setlength{\rightskip}{0pt plus 5cm}cx\-\_\-mat Motion\-Model\-::get\-Mat\-Force\-React\-\_\-user (
+\begin{DoxyParamCaption}
+\item[{int}]{force, }
+\item[{int}]{ord}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_motion_model_a44e885c0255e74d82664c785499138f0}
+
+
+Evaluates the motion model for a whole range of equations and variable on the specified force and order of derivative. 
+
+Evaluates the motion model for a whole range of equations and variable on the specified force and order of derivative. Returns a complex matrix that contains the results of the entire evaluation. Saves some time on computing effort. 
+\begin{DoxyParams}{Parameters}
+{\em force} & Integer specifying the force object to use. \\
+\hline
+{\em ord} & Integer specifying which order of derivative to use on the specified force object. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns a complex matrix that contains the results of the entire evaluation. Saves some time on computing effort. 
+\end{DoxyReturn}
+\hypertarget{classosea_1_1ofreq_1_1_motion_model_af9fd1e58735b7f47bc5d5257bdca9139}{\index{osea\-::ofreq\-::\-Motion\-Model@{osea\-::ofreq\-::\-Motion\-Model}!get\-Name@{get\-Name}}
+\index{get\-Name@{get\-Name}!osea::ofreq::MotionModel@{osea\-::ofreq\-::\-Motion\-Model}}
+\subsubsection[{get\-Name}]{\setlength{\rightskip}{0pt plus 5cm}string Motion\-Model\-::get\-Name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_motion_model_af9fd1e58735b7f47bc5d5257bdca9139}
+
+
+Name for the motion model. 
+
+Name for the motion model. Used by the user to identify the motion model. \begin{DoxyReturn}{Returns}
+The name to set for the motion model. std\-::string variable. Variable passed by value. 
+\end{DoxyReturn}
+\hypertarget{classosea_1_1ofreq_1_1_motion_model_a67ad0e6b993a20af61170cdebe8f418f}{\index{osea\-::ofreq\-::\-Motion\-Model@{osea\-::ofreq\-::\-Motion\-Model}!list\-Body@{list\-Body}}
+\index{list\-Body@{list\-Body}!osea::ofreq::MotionModel@{osea\-::ofreq\-::\-Motion\-Model}}
+\subsubsection[{list\-Body}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ {\bf Body} $>$ \& Motion\-Model\-::list\-Body (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_motion_model_a67ad0e6b993a20af61170cdebe8f418f}
+
+
+Provides direct access to the list of Bodies referenced by the motion model. 
+
+\begin{DoxyReturn}{Returns}
+Reference to vector of \hyperlink{classosea_1_1ofreq_1_1_body}{Body} objects. Variable passed by reference. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classosea_1_1ofreq_1_1_body}{Body} 
+\end{DoxySeeAlso}
+\hypertarget{classosea_1_1ofreq_1_1_motion_model_a3c08da3c6cb3e959b53f2cf6f614d3c0}{\index{osea\-::ofreq\-::\-Motion\-Model@{osea\-::ofreq\-::\-Motion\-Model}!list\-Body@{list\-Body}}
+\index{list\-Body@{list\-Body}!osea::ofreq::MotionModel@{osea\-::ofreq\-::\-Motion\-Model}}
+\subsubsection[{list\-Body}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Body} \& Motion\-Model\-::list\-Body (
+\begin{DoxyParamCaption}
+\item[{int}]{bod\-In}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_motion_model_a3c08da3c6cb3e959b53f2cf6f614d3c0}
+
+
+Direct access to an individual \hyperlink{classosea_1_1ofreq_1_1_body}{Body} from the list of Bodies contained in the motion model. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em bod\-In} & Integer specifying which \hyperlink{classosea_1_1ofreq_1_1_body}{Body} object to access in the list of Bodies. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns reference to the \hyperlink{classosea_1_1ofreq_1_1_body}{Body} object specified by input bod\-In. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classosea_1_1ofreq_1_1_motion_model_a67ad0e6b993a20af61170cdebe8f418f}{list\-Body()} 
+\end{DoxySeeAlso}
+\hypertarget{classosea_1_1ofreq_1_1_motion_model_ac4169ab37ab7d69f5030a0d67cb3dc86}{\index{osea\-::ofreq\-::\-Motion\-Model@{osea\-::ofreq\-::\-Motion\-Model}!list\-Comp\-Cross\-Bod\-\_\-hydro@{list\-Comp\-Cross\-Bod\-\_\-hydro}}
+\index{list\-Comp\-Cross\-Bod\-\_\-hydro@{list\-Comp\-Cross\-Bod\-\_\-hydro}!osea::ofreq::MotionModel@{osea\-::ofreq\-::\-Motion\-Model}}
+\subsubsection[{list\-Comp\-Cross\-Bod\-\_\-hydro}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ int $>$ \& Motion\-Model\-::list\-Comp\-Cross\-Bod\-\_\-hydro (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_motion_model_ac4169ab37ab7d69f5030a0d67cb3dc86}
+
+
+Records the index of the body object referenced by the cross body. 
+
+Records the index of the body object referenced by the cross body. Each body object contains a list of pointers for the cross-\/body objects. Each cross-\/body force has a pointer associated with it. This pointer points to another body object. This allows comparison between memory addresses of different body objects. However, when the body objects are copied over, the pointers are now pointing to different, invalid memory addresses. to eliminate this problem in the motion model, the model will record the position of the body object in the vector of body objects. This forms a vector. Each entry in the vector represents one cross-\/body force for the current body. The integer entry in the vector is the integer index of the body that the cross-\/body force is linked to. \begin{DoxyReturn}{Returns}
+Returns a vector of integers. Returned variable is passed by reference. Each entry in the vector represents one cross-\/body force for the current body. The integer entry in the vector is the integer index of the body that the cross-\/body force is linked to. 
+\end{DoxyReturn}
+\hypertarget{classosea_1_1ofreq_1_1_motion_model_abe445279c6f964b5a64e046945249ea9}{\index{osea\-::ofreq\-::\-Motion\-Model@{osea\-::ofreq\-::\-Motion\-Model}!list\-Comp\-Cross\-Bod\-\_\-hydro@{list\-Comp\-Cross\-Bod\-\_\-hydro}}
+\index{list\-Comp\-Cross\-Bod\-\_\-hydro@{list\-Comp\-Cross\-Bod\-\_\-hydro}!osea::ofreq::MotionModel@{osea\-::ofreq\-::\-Motion\-Model}}
+\subsubsection[{list\-Comp\-Cross\-Bod\-\_\-hydro}]{\setlength{\rightskip}{0pt plus 5cm}int \& Motion\-Model\-::list\-Comp\-Cross\-Bod\-\_\-hydro (
+\begin{DoxyParamCaption}
+\item[{int}]{crossbod\-In}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_motion_model_abe445279c6f964b5a64e046945249ea9}
+
+
+Records the index of the body object referenced by the cross body. 
+
+Records the index of the body object referenced by the cross body. Each body object contains a list of pointers for the cross-\/body objects. Each cross-\/body force has a pointer associated with it. This pointer points to another body object. This allows comparison between memory addresses of different body objects. However, when the body objects are copied over, the pointers are now pointing to different, invalid memory addresses. to eliminate this problem in the motion model, the model will record the position of the body object in the vector of body objects. This forms a vector. Each entry in the vector represents one cross-\/body force for the current body. The integer entry in the vector is the integer index of the body that the cross-\/body force is linked to. 
+\begin{DoxyParams}{Parameters}
+{\em crossbod\-In} & Integer parameter. Specified the index of which value to retrieve from the list of values for the Cross\-Bod indices. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns an integer. Variable passed by reference. Returned integer is the index of the \hyperlink{classosea_1_1ofreq_1_1_body}{Body} object referenced by the cross-\/body force located at the index specified by Cross\-Bod. Example\-: Cross\-Bod (index) -\/$>$ (vector of cross body forces) -\/$>$ Index of \hyperlink{classosea_1_1ofreq_1_1_body}{Body} object that cross-\/body force points to. 
+\end{DoxyReturn}
+\hypertarget{classosea_1_1ofreq_1_1_motion_model_a873a325f0017d73989cee1cdf8285b3c}{\index{osea\-::ofreq\-::\-Motion\-Model@{osea\-::ofreq\-::\-Motion\-Model}!list\-Comp\-Cross\-Bod\-\_\-user@{list\-Comp\-Cross\-Bod\-\_\-user}}
+\index{list\-Comp\-Cross\-Bod\-\_\-user@{list\-Comp\-Cross\-Bod\-\_\-user}!osea::ofreq::MotionModel@{osea\-::ofreq\-::\-Motion\-Model}}
+\subsubsection[{list\-Comp\-Cross\-Bod\-\_\-user}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ int $>$ \& Motion\-Model\-::list\-Comp\-Cross\-Bod\-\_\-user (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_motion_model_a873a325f0017d73989cee1cdf8285b3c}
+
+
+Records the index of the body object referenced by the cross body. 
+
+Records the index of the body object referenced by the cross body. Each body object contains a list of pointers for the cross-\/body objects. Each cross-\/body force has a pointer associated with it. This pointer points to another body object. This allows comparison between memory addresses of different body objects. However, when the body objects are copied over, the pointers are now pointing to different, invalid memory addresses. to eliminate this problem in the motion model, the model will record the position of the body object in the vector of body objects. This forms a vector. Each entry in the vector represents one cross-\/body force for the current body. The integer entry in the vector is the integer index of the body that the cross-\/body force is linked to. \begin{DoxyReturn}{Returns}
+Returns a vector of integers. Returned variable is passed by reference. Each entry in the vector represents one cross-\/body force for the current body. The integer entry in the vector is the integer index of the body that the cross-\/body force is linked to. 
+\end{DoxyReturn}
+\hypertarget{classosea_1_1ofreq_1_1_motion_model_a63d9e54f8cbb434f67753fe737a89ee6}{\index{osea\-::ofreq\-::\-Motion\-Model@{osea\-::ofreq\-::\-Motion\-Model}!list\-Comp\-Cross\-Bod\-\_\-user@{list\-Comp\-Cross\-Bod\-\_\-user}}
+\index{list\-Comp\-Cross\-Bod\-\_\-user@{list\-Comp\-Cross\-Bod\-\_\-user}!osea::ofreq::MotionModel@{osea\-::ofreq\-::\-Motion\-Model}}
+\subsubsection[{list\-Comp\-Cross\-Bod\-\_\-user}]{\setlength{\rightskip}{0pt plus 5cm}int \& Motion\-Model\-::list\-Comp\-Cross\-Bod\-\_\-user (
+\begin{DoxyParamCaption}
+\item[{int}]{crossbod\-In}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_motion_model_a63d9e54f8cbb434f67753fe737a89ee6}
+
+
+Records the index of the body object referenced by the cross body. 
+
+Records the index of the body object referenced by the cross body. Each body object contains a list of pointers for the cross-\/body objects. Each cross-\/body force has a pointer associated with it. This pointer points to another body object. This allows comparison between memory addresses of different body objects. However, when the body objects are copied over, the pointers are now pointing to different, invalid memory addresses. to eliminate this problem in the motion model, the model will record the position of the body object in the vector of body objects. This forms a vector. Each entry in the vector represents one cross-\/body force for the current body. The integer entry in the vector is the integer index of the body that the cross-\/body force is linked to. 
+\begin{DoxyParams}{Parameters}
+{\em crossbod\-In} & Integer parameter. Specified the index of which value to retrieve from the list of values for the Cross\-Bod indices. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns an integer. Variable passed by reference. Returned integer is the index of the \hyperlink{classosea_1_1ofreq_1_1_body}{Body} object referenced by the cross-\/body force located at the index specified by Cross\-Bod. Example\-: Cross\-Bod (index) -\/$>$ (vector of cross body forces) -\/$>$ Index of \hyperlink{classosea_1_1ofreq_1_1_body}{Body} object that cross-\/body force points to. 
+\end{DoxyReturn}
+\hypertarget{classosea_1_1ofreq_1_1_motion_model_ae63712716bcaff9ff263d9728f39323a}{\index{osea\-::ofreq\-::\-Motion\-Model@{osea\-::ofreq\-::\-Motion\-Model}!list\-Data@{list\-Data}}
+\index{list\-Data@{list\-Data}!osea::ofreq::MotionModel@{osea\-::ofreq\-::\-Motion\-Model}}
+\subsubsection[{list\-Data}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ {\bf Body} $>$ \& Motion\-Model\-::list\-Data (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_motion_model_ae63712716bcaff9ff263d9728f39323a}
+
+
+Provides direct access to the list of Bodies used as data for the motion model. 
+
+\begin{DoxyReturn}{Returns}
+Reference to the vector of \hyperlink{classosea_1_1ofreq_1_1_body}{Body} objects used as data. Variable passed by reference. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classosea_1_1ofreq_1_1_body}{Body} 
+\end{DoxySeeAlso}
+\hypertarget{classosea_1_1ofreq_1_1_motion_model_a1d7e2b929c15789259aaf732efd7f752}{\index{osea\-::ofreq\-::\-Motion\-Model@{osea\-::ofreq\-::\-Motion\-Model}!list\-Data@{list\-Data}}
+\index{list\-Data@{list\-Data}!osea::ofreq::MotionModel@{osea\-::ofreq\-::\-Motion\-Model}}
+\subsubsection[{list\-Data}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Body} \& Motion\-Model\-::list\-Data (
+\begin{DoxyParamCaption}
+\item[{int}]{data\-In}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_motion_model_a1d7e2b929c15789259aaf732efd7f752}
+
+
+Direct access to an individual \hyperlink{classosea_1_1ofreq_1_1_body}{Body} from the list of Data contained in the motion model. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data\-In} & Integer specifying which \hyperlink{classosea_1_1ofreq_1_1_body}{Body} object to access from the list of Data. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns reference to the \hyperlink{classosea_1_1ofreq_1_1_body}{Body} object specified by data\-In. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classosea_1_1ofreq_1_1_motion_model_ae63712716bcaff9ff263d9728f39323a}{list\-Data()} 
+\end{DoxySeeAlso}
+\hypertarget{classosea_1_1ofreq_1_1_motion_model_a608c356b5eb21fee5036a44124497815}{\index{osea\-::ofreq\-::\-Motion\-Model@{osea\-::ofreq\-::\-Motion\-Model}!list\-Equation@{list\-Equation}}
+\index{list\-Equation@{list\-Equation}!osea::ofreq::MotionModel@{osea\-::ofreq\-::\-Motion\-Model}}
+\subsubsection[{list\-Equation}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ {\bf Equationof\-Motion} $>$ \& Motion\-Model\-::list\-Equation (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_motion_model_a608c356b5eb21fee5036a44124497815}
+
+
+Provides direct access to the list of equation of motion objects used in the motion model. 
+
+\begin{DoxyReturn}{Returns}
+Reference to the vector of \hyperlink{classosea_1_1ofreq_1_1_equationof_motion}{Equationof\-Motion} objects. Variable passed by reference. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classosea_1_1ofreq_1_1_equationof_motion}{Equationof\-Motion} 
+\end{DoxySeeAlso}
+\hypertarget{classosea_1_1ofreq_1_1_motion_model_a444cd6e6ca1aea0822545b732118aeb9}{\index{osea\-::ofreq\-::\-Motion\-Model@{osea\-::ofreq\-::\-Motion\-Model}!list\-Equation@{list\-Equation}}
+\index{list\-Equation@{list\-Equation}!osea::ofreq::MotionModel@{osea\-::ofreq\-::\-Motion\-Model}}
+\subsubsection[{list\-Equation}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Equationof\-Motion} \& Motion\-Model\-::list\-Equation (
+\begin{DoxyParamCaption}
+\item[{int}]{eq\-In}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_motion_model_a444cd6e6ca1aea0822545b732118aeb9}
+
+
+Direct access to an individual \hyperlink{classosea_1_1ofreq_1_1_equationof_motion}{Equationof\-Motion} object from the list of Equations contained in the motion model. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em eq\-In} & Integer specifying which \hyperlink{classosea_1_1ofreq_1_1_equationof_motion}{Equationof\-Motion} object to access from the list of Equations \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns reference to the \hyperlink{classosea_1_1ofreq_1_1_equationof_motion}{Equationof\-Motion} object specified by eq\-In. 
+\end{DoxyReturn}
+\hypertarget{classosea_1_1ofreq_1_1_motion_model_a81ed21162a09ffce06043f3a7fb4213d}{\index{osea\-::ofreq\-::\-Motion\-Model@{osea\-::ofreq\-::\-Motion\-Model}!Max\-Data\-Index@{Max\-Data\-Index}}
+\index{Max\-Data\-Index@{Max\-Data\-Index}!osea::ofreq::MotionModel@{osea\-::ofreq\-::\-Motion\-Model}}
+\subsubsection[{Max\-Data\-Index}]{\setlength{\rightskip}{0pt plus 5cm}int Motion\-Model\-::\-Max\-Data\-Index (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_motion_model_a81ed21162a09ffce06043f3a7fb4213d}
+
+
+Returns the maximum number of the data index. 
+
+Returns the maximum number of the data index. This may be the same as the number of equations. Very few equations may be used. However, if they are custom equations, they must avoid the first six indices, which are reserved for standard 6dof models. \begin{DoxyReturn}{Returns}
+Returns integer number representing the maximum number of the data index found from all equations. 
+\end{DoxyReturn}
+\hypertarget{classosea_1_1ofreq_1_1_motion_model_a0a228c24a524e2a1c6636d3121a842be}{\index{osea\-::ofreq\-::\-Motion\-Model@{osea\-::ofreq\-::\-Motion\-Model}!num\-Equations@{num\-Equations}}
+\index{num\-Equations@{num\-Equations}!osea::ofreq::MotionModel@{osea\-::ofreq\-::\-Motion\-Model}}
+\subsubsection[{num\-Equations}]{\setlength{\rightskip}{0pt plus 5cm}int Motion\-Model\-::num\-Equations (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_motion_model_a0a228c24a524e2a1c6636d3121a842be}
+
+
+Reports the number of equations used in the motion model. 
+
+Reports the number of equations used in the motion model. This lets the \hyperlink{classosea_1_1ofreq_1_1mat_body}{mat\-Body} object know how many equations to prepare for. \begin{DoxyReturn}{Returns}
+Returns the number of equations used in the motion model. 
+\end{DoxyReturn}
+\hypertarget{classosea_1_1ofreq_1_1_motion_model_ac62401cfe337e9404867819c529f2300}{\index{osea\-::ofreq\-::\-Motion\-Model@{osea\-::ofreq\-::\-Motion\-Model}!ref\-Data\-Index@{ref\-Data\-Index}}
+\index{ref\-Data\-Index@{ref\-Data\-Index}!osea::ofreq::MotionModel@{osea\-::ofreq\-::\-Motion\-Model}}
+\subsubsection[{ref\-Data\-Index}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ int $>$ \& Motion\-Model\-::ref\-Data\-Index (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_motion_model_ac62401cfe337e9404867819c529f2300}
+
+
+Returns a vector containing all equation indices. This may be the same as the number of equations. Very few equations may be used. However, if they are custom equations, they must avoid the first six indices, which are reserved for standard 6dof models. 
+
+\begin{DoxyReturn}{Returns}
+Returns the highest count of the equation index. 
+\end{DoxyReturn}
+\hypertarget{classosea_1_1ofreq_1_1_motion_model_a713b903a3e78141fff2af9c045755ffb}{\index{osea\-::ofreq\-::\-Motion\-Model@{osea\-::ofreq\-::\-Motion\-Model}!set\-Body@{set\-Body}}
+\index{set\-Body@{set\-Body}!osea::ofreq::MotionModel@{osea\-::ofreq\-::\-Motion\-Model}}
+\subsubsection[{set\-Body}]{\setlength{\rightskip}{0pt plus 5cm}void Motion\-Model\-::set\-Body (
+\begin{DoxyParamCaption}
+\item[{int}]{bod}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_motion_model_a713b903a3e78141fff2af9c045755ffb}
+
+
+Sets the index for the body that all calculations are based on. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Integer} & input specifying the number of the body to use. Integer corresponds to the sequence of bodies in the vector supplied with the body. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classosea_1_1ofreq_1_1_motion_model_a5097540bb98ad753594d41890e6ef30d}{\index{osea\-::ofreq\-::\-Motion\-Model@{osea\-::ofreq\-::\-Motion\-Model}!set\-Description@{set\-Description}}
+\index{set\-Description@{set\-Description}!osea::ofreq::MotionModel@{osea\-::ofreq\-::\-Motion\-Model}}
+\subsubsection[{set\-Description}]{\setlength{\rightskip}{0pt plus 5cm}void Motion\-Model\-::set\-Description (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{Desc\-In}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_motion_model_a5097540bb98ad753594d41890e6ef30d}
+
+
+Description for the motion model. 
+
+Description for the motion model. Used by the user to provide a more extensive description of the motion model. Used purely for user information. Not used for model identification. 
+\begin{DoxyParams}{Parameters}
+{\em Desc\-In} & std\-::string. The description for the motion model. Variable passed by value. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classosea_1_1ofreq_1_1_motion_model_a18e880b4a0b1a1d1c385bc3be3524440}{\index{osea\-::ofreq\-::\-Motion\-Model@{osea\-::ofreq\-::\-Motion\-Model}!set\-Freq@{set\-Freq}}
+\index{set\-Freq@{set\-Freq}!osea::ofreq::MotionModel@{osea\-::ofreq\-::\-Motion\-Model}}
+\subsubsection[{set\-Freq}]{\setlength{\rightskip}{0pt plus 5cm}void Motion\-Model\-::set\-Freq (
+\begin{DoxyParamCaption}
+\item[{double}]{freq}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_motion_model_a18e880b4a0b1a1d1c385bc3be3524440}
+
+
+Sets the current operating frequency for the function. Only necessary when calculating true forces and using derivatives defined in the motion model. Otherwise, you can safely ignore this function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Double} & precision value that sets the current wave frequency value. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classosea_1_1ofreq_1_1_motion_model_a92f6b9639a82aef868dbaf8445276d3c}{\index{osea\-::ofreq\-::\-Motion\-Model@{osea\-::ofreq\-::\-Motion\-Model}!setlist\-Body@{setlist\-Body}}
+\index{setlist\-Body@{setlist\-Body}!osea::ofreq::MotionModel@{osea\-::ofreq\-::\-Motion\-Model}}
+\subsubsection[{setlist\-Body}]{\setlength{\rightskip}{0pt plus 5cm}void Motion\-Model\-::setlist\-Body (
+\begin{DoxyParamCaption}
+\item[{std\-::vector$<$ {\bf Body} $>$ \&}]{list\-Bod\-In}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_motion_model_a92f6b9639a82aef868dbaf8445276d3c}
+
+
+Inputs the list of body data. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em list\-Bod\-In} & The vector of body objects to input. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classosea_1_1ofreq_1_1_motion_model_a42d989727028c18c59ba04f958bc7b74}{\index{osea\-::ofreq\-::\-Motion\-Model@{osea\-::ofreq\-::\-Motion\-Model}!set\-Name@{set\-Name}}
+\index{set\-Name@{set\-Name}!osea::ofreq::MotionModel@{osea\-::ofreq\-::\-Motion\-Model}}
+\subsubsection[{set\-Name}]{\setlength{\rightskip}{0pt plus 5cm}void Motion\-Model\-::set\-Name (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{name\-In}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_motion_model_a42d989727028c18c59ba04f958bc7b74}
+
+
+Name for the motion model. 
+
+Name for the motion model. Used by the user to identify the motion model. 
+\begin{DoxyParams}{Parameters}
+{\em name\-In} & The name to set for the motion model. std\-::string variable. Variable passed by value. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classosea_1_1ofreq_1_1_motion_model_a4d3e0590135e1a9f7ce954406f99ff44}{\index{osea\-::ofreq\-::\-Motion\-Model@{osea\-::ofreq\-::\-Motion\-Model}!use\-Force\-Active\-\_\-hydro@{use\-Force\-Active\-\_\-hydro}}
+\index{use\-Force\-Active\-\_\-hydro@{use\-Force\-Active\-\_\-hydro}!osea::ofreq::MotionModel@{osea\-::ofreq\-::\-Motion\-Model}}
+\subsubsection[{use\-Force\-Active\-\_\-hydro}]{\setlength{\rightskip}{0pt plus 5cm}void Motion\-Model\-::use\-Force\-Active\-\_\-hydro (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{force, }
+\item[{unsigned int}]{eqn}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_motion_model_a4d3e0590135e1a9f7ce954406f99ff44}
+
+
+Passes information to the object to use input coefficients from the entry specified. 
+
+Passes information to the object to use input coefficients from the entry specified. Limits inputs to only the force object type specified by the method. Calls to use\-Force methods are cumulative. Sucessive calls to different entries in the same force sequence will add their coefficients to the sets for evaluation. Can be combined with other use\-Force methods. Multiple calls to the same use\-Force method with the same index coordinates are not cumulative. An input coefficient can either be on or off, not multiple instances of the exact same coefficient. 
+\begin{DoxyParams}{Parameters}
+{\em force} & Integer specifying which force to use in the set of forces for the given force type. \\
+\hline
+{\em eqn} & Integer specifying which equation to use in the selected force. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classosea_1_1ofreq_1_1_motion_model_aaf761fac4693612a10771e38993431a0}{\index{osea\-::ofreq\-::\-Motion\-Model@{osea\-::ofreq\-::\-Motion\-Model}!use\-Force\-Active\-\_\-user@{use\-Force\-Active\-\_\-user}}
+\index{use\-Force\-Active\-\_\-user@{use\-Force\-Active\-\_\-user}!osea::ofreq::MotionModel@{osea\-::ofreq\-::\-Motion\-Model}}
+\subsubsection[{use\-Force\-Active\-\_\-user}]{\setlength{\rightskip}{0pt plus 5cm}void Motion\-Model\-::use\-Force\-Active\-\_\-user (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{force, }
+\item[{unsigned int}]{eqn}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_motion_model_aaf761fac4693612a10771e38993431a0}
+
+
+Passes information to the object to use input coefficients from the entry specified. 
+
+Passes information to the object to use input coefficients from the entry specified. Limits inputs to only the force object type specified by the method. Calls to use\-Force methods are cumulative. Sucessive calls to different entries in the same force sequence will add their coefficients to the sets for evaluation. Can be combined with other use\-Force methods. Multiple calls to the same use\-Force method with the same index coordinates are not cumulative. An input coefficient can either be on or off, not multiple instances of the exact same coefficient. 
+\begin{DoxyParams}{Parameters}
+{\em force} & Integer specifying which force to use in the set of forces for the given force type. \\
+\hline
+{\em eqn} & Integer specifying which equation to use in the selected force. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classosea_1_1ofreq_1_1_motion_model_abfd6e4a22ec23d7ee462adb737fab3f2}{\index{osea\-::ofreq\-::\-Motion\-Model@{osea\-::ofreq\-::\-Motion\-Model}!use\-Force\-Cross\-\_\-hydro@{use\-Force\-Cross\-\_\-hydro}}
+\index{use\-Force\-Cross\-\_\-hydro@{use\-Force\-Cross\-\_\-hydro}!osea::ofreq::MotionModel@{osea\-::ofreq\-::\-Motion\-Model}}
+\subsubsection[{use\-Force\-Cross\-\_\-hydro}]{\setlength{\rightskip}{0pt plus 5cm}void Motion\-Model\-::use\-Force\-Cross\-\_\-hydro (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{force, }
+\item[{unsigned int}]{ord, }
+\item[{unsigned int}]{eqn, }
+\item[{unsigned int}]{var}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_motion_model_abfd6e4a22ec23d7ee462adb737fab3f2}
+
+
+Passes information to the object to use input coefficients from the entry specified. 
+
+Passes information to the object to use input coefficients from the entry specified. Limits inputs to only the force object type specified by the method. Calls to use\-Force methods are cumulative. Sucessive calls to different entries in the same force sequence will add their coefficients to the sets for evaluation. Can be combined with other use\-Force methods. Multiple calls to the same use\-Force method with the same index coordinates are not cumulative. An input coefficient can either be on or off, not multiple instances of the exact same coefficient. 
+\begin{DoxyParams}{Parameters}
+{\em force} & Integer specifying which force to use in the set of forces for the given force type. \\
+\hline
+{\em ord} & Integer specifying which order of derviative to use for the selected force. \\
+\hline
+{\em eqn} & Integer specifying which equation to use in the selected force. \\
+\hline
+{\em var} & Integer specifying which variable to use from the selected equation. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classosea_1_1ofreq_1_1_motion_model_a1159117995080d2b62e50fceaeb29778}{\index{osea\-::ofreq\-::\-Motion\-Model@{osea\-::ofreq\-::\-Motion\-Model}!use\-Force\-Cross\-\_\-user@{use\-Force\-Cross\-\_\-user}}
+\index{use\-Force\-Cross\-\_\-user@{use\-Force\-Cross\-\_\-user}!osea::ofreq::MotionModel@{osea\-::ofreq\-::\-Motion\-Model}}
+\subsubsection[{use\-Force\-Cross\-\_\-user}]{\setlength{\rightskip}{0pt plus 5cm}void Motion\-Model\-::use\-Force\-Cross\-\_\-user (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{force, }
+\item[{unsigned int}]{ord, }
+\item[{unsigned int}]{eqn, }
+\item[{unsigned int}]{var}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_motion_model_a1159117995080d2b62e50fceaeb29778}
+
+
+Passes information to the object to use input coefficients from the entry specified. 
+
+Passes information to the object to use input coefficients from the entry specified. Limits inputs to only the force object type specified by the method. Calls to use\-Force methods are cumulative. Sucessive calls to different entries in the same force sequence will add their coefficients to the sets for evaluation. Can be combined with other use\-Force methods. Multiple calls to the same use\-Force method with the same index coordinates are not cumulative. An input coefficient can either be on or off, not multiple instances of the exact same coefficient. 
+\begin{DoxyParams}{Parameters}
+{\em force} & Integer specifying which force to use in the set of forces for the given force type. \\
+\hline
+{\em ord} & Integer specifying which order of derviative to use for the selected force. \\
+\hline
+{\em eqn} & Integer specifying which equation to use in the selected force. \\
+\hline
+{\em var} & Integer specifying which variable to use from the selected equation. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classosea_1_1ofreq_1_1_motion_model_aecaf9f0261355cff2acf602acd728644}{\index{osea\-::ofreq\-::\-Motion\-Model@{osea\-::ofreq\-::\-Motion\-Model}!use\-Force\-Mass@{use\-Force\-Mass}}
+\index{use\-Force\-Mass@{use\-Force\-Mass}!osea::ofreq::MotionModel@{osea\-::ofreq\-::\-Motion\-Model}}
+\subsubsection[{use\-Force\-Mass}]{\setlength{\rightskip}{0pt plus 5cm}void Motion\-Model\-::use\-Force\-Mass (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{eqn, }
+\item[{unsigned int}]{var}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_motion_model_aecaf9f0261355cff2acf602acd728644}
+
+
+Passes information to the object to use input coefficients from the entry specified. 
+
+Passes information to the object to use input coefficients from the entry specified. Limits inputs to only the force object type specified by the method. Calls to use\-Force methods are cumulative. Sucessive calls to different entries in the same force sequence will add their coefficients to the sets for evaluation. Can be combined with other use\-Force methods. Multiple calls to the same use\-Force method with the same index coordinates are not cumulative. An input coefficient can either be on or off, not multiple instances of the exact same coefficient. 
+\begin{DoxyParams}{Parameters}
+{\em eqn} & Integer specifying which equation to use in the selected force. \\
+\hline
+{\em var} & Integer specifying which variable to use from the selected equation. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classosea_1_1ofreq_1_1_motion_model_ae3d2c7527ea2daddc6a85b6e02febb45}{\index{osea\-::ofreq\-::\-Motion\-Model@{osea\-::ofreq\-::\-Motion\-Model}!use\-Force\-React\-\_\-hydro@{use\-Force\-React\-\_\-hydro}}
+\index{use\-Force\-React\-\_\-hydro@{use\-Force\-React\-\_\-hydro}!osea::ofreq::MotionModel@{osea\-::ofreq\-::\-Motion\-Model}}
+\subsubsection[{use\-Force\-React\-\_\-hydro}]{\setlength{\rightskip}{0pt plus 5cm}void Motion\-Model\-::use\-Force\-React\-\_\-hydro (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{force, }
+\item[{unsigned int}]{ord, }
+\item[{unsigned int}]{eqn, }
+\item[{unsigned int}]{var}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_motion_model_ae3d2c7527ea2daddc6a85b6e02febb45}
+
+
+Passes information to the object to use input coefficients from the entry specified. 
+
+Passes information to the object to use input coefficients from the entry specified. Limits inputs to only the force object type specified by the method. Calls to use\-Force methods are cumulative. Sucessive calls to different entries in the same force sequence will add their coefficients to the sets for evaluation. Can be combined with other use\-Force methods. Multiple calls to the same use\-Force method with the same index coordinates are not cumulative. An input coefficient can either be on or off, not multiple instances of the exact same coefficient. 
+\begin{DoxyParams}{Parameters}
+{\em force} & Integer specifying which force to use in the set of forces for the given force type. \\
+\hline
+{\em ord} & Integer specifying which order of derviative to use for the selected force. \\
+\hline
+{\em eqn} & Integer specifying which equation to use in the selected force. \\
+\hline
+{\em var} & Integer specifying which variable to use from the selected equation. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classosea_1_1ofreq_1_1_motion_model_a7db1d1ebebe216d17efd7b38f2e9deec}{\index{osea\-::ofreq\-::\-Motion\-Model@{osea\-::ofreq\-::\-Motion\-Model}!use\-Force\-React\-\_\-user@{use\-Force\-React\-\_\-user}}
+\index{use\-Force\-React\-\_\-user@{use\-Force\-React\-\_\-user}!osea::ofreq::MotionModel@{osea\-::ofreq\-::\-Motion\-Model}}
+\subsubsection[{use\-Force\-React\-\_\-user}]{\setlength{\rightskip}{0pt plus 5cm}void Motion\-Model\-::use\-Force\-React\-\_\-user (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{force, }
+\item[{unsigned int}]{ord, }
+\item[{unsigned int}]{eqn, }
+\item[{unsigned int}]{var}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_motion_model_a7db1d1ebebe216d17efd7b38f2e9deec}
+
+
+Passes information to the object to use input coefficients from the entry specified. 
+
+Passes information to the object to use input coefficients from the entry specified. Limits inputs to only the force object type specified by the method. Calls to use\-Force methods are cumulative. Sucessive calls to different entries in the same force sequence will add their coefficients to the sets for evaluation. Can be combined with other use\-Force methods. Multiple calls to the same use\-Force method with the same index coordinates are not cumulative. An input coefficient can either be on or off, not multiple instances of the exact same coefficient. 
+\begin{DoxyParams}{Parameters}
+{\em force} & Integer specifying which force to use in the set of forces for the given force type. \\
+\hline
+{\em ord} & Integer specifying which order of derviative to use for the selected force. \\
+\hline
+{\em eqn} & Integer specifying which equation to use in the selected force. \\
+\hline
+{\em var} & Integer specifying which variable to use from the selected equation. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+motionmodel.\-h\item 
+motionmodel.\-cpp\end{DoxyCompactItemize}

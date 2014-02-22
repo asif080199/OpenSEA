@@ -60,6 +60,109 @@ EqnRotation::~EqnRotation()
 
 }
 
+//------------------------------------------Function Separator --------------------------------------------------------
+std::complex<double> EqnRotation::Sum(std::complex<double> (EqnRotation::*force)(void),
+                                           std::string index, int from, int to)
+{
+    //Create variable for output
+    std::complex<double> output(0,0);        //Output variable
+
+    //Select which index to Sum over.
+    //Sum for variable
+    //-----------------------------------
+    if ((index.compare("var") == 0) ||
+            (index.compare("v") == 0) ||
+            (index.compare("V") == 0) ||
+            (index.compare("Var") == 0) ||
+            (index.compare("VAR") == 0))
+    {
+        //Check for summation limits
+        if (from == undefArg)
+        {
+            //Get limit
+            from = 0;
+        }
+
+        if (to == undefArg)
+        {
+            //Get limit
+            to = maxvar();
+        }
+
+        //Sum for variable count.
+        for (pCurVar = from ; pCurVar <= to; pCurVar++)
+        {
+            output = output + (this->*force)();
+        }
+        //Return counter to max limit
+        pCurVar = to;
+    }
+
+    //Sum for Derivative Order
+    //-----------------------------------
+    else if ((index.compare("ord") == 0) ||
+             (index.compare("o") == 0) ||
+             (index.compare("O") == 0) ||
+             (index.compare("Ord") == 0) ||
+             (index.compare("ORD") == 0))
+    {
+        //Check for summation limits
+        if (from == undefArg)
+        {
+            //Get limit
+            from = 0;
+        }
+
+        if (to == undefArg)
+        {
+            //Get limit
+            to = maxord();
+        }
+
+        //Sum for order of refDerivative.
+        for (pCurOrd = from ; pCurOrd <= to; pCurOrd++)
+        {
+            output = output + (this->*force)();
+        }
+        //Return counter to max limit
+        pCurOrd = to;
+    }
+
+    //Sum for Body
+    //-----------------------------------
+    else if ( (index.compare("bod") == 0) ||
+              (index.compare("b") == 0) ||
+              (index.compare("B") == 0) ||
+              (index.compare("Bod") == 0) ||
+              (index.compare("BOD") == 0) ||
+              (index.compare("body") == 0) ||
+              (index.compare("Body") == 0))
+    {
+        //Check for summation limits
+        if (from == undefArg)
+        {
+            //Get limit
+            from = 0;
+        }
+
+        if (to == undefArg)
+        {
+            //Get limit
+            to = maxbody();
+        }
+
+        //Sum for bodies
+        for (pBod = from ; pBod <= to; pBod++)
+        {
+            output = output + (this->*force)();
+        }
+        //Return counter to max limit
+        pBod = to;
+    }
+    //write output
+    return output;
+}
+
 //*********************************************************************************************************************
 //*********************************************************************************************************************
 //                              DO NOT EDIT ANYTHING ABOVE THIS COMMENT BLOCK
@@ -79,6 +182,85 @@ EqnRotation::~EqnRotation()
 //==========================================Section Separator =========================================================
 //Custom function definitions
 
+//------------------------------------------Function Separator --------------------------------------------------------
+std::complex<double> EqnRotation::Func1()
+{
+    return ForceMass(var()) * Ddt(var(),2);
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+std::complex<double> EqnRotation::Func2()
+{
+    return ForceReact_hydro(ord(),var()) * Ddt(var(),ord());
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+std::complex<double> EqnRotation::Func3()
+{
+    return ForceReact_user(ord(),var()) * Ddt(var(),ord());
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+std::complex<double> EqnRotation::Func4()
+{
+    return ForceCross_hydro(body(),ord(),var()) * Ddt(var(),ord(),body());
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+std::complex<double> EqnRotation::Func5()
+{
+    return Kronecker(curbody(),body(),true) *
+            Sum(
+                &EqnRotation::Func9, "ord"
+                );
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+std::complex<double> EqnRotation::Func6()
+{
+    return ForceCross_user(body(),ord(),var()) * Ddt(var(),ord(),body());
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+std::complex<double> EqnRotation::Func7()
+{
+    return Kronecker(curbody(),body(),true) *
+            Sum(
+                &EqnRotation::Func8, "ord"
+                );
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+std::complex<double> EqnRotation::Func8()
+{
+    return Sum(
+                &EqnRotation::Func6, "var"
+                );
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+std::complex<double> EqnRotation::Func9()
+{
+    return Sum(
+                &EqnRotation::Func4, "var", 0, 5
+                );
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+std::complex<double> EqnRotation::Func10()
+{
+    return Sum(
+                &EqnRotation::Func2, "var", 0, 5
+                );
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+std::complex<double> EqnRotation::Func11()
+{
+    return Sum(
+                &EqnRotation::Func3,"var"
+                );
+}
 
 //==========================================Section Separator =========================================================
 //Protected Members
@@ -90,48 +272,26 @@ std::complex<double> EqnRotation::setFormula()
 
     //Add in mass objects
     valOut = Sum(
-                 [&]() -> std::complex<double> {return ForceMass(var()) * Ddt(var(),2);},
-                 "var"
+                 &EqnRotation::Func1, "var"
                  );
 
     //Add in reactive force objects
     valOut += Sum(
-                  Sum(
-                       [&]() -> std::complex<double> {return ForceReact_hydro(ord(),var()) * Ddt(var(),ord());},
-                       "var",
-                       0,
-                       5),
-                  "ord",
-                   0,
-                   2);
+                  &EqnRotation::Func10, "ord", 0, 2
+                  );
+
     valOut += Sum(
-                  Sum(
-                       [&]() -> std::complex<double> {return ForceReact_user(ord(),var()) * Ddt(var(),ord());},
-                       "var"),
-                  "ord");
+                  &EqnRotation::Func11, "ord"
+                  );
 
     //Add in cross-body force objects
     valOut += Sum(
-                  [&]() -> std::complex<double> {return Kronecker(curbody(),body(),true) *
-                  Sum(
-                      Sum(
-                           [&]() -> std::complex<double> {return ForceCross_hydro(body(),ord(),var()) *
-                                                         Ddt(var(),ord(),body());},
-                           "var",
-                           0,
-                           5),
-                      "ord");},
-                  "body");
+                  &EqnRotation::Func5, "body"
+                  );
 
     valOut += Sum(
-                  [&]() -> std::complex<double> {return Kronecker(curbody(),body(),true) *
-                  Sum(
-                      Sum(
-                          [&]() -> std::complex<double> {return ForceCross_user(body(),ord(),var()) *
-                                                        Ddt(var(),ord(),body());},
-                          "var"),
-                      "ord");},
-                  "body");
+                  &EqnRotation::Func6, "body"
+                  );
 
     //Add in active force objects.
     //Active forces must be entered negative to account for the rearranged equation.

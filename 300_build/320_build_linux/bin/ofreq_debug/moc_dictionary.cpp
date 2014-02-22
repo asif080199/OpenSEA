@@ -17,7 +17,7 @@
 #endif
 
 QT_BEGIN_MOC_NAMESPACE
-static const uint qt_meta_data_Dictionary[] = {
+static const uint qt_meta_data_osea__Dictionary[] = {
 
  // content:
        6,       // revision
@@ -31,57 +31,59 @@ static const uint qt_meta_data_Dictionary[] = {
        0,       // signalCount
 
  // slots: signature, parameters, type, tag, flags
-      18,   12,   11,   11, 0x0a,
-      49,   41,   11,   11, 0x0a,
+      24,   18,   17,   17, 0x0a,
+      55,   47,   17,   17, 0x0a,
 
        0        // eod
 };
 
-static const char qt_meta_stringdata_Dictionary[] = {
-    "Dictionary\0\0input\0setObject(ObjectGroup)\0"
-    "ptInput\0setSystem(System*)\0"
+static const char qt_meta_stringdata_osea__Dictionary[] = {
+    "osea::Dictionary\0\0input\0setObject(ObjectGroup)\0"
+    "ptInput\0setSystem(ofreq::System*)\0"
 };
 
-void Dictionary::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
+void osea::Dictionary::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
 {
     if (_c == QMetaObject::InvokeMetaMethod) {
         Q_ASSERT(staticMetaObject.cast(_o));
         Dictionary *_t = static_cast<Dictionary *>(_o);
         switch (_id) {
         case 0: _t->setObject((*reinterpret_cast< ObjectGroup(*)>(_a[1]))); break;
-        case 1: _t->setSystem((*reinterpret_cast< System*(*)>(_a[1]))); break;
+        case 1: _t->setSystem((*reinterpret_cast< ofreq::System*(*)>(_a[1]))); break;
         default: ;
         }
     }
 }
 
-const QMetaObjectExtraData Dictionary::staticMetaObjectExtraData = {
+const QMetaObjectExtraData osea::Dictionary::staticMetaObjectExtraData = {
     0,  qt_static_metacall 
 };
 
-const QMetaObject Dictionary::staticMetaObject = {
-    { &QObject::staticMetaObject, qt_meta_stringdata_Dictionary,
-      qt_meta_data_Dictionary, &staticMetaObjectExtraData }
+const QMetaObject osea::Dictionary::staticMetaObject = {
+    { &QObject::staticMetaObject, qt_meta_stringdata_osea__Dictionary,
+      qt_meta_data_osea__Dictionary, &staticMetaObjectExtraData }
 };
 
 #ifdef Q_NO_DATA_RELOCATION
-const QMetaObject &Dictionary::getStaticMetaObject() { return staticMetaObject; }
+const QMetaObject &osea::Dictionary::getStaticMetaObject() { return staticMetaObject; }
 #endif //Q_NO_DATA_RELOCATION
 
-const QMetaObject *Dictionary::metaObject() const
+const QMetaObject *osea::Dictionary::metaObject() const
 {
     return QObject::d_ptr->metaObject ? QObject::d_ptr->metaObject : &staticMetaObject;
 }
 
-void *Dictionary::qt_metacast(const char *_clname)
+void *osea::Dictionary::qt_metacast(const char *_clname)
 {
     if (!_clname) return 0;
-    if (!strcmp(_clname, qt_meta_stringdata_Dictionary))
+    if (!strcmp(_clname, qt_meta_stringdata_osea__Dictionary))
         return static_cast<void*>(const_cast< Dictionary*>(this));
+    if (!strcmp(_clname, "osea::ofreq::oFreqCore"))
+        return static_cast< osea::ofreq::oFreqCore*>(const_cast< Dictionary*>(this));
     return QObject::qt_metacast(_clname);
 }
 
-int Dictionary::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
+int osea::Dictionary::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 {
     _id = QObject::qt_metacall(_c, _id, _a);
     if (_id < 0)

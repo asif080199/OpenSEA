@@ -45,6 +45,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -89,8 +90,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="functions_func_0x65.html#index_e"><span>e</span></a></li>
       <li><a href="functions_func_0x66.html#index_f"><span>f</span></a></li>
       <li><a href="functions_func_0x67.html#index_g"><span>g</span></a></li>
-      <li><a href="functions_func_0x68.html#index_h"><span>h</span></a></li>
-      <li><a href="functions_func_0x69.html#index_i"><span>i</span></a></li>
       <li><a href="functions_func_0x6b.html#index_k"><span>k</span></a></li>
       <li><a href="functions_func_0x6c.html#index_l"><span>l</span></a></li>
       <li><a href="functions_func_0x6d.html#index_m"><span>m</span></a></li>
@@ -126,7 +125,7 @@ $(document).ready(function(){initNavTree('functions_func_0x63.html','');});
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Variables</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -139,37 +138,30 @@ $(document).ready(function(){initNavTree('functions_func_0x63.html','');});
 &#160;
 
 <h3><a class="anchor" id="index_c"></a>- c -</h3><ul>
-<li>calcCoefficient()
-: <a class="el" href="classmotion_model.html#a59d2d9f4c425492844921712fb5690cd">motionModel</a>
-</li>
 <li>calcOutput()
-: <a class="el" href="class_global_solution.html#adf90922a97153ce858da530e20bc3f4d">GlobalSolution</a>
-, <a class="el" href="class_output_derived.html#a7a65864e45519edfe7fe45c408457f41">OutputDerived</a>
+: <a class="el" href="classosea_1_1ofreq_1_1_global_solution.html#adf90922a97153ce858da530e20bc3f4d">osea::ofreq::GlobalSolution</a>
+, <a class="el" href="classosea_1_1ofreq_1_1_output_derived.html#a5600a2c7f70052a8bafce79e15e1aa92">osea::ofreq::OutputDerived</a>
 </li>
-<li>CalculateOutputs()
-: <a class="el" href="class_motion_solver.html#ae072dd17e5535185100a4505adf2c627">MotionSolver</a>
+<li>calculateOutputs()
+: <a class="el" href="classosea_1_1ofreq_1_1_motion_solver.html#a28190e2b9c937f8889ba37db35069c52">osea::ofreq::MotionSolver</a>
 </li>
 <li>clearFiles()
-: <a class="el" href="class_file_writer.html#a74a40c3c47b4d12582a2aa44c38d9d07">FileWriter</a>
+: <a class="el" href="classosea_1_1ofreq_1_1_file_writer.html#a74a40c3c47b4d12582a2aa44c38d9d07">osea::ofreq::FileWriter</a>
 </li>
-<li>Coefficients()
-: <a class="el" href="class_equation.html#abe2b02e37a07bddaf1040d2d24c3564c">Equation</a>
-, <a class="el" href="classmat_active_force.html#a56526b6497fc513d211526584db50470">matActiveForce</a>
+<li>clearForce()
+: <a class="el" href="classosea_1_1ofreq_1_1_system.html#ac2c9763916fdfe6a7858c0efa87504c2">osea::ofreq::System</a>
 </li>
-<li>ControlInput()
-: <a class="el" href="class_control_input.html#a50dc4cde4f6410238119971b6934c63a">ControlInput</a>
+<li>CoefficientOnly()
+: <a class="el" href="classosea_1_1ofreq_1_1_motion_model.html#af4d34bfa133e77f1527cee1aa36b02f4">osea::ofreq::MotionModel</a>
 </li>
-<li>convertPolarFormToComplexNumber()
-: <a class="el" href="classforce_active.html#a03fb66815043f4c5e6d08773ffb46332">forceActive</a>
-</li>
-<li>convertRectangularFormToComplexNumber()
-: <a class="el" href="classforce_active.html#af09ddfe88141c00bd8fab17593563374">forceActive</a>
+<li>convertComplex()
+: <a class="el" href="classosea_1_1_dictionary.html#ac714952a7fcf99ab69de015c606322ad">osea::Dictionary</a>
 </li>
 <li>Copy()
-: <a class="el" href="class_body.html#a370dc9a5702d93d9295a9618ebdef456">Body</a>
+: <a class="el" href="classosea_1_1ofreq_1_1_body.html#a370dc9a5702d93d9295a9618ebdef456">osea::ofreq::Body</a>
 </li>
 <li>createDir()
-: <a class="el" href="class_file_writer.html#ae6e5afc50484694d033628c954c62df3">FileWriter</a>
+: <a class="el" href="classosea_1_1ofreq_1_1_file_writer.html#ae8deeb9fc4323edf326fb0dadc4f9380">osea::ofreq::FileWriter</a>
 </li>
 </ul>
 </div><!-- contents -->
@@ -177,7 +169,7 @@ $(document).ready(function(){initNavTree('functions_func_0x63.html','');});
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Thu Aug 22 2013 20:08:31 for oFreq by
+    <li class="footer">Generated on Sat Oct 12 2013 10:41:59 for oFreq by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.2 </li>
   </ul>

@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['bodiesinput',['Bodiesinput',['../class_bodiesinput.html',1,'']]],
-  ['body',['Body',['../class_body.html',1,'']]]
+  ['body',['Body',['../classosea_1_1ofreq_1_1_body.html',1,'osea::ofreq']]]
 ];

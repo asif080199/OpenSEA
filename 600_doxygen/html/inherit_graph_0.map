@@ -1,3 +1,34 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$class_body.html" title="Body" alt="" coords="6,5,61,32"/>
+<area shape="rect" id="node1" href="$classosea_1_1ofreq_1_1o_freq_core.html" title="The core oFreq class. All oFreq classes inherit from this class." alt="" coords="6,487,173,513"/>
+<area shape="rect" id="node3" href="$classosea_1_1_dictionary.html" title="osea::Dictionary" alt="" coords="262,107,383,133"/>
+<area shape="rect" id="node11" href="$classosea_1_1_file_reader.html" title="osea::FileReader" alt="" coords="259,157,387,184"/>
+<area shape="rect" id="node13" href="$classosea_1_1_object_group.html" title="The ObjectGroup class contains groupings of object definitions captured from an input file..." alt="" coords="255,816,391,843"/>
+<area shape="rect" id="node15" href="$classosea_1_1ofreq_1_1_body.html" title="osea::ofreq::Body" alt="" coords="257,867,389,893"/>
+<area shape="rect" id="node17" href="$classosea_1_1ofreq_1_1_derivative.html" title="osea::ofreq::Derivative" alt="" coords="242,917,403,944"/>
+<area shape="rect" id="node19" href="$classosea_1_1ofreq_1_1_equation.html" title="osea::ofreq::Equation" alt="" coords="247,968,399,995"/>
+<area shape="rect" id="node21" href="$classosea_1_1ofreq_1_1_equationof_motion.html" title="osea::ofreq::EquationofMotion" alt="" coords="221,5,424,32"/>
+<area shape="rect" id="node23" href="$classosea_1_1ofreq_1_1_file_writer.html" title="osea::ofreq::FileWriter" alt="" coords="244,208,401,235"/>
+<area shape="rect" id="node25" href="$classosea_1_1ofreq_1_1_force.html" title="osea::ofreq::Force" alt="" coords="255,259,390,285"/>
+<area shape="rect" id="node33" href="$classosea_1_1ofreq_1_1mat_body.html" title="osea::ofreq::matBody" alt="" coords="245,309,400,336"/>
+<area shape="rect" id="node35" href="$classosea_1_1ofreq_1_1mat_force_active.html" title="osea::ofreq::matForceActive" alt="" coords="225,360,420,387"/>
+<area shape="rect" id="node37" href="$classosea_1_1ofreq_1_1mat_force_react.html" title="osea::ofreq::matForceReact" alt="" coords="227,411,419,437"/>
+<area shape="rect" id="node41" href="$classosea_1_1ofreq_1_1_motion_model.html" title="osea::ofreq::MotionModel" alt="" coords="233,461,412,488"/>
+<area shape="rect" id="node43" href="$classosea_1_1ofreq_1_1_motion_solver.html" title="osea::ofreq::MotionSolver" alt="" coords="233,512,412,539"/>
+<area shape="rect" id="node45" href="$classosea_1_1ofreq_1_1_output_derived.html" title="osea::ofreq::OutputDerived" alt="" coords="230,563,415,589"/>
+<area shape="rect" id="node55" href="$classosea_1_1ofreq_1_1_outputs_body.html" title="osea::ofreq::OutputsBody" alt="" coords="235,613,411,640"/>
+<area shape="rect" id="node57" href="$classosea_1_1ofreq_1_1_solution.html" title="osea::ofreq::Solution" alt="" coords="249,664,397,691"/>
+<area shape="rect" id="node59" href="$classosea_1_1ofreq_1_1_solution_set.html" title="osea::ofreq::SolutionSet" alt="" coords="239,715,407,741"/>
+<area shape="rect" id="node61" href="$classosea_1_1ofreq_1_1_system.html" title="osea::ofreq::System" alt="" coords="250,56,395,83"/>
+<area shape="rect" id="node63" href="$classosea_1_1_parser.html" title="The Parser class takes an input segment of strings and segments that segment. It strips out comments..." alt="" coords="272,765,373,792"/>
+<area shape="rect" id="node5" href="$classosea_1_1ofreq_1_1dict_bodies.html" title="osea::ofreq::dictBodies" alt="" coords="487,56,651,83"/>
+<area shape="rect" id="node7" href="$classosea_1_1ofreq_1_1dict_control.html" title="osea::ofreq::dictControl" alt="" coords="487,107,651,133"/>
+<area shape="rect" id="node9" href="$classosea_1_1ofreq_1_1dict_forces.html" title="osea::ofreq::dictForces" alt="" coords="488,157,651,184"/>
+<area shape="rect" id="node27" href="$classosea_1_1ofreq_1_1_force_active.html" title="osea::ofreq::ForceActive" alt="" coords="483,284,655,311"/>
+<area shape="rect" id="node29" href="$classosea_1_1ofreq_1_1_force_react.html" title="osea::ofreq::ForceReact" alt="" coords="484,233,655,260"/>
+<area shape="rect" id="node31" href="$classosea_1_1ofreq_1_1_force_cross.html" title="osea::ofreq::ForceCross" alt="" coords="737,233,908,260"/>
+<area shape="rect" id="node39" href="$classosea_1_1ofreq_1_1mat_force_cross.html" title="osea::ofreq::matForceCross" alt="" coords="473,411,666,437"/>
+<area shape="rect" id="node47" href="$classosea_1_1ofreq_1_1_global_solution.html" title="osea::ofreq::GlobalSolution" alt="" coords="475,563,663,589"/>
+<area shape="rect" id="node49" href="$classosea_1_1ofreq_1_1_global_acceleration.html" title="osea::ofreq::GlobalAcceleration" alt="" coords="715,613,930,640"/>
+<area shape="rect" id="node51" href="$classosea_1_1ofreq_1_1_global_motion.html" title="osea::ofreq::GlobalMotion" alt="" coords="733,512,913,539"/>
+<area shape="rect" id="node53" href="$classosea_1_1ofreq_1_1_global_velocity.html" title="osea::ofreq::GlobalVelocity" alt="" coords="729,563,917,589"/>
 </map>

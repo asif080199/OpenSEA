@@ -61,6 +61,110 @@ EqnTranslation::~EqnTranslation()
 
 }
 
+//------------------------------------------Function Separator --------------------------------------------------------
+std::complex<double> EqnTranslation::Sum(std::complex<double> (EqnTranslation::*force)(void),
+                                           std::string index, int from, int to)
+{
+    //Create variable for output
+    std::complex<double> output(0,0);        //Output variable
+
+    //Select which index to Sum over.
+    //Sum for variable
+    //-----------------------------------
+    if ((index.compare("var") == 0) ||
+            (index.compare("v") == 0) ||
+            (index.compare("V") == 0) ||
+            (index.compare("Var") == 0) ||
+            (index.compare("VAR") == 0))
+    {
+        //Check for summation limits
+        if (from == undefArg)
+        {
+            //Get limit
+            from = 0;
+        }
+
+        if (to == undefArg)
+        {
+            //Get limit
+            to = maxvar();
+        }
+
+        //Sum for variable count.
+        for (pCurVar = from ; pCurVar <= to; pCurVar++)
+        {
+            output = output + (this->*force)();
+        }
+        //Return counter to max limit
+        pCurVar = to;
+    }
+
+    //Sum for Derivative Order
+    //-----------------------------------
+    else if ((index.compare("ord") == 0) ||
+             (index.compare("o") == 0) ||
+             (index.compare("O") == 0) ||
+             (index.compare("Ord") == 0) ||
+             (index.compare("ORD") == 0))
+    {
+        //Check for summation limits
+        if (from == undefArg)
+        {
+            //Get limit
+            from = 0;
+        }
+
+        if (to == undefArg)
+        {
+            //Get limit
+            to = maxord();
+        }
+
+        //Sum for order of refDerivative.
+        for (pCurOrd = from ; pCurOrd <= to; pCurOrd++)
+        {
+            output = output + (this->*force)();
+        }
+        //Return counter to max limit
+        pCurOrd = to;
+    }
+
+    //Sum for Body
+    //-----------------------------------
+    else if ( (index.compare("bod") == 0) ||
+              (index.compare("b") == 0) ||
+              (index.compare("B") == 0) ||
+              (index.compare("Bod") == 0) ||
+              (index.compare("BOD") == 0) ||
+              (index.compare("body") == 0) ||
+              (index.compare("Body") == 0))
+    {
+        //Check for summation limits
+        if (from == undefArg)
+        {
+            //Get limit
+            from = 0;
+        }
+
+        if (to == undefArg)
+        {
+            //Get limit
+            to = maxbody();
+        }
+
+        //Sum for bodies
+        for (pBod = from ; pBod <= to; pBod++)
+        {
+            output = output + (this->*force)();
+        }
+        //Return counter to max limit
+        pBod = to;
+    }
+    //write output
+    return output;
+}
+
+
 //*********************************************************************************************************************
 //*********************************************************************************************************************
 //                              DO NOT EDIT ANYTHING ABOVE THIS COMMENT BLOCK
@@ -80,14 +184,89 @@ EqnTranslation::~EqnTranslation()
 //==========================================Section Separator =========================================================
 //Custom function definitions
 
+//------------------------------------------Function Separator --------------------------------------------------------
+complex<double> EqnTranslation::Func1()
+{
+    return ForceReact_hydro(ord(),var()) * Ddt(var(),ord());
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+complex<double> EqnTranslation::Func2()
+{
+    return Sum(
+               &EqnTranslation::Func1, "var", 0, 5
+               );
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+complex<double> EqnTranslation::Func3()
+{
+    return ForceReact_user(ord(),var()) * Ddt(var(),ord());
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+complex<double> EqnTranslation::Func4()
+{
+    return Sum(
+               &EqnTranslation::Func3, "var"
+               );
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+complex<double> EqnTranslation::Func5()
+{
+    return ForceCross_hydro(body(),ord(),var()) * Ddt(var(),ord(),body());
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+complex<double> EqnTranslation::Func6()
+{
+    return Kronecker(curbody(),body(),true) *
+            Sum(
+                &EqnTranslation::Func9,
+                "ord", 0, 2
+                );
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+complex<double> EqnTranslation::Func7()
+{
+    return ForceCross_user(body(),ord(),var()) * Ddt(var(),ord(),body());
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+complex<double> EqnTranslation::Func8()
+{
+    return Kronecker(curbody(),body(),true) *
+            Sum(
+                &EqnTranslation::Func10,
+                "ord"
+                );
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+complex<double> EqnTranslation::Func9()
+{
+    return Sum(
+                &EqnTranslation::Func5, "var", 0, 5
+                );
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+complex<double> EqnTranslation::Func10(){
+    return Sum(
+                &EqnTranslation::Func7, "var"
+                );
+}
+
 
 //==========================================Section Separator =========================================================
 //Protected Members
 
 //------------------------------------------Function Separator --------------------------------------------------------
-std::complex<double> EqnTranslation::setFormula()
+complex<double> EqnTranslation::setFormula()
 {
-    std::complex<double> valOut;
+    complex<double> valOut;
 
     //I only want to define a single equation to linear translation.  Add some if statements to change equation
     //definition, depending on equation index.
@@ -116,68 +295,24 @@ std::complex<double> EqnTranslation::setFormula()
     //Add in reactive force objects
     //Sum hydrodynamic reactive forces for derivative orders 0 - 2
     valOut += Sum(
-                  [&]() -> std::complex<double>
-                  {return Sum(
-                              [&]() -> std::complex<double>
-                              {return ForceReact_hydro(ord(),var()) * Ddt(var(),ord());},
-                              "var",
-                              0,
-                              5);},
-                  "ord",
-                  0,
-                  2);
+                  &EqnTranslation::Func2, "ord", 0, 2
+                  );
 
     //Sum user reactive forces for however high the derivative order goes.
     valOut += Sum(
-                  [&]() -> std::complex<double>
-                  {return Sum(
-                              [&]() -> std::complex<double>
-                              {return ForceReact_user(ord(),var()) * Ddt(var(),ord());},
-                              "var");},
-                  "ord");
+                  &EqnTranslation::Func4, "ord"
+                  );
 
 
     //Add in cross-body force objects
     //Add cross-body forces for hydrodynamic forces.  Sum for order from 0 to 2.
     valOut += Sum(
-                  [&]() -> std::complex<double>
-                  {return Kronecker(curbody(),body(),true) *
-                  Sum(
-                      [&]() -> std::complex<double>
-                      {return
-                      Sum(
-                          [&]() -> std::complex<double>
-                          {return
-                          ForceCross_hydro(body(),ord(),var()) * Ddt(var(),ord(),body());
-                          },
-                          "var",
-                          0,
-                          5);
-                      },
-                      "ord",
-                      0,
-                      2);
-                  },
-                  "body");
+                  &EqnTranslation::Func6, "body"
+                  );
 
     valOut += Sum(
-                  [&]() -> std::complex<double>
-                  {
-                   return Kronecker(curbody(),body(),true) *
-                   Sum(
-                       [&]() -> std::complex<double>
-                       {
-                        return
-                        Sum(
-                            [&]() -> std::complex<double>
-                            {
-                             return ForceCross_user(body(),ord(),var()) * Ddt(var(),ord(),body());
-                            },
-                            "var");
-                      },
-                      "ord");
-                  },
-                  "body");
+                  &EqnTranslation::Func8, "body"
+                  );
 
     //Add in active force objects.
     //Active forces must be entered negative to account for the rearranged equation.
@@ -187,7 +322,6 @@ std::complex<double> EqnTranslation::setFormula()
     //Write out results
     return valOut;
 }
-
 
 //==========================================Section Separator =========================================================
 //Private Members

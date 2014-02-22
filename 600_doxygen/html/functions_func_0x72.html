@@ -45,6 +45,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -89,8 +90,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="functions_func_0x65.html#index_e"><span>e</span></a></li>
       <li><a href="functions_func_0x66.html#index_f"><span>f</span></a></li>
       <li><a href="functions_func_0x67.html#index_g"><span>g</span></a></li>
-      <li><a href="functions_func_0x68.html#index_h"><span>h</span></a></li>
-      <li><a href="functions_func_0x69.html#index_i"><span>i</span></a></li>
       <li><a href="functions_func_0x6b.html#index_k"><span>k</span></a></li>
       <li><a href="functions_func_0x6c.html#index_l"><span>l</span></a></li>
       <li><a href="functions_func_0x6d.html#index_m"><span>m</span></a></li>
@@ -126,7 +125,7 @@ $(document).ready(function(){initNavTree('functions_func_0x72.html','');});
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Variables</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -139,66 +138,95 @@ $(document).ready(function(){initNavTree('functions_func_0x72.html','');});
 &#160;
 
 <h3><a class="anchor" id="index_r"></a>- r -</h3><ul>
-<li>ReadInput()
-: <a class="el" href="class_read_input.html#a181da3d718520ea9168808dde2d3e867">ReadInput</a>
+<li>readBodies()
+: <a class="el" href="classosea_1_1_file_reader.html#a44770836db4ab430139118727ace6547">osea::FileReader</a>
+</li>
+<li>readControl()
+: <a class="el" href="classosea_1_1_file_reader.html#a967cab6ec0822fd8bcf392873a8a82b1">osea::FileReader</a>
+</li>
+<li>readData()
+: <a class="el" href="classosea_1_1_file_reader.html#a814f8b06adcc190d4042509797eef6d2">osea::FileReader</a>
+</li>
+<li>readForces()
+: <a class="el" href="classosea_1_1_file_reader.html#ab78d2f631eb8e64b0a68d25eeca80be5">osea::FileReader</a>
+</li>
+<li>readHydroFile()
+: <a class="el" href="classosea_1_1_file_reader.html#aafe1acb27e25c2774c04c21a808748a4">osea::FileReader</a>
+</li>
+<li>readSeaEnv()
+: <a class="el" href="classosea_1_1_file_reader.html#a1f8a6bd4b5c53f80cc94d64d6dd1f2da">osea::FileReader</a>
 </li>
 <li>refBody()
-: <a class="el" href="class_solution.html#a95519db148bcece14c88aab53f4ced0e">Solution</a>
-, <a class="el" href="class_system.html#a3bb2a6aaa71a7b4b58afc8d92a67e214">System</a>
+: <a class="el" href="classosea_1_1ofreq_1_1_solution.html#a95519db148bcece14c88aab53f4ced0e">osea::ofreq::Solution</a>
+</li>
+<li>refBodyName()
+: <a class="el" href="classosea_1_1ofreq_1_1_body.html#ae1f5ffd42ba3b276a056eb56ec6ed5a9">osea::ofreq::Body</a>
 </li>
 <li>refCurBody()
-: <a class="el" href="class_outputs_body.html#afdb3f49b84baf1a6b2de8a5d014abfe5">OutputsBody</a>
+: <a class="el" href="classosea_1_1ofreq_1_1_outputs_body.html#afdb3f49b84baf1a6b2de8a5d014abfe5">osea::ofreq::OutputsBody</a>
 </li>
-<li>refDerivative()
-: <a class="el" href="classforce_react.html#a7a730eac8ddff77861256f53013ae18f">forceReact</a>
+<li>refDataIndex()
+: <a class="el" href="classosea_1_1ofreq_1_1_equation.html#a5964477a42f3941a968f249b89742d73">osea::ofreq::Equation</a>
+, <a class="el" href="classosea_1_1ofreq_1_1_equationof_motion.html#ae16051cbf725210aa44941d41d8800e2">osea::ofreq::EquationofMotion</a>
+, <a class="el" href="classosea_1_1ofreq_1_1_motion_model.html#ac62401cfe337e9404867819c529f2300">osea::ofreq::MotionModel</a>
+</li>
+<li>refDescription()
+: <a class="el" href="classosea_1_1ofreq_1_1_equationof_motion.html#a5be5a333dd1a5a65eaadec4b32c68fb5">osea::ofreq::EquationofMotion</a>
+</li>
+<li>ReferenceSystem()
+: <a class="el" href="classosea_1_1ofreq_1_1_system.html#a0889e1e19fe1c0c52fd385e759e5ecc7">osea::ofreq::System</a>
 </li>
 <li>refGlobalAcceleration()
-: <a class="el" href="class_outputs_body.html#a7be24ef361c2dcd9c6b9c62d58ee34bd">OutputsBody</a>
+: <a class="el" href="classosea_1_1ofreq_1_1_outputs_body.html#a7be24ef361c2dcd9c6b9c62d58ee34bd">osea::ofreq::OutputsBody</a>
 </li>
 <li>refGlobalMotion()
-: <a class="el" href="class_outputs_body.html#a54325e076109111454b5ed0633c85660">OutputsBody</a>
+: <a class="el" href="classosea_1_1ofreq_1_1_outputs_body.html#a54325e076109111454b5ed0633c85660">osea::ofreq::OutputsBody</a>
 </li>
 <li>refGlobalSolution()
-: <a class="el" href="class_outputs_body.html#a7480b88e4d67c84a2c540127c93a15d2">OutputsBody</a>
+: <a class="el" href="classosea_1_1ofreq_1_1_outputs_body.html#a7480b88e4d67c84a2c540127c93a15d2">osea::ofreq::OutputsBody</a>
 </li>
 <li>refGlobalVelocity()
-: <a class="el" href="class_outputs_body.html#a6728d42493b83db7d682ca751a8f080a">OutputsBody</a>
+: <a class="el" href="classosea_1_1ofreq_1_1_outputs_body.html#a6728d42493b83db7d682ca751a8f080a">osea::ofreq::OutputsBody</a>
 </li>
-<li>reflistBody()
-: <a class="el" href="class_system.html#a18bd5c0db7e2cf00404ee9791fa7344a">System</a>
+<li>refHeading()
+: <a class="el" href="classosea_1_1ofreq_1_1_body.html#a7aef7cce12d2dbdd3e5ab789ba8fe669">osea::ofreq::Body</a>
 </li>
-<li>reflistFreq()
-: <a class="el" href="class_outputs_body.html#a880542382668134727cb312757c11d07">OutputsBody</a>
+<li>refHydroBodName()
+: <a class="el" href="classosea_1_1ofreq_1_1_body.html#aef09a9c9b037e1b4e42fbdd1fa61c65d">osea::ofreq::Body</a>
 </li>
-<li>reflistOutputs()
-: <a class="el" href="class_system.html#aea22bb014c1b994c336842076cc86483">System</a>
+<li>refIndexEquation()
+: <a class="el" href="classosea_1_1ofreq_1_1_derivative.html#a432dcf928635e6f77801ae7b546656fe">osea::ofreq::Derivative</a>
 </li>
-<li>reflistWaveDir()
-: <a class="el" href="class_outputs_body.html#a76439db0a461f51b572c0d011cf405b7">OutputsBody</a>
+<li>refMass()
+: <a class="el" href="classosea_1_1ofreq_1_1mat_body.html#a7c0b44be2aa75ae270168849c06e6067">osea::ofreq::matBody</a>
 </li>
-<li>refOutput()
-: <a class="el" href="class_system.html#af5cdbac74348f475cc5a529134ac418d">System</a>
+<li>refName()
+: <a class="el" href="classosea_1_1ofreq_1_1_equationof_motion.html#abb7b1a4295e8406ea4f155b1f03689f6">osea::ofreq::EquationofMotion</a>
 </li>
 <li>refOutputsBody()
-: <a class="el" href="class_file_writer.html#a77da1b41e1332209f39243fcca4d1287">FileWriter</a>
+: <a class="el" href="classosea_1_1ofreq_1_1_file_writer.html#a77da1b41e1332209f39243fcca4d1287">osea::ofreq::FileWriter</a>
+</li>
+<li>refPosn()
+: <a class="el" href="classosea_1_1ofreq_1_1_body.html#ad34f38992e14d5bda02c481c311b66b3">osea::ofreq::Body</a>
+</li>
+<li>refSolnMat()
+: <a class="el" href="classosea_1_1ofreq_1_1_solution.html#a97e6a64afec87dd0fa217f1d49449ac9">osea::ofreq::Solution</a>
 </li>
 <li>refSolution()
-: <a class="el" href="class_solution.html#aa224465c8237cd395681164bee0d7f8d">Solution</a>
-, <a class="el" href="classlist_solution.html#aae2dcc67016955affa22dc752c583c59">listSolution</a>
+: <a class="el" href="classosea_1_1ofreq_1_1_body.html#ae799af5531c35381830061f6abc0bb17">osea::ofreq::Body</a>
+, <a class="el" href="classosea_1_1ofreq_1_1_solution_set.html#a5bbd01ec83ef72d924d13d9437407880">osea::ofreq::SolutionSet</a>
 </li>
-<li>refWaveDirections()
-: <a class="el" href="class_system.html#a660da11fb839d3efe76f4ab62be8bb23">System</a>
-, <a class="el" href="class_wave_directions.html#aaebd8fa635ede430b49b8c920832d87b">WaveDirections</a>
+<li>refSolutionSet()
+: <a class="el" href="classosea_1_1ofreq_1_1_output_derived.html#ae94d577f4f58c2c1f8cb2c9c650d505c">osea::ofreq::OutputDerived</a>
 </li>
-<li>refWaveFrequencies()
-: <a class="el" href="class_wave_frequencies.html#a578cb4e1172ff4f0b4551e5b872e8178">WaveFrequencies</a>
-, <a class="el" href="class_system.html#aa8af03fa5a3e8d6154d88987060a03e8">System</a>
+<li>refSubObject()
+: <a class="el" href="classosea_1_1_parser.html#a4e0dcef1ae5785c46f2fb6d935090595">osea::Parser</a>
 </li>
 <li>Reset()
-: <a class="el" href="classmotion_model.html#affba6d16fb4c63967d24edcb50967044">motionModel</a>
+: <a class="el" href="classosea_1_1ofreq_1_1_motion_model.html#a27842d2b76ab078534c0626601da446b">osea::ofreq::MotionModel</a>
 </li>
 <li>resize()
-: <a class="el" href="classlist_solution.html#a0127a6f326ca08b2c965592dda51dc1e">listSolution</a>
+: <a class="el" href="classosea_1_1ofreq_1_1_solution_set.html#a1f01e0b7d5b72c8b225f15dc8d921315">osea::ofreq::SolutionSet</a>
 </li>
 </ul>
 </div><!-- contents -->
@@ -206,7 +234,7 @@ $(document).ready(function(){initNavTree('functions_func_0x72.html','');});
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Thu Aug 22 2013 20:08:32 for oFreq by
+    <li class="footer">Generated on Sat Oct 12 2013 10:42:00 for oFreq by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.2 </li>
   </ul>

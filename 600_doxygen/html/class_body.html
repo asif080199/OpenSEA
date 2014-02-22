@@ -45,6 +45,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -93,7 +94,7 @@ $(document).ready(function(){initNavTree('class_body.html','');});
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Variables</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -112,6 +113,20 @@ $(document).ready(function(){initNavTree('class_body.html','');});
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="body_8h_source.html">body.h</a>&gt;</code></p>
+<div class="dynheader">
+Inheritance diagram for Body:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_body__inherit__graph.png" border="0" usemap="#_body_inherit__map" alt="Inheritance graph"/></div>
+<map name="_body_inherit__map" id="_body_inherit__map">
+<area shape="rect" id="node2" href="classo_freq_core.html" title="The core oFreq class. All oFreq classes inherit from this class." alt="" coords="5,5,93,32"/></map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
+<div class="dynheader">
+Collaboration diagram for Body:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_body__coll__graph.png" border="0" usemap="#_body_coll__map" alt="Collaboration graph"/></div>
+<map name="_body_coll__map" id="_body_coll__map">
+<area shape="rect" id="node2" href="classo_freq_core.html" title="The core oFreq class. All oFreq classes inherit from this class." alt="" coords="5,5,93,32"/></map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -119,37 +134,29 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a7727b0d8c998bbc2942e4c802e31e2eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abe1c4da65568cf7978b6247affc461e3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_body.html#abe1c4da65568cf7978b6247affc461e3">~Body</a> ()</td></tr>
 <tr class="separator:abe1c4da65568cf7978b6247affc461e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a31b959b6f30e3c9c6ebc3f0a325fec9d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_body.html#a31b959b6f30e3c9c6ebc3f0a325fec9d">testPrint</a> ()</td></tr>
-<tr class="separator:a31b959b6f30e3c9c6ebc3f0a325fec9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad4580795d6db4b4ffd23db2a21ace9c7"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_body.html#ad4580795d6db4b4ffd23db2a21ace9c7">operator==</a> (<a class="el" href="class_body.html">Body</a> &amp;bodIn)</td></tr>
+<tr class="memdesc:ad4580795d6db4b4ffd23db2a21ace9c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Overload for operator == to compare two <a class="el" href="class_body.html">Body</a> objects. Comparison is based on body names.  <a href="#ad4580795d6db4b4ffd23db2a21ace9c7"></a><br/></td></tr>
+<tr class="separator:ad4580795d6db4b4ffd23db2a21ace9c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a21190f9d796d631202db6caf768beae1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_body.html#a21190f9d796d631202db6caf768beae1">setBodyName</a> (string)</td></tr>
 <tr class="separator:a21190f9d796d631202db6caf768beae1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaeacf4b8d79625bc8c6d77544c6ecfb7"><td class="memItemLeft" align="right" valign="top">string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_body.html#aaeacf4b8d79625bc8c6d77544c6ecfb7">BodyName</a> ()</td></tr>
-<tr class="memdesc:aaeacf4b8d79625bc8c6d77544c6ecfb7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Exposes the body name property for operation.  <a href="#aaeacf4b8d79625bc8c6d77544c6ecfb7"></a><br/></td></tr>
-<tr class="separator:aaeacf4b8d79625bc8c6d77544c6ecfb7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaf7cbd04e863d70e71c3de1819df9c37"><td class="memItemLeft" align="right" valign="top">string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_body.html#aaf7cbd04e863d70e71c3de1819df9c37">HydroBodyName</a> ()</td></tr>
-<tr class="memdesc:aaf7cbd04e863d70e71c3de1819df9c37"><td class="mdescLeft">&#160;</td><td class="mdescRight">Exposes the hydro body name property for operation.  <a href="#aaf7cbd04e863d70e71c3de1819df9c37"></a><br/></td></tr>
-<tr class="separator:aaf7cbd04e863d70e71c3de1819df9c37"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac2cb95c1a4d24e6b456db9bfe3e6dea3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_body.html#ac2cb95c1a4d24e6b456db9bfe3e6dea3">setHydroBodyName</a> (string)</td></tr>
-<tr class="separator:ac2cb95c1a4d24e6b456db9bfe3e6dea3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae1f5ffd42ba3b276a056eb56ec6ed5a9"><td class="memItemLeft" align="right" valign="top">string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_body.html#ae1f5ffd42ba3b276a056eb56ec6ed5a9">refBodyName</a> ()</td></tr>
+<tr class="memdesc:ae1f5ffd42ba3b276a056eb56ec6ed5a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Exposes the body name property for operation.  <a href="#ae1f5ffd42ba3b276a056eb56ec6ed5a9"></a><br/></td></tr>
+<tr class="separator:ae1f5ffd42ba3b276a056eb56ec6ed5a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aef09a9c9b037e1b4e42fbdd1fa61c65d"><td class="memItemLeft" align="right" valign="top">string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_body.html#aef09a9c9b037e1b4e42fbdd1fa61c65d">refHydroBodName</a> ()</td></tr>
+<tr class="memdesc:aef09a9c9b037e1b4e42fbdd1fa61c65d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Exposes the hydro body name property for operation.  <a href="#aef09a9c9b037e1b4e42fbdd1fa61c65d"></a><br/></td></tr>
+<tr class="separator:aef09a9c9b037e1b4e42fbdd1fa61c65d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a423511decfb427835d6734e1c21e1856"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_body.html#a423511decfb427835d6734e1c21e1856">setHydroBodName</a> (string)</td></tr>
+<tr class="separator:a423511decfb427835d6734e1c21e1856"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ada5245142768e7b4cdc74504651438bb"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_body.html#ada5245142768e7b4cdc74504651438bb">getHydroBodName</a> ()</td></tr>
+<tr class="separator:ada5245142768e7b4cdc74504651438bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7bba55a8fd4aea7a17ce7bd5f54d6ab8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_body.html#a7bba55a8fd4aea7a17ce7bd5f54d6ab8">setHeading</a> (double)</td></tr>
 <tr class="separator:a7bba55a8fd4aea7a17ce7bd5f54d6ab8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aef98ce381a5f74886a082dbaf40810c2"><td class="memItemLeft" align="right" valign="top">double &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_body.html#aef98ce381a5f74886a082dbaf40810c2">Heading</a> ()</td></tr>
-<tr class="memdesc:aef98ce381a5f74886a082dbaf40810c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Exposes the heading property for operations.  <a href="#aef98ce381a5f74886a082dbaf40810c2"></a><br/></td></tr>
-<tr class="separator:aef98ce381a5f74886a082dbaf40810c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaa26153bd320830684e65bbf538b139d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_body.html#aaa26153bd320830684e65bbf538b139d">setUserActiveForces</a> (vector&lt; string &gt;)</td></tr>
-<tr class="separator:aaa26153bd320830684e65bbf538b139d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa3b532c91892c7336309df492cad39d6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_body.html#aa3b532c91892c7336309df492cad39d6">setUserReactiveForces</a> (vector&lt; string &gt;)</td></tr>
-<tr class="separator:aa3b532c91892c7336309df492cad39d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af409e4b49b838e118a57a753879685dc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_body.html#af409e4b49b838e118a57a753879685dc">setUserCrossBodyForces</a> (vector&lt; string &gt;)</td></tr>
-<tr class="separator:af409e4b49b838e118a57a753879685dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a34950bfba0878d2488f91a0f5a1ae918"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_body.html#a34950bfba0878d2488f91a0f5a1ae918">setHydroActiveForces</a> (vector&lt; string &gt;)</td></tr>
-<tr class="separator:a34950bfba0878d2488f91a0f5a1ae918"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae26fc5ecce5fd1803ce26bf87d1d2a2b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_body.html#ae26fc5ecce5fd1803ce26bf87d1d2a2b">setHydroReactiveForces</a> (vector&lt; string &gt;)</td></tr>
-<tr class="separator:ae26fc5ecce5fd1803ce26bf87d1d2a2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a47aed2abb4a77b9da93a803f7fdd5e31"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_body.html#a47aed2abb4a77b9da93a803f7fdd5e31">setHydroCrossBodyForces</a> (vector&lt; string &gt;)</td></tr>
-<tr class="separator:a47aed2abb4a77b9da93a803f7fdd5e31"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1bcd87df62f0cdd063c01799c1631ebd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_body.html#a1bcd87df62f0cdd063c01799c1631ebd">addLinkedBody</a> (string)</td></tr>
-<tr class="separator:a1bcd87df62f0cdd063c01799c1631ebd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac34e65deb4894bd5c2b5d4089be0dcb0"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_body.html#ac34e65deb4894bd5c2b5d4089be0dcb0">getHeading</a> ()</td></tr>
+<tr class="memdesc:ac34e65deb4894bd5c2b5d4089be0dcb0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the heading for the body. Heading is measured in radians. Zero heading is True North, proceeding counter clockwise around the compass rose.  <a href="#ac34e65deb4894bd5c2b5d4089be0dcb0"></a><br/></td></tr>
+<tr class="separator:ac34e65deb4894bd5c2b5d4089be0dcb0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7aef7cce12d2dbdd3e5ab789ba8fe669"><td class="memItemLeft" align="right" valign="top">double &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_body.html#a7aef7cce12d2dbdd3e5ab789ba8fe669">refHeading</a> ()</td></tr>
+<tr class="memdesc:a7aef7cce12d2dbdd3e5ab789ba8fe669"><td class="mdescLeft">&#160;</td><td class="mdescRight">Exposes the heading property for operations.  <a href="#a7aef7cce12d2dbdd3e5ab789ba8fe669"></a><br/></td></tr>
+<tr class="separator:a7aef7cce12d2dbdd3e5ab789ba8fe669"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a896b660a9d001422f5d2b0b4e6d77b98"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_body.html#a896b660a9d001422f5d2b0b4e6d77b98">setMass</a> (double)</td></tr>
 <tr class="separator:a896b660a9d001422f5d2b0b4e6d77b98"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac58abb2931cc56f2c0ff85700175a4d9"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_body.html#ac58abb2931cc56f2c0ff85700175a4d9">getMass</a> ()</td></tr>
@@ -172,19 +179,19 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a00f9b6c0dfc59de42bb4ba6eaa80d707"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad21041419756e97484ef399181e4b668"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_body.html#ad21041419756e97484ef399181e4b668">setMomIxy</a> (double)</td></tr>
 <tr class="separator:ad21041419756e97484ef399181e4b668"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad441c69196f118ba60f51951e82a5929"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_body.html#ad441c69196f118ba60f51951e82a5929">getMomIxy</a> ()</td></tr>
-<tr class="memdesc:ad441c69196f118ba60f51951e82a5929"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the cross product of intertia on the XY axis for the body.  <a href="#ad441c69196f118ba60f51951e82a5929"></a><br/></td></tr>
-<tr class="separator:ad441c69196f118ba60f51951e82a5929"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1acaae4a9731de146aabcb9482ff3f0b"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_body.html#a1acaae4a9731de146aabcb9482ff3f0b">getMomIxy</a> ()</td></tr>
+<tr class="memdesc:a1acaae4a9731de146aabcb9482ff3f0b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the cross product of intertia on the XY axis for the body.  <a href="#a1acaae4a9731de146aabcb9482ff3f0b"></a><br/></td></tr>
+<tr class="separator:a1acaae4a9731de146aabcb9482ff3f0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab76083304777794dd27769e1a35955b5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_body.html#ab76083304777794dd27769e1a35955b5">setMomIxz</a> (double)</td></tr>
 <tr class="separator:ab76083304777794dd27769e1a35955b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6f9191a86fe6be241aa2278186926767"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_body.html#a6f9191a86fe6be241aa2278186926767">getMomIxz</a> ()</td></tr>
-<tr class="memdesc:a6f9191a86fe6be241aa2278186926767"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the cross product of intertia on the XZ axis for the body.  <a href="#a6f9191a86fe6be241aa2278186926767"></a><br/></td></tr>
-<tr class="separator:a6f9191a86fe6be241aa2278186926767"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a946ad48ed4493008f4afbc5e89690bb5"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_body.html#a946ad48ed4493008f4afbc5e89690bb5">getMomIxz</a> ()</td></tr>
+<tr class="memdesc:a946ad48ed4493008f4afbc5e89690bb5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the cross product of intertia on the XZ axis for the body.  <a href="#a946ad48ed4493008f4afbc5e89690bb5"></a><br/></td></tr>
+<tr class="separator:a946ad48ed4493008f4afbc5e89690bb5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a21a26c218ddbb7ee5b20e9ccdb0736f7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_body.html#a21a26c218ddbb7ee5b20e9ccdb0736f7">setMomIyz</a> (double)</td></tr>
 <tr class="separator:a21a26c218ddbb7ee5b20e9ccdb0736f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afa233bb2f555c54ca2697f796548668e"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_body.html#afa233bb2f555c54ca2697f796548668e">getMomIyz</a> ()</td></tr>
-<tr class="memdesc:afa233bb2f555c54ca2697f796548668e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the cross product of intertia on the YZ axis for the body.  <a href="#afa233bb2f555c54ca2697f796548668e"></a><br/></td></tr>
-<tr class="separator:afa233bb2f555c54ca2697f796548668e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5178058d29b5eaac87f21f26d5e935f6"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_body.html#a5178058d29b5eaac87f21f26d5e935f6">getMomIyz</a> ()</td></tr>
+<tr class="memdesc:a5178058d29b5eaac87f21f26d5e935f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the cross product of intertia on the YZ axis for the body.  <a href="#a5178058d29b5eaac87f21f26d5e935f6"></a><br/></td></tr>
+<tr class="separator:a5178058d29b5eaac87f21f26d5e935f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeaacc5db3052196de8a6f7f61a8b6278"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_body.html#aeaacc5db3052196de8a6f7f61a8b6278">setCenX</a> (double)</td></tr>
 <tr class="separator:aeaacc5db3052196de8a6f7f61a8b6278"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4201150aa57d9d6f3aa245d8eca231d3"><td class="memItemLeft" align="right" valign="top">Mat&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_body.html#a4201150aa57d9d6f3aa245d8eca231d3">getMassMatrix</a> ()</td></tr>
@@ -233,49 +240,83 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a09987e449c77ba11fb66cf81de88220a"><td class="memItemLeft" align="right" valign="top">Mat&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_body.html#a09987e449c77ba11fb66cf81de88220a">getPosn</a> ()</td></tr>
 <tr class="memdesc:a09987e449c77ba11fb66cf81de88220a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the entire matrix for position of the body.  <a href="#a09987e449c77ba11fb66cf81de88220a"></a><br/></td></tr>
 <tr class="separator:a09987e449c77ba11fb66cf81de88220a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab78f6612c15b27617175bb385a051667"><td class="memItemLeft" align="right" valign="top">Mat&lt; double &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_body.html#ab78f6612c15b27617175bb385a051667">Posn</a> ()</td></tr>
-<tr class="memdesc:ab78f6612c15b27617175bb385a051667"><td class="mdescLeft">&#160;</td><td class="mdescRight">Exposes the position property for operation. The entire matrix for position of the body.  <a href="#ab78f6612c15b27617175bb385a051667"></a><br/></td></tr>
-<tr class="separator:ab78f6612c15b27617175bb385a051667"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a38933b2aec94873355dcecc8f8b41db2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_body.html#a38933b2aec94873355dcecc8f8b41db2">setCrossBodyName</a> (string)</td></tr>
-<tr class="separator:a38933b2aec94873355dcecc8f8b41db2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad34f38992e14d5bda02c481c311b66b3"><td class="memItemLeft" align="right" valign="top">Mat&lt; double &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_body.html#ad34f38992e14d5bda02c481c311b66b3">refPosn</a> ()</td></tr>
+<tr class="memdesc:ad34f38992e14d5bda02c481c311b66b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Exposes the position property for operation. The entire matrix for position of the body.  <a href="#ad34f38992e14d5bda02c481c311b66b3"></a><br/></td></tr>
+<tr class="separator:ad34f38992e14d5bda02c481c311b66b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aab63febbe35984d8551a188b40ee3c3f"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_body.html#aab63febbe35984d8551a188b40ee3c3f">getBodyName</a> ()</td></tr>
 <tr class="separator:aab63febbe35984d8551a188b40ee3c3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac1534f2032bc04ff9c118f5f47f3ef8e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_body.html#ac1534f2032bc04ff9c118f5f47f3ef8e">setSolution</a> (cx_mat input)</td></tr>
-<tr class="memdesc:ac1534f2032bc04ff9c118f5f47f3ef8e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the solution matrix for the body.  <a href="#ac1534f2032bc04ff9c118f5f47f3ef8e"></a><br/></td></tr>
-<tr class="separator:ac1534f2032bc04ff9c118f5f47f3ef8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a202cf4dbcc9b1cbd268f02905ddebbb2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_body.html#a202cf4dbcc9b1cbd268f02905ddebbb2">setSolnMat</a> (cx_mat input)</td></tr>
+<tr class="memdesc:a202cf4dbcc9b1cbd268f02905ddebbb2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the solution matrix for the body.  <a href="#a202cf4dbcc9b1cbd268f02905ddebbb2"></a><br/></td></tr>
+<tr class="separator:a202cf4dbcc9b1cbd268f02905ddebbb2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5153b4cfad5bf12ae6f279a5e7190c31"><td class="memItemLeft" align="right" valign="top">cx_mat&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_body.html#a5153b4cfad5bf12ae6f279a5e7190c31">getSolution</a> ()</td></tr>
 <tr class="memdesc:a5153b4cfad5bf12ae6f279a5e7190c31"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the solution matrix for the body.  <a href="#a5153b4cfad5bf12ae6f279a5e7190c31"></a><br/></td></tr>
 <tr class="separator:a5153b4cfad5bf12ae6f279a5e7190c31"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abca1fdefd8fd12c9548c5e0d157d00ac"><td class="memItemLeft" align="right" valign="top">cx_mat &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_body.html#abca1fdefd8fd12c9548c5e0d157d00ac">Solution</a> ()</td></tr>
-<tr class="memdesc:abca1fdefd8fd12c9548c5e0d157d00ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the solution matrix for the body.  <a href="#abca1fdefd8fd12c9548c5e0d157d00ac"></a><br/></td></tr>
-<tr class="separator:abca1fdefd8fd12c9548c5e0d157d00ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae799af5531c35381830061f6abc0bb17"><td class="memItemLeft" align="right" valign="top">cx_mat &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_body.html#ae799af5531c35381830061f6abc0bb17">refSolution</a> ()</td></tr>
+<tr class="memdesc:ae799af5531c35381830061f6abc0bb17"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the solution matrix for the body.  <a href="#ae799af5531c35381830061f6abc0bb17"></a><br/></td></tr>
+<tr class="separator:ae799af5531c35381830061f6abc0bb17"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a370dc9a5702d93d9295a9618ebdef456"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_body.html">Body</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_body.html#a370dc9a5702d93d9295a9618ebdef456">Copy</a> ()</td></tr>
 <tr class="memdesc:a370dc9a5702d93d9295a9618ebdef456"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies the body object, complete with all current data.  <a href="#a370dc9a5702d93d9295a9618ebdef456"></a><br/></td></tr>
 <tr class="separator:a370dc9a5702d93d9295a9618ebdef456"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a09cc32078919b282e5077f18f3343b35"><td class="memItemLeft" align="right" valign="top">vector&lt; <a class="el" href="classforce_active.html">forceActive</a> * &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_body.html#a09cc32078919b282e5077f18f3343b35">listForceActive_user</a> ()</td></tr>
-<tr class="memdesc:a09cc32078919b282e5077f18f3343b35"><td class="mdescLeft">&#160;</td><td class="mdescRight">The list of active user forces.  <a href="#a09cc32078919b282e5077f18f3343b35"></a><br/></td></tr>
-<tr class="separator:a09cc32078919b282e5077f18f3343b35"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2e7a45fefe1c449e333891bdfea0b264"><td class="memItemLeft" align="right" valign="top">vector&lt; <a class="el" href="classforce_active.html">forceActive</a> * &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_body.html#a2e7a45fefe1c449e333891bdfea0b264">listForceActive_hydro</a> ()</td></tr>
-<tr class="memdesc:a2e7a45fefe1c449e333891bdfea0b264"><td class="mdescLeft">&#160;</td><td class="mdescRight">The list of active hydrodynamic forces.  <a href="#a2e7a45fefe1c449e333891bdfea0b264"></a><br/></td></tr>
-<tr class="separator:a2e7a45fefe1c449e333891bdfea0b264"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abf20f5bfe14f6c831db9718682d7857d"><td class="memItemLeft" align="right" valign="top">vector&lt; <a class="el" href="classforce_react.html">forceReact</a> * &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_body.html#abf20f5bfe14f6c831db9718682d7857d">listForceReact_user</a> ()</td></tr>
-<tr class="memdesc:abf20f5bfe14f6c831db9718682d7857d"><td class="mdescLeft">&#160;</td><td class="mdescRight">The list of reactive user forces.  <a href="#abf20f5bfe14f6c831db9718682d7857d"></a><br/></td></tr>
-<tr class="separator:abf20f5bfe14f6c831db9718682d7857d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6d728e1c27df4498ffe3b270bc2bd4b6"><td class="memItemLeft" align="right" valign="top">vector&lt; <a class="el" href="classforce_react.html">forceReact</a> * &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_body.html#a6d728e1c27df4498ffe3b270bc2bd4b6">listForceReact_hydro</a> ()</td></tr>
-<tr class="memdesc:a6d728e1c27df4498ffe3b270bc2bd4b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">The list of reactive hydrodynamic forces.  <a href="#a6d728e1c27df4498ffe3b270bc2bd4b6"></a><br/></td></tr>
-<tr class="separator:a6d728e1c27df4498ffe3b270bc2bd4b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad44837d77c6b6c0b0f3f4d5b2658627a"><td class="memItemLeft" align="right" valign="top">vector&lt; <a class="el" href="classforce_cross.html">forceCross</a> * &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_body.html#ad44837d77c6b6c0b0f3f4d5b2658627a">listForceCross_user</a> ()</td></tr>
-<tr class="memdesc:ad44837d77c6b6c0b0f3f4d5b2658627a"><td class="mdescLeft">&#160;</td><td class="mdescRight">The list of user cross-body forces.  <a href="#ad44837d77c6b6c0b0f3f4d5b2658627a"></a><br/></td></tr>
-<tr class="separator:ad44837d77c6b6c0b0f3f4d5b2658627a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6d71490a913c0ed97ade7bb2976d426a"><td class="memItemLeft" align="right" valign="top">vector&lt; <a class="el" href="classforce_cross.html">forceCross</a> * &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_body.html#a6d71490a913c0ed97ade7bb2976d426a">listForceCross_hydro</a> ()</td></tr>
-<tr class="memdesc:a6d71490a913c0ed97ade7bb2976d426a"><td class="mdescLeft">&#160;</td><td class="mdescRight">The list of hydrodynamic cross-body forces.  <a href="#a6d71490a913c0ed97ade7bb2976d426a"></a><br/></td></tr>
-<tr class="separator:a6d71490a913c0ed97ade7bb2976d426a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acc646c06517d67b4d8dba821b5f87d8e"><td class="memItemLeft" align="right" valign="top">vector&lt; <a class="el" href="class_force_active.html">ForceActive</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_body.html#acc646c06517d67b4d8dba821b5f87d8e">listForceActive_user</a> ()</td></tr>
+<tr class="memdesc:acc646c06517d67b4d8dba821b5f87d8e"><td class="mdescLeft">&#160;</td><td class="mdescRight">The list of active user forces.  <a href="#acc646c06517d67b4d8dba821b5f87d8e"></a><br/></td></tr>
+<tr class="separator:acc646c06517d67b4d8dba821b5f87d8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad55994a87e95520959a2d236e02168ea"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_force_active.html">ForceActive</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_body.html#ad55994a87e95520959a2d236e02168ea">listForceActive_user</a> (int forceIn)</td></tr>
+<tr class="memdesc:ad55994a87e95520959a2d236e02168ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">A single active user force.  <a href="#ad55994a87e95520959a2d236e02168ea"></a><br/></td></tr>
+<tr class="separator:ad55994a87e95520959a2d236e02168ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2169495533eebe0f4f05d9e2cb71f42b"><td class="memItemLeft" align="right" valign="top">vector&lt; <a class="el" href="class_force_active.html">ForceActive</a> * &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_body.html#a2169495533eebe0f4f05d9e2cb71f42b">listForceActive_hydro</a> ()</td></tr>
+<tr class="memdesc:a2169495533eebe0f4f05d9e2cb71f42b"><td class="mdescLeft">&#160;</td><td class="mdescRight">The list of active hydrodynamic forces.  <a href="#a2169495533eebe0f4f05d9e2cb71f42b"></a><br/></td></tr>
+<tr class="separator:a2169495533eebe0f4f05d9e2cb71f42b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa83129940f0eb3a27686b35292bf3339"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_force_active.html">ForceActive</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_body.html#aa83129940f0eb3a27686b35292bf3339">listForceActive_hydro</a> (int forceIn)</td></tr>
+<tr class="memdesc:aa83129940f0eb3a27686b35292bf3339"><td class="mdescLeft">&#160;</td><td class="mdescRight">A single active hydrodynamic force.  <a href="#aa83129940f0eb3a27686b35292bf3339"></a><br/></td></tr>
+<tr class="separator:aa83129940f0eb3a27686b35292bf3339"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afc1e6e0018dd26cc3702b74aea12ed9b"><td class="memItemLeft" align="right" valign="top">vector&lt; <a class="el" href="class_force_react.html">ForceReact</a> * &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_body.html#afc1e6e0018dd26cc3702b74aea12ed9b">listForceReact_user</a> ()</td></tr>
+<tr class="memdesc:afc1e6e0018dd26cc3702b74aea12ed9b"><td class="mdescLeft">&#160;</td><td class="mdescRight">The list of reactive user forces.  <a href="#afc1e6e0018dd26cc3702b74aea12ed9b"></a><br/></td></tr>
+<tr class="separator:afc1e6e0018dd26cc3702b74aea12ed9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8afe32e16a7869395083de6cb0aca63e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_force_react.html">ForceReact</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_body.html#a8afe32e16a7869395083de6cb0aca63e">listForceReact_user</a> (int forceIn)</td></tr>
+<tr class="memdesc:a8afe32e16a7869395083de6cb0aca63e"><td class="mdescLeft">&#160;</td><td class="mdescRight">A single reactive user force.  <a href="#a8afe32e16a7869395083de6cb0aca63e"></a><br/></td></tr>
+<tr class="separator:a8afe32e16a7869395083de6cb0aca63e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad68893d21ecf337242d68936132ad25a"><td class="memItemLeft" align="right" valign="top">vector&lt; <a class="el" href="class_force_react.html">ForceReact</a> * &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_body.html#ad68893d21ecf337242d68936132ad25a">listForceReact_hydro</a> ()</td></tr>
+<tr class="memdesc:ad68893d21ecf337242d68936132ad25a"><td class="mdescLeft">&#160;</td><td class="mdescRight">The list of reactive hydrodynamic forces.  <a href="#ad68893d21ecf337242d68936132ad25a"></a><br/></td></tr>
+<tr class="separator:ad68893d21ecf337242d68936132ad25a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a774fe4681465ee5a8ea344f4ec7c18e2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_force_react.html">ForceReact</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_body.html#a774fe4681465ee5a8ea344f4ec7c18e2">listForceReact_hydro</a> (int forceIn)</td></tr>
+<tr class="memdesc:a774fe4681465ee5a8ea344f4ec7c18e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">A single reactive hydrodynamic force.  <a href="#a774fe4681465ee5a8ea344f4ec7c18e2"></a><br/></td></tr>
+<tr class="separator:a774fe4681465ee5a8ea344f4ec7c18e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac428c19730346a51bde800e0cbc2e281"><td class="memItemLeft" align="right" valign="top">vector&lt; <a class="el" href="class_force_cross.html">ForceCross</a> * &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_body.html#ac428c19730346a51bde800e0cbc2e281">listForceCross_user</a> ()</td></tr>
+<tr class="memdesc:ac428c19730346a51bde800e0cbc2e281"><td class="mdescLeft">&#160;</td><td class="mdescRight">The list of user cross-body forces.  <a href="#ac428c19730346a51bde800e0cbc2e281"></a><br/></td></tr>
+<tr class="separator:ac428c19730346a51bde800e0cbc2e281"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af01cd5dc37ebd7969f4f2bc10ba3d76b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_force_cross.html">ForceCross</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_body.html#af01cd5dc37ebd7969f4f2bc10ba3d76b">listForceCross_user</a> (int forceIn)</td></tr>
+<tr class="memdesc:af01cd5dc37ebd7969f4f2bc10ba3d76b"><td class="mdescLeft">&#160;</td><td class="mdescRight">A single cross-body user force.  <a href="#af01cd5dc37ebd7969f4f2bc10ba3d76b"></a><br/></td></tr>
+<tr class="separator:af01cd5dc37ebd7969f4f2bc10ba3d76b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0dc70d3a67ad921a022f48a2fdf37526"><td class="memItemLeft" align="right" valign="top">vector&lt; <a class="el" href="class_force_cross.html">ForceCross</a> * &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_body.html#a0dc70d3a67ad921a022f48a2fdf37526">listForceCross_hydro</a> ()</td></tr>
+<tr class="memdesc:a0dc70d3a67ad921a022f48a2fdf37526"><td class="mdescLeft">&#160;</td><td class="mdescRight">The list of hydrodynamic cross-body forces.  <a href="#a0dc70d3a67ad921a022f48a2fdf37526"></a><br/></td></tr>
+<tr class="separator:a0dc70d3a67ad921a022f48a2fdf37526"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab814600b31abd49c0a8de29a0fb597b4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_force_cross.html">ForceCross</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_body.html#ab814600b31abd49c0a8de29a0fb597b4">listForceCross_hydro</a> (int forceIn)</td></tr>
+<tr class="memdesc:ab814600b31abd49c0a8de29a0fb597b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">A single cross-body hydrodynamic force.  <a href="#ab814600b31abd49c0a8de29a0fb597b4"></a><br/></td></tr>
+<tr class="separator:ab814600b31abd49c0a8de29a0fb597b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a56ad2b60555f24df3feb5889974b27b2"><td class="memItemLeft" align="right" valign="top">vector&lt; <a class="el" href="class_body.html">Body</a> * &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_body.html#a56ad2b60555f24df3feb5889974b27b2">listCrossBody_user</a> ()</td></tr>
 <tr class="memdesc:a56ad2b60555f24df3feb5889974b27b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">The list of linked bodies for user cross-body forces.  <a href="#a56ad2b60555f24df3feb5889974b27b2"></a><br/></td></tr>
 <tr class="separator:a56ad2b60555f24df3feb5889974b27b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afaf64ab1b477ff157f31e6824be1b767"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_body.html">Body</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_body.html#afaf64ab1b477ff157f31e6824be1b767">listCrossBody_user</a> (int index)</td></tr>
+<tr class="memdesc:afaf64ab1b477ff157f31e6824be1b767"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns reference to individual linked <a class="el" href="class_body.html">Body</a> for the user cross-body force.  <a href="#afaf64ab1b477ff157f31e6824be1b767"></a><br/></td></tr>
+<tr class="separator:afaf64ab1b477ff157f31e6824be1b767"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7c930213d83962d4248068c38c589113"><td class="memItemLeft" align="right" valign="top">vector&lt; <a class="el" href="class_body.html">Body</a> * &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_body.html#a7c930213d83962d4248068c38c589113">listCrossBody_hydro</a> ()</td></tr>
 <tr class="memdesc:a7c930213d83962d4248068c38c589113"><td class="mdescLeft">&#160;</td><td class="mdescRight">The list of linked bodies for hydrodynamic cross-body forces.  <a href="#a7c930213d83962d4248068c38c589113"></a><br/></td></tr>
 <tr class="separator:a7c930213d83962d4248068c38c589113"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9aaac9391781c67198f7b8b5785d4745"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_body.html">Body</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_body.html#a9aaac9391781c67198f7b8b5785d4745">listCrossBody_hydro</a> (int index)</td></tr>
+<tr class="memdesc:a9aaac9391781c67198f7b8b5785d4745"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns reference to individual linked <a class="el" href="class_body.html">Body</a> for the hydro cross-body force.  <a href="#a9aaac9391781c67198f7b8b5785d4745"></a><br/></td></tr>
+<tr class="separator:a9aaac9391781c67198f7b8b5785d4745"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a07d8ed6fdf5a4c6ef73b2d39b58403ce"><td class="memItemLeft" align="right" valign="top">vector&lt; string &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_body.html#a07d8ed6fdf5a4c6ef73b2d39b58403ce">listNamedLink_user</a> ()</td></tr>
+<tr class="memdesc:a07d8ed6fdf5a4c6ef73b2d39b58403ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">The list of names of linked bodies for user cross-body forces. This is a list of names of other bodies that a cross-body force references. This corresponds to the vector listForceCross_usr. The indices of the two vectors should match. So that when a force gets added at index 5 in the listForceCross_user, it should have a matching entry at index 5 in listNamedLink_usr. The list of names only is a temporary list used during the input stage of bodies. This is required because the linked body may name a body which is not yet read from the input file. Thus, the body is not currently defined. Once all Bodies are defined, the <a class="el" href="class_system.html">System</a> object calls a function to read through each name in the list and assign corresponding pointers in the listLinkedBody_usr.  <a href="#a07d8ed6fdf5a4c6ef73b2d39b58403ce"></a><br/></td></tr>
+<tr class="separator:a07d8ed6fdf5a4c6ef73b2d39b58403ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1fd7e672b9768351f9a53523d7b5c798"><td class="memItemLeft" align="right" valign="top">string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_body.html#a1fd7e672b9768351f9a53523d7b5c798">listNamedLink_user</a> (unsigned int varIn)</td></tr>
+<tr class="memdesc:a1fd7e672b9768351f9a53523d7b5c798"><td class="mdescLeft">&#160;</td><td class="mdescRight">The list of names of linked bodies for user cross-body forces. This is a list of names of other bodies that a cross-body force references. This corresponds to the vector listForceCross_usr. The indices of the two vectors should match. So that when a force gets added at index 5 in the listForceCross_user, it should have a matching entry at index 5 in listNamedLink_usr. The list of names only is a temporary list used during the input stage of bodies. This is required because the linked body may name a body which is not yet read from the input file. Thus, the body is not currently defined. Once all Bodies are defined, the <a class="el" href="class_system.html">System</a> object calls a function to read through each name in the list and assign corresponding pointers in the listLinkedBody_usr.  <a href="#a1fd7e672b9768351f9a53523d7b5c798"></a><br/></td></tr>
+<tr class="separator:a1fd7e672b9768351f9a53523d7b5c798"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abc4abd052a3776123df114c6faf34bae"><td class="memItemLeft" align="right" valign="top">vector&lt; string &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_body.html#abc4abd052a3776123df114c6faf34bae">listNamedLink_hydro</a> ()</td></tr>
+<tr class="memdesc:abc4abd052a3776123df114c6faf34bae"><td class="mdescLeft">&#160;</td><td class="mdescRight">The list of names of linked bodies for hydro cross-body forces. This is a list of names of other bodies that a cross-body force references. This corresponds to the vector listForceCross_hydro. The indices of the two vectors should match. So that when a force gets added at index 5 in the listForceCross_hydro, it should have a matching entry at index 5 in listNamedLink_hydro. The list of names only is a temporary list used during the input stage of bodies. This is required because the linked body may name a body which is not yet read from the input file. Thus, the body is not currently defined. Once all Bodies are defined, the <a class="el" href="class_system.html">System</a> object calls a function to read through each name in the list and assign corresponding pointers in the listLinkedBody_hydro.  <a href="#abc4abd052a3776123df114c6faf34bae"></a><br/></td></tr>
+<tr class="separator:abc4abd052a3776123df114c6faf34bae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad01b96bf575dde9f75f489c7118ca574"><td class="memItemLeft" align="right" valign="top">string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_body.html#ad01b96bf575dde9f75f489c7118ca574">listNamedLink_hydro</a> (unsigned int varIn)</td></tr>
+<tr class="memdesc:ad01b96bf575dde9f75f489c7118ca574"><td class="mdescLeft">&#160;</td><td class="mdescRight">The list of names of linked bodies for hydro cross-body forces. This is a list of names of other bodies that a cross-body force references. This corresponds to the vector listForceCross_hydro. The indices of the two vectors should match. So that when a force gets added at index 5 in the listForceCross_hydro, it should have a matching entry at index 5 in listNamedLink_hydro. The list of names only is a temporary list used during the input stage of bodies. This is required because the linked body may name a body which is not yet read from the input file. Thus, the body is not currently defined. Once all Bodies are defined, the <a class="el" href="class_system.html">System</a> object calls a function to read through each name in the list and assign corresponding pointers in the listLinkedBody_hydro.  <a href="#ad01b96bf575dde9f75f489c7118ca574"></a><br/></td></tr>
+<tr class="separator:ad01b96bf575dde9f75f489c7118ca574"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae6fe245f2504eac2e3486f28df3c0ca3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_body.html#ae6fe245f2504eac2e3486f28df3c0ca3">setMotionModel</a> (string modelName)</td></tr>
 <tr class="memdesc:ae6fe245f2504eac2e3486f28df3c0ca3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the name of the motion model for lookup later.  <a href="#ae6fe245f2504eac2e3486f28df3c0ca3"></a><br/></td></tr>
 <tr class="separator:ae6fe245f2504eac2e3486f28df3c0ca3"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -285,6 +326,36 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a07a8f186c02f0d5bad4beded83949571"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_body.html#a07a8f186c02f0d5bad4beded83949571">getEquationCount</a> ()</td></tr>
 <tr class="memdesc:a07a8f186c02f0d5bad4beded83949571"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the number of equations used in the body.  <a href="#a07a8f186c02f0d5bad4beded83949571"></a><br/></td></tr>
 <tr class="separator:a07a8f186c02f0d5bad4beded83949571"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classo_freq_core"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classo_freq_core')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classo_freq_core.html">oFreqCore</a></td></tr>
+<tr class="memitem:a5c882c0d8e78706270e377b749a647f5 inherit pub_methods_classo_freq_core"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classo_freq_core.html#a5c882c0d8e78706270e377b749a647f5">oFreqCore</a> ()</td></tr>
+<tr class="separator:a5c882c0d8e78706270e377b749a647f5 inherit pub_methods_classo_freq_core"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aea5887547dbd17fc2d4f1a99fe217918 inherit pub_methods_classo_freq_core"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classo_freq_core.html#aea5887547dbd17fc2d4f1a99fe217918">~oFreqCore</a> ()</td></tr>
+<tr class="separator:aea5887547dbd17fc2d4f1a99fe217918 inherit pub_methods_classo_freq_core"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
+Additional Inherited Members</h2></td></tr>
+<tr class="inherit_header pro_methods_classo_freq_core"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classo_freq_core')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classo_freq_core.html">oFreqCore</a></td></tr>
+<tr class="memitem:a2912584189c4abd84498450b7c5908c2 inherit pro_methods_classo_freq_core"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classo_freq_core.html#a2912584189c4abd84498450b7c5908c2">setOutLog</a> (string dirIn)</td></tr>
+<tr class="memdesc:a2912584189c4abd84498450b7c5908c2 inherit pro_methods_classo_freq_core"><td class="mdescLeft">&#160;</td><td class="mdescRight">Opens the output log file and prepares it for writing.  <a href="#a2912584189c4abd84498450b7c5908c2"></a><br/></td></tr>
+<tr class="separator:a2912584189c4abd84498450b7c5908c2 inherit pro_methods_classo_freq_core"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8af56bbec3689f5d2252da1787a910e3 inherit pro_methods_classo_freq_core"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classo_freq_core.html#a8af56bbec3689f5d2252da1787a910e3">setErrLog</a> (string dirIn)</td></tr>
+<tr class="memdesc:a8af56bbec3689f5d2252da1787a910e3 inherit pro_methods_classo_freq_core"><td class="mdescLeft">&#160;</td><td class="mdescRight">Opens the error log file and prepares it for writing.  <a href="#a8af56bbec3689f5d2252da1787a910e3"></a><br/></td></tr>
+<tr class="separator:a8af56bbec3689f5d2252da1787a910e3 inherit pro_methods_classo_freq_core"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a74a938eae7e51de72bc752ad83382a11 inherit pro_methods_classo_freq_core"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classo_freq_core.html#a74a938eae7e51de72bc752ad83382a11">writeLog</a> (string mesIn)</td></tr>
+<tr class="memdesc:a74a938eae7e51de72bc752ad83382a11 inherit pro_methods_classo_freq_core"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes output of a log message to the log file. Adds in a date and time stamp to the log.  <a href="#a74a938eae7e51de72bc752ad83382a11"></a><br/></td></tr>
+<tr class="separator:a74a938eae7e51de72bc752ad83382a11 inherit pro_methods_classo_freq_core"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7272d265451eb63bb371f9b9c02f4883 inherit pro_methods_classo_freq_core"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classo_freq_core.html#a7272d265451eb63bb371f9b9c02f4883">writeError</a> (string mesIn)</td></tr>
+<tr class="memdesc:a7272d265451eb63bb371f9b9c02f4883 inherit pro_methods_classo_freq_core"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes output of an error message to the error file. Adds in a date, time, and class name to the log.  <a href="#a7272d265451eb63bb371f9b9c02f4883"></a><br/></td></tr>
+<tr class="separator:a7272d265451eb63bb371f9b9c02f4883 inherit pro_methods_classo_freq_core"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_static_attribs_classo_freq_core"><td colspan="2" onclick="javascript:toggleInherit('pro_static_attribs_classo_freq_core')"><img src="closed.png" alt="-"/>&#160;Static Protected Attributes inherited from <a class="el" href="classo_freq_core.html">oFreqCore</a></td></tr>
+<tr class="memitem:a85b3e812b6d78c064ba375d5101bb053 inherit pro_static_attribs_classo_freq_core"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a85b3e812b6d78c064ba375d5101bb053"></a>
+static std::ofstream&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classo_freq_core.html#a85b3e812b6d78c064ba375d5101bb053">OutLog</a></td></tr>
+<tr class="memdesc:a85b3e812b6d78c064ba375d5101bb053 inherit pro_static_attribs_classo_freq_core"><td class="mdescLeft">&#160;</td><td class="mdescRight">The log file for an oFreq run. Records normal actions for the program. Informs user of regular program developments. Through inheritence of the <a class="el" href="classo_freq_core.html" title="The core oFreq class. All oFreq classes inherit from this class.">oFreqCore</a> class, this object is available to every object in the oFreq application. <br/></td></tr>
+<tr class="separator:a85b3e812b6d78c064ba375d5101bb053 inherit pro_static_attribs_classo_freq_core"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5e31044ee80fa436289e569c8080b21e inherit pro_static_attribs_classo_freq_core"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5e31044ee80fa436289e569c8080b21e"></a>
+static std::ofstream&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classo_freq_core.html#a5e31044ee80fa436289e569c8080b21e">ErrLog</a></td></tr>
+<tr class="memdesc:a5e31044ee80fa436289e569c8080b21e inherit pro_static_attribs_classo_freq_core"><td class="mdescLeft">&#160;</td><td class="mdescRight">The error log file for an oFreq run. Records any errors or warnings for the program. Informs user of errors and warnings and where they occurred. Through inheritence of the <a class="el" href="classo_freq_core.html" title="The core oFreq class. All oFreq classes inherit from this class.">oFreqCore</a> class, this object is available for every object in the oFreq application. <br/></td></tr>
+<tr class="separator:a5e31044ee80fa436289e569c8080b21e inherit pro_static_attribs_classo_freq_core"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>This class holds all of the data for the <a class="el" href="class_body.html">Body</a> Input File. </p>
@@ -322,65 +393,6 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a1bcd87df62f0cdd063c01799c1631ebd"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Body::addLinkedBody </td>
-          <td>(</td>
-          <td class="paramtype">string&#160;</td>
-          <td class="paramname"><em>newLinkedBody</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Adds a linked body. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">newLinkedBody</td><td>The string passed in is added to the linkedBody vector. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p><div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_body_a1bcd87df62f0cdd063c01799c1631ebd_icgraph.png" border="0" usemap="#class_body_a1bcd87df62f0cdd063c01799c1631ebd_icgraph" alt=""/></div>
-<map name="class_body_a1bcd87df62f0cdd063c01799c1631ebd_icgraph" id="class_body_a1bcd87df62f0cdd063c01799c1631ebd_icgraph">
-<area shape="rect" id="node3" href="class_body.html#af409e4b49b838e118a57a753879685dc" title="Body::setUserCrossBodyForces" alt="" coords="213,5,432,32"/></map>
-</div>
-</p>
-
-</div>
-</div>
-<a class="anchor" id="aaeacf4b8d79625bc8c6d77544c6ecfb7"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">string &amp; Body::BodyName </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Exposes the body name property for operation. </p>
-<dl class="section return"><dt>Returns</dt><dd>Pointer to the body name property. </dd></dl>
-
-<p><div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_body_aaeacf4b8d79625bc8c6d77544c6ecfb7_icgraph.png" border="0" usemap="#class_body_aaeacf4b8d79625bc8c6d77544c6ecfb7_icgraph" alt=""/></div>
-<map name="class_body_aaeacf4b8d79625bc8c6d77544c6ecfb7_icgraph" id="class_body_aaeacf4b8d79625bc8c6d77544c6ecfb7_icgraph">
-<area shape="rect" id="node3" href="class_file_writer.html#a5c921b5ae92039cf50458e2c46e204da" title="Writes the output file of global motions. If file exists, appends to the file, assuming the appended ..." alt="" coords="203,5,397,32"/><area shape="rect" id="node5" href="class_file_writer.html#a2078a50dbd21946aeed86d8e0bccd50e" title="Writes the output file of global velocities. If file exists, appends to the file, assuming the append..." alt="" coords="199,56,401,83"/><area shape="rect" id="node7" href="class_file_writer.html#aaff553c2e03cb1c1639e107cfeac3038" title="Writes the output file of global accelerations. If file exists, appends to the file, assuming the appended file is a new body object." alt="" coords="185,107,415,133"/><area shape="rect" id="node9" href="class_file_writer.html#a317649499b8c16dd529e2bf588e3be88" title="Writes the output file of global solutions. If file exists, appends to the file, assuming the appende..." alt="" coords="199,157,401,184"/></map>
-</div>
-</p>
-
-</div>
-</div>
 <a class="anchor" id="a370dc9a5702d93d9295a9618ebdef456"></a>
 <div class="memitem">
 <div class="memproto">
@@ -519,6 +531,41 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
+<a class="anchor" id="ac34e65deb4894bd5c2b5d4089be0dcb0"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double Body::getHeading </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gets the heading for the body. Heading is measured in radians. Zero heading is True North, proceeding counter clockwise around the compass rose. </p>
+<dl class="section return"><dt>Returns</dt><dd>Returns double variable. Heading of the <a class="el" href="class_body.html">Body</a> object. Variable passed by value. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ada5245142768e7b4cdc74504651438bb"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">string Body::getHydroBodName </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Gets the name of the hydro body. </p>
+<dl class="section return"><dt>Returns</dt><dd>Returns string. The name of the hydrobody object associated with the body. Variable passed by value. </dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="ac58abb2931cc56f2c0ff85700175a4d9"></a>
 <div class="memitem">
 <div class="memproto">
@@ -553,15 +600,6 @@ Here is the caller graph for this function:</div>
 <p>Gets the mass matrix for the body. </p>
 <dl class="section return"><dt>Returns</dt><dd>Returns the mass matrix for the body, as a single matrix. Returned by value. </dd></dl>
 
-<p><div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_body_a4201150aa57d9d6f3aa245d8eca231d3_icgraph.png" border="0" usemap="#class_body_a4201150aa57d9d6f3aa245d8eca231d3_icgraph" alt=""/></div>
-<map name="class_body_a4201150aa57d9d6f3aa245d8eca231d3_icgraph" id="class_body_a4201150aa57d9d6f3aa245d8eca231d3_icgraph">
-<area shape="rect" id="node3" href="class_body.html#acb2895e81a595c7d168db48ff5dc766c" title="Implements the method getMassMatrix(), just under a different name." alt="" coords="205,5,336,32"/></map>
-</div>
-</p>
-
 </div>
 </div>
 <a class="anchor" id="ac95aca5c89a30c42db96a8cfacecd89d"></a>
@@ -582,12 +620,12 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a class="anchor" id="ad441c69196f118ba60f51951e82a5929"></a>
+<a class="anchor" id="a1acaae4a9731de146aabcb9482ff3f0b"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void Body::getMomIxy </td>
+          <td class="memname">double Body::getMomIxy </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -600,12 +638,12 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a class="anchor" id="a6f9191a86fe6be241aa2278186926767"></a>
+<a class="anchor" id="a946ad48ed4493008f4afbc5e89690bb5"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void Body::getMomIxz </td>
+          <td class="memname">double Body::getMomIxz </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -636,12 +674,12 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a class="anchor" id="afa233bb2f555c54ca2697f796548668e"></a>
+<a class="anchor" id="a5178058d29b5eaac87f21f26d5e935f6"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void Body::getMomIyz </td>
+          <td class="memname">double Body::getMomIyz </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -786,42 +824,6 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a class="anchor" id="aef98ce381a5f74886a082dbaf40810c2"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">double &amp; Body::Heading </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Exposes the heading property for operations. </p>
-<dl class="section return"><dt>Returns</dt><dd>Pointer to the heading property. </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="aaf7cbd04e863d70e71c3de1819df9c37"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">string &amp; Body::HydroBodyName </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Exposes the hydro body name property for operation. </p>
-<dl class="section return"><dt>Returns</dt><dd>Pointer to the hydro body name property. </dd></dl>
-
-</div>
-</div>
 <a class="anchor" id="a7c930213d83962d4248068c38c589113"></a>
 <div class="memitem">
 <div class="memproto">
@@ -838,6 +840,32 @@ Here is the caller graph for this function:</div>
 <p>The list of linked bodies for hydrodynamic cross-body forces. </p>
 <p>The list of linked bodies for hydrodynamic cross-body forces. This is a list of pointers to the other bodies. This corresponds with the vector listForceCross_usr. The indices of the two vectors should match. The indices of the two lists should match. So that when a force gets added at index 5 in the listForceCross_hydro, it should have a matching entry at index 5 in the listLinkedBody_hydro. </p>
 <dl class="section return"><dt>Returns</dt><dd>A list of pointers to various linked bodies for hydro cross-body forces. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a9aaac9391781c67198f7b8b5785d4745"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_body.html">Body</a> &amp; Body::listCrossBody_hydro </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>index</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns reference to individual linked <a class="el" href="class_body.html">Body</a> for the hydro cross-body force. </p>
+<p>Returns reference for linked <a class="el" href="class_body.html">Body</a> specified by the index. The index corresponds to the index of the cross-body force. So that when a cross-body force is stored in its list at index 5, the linked <a class="el" href="class_body.html">Body</a> can be retrieved from this method with index 5. <a class="el" href="class_body.html">Body</a> stored internally as a pointer to the <a class="el" href="class_body.html">Body</a> object. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">index</td><td>Integer. The index of the linked <a class="el" href="class_body.html">Body</a> to return. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Returns reference to a <a class="el" href="class_body.html">Body</a> object. The reference points to the linked <a class="el" href="class_body.html">Body</a> object that corresponds to the <a class="el" href="class_force_cross.html">ForceCross</a> object at the same index. </dd></dl>
 
 </div>
 </div>
@@ -860,12 +888,38 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a class="anchor" id="a2e7a45fefe1c449e333891bdfea0b264"></a>
+<a class="anchor" id="afaf64ab1b477ff157f31e6824be1b767"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">vector&lt; <a class="el" href="classforce_active.html">forceActive</a> * &gt; &amp; Body::listForceActive_hydro </td>
+          <td class="memname"><a class="el" href="class_body.html">Body</a> &amp; Body::listCrossBody_user </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>index</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns reference to individual linked <a class="el" href="class_body.html">Body</a> for the user cross-body force. </p>
+<p>Returns reference for linked <a class="el" href="class_body.html">Body</a> specified by the index. The index corresponds to the index of the cross-body force. So that when a cross-body force is stored in its list at index 5, the linked <a class="el" href="class_body.html">Body</a> can be retrieved from this method with index 5. <a class="el" href="class_body.html">Body</a> stored internally as a pointer to the <a class="el" href="class_body.html">Body</a> object. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">index</td><td>Integer. The index of the linked <a class="el" href="class_body.html">Body</a> to return. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Returns reference to a <a class="el" href="class_body.html">Body</a> object. The reference points to the linked <a class="el" href="class_body.html">Body</a> object that corresponds to the <a class="el" href="class_force_cross.html">ForceCross</a> object at the same index. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a2169495533eebe0f4f05d9e2cb71f42b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">vector&lt; <a class="el" href="class_force_active.html">ForceActive</a> * &gt; &amp; Body::listForceActive_hydro </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -879,12 +933,38 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a class="anchor" id="a09cc32078919b282e5077f18f3343b35"></a>
+<a class="anchor" id="aa83129940f0eb3a27686b35292bf3339"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">vector&lt; <a class="el" href="classforce_active.html">forceActive</a> * &gt; &amp; Body::listForceActive_user </td>
+          <td class="memname"><a class="el" href="class_force_active.html">ForceActive</a> * Body::listForceActive_hydro </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>forceIn</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>A single active hydrodynamic force. </p>
+<p>A single active hydrodynamic force. A pointer directing to the active hydrodynamic force. Warning that these forces may be linked to other bodies as well and should not be changed. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">forceIn</td><td>Integer. Index of the <a class="el" href="class_force_active.html">ForceActive</a> object requested. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A single pointer to the user active forces requested by parameter forceIn. Pointer passed by value. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="acc646c06517d67b4d8dba821b5f87d8e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">vector&lt; <a class="el" href="class_force_active.html">ForceActive</a> * &gt; Body::listForceActive_user </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -898,12 +978,38 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a class="anchor" id="a6d71490a913c0ed97ade7bb2976d426a"></a>
+<a class="anchor" id="ad55994a87e95520959a2d236e02168ea"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">vector&lt;<a class="el" href="classforce_cross.html">forceCross</a>* &gt;&amp; Body::listForceCross_hydro </td>
+          <td class="memname"><a class="el" href="class_force_active.html">ForceActive</a> * Body::listForceActive_user </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>forceIn</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>A single active user force. </p>
+<p>A single active user force. A pointer directing to the active user force. Warning that these forces may be linked to other bodies as well and should not be changed. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">forceIn</td><td>Integer. Index of the <a class="el" href="class_force_active.html">ForceActive</a> object requested. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A single pointer to the user active forces requested by parameter forceIn. Pointer passed by value. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a0dc70d3a67ad921a022f48a2fdf37526"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">vector&lt; <a class="el" href="class_force_cross.html">ForceCross</a> * &gt; &amp; Body::listForceCross_hydro </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -917,12 +1023,38 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a class="anchor" id="ad44837d77c6b6c0b0f3f4d5b2658627a"></a>
+<a class="anchor" id="ab814600b31abd49c0a8de29a0fb597b4"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">vector&lt;<a class="el" href="classforce_cross.html">forceCross</a>* &gt;&amp; Body::listForceCross_user </td>
+          <td class="memname"><a class="el" href="class_force_cross.html">ForceCross</a> * Body::listForceCross_hydro </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>forceIn</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>A single cross-body hydrodynamic force. </p>
+<p>A single cross-body hydrodynamic force. A pointer directing to the cross-body hydrodynamic force. Warning that these forces may be linked to other bodies as well and should not be changed. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">forceIn</td><td>Integer. Index of the <a class="el" href="class_force_cross.html">ForceCross</a> object requested. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A single pointer to the user cross-body forces requested by parameter forceIn. Pointer passed by value. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ac428c19730346a51bde800e0cbc2e281"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">vector&lt; <a class="el" href="class_force_cross.html">ForceCross</a> * &gt; &amp; Body::listForceCross_user </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -936,12 +1068,38 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a class="anchor" id="a6d728e1c27df4498ffe3b270bc2bd4b6"></a>
+<a class="anchor" id="af01cd5dc37ebd7969f4f2bc10ba3d76b"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">vector&lt; <a class="el" href="classforce_react.html">forceReact</a> * &gt; &amp; Body::listForceReact_hydro </td>
+          <td class="memname"><a class="el" href="class_force_cross.html">ForceCross</a> * Body::listForceCross_user </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>forceIn</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>A single cross-body user force. </p>
+<p>A single cross-body user force. A pointer directing to the cross-body user force. Warning that these forces may be linked to other bodies as well and should not be changed. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">forceIn</td><td>Integer. Index of the <a class="el" href="class_force_cross.html">ForceCross</a> object requested. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A single pointer to the user cross-body forces requested by parameter forceIn. Pointer passed by value. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ad68893d21ecf337242d68936132ad25a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">vector&lt; <a class="el" href="class_force_react.html">ForceReact</a> * &gt; &amp; Body::listForceReact_hydro </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -955,12 +1113,38 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a class="anchor" id="abf20f5bfe14f6c831db9718682d7857d"></a>
+<a class="anchor" id="a774fe4681465ee5a8ea344f4ec7c18e2"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">vector&lt; <a class="el" href="classforce_react.html">forceReact</a> * &gt; &amp; Body::listForceReact_user </td>
+          <td class="memname"><a class="el" href="class_force_react.html">ForceReact</a> * Body::listForceReact_hydro </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>forceIn</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>A single reactive hydrodynamic force. </p>
+<p>A single reactive hydrodynamic force. A pointer directing to the reactive hydrodynamic force. Warning that these forces may be linked to other bodies as well and should not be changed. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">forceIn</td><td>Integer. Index of the <a class="el" href="class_force_react.html">ForceReact</a> object requested. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A single pointer to the user reactive forces requested by parameter forceIn. Pointer passed by value. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="afc1e6e0018dd26cc3702b74aea12ed9b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">vector&lt; <a class="el" href="class_force_react.html">ForceReact</a> * &gt; &amp; Body::listForceReact_user </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -971,6 +1155,130 @@ Here is the caller graph for this function:</div>
 <p>The list of reactive user forces. </p>
 <p>The list of reactive user forces. A vector of pointers directing to the reactive user forces. Warning that these forces may be linked to other bodies as well and should not be changed. </p>
 <dl class="section return"><dt>Returns</dt><dd>A vector of pointers to various user reactive forces. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a8afe32e16a7869395083de6cb0aca63e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_force_react.html">ForceReact</a> * Body::listForceReact_user </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>forceIn</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>A single reactive user force. </p>
+<p>A single reactive user force. A pointer directing to the reactive user force. Warning that these forces may be linked to other bodies as well and should not be changed. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">forceIn</td><td>Integer. Index of the <a class="el" href="class_force_react.html">ForceReact</a> object requested. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A single pointer to the user reactive forces requested by parameter forceIn. Pointer passed by value. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="abc4abd052a3776123df114c6faf34bae"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">vector&lt; string &gt; &amp; Body::listNamedLink_hydro </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The list of names of linked bodies for hydro cross-body forces. This is a list of names of other bodies that a cross-body force references. This corresponds to the vector listForceCross_hydro. The indices of the two vectors should match. So that when a force gets added at index 5 in the listForceCross_hydro, it should have a matching entry at index 5 in listNamedLink_hydro. The list of names only is a temporary list used during the input stage of bodies. This is required because the linked body may name a body which is not yet read from the input file. Thus, the body is not currently defined. Once all Bodies are defined, the <a class="el" href="class_system.html">System</a> object calls a function to read through each name in the list and assign corresponding pointers in the listLinkedBody_hydro. </p>
+<dl class="section return"><dt>Returns</dt><dd>Returns the list of named bodies linked to the Cross-Body forces. Returned object is a vector of string objects. Returned variable passed by reference. </dd></dl>
+<dl class="section see"><dt>See Also</dt><dd>listLinkedBody_hydro() </dd>
+<dd>
+<a class="el" href="class_system.html">System</a> </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ad01b96bf575dde9f75f489c7118ca574"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">string &amp; Body::listNamedLink_hydro </td>
+          <td>(</td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>varIn</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The list of names of linked bodies for hydro cross-body forces. This is a list of names of other bodies that a cross-body force references. This corresponds to the vector listForceCross_hydro. The indices of the two vectors should match. So that when a force gets added at index 5 in the listForceCross_hydro, it should have a matching entry at index 5 in listNamedLink_hydro. The list of names only is a temporary list used during the input stage of bodies. This is required because the linked body may name a body which is not yet read from the input file. Thus, the body is not currently defined. Once all Bodies are defined, the <a class="el" href="class_system.html">System</a> object calls a function to read through each name in the list and assign corresponding pointers in the listLinkedBody_hydro. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">varIn</td><td>Integer input specifying exactly which item in the list to return. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Returns the named body linked to the Cross-Body forces. Returned object is a string object. Returned variable passed by reference. </dd></dl>
+<dl class="section see"><dt>See Also</dt><dd>listLinkedBody_hydro() </dd>
+<dd>
+<a class="el" href="class_system.html">System</a> </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a07d8ed6fdf5a4c6ef73b2d39b58403ce"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">vector&lt; string &gt; &amp; Body::listNamedLink_user </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The list of names of linked bodies for user cross-body forces. This is a list of names of other bodies that a cross-body force references. This corresponds to the vector listForceCross_usr. The indices of the two vectors should match. So that when a force gets added at index 5 in the listForceCross_user, it should have a matching entry at index 5 in listNamedLink_usr. The list of names only is a temporary list used during the input stage of bodies. This is required because the linked body may name a body which is not yet read from the input file. Thus, the body is not currently defined. Once all Bodies are defined, the <a class="el" href="class_system.html">System</a> object calls a function to read through each name in the list and assign corresponding pointers in the listLinkedBody_usr. </p>
+<dl class="section return"><dt>Returns</dt><dd>Returns the list of named bodies linked to the Cross-Body forces. Returned object is a vector of string objects. Returned variable passed by reference. </dd></dl>
+<dl class="section see"><dt>See Also</dt><dd>listLinkedBody_user() </dd>
+<dd>
+<a class="el" href="class_system.html">System</a> </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a1fd7e672b9768351f9a53523d7b5c798"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">string &amp; Body::listNamedLink_user </td>
+          <td>(</td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>varIn</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The list of names of linked bodies for user cross-body forces. This is a list of names of other bodies that a cross-body force references. This corresponds to the vector listForceCross_usr. The indices of the two vectors should match. So that when a force gets added at index 5 in the listForceCross_user, it should have a matching entry at index 5 in listNamedLink_usr. The list of names only is a temporary list used during the input stage of bodies. This is required because the linked body may name a body which is not yet read from the input file. Thus, the body is not currently defined. Once all Bodies are defined, the <a class="el" href="class_system.html">System</a> object calls a function to read through each name in the list and assign corresponding pointers in the listLinkedBody_usr. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">varIn</td><td>Integer input specifying exactly which item in the list to return. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Returns the named body linked to the Cross-Body forces. Returned object is a string object. Returned variable passed by reference. </dd></dl>
+<dl class="section see"><dt>See Also</dt><dd>listLinkedBody_user() </dd>
+<dd>
+<a class="el" href="class_system.html">System</a> </dd></dl>
 
 </div>
 </div>
@@ -990,23 +1298,102 @@ Here is the caller graph for this function:</div>
 <p>Implements the method <a class="el" href="class_body.html#a4201150aa57d9d6f3aa245d8eca231d3" title="Gets the mass matrix for the body.">getMassMatrix()</a>, just under a different name. </p>
 <dl class="section return"><dt>Returns</dt><dd>Returns the mass matrix for the body, as a single matrix. </dd></dl>
 
+</div>
+</div>
+<a class="anchor" id="ad4580795d6db4b4ffd23db2a21ace9c7"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Body::operator== </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_body.html">Body</a> &amp;&#160;</td>
+          <td class="paramname"><em>bodIn</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Overload for operator == to compare two <a class="el" href="class_body.html">Body</a> objects. Comparison is based on body names. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">bodIn</td><td>The other body to compare to. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Returns true if the body names are equal. Returned variable is passed by value. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ae1f5ffd42ba3b276a056eb56ec6ed5a9"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">string &amp; Body::refBodyName </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Exposes the body name property for operation. </p>
+<dl class="section return"><dt>Returns</dt><dd>Pointer to the body name property. </dd></dl>
+
 <p><div class="dynheader">
-Here is the call graph for this function:</div>
+Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="class_body_acb2895e81a595c7d168db48ff5dc766c_cgraph.png" border="0" usemap="#class_body_acb2895e81a595c7d168db48ff5dc766c_cgraph" alt=""/></div>
-<map name="class_body_acb2895e81a595c7d168db48ff5dc766c_cgraph" id="class_body_acb2895e81a595c7d168db48ff5dc766c_cgraph">
-<area shape="rect" id="node3" href="class_body.html#a4201150aa57d9d6f3aa245d8eca231d3" title="Gets the mass matrix for the body." alt="" coords="185,5,335,32"/></map>
+<div class="center"><img src="class_body_ae1f5ffd42ba3b276a056eb56ec6ed5a9_icgraph.png" border="0" usemap="#class_body_ae1f5ffd42ba3b276a056eb56ec6ed5a9_icgraph" alt=""/></div>
+<map name="class_body_ae1f5ffd42ba3b276a056eb56ec6ed5a9_icgraph" id="class_body_ae1f5ffd42ba3b276a056eb56ec6ed5a9_icgraph">
+<area shape="rect" id="node3" href="class_file_writer.html#a5c921b5ae92039cf50458e2c46e204da" title="Writes the output file of global motions. If file exists, appends to the file, assuming the appended ..." alt="" coords="219,5,413,32"/><area shape="rect" id="node5" href="class_file_writer.html#a2078a50dbd21946aeed86d8e0bccd50e" title="Writes the output file of global velocities. If file exists, appends to the file, assuming the append..." alt="" coords="215,56,417,83"/><area shape="rect" id="node7" href="class_file_writer.html#aaff553c2e03cb1c1639e107cfeac3038" title="Writes the output file of global accelerations. If file exists, appends to the file, assuming the appended file is a new body object." alt="" coords="201,107,431,133"/><area shape="rect" id="node9" href="class_file_writer.html#a317649499b8c16dd529e2bf588e3be88" title="Writes the output file of global solutions. If file exists, appends to the file, assuming the appende..." alt="" coords="215,157,417,184"/></map>
 </div>
 </p>
 
 </div>
 </div>
-<a class="anchor" id="ab78f6612c15b27617175bb385a051667"></a>
+<a class="anchor" id="a7aef7cce12d2dbdd3e5ab789ba8fe669"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">Mat&lt; double &gt; &amp; Body::Posn </td>
+          <td class="memname">double &amp; Body::refHeading </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Exposes the heading property for operations. </p>
+<dl class="section return"><dt>Returns</dt><dd>Pointer to the heading property. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="aef09a9c9b037e1b4e42fbdd1fa61c65d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">string &amp; Body::refHydroBodName </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Exposes the hydro body name property for operation. </p>
+<dl class="section return"><dt>Returns</dt><dd>Pointer to the hydro body name property. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ad34f38992e14d5bda02c481c311b66b3"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Mat&lt; double &gt; &amp; Body::refPosn </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -1017,6 +1404,25 @@ Here is the call graph for this function:</div>
 <p>Exposes the position property for operation. The entire matrix for position of the body. </p>
 <p>Returns the entire matrix for the position of the body. Output is a 3x1 matrix with double point precision. First entry (1,1) = Position in X-axis. Second entry (2,1) = Position in Y-axis. Third entry (3,1) = Position in Z-axis. Units are in meters. Position is relative to the orientation of the world coordinate system. </p>
 <dl class="section return"><dt>Returns</dt><dd>Returns a pointer to the the entire matrix for the position of the body. Output is a 3x1 matrix with double point precision. First entry (1,1) = Position in X-axis. Second entry (2,1) = Position in Y-axis. Third entry (3,1) = Position in Z-axis. Units are in meters. Position is relative to the orientation of the world coordinate system. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ae799af5531c35381830061f6abc0bb17"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">cx_mat &amp; Body::refSolution </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the solution matrix for the body. </p>
+<p>Gets the solution matrix for the body. Used to store the solution from the motion solver. This variable is initially empty on body creation. It gets filled with the output from the motion solver. Output is a column matrix (n by 1) of complex numbers. Output is in units of meters. </p>
+<dl class="section return"><dt>Returns</dt><dd>Reference to column matrix of complex numbers. Value returned by reference. Matrix size is not hard coded. Number of rows in matrix must match number of equations for body property. </dd></dl>
 
 </div>
 </div>
@@ -1040,15 +1446,6 @@ Here is the call graph for this function:</div>
   </table>
   </dd>
 </dl>
-
-<p><div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_body_a21190f9d796d631202db6caf768beae1_icgraph.png" border="0" usemap="#class_body_a21190f9d796d631202db6caf768beae1_icgraph" alt=""/></div>
-<map name="class_body_a21190f9d796d631202db6caf768beae1_icgraph" id="class_body_a21190f9d796d631202db6caf768beae1_icgraph">
-<area shape="rect" id="node3" href="class_bodiesinput.html#a752cc5feeefe16345651b8133a132411" title="Bodiesinput::addNewBody" alt="" coords="203,5,386,32"/><area shape="rect" id="node5" href="class_bodiesinput.html#a2bf5785740ebd6e397477e667af16a05" title="Bodiesinput::keywordHandler" alt="" coords="435,5,634,32"/></map>
-</div>
-</p>
 
 </div>
 </div>
@@ -1121,29 +1518,6 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a class="anchor" id="a38933b2aec94873355dcecc8f8b41db2"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Body::setCrossBodyName </td>
-          <td>(</td>
-          <td class="paramtype">string&#160;</td>
-          <td class="paramname"><em>newName</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Adds a cross body name. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">newName</td><td>The string passed in is added to the vector that holds the list of cross body forces. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
 <a class="anchor" id="a7bba55a8fd4aea7a17ce7bd5f54d6ab8"></a>
 <div class="memitem">
 <div class="memproto">
@@ -1167,35 +1541,12 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a class="anchor" id="a34950bfba0878d2488f91a0f5a1ae918"></a>
+<a class="anchor" id="a423511decfb427835d6734e1c21e1856"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void Body::setHydroActiveForces </td>
-          <td>(</td>
-          <td class="paramtype">vector&lt; string &gt;&#160;</td>
-          <td class="paramname"><em>newForceList</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Sets the hydro active forces. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">newForceList</td><td>The vector of strings sets hydroActiveForces. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a class="anchor" id="ac2cb95c1a4d24e6b456db9bfe3e6dea3"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Body::setHydroBodyName </td>
+          <td class="memname">void Body::setHydroBodName </td>
           <td>(</td>
           <td class="paramtype">string&#160;</td>
           <td class="paramname"><em>newName</em></td><td>)</td>
@@ -1207,52 +1558,6 @@ Here is the caller graph for this function:</div>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">newName</td><td>The string passed in sets the hydroBody. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a class="anchor" id="a47aed2abb4a77b9da93a803f7fdd5e31"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Body::setHydroCrossBodyForces </td>
-          <td>(</td>
-          <td class="paramtype">vector&lt; string &gt;&#160;</td>
-          <td class="paramname"><em>newForceList</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Sets the hydro active forces. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">newForceList</td><td>The vector of strings sets hydroCrossBodyForces. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a class="anchor" id="ae26fc5ecce5fd1803ce26bf87d1d2a2b"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Body::setHydroReactiveForces </td>
-          <td>(</td>
-          <td class="paramtype">vector&lt; string &gt;&#160;</td>
-          <td class="paramname"><em>newForceList</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Sets the hydro reactive forces. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">newForceList</td><td>The vector of strings sets hydroReactiveForce. </td></tr>
   </table>
   </dd>
 </dl>
@@ -1544,12 +1849,12 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a class="anchor" id="ac1534f2032bc04ff9c118f5f47f3ef8e"></a>
+<a class="anchor" id="a202cf4dbcc9b1cbd268f02905ddebbb2"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void Body::setSolution </td>
+          <td class="memname">void Body::setSolnMat </td>
           <td>(</td>
           <td class="paramtype">cx_mat&#160;</td>
           <td class="paramname"><em>input</em></td><td>)</td>
@@ -1569,122 +1874,9 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a class="anchor" id="aaa26153bd320830684e65bbf538b139d"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Body::setUserActiveForces </td>
-          <td>(</td>
-          <td class="paramtype">vector&lt; string &gt;&#160;</td>
-          <td class="paramname"><em>newForceList</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Sets the user active forces. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">newForceList</td><td>The vector of strings sets userActiveForces. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a class="anchor" id="af409e4b49b838e118a57a753879685dc"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Body::setUserCrossBodyForces </td>
-          <td>(</td>
-          <td class="paramtype">vector&lt; string &gt;&#160;</td>
-          <td class="paramname"><em>newCrossBodyList</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Sets the user cross body forces. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">newCrossBodyList</td><td>The vector of strings sets userCrossBodyForces. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p><div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_body_af409e4b49b838e118a57a753879685dc_cgraph.png" border="0" usemap="#class_body_af409e4b49b838e118a57a753879685dc_cgraph" alt=""/></div>
-<map name="class_body_af409e4b49b838e118a57a753879685dc_cgraph" id="class_body_af409e4b49b838e118a57a753879685dc_cgraph">
-<area shape="rect" id="node3" href="class_body.html#a1bcd87df62f0cdd063c01799c1631ebd" title="Body::addLinkedBody" alt="" coords="273,5,431,32"/></map>
-</div>
-</p>
-
-</div>
-</div>
-<a class="anchor" id="aa3b532c91892c7336309df492cad39d6"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Body::setUserReactiveForces </td>
-          <td>(</td>
-          <td class="paramtype">vector&lt; string &gt;&#160;</td>
-          <td class="paramname"><em>newForceList</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Sets the user reactive forces. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">newForceList</td><td>The vector of strings sets userReactiveForces. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a class="anchor" id="abca1fdefd8fd12c9548c5e0d157d00ac"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">cx_mat &amp; Body::Solution </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Get the solution matrix for the body. </p>
-<p>Gets the solution matrix for the body. Used to store the solution from the motion solver. This variable is initially empty on body creation. It gets filled with the output from the motion solver. Output is a column matrix (n by 1) of complex numbers. Output is in units of meters. </p>
-<dl class="section return"><dt>Returns</dt><dd>Reference to column matrix of complex numbers. Value returned by reference. Matrix size is not hard coded. Number of rows in matrix must match number of equations for body property. </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="a31b959b6f30e3c9c6ebc3f0a325fec9d"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Body::testPrint </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Test print to console the values of all data members. </p>
-
-</div>
-</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>/home/nicholas/Ship Design/Projects/DMS1305 OpenSEA/master/200_src/bin/ofreq/motion_solver/<a class="el" href="body_8h_source.html">body.h</a></li>
-<li>/home/nicholas/Ship Design/Projects/DMS1305 OpenSEA/master/200_src/bin/ofreq/motion_solver/body.cpp</li>
+<li><a class="el" href="body_8h_source.html">body.h</a></li>
+<li>body.cpp</li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -1692,7 +1884,7 @@ Here is the call graph for this function:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="class_body.html">Body</a></li>
-    <li class="footer">Generated on Thu Aug 22 2013 20:07:47 for oFreq by
+    <li class="footer">Generated on Sat Oct 12 2013 09:37:23 for oFreq by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.2 </li>
   </ul>

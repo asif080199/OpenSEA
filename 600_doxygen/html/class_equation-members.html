@@ -45,6 +45,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -93,7 +94,7 @@ $(document).ready(function(){initNavTree('class_equation.html','');});
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Variables</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -110,23 +111,31 @@ $(document).ready(function(){initNavTree('class_equation.html','');});
 
 <p>This is the complete list of members for <a class="el" href="class_equation.html">Equation</a>, including all inherited members.</p>
 <table class="directory">
-  <tr class="even"><td class="entry"><a class="el" href="class_equation.html#abe2b02e37a07bddaf1040d2d24c3564c">Coefficients</a>()</td><td class="entry"><a class="el" href="class_equation.html">Equation</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="class_equation.html#ad3c7c4766cf4b17eaf4f07e0792f012a">DataIndex</a>()</td><td class="entry"><a class="el" href="class_equation.html">Equation</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="class_equation.html#a68511fc719250ed80f86c50de9136733">Equation</a>()</td><td class="entry"><a class="el" href="class_equation.html">Equation</a></td><td class="entry"></td></tr>
   <tr><td class="entry"><a class="el" href="class_equation.html#a37fec641aec75302c37590d191421790">Equation</a>(int IndexIn)</td><td class="entry"><a class="el" href="class_equation.html">Equation</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_equation.html#a6aa77458d50e80de2a31708756c7925b">getCoefficient</a>(int number)</td><td class="entry"><a class="el" href="class_equation.html">Equation</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="class_equation.html#abb01745ac8c816354d72ee529d2bddc0">getCoefficientListSize</a>()</td><td class="entry"><a class="el" href="class_equation.html">Equation</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_equation.html#ac5fd13eba76ddbbf4813823fad4166e2">getDataIndex</a>()</td><td class="entry"><a class="el" href="class_equation.html">Equation</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classo_freq_core.html#a5e31044ee80fa436289e569c8080b21e">ErrLog</a></td><td class="entry"><a class="el" href="classo_freq_core.html">oFreqCore</a></td><td class="entry"><span class="mlabel">protected</span><span class="mlabel">static</span></td></tr>
+  <tr><td class="entry"><a class="el" href="class_equation.html#a6aa77458d50e80de2a31708756c7925b">getCoefficient</a>(int number)</td><td class="entry"><a class="el" href="class_equation.html">Equation</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_equation.html#aa3ceaac689d9cfef1a1b3123d8ec4027">getCoefficientListSize</a>()</td><td class="entry"><a class="el" href="class_equation.html">Equation</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="class_equation.html#ac5fd13eba76ddbbf4813823fad4166e2">getDataIndex</a>()</td><td class="entry"><a class="el" href="class_equation.html">Equation</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_equation.html#a4277bda09b538c1523d451afcc55787a">listCoefficients</a>()</td><td class="entry"><a class="el" href="class_equation.html">Equation</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="class_equation.html#a198eb9e2816a5cd316b8bdc07d505568">listCoefficients</a>(unsigned int index)</td><td class="entry"><a class="el" href="class_equation.html">Equation</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classo_freq_core.html#a5c882c0d8e78706270e377b749a647f5">oFreqCore</a>()</td><td class="entry"><a class="el" href="classo_freq_core.html">oFreqCore</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classo_freq_core.html#a85b3e812b6d78c064ba375d5101bb053">OutLog</a></td><td class="entry"><a class="el" href="classo_freq_core.html">oFreqCore</a></td><td class="entry"><span class="mlabel">protected</span><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="class_equation.html#a5964477a42f3941a968f249b89742d73">refDataIndex</a>()</td><td class="entry"><a class="el" href="class_equation.html">Equation</a></td><td class="entry"></td></tr>
   <tr><td class="entry"><a class="el" href="class_equation.html#a96dd6f24624703a1ff3ffb4d19a76582">setCoefficient</a>(int number, double coeffIn)</td><td class="entry"><a class="el" href="class_equation.html">Equation</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="class_equation.html#aa9e40c1cc6fb3cb030e9956663025a87">setDataIndex</a>(int index)</td><td class="entry"><a class="el" href="class_equation.html">Equation</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="class_equation.html#af6c9148998a4abe47f4a4215c51ce3c8">testPrint</a>()</td><td class="entry"><a class="el" href="class_equation.html">Equation</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="class_equation.html#a097243d0dfd608330fc91f115a0d15bb">~Equation</a>()</td><td class="entry"><a class="el" href="class_equation.html">Equation</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="classo_freq_core.html#a8af56bbec3689f5d2252da1787a910e3">setErrLog</a>(string dirIn)</td><td class="entry"><a class="el" href="classo_freq_core.html">oFreqCore</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classo_freq_core.html#a2912584189c4abd84498450b7c5908c2">setOutLog</a>(string dirIn)</td><td class="entry"><a class="el" href="classo_freq_core.html">oFreqCore</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr><td class="entry"><a class="el" href="classo_freq_core.html#a7272d265451eb63bb371f9b9c02f4883">writeError</a>(string mesIn)</td><td class="entry"><a class="el" href="classo_freq_core.html">oFreqCore</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classo_freq_core.html#a74a938eae7e51de72bc752ad83382a11">writeLog</a>(string mesIn)</td><td class="entry"><a class="el" href="classo_freq_core.html">oFreqCore</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
+  <tr><td class="entry"><a class="el" href="class_equation.html#a097243d0dfd608330fc91f115a0d15bb">~Equation</a>()</td><td class="entry"><a class="el" href="class_equation.html">Equation</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classo_freq_core.html#aea5887547dbd17fc2d4f1a99fe217918">~oFreqCore</a>()</td><td class="entry"><a class="el" href="classo_freq_core.html">oFreqCore</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
 </table></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Thu Aug 22 2013 20:07:50 for oFreq by
+    <li class="footer">Generated on Sat Oct 12 2013 09:37:29 for oFreq by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.2 </li>
   </ul>

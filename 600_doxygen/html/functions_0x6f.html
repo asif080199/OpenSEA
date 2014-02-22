@@ -45,6 +45,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -89,8 +90,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="functions_0x65.html#index_e"><span>e</span></a></li>
       <li><a href="functions_0x66.html#index_f"><span>f</span></a></li>
       <li><a href="functions_0x67.html#index_g"><span>g</span></a></li>
-      <li><a href="functions_0x68.html#index_h"><span>h</span></a></li>
-      <li><a href="functions_0x69.html#index_i"><span>i</span></a></li>
       <li><a href="functions_0x6b.html#index_k"><span>k</span></a></li>
       <li><a href="functions_0x6c.html#index_l"><span>l</span></a></li>
       <li><a href="functions_0x6d.html#index_m"><span>m</span></a></li>
@@ -126,7 +125,7 @@ $(document).ready(function(){initNavTree('functions_0x6f.html','');});
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Variables</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -139,25 +138,52 @@ $(document).ready(function(){initNavTree('functions_0x6f.html','');});
 <div class="textblock">Here is a list of all documented class members with links to the class documentation for each member:</div>
 
 <h3><a class="anchor" id="index_o"></a>- o -</h3><ul>
+<li>ObjectGroup()
+: <a class="el" href="classosea_1_1_object_group.html#af4d309432161dab231e33e83acaf4161">osea::ObjectGroup</a>
+</li>
+<li>oFreqCore()
+: <a class="el" href="classosea_1_1ofreq_1_1o_freq_core.html#a5c882c0d8e78706270e377b749a647f5">osea::ofreq::oFreqCore</a>
+</li>
 <li>operator+()
-: <a class="el" href="classmat_cross_force.html#ae08bed0375d872e33a128b2e70224e6d">matCrossForce</a>
-, <a class="el" href="classmat_react_force.html#aed364735975e65fe52ee9425b15ac839">matReactForce</a>
+: <a class="el" href="classosea_1_1ofreq_1_1mat_force_react.html#a8f65b2f67fd6169167cc9735370c99eb">osea::ofreq::matForceReact</a>
+, <a class="el" href="classosea_1_1ofreq_1_1mat_force_cross.html#a9cb8a17edf38bebb728ff47261175614">osea::ofreq::matForceCross</a>
 </li>
 <li>operator-()
-: <a class="el" href="classmat_react_force.html#a0294972a0d151ae787f1593bf45aaf9e">matReactForce</a>
-, <a class="el" href="classmat_cross_force.html#ae0d2f74c5c7a615e93ba523fe86275b0">matCrossForce</a>
+: <a class="el" href="classosea_1_1ofreq_1_1mat_force_cross.html#af22b49c1536dc753f99b34a3eba1c8e7">osea::ofreq::matForceCross</a>
+, <a class="el" href="classosea_1_1ofreq_1_1mat_force_react.html#ad3be4d341c5fdabf28634cf102a8fbc9">osea::ofreq::matForceReact</a>
+</li>
+<li>operator==()
+: <a class="el" href="classosea_1_1ofreq_1_1_body.html#ad4580795d6db4b4ffd23db2a21ace9c7">osea::ofreq::Body</a>
 </li>
 <li>ord()
-: <a class="el" href="class_equationof_motion.html#a31f904818ce75c9e2a2b5cff9fc707a5">EquationofMotion</a>
+: <a class="el" href="classosea_1_1ofreq_1_1_equationof_motion.html#a31f904818ce75c9e2a2b5cff9fc707a5">osea::ofreq::EquationofMotion</a>
 </li>
 <li>orderDerivative
-: <a class="el" href="class_global_solution.html#a026746ffb8e416eb4142a058b108148c">GlobalSolution</a>
+: <a class="el" href="classosea_1_1ofreq_1_1_global_solution.html#a935843ad9f4fd2de2a2ec407de45a20d">osea::ofreq::GlobalSolution</a>
+</li>
+<li>OutLog
+: <a class="el" href="classosea_1_1ofreq_1_1o_freq_core.html#a85b3e812b6d78c064ba375d5101bb053">osea::ofreq::oFreqCore</a>
+</li>
+<li>outputBodiesFile()
+: <a class="el" href="classosea_1_1_file_reader.html#a79f10f1fd00fac75e83152980e34a6ea">osea::FileReader</a>
+</li>
+<li>outputControlFile()
+: <a class="el" href="classosea_1_1_file_reader.html#a705af41cd541f983951b6988082c632c">osea::FileReader</a>
+</li>
+<li>outputDataFile()
+: <a class="el" href="classosea_1_1_file_reader.html#a7f061059a96d02e453890e3b6874c17c">osea::FileReader</a>
 </li>
 <li>OutputDerived()
-: <a class="el" href="class_output_derived.html#af8b70b70b8a5089f2b673da8b59a7b6a">OutputDerived</a>
+: <a class="el" href="classosea_1_1ofreq_1_1_output_derived.html#af8b70b70b8a5089f2b673da8b59a7b6a">osea::ofreq::OutputDerived</a>
+</li>
+<li>outputForcesFile()
+: <a class="el" href="classosea_1_1_file_reader.html#a02f58d7d0c309a7de4599d5220c3ac65">osea::FileReader</a>
 </li>
 <li>OutputsBody()
-: <a class="el" href="class_outputs_body.html#a6898483a0919f9bb9cd82e3036a59a14">OutputsBody</a>
+: <a class="el" href="classosea_1_1ofreq_1_1_outputs_body.html#a6898483a0919f9bb9cd82e3036a59a14">osea::ofreq::OutputsBody</a>
+</li>
+<li>outputSeaEnvFile()
+: <a class="el" href="classosea_1_1_file_reader.html#a25198e57b3c7f8fbca043ecce848d008">osea::FileReader</a>
 </li>
 </ul>
 </div><!-- contents -->
@@ -165,7 +191,7 @@ $(document).ready(function(){initNavTree('functions_0x6f.html','');});
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Thu Aug 22 2013 20:08:30 for oFreq by
+    <li class="footer">Generated on Sat Oct 12 2013 10:41:58 for oFreq by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.2 </li>
   </ul>

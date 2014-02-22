@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['equationlist',['EquationList',['../class_derivative.html#aed6f05c911e91ef4690784072eeff9f1',1,'Derivative']]],
-  ['equations',['Equations',['../class_derivative.html#ade93a5b5e1f55b428b9e674f8ac02c9e',1,'Derivative']]]
+  ['errlog',['ErrLog',['../classosea_1_1ofreq_1_1o_freq_core.html#a5e31044ee80fa436289e569c8080b21e',1,'osea::ofreq::oFreqCore']]]
 ];

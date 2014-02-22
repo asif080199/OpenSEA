@@ -1,0 +1,163 @@
+\hypertarget{classosea_1_1ofreq_1_1_force}{\section{osea\-:\-:ofreq\-:\-:Force Class Reference}
+\label{classosea_1_1ofreq_1_1_force}\index{osea\-::ofreq\-::\-Force@{osea\-::ofreq\-::\-Force}}
+}
+
+
+{\ttfamily \#include $<$force.\-h$>$}
+
+
+
+Inheritance diagram for osea\-:\-:ofreq\-:\-:Force\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classosea_1_1ofreq_1_1_force__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for osea\-:\-:ofreq\-:\-:Force\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=204pt]{classosea_1_1ofreq_1_1_force__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classosea_1_1ofreq_1_1_force_a00983e3bbc206a00bb9253deafc4e424}{Force} ()
+\item 
+\hyperlink{classosea_1_1ofreq_1_1_force_a17b130fe437ef6c78162f6d4fb7fc909}{Force} (int index\-In)
+\begin{DoxyCompactList}\small\item\em Overloaded constructor for \hyperlink{classosea_1_1ofreq_1_1_force}{Force} object. Allows the \hyperlink{classosea_1_1ofreq_1_1_system}{System} object to pass the index of the newly created \hyperlink{classosea_1_1ofreq_1_1_force}{Force} object in the list of other similar \hyperlink{classosea_1_1ofreq_1_1_force}{Force} objects. Used during object creation for proper association with \hyperlink{classosea_1_1ofreq_1_1_body}{Body} object. \end{DoxyCompactList}\item 
+virtual \hyperlink{classosea_1_1ofreq_1_1_force_a8767ca332cee738a462befe1bfbfa454}{$\sim$\-Force} ()
+\item 
+void \hyperlink{classosea_1_1ofreq_1_1_force_afda991c33f4b65e82b246b24c39f0923}{set\-Force\-Name} (std\-::string)
+\item 
+std\-::string \hyperlink{classosea_1_1ofreq_1_1_force_a8431fcc0edd27e3edb77f8176bec6908}{get\-Force\-Name} ()
+\item 
+void \hyperlink{classosea_1_1ofreq_1_1_force_aee052df1c632a6dfb323b5deac443684}{set\-System\-Index} (int index\-In)
+\begin{DoxyCompactList}\small\item\em Sets the system index. The index of the \hyperlink{classosea_1_1ofreq_1_1_force}{Force} object as it exists in the list of other similar \hyperlink{classosea_1_1ofreq_1_1_force}{Force} objects contained under the \hyperlink{classosea_1_1ofreq_1_1_system}{System} object. \end{DoxyCompactList}\item 
+int \hyperlink{classosea_1_1ofreq_1_1_force_a8cce0e20d734d02c5c52c8ca1f1bde54}{get\-System\-Index} ()
+\begin{DoxyCompactList}\small\item\em Gets the system index. The index of the \hyperlink{classosea_1_1ofreq_1_1_force}{Force} object as it exists in the list of other similar \hyperlink{classosea_1_1ofreq_1_1_force}{Force} objects contained under the \hyperlink{classosea_1_1ofreq_1_1_system}{System} object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\-::string \hyperlink{classosea_1_1ofreq_1_1_force_af7cab6c2ebbe013f407570136a5cb8e7}{force\-Name}
+\item 
+\hypertarget{classosea_1_1ofreq_1_1_force_ae93d98d3c25ed841450d2a839b936aad}{int \hyperlink{classosea_1_1ofreq_1_1_force_ae93d98d3c25ed841450d2a839b936aad}{p\-Sys\-Index}}\label{classosea_1_1ofreq_1_1_force_ae93d98d3c25ed841450d2a839b936aad}
+
+\begin{DoxyCompactList}\small\item\em The index of the \hyperlink{classosea_1_1ofreq_1_1_force}{Force} object as it exists in the list of other similar \hyperlink{classosea_1_1ofreq_1_1_force}{Force} objects contained under the \hyperlink{classosea_1_1ofreq_1_1_system}{System} object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+This (base) class holds data for a force object. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classosea_1_1ofreq_1_1_force_a00983e3bbc206a00bb9253deafc4e424}{\index{osea\-::ofreq\-::\-Force@{osea\-::ofreq\-::\-Force}!Force@{Force}}
+\index{Force@{Force}!osea::ofreq::Force@{osea\-::ofreq\-::\-Force}}
+\subsubsection[{Force}]{\setlength{\rightskip}{0pt plus 5cm}Force\-::\-Force (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_force_a00983e3bbc206a00bb9253deafc4e424}
+The default constructor. \hypertarget{classosea_1_1ofreq_1_1_force_a17b130fe437ef6c78162f6d4fb7fc909}{\index{osea\-::ofreq\-::\-Force@{osea\-::ofreq\-::\-Force}!Force@{Force}}
+\index{Force@{Force}!osea::ofreq::Force@{osea\-::ofreq\-::\-Force}}
+\subsubsection[{Force}]{\setlength{\rightskip}{0pt plus 5cm}Force\-::\-Force (
+\begin{DoxyParamCaption}
+\item[{int}]{index\-In}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_force_a17b130fe437ef6c78162f6d4fb7fc909}
+
+
+Overloaded constructor for \hyperlink{classosea_1_1ofreq_1_1_force}{Force} object. Allows the \hyperlink{classosea_1_1ofreq_1_1_system}{System} object to pass the index of the newly created \hyperlink{classosea_1_1ofreq_1_1_force}{Force} object in the list of other similar \hyperlink{classosea_1_1ofreq_1_1_force}{Force} objects. Used during object creation for proper association with \hyperlink{classosea_1_1ofreq_1_1_body}{Body} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index\-In} & Integer. The index of the \hyperlink{classosea_1_1ofreq_1_1_force}{Force} object as it exists in the list of other similar \hyperlink{classosea_1_1ofreq_1_1_force}{Force} objects contained under the \hyperlink{classosea_1_1ofreq_1_1_system}{System} object. Variable passed by value. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classosea_1_1ofreq_1_1dict_bodies}{dict\-Bodies} 
+
+\hyperlink{classosea_1_1ofreq_1_1_system}{System} 
+
+\hyperlink{classosea_1_1ofreq_1_1_body}{Body} 
+\end{DoxySeeAlso}
+\hypertarget{classosea_1_1ofreq_1_1_force_a8767ca332cee738a462befe1bfbfa454}{\index{osea\-::ofreq\-::\-Force@{osea\-::ofreq\-::\-Force}!$\sim$\-Force@{$\sim$\-Force}}
+\index{$\sim$\-Force@{$\sim$\-Force}!osea::ofreq::Force@{osea\-::ofreq\-::\-Force}}
+\subsubsection[{$\sim$\-Force}]{\setlength{\rightskip}{0pt plus 5cm}Force\-::$\sim$\-Force (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classosea_1_1ofreq_1_1_force_a8767ca332cee738a462befe1bfbfa454}
+The default destructor, nothing happens here. 
+
+\subsection{Member Function Documentation}
+\hypertarget{classosea_1_1ofreq_1_1_force_a8431fcc0edd27e3edb77f8176bec6908}{\index{osea\-::ofreq\-::\-Force@{osea\-::ofreq\-::\-Force}!get\-Force\-Name@{get\-Force\-Name}}
+\index{get\-Force\-Name@{get\-Force\-Name}!osea::ofreq::Force@{osea\-::ofreq\-::\-Force}}
+\subsubsection[{get\-Force\-Name}]{\setlength{\rightskip}{0pt plus 5cm}string Force\-::get\-Force\-Name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_force_a8431fcc0edd27e3edb77f8176bec6908}
+Retrieve the name of the force. \begin{DoxyReturn}{Returns}
+new\-Name The name of the force. 
+\end{DoxyReturn}
+\hypertarget{classosea_1_1ofreq_1_1_force_a8cce0e20d734d02c5c52c8ca1f1bde54}{\index{osea\-::ofreq\-::\-Force@{osea\-::ofreq\-::\-Force}!get\-System\-Index@{get\-System\-Index}}
+\index{get\-System\-Index@{get\-System\-Index}!osea::ofreq::Force@{osea\-::ofreq\-::\-Force}}
+\subsubsection[{get\-System\-Index}]{\setlength{\rightskip}{0pt plus 5cm}int Force\-::get\-System\-Index (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_force_a8cce0e20d734d02c5c52c8ca1f1bde54}
+
+
+Gets the system index. The index of the \hyperlink{classosea_1_1ofreq_1_1_force}{Force} object as it exists in the list of other similar \hyperlink{classosea_1_1ofreq_1_1_force}{Force} objects contained under the \hyperlink{classosea_1_1ofreq_1_1_system}{System} object. 
+
+\begin{DoxyReturn}{Returns}
+Integer. The index of the \hyperlink{classosea_1_1ofreq_1_1_force}{Force} object as it exists in the list of other similar \hyperlink{classosea_1_1ofreq_1_1_force}{Force} objects contained under the \hyperlink{classosea_1_1ofreq_1_1_system}{System} object. Variable passed by value. 
+\end{DoxyReturn}
+\hypertarget{classosea_1_1ofreq_1_1_force_afda991c33f4b65e82b246b24c39f0923}{\index{osea\-::ofreq\-::\-Force@{osea\-::ofreq\-::\-Force}!set\-Force\-Name@{set\-Force\-Name}}
+\index{set\-Force\-Name@{set\-Force\-Name}!osea::ofreq::Force@{osea\-::ofreq\-::\-Force}}
+\subsubsection[{set\-Force\-Name}]{\setlength{\rightskip}{0pt plus 5cm}void Force\-::set\-Force\-Name (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_force_afda991c33f4b65e82b246b24c39f0923}
+Sets the name of the force. 
+\begin{DoxyParams}{Parameters}
+{\em new\-Name} & The name of the force. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classosea_1_1ofreq_1_1_force_aee052df1c632a6dfb323b5deac443684}{\index{osea\-::ofreq\-::\-Force@{osea\-::ofreq\-::\-Force}!set\-System\-Index@{set\-System\-Index}}
+\index{set\-System\-Index@{set\-System\-Index}!osea::ofreq::Force@{osea\-::ofreq\-::\-Force}}
+\subsubsection[{set\-System\-Index}]{\setlength{\rightskip}{0pt plus 5cm}void Force\-::set\-System\-Index (
+\begin{DoxyParamCaption}
+\item[{int}]{index\-In}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_force_aee052df1c632a6dfb323b5deac443684}
+
+
+Sets the system index. The index of the \hyperlink{classosea_1_1ofreq_1_1_force}{Force} object as it exists in the list of other similar \hyperlink{classosea_1_1ofreq_1_1_force}{Force} objects contained under the \hyperlink{classosea_1_1ofreq_1_1_system}{System} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index\-In} & Integer. The index of the \hyperlink{classosea_1_1ofreq_1_1_force}{Force} object as it exists in the list of other similar \hyperlink{classosea_1_1ofreq_1_1_force}{Force} objects contained under the \hyperlink{classosea_1_1ofreq_1_1_system}{System} object. Variable passed by value. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classosea_1_1ofreq_1_1_force_af7cab6c2ebbe013f407570136a5cb8e7}{\index{osea\-::ofreq\-::\-Force@{osea\-::ofreq\-::\-Force}!force\-Name@{force\-Name}}
+\index{force\-Name@{force\-Name}!osea::ofreq::Force@{osea\-::ofreq\-::\-Force}}
+\subsubsection[{force\-Name}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string osea\-::ofreq\-::\-Force\-::force\-Name\hspace{0.3cm}{\ttfamily [protected]}}}\label{classosea_1_1ofreq_1_1_force_af7cab6c2ebbe013f407570136a5cb8e7}
+The force name. 
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+force.\-h\item 
+force.\-cpp\end{DoxyCompactItemize}
