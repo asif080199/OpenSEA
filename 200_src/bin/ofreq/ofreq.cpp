@@ -231,7 +231,8 @@ int main(int argc, char *argv[])
             for(unsigned int k = 0; k < sysofreq.listBody().size(); k++)
 			{
                 Solution soln;
-                soln.refBody() = sysofreq.listBody(k);
+                //soln.refBody() = sysofreq.listBody(k);
+                soln.setBody(&sysofreq.listBody(k));
                 soln.setSolnMat(theMotionSolver.listSolution(k));
                 listSolutions[k].setSolnMat(i, j, soln);
 			}
@@ -306,10 +307,10 @@ void buildMatBody(int bod, bool useCoeff)
     for (unsigned int i = 0; i < MyBod->listForceActive_user().size(); i++)
     {
         listMatBody[bod].listForceActive_user().push_back(matForceActive());
-        listMatBody[bod].listForceActive_user(i).listCoefficients() = MyModel->getMatForceActive_user(i);
+        listMatBody[bod].listForceActive_user(i).listCoefficient() = MyModel->getMatForceActive_user(i);
+        //Print out active force matrix.  For Debugging.
+        //listMatBody[bod].listForceActive_user(i).listCoefficient().print("Active Force: " + i);
 
-        //Print output
-        MyModel->getMatForceActive_user(i).print();
         //Create force ID.
         listMatBody[bod].listForceActive_user(i).setId(i);
     }
@@ -319,7 +320,7 @@ void buildMatBody(int bod, bool useCoeff)
     for(unsigned int i = 0; i < MyBod->listForceActive_hydro().size(); i++)
     {
         listMatBody[bod].listForceActive_hydro().push_back(matForceActive());
-        listMatBody[bod].listForceActive_hydro(i).listCoefficients() = MyModel->getMatForceActive_hydro(i);
+        listMatBody[bod].listForceActive_hydro(i).listCoefficient() = MyModel->getMatForceActive_hydro(i);
         //Create force ID.
         listMatBody[bod].listForceActive_hydro(i).setId(i);
     }
@@ -346,6 +347,10 @@ void buildMatBody(int bod, bool useCoeff)
         {
             //Assign matrices
             ptForce->listDerivative().push_back(MyModel->getMatForceReact_user(i,j));
+
+            //Print out Matrix.  For debugging.
+            //cout << "Derivative Order:  " << j << endl;
+            //ptForce->listDerivative(j).print("Reactive Force:");
         }
     }
 
@@ -444,6 +449,8 @@ void buildMatBody(int bod, bool useCoeff)
     //Get the mass matrix
     //------------------------------------------
     listMatBody[bod].refMass() = MyModel->getMatForceMass();
+    //print out mass matrix.  For debugging.
+    //listMatBody[bod].refMass().print("Mass:");
 }
 
 //######################################## CalcOutput Function ########################################################
@@ -460,6 +467,11 @@ void calcOutput(OutputsBody &OutputIn, FileWriter &WriterIn)
         //Set current wave direction
         sysofreq.setCurWaveDirInd(j);
         OutputIn.setCurWaveDir(j);
+
+        /* To save on memory, an output type is not
+         * calculated until it is requested.  And then the derived output immediately returns the calculations.  Outputs are
+         * typically returned as a vector of objects.
+         */
 
         //Write output for Global Motion
         filetest = WriterIn.writeGlobalMotion();

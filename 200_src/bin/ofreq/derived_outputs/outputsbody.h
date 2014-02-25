@@ -100,7 +100,7 @@ typedef std::vector< std::complex<double> > cx_vector;
  * This class holds all types of derived outputs for a single body object.  Each derived output type is contained
  * in a vector.  This allows multiple instances of each output type.  To save on memory, an output type is not
  * calculated until it is requested.  And then the derived output immediately returns the calculations.  Outputs are
- * typically returned as a vector of objects.  Each row in the vectorrepresents a different wave frequency.  THe object
+ * typically returned as a vector of objects.  Each row in the vector represents a different wave frequency.  The object
  * contained in the returned vector The meaning may change with each derived output type.
  * You should check the documentation for each derived output.
  *
@@ -134,7 +134,7 @@ typedef std::vector< std::complex<double> > cx_vector;
  * @sa GlobalVelocity
  * @sa GlobalAcceleration
  *
- * * Developers note:  The original scheme had the OutputDerived class include a pointer to the contain parent class,
+ * Developers note:  The original scheme had the OutputDerived class include a pointer to the contain parent class,
  * OutputsBody.  But this creates a cyclic dependency of header files, and will not compile.  The only resolution I
  * found to this was to not include the parent class and pass all the necessary information to each individual
  * OutputDerived object.  This is tedious, but within the reasons of the methods defined by the OutputsBody class.

@@ -52,14 +52,26 @@ Equation::~Equation()
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-vector<double> &Equation::listCoefficients()
+vector<double> &Equation::listCoefficient()
 {
     //Return pointer to the list of coefficients.
     return pcoeffs;
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-double &Equation::listCoefficients(unsigned int index)
+double &Equation::listCoefficient(unsigned int index)
+{
+    return pcoeffs[index];
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+std::vector<double> &Equation::listVariable()
+{
+    return pcoeffs;
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+double &Equation::listVariable(unsigned int index)
 {
     return pcoeffs[index];
 }

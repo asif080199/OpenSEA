@@ -172,6 +172,16 @@ public:
      */
     Body &refBody();
 
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Sets the body object that the solution object is relevant to.
+     *
+     * The solution set in this object is specific to a single body.  The setBody method allows you to create a
+     * pointer to that Body object for reference and use in other sections of code.
+     * @param input Pointer to the Body object.  Pointer variable passed by value.
+     */
+    void setBody(Body *input);
+
 //==========================================Section Separator =========================================================
 protected:
 

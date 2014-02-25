@@ -266,7 +266,6 @@ int dictBodies::defineKey(string keyIn, vector<string> valIn)
         {
             //Active Force model
             int var;
-            ForceActive* ptForce;
             var = atoi(valIn[0].c_str());
             ptSystem->listBody(pBody).listForceActive_user().push_back(
                         &(ptSystem->listForceActive_user(var))

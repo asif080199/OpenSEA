@@ -44,6 +44,8 @@
 #include <iomanip>  
 #include <typeinfo>
 #include <QtGlobal>
+#include <QDir>
+#include <QString>
 #include "../derived_outputs/outputsbody.h"
 #include <boost/filesystem.hpp>
 #include <boost/lexical_cast.hpp>
@@ -146,9 +148,26 @@ public:
     /**
      * @brief Provides direct access to the OutputsBody object.  The OutputsBody object must be set for the fileWriter
      * to work.  All file data comes from the FileWriter object.
-     * @return Returns pointer to the OutputsBody object.  Variable passed by reference.
+     * @return Returns reference to the OutputsBody object.  Variable passed by reference.
      */
     OutputsBody &refOutputsBody();
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Sets the outputs body object, pointer input.
+     *
+     * Takes a pointer to the Outputs body object as input and stores that pointer for future use.
+     * @param input Pointer to the Outputs Body object.  Pointer variable passed by value.
+     */
+    void setOutputsBody(OutputsBody *input);
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Returns a pointer to the Outputs Body object.
+     *
+     * @return Returns a pointer to the Outputs Body object.  Returned pointer passed by value.
+     */
+    OutputsBody *getOutputsBody();
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**

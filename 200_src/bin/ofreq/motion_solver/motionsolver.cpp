@@ -154,7 +154,7 @@ cx_mat *MotionSolver::sumActiveSet(vector<matForceActive> listForces)
             tempOutput = tempOutput + listForces[i];
         }
 
-        *singleForceMatrix = tempOutput.listCoefficients();
+        *singleForceMatrix = tempOutput.listCoefficient();
 
         return singleForceMatrix;
     }
@@ -308,8 +308,6 @@ void MotionSolver::calculateOutputs()
         CrossList_hydro.push_back(sumDerivative(tempCrossList_hydro[curSumBody]));
     }
 
-    DebugMatrix("Reactive Matrix", *ReactList_usr.at(0));
-
     //Delete uneeded variables
     for (curSumBody = 0; curSumBody < plistBody.size(); curSumBody++)
     {
@@ -394,7 +392,7 @@ void MotionSolver::calculateOutputs()
 
         //Create values for matStart and matEnd
         matStart.push_back(0);
-        matEnd.push_back(ActiveList[0].n_rows);
+        matEnd.push_back(ActiveList[0].n_rows - 1);
     }
     else //Multiple Bodies, must resize the matrices
     {
@@ -411,11 +409,11 @@ void MotionSolver::calculateOutputs()
             }
             else
             {
-                matStart.push_back(matStart[j-1] + ReactList[j].n_rows + 1);
+                matStart.push_back(matStart[j-1] + ReactList[j].n_rows);
             }
 
             //Add the sizes to get the ending positions of each matrix.
-            matEnd.push_back(matStart[j] + ReactList[j].n_rows);
+            matEnd.push_back(matStart[j] + ReactList[j].n_rows - 1);
         }
 
         //A Matrix
@@ -449,8 +447,12 @@ void MotionSolver::calculateOutputs()
     //Debug print out matrix values
     DebugMatrix("Global Reactive Matrix", globReactiveMat);
     DebugMatrix("Global Active Matrix", globActiveMat);
+
     //Solve for Unknown Matrix (the X Matrix) --    A*X=B where X is the unknown
     globSolnMat = solve(globReactiveMat, globActiveMat, true); //true arg for more precise calculations
+
+    //Debug print out solution matrix
+    DebugMatrix("Global Solution Matrix", globSolnMat);
 
     //Split into vector of solutions, each represents per body
     for(unsigned int i = 0; i < plistBody.size(); i++)
@@ -535,17 +537,9 @@ void MotionSolver::DebugMatrix(std::string Name, cx_mat& input)
     //Write output of name
     cout << endl << Name << " = " << endl;
 
-    //Write matrix for output
-    for (int i = 0; i < input.n_rows; i++)
-    {
-        //Print out Some bounds
-        cout << "\t| ";
-        for (int j = 0; j < input.n_cols; j++)
-        {
-            //Print out individual entries
-            cout << input(i,j) << "\t";
-        }
-        //Finish with end bounds
-        cout << "|" << endl;
-    }
+    //Print out matrix.
+    input.print();
+
+    //Put a few more carriage returns in.
+    cout << endl << endl;
 }

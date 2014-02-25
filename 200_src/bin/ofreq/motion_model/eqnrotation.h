@@ -144,50 +144,40 @@ namespace ofreq
  *           This might include external forces such as a mooring line or dynamic positioning system.  In any
  *           case, these are reactive forces defined at run time in the ofreq input files.
  *
- * 6.)  Use of the Sum() Function.  The Sum function expects a function pointer to be supplied as the equation it
- *      will sum over.  The function pointer is necessary due to limitations of the C++ programming language.
- *      Any functions supplied to the sum function can not have any arguments supplied.  To use a function in
- *      the Sum function, follow these steps:
- *      6.1) Define the function as normal.  Remember that the function must have a full code supplied before
- *           its first use.  The safest approach is to define this function wholly within the source code file
- *           (the .cpp file).  That keeps the function isolated from the rest of the oFreq program.
- *           The function data type must be complex, double.  So a typical function definition would look like
- *           the following.  (Capitals are the parts you change for your specific function).
+ * 6.)  Use of the Sum() Function.  There are three possible implementations of the Sum() function.  The input
+ *      syntax determines which function to use.
+ *      6.1) Sum a finite value:  This implementation occurrs when a variable is provided as the argument for
+ *           for the summation.  The variable must be of data type complex<double>.  The variable will not
+ *           change during the summation.  Variable is passed by value.
+ *      6.2) Sum a function contained within the class:  This is the most common implementation of the Sum()
+ *           function.  The class has 50 functions provided for your use.  They are named Func1 through Func50.
+ *           You may enter any code within these functions.  But the functions do not accept any inputs.
+ *           This is a limitation of program.  The functions will update with each iteration of the Sum()
+ *           function.  Anyhthing that you wish to change during summation must be captured within one of the
+ *           custom functions.  This also includes references to any other class functions.
+ *           To implement the custom function, you simply type in the function name as a string input.
+ *           Example:
+ *           Sum( "Func1()", "body", 0, 1)
  *
- *           std::complex<double> FUNCTION_NAME() {
- *              *FUNCTION CODE*
- *              return FUNCTION_VALUE;
+ *           And then the function definition for Func1 would be:
+ *           Func1()
+ *           {
+ *              return ForceReact_hydro(ord(), var()) * Ddt(var(), ord());
  *           }
  *
- *      6.2) Once you have defined the function, you must use it in the Sum function.  The Sum function expects
- *           a pointer to a function.  You would enter it as follows (all capitals are the terms you change for
- *           your specific function:
+ *           This was just one example.  Any combination may be used within the custom function.
+ *      6.3) Sum a function not contained within the class.  This is mostly used for debugging when you
+ *           wish to test a custom equation of motion, isolated from the main program.  The returned
+ *           data type from the function must be complex<double>.
+ *           To use your external function within the Sum() function, you must enter as a function pointer.
+ *           The Sum function expects a pointer to a function.  You would enter it as follows (all capitals
+ *           are the terms you change for your specific function):
  *
  *           output = Sum( &FUNCTION_NAME, index, from, to);
  *
  *           Two key points to notice:  The function name was preceded with a reference symbol ( & ); and I only
- *           stated the function name.  I did not include the brackets to explicitely state that its a function.
+ *           stated the function name.  I did not include the brackets to explicitely state that it's a function.
  *           Don't include the brackets.  You will get a compiler error if you do.
- *
- *      6.3) If you have advanced C++ programming experience, you can use lambda functions to define and implement
- *           your function pointer in line.  This requires a basic understand of lambda functions, but it does
- *           produce more streamlined code which better shows the intended functionality.  Note that C++11 is
- *           required for lambda functions.  This is already implemented in the Qt project supplied with the
- *           source code.  For a quick tutorial on how to use lambda functions, visit:
- *           <http://www.cprogramming.com/c++11/c++11-lambda-closures.html>
- *           For an example, a typical lambda implementation in this program would look like this:
- *
- *           [&] () -> complex<double> {return ForceReact_hydro(ord(),var()) * Ddt(var(),ord());}
- *
- *           The square brackets denote the lambda function.  The () marks show that the function has no inputs.
- *           The -> specifies the returned variable type.  Everything in the curly brakets is the actual function
- *           definition.  This lambda function would be implemented in the Sum() function in the following manner
- *           Sum(
- *                  [&] () -> std::complex<double> {return ForceReact_hydro(ord(),var()) * Ddt(var(),ord());},
- *                  "ord",
- *                  0,
- *                  2
- *           );
  *
  * @sa EquationofMotion
  * @sa MotionModel
@@ -326,32 +316,6 @@ protected:
     std::complex<double> Func48();
     std::complex<double> Func49();
     std::complex<double> Func50();
-
-    //------------------------------------------Function Separator ----------------------------------------------------
-    /**
-     * @brief Sums across a variable.
-     *
-     * Sums across a variable.  The index limits can be specified.  Or the keyword functions can be used to
-     * automatically Sum across the entire index range.  This implementation accepts a function pointer with no
-     * parameters.  When using lambda functions, you can add in extra parameters.  The compiler won't care.  It only
-     * cares about the returned value.
-     * @param force Input to specify which items the results should Sum across.  Typically, this is one of the built-in
-     * force functions. However, it can be any function, any item, any calculation.  The only catch is that the
-     * input value must be a std::complex<double> data type.  Input format is a function pointer.  This allows
-     * the Sum function to update as it performs iterations.  The only catch is that you can not combine multiple
-     * values into one.  You must define a single function for each input argument you want.
-     * @param index std::string specifying which variable should be summed on.  This may be any one of these options:
-     * Order of derivative = "ord"
-     * Variable = "var"
-     * Body = "bod"
-     * @param from Integer for the beginning value of the summation.  Default value of negative one (-1) indicates that
-     * the summation will happen at the lowest value of the variable index specified.
-     * @param to Integer for the ending value of the summation.  Default value of negative one (-1) indicates that
-     * the summation will happen at the highest value of the variable index specified.
-     * @return Returns a complex value that is the summation of the index and limits specified.
-     */
-    virtual std::complex<double> Sum(std::complex<double> (EqnRotation::*force)(void),
-                             std::string index, int from = -1, int to = -1);
 
 //==========================================Section Separator =========================================================
 private:

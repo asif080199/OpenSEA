@@ -103,7 +103,7 @@ namespace ofreq
  * 7.)  Evaluate the motion model to produce a single complex value result.
  */
 
-class MotionModel : public osea::ofreq::oFreqCore
+class MotionModel : oFreqCore
 {
 //==========================================Section Separator =========================================================
 public:
@@ -126,7 +126,7 @@ public:
     /**
      * Default destructor.
      */
-    ~MotionModel();
+    virtual ~MotionModel();
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -304,11 +304,67 @@ public:
      * to different entries in the same force sequence will add their coefficients to the sets for evaluation.  Can be
      * combined with other useForce methods.  Multiple calls to the same useForce method with the same index coordinates
      * are not cumulative.  An input coefficient can either be on or off, not multiple instances of the exact same
+     * coefficient.  With only the force number specified, all equations are used as coefficients.
+     * @param force Integer specifying which force to use in the set of forces for the given force type.
+     */
+    void useForceActive_user(unsigned int force);
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Passes information to the object to use input coefficients from the entry specified.
+     *
+     * Passes information to the object to use input coefficients from the entry specified.  Limits inputs to
+     * only the force object type specified by the method.  Calls to useForce methods are cumulative.  Sucessive calls
+     * to different entries in the same force sequence will add their coefficients to the sets for evaluation.  Can be
+     * combined with other useForce methods.  Multiple calls to the same useForce method with the same index coordinates
+     * are not cumulative.  An input coefficient can either be on or off, not multiple instances of the exact same
+     * coefficient.  All forces and all coefficients are used.
+     * @param force Integer specifying which force to use in the set of forces for the given force type.
+     */
+    void useForceActive_user();
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Passes information to the object to use input coefficients from the entry specified.
+     *
+     * Passes information to the object to use input coefficients from the entry specified.  Limits inputs to
+     * only the force object type specified by the method.  Calls to useForce methods are cumulative.  Sucessive calls
+     * to different entries in the same force sequence will add their coefficients to the sets for evaluation.  Can be
+     * combined with other useForce methods.  Multiple calls to the same useForce method with the same index coordinates
+     * are not cumulative.  An input coefficient can either be on or off, not multiple instances of the exact same
      * coefficient.
      * @param force Integer specifying which force to use in the set of forces for the given force type.
      * @param eqn Integer specifying which equation to use in the selected force.
      */
     void useForceActive_hydro(unsigned int force, unsigned int eqn);
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Passes information to the object to use input coefficients from the entry specified.
+     *
+     * Passes information to the object to use input coefficients from the entry specified.  Limits inputs to
+     * only the force object type specified by the method.  Calls to useForce methods are cumulative.  Sucessive calls
+     * to different entries in the same force sequence will add their coefficients to the sets for evaluation.  Can be
+     * combined with other useForce methods.  Multiple calls to the same useForce method with the same index coordinates
+     * are not cumulative.  An input coefficient can either be on or off, not multiple instances of the exact same
+     * coefficient.  With only the force number specified, all equations are used as coefficients.
+     * @param force Integer specifying which force to use in the set of forces for the given force type.
+     */
+    void useForceActive_hydro(unsigned int force);
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Passes information to the object to use input coefficients from the entry specified.
+     *
+     * Passes information to the object to use input coefficients from the entry specified.  Limits inputs to
+     * only the force object type specified by the method.  Calls to useForce methods are cumulative.  Sucessive calls
+     * to different entries in the same force sequence will add their coefficients to the sets for evaluation.  Can be
+     * combined with other useForce methods.  Multiple calls to the same useForce method with the same index coordinates
+     * are not cumulative.  An input coefficient can either be on or off, not multiple instances of the exact same
+     * coefficient.  All forces and all coefficients are used.
+     * @param force Integer specifying which force to use in the set of forces for the given force type.
+     */
+    void useForceActive_hydro();
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -336,6 +392,68 @@ public:
      * to different entries in the same force sequence will add their coefficients to the sets for evaluation.  Can be
      * combined with other useForce methods.  Multiple calls to the same useForce method with the same index coordinates
      * are not cumulative.  An input coefficient can either be on or off, not multiple instances of the exact same
+     * coefficient.  This method uses all coefficients for all variables within the specified equation, derivative, and
+     * force.
+     * @param force Integer specifying which force to use in the set of forces for the given force type.
+     * @param ord Integer specifying which order of derviative to use for the selected force.
+     * @param eqn Integer specifying which equation to use in the selected force.
+     */
+    void useForceReact_user(unsigned int force, unsigned int ord, unsigned int eqn);
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Passes information to the object to use input coefficients from the entry specified.
+     *
+     * Passes information to the object to use input coefficients from the entry specified.  Limits inputs to
+     * only the force object type specified by the method.  Calls to useForce methods are cumulative.  Sucessive calls
+     * to different entries in the same force sequence will add their coefficients to the sets for evaluation.  Can be
+     * combined with other useForce methods.  Multiple calls to the same useForce method with the same index coordinates
+     * are not cumulative.  An input coefficient can either be on or off, not multiple instances of the exact same
+     * coefficient.  This method uses all coefficients for all variables and all equations within the specified derivative
+     * and force.
+     * @param force Integer specifying which force to use in the set of forces for the given force type.
+     * @param ord Integer specifying which order of derviative to use for the selected force.
+     */
+    void useForceReact_user(unsigned int force, unsigned int ord);
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Passes information to the object to use input coefficients from the entry specified.
+     *
+     * Passes information to the object to use input coefficients from the entry specified.  Limits inputs to
+     * only the force object type specified by the method.  Calls to useForce methods are cumulative.  Sucessive calls
+     * to different entries in the same force sequence will add their coefficients to the sets for evaluation.  Can be
+     * combined with other useForce methods.  Multiple calls to the same useForce method with the same index coordinates
+     * are not cumulative.  An input coefficient can either be on or off, not multiple instances of the exact same
+     * coefficient.  This method uses all coefficients for all variables and all equations within all derivatives
+     * within the specified force
+     * @param force Integer specifying which force to use in the set of forces for the given force type.
+     */
+    void useForceReact_user(unsigned int force);
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Passes information to the object to use input coefficients from the entry specified.
+     *
+     * Passes information to the object to use input coefficients from the entry specified.  Limits inputs to
+     * only the force object type specified by the method.  Calls to useForce methods are cumulative.  Sucessive calls
+     * to different entries in the same force sequence will add their coefficients to the sets for evaluation.  Can be
+     * combined with other useForce methods.  Multiple calls to the same useForce method with the same index coordinates
+     * are not cumulative.  An input coefficient can either be on or off, not multiple instances of the exact same
+     * coefficient.  This method uses all coefficients for all variables and all equations within all derivatives
+     * within all forces available.
+     */
+    void useForceReact_user();
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Passes information to the object to use input coefficients from the entry specified.
+     *
+     * Passes information to the object to use input coefficients from the entry specified.  Limits inputs to
+     * only the force object type specified by the method.  Calls to useForce methods are cumulative.  Sucessive calls
+     * to different entries in the same force sequence will add their coefficients to the sets for evaluation.  Can be
+     * combined with other useForce methods.  Multiple calls to the same useForce method with the same index coordinates
+     * are not cumulative.  An input coefficient can either be on or off, not multiple instances of the exact same
      * coefficient.
      * @param force Integer specifying which force to use in the set of forces for the given force type.
      * @param ord Integer specifying which order of derviative to use for the selected force.
@@ -343,6 +461,68 @@ public:
      * @param var Integer specifying which variable to use from the selected equation.
      */
     void useForceReact_hydro(unsigned int force, unsigned int ord, unsigned int eqn, unsigned int var);
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Passes information to the object to use input coefficients from the entry specified.
+     *
+     * Passes information to the object to use input coefficients from the entry specified.  Limits inputs to
+     * only the force object type specified by the method.  Calls to useForce methods are cumulative.  Sucessive calls
+     * to different entries in the same force sequence will add their coefficients to the sets for evaluation.  Can be
+     * combined with other useForce methods.  Multiple calls to the same useForce method with the same index coordinates
+     * are not cumulative.  An input coefficient can either be on or off, not multiple instances of the exact same
+     * coefficient.  This method uses all coefficients for all variables within the specified equation, derivative, and
+     * force.
+     * @param force Integer specifying which force to use in the set of forces for the given force type.
+     * @param ord Integer specifying which order of derviative to use for the selected force.
+     * @param eqn Integer specifying which equation to use in the selected force.
+     */
+    void useForceReact_hydro(unsigned int force, unsigned int ord, unsigned int eqn);
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Passes information to the object to use input coefficients from the entry specified.
+     *
+     * Passes information to the object to use input coefficients from the entry specified.  Limits inputs to
+     * only the force object type specified by the method.  Calls to useForce methods are cumulative.  Sucessive calls
+     * to different entries in the same force sequence will add their coefficients to the sets for evaluation.  Can be
+     * combined with other useForce methods.  Multiple calls to the same useForce method with the same index coordinates
+     * are not cumulative.  An input coefficient can either be on or off, not multiple instances of the exact same
+     * coefficient.  This method uses all coefficients for all variables and all equations within the specified derivative
+     * and force.
+     * @param force Integer specifying which force to use in the set of forces for the given force type.
+     * @param ord Integer specifying which order of derviative to use for the selected force.
+     */
+    void useForceReact_hydro(unsigned int force, unsigned int ord);
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Passes information to the object to use input coefficients from the entry specified.
+     *
+     * Passes information to the object to use input coefficients from the entry specified.  Limits inputs to
+     * only the force object type specified by the method.  Calls to useForce methods are cumulative.  Sucessive calls
+     * to different entries in the same force sequence will add their coefficients to the sets for evaluation.  Can be
+     * combined with other useForce methods.  Multiple calls to the same useForce method with the same index coordinates
+     * are not cumulative.  An input coefficient can either be on or off, not multiple instances of the exact same
+     * coefficient.  This method uses all coefficients for all variables and all equations within all derivatives
+     * within the specified force
+     * @param force Integer specifying which force to use in the set of forces for the given force type.
+     */
+    void useForceReact_hydro(unsigned int force);
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Passes information to the object to use input coefficients from the entry specified.
+     *
+     * Passes information to the object to use input coefficients from the entry specified.  Limits inputs to
+     * only the force object type specified by the method.  Calls to useForce methods are cumulative.  Sucessive calls
+     * to different entries in the same force sequence will add their coefficients to the sets for evaluation.  Can be
+     * combined with other useForce methods.  Multiple calls to the same useForce method with the same index coordinates
+     * are not cumulative.  An input coefficient can either be on or off, not multiple instances of the exact same
+     * coefficient.  This method uses all coefficients for all variables and all equations within all derivatives
+     * within all forces available.
+     */
+    void useForceReact_hydro();
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -370,6 +550,68 @@ public:
      * to different entries in the same force sequence will add their coefficients to the sets for evaluation.  Can be
      * combined with other useForce methods.  Multiple calls to the same useForce method with the same index coordinates
      * are not cumulative.  An input coefficient can either be on or off, not multiple instances of the exact same
+     * coefficient.  This method uses all coefficients for all variables within the specified equation, derivative, and
+     * force.
+     * @param force Integer specifying which force to use in the set of forces for the given force type.
+     * @param ord Integer specifying which order of derviative to use for the selected force.
+     * @param eqn Integer specifying which equation to use in the selected force.
+     */
+    void useForceCross_user(unsigned int force, unsigned int ord, unsigned int eqn);
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Passes information to the object to use input coefficients from the entry specified.
+     *
+     * Passes information to the object to use input coefficients from the entry specified.  Limits inputs to
+     * only the force object type specified by the method.  Calls to useForce methods are cumulative.  Sucessive calls
+     * to different entries in the same force sequence will add their coefficients to the sets for evaluation.  Can be
+     * combined with other useForce methods.  Multiple calls to the same useForce method with the same index coordinates
+     * are not cumulative.  An input coefficient can either be on or off, not multiple instances of the exact same
+     * coefficient.  This method uses all coefficients for all variables and all equations within the specified derivative
+     * and force.
+     * @param force Integer specifying which force to use in the set of forces for the given force type.
+     * @param ord Integer specifying which order of derviative to use for the selected force.
+     */
+    void useForceCross_user(unsigned int force, unsigned int ord);
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Passes information to the object to use input coefficients from the entry specified.
+     *
+     * Passes information to the object to use input coefficients from the entry specified.  Limits inputs to
+     * only the force object type specified by the method.  Calls to useForce methods are cumulative.  Sucessive calls
+     * to different entries in the same force sequence will add their coefficients to the sets for evaluation.  Can be
+     * combined with other useForce methods.  Multiple calls to the same useForce method with the same index coordinates
+     * are not cumulative.  An input coefficient can either be on or off, not multiple instances of the exact same
+     * coefficient.  This method uses all coefficients for all variables and all equations within all derivatives
+     * within the specified force
+     * @param force Integer specifying which force to use in the set of forces for the given force type.
+     */
+    void useForceCross_user(unsigned int force);
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Passes information to the object to use input coefficients from the entry specified.
+     *
+     * Passes information to the object to use input coefficients from the entry specified.  Limits inputs to
+     * only the force object type specified by the method.  Calls to useForce methods are cumulative.  Sucessive calls
+     * to different entries in the same force sequence will add their coefficients to the sets for evaluation.  Can be
+     * combined with other useForce methods.  Multiple calls to the same useForce method with the same index coordinates
+     * are not cumulative.  An input coefficient can either be on or off, not multiple instances of the exact same
+     * coefficient.  This method uses all coefficients for all variables and all equations within all derivatives
+     * within all forces available.
+     */
+    void useForceCross_user();
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Passes information to the object to use input coefficients from the entry specified.
+     *
+     * Passes information to the object to use input coefficients from the entry specified.  Limits inputs to
+     * only the force object type specified by the method.  Calls to useForce methods are cumulative.  Sucessive calls
+     * to different entries in the same force sequence will add their coefficients to the sets for evaluation.  Can be
+     * combined with other useForce methods.  Multiple calls to the same useForce method with the same index coordinates
+     * are not cumulative.  An input coefficient can either be on or off, not multiple instances of the exact same
      * coefficient.
      * @param force Integer specifying which force to use in the set of forces for the given force type.
      * @param ord Integer specifying which order of derviative to use for the selected force.
@@ -387,11 +629,100 @@ public:
      * to different entries in the same force sequence will add their coefficients to the sets for evaluation.  Can be
      * combined with other useForce methods.  Multiple calls to the same useForce method with the same index coordinates
      * are not cumulative.  An input coefficient can either be on or off, not multiple instances of the exact same
+     * coefficient.  This method uses all coefficients for all variables within the specified equation, derivative, and
+     * force.
+     * @param force Integer specifying which force to use in the set of forces for the given force type.
+     * @param ord Integer specifying which order of derviative to use for the selected force.
+     * @param eqn Integer specifying which equation to use in the selected force.
+     */
+    void useForceCross_hydro(unsigned int force, unsigned int ord, unsigned int eqn);
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Passes information to the object to use input coefficients from the entry specified.
+     *
+     * Passes information to the object to use input coefficients from the entry specified.  Limits inputs to
+     * only the force object type specified by the method.  Calls to useForce methods are cumulative.  Sucessive calls
+     * to different entries in the same force sequence will add their coefficients to the sets for evaluation.  Can be
+     * combined with other useForce methods.  Multiple calls to the same useForce method with the same index coordinates
+     * are not cumulative.  An input coefficient can either be on or off, not multiple instances of the exact same
+     * coefficient.  This method uses all coefficients for all variables and all equations within the specified derivative
+     * and force.
+     * @param force Integer specifying which force to use in the set of forces for the given force type.
+     * @param ord Integer specifying which order of derviative to use for the selected force.
+     */
+    void useForceCross_hydro(unsigned int force, unsigned int ord);
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Passes information to the object to use input coefficients from the entry specified.
+     *
+     * Passes information to the object to use input coefficients from the entry specified.  Limits inputs to
+     * only the force object type specified by the method.  Calls to useForce methods are cumulative.  Sucessive calls
+     * to different entries in the same force sequence will add their coefficients to the sets for evaluation.  Can be
+     * combined with other useForce methods.  Multiple calls to the same useForce method with the same index coordinates
+     * are not cumulative.  An input coefficient can either be on or off, not multiple instances of the exact same
+     * coefficient.  This method uses all coefficients for all variables and all equations within all derivatives
+     * within the specified force
+     * @param force Integer specifying which force to use in the set of forces for the given force type.
+     */
+    void useForceCross_hydro(unsigned int force);
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Passes information to the object to use input coefficients from the entry specified.
+     *
+     * Passes information to the object to use input coefficients from the entry specified.  Limits inputs to
+     * only the force object type specified by the method.  Calls to useForce methods are cumulative.  Sucessive calls
+     * to different entries in the same force sequence will add their coefficients to the sets for evaluation.  Can be
+     * combined with other useForce methods.  Multiple calls to the same useForce method with the same index coordinates
+     * are not cumulative.  An input coefficient can either be on or off, not multiple instances of the exact same
+     * coefficient.  This method uses all coefficients for all variables and all equations within all derivatives
+     * within all forces available.
+     */
+    void useForceCross_hydro();
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Passes information to the object to use input coefficients from the entry specified.
+     *
+     * Passes information to the object to use input coefficients from the entry specified.  Limits inputs to
+     * only the force object type specified by the method.  Calls to useForce methods are cumulative.  Sucessive calls
+     * to different entries in the same force sequence will add their coefficients to the sets for evaluation.  Can be
+     * combined with other useForce methods.  Multiple calls to the same useForce method with the same index coordinates
+     * are not cumulative.  An input coefficient can either be on or off, not multiple instances of the exact same
      * coefficient.
      * @param eqn Integer specifying which equation to use in the selected force.
      * @param var Integer specifying which variable to use from the selected equation.
      */
     void useForceMass(unsigned int eqn, unsigned int var);
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Passes information to the object to use input coefficients from the entry specified.
+     *
+     * Passes information to the object to use input coefficients from the entry specified.  Limits inputs to
+     * only the force object type specified by the method.  Calls to useForce methods are cumulative.  Sucessive calls
+     * to different entries in the same force sequence will add their coefficients to the sets for evaluation.  Can be
+     * combined with other useForce methods.  Multiple calls to the same useForce method with the same index coordinates
+     * are not cumulative.  An input coefficient can either be on or off, not multiple instances of the exact same
+     * coefficient.  This implementation will copy over all variables for the specified equation.
+     * @param eqn Integer specifying which equation to use in the selected force.
+     */
+    void useForceMass(unsigned int eqn);
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Passes information to the object to use input coefficients from the entry specified.
+     *
+     * Passes information to the object to use input coefficients from the entry specified.  Limits inputs to
+     * only the force object type specified by the method.  Calls to useForce methods are cumulative.  Sucessive calls
+     * to different entries in the same force sequence will add their coefficients to the sets for evaluation.  Can be
+     * combined with other useForce methods.  Multiple calls to the same useForce method with the same index coordinates
+     * are not cumulative.  An input coefficient can either be on or off, not multiple instances of the exact same
+     * coefficient.  This implementation will copy over all variables for all equations.
+     */
+    void useForceMass();
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -514,12 +845,47 @@ public:
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
-     * @brief Returns a vector containing all equation indices.  This may be the same as the number of equations.  Very
-     * few equations may be used.  However, if they are custom equations, they must avoid the first six indices, which
-     * are reserved for standard 6dof models.
-     * @return Returns the highest count of the equation index.
+     * @brief Returns a vector containing all equation indices.  This may be the same as the number of equations.
+     * However, if they are custom equations, they must avoid the first six indices, which
+     * are reserved for standard 6dof models.  This means that the data index may not start at zero, which is why the
+     * data index vector is returned.  It allows you to see for each entry in the slot, what the index is for that
+     * equation.
+     * @return Returns a vector containing all the equation indices currently in use.  Returned vector is passed by
+     * reference.
      */
-    std::vector<int> &refDataIndex();
+    std::vector<int> &listDataIndex();
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Returns an enry from a vector containing all equation indices.
+     *
+     * The requested entry is specified by the input variable index.  The list of equation data indices may be the
+     * same as the number of equations.  However, if they are custom equations, they must avoid the first six
+     * indices, which are reeserved for standard 6dof models.  This means that the data index may not start at zero,
+     * which is why the entries of the data index vector are exposed for retrieval and manipulation.  It allows you
+     * to see for each entry in the slot, which the data index is for that equation.
+     * @param index Integer variable.  Passed by value.  Specified the index of which entry in the data index you
+     * want to see.  If the requested index is beyond the current limits of the vectors, the vector is automatically
+     * resized, but never larger than the number of current equations.  Each entry in the index represents an equation.
+     * @return Returns an integer variable.  Variable passed by value.  The returned variable is an entry from the
+     * vector of all equation data indices currently in use.
+     */
+    int &listDataIndex(unsigned int index);
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Assembles and gets the vector of equation indices.
+     *
+     * The list of equation indices may be the same as the number of equations.
+     * However, if they are custom equations, they must avoid the first six indices, which
+     * are reserved for standard 6dof models.  This means that the data index may not start at zero, which is why the
+     * data index vector is returned.  It allows you to see for each entry in the slot, what the index is for that
+     * equation.  This method also searches through all the included equation objects to retrieve their data index
+     * automatically.  So if you have an imcomplete list, this method will automatically complete the list before
+     * returning the vector of the complete list of data indices.
+     * @return Returns a vector containing all the equation indices currently in use.
+     */
+    std::vector<int> getDataIndex();
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -591,7 +957,7 @@ public:
     /**
      * @brief Provides direct access to the list of Bodies used as data for the motion model.
      * @return Reference to the vector of Body objects used as data.  Variable passed by reference.
-     * @sa Body
+     * @sa Bodyy
      */
     std::vector<Body> &listData();
 
@@ -702,7 +1068,7 @@ private:
      * to this list and fills it with Body objects that contain the same number and sizes of forces as the originals,
      * but all entries within the copied objects are zeros.
      */
-    std::vector<Body> plistData;
+    std::vector<ofreq::Body> plistData;
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -791,6 +1157,16 @@ private:
      * activated as well, this variable is set false.
      */
     bool pActiveOnly;
+
+    //------------------------------------------Function Separator --------------------------------------------------------
+    /**
+     * @brief A vector containing all equation indices.  This may be the same as the number of equations.
+     * However, if they are custom equations, they must avoid the first six indices, which
+     * are reserved for standard 6dof models.  This means that the data index may not start at zero, which is why the
+     * data index vector is provided.  It allows you to see for each entry in the slot, what the index is for that
+     * equation.
+     */
+    std::vector<int> pDataIndex;
 
     //------------------------------------------Function Separator --------------------------------------------------------
     /**

@@ -96,7 +96,7 @@ FileWriter::FileWriter(string rootPath, OutputsBody &BodyIn)
     this->setProjectDir(rootPath);
 
     //Set the OutputsBody
-    this->refOutputsBody() = BodyIn;
+    setOutputsBody(&BodyIn);
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
@@ -112,7 +112,7 @@ void FileWriter::setProjectDir(string dirIn)
     if (lastChar == SLASH.at(0))
     {
         //Delete the slash
-        dirIn.resize(dirIn.length() - 2);
+        dirIn.resize(dirIn.length() - 1);
     }
 
     //Set the value
@@ -154,6 +154,18 @@ bool FileWriter::clearFiles()
 OutputsBody &FileWriter::refOutputsBody()
 {
     return *pOutput;
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+void FileWriter::setOutputsBody(OutputsBody *input)
+{
+    pOutput = input;
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+OutputsBody *FileWriter::getOutputsBody()
+{
+    return pOutput;
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
@@ -662,22 +674,16 @@ string FileWriter::getCurWaveDir()
 //------------------------------------------Function Separator --------------------------------------------------------
 bool FileWriter::createDir(string path)
 {
-    //Create the current directory
-    if (!exists(projectDirectory + SLASH + path))
-    {
-        if (!create_directory(projectDirectory + SLASH + path))
-        {
-            cerr << "Failed to create " + projectDirectory + SLASH + path << endl; //This needs to be handled
-            return false;
-        }
-        else
-            return true;
-    }
-    else
-    {
-        //return false if any errors
-        return false;
-    }
+    //Create Qt directory object.
+    QString Qpath;
+    Qpath.append(projectDirectory.c_str());
+    Qpath.append(SLASH.c_str());
+    Qpath.append(path.c_str());
+
+    QDir dir(Qpath);    //Qt objec that is the output directory.
+
+    //Check if directory exists and create if not.
+    return dir.mkpath(".");
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------

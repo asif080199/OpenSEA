@@ -125,7 +125,7 @@ matForceActive matForceActive::operator-(matForceActive &forceOther)
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-cx_mat &matForceActive::listCoefficients()
+cx_mat &matForceActive::listCoefficient()
 {
     return pCoeff;
 }

@@ -106,7 +106,7 @@ public:
 	 * Retrieve the list of coefficients.
 	 * @return The list of coefficients.
 	 */
-    std::vector<complexDouble> &listCoefficients();
+    std::vector<complexDouble> &listCoefficient();
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -117,18 +117,18 @@ public:
      * @return Returns a complex double.  Returned variable is a value from the list of coefficients.  Returned
      * variable is passed by reference.
      */
-    complexDouble &listCoefficients(unsigned int index);
+    complexDouble &listCoefficient(unsigned int index);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
-     * @brief Another implementation of function listCoefficients.
+     * @brief Another implementation of function listCoefficient.
      * @return Vector containing the list of coefficients.  Argument passed by reference.
      */
     std::vector<complexDouble> &listEquation();
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
-     * @brief Another implementation of function listCoefficients(index).
+     * @brief Another implementation of function listCoefficient(index).
      *
      * Provides direct access to items in the list of equations.  Returns a single variable from the list of
      * coefficients.

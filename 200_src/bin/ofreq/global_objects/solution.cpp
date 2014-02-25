@@ -30,6 +30,9 @@ using namespace std;
 using namespace arma;
 using namespace osea::ofreq;
 
+//==========================================Section Separator =========================================================
+//Public Functions
+
 //------------------------------------------Function Separator --------------------------------------------------------
 Solution::Solution()
 {
@@ -83,3 +86,17 @@ Body &Solution::refBody()
     //Retunrns the reference to the body object.
     return *pBod;
 }
+
+//------------------------------------------Function Separator --------------------------------------------------------
+void Solution::setBody(Body *input)
+{
+    pBod = input;
+}
+
+//==========================================Section Separator =========================================================
+//Protected Functions
+
+//==========================================Section Separator =========================================================
+//Private Functions
+
+

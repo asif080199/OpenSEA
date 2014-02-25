@@ -105,7 +105,7 @@ public:
      * Returns the coefficients matrix.
      * @return Returns the coefficients matrix.
      */
-    arma::cx_mat &listCoefficients();
+    arma::cx_mat &listCoefficient();
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**

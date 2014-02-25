@@ -155,6 +155,15 @@ int OutputsBody::sizeGlobalMotion()
 GlobalMotion &OutputsBody::refGlobalMotion(int index)
 {
     //Returns the GlobalMotion object specified by the index.
+
+    //Check if out of bounds.
+    if ((index > pGlobalMotion.size() - 1) ||
+            (pGlobalMotion.size() == 0))
+    {
+        //Resize global motion
+        pGlobalMotion.resize(index + 1);
+    }
+
     return pGlobalMotion.at(index);
 }
 
@@ -227,6 +236,15 @@ int OutputsBody::sizeGlobalVelocity()
 GlobalVelocity &OutputsBody::refGlobalVelocity(int index)
 {
     //Returns the GlobalVelocity object specified by the index.
+
+    //Check if current index out of bounds.
+    if ((index > pGlobalVelocity.size() - 1) ||
+            (pGlobalVelocity.size() == 0))
+    {
+        pGlobalVelocity.resize(index + 1);
+    }
+
+    //Write output.
     return pGlobalVelocity.at(index);
 }
 
@@ -299,6 +317,16 @@ int OutputsBody::sizeGlobalAcceleration()
 GlobalAcceleration &OutputsBody::refGlobalAcceleration(int index)
 {
     //Returns the GlobalAcceleration object specified by the index.
+
+    //Check if requested index is out of bounds.
+    if ((index > pGlobalAcceleration.size() - 1) ||
+            (pGlobalAcceleration.size() == 0))
+    {
+        //Resize vector
+        pGlobalAcceleration.resize(index + 1);
+    }
+
+    //Write outputs
     return pGlobalAcceleration.at(index);
 }
 
@@ -371,6 +399,15 @@ int OutputsBody::sizeGlobalSolution()
 GlobalSolution &OutputsBody::refGlobalSolution(int index)
 {
     //Returns the GlobalSolution object specified by the index.
+    //Check if requested index is out of bounds
+    if ((index > pGlobalSolution.size() - 1) ||
+            (pGlobalSolution.size() == 0))
+    {
+        //Resize
+        pGlobalSolution.resize(index + 1);
+    }
+
+    //Write output
     return pGlobalSolution.at(index);
 }
 

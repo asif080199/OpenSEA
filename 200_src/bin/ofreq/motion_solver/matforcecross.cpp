@@ -66,12 +66,18 @@ matForceCross matForceCross::operator+(matForceCross& forceOther)
     {
         //Nothing defined for first object.
         output = forceOther;
+
+        //linked body parameters did not match.  Return only this object.
+        return *this;
     }
 
     else if (forceOther.pderiv.size() == 0)
     {
         //Nothing defined for the other object.
         output = *this;
+
+        //linked body parameters did not match.  Return only this object.
+        return *this;
     }
 
     else
@@ -137,12 +143,18 @@ matForceCross matForceCross::operator-(matForceCross& forceOther)
     {
         //Nothing defined for first object.
         output = forceOther;
+
+        //linked body parameters did not match.  Return only this object.
+        return *this;
     }
 
     else if (forceOther.pderiv.size() == 0)
     {
         //Nothing defined for the other object.
         output = *this;
+
+        //linked body parameters did not match.  Return only this object.
+        return *this;
     }
 
     else

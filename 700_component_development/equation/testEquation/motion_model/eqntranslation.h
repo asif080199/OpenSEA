@@ -145,7 +145,14 @@ namespace ofreq
  *           This might include external forces such as a mooring line or dynamic positioning system.  In any
  *           case, these are reactive forces defined at run time in the ofreq input files.
  *
- * 6.)  Use of the Sum() Function.  The Sum function expects a function pointer to be supplied as the equation it
+ * 6.)  Use of the Sum() Function.
+ *
+ *
+ *
+ *
+ *
+ *
+ *      The Sum function expects a function pointer to be supplied as the equation it
  *      will sum over.  The function pointer is necessary due to limitations of the C++ programming language.
  *      Any functions supplied to the sum function can not have any arguments supplied.  To use a function in
  *      the Sum function, follow these steps:

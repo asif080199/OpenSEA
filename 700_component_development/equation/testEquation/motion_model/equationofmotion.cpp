@@ -615,7 +615,7 @@ int EquationofMotion::var()
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-unsigned int EquationofMotion::eqn()
+int EquationofMotion::eqn()
 {
     /*Returns the index integer for iteration on equation number.
      *Includes error handling for out-of-bounds checking.
@@ -1155,7 +1155,7 @@ std::complex<double> EquationofMotion::Func50()
 //Private Members
 
 //------------------------------------------Function Separator --------------------------------------------------------
-unsigned int EquationofMotion::force()
+int EquationofMotion::force()
 {
     //Returns integer for the current force.  Also includes checks for out-of-bounds error limits.
     int output;

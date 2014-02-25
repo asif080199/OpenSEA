@@ -102,9 +102,9 @@ public:
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
      * @brief Direct access to the list of coefficients.
-     * @return Pointer to the list of coefficients.
+     * @return The list of coefficients.  Returned variable passed by reference.
      */
-    std::vector<double> &listCoefficients();
+    std::vector<double> &listCoefficient();
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -115,7 +115,29 @@ public:
      * @return Returns a double.  Returned variable is a value from the list of coefficients.  Returned variable is
      * passed by reference.
      */
-    double &listCoefficients(unsigned int index);
+    double &listCoefficient(unsigned int index);
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Provides direct access to the list of coefficients.  This is the same as the listCoefficient() method,
+     * just under a different name.
+     * @return The list of coefficients.  Returned variable passed by reference.
+     * @sa listCoefficient()
+     */
+    std::vector<double> &listVariable();
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Provides direct access to a coefficient from the list of coefficients.
+     *
+     * Returns a value from the list of coefficents.  Which value to return is specified by the input index.  This is
+     * the same as the listCoefficient(index) method, just under a different name.
+     * @param index Unsigned integer.  Specifies which value to return from the list of coefficients.
+     * @return Returns a double.  Returned variable is a value from the list of coefficients.  Returned variable is
+     * passed by reference.
+     * @sa listCoefficient(index)
+     */
+    double &listVariable(unsigned int index);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**

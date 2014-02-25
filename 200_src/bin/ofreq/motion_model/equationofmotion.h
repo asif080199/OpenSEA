@@ -98,7 +98,7 @@ class MotionModel;
  * In addition to the regular object entries, the class also has provision for a list of arbitrary arguments.
  */
 
-class EquationofMotion : public osea::ofreq::oFreqCore
+class EquationofMotion : oFreqCore
 {
 //==========================================Section Separator =========================================================
 public:
@@ -280,6 +280,16 @@ public:
      */
     void setDescription(std::string descIn);
 
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Sets debugging data to use when creating fictional inputs purely for debugging this function.  Allows
+     * the programmer to debug the function independent of the other functions which depend on it.
+     * @param freqIn Wave Frequency.  Double.  Variable passed by value.
+     * @param solnIn Solution of motion.  Complex, double variable.  Variable passed by value.
+     * @param coeffIn Boolean to describe if Ddt should calculate coefficients only.  False by default.
+     */
+    void setDebugData(double freqIn, std::complex<double> solnIn, bool coeffIn = false);
+
 //==========================================Section Separator =========================================================
 protected:
     //------------------------------------------Function Separator ----------------------------------------------------
@@ -447,10 +457,173 @@ protected:
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
+     * @brief The name for the equation object.
+     *
+     * The name for the equation object.  This is the short name that user will use to identify the meaning of the
+     * equation.
+     */
+    std::string pName;
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief The description for the equation object.
+     *
+     * The description for the equation object.  This is an expanded version of the name.  Again, purely for user
+     * identification of the EquationofMotion object.  Brief names go under the Name property.  More extensive
+     * descriptions go under this property.  These would be useful to the user for describing the physical meaning
+     * behind the equation of motion.
+     */
+    std::string pDescription;
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Sums across a variable.
+     *
+     * Sums across a variable.  The index limits can be specified.  Or the keyword functions can be used to
+     * automatically Sum across the entire index range.  This implementation accepts the name which specifies one of
+     * 50 available functions.  The functions are not defined.  The user must define the function and then specify
+     * the function name to use that function in the Sum function.  Sum functions can be nested within other
+     * function definitions.
+     * @param FuncName String which specifies the name of the function you wish to use as input to the summation.
+     * Example:  Sum("Func1()", ...).  The specified function name must be one of the available functions. ("Func1(),
+     * "Func2()", ... "Func50()")  None of the functions can accept input parameters.  But you can use the input
+     * parameters already defined within the class.  Output for any function definition must always be data type of
+     * std::complex<double>.
+     * @param index std::string specifying which variable should be summed on.  This may be any one of these options:
+     * Order of derivative = "ord"
+     * Variable = "var"
+     * Body = "bod"
+     * @param from Integer for the beginning value of the summation.  Default value of negative one (-1) indicates that
+     * the summation will happen at the lowest value of the variable index specified.
+     * @param to Integer for the ending value of the summation.  Default value of negative one (-1) indicates that
+     * the summation will happen at the highest value of the variable index specified.
+     * @return Returns a complex value that is the summation of the index and limits specified.
+     */
+    std::complex<double> Sum(std::string FuncName, std::string index, int from = -1, int to = -1);
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Sums a function multiple times.
+     *
+     * The index limits can be specified.  Or the keyword functions can be used to
+     * automatically Sum across the entire index range.  This implementation accepts a function pointer with no
+     * parameters.
+     * @param force Input to specify which items the results should Sum across.  Typically, this is one of the built-in
+     * force functions. However, it can be any function, any item, any calculation.  The only catch is that the
+     * input value must be a std::complex<double> data type.  Input format is a function pointer.  This allows
+     * the Sum function to update as it performs iterations.  The only catch is that you can not combine multiple
+     * values into one.  You must define a single function for each input argument you want.
+     * @param from Integer for the beginning value of the summation.
+     * @param to Integer for the ending value of the summation.
+     * @return Returns a complex value that is the summation of the index and limits specified.
+     */
+    std::complex<double> Sum(std::complex<double> (*force)(void), int from, int to);
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Sums a constant value multiple times.
+     *
+     * The index limits can be specified.  Or the keyword functions can be used to
+     * automatically Sum across the entire index range.
+     * @param force Input to specify constant value that Sum should add.  The only catch is that the
+     * input value must be a std::complex<double> data type.  Input format is a variabled passed by value.
+     * @param from Integer for the beginning value of the summation.
+     * @param to Integer for the ending value of the summation.
+     * @return Returns a complex value that is the summation of the index and limits specified.
+     */
+    std::complex<double> Sum(std::complex<double> force, int from, int to);
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief The integer of the current value of var() index.  Used for iteration and summation functions.
+     */
+    unsigned int pCurVar;
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief The integer of the current value of ord() index.  Used for iteration and summation functions.
+     */
+    unsigned int pCurOrd;
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief The integer of the current body.  Used for iteration and summation functions.
+     */
+    unsigned int pBod;
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    //Static variables
+    static int undefArg;   /**< Integer value for undefined argument in the summation function.*/
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Func1 through Func50 provide user custom defined functions.
+     *
+     * These are custom functions that the user may need to create to define their equations of motion.  The only
+     * restriction is that the functions can not take any arguments.  Any arguments required must be supplied through
+     * a set of global variables.  Sorry, that's just a restriction of how the code is written and the use of the C++
+     * language.
+     * @return Returns a complex<double> variable.  Returned variabled passed by value.
+     */
+    virtual std::complex<double> Func1();
+    virtual std::complex<double> Func2();
+    virtual std::complex<double> Func3();
+    virtual std::complex<double> Func4();
+    virtual std::complex<double> Func5();
+    virtual std::complex<double> Func6();
+    virtual std::complex<double> Func7();
+    virtual std::complex<double> Func8();
+    virtual std::complex<double> Func9();
+    virtual std::complex<double> Func10();
+    virtual std::complex<double> Func11();
+    virtual std::complex<double> Func12();
+    virtual std::complex<double> Func13();
+    virtual std::complex<double> Func14();
+    virtual std::complex<double> Func15();
+    virtual std::complex<double> Func16();
+    virtual std::complex<double> Func17();
+    virtual std::complex<double> Func18();
+    virtual std::complex<double> Func19();
+    virtual std::complex<double> Func20();
+    virtual std::complex<double> Func21();
+    virtual std::complex<double> Func22();
+    virtual std::complex<double> Func23();
+    virtual std::complex<double> Func24();
+    virtual std::complex<double> Func25();
+    virtual std::complex<double> Func26();
+    virtual std::complex<double> Func27();
+    virtual std::complex<double> Func28();
+    virtual std::complex<double> Func29();
+    virtual std::complex<double> Func30();
+    virtual std::complex<double> Func31();
+    virtual std::complex<double> Func32();
+    virtual std::complex<double> Func33();
+    virtual std::complex<double> Func34();
+    virtual std::complex<double> Func35();
+    virtual std::complex<double> Func36();
+    virtual std::complex<double> Func37();
+    virtual std::complex<double> Func38();
+    virtual std::complex<double> Func39();
+    virtual std::complex<double> Func40();
+    virtual std::complex<double> Func41();
+    virtual std::complex<double> Func42();
+    virtual std::complex<double> Func43();
+    virtual std::complex<double> Func44();
+    virtual std::complex<double> Func45();
+    virtual std::complex<double> Func46();
+    virtual std::complex<double> Func47();
+    virtual std::complex<double> Func48();
+    virtual std::complex<double> Func49();
+    virtual std::complex<double> Func50();
+
+//==========================================Section Separator =========================================================
+private:
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
      * @brief Returns the maximum number of items that can be iterated through on the variable index.
      *
      * Returns the maximum number of items that can be iterated through on the variable index.  Used for summation
-     * functions.  Automatically finds the upper limit of any summation loops.  The lower limit is always 0 and does
+     * functions.  Automatically finds the upper limit of any summation loops.  The lower limit is always 1 and does
      * not require a special function.
      * @return Returns the maximum number of items that can be iterated through on the variable index.
      */
@@ -478,77 +651,6 @@ protected:
      */
     int maxbody();
 
-    //------------------------------------------Function Separator ----------------------------------------------------
-    /**
-     * @brief The name for the equation object.
-     *
-     * The name for the equation object.  This is the short name that user will use to identify the meaning of the
-     * equation.
-     */
-    std::string pName;
-
-    //------------------------------------------Function Separator ----------------------------------------------------
-    /**
-     * @brief The description for the equation object.
-     *
-     * The description for the equation object.  This is an expanded version of the name.  Again, purely for user
-     * identification of the EquationofMotion object.  Brief names go under the Name property.  More extensive
-     * descriptions go under this property.  These would be useful to the user for describing the physical meaning
-     * behind the equation of motion.
-     */
-    std::string pDescription;
-
-    //------------------------------------------Function Separator ----------------------------------------------------
-    /**
-     * @brief Sums across a variable.
-     *
-     * Sums across a variable.  The index limits can be specified.  Or the keyword functions can be used to
-     * automatically Sum across the entire index range.  This implementation accepts a function pointer with no
-     * parameters.  When using lambda functions, you can add in extra parameters.  The compiler won't care.  It only
-     * cares about the returned value.
-     * @param force Input to specify which items the results should Sum across.  Typically, this is one of the built-in
-     * force functions. However, it can be any function, any item, any calculation.  The only catch is that the
-     * input value must be a std::complex<double> data type.  Input format is a function pointer.  This allows
-     * the Sum function to update as it performs iterations.  The only catch is that you can not combine multiple
-     * values into one.  You must define a single function for each input argument you want.
-     * @param index std::string specifying which variable should be summed on.  This may be any one of these options:
-     * Order of derivative = "ord"
-     * Variable = "var"
-     * Body = "bod"
-     * @param from Integer for the beginning value of the summation.  Default value of negative one (-1) indicates that
-     * the summation will happen at the lowest value of the variable index specified.
-     * @param to Integer for the ending value of the summation.  Default value of negative one (-1) indicates that
-     * the summation will happen at the highest value of the variable index specified.
-     * @return Returns a complex value that is the summation of the index and limits specified.
-     */
-    virtual std::complex<double> Sum(std::complex<double> (EquationofMotion::*force)(void),
-                             std::string index, int from = -1, int to = -1);
-
-    //------------------------------------------Function Separator ----------------------------------------------------
-    /**
-     * @brief The integer of the current value of var() index.  Used for iteration and summation functions.
-     */
-    unsigned int pCurVar;
-
-    //------------------------------------------Function Separator ----------------------------------------------------
-    /**
-     * @brief The integer of the current value of ord() index.  Used for iteration and summation functions.
-     */
-    unsigned int pCurOrd;
-
-    //------------------------------------------Function Separator ----------------------------------------------------
-    /**
-     * @brief The integer of the current body.  Used for iteration and summation functions.
-     */
-    unsigned int pBod;
-
-    //------------------------------------------Function Separator ----------------------------------------------------
-    //Static variables
-    static int undefArg;   /**< Integer value for undefined argument in the summation function.*/
-
-
-//==========================================Section Separator =========================================================
-private:
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
      * @brief Reference to the motion model object which created the object.
@@ -594,6 +696,25 @@ private:
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
+     * @brief variable used to set the wave frequency when creating fictional data for debugging.
+     */
+    double debugFreq;
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief varible used to set the solution when creating fictional data for debugging.
+     */
+    std::complex<double> debugSoln;
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Variable used to set the property of calculating coefficients only.  Used only to create fictional
+     * data for debugging.
+     */
+    bool debugCoeffOnly;
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
      * @brief The integer of the current value of force() index.  Used to track the forces recorded.
      *
      * The integer of the current value of force() index.  Used to track the forces recorded.  Intentionally kept as a
@@ -612,6 +733,17 @@ private:
 
     //------------------------------------------Function Separator ----------------------------------------------------
     void ConstructorCommon(MotionModel *modelIn);
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Compares the text input which specifies the function name.  It then compares this to the list of
+     * function names and returns selects the correct function to evaluate.
+     * @param FuncName String.  The name of the function to return.  This is a string input.  Function name can include
+     * brackets or no brackets.  Variable passed by value.
+     * @return Returns a complex<double>.  Returns the value obtained from evaluating the function whose name was
+     * specified.  Returned variable passed by value.
+     */
+    std::complex<double> FunctionFind(std::string FuncName);
 };
 
 }   //Namespace ofreq

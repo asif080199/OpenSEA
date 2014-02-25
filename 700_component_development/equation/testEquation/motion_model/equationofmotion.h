@@ -570,19 +570,19 @@ public:
     /**
      * @brief The integer of the current value of var() index.  Used for iteration and summation functions.
      */
-    unsigned int pCurVar;
+    int pCurVar;
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
      * @brief The integer of the current value of ord() index.  Used for iteration and summation functions.
      */
-    unsigned int pCurOrd;
+    int pCurOrd;
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
      * @brief The integer of the current body.  Used for iteration and summation functions.
      */
-    unsigned int pBod;
+    int pBod;
 
     //------------------------------------------Function Separator ----------------------------------------------------
     //Static variables
@@ -664,13 +664,13 @@ public:
     /**
      * @brief The integer of the current value of eqn() index.  Used for iteration and summation functions.
      */
-    unsigned int pCurEqn;
+    int pCurEqn;
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
      * @brief The integer of the current value of force() index.  Used to track the forces recorded.
      */
-    unsigned int pCurForce;
+    int pCurForce;
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -722,14 +722,14 @@ public:
      * equation of motion can only depend on the type of force, not the individual force designation.
      * @return Returns integer value of the current force object.
      */
-    unsigned int force();
+    int force();
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
      * @brief Returns the index integer for iteration on equation number.
      * @return Returns the index integer for iteration on equation number.
      */
-    unsigned int eqn();
+    int eqn();
 
     //------------------------------------------Function Separator ----------------------------------------------------
     void ConstructorCommon(MotionModel *modelIn);

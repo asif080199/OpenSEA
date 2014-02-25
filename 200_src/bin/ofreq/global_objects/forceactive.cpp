@@ -54,13 +54,13 @@ void ForceActive::setCoeff(complex<double> coeffIn, unsigned int index)
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-vector<complexDouble> &ForceActive::listCoefficients()
+vector<complexDouble> &ForceActive::listCoefficient()
 {
     return pCoefficients;
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-complexDouble &ForceActive::listCoefficients(unsigned int index)
+complexDouble &ForceActive::listCoefficient(unsigned int index)
 {
     return pCoefficients[index];
 }
@@ -68,13 +68,13 @@ complexDouble &ForceActive::listCoefficients(unsigned int index)
 //------------------------------------------Function Separator --------------------------------------------------------
 vector<complexDouble> &ForceActive::listEquation()
 {
-    return this->listCoefficients();
+    return this->listCoefficient();
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
 complexDouble &ForceActive::listEquation(unsigned int index)
 {
-    return this->listCoefficients(index);
+    return this->listCoefficient(index);
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------

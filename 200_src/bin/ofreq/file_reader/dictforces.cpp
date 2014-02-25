@@ -140,16 +140,16 @@ int dictForces::defineKey(string keyIn, vector<string> valIn)
         if (pForceType == 2)
         {
             //Reactive force object
-            ptSystem->listForceReact_user(pForceIndex).listDerivative(pOrd).listEquation(pEqn).listCoefficients().clear();
-            ptSystem->listForceReact_user(pForceIndex).listDerivative(pOrd).listEquation(pEqn).listCoefficients() = coeffIn;
+            ptSystem->listForceReact_user(pForceIndex).listDerivative(pOrd).listEquation(pEqn).listCoefficient().clear();
+            ptSystem->listForceReact_user(pForceIndex).listDerivative(pOrd).listEquation(pEqn).listCoefficient() = coeffIn;
             //Report success
             return 0;
         }
         else if (pForceType == 3)
         {
             //Cross-body force object
-            ptSystem->listForceCross_user(pForceIndex).listDerivative(pOrd).listEquation(pEqn).listCoefficients().clear();
-            ptSystem->listForceCross_user(pForceIndex).listDerivative(pOrd).listEquation(pEqn).listCoefficients() = coeffIn;
+            ptSystem->listForceCross_user(pForceIndex).listDerivative(pOrd).listEquation(pEqn).listCoefficient().clear();
+            ptSystem->listForceCross_user(pForceIndex).listDerivative(pOrd).listEquation(pEqn).listCoefficient() = coeffIn;
             //Report success
             return 0;
         }
@@ -174,8 +174,8 @@ int dictForces::defineKey(string keyIn, vector<string> valIn)
             setEquation(indexIn);
 
             //Resize the vector for number of coefficients on the Active Force object.
-            if (ptSystem->listForceActive_user(pForceIndex).listCoefficients().size() < (pEqn + 1))
-                ptSystem->listForceActive_user(pForceIndex).listCoefficients().resize(pEqn + 1);
+            if (ptSystem->listForceActive_user(pForceIndex).listCoefficient().size() < (pEqn + 1))
+                ptSystem->listForceActive_user(pForceIndex).listCoefficient().resize(pEqn + 1);
 
             //Report success
             return 0;
@@ -247,6 +247,9 @@ int dictForces::defineClass(string nameIn)
             //Return error message about using keyword in wrong location.
             writeError("force object designation can only be used within an active force object.");
         }
+
+        //Report back success
+        return 0;
     }
 
     else if (nameIn == OBJECT_DERIVATIVE)

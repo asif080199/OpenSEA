@@ -141,40 +141,40 @@ void MotionModel::Reset()
 
     //memory cleanup of all variables in the data list
 
-    for (int i = 0; i < plistData.size(); i++)
+    for (unsigned int i = 0; i < plistData.size(); i++)
     {
         //memory cleanup of Active-user forces
-        for (int j = 0; j < plistData[i].listForceActive_user().size(); j++)
+        for (unsigned int j = 0; j < plistData[i].listForceActive_user().size(); j++)
         {
             delete plistData[i].listForceActive_user(j);
         }
 
         //memory cleanup of Active-hydro forces
-        for (int j = 0; j < plistData[i].listForceActive_hydro().size(); j++)
+        for (unsigned int j = 0; j < plistData[i].listForceActive_hydro().size(); j++)
         {
             delete plistData[i].listForceActive_hydro(j);
         }
 
         //memory cleanup of React-user forces
-        for (int j = 0; j < plistData[i].listForceReact_user().size(); j++)
+        for (unsigned int j = 0; j < plistData[i].listForceReact_user().size(); j++)
         {
             delete plistData[i].listForceReact_user(j);
         }
 
         //memory cleanup of React-hydro forces
-        for (int j = 0; j < plistData[i].listForceReact_hydro().size(); j++)
+        for (unsigned int j = 0; j < plistData[i].listForceReact_hydro().size(); j++)
         {
             delete plistData[i].listForceReact_hydro(j);
         }
 
         //memory cleanup of Cross-body user forces
-        for (int j = 0; j < plistData[i].listForceCross_user().size(); j++)
+        for (unsigned int j = 0; j < plistData[i].listForceCross_user().size(); j++)
         {
             delete plistData[i].listForceCross_user(j);
         }
 
         //memory cleanup of Cross-body hydro forces
-        for (int j = 0; j < plistData[i].listForceCross_hydro().size(); j++)
+        for (unsigned int j = 0; j < plistData[i].listForceCross_hydro().size(); j++)
         {
             delete plistData[i].listForceCross_hydro(j);
         }
@@ -249,7 +249,7 @@ void MotionModel::useForceActive_user(unsigned int force, unsigned int eqn)
 void MotionModel::useForceActive_user(unsigned int force)
 {
     //Get total number of equations
-    int eqn = plistBody->at(curBody).listForceActive_user(force)->listEquation().size() - 1;
+    unsigned int eqn = plistBody->at(curBody).listForceActive_user(force)->listEquation().size() - 1;
 
     //Trigger to use active forces.
     pActiveOnly = pActiveOnly * true;       //Will still evaluate to false if a reactive force was already triggered.
@@ -349,7 +349,7 @@ void MotionModel::useForceActive_hydro(unsigned int force, unsigned int eqn)
 void MotionModel::useForceActive_hydro(unsigned int force)
 {
     //Get total number of equations
-    int eqn = plistBody->at(curBody).listForceActive_hydro(force)->listEquation().size() - 1;
+    unsigned int eqn = plistBody->at(curBody).listForceActive_hydro(force)->listEquation().size() - 1;
 
     //Trigger to use active forces.
     pActiveOnly = pActiveOnly * true;       //Will still evaluate to false if a reactive force was already triggered.
@@ -382,7 +382,7 @@ void MotionModel::useForceActive_hydro(unsigned int force)
     }
 
     //Iterate through all equations for the designated forces
-    for (int i = 0; i <= eqn; i++)
+    for (unsigned int i = 0; i <= eqn; i++)
     {
             plistData[curBody].listForceActive_hydro(force)->listEquation(i) =
                     plistBody->at(curBody).listForceActive_hydro(force)->listEquation(i);
@@ -393,10 +393,10 @@ void MotionModel::useForceActive_hydro(unsigned int force)
 void MotionModel::useForceActive_hydro()
 {
     //Get total number of forces
-    int force = plistBody->at(curBody).listForceActive_hydro().size() - 1;
+    unsigned int force = plistBody->at(curBody).listForceActive_hydro().size() - 1;
 
     //Call to use all the active forces
-    for (int i = 0; i <= force; i++)
+    for (unsigned int i = 0; i <= force; i++)
     {
         useForceActive_hydro(i);
     }
@@ -619,11 +619,11 @@ void MotionModel::useForceReact_user(unsigned int force)
 void MotionModel::useForceReact_user()
 {
     //Get the number of forces
-    int force = plistBody->at(curBody).
+    unsigned int force = plistBody->at(curBody).
                 listForceReact_user().size() - 1;
 
     //Call the useForce method for each force object.
-    for (int i = 0; i <= force; i++)
+    for (unsigned int i = 0; i <= force; i++)
     {
         useForceReact_user(i);
     }
@@ -738,7 +738,7 @@ void MotionModel::useForceReact_hydro(unsigned int force, unsigned int ord, unsi
     }
 
     //Get the current number of variables
-    int var = plistBody->at(curBody).
+    unsigned int var = plistBody->at(curBody).
               listForceReact_hydro(force)->
               listDerivative(ord).
               listEquation(eqn).
@@ -752,7 +752,7 @@ void MotionModel::useForceReact_hydro(unsigned int force, unsigned int ord, unsi
             listCoefficients().resize(var + 1);
 
     //For each variable, copy over the value.
-    for (int i = 0; i <= var; i++)
+    for (unsigned int i = 0; i <= var; i++)
     {
         //Copy the input value
         plistData[curBody].listForceReact_hydro(force)->listDerivative(ord).
@@ -795,13 +795,13 @@ void MotionModel::useForceReact_hydro(unsigned int force, unsigned int ord)
     }
 
     //Get the current number of equations
-    int eqn = plistBody->at(curBody).
+    unsigned int eqn = plistBody->at(curBody).
               listForceReact_hydro(force)->
               listDerivative(ord).
               listEquation().size() - 1;
 
     //Iterate through equation and apply the useForce method.
-    for (int i = 0; i <= eqn; i++)
+    for (unsigned int i = 0; i <= eqn; i++)
     {
         useForceReact_hydro(force, ord, i);
     }
@@ -827,12 +827,12 @@ void MotionModel::useForceReact_hydro(unsigned int force)
     }
 
     //Get the maximum number of derivatives
-    int ord = plistBody->at(curBody).
+    unsigned int ord = plistBody->at(curBody).
               listForceReact_hydro(force)->
               listDerivative().size() - 1;
 
     //Iterate through for each derivative and apply the useForce method
-    for (int i = 0; i <= ord; i++)
+    for (unsigned int i = 0; i <= ord; i++)
     {
         useForceReact_hydro(force, i);
     }
@@ -842,11 +842,11 @@ void MotionModel::useForceReact_hydro(unsigned int force)
 void MotionModel::useForceReact_hydro()
 {
     //Get the number of forces
-    int force = plistBody->at(curBody).
+    unsigned int force = plistBody->at(curBody).
                 listForceReact_hydro().size() - 1;
 
     //Call the useForce method for each force object.
-    for (int i = 0; i <= force; i++)
+    for (unsigned int i = 0; i <= force; i++)
     {
         useForceReact_hydro(i);
     }
@@ -1317,9 +1317,7 @@ void MotionModel::useForceMass(unsigned int eqn, unsigned int var)
             throw 1;
         }
 
-
         //Copy over the mass matrix entry.
-        double test1 = plistBody->at(curBody).getMassMatrix()(eqn,var);
         plistData[curBody].MassMatrix()(eqn, var) = plistBody->at(curBody).getMassMatrix()(eqn, var);
     }
     catch (int err)
