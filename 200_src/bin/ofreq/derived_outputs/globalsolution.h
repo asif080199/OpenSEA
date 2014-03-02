@@ -83,6 +83,7 @@ typedef std::complex<double> complexDouble; /**< Simple typedef for complexDoubl
 
 //######################################### Class Separator ###########################################################
 //Prototype class declarations
+class OutputsBody;
 
 //######################################### Class Separator ###########################################################
 /**
@@ -101,6 +102,16 @@ class GlobalSolution : public OutputDerived
 public:
     //------------------------------------------Function Separator ----------------------------------------------------
 	GlobalSolution(); /**< This default constructor creates a Global Solution object. */
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Constructor that also sets the pointer to the OutputsBody object which contains the OutputDerived
+     * object.
+     * @param input Pointer to the OutputsBody objec that contains this OutputDerived object.  Pointer passed by value.
+     *
+     * @sa setOutputsBody()
+     */
+    GlobalSolution(OutputsBody *input);
 
     //------------------------------------------Function Separator ----------------------------------------------------
 	~GlobalSolution(); /**< The default destructor, nothing happens here. */
@@ -128,10 +139,10 @@ public:
      * for the solution.
      * @param freqIn The wave frequency to use for calculating the OutputDerived object.  Most outputs will depend
      * on the wave frequency.
-     * @return Returns a complex matrix that is the GlobalSolution object.  The complex matrix is a single row matrix.
-     * Each column in the row matrix represents a new degree of freedom variable.
+     * @return Returns a complex matrix that is the GlobalSolution object.  The complex matrix is a single column matrix.
+     * Each rows in the matrix represents a new degree of freedom variable.
      */
-    arma::cx_mat calcOutput(double freqIn);
+    int calcOutput(int freqIn);
 
 //==========================================Section Separator =========================================================
 protected:

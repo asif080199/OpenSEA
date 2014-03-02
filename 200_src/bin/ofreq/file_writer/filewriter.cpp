@@ -50,7 +50,7 @@ string FileWriter::NAME_RES = "r"; /**< The starting character for the resonant 
 //------------------------------------------Function Separator ----------------------------------------------------
 //General File Content Marks
 string FileWriter::LIST_BEGIN2 = "(";
-string FileWriter::LIST_END2 = ");";
+string FileWriter::LIST_END2 = ")";
 string FileWriter::OBJECT_BEGIN2 = "{";
 string FileWriter::OBJECT_END2 = "}";
 string FileWriter::END = ";";
@@ -195,89 +195,115 @@ bool FileWriter::fileExists(string filename)
 //--------------------------------------------Function Separator ------------------------------------------------------
 
 //------------------------------------------Function Separator --------------------------------------------------------
-bool FileWriter::writeWaveDirection()
+int FileWriter::writeWaveDirection()
 {
     ofstream output;
     string writeFilename;
+    int errVal = 0;             //Output error code.  Default value set to no error.
 
     //Get filename
     writeFilename = projectDirectory + SLASH + FILE_DIRECTIONS;
 
-    //Open file
-    output.open(writeFilename.c_str());
-
-    //Add top header
-    output << header;
-
-    //Add info block
-    output << getInfoBlock(KEY_DIRECTION);
-    output << BREAK_TOP;
-
-    //Add beginning of data
-    output << KEY_DIRECTION + SPACE + LIST_BEGIN2 << endl;
-
-    //Write outputs
-    for(unsigned int i = 0; i < pOutput->listWaveDir().size(); i ++)
+    try
     {
-        output << TAB << pOutput->listWaveDir(i) << endl;
+        //Open file
+        output.open(writeFilename.c_str());
+
+        //Add top header
+        output << header;
+
+        //Add info block
+        output << getInfoBlock(KEY_DIRECTION);
+        output << BREAK_TOP;
+
+        //Add beginning of data
+        output << KEY_DIRECTION + SPACE + LIST_BEGIN2 << endl;
+
+        //Write outputs
+        for(unsigned int i = 0; i < pOutput->listWaveDir().size(); i ++)
+        {
+            output << TAB << pOutput->listWaveDir(i) << endl;
+        }
+
+        //Close the list and finish
+        output << LIST_END2 << END << "\n\n" << BREAK_BOTTOM;
+
+        //Close file
+        output.close();
+    }
+    catch (int err)
+    {
+        //Add error handler later
+        errVal = err;
     }
 
-    //Close the list and finish
-    output << END << LIST_END2  << "\n\n" << BREAK_BOTTOM;
-
-    //Close file
-    output.close();
-
-    return true;
+    return errVal;
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-bool FileWriter::writeFrequency()
+int FileWriter::writeFrequency()
 {
     ofstream output;
     string writeFilename;
+    int errVal = 0;             //Output error code.  Default value set to no error.
 
     //Get filename
     writeFilename = projectDirectory + SLASH + FILE_FREQUENCIES;
 
-    //Open file
-    output.open(writeFilename.c_str());
-
-    //Add top header
-    output << header;
-
-    //Add info block
-    output << getInfoBlock(KEY_FREQUENCY);
-    output << BREAK_TOP;
-
-    //Add beginning of data
-    output << KEY_FREQUENCY + SPACE + LIST_BEGIN2 << endl;
-
-    //Write outputs
-    for(unsigned int i = 0; i < pOutput->listFreq().size(); i ++)
+    try
     {
-        output << TAB << pOutput->listFreq(i) << endl;
+        //Open file
+        output.open(writeFilename.c_str());
+
+        //Add top header
+        output << header;
+
+        //Add info block
+        output << getInfoBlock(KEY_FREQUENCY);
+        output << BREAK_TOP;
+
+        //Add beginning of data
+        output << KEY_FREQUENCY + SPACE + LIST_BEGIN2 << endl;
+
+        //Write outputs
+        for(unsigned int i = 0; i < pOutput->listFreq().size(); i ++)
+        {
+            output << TAB << pOutput->listFreq(i) << endl;
+        }
+
+        //Close the list and finish
+        output << LIST_END2 << END << "\n\n" << BREAK_BOTTOM;
+
+        //Close file
+        output.close();
+    }
+    catch (int err)
+    {
+        //Add error handler later
+        errVal = err;
     }
 
-    //Close the list and finish
-    output << END << LIST_END2  << "\n\n" << BREAK_BOTTOM;
-
-    //Close file
-    output.close();
-
-    return true;
+    return errVal;
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-bool FileWriter::writeGlobalMotion()
+int FileWriter::writeGlobalMotion()
 {
     string writeFilename;           //The name of the file to write out.
     string classname;               //The name of the class type that contains the file elements.
+    int errVal = 0;                 //Returned value for error codes from calculations.  Default set to no error.
+    bool outputAvail = false;       //Boolean to track if any output objects are even available.
+
+    //Check if output objects even exist.
+    if (pOutput->listGlobalMotion().size() == 0)
+        outputAvail = false;
+    else
+        outputAvail = true;
 
     //create directory.  Function will do nothing if directory already exists.
     createDir(getCurWaveDir());
 
-    //create filename and open file
+    //create filename and file output stream.
     writeFilename = projectDirectory + SLASH + getCurWaveDir() + FILE_GLOBAL_MOTION;
     ofstream output;
 
@@ -297,83 +323,118 @@ bool FileWriter::writeGlobalMotion()
         //Add top header
         output << header;
 
-        //Get the name for the class written in output.
-        classname.assign(typeid(pOutput->refGlobalMotion()).name());
+        if (outputAvail)
+        {
+            //Get the name for the class written in output.)
+            classname = pOutput->listGlobalMotion(0).getClassName();
 
-        //Write the file info block.
-        output << getInfoBlock(classname);
-        output << BREAK_TOP;
+            //Write the file info block.
+            output << getInfoBlock(classname);
+            output << BREAK_TOP;
+        }
     }
 
-    //Write output for beginning of body
-    output << KEY_BODY << SPACE << OBJECT_BEGIN2 << endl;
-    output << KEY_NAME;
-    output << SPACE;
-    output << pOutput->refCurBody().refBodyName();
-    output << END << endl;
-
-    //Repeat process for each item in object list
-    for (int i = 0; i < pOutput->sizeGlobalMotion(); i++)
+    if (outputAvail)
     {
-        //Start the output object.
-        output << TAB << classname << OBJECT_BEGIN2 << endl;
-        output << TAB;
+        //Write output for beginning of body
+        output << KEY_BODY << SPACE << OBJECT_BEGIN2 << endl;
         output << KEY_NAME;
         output << SPACE;
-        output << pOutput->refGlobalMotion(i).getName();
+        output << pOutput->refCurBody().refBodyName();
         output << END << endl;
 
-        //Iterate for each frequency in the list
-        for (unsigned int j = 0; j < pOutput->listFreq().size(); j++)
+        //Repeat process for each item in object list
+        for (unsigned int i = 0; i < pOutput->listGlobalMotion().size(); i++)
         {
-            //Create data signifier
-            output << TAB << TAB << KEY_DATA << SPACE << OBJECT_BEGIN2 << endl;
-            //Add frequency designator
-            output << TAB << TAB << KEY_FREQUENCY << SPACE << (j+1) << END << endl;
-            //Add value indicator
-            output << TAB << TAB << KEY_VALUE << SPACE << LIST_BEGIN2 << endl;
-            for (unsigned int k = 0; j < pOutput->getGlobalMotion(i).size(); k++)
+            try
             {
-                //Set precision
-                output.precision(DIGIT);
-                //Write output values for each solution object.
-                //Write the real part
-                output << TAB << TAB << TAB << pOutput->getGlobalMotion(i)[j][k].real();
-                //Write the imaginary part
-                if (pOutput->getGlobalMotion(i)[j][k].imag() < 0.0)
-                    output << pOutput->getGlobalMotion(i)[j][k].imag() << "i" << endl;
-                else
-                    output << "+" << pOutput->getGlobalMotion(i)[j][k].imag() << "i" << endl;
-            }
-            //Close list
-            output << TAB << TAB << LIST_END2 << endl;
-            //Close data object
-            output << TAB << TAB << OBJECT_END2 << endl;
-        }
-        //End the output object
-        output << TAB << OBJECT_END2 << "\n";
-    }
+                //Calculate the results for the given body and specified output object.
+                errVal = pOutput->calcGlobalMotion(i);
 
-    //Write output for ending of body
-    output << OBJECT_END2 << "\n" << BREAK_BOTTOM << "\n";
+                //Check for errors
+                if (errVal != 0)
+                    throw errVal;
+
+                //Start the output object.
+                output << TAB << classname << OBJECT_BEGIN2 << endl;
+                output << TAB;
+                output << KEY_NAME;
+                output << SPACE;
+                output << pOutput->listGlobalMotion(i).getName();
+                output << END << endl;
+
+                //Iterate for each frequency in the list
+                for (unsigned int j = 0; j < pOutput->listFreq().size(); j++)
+                {
+                    //Create data signifier
+                    output << TAB << TAB << KEY_DATA << SPACE << OBJECT_BEGIN2 << endl;
+                    //Add frequency designator
+                    output << TAB << TAB << KEY_FREQUENCY << SPACE << (j+1) << END << endl;
+                    //Add value indicator
+                    output << TAB << TAB << KEY_VALUE << SPACE << LIST_BEGIN2 << endl;
+
+                    //Write out data for given frequency.
+                    for (unsigned int k = 0; j < pOutput->listResult(j).n_rows; k++)
+                    {
+                        //Set precision
+                        output.precision(DIGIT);
+                        //Write output values for each solution object.
+                        //Write the real part
+                        output << TAB << TAB << TAB << pOutput->listResult(j)(k,0).real();
+
+                        //Write the imaginary part
+                        if (pOutput->listResult(j)(k,0).imag() < 0.00)
+                            output << pOutput->listResult(j)(k,0).imag() << "i" << endl;
+                        else
+                            output << "+" << pOutput->listResult(j)(k,0).imag() << "i" << endl;
+                    }
+                    //Close list
+                    output << TAB << TAB << LIST_END2 << END << endl;
+                    //Close data object
+                    output << TAB << TAB << OBJECT_END2 << endl;
+                }
+
+
+            }
+            catch(int err)
+            {
+                //Error handler
+                return errVal;
+            }
+
+            //End the output object
+            output << TAB << OBJECT_END2 << "\n";
+        }
+
+        //Write output for ending of body
+        output << OBJECT_END2 << "\n" << BREAK_BOTTOM << "\n";
+    }
 
     //Close file
     output.close();
 
-    //Report success
-    return true;
+    //Report status of efforts
+    return errVal;
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-bool FileWriter::writeGlobalVelocity()
+int FileWriter::writeGlobalVelocity()
 {
     string writeFilename;           //The name of the file to write out.
     string classname;               //The name of the class type that contains the file elements.
+    int errVal = 0;                 //Returned value for error codes from calculations.  Default set to no error.
+    bool outputAvail = false;       //Boolean to track if any output objects are even available.
+
+    //Check if output objects even exist.
+    if (pOutput->listGlobalVelocity().size() == 0)
+        outputAvail = false;
+    else
+        outputAvail = true;
 
     //create directory.  Function will do nothing if directory already exists.
     createDir(getCurWaveDir());
 
-    //create filename and open file
+    //create filename and file output stream.
     writeFilename = projectDirectory + SLASH + getCurWaveDir() + FILE_GLOBAL_VELOCITY;
     ofstream output;
 
@@ -393,83 +454,118 @@ bool FileWriter::writeGlobalVelocity()
         //Add top header
         output << header;
 
-        //Get the name for the class written in output.
-        classname.assign(typeid(pOutput->refGlobalVelocity()).name());
+        if (outputAvail)
+        {
+            //Get the name for the class written in output.)
+            classname = pOutput->listGlobalVelocity(0).getClassName();
 
-        //Write the file info block.
-        output << getInfoBlock(classname);
-        output << BREAK_TOP;
+            //Write the file info block.
+            output << getInfoBlock(classname);
+            output << BREAK_TOP;
+        }
     }
 
-    //Write output for beginning of body
-    output << KEY_BODY << SPACE << OBJECT_BEGIN2 << endl;
-    output << KEY_NAME;
-    output << SPACE;
-    output << pOutput->refCurBody().refBodyName();
-    output << END << endl;
-
-    //Repeat process for each item in object list
-    for (int i = 0; i < pOutput->sizeGlobalVelocity(); i++)
+    if (outputAvail)
     {
-        //Start the output object.
-        output << TAB << classname << OBJECT_BEGIN2 << endl;
-        output << TAB;
+        //Write output for beginning of body
+        output << KEY_BODY << SPACE << OBJECT_BEGIN2 << endl;
         output << KEY_NAME;
         output << SPACE;
-        output << pOutput->refGlobalVelocity(i).getName();
+        output << pOutput->refCurBody().refBodyName();
         output << END << endl;
 
-        //Iterate for each frequency in the list
-        for (unsigned int j = 0; j < pOutput->listFreq().size(); j++)
+        //Repeat process for each item in object list
+        for (unsigned int i = 0; i < pOutput->listGlobalVelocity().size(); i++)
         {
-            //Create data signifier
-            output << TAB << TAB << KEY_DATA << SPACE << OBJECT_BEGIN2 << endl;
-            //Add frequency designator
-            output << TAB << TAB << KEY_FREQUENCY << SPACE << (j+1) << END << endl;
-            //Add value indicator
-            output << TAB << TAB << KEY_VALUE << SPACE << LIST_BEGIN2 << endl;
-            for (unsigned int k = 0; j < pOutput->getGlobalVelocity(i).size(); k++)
+            try
             {
-                //Set precision
-                output.precision(DIGIT);
-                //Write output values for each solution object.
-                //Write the real part
-                output << TAB << TAB << TAB << pOutput->getGlobalVelocity(i)[j][k].real();
-                //Write the imaginary part
-                if (pOutput->getGlobalVelocity(i)[j][k].imag() < 0.0)
-                    output << pOutput->getGlobalVelocity(i)[j][k].imag() << "i" << endl;
-                else
-                    output << "+" << pOutput->getGlobalVelocity(i)[j][k].imag() << "i" << endl;
-            }
-            //Close list
-            output << TAB << TAB << LIST_END2 << endl;
-            //Close data object
-            output << TAB << TAB << OBJECT_END2 << endl;
-        }
-        //End the output object
-        output << TAB << OBJECT_END2 << "\n";
-    }
+                //Calculate the results for the given body and specified output object.
+                errVal = pOutput->calcGlobalVelocity(i);
 
-    //Write output for ending of body
-    output << OBJECT_END2 << "\n" << BREAK_BOTTOM << "\n";
+                //Check for errors
+                if (errVal != 0)
+                    throw errVal;
+
+                //Start the output object.
+                output << TAB << classname << OBJECT_BEGIN2 << endl;
+                output << TAB;
+                output << KEY_NAME;
+                output << SPACE;
+                output << pOutput->listGlobalVelocity(i).getName();
+                output << END << endl;
+
+                //Iterate for each frequency in the list
+                for (unsigned int j = 0; j < pOutput->listFreq().size(); j++)
+                {
+                    //Create data signifier
+                    output << TAB << TAB << KEY_DATA << SPACE << OBJECT_BEGIN2 << endl;
+                    //Add frequency designator
+                    output << TAB << TAB << KEY_FREQUENCY << SPACE << (j+1) << END << endl;
+                    //Add value indicator
+                    output << TAB << TAB << KEY_VALUE << SPACE << LIST_BEGIN2 << endl;
+
+                    //Write out data for given frequency.
+                    for (unsigned int k = 0; j < pOutput->listResult(j).n_rows; k++)
+                    {
+                        //Set precision
+                        output.precision(DIGIT);
+                        //Write output values for each solution object.
+                        //Write the real part
+                        output << TAB << TAB << TAB << pOutput->listResult(j)(k,0).real();
+
+                        //Write the imaginary part
+                        if (pOutput->listResult(j)(k,0).imag() < 0.00)
+                            output << pOutput->listResult(j)(k,0).imag() << "i" << endl;
+                        else
+                            output << "+" << pOutput->listResult(j)(k,0).imag() << "i" << endl;
+                    }
+                    //Close list
+                    output << TAB << TAB << LIST_END2 << END << endl;
+                    //Close data object
+                    output << TAB << TAB << OBJECT_END2 << endl;
+                }
+
+
+            }
+            catch(int err)
+            {
+                //Error handler
+                return errVal;
+            }
+
+            //End the output object
+            output << TAB << OBJECT_END2 << "\n";
+        }
+
+        //Write output for ending of body
+        output << OBJECT_END2 << "\n" << BREAK_BOTTOM << "\n";
+    }
 
     //Close file
     output.close();
 
-    //Report success
-    return true;
+    //Report status of efforts
+    return errVal;
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-bool FileWriter::writeGlobalAcceleration()
+int FileWriter::writeGlobalAcceleration()
 {
     string writeFilename;           //The name of the file to write out.
     string classname;               //The name of the class type that contains the file elements.
+    int errVal = 0;                 //Returned value for error codes from calculations.  Default set to no error.
+    bool outputAvail = false;       //Boolean to track if any output objects are even available.
+
+    //Check if output objects even exist.
+    if (pOutput->listGlobalAcceleration().size() == 0)
+        outputAvail = false;
+    else
+        outputAvail = true;
 
     //create directory.  Function will do nothing if directory already exists.
     createDir(getCurWaveDir());
 
-    //create filename and open file
+    //create filename and file output stream.
     writeFilename = projectDirectory + SLASH + getCurWaveDir() + FILE_GLOBAL_ACCELERATION;
     ofstream output;
 
@@ -489,83 +585,118 @@ bool FileWriter::writeGlobalAcceleration()
         //Add top header
         output << header;
 
-        //Get the name for the class written in output.
-        classname.assign(typeid(pOutput->refGlobalAcceleration()).name());
+        if (outputAvail)
+        {
+            //Get the name for the class written in output.)
+            classname = pOutput->listGlobalAcceleration(0).getClassName();
 
-        //Write the file info block.
-        output << getInfoBlock(classname);
-        output << BREAK_TOP;
+            //Write the file info block.
+            output << getInfoBlock(classname);
+            output << BREAK_TOP;
+        }
     }
 
-    //Write output for beginning of body
-    output << KEY_BODY << SPACE << OBJECT_BEGIN2 << endl;
-    output << KEY_NAME;
-    output << SPACE;
-    output << pOutput->refCurBody().refBodyName();
-    output << END << endl;
-
-    //Repeat process for each item in object list
-    for (int i = 0; i < pOutput->sizeGlobalAcceleration(); i++)
+    if (outputAvail)
     {
-        //Start the output object.
-        output << TAB << classname << OBJECT_BEGIN2 << endl;
-        output << TAB;
+        //Write output for beginning of body
+        output << KEY_BODY << SPACE << OBJECT_BEGIN2 << endl;
         output << KEY_NAME;
         output << SPACE;
-        output << pOutput->refGlobalAcceleration(i).getName();
+        output << pOutput->refCurBody().refBodyName();
         output << END << endl;
 
-        //Iterate for each frequency in the list
-        for (unsigned int j = 0; j < pOutput->listFreq().size(); j++)
+        //Repeat process for each item in object list
+        for (unsigned int i = 0; i < pOutput->listGlobalAcceleration().size(); i++)
         {
-            //Create data signifier
-            output << TAB << TAB << KEY_DATA << SPACE << OBJECT_BEGIN2 << endl;
-            //Add frequency designator
-            output << TAB << TAB << KEY_FREQUENCY << SPACE << (j+1) << END << endl;
-            //Add value indicator
-            output << TAB << TAB << KEY_VALUE << SPACE << LIST_BEGIN2 << endl;
-            for (unsigned int k = 0; j < pOutput->getGlobalAcceleration(i).size(); k++)
+            try
             {
-                //Set precision
-                output.precision(DIGIT);
-                //Write output values for each solution object.
-                //Write the real part
-                output << TAB << TAB << TAB << pOutput->getGlobalAcceleration(i)[j][k].real();
-                //Write the imaginary part
-                if (pOutput->getGlobalAcceleration(i)[j][k].imag() < 0.0)
-                    output << pOutput->getGlobalAcceleration(i)[j][k].imag() << "i" << endl;
-                else
-                    output << "+" << pOutput->getGlobalAcceleration(i)[j][k].imag() << "i" << endl;
-            }
-            //Close list
-            output << TAB << TAB << LIST_END2 << endl;
-            //Close data object
-            output << TAB << TAB << OBJECT_END2 << endl;
-        }
-        //End the output object
-        output << TAB << OBJECT_END2 << "\n";
-    }
+                //Calculate the results for the given body and specified output object.
+                errVal = pOutput->calcGlobalAcceleration(i);
 
-    //Write output for ending of body
-    output << OBJECT_END2 << "\n" << BREAK_BOTTOM << "\n";
+                //Check for errors
+                if (errVal != 0)
+                    throw errVal;
+
+                //Start the output object.
+                output << TAB << classname << OBJECT_BEGIN2 << endl;
+                output << TAB;
+                output << KEY_NAME;
+                output << SPACE;
+                output << pOutput->listGlobalAcceleration(i).getName();
+                output << END << endl;
+
+                //Iterate for each frequency in the list
+                for (unsigned int j = 0; j < pOutput->listFreq().size(); j++)
+                {
+                    //Create data signifier
+                    output << TAB << TAB << KEY_DATA << SPACE << OBJECT_BEGIN2 << endl;
+                    //Add frequency designator
+                    output << TAB << TAB << KEY_FREQUENCY << SPACE << (j+1) << END << endl;
+                    //Add value indicator
+                    output << TAB << TAB << KEY_VALUE << SPACE << LIST_BEGIN2 << endl;
+
+                    //Write out data for given frequency.
+                    for (unsigned int k = 0; j < pOutput->listResult(j).n_rows; k++)
+                    {
+                        //Set precision
+                        output.precision(DIGIT);
+                        //Write output values for each solution object.
+                        //Write the real part
+                        output << TAB << TAB << TAB << pOutput->listResult(j)(k,0).real();
+
+                        //Write the imaginary part
+                        if (pOutput->listResult(j)(k,0).imag() < 0.00)
+                            output << pOutput->listResult(j)(k,0).imag() << "i" << endl;
+                        else
+                            output << "+" << pOutput->listResult(j)(k,0).imag() << "i" << endl;
+                    }
+                    //Close list
+                    output << TAB << TAB << LIST_END2 << END << endl;
+                    //Close data object
+                    output << TAB << TAB << OBJECT_END2 << endl;
+                }
+
+
+            }
+            catch(int err)
+            {
+                //Error handler
+                return errVal;
+            }
+
+            //End the output object
+            output << TAB << OBJECT_END2 << "\n";
+        }
+
+        //Write output for ending of body
+        output << OBJECT_END2 << "\n" << BREAK_BOTTOM << "\n";
+    }
 
     //Close file
     output.close();
 
-    //Report success
-    return true;
+    //Report status of efforts
+    return errVal;
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-bool FileWriter::writeGlobalSolution()
+int FileWriter::writeGlobalSolution()
 {
     string writeFilename;           //The name of the file to write out.
     string classname;               //The name of the class type that contains the file elements.
+    int errVal = 0;                 //Returned value for error codes from calculations.  Default set to no error.
+    bool outputAvail = false;       //Boolean to track if any output objects are even available.
+
+    //Check if output objects even exist.
+    if (pOutput->listGlobalSolution().size() == 0)
+        outputAvail = false;
+    else
+        outputAvail = true;
 
     //create directory.  Function will do nothing if directory already exists.
     createDir(getCurWaveDir());
 
-    //create filename and open file
+    //create filename and file output stream.
     writeFilename = projectDirectory + SLASH + getCurWaveDir() + FILE_GLOBAL_SOLUTION;
     ofstream output;
 
@@ -585,71 +716,98 @@ bool FileWriter::writeGlobalSolution()
         //Add top header
         output << header;
 
-        //Get the name for the class written in output.
-        classname.assign(typeid(pOutput->refGlobalSolution()).name());
+        if (outputAvail)
+        {
+            //Get the name for the class written in output.)
+            classname = pOutput->listGlobalSolution(0).getClassName();
 
-        //Write the file info block.
-        output << getInfoBlock(classname);
-        output << BREAK_TOP;
+            //Write the file info block.
+            output << getInfoBlock(classname);
+            output << BREAK_TOP;
+        }
     }
 
-    //Write output for beginning of body
-    output << KEY_BODY << SPACE << OBJECT_BEGIN2 << endl;
-    output << KEY_NAME;
-    output << SPACE;
-    output << pOutput->refCurBody().refBodyName();
-    output << END << endl;
-
-    //Repeat process for each item in object list
-    for (int i = 0; i < pOutput->sizeGlobalSolution(); i++)
+    if (outputAvail)
     {
-        //Start the output object.
-        output << TAB << classname << OBJECT_BEGIN2 << endl;
-        output << TAB;
+        //Write output for beginning of body
+        output << KEY_BODY << SPACE << OBJECT_BEGIN2 << endl;
         output << KEY_NAME;
         output << SPACE;
-        output << pOutput->refGlobalSolution(i).getName();
+        output << pOutput->refCurBody().refBodyName();
         output << END << endl;
 
-        //Iterate for each frequency in the list
-        for (unsigned int j = 0; j < pOutput->listFreq().size(); j++)
+        //Repeat process for each item in object list
+        for (unsigned int i = 0; i < pOutput->listGlobalSolution().size(); i++)
         {
-            //Create data signifier
-            output << TAB << TAB << KEY_DATA << SPACE << OBJECT_BEGIN2 << endl;
-            //Add frequency designator
-            output << TAB << TAB << KEY_FREQUENCY << SPACE << (j+1) << END << endl;
-            //Add value indicator
-            output << TAB << TAB << KEY_VALUE << SPACE << LIST_BEGIN2 << endl;
-            for (unsigned int k = 0; j < pOutput->getGlobalSolution(i).size(); k++)
+            try
             {
-                //Set precision
-                output.precision(DIGIT);
-                //Write output values for each solution object.
-                //Write the real part
-                output << TAB << TAB << TAB << pOutput->getGlobalSolution(i)[j][k].real();
-                //Write the imaginary part
-                if (pOutput->getGlobalSolution(i)[j][k].imag() < 0.0)
-                    output << pOutput->getGlobalSolution(i)[j][k].imag() << "i" << endl;
-                else
-                    output << "+" << pOutput->getGlobalSolution(i)[j][k].imag() << "i" << endl;
-            }
-            //Close list
-            output << TAB << TAB << LIST_END2 << endl;
-            //Close data object
-            output << TAB << TAB << OBJECT_END2 << endl;
-        }
-        //End the output object
-        output << TAB << OBJECT_END2 << "\n";
-    }
+                //Calculate the results for the given body and specified output object.
+                errVal = pOutput->calcGlobalSolution(i);
 
-    //Write output for ending of body
-    output << OBJECT_END2 << "\n" << BREAK_BOTTOM << "\n";
+                //Check for errors
+                if (errVal != 0)
+                    throw errVal;
+
+                //Start the output object.
+                output << TAB << classname << OBJECT_BEGIN2 << endl;
+                output << TAB;
+                output << KEY_NAME;
+                output << SPACE;
+                output << pOutput->listGlobalSolution(i).getName();
+                output << END << endl;
+
+                //Iterate for each frequency in the list
+                for (unsigned int j = 0; j < pOutput->listFreq().size(); j++)
+                {
+                    //Create data signifier
+                    output << TAB << TAB << KEY_DATA << SPACE << OBJECT_BEGIN2 << endl;
+                    //Add frequency designator
+                    output << TAB << TAB << KEY_FREQUENCY << SPACE << (j+1) << END << endl;
+                    //Add value indicator
+                    output << TAB << TAB << KEY_VALUE << SPACE << LIST_BEGIN2 << endl;
+
+                    //Write out data for given frequency.
+                    for (unsigned int k = 0; j < pOutput->listResult(j).n_rows; k++)
+                    {
+                        //Set precision
+                        output.precision(DIGIT);
+                        //Write output values for each solution object.
+                        //Write the real part
+                        output << TAB << TAB << TAB << pOutput->listResult(j)(k,0).real();
+
+                        //Write the imaginary part
+                        if (pOutput->listResult(j)(k,0).imag() < 0.00)
+                            output << pOutput->listResult(j)(k,0).imag() << "i" << endl;
+                        else
+                            output << "+" << pOutput->listResult(j)(k,0).imag() << "i" << endl;
+                    }
+                    //Close list
+                    output << TAB << TAB << LIST_END2 << END << endl;
+                    //Close data object
+                    output << TAB << TAB << OBJECT_END2 << endl;
+                }
+
+
+            }
+            catch(int err)
+            {
+                //Error handler
+                return errVal;
+            }
+
+            //End the output object
+            output << TAB << OBJECT_END2 << "\n";
+        }
+
+        //Write output for ending of body
+        output << OBJECT_END2 << "\n" << BREAK_BOTTOM << "\n";
+    }
 
     //Close file
     output.close();
 
-    //Report success
-    return true;
+    //Report status of efforts
+    return errVal;
 }
 
 //==========================================Section Separator =========================================================

@@ -1,4 +1,16 @@
+seafile
+{
+    version   1.0;
+    format    ascii;
+    object    ;
+}
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 body {
 name body1;
-}
-// ************************************************************************* //
+  {
+  name Global Motion;
+    data {
+    frequency 1;
+    value (
+      0+0i

@@ -7,8 +7,7 @@
 
 
 
-Inheritance diagram for osea\-:\-:File\-Reader\-:
-\nopagebreak
+Inheritance diagram for osea\-:\-:File\-Reader\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -17,8 +16,7 @@ Inheritance diagram for osea\-:\-:File\-Reader\-:
 \end{figure}
 
 
-Collaboration diagram for osea\-:\-:File\-Reader\-:
-\nopagebreak
+Collaboration diagram for osea\-:\-:File\-Reader\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -66,7 +64,14 @@ int \hyperlink{classosea_1_1_file_reader_ab78d2f631eb8e64b0a68d25eeca80be5}{read
 int \hyperlink{classosea_1_1_file_reader_a1f8a6bd4b5c53f80cc94d64d6dd1f2da}{read\-Sea\-Env} ()
 \begin{DoxyCompactList}\small\item\em Reads in the Sea Environment input file and parses its inputs. \end{DoxyCompactList}\item 
 int \hyperlink{classosea_1_1_file_reader_a814f8b06adcc190d4042509797eef6d2}{read\-Data} ()
-\begin{DoxyCompactList}\small\item\em Reads in the Data input file and parses its inputs. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Reads in the Data input file and parses its inputs. \end{DoxyCompactList}\item 
+void \hyperlink{classosea_1_1_file_reader_a3cbdb7eab632abafcfd055aa92f47b73}{set\-Dictionary} (\hyperlink{classosea_1_1_dictionary}{osea\-::\-Dictionary} \&dict\-In)
+\begin{DoxyCompactList}\small\item\em Sets the dictionary object to be used for processing any data read from the input files. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classosea_1_1_file_reader_aa57b483154b47ad0126d97debb53c638}{send\-Output} (int index)
+\begin{DoxyCompactList}\small\item\em Sends the results of parsing the input file onto the dictionary object. Use for processing the input file. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Additional Inherited Members}
 
 
@@ -302,6 +307,38 @@ Reads in the Sea Environment input file and parses its inputs.
 \begin{DoxyReturn}{Returns}
 Returns integer to report success or failure of file parsing. Returns 0 for success. Returns 1 for file does not exist. 
 \end{DoxyReturn}
+\hypertarget{classosea_1_1_file_reader_aa57b483154b47ad0126d97debb53c638}{\index{osea\-::\-File\-Reader@{osea\-::\-File\-Reader}!send\-Output@{send\-Output}}
+\index{send\-Output@{send\-Output}!osea::FileReader@{osea\-::\-File\-Reader}}
+\subsubsection[{send\-Output}]{\setlength{\rightskip}{0pt plus 5cm}void File\-Reader\-::send\-Output (
+\begin{DoxyParamCaption}
+\item[{int}]{index}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classosea_1_1_file_reader_aa57b483154b47ad0126d97debb53c638}
+
+
+Sends the results of parsing the input file onto the dictionary object. Use for processing the input file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & Integer. The index which specifies which object in the list of recognized objects to use. Variable passed by value. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classosea_1_1_file_reader_a3cbdb7eab632abafcfd055aa92f47b73}{\index{osea\-::\-File\-Reader@{osea\-::\-File\-Reader}!set\-Dictionary@{set\-Dictionary}}
+\index{set\-Dictionary@{set\-Dictionary}!osea::FileReader@{osea\-::\-File\-Reader}}
+\subsubsection[{set\-Dictionary}]{\setlength{\rightskip}{0pt plus 5cm}void File\-Reader\-::set\-Dictionary (
+\begin{DoxyParamCaption}
+\item[{{\bf osea\-::\-Dictionary} \&}]{dict\-In}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1_file_reader_a3cbdb7eab632abafcfd055aa92f47b73}
+
+
+Sets the dictionary object to be used for processing any data read from the input files. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dict\-In} & The dictionary object that you want to use for processing the file. This can change between reading individual files. Variable is passed by reference and stored as a pointer in the object. \\
+\hline
+\end{DoxyParams}
 \hypertarget{classosea_1_1_file_reader_a0b12de2af52dc0cdfae5ab337bf494dc}{\index{osea\-::\-File\-Reader@{osea\-::\-File\-Reader}!set\-Path@{set\-Path}}
 \index{set\-Path@{set\-Path}!osea::FileReader@{osea\-::\-File\-Reader}}
 \subsubsection[{set\-Path}]{\setlength{\rightskip}{0pt plus 5cm}void File\-Reader\-::set\-Path (

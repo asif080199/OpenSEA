@@ -152,8 +152,11 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a169b35ae15b49ca4096ea7e0ea927fec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the solution matrix as a whole.  <a href="#a169b35ae15b49ca4096ea7e0ea927fec"></a><br/></td></tr>
 <tr class="separator:a169b35ae15b49ca4096ea7e0ea927fec"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a95519db148bcece14c88aab53f4ced0e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classosea_1_1ofreq_1_1_body.html">Body</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classosea_1_1ofreq_1_1_solution.html#a95519db148bcece14c88aab53f4ced0e">refBody</a> ()</td></tr>
-<tr class="memdesc:a95519db148bcece14c88aab53f4ced0e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the body object used as the reference body. Variable passed by value.  <a href="#a95519db148bcece14c88aab53f4ced0e"></a><br/></td></tr>
+<tr class="memdesc:a95519db148bcece14c88aab53f4ced0e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns reference pointer to the reference body. Variable passed by reference.  <a href="#a95519db148bcece14c88aab53f4ced0e"></a><br/></td></tr>
 <tr class="separator:a95519db148bcece14c88aab53f4ced0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:affec6f64a60e9ad3b5a236302e2dd820"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classosea_1_1ofreq_1_1_solution.html#affec6f64a60e9ad3b5a236302e2dd820">setBody</a> (<a class="el" href="classosea_1_1ofreq_1_1_body.html">Body</a> *input)</td></tr>
+<tr class="memdesc:affec6f64a60e9ad3b5a236302e2dd820"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the body object that the solution object is relevant to.  <a href="#affec6f64a60e9ad3b5a236302e2dd820"></a><br/></td></tr>
+<tr class="separator:affec6f64a60e9ad3b5a236302e2dd820"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classosea_1_1ofreq_1_1o_freq_core"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classosea_1_1ofreq_1_1o_freq_core')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classosea_1_1ofreq_1_1o_freq_core.html">osea::ofreq::oFreqCore</a></td></tr>
 <tr class="memitem:a5c882c0d8e78706270e377b749a647f5 inherit pub_methods_classosea_1_1ofreq_1_1o_freq_core"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classosea_1_1ofreq_1_1o_freq_core.html#a5c882c0d8e78706270e377b749a647f5">oFreqCore</a> ()</td></tr>
 <tr class="separator:a5c882c0d8e78706270e377b749a647f5 inherit pub_methods_classosea_1_1ofreq_1_1o_freq_core"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -178,12 +181,18 @@ Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pro_static_attribs_classosea_1_1ofreq_1_1o_freq_core"><td colspan="2" onclick="javascript:toggleInherit('pro_static_attribs_classosea_1_1ofreq_1_1o_freq_core')"><img src="closed.png" alt="-"/>&#160;Static Protected Attributes inherited from <a class="el" href="classosea_1_1ofreq_1_1o_freq_core.html">osea::ofreq::oFreqCore</a></td></tr>
 <tr class="memitem:a85b3e812b6d78c064ba375d5101bb053 inherit pro_static_attribs_classosea_1_1ofreq_1_1o_freq_core"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a85b3e812b6d78c064ba375d5101bb053"></a>
 static std::ofstream&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classosea_1_1ofreq_1_1o_freq_core.html#a85b3e812b6d78c064ba375d5101bb053">OutLog</a></td></tr>
-<tr class="memdesc:a85b3e812b6d78c064ba375d5101bb053 inherit pro_static_attribs_classosea_1_1ofreq_1_1o_freq_core"><td class="mdescLeft">&#160;</td><td class="mdescRight">The log file for an oFreq run. Records normal actions for the program. Informs user of regular program developments. Through inheritence of the <a class="el" href="classosea_1_1ofreq_1_1o_freq_core.html" title="The core oFreq class. All oFreq classes inherit from this class.">oFreqCore</a> class, this object is available to every object in the oFreq application. <br/></td></tr>
+<tr class="memdesc:a85b3e812b6d78c064ba375d5101bb053 inherit pro_static_attribs_classosea_1_1ofreq_1_1o_freq_core"><td class="mdescLeft">&#160;</td><td class="mdescRight">The log file for an oFreq run. Records normal actions for the program. Informs user of regular program developments. Through inheritence of the <a class="el" href="classosea_1_1ofreq_1_1o_freq_core.html" title="The core oFreq class. All oFreq classes inherit from this class.">oFreqCore</a> class, this object is available to every object in the oFreq application. Also provided with a second name of seaout. <br/></td></tr>
 <tr class="separator:a85b3e812b6d78c064ba375d5101bb053 inherit pro_static_attribs_classosea_1_1ofreq_1_1o_freq_core"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad1092650d598d7f30e7c0fb3dbdfd392 inherit pro_static_attribs_classosea_1_1ofreq_1_1o_freq_core"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad1092650d598d7f30e7c0fb3dbdfd392"></a>
+static std::ofstream &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>seaout</b> = <a class="el" href="classosea_1_1ofreq_1_1o_freq_core.html#a85b3e812b6d78c064ba375d5101bb053">OutLog</a></td></tr>
+<tr class="separator:ad1092650d598d7f30e7c0fb3dbdfd392 inherit pro_static_attribs_classosea_1_1ofreq_1_1o_freq_core"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5e31044ee80fa436289e569c8080b21e inherit pro_static_attribs_classosea_1_1ofreq_1_1o_freq_core"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5e31044ee80fa436289e569c8080b21e"></a>
 static std::ofstream&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classosea_1_1ofreq_1_1o_freq_core.html#a5e31044ee80fa436289e569c8080b21e">ErrLog</a></td></tr>
-<tr class="memdesc:a5e31044ee80fa436289e569c8080b21e inherit pro_static_attribs_classosea_1_1ofreq_1_1o_freq_core"><td class="mdescLeft">&#160;</td><td class="mdescRight">The error log file for an oFreq run. Records any errors or warnings for the program. Informs user of errors and warnings and where they occurred. Through inheritence of the <a class="el" href="classosea_1_1ofreq_1_1o_freq_core.html" title="The core oFreq class. All oFreq classes inherit from this class.">oFreqCore</a> class, this object is available for every object in the oFreq application. <br/></td></tr>
+<tr class="memdesc:a5e31044ee80fa436289e569c8080b21e inherit pro_static_attribs_classosea_1_1ofreq_1_1o_freq_core"><td class="mdescLeft">&#160;</td><td class="mdescRight">The error log file for an oFreq run. Records any errors or warnings for the program. Informs user of errors and warnings and where they occurred. Through inheritence of the <a class="el" href="classosea_1_1ofreq_1_1o_freq_core.html" title="The core oFreq class. All oFreq classes inherit from this class.">oFreqCore</a> class, this object is available for every object in the oFreq application. Also provided with a second name of seaerr. <br/></td></tr>
 <tr class="separator:a5e31044ee80fa436289e569c8080b21e inherit pro_static_attribs_classosea_1_1ofreq_1_1o_freq_core"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aec5a7ac06574b9c5f80ac3c149c09fda inherit pro_static_attribs_classosea_1_1ofreq_1_1o_freq_core"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aec5a7ac06574b9c5f80ac3c149c09fda"></a>
+static std::ofstream &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>seaerr</b> = <a class="el" href="classosea_1_1ofreq_1_1o_freq_core.html#a5e31044ee80fa436289e569c8080b21e">ErrLog</a></td></tr>
+<tr class="separator:aec5a7ac06574b9c5f80ac3c149c09fda inherit pro_static_attribs_classosea_1_1ofreq_1_1o_freq_core"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>This class defines a solution object. The solution object records the basic value of motion solution. The motion solution is translated back into body coordinate system. </p>
@@ -308,8 +317,7 @@ static std::ofstream&#160;</td><td class="memItemRight" valign="bottom"><a class
       </table>
 </div><div class="memdoc">
 
-<p>Gets the body object used as the reference body. Variable passed by value. </p>
-<dl class="section return"><dt>Returns</dt><dd>Gets the body object used as the reference body. Variable passed by value. Returns reference pointer to the reference body. Variable passed by reference.</dd></dl>
+<p>Returns reference pointer to the reference body. Variable passed by reference. </p>
 <p>Returns reference pointer to the reference body. Variable passed by reference. Used for direct access to the reference body and all its member functions. </p>
 <dl class="section return"><dt>Returns</dt><dd>Returns reference pointer to the reference body. Variable passed by reference. </dd></dl>
 
@@ -331,6 +339,31 @@ static std::ofstream&#160;</td><td class="memItemRight" valign="bottom"><a class
 <p>Returns direct access to the solution matrix. </p>
 <p>Returns direct access to the solution matrix. Provides a pointer to the solution matrix. It gets filled with the output from the motion solver. Output is a column matrix (n by 1) of complex numbers. Output is in units of meters. </p>
 <dl class="section return"><dt>Returns</dt><dd>Returns direct access to the solution matrix. Provides a pointer to the solution matrix. Returned variable is passed by reference. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="affec6f64a60e9ad3b5a236302e2dd820"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Solution::setBody </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classosea_1_1ofreq_1_1_body.html">Body</a> *&#160;</td>
+          <td class="paramname"><em>input</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets the body object that the solution object is relevant to. </p>
+<p>The solution set in this object is specific to a single body. The setBody method allows you to create a pointer to that <a class="el" href="classosea_1_1ofreq_1_1_body.html">Body</a> object for reference and use in other sections of code. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">input</td><td>Pointer to the <a class="el" href="classosea_1_1ofreq_1_1_body.html">Body</a> object. Pointer variable passed by value. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -368,7 +401,7 @@ static std::ofstream&#160;</td><td class="memItemRight" valign="bottom"><a class
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespaceosea.html">osea</a></li><li class="navelem"><a class="el" href="namespaceosea_1_1ofreq.html">ofreq</a></li><li class="navelem"><a class="el" href="classosea_1_1ofreq_1_1_solution.html">Solution</a></li>
-    <li class="footer">Generated on Sat Oct 12 2013 10:41:40 for oFreq by
+    <li class="footer">Generated on Sat Mar 1 2014 20:21:02 for oFreq by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.2 </li>
   </ul>

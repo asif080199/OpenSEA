@@ -43,6 +43,15 @@ GlobalMotion::GlobalMotion()
 {
     pName = MOTION_NAME;
 	orderDerivative = GLOBAL_MOTION_DERIVATIVE;
+    pClassName = "GlobalMotion";
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+GlobalMotion::GlobalMotion(OutputsBody* input)
+    : GlobalSolution(input)
+{
+    pName = MOTION_NAME;
+    orderDerivative = GLOBAL_MOTION_DERIVATIVE;
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------

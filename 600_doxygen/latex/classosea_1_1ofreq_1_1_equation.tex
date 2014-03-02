@@ -7,8 +7,7 @@
 
 
 
-Inheritance diagram for osea\-:\-:ofreq\-:\-:Equation\-:
-\nopagebreak
+Inheritance diagram for osea\-:\-:ofreq\-:\-:Equation\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -17,8 +16,7 @@ Inheritance diagram for osea\-:\-:ofreq\-:\-:Equation\-:
 \end{figure}
 
 
-Collaboration diagram for osea\-:\-:ofreq\-:\-:Equation\-:
-\nopagebreak
+Collaboration diagram for osea\-:\-:ofreq\-:\-:Equation\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -34,9 +32,13 @@ Collaboration diagram for osea\-:\-:ofreq\-:\-:Equation\-:
 \begin{DoxyCompactList}\small\item\em Constructor with setting the data index. \end{DoxyCompactList}\item 
 \hyperlink{classosea_1_1ofreq_1_1_equation_a097243d0dfd608330fc91f115a0d15bb}{$\sim$\-Equation} ()
 \item 
-std\-::vector$<$ double $>$ \& \hyperlink{classosea_1_1ofreq_1_1_equation_a4277bda09b538c1523d451afcc55787a}{list\-Coefficients} ()
+std\-::vector$<$ double $>$ \& \hyperlink{classosea_1_1ofreq_1_1_equation_a40be3415ddc7ebc7aa93829f3eb750f0}{list\-Coefficient} ()
 \begin{DoxyCompactList}\small\item\em Direct access to the list of coefficients. \end{DoxyCompactList}\item 
-double \& \hyperlink{classosea_1_1ofreq_1_1_equation_a198eb9e2816a5cd316b8bdc07d505568}{list\-Coefficients} (unsigned int index)
+double \& \hyperlink{classosea_1_1ofreq_1_1_equation_acce479a17f90df340bcf9cabf06258a2}{list\-Coefficient} (unsigned int index)
+\begin{DoxyCompactList}\small\item\em Provides direct access to a coefficient from the list of coefficients. \end{DoxyCompactList}\item 
+std\-::vector$<$ double $>$ \& \hyperlink{classosea_1_1ofreq_1_1_equation_a736b8cff2908ad73abad4ca4533b830d}{list\-Variable} ()
+\begin{DoxyCompactList}\small\item\em Provides direct access to the list of coefficients. This is the same as the \hyperlink{classosea_1_1ofreq_1_1_equation_a40be3415ddc7ebc7aa93829f3eb750f0}{list\-Coefficient()} method, just under a different name. \end{DoxyCompactList}\item 
+double \& \hyperlink{classosea_1_1ofreq_1_1_equation_a9d969fd44848f29f135213aaa520fabe}{list\-Variable} (unsigned int index)
 \begin{DoxyCompactList}\small\item\em Provides direct access to a coefficient from the list of coefficients. \end{DoxyCompactList}\item 
 double \hyperlink{classosea_1_1ofreq_1_1_equation_a6aa77458d50e80de2a31708756c7925b}{get\-Coefficient} (int number)
 \begin{DoxyCompactList}\small\item\em Get the coefficient at the specified number. \end{DoxyCompactList}\item 
@@ -135,27 +137,27 @@ Get the index number of any equation data that should be retrieved. Because the 
 {\em index} & Integer. The index number that should be retrieved. Any number less than zero indicates the index is not set. \\
 \hline
 \end{DoxyParams}
-\hypertarget{classosea_1_1ofreq_1_1_equation_a4277bda09b538c1523d451afcc55787a}{\index{osea\-::ofreq\-::\-Equation@{osea\-::ofreq\-::\-Equation}!list\-Coefficients@{list\-Coefficients}}
-\index{list\-Coefficients@{list\-Coefficients}!osea::ofreq::Equation@{osea\-::ofreq\-::\-Equation}}
-\subsubsection[{list\-Coefficients}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ double $>$ \& Equation\-::list\-Coefficients (
+\hypertarget{classosea_1_1ofreq_1_1_equation_a40be3415ddc7ebc7aa93829f3eb750f0}{\index{osea\-::ofreq\-::\-Equation@{osea\-::ofreq\-::\-Equation}!list\-Coefficient@{list\-Coefficient}}
+\index{list\-Coefficient@{list\-Coefficient}!osea::ofreq::Equation@{osea\-::ofreq\-::\-Equation}}
+\subsubsection[{list\-Coefficient}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ double $>$ \& Equation\-::list\-Coefficient (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)}}\label{classosea_1_1ofreq_1_1_equation_a4277bda09b538c1523d451afcc55787a}
+)}}\label{classosea_1_1ofreq_1_1_equation_a40be3415ddc7ebc7aa93829f3eb750f0}
 
 
 Direct access to the list of coefficients. 
 
 \begin{DoxyReturn}{Returns}
-Pointer to the list of coefficients. 
+The list of coefficients. Returned variable passed by reference. 
 \end{DoxyReturn}
-\hypertarget{classosea_1_1ofreq_1_1_equation_a198eb9e2816a5cd316b8bdc07d505568}{\index{osea\-::ofreq\-::\-Equation@{osea\-::ofreq\-::\-Equation}!list\-Coefficients@{list\-Coefficients}}
-\index{list\-Coefficients@{list\-Coefficients}!osea::ofreq::Equation@{osea\-::ofreq\-::\-Equation}}
-\subsubsection[{list\-Coefficients}]{\setlength{\rightskip}{0pt plus 5cm}double \& Equation\-::list\-Coefficients (
+\hypertarget{classosea_1_1ofreq_1_1_equation_acce479a17f90df340bcf9cabf06258a2}{\index{osea\-::ofreq\-::\-Equation@{osea\-::ofreq\-::\-Equation}!list\-Coefficient@{list\-Coefficient}}
+\index{list\-Coefficient@{list\-Coefficient}!osea::ofreq::Equation@{osea\-::ofreq\-::\-Equation}}
+\subsubsection[{list\-Coefficient}]{\setlength{\rightskip}{0pt plus 5cm}double \& Equation\-::list\-Coefficient (
 \begin{DoxyParamCaption}
 \item[{unsigned int}]{index}
 \end{DoxyParamCaption}
-)}}\label{classosea_1_1ofreq_1_1_equation_a198eb9e2816a5cd316b8bdc07d505568}
+)}}\label{classosea_1_1ofreq_1_1_equation_acce479a17f90df340bcf9cabf06258a2}
 
 
 Provides direct access to a coefficient from the list of coefficients. 
@@ -168,6 +170,45 @@ Returns a value from the list of coefficents. Which value to return is specified
 \begin{DoxyReturn}{Returns}
 Returns a double. Returned variable is a value from the list of coefficients. Returned variable is passed by reference. 
 \end{DoxyReturn}
+\hypertarget{classosea_1_1ofreq_1_1_equation_a736b8cff2908ad73abad4ca4533b830d}{\index{osea\-::ofreq\-::\-Equation@{osea\-::ofreq\-::\-Equation}!list\-Variable@{list\-Variable}}
+\index{list\-Variable@{list\-Variable}!osea::ofreq::Equation@{osea\-::ofreq\-::\-Equation}}
+\subsubsection[{list\-Variable}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<$ double $>$ \& Equation\-::list\-Variable (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_equation_a736b8cff2908ad73abad4ca4533b830d}
+
+
+Provides direct access to the list of coefficients. This is the same as the \hyperlink{classosea_1_1ofreq_1_1_equation_a40be3415ddc7ebc7aa93829f3eb750f0}{list\-Coefficient()} method, just under a different name. 
+
+\begin{DoxyReturn}{Returns}
+The list of coefficients. Returned variable passed by reference. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classosea_1_1ofreq_1_1_equation_a40be3415ddc7ebc7aa93829f3eb750f0}{list\-Coefficient()} 
+\end{DoxySeeAlso}
+\hypertarget{classosea_1_1ofreq_1_1_equation_a9d969fd44848f29f135213aaa520fabe}{\index{osea\-::ofreq\-::\-Equation@{osea\-::ofreq\-::\-Equation}!list\-Variable@{list\-Variable}}
+\index{list\-Variable@{list\-Variable}!osea::ofreq::Equation@{osea\-::ofreq\-::\-Equation}}
+\subsubsection[{list\-Variable}]{\setlength{\rightskip}{0pt plus 5cm}double \& Equation\-::list\-Variable (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{index}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_equation_a9d969fd44848f29f135213aaa520fabe}
+
+
+Provides direct access to a coefficient from the list of coefficients. 
+
+Returns a value from the list of coefficents. Which value to return is specified by the input index. This is the same as the list\-Coefficient(index) method, just under a different name. 
+\begin{DoxyParams}{Parameters}
+{\em index} & Unsigned integer. Specifies which value to return from the list of coefficients. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns a double. Returned variable is a value from the list of coefficients. Returned variable is passed by reference. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See Also}
+list\-Coefficient(index) 
+\end{DoxySeeAlso}
 \hypertarget{classosea_1_1ofreq_1_1_equation_a5964477a42f3941a968f249b89742d73}{\index{osea\-::ofreq\-::\-Equation@{osea\-::ofreq\-::\-Equation}!ref\-Data\-Index@{ref\-Data\-Index}}
 \index{ref\-Data\-Index@{ref\-Data\-Index}!osea::ofreq::Equation@{osea\-::ofreq\-::\-Equation}}
 \subsubsection[{ref\-Data\-Index}]{\setlength{\rightskip}{0pt plus 5cm}int \& Equation\-::ref\-Data\-Index (

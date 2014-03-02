@@ -257,9 +257,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a370dc9a5702d93d9295a9618ebdef456"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classosea_1_1ofreq_1_1_body.html">Body</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classosea_1_1ofreq_1_1_body.html#a370dc9a5702d93d9295a9618ebdef456">Copy</a> ()</td></tr>
 <tr class="memdesc:a370dc9a5702d93d9295a9618ebdef456"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies the body object, complete with all current data.  <a href="#a370dc9a5702d93d9295a9618ebdef456"></a><br/></td></tr>
 <tr class="separator:a370dc9a5702d93d9295a9618ebdef456"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acc646c06517d67b4d8dba821b5f87d8e"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classosea_1_1ofreq_1_1_force_active.html">ForceActive</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classosea_1_1ofreq_1_1_body.html#acc646c06517d67b4d8dba821b5f87d8e">listForceActive_user</a> ()</td></tr>
-<tr class="memdesc:acc646c06517d67b4d8dba821b5f87d8e"><td class="mdescLeft">&#160;</td><td class="mdescRight">The list of active user forces.  <a href="#acc646c06517d67b4d8dba821b5f87d8e"></a><br/></td></tr>
-<tr class="separator:acc646c06517d67b4d8dba821b5f87d8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab9373ca18d09e89a2ba535c66fa92760"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classosea_1_1ofreq_1_1_force_active.html">ForceActive</a> * &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classosea_1_1ofreq_1_1_body.html#ab9373ca18d09e89a2ba535c66fa92760">listForceActive_user</a> ()</td></tr>
+<tr class="memdesc:ab9373ca18d09e89a2ba535c66fa92760"><td class="mdescLeft">&#160;</td><td class="mdescRight">The list of active user forces.  <a href="#ab9373ca18d09e89a2ba535c66fa92760"></a><br/></td></tr>
+<tr class="separator:ab9373ca18d09e89a2ba535c66fa92760"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad55994a87e95520959a2d236e02168ea"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classosea_1_1ofreq_1_1_force_active.html">ForceActive</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classosea_1_1ofreq_1_1_body.html#ad55994a87e95520959a2d236e02168ea">listForceActive_user</a> (int forceIn)</td></tr>
 <tr class="memdesc:ad55994a87e95520959a2d236e02168ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">A single active user force.  <a href="#ad55994a87e95520959a2d236e02168ea"></a><br/></td></tr>
 <tr class="separator:ad55994a87e95520959a2d236e02168ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -317,12 +317,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ad01b96bf575dde9f75f489c7118ca574"><td class="memItemLeft" align="right" valign="top">std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classosea_1_1ofreq_1_1_body.html#ad01b96bf575dde9f75f489c7118ca574">listNamedLink_hydro</a> (unsigned int varIn)</td></tr>
 <tr class="memdesc:ad01b96bf575dde9f75f489c7118ca574"><td class="mdescLeft">&#160;</td><td class="mdescRight">The list of names of linked bodies for hydro cross-body forces. This is a list of names of other bodies that a cross-body force references. This corresponds to the vector listForceCross_hydro. The indices of the two vectors should match. So that when a force gets added at index 5 in the listForceCross_hydro, it should have a matching entry at index 5 in listNamedLink_hydro. The list of names only is a temporary list used during the input stage of bodies. This is required because the linked body may name a body which is not yet read from the input file. Thus, the body is not currently defined. Once all Bodies are defined, the <a class="el" href="classosea_1_1ofreq_1_1_system.html">System</a> object calls a function to read through each name in the list and assign corresponding pointers in the listLinkedBody_hydro.  <a href="#ad01b96bf575dde9f75f489c7118ca574"></a><br/></td></tr>
 <tr class="separator:ad01b96bf575dde9f75f489c7118ca574"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8bbac7bdd98587b2d1cdab13f82f3d63"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classosea_1_1ofreq_1_1_body.html#a8bbac7bdd98587b2d1cdab13f82f3d63">setMotionModel</a> (std::string modelName)</td></tr>
-<tr class="memdesc:a8bbac7bdd98587b2d1cdab13f82f3d63"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the name of the motion model for lookup later.  <a href="#a8bbac7bdd98587b2d1cdab13f82f3d63"></a><br/></td></tr>
-<tr class="separator:a8bbac7bdd98587b2d1cdab13f82f3d63"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab4340cac445ae26ae751a08c35155386"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classosea_1_1ofreq_1_1_body.html#ab4340cac445ae26ae751a08c35155386">getMotionModel</a> ()</td></tr>
-<tr class="memdesc:ab4340cac445ae26ae751a08c35155386"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the name of the motion model.  <a href="#ab4340cac445ae26ae751a08c35155386"></a><br/></td></tr>
-<tr class="separator:ab4340cac445ae26ae751a08c35155386"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a25b6fa24ac6237272494a7f74a348145"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classosea_1_1ofreq_1_1_body.html#a25b6fa24ac6237272494a7f74a348145">setMotionModel</a> (<a class="el" href="classosea_1_1ofreq_1_1_motion_model.html">ofreq::MotionModel</a> &amp;modelIn)</td></tr>
+<tr class="memdesc:a25b6fa24ac6237272494a7f74a348145"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the motion model for lookup later.  <a href="#a25b6fa24ac6237272494a7f74a348145"></a><br/></td></tr>
+<tr class="separator:a25b6fa24ac6237272494a7f74a348145"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a00aa77588d908d6df47a923dc8bf8331"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classosea_1_1ofreq_1_1_motion_model.html">ofreq::MotionModel</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classosea_1_1ofreq_1_1_body.html#a00aa77588d908d6df47a923dc8bf8331">getMotionModel</a> ()</td></tr>
+<tr class="memdesc:a00aa77588d908d6df47a923dc8bf8331"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the motion model.  <a href="#a00aa77588d908d6df47a923dc8bf8331"></a><br/></td></tr>
+<tr class="separator:a00aa77588d908d6df47a923dc8bf8331"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a07a8f186c02f0d5bad4beded83949571"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classosea_1_1ofreq_1_1_body.html#a07a8f186c02f0d5bad4beded83949571">getEquationCount</a> ()</td></tr>
 <tr class="memdesc:a07a8f186c02f0d5bad4beded83949571"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the number of equations used in the body.  <a href="#a07a8f186c02f0d5bad4beded83949571"></a><br/></td></tr>
 <tr class="separator:a07a8f186c02f0d5bad4beded83949571"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -350,12 +350,18 @@ Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pro_static_attribs_classosea_1_1ofreq_1_1o_freq_core"><td colspan="2" onclick="javascript:toggleInherit('pro_static_attribs_classosea_1_1ofreq_1_1o_freq_core')"><img src="closed.png" alt="-"/>&#160;Static Protected Attributes inherited from <a class="el" href="classosea_1_1ofreq_1_1o_freq_core.html">osea::ofreq::oFreqCore</a></td></tr>
 <tr class="memitem:a85b3e812b6d78c064ba375d5101bb053 inherit pro_static_attribs_classosea_1_1ofreq_1_1o_freq_core"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a85b3e812b6d78c064ba375d5101bb053"></a>
 static std::ofstream&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classosea_1_1ofreq_1_1o_freq_core.html#a85b3e812b6d78c064ba375d5101bb053">OutLog</a></td></tr>
-<tr class="memdesc:a85b3e812b6d78c064ba375d5101bb053 inherit pro_static_attribs_classosea_1_1ofreq_1_1o_freq_core"><td class="mdescLeft">&#160;</td><td class="mdescRight">The log file for an oFreq run. Records normal actions for the program. Informs user of regular program developments. Through inheritence of the <a class="el" href="classosea_1_1ofreq_1_1o_freq_core.html" title="The core oFreq class. All oFreq classes inherit from this class.">oFreqCore</a> class, this object is available to every object in the oFreq application. <br/></td></tr>
+<tr class="memdesc:a85b3e812b6d78c064ba375d5101bb053 inherit pro_static_attribs_classosea_1_1ofreq_1_1o_freq_core"><td class="mdescLeft">&#160;</td><td class="mdescRight">The log file for an oFreq run. Records normal actions for the program. Informs user of regular program developments. Through inheritence of the <a class="el" href="classosea_1_1ofreq_1_1o_freq_core.html" title="The core oFreq class. All oFreq classes inherit from this class.">oFreqCore</a> class, this object is available to every object in the oFreq application. Also provided with a second name of seaout. <br/></td></tr>
 <tr class="separator:a85b3e812b6d78c064ba375d5101bb053 inherit pro_static_attribs_classosea_1_1ofreq_1_1o_freq_core"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad1092650d598d7f30e7c0fb3dbdfd392 inherit pro_static_attribs_classosea_1_1ofreq_1_1o_freq_core"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad1092650d598d7f30e7c0fb3dbdfd392"></a>
+static std::ofstream &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>seaout</b> = <a class="el" href="classosea_1_1ofreq_1_1o_freq_core.html#a85b3e812b6d78c064ba375d5101bb053">OutLog</a></td></tr>
+<tr class="separator:ad1092650d598d7f30e7c0fb3dbdfd392 inherit pro_static_attribs_classosea_1_1ofreq_1_1o_freq_core"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5e31044ee80fa436289e569c8080b21e inherit pro_static_attribs_classosea_1_1ofreq_1_1o_freq_core"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5e31044ee80fa436289e569c8080b21e"></a>
 static std::ofstream&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classosea_1_1ofreq_1_1o_freq_core.html#a5e31044ee80fa436289e569c8080b21e">ErrLog</a></td></tr>
-<tr class="memdesc:a5e31044ee80fa436289e569c8080b21e inherit pro_static_attribs_classosea_1_1ofreq_1_1o_freq_core"><td class="mdescLeft">&#160;</td><td class="mdescRight">The error log file for an oFreq run. Records any errors or warnings for the program. Informs user of errors and warnings and where they occurred. Through inheritence of the <a class="el" href="classosea_1_1ofreq_1_1o_freq_core.html" title="The core oFreq class. All oFreq classes inherit from this class.">oFreqCore</a> class, this object is available for every object in the oFreq application. <br/></td></tr>
+<tr class="memdesc:a5e31044ee80fa436289e569c8080b21e inherit pro_static_attribs_classosea_1_1ofreq_1_1o_freq_core"><td class="mdescLeft">&#160;</td><td class="mdescRight">The error log file for an oFreq run. Records any errors or warnings for the program. Informs user of errors and warnings and where they occurred. Through inheritence of the <a class="el" href="classosea_1_1ofreq_1_1o_freq_core.html" title="The core oFreq class. All oFreq classes inherit from this class.">oFreqCore</a> class, this object is available for every object in the oFreq application. Also provided with a second name of seaerr. <br/></td></tr>
 <tr class="separator:a5e31044ee80fa436289e569c8080b21e inherit pro_static_attribs_classosea_1_1ofreq_1_1o_freq_core"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aec5a7ac06574b9c5f80ac3c149c09fda inherit pro_static_attribs_classosea_1_1ofreq_1_1o_freq_core"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aec5a7ac06574b9c5f80ac3c149c09fda"></a>
+static std::ofstream &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>seaerr</b> = <a class="el" href="classosea_1_1ofreq_1_1o_freq_core.html#a5e31044ee80fa436289e569c8080b21e">ErrLog</a></td></tr>
+<tr class="separator:aec5a7ac06574b9c5f80ac3c149c09fda inherit pro_static_attribs_classosea_1_1ofreq_1_1o_freq_core"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>This class holds all of the data for the <a class="el" href="classosea_1_1ofreq_1_1_body.html">Body</a> Input File. </p>
@@ -519,6 +525,15 @@ static std::ofstream&#160;</td><td class="memItemRight" valign="bottom"><a class
 <p>Gets the number of equations used in the body. </p>
 <p>Gets the number of equations used in the body. </p>
 <dl class="section return"><dt>Returns</dt><dd>Integer number representing the number of equations used in the body. </dd></dl>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classosea_1_1ofreq_1_1_body_a07a8f186c02f0d5bad4beded83949571_cgraph.png" border="0" usemap="#classosea_1_1ofreq_1_1_body_a07a8f186c02f0d5bad4beded83949571_cgraph" alt=""/></div>
+<map name="classosea_1_1ofreq_1_1_body_a07a8f186c02f0d5bad4beded83949571_cgraph" id="classosea_1_1ofreq_1_1_body_a07a8f186c02f0d5bad4beded83949571_cgraph">
+<area shape="rect" id="node3" href="classosea_1_1ofreq_1_1_motion_model.html#a998756fbf76a5c65773f5eae7bf9a3e1" title="Provides direct access to the list of equation of motion objects used in the motion model..." alt="" coords="195,5,373,46"/></map>
+</div>
+</p>
 
 </div>
 </div>
@@ -701,12 +716,12 @@ static std::ofstream&#160;</td><td class="memItemRight" valign="bottom"><a class
 
 </div>
 </div>
-<a class="anchor" id="ab4340cac445ae26ae751a08c35155386"></a>
+<a class="anchor" id="a00aa77588d908d6df47a923dc8bf8331"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">string Body::getMotionModel </td>
+          <td class="memname"><a class="el" href="classosea_1_1ofreq_1_1_motion_model.html">MotionModel</a> &amp; Body::getMotionModel </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -714,9 +729,9 @@ static std::ofstream&#160;</td><td class="memItemRight" valign="bottom"><a class
       </table>
 </div><div class="memdoc">
 
-<p>Gets the name of the motion model. </p>
-<p>Gets std::string output that is the name of the motion model assigned to this body. </p>
-<dl class="section return"><dt>Returns</dt><dd>std::string output that is the name of the motion model assigned to this body. </dd></dl>
+<p>Gets the motion model. </p>
+<p>Returns the motion model object used by this body object. </p>
+<dl class="section return"><dt>Returns</dt><dd>Returns MotinModel object. Variable passed by reference. </dd></dl>
 
 </div>
 </div>
@@ -950,12 +965,12 @@ static std::ofstream&#160;</td><td class="memItemRight" valign="bottom"><a class
 
 </div>
 </div>
-<a class="anchor" id="acc646c06517d67b4d8dba821b5f87d8e"></a>
+<a class="anchor" id="ab9373ca18d09e89a2ba535c66fa92760"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">vector&lt; <a class="el" href="classosea_1_1ofreq_1_1_force_active.html">ForceActive</a> * &gt; Body::listForceActive_user </td>
+          <td class="memname">vector&lt; <a class="el" href="classosea_1_1ofreq_1_1_force_active.html">ForceActive</a> * &gt; &amp; Body::listForceActive_user </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -1288,6 +1303,15 @@ static std::ofstream&#160;</td><td class="memItemRight" valign="bottom"><a class
 
 <p>Implements the method <a class="el" href="classosea_1_1ofreq_1_1_body.html#a4201150aa57d9d6f3aa245d8eca231d3" title="Gets the mass matrix for the body.">getMassMatrix()</a>, just under a different name. </p>
 <dl class="section return"><dt>Returns</dt><dd>Returns the mass matrix for the body, as a single matrix. </dd></dl>
+
+<p><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classosea_1_1ofreq_1_1_body_acb2895e81a595c7d168db48ff5dc766c_icgraph.png" border="0" usemap="#classosea_1_1ofreq_1_1_body_acb2895e81a595c7d168db48ff5dc766c_icgraph" alt=""/></div>
+<map name="classosea_1_1ofreq_1_1_body_acb2895e81a595c7d168db48ff5dc766c_icgraph" id="classosea_1_1ofreq_1_1_body_acb2895e81a595c7d168db48ff5dc766c_icgraph">
+<area shape="rect" id="node3" href="classosea_1_1ofreq_1_1_equationof_motion.html#af1d1f42b77561e9f1c4110e16af309da" title="A reference to the data set of the ForceCross_hydro." alt="" coords="195,5,397,46"/><area shape="rect" id="node5" href="classosea_1_1ofreq_1_1_equationof_motion.html#a3b06b1ff4b792ad3a3d3c0274426d5ed" title="A reference to the data set of the ForceCross_user." alt="" coords="195,70,397,111"/></map>
+</div>
+</p>
 
 </div>
 </div>
@@ -1731,25 +1755,24 @@ static std::ofstream&#160;</td><td class="memItemRight" valign="bottom"><a class
 
 </div>
 </div>
-<a class="anchor" id="a8bbac7bdd98587b2d1cdab13f82f3d63"></a>
+<a class="anchor" id="a25b6fa24ac6237272494a7f74a348145"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">void Body::setMotionModel </td>
           <td>(</td>
-          <td class="paramtype">std::string&#160;</td>
-          <td class="paramname"><em>modelName</em></td><td>)</td>
+          <td class="paramtype"><a class="el" href="classosea_1_1ofreq_1_1_motion_model.html">ofreq::MotionModel</a> &amp;&#160;</td>
+          <td class="paramname"><em>modelIn</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Sets the name of the motion model for lookup later. </p>
-<p>Sets the name of the motion model for lookup later. </p>
+<p>Sets the motion model for lookup later. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">modelName</td><td>std::string input that is the name of the motion model. This must match exactly one of the entries in the list of motion models avaiable at run time. </td></tr>
+    <tr><td class="paramname">modelIn</td><td>Variable input that is the motion model object. Variable passed by reference. Stored internally as a pointer. </td></tr>
   </table>
   </dd>
 </dl>
@@ -1866,7 +1889,7 @@ static std::ofstream&#160;</td><td class="memItemRight" valign="bottom"><a class
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespaceosea.html">osea</a></li><li class="navelem"><a class="el" href="namespaceosea_1_1ofreq.html">ofreq</a></li><li class="navelem"><a class="el" href="classosea_1_1ofreq_1_1_body.html">Body</a></li>
-    <li class="footer">Generated on Sat Oct 12 2013 10:41:34 for oFreq by
+    <li class="footer">Generated on Sat Mar 1 2014 20:20:55 for oFreq by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.2 </li>
   </ul>

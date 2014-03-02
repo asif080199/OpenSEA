@@ -2,6 +2,8 @@ var searchData=
 [
   ['_7ebody',['~Body',['../classosea_1_1ofreq_1_1_body.html#abe1c4da65568cf7978b6247affc461e3',1,'osea::ofreq::Body']]],
   ['_7ederivative',['~Derivative',['../classosea_1_1ofreq_1_1_derivative.html#a7fc4ee53f460dfb98b3db2e9c9830cf9',1,'osea::ofreq::Derivative']]],
+  ['_7eeqnrotation',['~EqnRotation',['../classosea_1_1ofreq_1_1_eqn_rotation.html#a13f491e18770b8412b3babb610068d8c',1,'osea::ofreq::EqnRotation']]],
+  ['_7eeqntranslation',['~EqnTranslation',['../classosea_1_1ofreq_1_1_eqn_translation.html#a877b27d79911a4a5cb1d905221178cc6',1,'osea::ofreq::EqnTranslation']]],
   ['_7eequation',['~Equation',['../classosea_1_1ofreq_1_1_equation.html#a097243d0dfd608330fc91f115a0d15bb',1,'osea::ofreq::Equation']]],
   ['_7eequationofmotion',['~EquationofMotion',['../classosea_1_1ofreq_1_1_equationof_motion.html#ab06097df1a54719d7a5682babbd9f233',1,'osea::ofreq::EquationofMotion']]],
   ['_7efilereader',['~FileReader',['../classosea_1_1_file_reader.html#a1382969e8f1468f3b04ad4b44ab39dee',1,'osea::FileReader']]],
@@ -18,6 +20,7 @@ var searchData=
   ['_7ematforceactive',['~matForceActive',['../classosea_1_1ofreq_1_1mat_force_active.html#aba1957829e2109f03c6fc03990258210',1,'osea::ofreq::matForceActive']]],
   ['_7ematforcecross',['~matForceCross',['../classosea_1_1ofreq_1_1mat_force_cross.html#a2eb0a76db0d4f994287d8368699bb036',1,'osea::ofreq::matForceCross']]],
   ['_7ematforcereact',['~matForceReact',['../classosea_1_1ofreq_1_1mat_force_react.html#a4c70511a7f49650d56b0a2ed42bf4f8b',1,'osea::ofreq::matForceReact']]],
+  ['_7emodel6dof',['~Model6DOF',['../classosea_1_1ofreq_1_1_model6_d_o_f.html#a9559d74006712422d84356e210b406be',1,'osea::ofreq::Model6DOF']]],
   ['_7emotionmodel',['~MotionModel',['../classosea_1_1ofreq_1_1_motion_model.html#ac48a359c77d9efe39d4ec8c9e862a1cd',1,'osea::ofreq::MotionModel']]],
   ['_7emotionsolver',['~MotionSolver',['../classosea_1_1ofreq_1_1_motion_solver.html#ae1fb5f389752a21a6d65ce41599b9b91',1,'osea::ofreq::MotionSolver']]],
   ['_7eobjectgroup',['~ObjectGroup',['../classosea_1_1_object_group.html#a58c2e7cf18338d3fbe47f30fafca3c77',1,'osea::ObjectGroup']]],

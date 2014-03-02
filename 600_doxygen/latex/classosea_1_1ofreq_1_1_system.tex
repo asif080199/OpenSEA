@@ -7,8 +7,7 @@
 
 
 
-Inheritance diagram for osea\-:\-:ofreq\-:\-:System\-:
-\nopagebreak
+Inheritance diagram for osea\-:\-:ofreq\-:\-:System\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -17,8 +16,7 @@ Inheritance diagram for osea\-:\-:ofreq\-:\-:System\-:
 \end{figure}
 
 
-Collaboration diagram for osea\-:\-:ofreq\-:\-:System\-:
-\nopagebreak
+Collaboration diagram for osea\-:\-:ofreq\-:\-:System\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -51,7 +49,13 @@ void \hyperlink{classosea_1_1ofreq_1_1_system_afa58e77f961286c082e18193aeb14fc7}
 void \hyperlink{classosea_1_1ofreq_1_1_system_abc3ad01f3fb22863565a8643202347f4}{add\-Force\-Cross\-\_\-user} ()
 \begin{DoxyCompactList}\small\item\em Adds another \hyperlink{classosea_1_1ofreq_1_1_force_cross}{Force\-Cross} Object to the list of force\-Cross\-\_\-user objects. Uses a blank new \hyperlink{classosea_1_1ofreq_1_1_force_cross}{Force\-Cross} object. \end{DoxyCompactList}\item 
 void \hyperlink{classosea_1_1ofreq_1_1_system_a280d384672341228d20181ea390118b9}{link\-Bodies} (int bod\-I\-D)
-\begin{DoxyCompactList}\small\item\em This converts the cross-\/body force links from simple identification by name into actual pointers to each body. The link\-Bodies command must exist so that all bodies can be read into the program before linking takes place. This command searches through the list of bodies to get a matching body name and creates a pointer link to that body. At the end, it clears the list of names for linked bodies, to reduce memory requirements. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em This converts the cross-\/body force links from simple identification by name into actual pointers to each body. The link\-Bodies command must exist so that all bodies can be read into the program before linking takes place. This command searches through the list of bodies to get a matching body name and creates a pointer link to that body. At the end, it clears the list of names for linked bodies, to reduce memory requirements. \end{DoxyCompactList}\item 
+std\-::vector$<$ \hyperlink{classosea_1_1ofreq_1_1_motion_model}{Motion\-Model} $\ast$ $>$ \& \hyperlink{classosea_1_1ofreq_1_1_system_a3a22c0f957f515c951f1cbb32c36b70e}{list\-Model} ()
+\begin{DoxyCompactList}\small\item\em Provides access to the full list of motion models. \end{DoxyCompactList}\item 
+\hyperlink{classosea_1_1ofreq_1_1_motion_model}{ofreq\-::\-Motion\-Model} \& \hyperlink{classosea_1_1ofreq_1_1_system_abe2ad405661178362ba0cef96a345002}{list\-Model} (unsigned int index)
+\begin{DoxyCompactList}\small\item\em Provides access to one item in the list of motion models. \end{DoxyCompactList}\item 
+\hyperlink{classosea_1_1ofreq_1_1_motion_model}{ofreq\-::\-Motion\-Model} \& \hyperlink{classosea_1_1ofreq_1_1_system_a65f7eaf3ac522f1dfb60d3f9a47d99ca}{list\-Model} (std\-::string model\-Name)
+\begin{DoxyCompactList}\small\item\em Provides access to one item in the list of motion models. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Signals}
 \begin{DoxyCompactItemize}
 \item 
@@ -62,7 +66,7 @@ void \hyperlink{classosea_1_1ofreq_1_1_system_a0889e1e19fe1c0c52fd385e759e5ecc7}
 \item 
 \hyperlink{classosea_1_1ofreq_1_1_system_ae317936c9bcf1374d61745572e0f2f8a}{System} ()
 \item 
-\hyperlink{classosea_1_1ofreq_1_1_system_a3be70bb338e3f062f821173fd15680d0}{$\sim$\-System} ()
+virtual \hyperlink{classosea_1_1ofreq_1_1_system_a3be70bb338e3f062f821173fd15680d0}{$\sim$\-System} ()
 \item 
 void \hyperlink{classosea_1_1ofreq_1_1_system_ac044fdc41aa436151bea0c81c8f70bc1}{set\-Wave\-Frequencies} (std\-::vector$<$ double $>$)
 \item 
@@ -138,8 +142,8 @@ The default constructor. \hypertarget{classosea_1_1ofreq_1_1_system_a3be70bb338e
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)}}\label{classosea_1_1ofreq_1_1_system_a3be70bb338e3f062f821173fd15680d0}
-The default destructor, nothing happens here. 
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classosea_1_1ofreq_1_1_system_a3be70bb338e3f062f821173fd15680d0}
+The default destructor, clears any dynamic memory. 
 
 \subsection{Member Function Documentation}
 \hypertarget{classosea_1_1ofreq_1_1_system_a0e146c46e245b3222a77fbcf93901630}{\index{osea\-::ofreq\-::\-System@{osea\-::ofreq\-::\-System}!add\-Body@{add\-Body}}
@@ -163,8 +167,7 @@ Adds another \hyperlink{classosea_1_1ofreq_1_1_body}{Body} object to the list of
 \end{DoxySeeAlso}
 
 
-Here is the call graph for this function\-:
-\nopagebreak
+Here is the call graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -189,8 +192,7 @@ Adds another \hyperlink{classosea_1_1ofreq_1_1_body}{Body} object to the list of
 \end{DoxySeeAlso}
 
 
-Here is the call graph for this function\-:
-\nopagebreak
+Here is the call graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -503,8 +505,7 @@ This converts the cross-\/body force links from simple identification by name in
 \end{DoxySeeAlso}
 
 
-Here is the call graph for this function\-:
-\nopagebreak
+Here is the call graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -532,8 +533,7 @@ Returns a vector of \hyperlink{classosea_1_1ofreq_1_1_body}{Body} objects. Retur
 \end{DoxySeeAlso}
 
 
-Here is the caller graph for this function\-:
-\nopagebreak
+Here is the caller graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -660,6 +660,61 @@ Returns reference to the force\-React\-\_\-user object referenced by the index s
 \begin{DoxyReturn}{Returns}
 Returns a reference to the Force\-React\-\_\-user object. Variable passed by reference 
 \end{DoxyReturn}
+\hypertarget{classosea_1_1ofreq_1_1_system_a3a22c0f957f515c951f1cbb32c36b70e}{\index{osea\-::ofreq\-::\-System@{osea\-::ofreq\-::\-System}!list\-Model@{list\-Model}}
+\index{list\-Model@{list\-Model}!osea::ofreq::System@{osea\-::ofreq\-::\-System}}
+\subsubsection[{list\-Model}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<$ {\bf Motion\-Model} $\ast$ $>$ \& System\-::list\-Model (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{classosea_1_1ofreq_1_1_system_a3a22c0f957f515c951f1cbb32c36b70e}
+
+
+Provides access to the full list of motion models. 
+
+Returns a vector to the full list of motion models. The list of motion models are all the various model classes available to the system at run time. Each object in the vector is a different class, but all classes in the vector are derived from the \hyperlink{classosea_1_1ofreq_1_1_motion_model}{Motion\-Model} class. \begin{DoxySeeAlso}{See Also}
+\hyperlink{classosea_1_1ofreq_1_1_motion_model}{Motion\-Model} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+Returns a vector of objects of different types. Each object is derived from the \hyperlink{classosea_1_1ofreq_1_1_motion_model}{Motion\-Model} class. Returned variable is passed by reference. 
+\end{DoxyReturn}
+\hypertarget{classosea_1_1ofreq_1_1_system_abe2ad405661178362ba0cef96a345002}{\index{osea\-::ofreq\-::\-System@{osea\-::ofreq\-::\-System}!list\-Model@{list\-Model}}
+\index{list\-Model@{list\-Model}!osea::ofreq::System@{osea\-::ofreq\-::\-System}}
+\subsubsection[{list\-Model}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Motion\-Model} \& System\-::list\-Model (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{index}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{classosea_1_1ofreq_1_1_system_abe2ad405661178362ba0cef96a345002}
+
+
+Provides access to one item in the list of motion models. 
+
+Returns a single \hyperlink{classosea_1_1ofreq_1_1_motion_model}{Motion\-Model} based object. Each model will be a different class, but all classes are derived from the \hyperlink{classosea_1_1ofreq_1_1_motion_model}{Motion\-Model} object. Each object in the vector is a different class of motion model. 
+\begin{DoxyParams}{Parameters}
+{\em index} & Integer. The index of which item in the vector you want. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns an object of a class derived from the \hyperlink{classosea_1_1ofreq_1_1_motion_model}{Motion\-Model} class. Returned variable is passed by reference. 
+\end{DoxyReturn}
+\hypertarget{classosea_1_1ofreq_1_1_system_a65f7eaf3ac522f1dfb60d3f9a47d99ca}{\index{osea\-::ofreq\-::\-System@{osea\-::ofreq\-::\-System}!list\-Model@{list\-Model}}
+\index{list\-Model@{list\-Model}!osea::ofreq::System@{osea\-::ofreq\-::\-System}}
+\subsubsection[{list\-Model}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Motion\-Model} \& System\-::list\-Model (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{model\-Name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{classosea_1_1ofreq_1_1_system_a65f7eaf3ac522f1dfb60d3f9a47d99ca}
+
+
+Provides access to one item in the list of motion models. 
+
+Returns a single \hyperlink{classosea_1_1ofreq_1_1_motion_model}{Motion\-Model} based object. Each model will be a different class, but all classes are derived from the \hyperlink{classosea_1_1ofreq_1_1_motion_model}{Motion\-Model} object. Each object in the vector is a different class of motion model. 
+\begin{DoxyParams}{Parameters}
+{\em model\-Name} & String input. The name of the motion model, as specified by the user. Must match the predefined name of the model exactly. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns an object of a class derived from the \hyperlink{classosea_1_1ofreq_1_1_motion_model}{Motion\-Model} class. Returned variable is passed by reference. 
+\end{DoxyReturn}
 \hypertarget{classosea_1_1ofreq_1_1_system_ad2c5c4c5be9ed1b30651a267df67c466}{\index{osea\-::ofreq\-::\-System@{osea\-::ofreq\-::\-System}!list\-Output@{list\-Output}}
 \index{list\-Output@{list\-Output}!osea::ofreq::System@{osea\-::ofreq\-::\-System}}
 \subsubsection[{list\-Output}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ {\bf Outputs\-Body} $>$ \& System\-::list\-Output (
@@ -742,8 +797,7 @@ Returns the \hyperlink{classosea_1_1ofreq_1_1_system}{System} object for informa
 \end{DoxyParams}
 
 
-Here is the caller graph for this function\-:
-\nopagebreak
+Here is the caller graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -766,8 +820,7 @@ Sets the analysis ype.
 \end{DoxyParams}
 
 
-Here is the caller graph for this function\-:
-\nopagebreak
+Here is the caller graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -834,8 +887,7 @@ Sets the wave directions.
 \end{DoxyParams}
 
 
-Here is the caller graph for this function\-:
-\nopagebreak
+Here is the caller graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -858,8 +910,7 @@ Sets the wave frequencies.
 \end{DoxyParams}
 
 
-Here is the caller graph for this function\-:
-\nopagebreak
+Here is the caller graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode

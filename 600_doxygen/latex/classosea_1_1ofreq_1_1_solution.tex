@@ -7,8 +7,7 @@
 
 
 
-Inheritance diagram for osea\-:\-:ofreq\-:\-:Solution\-:
-\nopagebreak
+Inheritance diagram for osea\-:\-:ofreq\-:\-:Solution\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -17,8 +16,7 @@ Inheritance diagram for osea\-:\-:ofreq\-:\-:Solution\-:
 \end{figure}
 
 
-Collaboration diagram for osea\-:\-:ofreq\-:\-:Solution\-:
-\nopagebreak
+Collaboration diagram for osea\-:\-:ofreq\-:\-:Solution\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -43,7 +41,9 @@ std\-::complex$<$ double $>$ \hyperlink{classosea_1_1ofreq_1_1_solution_a8f85082
 void \hyperlink{classosea_1_1ofreq_1_1_solution_a169b35ae15b49ca4096ea7e0ea927fec}{set\-Soln\-Mat} (arma\-::cx\-\_\-mat mat\-In)
 \begin{DoxyCompactList}\small\item\em Sets the solution matrix as a whole. \end{DoxyCompactList}\item 
 \hyperlink{classosea_1_1ofreq_1_1_body}{Body} \& \hyperlink{classosea_1_1ofreq_1_1_solution_a95519db148bcece14c88aab53f4ced0e}{ref\-Body} ()
-\begin{DoxyCompactList}\small\item\em Gets the body object used as the reference body. Variable passed by value. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Returns reference pointer to the reference body. Variable passed by reference. \end{DoxyCompactList}\item 
+void \hyperlink{classosea_1_1ofreq_1_1_solution_affec6f64a60e9ad3b5a236302e2dd820}{set\-Body} (\hyperlink{classosea_1_1ofreq_1_1_body}{Body} $\ast$input)
+\begin{DoxyCompactList}\small\item\em Sets the body object that the solution object is relevant to. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Additional Inherited Members}
 
 
@@ -136,11 +136,8 @@ Returns a complex number data type. Single value from the solution matrix. Value
 )}}\label{classosea_1_1ofreq_1_1_solution_a95519db148bcece14c88aab53f4ced0e}
 
 
-Gets the body object used as the reference body. Variable passed by value. 
+Returns reference pointer to the reference body. Variable passed by reference. 
 
-\begin{DoxyReturn}{Returns}
-Gets the body object used as the reference body. Variable passed by value. Returns reference pointer to the reference body. Variable passed by reference.
-\end{DoxyReturn}
 Returns reference pointer to the reference body. Variable passed by reference. Used for direct access to the reference body and all its member functions. \begin{DoxyReturn}{Returns}
 Returns reference pointer to the reference body. Variable passed by reference. 
 \end{DoxyReturn}
@@ -158,6 +155,22 @@ Returns direct access to the solution matrix.
 Returns direct access to the solution matrix. Provides a pointer to the solution matrix. It gets filled with the output from the motion solver. Output is a column matrix (n by 1) of complex numbers. Output is in units of meters. \begin{DoxyReturn}{Returns}
 Returns direct access to the solution matrix. Provides a pointer to the solution matrix. Returned variable is passed by reference. 
 \end{DoxyReturn}
+\hypertarget{classosea_1_1ofreq_1_1_solution_affec6f64a60e9ad3b5a236302e2dd820}{\index{osea\-::ofreq\-::\-Solution@{osea\-::ofreq\-::\-Solution}!set\-Body@{set\-Body}}
+\index{set\-Body@{set\-Body}!osea::ofreq::Solution@{osea\-::ofreq\-::\-Solution}}
+\subsubsection[{set\-Body}]{\setlength{\rightskip}{0pt plus 5cm}void Solution\-::set\-Body (
+\begin{DoxyParamCaption}
+\item[{{\bf Body} $\ast$}]{input}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_solution_affec6f64a60e9ad3b5a236302e2dd820}
+
+
+Sets the body object that the solution object is relevant to. 
+
+The solution set in this object is specific to a single body. The set\-Body method allows you to create a pointer to that \hyperlink{classosea_1_1ofreq_1_1_body}{Body} object for reference and use in other sections of code. 
+\begin{DoxyParams}{Parameters}
+{\em input} & Pointer to the \hyperlink{classosea_1_1ofreq_1_1_body}{Body} object. Pointer variable passed by value. \\
+\hline
+\end{DoxyParams}
 \hypertarget{classosea_1_1ofreq_1_1_solution_a169b35ae15b49ca4096ea7e0ea927fec}{\index{osea\-::ofreq\-::\-Solution@{osea\-::ofreq\-::\-Solution}!set\-Soln\-Mat@{set\-Soln\-Mat}}
 \index{set\-Soln\-Mat@{set\-Soln\-Mat}!osea::ofreq::Solution@{osea\-::ofreq\-::\-Solution}}
 \subsubsection[{set\-Soln\-Mat}]{\setlength{\rightskip}{0pt plus 5cm}void Solution\-::set\-Soln\-Mat (

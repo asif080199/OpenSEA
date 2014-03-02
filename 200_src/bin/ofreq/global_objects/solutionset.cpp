@@ -44,6 +44,14 @@ SolutionSet::SolutionSet(int dir, int freq)
 //------------------------------------------Function Separator --------------------------------------------------------
 SolutionSet::~SolutionSet()
 {
+    //Delete all solution objects to clear memory
+    for (unsigned int i = 0; i < plist.size(); i++)
+    {
+        for (unsigned int j = 0; j < plist[i].size(); j++)
+        {
+            delete plist[i][j];
+        }
+    }
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
@@ -58,7 +66,11 @@ void SolutionSet::setSolnMat(int dir, int freq, Solution soln)
 {
     //Set the Solution object with the new value.
     //Create new solution object
-    Solution* newSoln = &soln;
+    Solution* newSoln = new Solution();
+
+    //Set data for new solution
+    newSoln->setBody(&soln.refBody());
+    newSoln->setSolnMat(soln.getSolnMat());
 
     //Check that the specified index is the correct size.  If not, resize.
     if ((dir > n_dirs()) || (freq > n_freqs()))

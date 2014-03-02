@@ -14,6 +14,8 @@ var classosea_1_1_file_reader =
     [ "readForces", "classosea_1_1_file_reader.html#ab78d2f631eb8e64b0a68d25eeca80be5", null ],
     [ "readHydroFile", "classosea_1_1_file_reader.html#aafe1acb27e25c2774c04c21a808748a4", null ],
     [ "readSeaEnv", "classosea_1_1_file_reader.html#a1f8a6bd4b5c53f80cc94d64d6dd1f2da", null ],
+    [ "sendOutput", "classosea_1_1_file_reader.html#aa57b483154b47ad0126d97debb53c638", null ],
+    [ "setDictionary", "classosea_1_1_file_reader.html#a3cbdb7eab632abafcfd055aa92f47b73", null ],
     [ "setPath", "classosea_1_1_file_reader.html#a0b12de2af52dc0cdfae5ab337bf494dc", null ],
     [ "setSystem", "classosea_1_1_file_reader.html#a54b42892f8c4de66ad1f7bfd1e8e0a27", null ]
 ];

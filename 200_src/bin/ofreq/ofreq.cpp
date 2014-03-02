@@ -179,6 +179,14 @@ int main(int argc, char *argv[])
         oFreq_Directory = cCurrentPath;
     }
 
+    //Clear out any previous output files
+    //---------------------------------------------------------------------------
+    //Setup filewriter for outputs
+    FileWriter WriterTemp;
+    WriterTemp.setProjectDir(oFreq_Directory);
+    //Clean up existing outputs
+    WriterTemp.clearFiles();
+
     //Read input files and interpret data.
     //---------------------------------------------------------------------------
     ReadFiles(oFreq_Directory);
@@ -258,22 +266,38 @@ int main(int argc, char *argv[])
         //Setup filewriter for outputs
         FileWriter Writer(oFreq_Directory, sysofreq.listOutput(i));
 
+        int testwrite;     //test to see if file writing was sucessful.
+
         //Write frequency and wave direction list if this is the first iteration.
         if (i == 0)
         {
-            bool testwrite;     //test to see if file writing was sucessful.
-
             //Write frequency list
-            testwrite = Writer.writeFrequency();
-
-            if (!testwrite)
-                cerr << "Error Writing Frequency Outputs\n";
+            try
+            {
+                testwrite = Writer.writeFrequency();
+                if (testwrite != 0)
+                    throw testwrite;
+            }
+            catch(int err)
+            {
+                testwrite = err;
+                cerr << "Error Writing Frequency Outputs" << endl;
+                cerr << "Error Code:  " << testwrite << endl;
+            }
 
             //Write wave directions list
-            testwrite = Writer.writeWaveDirection();
-
-            if (!testwrite)
-                cerr << "Error Writing Frequency Outputs\n";
+            try
+            {
+                testwrite = Writer.writeWaveDirection();
+                if (testwrite != 0)
+                    throw testwrite;
+            }
+            catch(int err)
+            {
+                testwrite = err;
+                cerr << "Error Writing Wave Direction Outputs" << endl;
+                cerr << "Error Code:  " << testwrite << endl;
+            }
         }
 
         //Calculate outputs and write to file
@@ -456,7 +480,7 @@ void buildMatBody(int bod, bool useCoeff)
 //######################################## CalcOutput Function ########################################################
 void calcOutput(OutputsBody &OutputIn, FileWriter &WriterIn)
 {
-    bool filetest;      //Checks whether filewriting was sucessful.
+    int filetest;      //Checks whether filewriting was sucessful.
 
     //Setup the FileWriter with the OutputsBody object.
     WriterIn.refOutputsBody() = OutputIn;
@@ -468,41 +492,64 @@ void calcOutput(OutputsBody &OutputIn, FileWriter &WriterIn)
         sysofreq.setCurWaveDirInd(j);
         OutputIn.setCurWaveDir(j);
 
-        /* To save on memory, an output type is not
-         * calculated until it is requested.  And then the derived output immediately returns the calculations.  Outputs are
-         * typically returned as a vector of objects.
-         */
-
-        //Write output for Global Motion
-        filetest = WriterIn.writeGlobalMotion();
-
-        if (!filetest)
+        try
         {
+            //Write output for Global Motion
+            filetest = WriterIn.writeGlobalMotion();
+
+            if (filetest != 0)
+                throw filetest;
+        }
+        catch (int err)
+        {
+            filetest = err;
             cerr << "Error writing output to Global Motion file." << endl;
+            cerr << "Error code:  " << filetest << endl << endl;
         }
 
-        //Write output for Global Velocity
-        filetest = WriterIn.writeGlobalVelocity();
-
-        if (!filetest)
+        try
         {
+            //Write output for Global Velocity
+            filetest = WriterIn.writeGlobalVelocity();
+
+            if (filetest != 0)
+                throw filetest;
+        }
+        catch (int err)
+        {
+            filetest = err;
             cerr << "Error writing output to Global Velocity file." << endl;
+            cerr << "Error code:  " << filetest << endl << endl;
         }
 
-        //Write output for Global Acceleration
-        filetest = WriterIn.writeGlobalAcceleration();
-
-        if (!filetest)
+        try
         {
+            //Write output for Global Acceleration
+            filetest = WriterIn.writeGlobalAcceleration();
+
+            if (filetest != 0)
+                throw filetest;
+        }
+        catch (int err)
+        {
+            filetest = err;
             cerr << "Error writing output to Global Acceleration file." << endl;
+            cerr << "Error code:  " << filetest << endl << endl;
         }
 
-        //Write output for Global Solution;
-        filetest = WriterIn.writeGlobalSolution();
-
-        if (!filetest)
+        try
         {
+            //Write output for Global Solution;
+            filetest = WriterIn.writeGlobalSolution();
+
+            if (filetest != 0)
+                throw filetest;
+        }
+        catch (int err)
+        {
+            filetest = err;
             cerr << "Error writing output to Global Solution file." << endl;
+            cerr << "Error code:  " << filetest << endl << endl;
         }
     }
 }
@@ -516,11 +563,6 @@ void ReadFiles(string runPath)
     dictBodies dictBod;                 //Create dictionary object for bodies.in
     dictForces dictForce;               //Create dictionary object for forces.in
     dictControl dictCont;               //Create dictionary object for control.in
-
-    //Connect the dictionary and FileReader objects.
-//    QObject::connect(&fileIn, SIGNAL(outputBodiesFile(ObjectGroup)), &dictBod, SLOT(setObject(ObjectGroup)));
-//    QObject::connect(&fileIn, SIGNAL(outputForcesFile(ObjectGroup)), &dictForce, SLOT(setObject(ObjectGroup)));
-//    QObject::connect(&fileIn, SIGNAL(outputControlFile(ObjectGroup)), &dictCont, SLOT(setObject(ObjectGroup)));
 
     //Create pointer to System object for each of the filereader objects
     fileIn.setSystem( &sysofreq);

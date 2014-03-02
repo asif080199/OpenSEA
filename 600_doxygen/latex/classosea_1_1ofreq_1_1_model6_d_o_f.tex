@@ -1,0 +1,164 @@
+\hypertarget{classosea_1_1ofreq_1_1_model6_d_o_f}{\section{osea\-:\-:ofreq\-:\-:Model6\-D\-O\-F Class Reference}
+\label{classosea_1_1ofreq_1_1_model6_d_o_f}\index{osea\-::ofreq\-::\-Model6\-D\-O\-F@{osea\-::ofreq\-::\-Model6\-D\-O\-F}}
+}
+
+
+The motion model for standard six-\/degree of freedom rigid-\/body dynamics problems.  
+
+
+
+
+{\ttfamily \#include $<$model6dof.\-h$>$}
+
+
+
+Inheritance diagram for osea\-:\-:ofreq\-:\-:Model6\-D\-O\-F\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=214pt]{classosea_1_1ofreq_1_1_model6_d_o_f__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for osea\-:\-:ofreq\-:\-:Model6\-D\-O\-F\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=214pt]{classosea_1_1ofreq_1_1_model6_d_o_f__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classosea_1_1ofreq_1_1_model6_d_o_f_a12492ff1097aa30bb6e1e700b56387c3}{\hyperlink{classosea_1_1ofreq_1_1_model6_d_o_f_a12492ff1097aa30bb6e1e700b56387c3}{Model6\-D\-O\-F} ()}\label{classosea_1_1ofreq_1_1_model6_d_o_f_a12492ff1097aa30bb6e1e700b56387c3}
+
+\begin{DoxyCompactList}\small\item\em The default constructor. \end{DoxyCompactList}\item 
+\hyperlink{classosea_1_1ofreq_1_1_model6_d_o_f_ad86b5d762a92454bb3be07a6e125c9c5}{Model6\-D\-O\-F} (std\-::vector$<$ \hyperlink{classosea_1_1ofreq_1_1_body}{Body} $>$ \&list\-Bod\-In)
+\begin{DoxyCompactList}\small\item\em Constructor. This is the preferred constructor as it supplies the body data. \end{DoxyCompactList}\item 
+\hyperlink{classosea_1_1ofreq_1_1_model6_d_o_f_a9559d74006712422d84356e210b406be}{$\sim$\-Model6\-D\-O\-F} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classosea_1_1ofreq_1_1_model6_d_o_f_a0048de3d40838c93e2130ebb5130f3a1}{Define\-Equations} ()
+\begin{DoxyCompactList}\small\item\em The function used to define the equation of motion objects. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The motion model for standard six-\/degree of freedom rigid-\/body dynamics problems. 
+
+
+
+
+
+This is where each \hyperlink{classosea_1_1ofreq_1_1_equationof_motion}{Equationof\-Motion} object is created. Can also be any object from a class that is derived from the \hyperlink{classosea_1_1ofreq_1_1_equationof_motion}{Equationof\-Motion} object. Before adding equations within this motion model, the individual equation must be defined. These will be new objects inheritted from the \hyperlink{classosea_1_1ofreq_1_1_equationof_motion}{Equationof\-Motion} object. Once those new equation clases are defined, they can be used in the motion model.
+
+Using an \hyperlink{classosea_1_1ofreq_1_1_equationof_motion}{Equationof\-Motion} in the motion model will generally follow the following sequence. All step are executed within the Define\-Equations function. 1.) Create a new object from the appropriate class which is derived from the \hyperlink{classosea_1_1ofreq_1_1_equationof_motion}{Equationof\-Motion}. When creating the equation of motion, you must include the pointer to the existing motion model. Use the keyword this when creating the new object. 2.) Set the data index for the equation. This is probably the most important step. Regardless of what name you give the equation, the program ofreq only sees the equation as one in a list of equations, and refers to it by its index within that list. Any input data (such as hydrodynamic or user coefficients) is similarly referenced by that index. When you set the data index, you tell ofreq which index in the list of data is has available should correspond to this specific equation. (Set the data index using the function set\-Data\-Index(). 3.) Set the name for the new object. This is just the short name or equation symbol. (Use the function \hyperlink{classosea_1_1ofreq_1_1_motion_model_a42d989727028c18c59ba04f958bc7b74}{set\-Name()} to set it.) 4.) Set the description for the new object. This is the more extensive name for the equation. (Use the function \hyperlink{classosea_1_1ofreq_1_1_motion_model_a5097540bb98ad753594d41890e6ef30d}{set\-Description()} to set it.) 5.) Now that you set all the appropriate information, add the equation of motion into the list of equations used by this motion model. (Use the function \hyperlink{classosea_1_1ofreq_1_1_motion_model_a73489d88c07b26109bbb9bdd0a576b30}{Add\-Equation()}).
+
+Once you define all the equations, you will also want to define a name for your motion model. This is the name you will use to select the motion model within the input files. It can be any sequence you want and include spaces. One name is already reserved as part of the standard program models. You can not use the following name\-: \char`\"{}6\-D\-O\-F\char`\"{} -\/ Reserved.$\ast$
+
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classosea_1_1ofreq_1_1_motion_model_a73489d88c07b26109bbb9bdd0a576b30}{Add\-Equation()} 
+
+\hyperlink{classosea_1_1ofreq_1_1_equationof_motion}{Equationof\-Motion} 
+\end{DoxySeeAlso}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classosea_1_1ofreq_1_1_model6_d_o_f_ad86b5d762a92454bb3be07a6e125c9c5}{\index{osea\-::ofreq\-::\-Model6\-D\-O\-F@{osea\-::ofreq\-::\-Model6\-D\-O\-F}!Model6\-D\-O\-F@{Model6\-D\-O\-F}}
+\index{Model6\-D\-O\-F@{Model6\-D\-O\-F}!osea::ofreq::Model6DOF@{osea\-::ofreq\-::\-Model6\-D\-O\-F}}
+\subsubsection[{Model6\-D\-O\-F}]{\setlength{\rightskip}{0pt plus 5cm}Model6\-D\-O\-F\-::\-Model6\-D\-O\-F (
+\begin{DoxyParamCaption}
+\item[{std\-::vector$<$ {\bf Body} $>$ \&}]{list\-Bod\-In}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_model6_d_o_f_ad86b5d762a92454bb3be07a6e125c9c5}
+
+
+Constructor. This is the preferred constructor as it supplies the body data. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em list\-Bod\-In} & The vector of the body objects to input. \\
+\hline
+\end{DoxyParams}
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classosea_1_1ofreq_1_1_model6_d_o_f_ad86b5d762a92454bb3be07a6e125c9c5_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classosea_1_1ofreq_1_1_model6_d_o_f_a9559d74006712422d84356e210b406be}{\index{osea\-::ofreq\-::\-Model6\-D\-O\-F@{osea\-::ofreq\-::\-Model6\-D\-O\-F}!$\sim$\-Model6\-D\-O\-F@{$\sim$\-Model6\-D\-O\-F}}
+\index{$\sim$\-Model6\-D\-O\-F@{$\sim$\-Model6\-D\-O\-F}!osea::ofreq::Model6DOF@{osea\-::ofreq\-::\-Model6\-D\-O\-F}}
+\subsubsection[{$\sim$\-Model6\-D\-O\-F}]{\setlength{\rightskip}{0pt plus 5cm}Model6\-D\-O\-F\-::$\sim$\-Model6\-D\-O\-F (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_model6_d_o_f_a9559d74006712422d84356e210b406be}
+Default destructor. 
+
+\subsection{Member Function Documentation}
+\hypertarget{classosea_1_1ofreq_1_1_model6_d_o_f_a0048de3d40838c93e2130ebb5130f3a1}{\index{osea\-::ofreq\-::\-Model6\-D\-O\-F@{osea\-::ofreq\-::\-Model6\-D\-O\-F}!Define\-Equations@{Define\-Equations}}
+\index{Define\-Equations@{Define\-Equations}!osea::ofreq::Model6DOF@{osea\-::ofreq\-::\-Model6\-D\-O\-F}}
+\subsubsection[{Define\-Equations}]{\setlength{\rightskip}{0pt plus 5cm}void Model6\-D\-O\-F\-::\-Define\-Equations (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{classosea_1_1ofreq_1_1_model6_d_o_f_a0048de3d40838c93e2130ebb5130f3a1}
+
+
+The function used to define the equation of motion objects. 
+
+This function gets executed when the Motion model is first created. It contains all the statements to add the appropriate equations to the motion model. This is where each \hyperlink{classosea_1_1ofreq_1_1_equationof_motion}{Equationof\-Motion} object is created. Can also be any object from a class that is derived from the \hyperlink{classosea_1_1ofreq_1_1_equationof_motion}{Equationof\-Motion} object. Before definining equations within this motion model, the individual equation must be defined. These will be new objects inheritted from the \hyperlink{classosea_1_1ofreq_1_1_equationof_motion}{Equationof\-Motion} object. Once those new equation clases are defined, they can be used in the motion model.
+
+Using an \hyperlink{classosea_1_1ofreq_1_1_equationof_motion}{Equationof\-Motion} in the motion model will generally follow the following sequence. All step are executed within the Define\-Equations function. 1.) Create a new object from the appropriate class which is derived from the \hyperlink{classosea_1_1ofreq_1_1_equationof_motion}{Equationof\-Motion}. When creating the equation of motion, you must include the pointer to the existing motion model. Use the keyword this when creating the new object. 2.) Set the data index for the equation. This is probably the most important step. Regardless of what name you give the equation, the program ofreq only sees the equation as one in a list of equations, and refers to it by its index within that list. Any input data (such as hydrodynamic or user coefficients) is similarly referenced by that index. When you set the data index, you tell ofreq which index in the list of data is has available should correspond to this specific equation. (Set the data index using the function set\-Data\-Index(). 3.) Set the name for the new object. This is just the short name or equation symbol. (Use the function \hyperlink{classosea_1_1ofreq_1_1_motion_model_a42d989727028c18c59ba04f958bc7b74}{set\-Name()} to set it.) 4.) Set the description for the new object. This is the more extensive name for the equation. (Use the function \hyperlink{classosea_1_1ofreq_1_1_motion_model_a5097540bb98ad753594d41890e6ef30d}{set\-Description()} to set it.) 5.) Now that you set all the appropriate information, add the equation of motion into the list of equations used by this motion model. (Use the function \hyperlink{classosea_1_1ofreq_1_1_motion_model_a73489d88c07b26109bbb9bdd0a576b30}{Add\-Equation()}).
+
+Once you define all the equations, you will also want to define a name for your motion model. This is the name you will use to select the motion model within the input files. It can be any sequence you want and include spaces. One name is already reserved as part of the standard program models. You can not use the following name\-: \char`\"{}6\-D\-O\-F\char`\"{} -\/ Reserved.
+
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classosea_1_1ofreq_1_1_motion_model_a73489d88c07b26109bbb9bdd0a576b30}{Add\-Equation()} 
+
+\hyperlink{classosea_1_1ofreq_1_1_equationof_motion}{Equationof\-Motion} 
+\end{DoxySeeAlso}
+
+
+Reimplemented from \hyperlink{classosea_1_1ofreq_1_1_motion_model_a001b525e45be6f6c8f9088dacbb161c6}{osea\-::ofreq\-::\-Motion\-Model}.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classosea_1_1ofreq_1_1_model6_d_o_f_a0048de3d40838c93e2130ebb5130f3a1_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classosea_1_1ofreq_1_1_model6_d_o_f_a0048de3d40838c93e2130ebb5130f3a1_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+model6dof.\-h\item 
+model6dof.\-cpp\end{DoxyCompactItemize}

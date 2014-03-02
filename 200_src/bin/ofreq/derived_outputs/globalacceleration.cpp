@@ -44,6 +44,15 @@ GlobalAcceleration::GlobalAcceleration()
 {
     pName = ACCELERATION_NAME;
     orderDerivative = GLOBAL_ACCELERATION_DERIVATIVE;
+    pClassName = "GlobalAcceleration";
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+GlobalAcceleration::GlobalAcceleration(OutputsBody* input)
+    : GlobalSolution(input)
+{
+    pName = ACCELERATION_NAME;
+    orderDerivative = GLOBAL_ACCELERATION_DERIVATIVE;
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------

@@ -7,8 +7,7 @@
 
 
 
-Inheritance diagram for osea\-:\-:ofreq\-:\-:File\-Writer\-:
-\nopagebreak
+Inheritance diagram for osea\-:\-:ofreq\-:\-:File\-Writer\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -17,8 +16,7 @@ Inheritance diagram for osea\-:\-:ofreq\-:\-:File\-Writer\-:
 \end{figure}
 
 
-Collaboration diagram for osea\-:\-:ofreq\-:\-:File\-Writer\-:
-\nopagebreak
+Collaboration diagram for osea\-:\-:ofreq\-:\-:File\-Writer\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -41,19 +39,23 @@ bool \hyperlink{classosea_1_1ofreq_1_1_file_writer_a74a40c3c47b4d12582a2aa44c38d
 \item 
 \hyperlink{classosea_1_1ofreq_1_1_outputs_body}{Outputs\-Body} \& \hyperlink{classosea_1_1ofreq_1_1_file_writer_a77da1b41e1332209f39243fcca4d1287}{ref\-Outputs\-Body} ()
 \begin{DoxyCompactList}\small\item\em Provides direct access to the \hyperlink{classosea_1_1ofreq_1_1_outputs_body}{Outputs\-Body} object. The \hyperlink{classosea_1_1ofreq_1_1_outputs_body}{Outputs\-Body} object must be set for the file\-Writer to work. All file data comes from the \hyperlink{classosea_1_1ofreq_1_1_file_writer}{File\-Writer} object. \end{DoxyCompactList}\item 
+void \hyperlink{classosea_1_1ofreq_1_1_file_writer_af0234f3573308ca6f5b7178f662b3993}{set\-Outputs\-Body} (\hyperlink{classosea_1_1ofreq_1_1_outputs_body}{Outputs\-Body} $\ast$input)
+\begin{DoxyCompactList}\small\item\em Sets the outputs body object, pointer input. \end{DoxyCompactList}\item 
+\hyperlink{classosea_1_1ofreq_1_1_outputs_body}{Outputs\-Body} $\ast$ \hyperlink{classosea_1_1ofreq_1_1_file_writer_a2794a9410be184745cd98f26df801ab2}{get\-Outputs\-Body} ()
+\begin{DoxyCompactList}\small\item\em Returns a pointer to the Outputs \hyperlink{classosea_1_1ofreq_1_1_body}{Body} object. \end{DoxyCompactList}\item 
 bool \hyperlink{classosea_1_1ofreq_1_1_file_writer_afc22f7afcd30f676e5385133247ed84d}{file\-Exists} (std\-::string filename)
 \begin{DoxyCompactList}\small\item\em Test is a file exists. Function automatically assumes that the file is located in the directory associated with the \hyperlink{classosea_1_1ofreq_1_1_file_writer_a9748d987475a225b49e14f48b8be0cd6}{get\-Cur\-Wave\-Ind()} function. Returns true if the file exists and is valid. Returns false if the file does not exist or the directory does not exist. \end{DoxyCompactList}\item 
-bool \hyperlink{classosea_1_1ofreq_1_1_file_writer_a0428a4f8ad72d01ff5316bfa3e4ce631}{write\-Wave\-Direction} ()
+int \hyperlink{classosea_1_1ofreq_1_1_file_writer_af8b7b6236b90e1734161f6158f64482b}{write\-Wave\-Direction} ()
 \begin{DoxyCompactList}\small\item\em Writes the directions list to file. \end{DoxyCompactList}\item 
-bool \hyperlink{classosea_1_1ofreq_1_1_file_writer_ac6df31af71020a41adb6ecd6ff136532}{write\-Frequency} ()
+int \hyperlink{classosea_1_1ofreq_1_1_file_writer_a99e8d1ffb93b50966735bb90d0f4e082}{write\-Frequency} ()
 \item 
-bool \hyperlink{classosea_1_1ofreq_1_1_file_writer_a5c921b5ae92039cf50458e2c46e204da}{write\-Global\-Motion} ()
+int \hyperlink{classosea_1_1ofreq_1_1_file_writer_ada34dffe391a0daeac192bd4b7ed0ce5}{write\-Global\-Motion} ()
 \begin{DoxyCompactList}\small\item\em Writes the output file of global motions. If file exists, appends to the file, assuming the appended file is a new body object. \end{DoxyCompactList}\item 
-bool \hyperlink{classosea_1_1ofreq_1_1_file_writer_a2078a50dbd21946aeed86d8e0bccd50e}{write\-Global\-Velocity} ()
+int \hyperlink{classosea_1_1ofreq_1_1_file_writer_a9887a28316fca1417da81c95b04c2208}{write\-Global\-Velocity} ()
 \begin{DoxyCompactList}\small\item\em Writes the output file of global velocities. If file exists, appends to the file, assuming the appended file is a new body object. \end{DoxyCompactList}\item 
-bool \hyperlink{classosea_1_1ofreq_1_1_file_writer_aaff553c2e03cb1c1639e107cfeac3038}{write\-Global\-Acceleration} ()
+int \hyperlink{classosea_1_1ofreq_1_1_file_writer_a1c49975afb40d028c42027e5239bcdaa}{write\-Global\-Acceleration} ()
 \begin{DoxyCompactList}\small\item\em Writes the output file of global accelerations. If file exists, appends to the file, assuming the appended file is a new body object. \end{DoxyCompactList}\item 
-bool \hyperlink{classosea_1_1ofreq_1_1_file_writer_a317649499b8c16dd529e2bf588e3be88}{write\-Global\-Solution} ()
+int \hyperlink{classosea_1_1ofreq_1_1_file_writer_ae5977c7303f36b1ae0b71bf9251c8a59}{write\-Global\-Solution} ()
 \begin{DoxyCompactList}\small\item\em Writes the output file of global solutions. If file exists, appends to the file, assuming the appended file is a new body object. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
@@ -204,6 +206,20 @@ Set information about the file to be written after header and above data, includ
 \begin{DoxyReturn}{Returns}
 Returns std\-::string. std\-::string contains the file info for the output file. Everything written into the seafile block. Variable passed by value. 
 \end{DoxyReturn}
+\hypertarget{classosea_1_1ofreq_1_1_file_writer_a2794a9410be184745cd98f26df801ab2}{\index{osea\-::ofreq\-::\-File\-Writer@{osea\-::ofreq\-::\-File\-Writer}!get\-Outputs\-Body@{get\-Outputs\-Body}}
+\index{get\-Outputs\-Body@{get\-Outputs\-Body}!osea::ofreq::FileWriter@{osea\-::ofreq\-::\-File\-Writer}}
+\subsubsection[{get\-Outputs\-Body}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Outputs\-Body} $\ast$ File\-Writer\-::get\-Outputs\-Body (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_file_writer_a2794a9410be184745cd98f26df801ab2}
+
+
+Returns a pointer to the Outputs \hyperlink{classosea_1_1ofreq_1_1_body}{Body} object. 
+
+\begin{DoxyReturn}{Returns}
+Returns a pointer to the Outputs \hyperlink{classosea_1_1ofreq_1_1_body}{Body} object. Returned pointer passed by value. 
+\end{DoxyReturn}
 \hypertarget{classosea_1_1ofreq_1_1_file_writer_a77da1b41e1332209f39243fcca4d1287}{\index{osea\-::ofreq\-::\-File\-Writer@{osea\-::ofreq\-::\-File\-Writer}!ref\-Outputs\-Body@{ref\-Outputs\-Body}}
 \index{ref\-Outputs\-Body@{ref\-Outputs\-Body}!osea::ofreq::FileWriter@{osea\-::ofreq\-::\-File\-Writer}}
 \subsubsection[{ref\-Outputs\-Body}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Outputs\-Body} \& File\-Writer\-::ref\-Outputs\-Body (
@@ -216,8 +232,24 @@ Returns std\-::string. std\-::string contains the file info for the output file.
 Provides direct access to the \hyperlink{classosea_1_1ofreq_1_1_outputs_body}{Outputs\-Body} object. The \hyperlink{classosea_1_1ofreq_1_1_outputs_body}{Outputs\-Body} object must be set for the file\-Writer to work. All file data comes from the \hyperlink{classosea_1_1ofreq_1_1_file_writer}{File\-Writer} object. 
 
 \begin{DoxyReturn}{Returns}
-Returns pointer to the \hyperlink{classosea_1_1ofreq_1_1_outputs_body}{Outputs\-Body} object. Variable passed by reference. 
+Returns reference to the \hyperlink{classosea_1_1ofreq_1_1_outputs_body}{Outputs\-Body} object. Variable passed by reference. 
 \end{DoxyReturn}
+\hypertarget{classosea_1_1ofreq_1_1_file_writer_af0234f3573308ca6f5b7178f662b3993}{\index{osea\-::ofreq\-::\-File\-Writer@{osea\-::ofreq\-::\-File\-Writer}!set\-Outputs\-Body@{set\-Outputs\-Body}}
+\index{set\-Outputs\-Body@{set\-Outputs\-Body}!osea::ofreq::FileWriter@{osea\-::ofreq\-::\-File\-Writer}}
+\subsubsection[{set\-Outputs\-Body}]{\setlength{\rightskip}{0pt plus 5cm}void File\-Writer\-::set\-Outputs\-Body (
+\begin{DoxyParamCaption}
+\item[{{\bf Outputs\-Body} $\ast$}]{input}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_file_writer_af0234f3573308ca6f5b7178f662b3993}
+
+
+Sets the outputs body object, pointer input. 
+
+Takes a pointer to the Outputs body object as input and stores that pointer for future use. 
+\begin{DoxyParams}{Parameters}
+{\em input} & Pointer to the Outputs \hyperlink{classosea_1_1ofreq_1_1_body}{Body} object. Pointer variable passed by value. \\
+\hline
+\end{DoxyParams}
 \hypertarget{classosea_1_1ofreq_1_1_file_writer_aa1dbf0e1a54a78fb62d799187752b002}{\index{osea\-::ofreq\-::\-File\-Writer@{osea\-::ofreq\-::\-File\-Writer}!set\-Project\-Dir@{set\-Project\-Dir}}
 \index{set\-Project\-Dir@{set\-Project\-Dir}!osea::ofreq::FileWriter@{osea\-::ofreq\-::\-File\-Writer}}
 \subsubsection[{set\-Project\-Dir}]{\setlength{\rightskip}{0pt plus 5cm}void File\-Writer\-::set\-Project\-Dir (
@@ -234,85 +266,85 @@ Sets the path to the project directory. Assumes the std\-::string specifying the
 {\em dir\-In} & std\-::string specifying the path to the project directory. Variable passed by value. \\
 \hline
 \end{DoxyParams}
-\hypertarget{classosea_1_1ofreq_1_1_file_writer_ac6df31af71020a41adb6ecd6ff136532}{\index{osea\-::ofreq\-::\-File\-Writer@{osea\-::ofreq\-::\-File\-Writer}!write\-Frequency@{write\-Frequency}}
+\hypertarget{classosea_1_1ofreq_1_1_file_writer_a99e8d1ffb93b50966735bb90d0f4e082}{\index{osea\-::ofreq\-::\-File\-Writer@{osea\-::ofreq\-::\-File\-Writer}!write\-Frequency@{write\-Frequency}}
 \index{write\-Frequency@{write\-Frequency}!osea::ofreq::FileWriter@{osea\-::ofreq\-::\-File\-Writer}}
-\subsubsection[{write\-Frequency}]{\setlength{\rightskip}{0pt plus 5cm}bool File\-Writer\-::write\-Frequency (
+\subsubsection[{write\-Frequency}]{\setlength{\rightskip}{0pt plus 5cm}int File\-Writer\-::write\-Frequency (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)}}\label{classosea_1_1ofreq_1_1_file_writer_ac6df31af71020a41adb6ecd6ff136532}
+)}}\label{classosea_1_1ofreq_1_1_file_writer_a99e8d1ffb93b50966735bb90d0f4e082}
 Writes the frequencies list to file. \begin{DoxyReturn}{Returns}
-true if write successful. 
+Integer reports status of file writing. Returns of succesful. Otherwise returns a non-\/zero value that is the error code. Returned variable passed by value. 
 \end{DoxyReturn}
-\hypertarget{classosea_1_1ofreq_1_1_file_writer_aaff553c2e03cb1c1639e107cfeac3038}{\index{osea\-::ofreq\-::\-File\-Writer@{osea\-::ofreq\-::\-File\-Writer}!write\-Global\-Acceleration@{write\-Global\-Acceleration}}
+\hypertarget{classosea_1_1ofreq_1_1_file_writer_a1c49975afb40d028c42027e5239bcdaa}{\index{osea\-::ofreq\-::\-File\-Writer@{osea\-::ofreq\-::\-File\-Writer}!write\-Global\-Acceleration@{write\-Global\-Acceleration}}
 \index{write\-Global\-Acceleration@{write\-Global\-Acceleration}!osea::ofreq::FileWriter@{osea\-::ofreq\-::\-File\-Writer}}
-\subsubsection[{write\-Global\-Acceleration}]{\setlength{\rightskip}{0pt plus 5cm}bool File\-Writer\-::write\-Global\-Acceleration (
+\subsubsection[{write\-Global\-Acceleration}]{\setlength{\rightskip}{0pt plus 5cm}int File\-Writer\-::write\-Global\-Acceleration (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)}}\label{classosea_1_1ofreq_1_1_file_writer_aaff553c2e03cb1c1639e107cfeac3038}
+)}}\label{classosea_1_1ofreq_1_1_file_writer_a1c49975afb40d028c42027e5239bcdaa}
 
 
 Writes the output file of global accelerations. If file exists, appends to the file, assuming the appended file is a new body object. 
 
 \begin{DoxyReturn}{Returns}
-Returns true if write successful. 
+Integer reports status of file writing. Returns of succesful. Otherwise returns a non-\/zero value that is the error code. Returned variable passed by value. 
 \end{DoxyReturn}
-\hypertarget{classosea_1_1ofreq_1_1_file_writer_a5c921b5ae92039cf50458e2c46e204da}{\index{osea\-::ofreq\-::\-File\-Writer@{osea\-::ofreq\-::\-File\-Writer}!write\-Global\-Motion@{write\-Global\-Motion}}
+\hypertarget{classosea_1_1ofreq_1_1_file_writer_ada34dffe391a0daeac192bd4b7ed0ce5}{\index{osea\-::ofreq\-::\-File\-Writer@{osea\-::ofreq\-::\-File\-Writer}!write\-Global\-Motion@{write\-Global\-Motion}}
 \index{write\-Global\-Motion@{write\-Global\-Motion}!osea::ofreq::FileWriter@{osea\-::ofreq\-::\-File\-Writer}}
-\subsubsection[{write\-Global\-Motion}]{\setlength{\rightskip}{0pt plus 5cm}bool File\-Writer\-::write\-Global\-Motion (
+\subsubsection[{write\-Global\-Motion}]{\setlength{\rightskip}{0pt plus 5cm}int File\-Writer\-::write\-Global\-Motion (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)}}\label{classosea_1_1ofreq_1_1_file_writer_a5c921b5ae92039cf50458e2c46e204da}
+)}}\label{classosea_1_1ofreq_1_1_file_writer_ada34dffe391a0daeac192bd4b7ed0ce5}
 
 
 Writes the output file of global motions. If file exists, appends to the file, assuming the appended file is a new body object. 
 
 \begin{DoxyReturn}{Returns}
-Returns true if write successful. 
+Integer reports status of file writing. Returns of succesful. Otherwise returns a non-\/zero value that is the error code. Returned variable passed by value. 
 \end{DoxyReturn}
-\hypertarget{classosea_1_1ofreq_1_1_file_writer_a317649499b8c16dd529e2bf588e3be88}{\index{osea\-::ofreq\-::\-File\-Writer@{osea\-::ofreq\-::\-File\-Writer}!write\-Global\-Solution@{write\-Global\-Solution}}
+\hypertarget{classosea_1_1ofreq_1_1_file_writer_ae5977c7303f36b1ae0b71bf9251c8a59}{\index{osea\-::ofreq\-::\-File\-Writer@{osea\-::ofreq\-::\-File\-Writer}!write\-Global\-Solution@{write\-Global\-Solution}}
 \index{write\-Global\-Solution@{write\-Global\-Solution}!osea::ofreq::FileWriter@{osea\-::ofreq\-::\-File\-Writer}}
-\subsubsection[{write\-Global\-Solution}]{\setlength{\rightskip}{0pt plus 5cm}bool File\-Writer\-::write\-Global\-Solution (
+\subsubsection[{write\-Global\-Solution}]{\setlength{\rightskip}{0pt plus 5cm}int File\-Writer\-::write\-Global\-Solution (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)}}\label{classosea_1_1ofreq_1_1_file_writer_a317649499b8c16dd529e2bf588e3be88}
+)}}\label{classosea_1_1ofreq_1_1_file_writer_ae5977c7303f36b1ae0b71bf9251c8a59}
 
 
 Writes the output file of global solutions. If file exists, appends to the file, assuming the appended file is a new body object. 
 
 \begin{DoxyReturn}{Returns}
-Returns true if write successful. 
+Integer reports status of file writing. Returns of succesful. Otherwise returns a non-\/zero value that is the error code. Returned variable passed by value. 
 \end{DoxyReturn}
-\hypertarget{classosea_1_1ofreq_1_1_file_writer_a2078a50dbd21946aeed86d8e0bccd50e}{\index{osea\-::ofreq\-::\-File\-Writer@{osea\-::ofreq\-::\-File\-Writer}!write\-Global\-Velocity@{write\-Global\-Velocity}}
+\hypertarget{classosea_1_1ofreq_1_1_file_writer_a9887a28316fca1417da81c95b04c2208}{\index{osea\-::ofreq\-::\-File\-Writer@{osea\-::ofreq\-::\-File\-Writer}!write\-Global\-Velocity@{write\-Global\-Velocity}}
 \index{write\-Global\-Velocity@{write\-Global\-Velocity}!osea::ofreq::FileWriter@{osea\-::ofreq\-::\-File\-Writer}}
-\subsubsection[{write\-Global\-Velocity}]{\setlength{\rightskip}{0pt plus 5cm}bool File\-Writer\-::write\-Global\-Velocity (
+\subsubsection[{write\-Global\-Velocity}]{\setlength{\rightskip}{0pt plus 5cm}int File\-Writer\-::write\-Global\-Velocity (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)}}\label{classosea_1_1ofreq_1_1_file_writer_a2078a50dbd21946aeed86d8e0bccd50e}
+)}}\label{classosea_1_1ofreq_1_1_file_writer_a9887a28316fca1417da81c95b04c2208}
 
 
 Writes the output file of global velocities. If file exists, appends to the file, assuming the appended file is a new body object. 
 
 \begin{DoxyReturn}{Returns}
-Returns true if write successful. 
+Integer reports status of file writing. Returns of succesful. Otherwise returns a non-\/zero value that is the error code. Returned variable passed by value. 
 \end{DoxyReturn}
-\hypertarget{classosea_1_1ofreq_1_1_file_writer_a0428a4f8ad72d01ff5316bfa3e4ce631}{\index{osea\-::ofreq\-::\-File\-Writer@{osea\-::ofreq\-::\-File\-Writer}!write\-Wave\-Direction@{write\-Wave\-Direction}}
+\hypertarget{classosea_1_1ofreq_1_1_file_writer_af8b7b6236b90e1734161f6158f64482b}{\index{osea\-::ofreq\-::\-File\-Writer@{osea\-::ofreq\-::\-File\-Writer}!write\-Wave\-Direction@{write\-Wave\-Direction}}
 \index{write\-Wave\-Direction@{write\-Wave\-Direction}!osea::ofreq::FileWriter@{osea\-::ofreq\-::\-File\-Writer}}
-\subsubsection[{write\-Wave\-Direction}]{\setlength{\rightskip}{0pt plus 5cm}bool File\-Writer\-::write\-Wave\-Direction (
+\subsubsection[{write\-Wave\-Direction}]{\setlength{\rightskip}{0pt plus 5cm}int File\-Writer\-::write\-Wave\-Direction (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)}}\label{classosea_1_1ofreq_1_1_file_writer_a0428a4f8ad72d01ff5316bfa3e4ce631}
+)}}\label{classosea_1_1ofreq_1_1_file_writer_af8b7b6236b90e1734161f6158f64482b}
 
 
 Writes the directions list to file. 
 
 \begin{DoxyReturn}{Returns}
-true if write successful. 
+Integer reports status of file writing. Returns of succesful. Otherwise returns a non-\/zero value that is the error code. Returned variable passed by value. 
 \end{DoxyReturn}
 
 

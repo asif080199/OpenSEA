@@ -155,13 +155,6 @@ public:
      */
     void setSolnMat(arma::cx_mat matIn);
 
-//    //------------------------------------------Function Separator ----------------------------------------------------
-//    /**
-//     * @brief Gets the body object used as the reference body.  Variable passed by value.
-//     * @return Gets the body object used as the reference body.  Variable passed by value.
-//     */
-//    Body getBody();
-
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
      * @brief Returns reference pointer to the reference body.  Variable passed by reference.

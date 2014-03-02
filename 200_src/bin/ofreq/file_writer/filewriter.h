@@ -191,48 +191,54 @@ public:
     //------------------------------------------Function Separator ----------------------------------------------------
 	/**
      * @brief Writes the directions list to file.
-	 * @return true if write successful.
+     * @return Integer reports status of file writing.  Returns of succesful.  Otherwise returns a non-zero value that
+     * is the error code.  Returned variable passed by value.
 	 */
-    bool writeWaveDirection();
+    int writeWaveDirection();
 
     //------------------------------------------Function Separator ----------------------------------------------------
 	/**
 	 * Writes the frequencies list to file.
-	 * @return true if write successful.
+     * @return Integer reports status of file writing.  Returns of succesful.  Otherwise returns a non-zero value that
+     * is the error code.  Returned variable passed by value.
 	 */
-    bool writeFrequency();
+    int writeFrequency();
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
      * @brief Writes the output file of global motions.  If file exists, appends to the file, assuming the appended
      * file is a new body object.
-     * @return Returns true if write successful.
+     * @return Integer reports status of file writing.  Returns of succesful.  Otherwise returns a non-zero value that
+     * is the error code.  Returned variable passed by value.
      */
-    bool writeGlobalMotion();
+    int writeGlobalMotion();
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
      * @brief Writes the output file of global velocities.  If file exists, appends to the file, assuming the appended
      * file is a new body object.
-     * @return Returns true if write successful.
+     * @return Integer reports status of file writing.  Returns of succesful.  Otherwise returns a non-zero value that
+     * is the error code.  Returned variable passed by value.
      */
-    bool writeGlobalVelocity();
+    int writeGlobalVelocity();
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
      * @brief Writes the output file of global accelerations.  If file exists, appends to the file, assuming the appended
      * file is a new body object.
-     * @return Returns true if write successful.
+     * @return Integer reports status of file writing.  Returns of succesful.  Otherwise returns a non-zero value that
+     * is the error code.  Returned variable passed by value.
      */
-    bool writeGlobalAcceleration();
+    int writeGlobalAcceleration();
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
      * @brief Writes the output file of global solutions.  If file exists, appends to the file, assuming the appended
      * file is a new body object.
-     * @return Returns true if write successful.
+     * @return Integer reports status of file writing.  Returns of succesful.  Otherwise returns a non-zero value that
+     * is the error code.  Returned variable passed by value.
      */
-    bool writeGlobalSolution();
+    int writeGlobalSolution();
 
 
 //==========================================Section Separator =========================================================

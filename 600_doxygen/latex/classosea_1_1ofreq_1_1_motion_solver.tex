@@ -7,8 +7,7 @@
 
 
 
-Inheritance diagram for osea\-:\-:ofreq\-:\-:Motion\-Solver\-:
-\nopagebreak
+Inheritance diagram for osea\-:\-:ofreq\-:\-:Motion\-Solver\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -17,8 +16,7 @@ Inheritance diagram for osea\-:\-:ofreq\-:\-:Motion\-Solver\-:
 \end{figure}
 
 
-Collaboration diagram for osea\-:\-:ofreq\-:\-:Motion\-Solver\-:
-\nopagebreak
+Collaboration diagram for osea\-:\-:ofreq\-:\-:Motion\-Solver\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -37,16 +35,16 @@ Collaboration diagram for osea\-:\-:ofreq\-:\-:Motion\-Solver\-:
 \item 
 void \hyperlink{classosea_1_1ofreq_1_1_motion_solver_a79603cb6fede30d405f247a4d37256c1}{add\-Body} (\hyperlink{classosea_1_1ofreq_1_1mat_body}{mat\-Body} bod\-In)
 \begin{DoxyCompactList}\small\item\em Add a body to the motion solver set. \end{DoxyCompactList}\item 
-\hyperlink{classosea_1_1ofreq_1_1mat_force_react}{mat\-Force\-React} \hyperlink{classosea_1_1ofreq_1_1_motion_solver_a2345f18f82f306010659124421d5fe34}{sum\-React\-Set} (std\-::vector$<$ \hyperlink{classosea_1_1ofreq_1_1mat_force_react}{mat\-Force\-React} $>$ list\-Forces)
+\hyperlink{classosea_1_1ofreq_1_1mat_force_react}{mat\-Force\-React} $\ast$ \hyperlink{classosea_1_1ofreq_1_1_motion_solver_ae30c84547cbbfdf32125b01fc34882e7}{sum\-React\-Set} (std\-::vector$<$ \hyperlink{classosea_1_1ofreq_1_1mat_force_react}{mat\-Force\-React} $>$ list\-Forces)
 \begin{DoxyCompactList}\small\item\em Sum Reactive forces for each set. \end{DoxyCompactList}\item 
-std\-::vector$<$ \hyperlink{classosea_1_1ofreq_1_1mat_force_cross}{mat\-Force\-Cross} $>$ \hyperlink{classosea_1_1ofreq_1_1_motion_solver_a3b8939bbea9a8a260a022ed175d25d6d}{sum\-Cross\-Set} (std\-::vector$<$ \hyperlink{classosea_1_1ofreq_1_1mat_force_cross}{mat\-Force\-Cross} $>$ list\-Forces)
+std\-::vector$<$ \hyperlink{classosea_1_1ofreq_1_1mat_force_cross}{mat\-Force\-Cross} $\ast$ $>$ \hyperlink{classosea_1_1ofreq_1_1_motion_solver_a791ca06422d61c08bfed2a887791b1bd}{sum\-Cross\-Set} (std\-::vector$<$ \hyperlink{classosea_1_1ofreq_1_1mat_force_cross}{mat\-Force\-Cross} $>$ list\-Forces)
 \begin{DoxyCompactList}\small\item\em Sum cross-\/body forces for each set. \end{DoxyCompactList}\item 
-arma\-::cx\-\_\-mat \hyperlink{classosea_1_1ofreq_1_1_motion_solver_a0546fbdb4b4c80b1eb8e13c8fb799217}{sum\-Active\-Set} (std\-::vector$<$ \hyperlink{classosea_1_1ofreq_1_1mat_force_active}{mat\-Force\-Active} $>$ list\-Forces)
+arma\-::cx\-\_\-mat $\ast$ \hyperlink{classosea_1_1ofreq_1_1_motion_solver_a3cb1ad32fc63451422af408f7c07fda6}{sum\-Active\-Set} (std\-::vector$<$ \hyperlink{classosea_1_1ofreq_1_1mat_force_active}{mat\-Force\-Active} $>$ list\-Forces)
 \begin{DoxyCompactList}\small\item\em Sum active forces for each set. \end{DoxyCompactList}\item 
-arma\-::cx\-\_\-mat \hyperlink{classosea_1_1ofreq_1_1_motion_solver_a07eeaf738ebae2ce078de86e61132220}{sum\-Derivative} (\hyperlink{classosea_1_1ofreq_1_1mat_force_react}{mat\-Force\-React} force\-In)
-\begin{DoxyCompactList}\small\item\em Sum list\-Derivatives for reactive force matrix. \end{DoxyCompactList}\item 
-std\-::vector$<$ arma\-::cx\-\_\-mat $>$ \hyperlink{classosea_1_1ofreq_1_1_motion_solver_a07a30b3c6011f6e86d71ba03f738c510}{sum\-Derivative} (std\-::vector$<$ \hyperlink{classosea_1_1ofreq_1_1mat_force_cross}{mat\-Force\-Cross} $>$ force\-In)
-\begin{DoxyCompactList}\small\item\em Sum list\-Derivatives for reactive force matrix. \end{DoxyCompactList}\item 
+arma\-::cx\-\_\-mat $\ast$ \hyperlink{classosea_1_1ofreq_1_1_motion_solver_abe3c2cac5c822e59db5914bf5450d514}{sum\-Derivative} (\hyperlink{classosea_1_1ofreq_1_1mat_force_react}{mat\-Force\-React} $\ast$force\-In)
+\begin{DoxyCompactList}\small\item\em Sums all derivatives for the reactive force object entered. \end{DoxyCompactList}\item 
+std\-::vector$<$ arma\-::cx\-\_\-mat $\ast$ $>$ \hyperlink{classosea_1_1ofreq_1_1_motion_solver_a7e5465b12b38dd33a57b04b5f07aa21d}{sum\-Derivative} (std\-::vector$<$ \hyperlink{classosea_1_1ofreq_1_1mat_force_cross}{mat\-Force\-Cross} $\ast$ $>$ force\-In)
+\begin{DoxyCompactList}\small\item\em Sums all derivatives for the cross-\/body force objects entered. \end{DoxyCompactList}\item 
 void \hyperlink{classosea_1_1ofreq_1_1_motion_solver_a5deee421d26ef9729e0a870fd48b4403}{set\-Wave\-Freq} (double freq\-In)
 \begin{DoxyCompactList}\small\item\em Sets the current wave frequency. \end{DoxyCompactList}\item 
 \hypertarget{classosea_1_1ofreq_1_1_motion_solver_a28190e2b9c937f8889ba37db35069c52}{void \hyperlink{classosea_1_1ofreq_1_1_motion_solver_a28190e2b9c937f8889ba37db35069c52}{calculate\-Outputs} ()}\label{classosea_1_1ofreq_1_1_motion_solver_a28190e2b9c937f8889ba37db35069c52}
@@ -157,24 +155,24 @@ Sets the current wave frequency. This is used in calculating the summations and 
 {\em freq\-In} & The input wave frequency. A double precision floating point value. Used when summing derivatives. \\
 \hline
 \end{DoxyParams}
-\hypertarget{classosea_1_1ofreq_1_1_motion_solver_a0546fbdb4b4c80b1eb8e13c8fb799217}{\index{osea\-::ofreq\-::\-Motion\-Solver@{osea\-::ofreq\-::\-Motion\-Solver}!sum\-Active\-Set@{sum\-Active\-Set}}
+\hypertarget{classosea_1_1ofreq_1_1_motion_solver_a3cb1ad32fc63451422af408f7c07fda6}{\index{osea\-::ofreq\-::\-Motion\-Solver@{osea\-::ofreq\-::\-Motion\-Solver}!sum\-Active\-Set@{sum\-Active\-Set}}
 \index{sum\-Active\-Set@{sum\-Active\-Set}!osea::ofreq::MotionSolver@{osea\-::ofreq\-::\-Motion\-Solver}}
-\subsubsection[{sum\-Active\-Set}]{\setlength{\rightskip}{0pt plus 5cm}cx\-\_\-mat Motion\-Solver\-::sum\-Active\-Set (
+\subsubsection[{sum\-Active\-Set}]{\setlength{\rightskip}{0pt plus 5cm}cx\-\_\-mat $\ast$ Motion\-Solver\-::sum\-Active\-Set (
 \begin{DoxyParamCaption}
 \item[{std\-::vector$<$ {\bf mat\-Force\-Active} $>$}]{list\-Forces}
 \end{DoxyParamCaption}
-)}}\label{classosea_1_1ofreq_1_1_motion_solver_a0546fbdb4b4c80b1eb8e13c8fb799217}
+)}}\label{classosea_1_1ofreq_1_1_motion_solver_a3cb1ad32fc63451422af408f7c07fda6}
 
 
 Sum active forces for each set. 
 
-Sum active forces for each set. 
+Takes the input vector and sums all force objects together to create an aggregate force that is the total of all force objects supplied in the input vector (list\-Forces). If the input vector is empty, the function returns a N\-U\-L\-L pointer. 
 \begin{DoxyParams}{Parameters}
-{\em list\-Forces} & The active force matrix. \\
+{\em list\-Forces} & Vector of \hyperlink{classosea_1_1ofreq_1_1mat_force_active}{mat\-Force\-Active} objects. Vector can be unlimited size. Each entry in the vector is one of the active forces to be added into the total aggregate active force. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-The Sum of active force matrix. 
+The Sum of active force matrix. Variable is returned as pointer. 
 \end{DoxyReturn}
 
 
@@ -183,48 +181,48 @@ Here is the call graph for this function\-:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{classosea_1_1ofreq_1_1_motion_solver_a0546fbdb4b4c80b1eb8e13c8fb799217_cgraph}
+\includegraphics[width=350pt]{classosea_1_1ofreq_1_1_motion_solver_a3cb1ad32fc63451422af408f7c07fda6_cgraph}
 \end{center}
 \end{figure}
 
 
-\hypertarget{classosea_1_1ofreq_1_1_motion_solver_a3b8939bbea9a8a260a022ed175d25d6d}{\index{osea\-::ofreq\-::\-Motion\-Solver@{osea\-::ofreq\-::\-Motion\-Solver}!sum\-Cross\-Set@{sum\-Cross\-Set}}
+\hypertarget{classosea_1_1ofreq_1_1_motion_solver_a791ca06422d61c08bfed2a887791b1bd}{\index{osea\-::ofreq\-::\-Motion\-Solver@{osea\-::ofreq\-::\-Motion\-Solver}!sum\-Cross\-Set@{sum\-Cross\-Set}}
 \index{sum\-Cross\-Set@{sum\-Cross\-Set}!osea::ofreq::MotionSolver@{osea\-::ofreq\-::\-Motion\-Solver}}
-\subsubsection[{sum\-Cross\-Set}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ {\bf mat\-Force\-Cross} $>$ Motion\-Solver\-::sum\-Cross\-Set (
+\subsubsection[{sum\-Cross\-Set}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ {\bf mat\-Force\-Cross} $\ast$ $>$ Motion\-Solver\-::sum\-Cross\-Set (
 \begin{DoxyParamCaption}
 \item[{std\-::vector$<$ {\bf mat\-Force\-Cross} $>$}]{list\-Forces}
 \end{DoxyParamCaption}
-)}}\label{classosea_1_1ofreq_1_1_motion_solver_a3b8939bbea9a8a260a022ed175d25d6d}
+)}}\label{classosea_1_1ofreq_1_1_motion_solver_a791ca06422d61c08bfed2a887791b1bd}
 
 
 Sum cross-\/body forces for each set. 
 
-Sum cross-\/body forces for each set. This gets handled a little differently from reactive forces, as the linked body for the force depends on whether two objects are summed together. Output from this function is a vector of cross-\/body forces. Each entry in the vector contains a cross-\/body force object. 
+This gets handled a little differently from reactive forces, as the linked body for the force depends on whether two objects are summed together. Output from this function is a vector of cross-\/body forces. Each entry in the vector contains a cross-\/body force object. If the input list of forces (list\-Forces) is empty, the function returns a N\-U\-L\-L pointer. 
 \begin{DoxyParams}{Parameters}
 {\em Cross\-Bod\-Mat} & The vector of cross-\/body force matrices. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-A vector of complex matrices, with each entry in the vectors representing a cross-\/body force linked to a specific body. 
+A vector of complex matrices, with each entry in the vectors representing a cross-\/body force linked to a specific body. Returned variable is a pointer. 
 \end{DoxyReturn}
-\hypertarget{classosea_1_1ofreq_1_1_motion_solver_a07eeaf738ebae2ce078de86e61132220}{\index{osea\-::ofreq\-::\-Motion\-Solver@{osea\-::ofreq\-::\-Motion\-Solver}!sum\-Derivative@{sum\-Derivative}}
+\hypertarget{classosea_1_1ofreq_1_1_motion_solver_abe3c2cac5c822e59db5914bf5450d514}{\index{osea\-::ofreq\-::\-Motion\-Solver@{osea\-::ofreq\-::\-Motion\-Solver}!sum\-Derivative@{sum\-Derivative}}
 \index{sum\-Derivative@{sum\-Derivative}!osea::ofreq::MotionSolver@{osea\-::ofreq\-::\-Motion\-Solver}}
-\subsubsection[{sum\-Derivative}]{\setlength{\rightskip}{0pt plus 5cm}cx\-\_\-mat Motion\-Solver\-::sum\-Derivative (
+\subsubsection[{sum\-Derivative}]{\setlength{\rightskip}{0pt plus 5cm}cx\-\_\-mat $\ast$ Motion\-Solver\-::sum\-Derivative (
 \begin{DoxyParamCaption}
-\item[{{\bf mat\-Force\-React}}]{force\-In}
+\item[{{\bf mat\-Force\-React} $\ast$}]{force\-In}
 \end{DoxyParamCaption}
-)}}\label{classosea_1_1ofreq_1_1_motion_solver_a07eeaf738ebae2ce078de86e61132220}
+)}}\label{classosea_1_1ofreq_1_1_motion_solver_abe3c2cac5c822e59db5914bf5450d514}
 
 
-Sum list\-Derivatives for reactive force matrix. 
+Sums all derivatives for the reactive force object entered. 
 
-Sum list\-Derivatives for reactive force matrix. 
+Matrix force objects normally store a separate matrix of coefficients for each derivative. However, to solve for object motions at a given frequency, it is necessary to combine the various derivatives into a single matrix. The function uses a formula to combine the various derivative formulas into a single output matrix. The output matrix is only valid for the specific frequency set at the time of calling this function. If the input object is a N\-U\-L\-L pointer, the function also returns a N\-U\-L\-L pointer. 
 \begin{DoxyParams}{Parameters}
-{\em the\-Reactive\-Force\-Matrix} & The reactive force matrix. \\
+{\em force\-In} & The reactive force matrix. Variable is a pointer to a \hyperlink{classosea_1_1ofreq_1_1mat_force_react}{mat\-Force\-React} object. Variable passed by value. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-T\-Single matrix that is the Sum of Matrices passed in. 
+Single matrix that is the derivative sum of each matrix for each derivative contained within the input object. Returned variable is a pointer. Returned pointer is set to N\-U\-L\-L if input pointer is N\-U\-L\-L. 
 \end{DoxyReturn}
 
 
@@ -233,48 +231,48 @@ Here is the call graph for this function\-:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{classosea_1_1ofreq_1_1_motion_solver_a07eeaf738ebae2ce078de86e61132220_cgraph}
+\includegraphics[width=350pt]{classosea_1_1ofreq_1_1_motion_solver_abe3c2cac5c822e59db5914bf5450d514_cgraph}
 \end{center}
 \end{figure}
 
 
-\hypertarget{classosea_1_1ofreq_1_1_motion_solver_a07a30b3c6011f6e86d71ba03f738c510}{\index{osea\-::ofreq\-::\-Motion\-Solver@{osea\-::ofreq\-::\-Motion\-Solver}!sum\-Derivative@{sum\-Derivative}}
+\hypertarget{classosea_1_1ofreq_1_1_motion_solver_a7e5465b12b38dd33a57b04b5f07aa21d}{\index{osea\-::ofreq\-::\-Motion\-Solver@{osea\-::ofreq\-::\-Motion\-Solver}!sum\-Derivative@{sum\-Derivative}}
 \index{sum\-Derivative@{sum\-Derivative}!osea::ofreq::MotionSolver@{osea\-::ofreq\-::\-Motion\-Solver}}
-\subsubsection[{sum\-Derivative}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<$arma\-::cx\-\_\-mat$>$ osea\-::ofreq\-::\-Motion\-Solver\-::sum\-Derivative (
+\subsubsection[{sum\-Derivative}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ cx\-\_\-mat $\ast$ $>$ Motion\-Solver\-::sum\-Derivative (
 \begin{DoxyParamCaption}
-\item[{std\-::vector$<$ {\bf mat\-Force\-Cross} $>$}]{force\-In}
+\item[{std\-::vector$<$ {\bf mat\-Force\-Cross} $\ast$ $>$}]{force\-In}
 \end{DoxyParamCaption}
-)}}\label{classosea_1_1ofreq_1_1_motion_solver_a07a30b3c6011f6e86d71ba03f738c510}
+)}}\label{classosea_1_1ofreq_1_1_motion_solver_a7e5465b12b38dd33a57b04b5f07aa21d}
 
 
-Sum list\-Derivatives for reactive force matrix. 
+Sums all derivatives for the cross-\/body force objects entered. 
 
-Sum list\-Derivatives for reactive force matrix. 
+Matrix force objects normally store a separate matrix of coefficients for each derivative. However, to solve for object motions at a given frequency, it is necessary to combine the various derivatives into a single matrix. The function uses a formula to combine the various derivative formulas into a single output matrix. The output matrix is only valid for the specific frequency set at the time of calling this function. If the input object is a N\-U\-L\-L pointer, the function also returns a N\-U\-L\-L pointer. For the cross-\/body forces, the function expects a vector of cross-\/body forces. These are all for a single \hyperlink{classosea_1_1ofreq_1_1_body}{Body} object. Each \hyperlink{classosea_1_1ofreq_1_1mat_force_cross}{mat\-Force\-Cross} object in the vector represents a cross-\/body force that depends on the motions of another body. So for N bodies, it is possible for the vector to contain up to N -\/ 1 \hyperlink{classosea_1_1ofreq_1_1mat_force_cross}{mat\-Force\-Cross} objects. 
 \begin{DoxyParams}{Parameters}
-{\em force\-In} & the matrix that contains the set of cross body forces. \\
+{\em force\-In} & The cross-\/body force matrix. Variable is a vector of pointers to \hyperlink{classosea_1_1ofreq_1_1mat_force_cross}{mat\-Force\-Cross} objects. Variable passed by value. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-Single matrix that contains the cross body forces for a single definition. 
+Returns vector of single matrices. Each matrix in the vector is the derivative sum of each matrix for each derivative contained within the input \hyperlink{classosea_1_1ofreq_1_1mat_force_cross}{mat\-Force\-Cross} object. Returned variable is a pointer to a vector of single matrices. Returned pointer is set to N\-U\-L\-L if input pointer is N\-U\-L\-L. 
 \end{DoxyReturn}
-\hypertarget{classosea_1_1ofreq_1_1_motion_solver_a2345f18f82f306010659124421d5fe34}{\index{osea\-::ofreq\-::\-Motion\-Solver@{osea\-::ofreq\-::\-Motion\-Solver}!sum\-React\-Set@{sum\-React\-Set}}
+\hypertarget{classosea_1_1ofreq_1_1_motion_solver_ae30c84547cbbfdf32125b01fc34882e7}{\index{osea\-::ofreq\-::\-Motion\-Solver@{osea\-::ofreq\-::\-Motion\-Solver}!sum\-React\-Set@{sum\-React\-Set}}
 \index{sum\-React\-Set@{sum\-React\-Set}!osea::ofreq::MotionSolver@{osea\-::ofreq\-::\-Motion\-Solver}}
-\subsubsection[{sum\-React\-Set}]{\setlength{\rightskip}{0pt plus 5cm}{\bf mat\-Force\-React} Motion\-Solver\-::sum\-React\-Set (
+\subsubsection[{sum\-React\-Set}]{\setlength{\rightskip}{0pt plus 5cm}{\bf mat\-Force\-React} $\ast$ Motion\-Solver\-::sum\-React\-Set (
 \begin{DoxyParamCaption}
 \item[{std\-::vector$<$ {\bf mat\-Force\-React} $>$}]{list\-Forces}
 \end{DoxyParamCaption}
-)}}\label{classosea_1_1ofreq_1_1_motion_solver_a2345f18f82f306010659124421d5fe34}
+)}}\label{classosea_1_1ofreq_1_1_motion_solver_ae30c84547cbbfdf32125b01fc34882e7}
 
 
 Sum Reactive forces for each set. 
 
-Sum Reactive forces for each set. This iterates through each reactive force in a set and adds the forces together. It respects derivatives in the summation. 
+Sum Reactive forces for each set. This iterates through each reactive force in a set and adds the forces together. It respects derivatives in the summation. If the input list of forces is empty (list\-Forces), the function returns a N\-U\-L\-L pointer. 
 \begin{DoxyParams}{Parameters}
 {\em list\-Forces} & The list of reactive forces associated with each body. This list may be anything from zero to infinite number of entries. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-The Sum of reactive force matrices. 
+The Sum of reactive force matrices. Returned variable is a pointer. 
 \end{DoxyReturn}
 
 

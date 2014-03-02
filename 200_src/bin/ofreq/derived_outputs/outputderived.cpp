@@ -25,14 +25,25 @@
 \*-------------------------------------------------------------------------------------------------------------------*/
 
 #include "outputderived.h"
+#include "outputsbody.h"
 
 using namespace arma;
 using namespace std;
 using namespace osea::ofreq;
 
+//==========================================Section Separator =========================================================
+//Public Functions
+
 //------------------------------------------Function Separator --------------------------------------------------------
 OutputDerived::OutputDerived()
 {
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+OutputDerived::OutputDerived(OutputsBody *input)
+{
+    //Set the pointer to containing OutputsBody.
+    setOutputBody(input);
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
@@ -41,9 +52,21 @@ OutputDerived::~OutputDerived()
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
+void OutputDerived::setOutputBody(OutputsBody *input)
+{
+    pParentBody = input;
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
 std::string OutputDerived::getName()
 {
     return pName;
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+std::string OutputDerived::getClassName()
+{
+    return pClassName;
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
@@ -55,95 +78,95 @@ void OutputDerived::setName(std::string nameIn)
 //------------------------------------------Function Separator --------------------------------------------------------
 vector<Body> &OutputDerived::listBody()
 {
-    return *plistBody;
+    return pParentBody->listBody();
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
 Body &OutputDerived::listBody(int bodIn)
 {
-    return plistBody->at(bodIn);
+    return pParentBody->listBody(bodIn);
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-void OutputDerived::setListBody(vector<Body> &Input)
+vector<SolutionSet> &OutputDerived::listSolutionSet()
 {
-    plistBody = &Input;
+    return pParentBody->listSolutionSet();
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-vector<SolutionSet> &OutputDerived::refSolutionSet()
+SolutionSet &OutputDerived::listSolutionSet(int index)
 {
-    return *plistSolution;
-}
-
-//------------------------------------------Function Separator --------------------------------------------------------
-void OutputDerived::setSolutionSet(vector<SolutionSet>& Input)
-{
-    plistSolution = &Input;
+    return pParentBody->listSolutionSet(index);
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
 vector<double> &OutputDerived::listFreq()
 {
-    return *plistFreq;
+    return pParentBody->listFreq();
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
 double &OutputDerived::listFreq(int index)
 {
-    return plistFreq->at(index);
-}
-
-//------------------------------------------Function Separator --------------------------------------------------------
-void OutputDerived::setListFreq(vector<double>& Input)
-{
-    plistFreq = &Input;
+    return pParentBody->listFreq(index);
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
 vector<double> &OutputDerived::listWaveDir()
 {
-    return *plistWaveDir;
+    return pParentBody->listWaveDir();
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
 double &OutputDerived::listWaveDir(int index)
 {
-    return plistWaveDir->at(index);
+    return pParentBody->listWaveDir(index);
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-void OutputDerived::setListWaveDir(vector<double>& Input)
+double OutputDerived::getCurWaveDir()
 {
-    plistWaveDir = &Input;
+    return pParentBody->getCurWaveDir();
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-int &OutputDerived::getCurWaveDir()
+int OutputDerived::getCurBodyIndex()
 {
-    return *pCurWaveDir;
-}
-
-//------------------------------------------Function Separator --------------------------------------------------------
-void OutputDerived::setCurWaveDir(int &Input)
-{
-    pCurWaveDir = &Input;
-}
-
-//------------------------------------------Function Separator --------------------------------------------------------
-int OutputDerived::getCurBody()
-{
-    return pCurBody;
-}
-
-//------------------------------------------Function Separator --------------------------------------------------------
-void OutputDerived::setCurBody(int Input)
-{
-    pCurBody = Input;
+    return pParentBody->getCurBodyIndex();
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
 int OutputDerived::getCurWaveInd()
 {
-    return *pCurWaveDir;
+    return pParentBody->getCurWaveInd();
 }
+
+
+//==========================================Section Separator =========================================================
+//Protected Functions
+
+//------------------------------------------Function Separator --------------------------------------------------------
+void OutputDerived::addResult(arma::cx_mat* input, int index)
+{
+    //First check if index was specified or not.
+    if (index == -1)
+    {
+        //Index not specified.  Set it to one past the end of the list.
+        index = pParentBody->listResult().size();
+    }
+
+    //Check if requested index is out of bounds.
+    if ((index > pParentBody->listResult().size() - 1) ||
+            (pParentBody->listResult().size() == 0))
+    {
+        //Resize the list
+        pParentBody->listResult().resize(index + 1);
+    }
+
+    //Place result in the list of results
+    pParentBody->getResult(index) = input;
+}
+
+
+//==========================================Section Separator =========================================================
+//Private Functions

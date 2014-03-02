@@ -184,62 +184,70 @@ $(document).ready(function(){initNavTree('motionsolver_8h_source.html','');});
 <div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;<span class="comment"></span>    <span class="keywordtype">void</span> <a class="code" href="classosea_1_1ofreq_1_1_motion_solver.html#a79603cb6fede30d405f247a4d37256c1" title="Add a body to the motion solver set.">addBody</a>(<a class="code" href="classosea_1_1ofreq_1_1mat_body.html">matBody</a> bodIn);</div>
 <div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;</div>
 <div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    <span class="comment">//------------------------------------------Function Separator ----------------------------------------------------</span></div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;<span class="comment"></span>    <a class="code" href="classosea_1_1ofreq_1_1mat_force_react.html">matForceReact</a> <a class="code" href="classosea_1_1ofreq_1_1_motion_solver.html#a2345f18f82f306010659124421d5fe34" title="Sum Reactive forces for each set.">sumReactSet</a>(std::vector&lt;matForceReact&gt; listForces);</div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;</div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    <span class="comment">//------------------------------------------Function Separator ----------------------------------------------------</span></div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;<span class="comment"></span>    std::vector&lt;matForceCross&gt; <a class="code" href="classosea_1_1ofreq_1_1_motion_solver.html#a3b8939bbea9a8a260a022ed175d25d6d" title="Sum cross-body forces for each set.">sumCrossSet</a>(std::vector&lt;matForceCross&gt; listForces);</div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    <span class="comment">//------------------------------------------Function Separator ----------------------------------------------------</span></div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;<span class="comment"></span>    arma::cx_mat <a class="code" href="classosea_1_1ofreq_1_1_motion_solver.html#a0546fbdb4b4c80b1eb8e13c8fb799217" title="Sum active forces for each set.">sumActiveSet</a>(std::vector&lt;matForceActive&gt; listForces);</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;</div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    <span class="comment">//------------------------------------------Function Separator ----------------------------------------------------</span></div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;<span class="comment"></span>    arma::cx_mat <a class="code" href="classosea_1_1ofreq_1_1_motion_solver.html#a07eeaf738ebae2ce078de86e61132220" title="Sum listDerivatives for reactive force matrix.">sumDerivative</a>(<a class="code" href="classosea_1_1ofreq_1_1mat_force_react.html">matForceReact</a> forceIn);</div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;</div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;    <span class="comment">//------------------------------------------Function Separator ----------------------------------------------------</span></div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;<span class="comment"></span>    std::vector&lt;arma::cx_mat&gt; <a class="code" href="classosea_1_1ofreq_1_1_motion_solver.html#a07eeaf738ebae2ce078de86e61132220" title="Sum listDerivatives for reactive force matrix.">sumDerivative</a>(std::vector&lt;matForceCross&gt; forceIn);</div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;</div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;    <span class="comment">//------------------------------------------Function Separator ----------------------------------------------------</span></div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;<span class="comment"></span>    <span class="keywordtype">void</span> <a class="code" href="classosea_1_1ofreq_1_1_motion_solver.html#a5deee421d26ef9729e0a870fd48b4403" title="Sets the current wave frequency.">setWaveFreq</a>(<span class="keywordtype">double</span> freqIn);</div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;</div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;    <span class="comment">//------------------------------------------Function Separator ----------------------------------------------------</span></div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;<span class="comment"></span>    <span class="keywordtype">void</span> <a class="code" href="classosea_1_1ofreq_1_1_motion_solver.html#a28190e2b9c937f8889ba37db35069c52" title="Calculate the Solution.">calculateOutputs</a>();</div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;</div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;    <span class="comment">//------------------------------------------Function Separator ----------------------------------------------------</span></div>
-<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;<span class="comment"></span>    std::vector&lt;arma::cx_mat&gt; &amp;<a class="code" href="classosea_1_1ofreq_1_1_motion_solver.html#a8391c0f67d1d711294f2e6f44363b9bf" title="Get the solution for the solved equation.">listSolution</a>();</div>
-<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;</div>
-<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;    <span class="comment">//------------------------------------------Function Separator ----------------------------------------------------</span></div>
-<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;<span class="comment"></span>    arma::cx_mat &amp;<a class="code" href="classosea_1_1ofreq_1_1_motion_solver.html#a8391c0f67d1d711294f2e6f44363b9bf" title="Get the solution for the solved equation.">listSolution</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> bod);</div>
-<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;</div>
-<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;</div>
-<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;</div>
-<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;<span class="comment">//==========================================Section Separator =========================================================</span></div>
-<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;<span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;</div>
-<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;<span class="comment">//==========================================Section Separator =========================================================</span></div>
-<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;    <span class="keywordtype">double</span> curWaveFrequency; </div>
-<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;    <span class="comment">//Global Matrices</span></div>
-<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;    arma::cx_mat globReactiveMat; </div>
-<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;    arma::cx_mat globActiveMat;   </div>
-<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;    arma::cx_mat globSolnMat;   </div>
-<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;    <span class="comment">//Output solution values</span></div>
-<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;<span class="comment"></span>    std::vector&lt;arma::cx_mat&gt; plistSolution;</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;<span class="comment"></span>    <a class="code" href="classosea_1_1ofreq_1_1mat_force_react.html">matForceReact</a> *<a class="code" href="classosea_1_1ofreq_1_1_motion_solver.html#ae30c84547cbbfdf32125b01fc34882e7" title="Sum Reactive forces for each set.">sumReactSet</a>(std::vector&lt;matForceReact&gt; listForces);</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    <span class="comment">//------------------------------------------Function Separator ----------------------------------------------------</span></div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;<span class="comment"></span>    std::vector&lt;matForceCross *&gt; <a class="code" href="classosea_1_1ofreq_1_1_motion_solver.html#a791ca06422d61c08bfed2a887791b1bd" title="Sum cross-body forces for each set.">sumCrossSet</a>(std::vector&lt;matForceCross&gt; listForces);</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    <span class="comment">//------------------------------------------Function Separator ----------------------------------------------------</span></div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;<span class="comment"></span>    arma::cx_mat *<a class="code" href="classosea_1_1ofreq_1_1_motion_solver.html#a3cb1ad32fc63451422af408f7c07fda6" title="Sum active forces for each set.">sumActiveSet</a>(std::vector&lt;matForceActive&gt; listForces);</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    <span class="comment">//------------------------------------------Function Separator ----------------------------------------------------</span></div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;<span class="comment"></span>    arma::cx_mat *<a class="code" href="classosea_1_1ofreq_1_1_motion_solver.html#abe3c2cac5c822e59db5914bf5450d514" title="Sums all derivatives for the reactive force object entered.">sumDerivative</a>(<a class="code" href="classosea_1_1ofreq_1_1mat_force_react.html">matForceReact</a> *forceIn);</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;    <span class="comment">//------------------------------------------Function Separator ----------------------------------------------------</span></div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;<span class="comment"></span>    std::vector&lt;arma::cx_mat *&gt; <a class="code" href="classosea_1_1ofreq_1_1_motion_solver.html#abe3c2cac5c822e59db5914bf5450d514" title="Sums all derivatives for the reactive force object entered.">sumDerivative</a>(std::vector&lt;matForceCross *&gt; forceIn);</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;    <span class="comment">//------------------------------------------Function Separator ----------------------------------------------------</span></div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;<span class="comment"></span>    <span class="keywordtype">void</span> <a class="code" href="classosea_1_1ofreq_1_1_motion_solver.html#a5deee421d26ef9729e0a870fd48b4403" title="Sets the current wave frequency.">setWaveFreq</a>(<span class="keywordtype">double</span> freqIn);</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;    <span class="comment">//------------------------------------------Function Separator ----------------------------------------------------</span></div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;<span class="comment"></span>    <span class="keywordtype">void</span> <a class="code" href="classosea_1_1ofreq_1_1_motion_solver.html#a28190e2b9c937f8889ba37db35069c52" title="Calculate the Solution.">calculateOutputs</a>();</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;    <span class="comment">//------------------------------------------Function Separator ----------------------------------------------------</span></div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;<span class="comment"></span>    std::vector&lt;arma::cx_mat&gt; &amp;<a class="code" href="classosea_1_1ofreq_1_1_motion_solver.html#a8391c0f67d1d711294f2e6f44363b9bf" title="Get the solution for the solved equation.">listSolution</a>();</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;    <span class="comment">//------------------------------------------Function Separator ----------------------------------------------------</span></div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;<span class="comment"></span>    arma::cx_mat &amp;<a class="code" href="classosea_1_1ofreq_1_1_motion_solver.html#a8391c0f67d1d711294f2e6f44363b9bf" title="Get the solution for the solved equation.">listSolution</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> bod);</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;</div>
 <div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;</div>
-<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;    <span class="comment">//------------------------------------------Function Separator ----------------------------------------------------</span></div>
-<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;    std::vector&lt;matBody&gt; plistBody; </div>
-<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;};</div>
-<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;</div>
-<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;}   <span class="comment">//Namespace ofreq</span></div>
-<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;}   <span class="comment">//Namespace osea</span></div>
-<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;</div>
-<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;<span class="comment">//==========================================Section Separator =========================================================</span></div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;<span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;<span class="comment">//==========================================Section Separator =========================================================</span></div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;    <span class="keywordtype">double</span> curWaveFrequency; </div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;    <span class="comment">//Global Matrices</span></div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;    arma::cx_mat globReactiveMat; </div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;    arma::cx_mat globActiveMat;   </div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;    arma::cx_mat globSolnMat;   </div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;    <span class="comment">//Output solution values</span></div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;<span class="comment"></span>    std::vector&lt;arma::cx_mat&gt; plistSolution;</div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;</div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;    <span class="comment">//------------------------------------------Function Separator ----------------------------------------------------</span></div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;    std::vector&lt;matBody&gt; plistBody; </div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;    <span class="comment">//------------------------------------------Function Separator ----------------------------------------------------</span></div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;<span class="comment"></span>    <span class="keywordtype">int</span> curSumBody;</div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;</div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;    <span class="comment">//------------------------------------------Function Separator ----------------------------------------------------</span></div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;<span class="comment"></span>    arma::cx_mat SumSingle(arma::cx_mat *Input1, arma::cx_mat *Input2, <span class="keywordtype">int</span> ForceType);</div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;</div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;    <span class="comment">//------------------------------------------Function Separator ----------------------------------------------------</span></div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;<span class="comment"></span>    <span class="keywordtype">void</span> DebugMatrix(std::string Name, arma::cx_mat&amp; input);</div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;};</div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;</div>
+<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;}   <span class="comment">//Namespace ofreq</span></div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;}   <span class="comment">//Namespace osea</span></div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;</div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_f391ca716ffc5f73e26bbfbd1c386d7a.html">nicholas</a></li><li class="navelem"><a class="el" href="dir_56714be5f44c632f096dc98161cfe0bc.html">Projects</a></li><li class="navelem"><a class="el" href="dir_a9660f870cd78d147631dbe8401fc122.html">DMS1305 OpenSEA</a></li><li class="navelem"><a class="el" href="dir_57862b7a2e6c493336b5eba4fa7a08ad.html">master</a></li><li class="navelem"><a class="el" href="dir_93879df78e79e3db9dadcce0364173a5.html">200_src</a></li><li class="navelem"><a class="el" href="dir_c68d9c97f52ca4a921fcfe2b9a5c2169.html">bin</a></li><li class="navelem"><a class="el" href="dir_de13d08a2e5fe03c0504c97f3e0a2dbd.html">ofreq</a></li><li class="navelem"><a class="el" href="dir_b2eb6ed7c0aadfa7bb23bf512ca4deb5.html">motion_solver</a></li><li class="navelem"><b>motionsolver.h</b></li>
-    <li class="footer">Generated on Sat Oct 12 2013 10:41:18 for oFreq by
+    <li class="footer">Generated on Sat Mar 1 2014 20:20:36 for oFreq by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.2 </li>
   </ul>

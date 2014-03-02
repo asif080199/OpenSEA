@@ -34,6 +34,9 @@ using namespace osea::ofreq;
 OutputsBody::OutputsBody()
 {
     //Default constructor
+
+    //Create output objects by default.
+    Initialize();
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
@@ -47,12 +50,54 @@ OutputsBody::OutputsBody(vector<Body> &listBod,
     plistSolution = & listSoln;
     plistFreq = & listFreq;
     plistWaveDir = & listWaveDir;
+
+    //Create output objects by default.
+    Initialize();
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
 OutputsBody::~OutputsBody()
 {
     //Default destructor
+
+    //Delete matrix of results
+    this->ClearResult();
+
+    //Delete each of the OutputDerived objects.
+
+    //Delete Global Solution objects.
+    for (unsigned int i = 0; i < plistGlobalSolution.size(); i++)
+        delete plistGlobalSolution[i];
+
+    //Delete Global Motion objects.
+    for (unsigned int i = 0; i < plistGlobalMotion.size(); i++)
+        delete plistGlobalMotion[i];
+
+    //Delete Global Velocity objects.
+    for (unsigned int i = 0; i < plistGlobalVelocity.size(); i++)
+        delete plistGlobalVelocity[i];
+
+    //Delete GLobal Acceleration objects.
+    for (unsigned int i = 0; i < plistGlobalAcceleration.size(); i++)
+        delete plistGlobalAcceleration[i];
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+void OutputsBody::Initialize()
+{
+    //Create the GlobalMotion object.  Only need one.
+    if (plistGlobalMotion.size() == 0)
+        this->addGlobalMotion();
+
+    //Create the GlobalVelocity object.  Only need one.
+    if (plistGlobalVelocity.size() == 0)
+        this->addGlobalVelocity();
+
+    //Create the GlobalAcceleration object.  Only need one.
+    if (plistGlobalAcceleration.size() == 0)
+        this->addGlobalAcceleration();
+
+    //Don't need to add any GlobalSolution objects by default.
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
@@ -65,6 +110,31 @@ void OutputsBody::setListBody(vector<Body> &listIn)
 void OutputsBody::setSolutionSet(vector<SolutionSet> &listIn)
 {
     plistSolution = & listIn;
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+std::vector<SolutionSet> &OutputsBody::listSolutionSet()
+{
+    return *plistSolution;
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+osea::ofreq::SolutionSet &OutputsBody::listSolutionSet(int index)
+{
+    try
+    {
+        return plistSolution->at(index);
+    }
+    catch(int err)
+    {
+        //Add in error handler later
+    }
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+osea::ofreq::SolutionSet &OutputsBody::refCurSolution()
+{
+    return listSolutionSet(pCurBody);
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
@@ -140,334 +210,365 @@ Body &OutputsBody::refCurBody()
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
+std::vector<Body> &OutputsBody::listBody()
+{
+    return *plistBody;
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+Body &OutputsBody::listBody(int bodIn)
+{
+    return plistBody->at(bodIn);
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+void OutputsBody::setCurOutput(OutputDerived *input)
+{
+    pCurOutput = input;
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+OutputDerived &OutputsBody::refCurOutput()
+{
+    return *pCurOutput;
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+OutputDerived *OutputsBody::getCurOutput()
+{
+    return pCurOutput;
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+std::vector<arma::cx_mat*> &OutputsBody::listResult()
+{
+    return plistResult;
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+arma::cx_mat &OutputsBody::listResult(unsigned int index)
+{
+    //Check for out of bounds errors.  Resize if necessary.
+    if ((index > plistResult.size() - 1) ||
+            (plistResult.size() == 0))
+    {
+        //Resize
+        plistResult.resize(index + 1);
+    }
+
+    return *(plistResult.at(index));
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+arma::cx_mat* &OutputsBody::getResult(unsigned int index)
+{
+    //Check for out of bounds errors.  Resize if necessary.
+    if ((index > plistResult.size() - 1) ||
+            (plistResult.size() == 0))
+    {
+        //Resize
+        plistResult.resize(index + 1);
+    }
+
+    return plistResult.at(index);
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+void OutputsBody::ClearResult()
+{   
+    //Clear the array of result data.
+    for (unsigned int i = 0; i < plistResult.size(); i++)
+    {
+        delete plistResult[i];
+    }
+    plistResult.clear();
+    plistResult.resize(0);
+
+    //Set the pointer for the current OutputDerived object back to null.
+    pCurOutput = NULL;
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
 //------------------------------------------Function Separator --------------------------------------------------------
 //Derived Outputs Now Listed Below
 //------------------------------------------Function Separator --------------------------------------------------------
 //------------------------------------------Function Separator --------------------------------------------------------
 
 //------------------------------------------Function Separator --------------------------------------------------------
-int OutputsBody::sizeGlobalMotion()
+std::vector<GlobalMotion*> &OutputsBody::listGlobalMotion()
 {
-    return pGlobalMotion.size();
+    return plistGlobalMotion;
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-GlobalMotion &OutputsBody::refGlobalMotion(int index)
+GlobalMotion &OutputsBody::listGlobalMotion(unsigned int index)
 {
     //Returns the GlobalMotion object specified by the index.
 
     //Check if out of bounds.
-    if ((index > pGlobalMotion.size() - 1) ||
-            (pGlobalMotion.size() == 0))
+    if ((index > plistGlobalMotion.size() - 1) ||
+            (plistGlobalMotion.size() == 0))
     {
         //Resize global motion
-        pGlobalMotion.resize(index + 1);
+        plistGlobalMotion.resize(index + 1);
     }
 
-    return pGlobalMotion.at(index);
+    return *(plistGlobalMotion.at(index));
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-vector<cx_vector> OutputsBody::getGlobalMotion(int index)
+int OutputsBody::calcGlobalMotion(unsigned int index)
 {
-    vector<cx_vector> output;      //Output object
-    cx_mat temp;  //Direct output returned from derived output object.
-    int num;            //Number of equations.  Used to correctly sizing output matrix.
+    int errVal = 0;         //Set error value, initialized with a default value of 0.
 
-    //Get number of equations.
-    num = refCurBody().getEquationCount();
+    //First clear results matrix
+    this->ClearResult();
 
-    //Resize output matrix.
-    output.resize(plistFreq->size());
-
-    //Iterate through each frequency and calculate the derived output for that frequency.
-    for (unsigned int i = 0; i < plistFreq->size(); i++)
+    //Now calculate requested results object.  Check for out of bounds error.
+    if ((index <= plistGlobalMotion.size() - 1) &&
+            (plistGlobalMotion.size() != 0))
     {
-        temp = pGlobalMotion[index].calcOutput(plistFreq->at(i));
-
-        //Assign result to output
-        output[i].resize(num);
-        for (int j = 0; j <= num; j++)
+        //Calc result for each frequency.
+        for (unsigned int i = 0; i < plistFreq->size(); i++)
         {
-            output[i][j] = temp(1,j);
+            try
+            {
+                errVal = listGlobalMotion(index).calcOutput(i);
+                if (errVal != 0)
+                    throw errVal;
+            }
+            catch (int err)
+            {
+                return err;
+            }
         }
     }
 
-    //Write output
-    return output;
+    return errVal;
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-void OutputsBody::addGlobalMotion(GlobalMotion input)
+void OutputsBody::addGlobalMotion(GlobalMotion *input)
 {
     //Adds a global motion object to the list.
-    pGlobalMotion.push_back(input);    
+    input->setOutputBody(this);
 
-    //Add necessary information
-    pGlobalMotion.back().setListBody(*plistBody);
-    pGlobalMotion.back().setSolutionSet(*plistSolution);
-    pGlobalMotion.back().setListFreq(*plistFreq);
-    pGlobalMotion.back().setListWaveDir(*plistWaveDir);
-    pGlobalMotion.back().setCurWaveDir(pCurWaveDir);
-    pGlobalMotion.back().setCurBody(pCurBody);
+    plistGlobalMotion.push_back(input);
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
 void OutputsBody::addGlobalMotion()
 {
-    pGlobalMotion.push_back(GlobalMotion());
+    //Create new global motion object on the stack.
+    GlobalMotion *mot1 = new GlobalMotion(this);
 
-    //Add necessary information
-    pGlobalMotion.back().setListBody(*plistBody);
-    pGlobalMotion.back().setSolutionSet(*plistSolution);
-    pGlobalMotion.back().setListFreq(*plistFreq);
-    pGlobalMotion.back().setListWaveDir(*plistWaveDir);
-    pGlobalMotion.back().setCurWaveDir(pCurWaveDir);
-    pGlobalMotion.back().setCurBody(pCurBody);
+    plistGlobalMotion.push_back(mot1);
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-int OutputsBody::sizeGlobalVelocity()
+std::vector<GlobalVelocity*> &OutputsBody::listGlobalVelocity()
 {
-    return pGlobalVelocity.size();
+    return plistGlobalVelocity;
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-GlobalVelocity &OutputsBody::refGlobalVelocity(int index)
+GlobalVelocity &OutputsBody::listGlobalVelocity(unsigned int index)
 {
     //Returns the GlobalVelocity object specified by the index.
 
     //Check if current index out of bounds.
-    if ((index > pGlobalVelocity.size() - 1) ||
-            (pGlobalVelocity.size() == 0))
+    if ((index > plistGlobalVelocity.size() - 1) ||
+            (plistGlobalVelocity.size() == 0))
     {
-        pGlobalVelocity.resize(index + 1);
+        plistGlobalVelocity.resize(index + 1);
     }
 
     //Write output.
-    return pGlobalVelocity.at(index);
+    return *(plistGlobalVelocity.at(index));
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-vector<cx_vector> OutputsBody::getGlobalVelocity(int index)
+int OutputsBody::calcGlobalVelocity(unsigned int index)
 {
-    vector<cx_vector> output;      //Output object
-    cx_mat temp;  //Direct output returned from derived output object.
-    int num;            //Number of equations.  Used to correctly sizing output matrix.
+    int errVal = 0;         //Set error value, initialized with a default value of 0.
 
-    //Get number of equations.
-    num = refCurBody().getEquationCount();
+    //First clear results matrix
+    this->ClearResult();
 
-    //Resize output matrix.
-    output.resize(plistFreq->size());
-
-    //Iterate through each frequency and calculate the derived output for that frequency.
-    for (unsigned int i = 0; i < plistFreq->size(); i++)
+    //Now calculate requested results object.  Check for out of bounds error.
+    if ((index <= plistGlobalVelocity.size() - 1) &&
+            (plistGlobalVelocity.size() != 0))
     {
-        temp = pGlobalVelocity.at(index).calcOutput(plistFreq->at(i));
-
-        //Assign result to output
-        output[i].resize(num);
-        for (int j = 0; j <= num; j++)
+        //Calc result for each frequency.
+        for (unsigned int i = 0; i < plistFreq->size(); i++)
         {
-            output[i][j] = temp(1,j);
+            try
+            {
+                errVal = listGlobalVelocity(index).calcOutput(i);
+                if (errVal != 0)
+                    throw errVal;
+            }
+            catch (int err)
+            {
+                return err;
+            }
         }
     }
 
-    //Write output
-    return output;
+    return errVal;
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-void OutputsBody::addGlobalVelocity(GlobalVelocity input)
+void OutputsBody::addGlobalVelocity(GlobalVelocity *input)
 {
     //Adds a global motion object to the list.
-    pGlobalVelocity.push_back(input);
-
-    //Add necessary information
-    pGlobalVelocity.back().setListBody(*plistBody);
-    pGlobalVelocity.back().setSolutionSet(*plistSolution);
-    pGlobalVelocity.back().setListFreq(*plistFreq);
-    pGlobalVelocity.back().setListWaveDir(*plistWaveDir);
-    pGlobalVelocity.back().setCurWaveDir(pCurWaveDir);
-    pGlobalVelocity.back().setCurBody(pCurBody);
+    input->setOutputBody(this);
+    plistGlobalVelocity.push_back(input);
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
 void OutputsBody::addGlobalVelocity()
 {
-    pGlobalVelocity.push_back(GlobalVelocity());
+    //Create new GlobalVelocity object
+    GlobalVelocity *vel1 = new GlobalVelocity(this);
 
-    //Add necessary information
-    pGlobalVelocity.back().setListBody(*plistBody);
-    pGlobalVelocity.back().setSolutionSet(*plistSolution);
-    pGlobalVelocity.back().setListFreq(*plistFreq);
-    pGlobalVelocity.back().setListWaveDir(*plistWaveDir);
-    pGlobalVelocity.back().setCurWaveDir(pCurWaveDir);
-    pGlobalVelocity.back().setCurBody(pCurBody);
+    plistGlobalVelocity.push_back(vel1);
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-int OutputsBody::sizeGlobalAcceleration()
+vector<GlobalAcceleration*> &OutputsBody::listGlobalAcceleration()
 {
-    return pGlobalAcceleration.size();
+    return plistGlobalAcceleration;
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-GlobalAcceleration &OutputsBody::refGlobalAcceleration(int index)
+GlobalAcceleration &OutputsBody::listGlobalAcceleration(unsigned int index)
 {
     //Returns the GlobalAcceleration object specified by the index.
 
     //Check if requested index is out of bounds.
-    if ((index > pGlobalAcceleration.size() - 1) ||
-            (pGlobalAcceleration.size() == 0))
+    if ((index > plistGlobalAcceleration.size() - 1) ||
+            (plistGlobalAcceleration.size() == 0))
     {
         //Resize vector
-        pGlobalAcceleration.resize(index + 1);
+        plistGlobalAcceleration.resize(index + 1);
     }
 
     //Write outputs
-    return pGlobalAcceleration.at(index);
+    return *(plistGlobalAcceleration.at(index));
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-vector<cx_vector> OutputsBody::getGlobalAcceleration(int index)
+int OutputsBody::calcGlobalAcceleration(unsigned int index)
 {
-    vector<cx_vector> output;      //Output object
-    cx_mat temp;  //Direct output returned from derived output object.
-    int num;            //Number of equations.  Used to correctly sizing output matrix.
+    int errVal = 0;         //Set error value, initialized with a default value of 0.
 
-    //Get number of equations.
-    num = refCurBody().getEquationCount();
+    //First clear results matrix
+    this->ClearResult();
 
-    //Resize output matrix.
-    output.resize(plistFreq->size());
-
-    //Iterate through each frequency and calculate the derived output for that frequency.
-    for (unsigned int i = 0; i < plistFreq->size(); i++)
+    //Now calculate requested results object.  Check for out of bounds error.
+    if ((index <= plistGlobalAcceleration.size() - 1) &&
+            (plistGlobalAcceleration.size() != 0))
     {
-        temp = pGlobalAcceleration[index].calcOutput(plistFreq->at(i));
-
-        //Assign result to output
-        output[i].resize(num);
-        for (int j = 0; j <= num; j++)
+        //Calc result for each frequency.
+        for (unsigned int i = 0; i < plistFreq->size(); i++)
         {
-            output[i][j] = temp(1,j);
+            try
+            {
+                errVal = listGlobalAcceleration(index).calcOutput(i);
+                if (errVal != 0)
+                    throw errVal;
+            }
+            catch (int err)
+            {
+                return err;
+            }
         }
     }
 
-    //Write output
-    return output;
+    return errVal;
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-void OutputsBody::addGlobalAcceleration(GlobalAcceleration input)
+void OutputsBody::addGlobalAcceleration(GlobalAcceleration *input)
 {
     //Adds a global motion object to the list.
-    pGlobalAcceleration.push_back(input);
-
-    //Add necessary information
-    pGlobalAcceleration.back().setListBody(*plistBody);
-    pGlobalAcceleration.back().setSolutionSet(*plistSolution);
-    pGlobalAcceleration.back().setListFreq(*plistFreq);
-    pGlobalAcceleration.back().setListWaveDir(*plistWaveDir);
-    pGlobalAcceleration.back().setCurWaveDir(pCurWaveDir);
-    pGlobalAcceleration.back().setCurBody(pCurBody);
+    input->setOutputBody(this);
+    plistGlobalAcceleration.push_back(input);
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
 void OutputsBody::addGlobalAcceleration()
 {
-    pGlobalAcceleration.push_back(GlobalAcceleration());
+    GlobalAcceleration *acc1 = new GlobalAcceleration(this);
 
-    //Add necessary information
-    pGlobalAcceleration.back().setListBody(*plistBody);
-    pGlobalAcceleration.back().setSolutionSet(*plistSolution);
-    pGlobalAcceleration.back().setListFreq(*plistFreq);
-    pGlobalAcceleration.back().setListWaveDir(*plistWaveDir);
-    pGlobalAcceleration.back().setCurWaveDir(pCurWaveDir);
-    pGlobalAcceleration.back().setCurBody(pCurBody);
+    plistGlobalAcceleration.push_back(acc1);
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-int OutputsBody::sizeGlobalSolution()
+vector<GlobalSolution*> &OutputsBody::listGlobalSolution()
 {
-    return pGlobalSolution.size();
+    return plistGlobalSolution;
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-GlobalSolution &OutputsBody::refGlobalSolution(int index)
+GlobalSolution &OutputsBody::listGlobalSolution(unsigned int index)
 {
     //Returns the GlobalSolution object specified by the index.
     //Check if requested index is out of bounds
-    if ((index > pGlobalSolution.size() - 1) ||
-            (pGlobalSolution.size() == 0))
+    if ((index > plistGlobalSolution.size() - 1) ||
+            (plistGlobalSolution.size() == 0))
     {
         //Resize
-        pGlobalSolution.resize(index + 1);
+        plistGlobalSolution.resize(index + 1);
     }
 
     //Write output
-    return pGlobalSolution.at(index);
+    return *(plistGlobalSolution.at(index));
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-vector<cx_vector> OutputsBody::getGlobalSolution(int index)
+int OutputsBody::calcGlobalSolution(unsigned int index)
 {
-    vector<cx_vector> output;      //Output object
-    cx_mat temp;  //Direct output returned from derived output object.
-    int num;            //Number of equations.  Used to correctly sizing output matrix.
+    int errVal = 0;         //Set error value, initialized with a default value of 0.
 
-    //Get number of equations.
-    num = refCurBody().getEquationCount();
+    //First clear results matrix
+    this->ClearResult();
 
-    //Resize output matrix.
-    output.resize(plistFreq->size());
-
-    //Iterate through each frequency and calculate the derived output for that frequency.
-    for (unsigned int i = 0; i < plistFreq->size(); i++)
+    //Now calculate requested results object.  Check for out of bounds error.
+    if ((index <= plistGlobalSolution.size() - 1) &&
+            (plistGlobalSolution.size() != 0))
     {
-        temp = pGlobalSolution[index].calcOutput(plistFreq->at(i));
-
-        //Assign result to output
-        output[i].resize(num);
-        for (int j = 0; j <= num; j++)
+        //Calc result for each frequency.
+        for (unsigned int i = 0; i < plistFreq->size(); i++)
         {
-            output[i][j] = temp(1,j);
+            try
+            {
+                errVal = listGlobalSolution(index).calcOutput(i);
+                if (errVal != 0)
+                    throw errVal;
+            }
+            catch (int err)
+            {
+                return err;
+            }
         }
     }
 
-    //Write output
-    return output;
-
-    //Cleanup
+    return errVal;
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-void OutputsBody::addGlobalSolution(GlobalSolution input)
+void OutputsBody::addGlobalSolution(GlobalSolution *input)
 {
     //Adds a global motion object to the list.
-    pGlobalSolution.push_back(input);
-
-    //Add necessary information
-    pGlobalSolution.back().setListBody(*plistBody);
-    pGlobalSolution.back().setSolutionSet(*plistSolution);
-    pGlobalSolution.back().setListFreq(*plistFreq);
-    pGlobalSolution.back().setListWaveDir(*plistWaveDir);
-    pGlobalSolution.back().setCurWaveDir(pCurWaveDir);
-    pGlobalSolution.back().setCurBody(pCurBody);
+    input->setOutputBody(this);
+    plistGlobalSolution.push_back(input);
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
 void OutputsBody::addGlobalSolution()
 {
-    pGlobalSolution.push_back(GlobalSolution());
-
-    //Add necessary information
-    pGlobalSolution.back().setListBody(*plistBody);
-    pGlobalSolution.back().setSolutionSet(*plistSolution);
-    pGlobalSolution.back().setListFreq(*plistFreq);
-    pGlobalSolution.back().setListWaveDir(*plistWaveDir);
-    pGlobalSolution.back().setCurWaveDir(pCurWaveDir);
-    pGlobalSolution.back().setCurBody(pCurBody);
+    GlobalSolution *sol1 = new GlobalSolution(this);
+    plistGlobalSolution.push_back(sol1);
 }

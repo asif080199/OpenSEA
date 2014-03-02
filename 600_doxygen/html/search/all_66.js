@@ -17,8 +17,9 @@ var searchData=
   ['forcecross_5fuser',['ForceCross_user',['../classosea_1_1ofreq_1_1_equationof_motion.html#a3b06b1ff4b792ad3a3d3c0274426d5ed',1,'osea::ofreq::EquationofMotion']]],
   ['forcemass',['ForceMass',['../classosea_1_1ofreq_1_1_equationof_motion.html#a848b45b70d29d793b86a7c1ca8f97ed6',1,'osea::ofreq::EquationofMotion']]],
   ['forcename',['forceName',['../classosea_1_1ofreq_1_1_force.html#af7cab6c2ebbe013f407570136a5cb8e7',1,'osea::ofreq::Force']]],
-  ['forcereact',['ForceReact',['../classosea_1_1ofreq_1_1_force_react.html',1,'osea::ofreq']]],
   ['forcereact',['ForceReact',['../classosea_1_1ofreq_1_1_force_react.html#ac8f8b24f67f93f43ae1bb9c464a2d8d4',1,'osea::ofreq::ForceReact']]],
+  ['forcereact',['ForceReact',['../classosea_1_1ofreq_1_1_force_react.html',1,'osea::ofreq']]],
   ['forcereact_5fhydro',['ForceReact_hydro',['../classosea_1_1ofreq_1_1_equationof_motion.html#a4962df48c786fced4e953e50f1d82a3a',1,'osea::ofreq::EquationofMotion']]],
-  ['forcereact_5fuser',['ForceReact_user',['../classosea_1_1ofreq_1_1_equationof_motion.html#ac1f572e423c09b9e9fa955f52434a8f7',1,'osea::ofreq::EquationofMotion']]]
+  ['forcereact_5fuser',['ForceReact_user',['../classosea_1_1ofreq_1_1_equationof_motion.html#ac1f572e423c09b9e9fa955f52434a8f7',1,'osea::ofreq::EquationofMotion']]],
+  ['func1',['Func1',['../classosea_1_1ofreq_1_1_eqn_rotation.html#aac7de76e4a8da885b4c06f9e694afff1',1,'osea::ofreq::EqnRotation::Func1()'],['../classosea_1_1ofreq_1_1_eqn_translation.html#a147be15e86663c1af76ca2ecaeece82d',1,'osea::ofreq::EqnTranslation::Func1()'],['../classosea_1_1ofreq_1_1_equationof_motion.html#af83fcd0f9089a49f0b36e1af79b66922',1,'osea::ofreq::EquationofMotion::Func1()']]]
 ];

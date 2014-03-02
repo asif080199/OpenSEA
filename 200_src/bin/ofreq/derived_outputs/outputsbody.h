@@ -94,6 +94,7 @@ typedef std::vector< std::complex<double> > cx_vector;
 
 //######################################### Class Separator ###########################################################
 //Forward declarations of classes
+class OutputsBody;
 
 //######################################### Class Separator ###########################################################
 /**
@@ -177,6 +178,15 @@ public:
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
+     * @brief Creates each of the OutputDerived objects in their respective lists.
+     *
+     * Each list of OutputDerived object can contain any number of objects.  The initialize function is called to
+     * generate each of these OutputDerived objects.
+     */
+    void Initialize();
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
      * @brief Sets the list of Body objects to calculate derived outputs for.  Derived outputs are calculated for only
      * one Body object in the list.  The rest are included as reference for cross-body forces.
      * @param listIn The vector of Body objects to assign to this OutputsBody.  Input is passed by reference.  Input
@@ -192,6 +202,37 @@ public:
      * Inputs is held as a constant value, so that it can not be modified by the class.
      */
     void setSolutionSet(std::vector<SolutionSet> &listIn);
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Provides the list of the SolutionSet objects.
+     *
+     * Derived outputs are calculated for only one SolutionSet object in the list.  The rest are included as reference
+     * for cross-body forces.
+     * @return Returns a vector containing the SolutionSet objects.  Variable passed by reference.
+     */
+    std::vector<SolutionSet> &listSolutionSet();
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Provides a single entry from the list of the SolutionSet objects.
+     *
+     * Derived outputs are calculated for only one SolutionSet object in the list.  The rest are included as reference
+     * for cross-body forces.  This implementation of the function only returns a single entry from the list.
+     * @param index Integer.  Specifies the index for which to retrieve the solution set.  If the requested index is
+     * out of bounds, the program will return an error.
+     * @return Returns a single SolutionSet object requested from the list of SolutionSet objects.  Requested variable
+     * is passed by reference.
+     */
+    SolutionSet &listSolutionSet(int index);
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Provides access to the solution object for the current body.  Saves the trouble of trying to remember
+     * which is the current body.
+     * @return Returns the solution object for the current body.  Returned variable passed by reference.
+     */
+    osea::ofreq::SolutionSet &refCurSolution();
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -298,6 +339,112 @@ public:
     Body &refCurBody();
 
     //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Provides direct access to the list of Bodies.
+     * @return Reference to vector of Body objects.  Variable passed by reference.
+     * @sa Body
+     */
+    std::vector<Body> &listBody();
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Direct access to an individual Body from the list of Bodies.
+     * @param bodIn Integer specifying which Body object to access in the list of Bodies.
+     * @return Returns reference to the Body object specified by input bodIn.
+     * @sa listBody()
+     */
+    Body &listBody(int bodIn);
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Sets the pointer to the last OutputDerived object that calculated the results and wrote them for access.
+     *
+     * When a call is made to calculate the outputs of a DerivedOutput object, that object writes its results to the
+     * Results storage in the OutputsBody.  The pointer is then set to that OutputDerived object.  This is in case
+     * you need to access the OutputDerived object for any reason.  You don't need to remember which object did the
+     * calculation.  You can just access the object.
+     * @param input Pointer to the OutputDerived object that performed the last results calculation.
+     */
+    void setCurOutput(OutputDerived *input);
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Provides direct access to the last OutputDerived object that calculated the results.
+     *
+     * When a call is made to calculate the outputs of a DerivedOutput object, that object writes its results to the
+     * Results storage in the OutputsBody.  The pointer is then set to that OutputDerived object.  This is in case
+     * you need to access the OutputDerived object for any reason.  You don't need to remember which object did the
+     * calculation.  You can just access the object.
+     * @return Returns the OutputDerived object that performed the last calculation.  Variable passed by reference.
+     */
+    OutputDerived &refCurOutput();
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Provides direct access to the last OutputDerived object that calculated the results.
+     *
+     * When a call is made to calculate the outputs of a DerivedOutput object, that object writes its results to the
+     * Results storage in the OutputsBody.  The pointer is then set to that OutputDerived object.  This is in case
+     * you need to access the OutputDerived object for any reason.  You don't need to remember which object did the
+     * calculation.  You can just access the object.
+     * @return Returns a pointer to the OutputDerived object that performed the last calculation.  Pointer passed
+     * by value.
+     */
+    OutputDerived *getCurOutput();
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief The results from calculation of a DerivedOutput.
+     *
+     * When a call is made to calculate a DerivedOutput object, the object stores the results of its calculation in
+     * the results matrix.  Those results can be accessed through this method.  This method is also used by the
+     * DerivedOutput object to write the results.  DerivedOutput object automatically resizes the output buffer as
+     * needed.  The output buffer is a vector storing pointers to matrices of complex numbers.
+     * @return Returns direct access to the stored results matrix.  Returned variable is a vector storing pointers
+     * to matrices of complex numbers.  matrix of undetermined size.  Returned variable is passed by reference.
+     */
+    std::vector<arma::cx_mat*> &listResult();
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief The results from calculation of a DerivedOutput.
+     *
+     * When a call is made to calculate a DerivedOutput object, the object stores the results of its calculation in
+     * the results matrix.  Those results can be accessed through this method.  This method is also used by the
+     * DerivedOutput object to write the results.  DerivedOutput object automatically resizes the output buffer as
+     * needed.  The output buffer is a vector storing pointers to matrices of complex numbers.
+     * @param index Integer input that specifies which matrix to retrieve from the list of results.  Most commonly,
+     * the index represents the index of a wave frequency from the list of wave frequencies.  (i.e.  The list is
+     * organized by wave frequencies.)
+     * @return Returns direct access to the stored results matrix.  Returned variable is a matrix of complex numbers.
+     * Matrix of undetermined size.  Returned variable is passed by reference.
+     */
+    arma::cx_mat &listResult(unsigned int index);
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief The results from calculation of a DerivedOutput.
+     *
+     * When a call is made to calculate a DerivedOutput object, the object stores the results of its calculation in
+     * the results matrix.  Those results can be accessed through this method.  This method is also used by the
+     * DerivedOutput object to write the results.  DerivedOutput object automatically resizes the output buffer as
+     * needed.  The output buffer is a vector storing pointers to matrices of complex numbers.
+     * @param index Integer input that specifies which matrix to retrieve from the list of results.
+     * @return Returns a pointer to the stored results matrix.  Returned variable is a pointer to a matrix of
+     * complex numbers.  Matrix of undetermined size.  Returned variable is passed by reference.
+     */
+    arma::cx_mat* &getResult(unsigned int index);
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Clears all calculated results.
+     *
+     * Clears the calculated results from all internal storage.  And removes any pointers to the DerivedOutput object
+     * that calculated the result.  The DerivedOutput object itself is not deleted.
+     */
+    void ClearResult();
+
+    //------------------------------------------Function Separator ----------------------------------------------------
     //------------------------------------------Function Separator ----------------------------------------------------
     //Derived Outputs Now Listed Below
     //------------------------------------------Function Separator ----------------------------------------------------
@@ -305,11 +452,12 @@ public:
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
-     * @brief returns the number of entries for the vector of GlobalMotion outputs.
-     * @return Integer.  Returns the number of entries for the vector of GlobalMotion outputs.  Variable passed by
-     * value.
+     * @brief Returns the list of GlobalMotion objects.
+     *
+     * @return Returns a vector of pointers to each of the global motion objects.  Returned variable passed by
+     * reference.
      */
-    int sizeGlobalMotion();
+    std::vector<GlobalMotion*> &listGlobalMotion();
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -320,29 +468,32 @@ public:
      * @return Returns the GlobalMotion object from the list of GlobalMotion objects. Returned variable is passed
      * by reference.  Returns only the object specified by the input index.
      */
-    GlobalMotion &refGlobalMotion(int index = 0);
+    GlobalMotion &listGlobalMotion(unsigned int index);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
-     * @brief Calculates the GlobalMotion object from the list of GlobalMotion objects and returns the output.
-     * @sa GlobalMotion
+     * @brief Calculates the GlobalMotion object from the list of GlobalMotion objects.
+     *
+     * Outputs from calculation is written to the results matrix.  You can retrieve the results from the calculation
+     * by use of the getResult() function.  Calculating any other DerivedOutput will erase your results from the
+     * Results matrix and you will need to recalculate them.
      * @param index The index of which GlobalMotion object to retrieve from the list of objects.  For this Derived
      * Output, there is only one GlobalMotion object per OutputsBody.  The default value selects this object.
-     * @return Returns a vector of vectors, which is the GlobalMotion Results.  Each row in the vector represents
-     * a wave frequency.  Each entry in the vector for that frequency represents a result for one of the degrees
-     * of freedom.  All entries are complex numbers.  Returned variable is passed by value.  Value is not stored in
-     * memory and must be calculated new each time method is called.
+     * @return Returns an integer for output.  This integer is not the calculation result.  It reports on whether the
+     * calculation is successful.  A returned value of zero (0) means a successful calculation.  Other returned
+     * values are error codes, each with their own meaning.
+     * @sa GlobalMotion
      */
-    std::vector<cx_vector> getGlobalMotion(int index = 0);
+    int calcGlobalMotion(unsigned int index = 0);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
      * @brief Adds a new GlobalMotion object to the list of GlobalMotion objects.  This version sets the new
      * GlobalMotion object equal to the information passed in.
-     * @param input The new GlobalMotion object to add to the list of GlobalMotion objects.  Variable is passed by
-     * value.
+     * @param input Pointer to the new GlobalMotion object to add to the list of GlobalMotion objects.  Pointer is
+     * passed by value.
      */
-    void addGlobalMotion(GlobalMotion input);
+    void addGlobalMotion(GlobalMotion *input);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -353,11 +504,28 @@ public:
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
-     * @brief returns the number of entries for the vector of GlobalVelocity outputs.
-     * @return Integer.  Returns the number of entries for the vector of GlobalVelocity outputs.  Variable passed by
-     * value.
+     * @brief Calculates the GlobalVelocity object from the list of GlobalVelocity objects.
+     *
+     * Outputs from calculation is written to the results matrix.  You can retrieve the results from the calculation
+     * by use of the getResult() function.  Calculating any other DerivedOutput will erase your results from the
+     * Results matrix and you will need to recalculate them.
+     * @param index The index of which GlobalVelocity object to retrieve from the list of objects.  For this Derived
+     * Output, there is only one GlobalVelocity object per OutputsBody.  The default value selects this object.
+     * @return Returns an integer for output.  This integer is not the calculation result.  It reports on whether the
+     * calculation is successful.  A returned value of zero (0) means a successful calculation.  Other returned
+     * values are error codes, each with their own meaning.
+     * @sa GlobalVelocity
      */
-    int sizeGlobalVelocity();
+    int calcGlobalVelocity(unsigned int index = 0);
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Returns the list of GlobalVelocity objects.
+     *
+     * @return Returns a vector of pointers to each of the global motion objects.  Returned variable passed by
+     * reference.
+     */
+    std::vector<GlobalVelocity*> &listGlobalVelocity();
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -368,29 +536,16 @@ public:
      * @return Returns the GlobalVelocity object from the list of GlobalVelocity objects. Returned variable is passed
      * by reference.  Returns only the object specified by the input index.
      */
-    GlobalVelocity &refGlobalVelocity(int index = 0);
-
-    //------------------------------------------Function Separator ----------------------------------------------------
-    /**
-     * @brief Calculates the GlobalVelocity object from the list of GlobalVelocity objects and returns the output.
-     * @sa GlobalVelocity
-     * @param index The index of which GlobalVelocity object to retrieve from the list of objects.  For this Derived
-     * Output, there is only one GlobalVelocity object per OutputsBody.  The default value selects this object.
-     * @return Returns a vector of vectors, which is the GlobalVelocity Results.  Each row in the vector represents
-     * a wave frequency.  Each entry in the vector for that frequency represents a result for one of the degrees
-     * of freedom.  All entries are complex numbers.  Returned variable is passed by value.  Value is not stored in
-     * memory and must be calculated new each time method is called.
-     */
-    std::vector<cx_vector> getGlobalVelocity(int index = 0);
+    GlobalVelocity &listGlobalVelocity(unsigned int index);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
      * @brief Adds a new GlobalVelocity object to the list of GlobalVelocity objects.  This version sets the new
      * GlobalVelocity object equal to the information passed in.
-     * @param input The new GlobalVelocity object to add to the list of GlobalVelocity objects.  Variable is passed by
-     * value.
+     * @param input Pointer to the new GlobalVelocity object to add to the list of GlobalVelocity objects.
+     * Pointer is passed by value.
      */
-    void addGlobalVelocity(GlobalVelocity input);
+    void addGlobalVelocity(GlobalVelocity *input);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -401,11 +556,28 @@ public:
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
-     * @brief returns the number of entries for the vector of GlobalAcceleration outputs.
-     * @return Integer.  Returns the number of entries for the vector of GlobalAcceleration outputs.  Variable passed by
-     * value.
+     * @brief Calculates the GlobalAcceleration object from the list of GlobalAcceleration objects.
+     *
+     * Outputs from calculation is written to the results matrix.  You can retrieve the results from the calculation
+     * by use of the getResult() function.  Calculating any other DerivedOutput will erase your results from the
+     * Results matrix and you will need to recalculate them.
+     * @param index The index of which GlobalAcceleration object to retrieve from the list of objects.  For this Derived
+     * Output, there is only one GlobalAcceleration object per OutputsBody.  The default value selects this object.
+     * @return Returns an integer for output.  This integer is not the calculation result.  It reports on whether the
+     * calculation is successful.  A returned value of zero (0) means a successful calculation.  Other returned
+     * values are error codes, each with their own meaning.
+     * @sa GlobalAcceleration
      */
-    int sizeGlobalAcceleration();
+    int calcGlobalAcceleration(unsigned int index = 0);
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Returns the list of GlobalAcceleration objects.
+     *
+     * @return Returns a vector of pointers to each of the global motion objects.  Returned variable passed by
+     * reference.
+     */
+    std::vector<GlobalAcceleration *> &listGlobalAcceleration();
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -416,29 +588,16 @@ public:
      * @return Returns the GlobalAcceleration object from the list of GlobalAcceleration objects. Returned variable is passed
      * by reference.  Returns only the object specified by the input index.
      */
-    GlobalAcceleration &refGlobalAcceleration(int index = 0);
-
-    //------------------------------------------Function Separator ----------------------------------------------------
-    /**
-     * @brief Calculates the GlobalAcceleration object from the list of GlobalAcceleration objects and returns the output.
-     * @sa GlobalAcceleration
-     * @param index The index of which GlobalAcceleration object to retrieve from the list of objects.  For this Derived
-     * Output, there is only one GlobalAcceleration object per OutputsBody.  The default value selects this object.
-     * @return Returns a vector of vectors, which is the GlobalAcceleration Results.  Each row in the vector represents
-     * a wave frequency.  Each entry in the vector for that frequency represents a result for one of the degrees
-     * of freedom.  All entries are complex numbers.  Returned variable is passed by value.  Value is not stored in
-     * memory and must be calculated new each time method is called.
-     */
-    std::vector<cx_vector> getGlobalAcceleration(int index = 0);
+    GlobalAcceleration &listGlobalAcceleration(unsigned int index);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
      * @brief Adds a new GlobalAcceleration object to the list of GlobalAcceleration objects.  This version sets the new
      * GlobalAcceleration object equal to the information passed in.
-     * @param input The new GlobalAcceleration object to add to the list of GlobalAcceleration objects.  Variable is
-     * passed by value.
+     * @param input Pointer to the new GlobalAcceleration object to add to the list of GlobalAcceleration objects.
+     * Pointer is passed by value.
      */
-    void addGlobalAcceleration(GlobalAcceleration input);
+    void addGlobalAcceleration(GlobalAcceleration *input);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -449,11 +608,28 @@ public:
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
-     * @brief returns the number of entries for the vector of GlobalSolution outputs.
-     * @return Integer.  Returns the number of entries for the vector of GlobalSolution outputs.  Variable passed by
-     * value.
+     * @brief Calculates the GlobalSolution object from the list of GlobalSolution objects.
+     *
+     * Outputs from calculation is written to the results matrix.  You can retrieve the results from the calculation
+     * by use of the getResult() function.  Calculating any other DerivedOutput will erase your results from the
+     * Results matrix and you will need to recalculate them.
+     * @param index The index of which GlobalSolution object to retrieve from the list of objects.  For this Derived
+     * Output, there is only one GlobalSolution object per OutputsBody.  The default value selects this object.
+     * @return Returns an integer for output.  This integer is not the calculation result.  It reports on whether the
+     * calculation is successful.  A returned value of zero (0) means a successful calculation.  Other returned
+     * values are error codes, each with their own meaning.
+     * @sa GlobalSolution
      */
-    int sizeGlobalSolution();
+    int calcGlobalSolution(unsigned int index = 0);
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Returns the list of GlobalSolution objects.
+     *
+     * @return Returns a vector of pointers to each of the global motion objects.  Returned variable passed by
+     * reference.
+     */
+    std::vector<GlobalSolution*> &listGlobalSolution();
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -464,29 +640,16 @@ public:
      * @return Returns the GlobalSolution object from the list of GlobalSolution objects. Returned variable is passed
      * by reference.  Returns only the object specified by the input index.
      */
-    GlobalSolution &refGlobalSolution(int index = 0);
-
-    //------------------------------------------Function Separator ----------------------------------------------------
-    /**
-     * @brief Calculates the GlobalSolution object from the list of GlobalSolution objects and returns the output.
-     * @sa GlobalSolution
-     * @param index The index of which GlobalSolution object to retrieve from the list of objects.  For this Derived
-     * Output, there is only one GlobalSolution object per OutputsBody.  The default value selects this object.
-     * @return Returns a vector of vectors, which is the GlobalSolution Results.  Each row in the vector represents
-     * a wave frequency.  Each entry in the vector for that frequency represents a result for one of the degrees
-     * of freedom.  All entries are complex numbers.  Returned variable is passed by value.  Value is not stored in
-     * memory and must be calculated new each time method is called.
-     */
-    std::vector<cx_vector> getGlobalSolution(int index = 0);
+    GlobalSolution &listGlobalSolution(unsigned int index);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
      * @brief Adds a new GlobalSolution object to the list of GlobalSolution objects.  This version sets the new
      * GlobalSolution object equal to the information passed in.
-     * @param input The new GlobalSolution object to add to the list of GlobalSolution objects.  Variable is
-     * passed by value.
+     * @param input Pointer to the new GlobalSolution object to add to the list of GlobalSolution objects.
+     * Pointer is passed by value.
      */
-    void addGlobalSolution(GlobalSolution input);
+    void addGlobalSolution(GlobalSolution *input);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -539,6 +702,23 @@ private:
     int pCurBody;
 
     //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Pointer to whichever was the last output object to generate a result set.
+     *
+     * This may prove useful to find any information related to which OutputDerived object actually generated the
+     * result.
+     */
+    OutputDerived *pCurOutput;
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Matrix of results calculated by one of the DerivedOutput objects.
+     *
+     * This matrix is used to specifically store results that require complex data storage.
+     */
+    std::vector<arma::cx_mat*> plistResult;
+
+    //------------------------------------------Function Separator ----------------------------------------------------
     //------------------------------------------Function Separator ----------------------------------------------------
     //Derived Outputs Now Listed Below
     //------------------------------------------Function Separator ----------------------------------------------------
@@ -548,26 +728,26 @@ private:
     /**
      * @brief The list of GlobalMotion objects.  Records the amplitude of motions for the Body.
      */
-    std::vector<GlobalMotion> pGlobalMotion;
+    std::vector<GlobalMotion*> plistGlobalMotion;
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
      * @brief The list of GlobalVelocity objects.  Records the velocity of motions for the Body.
      */
-    std::vector<GlobalVelocity> pGlobalVelocity;
+    std::vector<GlobalVelocity*> plistGlobalVelocity;
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
      * @brief The list of GlobalAcceleration objects.  Records the acceleration of motions for the Body.
      */
-    std::vector<GlobalAcceleration> pGlobalAcceleration;
+    std::vector<GlobalAcceleration*> plistGlobalAcceleration;
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
      * @brief The list of GlobalSolution objects.  Records the output of any derivative of solve motion amplitude
      * for the Body.
      */
-    std::vector<GlobalSolution> pGlobalSolution;
+    std::vector<GlobalSolution*> plistGlobalSolution;
 
 };
 

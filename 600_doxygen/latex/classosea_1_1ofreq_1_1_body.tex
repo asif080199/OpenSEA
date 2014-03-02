@@ -7,8 +7,7 @@
 
 
 
-Inheritance diagram for osea\-:\-:ofreq\-:\-:Body\-:
-\nopagebreak
+Inheritance diagram for osea\-:\-:ofreq\-:\-:Body\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -17,8 +16,7 @@ Inheritance diagram for osea\-:\-:ofreq\-:\-:Body\-:
 \end{figure}
 
 
-Collaboration diagram for osea\-:\-:ofreq\-:\-:Body\-:
-\nopagebreak
+Collaboration diagram for osea\-:\-:ofreq\-:\-:Body\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -124,7 +122,7 @@ arma\-::cx\-\_\-mat \& \hyperlink{classosea_1_1ofreq_1_1_body_ae799af5531c353818
 \begin{DoxyCompactList}\small\item\em Get the solution matrix for the body. \end{DoxyCompactList}\item 
 \hyperlink{classosea_1_1ofreq_1_1_body}{Body} \hyperlink{classosea_1_1ofreq_1_1_body_a370dc9a5702d93d9295a9618ebdef456}{Copy} ()
 \begin{DoxyCompactList}\small\item\em Copies the body object, complete with all current data. \end{DoxyCompactList}\item 
-std\-::vector$<$ \hyperlink{classosea_1_1ofreq_1_1_force_active}{Force\-Active} $\ast$ $>$ \hyperlink{classosea_1_1ofreq_1_1_body_acc646c06517d67b4d8dba821b5f87d8e}{list\-Force\-Active\-\_\-user} ()
+std\-::vector$<$ \hyperlink{classosea_1_1ofreq_1_1_force_active}{Force\-Active} $\ast$ $>$ \& \hyperlink{classosea_1_1ofreq_1_1_body_ab9373ca18d09e89a2ba535c66fa92760}{list\-Force\-Active\-\_\-user} ()
 \begin{DoxyCompactList}\small\item\em The list of active user forces. \end{DoxyCompactList}\item 
 \hyperlink{classosea_1_1ofreq_1_1_force_active}{Force\-Active} $\ast$ \hyperlink{classosea_1_1ofreq_1_1_body_ad55994a87e95520959a2d236e02168ea}{list\-Force\-Active\-\_\-user} (int force\-In)
 \begin{DoxyCompactList}\small\item\em A single active user force. \end{DoxyCompactList}\item 
@@ -164,10 +162,10 @@ std\-::vector$<$ std\-::string $>$ \& \hyperlink{classosea_1_1ofreq_1_1_body_abc
 \begin{DoxyCompactList}\small\item\em The list of names of linked bodies for hydro cross-\/body forces. This is a list of names of other bodies that a cross-\/body force references. This corresponds to the vector list\-Force\-Cross\-\_\-hydro. The indices of the two vectors should match. So that when a force gets added at index 5 in the list\-Force\-Cross\-\_\-hydro, it should have a matching entry at index 5 in list\-Named\-Link\-\_\-hydro. The list of names only is a temporary list used during the input stage of bodies. This is required because the linked body may name a body which is not yet read from the input file. Thus, the body is not currently defined. Once all Bodies are defined, the \hyperlink{classosea_1_1ofreq_1_1_system}{System} object calls a function to read through each name in the list and assign corresponding pointers in the list\-Linked\-Body\-\_\-hydro. \end{DoxyCompactList}\item 
 std\-::string \& \hyperlink{classosea_1_1ofreq_1_1_body_ad01b96bf575dde9f75f489c7118ca574}{list\-Named\-Link\-\_\-hydro} (unsigned int var\-In)
 \begin{DoxyCompactList}\small\item\em The list of names of linked bodies for hydro cross-\/body forces. This is a list of names of other bodies that a cross-\/body force references. This corresponds to the vector list\-Force\-Cross\-\_\-hydro. The indices of the two vectors should match. So that when a force gets added at index 5 in the list\-Force\-Cross\-\_\-hydro, it should have a matching entry at index 5 in list\-Named\-Link\-\_\-hydro. The list of names only is a temporary list used during the input stage of bodies. This is required because the linked body may name a body which is not yet read from the input file. Thus, the body is not currently defined. Once all Bodies are defined, the \hyperlink{classosea_1_1ofreq_1_1_system}{System} object calls a function to read through each name in the list and assign corresponding pointers in the list\-Linked\-Body\-\_\-hydro. \end{DoxyCompactList}\item 
-void \hyperlink{classosea_1_1ofreq_1_1_body_a8bbac7bdd98587b2d1cdab13f82f3d63}{set\-Motion\-Model} (std\-::string model\-Name)
-\begin{DoxyCompactList}\small\item\em Sets the name of the motion model for lookup later. \end{DoxyCompactList}\item 
-std\-::string \hyperlink{classosea_1_1ofreq_1_1_body_ab4340cac445ae26ae751a08c35155386}{get\-Motion\-Model} ()
-\begin{DoxyCompactList}\small\item\em Gets the name of the motion model. \end{DoxyCompactList}\item 
+void \hyperlink{classosea_1_1ofreq_1_1_body_a25b6fa24ac6237272494a7f74a348145}{set\-Motion\-Model} (\hyperlink{classosea_1_1ofreq_1_1_motion_model}{ofreq\-::\-Motion\-Model} \&model\-In)
+\begin{DoxyCompactList}\small\item\em Sets the motion model for lookup later. \end{DoxyCompactList}\item 
+\hyperlink{classosea_1_1ofreq_1_1_motion_model}{ofreq\-::\-Motion\-Model} \& \hyperlink{classosea_1_1ofreq_1_1_body_a00aa77588d908d6df47a923dc8bf8331}{get\-Motion\-Model} ()
+\begin{DoxyCompactList}\small\item\em Gets the motion model. \end{DoxyCompactList}\item 
 int \hyperlink{classosea_1_1ofreq_1_1_body_a07a8f186c02f0d5bad4beded83949571}{get\-Equation\-Count} ()
 \begin{DoxyCompactList}\small\item\em Gets the number of equations used in the body. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Additional Inherited Members}
@@ -288,6 +286,18 @@ Gets the number of equations used in the body.
 Gets the number of equations used in the body. \begin{DoxyReturn}{Returns}
 Integer number representing the number of equations used in the body. 
 \end{DoxyReturn}
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classosea_1_1ofreq_1_1_body_a07a8f186c02f0d5bad4beded83949571_cgraph}
+\end{center}
+\end{figure}
+
+
 \hypertarget{classosea_1_1ofreq_1_1_body_ac34e65deb4894bd5c2b5d4089be0dcb0}{\index{osea\-::ofreq\-::\-Body@{osea\-::ofreq\-::\-Body}!get\-Heading@{get\-Heading}}
 \index{get\-Heading@{get\-Heading}!osea::ofreq::Body@{osea\-::ofreq\-::\-Body}}
 \subsubsection[{get\-Heading}]{\setlength{\rightskip}{0pt plus 5cm}double Body\-::get\-Heading (
@@ -424,19 +434,19 @@ Returns the mass moment of inertia on the Z\-Z axis for the body.
 \begin{DoxyReturn}{Returns}
 Returns the mass moment of inertia on the Z\-Z axis for the body. Output is in units of kilogram-\/m$^\wedge$2. 
 \end{DoxyReturn}
-\hypertarget{classosea_1_1ofreq_1_1_body_ab4340cac445ae26ae751a08c35155386}{\index{osea\-::ofreq\-::\-Body@{osea\-::ofreq\-::\-Body}!get\-Motion\-Model@{get\-Motion\-Model}}
+\hypertarget{classosea_1_1ofreq_1_1_body_a00aa77588d908d6df47a923dc8bf8331}{\index{osea\-::ofreq\-::\-Body@{osea\-::ofreq\-::\-Body}!get\-Motion\-Model@{get\-Motion\-Model}}
 \index{get\-Motion\-Model@{get\-Motion\-Model}!osea::ofreq::Body@{osea\-::ofreq\-::\-Body}}
-\subsubsection[{get\-Motion\-Model}]{\setlength{\rightskip}{0pt plus 5cm}string Body\-::get\-Motion\-Model (
+\subsubsection[{get\-Motion\-Model}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Motion\-Model} \& Body\-::get\-Motion\-Model (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)}}\label{classosea_1_1ofreq_1_1_body_ab4340cac445ae26ae751a08c35155386}
+)}}\label{classosea_1_1ofreq_1_1_body_a00aa77588d908d6df47a923dc8bf8331}
 
 
-Gets the name of the motion model. 
+Gets the motion model. 
 
-Gets std\-::string output that is the name of the motion model assigned to this body. \begin{DoxyReturn}{Returns}
-std\-::string output that is the name of the motion model assigned to this body. 
+Returns the motion model object used by this body object. \begin{DoxyReturn}{Returns}
+Returns Motin\-Model object. Variable passed by reference. 
 \end{DoxyReturn}
 \hypertarget{classosea_1_1ofreq_1_1_body_a09987e449c77ba11fb66cf81de88220a}{\index{osea\-::ofreq\-::\-Body@{osea\-::ofreq\-::\-Body}!get\-Posn@{get\-Posn}}
 \index{get\-Posn@{get\-Posn}!osea::ofreq::Body@{osea\-::ofreq\-::\-Body}}
@@ -607,13 +617,13 @@ A single active hydrodynamic force. A pointer directing to the active hydrodynam
 \begin{DoxyReturn}{Returns}
 A single pointer to the user active forces requested by parameter force\-In. Pointer passed by value. 
 \end{DoxyReturn}
-\hypertarget{classosea_1_1ofreq_1_1_body_acc646c06517d67b4d8dba821b5f87d8e}{\index{osea\-::ofreq\-::\-Body@{osea\-::ofreq\-::\-Body}!list\-Force\-Active\-\_\-user@{list\-Force\-Active\-\_\-user}}
+\hypertarget{classosea_1_1ofreq_1_1_body_ab9373ca18d09e89a2ba535c66fa92760}{\index{osea\-::ofreq\-::\-Body@{osea\-::ofreq\-::\-Body}!list\-Force\-Active\-\_\-user@{list\-Force\-Active\-\_\-user}}
 \index{list\-Force\-Active\-\_\-user@{list\-Force\-Active\-\_\-user}!osea::ofreq::Body@{osea\-::ofreq\-::\-Body}}
-\subsubsection[{list\-Force\-Active\-\_\-user}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ {\bf Force\-Active} $\ast$ $>$ Body\-::list\-Force\-Active\-\_\-user (
+\subsubsection[{list\-Force\-Active\-\_\-user}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ {\bf Force\-Active} $\ast$ $>$ \& Body\-::list\-Force\-Active\-\_\-user (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)}}\label{classosea_1_1ofreq_1_1_body_acc646c06517d67b4d8dba821b5f87d8e}
+)}}\label{classosea_1_1ofreq_1_1_body_ab9373ca18d09e89a2ba535c66fa92760}
 
 
 The list of active user forces. 
@@ -872,6 +882,18 @@ Implements the method \hyperlink{classosea_1_1ofreq_1_1_body_a4201150aa57d9d6f3a
 \begin{DoxyReturn}{Returns}
 Returns the mass matrix for the body, as a single matrix. 
 \end{DoxyReturn}
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classosea_1_1ofreq_1_1_body_acb2895e81a595c7d168db48ff5dc766c_icgraph}
+\end{center}
+\end{figure}
+
+
 \hypertarget{classosea_1_1ofreq_1_1_body_ad4580795d6db4b4ffd23db2a21ace9c7}{\index{osea\-::ofreq\-::\-Body@{osea\-::ofreq\-::\-Body}!operator==@{operator==}}
 \index{operator==@{operator==}!osea::ofreq::Body@{osea\-::ofreq\-::\-Body}}
 \subsubsection[{operator==}]{\setlength{\rightskip}{0pt plus 5cm}bool Body\-::operator== (
@@ -1133,20 +1155,20 @@ Sets the Moment of Inertia Z\-Z (Izz)
 {\em new\-Z\-Z} & The double passed in sets moment\-Of\-Inertia\-Z\-Z. \\
 \hline
 \end{DoxyParams}
-\hypertarget{classosea_1_1ofreq_1_1_body_a8bbac7bdd98587b2d1cdab13f82f3d63}{\index{osea\-::ofreq\-::\-Body@{osea\-::ofreq\-::\-Body}!set\-Motion\-Model@{set\-Motion\-Model}}
+\hypertarget{classosea_1_1ofreq_1_1_body_a25b6fa24ac6237272494a7f74a348145}{\index{osea\-::ofreq\-::\-Body@{osea\-::ofreq\-::\-Body}!set\-Motion\-Model@{set\-Motion\-Model}}
 \index{set\-Motion\-Model@{set\-Motion\-Model}!osea::ofreq::Body@{osea\-::ofreq\-::\-Body}}
 \subsubsection[{set\-Motion\-Model}]{\setlength{\rightskip}{0pt plus 5cm}void Body\-::set\-Motion\-Model (
 \begin{DoxyParamCaption}
-\item[{std\-::string}]{model\-Name}
+\item[{{\bf ofreq\-::\-Motion\-Model} \&}]{model\-In}
 \end{DoxyParamCaption}
-)}}\label{classosea_1_1ofreq_1_1_body_a8bbac7bdd98587b2d1cdab13f82f3d63}
+)}}\label{classosea_1_1ofreq_1_1_body_a25b6fa24ac6237272494a7f74a348145}
 
 
-Sets the name of the motion model for lookup later. 
+Sets the motion model for lookup later. 
 
-Sets the name of the motion model for lookup later. 
+
 \begin{DoxyParams}{Parameters}
-{\em model\-Name} & std\-::string input that is the name of the motion model. This must match exactly one of the entries in the list of motion models avaiable at run time. \\
+{\em model\-In} & Variable input that is the motion model object. Variable passed by reference. Stored internally as a pointer. \\
 \hline
 \end{DoxyParams}
 \hypertarget{classosea_1_1ofreq_1_1_body_af507be7e52f44404e7664dd623585780}{\index{osea\-::ofreq\-::\-Body@{osea\-::ofreq\-::\-Body}!set\-Posn\-X@{set\-Posn\-X}}

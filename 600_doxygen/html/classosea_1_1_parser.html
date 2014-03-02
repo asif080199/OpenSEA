@@ -139,9 +139,9 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a12234f6cd36b61af4b50c94a179422c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3e658b5917a93a3ef648050d060e3a93"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classosea_1_1_parser.html#a3e658b5917a93a3ef648050d060e3a93">~Parser</a> ()</td></tr>
 <tr class="separator:a3e658b5917a93a3ef648050d060e3a93"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7e33e142c7b5d13943e973cc87880ee9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classosea_1_1_parser.html#a7e33e142c7b5d13943e973cc87880ee9">Parse</a> (std::istream &amp;infile)</td></tr>
-<tr class="memdesc:a7e33e142c7b5d13943e973cc87880ee9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parses the input files into a vector of key-value pairs.  <a href="#a7e33e142c7b5d13943e973cc87880ee9"></a><br/></td></tr>
-<tr class="separator:a7e33e142c7b5d13943e973cc87880ee9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a819455e27dc19323cdfd2f9354e11ec2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classosea_1_1_parser.html#a819455e27dc19323cdfd2f9354e11ec2">Parse</a> (std::istream &amp;infile, int bracket_count=0)</td></tr>
+<tr class="memdesc:a819455e27dc19323cdfd2f9354e11ec2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parses the input files into a vector of key-value pairs.  <a href="#a819455e27dc19323cdfd2f9354e11ec2"></a><br/></td></tr>
+<tr class="separator:a819455e27dc19323cdfd2f9354e11ec2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab8e77da06e72ede97238d28bad4a9ae6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classosea_1_1_object_group.html">ObjectGroup</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classosea_1_1_parser.html#ab8e77da06e72ede97238d28bad4a9ae6">getObject</a> (int index=0)</td></tr>
 <tr class="memdesc:ab8e77da06e72ede97238d28bad4a9ae6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the <a class="el" href="classosea_1_1_object_group.html" title="The ObjectGroup class contains groupings of object definitions captured from an input file...">ObjectGroup</a> object.  <a href="#ab8e77da06e72ede97238d28bad4a9ae6"></a><br/></td></tr>
 <tr class="separator:ab8e77da06e72ede97238d28bad4a9ae6"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -151,6 +151,18 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ac7323370460e1373acf710cbe2014c9a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classosea_1_1_object_group.html">ObjectGroup</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classosea_1_1_parser.html#ac7323370460e1373acf710cbe2014c9a">listObject</a> (unsigned int index)</td></tr>
 <tr class="memdesc:ac7323370460e1373acf710cbe2014c9a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides direct access to the <a class="el" href="classosea_1_1_object_group.html" title="The ObjectGroup class contains groupings of object definitions captured from an input file...">ObjectGroup</a> object specified by index.  <a href="#ac7323370460e1373acf710cbe2014c9a"></a><br/></td></tr>
 <tr class="separator:ac7323370460e1373acf710cbe2014c9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2ffe797d5380aed4e9a9dd400e8ab79d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceosea.html#af47d453cb217c2c461685cd6e754c070">vecKeyword</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classosea_1_1_parser.html#a2ffe797d5380aed4e9a9dd400e8ab79d">listKey</a> ()</td></tr>
+<tr class="memdesc:a2ffe797d5380aed4e9a9dd400e8ab79d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides direct access to thelist of key words.  <a href="#a2ffe797d5380aed4e9a9dd400e8ab79d"></a><br/></td></tr>
+<tr class="separator:a2ffe797d5380aed4e9a9dd400e8ab79d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3b378364d4b4c3f58f7b3ea7e156ac98"><td class="memItemLeft" align="right" valign="top">std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classosea_1_1_parser.html#a3b378364d4b4c3f58f7b3ea7e156ac98">listKey</a> (int index)</td></tr>
+<tr class="memdesc:a3b378364d4b4c3f58f7b3ea7e156ac98"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides direct access to an individual item in the list of key words.  <a href="#a3b378364d4b4c3f58f7b3ea7e156ac98"></a><br/></td></tr>
+<tr class="separator:a3b378364d4b4c3f58f7b3ea7e156ac98"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac8e87b248b0a427add910f8f7f72183d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceosea.html#ae7c5f2bab0fab3931b2ef51a0ad04cc2">vecValue</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classosea_1_1_parser.html#ac8e87b248b0a427add910f8f7f72183d">listVal</a> ()</td></tr>
+<tr class="memdesc:ac8e87b248b0a427add910f8f7f72183d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides direct access to the list of key values.  <a href="#ac8e87b248b0a427add910f8f7f72183d"></a><br/></td></tr>
+<tr class="separator:ac8e87b248b0a427add910f8f7f72183d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a312496911fbc7212187b7638a61d8227"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::string &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classosea_1_1_parser.html#a312496911fbc7212187b7638a61d8227">listVal</a> (int index)</td></tr>
+<tr class="memdesc:a312496911fbc7212187b7638a61d8227"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides direct access to an individual item in the list of key values.  <a href="#a312496911fbc7212187b7638a61d8227"></a><br/></td></tr>
+<tr class="separator:a312496911fbc7212187b7638a61d8227"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4e0dcef1ae5785c46f2fb6d935090595"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classosea_1_1_object_group.html">ObjectGroup</a> * &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classosea_1_1_parser.html#a4e0dcef1ae5785c46f2fb6d935090595">refSubObject</a> (int index1=0)</td></tr>
 <tr class="memdesc:a4e0dcef1ae5785c46f2fb6d935090595"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides direct access to the list of SubObjects.  <a href="#a4e0dcef1ae5785c46f2fb6d935090595"></a><br/></td></tr>
 <tr class="separator:a4e0dcef1ae5785c46f2fb6d935090595"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -181,12 +193,18 @@ Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pro_static_attribs_classosea_1_1ofreq_1_1o_freq_core"><td colspan="2" onclick="javascript:toggleInherit('pro_static_attribs_classosea_1_1ofreq_1_1o_freq_core')"><img src="closed.png" alt="-"/>&#160;Static Protected Attributes inherited from <a class="el" href="classosea_1_1ofreq_1_1o_freq_core.html">osea::ofreq::oFreqCore</a></td></tr>
 <tr class="memitem:a85b3e812b6d78c064ba375d5101bb053 inherit pro_static_attribs_classosea_1_1ofreq_1_1o_freq_core"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a85b3e812b6d78c064ba375d5101bb053"></a>
 static std::ofstream&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classosea_1_1ofreq_1_1o_freq_core.html#a85b3e812b6d78c064ba375d5101bb053">OutLog</a></td></tr>
-<tr class="memdesc:a85b3e812b6d78c064ba375d5101bb053 inherit pro_static_attribs_classosea_1_1ofreq_1_1o_freq_core"><td class="mdescLeft">&#160;</td><td class="mdescRight">The log file for an oFreq run. Records normal actions for the program. Informs user of regular program developments. Through inheritence of the <a class="el" href="classosea_1_1ofreq_1_1o_freq_core.html" title="The core oFreq class. All oFreq classes inherit from this class.">oFreqCore</a> class, this object is available to every object in the oFreq application. <br/></td></tr>
+<tr class="memdesc:a85b3e812b6d78c064ba375d5101bb053 inherit pro_static_attribs_classosea_1_1ofreq_1_1o_freq_core"><td class="mdescLeft">&#160;</td><td class="mdescRight">The log file for an oFreq run. Records normal actions for the program. Informs user of regular program developments. Through inheritence of the <a class="el" href="classosea_1_1ofreq_1_1o_freq_core.html" title="The core oFreq class. All oFreq classes inherit from this class.">oFreqCore</a> class, this object is available to every object in the oFreq application. Also provided with a second name of seaout. <br/></td></tr>
 <tr class="separator:a85b3e812b6d78c064ba375d5101bb053 inherit pro_static_attribs_classosea_1_1ofreq_1_1o_freq_core"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad1092650d598d7f30e7c0fb3dbdfd392 inherit pro_static_attribs_classosea_1_1ofreq_1_1o_freq_core"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad1092650d598d7f30e7c0fb3dbdfd392"></a>
+static std::ofstream &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>seaout</b> = <a class="el" href="classosea_1_1ofreq_1_1o_freq_core.html#a85b3e812b6d78c064ba375d5101bb053">OutLog</a></td></tr>
+<tr class="separator:ad1092650d598d7f30e7c0fb3dbdfd392 inherit pro_static_attribs_classosea_1_1ofreq_1_1o_freq_core"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5e31044ee80fa436289e569c8080b21e inherit pro_static_attribs_classosea_1_1ofreq_1_1o_freq_core"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5e31044ee80fa436289e569c8080b21e"></a>
 static std::ofstream&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classosea_1_1ofreq_1_1o_freq_core.html#a5e31044ee80fa436289e569c8080b21e">ErrLog</a></td></tr>
-<tr class="memdesc:a5e31044ee80fa436289e569c8080b21e inherit pro_static_attribs_classosea_1_1ofreq_1_1o_freq_core"><td class="mdescLeft">&#160;</td><td class="mdescRight">The error log file for an oFreq run. Records any errors or warnings for the program. Informs user of errors and warnings and where they occurred. Through inheritence of the <a class="el" href="classosea_1_1ofreq_1_1o_freq_core.html" title="The core oFreq class. All oFreq classes inherit from this class.">oFreqCore</a> class, this object is available for every object in the oFreq application. <br/></td></tr>
+<tr class="memdesc:a5e31044ee80fa436289e569c8080b21e inherit pro_static_attribs_classosea_1_1ofreq_1_1o_freq_core"><td class="mdescLeft">&#160;</td><td class="mdescRight">The error log file for an oFreq run. Records any errors or warnings for the program. Informs user of errors and warnings and where they occurred. Through inheritence of the <a class="el" href="classosea_1_1ofreq_1_1o_freq_core.html" title="The core oFreq class. All oFreq classes inherit from this class.">oFreqCore</a> class, this object is available for every object in the oFreq application. Also provided with a second name of seaerr. <br/></td></tr>
 <tr class="separator:a5e31044ee80fa436289e569c8080b21e inherit pro_static_attribs_classosea_1_1ofreq_1_1o_freq_core"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aec5a7ac06574b9c5f80ac3c149c09fda inherit pro_static_attribs_classosea_1_1ofreq_1_1o_freq_core"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aec5a7ac06574b9c5f80ac3c149c09fda"></a>
+static std::ofstream &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>seaerr</b> = <a class="el" href="classosea_1_1ofreq_1_1o_freq_core.html#a5e31044ee80fa436289e569c8080b21e">ErrLog</a></td></tr>
+<tr class="separator:aec5a7ac06574b9c5f80ac3c149c09fda inherit pro_static_attribs_classosea_1_1ofreq_1_1o_freq_core"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>The <a class="el" href="classosea_1_1_parser.html" title="The Parser class takes an input segment of strings and segments that segment. It strips out comments...">Parser</a> class takes an input segment of strings and segments that segment. It strips out comments. It recognizes quotation marks and groups those segments together. <a class="el" href="classosea_1_1_parser.html" title="The Parser class takes an input segment of strings and segments that segment. It strips out comments...">Parser</a> finally returns a series of <a class="el" href="classosea_1_1_object_group.html" title="The ObjectGroup class contains groupings of object definitions captured from an input file...">ObjectGroup</a> objects. Each <a class="el" href="classosea_1_1_object_group.html" title="The ObjectGroup class contains groupings of object definitions captured from an input file...">ObjectGroup</a> contains the classname and a list of keyword value pairs. </p>
@@ -270,6 +288,50 @@ static std::ofstream&#160;</td><td class="memItemRight" valign="bottom"><a class
 
 </div>
 </div>
+<a class="anchor" id="a2ffe797d5380aed4e9a9dd400e8ab79d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespaceosea.html#af47d453cb217c2c461685cd6e754c070">vecKeyword</a> &amp; Parser::listKey </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Provides direct access to thelist of key words. </p>
+<dl class="section return"><dt>Returns</dt><dd>Returns a reference to the list of key words. Variable passed by reference. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a3b378364d4b4c3f58f7b3ea7e156ac98"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">string &amp; Parser::listKey </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>index</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Provides direct access to an individual item in the list of key words. </p>
+<p>Returns the key word specified by the index. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">index</td><td>Integer. The index of the key word to retrieve. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>std::string. The key word specified by index. Returned variable passed by reference. </dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="a93885957453b4b7e346ee1b2b79d05f8"></a>
 <div class="memitem">
 <div class="memproto">
@@ -315,7 +377,51 @@ static std::ofstream&#160;</td><td class="memItemRight" valign="bottom"><a class
 
 </div>
 </div>
-<a class="anchor" id="a7e33e142c7b5d13943e973cc87880ee9"></a>
+<a class="anchor" id="ac8e87b248b0a427add910f8f7f72183d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespaceosea.html#ae7c5f2bab0fab3931b2ef51a0ad04cc2">vecValue</a> &amp; Parser::listVal </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Provides direct access to the list of key values. </p>
+<dl class="section return"><dt>Returns</dt><dd>Returns a reference to the list of key values. Variable passed by reference. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a312496911fbc7212187b7638a61d8227"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">vector&lt; string &gt; &amp; Parser::listVal </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>index</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Provides direct access to an individual item in the list of key values. </p>
+<p>Returns the key value specified by the index. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">index</td><td>Integer. THe index of the key value to retrieve. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Vector of strings. The key value specified by the index. Returned variable passed by reference. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a819455e27dc19323cdfd2f9354e11ec2"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -323,8 +429,18 @@ static std::ofstream&#160;</td><td class="memItemRight" valign="bottom"><a class
           <td class="memname">void Parser::Parse </td>
           <td>(</td>
           <td class="paramtype">std::istream &amp;&#160;</td>
-          <td class="paramname"><em>infile</em></td><td>)</td>
+          <td class="paramname"><em>infile</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>bracket_count</em> = <code>0</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -332,10 +448,12 @@ static std::ofstream&#160;</td><td class="memItemRight" valign="bottom"><a class
 <p>Parses the input files into a vector of key-value pairs. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">The</td><td>input file to parse. </td></tr>
+    <tr><td class="paramname">infile</td><td>The input file to parse. Istream. Variable passed by reference. </td></tr>
+    <tr><td class="paramname">bracket_count</td><td>The count of object definition brackets. Used as a termination condition in the parsing process. Provides control for any recursive instances of the <a class="el" href="classosea_1_1_parser.html#a819455e27dc19323cdfd2f9354e11ec2" title="Parses the input files into a vector of key-value pairs.">Parse()</a> function. Default is 0. The bracket count updates while parsing, as the <a class="el" href="classosea_1_1_parser.html" title="The Parser class takes an input segment of strings and segments that segment. It strips out comments...">Parser</a> finds new opening ({) and closing (}) brackets. Parsing continues as long as the bracket count is equal to or above the bracket count fed into the <a class="el" href="classosea_1_1_parser.html" title="The Parser class takes an input segment of strings and segments that segment. It strips out comments...">Parser</a> as an argument. At this point, the function behavior does not change with what the actual value of bracket_count is. Parsing only requires that bracket_count is &gt;= its starting value. However, several development attempts indicated that the behavior the Parse function may become dependent on the value of bracket_count. So it is left in as an argument to allow functionality expansion in any future development. </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section see"><dt>See Also</dt><dd>ParseCommands() </dd></dl>
 
 </div>
 </div>
@@ -383,7 +501,7 @@ Here is the call graph for this function:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespaceosea.html">osea</a></li><li class="navelem"><a class="el" href="classosea_1_1_parser.html">Parser</a></li>
-    <li class="footer">Generated on Sat Oct 12 2013 10:41:24 for oFreq by
+    <li class="footer">Generated on Sat Mar 1 2014 20:20:42 for oFreq by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.2 </li>
   </ul>

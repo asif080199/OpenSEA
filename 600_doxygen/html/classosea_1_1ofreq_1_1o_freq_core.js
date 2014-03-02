@@ -7,5 +7,7 @@ var classosea_1_1ofreq_1_1o_freq_core =
     [ "writeError", "classosea_1_1ofreq_1_1o_freq_core.html#a4671f6ce9f5eb62b1a587a1118934dee", null ],
     [ "writeLog", "classosea_1_1ofreq_1_1o_freq_core.html#a1b85faf81110e491b5245f2cbc2ac23b", null ],
     [ "ErrLog", "classosea_1_1ofreq_1_1o_freq_core.html#a5e31044ee80fa436289e569c8080b21e", null ],
-    [ "OutLog", "classosea_1_1ofreq_1_1o_freq_core.html#a85b3e812b6d78c064ba375d5101bb053", null ]
+    [ "OutLog", "classosea_1_1ofreq_1_1o_freq_core.html#a85b3e812b6d78c064ba375d5101bb053", null ],
+    [ "seaerr", "classosea_1_1ofreq_1_1o_freq_core.html#aec5a7ac06574b9c5f80ac3c149c09fda", null ],
+    [ "seaout", "classosea_1_1ofreq_1_1o_freq_core.html#ad1092650d598d7f30e7c0fb3dbdfd392", null ]
 ];

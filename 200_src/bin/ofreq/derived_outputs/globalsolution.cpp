@@ -25,6 +25,7 @@
 \*-------------------------------------------------------------------------------------------------------------------*/
 
 #include "globalsolution.h"
+#include "outputsbody.h"
 
 using namespace std;
 using namespace arma;
@@ -38,6 +39,17 @@ GlobalSolution::GlobalSolution()
 {
     //Set the order of the derivative as a default.
     this->setDerivative(0);
+    pClassName = "GlobalSolution";
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+GlobalSolution::GlobalSolution(OutputsBody *input)
+{
+    //Set the order of the derivative as a default.
+    this->setDerivative(0);
+
+    //Set the outputsbody pointers.
+    this->setOutputBody(input);
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
@@ -60,24 +72,41 @@ int GlobalSolution::getDerivative()
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-cx_mat GlobalSolution::calcOutput(double freqIn)
-{
-    cx_mat output;
-	complexDouble compI(0,1); //comlex number w/ 0 real, 1 imaginary used below for computations
-    complexDouble wavefreq(freqIn,0);   //Wave frequency.
+int GlobalSolution::calcOutput(int freqIn)
+{    
+    cx_mat* output = new cx_mat();
+    complexDouble compI(0,1); //comlex number w/ 0 real, 1 imaginary used below for computations
+    complexDouble wavefreq(0,0);   //Wave frequency.
+    int errVal = 1;                     //Returned error code.  Set to default starting value of unknown err.
 
     //Get number of rows
     int nrow;
-    nrow = getSolution(freqIn).refSolnMat().n_rows;
+    nrow = pParentBody->refCurSolution().n_freqs();
+
+    //Get current frequency
+    wavefreq.real(pParentBody->listFreq(freqIn));
 
     //resize matrix
-    output.set_size(1, nrow);
+    output->set_size(nrow, 1);
 
     for(int i = 0; i < nrow; i++)
-	{
-        output(1,i) = pow(wavefreq, orderDerivative) * pow(compI, orderDerivative) * getSolution(freqIn).getSolnMat(i);
-	}
-    return output;
+    {
+        output->at(i,1) = pow(wavefreq, orderDerivative) *
+                          pow(compI, orderDerivative) *
+                          pParentBody->refCurSolution().
+                            refSolution(pParentBody->getCurWaveInd(),freqIn).
+                            refSolnMat()(i,0);
+
+
+    }
+
+    //Write result to results list
+    addResult(output);
+
+    //Change error to success
+    errVal = 0;         //No errors.
+
+    return errVal;
 }
 
 //==========================================Section Separator =========================================================
@@ -87,20 +116,33 @@ Solution &GlobalSolution::getSolution(double freqIn)
 {
     //Gets the Solution object for the specified frequency.
     int freqIndex;      //The index of the specified frequency in the list of frequencies.
+    bool matchFind;     //Boolean to track if a match was found to the requested frequency.
+    matchFind = false;
 
     //Search for the index of the frequency specified.
-    for (unsigned int i = 0; i < plistFreq->size(); i++)
+    for (unsigned int i = 0; i < pParentBody->refCurSolution().n_freqs(); i++)
     {
         //Check if the frequency matches the specified freq in.
-        if (plistFreq->at(i) == freqIn)
+        if (pParentBody->listFreq(i) == freqIn)
         {
             freqIndex = i;
             break;
+            matchFind = true;
         }
     }
 
     //Retrieve the solution object.
-    return plistSolution->at(pCurBody).refSolution(*pCurWaveDir, freqIndex);
+    try
+    {
+        if (!matchFind) //Throw an error if the search never found a matching frequency.
+            throw 2;
+
+        return pParentBody->refCurSolution().refSolution(getCurWaveInd(), freqIndex);
+    }
+    catch (int err)
+    {
+        //error handler later
+    }
 }
 
 //==========================================Section Separator =========================================================

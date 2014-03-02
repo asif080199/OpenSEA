@@ -7,5 +7,6 @@ var classosea_1_1ofreq_1_1_solution =
     [ "getSolnMat", "classosea_1_1ofreq_1_1_solution.html#a8f850820d65445470f4a0a5351f990e7", null ],
     [ "refBody", "classosea_1_1ofreq_1_1_solution.html#a95519db148bcece14c88aab53f4ced0e", null ],
     [ "refSolnMat", "classosea_1_1ofreq_1_1_solution.html#a97e6a64afec87dd0fa217f1d49449ac9", null ],
+    [ "setBody", "classosea_1_1ofreq_1_1_solution.html#affec6f64a60e9ad3b5a236302e2dd820", null ],
     [ "setSolnMat", "classosea_1_1ofreq_1_1_solution.html#a169b35ae15b49ca4096ea7e0ea927fec", null ]
 ];

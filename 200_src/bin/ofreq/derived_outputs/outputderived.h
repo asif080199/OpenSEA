@@ -81,6 +81,7 @@ namespace ofreq
 //######################################### Class Separator ###########################################################
 //Forward declarations to keep the compiler happy.
 class SolutionSet;
+class OutputsBody;
 
 //######################################### Class Separator ###########################################################
 /**
@@ -93,12 +94,6 @@ class SolutionSet;
  * inherit this Derived Output class.  This abstract class provides a common framework that all Derived Outputs must
  * share.  The most important part is the calcOutput() method.  Everything that uses a Derived Output object
  * expects to have this calcOutput() method, and will call it by that name.
- *
- * Developers note:  The original scheme had the OutputDerived class include a pointer to the contain parent class,
- * OutputsBody.  But this creates a cyclic dependency of header files, and will not compile.  The only resolution I
- * found to this was to not include the parent class and pass all the necessary information to each individual
- * OutputDerived object.  This is tedious, but within the reasons of the methods defined by the OutputsBody class.
- * And it allow compilation.  All data items are passed by reference to avoid excess memory duplication.
  *
  * @sa OutputDerived::calcOutput();
  */
@@ -115,9 +110,37 @@ public:
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
+     * @brief Constructor that also sets the pointer to the OutputsBody object which contains the OutputDerived
+     * object.
+     * @param input Pointer to the OutputsBody objec that contains this OutputDerived object.  Pointer passed by value.
+     *
+     * @sa setOutputsBody()
+     */
+    OutputDerived(OutputsBody *input);
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
      * The default destructor.  Nothing happens here.
      */
     ~OutputDerived();
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Sets the pointer to the OutputsBody object which contains this OutputDerived object.
+     *
+     * The OutputsBody object contains critical information that each DerivedOutput object may require.  This
+     * information is made avaiable through the pParentBody pointer.  Available information includes:
+     * - list of Body objects.
+     * - list of SolutionSet objects.
+     * - list of wave frequencies.  Wave frequency recorded in units of radians per second.
+     * - list of wave directions.  Wave direction recorded in units of radians.  Zero is true North direction.
+     * Oriented positive counter-clockwise.
+     * - The current wave direction used for calculating the DerivedOutput objects.
+     * @param input Pointer to the OutputsBody objec that contains this OutputDerived object.  Pointer passed by value.
+     *
+     * @sa OutputsBody
+     */
+    void setOutputBody(OutputsBody *input);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -126,6 +149,15 @@ public:
      * @return Returns the name of the OutputDerived object.  std::string variable.  Variable passed by value.
      */
     std::string getName();
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Returns the name of the class used to create the OutputDerived object.  This is the name set to identify
+     * the type of output object.  If multiple objects of the same type are created, the class name will be the same
+     * for all objects.
+     * @return Returns the class name of the OutputDerived object.  std::string variable.  Variable passed by value.
+     */
+    std::string getClassName();
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -149,14 +181,23 @@ public:
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
      * @brief Pure virtual member.  Calculates the output from the OutputDerived object.
-     * @param freqIn The wave frequency to use for calculating the OutputDerived object.  Most outputs will depend
-     * on the wave frequency.
-     * @return Returns a complex matrix that is the OutputDerived result.  The exact meaning and organization of the
-     * complex matrix changes with each type of OutputDerived object created as a child of this class.  The cx_mat
-     * data type is used because that is the most natural data type for the larges number of OutputDerived objects.
-     * It isn't always the best, but it can usually work well for the intended purposes.
+     *
+     * Writes results of calculation to the Results matrix in the OutputsBody object that contains this
+     * OutputDerived object.  Calling the calcOutput() function only generates the results.  They must be retrieved
+     * from the OutputsBody object in a separate function, using getResult() function.
+     *
+     * Results written to the Results matrix are always stored in a matrix of complex values.  The exact meaning and
+     * organization of the complex matrix changes with each type of OutputDerived object created as a child of this
+     * class.  The cx_mat data type is used because that is the most natural data type for the largest number of
+     * OutputDerived objects.  It isn't always the best, but it can usually work well for the intended purposes.
+     * @param freqIn The wave frequency to use for calculating the OutputDerived object.  Specifies the index of the
+     * wave frequency to retrieve from the list of wave frequencies.  Most outputs will depend on the wave frequency.
+     * @return Returns an integer for output.  This integer is not the calculation result.  It reports on whether the
+     * calculation is successful.  A returned value of zero (0) means a successful calculation.  Other returned
+     * values are error codes, each with their own meaning.
+     * @sa OutputsBody::getResult()
      */
-    virtual arma::cx_mat calcOutput(double freqIn) = 0;
+    virtual int calcOutput(int freqIn = -1) = 0;
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -175,26 +216,21 @@ public:
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
-     * @brief Sets the list of Body objects.
-     * @param Input THe list of Body objects.  Variable passed by reference.
-     */
-    void setListBody(std::vector<Body> &Input);
-
-    //------------------------------------------Function Separator ----------------------------------------------------
-    /**
      * @brief Returns a vector of SolutionSet objects.
      * @return Returns a vector of SolutionSet objects.  Internal storage is just a set of pointers to the object.
      * Variable is passed by reference.
      */
-    std::vector<SolutionSet> &refSolutionSet();
+    std::vector<SolutionSet> &listSolutionSet();
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
-     * @brief Sets the list of solutions.
-     * @param Input The vector list of SolutionSet objects.  Variable is passed by reference.  Variable is stored
-     * internally as a pointer.
+     * @brief Returns a vector of SolutionSet objects.
+     * @param index Integer.  Specifies the index for which to retrieve the solution set.  If the requested index is
+     * out of bounds, the program will return an error.
+     * @return Returns a vector of SolutionSet objects.  Internal storage is just a set of pointers to the object.
+     * Variable is passed by reference.
      */
-    void setSolutionSet(std::vector<SolutionSet> &Input);
+    SolutionSet &listSolutionSet(int index);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -214,14 +250,6 @@ public:
      * by reference.
      */
     double &listFreq(int index);
-
-    //------------------------------------------Function Separator ----------------------------------------------------
-    /**
-     * @brief Sets the list of wave frequencies.  Frequencies are in radians per second.
-     * @param Input The list of wave frequencies.  Variable is passed by reference.  Variable is stored internally as
-     * a pointer.
-     */
-    void setListFreq(std::vector<double>& Input);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -246,28 +274,11 @@ public:
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
-     * @brief Sets the list of wave directions.  Wave directions are measured in radians.  True North is zero, with
-     * positive angles going counter-clockwise.
-     * @param Input The vector of doubles containing the wave directions.  Variable is passed by reference.  Variable
-     * is stored internally as a pointer.
+     * @brief Gets the current wave direction.  Output is the actual value for the current wave direction, in units
+     * of radians.
+     * @return Returns a double that is the current wave direction, in units of radians.  Variable is passed by value.
      */
-    void setListWaveDir(std::vector<double>& Input);
-
-    //------------------------------------------Function Separator ----------------------------------------------------
-    /**
-     * @brief Gets the integer index of the current wave direction.
-     * @return Gets the integer index of the current wave direction.  Variable is passed by reference.  Variable
-     * is stored internally as a pointer.
-     */
-    int &getCurWaveDir();
-
-    //------------------------------------------Function Separator ----------------------------------------------------
-    /**
-     * @brief Sets the integer index of the current wave direction.
-     * @param Input The integer index of the current wave direction in the vector list of wave directions.  Variable
-     * is passed by reference.  Variable is stored internally as a pointer.
-     */
-    void setCurWaveDir(int &Input);
+    double getCurWaveDir();
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -276,16 +287,7 @@ public:
      * @return Returns the integer index of the current Body object associated with this derived output object.
      * Variable is passed by value.
      */
-    int getCurBody();
-
-    //------------------------------------------Function Separator ----------------------------------------------------
-    /**
-     * @brief Sets the integer index of the current body.  This represents the Body object that the derived output is
-     * associated with.
-     * @param Input The integer index of the current Body object associated with this derived output object.
-     * Variable is passed by value
-     */
-    void setCurBody(int Input);
+    int getCurBodyIndex();
 
 //==========================================Section Separator =========================================================
 protected:
@@ -298,44 +300,50 @@ protected:
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
-     * @brief The vector list of Body objects.
+     * @brief The actual name of the class.  This is used in outputs writing to file.  The class name must be hard
+     * coded as a variable because functions such as typeid produce unreliable formatting of the output.  The class
+     * name is automatically set by the class constructor.  Getter functions can only retrieve the variable.  Not
+     * alter it.
      */
-    std::vector<Body>* plistBody;
+    std::string pClassName;
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
-     * @brief The vector list of SolutionSet objects.
+     * @brief Adds a result to the list of results in the OutputsBody.
+     *
+     * The list of results contains all the results from calculating each DerivedOutput.  The DerivedOutput objects
+     * also have direct access to this list.  But this function handles all the tedious tasks of resizing the list
+     * and preventing anything from going out of bounds.
+     * @param input The result that you wish to add to the list of results.  Input is a pointer to a matrix of
+     * complex numbers.  Please be sure to create all your matrices on the stack so they don't get destroyed once
+     * they go out of scope.  Don't worry about memory cleanup.  The OutputsBody object has a Reset() function that
+     * automatically deletes all variables from the list of results and clears the memory.
+     * @param index [Optional] Integer input.  The index specifies the index in the vector in which you wish to enter
+     * the result.  This input is optional.  If no index is specified, the function automatically adds the result as
+     * a new entry on the end of the list.
      */
-    std::vector<SolutionSet>* plistSolution;
+    void addResult(arma::cx_mat* input, int index = -1);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
-     * @brief The list of wave frequencies.  Wave frequency recorded in units of radians per second.
-     */
-    std::vector<double>* plistFreq;
-
-    //------------------------------------------Function Separator ----------------------------------------------------
-    /**
-     * @brief The list of wave directions.  Wave direction recorded in units of radians.  Zero is true North direction.
+     * @brief Pointer to the OutputsBody object.
+     *
+     * The OutputsBody object contains critical information that each DerivedOutput object may require.  This
+     * information is made avaiable through the pParentBody pointer.  Available information includes:
+     * - list of Body objects.
+     * - list of SolutionSet objects.
+     * - list of wave frequencies.  Wave frequency recorded in units of radians per second.
+     * - list of wave directions.  Wave direction recorded in units of radians.  Zero is true North direction.
      * Oriented positive counter-clockwise.
+     * - THe current wave direction used for calculating the DerivedOutput objects.
+     *
+     * @sa OutputsBody
      */
-    std::vector<double>* plistWaveDir;
-
-    //------------------------------------------Function Separator ----------------------------------------------------
-    /**
-     * @brief The current wave direction used for calculating the DerivedOutput objects.
-     */
-    int* pCurWaveDir;
-
-    //------------------------------------------Function Separator ----------------------------------------------------
-    /**
-     * @brief The index of the current body used for calculating derived outputs.  This index is the position of
-     * the current body in the list of Body objects.
-     */
-    int pCurBody;
+    OutputsBody *pParentBody;
 
 //==========================================Section Separator =========================================================
 private:
+
 
 };
 

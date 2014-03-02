@@ -9,13 +9,15 @@ var classosea_1_1ofreq_1_1_file_writer =
     [ "getCurWaveDir", "classosea_1_1ofreq_1_1_file_writer.html#a82a3acb66bd5c0396836386258608a40", null ],
     [ "getCurWaveInd", "classosea_1_1ofreq_1_1_file_writer.html#a9748d987475a225b49e14f48b8be0cd6", null ],
     [ "getInfoBlock", "classosea_1_1ofreq_1_1_file_writer.html#a8b2b109105916979fe152960bbadcf7f", null ],
+    [ "getOutputsBody", "classosea_1_1ofreq_1_1_file_writer.html#a2794a9410be184745cd98f26df801ab2", null ],
     [ "refOutputsBody", "classosea_1_1ofreq_1_1_file_writer.html#a77da1b41e1332209f39243fcca4d1287", null ],
     [ "setHeader", "classosea_1_1ofreq_1_1_file_writer.html#aeea3ca877f0c5280b22ea7ff653db233", null ],
+    [ "setOutputsBody", "classosea_1_1ofreq_1_1_file_writer.html#af0234f3573308ca6f5b7178f662b3993", null ],
     [ "setProjectDir", "classosea_1_1ofreq_1_1_file_writer.html#aa1dbf0e1a54a78fb62d799187752b002", null ],
-    [ "writeFrequency", "classosea_1_1ofreq_1_1_file_writer.html#ac6df31af71020a41adb6ecd6ff136532", null ],
-    [ "writeGlobalAcceleration", "classosea_1_1ofreq_1_1_file_writer.html#aaff553c2e03cb1c1639e107cfeac3038", null ],
-    [ "writeGlobalMotion", "classosea_1_1ofreq_1_1_file_writer.html#a5c921b5ae92039cf50458e2c46e204da", null ],
-    [ "writeGlobalSolution", "classosea_1_1ofreq_1_1_file_writer.html#a317649499b8c16dd529e2bf588e3be88", null ],
-    [ "writeGlobalVelocity", "classosea_1_1ofreq_1_1_file_writer.html#a2078a50dbd21946aeed86d8e0bccd50e", null ],
-    [ "writeWaveDirection", "classosea_1_1ofreq_1_1_file_writer.html#a0428a4f8ad72d01ff5316bfa3e4ce631", null ]
+    [ "writeFrequency", "classosea_1_1ofreq_1_1_file_writer.html#a99e8d1ffb93b50966735bb90d0f4e082", null ],
+    [ "writeGlobalAcceleration", "classosea_1_1ofreq_1_1_file_writer.html#a1c49975afb40d028c42027e5239bcdaa", null ],
+    [ "writeGlobalMotion", "classosea_1_1ofreq_1_1_file_writer.html#ada34dffe391a0daeac192bd4b7ed0ce5", null ],
+    [ "writeGlobalSolution", "classosea_1_1ofreq_1_1_file_writer.html#ae5977c7303f36b1ae0b71bf9251c8a59", null ],
+    [ "writeGlobalVelocity", "classosea_1_1ofreq_1_1_file_writer.html#a9887a28316fca1417da81c95b04c2208", null ],
+    [ "writeWaveDirection", "classosea_1_1ofreq_1_1_file_writer.html#af8b7b6236b90e1734161f6158f64482b", null ]
 ];

@@ -1,5 +1,6 @@
 <map id="osea::ofreq::GlobalVelocity" name="osea::ofreq::GlobalVelocity">
-<area shape="rect" id="node2" href="$classosea_1_1ofreq_1_1_global_solution.html" title="osea::ofreq::GlobalSolution" alt="" coords="5,155,192,181"/>
-<area shape="rect" id="node4" href="$classosea_1_1ofreq_1_1_output_derived.html" title="osea::ofreq::OutputDerived" alt="" coords="6,80,191,107"/>
-<area shape="rect" id="node6" href="$classosea_1_1ofreq_1_1o_freq_core.html" title="The core oFreq class. All oFreq classes inherit from this class." alt="" coords="15,5,181,32"/>
+<area shape="rect" id="node2" href="$classosea_1_1ofreq_1_1_global_solution.html" title="osea::ofreq::GlobalSolution" alt="" coords="5,251,192,277"/>
+<area shape="rect" id="node4" href="$classosea_1_1ofreq_1_1_output_derived.html" title="osea::ofreq::OutputDerived" alt="" coords="6,173,191,200"/>
+<area shape="rect" id="node6" href="$classosea_1_1ofreq_1_1o_freq_core.html" title="The core oFreq class. All oFreq classes inherit from this class." alt="" coords="33,5,199,32"/>
+<area shape="rect" id="node8" href="$classosea_1_1ofreq_1_1_outputs_body.html" title="osea::ofreq::OutputsBody" alt="" coords="115,83,291,109"/>
 </map>

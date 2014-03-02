@@ -1,0 +1,6 @@
+<map id="osea::ofreq::OutputDerived::setOutputBody" name="osea::ofreq::OutputDerived::setOutputBody">
+<area shape="rect" id="node3" href="$classosea_1_1ofreq_1_1_outputs_body.html#a015653c3344d036543668ffe7b4a41db" title="Adds a new GlobalMotion object to the list of GlobalMotion objects. This version sets the new GlobalM..." alt="" coords="240,5,416,46"/>
+<area shape="rect" id="node5" href="$classosea_1_1ofreq_1_1_outputs_body.html#aa334cb10ee07542372cdcef0a7ecf750" title="Adds a new GlobalVelocity object to the list of GlobalVelocity objects. This version sets the new Glo..." alt="" coords="240,70,416,111"/>
+<area shape="rect" id="node7" href="$classosea_1_1ofreq_1_1_outputs_body.html#aa726a0eca1105d15bd23fd1cb51ecc67" title="Adds a new GlobalAcceleration object to the list of GlobalAcceleration objects. This version sets the..." alt="" coords="240,135,416,177"/>
+<area shape="rect" id="node9" href="$classosea_1_1ofreq_1_1_outputs_body.html#ac5657a2f9a4ac48a56db7b081864ea8d" title="Adds a new GlobalSolution object to the list of GlobalSolution objects. This version sets the new Glo..." alt="" coords="240,201,416,242"/>
+</map>

@@ -25,6 +25,7 @@
 \*-------------------------------------------------------------------------------------------------------------------*/
 
 #include "solution.h"
+#include "body.h"
 
 using namespace std;
 using namespace arma;
@@ -73,12 +74,6 @@ void Solution::setSolnMat(cx_mat matIn)
     pSoln = matIn;
 }
 
-////------------------------------------------Function Separator --------------------------------------------------------
-//Body Solution::getBody()
-//{
-//    //Gets the body object.
-//    return *pBod;
-//}
 
 //------------------------------------------Function Separator --------------------------------------------------------
 Body &Solution::refBody()

@@ -15,7 +15,7 @@ var searchData=
   ['outputbodiesfile',['outputBodiesFile',['../classosea_1_1_file_reader.html#a79f10f1fd00fac75e83152980e34a6ea',1,'osea::FileReader']]],
   ['outputcontrolfile',['outputControlFile',['../classosea_1_1_file_reader.html#a705af41cd541f983951b6988082c632c',1,'osea::FileReader']]],
   ['outputdatafile',['outputDataFile',['../classosea_1_1_file_reader.html#a7f061059a96d02e453890e3b6874c17c',1,'osea::FileReader']]],
-  ['outputderived',['OutputDerived',['../classosea_1_1ofreq_1_1_output_derived.html#af8b70b70b8a5089f2b673da8b59a7b6a',1,'osea::ofreq::OutputDerived']]],
+  ['outputderived',['OutputDerived',['../classosea_1_1ofreq_1_1_output_derived.html#af8b70b70b8a5089f2b673da8b59a7b6a',1,'osea::ofreq::OutputDerived::OutputDerived()'],['../classosea_1_1ofreq_1_1_output_derived.html#aa35993ef6d6da030cf74bca52b142ac1',1,'osea::ofreq::OutputDerived::OutputDerived(OutputsBody *input)']]],
   ['outputderived',['OutputDerived',['../classosea_1_1ofreq_1_1_output_derived.html',1,'osea::ofreq']]],
   ['outputforcesfile',['outputForcesFile',['../classosea_1_1_file_reader.html#a02f58d7d0c309a7de4599d5220c3ac65',1,'osea::FileReader']]],
   ['outputsbody',['OutputsBody',['../classosea_1_1ofreq_1_1_outputs_body.html',1,'osea::ofreq']]],

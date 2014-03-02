@@ -9,7 +9,7 @@ var searchData=
   ['outputbodiesfile',['outputBodiesFile',['../classosea_1_1_file_reader.html#a79f10f1fd00fac75e83152980e34a6ea',1,'osea::FileReader']]],
   ['outputcontrolfile',['outputControlFile',['../classosea_1_1_file_reader.html#a705af41cd541f983951b6988082c632c',1,'osea::FileReader']]],
   ['outputdatafile',['outputDataFile',['../classosea_1_1_file_reader.html#a7f061059a96d02e453890e3b6874c17c',1,'osea::FileReader']]],
-  ['outputderived',['OutputDerived',['../classosea_1_1ofreq_1_1_output_derived.html#af8b70b70b8a5089f2b673da8b59a7b6a',1,'osea::ofreq::OutputDerived']]],
+  ['outputderived',['OutputDerived',['../classosea_1_1ofreq_1_1_output_derived.html#af8b70b70b8a5089f2b673da8b59a7b6a',1,'osea::ofreq::OutputDerived::OutputDerived()'],['../classosea_1_1ofreq_1_1_output_derived.html#aa35993ef6d6da030cf74bca52b142ac1',1,'osea::ofreq::OutputDerived::OutputDerived(OutputsBody *input)']]],
   ['outputforcesfile',['outputForcesFile',['../classosea_1_1_file_reader.html#a02f58d7d0c309a7de4599d5220c3ac65',1,'osea::FileReader']]],
   ['outputsbody',['OutputsBody',['../classosea_1_1ofreq_1_1_outputs_body.html#a6898483a0919f9bb9cd82e3036a59a14',1,'osea::ofreq::OutputsBody::OutputsBody()'],['../classosea_1_1ofreq_1_1_outputs_body.html#a03921b36c8a8323eb08355d267c0c626',1,'osea::ofreq::OutputsBody::OutputsBody(std::vector&lt; Body &gt; &amp;listBod, std::vector&lt; SolutionSet &gt; &amp;listSoln, std::vector&lt; double &gt; &amp;listFreq, std::vector&lt; double &gt; &amp;listWaveDir)']]],
   ['outputseaenvfile',['outputSeaEnvFile',['../classosea_1_1_file_reader.html#a25198e57b3c7f8fbca043ecce848d008',1,'osea::FileReader']]]

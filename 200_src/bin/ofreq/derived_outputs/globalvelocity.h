@@ -74,6 +74,7 @@ namespace ofreq
 //######################################### Class Separator ###########################################################
 //Prototype class declarations
 class OutputDerived;    //Include prototype declaration to allow proper class definition.
+class OutputsBody;
 
 //######################################### Class Separator ###########################################################
 /**
@@ -86,6 +87,16 @@ class GlobalVelocity : public GlobalSolution
 public:
     //------------------------------------------Function Separator ----------------------------------------------------
 	GlobalVelocity(); /**< This default constructor creates a Global Velocity object. */
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Constructor that also sets the pointer to the OutputsBody object which contains the OutputDerived
+     * object.
+     * @param input Pointer to the OutputsBody objec that contains this OutputDerived object.  Pointer passed by value.
+     *
+     * @sa setOutputsBody()
+     */
+    GlobalVelocity(OutputsBody *input);
 
     //------------------------------------------Function Separator ----------------------------------------------------
 	~GlobalVelocity(); /**< The default destructor, nothing happens here. */
