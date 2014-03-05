@@ -260,7 +260,7 @@ arma::cx_mat &OutputsBody::listResult(unsigned int index)
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-arma::cx_mat* &OutputsBody::getResult(unsigned int index)
+arma::cx_mat* &OutputsBody::refResult(unsigned int index)
 {
     //Check for out of bounds errors.  Resize if necessary.
     if ((index > plistResult.size() - 1) ||

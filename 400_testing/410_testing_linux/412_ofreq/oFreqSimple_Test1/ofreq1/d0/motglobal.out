@@ -1,16 +1,35 @@
+/*--------------------------------*- C++ -*------------------------------------*\
+| O pen         | OpenSea: The Open Source Seakeeping Suite            		|
+| S eakeeping   | Version:  0.20                                                |
+| E valuation   | Web:      www.opensea.dmsonline.us                            |
+| A nalysis     |                                                               |
+\*-----------------------------------------------------------------------------*/
+
+
+
 seafile
 {
-    version   1.0;
-    format    ascii;
-    object    ;
+  version  1.0;
+  format  ascii;
+  object  GlobalMotion;
 }
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 body {
-name body1;
-  {
-  name Global Motion;
+  name "body1";
+  GlobalMotion {
+  name "Global Motion";
     data {
-    frequency 1;
-    value (
-      0+0i
+      frequency 1;
+      value (
+        -3.89133e-318+0.5i
+        0.333333-0.333333i
+        1.94564e-318-1.06266e-315i
+        -1.83725e-311+0.2i
+        0.166667-7.77834e-318i
+        1.1118e-318-0.142857i
+      );
+    }
+  }
+}
+// ************************************************************************* //

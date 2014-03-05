@@ -34,8 +34,8 @@ using namespace osea::ofreq;
 //Static Initialization
 
 //------------------------------------------Function Separator ----------------------------------------------------
-//Reference File Declarations
-string FileWriter::HEADER_FILENAME = "../../var/openseaheader.txt";
+//Filename Specification
+string FileWriter::HEADER_FILENAME = "openseaheader.txt";
 
 //------------------------------------------Function Separator ----------------------------------------------------
 //Directory Specifications
@@ -54,8 +54,9 @@ string FileWriter::LIST_END2 = ")";
 string FileWriter::OBJECT_BEGIN2 = "{";
 string FileWriter::OBJECT_END2 = "}";
 string FileWriter::END = ";";
-string FileWriter::TAB = "  ";
+string FileWriter::TAB_REF = "  ";
 string FileWriter::SPACE = " ";
+string FileWriter::QUOTE = "\"";
 string FileWriter::KEY_NAME = "name";
 string FileWriter::KEY_DATA = "data";
 string FileWriter::KEY_VALUE = "value";
@@ -70,7 +71,7 @@ string FileWriter::VAL_FORMAT = "ascii";
 string FileWriter::VAL_SEAFILE = "seafile";
 string FileWriter::BREAK_TOP = "// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //\n";
 string FileWriter::BREAK_BOTTOM = "// ************************************************************************* //";
-int FileWriter::DIGIT = 15; /** The number of digits to use in precision of floating point numbers.*/
+int FileWriter::DIGIT = 6; /** The number of digits to use in precision of floating point numbers.*/
 
 //==========================================Section Separator =========================================================
 //Filename Markers
@@ -188,6 +189,43 @@ bool FileWriter::fileExists(string filename)
         return false;
 }
 
+//------------------------------------------Function Separator --------------------------------------------------------
+void FileWriter::setHeader(string filePathIn)
+{
+    std::string fileIn;     //Full path of input file that contains the header to write.
+
+    //Combine file path and filename.
+    fileIn = filePathIn;
+
+    if (fileIn.substr(fileIn.size(),1) == SLASH)
+    {
+        //Just add filename
+        fileIn.append(HEADER_FILENAME);
+    }
+    else
+    {
+        //Add filename plus slash.
+        fileIn.append(SLASH);
+        fileIn.append(HEADER_FILENAME);
+    }
+
+    ifstream header_fileInput(fileIn.c_str(), std::ios::in);
+
+    if (!header_fileInput)
+    {
+        cerr << fileIn + ":  file does not exist." << endl;
+    }
+    else
+    {
+        header_fileInput.seekg(0, std::ios::end);
+        header.resize(header_fileInput.tellg());
+        header_fileInput.seekg(0, std::ios::beg);
+        header_fileInput.read(&header[0], header.size());
+        //Close file
+        header_fileInput.close();
+    }
+}
+
 //--------------------------------------------Function Separator ------------------------------------------------------
 //--------------------------------------------Function Separator ------------------------------------------------------
 //Outputs writing methods below here
@@ -206,30 +244,34 @@ int FileWriter::writeWaveDirection()
 
     try
     {
-        //Open file
-        output.open(writeFilename.c_str());
-
-        //Add top header
-        output << header;
-
-        //Add info block
-        output << getInfoBlock(KEY_DIRECTION);
-        output << BREAK_TOP;
-
-        //Add beginning of data
-        output << KEY_DIRECTION + SPACE + LIST_BEGIN2 << endl;
-
-        //Write outputs
-        for(unsigned int i = 0; i < pOutput->listWaveDir().size(); i ++)
+        if (!exists(writeFilename))
         {
-            output << TAB << pOutput->listWaveDir(i) << endl;
+            //File does not exist.  Create file.
+            //Open file
+            output.open(writeFilename.c_str());
+
+            //Add top header
+            output << header;
+
+            //Add info block
+            output << getInfoBlock(KEY_DIRECTION);
+            output << BREAK_TOP;
+
+            //Add beginning of data
+            output << KEY_DIRECTION + SPACE + LIST_BEGIN2 << endl;
+
+            //Write outputs
+            for(unsigned int i = 0; i < pOutput->listWaveDir().size(); i ++)
+            {
+                output << TAB() << pOutput->listWaveDir(i) << endl;
+            }
+
+            //Close the list and finish
+            output << LIST_END2 << END << "\n\n" << BREAK_BOTTOM;
+
+            //Close file
+            output.close();
         }
-
-        //Close the list and finish
-        output << LIST_END2 << END << "\n\n" << BREAK_BOTTOM;
-
-        //Close file
-        output.close();
     }
     catch (int err)
     {
@@ -252,30 +294,34 @@ int FileWriter::writeFrequency()
 
     try
     {
-        //Open file
-        output.open(writeFilename.c_str());
-
-        //Add top header
-        output << header;
-
-        //Add info block
-        output << getInfoBlock(KEY_FREQUENCY);
-        output << BREAK_TOP;
-
-        //Add beginning of data
-        output << KEY_FREQUENCY + SPACE + LIST_BEGIN2 << endl;
-
-        //Write outputs
-        for(unsigned int i = 0; i < pOutput->listFreq().size(); i ++)
+        if (!exists(writeFilename))
         {
-            output << TAB << pOutput->listFreq(i) << endl;
+            //File does not exist.  Create.
+            //Open file
+            output.open(writeFilename.c_str());
+
+            //Add top header
+            output << header;
+
+            //Add info block
+            output << getInfoBlock(KEY_FREQUENCY);
+            output << BREAK_TOP;
+
+            //Add beginning of data
+            output << KEY_FREQUENCY + SPACE + LIST_BEGIN2 << endl;
+
+            //Write outputs
+            for(unsigned int i = 0; i < pOutput->listFreq().size(); i ++)
+            {
+                output << TAB() << pOutput->listFreq(i) << endl;
+            }
+
+            //Close the list and finish
+            output << LIST_END2 << END << "\n\n" << BREAK_BOTTOM;
+
+            //Close file
+            output.close();
         }
-
-        //Close the list and finish
-        output << LIST_END2 << END << "\n\n" << BREAK_BOTTOM;
-
-        //Close file
-        output.close();
     }
     catch (int err)
     {
@@ -338,10 +384,7 @@ int FileWriter::writeGlobalMotion()
     {
         //Write output for beginning of body
         output << KEY_BODY << SPACE << OBJECT_BEGIN2 << endl;
-        output << KEY_NAME;
-        output << SPACE;
-        output << pOutput->refCurBody().refBodyName();
-        output << END << endl;
+        output << TAB() << KEY_NAME << SPACE << QUOTE << pOutput->refCurBody().refBodyName() << QUOTE << END << endl;
 
         //Repeat process for each item in object list
         for (unsigned int i = 0; i < pOutput->listGlobalMotion().size(); i++)
@@ -356,45 +399,45 @@ int FileWriter::writeGlobalMotion()
                     throw errVal;
 
                 //Start the output object.
-                output << TAB << classname << OBJECT_BEGIN2 << endl;
-                output << TAB;
-                output << KEY_NAME;
-                output << SPACE;
-                output << pOutput->listGlobalMotion(i).getName();
+                output << TAB() << classname << SPACE << OBJECT_BEGIN2 << endl;
+                output << TAB() << KEY_NAME << SPACE << QUOTE << pOutput->listGlobalMotion(i).getName() << QUOTE;
                 output << END << endl;
 
                 //Iterate for each frequency in the list
                 for (unsigned int j = 0; j < pOutput->listFreq().size(); j++)
                 {
                     //Create data signifier
-                    output << TAB << TAB << KEY_DATA << SPACE << OBJECT_BEGIN2 << endl;
+                    output << TAB(2) << KEY_DATA << SPACE << OBJECT_BEGIN2 << endl;
                     //Add frequency designator
-                    output << TAB << TAB << KEY_FREQUENCY << SPACE << (j+1) << END << endl;
+                    output << TAB(3) << KEY_FREQUENCY << SPACE << (j+1) << END << endl;
                     //Add value indicator
-                    output << TAB << TAB << KEY_VALUE << SPACE << LIST_BEGIN2 << endl;
+                    output << TAB(3) << KEY_VALUE << SPACE << LIST_BEGIN2 << endl;
 
                     //Write out data for given frequency.
-                    for (unsigned int k = 0; j < pOutput->listResult(j).n_rows; k++)
+                    for (unsigned int k = 0; k < pOutput->listResult(j).n_rows; k++)
                     {
                         //Set precision
                         output.precision(DIGIT);
                         //Write output values for each solution object.
                         //Write the real part
-                        output << TAB << TAB << TAB << pOutput->listResult(j)(k,0).real();
+                        output << TAB(4) << std::setprecision(DIGIT) << pOutput->listResult(j)(k,0).real();
 
                         //Write the imaginary part
+                        //Set precision
                         if (pOutput->listResult(j)(k,0).imag() < 0.00)
-                            output << pOutput->listResult(j)(k,0).imag() << "i" << endl;
+                            output << std::setprecision(DIGIT) << pOutput->listResult(j)(k,0).imag() << "i" << endl;
                         else
-                            output << "+" << pOutput->listResult(j)(k,0).imag() << "i" << endl;
+                        {
+                            output << "+";
+                            output << std::setprecision(DIGIT) << pOutput->listResult(j)(k,0).imag();
+                            output << "i" << endl;
+                        }
                     }
                     //Close list
-                    output << TAB << TAB << LIST_END2 << END << endl;
+                    output << TAB(3) << LIST_END2 << END << endl;
                     //Close data object
-                    output << TAB << TAB << OBJECT_END2 << endl;
+                    output << TAB(2) << OBJECT_END2 << endl;
                 }
-
-
             }
             catch(int err)
             {
@@ -403,7 +446,7 @@ int FileWriter::writeGlobalMotion()
             }
 
             //End the output object
-            output << TAB << OBJECT_END2 << "\n";
+            output << TAB() << OBJECT_END2 << "\n";
         }
 
         //Write output for ending of body
@@ -469,10 +512,7 @@ int FileWriter::writeGlobalVelocity()
     {
         //Write output for beginning of body
         output << KEY_BODY << SPACE << OBJECT_BEGIN2 << endl;
-        output << KEY_NAME;
-        output << SPACE;
-        output << pOutput->refCurBody().refBodyName();
-        output << END << endl;
+        output << TAB() << KEY_NAME << SPACE << QUOTE << pOutput->refCurBody().refBodyName() << QUOTE << END << endl;
 
         //Repeat process for each item in object list
         for (unsigned int i = 0; i < pOutput->listGlobalVelocity().size(); i++)
@@ -487,45 +527,42 @@ int FileWriter::writeGlobalVelocity()
                     throw errVal;
 
                 //Start the output object.
-                output << TAB << classname << OBJECT_BEGIN2 << endl;
-                output << TAB;
-                output << KEY_NAME;
-                output << SPACE;
-                output << pOutput->listGlobalVelocity(i).getName();
+                output << TAB() << classname << SPACE << OBJECT_BEGIN2 << endl;
+                output << TAB() << KEY_NAME << SPACE << QUOTE << pOutput->listGlobalVelocity(i).getName() << QUOTE;
                 output << END << endl;
 
                 //Iterate for each frequency in the list
                 for (unsigned int j = 0; j < pOutput->listFreq().size(); j++)
                 {
                     //Create data signifier
-                    output << TAB << TAB << KEY_DATA << SPACE << OBJECT_BEGIN2 << endl;
+                    output << TAB(2) << KEY_DATA << SPACE << OBJECT_BEGIN2 << endl;
                     //Add frequency designator
-                    output << TAB << TAB << KEY_FREQUENCY << SPACE << (j+1) << END << endl;
+                    output << TAB(3) << KEY_FREQUENCY << SPACE << (j+1) << END << endl;
                     //Add value indicator
-                    output << TAB << TAB << KEY_VALUE << SPACE << LIST_BEGIN2 << endl;
+                    output << TAB(3) << KEY_VALUE << SPACE << LIST_BEGIN2 << endl;
 
                     //Write out data for given frequency.
-                    for (unsigned int k = 0; j < pOutput->listResult(j).n_rows; k++)
+                    for (unsigned int k = 0; k < pOutput->listResult(j).n_rows; k++)
                     {
                         //Set precision
                         output.precision(DIGIT);
                         //Write output values for each solution object.
                         //Write the real part
-                        output << TAB << TAB << TAB << pOutput->listResult(j)(k,0).real();
+                        output << TAB(4) << pOutput->listResult(j)(k,0).real();
 
                         //Write the imaginary part
+                        //Set precision
+                        output.precision(DIGIT);
                         if (pOutput->listResult(j)(k,0).imag() < 0.00)
                             output << pOutput->listResult(j)(k,0).imag() << "i" << endl;
                         else
                             output << "+" << pOutput->listResult(j)(k,0).imag() << "i" << endl;
                     }
                     //Close list
-                    output << TAB << TAB << LIST_END2 << END << endl;
+                    output << TAB(3) << LIST_END2 << END << endl;
                     //Close data object
-                    output << TAB << TAB << OBJECT_END2 << endl;
+                    output << TAB(2) << OBJECT_END2 << endl;
                 }
-
-
             }
             catch(int err)
             {
@@ -534,7 +571,7 @@ int FileWriter::writeGlobalVelocity()
             }
 
             //End the output object
-            output << TAB << OBJECT_END2 << "\n";
+            output << TAB() << OBJECT_END2 << "\n";
         }
 
         //Write output for ending of body
@@ -600,10 +637,7 @@ int FileWriter::writeGlobalAcceleration()
     {
         //Write output for beginning of body
         output << KEY_BODY << SPACE << OBJECT_BEGIN2 << endl;
-        output << KEY_NAME;
-        output << SPACE;
-        output << pOutput->refCurBody().refBodyName();
-        output << END << endl;
+        output << TAB() << KEY_NAME << SPACE << QUOTE << pOutput->refCurBody().refBodyName() << QUOTE << END << endl;
 
         //Repeat process for each item in object list
         for (unsigned int i = 0; i < pOutput->listGlobalAcceleration().size(); i++)
@@ -618,45 +652,42 @@ int FileWriter::writeGlobalAcceleration()
                     throw errVal;
 
                 //Start the output object.
-                output << TAB << classname << OBJECT_BEGIN2 << endl;
-                output << TAB;
-                output << KEY_NAME;
-                output << SPACE;
-                output << pOutput->listGlobalAcceleration(i).getName();
+                output << TAB() << classname << SPACE << OBJECT_BEGIN2 << endl;
+                output << TAB() << KEY_NAME << SPACE << QUOTE << pOutput->listGlobalAcceleration(i).getName() << QUOTE;
                 output << END << endl;
 
                 //Iterate for each frequency in the list
                 for (unsigned int j = 0; j < pOutput->listFreq().size(); j++)
                 {
                     //Create data signifier
-                    output << TAB << TAB << KEY_DATA << SPACE << OBJECT_BEGIN2 << endl;
+                    output << TAB(2) << KEY_DATA << SPACE << OBJECT_BEGIN2 << endl;
                     //Add frequency designator
-                    output << TAB << TAB << KEY_FREQUENCY << SPACE << (j+1) << END << endl;
+                    output << TAB(3) << KEY_FREQUENCY << SPACE << (j+1) << END << endl;
                     //Add value indicator
-                    output << TAB << TAB << KEY_VALUE << SPACE << LIST_BEGIN2 << endl;
+                    output << TAB(3) << KEY_VALUE << SPACE << LIST_BEGIN2 << endl;
 
                     //Write out data for given frequency.
-                    for (unsigned int k = 0; j < pOutput->listResult(j).n_rows; k++)
+                    for (unsigned int k = 0; k < pOutput->listResult(j).n_rows; k++)
                     {
                         //Set precision
                         output.precision(DIGIT);
                         //Write output values for each solution object.
                         //Write the real part
-                        output << TAB << TAB << TAB << pOutput->listResult(j)(k,0).real();
+                        output << TAB(4) << pOutput->listResult(j)(k,0).real();
 
                         //Write the imaginary part
+                        //Set precision
+                        output.precision(DIGIT);
                         if (pOutput->listResult(j)(k,0).imag() < 0.00)
                             output << pOutput->listResult(j)(k,0).imag() << "i" << endl;
                         else
                             output << "+" << pOutput->listResult(j)(k,0).imag() << "i" << endl;
                     }
                     //Close list
-                    output << TAB << TAB << LIST_END2 << END << endl;
+                    output << TAB(3) << LIST_END2 << END << endl;
                     //Close data object
-                    output << TAB << TAB << OBJECT_END2 << endl;
+                    output << TAB(2) << OBJECT_END2 << endl;
                 }
-
-
             }
             catch(int err)
             {
@@ -665,7 +696,7 @@ int FileWriter::writeGlobalAcceleration()
             }
 
             //End the output object
-            output << TAB << OBJECT_END2 << "\n";
+            output << TAB() << OBJECT_END2 << "\n";
         }
 
         //Write output for ending of body
@@ -731,10 +762,7 @@ int FileWriter::writeGlobalSolution()
     {
         //Write output for beginning of body
         output << KEY_BODY << SPACE << OBJECT_BEGIN2 << endl;
-        output << KEY_NAME;
-        output << SPACE;
-        output << pOutput->refCurBody().refBodyName();
-        output << END << endl;
+        output << TAB() << KEY_NAME << SPACE << QUOTE << pOutput->refCurBody().refBodyName() << QUOTE << END << endl;
 
         //Repeat process for each item in object list
         for (unsigned int i = 0; i < pOutput->listGlobalSolution().size(); i++)
@@ -749,45 +777,42 @@ int FileWriter::writeGlobalSolution()
                     throw errVal;
 
                 //Start the output object.
-                output << TAB << classname << OBJECT_BEGIN2 << endl;
-                output << TAB;
-                output << KEY_NAME;
-                output << SPACE;
-                output << pOutput->listGlobalSolution(i).getName();
+                output << TAB() << classname << SPACE << OBJECT_BEGIN2 << endl;
+                output << TAB() << KEY_NAME << SPACE << QUOTE << pOutput->listGlobalSolution(i).getName() << QUOTE;
                 output << END << endl;
 
                 //Iterate for each frequency in the list
                 for (unsigned int j = 0; j < pOutput->listFreq().size(); j++)
                 {
                     //Create data signifier
-                    output << TAB << TAB << KEY_DATA << SPACE << OBJECT_BEGIN2 << endl;
+                    output << TAB(2) << KEY_DATA << SPACE << OBJECT_BEGIN2 << endl;
                     //Add frequency designator
-                    output << TAB << TAB << KEY_FREQUENCY << SPACE << (j+1) << END << endl;
+                    output << TAB(3) << KEY_FREQUENCY << SPACE << (j+1) << END << endl;
                     //Add value indicator
-                    output << TAB << TAB << KEY_VALUE << SPACE << LIST_BEGIN2 << endl;
+                    output << TAB(3) << KEY_VALUE << SPACE << LIST_BEGIN2 << endl;
 
                     //Write out data for given frequency.
-                    for (unsigned int k = 0; j < pOutput->listResult(j).n_rows; k++)
+                    for (unsigned int k = 0; k < pOutput->listResult(j).n_rows; k++)
                     {
                         //Set precision
                         output.precision(DIGIT);
                         //Write output values for each solution object.
                         //Write the real part
-                        output << TAB << TAB << TAB << pOutput->listResult(j)(k,0).real();
+                        output << TAB(4) << pOutput->listResult(j)(k,0).real();
 
                         //Write the imaginary part
+                        //Set precision
+                        output.precision(DIGIT);
                         if (pOutput->listResult(j)(k,0).imag() < 0.00)
                             output << pOutput->listResult(j)(k,0).imag() << "i" << endl;
                         else
                             output << "+" << pOutput->listResult(j)(k,0).imag() << "i" << endl;
                     }
                     //Close list
-                    output << TAB << TAB << LIST_END2 << END << endl;
+                    output << TAB(3) << LIST_END2 << END << endl;
                     //Close data object
-                    output << TAB << TAB << OBJECT_END2 << endl;
+                    output << TAB(2) << OBJECT_END2 << endl;
                 }
-
-
             }
             catch(int err)
             {
@@ -796,7 +821,7 @@ int FileWriter::writeGlobalSolution()
             }
 
             //End the output object
-            output << TAB << OBJECT_END2 << "\n";
+            output << TAB() << OBJECT_END2 << "\n";
         }
 
         //Write output for ending of body
@@ -845,27 +870,23 @@ bool FileWriter::createDir(string path)
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-void FileWriter::setHeader()
-{
-    ifstream header_fileInput(HEADER_FILENAME.c_str());
-
-    if (!header_fileInput)
-    {
-        cerr << HEADER_FILENAME + " file does not exist." << endl;
-    }
-    else
-    {
-        header.assign((std::istreambuf_iterator<char>(header_fileInput)),
-            (std::istreambuf_iterator<char>()));
-    }
-}
-
-//------------------------------------------Function Separator --------------------------------------------------------
 string FileWriter::getInfoBlock(string nameIn)
 {
-    return VAL_SEAFILE + "\n" + OBJECT_BEGIN2 + "\n    " + KEY_VERSION + "   " + VAL_VERSION + END + "\n    " + KEY_FORMAT + "    "
-        + VAL_FORMAT + END + "\n    " + KEY_OBJECT + "    " + nameIn + END + "\n" + OBJECT_END2 + "\n\n";
+    return VAL_SEAFILE + "\n" + OBJECT_BEGIN2 + "\n" + TAB() + KEY_VERSION + TAB() + VAL_VERSION + END + "\n" + TAB()
+            + KEY_FORMAT + TAB()
+            + VAL_FORMAT + END + "\n" + TAB() + KEY_OBJECT + TAB() + nameIn + END + "\n" + OBJECT_END2 + "\n\n";
 }
 
 //==========================================Section Separator =========================================================
 //Private Functions
+
+//------------------------------------------Function Separator --------------------------------------------------------
+std::string FileWriter::TAB(int num)
+{
+    string output;  //Output string
+    for (int i = 0; i < num; i++)
+        output.append(TAB_REF);
+
+    //Write output
+    return output;
+}

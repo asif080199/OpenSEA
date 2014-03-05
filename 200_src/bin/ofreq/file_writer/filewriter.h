@@ -183,6 +183,15 @@ public:
     bool fileExists(std::string filename);
 
     //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Reads in from input file the header to be used in all files.  This is a basic header text that should
+     * be at the top of all OpenSEA output files.  Simple identification of the program.  Nothing specific for output.
+     * @param filePathIn String variable specifying the full location of the folder which has the text for the header
+     * file.  Header file must be a simple ASCII text file.
+     */
+    void setHeader(std::string filePathIn);
+
+    //------------------------------------------Function Separator ----------------------------------------------------
     //------------------------------------------Function Separator ----------------------------------------------------
     //Outputs writing methods below here
     //------------------------------------------Function Separator ----------------------------------------------------
@@ -238,7 +247,7 @@ public:
      * @return Integer reports status of file writing.  Returns of succesful.  Otherwise returns a non-zero value that
      * is the error code.  Returned variable passed by value.
      */
-    int writeGlobalSolution();
+    int writeGlobalSolution();    
 
 
 //==========================================Section Separator =========================================================
@@ -271,13 +280,6 @@ protected:
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
-     * @brief Reads in from input file the header to be used in all files.  This is a basic header text that should
-     * be at the top of all OpenSEA output files.  Simple identification of the program.  Nothing specific for output.
-     */
-    void setHeader();
-
-    //------------------------------------------Function Separator ----------------------------------------------------
-    /**
      * Set information about the file to be written after header and above data, included in the seafile block.
      * @param nameIn The name of the object.
      * @return Returns std::string.  std::string contains the file info for the output file.  Everything written into the
@@ -287,6 +289,16 @@ protected:
 
 //==========================================Section Separator =========================================================
 private:
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief A simple function that writes out multiple tab statements.
+     *
+     * Based on the TAB variable defined within this class.  Which may actually be a collection of spaces.
+     * @param num Integer specifying the number of tab statements to write out.
+     * @return Returns string that is the combination of the TAB statements.
+     */
+    std::string TAB(int num = 1);
+
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
      * @brief The path to the root directory for the current project run of oFreq.
@@ -313,8 +325,8 @@ private:
     //=================================== Variable Declarations =======================================================
 
     //------------------------------------------Function Separator ----------------------------------------------------
-    //Reference File Declarations
-    static std::string HEADER_FILENAME;
+    //Filename Specification
+    static std::string HEADER_FILENAME; /**< The filename of the header file to read. **/
 
     //------------------------------------------Function Separator ----------------------------------------------------
     //Directory Specifications
@@ -329,10 +341,11 @@ private:
     static std::string OBJECT_BEGIN2;
     static std::string OBJECT_END2;
     static std::string END;
-    static std::string TAB;
+    static std::string TAB_REF;
     static std::string SPACE;
     static std::string BREAK_TOP;
     static std::string BREAK_BOTTOM;
+    static std::string QUOTE;
     static int DIGIT; /** The number of digits to use in precision of floating point numbers.*/
 
     //------------------------------------------Function Separator ----------------------------------------------------

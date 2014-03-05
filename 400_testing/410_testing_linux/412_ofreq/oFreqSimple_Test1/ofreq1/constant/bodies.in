@@ -28,7 +28,7 @@ body {
   //If a property is not defined, it is assumed to be zero.
   massprop {
     //Mass [kg]
-    mass 500.0;
+    mass 1.0;
     ixx 10.0;
     iyy 10.0;
     izz 10.0;

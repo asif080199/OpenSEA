@@ -164,7 +164,7 @@ void OutputDerived::addResult(arma::cx_mat* input, int index)
     }
 
     //Place result in the list of results
-    pParentBody->getResult(index) = input;
+    pParentBody->refResult(index) = input;
 }
 
 

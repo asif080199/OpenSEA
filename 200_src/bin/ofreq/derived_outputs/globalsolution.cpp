@@ -50,6 +50,8 @@ GlobalSolution::GlobalSolution(OutputsBody *input)
 
     //Set the outputsbody pointers.
     this->setOutputBody(input);
+
+    pClassName = "GlobalSolution";
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
@@ -81,7 +83,7 @@ int GlobalSolution::calcOutput(int freqIn)
 
     //Get number of rows
     int nrow;
-    nrow = pParentBody->refCurSolution().n_freqs();
+    nrow = pParentBody->refCurSolution().getSolution(pParentBody->getCurWaveInd(), freqIn).refSolnMat().n_rows;
 
     //Get current frequency
     wavefreq.real(pParentBody->listFreq(freqIn));
@@ -91,17 +93,14 @@ int GlobalSolution::calcOutput(int freqIn)
 
     for(int i = 0; i < nrow; i++)
     {
-        output->at(i,1) = pow(wavefreq, orderDerivative) *
+        output->at(i,0) = pow(wavefreq, orderDerivative) *
                           pow(compI, orderDerivative) *
-                          pParentBody->refCurSolution().
-                            refSolution(pParentBody->getCurWaveInd(),freqIn).
-                            refSolnMat()(i,0);
-
-
+                          pParentBody->refCurSolution().getSolution(pParentBody->getCurWaveInd(), freqIn)
+                          .refSolnMat()(i,0);
     }
 
     //Write result to results list
-    addResult(output);
+    addResult(output, freqIn);
 
     //Change error to success
     errVal = 0;         //No errors.

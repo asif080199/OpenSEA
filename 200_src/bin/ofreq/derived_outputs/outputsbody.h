@@ -433,7 +433,7 @@ public:
      * @return Returns a pointer to the stored results matrix.  Returned variable is a pointer to a matrix of
      * complex numbers.  Matrix of undetermined size.  Returned variable is passed by reference.
      */
-    arma::cx_mat* &getResult(unsigned int index);
+    arma::cx_mat* & refResult(unsigned int index);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**

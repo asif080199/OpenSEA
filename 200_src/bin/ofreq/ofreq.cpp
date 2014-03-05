@@ -91,6 +91,24 @@ System sysofreq;
 //ofreqcore object.  For writing error messages.
 oFreqCore Logs;
 
+//Name of executable file itself
+const std::string EXECNAME = "ofreq";
+
+//Name of executable folder.  Specific to the ofreq executable.
+const std::string EXECFOLDER = "ofreq_debug";
+
+//Name of var folder.
+const std::string VARFOLDER = "var";
+
+//Name of lib folder
+const std::string LIBFOLDER = "lib";
+
+//Name of etc folder
+const std::string ETCFOLDER = "etc";
+
+//Name of binaries folder
+const std::string BINFOLDER = "bin";
+
 //######################################### Function Prototypes #######################################################
 
 //------------------------------------------Function Separator ----------------------------------------------------
@@ -121,6 +139,23 @@ void calcOutput(OutputsBody &OutputIn, FileWriter &WriterIn);
  * @sa Dictionary
  */
 void ReadFiles(string runPath);
+
+//------------------------------------------Function Separator ----------------------------------------------------
+/**
+ * @brief Finds the path of the critical files for the program.
+ *
+ * Finds the path of one of four possible folders that are critical to the oSea program.  Includes platform
+ * dependant code so that this function should work both under Windows or Linux.
+ * @param typePath String that specifies which path to get.  Options are:
+ * "exec":      Path to the directory of the executable file.  NOT the directory the program was called from.
+ * "lib":       Path to the lib directory that is common to all oSea programs.
+ * "var":       Path to the var directory that is common to all oSea programs.
+ * "etc":       Path to the etc directory that is common to all oSea programs.
+ * "bin":       Path to the binaries directory.  Binaries for individual programs are included in sub folders.
+ * @return Returns std::string that is the full absolute path to the specified .  Returned variable passed by
+ * value.
+ */
+std::string getPath(std::string typePath = "exec");
 
 //############################################ Class Prototypes #######################################################
 
@@ -265,6 +300,10 @@ int main(int argc, char *argv[])
 
         //Setup filewriter for outputs
         FileWriter Writer(oFreq_Directory, sysofreq.listOutput(i));
+
+        //Set location of header file
+        std::string directory = getPath("var");
+        Writer.setHeader(directory);
 
         int testwrite;     //test to see if file writing was sucessful.
 
@@ -581,4 +620,73 @@ void ReadFiles(string runPath)
     fileIn.readForces();        //Must come before reading Bodies
     fileIn.setDictionary(dictBod);
     fileIn.readBodies();        //Must come after reading forces.
+}
+
+//######################################## ReadFiles Function #########################################################
+std::string getPath(string typePath)
+{
+    std::string output;     //Output of full path
+    char buff[1024];        //Buffer for reading path
+
+    //First get executable path.  Includes dependancy code for both windows and linux.
+    #ifdef Q_OS_WIN
+    //----------------------------------- Windows Code ----------------------------------------------------------------
+    ssize_t len = GetModuleFileName(NULL, buff, sizeof(buff) - 1);
+    std::string SLASH = "\\";
+    #elif defined Q_OS_LINUX
+    //------------------------------------ Linux Code -----------------------------------------------------------------
+    ssize_t len = readlink("/proc/self/exe", buff, sizeof(buff) - 1);
+    std::string SLASH = "/";
+    #endif
+
+    //--------------------------- Platform Independent Code -----------------------------------------------------------
+    if (len != -1)
+    {
+        buff[len] = '\0';
+        output.assign(buff);
+    }
+    else
+    {
+        //Error handler later
+    }
+
+    //Strip off name of executable itself.
+    std::string strip = SLASH + EXECNAME;
+    output.erase(output.size() - strip.size(), strip.size());
+
+    //Strip back the name of the executable directory.
+    strip = BINFOLDER + SLASH + EXECFOLDER;
+    output.erase(output.size() - strip.size(), strip.size());
+
+    //Change output depending on which path was requested
+    if (typePath == "exec")
+    {
+        //Add on the executable path
+        output.append(BINFOLDER);
+        output.append(SLASH);
+        output.append(EXECFOLDER);
+    }
+    else if (typePath == "bin")
+    {
+        //Add on the binary folder
+        output.append(BINFOLDER);
+    }
+    else if (typePath == "lib")
+    {
+        //Add on library path
+        output.append(LIBFOLDER);
+    }
+    else if (typePath == "var")
+    {
+        //Add on variable folder
+        output.append(VARFOLDER);
+    }
+    else if (typePath == "etc")
+    {
+        //Add on etc folder
+        output.append(ETCFOLDER);
+    }
+
+    //Write output
+    return output;
 }

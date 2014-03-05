@@ -52,6 +52,7 @@ GlobalVelocity::GlobalVelocity(OutputsBody *input)
 {
     pName = VELOCITY_NAME;
     orderDerivative = GLOBAL_VELOCITY_DERIVATIVE;
+    pClassName = "GlobalVelocity";
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------

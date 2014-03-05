@@ -1,4 +1,35 @@
+/*--------------------------------*- C++ -*------------------------------------*\
+| O pen         | OpenSea: The Open Source Seakeeping Suite            		|
+| S eakeeping   | Version:  0.20                                                |
+| E valuation   | Web:      www.opensea.dmsonline.us                            |
+| A nalysis     |                                                               |
+\*-----------------------------------------------------------------------------*/
+
+
+
+seafile
+{
+  version  1.0;
+  format  ascii;
+  object  GlobalAcceleration;
+}
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 body {
-name body1;
+  name "body1";
+  GlobalAcceleration {
+  name "Global Acceleration";
+    data {
+      frequency 1;
+      value (
+        -6.12323e-17-0.5i
+        -0.333333+0.333333i
+        -1.94564e-318+1.06266e-315i
+        -2.44929e-17-0.2i
+        -0.166667+2.04108e-17i
+        1.7495e-17+0.142857i
+      );
+    }
+  }
 }
 // ************************************************************************* //
