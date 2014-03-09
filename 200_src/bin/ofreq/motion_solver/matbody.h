@@ -164,6 +164,16 @@ public:
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
+     * @brief Returns the mass matrix as a reactive force matrix.
+     *
+     * This allows the motion solver to easily add the body mass in with the other reactive force matrices.
+     * @return Returns a matrix reactive force object.  Object contains the mass matrix for the body.  Returned
+     * variabled passed by value.
+     */
+    matForceReact getForceReact_mass();
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
      * @brief Returns a reference to the Reactive Force, user objects.
      *
      * Returns a reference to the Reactive Force, user objects.  This is a vector list of the Reactive Force objects.

@@ -749,7 +749,7 @@ std::complex<double> EquationofMotion::Sum(std::string FuncName, std::string ind
                 (from < 1))
         {
             //Get limit
-            from = 0;
+            from = 1;
         }
 
         if (to == undefArg)

@@ -190,15 +190,21 @@ std::string Parser::CommentFilter(std::string curString, std::istream &infile)
     //-----------------------------------
     else if ( curString.find(COMMENT_BLOCK_BEGIN) != std::string::npos)
     {
+        int commentcount = 1;       //Number of comment markers
+
         for(;;)
         {
             infile >> curString;
             if (infile.eof()) break;
 
+            if (curString.find(COMMENT_BLOCK_BEGIN) != std::string::npos)
+                commentcount += 1;
+
             if( curString.find(COMMENT_BLOCK_END) != std::string::npos)
-            {
+                commentcount -= 1;
+
+            if (commentcount <= 0)
                 break;
-            }
         }
         //return blank string
         return "";

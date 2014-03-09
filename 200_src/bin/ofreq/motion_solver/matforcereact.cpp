@@ -77,7 +77,7 @@ matForceReact matForceReact::operator+(matForceReact& forceOther)
             maxOrdTwo = forceOther.getMaxOrder();
 
         //Expand the size of the vector
-        output.pderiv.resize(maxOrdTwo);
+        output.pderiv.resize(maxOrdTwo + 1);
 
         //Get size of matrices.
         unsigned int maxSizeTwo;
@@ -93,17 +93,25 @@ matForceReact matForceReact::operator+(matForceReact& forceOther)
             maxSizeTwo = forceOther.pderiv[0].n_rows;
 
         //Resize Matrices, initialize with zeros.
-        for (int i = 0; i <= maxOrdTwo; i++)
+        for (unsigned int i = 0; i <= maxOrdTwo; i++)
         {
-            output.pderiv[i].zeros(maxSizeTwo);
+            output.pderiv[i].zeros(maxSizeTwo, maxSizeTwo);
 
-            //Iterate through the matrix and add values.
-            for (unsigned int j = 0; j < maxSizeTwo; j++)
+            //Check if either matrix does not have enough derivatives
+            if (this->pderiv.size() - 1 < i)
             {
-                for (unsigned int k = 0; k < maxSizeTwo; k++)
-                {
-                    output.pderiv[i](k,j) = this->pderiv[i](k,j) + forceOther.pderiv[i](k,j);
-                }
+                //This force object does not have enough derivatives.
+                output.pderiv[i] = forceOther.pderiv[i];
+            }
+            else if (forceOther.pderiv.size() - 1 < i)
+            {
+                //Other force object does not have enough derivatives.
+                output.pderiv[i] = this->pderiv[i];
+            }
+            else
+            {
+                //Both have enough derivatives.  Add together.
+                output.pderiv[i] = this->pderiv[i] + forceOther.pderiv[i];
             }
         }
     }
@@ -140,7 +148,7 @@ matForceReact matForceReact::operator-(matForceReact& forceOther)
             maxOrdTwo = forceOther.getMaxOrder();
 
         //Expand the size of the vector
-        output.pderiv.resize(maxOrdTwo);
+        output.pderiv.resize(maxOrdTwo + 1);
 
         //Get size of matrices.
         unsigned int maxSizeTwo;
@@ -156,17 +164,25 @@ matForceReact matForceReact::operator-(matForceReact& forceOther)
             maxSizeTwo = forceOther.pderiv[0].n_rows;
 
         //Resize Matrices, initialize with zeros.
-        for (int i = 0; i <= maxOrdTwo; i++)
+        for (unsigned int i = 0; i <= maxOrdTwo; i++)
         {
-            output.pderiv[i].zeros(maxSizeTwo);
+            output.pderiv[i].zeros(maxSizeTwo, maxSizeTwo);
 
-            //Iterate through the matrix and add values.
-            for (unsigned int j = 0; j < maxSizeTwo; j++)
+            //Check if either matrix does not have enough derivatives
+            if (this->pderiv.size() - 1 < i)
             {
-                for (unsigned int k = 0; k < maxSizeTwo; k++)
-                {
-                    output.pderiv[i](k,j) = this->pderiv[i](k,j) - forceOther.pderiv[i](k,j);
-                }
+                //This force object does not have enough derivatives.
+                output.pderiv[i] = forceOther.pderiv[i];
+            }
+            else if (forceOther.pderiv.size() - 1 < i)
+            {
+                //Other force object does not have enough derivatives.
+                output.pderiv[i] = this->pderiv[i];
+            }
+            else
+            {
+                //Both have enough derivatives.  Add together.
+                output.pderiv[i] = this->pderiv[i] - forceOther.pderiv[i];
             }
         }
     }
@@ -191,8 +207,19 @@ cx_mat matForceReact::getDerivative(int order)
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-void matForceReact::setDerivative(int order, cx_mat Coeff)
+void matForceReact::setDerivative(unsigned int order, cx_mat Coeff)
 {
+    //Check if vector is large enough for requested order size
+    if ((order > pderiv.size() - 1) ||
+            (pderiv.size() == 0))
+    {
+        arma::cx_mat mat1 = zeros<cx_mat>(Coeff.n_rows, Coeff.n_cols);
+
+        //Resize list
+        pderiv.resize(order + 1, mat1);
+    }
+
+    //Assign matrix.
     pderiv[order] = Coeff;
 }
 
@@ -205,7 +232,53 @@ vector<cx_mat> &matForceReact::listDerivative()
 //------------------------------------------Function Separator --------------------------------------------------------
 cx_mat &matForceReact::listDerivative(unsigned int index)
 {
-    return pderiv[index];
+    try
+    {
+        //Check if the requested derivative exists.
+        if ((index > pderiv.size() - 1) ||
+                (pderiv.size() == 0))
+            throw 1;
+
+        //Return derivative
+        return pderiv[index];
+    }
+    catch (int err)
+    {
+        //Error handler.  Resize and return matrix of zeros.
+
+        //First check if requested derivative exceeds limits.
+        if ((index > pderiv.size() - 1) ||
+                (pderiv.size() == 0))
+        {
+            //Check if zero
+            if (pderiv.size() == 0)
+            {
+                //No size to go from.
+                arma::cx_mat mat1 = zeros<cx_mat>(1,1);
+
+                //Resize list
+                pderiv.resize(index + 1, mat1);
+            }
+            else
+            {
+                //Get matrix size
+                arma::cx_mat mat1 = zeros<cx_mat>(this->getMatSize(), this->getMatSize());
+
+                //Resize list
+                pderiv.resize(index + 1, mat1);
+            }
+        }
+        else
+        {
+            //Case where vector was large enough, but requested index has
+            //no matrix
+            arma::cx_mat mat1 = zeros<cx_mat>(this->getMatSize(), this->getMatSize());
+            pderiv[index] = mat1;
+        }
+
+        //Return matrix of zeros, newly created.
+        return pderiv[index];
+    }
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------

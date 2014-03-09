@@ -56,7 +56,7 @@ force_active {
 
   force {
     equation 6;
-    coeff /*F6 = */ 0.00+0.00i;
+    coeff /*F6 = */ 0.00+5.00i;
   }
 }
 
@@ -74,7 +74,7 @@ force set
         > coefficient for each variable
 */
 
-force_reactive {
+ force_reactive {
   //User defined name of user reactive force.  Other objects refer to this name
   name "reactive force 1";
   //Define a derivative, with an equation with user coefficients assigned.
@@ -117,6 +117,30 @@ force_reactive {
       number 6;
       force (
       /*C_x1 = */ 6:7.00      
+      );
+    }
+  }
+} 
+
+force_reactive {
+  //User defined name of user reactive force.  Other objects refer to this name
+  name "reactive force 2";
+  //Define a derivative, with an equation with user coefficients assigned.
+  //Each derivative contains an equation followed by coefficients for each
+  //variable associated with that derivative.
+  derivative {
+    order 0;
+    equation {
+      number 1;
+      force (
+      /*C_x1 = */ 1:2.00
+      );
+    }
+    
+    equation {
+      number 4;
+      force (
+	/*C_x1 = */ 1:3
       );
     }
   }

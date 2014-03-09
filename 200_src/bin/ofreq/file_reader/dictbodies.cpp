@@ -264,27 +264,28 @@ int dictBodies::defineKey(string keyIn, vector<string> valIn)
     {
         if (pForceType == 1)
         {
-            //Active Force model
-            int var;
-            var = atoi(valIn[0].c_str());
+            //Active Force Model
+
+            //Assign the pointer for the force object to this body object.
+            //Force object located by name of the object.
             ptSystem->listBody(pBody).listForceActive_user().push_back(
-                        &(ptSystem->listForceActive_user(var))
+                        ptSystem->refForceActive_user(valIn[0])
                         );
-            //Set body index
+
+            //Set the body index
             pForceBodyIndex = ptSystem->listBody(pBody).listForceActive_user().size() - 1;
-            //Set model index
-            pForceIndex = ptSystem->listBody(pBody).listForceActive_user(pForceBodyIndex)->getSystemIndex();
             //Return success
             return 0;
         }
         else if (pForceType == 2)
         {
             //Reactive force model
-            int var;
-            var = atoi(valIn[0].c_str());
+
+            //Assign the pointer for the force object to this body object.
+            //Force object located by the name of the object.
             ptSystem->listBody(pBody).listForceReact_user().push_back(
-                        &(ptSystem->listForceReact_user(var))
-                    );
+                        ptSystem->refForceReact_user(valIn[0])
+                        );
             //Set body index
             pForceBodyIndex = ptSystem->listBody(pBody).listForceReact_user().size() - 1;
             //Set model index
@@ -295,11 +296,12 @@ int dictBodies::defineKey(string keyIn, vector<string> valIn)
         else if (pForceType == 3)
         {
             //Cross-body force type
-            int var;
-            var = atoi(valIn[0].c_str());
+
+            //Assign the pointer for the force object to this body object.
+            //Force object located by the name of the object.
             ptSystem->listBody(pBody).listForceCross_user().push_back(
-                        &(ptSystem->listForceCross_user(var))
-                    );
+                        ptSystem->refForceCross_user(valIn[0])
+                        );
             //Set body index
             pForceBodyIndex = ptSystem->listBody(pBody).listForceCross_user().size() - 1;
             //Set model index

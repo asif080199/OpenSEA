@@ -188,7 +188,7 @@ string oFreq_Directory = "";
 
 int main(int argc, char *argv[])
 {
-    QCoreApplication a(argc, argv);
+//    QCoreApplication a(argc, argv);
     ofreq::oFreqCore freqCore;
 
 //    //Create a header for output to the screen
@@ -344,7 +344,8 @@ int main(int argc, char *argv[])
         calcOutput(sysofreq.listOutput(i), Writer);
     }
 
-    return a.exec();
+//    return a.exec();
+    return 0;
 }
 
 //####################################### buildMatBody Function #######################################################
@@ -412,8 +413,7 @@ void buildMatBody(int bod, bool useCoeff)
             ptForce->listDerivative().push_back(MyModel->getMatForceReact_user(i,j));
 
             //Print out Matrix.  For debugging.
-            //cout << "Derivative Order:  " << j << endl;
-            //ptForce->listDerivative(j).print("Reactive Force:");
+            listMatBody[bod].listForceReact_user(0).listDerivative(0).print("Reactive Force:  ");
         }
     }
 

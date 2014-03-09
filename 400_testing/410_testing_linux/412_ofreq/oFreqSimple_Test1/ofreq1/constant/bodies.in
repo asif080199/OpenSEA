@@ -28,10 +28,10 @@ body {
   //If a property is not defined, it is assumed to be zero.
   massprop {
     //Mass [kg]
-    mass 1.0;
-    ixx 10.0;
-    iyy 10.0;
-    izz 10.0;
+    mass 0.0;
+    ixx 0.0;
+    iyy 0.0;
+    izz 0.0;
   }
 
   //Center of gravity definition. [m]  Center of gravity relative to 
@@ -60,7 +60,7 @@ body {
   //Specify user reactive forces.  Multiple forces can be added with multiple
   //models specified.
   force_reactive {
-    model "reactive force 1";
+    model "reactive force 2";
   }
 
 

@@ -257,9 +257,9 @@ public:
      * will define the forceActive_user object by a name.  This uses that name to retrieve the forceActive_user object.
      * @param forceName std::string input.  Variable passed by value.  The name of the forceActive_user object.  Must match
      * exactly what is defined in the Forces.in input file which defines the forceActive_user object.
-     * @return Returns a forceActive_user object as requested.  Variable passed by value.
+     * @return Returns a pointer to the forceActive_user object as requested.  Pointer passed by value.
      */
-    ForceActive getForceActive_user(std::string forceName);
+    ForceActive* refForceActive_user(std::string forceName);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -283,9 +283,9 @@ public:
      * will define the forceReact_user object by a name.  This uses that name to retrieve the forceReact_user object.
      * @param forceName std::string input.  Variable passed by value.  The name of the forceReact_user object.  Must match
      * exactly what is defined in the Forces.in input file which defines the forceReact_user object.
-     * @return Returns a forceReact_user object as requested.  Variable passed by value.
+     * @return Returns a pointer to the forceReact_user object as requested.  Pointer passed by value.
      */
-    ForceReact getforceReact_user(std::string forceName);
+    ForceReact* refForceReact_user(std::string forceName);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -309,9 +309,9 @@ public:
      * will define the forceCross_user object by a name.  This uses that name to retrieve the forceCross_user object.
      * @param forceName std::string input.  Variable passed by value.  The name of the forceCross_user object.  Must match
      * exactly what is defined in the Forces.in input file which defines the forceCross_user object.
-     * @return Returns a forceCross_user object as requested.  Variable passed by value.
+     * @return Returns a pointer to the forceCross_user object as requested.  Pointer passed by value.
      */
-    ForceCross getforceCross_user(std::string forceName);
+    ForceCross* refForceCross_user(std::string forceName);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**

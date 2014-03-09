@@ -160,7 +160,7 @@ public:
      * @param Coeff The matrix of complex numbers that contains the force coefficients for the derivative.  Passed as a
      * value, not a reference.
      */
-    void setDerivative(int order, arma::cx_mat Coeff);
+    void setDerivative(unsigned int order, arma::cx_mat Coeff);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**

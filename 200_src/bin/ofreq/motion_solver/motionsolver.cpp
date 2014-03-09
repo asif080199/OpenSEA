@@ -283,6 +283,26 @@ void MotionSolver::calculateOutputs()
         tempReactList_hydro[curSumBody] = sumReactSet(plistBody[curSumBody].listForceReact_hydro());
         ActiveList_hydro[curSumBody] = sumActiveSet(plistBody[curSumBody].listForceActive_hydro());
         tempCrossList_hydro[curSumBody] = sumCrossSet(plistBody[curSumBody].listForceCross_hydro());
+
+        //Create reactive force matrices for adding in mass
+        matForceReact *curReactSet;
+        matForceReact mass = plistBody[curSumBody].getForceReact_mass();
+
+        //Assign reactive force matrices
+        if (tempReactList_usr[curSumBody] == NULL)
+        {
+            //Reactive force set has no forces defined.  Create one.
+            curReactSet = new matForceReact();
+            tempReactList_usr[curSumBody] = curReactSet;
+        }
+        else
+        {
+            //Reactive force set has some forces defined.  Get their current location.
+            curReactSet = tempReactList_usr[curSumBody];
+        }
+
+        //Add the mass matrix
+        *curReactSet = *curReactSet + mass;
     }
     //Each set now reduced to a single force object, for each body.
 
@@ -449,7 +469,14 @@ void MotionSolver::calculateOutputs()
     DebugMatrix("Global Active Matrix", globActiveMat);
 
     //Solve for Unknown Matrix (the X Matrix) --    A*X=B where X is the unknown
-    globSolnMat = solve(globReactiveMat, globActiveMat, true); //true arg for more precise calculations
+    try
+    {
+        globSolnMat = solve(globReactiveMat, globActiveMat, true); //true arg for more precise calculations
+    }
+    catch (int err)
+    {
+        //Insert error handler later.
+    }
 
     //Debug print out solution matrix
     DebugMatrix("Global Solution Matrix", globSolnMat);

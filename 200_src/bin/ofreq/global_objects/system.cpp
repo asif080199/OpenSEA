@@ -187,7 +187,7 @@ void System::clearForce(string forceClass)
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-ForceActive System::getForceActive_user(string forceName)
+ForceActive* System::refForceActive_user(string forceName)
 {
     //returns forceActive_user specified by forcename
     unsigned int i = 0;      //counting variable
@@ -204,12 +204,11 @@ ForceActive System::getForceActive_user(string forceName)
     if (i <= (plistForceActive_user.size() - 1))
     {
         //return specified object
-        return plistForceActive_user[i];
+        return &(plistForceActive_user[i]);
     }
     else
     {
         //return error
-        return ForceActive();
     }
 }
 
@@ -235,7 +234,7 @@ ForceActive &System::listForceActive_user(unsigned int forceIndex)
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-ForceReact System::getforceReact_user(string forceName)
+ForceReact *System::refForceReact_user(string forceName)
 {
     //returns forceReact_user specified by forcename
     unsigned int i = 0;      //counting variable
@@ -252,12 +251,11 @@ ForceReact System::getforceReact_user(string forceName)
     if (i <= (plistForceReact_user.size() - 1))
     {
         //return specified object
-        return plistForceReact_user[i];
+        return &(plistForceReact_user[i]);
     }
     else
     {
         //return error
-        return ForceReact();
     }
 }
 
@@ -281,7 +279,7 @@ ForceReact &System::listForceReact_user(unsigned int forceIndex)
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-ForceCross System::getforceCross_user(string forceName)
+ForceCross* System::refForceCross_user(string forceName)
 {
     //returns ForceCross_user specified by forcename
     unsigned int i = 0;      //counting variable
@@ -298,12 +296,11 @@ ForceCross System::getforceCross_user(string forceName)
     if (i <= (plistForceCross_user.size() - 1))
     {
         //return specified object
-        return plistForceCross_user[i];
+        return &(plistForceCross_user[i]);
     }
     else
     {
         //return error
-        return ForceCross();
     }
 }
 

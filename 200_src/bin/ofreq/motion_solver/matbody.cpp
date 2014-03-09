@@ -74,6 +74,19 @@ cx_mat &matBody::refMass()
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
+matForceReact matBody::getForceReact_mass()
+{
+    //Create a reactive matrix
+    matForceReact output;
+
+    //Input the mass matrix
+    output.setDerivative(2, pMass);
+
+    //Write output
+    return output;
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
 vector<matForceReact> &matBody::listForceReact_user()
 {
     return plistForceReact_user;
