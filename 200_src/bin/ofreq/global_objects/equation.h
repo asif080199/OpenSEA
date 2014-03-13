@@ -119,25 +119,26 @@ public:
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
-     * @brief Provides direct access to the list of coefficients.  This is the same as the listCoefficient() method,
-     * just under a different name.
+     * @brief Provides direct access to the list of coefficients.
      * @return The list of coefficients.  Returned variable passed by reference.
      * @sa listCoefficient()
      */
-    std::vector<double> &listVariable();
+    std::vector<double> &listDataVariable();
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
      * @brief Provides direct access to a coefficient from the list of coefficients.
      *
-     * Returns a value from the list of coefficents.  Which value to return is specified by the input index.  This is
-     * the same as the listCoefficient(index) method, just under a different name.
-     * @param index Unsigned integer.  Specifies which value to return from the list of coefficients.
+     * Returns a value from the list of coefficents.  Which value to return is specified by the data index.
+     * This is like the listCoefficient method.  But that method returned values based on the index of occurrence
+     * in the vector.  This method returns values based on the specified data index property.
+     * @param DataIndex Integer.  Specifies which value to return from the list of coefficients.  Specification is
+     * by the data index of each variable.
      * @return Returns a double.  Returned variable is a value from the list of coefficients.  Returned variable is
      * passed by reference.
      * @sa listCoefficient(index)
      */
-    double &listVariable(unsigned int index);
+    double &listDataVariable(int DataIndex);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -196,6 +197,18 @@ public:
      */
     int &refDataIndex();
 
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief This function adds a data variable to the list of variables contained in the equation.
+     *
+     * Two parameters are necessary to add data variable to the list.  The first parameter records the actual
+     * coefficient used in the equation.  The second parameter records the data index for the new entry.
+     * @param CoeffIn Double.  The actual coefficient used in the equation.  Variable passed by value.
+     * @param VarDataIn Integer.  The data index of the new variable passed to the equation.  Variable passed by value.
+     * If no value is provided, the function defaults to using the coefficients index in the containin vector.
+     */
+    void addVariable(double CoeffIn, int VarDataIn = -1);
+
 //==========================================Section Separator =========================================================
 protected:
 
@@ -203,6 +216,14 @@ protected:
 private:
     //------------------------------------------Function Separator ----------------------------------------------------
 	void initCoeff(); /**< Initialize all coefficients to default values. */
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Finds the vector occurrence index of the variable that matches the data index given.
+     * @param DataIndexIn Integer.  The data index requested.
+     * @return Integer.  The vector occurrent index of the data index requested.
+     */
+    int findIndex(int DataIndexIn);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -222,6 +243,21 @@ private:
      * -1, which indicates the index is not set.  Any number less than zero indicates the index is not set.
      */
     int pDataIndex;
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief The list of data indices for each variable stored in the equation object.  The variables stored in this
+     * equation object are each represented by a data index.
+     *
+     * The data index is the number of any equation data that should be retrieved.  Because the first six values in
+     * the index are reserved for 6DOF, it is necessary that equation objects should be able to specify their index
+     * as something other than their place in a containing vector.
+     *
+     * Because each variable also has a data index associated with it, it is necessary to both track the data index
+     * for the equation as a whole, and the data index for each coefficient stored in the vector of coefficients.
+     * This vector stores those data indices for each variable.
+     */
+    std::vector<int> plistDataIndex;
 
 };
 

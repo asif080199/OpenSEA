@@ -35,7 +35,8 @@ using namespace osea::ofreq;
 Body::Body()
 {
     //Initialize private variables with zeros
-    pMassMat.zeros(6,6);
+    int size = motModel->listDataEquation().size();
+    pMassMat.zeros(size, size);
     pCentroid.zeros(3,1);
     pPosn.zeros(3,1);
 }
@@ -198,9 +199,39 @@ double &Body::refHeading()
 //------------------------------------------Function Separator --------------------------------------------------------
 void Body::setMass(double newMass)
 {
-    pMassMat(0,0) = newMass;   //X position mass.
-    pMassMat(1,1) = newMass;   //Y position mass.
-    pMassMat(2,2) = newMass;   //Z position mass.
+    int index;
+    try
+    {
+        //Set mass for equation 0:  X-axis translation
+        index = findIndex(0);
+        pMassMat(index, index) = newMass;
+    }
+    catch(...)
+    {
+        //Error handler.  For now, do nothing
+    }
+
+    try
+    {
+        //Set mass for equation 1:  Y-axis translation
+        index = findIndex(1);
+        pMassMat(index, index) = newMass;
+    }
+    catch(...)
+    {
+        //Error handler.  For now, do nothing.
+    }
+
+    try
+    {
+        //Set mass for equation 2:  Z-axis translation
+        index = findIndex(2);
+        pMassMat(index, index) = newMass;
+    }
+    catch(...)
+    {
+        //Error handler.  For now, do nothing.
+    }
 
     //Calculate mass coupling.
     setMassCouple();
@@ -209,82 +240,257 @@ void Body::setMass(double newMass)
 //------------------------------------------Function Separator --------------------------------------------------------
 double Body::getMass()
 {
-    return pMassMat(0,0);
+    //Find an index with translation in it.
+    int index;
+
+    try
+    {
+        index = findIndex(0);   //Check for X-axis translation.
+    }
+    catch(...)
+    {
+        try
+        {
+            //Check the next index
+            index = findIndex(1);   //Check for Y-axis translation.
+        }
+        catch(...)
+        {
+            try
+            {
+                //Check the next index
+                index = findIndex(2);   //Check for Z-axis translation.
+            }
+            catch(...)
+            {
+                //Error handler.  Do something.
+                return 0;
+            }
+        }
+    }
+
+    return pMassMat(index, index);
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
 void Body::setMomIxx(double newXX)
 {
-    pMassMat(3,3) = newXX;
+    int index;
+
+    try
+    {
+        //Get index of rotation in XX-axis.
+        index = findIndex(3);
+        pMassMat(index, index) = newXX;
+    }
+    catch(...)
+    {
+        //Error handler.  For now, do nothing.
+    }
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
 double Body::getMomIxx()
 {
-    return pMassMat(3,3);
+    int index;
+
+    try
+    {
+        //Get index of rotation in the XX-axis.
+        index = findIndex(3);
+
+        return pMassMat(index, index);
+    }
+    catch(...)
+    {
+        return 0;
+    }
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
 void Body::setMomIyy(double newYY)
 {
-    pMassMat(4,4) = newYY;
+    int index;
+
+    try
+    {
+        //Get the index of rotation in the YY-axis.
+        index = findIndex(4);
+
+        pMassMat(index, index) = newYY;
+    }
+    catch(...)
+    {
+        //Do nothing.
+    }
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
 double Body::getMomIyy()
 {
-    return pMassMat(4,4);
+    int index;
+
+    try
+    {
+        //Get index of rotation in the YY-axis.
+        index = findIndex(4);
+
+        return pMassMat(index, index);
+    }
+    catch(...)
+    {
+        return 0;
+    }
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
 void Body::setMomIzz(double newZZ)
 {
-    pMassMat(5,5) = newZZ;
+    int index;
+
+    try
+    {
+        //Get the index of rotation in the ZZ-axis.
+        index = findIndex(5);
+
+        pMassMat(index, index) = newZZ;
+    }
+    catch(...)
+    {
+        //Do nothing.
+    }
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
 double Body::getMomIzz()
 {
-    return pMassMat(5,5);
+    int index;
+
+    try
+    {
+        //Get index of rotation in the ZZ-axis.
+        index = findIndex(5);
+
+        return pMassMat(index, index);
+    }
+    catch(...)
+    {
+        return 0;
+    }
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
 void Body::setMomIxy(double newXY)
 {
-    pMassMat(3,4) = newXY;
-    pMassMat(4,3) = newXY;
+    int index1;
+    int index2;
+
+    try
+    {
+        index1 = findIndex(3);  //Index of rotation X-axis
+        index2 = findIndex(4);  //Index of rotation Y-axis
+
+        pMassMat(index1, index2) = newXY;
+    }
+    catch(...)
+    {
+        //Do nothing for now.
+    }
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
 double Body::getMomIxy()
 {
-    return pMassMat(3,4);
+    int index1;
+    int index2;
+
+    try
+    {
+        index1 = findIndex(3);  //Index of rotation X-axis
+        index2 = findIndex(4);  //Index of rotation Y-axis
+
+        return pMassMat(index1, index2);
+    }
+    catch(...)
+    {
+        return 0;
+    }
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
 void Body::setMomIxz(double newXZ)
 {
-    pMassMat(3,5) = newXZ;
-    pMassMat(5,3) = newXZ;
+    int index1;
+    int index2;
+
+    try
+    {
+        index1 = findIndex(3);  //Index of rotation X-axis
+        index2 = findIndex(5);  //Index of rotation Z-axis
+
+        pMassMat(index1, index2) = newXZ;
+    }
+    catch(...)
+    {
+        //Do nothing for now.
+    }
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
 double Body::getMomIxz()
 {
-    return pMassMat(3,5);
+    int index1;
+    int index2;
+
+    try
+    {
+        index1 = findIndex(3);  //Index of rotation X-axis
+        index2 = findIndex(5);  //Index of rotation Z-axis
+
+        return pMassMat(index1, index2);
+    }
+    catch(...)
+    {
+        return 0;
+    }
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
 void Body::setMomIyz(double newYZ)
 {
-    pMassMat(4,5) = newYZ;
-    pMassMat(5,4) = newYZ;
+    int index1;
+    int index2;
+
+    try
+    {
+        index1 = findIndex(4);  //Index of rotation Y-axis
+        index2 = findIndex(5);  //Index of rotation Z-axis
+
+        pMassMat(index1, index2) = newYZ;
+    }
+    catch(...)
+    {
+        //Do nothing for now.
+    }
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
 double Body::getMomIyz()
 {
-    return pMassMat(4,5);
+    int index1;
+    int index2;
+
+    try
+    {
+        index1 = findIndex(4);  //Index of rotation Y-axis
+        index2 = findIndex(5);  //Index of rotation Z-axis
+
+        return pMassMat(index1, index2);
+    }
+    catch(...)
+    {
+        return 0;
+    }
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
@@ -442,6 +648,22 @@ cx_mat Body::getSolution()
 cx_mat &Body::refSolution()
 {
     return pSoln;
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+cx_mat &Body::refDataSolution()
+{
+    return pSoln;
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+std::complex<double> &Body::refDataSolution(int varIndexIn)
+{
+    //Search through the data variables to find the index of the solution that matches the correct variable
+    int i = findIndex(varIndexIn);
+
+    //Return value
+    return pSoln.at(i,0);
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
@@ -727,4 +949,45 @@ void Body::setMassCouple()
     pMassMat(5,0) = -1 * pMassMat(2,2) * pCentroid(1,0);
     pMassMat(5,1) = pMassMat(2,2) * pCentroid(0,0);
     pMassMat(5,2) = 0;
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+int Body::findIndex(int DataIndexIn)
+{
+    int output;         //integer to write as output.
+    int check;          //The integer to check against.
+    bool test = false;  //Check if a match was found
+
+    //Finds the integer of the equation object by data index.
+    for (unsigned int i = 0 ; i < motModel->listEquation().size(); i++)
+    {
+        //Check the data index of the object.
+        if (motModel->listEquation(i).getDataIndex() < 0)
+        {
+            //No data index set.  Use the position in the list.
+            check = i;
+        }
+        else
+        {
+            //Data index is used.  Use the position in the list.
+            check = motModel->listEquation(i).getDataIndex();
+        }
+
+        //Check for match
+        if (check == DataIndexIn)
+        {
+            output = i;
+            test = true;
+            break;
+        }
+    }
+
+    //Check for a match
+    if (!test)
+    {
+        //No match.  Throw an exception
+        throw 1;
+    }
+
+    return output;
 }

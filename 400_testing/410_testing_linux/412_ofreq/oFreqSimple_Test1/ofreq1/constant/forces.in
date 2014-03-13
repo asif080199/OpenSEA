@@ -44,7 +44,7 @@ force_active {
     coeff /*F3 = */ 0.00+1.00i;
   }
 
-  force {
+  /*force {
     equation 4;
     coeff /*F4 = */ 0.00+1.00i;
   }
@@ -57,7 +57,7 @@ force_active {
   force {
     equation 6;
     coeff /*F6 = */ 0.00+5.00i;
-  }
+  }*/
 }
 
 
@@ -130,17 +130,17 @@ force_reactive {
   //variable associated with that derivative.
   derivative {
     order 0;
-    equation {
-      number 1;
+    /*equation {
+      number 3;
       force (
-      /*C_x1 = */ 1:2.00
+      /*C_x1 = */ 3:5.00
       );
-    }
+    }*/
     
     equation {
       number 4;
       force (
-	/*C_x1 = */ 1:3
+	/*C_x1 = */ 4:3
       );
     }
   }

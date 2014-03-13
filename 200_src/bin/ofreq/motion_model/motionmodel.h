@@ -730,7 +730,8 @@ public:
      *
      * Evaluates the motion model for a whole range of equations on the specified force.  Returns a complex matrix
      * that contains the results of the entire evaluation.
-     * @param force Integer specifying which force object to evaluate.
+     * @param force Integer specifying which force object to evaluate.  Integer specifies the vector occurrence
+     * index of the force.
      * @return Returns a complex matrix that contains the results of the entire evaluation.  Returned argument passed
      * by value.
      */
@@ -742,7 +743,8 @@ public:
      *
      * Evaluates the motion model for a whole range of equations on the specified force.  Returns a complex matrix
      * that contains the results of the entire evaluation.
-     * @param force Integer specifying which force object to evaluate.
+     * @param force Integer specifying which force object to evaluate.  Integer specifies the vector occurrence
+     * index of the force.
      * @return Returns a complex matrix that contains the results of the entire evaluation.  Returned argument passed
      * by value.
      */
@@ -756,7 +758,8 @@ public:
      * Evaluates the motion model for a whole range of equations and variable on the specified force and order
      * of derivative.  Returns a complex matrix that contains the results of the entire evaluation.  Saves some time
      * on computing effort.
-     * @param force Integer specifying the force object to use.
+     * @param force Integer specifying the force object to use.  Integer specifies the vector occurrence
+     * index of the force.
      * @param ord Integer specifying which order of derivative to use on the specified force object.
      * @return Returns a complex matrix that contains the results of the entire evaluation.  Saves some time
      * on computing effort.
@@ -771,7 +774,8 @@ public:
      * Evaluates the motion model for a whole range of equations and variable on the specified force and order
      * of derivative.  Returns a complex matrix that contains the results of the entire evaluation.  Saves some time
      * on computing effort.
-     * @param force Integer specifying the force object to use.
+     * @param force Integer specifying the force object to use.  Integer specifies the vector occurrence
+     * index of the force.
      * @param ord Integer specifying which order of derivative to use on the specified force object.
      * @return Returns a complex matrix that contains the results of the entire evaluation.  Saves some time
      * on computing effort.
@@ -786,7 +790,8 @@ public:
      * Evaluates the motion model for a whole range of equations and variable on the specified force and order
      * of derivative.  Returns a complex matrix that contains the results of the entire evaluation.  Saves some time
      * on computing effort.
-     * @param force Integer specifying the force object to use.
+     * @param force Integer specifying the force object to use.  Integer specifies the vector occurrence
+     * index of the force.
      * @param ord Integer specifying which order of derivative to use on the specified force object.
      * @return Returns a complex matrix that contains the results of the entire evaluation.  Saves some time
      * on computing effort.
@@ -801,7 +806,8 @@ public:
      * Evaluates the motion model for a whole range of equations and variable on the specified force and order
      * of derivative.  Returns a complex matrix that contains the results of the entire evaluation.  Saves some time
      * on computing effort.
-     * @param force Integer specifying the force object to use.
+     * @param force Integer specifying the force object to use.  Integer specifies the vector occurrence
+     * index of the force.
      * @param ord Integer specifying which order of derivative to use on the specified force object.
      * @return Returns a complex matrix that contains the results of the entire evaluation.  Saves some time
      * on computing effort.
@@ -828,7 +834,8 @@ public:
      * Triggers evaluation of the currently activated set of input coefficients.  If Calc_Coeff is set to True, then
      * evaluation will only generate the force coefficients from the resulting evaluation.  Otherwise, the evaluation
      * will use the currently defined solution data and evaluate for force values.
-     * @param eqn Integer representing which equation object to evaluate.
+     * @param eqn Integer representing which equation object to evaluate.  Integer specifies the Data index of the
+     * equation.
      * @return Returns a complex number representing the force under the currently set conditions.
      */
     std::complex<double> Evaluate(int eqn);
@@ -973,7 +980,8 @@ public:
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
      * @brief Provides direct access to the list of equation of motion objects used in the motion model.
-     * @return Reference to the vector of EquationofMotion objects.  Variable passed by reference.
+     * @return Reference to the vector of EquationofMotion objects.  Variable passed by reference.  Each entry in the
+     * vector is a pointer to the relevent equation of motion object.
      * @sa EquationofMotion
      */
     std::vector<EquationofMotion *> &listEquation();
@@ -986,6 +994,32 @@ public:
      * @return Returns reference to the EquationofMotion object specified by eqIn.
      */
     EquationofMotion &listEquation(int eqIn);
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Provides direct access to the list of equation of motion objects used in the motion model.
+     *
+     * This is the same as the listEquation() function, but just under a different name.
+     * @return Reference to the vector of EquationofMotion objects.  Variable passed by reference.  Each entry in the
+     * vector is a pointer to the relevent equation of motion object.
+     * @sa EquationofMotion
+     * @sa MotionModel::listEquation()
+     */
+    std::vector<EquationofMotion *> &listDataEquation();
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Direct access to an individual EquationofMotion object from the list of Equations contained in the motion
+     * model.
+     *
+     * This function specifies the requested equation through the use of the equation's data index.  Not its normal
+     * occurrence index in the vector.  The data index is the number of the data this equation will retrieve, not its
+     * sequence in the vector that stores it.
+     * @param eqIn Integer.  The data index of the EquationofMotion object requested.
+     * @return Returns reference to the EquationofMotion object specified by eqIn.  Returned variable passed by
+     * reference.
+     */
+    EquationofMotion &listDataEquation(int eqIn);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -1173,6 +1207,17 @@ private:
      * @brief Executes setup actions that are common to all versions of the object constructor.
      */
     void ConstructorCommon();
+
+    //------------------------------------------Function Separator --------------------------------------------------------
+    /**
+     * @brief Searches through the list of EquationofMotion objects to find the one specified by the indexIn parameter.
+     *
+     * Searches through the list of EquationofMotion objects to find the one specified by the indexIn parameter.
+     * Returns the integer specifying the position of the object in the vector of equation objects.
+     * @param indexIn The data index requested.
+     * @return Returns the integer specifying the position of the object in the vector of equation objects.
+     */
+    int findIndex(int indexIn);
 };
 
 }   //Namespace ofreq

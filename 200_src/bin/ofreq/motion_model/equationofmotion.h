@@ -396,7 +396,7 @@ protected:
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
      * @brief A reference to the data set of the ForceMass.
-     * @param varIn Integer.  Represents the input varaible for the variable.
+     * @param varIn Integer.  Represents the input index for the variable.
      * @return Returns the data set for the ForceMass.  Indices can be specified to access individual elements.
      */
     std::complex<double> ForceMass(int varIn);
@@ -423,6 +423,8 @@ protected:
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
      * @brief Returns the index integer for iteration on variable.
+     *
+     * Returned value is expressed in human numbering.  So numbering starts from 1.
      * @return Returns the index integer for iteration on variable.
      */
     int var();
@@ -430,6 +432,9 @@ protected:
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
      * @brief Returns the index integer for iteration on order of derviative.
+     *
+     * Returned variable is expressed in human numbering.  But in this case, the order of 0 is a valid number.  So
+     * numbering starts from zero (0).
      * @return Returns the index integer for iteration on order of derviative.
      */
     int ord();
@@ -625,6 +630,8 @@ private:
      * Returns the maximum number of items that can be iterated through on the variable index.  Used for summation
      * functions.  Automatically finds the upper limit of any summation loops.  The lower limit is always 1 and does
      * not require a special function.
+     *
+     * Returned value is expressed in human notation.  Numbering starts with 1.
      * @return Returns the maximum number of items that can be iterated through on the variable index.
      */
     int maxvar();
@@ -727,6 +734,8 @@ private:
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
      * @brief Returns the index integer for iteration on equation number.
+     *
+     * Returned integer index is expressed in human numbering (index starts with 1, not zero.)
      * @return Returns the index integer for iteration on equation number.
      */
     unsigned int eqn();
@@ -744,6 +753,17 @@ private:
      * specified.  Returned variable passed by value.
      */
     std::complex<double> FunctionFind(std::string FuncName);
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Searches through the list of equation objects to find the one specified by the indexIn parameter.
+     *
+     * Searches through the list of equation objects to find the one specified by the indexIn parameter.  Returns the
+     * integer specifying the position of the object in the vector of equation objects.
+     * @param indexIn The data index requested.
+     * @return Returns the integer specifying the position of the object in the vector of equation objects.
+     */
+    int findIndex(int indexIn);
 };
 
 }   //Namespace ofreq

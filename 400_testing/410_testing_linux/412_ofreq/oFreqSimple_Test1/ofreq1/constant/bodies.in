@@ -60,7 +60,7 @@ body {
   //Specify user reactive forces.  Multiple forces can be added with multiple
   //models specified.
   force_reactive {
-    model "reactive force 2";
+    model "reactive force 1";
   }
 
 

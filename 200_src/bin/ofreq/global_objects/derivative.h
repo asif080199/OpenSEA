@@ -95,28 +95,9 @@ public:
     /**
      * @brief The list of equations.
      *
-     * Pointer to the list vector list of equations.  Value returned by reference.
+     * @return Returns a vector of Equation objects.  Returned value passed by reference.
      */
     std::vector<Equation> &listEquation();
-    //------------------------------------------Function Separator ----------------------------------------------------
-    /**
-     * @brief Returns the equation requested.  Only specified by the data index property of the equation object.
-     *
-     * Returns the equation requested.  Only specified by the data index property of the equation object.
-     * @param indexIn The integer describing the data index for the equation requested.
-     * @return Pointer to the Equation object specified by the DataIndex of indexIn.  Value returned is by reference.
-     */
-    Equation &refIndexEquation(int indexIn);
-
-    //------------------------------------------Function Separator ----------------------------------------------------
-    /**
-     * @brief Returns the equation requested.  Only specified by the data index property of the equation object.
-     *
-     * Returns the equation requested.  Only specified by the data index property of the equation object.
-     * @param indexIn The integer describing the data index for the equation requested.
-     * @return Equation object specified by the DataIndex of indexIn.  Value returned is by value.
-     */
-    Equation getIndexEquation(int indexIn);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -131,11 +112,44 @@ public:
     Equation &listEquation(unsigned int number);
 
     //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Returns the equation requested.  Only specified by the data index property of the equation object.
+     *
+     * Returns the equation requested.  Only specified by the data index property of the equation object.
+     * @param indexIn The integer describing the data index for the equation requested.
+     * @return Equation object specified by the DataIndex of indexIn.  Value returned is by value.
+     */
+    Equation &listDataEquation(int indexIn);
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Returns the list of equation objects.
+     *
+     * This is the same as the listEquation() function, just under a different name.
+     * @return Returns a vector of Equation objects.  Returned value passed by reference.
+     */
+    std::vector<Equation> &listDataEquation();
+
+    //------------------------------------------Function Separator ----------------------------------------------------
 	/**
 	 * Retrieve the size of the equation list.
 	 * @return The size of the equation list.
 	 */
 	int getEquationListSize();
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Creates a new equation object and adds it to the list of equation objects contained in this derivative.
+     *
+     * New equation object is created automatically within this function.  Function merely takes the list of input
+     * coefficients and creates all equation objects necessary from that.
+     * @param EqnDataIn Integer.  The data index of the equation object.  If no input is provided, the function
+     * assumes the data index to be the index of the equation's current place in the vector.
+     * @param listCoeffsIn Vector of doubles.  The list of coefficients.  Each coefficient corresponds to a single
+     * variable.  List of coefficients is organized by _data index_.  The coefficient's position in the list
+     * is it's data index.
+     */
+    void addModelEquation(std::vector<double> listCoeffsIn, int EqnDataIn = -1);
 
 //==========================================Section Separator =========================================================
 protected:

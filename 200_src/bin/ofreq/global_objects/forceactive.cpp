@@ -29,6 +29,9 @@
 using namespace std;
 using namespace osea::ofreq;
 
+//==========================================Section Separator =========================================================
+//Public Functions
+
 //------------------------------------------Function Separator --------------------------------------------------------
 ForceActive::ForceActive(): Force()
 {
@@ -54,6 +57,23 @@ void ForceActive::setCoeff(complex<double> coeffIn, unsigned int index)
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
+void ForceActive::addEquation(std::complex<double> eqIn, int dataIndex)
+{
+    //Add coefficient to the list of coefficients.
+    pCoefficients.push_back(eqIn);
+
+    //Check if no data index was specified.
+    if (dataIndex < 0)
+    {
+        //No data index specified.  Use default.  Default is just the object occurrance index.
+        dataIndex = pCoefficients.size() - 1;
+    }
+
+    //Add data index to the list of data indices.
+    pDataIndex.push_back(dataIndex);
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
 vector<complexDouble> &ForceActive::listCoefficient()
 {
     return pCoefficients;
@@ -66,15 +86,30 @@ complexDouble &ForceActive::listCoefficient(unsigned int index)
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-vector<complexDouble> &ForceActive::listEquation()
+vector<complexDouble> &ForceActive::listDataEquation()
 {
     return this->listCoefficient();
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-complexDouble &ForceActive::listEquation(unsigned int index)
+complexDouble &ForceActive::listDataEquation(int index)
 {
-    return this->listCoefficient(index);
+    //Get the vector occurrence index of the data index specified.
+    int i;
+    try
+    {
+        i = findIndex(index);
+    }
+    catch(int err)
+    {
+        //If an error, assume that there was no match.  Create a new place in the vector.
+        pCoefficients.push_back(complex<double>(0,0));
+        pDataIndex.push_back(index);
+        i = pCoefficients.size() - 1;
+    }
+
+    //Return coefficient.
+    return pCoefficients[i];
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
@@ -84,3 +119,49 @@ complexDouble ForceActive::getEquation(int number)
     return pCoefficients[number];
 }
 
+//==========================================Section Separator =========================================================
+//Protected Functions
+
+
+//==========================================Section Separator =========================================================
+//Private Functions
+
+//------------------------------------------Function Separator --------------------------------------------------------
+int ForceActive::findIndex(int indexIn)
+{
+    int output;         //integer to write as output.
+    int check;          //The integer to check against.
+    bool test = false;  //Boolean to check if a match was found.
+
+    //Finds the integer of the equation object by data index.
+    for (unsigned int i = 0 ; i < pDataIndex.size() ; i++)
+    {
+        //Check the data index of the object.
+        if (pDataIndex[i] < 0)
+        {
+            //No data index set.  Use the position in the list.
+            check = i;
+        }
+        else
+        {
+            //Data index is used.  Use the position in the list.
+            check = pDataIndex[i];
+        }
+
+        //Check for match
+        if (check == indexIn)
+        {
+            output = i;
+            test = true;    //Note that a match was found.
+            break;
+        }
+    }
+
+    //Check for a match
+    if (!test)
+    {
+        //No match.  Throw an exception
+        throw 1;
+    }
+    return output;
+}

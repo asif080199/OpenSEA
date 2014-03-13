@@ -489,6 +489,26 @@ public:
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
+     * @brief The same things as the refSolution() function, just under a different name.
+     * @return Reference to column matrix of complex numbers.  Value returned by reference.  Matrix size is not
+     * hard coded.  Number of rows in matrix must match number of equations for body property.
+     * @sa body::refSolution()
+     */
+    arma::cx_mat &refDataSolution();
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Returns a single solution value, based on the variable requested.
+     *
+     * Variable is requested by the data index, not vector occurrence index.
+     * @param varIndexIn Integer.  The variable's data index
+     * @return Returns a complex<double> variable.  This is the value of the solution object for the variable requested
+     * Returned variable passed by reference.
+     */
+    complexDouble &refDataSolution(int varIndexIn);
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
      * @brief Copies the body object, complete with all current data.
      * @return Returns a copy of the body object, complete with all current data.  Passed by value, not reference.
      */
@@ -968,6 +988,18 @@ private:
      * This functions calculates those coupling terms and adds them into the mass matrix.
      */
     void setMassCouple();
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Finds the vector index based on the specified data index.
+     *
+     * Returned vector index is based on the order of occurrence for the equation of motion objects contained in the
+     * motion model that the Body is linked to.
+     * @param DataIndexIn Integer.  The specified data index.
+     * @return Returns an integer.  Integer specifies the vector index that matches the data index.  Variabled passed
+     * by value.
+     */
+    int findIndex(int DataIndexIn);
 };
 
 }   //Namespace ofreq

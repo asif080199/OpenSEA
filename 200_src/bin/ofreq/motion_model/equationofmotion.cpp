@@ -109,7 +109,8 @@ void EquationofMotion::setDataIndex(int DataIn)
 int EquationofMotion::getDataIndex()
 {
     //Returns the data index.
-    return this->eqn();
+    //Speaks directly in computer numbering.
+    return this->refDataIndex();
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
@@ -117,6 +118,8 @@ int &EquationofMotion::refDataIndex()
 {
     //Exposes the data index object.  Passed by reference.
     //Get index of equation of motion.
+
+    //Speaks directly in computer numbering.
     if (pDataIndex < 0)
     {
         //Data index not defined.
@@ -242,13 +245,11 @@ complex<double> EquationofMotion::Ddt(int var, int ord, int bodIn)
             //get wave frequency.
             freq = pParentModel->getFreq();
 
-            //Calculate refDerivative
-            for (int i = 0; i <= ord; i++)
-            {
-                out = out * freq * imagI;
-            }
+            //Calculate refDerivative           
+            out = out * pow(freq,ord) * pow(imagI, ord);
 
-            out = out * pParentModel->listData(bodIn).getSolution().at(var,1);
+//            out = out * pParentModel->listData(bodIn).getSolution().at(var,1);
+            out = out * pParentModel->listData(bodIn).refDataSolution(var);
         }
     }
     catch(...)
@@ -283,7 +284,7 @@ complex<double> EquationofMotion::ForceActive_hydro()
     //Returns the active force object for the currently defined indices.
     complex<double> output(0,0);         //Temporary value for variable.
     complex<double> reverse(-1,0);         //Reverses sign of active force variable.
-    int eqComp = eqn() - 1;                 //The equation index converted from human to computer index.
+    int eqComp = eqn();                 //The equation index converted from human to computer index.
     int curBodComp = curbody() - 1;         //The current body index, converted from human to computer index.
 
     //The coefficients in the active force matrix for hydrodynamics can only be one
@@ -299,14 +300,18 @@ complex<double> EquationofMotion::ForceActive_hydro()
             //Add up for all forces
             for (pCurForce = 0; pCurForce < pParentModel->listData(curBodComp).listForceActive_hydro().size(); pCurForce ++)
             {
-                //Out of bounds check.  Ensure that the requested data index is not out of bounds.
-                if (eqComp <= 5 )
+                try
                 {
                     //Get value and add.
                     output +=
                             pParentModel->listData(curBodComp).
                             listForceActive_hydro(force())->
-                            getEquation(eqComp);
+                            listDataEquation(eqComp);
+                }
+                catch(...)
+                {
+                    //Error handler for anything.  In all cases, just add zero
+                    output += complex<double>(0,0);
                 }
             }
             //Check if need to reverse sign of variable.
@@ -325,7 +330,7 @@ complex<double> EquationofMotion::ForceActive_user()
     //Returns the active force object for the currently defined indices.  User force.
     complex<double> output(0,0);    //Temporary value for variable.
     complex<double> reverse(-1,0);         //Reverses sign of active force variable.
-    int eqComp = eqn() - 1;                 //The equation index converted from human to computer index.
+    int eqComp = eqn();                 //The equation index converted from human to computer index.
     int curBodComp = curbody() - 1;         //The current body index, converted from human to computer index.
 
     //The coefficients in the active force matrix must match the equations of motion, in the sequence that they
@@ -342,16 +347,18 @@ complex<double> EquationofMotion::ForceActive_user()
             for (pCurForce = 0; pCurForce < pParentModel->listData(curBodComp).listForceActive_user().size() ;
                  pCurForce++)
             {
-                //Out of bounds check for equations
-                if (eqComp <= pParentModel->listData(curBodComp).
-                        listForceActive_user(force())->
-                        listEquation().size() - 1)
+                try
                 {
                     //get value
                     output +=
                             pParentModel->listData(curBodComp).
                             listForceActive_user(force())->
-                            getEquation(eqComp);
+                            listDataEquation(eqComp);
+                }
+                catch (...)
+                {
+                    //Error handler for anything.  In all cases, just add zero
+                    output += complex<double>(0,0);
                 }
             }
             //Check if need to reverse sign of variable.
@@ -396,12 +403,7 @@ complex<double> EquationofMotion::ForceReact_hydro(unsigned int ordIn, unsigned 
                         listDerivative().
                         size() - 1)
                 {
-                    //Out of bounds check for variables
-                    if (varIn <= pParentModel->listData(curBodComp).
-                            listForceReact_hydro(force())->
-                            listDerivative(ordIn).
-                            refIndexEquation(eqComp).
-                            getCoefficientListSize())
+                    try
                     {
                         //get value
                         output.real(
@@ -409,9 +411,13 @@ complex<double> EquationofMotion::ForceReact_hydro(unsigned int ordIn, unsigned 
                                     pParentModel->listData(curBodComp).
                                     listForceReact_hydro(force())->
                                     listDerivative(ordIn).
-                                    listEquation(eqComp).
-                                    getCoefficient(varIn)
+                                    listDataEquation(eqComp).
+                                    listDataVariable(varIn)
                                     );
+                    }
+                    catch(...)
+                    {
+                        //Add nothing
                     }
                 }
             }
@@ -454,12 +460,7 @@ complex<double> EquationofMotion::ForceReact_user(unsigned int ordIn, unsigned i
                         listDerivative().
                         size() - 1)
                 {
-                    //Out of bounds check for variables
-                    if (varIn <= pParentModel->listData(curBodComp).
-                            listForceReact_user(force())->
-                            listDerivative(ordIn).
-                            refIndexEquation(eqComp).
-                            getCoefficientListSize())
+                    try
                     {
                         //get value
                         output.real(
@@ -467,9 +468,13 @@ complex<double> EquationofMotion::ForceReact_user(unsigned int ordIn, unsigned i
                                     pParentModel->listData(curBodComp).
                                     listForceReact_user(force())->
                                     listDerivative(ordIn).
-                                    listEquation(eqComp).
-                                    getCoefficient(varIn)
+                                    listDataEquation(eqComp).
+                                    listDataVariable(varIn)
                                     );
+                    }
+                    catch(...)
+                    {
+                        //Do nothing
                     }
                 }
             }
@@ -515,30 +520,25 @@ complex<double> EquationofMotion::ForceCross_hydro(unsigned int bodIn, unsigned 
                         listDerivative().
                         size() - 1)
                 {
-                    //Out of bounds check for variables
-                    if (varIn <= pParentModel->listData(curBodComp).
-                            listForceCross_hydro(force())->
-                            listDerivative(ordIn).
-                            refIndexEquation(eqComp).
-                            getCoefficientListSize())
+                    try
                     {
                         //Check that bodIn matches the body specified by the cross body force.
                         if (bodIn == pParentModel->listCompCrossBod_hydro(pCurForce))
-                        {    Body test1 = pParentModel->listData(curBodComp);
-                            complex<double> test2;
-                            test2.real(
-                                        test1.MassMatrix()(eqComp,varIn)
-                                        );
-                        //get value
-                        output.real(
+                        {
+                            //get value
+                            output.real(
                                     output.real() +
                                     pParentModel->listData(curBodComp).
                                     listForceCross_hydro(force())->
                                     listDerivative(ordIn).
-                                    listEquation(eqComp).
-                                    getCoefficient(varIn)
+                                    listDataEquation(eqComp).
+                                    listDataVariable(varIn)
                                     );
                         }
+                    }
+                    catch(...)
+                    {
+                        //Do nothing
                     }
                 }
             }
@@ -584,30 +584,24 @@ complex<double> EquationofMotion::ForceCross_user(unsigned int bodIn, unsigned i
                         listDerivative().
                         size() - 1)
                 {
-                    //Out of bounds check for variables
-                    if (varIn <= pParentModel->listData(curBodComp).
-                            listForceCross_user(force())->
-                            listDerivative(ordIn).
-                            refIndexEquation(eqComp).
-                            getCoefficientListSize())
+                    try
                     {
-                        //Check that bodIn matches the body specified by the cross body force.
                         if (bodIn == pParentModel->listCompCrossBod_user(pCurForce))
-                        {    Body test1 = pParentModel->listData(curBodComp);
-                            complex<double> test2;
-                            test2.real(
-                                        test1.MassMatrix()(eqComp,varIn)
-                                        );
+                        {
                         //get value
                         output.real(
                                     output.real() +
                                     pParentModel->listData(curBodComp).
                                     listForceCross_user(force())->
                                     listDerivative(ordIn).
-                                    listEquation(eqComp).
-                                    getCoefficient(varIn)
+                                    listDataEquation(eqComp).
+                                    listDataVariable(varIn)
                                     );
                         }
+                    }
+                    catch(...)
+                    {
+                        //Do nothing
                     }
                 }
             }
@@ -622,7 +616,7 @@ complex<double> EquationofMotion::ForceCross_user(unsigned int bodIn, unsigned i
 complex<double> EquationofMotion::ForceMass(int varIn)
 {
     //Returns the mass object.
-    complex<double> output;    //Temporary value for variable.
+    complex<double> output(0,0);    //Temporary value for variable.
     int eqComp = eqn() - 1;                 //The equation index converted from human to computer index.
     int curBodComp = curbody() - 1;         //The current body index, converted from human to computer index.
 
@@ -633,15 +627,34 @@ complex<double> EquationofMotion::ForceMass(int varIn)
     if ((curBodComp <= pParentModel->listData().size() - 1) &&
             (pParentModel->listData().size() != 0))
     {
-        //Check out of bounds for equation
-        if (eqComp <= pParentModel->listData(curBodComp).MassMatrix().n_rows)
+//        //Check out of bounds for equation
+//        if (eqComp <= pParentModel->listData(curBodComp).MassMatrix().n_rows)
+//        {
+//            //No need to check for out of bounds error.  Object creates enough entries by default.
+//            //No need to add multiple entries.  There can only be one mass object for each body.
+//            output.real(
+//                        pParentModel->listData(curBodComp).MassMatrix()(eqComp, varIn)
+//                        );
+//            output.imag(0);
+//        }
+
+        int index1;
+        int index2;
+
+        try
         {
-            //No need to check for out of bounds error.  Object creates enough entries by default.
-            //No need to add multiple entries.  There can only be one mass object for each body.
+            //Get data indices
+            index1 = findIndex(eqComp); //Index for the current equation
+            index2 = findIndex(varIn);  //Index for the ucrrent variable
+
             output.real(
-                        pParentModel->listData(curBodComp).MassMatrix()(eqComp, varIn)
+                        pParentModel->listData(curBodComp).MassMatrix()(index1, index2)
                         );
             output.imag(0);
+        }
+        catch(...)
+        {
+            output = complex<double>(0,0);
         }
     }
 
@@ -668,11 +681,12 @@ unsigned int EquationofMotion::eqn()
      *there will always be _data_ for at least six forces, which are reserved as the first six entries of any
      *equation vector.
      *
-     *However, the equations of motion may not use those indices.  And the use forces may use other higher indices.
+     *However, the equations of motion may not always use those indices.  And the use forces may use other higher
+     *indices.
      *To allievate this problem, each Equation object, and each Equation of Motion object has a property of DataIndex.
      *The eqn() function searches through the DataIndices and matches these items, instead of matching the index
      *of the equation's position in the vector.  If the DataIndex property is not defined, then the position
-     *in the vector is used as the index.
+     *in the vector is used as the index.  The variable pPrivateIndex records the equation's position in the vector.
      */
 
     //Get index of equation of motion.
@@ -1170,8 +1184,9 @@ std::complex<double> EquationofMotion::Func50()
 int EquationofMotion::maxvar()
 {
     //Returns the maximum index of variables.
-    return pParentModel->listEquation().size() - 1;
+    return pParentModel->listEquation().size() - 1 + 1;
     //Showed -1 to indicate that we are taking the index of the last entry.
+    //Showed +1 to indicate the conversion from computer to human numbering.
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
@@ -1657,4 +1672,45 @@ std::complex<double> EquationofMotion::FunctionFind(std::string FuncName)
     {
         return std::complex<double>(0,0);
     }
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+int EquationofMotion::findIndex(int indexIn)
+{
+    int output;         //integer to write as output.
+    int check;          //The integer to check against.
+    bool test = false;  //Boolean to check if a match was found.
+
+    //Finds the integer of the equation object by data index.
+    for (unsigned int i = 0 ; i < pParentModel->listDataEquation().size(); i++)
+    {
+        //Check the data index of the object.
+        if (pParentModel->listEquation(i).getDataIndex() < 0)
+        {
+            //No data index set.  Use the position in the list.
+            check = i;
+        }
+        else
+        {
+            //Data index is used.  Use the position in the list.
+            check = pParentModel->listEquation(i).getDataIndex();
+        }
+
+        //Check for match
+        if (check == indexIn)
+        {
+            output = i;
+            test = true;
+            break;
+        }
+    }
+
+    //Check for a match
+    if (!test)
+    {
+        //No match.  Throw an exception
+        throw 1;
+    }
+
+    return output;
 }

@@ -64,35 +64,69 @@ Equation &Derivative::listEquation(unsigned int number)
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
+Equation &Derivative::listDataEquation(int indexIn)
+{
+    //Get equation by data index, returns value.
+    int i;
+
+    //Find the index integer.
+    try
+    {
+        i = findIndex(indexIn);
+    }
+    catch (int err)
+    {
+        //Assume no data index found.  Create a new place in the vector for the data index.
+        pEquationList.push_back(Equation());
+        i = pEquationList.size() - 1;
+        pEquationList[i].setDataIndex(indexIn);
+    }
+
+    //Write output
+    return pEquationList[i];
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+std::vector<Equation> &Derivative::listDataEquation()
+{
+    //return the equation list
+    return pEquationList;
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
 int Derivative::getEquationListSize()
 {
     return pEquationList.size();
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-Equation &Derivative::refIndexEquation(int indexIn)
+void Derivative::addModelEquation(std::vector<double> listCoeffsIn, int EqnDataIn)
 {
-    //Get equation by data index, returns pointer to object.
-    int i;       //get the integer for the object.
+    //Adds a new equation object to the list for the current derivative.
+    Equation newEqn;
 
-    //Find the index integer.
-    i = findIndex(indexIn);
+    //Set data index for new equation.
+    if (EqnDataIn < 0)
+    {
+        //No data index assigned.  Create a default.  Default is the last item in the list.
+        //List will be expanded by 1 when I add the new equation object in.  So I take the size of the list.
+        EqnDataIn = pEquationList.size();
+    }
+    newEqn.setDataIndex(EqnDataIn);
 
-    //Write output
-    return pEquationList[i];
-}
+    //Iterate through and for each object in the list of coefficients, add to the equation model.
+    //Only add the object if it is non zero
+    for (unsigned int i = 0; i < listCoeffsIn.size(); i++)
+    {
+        if (listCoeffsIn[i] != 0.0)
+        {
+            //Add each coefficient to the list of coefficients for the equation object.
+            newEqn.addVariable(listCoeffsIn[i], i);
+        }
+    }
 
-//------------------------------------------Function Separator --------------------------------------------------------
-Equation Derivative::getIndexEquation(int indexIn)
-{
-    //Get equation by data index, returns value.
-    int i;
-
-    //Find the index integer.
-    i = findIndex(indexIn);
-
-    //Write output
-    return pEquationList[i];
+    //Finally add the new equation object to the list of equation objects.
+    pEquationList.push_back(newEqn);
 }
 
 //==========================================Section Separator =========================================================
@@ -106,6 +140,7 @@ int Derivative::findIndex(int indexIn)
 {
     int output;         //integer to write as output.
     int check;          //The integer to check against.
+    bool test = false;  //Boolean to check if a match was found.
 
     //Finds the integer of the equation object by data index.
     for (unsigned int i = 0 ; i < pEquationList.size() ; i++)
@@ -125,9 +160,19 @@ int Derivative::findIndex(int indexIn)
         //Check for match
         if (check == indexIn)
         {
-            output = check;
+            output = i;
+            test = true;
             break;
         }
     }
+
+
+    //Check for a match
+    if (!test)
+    {
+        //No match.  Throw an exception
+        throw 1;
+    }
+
     return output;
 }

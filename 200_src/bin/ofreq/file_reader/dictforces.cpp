@@ -101,7 +101,9 @@ int dictForces::defineKey(string keyIn, vector<string> valIn)
         {
             //convert data type and input.
             ptSystem->listForceActive_user(pForceIndex).setCoeff(
-                        convertComplex(valIn[0].c_str()), pEqn);
+                        convertComplex(valIn[0].c_str()),
+                    pEqn
+                    );
             //Report success
             return 0;
         }
@@ -140,16 +142,18 @@ int dictForces::defineKey(string keyIn, vector<string> valIn)
         if (pForceType == 2)
         {
             //Reactive force object
-            ptSystem->listForceReact_user(pForceIndex).listDerivative(pOrd).listEquation(pEqn).listCoefficient().clear();
-            ptSystem->listForceReact_user(pForceIndex).listDerivative(pOrd).listEquation(pEqn).listCoefficient() = coeffIn;
+            //Add the new object to the list of equations          
+            ptSystem->listForceReact_user(pForceIndex).listDerivative(pOrd).addModelEquation(coeffIn, pEqn);
+
             //Report success
             return 0;
         }
         else if (pForceType == 3)
         {
             //Cross-body force object
-            ptSystem->listForceCross_user(pForceIndex).listDerivative(pOrd).listEquation(pEqn).listCoefficient().clear();
-            ptSystem->listForceCross_user(pForceIndex).listDerivative(pOrd).listEquation(pEqn).listCoefficient() = coeffIn;
+            //Add the new object to the list of equations
+            ptSystem->listForceCross_user(pForceIndex).listDerivative(pOrd).addModelEquation(coeffIn, pEqn);
+
             //Report success
             return 0;
         }
@@ -167,15 +171,13 @@ int dictForces::defineKey(string keyIn, vector<string> valIn)
         if (pForceType == 1)
         {
             //Convert value
-            int indexIn;
-            indexIn = atoi(valIn[0].c_str()) - 1;
+            int indexIn = atoi(valIn[0].c_str()) - 1;
 
-            //Active force type.  Set the equation index.
-            setEquation(indexIn);
-
-            //Resize the vector for number of coefficients on the Active Force object.
-            if (ptSystem->listForceActive_user(pForceIndex).listCoefficient().size() < (pEqn + 1))
-                ptSystem->listForceActive_user(pForceIndex).listCoefficient().resize(pEqn + 1);
+            //Create a new equation entry in the list of equations stored in the forceActive object.
+            //For the moment, just use a dummy value for the coefficient.
+            ptSystem->listForceActive_user(pForceIndex).addEquation(
+                        std::complex<double>(0,0), indexIn
+                        );
 
             //Report success
             return 0;
@@ -328,17 +330,17 @@ void dictForces::setEquation(int eqIn)
         {
             //Active force type.
             //Get latest equation
-            pEqn = ptSystem->listForceActive_user(pForceIndex).listEquation().size();
+            pEqn = ptSystem->listForceActive_user(pForceIndex).listDataEquation().size();
         }
         else if (pForceType == 2)
         {
             //Reactive force type.
-            pEqn = ptSystem->listForceReact_user(pForceIndex).listDerivative(pOrd).listEquation().size();
+            pEqn = ptSystem->listForceReact_user(pForceIndex).listDerivative(pOrd).listDataEquation().size();
         }
         else if (pForceType == 3)
         {
             //Cross-body force type.
-            pEqn = ptSystem->listForceReact_user(pForceIndex).listDerivative(pOrd).listEquation().size();
+            pEqn = ptSystem->listForceReact_user(pForceIndex).listDerivative(pOrd).listDataEquation().size();
         }
     }
     else

@@ -29,6 +29,9 @@
 using namespace std;
 using namespace osea::ofreq;
 
+//==========================================Section Separator =========================================================
+//Public Functions
+
 //------------------------------------------Function Separator --------------------------------------------------------
 Equation::Equation()
 {
@@ -65,15 +68,31 @@ double &Equation::listCoefficient(unsigned int index)
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-std::vector<double> &Equation::listVariable()
+std::vector<double> &Equation::listDataVariable()
 {
     return pcoeffs;
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-double &Equation::listVariable(unsigned int index)
+double &Equation::listDataVariable(int DataIndex)
 {
-    return pcoeffs[index];
+    //Find the position of the coefficient with the specified data index
+    int i;
+
+    try
+    {
+        i = findIndex(DataIndex);
+    }
+    catch (int err)
+    {
+        //Assume no match found and create a new place for one.
+        pcoeffs.push_back(0.0);
+        plistDataIndex.push_back(DataIndex);
+        i = pcoeffs.size() - 1;
+    }
+
+    //Return the value
+    return pcoeffs[i];
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
@@ -120,6 +139,29 @@ int &Equation::refDataIndex()
     return pDataIndex;
 }
 
+//------------------------------------------Function Separator --------------------------------------------------------
+void Equation::addVariable(double CoeffIn, int VarDataIn)
+{
+    //Create a new place for the coefficient in the vector of coefficients.
+    //Add in the new coefficient.
+    pcoeffs.push_back(CoeffIn);
+
+    //Check for default value of VarDataIn
+    if (VarDataIn == -1)
+    {
+        //Assign default value.
+        VarDataIn = plistDataIndex.size() - 1;
+    }
+
+    plistDataIndex.push_back(VarDataIn);
+}
+
+
+
+//==========================================Section Separator =========================================================
+//Protected Functions
+
+
 //==========================================Section Separator =========================================================
 //Private Functions
 
@@ -128,4 +170,45 @@ void Equation::initCoeff()
 {
     for(unsigned int i = 0 ; i < pcoeffs.size(); i++)
         pcoeffs[i] = 0;
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+int Equation::findIndex(int DataIndexIn)
+{
+    int output;         //integer to write as output.
+    int check;          //The integer to check against.
+    bool test = false;  //Boolean to tell if a match was found
+
+    //Finds the integer of the equation object by data index.
+    for (unsigned int i = 0 ; i < plistDataIndex.size() ; i++)
+    {
+        //Check the data index of the object.
+        if (plistDataIndex[i] < 0)
+        {
+            //No data index set.  Use the position in the list.
+            check = i;
+        }
+        else
+        {
+            //Data index is used.  Use the position in the list.
+            check = plistDataIndex[i];
+        }
+
+        //Check for match
+        if (check == DataIndexIn)
+        {
+            output = i;
+            test = true;
+            break;
+        }
+    }
+
+    //Check for a match
+    if (!test)
+    {
+        //No match.  Throw an exception
+        throw 1;
+    }
+
+    return output;
 }

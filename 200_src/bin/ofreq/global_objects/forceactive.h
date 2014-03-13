@@ -102,6 +102,19 @@ public:
     void setCoeff(std::complex<double> coeffIn, unsigned int index);
 
     //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Adds an equation to the list of equations / coefficients stored in the forceActive object.
+     *
+     * Expands the current list of equations / coefficients by adding the inputs to the end of the list.  Adds
+     * both the coefficient specified, and the corresponding equation data index.
+     * @param eqIn Complex double input.  This is the coefficient value stored for the specified equation.  Variable
+     * passed by value.
+     * @param dataIndex Integer input.  This is the data index specified.  When objects are retrieved by their
+     * data index, they will lookup this value.
+     */
+    void addEquation(std::complex<double> eqIn, int dataIndex = -1);
+
+    //------------------------------------------Function Separator ----------------------------------------------------
 	/**
 	 * Retrieve the list of coefficients.
 	 * @return The list of coefficients.
@@ -121,22 +134,22 @@ public:
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
-     * @brief Another implementation of function listCoefficient.
+     * @brief Another implementation of function listCoefficient.  But this one uses the Data index
      * @return Vector containing the list of coefficients.  Argument passed by reference.
      */
-    std::vector<complexDouble> &listEquation();
+    std::vector<complexDouble> &listDataEquation();
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
      * @brief Another implementation of function listCoefficient(index).
      *
      * Provides direct access to items in the list of equations.  Returns a single variable from the list of
-     * coefficients.
-     * @param index Unsigned integer.  Specifies which value to return from the list of coefficients.
+     * coefficients.  Variable is accessed by data index, and not by vector occurrence index.
+     * @param index Integer.  Specifies which value to return from the list of coefficients.
      * @return Returns a complex double.  Returned variable is a value from the list of coefficients.  Returned
      * variable is passed by reference.
      */
-    complexDouble &listEquation(unsigned int index);
+    complexDouble &listDataEquation(int index);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -155,8 +168,26 @@ protected:
     //------------------------------------------Function Separator ----------------------------------------------------
     std::vector<complexDouble> pCoefficients; /**< The list of force coeffients. */
 
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief The list of data indices for each coefficient.  The listDataEquation() method will lookup items by their
+     * data index, instead of their occurance index in the container vector.  This vector contains those data indices
+     * used for that search by dataIndex.
+     */
+    std::vector<int> pDataIndex;
+
 //==========================================Section Separator =========================================================
 private:
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Searches through the list of coefficients to find the one specified by the indexIn parameter.
+     *
+     * Searches through the list of coefficients to find the one specified by the indexIn parameter.  Returns the
+     * integer specifying the position of the coefficient in the vector of coefficients.
+     * @param indexIn The data index requested.
+     * @return Returns the integer specifying the position of the coefficient in the vector of coefficients.
+     */
+    int findIndex(int indexIn);
 
 };
 
