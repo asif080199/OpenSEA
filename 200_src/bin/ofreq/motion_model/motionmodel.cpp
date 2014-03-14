@@ -1528,6 +1528,9 @@ void MotionModel::useForceMass(unsigned int eqn, unsigned int var)
     //Don't need to check that the mass matrix created successfully.
     //Construction of body object automatically initializes with a mass matrix of the correct size.
 
+    int indexeqn;       //Equation index
+    int indexvar;       //Variable index
+
     try
     {
         //Check if current body is assigned a value.
@@ -1537,8 +1540,13 @@ void MotionModel::useForceMass(unsigned int eqn, unsigned int var)
             throw 1;
         }
 
+        //Get vector occurrence index for equation and variable
+        indexeqn = findIndex(eqn);
+        indexvar = findIndex(var);
+
         //Copy over the mass matrix entry.
-        plistData[curBody].MassMatrix()(eqn, var) = plistBody->at(curBody).getMassMatrix()(eqn, var);
+        plistData[curBody].MassMatrix()(indexeqn, indexvar) =
+                plistBody->at(curBody).getMassMatrix()(indexeqn, indexvar);
     }
     catch (int err)
     {
@@ -1568,14 +1576,29 @@ void MotionModel::useForceMass(unsigned int eqn)
     //Don't need to check that the mass matrix created successfully.
     //Construction of body object automatically initializes with a mass matrix of the correct size.
 
+    int indexeqn;       //Equation index
+    int indexvar;       //Variable index
+
     //Get total number of variables
     int var = plistData.at(curBody).getMassMatrix().n_cols - 1;
 
     //Copy over all variables in the specified equation
     for (int i = 0; i <= var; i++)
     {
-        plistData[curBody].MassMatrix()(eqn, i) =
-                plistBody->at(curBody).getMassMatrix()(eqn, i);
+        try
+        {
+            //Get vector occurrence index for equation and variable
+            indexeqn = findIndex(eqn);
+            indexvar = findIndex(i);
+
+            plistData[curBody].MassMatrix()(indexeqn, indexvar) =
+                    plistBody->at(curBody).getMassMatrix()(indexeqn, indexvar);
+        }
+        catch(...)
+        {
+            //Do nothing
+        }
+
     }
 }
 
@@ -1679,13 +1702,14 @@ cx_mat MotionModel::getMatForceReact_user(int force, int ord)
     {
         //get equation data index
         eqnIndex = plistEquations[i]->getDataIndex();
-        complex<double> temp;
 
         //Run evaluation for each equation in the force object.
         for (unsigned int j = 0; j < plistEquations.size(); j++)
         {
             //Reset the model
             Reset();
+
+            std::complex<double> temp;
 
             //get the variable data index
             varIndex = plistEquations[j]->getDataIndex();
@@ -1838,6 +1862,8 @@ cx_mat MotionModel::getMatForceMass()
     //Create force matrix
     cx_mat outputmat;       //outputmatrix
     int n_row;              //number of rows for new matrix.
+    int datvar;             //Data index of the variable
+    int dateqn;             //Data index of the variable
 
     //resize output matrix.
     n_row = plistBody->at(curBody).getEquationCount();
@@ -1855,11 +1881,17 @@ cx_mat MotionModel::getMatForceMass()
             //Reset the model
             Reset();
 
+            //Get the data index of the equation
+            dateqn = plistEquations[j]->getDataIndex();
+
+            //Get the data index of of the variable
+            datvar = plistEquations[i]->getDataIndex();
+
             //Promote the reactive force to use, on the correct order of derivative.
-            useForceMass(j, i);
+            useForceMass(dateqn, datvar);
 
             //Evaluate the equation of motion and store in matrix.
-            outputmat(j,i) = Evaluate(j);
+            outputmat(j,i) = Evaluate(dateqn);
         }
     }
 
@@ -2088,6 +2120,12 @@ void MotionModel::fillBodies()
             plistData[i].setHeading(
                         plistBody->at(i).getHeading());
             plistData[i].refPosn() = plistBody->at(i).getPosn();
+            plistData[i].setMotionModel(
+                        plistBody->at(i).getMotionModel()
+                        );
+
+            //Initialize mass matrix of new body
+            plistData[i].initMassMat();
         }
     }
 }

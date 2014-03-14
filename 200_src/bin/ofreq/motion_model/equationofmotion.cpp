@@ -330,7 +330,7 @@ complex<double> EquationofMotion::ForceActive_user()
     //Returns the active force object for the currently defined indices.  User force.
     complex<double> output(0,0);    //Temporary value for variable.
     complex<double> reverse(-1,0);         //Reverses sign of active force variable.
-    int eqComp = eqn();                 //The equation index converted from human to computer index.
+    int eqComp = eqn() - 1;                 //The equation index converted from human to computer index.
     int curBodComp = curbody() - 1;         //The current body index, converted from human to computer index.
 
     //The coefficients in the active force matrix must match the equations of motion, in the sequence that they
@@ -350,6 +350,9 @@ complex<double> EquationofMotion::ForceActive_user()
                 try
                 {
                     //get value
+                    std::complex<double> test = pParentModel->listData(curBodComp).
+                                                listForceActive_user(force())->
+                                                listDataEquation(eqComp);
                     output +=
                             pParentModel->listData(curBodComp).
                             listForceActive_user(force())->
@@ -763,13 +766,13 @@ std::complex<double> EquationofMotion::Sum(std::string FuncName, std::string ind
                 (from < 1))
         {
             //Get limit
-            from = 1;
+            from = 0;
         }
 
         if (to == undefArg)
         {
             //Get limit
-            to = maxvar();
+            to = maxvar() - 1;
         }
 
         //Sum for variable count.
@@ -826,13 +829,13 @@ std::complex<double> EquationofMotion::Sum(std::string FuncName, std::string ind
                 (from < 1))
         {
             //Get limit
-            from = 1;
+            from = 0;
         }
 
         if (to == undefArg)
         {
             //Get limit
-            to = maxbody();
+            to = maxbody() - 1;
         }
 
         //Sum for bodies
@@ -1193,8 +1196,9 @@ int EquationofMotion::maxvar()
 int EquationofMotion::maxbody()
 {
     //Returns the maximum index of body variable.
-    return pParentModel->listData().size() - 1;
+    return pParentModel->listData().size() - 1 + 1;
     //subtracted 1 to show change from list size to list index.
+    //Showed +1 to indicate the conversion from computer to human numbering.
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------

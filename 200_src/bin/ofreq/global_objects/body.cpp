@@ -32,11 +32,19 @@ using namespace arma;
 using namespace osea::ofreq;
 
 //------------------------------------------Function Separator --------------------------------------------------------
+//Static variable intialization
+int Body::Tx = 0;      //Index of translation in X-axis
+int Body::Ty = 1;      //Index of translation in Y-axis
+int Body::Tz = 2;      //Index of translation in Z-axis
+int Body::Rx = 3;      //Index of rotation about X-axis
+int Body::Ry = 4;      //Index of rotation about Y-axis
+int Body::Rz = 5;      //Index of rotation about Z-axis
+
+//------------------------------------------Function Separator --------------------------------------------------------
 Body::Body()
 {
     //Initialize private variables with zeros
-    int size = motModel->listDataEquation().size();
-    pMassMat.zeros(size, size);
+//    initMassMat();
     pCentroid.zeros(3,1);
     pPosn.zeros(3,1);
 }
@@ -200,10 +208,14 @@ double &Body::refHeading()
 void Body::setMass(double newMass)
 {
     int index;
+
+    //initialize mass matrix
+    initMassMat();
+
     try
     {
         //Set mass for equation 0:  X-axis translation
-        index = findIndex(0);
+        index = findIndex(Tx);
         pMassMat(index, index) = newMass;
     }
     catch(...)
@@ -225,7 +237,7 @@ void Body::setMass(double newMass)
     try
     {
         //Set mass for equation 2:  Z-axis translation
-        index = findIndex(2);
+        index = findIndex(Tz);
         pMassMat(index, index) = newMass;
     }
     catch(...)
@@ -243,9 +255,12 @@ double Body::getMass()
     //Find an index with translation in it.
     int index;
 
+    //initialize mass matrix
+    initMassMat();
+
     try
     {
-        index = findIndex(0);   //Check for X-axis translation.
+        index = findIndex(Tx);   //Check for X-axis translation.
     }
     catch(...)
     {
@@ -259,7 +274,7 @@ double Body::getMass()
             try
             {
                 //Check the next index
-                index = findIndex(2);   //Check for Z-axis translation.
+                index = findIndex(Tz);   //Check for Z-axis translation.
             }
             catch(...)
             {
@@ -277,10 +292,13 @@ void Body::setMomIxx(double newXX)
 {
     int index;
 
+    //initialize mass matrix
+    initMassMat();
+
     try
     {
         //Get index of rotation in XX-axis.
-        index = findIndex(3);
+        index = findIndex(Rx);
         pMassMat(index, index) = newXX;
     }
     catch(...)
@@ -294,10 +312,13 @@ double Body::getMomIxx()
 {
     int index;
 
+    //initialize mass matrix
+    initMassMat();
+
     try
     {
         //Get index of rotation in the XX-axis.
-        index = findIndex(3);
+        index = findIndex(Rx);
 
         return pMassMat(index, index);
     }
@@ -312,10 +333,13 @@ void Body::setMomIyy(double newYY)
 {
     int index;
 
+    //initialize mass matrix
+    initMassMat();
+
     try
     {
         //Get the index of rotation in the YY-axis.
-        index = findIndex(4);
+        index = findIndex(Ry);
 
         pMassMat(index, index) = newYY;
     }
@@ -330,10 +354,13 @@ double Body::getMomIyy()
 {
     int index;
 
+    //initialize mass matrix
+    initMassMat();
+
     try
     {
         //Get index of rotation in the YY-axis.
-        index = findIndex(4);
+        index = findIndex(Ry);
 
         return pMassMat(index, index);
     }
@@ -348,10 +375,13 @@ void Body::setMomIzz(double newZZ)
 {
     int index;
 
+    //initialize mass matrix
+    initMassMat();
+
     try
     {
         //Get the index of rotation in the ZZ-axis.
-        index = findIndex(5);
+        index = findIndex(Rz);
 
         pMassMat(index, index) = newZZ;
     }
@@ -366,10 +396,13 @@ double Body::getMomIzz()
 {
     int index;
 
+    //initialize mass matrix
+    initMassMat();
+
     try
     {
         //Get index of rotation in the ZZ-axis.
-        index = findIndex(5);
+        index = findIndex(Rz);
 
         return pMassMat(index, index);
     }
@@ -385,10 +418,13 @@ void Body::setMomIxy(double newXY)
     int index1;
     int index2;
 
+    //initialize mass matrix
+    initMassMat();
+
     try
     {
-        index1 = findIndex(3);  //Index of rotation X-axis
-        index2 = findIndex(4);  //Index of rotation Y-axis
+        index1 = findIndex(Rx);  //Index of rotation X-axis
+        index2 = findIndex(Ry);  //Index of rotation Y-axis
 
         pMassMat(index1, index2) = newXY;
     }
@@ -404,10 +440,13 @@ double Body::getMomIxy()
     int index1;
     int index2;
 
+    //initialize mass matrix
+    initMassMat();
+
     try
     {
-        index1 = findIndex(3);  //Index of rotation X-axis
-        index2 = findIndex(4);  //Index of rotation Y-axis
+        index1 = findIndex(Rx);  //Index of rotation X-axis
+        index2 = findIndex(Ry);  //Index of rotation Y-axis
 
         return pMassMat(index1, index2);
     }
@@ -423,10 +462,13 @@ void Body::setMomIxz(double newXZ)
     int index1;
     int index2;
 
+    //initialize mass matrix
+    initMassMat();
+
     try
     {
-        index1 = findIndex(3);  //Index of rotation X-axis
-        index2 = findIndex(5);  //Index of rotation Z-axis
+        index1 = findIndex(Rx);  //Index of rotation X-axis
+        index2 = findIndex(Rz);  //Index of rotation Z-axis
 
         pMassMat(index1, index2) = newXZ;
     }
@@ -442,10 +484,13 @@ double Body::getMomIxz()
     int index1;
     int index2;
 
+    //initialize mass matrix
+    initMassMat();
+
     try
     {
-        index1 = findIndex(3);  //Index of rotation X-axis
-        index2 = findIndex(5);  //Index of rotation Z-axis
+        index1 = findIndex(Rx);  //Index of rotation X-axis
+        index2 = findIndex(Rz);  //Index of rotation Z-axis
 
         return pMassMat(index1, index2);
     }
@@ -461,10 +506,13 @@ void Body::setMomIyz(double newYZ)
     int index1;
     int index2;
 
+    //initialize mass matrix
+    initMassMat();
+
     try
     {
-        index1 = findIndex(4);  //Index of rotation Y-axis
-        index2 = findIndex(5);  //Index of rotation Z-axis
+        index1 = findIndex(Ry);  //Index of rotation Y-axis
+        index2 = findIndex(Rz);  //Index of rotation Z-axis
 
         pMassMat(index1, index2) = newYZ;
     }
@@ -480,10 +528,13 @@ double Body::getMomIyz()
     int index1;
     int index2;
 
+    //initialize mass matrix
+    initMassMat();
+
     try
     {
-        index1 = findIndex(4);  //Index of rotation Y-axis
-        index2 = findIndex(5);  //Index of rotation Z-axis
+        index1 = findIndex(Ry);  //Index of rotation Y-axis
+        index2 = findIndex(Rz);  //Index of rotation Z-axis
 
         return pMassMat(index1, index2);
     }
@@ -496,18 +547,27 @@ double Body::getMomIyz()
 //------------------------------------------Function Separator --------------------------------------------------------
 Mat<double> Body::getMassMatrix()
 {
+    //initialize mass matrix
+    initMassMat();
+
     return pMassMat;
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
 Mat<double> &Body::MassMatrix()
 {
+    //initialize mass matrix
+    initMassMat();
+
     return pMassMat;
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
 void Body::setMassMatrix(Mat<double> MassMatIn)
 {
+    //initialize mass matrix
+    initMassMat();
+
     pMassMat = MassMatIn;
 
     //Add mass coupling
@@ -517,7 +577,7 @@ void Body::setMassMatrix(Mat<double> MassMatIn)
 //------------------------------------------Function Separator --------------------------------------------------------
 void Body::setCenX(double newCenX)
 {
-    pCentroid(0,0) = newCenX;
+    pCentroid(Tx,0) = newCenX;
 
     //Add mass coupling
     setMassCouple();
@@ -526,13 +586,13 @@ void Body::setCenX(double newCenX)
 //------------------------------------------Function Separator --------------------------------------------------------
 double Body::getCenX()
 {
-    return pCentroid(0,0);
+    return pCentroid(Tx,0);
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
 void Body::setCenY(double newCenY)
 {
-    pCentroid(1,0) = newCenY;
+    pCentroid(Ty,0) = newCenY;
 
     //Add mass coupling
     setMassCouple();
@@ -541,13 +601,13 @@ void Body::setCenY(double newCenY)
 //------------------------------------------Function Separator --------------------------------------------------------
 double Body::getCenY()
 {
-    return pCentroid(1,0);   
+    return pCentroid(Ty,0);
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
 void Body::setCenZ(double newCenZ)
 {
-    pCentroid(2,0) = newCenZ;
+    pCentroid(Tz,0) = newCenZ;
 
     //Add mass coupling
     setMassCouple();
@@ -556,7 +616,7 @@ void Body::setCenZ(double newCenZ)
 //------------------------------------------Function Separator --------------------------------------------------------
 double Body::getCenZ()
 {
-    return pCentroid(2,0);
+    return pCentroid(Tz,0);
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
@@ -568,7 +628,7 @@ Mat<double> Body::getCen()
 //------------------------------------------Function Separator --------------------------------------------------------
 void Body::setPosnX(double input)
 {
-    pPosn(0,0) = input;
+    pPosn(Tx,0) = input;
 
     //Add mass coupling
     setMassCouple();
@@ -577,13 +637,13 @@ void Body::setPosnX(double input)
 //------------------------------------------Function Separator --------------------------------------------------------
 double Body::getPosnX()
 {
-    return pPosn(0,0);
+    return pPosn(Tx,0);
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
 void Body::setPosnY(double input)
 {
-    pPosn(1,0) = input;
+    pPosn(Ty,0) = input;
 
     //Add mass coupling
     setMassCouple();
@@ -592,13 +652,13 @@ void Body::setPosnY(double input)
 //------------------------------------------Function Separator --------------------------------------------------------
 double Body::getPosnY()
 {
-    return pPosn(1,0);
+    return pPosn(Ty,0);
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
 void Body::setPosnZ(double input)
 {
-    pPosn(2,0) = input;
+    pPosn(Tz,0) = input;
 
     //Add mass coupling
     setMassCouple();
@@ -607,7 +667,7 @@ void Body::setPosnZ(double input)
 //------------------------------------------Function Separator --------------------------------------------------------
 double Body::getPosnZ()
 {
-    return pPosn(2,0);
+    return pPosn(Tz,0);
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
@@ -670,6 +730,33 @@ std::complex<double> &Body::refDataSolution(int varIndexIn)
 Body Body::Copy()
 {
     return *this;
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+void Body::initMassMat()
+{
+    //Initialize the mass matrix
+
+    //Check if the motion model is assigned
+    if (motModel)
+    {
+        //Resize the mass matrix.
+        int size = motModel->listDataEquation().size();
+
+        if (pMassMat.n_rows != size)
+        {
+            if (pMassMat.n_rows == 0)
+            {
+                //Resize and fill matrix with zeros.
+                pMassMat.zeros(size, size);
+            }
+            else
+            {
+                //Just resize
+                pMassMat.resize(size, size);
+            }
+        }
+    }
 }
 
 
@@ -920,35 +1007,127 @@ void Body::setMassCouple()
     //Sets the coupling between mass and moment terms.
     //Should be run any time the mass is set or the centroid is set.
 
-    //Mass coupling for force X
-    pMassMat(0,3) = 0;
-    pMassMat(0,4) = pMassMat(0,0) * pCentroid(2,0);
-    pMassMat(0,5) = -1 * pMassMat(0,0) * pCentroid(1,0);
+    int index0;     //index for X-axis translation
+    int index1;     //index for Y-axis translation
+    int index2;     //index for Z-axis translation
+    int index3;     //index for X-axis rotation
+    int index4;     //index for Y-axis rotation
+    int index5;     //index for Z-axis rotation
 
-    //Mass coupling for force Y
-    pMassMat(1,3) = -1 * pMassMat(1,1) * pCentroid(2,0);
-    pMassMat(1,4) = 0;
-    pMassMat(1,5) = pMassMat(1,1) * pCentroid(0,0);
 
-    //Mass coupling for force Z
-    pMassMat(2,3) = pMassMat(2,2) * pCentroid(1,0);
-    pMassMat(2,4) = -1 * pMassMat(2,2) * pCentroid(0,0);
-    pMassMat(2,5) = 0;
+    try
+    {
+        //Get indices for each equation of motion
+        index0 = findIndex(Tx);
+        index1 = findIndex(Ty);
+        index2 = findIndex(Tz);
+        index3 = findIndex(Rx);
+        index4 = findIndex(Ry);
+        index5 = findIndex(Rz);
 
-    //Mass coupling for moment X
-    pMassMat(3,0) = 0;
-    pMassMat(3,1) = -1 * pMassMat(0,0) * pCentroid(2,0);
-    pMassMat(3,2) = pMassMat(0,0) * pCentroid(1,0);
+        //Mass coupling for force X
+        pMassMat(index0, index3) = 0;
+        pMassMat(index0, index4) = pMassMat(index0, index0) * pCentroid(Tz, 0);
+        pMassMat(index0, index5) = -1 * pMassMat(index0, index0) * pCentroid(Ty, 0);
+    }
+    catch(...)
+    {
+        //Do nothing
+    }
 
-    //Mass coupling for moment Y
-    pMassMat(4,0) = -1 * pMassMat(1,1) * pCentroid(2,0);
-    pMassMat(4,1) = 0;
-    pMassMat(4,2) = pMassMat(1,1) * pCentroid(0,0);
+    try
+    {
+        //Get indices for each equation of motion
+        index0 = findIndex(Tx);
+        index1 = findIndex(Ty);
+        index2 = findIndex(Tz);
+        index3 = findIndex(Rx);
+        index4 = findIndex(Ry);
+        index5 = findIndex(Rz);
 
-    //Mass coupling for moment Z
-    pMassMat(5,0) = -1 * pMassMat(2,2) * pCentroid(1,0);
-    pMassMat(5,1) = pMassMat(2,2) * pCentroid(0,0);
-    pMassMat(5,2) = 0;
+        //Mass coupling for force Y
+        pMassMat(index1, index3) = -1 * pMassMat(index1, index1) * pCentroid(Tz, 0);
+        pMassMat(index1, index4) = 0;
+        pMassMat(index1, index5) = pMassMat(index1, index1) * pCentroid(Tx, 0);
+    }
+    catch(...)
+    {
+        //Do nothing
+    }
+
+    try
+    {
+        //Get indices for each equation of motion
+        index0 = findIndex(Tx);
+        index1 = findIndex(Ty);
+        index2 = findIndex(Tz);
+        index3 = findIndex(Rx);
+        index4 = findIndex(Ry);
+        index5 = findIndex(Rz);
+
+        //Mass coupling for force Z
+        pMassMat(index2, index3) = pMassMat(index2, index2) * pCentroid(Ty, 0);
+        pMassMat(index2, index4) = -1 * pMassMat(index2, index2) * pCentroid(Tx, 0);
+        pMassMat(index2, index5) = 0;
+    }
+    catch(...)
+    {
+        //Do nothing
+    }
+
+    try
+    {
+        //Get indices for each equation of motion
+        index0 = findIndex(Tx);
+        index1 = findIndex(Ty);
+        index2 = findIndex(Tz);
+        index3 = findIndex(Rx);
+
+        //Mass coupling for moment X
+        pMassMat(index3, index0) = 0;
+        pMassMat(index3, index1) = -1 * pMassMat(index0, index0) * pCentroid(Tz, 0);
+        pMassMat(index3, index2) = pMassMat(index0, index0) * pCentroid(Ty, 0);
+    }
+    catch(...)
+    {
+        //Do nothing
+    }
+
+    try
+    {
+        //Get indices for each equation of motion
+        index0 = findIndex(Tx);
+        index1 = findIndex(Ty);
+        index2 = findIndex(Tz);
+        index4 = findIndex(Ry);
+
+        //Mass coupling for moment Y
+        pMassMat(index4, index0) = -1 * pMassMat(index1, index1) * pCentroid(Tz, 0);
+        pMassMat(index4, index1) = 0;
+        pMassMat(index4, index2) = pMassMat(index1, index1) * pCentroid(Tx, 0);
+    }
+    catch(...)
+    {
+        //Do nothing
+    }
+
+    try
+    {
+        //Get indices for each equation of motion
+        index0 = findIndex(Tx);
+        index1 = findIndex(Ty);
+        index2 = findIndex(Tz);
+        index5 = findIndex(Rz);
+
+        //Mass coupling for moment Z
+        pMassMat(index5, index0) = -1 * pMassMat(index2, index2) * pCentroid(Ty, 0);
+        pMassMat(index5, index1) = pMassMat(index2, index2) * pCentroid(Tx, 0);
+        pMassMat(index5, index2) = 0;
+    }
+    catch(...)
+    {
+        //Do nothing
+    }
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------

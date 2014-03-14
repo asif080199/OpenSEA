@@ -789,6 +789,14 @@ public:
      */
     int getEquationCount();
 
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Initializes the mass matrix.  Resizes it to the correct value.  Only acts if the motion model is
+     * already set.  And does not override any current values of the mass matrix.
+     */
+    void initMassMat();
+
+
 //==========================================Section Separator =========================================================
 protected:
 
@@ -974,7 +982,7 @@ private:
     int eqnCount;
 
     //------------------------------------------Function Separator ----------------------------------------------------
-    ofreq::MotionModel* motModel; /**< Pointer to the motion model used by the body. */
+    ofreq::MotionModel* motModel = NULL; /**< Pointer to the motion model used by the body. */
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -1000,6 +1008,14 @@ private:
      * by value.
      */
     int findIndex(int DataIndexIn);
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    static int Tx;      //Index of translation in X-axis
+    static int Ty;      //Index of translation in Y-axis
+    static int Tz;      //Index of translation in Z-axis
+    static int Rx;      //Index of rotation about X-axis
+    static int Ry;      //Index of rotation about Y-axis
+    static int Rz;      //Index of rotation about Z-axis
 };
 
 }   //Namespace ofreq

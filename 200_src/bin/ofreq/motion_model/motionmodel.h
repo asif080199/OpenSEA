@@ -291,7 +291,7 @@ public:
      * are not cumulative.  An input coefficient can either be on or off, not multiple instances of the exact same
      * coefficient.
      * @param force Integer specifying which force to use in the set of forces for the given force type.
-     * @param eqn Integer specifying which equation to use in the selected force.
+     * @param eqn Integer specifying which equation to use in the selected force.  Based on data index.
      */
     void useForceActive_user(unsigned int force, unsigned int eqn);
 
@@ -334,7 +334,7 @@ public:
      * are not cumulative.  An input coefficient can either be on or off, not multiple instances of the exact same
      * coefficient.
      * @param force Integer specifying which force to use in the set of forces for the given force type.
-     * @param eqn Integer specifying which equation to use in the selected force.
+     * @param eqn Integer specifying which equation to use in the selected force.  Based on data index.
      */
     void useForceActive_hydro(unsigned int force, unsigned int eqn);
 
@@ -378,8 +378,8 @@ public:
      * coefficient.
      * @param force Integer specifying which force to use in the set of forces for the given force type.
      * @param ord Integer specifying which order of derviative to use for the selected force.
-     * @param eqn Integer specifying which equation to use in the selected force.
-     * @param var Integer specifying which variable to use from the selected equation.
+     * @param eqn Integer specifying which equation to use in the selected force.  Based on data index.
+     * @param var Integer specifying which variable to use from the selected equation.  Based on data index.
      */
     void useForceReact_user(unsigned int force, unsigned int ord, unsigned int eqn, unsigned int var);
 
@@ -396,7 +396,7 @@ public:
      * force.
      * @param force Integer specifying which force to use in the set of forces for the given force type.
      * @param ord Integer specifying which order of derviative to use for the selected force.
-     * @param eqn Integer specifying which equation to use in the selected force.
+     * @param eqn Integer specifying which equation to use in the selected force.  Based on data index.
      */
     void useForceReact_user(unsigned int force, unsigned int ord, unsigned int eqn);
 
@@ -457,8 +457,8 @@ public:
      * coefficient.
      * @param force Integer specifying which force to use in the set of forces for the given force type.
      * @param ord Integer specifying which order of derviative to use for the selected force.
-     * @param eqn Integer specifying which equation to use in the selected force.
-     * @param var Integer specifying which variable to use from the selected equation.
+     * @param eqn Integer specifying which equation to use in the selected force.  Based on data index.
+     * @param var Integer specifying which variable to use from the selected equation.  Based on data index.
      */
     void useForceReact_hydro(unsigned int force, unsigned int ord, unsigned int eqn, unsigned int var);
 
@@ -475,7 +475,7 @@ public:
      * force.
      * @param force Integer specifying which force to use in the set of forces for the given force type.
      * @param ord Integer specifying which order of derviative to use for the selected force.
-     * @param eqn Integer specifying which equation to use in the selected force.
+     * @param eqn Integer specifying which equation to use in the selected force.  Based on data index.
      */
     void useForceReact_hydro(unsigned int force, unsigned int ord, unsigned int eqn);
 
@@ -536,8 +536,8 @@ public:
      * coefficient.
      * @param force Integer specifying which force to use in the set of forces for the given force type.
      * @param ord Integer specifying which order of derviative to use for the selected force.
-     * @param eqn Integer specifying which equation to use in the selected force.
-     * @param var Integer specifying which variable to use from the selected equation.
+     * @param eqn Integer specifying which equation to use in the selected force.  Based on data index.
+     * @param var Integer specifying which variable to use from the selected equation.  Based on data index.
      */
     void useForceCross_user(unsigned int force, unsigned int ord, unsigned int eqn, unsigned int var);
 
@@ -554,7 +554,7 @@ public:
      * force.
      * @param force Integer specifying which force to use in the set of forces for the given force type.
      * @param ord Integer specifying which order of derviative to use for the selected force.
-     * @param eqn Integer specifying which equation to use in the selected force.
+     * @param eqn Integer specifying which equation to use in the selected force.  Based on data index.
      */
     void useForceCross_user(unsigned int force, unsigned int ord, unsigned int eqn);
 
@@ -615,8 +615,8 @@ public:
      * coefficient.
      * @param force Integer specifying which force to use in the set of forces for the given force type.
      * @param ord Integer specifying which order of derviative to use for the selected force.
-     * @param eqn Integer specifying which equation to use in the selected force.
-     * @param var Integer specifying which variable to use from the selected equation.
+     * @param eqn Integer specifying which equation to use in the selected force.  Based on data index.
+     * @param var Integer specifying which variable to use from the selected equation.  Based on data index.
      */
     void useForceCross_hydro(unsigned int force, unsigned int ord, unsigned int eqn, unsigned int var);
 
@@ -633,7 +633,7 @@ public:
      * force.
      * @param force Integer specifying which force to use in the set of forces for the given force type.
      * @param ord Integer specifying which order of derviative to use for the selected force.
-     * @param eqn Integer specifying which equation to use in the selected force.
+     * @param eqn Integer specifying which equation to use in the selected force.  Based on data index.
      */
     void useForceCross_hydro(unsigned int force, unsigned int ord, unsigned int eqn);
 
@@ -692,8 +692,8 @@ public:
      * combined with other useForce methods.  Multiple calls to the same useForce method with the same index coordinates
      * are not cumulative.  An input coefficient can either be on or off, not multiple instances of the exact same
      * coefficient.
-     * @param eqn Integer specifying which equation to use in the selected force.
-     * @param var Integer specifying which variable to use from the selected equation.
+     * @param eqn Integer specifying which equation to use in the selected force.  Based on data index.
+     * @param var Integer specifying which variable to use from the selected equation.  Based on data index.
      */
     void useForceMass(unsigned int eqn, unsigned int var);
 
@@ -707,7 +707,7 @@ public:
      * combined with other useForce methods.  Multiple calls to the same useForce method with the same index coordinates
      * are not cumulative.  An input coefficient can either be on or off, not multiple instances of the exact same
      * coefficient.  This implementation will copy over all variables for the specified equation.
-     * @param eqn Integer specifying which equation to use in the selected force.
+     * @param eqn Integer specifying which equation to use in the selected force.  Based on data index.
      */
     void useForceMass(unsigned int eqn);
 

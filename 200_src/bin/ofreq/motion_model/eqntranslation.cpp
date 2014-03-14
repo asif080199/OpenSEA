@@ -87,21 +87,21 @@ complex<double> EqnTranslation::setFormula()
 
     //I only want to define a single equation to linear translation.  Add some if statements to change equation
     //definition, depending on equation index.
-    if (this->getDataIndex() == 1) //Data index for X-translation
+    if (this->getDataIndex() == 0) //Data index for X-translation
     {
         //Add in mass objects.
         valOut = ForceMass(1) * Ddt(1,2) +  //Direct mass object
                  ForceMass(5) * Ddt(5,2) +
                  ForceMass(6) * Ddt(6,2);
     }
-    else if (this->getDataIndex() == 2) //Data index for Y-translation
+    else if (this->getDataIndex() == 1) //Data index for Y-translation
     {
         //Add in mass objects.
         valOut = ForceMass(2) * Ddt(2,2) +
                  ForceMass(4) * Ddt(4,2) +
                  ForceMass(6) * Ddt(5,2);
     }
-    else if (this->getDataIndex() == 3) //Data index for Z-translation
+    else if (this->getDataIndex() == 2) //Data index for Z-translation
     {
         //Add in mass objects.
         valOut = ForceMass(3) * Ddt(3,2) +

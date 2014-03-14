@@ -44,7 +44,7 @@ force_active {
     coeff /*F3 = */ 0.00+1.00i;
   }
 
-  /*force {
+  force {
     equation 4;
     coeff /*F4 = */ 0.00+1.00i;
   }
@@ -57,7 +57,7 @@ force_active {
   force {
     equation 6;
     coeff /*F6 = */ 0.00+5.00i;
-  }*/
+  }
 }
 
 

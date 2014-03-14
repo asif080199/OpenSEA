@@ -179,6 +179,9 @@ int dictForces::defineKey(string keyIn, vector<string> valIn)
                         std::complex<double>(0,0), indexIn
                         );
 
+            //Set the equation value
+            pEqn = indexIn;
+
             //Report success
             return 0;
         }

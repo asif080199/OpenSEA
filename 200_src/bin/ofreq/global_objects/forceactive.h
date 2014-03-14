@@ -99,7 +99,7 @@ public:
      * @param coeffIn The value of the coefficient to specify.  Added as a complex number.  Variable passed by value.
      * @param index The equation index of the coefficient to specify.
      */
-    void setCoeff(std::complex<double> coeffIn, unsigned int index);
+    void setCoeff(std::complex<double> coeffIn, unsigned int index = -1);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**

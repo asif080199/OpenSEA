@@ -373,7 +373,7 @@ void buildMatBody(int bod, bool useCoeff)
         listMatBody[bod].listForceActive_user().push_back(matForceActive());
         listMatBody[bod].listForceActive_user(i).listCoefficient() = MyModel->getMatForceActive_user(i);
         //Print out active force matrix.  For Debugging.
-        //listMatBody[bod].listForceActive_user(i).listCoefficient().print("Active Force: " + i);
+        listMatBody[bod].listForceActive_user(i).listCoefficient().print("Active Force: " + i);
 
         //Create force ID.
         listMatBody[bod].listForceActive_user(i).setId(i);
@@ -412,8 +412,8 @@ void buildMatBody(int bod, bool useCoeff)
             //Assign matrices
             ptForce->listDerivative().push_back(MyModel->getMatForceReact_user(i,j));
 
-            //Print out Matrix.  For debugging.
-            listMatBody[bod].listForceReact_user(0).listDerivative(0).print("Reactive Force:  ");
+//            //Print out Matrix.  For debugging.
+//            listMatBody[bod].listForceReact_user(0).listDerivative(0).print("Reactive Force:  ");
         }
     }
 
