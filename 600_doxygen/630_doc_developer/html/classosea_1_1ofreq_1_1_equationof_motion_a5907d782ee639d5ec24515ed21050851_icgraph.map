@@ -1,0 +1,16 @@
+<map id="osea::ofreq::EquationofMotion::Sum" name="osea::ofreq::EquationofMotion::Sum">
+<area shape="rect" id="node3" href="$classosea_1_1ofreq_1_1_eqn_rotation.html#a910975e9e2e8d438853a4e7d658850a8" title="The formula used by the equation of motion." alt="" coords="303,5,475,46"/>
+<area shape="rect" id="node5" href="$classosea_1_1ofreq_1_1_eqn_rotation.html#a67b54733dbeed8cc6ec5a18ebc4115f8" title="osea::ofreq::EqnRotation\l::Func5" alt="" coords="303,70,475,111"/>
+<area shape="rect" id="node7" href="$classosea_1_1ofreq_1_1_eqn_rotation.html#acb3797b3ec3fb5d2fdccfe6ee800e470" title="osea::ofreq::EqnRotation\l::Func6" alt="" coords="303,135,475,177"/>
+<area shape="rect" id="node9" href="$classosea_1_1ofreq_1_1_eqn_rotation.html#aa4983c923f72cec31dd00d3bdf81a1c9" title="osea::ofreq::EqnRotation\l::Func8" alt="" coords="303,201,475,242"/>
+<area shape="rect" id="node11" href="$classosea_1_1ofreq_1_1_eqn_rotation.html#a47de6dace20f98dbfe8559f8e4acb19e" title="osea::ofreq::EqnRotation\l::Func9" alt="" coords="303,266,475,307"/>
+<area shape="rect" id="node13" href="$classosea_1_1ofreq_1_1_eqn_rotation.html#afa4e9d5dc8a1ca68e9e081207a68a985" title="osea::ofreq::EqnRotation\l::Func10" alt="" coords="303,331,475,373"/>
+<area shape="rect" id="node15" href="$classosea_1_1ofreq_1_1_eqn_rotation.html#a09824152fde4753f92c43b3e5349945f" title="osea::ofreq::EqnRotation\l::Func11" alt="" coords="303,397,475,438"/>
+<area shape="rect" id="node17" href="$classosea_1_1ofreq_1_1_eqn_translation.html#af2681a6f73df8e8518d81eba5ac9152e" title="The formula used by the equation of motion." alt="" coords="294,462,485,503"/>
+<area shape="rect" id="node19" href="$classosea_1_1ofreq_1_1_eqn_translation.html#ac2bdafda8b9be19c5b7432a4bd47dcf0" title="osea::ofreq::EqnTranslation\l::Func2" alt="" coords="294,527,485,569"/>
+<area shape="rect" id="node21" href="$classosea_1_1ofreq_1_1_eqn_translation.html#a1db00d610095489d2a06d69692a0dc48" title="osea::ofreq::EqnTranslation\l::Func4" alt="" coords="294,593,485,634"/>
+<area shape="rect" id="node23" href="$classosea_1_1ofreq_1_1_eqn_translation.html#aa094532bc1384cabaf532573e8ab3db7" title="osea::ofreq::EqnTranslation\l::Func6" alt="" coords="294,658,485,699"/>
+<area shape="rect" id="node25" href="$classosea_1_1ofreq_1_1_eqn_translation.html#a1b622a723ceade1afb98c238d4dfc4c6" title="osea::ofreq::EqnTranslation\l::Func8" alt="" coords="294,723,485,765"/>
+<area shape="rect" id="node27" href="$classosea_1_1ofreq_1_1_eqn_translation.html#aca66c64f6ad96f40a73349d47cc141fc" title="osea::ofreq::EqnTranslation\l::Func9" alt="" coords="294,789,485,830"/>
+<area shape="rect" id="node29" href="$classosea_1_1ofreq_1_1_eqn_translation.html#ad096f9fa00ae7cc9bd031d0d170343d7" title="osea::ofreq::EqnTranslation\l::Func10" alt="" coords="294,854,485,895"/>
+</map>

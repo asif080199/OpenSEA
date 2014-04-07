@@ -1,0 +1,347 @@
+.TH "osea::ofreq::FileWriter" 3 "Sat Apr 5 2014" "Version 0.4" "oFreq" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+osea::ofreq::FileWriter \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <filewriter\&.h>\fP
+.PP
+Inherits \fBosea::ofreq::oFreqCore\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBFileWriter\fP ()"
+.br
+.RI "\fIThe default constructor\&. \fP"
+.ti -1c
+.RI "\fBFileWriter\fP (std::string rootPath, \fBOutputsBody\fP &BodyIn)"
+.br
+.RI "\fIConstructor that includes the two important properties that must be declared for \fBFileWriter\fP to work correctly\&. The root path for the project must be declared\&. And the pointer to the \fBOutputsBody\fP object must be declared\&. \fP"
+.ti -1c
+.RI "\fB~FileWriter\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetProjectDir\fP (std::string dirIn)"
+.br
+.RI "\fISets the path to the project directory\&. Assumes the std::string specifying the path does not end with a slash mark\&. The class will automatically add the slash mark\&. If a slash mark is present, the function will automatically remove it\&. \fP"
+.ti -1c
+.RI "bool \fBclearFiles\fP ()"
+.br
+.ti -1c
+.RI "\fBOutputsBody\fP & \fBrefOutputsBody\fP ()"
+.br
+.RI "\fIProvides direct access to the \fBOutputsBody\fP object\&. The \fBOutputsBody\fP object must be set for the fileWriter to work\&. All file data comes from the \fBFileWriter\fP object\&. \fP"
+.ti -1c
+.RI "void \fBsetOutputsBody\fP (\fBOutputsBody\fP *input)"
+.br
+.RI "\fISets the outputs body object, pointer input\&. \fP"
+.ti -1c
+.RI "\fBOutputsBody\fP * \fBgetOutputsBody\fP ()"
+.br
+.RI "\fIReturns a pointer to the Outputs \fBBody\fP object\&. \fP"
+.ti -1c
+.RI "bool \fBfileExists\fP (std::string filename)"
+.br
+.RI "\fITest is a file exists\&. Function automatically assumes that the file is located in the directory associated with the \fBgetCurWaveInd()\fP function\&. Returns true if the file exists and is valid\&. Returns false if the file does not exist or the directory does not exist\&. \fP"
+.ti -1c
+.RI "void \fBsetHeader\fP (std::string filePathIn)"
+.br
+.RI "\fIReads in from input file the header to be used in all files\&. This is a basic header text that should be at the top of all OpenSEA output files\&. Simple identification of the program\&. Nothing specific for output\&. \fP"
+.ti -1c
+.RI "int \fBwriteWaveDirection\fP ()"
+.br
+.RI "\fIWrites the directions list to file\&. \fP"
+.ti -1c
+.RI "int \fBwriteFrequency\fP ()"
+.br
+.ti -1c
+.RI "int \fBwriteGlobalMotion\fP ()"
+.br
+.RI "\fIWrites the output file of global motions\&. If file exists, appends to the file, assuming the appended file is a new body object\&. \fP"
+.ti -1c
+.RI "int \fBwriteGlobalVelocity\fP ()"
+.br
+.RI "\fIWrites the output file of global velocities\&. If file exists, appends to the file, assuming the appended file is a new body object\&. \fP"
+.ti -1c
+.RI "int \fBwriteGlobalAcceleration\fP ()"
+.br
+.RI "\fIWrites the output file of global accelerations\&. If file exists, appends to the file, assuming the appended file is a new body object\&. \fP"
+.ti -1c
+.RI "int \fBwriteGlobalSolution\fP ()"
+.br
+.RI "\fIWrites the output file of global solutions\&. If file exists, appends to the file, assuming the appended file is a new body object\&. \fP"
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "int \fBgetCurWaveInd\fP ()"
+.br
+.RI "\fIGets the index of the current wave direction\&. The index is used to specify which directory to write the file into\&. \fP"
+.ti -1c
+.RI "std::string \fBgetCurWaveDir\fP ()"
+.br
+.RI "\fIReturns the std::string containing the folder path for the current wave direction\&. Path name includes the slash mark\&. For example, if using wave index 0, the std::string output would be: 'd0/'\&. \fP"
+.ti -1c
+.RI "bool \fBcreateDir\fP (std::string path)"
+.br
+.RI "\fICreates the directory specified by the std::string path\&. Assumes any specified directory is under the root project directory\&. \fP"
+.ti -1c
+.RI "std::string \fBgetInfoBlock\fP (std::string nameIn)"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+This class write all outputs to files\&. All output data is based on the attached \fBOutputsBody\fP object\&. To use the filewriter object, follow this sequence of steps: 1\&.) Create object\&. 2\&.) Set \fBOutputsBody\fP object associated with the file\&. 3\&.) Set the filesystem path to the root directory for the current run of ofreq\&. 4\&.) Run the \fBclearFiles()\fP function, which will clear out any pre-existing files\&. 5\&.) Run the writeFile function for the specified file that you want to write out\&.
+.PP
+Note that the \fBOutputsBody\fP object also provides the information on the current wave direction\&. And the \fBFileWriter\fP changes its directory to write to depending on the current wave direction\&. So the \fBOutputsBody\fP object must be updated before writing a new wave direction\&. 
+.PP
+Definition at line 103 of file filewriter\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "FileWriter::FileWriter ()"
+
+.PP
+The default constructor\&. 
+.PP
+Definition at line 89 of file filewriter\&.cpp\&.
+.SS "osea::ofreq::FileWriter::FileWriter (std::stringrootPath, \fBOutputsBody\fP &BodyIn)"
+
+.PP
+Constructor that includes the two important properties that must be declared for \fBFileWriter\fP to work correctly\&. The root path for the project must be declared\&. And the pointer to the \fBOutputsBody\fP object must be declared\&. \fBParameters:\fP
+.RS 4
+\fIrootPath\fP The full fule system path to the root directory of the currently running oFreq project\&. Not the path to the oFreq executable files\&. This is the path to the directory containing input and output files\&. 
+.br
+\fIBodyIn\fP The \fBOutputsBody\fP object that will be used to write out data for the \fBFileWriter\fP\&. The \fBOutputsBody\fP object supplies the data, and the \fBFileWriter\fP writes that data to the ASCII text file\&. The \fBOutputsBody\fP object also provides the information on the current wave direction\&. So the \fBOutputsBody\fP object must be updated before writing a new wave direction\&. 
+.RE
+.PP
+\fBSee Also:\fP
+.RS 4
+\fBOutputsBody\fP 
+.RE
+.PP
+
+.SS "FileWriter::~FileWriter ()"
+The default destructor, nothing happens here\&. 
+.PP
+Definition at line 104 of file filewriter\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "bool FileWriter::clearFiles ()"
+Remove all old directiories & files written by oFreq previous run\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+Return true if all files & directories were successfully deleted\&. 
+.RE
+.PP
+
+.PP
+Definition at line 124 of file filewriter\&.cpp\&.
+.SS "bool FileWriter::createDir (std::stringpath)\fC [protected]\fP"
+
+.PP
+Creates the directory specified by the std::string path\&. Assumes any specified directory is under the root project directory\&. \fBParameters:\fP
+.RS 4
+\fIpath\fP std::string\&. The path of the directory to create\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Returns true if creation sucessful\&. 
+.RE
+.PP
+
+.PP
+Definition at line 858 of file filewriter\&.cpp\&.
+.SS "bool FileWriter::fileExists (std::stringfilename)"
+
+.PP
+Test is a file exists\&. Function automatically assumes that the file is located in the directory associated with the \fBgetCurWaveInd()\fP function\&. Returns true if the file exists and is valid\&. Returns false if the file does not exist or the directory does not exist\&. \fBParameters:\fP
+.RS 4
+\fIfilename\fP std::string\&. Specifies the filename to search for\&. Only needs to specify local filename\&. Directory information is already inferred from previous settings with the \fBOutputsBody\fP object\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Returns boolean variable\&. True if the file exists\&. False if the file or any required directories do not exist\&. 
+.RE
+.PP
+\fBSee Also:\fP
+.RS 4
+\fBFileWriter::getCurWaveInd()\fP 
+.RE
+.PP
+
+.PP
+Definition at line 173 of file filewriter\&.cpp\&.
+.SS "string FileWriter::getCurWaveDir ()\fC [protected]\fP"
+
+.PP
+Returns the std::string containing the folder path for the current wave direction\&. Path name includes the slash mark\&. For example, if using wave index 0, the std::string output would be: 'd0/'\&. \fBReturns:\fP
+.RS 4
+std::string output\&. Has the path name for the current wave directory\&. 
+.RE
+.PP
+
+.PP
+Definition at line 848 of file filewriter\&.cpp\&.
+.SS "int FileWriter::getCurWaveInd ()\fC [protected]\fP"
+
+.PP
+Gets the index of the current wave direction\&. The index is used to specify which directory to write the file into\&. \fBReturns:\fP
+.RS 4
+Returns integer which specifies the index of the current wave direction\&. Index specifies the wave direction in the list of wave directions\&. Valid values are any integer from 0 or greater\&. 
+.RE
+.PP
+
+.PP
+Definition at line 842 of file filewriter\&.cpp\&.
+.SS "string FileWriter::getInfoBlock (std::stringnameIn)\fC [protected]\fP"
+Set information about the file to be written after header and above data, included in the seafile block\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fInameIn\fP The name of the object\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Returns std::string\&. std::string contains the file info for the output file\&. Everything written into the seafile block\&. Variable passed by value\&. 
+.RE
+.PP
+
+.PP
+Definition at line 873 of file filewriter\&.cpp\&.
+.SS "\fBOutputsBody\fP * FileWriter::getOutputsBody ()"
+
+.PP
+Returns a pointer to the Outputs \fBBody\fP object\&. \fBReturns:\fP
+.RS 4
+Returns a pointer to the Outputs \fBBody\fP object\&. Returned pointer passed by value\&. 
+.RE
+.PP
+
+.PP
+Definition at line 167 of file filewriter\&.cpp\&.
+.SS "\fBOutputsBody\fP & FileWriter::refOutputsBody ()"
+
+.PP
+Provides direct access to the \fBOutputsBody\fP object\&. The \fBOutputsBody\fP object must be set for the fileWriter to work\&. All file data comes from the \fBFileWriter\fP object\&. \fBReturns:\fP
+.RS 4
+Returns reference to the \fBOutputsBody\fP object\&. Variable passed by reference\&. 
+.RE
+.PP
+
+.PP
+Definition at line 155 of file filewriter\&.cpp\&.
+.SS "void FileWriter::setHeader (std::stringfilePathIn)"
+
+.PP
+Reads in from input file the header to be used in all files\&. This is a basic header text that should be at the top of all OpenSEA output files\&. Simple identification of the program\&. Nothing specific for output\&. \fBParameters:\fP
+.RS 4
+\fIfilePathIn\fP String variable specifying the full location of the folder which has the text for the header file\&. Header file must be a simple ASCII text file\&. 
+.RE
+.PP
+
+.PP
+Definition at line 193 of file filewriter\&.cpp\&.
+.SS "void FileWriter::setOutputsBody (\fBOutputsBody\fP *input)"
+
+.PP
+Sets the outputs body object, pointer input\&. Takes a pointer to the Outputs body object as input and stores that pointer for future use\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIinput\fP Pointer to the Outputs \fBBody\fP object\&. Pointer variable passed by value\&. 
+.RE
+.PP
+
+.PP
+Definition at line 161 of file filewriter\&.cpp\&.
+.SS "void FileWriter::setProjectDir (std::stringdirIn)"
+
+.PP
+Sets the path to the project directory\&. Assumes the std::string specifying the path does not end with a slash mark\&. The class will automatically add the slash mark\&. If a slash mark is present, the function will automatically remove it\&. \fBParameters:\fP
+.RS 4
+\fIdirIn\fP std::string specifying the path to the project directory\&. Variable passed by value\&. 
+.RE
+.PP
+
+.PP
+Definition at line 110 of file filewriter\&.cpp\&.
+.SS "int FileWriter::writeFrequency ()"
+Writes the frequencies list to file\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+Integer reports status of file writing\&. Returns of succesful\&. Otherwise returns a non-zero value that is the error code\&. Returned variable passed by value\&. 
+.RE
+.PP
+
+.PP
+Definition at line 286 of file filewriter\&.cpp\&.
+.SS "int FileWriter::writeGlobalAcceleration ()"
+
+.PP
+Writes the output file of global accelerations\&. If file exists, appends to the file, assuming the appended file is a new body object\&. \fBReturns:\fP
+.RS 4
+Integer reports status of file writing\&. Returns of succesful\&. Otherwise returns a non-zero value that is the error code\&. Returned variable passed by value\&. 
+.RE
+.PP
+
+.PP
+Definition at line 589 of file filewriter\&.cpp\&.
+.SS "int FileWriter::writeGlobalMotion ()"
+
+.PP
+Writes the output file of global motions\&. If file exists, appends to the file, assuming the appended file is a new body object\&. \fBReturns:\fP
+.RS 4
+Integer reports status of file writing\&. Returns of succesful\&. Otherwise returns a non-zero value that is the error code\&. Returned variable passed by value\&. 
+.RE
+.PP
+
+.PP
+Definition at line 336 of file filewriter\&.cpp\&.
+.SS "int FileWriter::writeGlobalSolution ()"
+
+.PP
+Writes the output file of global solutions\&. If file exists, appends to the file, assuming the appended file is a new body object\&. \fBReturns:\fP
+.RS 4
+Integer reports status of file writing\&. Returns of succesful\&. Otherwise returns a non-zero value that is the error code\&. Returned variable passed by value\&. 
+.RE
+.PP
+
+.PP
+Definition at line 714 of file filewriter\&.cpp\&.
+.SS "int FileWriter::writeGlobalVelocity ()"
+
+.PP
+Writes the output file of global velocities\&. If file exists, appends to the file, assuming the appended file is a new body object\&. \fBReturns:\fP
+.RS 4
+Integer reports status of file writing\&. Returns of succesful\&. Otherwise returns a non-zero value that is the error code\&. Returned variable passed by value\&. 
+.RE
+.PP
+
+.PP
+Definition at line 464 of file filewriter\&.cpp\&.
+.SS "int FileWriter::writeWaveDirection ()"
+
+.PP
+Writes the directions list to file\&. \fBReturns:\fP
+.RS 4
+Integer reports status of file writing\&. Returns of succesful\&. Otherwise returns a non-zero value that is the error code\&. Returned variable passed by value\&. 
+.RE
+.PP
+
+.PP
+Definition at line 236 of file filewriter\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for oFreq from the source code\&.

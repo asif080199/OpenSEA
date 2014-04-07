@@ -1,0 +1,18 @@
+<map id="eqntranslation.h" name="eqntranslation.h">
+<area shape="rect" id="node3" href="$eqntranslation_8cpp.html" title="eqntranslation.cpp" alt="" coords="473,80,603,107"/>
+<area shape="rect" id="node5" href="$model6dof_8h.html" title="model6dof.h" alt="" coords="628,80,724,107"/>
+<area shape="rect" id="node7" href="$system_8h.html" title="system.h" alt="" coords="473,155,547,181"/>
+<area shape="rect" id="node15" href="$ofreq_8cpp.html" title="ofreq.cpp" alt="" coords="456,379,532,405"/>
+<area shape="rect" id="node38" href="$model6dof_8cpp.html" title="model6dof.cpp" alt="" coords="714,155,824,181"/>
+<area shape="rect" id="node9" href="$dictionary_8h.html" title="dictionary.h" alt="" coords="265,229,356,256"/>
+<area shape="rect" id="node29" href="$filereader_8h.html" title="filereader.h" alt="" coords="549,304,637,331"/>
+<area shape="rect" id="node35" href="$system_8cpp.html" title="system.cpp" alt="" coords="383,229,472,256"/>
+<area shape="rect" id="node11" href="$dictbodies_8h.html" title="dictbodies.h" alt="" coords="18,304,112,331"/>
+<area shape="rect" id="node17" href="$dictcontrol_8h.html" title="dictcontrol.h" alt="" coords="137,304,231,331"/>
+<area shape="rect" id="node22" href="$dictforces_8h.html" title="dictforces.h" alt="" coords="383,304,473,331"/>
+<area shape="rect" id="node27" href="$dictionary_8cpp.html" title="dictionary.cpp" alt="" coords="255,304,359,331"/>
+<area shape="rect" id="node13" href="$dictbodies_8cpp.html" title="dictbodies.cpp" alt="" coords="5,379,112,405"/>
+<area shape="rect" id="node19" href="$dictcontrol_8cpp.html" title="dictcontrol.cpp" alt="" coords="137,379,244,405"/>
+<area shape="rect" id="node24" href="$dictforces_8cpp.html" title="dictforces.cpp" alt="" coords="328,379,432,405"/>
+<area shape="rect" id="node31" href="$filereader_8cpp.html" title="filereader.cpp" alt="" coords="558,379,660,405"/>
+</map>

@@ -1,0 +1,1263 @@
+.TH "osea::ofreq::Body" 3 "Sat Apr 5 2014" "Version 0.4" "oFreq" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+osea::ofreq::Body \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <body\&.h>\fP
+.PP
+Inherits \fBosea::ofreq::oFreqCore\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBBody\fP ()"
+.br
+.ti -1c
+.RI "\fB~Body\fP ()"
+.br
+.ti -1c
+.RI "bool \fBoperator==\fP (\fBBody\fP &bodIn)"
+.br
+.RI "\fIOverload for operator == to compare two \fBBody\fP objects\&. Comparison is based on body names\&. \fP"
+.ti -1c
+.RI "void \fBsetBodyName\fP (std::string)"
+.br
+.ti -1c
+.RI "std::string & \fBrefBodyName\fP ()"
+.br
+.RI "\fIExposes the body name property for operation\&. \fP"
+.ti -1c
+.RI "std::string & \fBrefHydroBodName\fP ()"
+.br
+.RI "\fIExposes the hydro body name property for operation\&. \fP"
+.ti -1c
+.RI "void \fBsetHydroBodName\fP (std::string)"
+.br
+.ti -1c
+.RI "std::string \fBgetHydroBodName\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetHeading\fP (double)"
+.br
+.ti -1c
+.RI "double \fBgetHeading\fP ()"
+.br
+.RI "\fIGets the heading for the body\&. Heading is measured in radians\&. Zero heading is True North, proceeding counter clockwise around the compass rose\&. \fP"
+.ti -1c
+.RI "double & \fBrefHeading\fP ()"
+.br
+.RI "\fIExposes the heading property for operations\&. \fP"
+.ti -1c
+.RI "void \fBsetMass\fP (double)"
+.br
+.ti -1c
+.RI "double \fBgetMass\fP ()"
+.br
+.RI "\fIReturns the mass of the body\&. \fP"
+.ti -1c
+.RI "void \fBsetMomIxx\fP (double)"
+.br
+.ti -1c
+.RI "double \fBgetMomIxx\fP ()"
+.br
+.RI "\fIReturns the mass moment of inertia on the XX axis for the body\&. \fP"
+.ti -1c
+.RI "void \fBsetMomIyy\fP (double)"
+.br
+.ti -1c
+.RI "double \fBgetMomIyy\fP ()"
+.br
+.RI "\fIReturns the mass moment of inertia on the YY axis for the body\&. \fP"
+.ti -1c
+.RI "void \fBsetMomIzz\fP (double)"
+.br
+.ti -1c
+.RI "double \fBgetMomIzz\fP ()"
+.br
+.RI "\fIReturns the mass moment of inertia on the ZZ axis for the body\&. \fP"
+.ti -1c
+.RI "void \fBsetMomIxy\fP (double)"
+.br
+.ti -1c
+.RI "double \fBgetMomIxy\fP ()"
+.br
+.RI "\fIReturns the cross product of intertia on the XY axis for the body\&. \fP"
+.ti -1c
+.RI "void \fBsetMomIxz\fP (double)"
+.br
+.ti -1c
+.RI "double \fBgetMomIxz\fP ()"
+.br
+.RI "\fIReturns the cross product of intertia on the XZ axis for the body\&. \fP"
+.ti -1c
+.RI "void \fBsetMomIyz\fP (double)"
+.br
+.ti -1c
+.RI "double \fBgetMomIyz\fP ()"
+.br
+.RI "\fIReturns the cross product of intertia on the YZ axis for the body\&. \fP"
+.ti -1c
+.RI "void \fBsetCenX\fP (double)"
+.br
+.ti -1c
+.RI "arma::Mat< double > \fBgetMassMatrix\fP ()"
+.br
+.RI "\fIGets the mass matrix for the body\&. \fP"
+.ti -1c
+.RI "arma::Mat< double > & \fBMassMatrix\fP ()"
+.br
+.RI "\fIImplements the method \fBgetMassMatrix()\fP, just under a different name\&. \fP"
+.ti -1c
+.RI "void \fBsetMassMatrix\fP (arma::Mat< double > MassMatIn)"
+.br
+.RI "\fISet the mass matrix for the body\&. \fP"
+.ti -1c
+.RI "double \fBgetCenX\fP ()"
+.br
+.RI "\fIReturns the centroid of the body mass, X-axis\&. \fP"
+.ti -1c
+.RI "void \fBsetCenY\fP (double)"
+.br
+.ti -1c
+.RI "double \fBgetCenY\fP ()"
+.br
+.RI "\fIReturns the centroid of the body mass, Y-axis\&. \fP"
+.ti -1c
+.RI "void \fBsetCenZ\fP (double)"
+.br
+.ti -1c
+.RI "double \fBgetCenZ\fP ()"
+.br
+.RI "\fIReturns the centroid of the body mass, Z-axis\&. \fP"
+.ti -1c
+.RI "arma::Mat< double > \fBgetCen\fP ()"
+.br
+.RI "\fIReturns the entire mass centroid matrix\&. \fP"
+.ti -1c
+.RI "void \fBsetPosnX\fP (double input)"
+.br
+.RI "\fISets the body position in the X-axis\&. \fP"
+.ti -1c
+.RI "double \fBgetPosnX\fP ()"
+.br
+.RI "\fIGets the body position in the X-axis\&. \fP"
+.ti -1c
+.RI "void \fBsetPosnY\fP (double input)"
+.br
+.RI "\fISets the body position in the Y-axis\&. \fP"
+.ti -1c
+.RI "double \fBgetPosnY\fP ()"
+.br
+.RI "\fIGets the body position in the Y-axis\&. \fP"
+.ti -1c
+.RI "void \fBsetPosnZ\fP (double input)"
+.br
+.RI "\fISets the body position in the Z-axis\&. \fP"
+.ti -1c
+.RI "double \fBgetPosnZ\fP ()"
+.br
+.RI "\fIGets the body position in the Z-axis\&. \fP"
+.ti -1c
+.RI "arma::Mat< double > \fBgetPosn\fP ()"
+.br
+.RI "\fIReturns the entire matrix for position of the body\&. \fP"
+.ti -1c
+.RI "arma::Mat< double > & \fBrefPosn\fP ()"
+.br
+.RI "\fIExposes the position property for operation\&. The entire matrix for position of the body\&. \fP"
+.ti -1c
+.RI "std::string \fBgetBodyName\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetSolnMat\fP (arma::cx_mat input)"
+.br
+.RI "\fISet the solution matrix for the body\&. \fP"
+.ti -1c
+.RI "arma::cx_mat \fBgetSolution\fP ()"
+.br
+.RI "\fIGet the solution matrix for the body\&. \fP"
+.ti -1c
+.RI "arma::cx_mat & \fBrefSolution\fP ()"
+.br
+.RI "\fIGet the solution matrix for the body\&. \fP"
+.ti -1c
+.RI "arma::cx_mat & \fBrefDataSolution\fP ()"
+.br
+.RI "\fIThe same things as the \fBrefSolution()\fP function, just under a different name\&. \fP"
+.ti -1c
+.RI "\fBcomplexDouble\fP & \fBrefDataSolution\fP (int varIndexIn)"
+.br
+.RI "\fIReturns a single solution value, based on the variable requested\&. \fP"
+.ti -1c
+.RI "\fBBody\fP \fBCopy\fP ()"
+.br
+.RI "\fICopies the body object, complete with all current data\&. \fP"
+.ti -1c
+.RI "std::vector< \fBForceActive\fP * > & \fBlistForceActive_user\fP ()"
+.br
+.RI "\fIThe list of active user forces\&. \fP"
+.ti -1c
+.RI "\fBForceActive\fP * \fBlistForceActive_user\fP (int forceIn)"
+.br
+.RI "\fIA single active user force\&. \fP"
+.ti -1c
+.RI "std::vector< \fBForceActive\fP * > & \fBlistForceActive_hydro\fP ()"
+.br
+.RI "\fIThe list of active hydrodynamic forces\&. \fP"
+.ti -1c
+.RI "\fBForceActive\fP * \fBlistForceActive_hydro\fP (int forceIn)"
+.br
+.RI "\fIA single active hydrodynamic force\&. \fP"
+.ti -1c
+.RI "std::vector< \fBForceReact\fP * > & \fBlistForceReact_user\fP ()"
+.br
+.RI "\fIThe list of reactive user forces\&. \fP"
+.ti -1c
+.RI "\fBForceReact\fP * \fBlistForceReact_user\fP (int forceIn)"
+.br
+.RI "\fIA single reactive user force\&. \fP"
+.ti -1c
+.RI "std::vector< \fBForceReact\fP * > & \fBlistForceReact_hydro\fP ()"
+.br
+.RI "\fIThe list of reactive hydrodynamic forces\&. \fP"
+.ti -1c
+.RI "\fBForceReact\fP * \fBlistForceReact_hydro\fP (int forceIn)"
+.br
+.RI "\fIA single reactive hydrodynamic force\&. \fP"
+.ti -1c
+.RI "std::vector< \fBForceCross\fP * > & \fBlistForceCross_user\fP ()"
+.br
+.RI "\fIThe list of user cross-body forces\&. \fP"
+.ti -1c
+.RI "\fBForceCross\fP * \fBlistForceCross_user\fP (int forceIn)"
+.br
+.RI "\fIA single cross-body user force\&. \fP"
+.ti -1c
+.RI "std::vector< \fBForceCross\fP * > & \fBlistForceCross_hydro\fP ()"
+.br
+.RI "\fIThe list of hydrodynamic cross-body forces\&. \fP"
+.ti -1c
+.RI "\fBForceCross\fP * \fBlistForceCross_hydro\fP (int forceIn)"
+.br
+.RI "\fIA single cross-body hydrodynamic force\&. \fP"
+.ti -1c
+.RI "std::vector< \fBBody\fP * > & \fBlistCrossBody_user\fP ()"
+.br
+.RI "\fIThe list of linked bodies for user cross-body forces\&. \fP"
+.ti -1c
+.RI "\fBBody\fP & \fBlistCrossBody_user\fP (int index)"
+.br
+.RI "\fIReturns reference to individual linked \fBBody\fP for the user cross-body force\&. \fP"
+.ti -1c
+.RI "std::vector< \fBBody\fP * > & \fBlistCrossBody_hydro\fP ()"
+.br
+.RI "\fIThe list of linked bodies for hydrodynamic cross-body forces\&. \fP"
+.ti -1c
+.RI "\fBBody\fP & \fBlistCrossBody_hydro\fP (int index)"
+.br
+.RI "\fIReturns reference to individual linked \fBBody\fP for the hydro cross-body force\&. \fP"
+.ti -1c
+.RI "std::vector< std::string > & \fBlistNamedLink_user\fP ()"
+.br
+.RI "\fIThe list of names of linked bodies for user cross-body forces\&. This is a list of names of other bodies that a cross-body force references\&. This corresponds to the vector listForceCross_usr\&. The indices of the two vectors should match\&. So that when a force gets added at index 5 in the listForceCross_user, it should have a matching entry at index 5 in listNamedLink_usr\&. The list of names only is a temporary list used during the input stage of bodies\&. This is required because the linked body may name a body which is not yet read from the input file\&. Thus, the body is not currently defined\&. Once all Bodies are defined, the \fBSystem\fP object calls a function to read through each name in the list and assign corresponding pointers in the listLinkedBody_usr\&. \fP"
+.ti -1c
+.RI "std::string & \fBlistNamedLink_user\fP (unsigned int varIn)"
+.br
+.RI "\fIThe list of names of linked bodies for user cross-body forces\&. This is a list of names of other bodies that a cross-body force references\&. This corresponds to the vector listForceCross_usr\&. The indices of the two vectors should match\&. So that when a force gets added at index 5 in the listForceCross_user, it should have a matching entry at index 5 in listNamedLink_usr\&. The list of names only is a temporary list used during the input stage of bodies\&. This is required because the linked body may name a body which is not yet read from the input file\&. Thus, the body is not currently defined\&. Once all Bodies are defined, the \fBSystem\fP object calls a function to read through each name in the list and assign corresponding pointers in the listLinkedBody_usr\&. \fP"
+.ti -1c
+.RI "std::vector< std::string > & \fBlistNamedLink_hydro\fP ()"
+.br
+.RI "\fIThe list of names of linked bodies for hydro cross-body forces\&. This is a list of names of other bodies that a cross-body force references\&. This corresponds to the vector listForceCross_hydro\&. The indices of the two vectors should match\&. So that when a force gets added at index 5 in the listForceCross_hydro, it should have a matching entry at index 5 in listNamedLink_hydro\&. The list of names only is a temporary list used during the input stage of bodies\&. This is required because the linked body may name a body which is not yet read from the input file\&. Thus, the body is not currently defined\&. Once all Bodies are defined, the \fBSystem\fP object calls a function to read through each name in the list and assign corresponding pointers in the listLinkedBody_hydro\&. \fP"
+.ti -1c
+.RI "std::string & \fBlistNamedLink_hydro\fP (unsigned int varIn)"
+.br
+.RI "\fIThe list of names of linked bodies for hydro cross-body forces\&. This is a list of names of other bodies that a cross-body force references\&. This corresponds to the vector listForceCross_hydro\&. The indices of the two vectors should match\&. So that when a force gets added at index 5 in the listForceCross_hydro, it should have a matching entry at index 5 in listNamedLink_hydro\&. The list of names only is a temporary list used during the input stage of bodies\&. This is required because the linked body may name a body which is not yet read from the input file\&. Thus, the body is not currently defined\&. Once all Bodies are defined, the \fBSystem\fP object calls a function to read through each name in the list and assign corresponding pointers in the listLinkedBody_hydro\&. \fP"
+.ti -1c
+.RI "void \fBsetMotionModel\fP (\fBofreq::MotionModel\fP &modelIn)"
+.br
+.RI "\fISets the motion model for lookup later\&. \fP"
+.ti -1c
+.RI "\fBofreq::MotionModel\fP & \fBgetMotionModel\fP ()"
+.br
+.RI "\fIGets the motion model\&. \fP"
+.ti -1c
+.RI "int \fBgetEquationCount\fP ()"
+.br
+.RI "\fIGets the number of equations used in the body\&. \fP"
+.ti -1c
+.RI "void \fBinitMassMat\fP ()"
+.br
+.RI "\fIInitializes the mass matrix\&. Resizes it to the correct value\&. Only acts if the motion model is already set\&. And does not override any current values of the mass matrix\&. \fP"
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+This class holds all of the data for the \fBBody\fP Input File\&. 
+.PP
+Definition at line 103 of file body\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "Body::Body ()"
+The default constructor 
+.PP
+Definition at line 44 of file body\&.cpp\&.
+.SS "Body::~Body ()"
+The default destructor, nothing happens here\&. 
+.PP
+Definition at line 53 of file body\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBBody\fP Body::Copy ()"
+
+.PP
+Copies the body object, complete with all current data\&. \fBReturns:\fP
+.RS 4
+Returns a copy of the body object, complete with all current data\&. Passed by value, not reference\&. 
+.RE
+.PP
+
+.PP
+Definition at line 730 of file body\&.cpp\&.
+.SS "string Body::getBodyName ()"
+Get the name of the body\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+The name of the body\&. 
+.RE
+.PP
+
+.PP
+Definition at line 690 of file body\&.cpp\&.
+.SS "Mat< double > Body::getCen ()"
+
+.PP
+Returns the entire mass centroid matrix\&. \fBReturns:\fP
+.RS 4
+Returns the entire mass centroid matrix\&. Output is a 3x1 matrix of the body centroid, relative to body coordinate system\&. 
+.RE
+.PP
+
+.PP
+Definition at line 623 of file body\&.cpp\&.
+.SS "double Body::getCenX ()"
+
+.PP
+Returns the centroid of the body mass, X-axis\&. Returns the centroid of the body mass, X-axis\&. Centroid is relative to body coordinates\&. This includes body rotation and translation\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+Returns the centroid of the body mass, X-axis\&. Centroid is relative to body coordinates\&. This includes body rotation and translation\&. 
+.RE
+.PP
+
+.PP
+Definition at line 587 of file body\&.cpp\&.
+.SS "double Body::getCenY ()"
+
+.PP
+Returns the centroid of the body mass, Y-axis\&. Returns the centroid of the body mass, Y-axis\&. Centroid is relative to body coordinates\&. This includes body rotation and translation\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+Returns the centroid of the body mass, Y-axis\&. Centroid is relative to body coordinates\&. This includes body rotation and translation\&. 
+.RE
+.PP
+
+.PP
+Definition at line 602 of file body\&.cpp\&.
+.SS "double Body::getCenZ ()"
+
+.PP
+Returns the centroid of the body mass, Z-axis\&. Returns the centroid of the body mass, Z-axis\&. Centroid is relative to body coordinates\&. This includes body rotation and translation\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+Returns the centroid of the body mass, Z-axis\&. Centroid is relative to body coordinates\&. This includes body rotation and translation\&. 
+.RE
+.PP
+
+.PP
+Definition at line 617 of file body\&.cpp\&.
+.SS "int Body::getEquationCount ()"
+
+.PP
+Gets the number of equations used in the body\&. Gets the number of equations used in the body\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+Integer number representing the number of equations used in the body\&. 
+.RE
+.PP
+
+.PP
+Definition at line 999 of file body\&.cpp\&.
+.SS "double Body::getHeading ()"
+
+.PP
+Gets the heading for the body\&. Heading is measured in radians\&. Zero heading is True North, proceeding counter clockwise around the compass rose\&. \fBReturns:\fP
+.RS 4
+Returns double variable\&. Heading of the \fBBody\fP object\&. Variable passed by value\&. 
+.RE
+.PP
+
+.PP
+Definition at line 193 of file body\&.cpp\&.
+.SS "string Body::getHydroBodName ()"
+Gets the name of the hydro body\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+Returns std::string\&. The name of the hydrobody object associated with the body\&. Variable passed by value\&. 
+.RE
+.PP
+
+.PP
+Definition at line 181 of file body\&.cpp\&.
+.SS "double Body::getMass ()"
+
+.PP
+Returns the mass of the body\&. \fBReturns:\fP
+.RS 4
+Returns the mass of the body\&. Output is in units of kilograms\&. 
+.RE
+.PP
+
+.PP
+Definition at line 253 of file body\&.cpp\&.
+.SS "Mat< double > Body::getMassMatrix ()"
+
+.PP
+Gets the mass matrix for the body\&. \fBReturns:\fP
+.RS 4
+Returns the mass matrix for the body, as a single matrix\&. Returned by value\&. 
+.RE
+.PP
+
+.PP
+Definition at line 548 of file body\&.cpp\&.
+.SS "double Body::getMomIxx ()"
+
+.PP
+Returns the mass moment of inertia on the XX axis for the body\&. \fBReturns:\fP
+.RS 4
+Returns the mass moment of inertia on the XX axis for the body\&. Output is in units of kilogram-m^2\&. 
+.RE
+.PP
+
+.PP
+Definition at line 311 of file body\&.cpp\&.
+.SS "double Body::getMomIxy ()"
+
+.PP
+Returns the cross product of intertia on the XY axis for the body\&. \fBReturns:\fP
+.RS 4
+Returns the cross product of intertia on the XY axis for the body\&. OUtput is in units of kilogram-m^2\&. 
+.RE
+.PP
+
+.PP
+Definition at line 438 of file body\&.cpp\&.
+.SS "double Body::getMomIxz ()"
+
+.PP
+Returns the cross product of intertia on the XZ axis for the body\&. \fBReturns:\fP
+.RS 4
+Returns the cross product of intertia on the XZ axis for the body\&. OUtput is in units of kilogram-m^2\&. 
+.RE
+.PP
+
+.PP
+Definition at line 482 of file body\&.cpp\&.
+.SS "double Body::getMomIyy ()"
+
+.PP
+Returns the mass moment of inertia on the YY axis for the body\&. \fBReturns:\fP
+.RS 4
+Returns the mass moment of inertia on the YY axis for the body\&. Output is in units of kilogram-m^2\&. 
+.RE
+.PP
+
+.PP
+Definition at line 353 of file body\&.cpp\&.
+.SS "double Body::getMomIyz ()"
+
+.PP
+Returns the cross product of intertia on the YZ axis for the body\&. \fBReturns:\fP
+.RS 4
+Returns the cross product of intertia on the YZ axis for the body\&. OUtput is in units of kilogram-m^2\&. 
+.RE
+.PP
+
+.PP
+Definition at line 526 of file body\&.cpp\&.
+.SS "double Body::getMomIzz ()"
+
+.PP
+Returns the mass moment of inertia on the ZZ axis for the body\&. \fBReturns:\fP
+.RS 4
+Returns the mass moment of inertia on the ZZ axis for the body\&. Output is in units of kilogram-m^2\&. 
+.RE
+.PP
+
+.PP
+Definition at line 395 of file body\&.cpp\&.
+.SS "\fBMotionModel\fP & Body::getMotionModel ()"
+
+.PP
+Gets the motion model\&. Returns the motion model object used by this body object\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+Returns MotinModel object\&. Variable passed by reference\&. 
+.RE
+.PP
+
+.PP
+Definition at line 993 of file body\&.cpp\&.
+.SS "Mat< double > Body::getPosn ()"
+
+.PP
+Returns the entire matrix for position of the body\&. Returns the entire matrix for the position of the body\&. Output is a 3x1 matrix with double point precision\&. First entry (1,1) = Position in X-axis\&. Second entry (2,1) = Position in Y-axis\&. Third entry (3,1) = Position in Z-axis\&. Units are in meters\&. Position is relative to the orientation of the world coordinate system\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+Returns the entire matrix for the position of the body\&. Output is a 3x1 matrix with double point precision\&. First entry (1,1) = Position in X-axis\&. Second entry (2,1) = Position in Y-axis\&. Third entry (3,1) = Position in Z-axis\&. Units are in meters\&. Position is relative to the orientation of the world coordinate system\&. 
+.RE
+.PP
+
+.PP
+Definition at line 674 of file body\&.cpp\&.
+.SS "double Body::getPosnX ()"
+
+.PP
+Gets the body position in the X-axis\&. Gets the body position in the X-axis\&. Position is set relative to the world coordinate system\&. Units are in meters\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+Double precision floating number specifying the position on the X-axis, units of meters\&. 
+.RE
+.PP
+
+.PP
+Definition at line 638 of file body\&.cpp\&.
+.SS "double Body::getPosnY ()"
+
+.PP
+Gets the body position in the Y-axis\&. Gets the body position in the Y-axis\&. Position is set relative to the world coordinate system\&. Units are in meters\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+Double precision floating number specifying the position on the Y-axis, units of meters\&. 
+.RE
+.PP
+
+.PP
+Definition at line 653 of file body\&.cpp\&.
+.SS "double Body::getPosnZ ()"
+
+.PP
+Gets the body position in the Z-axis\&. Gets the body position in the Z-axis\&. Position is set relative to the world coordinate system\&. Units are in meters\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+Double precision floating number specifying the position on the Z-axis, units of meters\&. 
+.RE
+.PP
+
+.PP
+Definition at line 668 of file body\&.cpp\&.
+.SS "cx_mat Body::getSolution ()"
+
+.PP
+Get the solution matrix for the body\&. Gets the solution matrix for the body\&. Used to store the solution from the motion solver\&. This variable is initially empty on body creation\&. It gets filled with the output from the motion solver\&. Output is a column matrix (n by 1) of complex numbers\&. Output is in units of meters\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+Column matrix of complex numbers\&. Matrix size is not hard coded\&. Number of rows in matrix must match number of equations for body property\&. 
+.RE
+.PP
+
+.PP
+Definition at line 702 of file body\&.cpp\&.
+.SS "void Body::initMassMat ()"
+
+.PP
+Initializes the mass matrix\&. Resizes it to the correct value\&. Only acts if the motion model is already set\&. And does not override any current values of the mass matrix\&. 
+.PP
+Definition at line 736 of file body\&.cpp\&.
+.SS "vector< \fBBody\fP * > & Body::listCrossBody_hydro ()"
+
+.PP
+The list of linked bodies for hydrodynamic cross-body forces\&. The list of linked bodies for hydrodynamic cross-body forces\&. This is a list of pointers to the other bodies\&. This corresponds with the vector listForceCross_usr\&. The indices of the two vectors should match\&. The indices of the two lists should match\&. So that when a force gets added at index 5 in the listForceCross_hydro, it should have a matching entry at index 5 in the listLinkedBody_hydro\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+A list of pointers to various linked bodies for hydro cross-body forces\&. 
+.RE
+.PP
+
+.PP
+Definition at line 939 of file body\&.cpp\&.
+.SS "\fBBody\fP & Body::listCrossBody_hydro (intindex)"
+
+.PP
+Returns reference to individual linked \fBBody\fP for the hydro cross-body force\&. Returns reference for linked \fBBody\fP specified by the index\&. The index corresponds to the index of the cross-body force\&. So that when a cross-body force is stored in its list at index 5, the linked \fBBody\fP can be retrieved from this method with index 5\&. \fBBody\fP stored internally as a pointer to the \fBBody\fP object\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIindex\fP Integer\&. The index of the linked \fBBody\fP to return\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Returns reference to a \fBBody\fP object\&. The reference points to the linked \fBBody\fP object that corresponds to the \fBForceCross\fP object at the same index\&. 
+.RE
+.PP
+
+.PP
+Definition at line 945 of file body\&.cpp\&.
+.SS "vector< \fBBody\fP * > & Body::listCrossBody_user ()"
+
+.PP
+The list of linked bodies for user cross-body forces\&. The list of linked bodies for user cross-body forces\&. This is a list of pointers to the other bodies\&. This corresponds with the vector listForceCross_usr\&. The indices of the two vectors should match\&. The indices of the two lists should match\&. So that when a force gets added at index 5 in the listForceCross_usr, it should have a matching entry at index 5 in the listLinkedBody_usr\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+A list of pointers to various linked bodies for user cross-body forces\&. 
+.RE
+.PP
+
+.PP
+Definition at line 927 of file body\&.cpp\&.
+.SS "\fBBody\fP & Body::listCrossBody_user (intindex)"
+
+.PP
+Returns reference to individual linked \fBBody\fP for the user cross-body force\&. Returns reference for linked \fBBody\fP specified by the index\&. The index corresponds to the index of the cross-body force\&. So that when a cross-body force is stored in its list at index 5, the linked \fBBody\fP can be retrieved from this method with index 5\&. \fBBody\fP stored internally as a pointer to the \fBBody\fP object\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIindex\fP Integer\&. The index of the linked \fBBody\fP to return\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Returns reference to a \fBBody\fP object\&. The reference points to the linked \fBBody\fP object that corresponds to the \fBForceCross\fP object at the same index\&. 
+.RE
+.PP
+
+.PP
+Definition at line 933 of file body\&.cpp\&.
+.SS "vector< \fBForceActive\fP * > & Body::listForceActive_hydro ()"
+
+.PP
+The list of active hydrodynamic forces\&. The list of active hydrodynamic forces\&. A vector of pointers directing to the active hydrodynamic forces\&. Warning that these forces may be linked to other bodies as well and should not be changed\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+A vector of pointes to various hydrodynamic active forces\&. 
+.RE
+.PP
+
+.PP
+Definition at line 793 of file body\&.cpp\&.
+.SS "\fBForceActive\fP * Body::listForceActive_hydro (intforceIn)"
+
+.PP
+A single active hydrodynamic force\&. A single active hydrodynamic force\&. A pointer directing to the active hydrodynamic force\&. Warning that these forces may be linked to other bodies as well and should not be changed\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIforceIn\fP Integer\&. Index of the \fBForceActive\fP object requested\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+A single pointer to the user active forces requested by parameter forceIn\&. Pointer passed by value\&. 
+.RE
+.PP
+
+.PP
+Definition at line 799 of file body\&.cpp\&.
+.SS "vector< \fBForceActive\fP * > & Body::listForceActive_user ()"
+
+.PP
+The list of active user forces\&. The list of active user forces\&. A vector of pointers directing to the active user forces\&. Warning that these forces may be linked to other bodies as well and should not be changed\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+A vector of pointers to various user active forces\&. 
+.RE
+.PP
+
+.PP
+Definition at line 767 of file body\&.cpp\&.
+.SS "\fBForceActive\fP * Body::listForceActive_user (intforceIn)"
+
+.PP
+A single active user force\&. A single active user force\&. A pointer directing to the active user force\&. Warning that these forces may be linked to other bodies as well and should not be changed\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIforceIn\fP Integer\&. Index of the \fBForceActive\fP object requested\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+A single pointer to the user active forces requested by parameter forceIn\&. Pointer passed by value\&. 
+.RE
+.PP
+
+.PP
+Definition at line 773 of file body\&.cpp\&.
+.SS "vector< \fBForceCross\fP * > & Body::listForceCross_hydro ()"
+
+.PP
+The list of hydrodynamic cross-body forces\&. The list of hydrodynamic cross-body forces\&. A vector of pointers directing to the hydrodynamic cross-body forces\&. Warning that these forces may be linked to other bodies as well and should not be changed\&. There is another vector: the listLinkedBody_usr\&. That determines which body each cross-body force links to\&. The indices of the two lists should match\&. So that when a force gets added at index 5 in the listForceCross_hydro, it should have a matching entry at index 5 in the listLinkedBody_hydro\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+A list of pointers to various hydrodynamic cross-body forces\&. 
+.RE
+.PP
+
+.PP
+Definition at line 897 of file body\&.cpp\&.
+.SS "\fBForceCross\fP * Body::listForceCross_hydro (intforceIn)"
+
+.PP
+A single cross-body hydrodynamic force\&. A single cross-body hydrodynamic force\&. A pointer directing to the cross-body hydrodynamic force\&. Warning that these forces may be linked to other bodies as well and should not be changed\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIforceIn\fP Integer\&. Index of the \fBForceCross\fP object requested\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+A single pointer to the user cross-body forces requested by parameter forceIn\&. Pointer passed by value\&. 
+.RE
+.PP
+
+.PP
+Definition at line 903 of file body\&.cpp\&.
+.SS "vector< \fBForceCross\fP * > & Body::listForceCross_user ()"
+
+.PP
+The list of user cross-body forces\&. The list of user cross-body forces\&. A vector of pointers directing to the user cross-body forces\&. Warning that these forces may be linked to other bodies as well and should not be changed\&. There is another vector: the listLinkedBody_usr\&. That determines which body each cross-body force links to\&. The indices of the two lists should match\&. So that when a force gets added at index 5 in the listForceCross_usr, it should have a matching entry at index 5 in the listLinkedBody_usr\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+A list of pointers to various user cross-body forces\&. 
+.RE
+.PP
+
+.PP
+Definition at line 871 of file body\&.cpp\&.
+.SS "\fBForceCross\fP * Body::listForceCross_user (intforceIn)"
+
+.PP
+A single cross-body user force\&. A single cross-body user force\&. A pointer directing to the cross-body user force\&. Warning that these forces may be linked to other bodies as well and should not be changed\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIforceIn\fP Integer\&. Index of the \fBForceCross\fP object requested\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+A single pointer to the user cross-body forces requested by parameter forceIn\&. Pointer passed by value\&. 
+.RE
+.PP
+
+.PP
+Definition at line 877 of file body\&.cpp\&.
+.SS "vector< \fBForceReact\fP * > & Body::listForceReact_hydro ()"
+
+.PP
+The list of reactive hydrodynamic forces\&. The list of reactive hydrodynamic forces\&. A vector of pointers directing to the reactive hydrodynamic forces\&. Warning that these forces may be linked to other bodies as well and should not be changed\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+A vector of pointers to various hydrodynamic reactive forces\&. 
+.RE
+.PP
+
+.PP
+Definition at line 865 of file body\&.cpp\&.
+.SS "\fBForceReact\fP * Body::listForceReact_hydro (intforceIn)"
+
+.PP
+A single reactive hydrodynamic force\&. A single reactive hydrodynamic force\&. A pointer directing to the reactive hydrodynamic force\&. Warning that these forces may be linked to other bodies as well and should not be changed\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIforceIn\fP Integer\&. Index of the \fBForceReact\fP object requested\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+A single pointer to the user reactive forces requested by parameter forceIn\&. Pointer passed by value\&. 
+.RE
+.PP
+
+.PP
+Definition at line 845 of file body\&.cpp\&.
+.SS "vector< \fBForceReact\fP * > & Body::listForceReact_user ()"
+
+.PP
+The list of reactive user forces\&. The list of reactive user forces\&. A vector of pointers directing to the reactive user forces\&. Warning that these forces may be linked to other bodies as well and should not be changed\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+A vector of pointers to various user reactive forces\&. 
+.RE
+.PP
+
+.PP
+Definition at line 819 of file body\&.cpp\&.
+.SS "\fBForceReact\fP * Body::listForceReact_user (intforceIn)"
+
+.PP
+A single reactive user force\&. A single reactive user force\&. A pointer directing to the reactive user force\&. Warning that these forces may be linked to other bodies as well and should not be changed\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIforceIn\fP Integer\&. Index of the \fBForceReact\fP object requested\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+A single pointer to the user reactive forces requested by parameter forceIn\&. Pointer passed by value\&. 
+.RE
+.PP
+
+.PP
+Definition at line 825 of file body\&.cpp\&.
+.SS "vector< string > & Body::listNamedLink_hydro ()"
+
+.PP
+The list of names of linked bodies for hydro cross-body forces\&. This is a list of names of other bodies that a cross-body force references\&. This corresponds to the vector listForceCross_hydro\&. The indices of the two vectors should match\&. So that when a force gets added at index 5 in the listForceCross_hydro, it should have a matching entry at index 5 in listNamedLink_hydro\&. The list of names only is a temporary list used during the input stage of bodies\&. This is required because the linked body may name a body which is not yet read from the input file\&. Thus, the body is not currently defined\&. Once all Bodies are defined, the \fBSystem\fP object calls a function to read through each name in the list and assign corresponding pointers in the listLinkedBody_hydro\&. \fBReturns:\fP
+.RS 4
+Returns the list of named bodies linked to the Cross-Body forces\&. Returned object is a vector of std::string objects\&. Returned variable passed by reference\&. 
+.RE
+.PP
+\fBSee Also:\fP
+.RS 4
+listLinkedBody_hydro() 
+.PP
+\fBSystem\fP 
+.RE
+.PP
+
+.PP
+Definition at line 969 of file body\&.cpp\&.
+.SS "string & Body::listNamedLink_hydro (unsigned intvarIn)"
+
+.PP
+The list of names of linked bodies for hydro cross-body forces\&. This is a list of names of other bodies that a cross-body force references\&. This corresponds to the vector listForceCross_hydro\&. The indices of the two vectors should match\&. So that when a force gets added at index 5 in the listForceCross_hydro, it should have a matching entry at index 5 in listNamedLink_hydro\&. The list of names only is a temporary list used during the input stage of bodies\&. This is required because the linked body may name a body which is not yet read from the input file\&. Thus, the body is not currently defined\&. Once all Bodies are defined, the \fBSystem\fP object calls a function to read through each name in the list and assign corresponding pointers in the listLinkedBody_hydro\&. \fBParameters:\fP
+.RS 4
+\fIvarIn\fP Integer input specifying exactly which item in the list to return\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Returns the named body linked to the Cross-Body forces\&. Returned object is a std::string object\&. Returned variable passed by reference\&. 
+.RE
+.PP
+\fBSee Also:\fP
+.RS 4
+listLinkedBody_hydro() 
+.PP
+\fBSystem\fP 
+.RE
+.PP
+
+.PP
+Definition at line 975 of file body\&.cpp\&.
+.SS "vector< string > & Body::listNamedLink_user ()"
+
+.PP
+The list of names of linked bodies for user cross-body forces\&. This is a list of names of other bodies that a cross-body force references\&. This corresponds to the vector listForceCross_usr\&. The indices of the two vectors should match\&. So that when a force gets added at index 5 in the listForceCross_user, it should have a matching entry at index 5 in listNamedLink_usr\&. The list of names only is a temporary list used during the input stage of bodies\&. This is required because the linked body may name a body which is not yet read from the input file\&. Thus, the body is not currently defined\&. Once all Bodies are defined, the \fBSystem\fP object calls a function to read through each name in the list and assign corresponding pointers in the listLinkedBody_usr\&. \fBReturns:\fP
+.RS 4
+Returns the list of named bodies linked to the Cross-Body forces\&. Returned object is a vector of std::string objects\&. Returned variable passed by reference\&. 
+.RE
+.PP
+\fBSee Also:\fP
+.RS 4
+listLinkedBody_user() 
+.PP
+\fBSystem\fP 
+.RE
+.PP
+
+.PP
+Definition at line 951 of file body\&.cpp\&.
+.SS "string & Body::listNamedLink_user (unsigned intvarIn)"
+
+.PP
+The list of names of linked bodies for user cross-body forces\&. This is a list of names of other bodies that a cross-body force references\&. This corresponds to the vector listForceCross_usr\&. The indices of the two vectors should match\&. So that when a force gets added at index 5 in the listForceCross_user, it should have a matching entry at index 5 in listNamedLink_usr\&. The list of names only is a temporary list used during the input stage of bodies\&. This is required because the linked body may name a body which is not yet read from the input file\&. Thus, the body is not currently defined\&. Once all Bodies are defined, the \fBSystem\fP object calls a function to read through each name in the list and assign corresponding pointers in the listLinkedBody_usr\&. \fBParameters:\fP
+.RS 4
+\fIvarIn\fP Integer input specifying exactly which item in the list to return\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Returns the named body linked to the Cross-Body forces\&. Returned object is a std::string object\&. Returned variable passed by reference\&. 
+.RE
+.PP
+\fBSee Also:\fP
+.RS 4
+listLinkedBody_user() 
+.PP
+\fBSystem\fP 
+.RE
+.PP
+
+.PP
+Definition at line 957 of file body\&.cpp\&.
+.SS "Mat< double > & Body::MassMatrix ()"
+
+.PP
+Implements the method \fBgetMassMatrix()\fP, just under a different name\&. \fBReturns:\fP
+.RS 4
+Returns the mass matrix for the body, as a single matrix\&. 
+.RE
+.PP
+
+.PP
+Definition at line 557 of file body\&.cpp\&.
+.SS "bool Body::operator== (\fBBody\fP &bodIn)"
+
+.PP
+Overload for operator == to compare two \fBBody\fP objects\&. Comparison is based on body names\&. \fBParameters:\fP
+.RS 4
+\fIbodIn\fP The other body to compare to\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Returns true if the body names are equal\&. Returned variable is passed by value\&. 
+.RE
+.PP
+
+.PP
+Definition at line 58 of file body\&.cpp\&.
+.SS "string & Body::refBodyName ()"
+
+.PP
+Exposes the body name property for operation\&. \fBReturns:\fP
+.RS 4
+Pointer to the body name property\&. 
+.RE
+.PP
+
+.PP
+Definition at line 163 of file body\&.cpp\&.
+.SS "cx_mat & Body::refDataSolution ()"
+
+.PP
+The same things as the \fBrefSolution()\fP function, just under a different name\&. \fBReturns:\fP
+.RS 4
+Reference to column matrix of complex numbers\&. Value returned by reference\&. Matrix size is not hard coded\&. Number of rows in matrix must match number of equations for body property\&. 
+.RE
+.PP
+\fBSee Also:\fP
+.RS 4
+body::refSolution() 
+.RE
+.PP
+
+.PP
+Definition at line 714 of file body\&.cpp\&.
+.SS "std::complex< double > & Body::refDataSolution (intvarIndexIn)"
+
+.PP
+Returns a single solution value, based on the variable requested\&. Variable is requested by the data index, not vector occurrence index\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIvarIndexIn\fP Integer\&. The variable's data index 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Returns a complex<double> variable\&. This is the value of the solution object for the variable requested Returned variable passed by reference\&. 
+.RE
+.PP
+
+.PP
+Definition at line 720 of file body\&.cpp\&.
+.SS "double & Body::refHeading ()"
+
+.PP
+Exposes the heading property for operations\&. \fBReturns:\fP
+.RS 4
+Pointer to the heading property\&. 
+.RE
+.PP
+
+.PP
+Definition at line 199 of file body\&.cpp\&.
+.SS "string & Body::refHydroBodName ()"
+
+.PP
+Exposes the hydro body name property for operation\&. \fBReturns:\fP
+.RS 4
+Pointer to the hydro body name property\&. 
+.RE
+.PP
+
+.PP
+Definition at line 169 of file body\&.cpp\&.
+.SS "Mat< double > & Body::refPosn ()"
+
+.PP
+Exposes the position property for operation\&. The entire matrix for position of the body\&. Returns the entire matrix for the position of the body\&. Output is a 3x1 matrix with double point precision\&. First entry (1,1) = Position in X-axis\&. Second entry (2,1) = Position in Y-axis\&. Third entry (3,1) = Position in Z-axis\&. Units are in meters\&. Position is relative to the orientation of the world coordinate system\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+Returns a pointer to the the entire matrix for the position of the body\&. Output is a 3x1 matrix with double point precision\&. First entry (1,1) = Position in X-axis\&. Second entry (2,1) = Position in Y-axis\&. Third entry (3,1) = Position in Z-axis\&. Units are in meters\&. Position is relative to the orientation of the world coordinate system\&. 
+.RE
+.PP
+
+.PP
+Definition at line 680 of file body\&.cpp\&.
+.SS "cx_mat & Body::refSolution ()"
+
+.PP
+Get the solution matrix for the body\&. Gets the solution matrix for the body\&. Used to store the solution from the motion solver\&. This variable is initially empty on body creation\&. It gets filled with the output from the motion solver\&. Output is a column matrix (n by 1) of complex numbers\&. Output is in units of meters\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+Reference to column matrix of complex numbers\&. Value returned by reference\&. Matrix size is not hard coded\&. Number of rows in matrix must match number of equations for body property\&. 
+.RE
+.PP
+
+.PP
+Definition at line 708 of file body\&.cpp\&.
+.SS "void Body::setBodyName (std::string)"
+Sets the bodyName\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fInewName\fP The std::string passed in sets bodyName\&. 
+.RE
+.PP
+
+.PP
+Definition at line 157 of file body\&.cpp\&.
+.SS "void Body::setCenX (doublenewCenX)"
+Sets the Centroid X\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fInewCenX\fP The double passed in sets centroidX\&. 
+.RE
+.PP
+
+.PP
+Definition at line 578 of file body\&.cpp\&.
+.SS "void Body::setCenY (doublenewCenY)"
+Sets the Centroid Y\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fInewCenY\fP The double passed in sets centroidY\&. 
+.RE
+.PP
+
+.PP
+Definition at line 593 of file body\&.cpp\&.
+.SS "void Body::setCenZ (doublenewCenZ)"
+Sets the Centroid Z\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fInewCenZ\fP The double passed in sets centroidZ\&. 
+.RE
+.PP
+
+.PP
+Definition at line 608 of file body\&.cpp\&.
+.SS "void Body::setHeading (doublenewHeading)"
+Sets the heading\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fInewHeading\fP The double passed in sets the heading\&. 
+.RE
+.PP
+
+.PP
+Definition at line 187 of file body\&.cpp\&.
+.SS "void Body::setHydroBodName (std::string)"
+Sets the hydroBody\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fInewName\fP The std::string passed in sets the hydroBody\&. 
+.RE
+.PP
+
+.PP
+Definition at line 175 of file body\&.cpp\&.
+.SS "void Body::setMass (doublenewMass)"
+Sets the mass\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fInewMass\fP The double passed in sets the mass\&. 
+.RE
+.PP
+
+.PP
+Definition at line 208 of file body\&.cpp\&.
+.SS "void Body::setMassMatrix (arma::Mat< double >MassMatIn)"
+
+.PP
+Set the mass matrix for the body\&. \fBParameters:\fP
+.RS 4
+\fIMassMatIn\fP The input mass matrix for the body\&. A 6x6 matrix\&. 
+.RE
+.PP
+
+.PP
+Definition at line 566 of file body\&.cpp\&.
+.SS "void Body::setMomIxx (doublenewXX)"
+Sets the Moment of Inertia XX (Ixx) 
+.PP
+\fBParameters:\fP
+.RS 4
+\fInewXX\fP The double passed in sets momentOfInertiaXX\&. 
+.RE
+.PP
+
+.PP
+Definition at line 291 of file body\&.cpp\&.
+.SS "void Body::setMomIxy (doublenewXY)"
+Sets the Product of Inertia XY (Ixy) 
+.PP
+\fBParameters:\fP
+.RS 4
+\fInewXY\fP The double passed in sets setCrossMomentXY\&. 
+.RE
+.PP
+
+.PP
+Definition at line 416 of file body\&.cpp\&.
+.SS "void Body::setMomIxz (doublenewXZ)"
+Sets the Product of Inertia XZ (Ixz) 
+.PP
+\fBParameters:\fP
+.RS 4
+\fInewXZ\fP The double passed in sets setCrossMomentXZ\&. 
+.RE
+.PP
+
+.PP
+Definition at line 460 of file body\&.cpp\&.
+.SS "void Body::setMomIyy (doublenewYY)"
+Sets the Moment of Inertia YY (Iyy) 
+.PP
+\fBParameters:\fP
+.RS 4
+\fInewYY\fP The double passed in sets momentOfInertiaYY\&. 
+.RE
+.PP
+
+.PP
+Definition at line 332 of file body\&.cpp\&.
+.SS "void Body::setMomIyz (doublenewYZ)"
+Sets the Product of Inertia YZ (Iyz) 
+.PP
+\fBParameters:\fP
+.RS 4
+\fInewYZ\fP The double passed in sets setCrossMomentYZ\&. 
+.RE
+.PP
+
+.PP
+Definition at line 504 of file body\&.cpp\&.
+.SS "void Body::setMomIzz (doublenewZZ)"
+Sets the Moment of Inertia ZZ (Izz) 
+.PP
+\fBParameters:\fP
+.RS 4
+\fInewZZ\fP The double passed in sets momentOfInertiaZZ\&. 
+.RE
+.PP
+
+.PP
+Definition at line 374 of file body\&.cpp\&.
+.SS "void Body::setMotionModel (\fBofreq::MotionModel\fP &modelIn)"
+
+.PP
+Sets the motion model for lookup later\&. \fBParameters:\fP
+.RS 4
+\fImodelIn\fP Variable input that is the motion model object\&. Variable passed by reference\&. Stored internally as a pointer\&. 
+.RE
+.PP
+
+.PP
+Definition at line 987 of file body\&.cpp\&.
+.SS "void Body::setPosnX (doubleinput)"
+
+.PP
+Sets the body position in the X-axis\&. Sets the body position in the X-axis\&. Position is set relative to the world coordinate system\&. Units are in meters\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIinput\fP Double input specifying the position on the X-axis, units of meters\&. 
+.RE
+.PP
+
+.PP
+Definition at line 629 of file body\&.cpp\&.
+.SS "void Body::setPosnY (doubleinput)"
+
+.PP
+Sets the body position in the Y-axis\&. Sets the body position in the Y-axis\&. Position is set relative to the world coordinate system\&. Units are in meters\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIinput\fP Double input specifying the position on the Y-axis, units of meters\&. 
+.RE
+.PP
+
+.PP
+Definition at line 644 of file body\&.cpp\&.
+.SS "void Body::setPosnZ (doubleinput)"
+
+.PP
+Sets the body position in the Z-axis\&. Sets the body position in the Z-axis\&. Position is set relative to the world coordinate system\&. Units are in meters\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIinput\fP Double input specifying the position on the Z-axis, units of meters\&. 
+.RE
+.PP
+
+.PP
+Definition at line 659 of file body\&.cpp\&.
+.SS "void Body::setSolnMat (arma::cx_matinput)"
+
+.PP
+Set the solution matrix for the body\&. Sets the solution matrix for the body\&. Used to store the solution from the motion solver\&. This variable is initially empty on body creation\&. It gets filled with the output from the motion solver\&. Output is a column matrix (n by 1) of complex numbers\&. Output is in units of meters\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIinput\fP Column matrix of complex numbers\&. Matrix size is not hard coded\&. Number of rows in matrix must match number of equations for body property\&. 
+.RE
+.PP
+
+.PP
+Definition at line 696 of file body\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for oFreq from the source code\&.

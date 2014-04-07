@@ -1,0 +1,14 @@
+/**
+\page multibody_support Multibody Support
+
+\todo Write theoretical background for multibody support.  List the forces that are used for 
+multibody interaction.  Include relative coordinate systems how each body has its own coordinate 
+system.
+
+# Interacting Forces
+
+## Cross-body Force:  Hydrodynamic
+
+## Cross-body Force:  User
+
+*/

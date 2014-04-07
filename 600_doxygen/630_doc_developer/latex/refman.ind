@@ -1,0 +1,2952 @@
+\begin{theindex}
+
+  \item {$\sim $\discretionary {-}{}{}Body}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Body}, 
+		\hyperpage{41}
+  \item {$\sim $\discretionary {-}{}{}Derivative}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Derivative}, 
+		\hyperpage{60}
+  \item {$\sim $\discretionary {-}{}{}Eqn\discretionary {-}{}{}Rotation}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Eqn\discretionary {-}{}{}Rotation}, 
+		\hyperpage{77}
+  \item {$\sim $\discretionary {-}{}{}Eqn\discretionary {-}{}{}Translation}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Eqn\discretionary {-}{}{}Translation}, 
+		\hyperpage{88}
+  \item {$\sim $\discretionary {-}{}{}Equation}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Equation}, 
+		\hyperpage{96}
+  \item {$\sim $\discretionary {-}{}{}Equationof\discretionary {-}{}{}Motion}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Equationof\discretionary {-}{}{}Motion}, 
+		\hyperpage{104}
+  \item {$\sim $\discretionary {-}{}{}File\discretionary {-}{}{}Reader}
+    \subitem {osea\discretionary {-}{}{}::\discretionary {-}{}{}File\discretionary {-}{}{}Reader}, 
+		\hyperpage{122}
+  \item {$\sim $\discretionary {-}{}{}File\discretionary {-}{}{}Writer}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}File\discretionary {-}{}{}Writer}, 
+		\hyperpage{128}
+  \item {$\sim $\discretionary {-}{}{}Force}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Force}, 
+		\hyperpage{134}
+  \item {$\sim $\discretionary {-}{}{}Force\discretionary {-}{}{}Active}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Force\discretionary {-}{}{}Active}, 
+		\hyperpage{137}
+  \item {$\sim $\discretionary {-}{}{}Force\discretionary {-}{}{}Cross}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Force\discretionary {-}{}{}Cross}, 
+		\hyperpage{141}
+  \item {$\sim $\discretionary {-}{}{}Force\discretionary {-}{}{}React}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Force\discretionary {-}{}{}React}, 
+		\hyperpage{143}
+  \item {$\sim $\discretionary {-}{}{}Global\discretionary {-}{}{}Acceleration}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Global\discretionary {-}{}{}Acceleration}, 
+		\hyperpage{147}
+  \item {$\sim $\discretionary {-}{}{}Global\discretionary {-}{}{}Motion}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Global\discretionary {-}{}{}Motion}, 
+		\hyperpage{149}
+  \item {$\sim $\discretionary {-}{}{}Global\discretionary {-}{}{}Solution}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Global\discretionary {-}{}{}Solution}, 
+		\hyperpage{151}
+  \item {$\sim $\discretionary {-}{}{}Global\discretionary {-}{}{}Velocity}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Global\discretionary {-}{}{}Velocity}, 
+		\hyperpage{154}
+  \item {$\sim $\discretionary {-}{}{}Model6\discretionary {-}{}{}D\discretionary {-}{}{}O\discretionary {-}{}{}F}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Model6\discretionary {-}{}{}D\discretionary {-}{}{}O\discretionary {-}{}{}F}, 
+		\hyperpage{175}
+  \item {$\sim $\discretionary {-}{}{}Motion\discretionary {-}{}{}Model}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Motion\discretionary {-}{}{}Model}, 
+		\hyperpage{181}
+  \item {$\sim $\discretionary {-}{}{}Motion\discretionary {-}{}{}Solver}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Motion\discretionary {-}{}{}Solver}, 
+		\hyperpage{203}
+  \item {$\sim $\discretionary {-}{}{}Object\discretionary {-}{}{}Group}
+    \subitem {osea\discretionary {-}{}{}::\discretionary {-}{}{}Object\discretionary {-}{}{}Group}, 
+		\hyperpage{209}
+  \item {$\sim $\discretionary {-}{}{}Output\discretionary {-}{}{}Derived}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Output\discretionary {-}{}{}Derived}, 
+		\hyperpage{219}
+  \item {$\sim $\discretionary {-}{}{}Outputs\discretionary {-}{}{}Body}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Outputs\discretionary {-}{}{}Body}, 
+		\hyperpage{229}
+  \item {$\sim $\discretionary {-}{}{}Parser}
+    \subitem {osea\discretionary {-}{}{}::\discretionary {-}{}{}Parser}, 
+		\hyperpage{243}
+  \item {$\sim $\discretionary {-}{}{}Sea\discretionary {-}{}{}Enviroment}
+    \subitem {Sea\discretionary {-}{}{}Enviroment}, \hyperpage{246}
+  \item {$\sim $\discretionary {-}{}{}Solution}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Solution}, 
+		\hyperpage{250}
+  \item {$\sim $\discretionary {-}{}{}Solution\discretionary {-}{}{}Set}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Solution\discretionary {-}{}{}Set}, 
+		\hyperpage{253}
+  \item {$\sim $\discretionary {-}{}{}System}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}System}, 
+		\hyperpage{259}
+  \item {$\sim $mat\discretionary {-}{}{}Body}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::mat\discretionary {-}{}{}Body}, 
+		\hyperpage{156}
+  \item {$\sim $mat\discretionary {-}{}{}Force\discretionary {-}{}{}Active}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::mat\discretionary {-}{}{}Force\discretionary {-}{}{}Active}, 
+		\hyperpage{163}
+  \item {$\sim $mat\discretionary {-}{}{}Force\discretionary {-}{}{}Cross}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::mat\discretionary {-}{}{}Force\discretionary {-}{}{}Cross}, 
+		\hyperpage{166}
+  \item {$\sim $mat\discretionary {-}{}{}Force\discretionary {-}{}{}React}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::mat\discretionary {-}{}{}Force\discretionary {-}{}{}React}, 
+		\hyperpage{171}
+  \item {$\sim $o\discretionary {-}{}{}Freq\discretionary {-}{}{}Core}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::o\discretionary {-}{}{}Freq\discretionary {-}{}{}Core}, 
+		\hyperpage{215}
+  \item {100\discretionary {-}{}{}\_\discretionary {-}{}{}doc/130\discretionary {-}{}{}\_\discretionary {-}{}{}doc\discretionary {-}{}{}\_\discretionary {-}{}{}developer/\discretionary {-}{}{}Coding\discretionary {-}{}{}Format\discretionary {-}{}{}Standards.\discretionary {-}{}{}dox}, 
+		\hyperpage{271}
+  \item {100\discretionary {-}{}{}\_\discretionary {-}{}{}doc/130\discretionary {-}{}{}\_\discretionary {-}{}{}doc\discretionary {-}{}{}\_\discretionary {-}{}{}developer/\discretionary {-}{}{}Coding\discretionary {-}{}{}Standard/\discretionary {-}{}{}C\discretionary {-}{}{}P\discretionary {-}{}{}P\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Comments.\discretionary {-}{}{}dox}, 
+		\hyperpage{271}
+  \item {100\discretionary {-}{}{}\_\discretionary {-}{}{}doc/130\discretionary {-}{}{}\_\discretionary {-}{}{}doc\discretionary {-}{}{}\_\discretionary {-}{}{}developer/\discretionary {-}{}{}Coding\discretionary {-}{}{}Standard/\discretionary {-}{}{}Header\discretionary {-}{}{}Comment.\discretionary {-}{}{}dox}, 
+		\hyperpage{271}
+  \item {100\discretionary {-}{}{}\_\discretionary {-}{}{}doc/130\discretionary {-}{}{}\_\discretionary {-}{}{}doc\discretionary {-}{}{}\_\discretionary {-}{}{}developer/\discretionary {-}{}{}Coding\discretionary {-}{}{}Standard/\discretionary {-}{}{}Object\discretionary {-}{}{}Paradigm.\discretionary {-}{}{}dox}, 
+		\hyperpage{271}
+  \item {100\discretionary {-}{}{}\_\discretionary {-}{}{}doc/130\discretionary {-}{}{}\_\discretionary {-}{}{}doc\discretionary {-}{}{}\_\discretionary {-}{}{}developer/\discretionary {-}{}{}Coding\discretionary {-}{}{}Standard/\discretionary {-}{}{}Qt\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Platform\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Code.\discretionary {-}{}{}dox}, 
+		\hyperpage{271}
+  \item {100\discretionary {-}{}{}\_\discretionary {-}{}{}doc/130\discretionary {-}{}{}\_\discretionary {-}{}{}doc\discretionary {-}{}{}\_\discretionary {-}{}{}developer/\discretionary {-}{}{}Input\discretionary {-}{}{}Formatting.\discretionary {-}{}{}dox}, 
+		\hyperpage{271}
+  \item {100\discretionary {-}{}{}\_\discretionary {-}{}{}doc/130\discretionary {-}{}{}\_\discretionary {-}{}{}doc\discretionary {-}{}{}\_\discretionary {-}{}{}developer/\discretionary {-}{}{}Inputs/\discretionary {-}{}{}Input\discretionary {-}{}{}Syntax.\discretionary {-}{}{}dox}, 
+		\hyperpage{271}
+  \item {100\discretionary {-}{}{}\_\discretionary {-}{}{}doc/130\discretionary {-}{}{}\_\discretionary {-}{}{}doc\discretionary {-}{}{}\_\discretionary {-}{}{}developer/\discretionary {-}{}{}Inputs/\discretionary {-}{}{}Input\discretionary {-}{}{}Values.\discretionary {-}{}{}dox}, 
+		\hyperpage{271}
+  \item {100\discretionary {-}{}{}\_\discretionary {-}{}{}doc/130\discretionary {-}{}{}\_\discretionary {-}{}{}doc\discretionary {-}{}{}\_\discretionary {-}{}{}developer/\discretionary {-}{}{}Inputs/\discretionary {-}{}{}Why\discretionary {-}{}{}Text\discretionary {-}{}{}Files.\discretionary {-}{}{}dox}, 
+		\hyperpage{271}
+  \item {100\discretionary {-}{}{}\_\discretionary {-}{}{}doc/130\discretionary {-}{}{}\_\discretionary {-}{}{}doc\discretionary {-}{}{}\_\discretionary {-}{}{}developer/\discretionary {-}{}{}Program\discretionary {-}{}{}Execution.\discretionary {-}{}{}dox}, 
+		\hyperpage{271}
+  \item {100\discretionary {-}{}{}\_\discretionary {-}{}{}doc/130\discretionary {-}{}{}\_\discretionary {-}{}{}doc\discretionary {-}{}{}\_\discretionary {-}{}{}developer/\discretionary {-}{}{}U\discretionary {-}{}{}M\discretionary {-}{}{}L\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Process.\discretionary {-}{}{}dox}, 
+		\hyperpage{271}
+  \item {100\discretionary {-}{}{}\_\discretionary {-}{}{}doc/130\discretionary {-}{}{}\_\discretionary {-}{}{}doc\discretionary {-}{}{}\_\discretionary {-}{}{}developer/\discretionary {-}{}{}U\discretionary {-}{}{}M\discretionary {-}{}{}L\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Process/\discretionary {-}{}{}U\discretionary {-}{}{}M\discretionary {-}{}{}L\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}File\discretionary {-}{}{}Reader.\discretionary {-}{}{}dox}, 
+		\hyperpage{271}
+  \item {100\discretionary {-}{}{}\_\discretionary {-}{}{}doc/130\discretionary {-}{}{}\_\discretionary {-}{}{}doc\discretionary {-}{}{}\_\discretionary {-}{}{}developer/\discretionary {-}{}{}U\discretionary {-}{}{}M\discretionary {-}{}{}L\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Process/\discretionary {-}{}{}U\discretionary {-}{}{}M\discretionary {-}{}{}L\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Motion\discretionary {-}{}{}Model.\discretionary {-}{}{}dox}, 
+		\hyperpage{271}
+  \item {100\discretionary {-}{}{}\_\discretionary {-}{}{}doc/130\discretionary {-}{}{}\_\discretionary {-}{}{}doc\discretionary {-}{}{}\_\discretionary {-}{}{}developer/\discretionary {-}{}{}U\discretionary {-}{}{}M\discretionary {-}{}{}L\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Process/\discretionary {-}{}{}U\discretionary {-}{}{}M\discretionary {-}{}{}L\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Motion\discretionary {-}{}{}Solver.\discretionary {-}{}{}dox}, 
+		\hyperpage{272}
+  \item {100\discretionary {-}{}{}\_\discretionary {-}{}{}doc/130\discretionary {-}{}{}\_\discretionary {-}{}{}doc\discretionary {-}{}{}\_\discretionary {-}{}{}developer/\discretionary {-}{}{}U\discretionary {-}{}{}M\discretionary {-}{}{}L\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Process/\discretionary {-}{}{}U\discretionary {-}{}{}M\discretionary {-}{}{}L\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Overall.\discretionary {-}{}{}dox}, 
+		\hyperpage{272}
+  \item {100\discretionary {-}{}{}\_\discretionary {-}{}{}doc/130\discretionary {-}{}{}\_\discretionary {-}{}{}doc\discretionary {-}{}{}\_\discretionary {-}{}{}developer/\discretionary {-}{}{}U\discretionary {-}{}{}M\discretionary {-}{}{}L\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Process/\discretionary {-}{}{}U\discretionary {-}{}{}M\discretionary {-}{}{}L\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Resonant\discretionary {-}{}{}Solver.\discretionary {-}{}{}dox}, 
+		\hyperpage{272}
+  \item {100\discretionary {-}{}{}\_\discretionary {-}{}{}doc/130\discretionary {-}{}{}\_\discretionary {-}{}{}doc\discretionary {-}{}{}\_\discretionary {-}{}{}developer/\discretionary {-}{}{}U\discretionary {-}{}{}M\discretionary {-}{}{}L\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Process/\discretionary {-}{}{}U\discretionary {-}{}{}M\discretionary {-}{}{}L\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Writing\discretionary {-}{}{}Files.\discretionary {-}{}{}dox}, 
+		\hyperpage{272}
+  \item {100\discretionary {-}{}{}\_\discretionary {-}{}{}doc/130\discretionary {-}{}{}\_\discretionary {-}{}{}doc\discretionary {-}{}{}\_\discretionary {-}{}{}developer/\discretionary {-}{}{}Validation/\discretionary {-}{}{}Multi\discretionary {-}{}{}Body\discretionary {-}{}{}Test1.\discretionary {-}{}{}dox}, 
+		\hyperpage{272}
+  \item {100\discretionary {-}{}{}\_\discretionary {-}{}{}doc/130\discretionary {-}{}{}\_\discretionary {-}{}{}doc\discretionary {-}{}{}\_\discretionary {-}{}{}developer/\discretionary {-}{}{}Validation/\discretionary {-}{}{}Multi\discretionary {-}{}{}Body\discretionary {-}{}{}Test2.\discretionary {-}{}{}dox}, 
+		\hyperpage{272}
+  \item {100\discretionary {-}{}{}\_\discretionary {-}{}{}doc/130\discretionary {-}{}{}\_\discretionary {-}{}{}doc\discretionary {-}{}{}\_\discretionary {-}{}{}developer/\discretionary {-}{}{}Validation/\discretionary {-}{}{}Multi\discretionary {-}{}{}Body\discretionary {-}{}{}Test3.\discretionary {-}{}{}dox}, 
+		\hyperpage{272}
+  \item {100\discretionary {-}{}{}\_\discretionary {-}{}{}doc/130\discretionary {-}{}{}\_\discretionary {-}{}{}doc\discretionary {-}{}{}\_\discretionary {-}{}{}developer/\discretionary {-}{}{}Validation/\discretionary {-}{}{}Multi\discretionary {-}{}{}Body\discretionary {-}{}{}Test4.\discretionary {-}{}{}dox}, 
+		\hyperpage{272}
+  \item {100\discretionary {-}{}{}\_\discretionary {-}{}{}doc/130\discretionary {-}{}{}\_\discretionary {-}{}{}doc\discretionary {-}{}{}\_\discretionary {-}{}{}developer/\discretionary {-}{}{}Validation/\discretionary {-}{}{}Simple\discretionary {-}{}{}Test1.\discretionary {-}{}{}dox}, 
+		\hyperpage{272}
+  \item {100\discretionary {-}{}{}\_\discretionary {-}{}{}doc/130\discretionary {-}{}{}\_\discretionary {-}{}{}doc\discretionary {-}{}{}\_\discretionary {-}{}{}developer/\discretionary {-}{}{}Validation/\discretionary {-}{}{}Simple\discretionary {-}{}{}Test2.\discretionary {-}{}{}dox}, 
+		\hyperpage{272}
+  \item {100\discretionary {-}{}{}\_\discretionary {-}{}{}doc/130\discretionary {-}{}{}\_\discretionary {-}{}{}doc\discretionary {-}{}{}\_\discretionary {-}{}{}developer/\discretionary {-}{}{}Validation/\discretionary {-}{}{}Simple\discretionary {-}{}{}Test3.\discretionary {-}{}{}dox}, 
+		\hyperpage{272}
+  \item {100\discretionary {-}{}{}\_\discretionary {-}{}{}doc/130\discretionary {-}{}{}\_\discretionary {-}{}{}doc\discretionary {-}{}{}\_\discretionary {-}{}{}developer/\discretionary {-}{}{}Validation/\discretionary {-}{}{}Simple\discretionary {-}{}{}Test4.\discretionary {-}{}{}dox}, 
+		\hyperpage{272}
+  \item {100\discretionary {-}{}{}\_\discretionary {-}{}{}doc/130\discretionary {-}{}{}\_\discretionary {-}{}{}doc\discretionary {-}{}{}\_\discretionary {-}{}{}developer/\discretionary {-}{}{}Validation/\discretionary {-}{}{}Test\discretionary {-}{}{}Frequency.\discretionary {-}{}{}dox}, 
+		\hyperpage{272}
+  \item {100\discretionary {-}{}{}\_\discretionary {-}{}{}doc/130\discretionary {-}{}{}\_\discretionary {-}{}{}doc\discretionary {-}{}{}\_\discretionary {-}{}{}developer/mainpage.\discretionary {-}{}{}dox}, 
+		\hyperpage{271}
+  \item {100\discretionary {-}{}{}\_\discretionary {-}{}{}doc/130\discretionary {-}{}{}\_\discretionary {-}{}{}doc\discretionary {-}{}{}\_\discretionary {-}{}{}developer/validation.\discretionary {-}{}{}dox}, 
+		\hyperpage{272}
+
+  \indexspace
+
+  \item {add\discretionary {-}{}{}Body}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Motion\discretionary {-}{}{}Solver}, 
+		\hyperpage{204}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}System}, 
+		\hyperpage{259}
+  \item {add\discretionary {-}{}{}Derivative}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Force\discretionary {-}{}{}React}, 
+		\hyperpage{143}
+  \item {Add\discretionary {-}{}{}Equation}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Motion\discretionary {-}{}{}Model}, 
+		\hyperpage{181}
+  \item {add\discretionary {-}{}{}Equation}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Force\discretionary {-}{}{}Active}, 
+		\hyperpage{137}
+  \item {add\discretionary {-}{}{}Force\discretionary {-}{}{}Active\discretionary {-}{}{}\_\discretionary {-}{}{}user}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}System}, 
+		\hyperpage{259}
+  \item {add\discretionary {-}{}{}Force\discretionary {-}{}{}Cross\discretionary {-}{}{}\_\discretionary {-}{}{}user}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}System}, 
+		\hyperpage{260}
+  \item {add\discretionary {-}{}{}Force\discretionary {-}{}{}React\discretionary {-}{}{}\_\discretionary {-}{}{}user}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}System}, 
+		\hyperpage{260}
+  \item {add\discretionary {-}{}{}Global\discretionary {-}{}{}Acceleration}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Outputs\discretionary {-}{}{}Body}, 
+		\hyperpage{229, 230}
+  \item {add\discretionary {-}{}{}Global\discretionary {-}{}{}Motion}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Outputs\discretionary {-}{}{}Body}, 
+		\hyperpage{230}
+  \item {add\discretionary {-}{}{}Global\discretionary {-}{}{}Solution}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Outputs\discretionary {-}{}{}Body}, 
+		\hyperpage{230}
+  \item {add\discretionary {-}{}{}Global\discretionary {-}{}{}Velocity}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Outputs\discretionary {-}{}{}Body}, 
+		\hyperpage{230, 231}
+  \item {add\discretionary {-}{}{}Key\discretionary {-}{}{}Set}
+    \subitem {osea\discretionary {-}{}{}::\discretionary {-}{}{}Object\discretionary {-}{}{}Group}, 
+		\hyperpage{209}
+  \item {add\discretionary {-}{}{}Key\discretionary {-}{}{}Val}
+    \subitem {osea\discretionary {-}{}{}::\discretionary {-}{}{}Object\discretionary {-}{}{}Group}, 
+		\hyperpage{209, 210}
+  \item {add\discretionary {-}{}{}Key\discretionary {-}{}{}Word}
+    \subitem {osea\discretionary {-}{}{}::\discretionary {-}{}{}Object\discretionary {-}{}{}Group}, 
+		\hyperpage{210}
+  \item {add\discretionary {-}{}{}Model\discretionary {-}{}{}Equation}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Derivative}, 
+		\hyperpage{60}
+  \item {add\discretionary {-}{}{}Output}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}System}, 
+		\hyperpage{261}
+  \item {add\discretionary {-}{}{}Result}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Output\discretionary {-}{}{}Derived}, 
+		\hyperpage{220}
+  \item {add\discretionary {-}{}{}Sub\discretionary {-}{}{}Object}
+    \subitem {osea\discretionary {-}{}{}::\discretionary {-}{}{}Object\discretionary {-}{}{}Group}, 
+		\hyperpage{210}
+  \item {add\discretionary {-}{}{}Variable}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Equation}, 
+		\hyperpage{96}
+  \item {argcount}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Equationof\discretionary {-}{}{}Motion}, 
+		\hyperpage{118}
+  \item {argvalue}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Equationof\discretionary {-}{}{}Motion}, 
+		\hyperpage{118}
+
+  \indexspace
+
+  \item {B\discretionary {-}{}{}I\discretionary {-}{}{}N\discretionary {-}{}{}F\discretionary {-}{}{}O\discretionary {-}{}{}L\discretionary {-}{}{}D\discretionary {-}{}{}E\discretionary {-}{}{}R}
+    \subitem {ofreq.\discretionary {-}{}{}cpp}, \hyperpage{319}
+  \item {bin/ofreq/derived\discretionary {-}{}{}\_\discretionary {-}{}{}outputs/globalacceleration.\discretionary {-}{}{}cpp}, 
+		\hyperpage{273}
+  \item {bin/ofreq/derived\discretionary {-}{}{}\_\discretionary {-}{}{}outputs/globalacceleration.\discretionary {-}{}{}h}, 
+		\hyperpage{273}
+  \item {bin/ofreq/derived\discretionary {-}{}{}\_\discretionary {-}{}{}outputs/globalmotion.\discretionary {-}{}{}cpp}, 
+		\hyperpage{274}
+  \item {bin/ofreq/derived\discretionary {-}{}{}\_\discretionary {-}{}{}outputs/globalmotion.\discretionary {-}{}{}h}, 
+		\hyperpage{274}
+  \item {bin/ofreq/derived\discretionary {-}{}{}\_\discretionary {-}{}{}outputs/globalsolution.\discretionary {-}{}{}cpp}, 
+		\hyperpage{275}
+  \item {bin/ofreq/derived\discretionary {-}{}{}\_\discretionary {-}{}{}outputs/globalsolution.\discretionary {-}{}{}h}, 
+		\hyperpage{275}
+  \item {bin/ofreq/derived\discretionary {-}{}{}\_\discretionary {-}{}{}outputs/globalvelocity.\discretionary {-}{}{}cpp}, 
+		\hyperpage{277}
+  \item {bin/ofreq/derived\discretionary {-}{}{}\_\discretionary {-}{}{}outputs/globalvelocity.\discretionary {-}{}{}h}, 
+		\hyperpage{277}
+  \item {bin/ofreq/derived\discretionary {-}{}{}\_\discretionary {-}{}{}outputs/outputderived.\discretionary {-}{}{}cpp}, 
+		\hyperpage{278}
+  \item {bin/ofreq/derived\discretionary {-}{}{}\_\discretionary {-}{}{}outputs/outputderived.\discretionary {-}{}{}h}, 
+		\hyperpage{278}
+  \item {bin/ofreq/derived\discretionary {-}{}{}\_\discretionary {-}{}{}outputs/outputsbody.\discretionary {-}{}{}cpp}, 
+		\hyperpage{279}
+  \item {bin/ofreq/derived\discretionary {-}{}{}\_\discretionary {-}{}{}outputs/outputsbody.\discretionary {-}{}{}h}, 
+		\hyperpage{279}
+  \item {bin/ofreq/file\discretionary {-}{}{}\_\discretionary {-}{}{}reader/dictbodies.\discretionary {-}{}{}cpp}, 
+		\hyperpage{280}
+  \item {bin/ofreq/file\discretionary {-}{}{}\_\discretionary {-}{}{}reader/dictbodies.\discretionary {-}{}{}h}, 
+		\hyperpage{281}
+  \item {bin/ofreq/file\discretionary {-}{}{}\_\discretionary {-}{}{}reader/dictcontrol.\discretionary {-}{}{}cpp}, 
+		\hyperpage{281}
+  \item {bin/ofreq/file\discretionary {-}{}{}\_\discretionary {-}{}{}reader/dictcontrol.\discretionary {-}{}{}h}, 
+		\hyperpage{282}
+  \item {bin/ofreq/file\discretionary {-}{}{}\_\discretionary {-}{}{}reader/dictforces.\discretionary {-}{}{}cpp}, 
+		\hyperpage{283}
+  \item {bin/ofreq/file\discretionary {-}{}{}\_\discretionary {-}{}{}reader/dictforces.\discretionary {-}{}{}h}, 
+		\hyperpage{283}
+  \item {bin/ofreq/file\discretionary {-}{}{}\_\discretionary {-}{}{}reader/dictionary.\discretionary {-}{}{}cpp}, 
+		\hyperpage{284}
+  \item {bin/ofreq/file\discretionary {-}{}{}\_\discretionary {-}{}{}reader/dictionary.\discretionary {-}{}{}h}, 
+		\hyperpage{284}
+  \item {bin/ofreq/file\discretionary {-}{}{}\_\discretionary {-}{}{}reader/filereader.\discretionary {-}{}{}cpp}, 
+		\hyperpage{285}
+  \item {bin/ofreq/file\discretionary {-}{}{}\_\discretionary {-}{}{}reader/filereader.\discretionary {-}{}{}h}, 
+		\hyperpage{285}
+  \item {bin/ofreq/file\discretionary {-}{}{}\_\discretionary {-}{}{}reader/objectgroup.\discretionary {-}{}{}cpp}, 
+		\hyperpage{286}
+  \item {bin/ofreq/file\discretionary {-}{}{}\_\discretionary {-}{}{}reader/objectgroup.\discretionary {-}{}{}h}, 
+		\hyperpage{286}
+  \item {bin/ofreq/file\discretionary {-}{}{}\_\discretionary {-}{}{}reader/parser.\discretionary {-}{}{}cpp}, 
+		\hyperpage{288}
+  \item {bin/ofreq/file\discretionary {-}{}{}\_\discretionary {-}{}{}reader/parser.\discretionary {-}{}{}h}, 
+		\hyperpage{288}
+  \item {bin/ofreq/file\discretionary {-}{}{}\_\discretionary {-}{}{}writer/filewriter.\discretionary {-}{}{}cpp}, 
+		\hyperpage{289}
+  \item {bin/ofreq/file\discretionary {-}{}{}\_\discretionary {-}{}{}writer/filewriter.\discretionary {-}{}{}h}, 
+		\hyperpage{289}
+  \item {bin/ofreq/global\discretionary {-}{}{}\_\discretionary {-}{}{}objects/body.\discretionary {-}{}{}cpp}, 
+		\hyperpage{290}
+  \item {bin/ofreq/global\discretionary {-}{}{}\_\discretionary {-}{}{}objects/body.\discretionary {-}{}{}h}, 
+		\hyperpage{290}
+  \item {bin/ofreq/global\discretionary {-}{}{}\_\discretionary {-}{}{}objects/derivative.\discretionary {-}{}{}cpp}, 
+		\hyperpage{291}
+  \item {bin/ofreq/global\discretionary {-}{}{}\_\discretionary {-}{}{}objects/derivative.\discretionary {-}{}{}h}, 
+		\hyperpage{291}
+  \item {bin/ofreq/global\discretionary {-}{}{}\_\discretionary {-}{}{}objects/equation.\discretionary {-}{}{}cpp}, 
+		\hyperpage{292}
+  \item {bin/ofreq/global\discretionary {-}{}{}\_\discretionary {-}{}{}objects/equation.\discretionary {-}{}{}h}, 
+		\hyperpage{293}
+  \item {bin/ofreq/global\discretionary {-}{}{}\_\discretionary {-}{}{}objects/force.\discretionary {-}{}{}cpp}, 
+		\hyperpage{294}
+  \item {bin/ofreq/global\discretionary {-}{}{}\_\discretionary {-}{}{}objects/force.\discretionary {-}{}{}h}, 
+		\hyperpage{294}
+  \item {bin/ofreq/global\discretionary {-}{}{}\_\discretionary {-}{}{}objects/forceactive.\discretionary {-}{}{}cpp}, 
+		\hyperpage{295}
+  \item {bin/ofreq/global\discretionary {-}{}{}\_\discretionary {-}{}{}objects/forceactive.\discretionary {-}{}{}h}, 
+		\hyperpage{295}
+  \item {bin/ofreq/global\discretionary {-}{}{}\_\discretionary {-}{}{}objects/forcecross.\discretionary {-}{}{}cpp}, 
+		\hyperpage{297}
+  \item {bin/ofreq/global\discretionary {-}{}{}\_\discretionary {-}{}{}objects/forcecross.\discretionary {-}{}{}h}, 
+		\hyperpage{297}
+  \item {bin/ofreq/global\discretionary {-}{}{}\_\discretionary {-}{}{}objects/forcereact.\discretionary {-}{}{}cpp}, 
+		\hyperpage{298}
+  \item {bin/ofreq/global\discretionary {-}{}{}\_\discretionary {-}{}{}objects/forcereact.\discretionary {-}{}{}h}, 
+		\hyperpage{298}
+  \item {bin/ofreq/global\discretionary {-}{}{}\_\discretionary {-}{}{}objects/ofreqcore.\discretionary {-}{}{}cpp}, 
+		\hyperpage{299}
+  \item {bin/ofreq/global\discretionary {-}{}{}\_\discretionary {-}{}{}objects/ofreqcore.\discretionary {-}{}{}h}, 
+		\hyperpage{299}
+  \item {bin/ofreq/global\discretionary {-}{}{}\_\discretionary {-}{}{}objects/solution.\discretionary {-}{}{}cpp}, 
+		\hyperpage{300}
+  \item {bin/ofreq/global\discretionary {-}{}{}\_\discretionary {-}{}{}objects/solution.\discretionary {-}{}{}h}, 
+		\hyperpage{300}
+  \item {bin/ofreq/global\discretionary {-}{}{}\_\discretionary {-}{}{}objects/solutionset.\discretionary {-}{}{}cpp}, 
+		\hyperpage{301}
+  \item {bin/ofreq/global\discretionary {-}{}{}\_\discretionary {-}{}{}objects/solutionset.\discretionary {-}{}{}h}, 
+		\hyperpage{301}
+  \item {bin/ofreq/global\discretionary {-}{}{}\_\discretionary {-}{}{}objects/system.\discretionary {-}{}{}cpp}, 
+		\hyperpage{303}
+  \item {bin/ofreq/global\discretionary {-}{}{}\_\discretionary {-}{}{}objects/system.\discretionary {-}{}{}h}, 
+		\hyperpage{303}
+  \item {bin/ofreq/motion\discretionary {-}{}{}\_\discretionary {-}{}{}model/eqnrotation.\discretionary {-}{}{}cpp}, 
+		\hyperpage{304}
+  \item {bin/ofreq/motion\discretionary {-}{}{}\_\discretionary {-}{}{}model/eqnrotation.\discretionary {-}{}{}h}, 
+		\hyperpage{304}
+  \item {bin/ofreq/motion\discretionary {-}{}{}\_\discretionary {-}{}{}model/eqntranslation.\discretionary {-}{}{}cpp}, 
+		\hyperpage{305}
+  \item {bin/ofreq/motion\discretionary {-}{}{}\_\discretionary {-}{}{}model/eqntranslation.\discretionary {-}{}{}h}, 
+		\hyperpage{306}
+  \item {bin/ofreq/motion\discretionary {-}{}{}\_\discretionary {-}{}{}model/equationofmotion.\discretionary {-}{}{}cpp}, 
+		\hyperpage{306}
+  \item {bin/ofreq/motion\discretionary {-}{}{}\_\discretionary {-}{}{}model/equationofmotion.\discretionary {-}{}{}h}, 
+		\hyperpage{307}
+  \item {bin/ofreq/motion\discretionary {-}{}{}\_\discretionary {-}{}{}model/model6dof.\discretionary {-}{}{}cpp}, 
+		\hyperpage{308}
+  \item {bin/ofreq/motion\discretionary {-}{}{}\_\discretionary {-}{}{}model/model6dof.\discretionary {-}{}{}h}, 
+		\hyperpage{308}
+  \item {bin/ofreq/motion\discretionary {-}{}{}\_\discretionary {-}{}{}model/motionmodel.\discretionary {-}{}{}cpp}, 
+		\hyperpage{309}
+  \item {bin/ofreq/motion\discretionary {-}{}{}\_\discretionary {-}{}{}model/motionmodel.\discretionary {-}{}{}h}, 
+		\hyperpage{309}
+  \item {bin/ofreq/motion\discretionary {-}{}{}\_\discretionary {-}{}{}solver/matbody.\discretionary {-}{}{}cpp}, 
+		\hyperpage{310}
+  \item {bin/ofreq/motion\discretionary {-}{}{}\_\discretionary {-}{}{}solver/matbody.\discretionary {-}{}{}h}, 
+		\hyperpage{310}
+  \item {bin/ofreq/motion\discretionary {-}{}{}\_\discretionary {-}{}{}solver/matforceactive.\discretionary {-}{}{}cpp}, 
+		\hyperpage{311}
+  \item {bin/ofreq/motion\discretionary {-}{}{}\_\discretionary {-}{}{}solver/matforceactive.\discretionary {-}{}{}h}, 
+		\hyperpage{311}
+  \item {bin/ofreq/motion\discretionary {-}{}{}\_\discretionary {-}{}{}solver/matforcecross.\discretionary {-}{}{}cpp}, 
+		\hyperpage{312}
+  \item {bin/ofreq/motion\discretionary {-}{}{}\_\discretionary {-}{}{}solver/matforcecross.\discretionary {-}{}{}h}, 
+		\hyperpage{313}
+  \item {bin/ofreq/motion\discretionary {-}{}{}\_\discretionary {-}{}{}solver/matforcereact.\discretionary {-}{}{}cpp}, 
+		\hyperpage{314}
+  \item {bin/ofreq/motion\discretionary {-}{}{}\_\discretionary {-}{}{}solver/matforcereact.\discretionary {-}{}{}h}, 
+		\hyperpage{314}
+  \item {bin/ofreq/motion\discretionary {-}{}{}\_\discretionary {-}{}{}solver/motionsolver.\discretionary {-}{}{}cpp}, 
+		\hyperpage{315}
+  \item {bin/ofreq/motion\discretionary {-}{}{}\_\discretionary {-}{}{}solver/motionsolver.\discretionary {-}{}{}h}, 
+		\hyperpage{315}
+  \item {bin/ofreq/ofreq.\discretionary {-}{}{}cpp}, \hyperpage{316}
+  \item {bin/ofreq/wave\discretionary {-}{}{}\_\discretionary {-}{}{}calcs/seaenviroment.\discretionary {-}{}{}h}, 
+		\hyperpage{320}
+  \item {Body}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Body}, 
+		\hyperpage{41}
+  \item {body}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Equationof\discretionary {-}{}{}Motion}, 
+		\hyperpage{104}
+  \item {build\discretionary {-}{}{}Mat\discretionary {-}{}{}Body}
+    \subitem {ofreq.\discretionary {-}{}{}cpp}, \hyperpage{317}
+
+  \indexspace
+
+  \item {calc\discretionary {-}{}{}Global\discretionary {-}{}{}Acceleration}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Outputs\discretionary {-}{}{}Body}, 
+		\hyperpage{231}
+  \item {calc\discretionary {-}{}{}Global\discretionary {-}{}{}Motion}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Outputs\discretionary {-}{}{}Body}, 
+		\hyperpage{231}
+  \item {calc\discretionary {-}{}{}Global\discretionary {-}{}{}Solution}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Outputs\discretionary {-}{}{}Body}, 
+		\hyperpage{232}
+  \item {calc\discretionary {-}{}{}Global\discretionary {-}{}{}Velocity}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Outputs\discretionary {-}{}{}Body}, 
+		\hyperpage{232}
+  \item {calc\discretionary {-}{}{}Output}
+    \subitem {ofreq.\discretionary {-}{}{}cpp}, \hyperpage{317}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Global\discretionary {-}{}{}Solution}, 
+		\hyperpage{151}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Output\discretionary {-}{}{}Derived}, 
+		\hyperpage{220}
+  \item {calculate\discretionary {-}{}{}Outputs}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Motion\discretionary {-}{}{}Solver}, 
+		\hyperpage{204}
+  \item {clear\discretionary {-}{}{}Files}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}File\discretionary {-}{}{}Writer}, 
+		\hyperpage{128}
+  \item {clear\discretionary {-}{}{}Force}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}System}, 
+		\hyperpage{261}
+  \item {Clear\discretionary {-}{}{}Result}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Outputs\discretionary {-}{}{}Body}, 
+		\hyperpage{233}
+  \item {Coefficient\discretionary {-}{}{}Only}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Motion\discretionary {-}{}{}Model}, 
+		\hyperpage{182}
+  \item {complex\discretionary {-}{}{}Double}
+    \subitem {osea\discretionary {-}{}{}::ofreq}, \hyperpage{35}
+  \item {convert\discretionary {-}{}{}Complex}
+    \subitem {osea\discretionary {-}{}{}::\discretionary {-}{}{}Dictionary}, 
+		\hyperpage{70}
+  \item {Copy}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Body}, 
+		\hyperpage{42}
+  \item {create\discretionary {-}{}{}Dir}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}File\discretionary {-}{}{}Writer}, 
+		\hyperpage{128}
+  \item {curbody}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Equationof\discretionary {-}{}{}Motion}, 
+		\hyperpage{105}
+  \item {current\discretionary {-}{}{}Derivative}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Force\discretionary {-}{}{}React}, 
+		\hyperpage{145}
+  \item {current\discretionary {-}{}{}Equation}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Force\discretionary {-}{}{}React}, 
+		\hyperpage{145}
+  \item {cx\discretionary {-}{}{}\_\discretionary {-}{}{}vector}
+    \subitem {osea\discretionary {-}{}{}::ofreq}, \hyperpage{35}
+
+  \indexspace
+
+  \item {Ddt}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Equationof\discretionary {-}{}{}Motion}, 
+		\hyperpage{105}
+  \item {define\discretionary {-}{}{}Class}
+    \subitem {osea\discretionary {-}{}{}::\discretionary {-}{}{}Dictionary}, 
+		\hyperpage{70}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::dict\discretionary {-}{}{}Bodies}, 
+		\hyperpage{63}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::dict\discretionary {-}{}{}Control}, 
+		\hyperpage{65}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::dict\discretionary {-}{}{}Forces}, 
+		\hyperpage{67}
+  \item {Define\discretionary {-}{}{}Equations}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Model6\discretionary {-}{}{}D\discretionary {-}{}{}O\discretionary {-}{}{}F}, 
+		\hyperpage{176}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Motion\discretionary {-}{}{}Model}, 
+		\hyperpage{182}
+  \item {define\discretionary {-}{}{}Key}
+    \subitem {osea\discretionary {-}{}{}::\discretionary {-}{}{}Dictionary}, 
+		\hyperpage{71}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::dict\discretionary {-}{}{}Bodies}, 
+		\hyperpage{63}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::dict\discretionary {-}{}{}Control}, 
+		\hyperpage{65}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::dict\discretionary {-}{}{}Forces}, 
+		\hyperpage{67}
+  \item {Derivative}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Derivative}, 
+		\hyperpage{60}
+  \item {dict\discretionary {-}{}{}Bodies}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::dict\discretionary {-}{}{}Bodies}, 
+		\hyperpage{63}
+  \item {dict\discretionary {-}{}{}Control}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::dict\discretionary {-}{}{}Control}, 
+		\hyperpage{65}
+  \item {dict\discretionary {-}{}{}Forces}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::dict\discretionary {-}{}{}Forces}, 
+		\hyperpage{67}
+  \item {Dictionary}
+    \subitem {osea\discretionary {-}{}{}::\discretionary {-}{}{}Dictionary}, 
+		\hyperpage{70}
+
+  \indexspace
+
+  \item {E\discretionary {-}{}{}T\discretionary {-}{}{}C\discretionary {-}{}{}F\discretionary {-}{}{}O\discretionary {-}{}{}L\discretionary {-}{}{}D\discretionary {-}{}{}E\discretionary {-}{}{}R}
+    \subitem {ofreq.\discretionary {-}{}{}cpp}, \hyperpage{319}
+  \item {E\discretionary {-}{}{}X\discretionary {-}{}{}E\discretionary {-}{}{}C\discretionary {-}{}{}F\discretionary {-}{}{}O\discretionary {-}{}{}L\discretionary {-}{}{}D\discretionary {-}{}{}E\discretionary {-}{}{}R}
+    \subitem {ofreq.\discretionary {-}{}{}cpp}, \hyperpage{319}
+  \item {E\discretionary {-}{}{}X\discretionary {-}{}{}E\discretionary {-}{}{}C\discretionary {-}{}{}N\discretionary {-}{}{}A\discretionary {-}{}{}M\discretionary {-}{}{}E}
+    \subitem {ofreq.\discretionary {-}{}{}cpp}, \hyperpage{319}
+  \item {Eqn\discretionary {-}{}{}Rotation}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Eqn\discretionary {-}{}{}Rotation}, 
+		\hyperpage{76, 77}
+  \item {Eqn\discretionary {-}{}{}Translation}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Eqn\discretionary {-}{}{}Translation}, 
+		\hyperpage{87, 88}
+  \item {Equation}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Equation}, 
+		\hyperpage{96}
+  \item {Equationof\discretionary {-}{}{}Motion}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Equationof\discretionary {-}{}{}Motion}, 
+		\hyperpage{103, 104}
+  \item {Err\discretionary {-}{}{}Log}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::o\discretionary {-}{}{}Freq\discretionary {-}{}{}Core}, 
+		\hyperpage{216}
+  \item {Evaluate}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Equationof\discretionary {-}{}{}Motion}, 
+		\hyperpage{105}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Motion\discretionary {-}{}{}Model}, 
+		\hyperpage{182}
+
+  \indexspace
+
+  \item {F\discretionary {-}{}{}O\discretionary {-}{}{}R\discretionary {-}{}{}C\discretionary {-}{}{}E\discretionary {-}{}{}A\discretionary {-}{}{}C\discretionary {-}{}{}T\discretionary {-}{}{}I\discretionary {-}{}{}V\discretionary {-}{}{}E\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}H}
+    \subitem {forceactive.\discretionary {-}{}{}h}, \hyperpage{296}
+  \item {file\discretionary {-}{}{}Exists}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}File\discretionary {-}{}{}Writer}, 
+		\hyperpage{129}
+  \item {File\discretionary {-}{}{}Reader}
+    \subitem {osea\discretionary {-}{}{}::\discretionary {-}{}{}File\discretionary {-}{}{}Reader}, 
+		\hyperpage{122}
+  \item {File\discretionary {-}{}{}Writer}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}File\discretionary {-}{}{}Writer}, 
+		\hyperpage{128}
+  \item {Force}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Force}, 
+		\hyperpage{134}
+  \item {Force\discretionary {-}{}{}Active}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Force\discretionary {-}{}{}Active}, 
+		\hyperpage{137}
+  \item {Force\discretionary {-}{}{}Active\discretionary {-}{}{}\_\discretionary {-}{}{}hydro}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Equationof\discretionary {-}{}{}Motion}, 
+		\hyperpage{105}
+  \item {Force\discretionary {-}{}{}Active\discretionary {-}{}{}\_\discretionary {-}{}{}user}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Equationof\discretionary {-}{}{}Motion}, 
+		\hyperpage{106}
+  \item {Force\discretionary {-}{}{}Cross}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Force\discretionary {-}{}{}Cross}, 
+		\hyperpage{140}
+  \item {Force\discretionary {-}{}{}Cross\discretionary {-}{}{}\_\discretionary {-}{}{}hydro}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Equationof\discretionary {-}{}{}Motion}, 
+		\hyperpage{106}
+  \item {Force\discretionary {-}{}{}Cross\discretionary {-}{}{}\_\discretionary {-}{}{}user}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Equationof\discretionary {-}{}{}Motion}, 
+		\hyperpage{106}
+  \item {Force\discretionary {-}{}{}Mass}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Equationof\discretionary {-}{}{}Motion}, 
+		\hyperpage{106}
+  \item {force\discretionary {-}{}{}Name}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Force}, 
+		\hyperpage{135}
+  \item {Force\discretionary {-}{}{}React}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Force\discretionary {-}{}{}React}, 
+		\hyperpage{143}
+  \item {Force\discretionary {-}{}{}React\discretionary {-}{}{}\_\discretionary {-}{}{}hydro}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Equationof\discretionary {-}{}{}Motion}, 
+		\hyperpage{107}
+  \item {Force\discretionary {-}{}{}React\discretionary {-}{}{}\_\discretionary {-}{}{}user}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Equationof\discretionary {-}{}{}Motion}, 
+		\hyperpage{107}
+  \item {forceactive.\discretionary {-}{}{}h}
+    \subitem {F\discretionary {-}{}{}O\discretionary {-}{}{}R\discretionary {-}{}{}C\discretionary {-}{}{}E\discretionary {-}{}{}A\discretionary {-}{}{}C\discretionary {-}{}{}T\discretionary {-}{}{}I\discretionary {-}{}{}V\discretionary {-}{}{}E\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}H}, 
+		\hyperpage{296}
+  \item {Func1}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Eqn\discretionary {-}{}{}Rotation}, 
+		\hyperpage{77}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Eqn\discretionary {-}{}{}Translation}, 
+		\hyperpage{88}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Equationof\discretionary {-}{}{}Motion}, 
+		\hyperpage{107}
+  \item {Func10}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Eqn\discretionary {-}{}{}Rotation}, 
+		\hyperpage{78}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Eqn\discretionary {-}{}{}Translation}, 
+		\hyperpage{89}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Equationof\discretionary {-}{}{}Motion}, 
+		\hyperpage{107}
+  \item {Func11}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Eqn\discretionary {-}{}{}Rotation}, 
+		\hyperpage{78}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Eqn\discretionary {-}{}{}Translation}, 
+		\hyperpage{89}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Equationof\discretionary {-}{}{}Motion}, 
+		\hyperpage{108}
+  \item {Func12}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Eqn\discretionary {-}{}{}Rotation}, 
+		\hyperpage{78}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Eqn\discretionary {-}{}{}Translation}, 
+		\hyperpage{89}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Equationof\discretionary {-}{}{}Motion}, 
+		\hyperpage{108}
+  \item {Func13}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Eqn\discretionary {-}{}{}Rotation}, 
+		\hyperpage{78}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Eqn\discretionary {-}{}{}Translation}, 
+		\hyperpage{89}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Equationof\discretionary {-}{}{}Motion}, 
+		\hyperpage{108}
+  \item {Func14}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Eqn\discretionary {-}{}{}Rotation}, 
+		\hyperpage{78}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Eqn\discretionary {-}{}{}Translation}, 
+		\hyperpage{89}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Equationof\discretionary {-}{}{}Motion}, 
+		\hyperpage{108}
+  \item {Func15}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Eqn\discretionary {-}{}{}Rotation}, 
+		\hyperpage{78}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Eqn\discretionary {-}{}{}Translation}, 
+		\hyperpage{89}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Equationof\discretionary {-}{}{}Motion}, 
+		\hyperpage{108}
+  \item {Func16}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Eqn\discretionary {-}{}{}Rotation}, 
+		\hyperpage{78}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Eqn\discretionary {-}{}{}Translation}, 
+		\hyperpage{89}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Equationof\discretionary {-}{}{}Motion}, 
+		\hyperpage{108}
+  \item {Func17}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Eqn\discretionary {-}{}{}Rotation}, 
+		\hyperpage{78}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Eqn\discretionary {-}{}{}Translation}, 
+		\hyperpage{89}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Equationof\discretionary {-}{}{}Motion}, 
+		\hyperpage{108}
+  \item {Func18}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Eqn\discretionary {-}{}{}Rotation}, 
+		\hyperpage{78}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Eqn\discretionary {-}{}{}Translation}, 
+		\hyperpage{89}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Equationof\discretionary {-}{}{}Motion}, 
+		\hyperpage{108}
+  \item {Func19}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Eqn\discretionary {-}{}{}Rotation}, 
+		\hyperpage{79}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Eqn\discretionary {-}{}{}Translation}, 
+		\hyperpage{90}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Equationof\discretionary {-}{}{}Motion}, 
+		\hyperpage{108}
+  \item {Func2}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Eqn\discretionary {-}{}{}Rotation}, 
+		\hyperpage{79}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Eqn\discretionary {-}{}{}Translation}, 
+		\hyperpage{90}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Equationof\discretionary {-}{}{}Motion}, 
+		\hyperpage{109}
+  \item {Func20}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Eqn\discretionary {-}{}{}Rotation}, 
+		\hyperpage{79}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Eqn\discretionary {-}{}{}Translation}, 
+		\hyperpage{90}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Equationof\discretionary {-}{}{}Motion}, 
+		\hyperpage{109}
+  \item {Func21}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Eqn\discretionary {-}{}{}Rotation}, 
+		\hyperpage{79}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Eqn\discretionary {-}{}{}Translation}, 
+		\hyperpage{90}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Equationof\discretionary {-}{}{}Motion}, 
+		\hyperpage{109}
+  \item {Func22}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Eqn\discretionary {-}{}{}Rotation}, 
+		\hyperpage{79}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Eqn\discretionary {-}{}{}Translation}, 
+		\hyperpage{90}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Equationof\discretionary {-}{}{}Motion}, 
+		\hyperpage{109}
+  \item {Func23}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Eqn\discretionary {-}{}{}Rotation}, 
+		\hyperpage{79}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Eqn\discretionary {-}{}{}Translation}, 
+		\hyperpage{90}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Equationof\discretionary {-}{}{}Motion}, 
+		\hyperpage{109}
+  \item {Func24}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Eqn\discretionary {-}{}{}Rotation}, 
+		\hyperpage{79}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Eqn\discretionary {-}{}{}Translation}, 
+		\hyperpage{90}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Equationof\discretionary {-}{}{}Motion}, 
+		\hyperpage{109}
+  \item {Func25}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Eqn\discretionary {-}{}{}Rotation}, 
+		\hyperpage{79}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Eqn\discretionary {-}{}{}Translation}, 
+		\hyperpage{90}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Equationof\discretionary {-}{}{}Motion}, 
+		\hyperpage{109}
+  \item {Func26}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Eqn\discretionary {-}{}{}Rotation}, 
+		\hyperpage{79}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Eqn\discretionary {-}{}{}Translation}, 
+		\hyperpage{90}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Equationof\discretionary {-}{}{}Motion}, 
+		\hyperpage{109}
+  \item {Func27}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Eqn\discretionary {-}{}{}Rotation}, 
+		\hyperpage{80}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Eqn\discretionary {-}{}{}Translation}, 
+		\hyperpage{91}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Equationof\discretionary {-}{}{}Motion}, 
+		\hyperpage{109}
+  \item {Func28}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Eqn\discretionary {-}{}{}Rotation}, 
+		\hyperpage{80}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Eqn\discretionary {-}{}{}Translation}, 
+		\hyperpage{91}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Equationof\discretionary {-}{}{}Motion}, 
+		\hyperpage{110}
+  \item {Func29}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Eqn\discretionary {-}{}{}Rotation}, 
+		\hyperpage{80}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Eqn\discretionary {-}{}{}Translation}, 
+		\hyperpage{91}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Equationof\discretionary {-}{}{}Motion}, 
+		\hyperpage{110}
+  \item {Func3}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Eqn\discretionary {-}{}{}Rotation}, 
+		\hyperpage{80}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Eqn\discretionary {-}{}{}Translation}, 
+		\hyperpage{91}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Equationof\discretionary {-}{}{}Motion}, 
+		\hyperpage{110}
+  \item {Func30}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Eqn\discretionary {-}{}{}Rotation}, 
+		\hyperpage{80}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Eqn\discretionary {-}{}{}Translation}, 
+		\hyperpage{91}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Equationof\discretionary {-}{}{}Motion}, 
+		\hyperpage{110}
+  \item {Func31}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Eqn\discretionary {-}{}{}Rotation}, 
+		\hyperpage{80}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Eqn\discretionary {-}{}{}Translation}, 
+		\hyperpage{91}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Equationof\discretionary {-}{}{}Motion}, 
+		\hyperpage{110}
+  \item {Func32}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Eqn\discretionary {-}{}{}Rotation}, 
+		\hyperpage{80}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Eqn\discretionary {-}{}{}Translation}, 
+		\hyperpage{91}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Equationof\discretionary {-}{}{}Motion}, 
+		\hyperpage{110}
+  \item {Func33}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Eqn\discretionary {-}{}{}Rotation}, 
+		\hyperpage{80}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Eqn\discretionary {-}{}{}Translation}, 
+		\hyperpage{91}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Equationof\discretionary {-}{}{}Motion}, 
+		\hyperpage{110}
+  \item {Func34}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Eqn\discretionary {-}{}{}Rotation}, 
+		\hyperpage{80}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Eqn\discretionary {-}{}{}Translation}, 
+		\hyperpage{91}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Equationof\discretionary {-}{}{}Motion}, 
+		\hyperpage{110}
+  \item {Func35}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Eqn\discretionary {-}{}{}Rotation}, 
+		\hyperpage{81}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Eqn\discretionary {-}{}{}Translation}, 
+		\hyperpage{92}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Equationof\discretionary {-}{}{}Motion}, 
+		\hyperpage{110}
+  \item {Func36}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Eqn\discretionary {-}{}{}Rotation}, 
+		\hyperpage{81}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Eqn\discretionary {-}{}{}Translation}, 
+		\hyperpage{92}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Equationof\discretionary {-}{}{}Motion}, 
+		\hyperpage{111}
+  \item {Func37}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Eqn\discretionary {-}{}{}Rotation}, 
+		\hyperpage{81}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Eqn\discretionary {-}{}{}Translation}, 
+		\hyperpage{92}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Equationof\discretionary {-}{}{}Motion}, 
+		\hyperpage{111}
+  \item {Func38}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Eqn\discretionary {-}{}{}Rotation}, 
+		\hyperpage{81}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Eqn\discretionary {-}{}{}Translation}, 
+		\hyperpage{92}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Equationof\discretionary {-}{}{}Motion}, 
+		\hyperpage{111}
+  \item {Func39}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Eqn\discretionary {-}{}{}Rotation}, 
+		\hyperpage{81}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Eqn\discretionary {-}{}{}Translation}, 
+		\hyperpage{92}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Equationof\discretionary {-}{}{}Motion}, 
+		\hyperpage{111}
+  \item {Func4}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Eqn\discretionary {-}{}{}Rotation}, 
+		\hyperpage{81}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Eqn\discretionary {-}{}{}Translation}, 
+		\hyperpage{92}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Equationof\discretionary {-}{}{}Motion}, 
+		\hyperpage{111}
+  \item {Func40}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Eqn\discretionary {-}{}{}Rotation}, 
+		\hyperpage{81}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Eqn\discretionary {-}{}{}Translation}, 
+		\hyperpage{92}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Equationof\discretionary {-}{}{}Motion}, 
+		\hyperpage{111}
+  \item {Func41}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Eqn\discretionary {-}{}{}Rotation}, 
+		\hyperpage{81}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Eqn\discretionary {-}{}{}Translation}, 
+		\hyperpage{92}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Equationof\discretionary {-}{}{}Motion}, 
+		\hyperpage{111}
+  \item {Func42}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Eqn\discretionary {-}{}{}Rotation}, 
+		\hyperpage{81}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Eqn\discretionary {-}{}{}Translation}, 
+		\hyperpage{92}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Equationof\discretionary {-}{}{}Motion}, 
+		\hyperpage{111}
+  \item {Func43}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Eqn\discretionary {-}{}{}Rotation}, 
+		\hyperpage{82}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Eqn\discretionary {-}{}{}Translation}, 
+		\hyperpage{93}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Equationof\discretionary {-}{}{}Motion}, 
+		\hyperpage{111}
+  \item {Func44}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Eqn\discretionary {-}{}{}Rotation}, 
+		\hyperpage{82}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Eqn\discretionary {-}{}{}Translation}, 
+		\hyperpage{93}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Equationof\discretionary {-}{}{}Motion}, 
+		\hyperpage{112}
+  \item {Func45}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Eqn\discretionary {-}{}{}Rotation}, 
+		\hyperpage{82}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Eqn\discretionary {-}{}{}Translation}, 
+		\hyperpage{93}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Equationof\discretionary {-}{}{}Motion}, 
+		\hyperpage{112}
+  \item {Func46}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Eqn\discretionary {-}{}{}Rotation}, 
+		\hyperpage{82}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Eqn\discretionary {-}{}{}Translation}, 
+		\hyperpage{93}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Equationof\discretionary {-}{}{}Motion}, 
+		\hyperpage{112}
+  \item {Func47}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Eqn\discretionary {-}{}{}Rotation}, 
+		\hyperpage{82}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Eqn\discretionary {-}{}{}Translation}, 
+		\hyperpage{93}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Equationof\discretionary {-}{}{}Motion}, 
+		\hyperpage{112}
+  \item {Func48}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Eqn\discretionary {-}{}{}Rotation}, 
+		\hyperpage{82}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Eqn\discretionary {-}{}{}Translation}, 
+		\hyperpage{93}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Equationof\discretionary {-}{}{}Motion}, 
+		\hyperpage{112}
+  \item {Func49}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Eqn\discretionary {-}{}{}Rotation}, 
+		\hyperpage{82}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Eqn\discretionary {-}{}{}Translation}, 
+		\hyperpage{93}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Equationof\discretionary {-}{}{}Motion}, 
+		\hyperpage{112}
+  \item {Func5}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Eqn\discretionary {-}{}{}Rotation}, 
+		\hyperpage{82}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Eqn\discretionary {-}{}{}Translation}, 
+		\hyperpage{93}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Equationof\discretionary {-}{}{}Motion}, 
+		\hyperpage{112}
+  \item {Func50}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Eqn\discretionary {-}{}{}Rotation}, 
+		\hyperpage{82}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Eqn\discretionary {-}{}{}Translation}, 
+		\hyperpage{93}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Equationof\discretionary {-}{}{}Motion}, 
+		\hyperpage{112}
+  \item {Func6}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Eqn\discretionary {-}{}{}Rotation}, 
+		\hyperpage{83}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Eqn\discretionary {-}{}{}Translation}, 
+		\hyperpage{94}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Equationof\discretionary {-}{}{}Motion}, 
+		\hyperpage{112}
+  \item {Func7}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Eqn\discretionary {-}{}{}Rotation}, 
+		\hyperpage{83}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Eqn\discretionary {-}{}{}Translation}, 
+		\hyperpage{94}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Equationof\discretionary {-}{}{}Motion}, 
+		\hyperpage{113}
+  \item {Func8}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Eqn\discretionary {-}{}{}Rotation}, 
+		\hyperpage{83}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Eqn\discretionary {-}{}{}Translation}, 
+		\hyperpage{94}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Equationof\discretionary {-}{}{}Motion}, 
+		\hyperpage{113}
+  \item {Func9}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Eqn\discretionary {-}{}{}Rotation}, 
+		\hyperpage{83}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Eqn\discretionary {-}{}{}Translation}, 
+		\hyperpage{94}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Equationof\discretionary {-}{}{}Motion}, 
+		\hyperpage{113}
+
+  \indexspace
+
+  \item {get\discretionary {-}{}{}Active\discretionary {-}{}{}Only}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Motion\discretionary {-}{}{}Model}, 
+		\hyperpage{183}
+  \item {get\discretionary {-}{}{}Body}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Motion\discretionary {-}{}{}Model}, 
+		\hyperpage{183}
+  \item {get\discretionary {-}{}{}Body\discretionary {-}{}{}Name}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Body}, 
+		\hyperpage{42}
+  \item {get\discretionary {-}{}{}Cen}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Body}, 
+		\hyperpage{42}
+  \item {get\discretionary {-}{}{}Cen\discretionary {-}{}{}X}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Body}, 
+		\hyperpage{42}
+  \item {get\discretionary {-}{}{}Cen\discretionary {-}{}{}Y}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Body}, 
+		\hyperpage{42}
+  \item {get\discretionary {-}{}{}Cen\discretionary {-}{}{}Z}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Body}, 
+		\hyperpage{43}
+  \item {get\discretionary {-}{}{}Class\discretionary {-}{}{}Name}
+    \subitem {osea\discretionary {-}{}{}::\discretionary {-}{}{}Object\discretionary {-}{}{}Group}, 
+		\hyperpage{210}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Output\discretionary {-}{}{}Derived}, 
+		\hyperpage{220}
+  \item {get\discretionary {-}{}{}Coefficient}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Equation}, 
+		\hyperpage{97}
+  \item {get\discretionary {-}{}{}Coefficient\discretionary {-}{}{}List\discretionary {-}{}{}Size}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Equation}, 
+		\hyperpage{97}
+  \item {get\discretionary {-}{}{}Cur\discretionary {-}{}{}Body\discretionary {-}{}{}Index}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Output\discretionary {-}{}{}Derived}, 
+		\hyperpage{221}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Outputs\discretionary {-}{}{}Body}, 
+		\hyperpage{233}
+  \item {get\discretionary {-}{}{}Cur\discretionary {-}{}{}Freq}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}System}, 
+		\hyperpage{261}
+  \item {get\discretionary {-}{}{}Cur\discretionary {-}{}{}Freq\discretionary {-}{}{}Ind}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}System}, 
+		\hyperpage{261}
+  \item {get\discretionary {-}{}{}Cur\discretionary {-}{}{}Output}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Outputs\discretionary {-}{}{}Body}, 
+		\hyperpage{233}
+  \item {get\discretionary {-}{}{}Cur\discretionary {-}{}{}Wave\discretionary {-}{}{}Dir}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}File\discretionary {-}{}{}Writer}, 
+		\hyperpage{129}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Output\discretionary {-}{}{}Derived}, 
+		\hyperpage{221}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Outputs\discretionary {-}{}{}Body}, 
+		\hyperpage{233}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}System}, 
+		\hyperpage{262}
+  \item {get\discretionary {-}{}{}Cur\discretionary {-}{}{}Wave\discretionary {-}{}{}Dir\discretionary {-}{}{}Ind}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}System}, 
+		\hyperpage{262}
+  \item {get\discretionary {-}{}{}Cur\discretionary {-}{}{}Wave\discretionary {-}{}{}Ind}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}File\discretionary {-}{}{}Writer}, 
+		\hyperpage{129}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Output\discretionary {-}{}{}Derived}, 
+		\hyperpage{221}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Outputs\discretionary {-}{}{}Body}, 
+		\hyperpage{233}
+  \item {get\discretionary {-}{}{}Data\discretionary {-}{}{}Index}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Equation}, 
+		\hyperpage{97}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Equationof\discretionary {-}{}{}Motion}, 
+		\hyperpage{113}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Motion\discretionary {-}{}{}Model}, 
+		\hyperpage{183}
+  \item {get\discretionary {-}{}{}Derivative}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Force\discretionary {-}{}{}React}, 
+		\hyperpage{144}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Global\discretionary {-}{}{}Solution}, 
+		\hyperpage{152}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::mat\discretionary {-}{}{}Force\discretionary {-}{}{}React}, 
+		\hyperpage{171}
+  \item {get\discretionary {-}{}{}Description}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Motion\discretionary {-}{}{}Model}, 
+		\hyperpage{183}
+  \item {get\discretionary {-}{}{}Equation}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Force\discretionary {-}{}{}Active}, 
+		\hyperpage{138}
+  \item {get\discretionary {-}{}{}Equation\discretionary {-}{}{}Count}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Body}, 
+		\hyperpage{43}
+  \item {get\discretionary {-}{}{}Equation\discretionary {-}{}{}List\discretionary {-}{}{}Size}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Derivative}, 
+		\hyperpage{60}
+  \item {get\discretionary {-}{}{}Force\discretionary {-}{}{}Name}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Force}, 
+		\hyperpage{135}
+  \item {get\discretionary {-}{}{}Force\discretionary {-}{}{}React\discretionary {-}{}{}\_\discretionary {-}{}{}mass}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::mat\discretionary {-}{}{}Body}, 
+		\hyperpage{157}
+  \item {get\discretionary {-}{}{}Format}
+    \subitem {osea\discretionary {-}{}{}::\discretionary {-}{}{}Object\discretionary {-}{}{}Group}, 
+		\hyperpage{211}
+  \item {get\discretionary {-}{}{}Freq}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Motion\discretionary {-}{}{}Model}, 
+		\hyperpage{184}
+  \item {get\discretionary {-}{}{}Heading}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Body}, 
+		\hyperpage{43}
+  \item {get\discretionary {-}{}{}Hydro\discretionary {-}{}{}Bod\discretionary {-}{}{}Name}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Body}, 
+		\hyperpage{43}
+  \item {get\discretionary {-}{}{}Id}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::mat\discretionary {-}{}{}Body}, 
+		\hyperpage{157}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::mat\discretionary {-}{}{}Force\discretionary {-}{}{}Active}, 
+		\hyperpage{163}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::mat\discretionary {-}{}{}Force\discretionary {-}{}{}React}, 
+		\hyperpage{171}
+  \item {get\discretionary {-}{}{}Info\discretionary {-}{}{}Block}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}File\discretionary {-}{}{}Writer}, 
+		\hyperpage{129}
+  \item {get\discretionary {-}{}{}Key}
+    \subitem {osea\discretionary {-}{}{}::\discretionary {-}{}{}Object\discretionary {-}{}{}Group}, 
+		\hyperpage{211}
+  \item {get\discretionary {-}{}{}Linked\discretionary {-}{}{}Body}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::mat\discretionary {-}{}{}Force\discretionary {-}{}{}Cross}, 
+		\hyperpage{166}
+  \item {get\discretionary {-}{}{}Linked\discretionary {-}{}{}Id}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::mat\discretionary {-}{}{}Force\discretionary {-}{}{}Cross}, 
+		\hyperpage{166}
+  \item {get\discretionary {-}{}{}Mass}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Body}, 
+		\hyperpage{43}
+  \item {get\discretionary {-}{}{}Mass\discretionary {-}{}{}Matrix}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Body}, 
+		\hyperpage{44}
+  \item {get\discretionary {-}{}{}Mat\discretionary {-}{}{}Dims}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::mat\discretionary {-}{}{}Force\discretionary {-}{}{}Cross}, 
+		\hyperpage{167}
+  \item {get\discretionary {-}{}{}Mat\discretionary {-}{}{}Force\discretionary {-}{}{}Active\discretionary {-}{}{}\_\discretionary {-}{}{}hydro}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Motion\discretionary {-}{}{}Model}, 
+		\hyperpage{184}
+  \item {get\discretionary {-}{}{}Mat\discretionary {-}{}{}Force\discretionary {-}{}{}Active\discretionary {-}{}{}\_\discretionary {-}{}{}user}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Motion\discretionary {-}{}{}Model}, 
+		\hyperpage{184}
+  \item {get\discretionary {-}{}{}Mat\discretionary {-}{}{}Force\discretionary {-}{}{}Cross\discretionary {-}{}{}\_\discretionary {-}{}{}hydro}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Motion\discretionary {-}{}{}Model}, 
+		\hyperpage{184}
+  \item {get\discretionary {-}{}{}Mat\discretionary {-}{}{}Force\discretionary {-}{}{}Cross\discretionary {-}{}{}\_\discretionary {-}{}{}user}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Motion\discretionary {-}{}{}Model}, 
+		\hyperpage{185}
+  \item {get\discretionary {-}{}{}Mat\discretionary {-}{}{}Force\discretionary {-}{}{}Mass}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Motion\discretionary {-}{}{}Model}, 
+		\hyperpage{185}
+  \item {get\discretionary {-}{}{}Mat\discretionary {-}{}{}Force\discretionary {-}{}{}React\discretionary {-}{}{}\_\discretionary {-}{}{}hydro}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Motion\discretionary {-}{}{}Model}, 
+		\hyperpage{185}
+  \item {get\discretionary {-}{}{}Mat\discretionary {-}{}{}Force\discretionary {-}{}{}React\discretionary {-}{}{}\_\discretionary {-}{}{}user}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Motion\discretionary {-}{}{}Model}, 
+		\hyperpage{186}
+  \item {get\discretionary {-}{}{}Mat\discretionary {-}{}{}Size}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::mat\discretionary {-}{}{}Force\discretionary {-}{}{}Active}, 
+		\hyperpage{163}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::mat\discretionary {-}{}{}Force\discretionary {-}{}{}React}, 
+		\hyperpage{171}
+  \item {get\discretionary {-}{}{}Max\discretionary {-}{}{}Ord}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Force\discretionary {-}{}{}React}, 
+		\hyperpage{144}
+  \item {get\discretionary {-}{}{}Max\discretionary {-}{}{}Order}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::mat\discretionary {-}{}{}Force\discretionary {-}{}{}React}, 
+		\hyperpage{171}
+  \item {get\discretionary {-}{}{}Model\discretionary {-}{}{}Id}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::mat\discretionary {-}{}{}Body}, 
+		\hyperpage{157}
+  \item {get\discretionary {-}{}{}Mom\discretionary {-}{}{}Ixx}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Body}, 
+		\hyperpage{44}
+  \item {get\discretionary {-}{}{}Mom\discretionary {-}{}{}Ixy}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Body}, 
+		\hyperpage{44}
+  \item {get\discretionary {-}{}{}Mom\discretionary {-}{}{}Ixz}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Body}, 
+		\hyperpage{44}
+  \item {get\discretionary {-}{}{}Mom\discretionary {-}{}{}Iyy}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Body}, 
+		\hyperpage{44}
+  \item {get\discretionary {-}{}{}Mom\discretionary {-}{}{}Iyz}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Body}, 
+		\hyperpage{44}
+  \item {get\discretionary {-}{}{}Mom\discretionary {-}{}{}Izz}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Body}, 
+		\hyperpage{45}
+  \item {get\discretionary {-}{}{}Motion\discretionary {-}{}{}Model}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Body}, 
+		\hyperpage{45}
+  \item {get\discretionary {-}{}{}Name}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Motion\discretionary {-}{}{}Model}, 
+		\hyperpage{186}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Output\discretionary {-}{}{}Derived}, 
+		\hyperpage{221}
+  \item {get\discretionary {-}{}{}Object}
+    \subitem {osea\discretionary {-}{}{}::\discretionary {-}{}{}Parser}, 
+		\hyperpage{243}
+  \item {get\discretionary {-}{}{}Outputs\discretionary {-}{}{}Body}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}File\discretionary {-}{}{}Writer}, 
+		\hyperpage{130}
+  \item {get\discretionary {-}{}{}Path}
+    \subitem {ofreq.\discretionary {-}{}{}cpp}, \hyperpage{317, 318}
+  \item {get\discretionary {-}{}{}Posn}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Body}, 
+		\hyperpage{45}
+  \item {get\discretionary {-}{}{}Posn\discretionary {-}{}{}X}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Body}, 
+		\hyperpage{45}
+  \item {get\discretionary {-}{}{}Posn\discretionary {-}{}{}Y}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Body}, 
+		\hyperpage{45}
+  \item {get\discretionary {-}{}{}Posn\discretionary {-}{}{}Z}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Body}, 
+		\hyperpage{46}
+  \item {get\discretionary {-}{}{}Soln\discretionary {-}{}{}Mat}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Solution}, 
+		\hyperpage{250}
+  \item {get\discretionary {-}{}{}Solution}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Body}, 
+		\hyperpage{46}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Global\discretionary {-}{}{}Solution}, 
+		\hyperpage{152}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Solution\discretionary {-}{}{}Set}, 
+		\hyperpage{254}
+  \item {get\discretionary {-}{}{}Sub\discretionary {-}{}{}Object}
+    \subitem {osea\discretionary {-}{}{}::\discretionary {-}{}{}Parser}, 
+		\hyperpage{243}
+  \item {get\discretionary {-}{}{}System\discretionary {-}{}{}Index}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Force}, 
+		\hyperpage{135}
+  \item {get\discretionary {-}{}{}Val}
+    \subitem {osea\discretionary {-}{}{}::\discretionary {-}{}{}Object\discretionary {-}{}{}Group}, 
+		\hyperpage{211}
+  \item {get\discretionary {-}{}{}Version}
+    \subitem {osea\discretionary {-}{}{}::\discretionary {-}{}{}Object\discretionary {-}{}{}Group}, 
+		\hyperpage{211}
+  \item {get\discretionary {-}{}{}Wave\discretionary {-}{}{}Directions}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}System}, 
+		\hyperpage{262}
+  \item {get\discretionary {-}{}{}Wave\discretionary {-}{}{}Frequencies}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}System}, 
+		\hyperpage{262}
+  \item {Global\discretionary {-}{}{}Acceleration}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Global\discretionary {-}{}{}Acceleration}, 
+		\hyperpage{146, 147}
+  \item {Global\discretionary {-}{}{}Motion}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Global\discretionary {-}{}{}Motion}, 
+		\hyperpage{148}
+  \item {Global\discretionary {-}{}{}Solution}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Global\discretionary {-}{}{}Solution}, 
+		\hyperpage{151}
+  \item {Global\discretionary {-}{}{}Velocity}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Global\discretionary {-}{}{}Velocity}, 
+		\hyperpage{154}
+
+  \indexspace
+
+  \item {init\discretionary {-}{}{}Mass\discretionary {-}{}{}Mat}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Body}, 
+		\hyperpage{46}
+  \item {Initialize}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Outputs\discretionary {-}{}{}Body}, 
+		\hyperpage{234}
+
+  \indexspace
+
+  \item {Kronecker}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Equationof\discretionary {-}{}{}Motion}, 
+		\hyperpage{113}
+
+  \indexspace
+
+  \item {L\discretionary {-}{}{}I\discretionary {-}{}{}B\discretionary {-}{}{}F\discretionary {-}{}{}O\discretionary {-}{}{}L\discretionary {-}{}{}D\discretionary {-}{}{}E\discretionary {-}{}{}R}
+    \subitem {ofreq.\discretionary {-}{}{}cpp}, \hyperpage{319}
+  \item {link\discretionary {-}{}{}Bodies}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}System}, 
+		\hyperpage{262}
+  \item {list\discretionary {-}{}{}Body}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Motion\discretionary {-}{}{}Model}, 
+		\hyperpage{186, 187}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Output\discretionary {-}{}{}Derived}, 
+		\hyperpage{221, 222}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Outputs\discretionary {-}{}{}Body}, 
+		\hyperpage{234}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}System}, 
+		\hyperpage{263}
+  \item {list\discretionary {-}{}{}Coefficient}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Equation}, 
+		\hyperpage{97, 98}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Force\discretionary {-}{}{}Active}, 
+		\hyperpage{138}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::mat\discretionary {-}{}{}Force\discretionary {-}{}{}Active}, 
+		\hyperpage{163}
+  \item {list\discretionary {-}{}{}Comp\discretionary {-}{}{}Cross\discretionary {-}{}{}Bod\discretionary {-}{}{}\_\discretionary {-}{}{}hydro}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Motion\discretionary {-}{}{}Model}, 
+		\hyperpage{187}
+  \item {list\discretionary {-}{}{}Comp\discretionary {-}{}{}Cross\discretionary {-}{}{}Bod\discretionary {-}{}{}\_\discretionary {-}{}{}user}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Motion\discretionary {-}{}{}Model}, 
+		\hyperpage{188}
+  \item {list\discretionary {-}{}{}Cross\discretionary {-}{}{}Body\discretionary {-}{}{}\_\discretionary {-}{}{}hydro}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Body}, 
+		\hyperpage{46}
+  \item {list\discretionary {-}{}{}Cross\discretionary {-}{}{}Body\discretionary {-}{}{}\_\discretionary {-}{}{}user}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Body}, 
+		\hyperpage{47}
+  \item {list\discretionary {-}{}{}Data}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Motion\discretionary {-}{}{}Model}, 
+		\hyperpage{188, 189}
+  \item {list\discretionary {-}{}{}Data\discretionary {-}{}{}Equation}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Derivative}, 
+		\hyperpage{60, 61}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Force\discretionary {-}{}{}Active}, 
+		\hyperpage{138, 139}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Motion\discretionary {-}{}{}Model}, 
+		\hyperpage{189}
+  \item {list\discretionary {-}{}{}Data\discretionary {-}{}{}Index}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Motion\discretionary {-}{}{}Model}, 
+		\hyperpage{190}
+  \item {list\discretionary {-}{}{}Data\discretionary {-}{}{}Variable}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Equation}, 
+		\hyperpage{98}
+  \item {list\discretionary {-}{}{}Derivative}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Force\discretionary {-}{}{}React}, 
+		\hyperpage{144}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::mat\discretionary {-}{}{}Force\discretionary {-}{}{}React}, 
+		\hyperpage{171, 172}
+  \item {list\discretionary {-}{}{}Equation}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Derivative}, 
+		\hyperpage{61}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Motion\discretionary {-}{}{}Model}, 
+		\hyperpage{190, 191}
+  \item {list\discretionary {-}{}{}Force\discretionary {-}{}{}Active\discretionary {-}{}{}\_\discretionary {-}{}{}hydro}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Body}, 
+		\hyperpage{47, 48}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::mat\discretionary {-}{}{}Body}, 
+		\hyperpage{157}
+  \item {list\discretionary {-}{}{}Force\discretionary {-}{}{}Active\discretionary {-}{}{}\_\discretionary {-}{}{}user}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Body}, 
+		\hyperpage{48}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::mat\discretionary {-}{}{}Body}, 
+		\hyperpage{158}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}System}, 
+		\hyperpage{263}
+  \item {list\discretionary {-}{}{}Force\discretionary {-}{}{}Cross\discretionary {-}{}{}\_\discretionary {-}{}{}hydro}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Body}, 
+		\hyperpage{48, 49}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::mat\discretionary {-}{}{}Body}, 
+		\hyperpage{158, 159}
+  \item {list\discretionary {-}{}{}Force\discretionary {-}{}{}Cross\discretionary {-}{}{}\_\discretionary {-}{}{}user}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Body}, 
+		\hyperpage{49}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::mat\discretionary {-}{}{}Body}, 
+		\hyperpage{159}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}System}, 
+		\hyperpage{264}
+  \item {list\discretionary {-}{}{}Force\discretionary {-}{}{}React\discretionary {-}{}{}\_\discretionary {-}{}{}hydro}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Body}, 
+		\hyperpage{50}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::mat\discretionary {-}{}{}Body}, 
+		\hyperpage{160}
+  \item {list\discretionary {-}{}{}Force\discretionary {-}{}{}React\discretionary {-}{}{}\_\discretionary {-}{}{}user}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Body}, 
+		\hyperpage{50}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::mat\discretionary {-}{}{}Body}, 
+		\hyperpage{160}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}System}, 
+		\hyperpage{264}
+  \item {list\discretionary {-}{}{}Freq}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Output\discretionary {-}{}{}Derived}, 
+		\hyperpage{222}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Outputs\discretionary {-}{}{}Body}, 
+		\hyperpage{234}
+  \item {list\discretionary {-}{}{}Global\discretionary {-}{}{}Acceleration}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Outputs\discretionary {-}{}{}Body}, 
+		\hyperpage{235}
+  \item {list\discretionary {-}{}{}Global\discretionary {-}{}{}Motion}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Outputs\discretionary {-}{}{}Body}, 
+		\hyperpage{235}
+  \item {list\discretionary {-}{}{}Global\discretionary {-}{}{}Solution}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Outputs\discretionary {-}{}{}Body}, 
+		\hyperpage{236}
+  \item {list\discretionary {-}{}{}Global\discretionary {-}{}{}Velocity}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Outputs\discretionary {-}{}{}Body}, 
+		\hyperpage{236, 237}
+  \item {list\discretionary {-}{}{}Key}
+    \subitem {osea\discretionary {-}{}{}::\discretionary {-}{}{}Object\discretionary {-}{}{}Group}, 
+		\hyperpage{211, 212}
+    \subitem {osea\discretionary {-}{}{}::\discretionary {-}{}{}Parser}, 
+		\hyperpage{244}
+  \item {list\discretionary {-}{}{}Mat\discretionary {-}{}{}Body}
+    \subitem {ofreq.\discretionary {-}{}{}cpp}, \hyperpage{319}
+  \item {list\discretionary {-}{}{}Model}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}System}, 
+		\hyperpage{265}
+  \item {list\discretionary {-}{}{}Named\discretionary {-}{}{}Link\discretionary {-}{}{}\_\discretionary {-}{}{}hydro}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Body}, 
+		\hyperpage{51}
+  \item {list\discretionary {-}{}{}Named\discretionary {-}{}{}Link\discretionary {-}{}{}\_\discretionary {-}{}{}user}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Body}, 
+		\hyperpage{51, 52}
+  \item {list\discretionary {-}{}{}Object}
+    \subitem {osea\discretionary {-}{}{}::\discretionary {-}{}{}Object\discretionary {-}{}{}Group}, 
+		\hyperpage{212}
+    \subitem {osea\discretionary {-}{}{}::\discretionary {-}{}{}Parser}, 
+		\hyperpage{244}
+  \item {list\discretionary {-}{}{}Output}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}System}, 
+		\hyperpage{266}
+  \item {list\discretionary {-}{}{}Result}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Outputs\discretionary {-}{}{}Body}, 
+		\hyperpage{237}
+  \item {list\discretionary {-}{}{}Solution}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Motion\discretionary {-}{}{}Solver}, 
+		\hyperpage{204}
+  \item {list\discretionary {-}{}{}Solution\discretionary {-}{}{}Set}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Output\discretionary {-}{}{}Derived}, 
+		\hyperpage{222}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Outputs\discretionary {-}{}{}Body}, 
+		\hyperpage{238}
+  \item {list\discretionary {-}{}{}Solutions}
+    \subitem {ofreq.\discretionary {-}{}{}cpp}, \hyperpage{319}
+  \item {list\discretionary {-}{}{}Val}
+    \subitem {osea\discretionary {-}{}{}::\discretionary {-}{}{}Object\discretionary {-}{}{}Group}, 
+		\hyperpage{212}
+    \subitem {osea\discretionary {-}{}{}::\discretionary {-}{}{}Parser}, 
+		\hyperpage{245}
+  \item {list\discretionary {-}{}{}Wave\discretionary {-}{}{}Dir}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Output\discretionary {-}{}{}Derived}, 
+		\hyperpage{223}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Outputs\discretionary {-}{}{}Body}, 
+		\hyperpage{238}
+  \item {list\discretionary {-}{}{}Wave\discretionary {-}{}{}Directions}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}System}, 
+		\hyperpage{266}
+  \item {list\discretionary {-}{}{}Wave\discretionary {-}{}{}Frequencies}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}System}, 
+		\hyperpage{266}
+  \item {Logs}
+    \subitem {ofreq.\discretionary {-}{}{}cpp}, \hyperpage{319}
+
+  \indexspace
+
+  \item {main}
+    \subitem {ofreq.\discretionary {-}{}{}cpp}, \hyperpage{318}
+  \item {Mass\discretionary {-}{}{}Matrix}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Body}, 
+		\hyperpage{52}
+  \item {mat\discretionary {-}{}{}Body}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::mat\discretionary {-}{}{}Body}, 
+		\hyperpage{156}
+  \item {mat\discretionary {-}{}{}Force\discretionary {-}{}{}Active}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::mat\discretionary {-}{}{}Force\discretionary {-}{}{}Active}, 
+		\hyperpage{163}
+  \item {mat\discretionary {-}{}{}Force\discretionary {-}{}{}Cross}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::mat\discretionary {-}{}{}Force\discretionary {-}{}{}Cross}, 
+		\hyperpage{166}
+  \item {mat\discretionary {-}{}{}Force\discretionary {-}{}{}React}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::mat\discretionary {-}{}{}Force\discretionary {-}{}{}React}, 
+		\hyperpage{170}
+  \item {Max\discretionary {-}{}{}Data\discretionary {-}{}{}Index}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Motion\discretionary {-}{}{}Model}, 
+		\hyperpage{191}
+  \item {Model6\discretionary {-}{}{}D\discretionary {-}{}{}O\discretionary {-}{}{}F}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Model6\discretionary {-}{}{}D\discretionary {-}{}{}O\discretionary {-}{}{}F}, 
+		\hyperpage{175}
+  \item {Motion\discretionary {-}{}{}Model}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Motion\discretionary {-}{}{}Model}, 
+		\hyperpage{181}
+  \item {Motion\discretionary {-}{}{}Solver}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Motion\discretionary {-}{}{}Solver}, 
+		\hyperpage{203}
+
+  \indexspace
+
+  \item {n\discretionary {-}{}{}\_\discretionary {-}{}{}dirs}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Solution\discretionary {-}{}{}Set}, 
+		\hyperpage{254}
+  \item {n\discretionary {-}{}{}\_\discretionary {-}{}{}freqs}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Solution\discretionary {-}{}{}Set}, 
+		\hyperpage{254}
+  \item {num\discretionary {-}{}{}Equations}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Motion\discretionary {-}{}{}Model}, 
+		\hyperpage{191}
+
+  \indexspace
+
+  \item {o\discretionary {-}{}{}Freq\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Directory}
+    \subitem {ofreq.\discretionary {-}{}{}cpp}, \hyperpage{319}
+  \item {o\discretionary {-}{}{}Freq\discretionary {-}{}{}Core}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::o\discretionary {-}{}{}Freq\discretionary {-}{}{}Core}, 
+		\hyperpage{215}
+  \item {Object\discretionary {-}{}{}Group}
+    \subitem {osea\discretionary {-}{}{}::\discretionary {-}{}{}Object\discretionary {-}{}{}Group}, 
+		\hyperpage{209}
+  \item {ofreq.\discretionary {-}{}{}cpp}
+    \subitem {B\discretionary {-}{}{}I\discretionary {-}{}{}N\discretionary {-}{}{}F\discretionary {-}{}{}O\discretionary {-}{}{}L\discretionary {-}{}{}D\discretionary {-}{}{}E\discretionary {-}{}{}R}, 
+		\hyperpage{319}
+    \subitem {build\discretionary {-}{}{}Mat\discretionary {-}{}{}Body}, 
+		\hyperpage{317}
+    \subitem {calc\discretionary {-}{}{}Output}, \hyperpage{317}
+    \subitem {E\discretionary {-}{}{}T\discretionary {-}{}{}C\discretionary {-}{}{}F\discretionary {-}{}{}O\discretionary {-}{}{}L\discretionary {-}{}{}D\discretionary {-}{}{}E\discretionary {-}{}{}R}, 
+		\hyperpage{319}
+    \subitem {E\discretionary {-}{}{}X\discretionary {-}{}{}E\discretionary {-}{}{}C\discretionary {-}{}{}F\discretionary {-}{}{}O\discretionary {-}{}{}L\discretionary {-}{}{}D\discretionary {-}{}{}E\discretionary {-}{}{}R}, 
+		\hyperpage{319}
+    \subitem {E\discretionary {-}{}{}X\discretionary {-}{}{}E\discretionary {-}{}{}C\discretionary {-}{}{}N\discretionary {-}{}{}A\discretionary {-}{}{}M\discretionary {-}{}{}E}, 
+		\hyperpage{319}
+    \subitem {get\discretionary {-}{}{}Path}, \hyperpage{317, 318}
+    \subitem {L\discretionary {-}{}{}I\discretionary {-}{}{}B\discretionary {-}{}{}F\discretionary {-}{}{}O\discretionary {-}{}{}L\discretionary {-}{}{}D\discretionary {-}{}{}E\discretionary {-}{}{}R}, 
+		\hyperpage{319}
+    \subitem {list\discretionary {-}{}{}Mat\discretionary {-}{}{}Body}, 
+		\hyperpage{319}
+    \subitem {list\discretionary {-}{}{}Solutions}, \hyperpage{319}
+    \subitem {Logs}, \hyperpage{319}
+    \subitem {main}, \hyperpage{318}
+    \subitem {o\discretionary {-}{}{}Freq\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Directory}, 
+		\hyperpage{319}
+    \subitem {Read\discretionary {-}{}{}Files}, \hyperpage{318}
+    \subitem {sysofreq}, \hyperpage{319}
+    \subitem {V\discretionary {-}{}{}A\discretionary {-}{}{}R\discretionary {-}{}{}F\discretionary {-}{}{}O\discretionary {-}{}{}L\discretionary {-}{}{}D\discretionary {-}{}{}E\discretionary {-}{}{}R}, 
+		\hyperpage{319}
+  \item {operator+}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::mat\discretionary {-}{}{}Force\discretionary {-}{}{}Active}, 
+		\hyperpage{163}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::mat\discretionary {-}{}{}Force\discretionary {-}{}{}Cross}, 
+		\hyperpage{167}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::mat\discretionary {-}{}{}Force\discretionary {-}{}{}React}, 
+		\hyperpage{172}
+  \item {operator-\/}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::mat\discretionary {-}{}{}Force\discretionary {-}{}{}Active}, 
+		\hyperpage{164}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::mat\discretionary {-}{}{}Force\discretionary {-}{}{}Cross}, 
+		\hyperpage{167}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::mat\discretionary {-}{}{}Force\discretionary {-}{}{}React}, 
+		\hyperpage{172}
+  \item {operator==}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Body}, 
+		\hyperpage{52}
+  \item {ord}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Equationof\discretionary {-}{}{}Motion}, 
+		\hyperpage{114}
+  \item {order\discretionary {-}{}{}Derivative}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Global\discretionary {-}{}{}Solution}, 
+		\hyperpage{153}
+  \item {osea}, \hyperpage{33}
+    \subitem {vec\discretionary {-}{}{}Keyword}, \hyperpage{34}
+    \subitem {vec\discretionary {-}{}{}Object}, \hyperpage{34}
+    \subitem {vec\discretionary {-}{}{}Value}, \hyperpage{34}
+  \item {osea\discretionary {-}{}{}::\discretionary {-}{}{}Dictionary}, 
+		\hyperpage{68}
+    \subitem {convert\discretionary {-}{}{}Complex}, \hyperpage{70}
+    \subitem {define\discretionary {-}{}{}Class}, \hyperpage{70}
+    \subitem {define\discretionary {-}{}{}Key}, \hyperpage{71}
+    \subitem {Dictionary}, \hyperpage{70}
+    \subitem {pt\discretionary {-}{}{}System}, \hyperpage{71}
+    \subitem {set\discretionary {-}{}{}Object}, \hyperpage{71}
+    \subitem {set\discretionary {-}{}{}System}, \hyperpage{71}
+  \item {osea\discretionary {-}{}{}::\discretionary {-}{}{}File\discretionary {-}{}{}Reader}, 
+		\hyperpage{119}
+    \subitem {$\sim $\discretionary {-}{}{}File\discretionary {-}{}{}Reader}, 
+		\hyperpage{122}
+    \subitem {File\discretionary {-}{}{}Reader}, \hyperpage{122}
+    \subitem {output\discretionary {-}{}{}Bodies\discretionary {-}{}{}File}, 
+		\hyperpage{122}
+    \subitem {output\discretionary {-}{}{}Control\discretionary {-}{}{}File}, 
+		\hyperpage{122}
+    \subitem {output\discretionary {-}{}{}Data\discretionary {-}{}{}File}, 
+		\hyperpage{122}
+    \subitem {output\discretionary {-}{}{}Forces\discretionary {-}{}{}File}, 
+		\hyperpage{123}
+    \subitem {output\discretionary {-}{}{}Sea\discretionary {-}{}{}Env\discretionary {-}{}{}File}, 
+		\hyperpage{123}
+    \subitem {read\discretionary {-}{}{}Bodies}, \hyperpage{123}
+    \subitem {read\discretionary {-}{}{}Control}, \hyperpage{123}
+    \subitem {read\discretionary {-}{}{}Data}, \hyperpage{123}
+    \subitem {read\discretionary {-}{}{}Forces}, \hyperpage{124}
+    \subitem {read\discretionary {-}{}{}Hydro\discretionary {-}{}{}File}, 
+		\hyperpage{124}
+    \subitem {read\discretionary {-}{}{}Sea\discretionary {-}{}{}Env}, 
+		\hyperpage{124}
+    \subitem {send\discretionary {-}{}{}Output}, \hyperpage{124}
+    \subitem {set\discretionary {-}{}{}Dictionary}, \hyperpage{125}
+    \subitem {set\discretionary {-}{}{}Path}, \hyperpage{125}
+    \subitem {set\discretionary {-}{}{}System}, \hyperpage{125}
+  \item {osea\discretionary {-}{}{}::\discretionary {-}{}{}Object\discretionary {-}{}{}Group}, 
+		\hyperpage{207}
+    \subitem {$\sim $\discretionary {-}{}{}Object\discretionary {-}{}{}Group}, 
+		\hyperpage{209}
+    \subitem {add\discretionary {-}{}{}Key\discretionary {-}{}{}Set}, 
+		\hyperpage{209}
+    \subitem {add\discretionary {-}{}{}Key\discretionary {-}{}{}Val}, 
+		\hyperpage{209, 210}
+    \subitem {add\discretionary {-}{}{}Key\discretionary {-}{}{}Word}, 
+		\hyperpage{210}
+    \subitem {add\discretionary {-}{}{}Sub\discretionary {-}{}{}Object}, 
+		\hyperpage{210}
+    \subitem {get\discretionary {-}{}{}Class\discretionary {-}{}{}Name}, 
+		\hyperpage{210}
+    \subitem {get\discretionary {-}{}{}Format}, \hyperpage{211}
+    \subitem {get\discretionary {-}{}{}Key}, \hyperpage{211}
+    \subitem {get\discretionary {-}{}{}Val}, \hyperpage{211}
+    \subitem {get\discretionary {-}{}{}Version}, \hyperpage{211}
+    \subitem {list\discretionary {-}{}{}Key}, \hyperpage{211, 212}
+    \subitem {list\discretionary {-}{}{}Object}, \hyperpage{212}
+    \subitem {list\discretionary {-}{}{}Val}, \hyperpage{212}
+    \subitem {Object\discretionary {-}{}{}Group}, \hyperpage{209}
+    \subitem {set\discretionary {-}{}{}Class\discretionary {-}{}{}Name}, 
+		\hyperpage{213}
+    \subitem {set\discretionary {-}{}{}Format}, \hyperpage{213}
+    \subitem {set\discretionary {-}{}{}Version}, \hyperpage{213}
+  \item {osea\discretionary {-}{}{}::\discretionary {-}{}{}Parser}, 
+		\hyperpage{241}
+    \subitem {$\sim $\discretionary {-}{}{}Parser}, \hyperpage{243}
+    \subitem {get\discretionary {-}{}{}Object}, \hyperpage{243}
+    \subitem {get\discretionary {-}{}{}Sub\discretionary {-}{}{}Object}, 
+		\hyperpage{243}
+    \subitem {list\discretionary {-}{}{}Key}, \hyperpage{244}
+    \subitem {list\discretionary {-}{}{}Object}, \hyperpage{244}
+    \subitem {list\discretionary {-}{}{}Val}, \hyperpage{245}
+    \subitem {Parse}, \hyperpage{245}
+    \subitem {Parser}, \hyperpage{243}
+    \subitem {ref\discretionary {-}{}{}Sub\discretionary {-}{}{}Object}, 
+		\hyperpage{246}
+  \item {osea\discretionary {-}{}{}::ofreq}, \hyperpage{34}
+    \subitem {complex\discretionary {-}{}{}Double}, \hyperpage{35}
+    \subitem {cx\discretionary {-}{}{}\_\discretionary {-}{}{}vector}, 
+		\hyperpage{35}
+    \subitem {pt\discretionary {-}{}{}Soln}, \hyperpage{35}
+  \item {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Body}, 
+		\hyperpage{37}
+    \subitem {$\sim $\discretionary {-}{}{}Body}, \hyperpage{41}
+    \subitem {Body}, \hyperpage{41}
+    \subitem {Copy}, \hyperpage{42}
+    \subitem {get\discretionary {-}{}{}Body\discretionary {-}{}{}Name}, 
+		\hyperpage{42}
+    \subitem {get\discretionary {-}{}{}Cen}, \hyperpage{42}
+    \subitem {get\discretionary {-}{}{}Cen\discretionary {-}{}{}X}, 
+		\hyperpage{42}
+    \subitem {get\discretionary {-}{}{}Cen\discretionary {-}{}{}Y}, 
+		\hyperpage{42}
+    \subitem {get\discretionary {-}{}{}Cen\discretionary {-}{}{}Z}, 
+		\hyperpage{43}
+    \subitem {get\discretionary {-}{}{}Equation\discretionary {-}{}{}Count}, 
+		\hyperpage{43}
+    \subitem {get\discretionary {-}{}{}Heading}, \hyperpage{43}
+    \subitem {get\discretionary {-}{}{}Hydro\discretionary {-}{}{}Bod\discretionary {-}{}{}Name}, 
+		\hyperpage{43}
+    \subitem {get\discretionary {-}{}{}Mass}, \hyperpage{43}
+    \subitem {get\discretionary {-}{}{}Mass\discretionary {-}{}{}Matrix}, 
+		\hyperpage{44}
+    \subitem {get\discretionary {-}{}{}Mom\discretionary {-}{}{}Ixx}, 
+		\hyperpage{44}
+    \subitem {get\discretionary {-}{}{}Mom\discretionary {-}{}{}Ixy}, 
+		\hyperpage{44}
+    \subitem {get\discretionary {-}{}{}Mom\discretionary {-}{}{}Ixz}, 
+		\hyperpage{44}
+    \subitem {get\discretionary {-}{}{}Mom\discretionary {-}{}{}Iyy}, 
+		\hyperpage{44}
+    \subitem {get\discretionary {-}{}{}Mom\discretionary {-}{}{}Iyz}, 
+		\hyperpage{44}
+    \subitem {get\discretionary {-}{}{}Mom\discretionary {-}{}{}Izz}, 
+		\hyperpage{45}
+    \subitem {get\discretionary {-}{}{}Motion\discretionary {-}{}{}Model}, 
+		\hyperpage{45}
+    \subitem {get\discretionary {-}{}{}Posn}, \hyperpage{45}
+    \subitem {get\discretionary {-}{}{}Posn\discretionary {-}{}{}X}, 
+		\hyperpage{45}
+    \subitem {get\discretionary {-}{}{}Posn\discretionary {-}{}{}Y}, 
+		\hyperpage{45}
+    \subitem {get\discretionary {-}{}{}Posn\discretionary {-}{}{}Z}, 
+		\hyperpage{46}
+    \subitem {get\discretionary {-}{}{}Solution}, \hyperpage{46}
+    \subitem {init\discretionary {-}{}{}Mass\discretionary {-}{}{}Mat}, 
+		\hyperpage{46}
+    \subitem {list\discretionary {-}{}{}Cross\discretionary {-}{}{}Body\discretionary {-}{}{}\_\discretionary {-}{}{}hydro}, 
+		\hyperpage{46}
+    \subitem {list\discretionary {-}{}{}Cross\discretionary {-}{}{}Body\discretionary {-}{}{}\_\discretionary {-}{}{}user}, 
+		\hyperpage{47}
+    \subitem {list\discretionary {-}{}{}Force\discretionary {-}{}{}Active\discretionary {-}{}{}\_\discretionary {-}{}{}hydro}, 
+		\hyperpage{47, 48}
+    \subitem {list\discretionary {-}{}{}Force\discretionary {-}{}{}Active\discretionary {-}{}{}\_\discretionary {-}{}{}user}, 
+		\hyperpage{48}
+    \subitem {list\discretionary {-}{}{}Force\discretionary {-}{}{}Cross\discretionary {-}{}{}\_\discretionary {-}{}{}hydro}, 
+		\hyperpage{48, 49}
+    \subitem {list\discretionary {-}{}{}Force\discretionary {-}{}{}Cross\discretionary {-}{}{}\_\discretionary {-}{}{}user}, 
+		\hyperpage{49}
+    \subitem {list\discretionary {-}{}{}Force\discretionary {-}{}{}React\discretionary {-}{}{}\_\discretionary {-}{}{}hydro}, 
+		\hyperpage{50}
+    \subitem {list\discretionary {-}{}{}Force\discretionary {-}{}{}React\discretionary {-}{}{}\_\discretionary {-}{}{}user}, 
+		\hyperpage{50}
+    \subitem {list\discretionary {-}{}{}Named\discretionary {-}{}{}Link\discretionary {-}{}{}\_\discretionary {-}{}{}hydro}, 
+		\hyperpage{51}
+    \subitem {list\discretionary {-}{}{}Named\discretionary {-}{}{}Link\discretionary {-}{}{}\_\discretionary {-}{}{}user}, 
+		\hyperpage{51, 52}
+    \subitem {Mass\discretionary {-}{}{}Matrix}, \hyperpage{52}
+    \subitem {operator==}, \hyperpage{52}
+    \subitem {ref\discretionary {-}{}{}Body\discretionary {-}{}{}Name}, 
+		\hyperpage{53}
+    \subitem {ref\discretionary {-}{}{}Data\discretionary {-}{}{}Solution}, 
+		\hyperpage{53}
+    \subitem {ref\discretionary {-}{}{}Heading}, \hyperpage{53}
+    \subitem {ref\discretionary {-}{}{}Hydro\discretionary {-}{}{}Bod\discretionary {-}{}{}Name}, 
+		\hyperpage{54}
+    \subitem {ref\discretionary {-}{}{}Posn}, \hyperpage{54}
+    \subitem {ref\discretionary {-}{}{}Solution}, \hyperpage{54}
+    \subitem {set\discretionary {-}{}{}Body\discretionary {-}{}{}Name}, 
+		\hyperpage{54}
+    \subitem {set\discretionary {-}{}{}Cen\discretionary {-}{}{}X}, 
+		\hyperpage{55}
+    \subitem {set\discretionary {-}{}{}Cen\discretionary {-}{}{}Y}, 
+		\hyperpage{55}
+    \subitem {set\discretionary {-}{}{}Cen\discretionary {-}{}{}Z}, 
+		\hyperpage{55}
+    \subitem {set\discretionary {-}{}{}Heading}, \hyperpage{55}
+    \subitem {set\discretionary {-}{}{}Hydro\discretionary {-}{}{}Bod\discretionary {-}{}{}Name}, 
+		\hyperpage{55}
+    \subitem {set\discretionary {-}{}{}Mass}, \hyperpage{55}
+    \subitem {set\discretionary {-}{}{}Mass\discretionary {-}{}{}Matrix}, 
+		\hyperpage{56}
+    \subitem {set\discretionary {-}{}{}Mom\discretionary {-}{}{}Ixx}, 
+		\hyperpage{56}
+    \subitem {set\discretionary {-}{}{}Mom\discretionary {-}{}{}Ixy}, 
+		\hyperpage{56}
+    \subitem {set\discretionary {-}{}{}Mom\discretionary {-}{}{}Ixz}, 
+		\hyperpage{56}
+    \subitem {set\discretionary {-}{}{}Mom\discretionary {-}{}{}Iyy}, 
+		\hyperpage{56}
+    \subitem {set\discretionary {-}{}{}Mom\discretionary {-}{}{}Iyz}, 
+		\hyperpage{56}
+    \subitem {set\discretionary {-}{}{}Mom\discretionary {-}{}{}Izz}, 
+		\hyperpage{57}
+    \subitem {set\discretionary {-}{}{}Motion\discretionary {-}{}{}Model}, 
+		\hyperpage{57}
+    \subitem {set\discretionary {-}{}{}Posn\discretionary {-}{}{}X}, 
+		\hyperpage{57}
+    \subitem {set\discretionary {-}{}{}Posn\discretionary {-}{}{}Y}, 
+		\hyperpage{57}
+    \subitem {set\discretionary {-}{}{}Posn\discretionary {-}{}{}Z}, 
+		\hyperpage{57}
+    \subitem {set\discretionary {-}{}{}Soln\discretionary {-}{}{}Mat}, 
+		\hyperpage{58}
+  \item {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Derivative}, 
+		\hyperpage{58}
+    \subitem {$\sim $\discretionary {-}{}{}Derivative}, \hyperpage{60}
+    \subitem {add\discretionary {-}{}{}Model\discretionary {-}{}{}Equation}, 
+		\hyperpage{60}
+    \subitem {Derivative}, \hyperpage{60}
+    \subitem {get\discretionary {-}{}{}Equation\discretionary {-}{}{}List\discretionary {-}{}{}Size}, 
+		\hyperpage{60}
+    \subitem {list\discretionary {-}{}{}Data\discretionary {-}{}{}Equation}, 
+		\hyperpage{60, 61}
+    \subitem {list\discretionary {-}{}{}Equation}, \hyperpage{61}
+  \item {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Eqn\discretionary {-}{}{}Rotation}, 
+		\hyperpage{72}
+    \subitem {$\sim $\discretionary {-}{}{}Eqn\discretionary {-}{}{}Rotation}, 
+		\hyperpage{77}
+    \subitem {Eqn\discretionary {-}{}{}Rotation}, \hyperpage{76, 77}
+    \subitem {Func1}, \hyperpage{77}
+    \subitem {Func10}, \hyperpage{78}
+    \subitem {Func11}, \hyperpage{78}
+    \subitem {Func12}, \hyperpage{78}
+    \subitem {Func13}, \hyperpage{78}
+    \subitem {Func14}, \hyperpage{78}
+    \subitem {Func15}, \hyperpage{78}
+    \subitem {Func16}, \hyperpage{78}
+    \subitem {Func17}, \hyperpage{78}
+    \subitem {Func18}, \hyperpage{78}
+    \subitem {Func19}, \hyperpage{79}
+    \subitem {Func2}, \hyperpage{79}
+    \subitem {Func20}, \hyperpage{79}
+    \subitem {Func21}, \hyperpage{79}
+    \subitem {Func22}, \hyperpage{79}
+    \subitem {Func23}, \hyperpage{79}
+    \subitem {Func24}, \hyperpage{79}
+    \subitem {Func25}, \hyperpage{79}
+    \subitem {Func26}, \hyperpage{79}
+    \subitem {Func27}, \hyperpage{80}
+    \subitem {Func28}, \hyperpage{80}
+    \subitem {Func29}, \hyperpage{80}
+    \subitem {Func3}, \hyperpage{80}
+    \subitem {Func30}, \hyperpage{80}
+    \subitem {Func31}, \hyperpage{80}
+    \subitem {Func32}, \hyperpage{80}
+    \subitem {Func33}, \hyperpage{80}
+    \subitem {Func34}, \hyperpage{80}
+    \subitem {Func35}, \hyperpage{81}
+    \subitem {Func36}, \hyperpage{81}
+    \subitem {Func37}, \hyperpage{81}
+    \subitem {Func38}, \hyperpage{81}
+    \subitem {Func39}, \hyperpage{81}
+    \subitem {Func4}, \hyperpage{81}
+    \subitem {Func40}, \hyperpage{81}
+    \subitem {Func41}, \hyperpage{81}
+    \subitem {Func42}, \hyperpage{81}
+    \subitem {Func43}, \hyperpage{82}
+    \subitem {Func44}, \hyperpage{82}
+    \subitem {Func45}, \hyperpage{82}
+    \subitem {Func46}, \hyperpage{82}
+    \subitem {Func47}, \hyperpage{82}
+    \subitem {Func48}, \hyperpage{82}
+    \subitem {Func49}, \hyperpage{82}
+    \subitem {Func5}, \hyperpage{82}
+    \subitem {Func50}, \hyperpage{82}
+    \subitem {Func6}, \hyperpage{83}
+    \subitem {Func7}, \hyperpage{83}
+    \subitem {Func8}, \hyperpage{83}
+    \subitem {Func9}, \hyperpage{83}
+    \subitem {set\discretionary {-}{}{}Formula}, \hyperpage{83}
+  \item {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Eqn\discretionary {-}{}{}Translation}, 
+		\hyperpage{83}
+    \subitem {$\sim $\discretionary {-}{}{}Eqn\discretionary {-}{}{}Translation}, 
+		\hyperpage{88}
+    \subitem {Eqn\discretionary {-}{}{}Translation}, \hyperpage{87, 88}
+    \subitem {Func1}, \hyperpage{88}
+    \subitem {Func10}, \hyperpage{89}
+    \subitem {Func11}, \hyperpage{89}
+    \subitem {Func12}, \hyperpage{89}
+    \subitem {Func13}, \hyperpage{89}
+    \subitem {Func14}, \hyperpage{89}
+    \subitem {Func15}, \hyperpage{89}
+    \subitem {Func16}, \hyperpage{89}
+    \subitem {Func17}, \hyperpage{89}
+    \subitem {Func18}, \hyperpage{89}
+    \subitem {Func19}, \hyperpage{90}
+    \subitem {Func2}, \hyperpage{90}
+    \subitem {Func20}, \hyperpage{90}
+    \subitem {Func21}, \hyperpage{90}
+    \subitem {Func22}, \hyperpage{90}
+    \subitem {Func23}, \hyperpage{90}
+    \subitem {Func24}, \hyperpage{90}
+    \subitem {Func25}, \hyperpage{90}
+    \subitem {Func26}, \hyperpage{90}
+    \subitem {Func27}, \hyperpage{91}
+    \subitem {Func28}, \hyperpage{91}
+    \subitem {Func29}, \hyperpage{91}
+    \subitem {Func3}, \hyperpage{91}
+    \subitem {Func30}, \hyperpage{91}
+    \subitem {Func31}, \hyperpage{91}
+    \subitem {Func32}, \hyperpage{91}
+    \subitem {Func33}, \hyperpage{91}
+    \subitem {Func34}, \hyperpage{91}
+    \subitem {Func35}, \hyperpage{92}
+    \subitem {Func36}, \hyperpage{92}
+    \subitem {Func37}, \hyperpage{92}
+    \subitem {Func38}, \hyperpage{92}
+    \subitem {Func39}, \hyperpage{92}
+    \subitem {Func4}, \hyperpage{92}
+    \subitem {Func40}, \hyperpage{92}
+    \subitem {Func41}, \hyperpage{92}
+    \subitem {Func42}, \hyperpage{92}
+    \subitem {Func43}, \hyperpage{93}
+    \subitem {Func44}, \hyperpage{93}
+    \subitem {Func45}, \hyperpage{93}
+    \subitem {Func46}, \hyperpage{93}
+    \subitem {Func47}, \hyperpage{93}
+    \subitem {Func48}, \hyperpage{93}
+    \subitem {Func49}, \hyperpage{93}
+    \subitem {Func5}, \hyperpage{93}
+    \subitem {Func50}, \hyperpage{93}
+    \subitem {Func6}, \hyperpage{94}
+    \subitem {Func7}, \hyperpage{94}
+    \subitem {Func8}, \hyperpage{94}
+    \subitem {Func9}, \hyperpage{94}
+    \subitem {set\discretionary {-}{}{}Formula}, \hyperpage{94}
+  \item {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Equation}, 
+		\hyperpage{94}
+    \subitem {$\sim $\discretionary {-}{}{}Equation}, \hyperpage{96}
+    \subitem {add\discretionary {-}{}{}Variable}, \hyperpage{96}
+    \subitem {Equation}, \hyperpage{96}
+    \subitem {get\discretionary {-}{}{}Coefficient}, \hyperpage{97}
+    \subitem {get\discretionary {-}{}{}Coefficient\discretionary {-}{}{}List\discretionary {-}{}{}Size}, 
+		\hyperpage{97}
+    \subitem {get\discretionary {-}{}{}Data\discretionary {-}{}{}Index}, 
+		\hyperpage{97}
+    \subitem {list\discretionary {-}{}{}Coefficient}, 
+		\hyperpage{97, 98}
+    \subitem {list\discretionary {-}{}{}Data\discretionary {-}{}{}Variable}, 
+		\hyperpage{98}
+    \subitem {ref\discretionary {-}{}{}Data\discretionary {-}{}{}Index}, 
+		\hyperpage{99}
+    \subitem {set\discretionary {-}{}{}Coefficient}, \hyperpage{99}
+    \subitem {set\discretionary {-}{}{}Data\discretionary {-}{}{}Index}, 
+		\hyperpage{99}
+  \item {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Equationof\discretionary {-}{}{}Motion}, 
+		\hyperpage{99}
+    \subitem {$\sim $\discretionary {-}{}{}Equationof\discretionary {-}{}{}Motion}, 
+		\hyperpage{104}
+    \subitem {argcount}, \hyperpage{118}
+    \subitem {argvalue}, \hyperpage{118}
+    \subitem {body}, \hyperpage{104}
+    \subitem {curbody}, \hyperpage{105}
+    \subitem {Ddt}, \hyperpage{105}
+    \subitem {Equationof\discretionary {-}{}{}Motion}, 
+		\hyperpage{103, 104}
+    \subitem {Evaluate}, \hyperpage{105}
+    \subitem {Force\discretionary {-}{}{}Active\discretionary {-}{}{}\_\discretionary {-}{}{}hydro}, 
+		\hyperpage{105}
+    \subitem {Force\discretionary {-}{}{}Active\discretionary {-}{}{}\_\discretionary {-}{}{}user}, 
+		\hyperpage{106}
+    \subitem {Force\discretionary {-}{}{}Cross\discretionary {-}{}{}\_\discretionary {-}{}{}hydro}, 
+		\hyperpage{106}
+    \subitem {Force\discretionary {-}{}{}Cross\discretionary {-}{}{}\_\discretionary {-}{}{}user}, 
+		\hyperpage{106}
+    \subitem {Force\discretionary {-}{}{}Mass}, \hyperpage{106}
+    \subitem {Force\discretionary {-}{}{}React\discretionary {-}{}{}\_\discretionary {-}{}{}hydro}, 
+		\hyperpage{107}
+    \subitem {Force\discretionary {-}{}{}React\discretionary {-}{}{}\_\discretionary {-}{}{}user}, 
+		\hyperpage{107}
+    \subitem {Func1}, \hyperpage{107}
+    \subitem {Func10}, \hyperpage{107}
+    \subitem {Func11}, \hyperpage{108}
+    \subitem {Func12}, \hyperpage{108}
+    \subitem {Func13}, \hyperpage{108}
+    \subitem {Func14}, \hyperpage{108}
+    \subitem {Func15}, \hyperpage{108}
+    \subitem {Func16}, \hyperpage{108}
+    \subitem {Func17}, \hyperpage{108}
+    \subitem {Func18}, \hyperpage{108}
+    \subitem {Func19}, \hyperpage{108}
+    \subitem {Func2}, \hyperpage{109}
+    \subitem {Func20}, \hyperpage{109}
+    \subitem {Func21}, \hyperpage{109}
+    \subitem {Func22}, \hyperpage{109}
+    \subitem {Func23}, \hyperpage{109}
+    \subitem {Func24}, \hyperpage{109}
+    \subitem {Func25}, \hyperpage{109}
+    \subitem {Func26}, \hyperpage{109}
+    \subitem {Func27}, \hyperpage{109}
+    \subitem {Func28}, \hyperpage{110}
+    \subitem {Func29}, \hyperpage{110}
+    \subitem {Func3}, \hyperpage{110}
+    \subitem {Func30}, \hyperpage{110}
+    \subitem {Func31}, \hyperpage{110}
+    \subitem {Func32}, \hyperpage{110}
+    \subitem {Func33}, \hyperpage{110}
+    \subitem {Func34}, \hyperpage{110}
+    \subitem {Func35}, \hyperpage{110}
+    \subitem {Func36}, \hyperpage{111}
+    \subitem {Func37}, \hyperpage{111}
+    \subitem {Func38}, \hyperpage{111}
+    \subitem {Func39}, \hyperpage{111}
+    \subitem {Func4}, \hyperpage{111}
+    \subitem {Func40}, \hyperpage{111}
+    \subitem {Func41}, \hyperpage{111}
+    \subitem {Func42}, \hyperpage{111}
+    \subitem {Func43}, \hyperpage{111}
+    \subitem {Func44}, \hyperpage{112}
+    \subitem {Func45}, \hyperpage{112}
+    \subitem {Func46}, \hyperpage{112}
+    \subitem {Func47}, \hyperpage{112}
+    \subitem {Func48}, \hyperpage{112}
+    \subitem {Func49}, \hyperpage{112}
+    \subitem {Func5}, \hyperpage{112}
+    \subitem {Func50}, \hyperpage{112}
+    \subitem {Func6}, \hyperpage{112}
+    \subitem {Func7}, \hyperpage{113}
+    \subitem {Func8}, \hyperpage{113}
+    \subitem {Func9}, \hyperpage{113}
+    \subitem {get\discretionary {-}{}{}Data\discretionary {-}{}{}Index}, 
+		\hyperpage{113}
+    \subitem {Kronecker}, \hyperpage{113}
+    \subitem {ord}, \hyperpage{114}
+    \subitem {p\discretionary {-}{}{}Bod}, \hyperpage{118}
+    \subitem {p\discretionary {-}{}{}Cur\discretionary {-}{}{}Ord}, 
+		\hyperpage{118}
+    \subitem {p\discretionary {-}{}{}Cur\discretionary {-}{}{}Var}, 
+		\hyperpage{118}
+    \subitem {p\discretionary {-}{}{}Description}, \hyperpage{118}
+    \subitem {p\discretionary {-}{}{}Name}, \hyperpage{118}
+    \subitem {ref\discretionary {-}{}{}Data\discretionary {-}{}{}Index}, 
+		\hyperpage{114}
+    \subitem {ref\discretionary {-}{}{}Description}, \hyperpage{114}
+    \subitem {ref\discretionary {-}{}{}Name}, \hyperpage{114}
+    \subitem {set\discretionary {-}{}{}Arguments}, \hyperpage{115}
+    \subitem {set\discretionary {-}{}{}Data\discretionary {-}{}{}Index}, 
+		\hyperpage{115}
+    \subitem {set\discretionary {-}{}{}Debug\discretionary {-}{}{}Data}, 
+		\hyperpage{115}
+    \subitem {set\discretionary {-}{}{}Description}, \hyperpage{115}
+    \subitem {set\discretionary {-}{}{}Formula}, \hyperpage{116}
+    \subitem {set\discretionary {-}{}{}Name}, \hyperpage{116}
+    \subitem {Sum}, \hyperpage{116, 117}
+    \subitem {undef\discretionary {-}{}{}Arg}, \hyperpage{119}
+    \subitem {var}, \hyperpage{117}
+  \item {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}File\discretionary {-}{}{}Writer}, 
+		\hyperpage{125}
+    \subitem {$\sim $\discretionary {-}{}{}File\discretionary {-}{}{}Writer}, 
+		\hyperpage{128}
+    \subitem {clear\discretionary {-}{}{}Files}, \hyperpage{128}
+    \subitem {create\discretionary {-}{}{}Dir}, \hyperpage{128}
+    \subitem {file\discretionary {-}{}{}Exists}, \hyperpage{129}
+    \subitem {File\discretionary {-}{}{}Writer}, \hyperpage{128}
+    \subitem {get\discretionary {-}{}{}Cur\discretionary {-}{}{}Wave\discretionary {-}{}{}Dir}, 
+		\hyperpage{129}
+    \subitem {get\discretionary {-}{}{}Cur\discretionary {-}{}{}Wave\discretionary {-}{}{}Ind}, 
+		\hyperpage{129}
+    \subitem {get\discretionary {-}{}{}Info\discretionary {-}{}{}Block}, 
+		\hyperpage{129}
+    \subitem {get\discretionary {-}{}{}Outputs\discretionary {-}{}{}Body}, 
+		\hyperpage{130}
+    \subitem {ref\discretionary {-}{}{}Outputs\discretionary {-}{}{}Body}, 
+		\hyperpage{130}
+    \subitem {set\discretionary {-}{}{}Header}, \hyperpage{130}
+    \subitem {set\discretionary {-}{}{}Outputs\discretionary {-}{}{}Body}, 
+		\hyperpage{130}
+    \subitem {set\discretionary {-}{}{}Project\discretionary {-}{}{}Dir}, 
+		\hyperpage{130}
+    \subitem {write\discretionary {-}{}{}Frequency}, \hyperpage{131}
+    \subitem {write\discretionary {-}{}{}Global\discretionary {-}{}{}Acceleration}, 
+		\hyperpage{131}
+    \subitem {write\discretionary {-}{}{}Global\discretionary {-}{}{}Motion}, 
+		\hyperpage{131}
+    \subitem {write\discretionary {-}{}{}Global\discretionary {-}{}{}Solution}, 
+		\hyperpage{131}
+    \subitem {write\discretionary {-}{}{}Global\discretionary {-}{}{}Velocity}, 
+		\hyperpage{131}
+    \subitem {write\discretionary {-}{}{}Wave\discretionary {-}{}{}Direction}, 
+		\hyperpage{132}
+  \item {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Force}, 
+		\hyperpage{132}
+    \subitem {$\sim $\discretionary {-}{}{}Force}, \hyperpage{134}
+    \subitem {Force}, \hyperpage{134}
+    \subitem {force\discretionary {-}{}{}Name}, \hyperpage{135}
+    \subitem {get\discretionary {-}{}{}Force\discretionary {-}{}{}Name}, 
+		\hyperpage{135}
+    \subitem {get\discretionary {-}{}{}System\discretionary {-}{}{}Index}, 
+		\hyperpage{135}
+    \subitem {p\discretionary {-}{}{}Sys\discretionary {-}{}{}Index}, 
+		\hyperpage{135}
+    \subitem {set\discretionary {-}{}{}Force\discretionary {-}{}{}Name}, 
+		\hyperpage{135}
+    \subitem {set\discretionary {-}{}{}System\discretionary {-}{}{}Index}, 
+		\hyperpage{135}
+  \item {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Force\discretionary {-}{}{}Active}, 
+		\hyperpage{136}
+    \subitem {$\sim $\discretionary {-}{}{}Force\discretionary {-}{}{}Active}, 
+		\hyperpage{137}
+    \subitem {add\discretionary {-}{}{}Equation}, \hyperpage{137}
+    \subitem {Force\discretionary {-}{}{}Active}, \hyperpage{137}
+    \subitem {get\discretionary {-}{}{}Equation}, \hyperpage{138}
+    \subitem {list\discretionary {-}{}{}Coefficient}, \hyperpage{138}
+    \subitem {list\discretionary {-}{}{}Data\discretionary {-}{}{}Equation}, 
+		\hyperpage{138, 139}
+    \subitem {p\discretionary {-}{}{}Coefficients}, \hyperpage{139}
+    \subitem {p\discretionary {-}{}{}Data\discretionary {-}{}{}Index}, 
+		\hyperpage{139}
+    \subitem {set\discretionary {-}{}{}Coeff}, \hyperpage{139}
+  \item {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Force\discretionary {-}{}{}Cross}, 
+		\hyperpage{140}
+    \subitem {$\sim $\discretionary {-}{}{}Force\discretionary {-}{}{}Cross}, 
+		\hyperpage{141}
+    \subitem {Force\discretionary {-}{}{}Cross}, \hyperpage{140}
+  \item {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Force\discretionary {-}{}{}React}, 
+		\hyperpage{141}
+    \subitem {$\sim $\discretionary {-}{}{}Force\discretionary {-}{}{}React}, 
+		\hyperpage{143}
+    \subitem {add\discretionary {-}{}{}Derivative}, \hyperpage{143}
+    \subitem {current\discretionary {-}{}{}Derivative}, \hyperpage{145}
+    \subitem {current\discretionary {-}{}{}Equation}, \hyperpage{145}
+    \subitem {Force\discretionary {-}{}{}React}, \hyperpage{143}
+    \subitem {get\discretionary {-}{}{}Derivative}, \hyperpage{144}
+    \subitem {get\discretionary {-}{}{}Max\discretionary {-}{}{}Ord}, 
+		\hyperpage{144}
+    \subitem {list\discretionary {-}{}{}Derivative}, \hyperpage{144}
+    \subitem {p\discretionary {-}{}{}Derivative}, \hyperpage{145}
+    \subitem {set\discretionary {-}{}{}Cur\discretionary {-}{}{}Derivative}, 
+		\hyperpage{145}
+    \subitem {set\discretionary {-}{}{}Cur\discretionary {-}{}{}Equation\discretionary {-}{}{}Num}, 
+		\hyperpage{145}
+  \item {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Global\discretionary {-}{}{}Acceleration}, 
+		\hyperpage{146}
+    \subitem {$\sim $\discretionary {-}{}{}Global\discretionary {-}{}{}Acceleration}, 
+		\hyperpage{147}
+    \subitem {Global\discretionary {-}{}{}Acceleration}, 
+		\hyperpage{146, 147}
+    \subitem {set\discretionary {-}{}{}Derivative}, \hyperpage{147}
+  \item {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Global\discretionary {-}{}{}Motion}, 
+		\hyperpage{147}
+    \subitem {$\sim $\discretionary {-}{}{}Global\discretionary {-}{}{}Motion}, 
+		\hyperpage{149}
+    \subitem {Global\discretionary {-}{}{}Motion}, \hyperpage{148}
+    \subitem {set\discretionary {-}{}{}Derivative}, \hyperpage{149}
+  \item {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Global\discretionary {-}{}{}Solution}, 
+		\hyperpage{149}
+    \subitem {$\sim $\discretionary {-}{}{}Global\discretionary {-}{}{}Solution}, 
+		\hyperpage{151}
+    \subitem {calc\discretionary {-}{}{}Output}, \hyperpage{151}
+    \subitem {get\discretionary {-}{}{}Derivative}, \hyperpage{152}
+    \subitem {get\discretionary {-}{}{}Solution}, \hyperpage{152}
+    \subitem {Global\discretionary {-}{}{}Solution}, \hyperpage{151}
+    \subitem {order\discretionary {-}{}{}Derivative}, \hyperpage{153}
+    \subitem {set\discretionary {-}{}{}Derivative}, \hyperpage{152}
+  \item {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Global\discretionary {-}{}{}Velocity}, 
+		\hyperpage{153}
+    \subitem {$\sim $\discretionary {-}{}{}Global\discretionary {-}{}{}Velocity}, 
+		\hyperpage{154}
+    \subitem {Global\discretionary {-}{}{}Velocity}, \hyperpage{154}
+    \subitem {set\discretionary {-}{}{}Derivative}, \hyperpage{154}
+  \item {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Model6\discretionary {-}{}{}D\discretionary {-}{}{}O\discretionary {-}{}{}F}, 
+		\hyperpage{174}
+    \subitem {$\sim $\discretionary {-}{}{}Model6\discretionary {-}{}{}D\discretionary {-}{}{}O\discretionary {-}{}{}F}, 
+		\hyperpage{175}
+    \subitem {Define\discretionary {-}{}{}Equations}, \hyperpage{176}
+    \subitem {Model6\discretionary {-}{}{}D\discretionary {-}{}{}O\discretionary {-}{}{}F}, 
+		\hyperpage{175}
+  \item {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Motion\discretionary {-}{}{}Model}, 
+		\hyperpage{176}
+    \subitem {$\sim $\discretionary {-}{}{}Motion\discretionary {-}{}{}Model}, 
+		\hyperpage{181}
+    \subitem {Add\discretionary {-}{}{}Equation}, \hyperpage{181}
+    \subitem {Coefficient\discretionary {-}{}{}Only}, \hyperpage{182}
+    \subitem {Define\discretionary {-}{}{}Equations}, \hyperpage{182}
+    \subitem {Evaluate}, \hyperpage{182}
+    \subitem {get\discretionary {-}{}{}Active\discretionary {-}{}{}Only}, 
+		\hyperpage{183}
+    \subitem {get\discretionary {-}{}{}Body}, \hyperpage{183}
+    \subitem {get\discretionary {-}{}{}Data\discretionary {-}{}{}Index}, 
+		\hyperpage{183}
+    \subitem {get\discretionary {-}{}{}Description}, \hyperpage{183}
+    \subitem {get\discretionary {-}{}{}Freq}, \hyperpage{184}
+    \subitem {get\discretionary {-}{}{}Mat\discretionary {-}{}{}Force\discretionary {-}{}{}Active\discretionary {-}{}{}\_\discretionary {-}{}{}hydro}, 
+		\hyperpage{184}
+    \subitem {get\discretionary {-}{}{}Mat\discretionary {-}{}{}Force\discretionary {-}{}{}Active\discretionary {-}{}{}\_\discretionary {-}{}{}user}, 
+		\hyperpage{184}
+    \subitem {get\discretionary {-}{}{}Mat\discretionary {-}{}{}Force\discretionary {-}{}{}Cross\discretionary {-}{}{}\_\discretionary {-}{}{}hydro}, 
+		\hyperpage{184}
+    \subitem {get\discretionary {-}{}{}Mat\discretionary {-}{}{}Force\discretionary {-}{}{}Cross\discretionary {-}{}{}\_\discretionary {-}{}{}user}, 
+		\hyperpage{185}
+    \subitem {get\discretionary {-}{}{}Mat\discretionary {-}{}{}Force\discretionary {-}{}{}Mass}, 
+		\hyperpage{185}
+    \subitem {get\discretionary {-}{}{}Mat\discretionary {-}{}{}Force\discretionary {-}{}{}React\discretionary {-}{}{}\_\discretionary {-}{}{}hydro}, 
+		\hyperpage{185}
+    \subitem {get\discretionary {-}{}{}Mat\discretionary {-}{}{}Force\discretionary {-}{}{}React\discretionary {-}{}{}\_\discretionary {-}{}{}user}, 
+		\hyperpage{186}
+    \subitem {get\discretionary {-}{}{}Name}, \hyperpage{186}
+    \subitem {list\discretionary {-}{}{}Body}, \hyperpage{186, 187}
+    \subitem {list\discretionary {-}{}{}Comp\discretionary {-}{}{}Cross\discretionary {-}{}{}Bod\discretionary {-}{}{}\_\discretionary {-}{}{}hydro}, 
+		\hyperpage{187}
+    \subitem {list\discretionary {-}{}{}Comp\discretionary {-}{}{}Cross\discretionary {-}{}{}Bod\discretionary {-}{}{}\_\discretionary {-}{}{}user}, 
+		\hyperpage{188}
+    \subitem {list\discretionary {-}{}{}Data}, \hyperpage{188, 189}
+    \subitem {list\discretionary {-}{}{}Data\discretionary {-}{}{}Equation}, 
+		\hyperpage{189}
+    \subitem {list\discretionary {-}{}{}Data\discretionary {-}{}{}Index}, 
+		\hyperpage{190}
+    \subitem {list\discretionary {-}{}{}Equation}, \hyperpage{190, 191}
+    \subitem {Max\discretionary {-}{}{}Data\discretionary {-}{}{}Index}, 
+		\hyperpage{191}
+    \subitem {Motion\discretionary {-}{}{}Model}, \hyperpage{181}
+    \subitem {num\discretionary {-}{}{}Equations}, \hyperpage{191}
+    \subitem {Reset}, \hyperpage{191}
+    \subitem {set\discretionary {-}{}{}Body}, \hyperpage{191}
+    \subitem {set\discretionary {-}{}{}Description}, \hyperpage{192}
+    \subitem {set\discretionary {-}{}{}Freq}, \hyperpage{192}
+    \subitem {set\discretionary {-}{}{}Name}, \hyperpage{192}
+    \subitem {setlist\discretionary {-}{}{}Body}, \hyperpage{192}
+    \subitem {use\discretionary {-}{}{}Force\discretionary {-}{}{}Active\discretionary {-}{}{}\_\discretionary {-}{}{}hydro}, 
+		\hyperpage{192, 193}
+    \subitem {use\discretionary {-}{}{}Force\discretionary {-}{}{}Active\discretionary {-}{}{}\_\discretionary {-}{}{}user}, 
+		\hyperpage{193, 194}
+    \subitem {use\discretionary {-}{}{}Force\discretionary {-}{}{}Cross\discretionary {-}{}{}\_\discretionary {-}{}{}hydro}, 
+		\hyperpage{194, 195}
+    \subitem {use\discretionary {-}{}{}Force\discretionary {-}{}{}Cross\discretionary {-}{}{}\_\discretionary {-}{}{}user}, 
+		\hyperpage{196, 197}
+    \subitem {use\discretionary {-}{}{}Force\discretionary {-}{}{}Mass}, 
+		\hyperpage{197, 198}
+    \subitem {use\discretionary {-}{}{}Force\discretionary {-}{}{}React\discretionary {-}{}{}\_\discretionary {-}{}{}hydro}, 
+		\hyperpage{198, 199}
+    \subitem {use\discretionary {-}{}{}Force\discretionary {-}{}{}React\discretionary {-}{}{}\_\discretionary {-}{}{}user}, 
+		\hyperpage{199--201}
+  \item {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Motion\discretionary {-}{}{}Solver}, 
+		\hyperpage{201}
+    \subitem {$\sim $\discretionary {-}{}{}Motion\discretionary {-}{}{}Solver}, 
+		\hyperpage{203}
+    \subitem {add\discretionary {-}{}{}Body}, \hyperpage{204}
+    \subitem {calculate\discretionary {-}{}{}Outputs}, \hyperpage{204}
+    \subitem {list\discretionary {-}{}{}Solution}, \hyperpage{204}
+    \subitem {Motion\discretionary {-}{}{}Solver}, \hyperpage{203}
+    \subitem {set\discretionary {-}{}{}Wave\discretionary {-}{}{}Freq}, 
+		\hyperpage{205}
+    \subitem {sum\discretionary {-}{}{}Active\discretionary {-}{}{}Set}, 
+		\hyperpage{205}
+    \subitem {sum\discretionary {-}{}{}Cross\discretionary {-}{}{}Set}, 
+		\hyperpage{205}
+    \subitem {sum\discretionary {-}{}{}Derivative}, 
+		\hyperpage{205, 206}
+    \subitem {sum\discretionary {-}{}{}React\discretionary {-}{}{}Set}, 
+		\hyperpage{206}
+  \item {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Output\discretionary {-}{}{}Derived}, 
+		\hyperpage{216}
+    \subitem {$\sim $\discretionary {-}{}{}Output\discretionary {-}{}{}Derived}, 
+		\hyperpage{219}
+    \subitem {add\discretionary {-}{}{}Result}, \hyperpage{220}
+    \subitem {calc\discretionary {-}{}{}Output}, \hyperpage{220}
+    \subitem {get\discretionary {-}{}{}Class\discretionary {-}{}{}Name}, 
+		\hyperpage{220}
+    \subitem {get\discretionary {-}{}{}Cur\discretionary {-}{}{}Body\discretionary {-}{}{}Index}, 
+		\hyperpage{221}
+    \subitem {get\discretionary {-}{}{}Cur\discretionary {-}{}{}Wave\discretionary {-}{}{}Dir}, 
+		\hyperpage{221}
+    \subitem {get\discretionary {-}{}{}Cur\discretionary {-}{}{}Wave\discretionary {-}{}{}Ind}, 
+		\hyperpage{221}
+    \subitem {get\discretionary {-}{}{}Name}, \hyperpage{221}
+    \subitem {list\discretionary {-}{}{}Body}, \hyperpage{221, 222}
+    \subitem {list\discretionary {-}{}{}Freq}, \hyperpage{222}
+    \subitem {list\discretionary {-}{}{}Solution\discretionary {-}{}{}Set}, 
+		\hyperpage{222}
+    \subitem {list\discretionary {-}{}{}Wave\discretionary {-}{}{}Dir}, 
+		\hyperpage{223}
+    \subitem {Output\discretionary {-}{}{}Derived}, \hyperpage{219}
+    \subitem {p\discretionary {-}{}{}Class\discretionary {-}{}{}Name}, 
+		\hyperpage{224}
+    \subitem {p\discretionary {-}{}{}Name}, \hyperpage{224}
+    \subitem {p\discretionary {-}{}{}Parent\discretionary {-}{}{}Body}, 
+		\hyperpage{224}
+    \subitem {set\discretionary {-}{}{}Name}, \hyperpage{223}
+    \subitem {set\discretionary {-}{}{}Output\discretionary {-}{}{}Body}, 
+		\hyperpage{223}
+  \item {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Outputs\discretionary {-}{}{}Body}, 
+		\hyperpage{225}
+    \subitem {$\sim $\discretionary {-}{}{}Outputs\discretionary {-}{}{}Body}, 
+		\hyperpage{229}
+    \subitem {add\discretionary {-}{}{}Global\discretionary {-}{}{}Acceleration}, 
+		\hyperpage{229, 230}
+    \subitem {add\discretionary {-}{}{}Global\discretionary {-}{}{}Motion}, 
+		\hyperpage{230}
+    \subitem {add\discretionary {-}{}{}Global\discretionary {-}{}{}Solution}, 
+		\hyperpage{230}
+    \subitem {add\discretionary {-}{}{}Global\discretionary {-}{}{}Velocity}, 
+		\hyperpage{230, 231}
+    \subitem {calc\discretionary {-}{}{}Global\discretionary {-}{}{}Acceleration}, 
+		\hyperpage{231}
+    \subitem {calc\discretionary {-}{}{}Global\discretionary {-}{}{}Motion}, 
+		\hyperpage{231}
+    \subitem {calc\discretionary {-}{}{}Global\discretionary {-}{}{}Solution}, 
+		\hyperpage{232}
+    \subitem {calc\discretionary {-}{}{}Global\discretionary {-}{}{}Velocity}, 
+		\hyperpage{232}
+    \subitem {Clear\discretionary {-}{}{}Result}, \hyperpage{233}
+    \subitem {get\discretionary {-}{}{}Cur\discretionary {-}{}{}Body\discretionary {-}{}{}Index}, 
+		\hyperpage{233}
+    \subitem {get\discretionary {-}{}{}Cur\discretionary {-}{}{}Output}, 
+		\hyperpage{233}
+    \subitem {get\discretionary {-}{}{}Cur\discretionary {-}{}{}Wave\discretionary {-}{}{}Dir}, 
+		\hyperpage{233}
+    \subitem {get\discretionary {-}{}{}Cur\discretionary {-}{}{}Wave\discretionary {-}{}{}Ind}, 
+		\hyperpage{233}
+    \subitem {Initialize}, \hyperpage{234}
+    \subitem {list\discretionary {-}{}{}Body}, \hyperpage{234}
+    \subitem {list\discretionary {-}{}{}Freq}, \hyperpage{234}
+    \subitem {list\discretionary {-}{}{}Global\discretionary {-}{}{}Acceleration}, 
+		\hyperpage{235}
+    \subitem {list\discretionary {-}{}{}Global\discretionary {-}{}{}Motion}, 
+		\hyperpage{235}
+    \subitem {list\discretionary {-}{}{}Global\discretionary {-}{}{}Solution}, 
+		\hyperpage{236}
+    \subitem {list\discretionary {-}{}{}Global\discretionary {-}{}{}Velocity}, 
+		\hyperpage{236, 237}
+    \subitem {list\discretionary {-}{}{}Result}, \hyperpage{237}
+    \subitem {list\discretionary {-}{}{}Solution\discretionary {-}{}{}Set}, 
+		\hyperpage{238}
+    \subitem {list\discretionary {-}{}{}Wave\discretionary {-}{}{}Dir}, 
+		\hyperpage{238}
+    \subitem {Outputs\discretionary {-}{}{}Body}, \hyperpage{229}
+    \subitem {ref\discretionary {-}{}{}Cur\discretionary {-}{}{}Body}, 
+		\hyperpage{239}
+    \subitem {ref\discretionary {-}{}{}Cur\discretionary {-}{}{}Output}, 
+		\hyperpage{239}
+    \subitem {ref\discretionary {-}{}{}Cur\discretionary {-}{}{}Solution}, 
+		\hyperpage{239}
+    \subitem {ref\discretionary {-}{}{}Result}, \hyperpage{239}
+    \subitem {set\discretionary {-}{}{}Cur\discretionary {-}{}{}Body}, 
+		\hyperpage{240}
+    \subitem {set\discretionary {-}{}{}Cur\discretionary {-}{}{}Output}, 
+		\hyperpage{240}
+    \subitem {set\discretionary {-}{}{}Cur\discretionary {-}{}{}Wave\discretionary {-}{}{}Dir}, 
+		\hyperpage{240}
+    \subitem {set\discretionary {-}{}{}List\discretionary {-}{}{}Body}, 
+		\hyperpage{240}
+    \subitem {set\discretionary {-}{}{}List\discretionary {-}{}{}Freq}, 
+		\hyperpage{241}
+    \subitem {set\discretionary {-}{}{}List\discretionary {-}{}{}Wave\discretionary {-}{}{}Dir}, 
+		\hyperpage{241}
+    \subitem {set\discretionary {-}{}{}Solution\discretionary {-}{}{}Set}, 
+		\hyperpage{241}
+  \item {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Solution}, 
+		\hyperpage{248}
+    \subitem {$\sim $\discretionary {-}{}{}Solution}, \hyperpage{250}
+    \subitem {get\discretionary {-}{}{}Soln\discretionary {-}{}{}Mat}, 
+		\hyperpage{250}
+    \subitem {ref\discretionary {-}{}{}Body}, \hyperpage{251}
+    \subitem {ref\discretionary {-}{}{}Soln\discretionary {-}{}{}Mat}, 
+		\hyperpage{251}
+    \subitem {set\discretionary {-}{}{}Body}, \hyperpage{251}
+    \subitem {set\discretionary {-}{}{}Soln\discretionary {-}{}{}Mat}, 
+		\hyperpage{251}
+    \subitem {Solution}, \hyperpage{250}
+  \item {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Solution\discretionary {-}{}{}Set}, 
+		\hyperpage{252}
+    \subitem {$\sim $\discretionary {-}{}{}Solution\discretionary {-}{}{}Set}, 
+		\hyperpage{253}
+    \subitem {get\discretionary {-}{}{}Solution}, \hyperpage{254}
+    \subitem {n\discretionary {-}{}{}\_\discretionary {-}{}{}dirs}, 
+		\hyperpage{254}
+    \subitem {n\discretionary {-}{}{}\_\discretionary {-}{}{}freqs}, 
+		\hyperpage{254}
+    \subitem {ref\discretionary {-}{}{}Solution}, \hyperpage{254}
+    \subitem {resize}, \hyperpage{255}
+    \subitem {set\discretionary {-}{}{}Soln\discretionary {-}{}{}Mat}, 
+		\hyperpage{255}
+    \subitem {size}, \hyperpage{255}
+    \subitem {Solution\discretionary {-}{}{}Set}, \hyperpage{253}
+  \item {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}System}, 
+		\hyperpage{255}
+    \subitem {$\sim $\discretionary {-}{}{}System}, \hyperpage{259}
+    \subitem {add\discretionary {-}{}{}Body}, \hyperpage{259}
+    \subitem {add\discretionary {-}{}{}Force\discretionary {-}{}{}Active\discretionary {-}{}{}\_\discretionary {-}{}{}user}, 
+		\hyperpage{259}
+    \subitem {add\discretionary {-}{}{}Force\discretionary {-}{}{}Cross\discretionary {-}{}{}\_\discretionary {-}{}{}user}, 
+		\hyperpage{260}
+    \subitem {add\discretionary {-}{}{}Force\discretionary {-}{}{}React\discretionary {-}{}{}\_\discretionary {-}{}{}user}, 
+		\hyperpage{260}
+    \subitem {add\discretionary {-}{}{}Output}, \hyperpage{261}
+    \subitem {clear\discretionary {-}{}{}Force}, \hyperpage{261}
+    \subitem {get\discretionary {-}{}{}Cur\discretionary {-}{}{}Freq}, 
+		\hyperpage{261}
+    \subitem {get\discretionary {-}{}{}Cur\discretionary {-}{}{}Freq\discretionary {-}{}{}Ind}, 
+		\hyperpage{261}
+    \subitem {get\discretionary {-}{}{}Cur\discretionary {-}{}{}Wave\discretionary {-}{}{}Dir}, 
+		\hyperpage{262}
+    \subitem {get\discretionary {-}{}{}Cur\discretionary {-}{}{}Wave\discretionary {-}{}{}Dir\discretionary {-}{}{}Ind}, 
+		\hyperpage{262}
+    \subitem {get\discretionary {-}{}{}Wave\discretionary {-}{}{}Directions}, 
+		\hyperpage{262}
+    \subitem {get\discretionary {-}{}{}Wave\discretionary {-}{}{}Frequencies}, 
+		\hyperpage{262}
+    \subitem {link\discretionary {-}{}{}Bodies}, \hyperpage{262}
+    \subitem {list\discretionary {-}{}{}Body}, \hyperpage{263}
+    \subitem {list\discretionary {-}{}{}Force\discretionary {-}{}{}Active\discretionary {-}{}{}\_\discretionary {-}{}{}user}, 
+		\hyperpage{263}
+    \subitem {list\discretionary {-}{}{}Force\discretionary {-}{}{}Cross\discretionary {-}{}{}\_\discretionary {-}{}{}user}, 
+		\hyperpage{264}
+    \subitem {list\discretionary {-}{}{}Force\discretionary {-}{}{}React\discretionary {-}{}{}\_\discretionary {-}{}{}user}, 
+		\hyperpage{264}
+    \subitem {list\discretionary {-}{}{}Model}, \hyperpage{265}
+    \subitem {list\discretionary {-}{}{}Output}, \hyperpage{266}
+    \subitem {list\discretionary {-}{}{}Wave\discretionary {-}{}{}Directions}, 
+		\hyperpage{266}
+    \subitem {list\discretionary {-}{}{}Wave\discretionary {-}{}{}Frequencies}, 
+		\hyperpage{266}
+    \subitem {ref\discretionary {-}{}{}Force\discretionary {-}{}{}Active\discretionary {-}{}{}\_\discretionary {-}{}{}user}, 
+		\hyperpage{267}
+    \subitem {ref\discretionary {-}{}{}Force\discretionary {-}{}{}Cross\discretionary {-}{}{}\_\discretionary {-}{}{}user}, 
+		\hyperpage{267}
+    \subitem {ref\discretionary {-}{}{}Force\discretionary {-}{}{}React\discretionary {-}{}{}\_\discretionary {-}{}{}user}, 
+		\hyperpage{267}
+    \subitem {Reference\discretionary {-}{}{}System}, \hyperpage{266}
+    \subitem {set\discretionary {-}{}{}Analysis\discretionary {-}{}{}Type}, 
+		\hyperpage{268}
+    \subitem {set\discretionary {-}{}{}Cur\discretionary {-}{}{}Freq\discretionary {-}{}{}Ind}, 
+		\hyperpage{268}
+    \subitem {set\discretionary {-}{}{}Cur\discretionary {-}{}{}Wave\discretionary {-}{}{}Dir\discretionary {-}{}{}Ind}, 
+		\hyperpage{268}
+    \subitem {set\discretionary {-}{}{}Spread\discretionary {-}{}{}Model}, 
+		\hyperpage{268}
+    \subitem {set\discretionary {-}{}{}Wave\discretionary {-}{}{}Directions}, 
+		\hyperpage{268}
+    \subitem {set\discretionary {-}{}{}Wave\discretionary {-}{}{}Frequencies}, 
+		\hyperpage{268}
+    \subitem {System}, \hyperpage{259}
+  \item {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::dict\discretionary {-}{}{}Bodies}, 
+		\hyperpage{61}
+    \subitem {define\discretionary {-}{}{}Class}, \hyperpage{63}
+    \subitem {define\discretionary {-}{}{}Key}, \hyperpage{63}
+    \subitem {dict\discretionary {-}{}{}Bodies}, \hyperpage{63}
+  \item {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::dict\discretionary {-}{}{}Control}, 
+		\hyperpage{64}
+    \subitem {define\discretionary {-}{}{}Class}, \hyperpage{65}
+    \subitem {define\discretionary {-}{}{}Key}, \hyperpage{65}
+    \subitem {dict\discretionary {-}{}{}Control}, \hyperpage{65}
+  \item {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::dict\discretionary {-}{}{}Forces}, 
+		\hyperpage{66}
+    \subitem {define\discretionary {-}{}{}Class}, \hyperpage{67}
+    \subitem {define\discretionary {-}{}{}Key}, \hyperpage{67}
+    \subitem {dict\discretionary {-}{}{}Forces}, \hyperpage{67}
+  \item {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::mat\discretionary {-}{}{}Body}, 
+		\hyperpage{155}
+    \subitem {$\sim $mat\discretionary {-}{}{}Body}, \hyperpage{156}
+    \subitem {get\discretionary {-}{}{}Force\discretionary {-}{}{}React\discretionary {-}{}{}\_\discretionary {-}{}{}mass}, 
+		\hyperpage{157}
+    \subitem {get\discretionary {-}{}{}Id}, \hyperpage{157}
+    \subitem {get\discretionary {-}{}{}Model\discretionary {-}{}{}Id}, 
+		\hyperpage{157}
+    \subitem {list\discretionary {-}{}{}Force\discretionary {-}{}{}Active\discretionary {-}{}{}\_\discretionary {-}{}{}hydro}, 
+		\hyperpage{157}
+    \subitem {list\discretionary {-}{}{}Force\discretionary {-}{}{}Active\discretionary {-}{}{}\_\discretionary {-}{}{}user}, 
+		\hyperpage{158}
+    \subitem {list\discretionary {-}{}{}Force\discretionary {-}{}{}Cross\discretionary {-}{}{}\_\discretionary {-}{}{}hydro}, 
+		\hyperpage{158, 159}
+    \subitem {list\discretionary {-}{}{}Force\discretionary {-}{}{}Cross\discretionary {-}{}{}\_\discretionary {-}{}{}user}, 
+		\hyperpage{159}
+    \subitem {list\discretionary {-}{}{}Force\discretionary {-}{}{}React\discretionary {-}{}{}\_\discretionary {-}{}{}hydro}, 
+		\hyperpage{160}
+    \subitem {list\discretionary {-}{}{}Force\discretionary {-}{}{}React\discretionary {-}{}{}\_\discretionary {-}{}{}user}, 
+		\hyperpage{160}
+    \subitem {mat\discretionary {-}{}{}Body}, \hyperpage{156}
+    \subitem {ref\discretionary {-}{}{}Mass}, \hyperpage{161}
+    \subitem {set\discretionary {-}{}{}Id}, \hyperpage{161}
+    \subitem {set\discretionary {-}{}{}Model\discretionary {-}{}{}Id}, 
+		\hyperpage{161}
+  \item {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::mat\discretionary {-}{}{}Force\discretionary {-}{}{}Active}, 
+		\hyperpage{162}
+    \subitem {$\sim $mat\discretionary {-}{}{}Force\discretionary {-}{}{}Active}, 
+		\hyperpage{163}
+    \subitem {get\discretionary {-}{}{}Id}, \hyperpage{163}
+    \subitem {get\discretionary {-}{}{}Mat\discretionary {-}{}{}Size}, 
+		\hyperpage{163}
+    \subitem {list\discretionary {-}{}{}Coefficient}, \hyperpage{163}
+    \subitem {mat\discretionary {-}{}{}Force\discretionary {-}{}{}Active}, 
+		\hyperpage{163}
+    \subitem {operator+}, \hyperpage{163}
+    \subitem {operator-\/}, \hyperpage{164}
+    \subitem {set\discretionary {-}{}{}Id}, \hyperpage{164}
+  \item {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::mat\discretionary {-}{}{}Force\discretionary {-}{}{}Cross}, 
+		\hyperpage{164}
+    \subitem {$\sim $mat\discretionary {-}{}{}Force\discretionary {-}{}{}Cross}, 
+		\hyperpage{166}
+    \subitem {get\discretionary {-}{}{}Linked\discretionary {-}{}{}Body}, 
+		\hyperpage{166}
+    \subitem {get\discretionary {-}{}{}Linked\discretionary {-}{}{}Id}, 
+		\hyperpage{166}
+    \subitem {get\discretionary {-}{}{}Mat\discretionary {-}{}{}Dims}, 
+		\hyperpage{167}
+    \subitem {mat\discretionary {-}{}{}Force\discretionary {-}{}{}Cross}, 
+		\hyperpage{166}
+    \subitem {operator+}, \hyperpage{167}
+    \subitem {operator-\/}, \hyperpage{167}
+    \subitem {set\discretionary {-}{}{}Linked\discretionary {-}{}{}Body}, 
+		\hyperpage{168}
+    \subitem {set\discretionary {-}{}{}Linked\discretionary {-}{}{}Id}, 
+		\hyperpage{168}
+  \item {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::mat\discretionary {-}{}{}Force\discretionary {-}{}{}React}, 
+		\hyperpage{168}
+    \subitem {$\sim $mat\discretionary {-}{}{}Force\discretionary {-}{}{}React}, 
+		\hyperpage{171}
+    \subitem {get\discretionary {-}{}{}Derivative}, \hyperpage{171}
+    \subitem {get\discretionary {-}{}{}Id}, \hyperpage{171}
+    \subitem {get\discretionary {-}{}{}Mat\discretionary {-}{}{}Size}, 
+		\hyperpage{171}
+    \subitem {get\discretionary {-}{}{}Max\discretionary {-}{}{}Order}, 
+		\hyperpage{171}
+    \subitem {list\discretionary {-}{}{}Derivative}, 
+		\hyperpage{171, 172}
+    \subitem {mat\discretionary {-}{}{}Force\discretionary {-}{}{}React}, 
+		\hyperpage{170}
+    \subitem {operator+}, \hyperpage{172}
+    \subitem {operator-\/}, \hyperpage{172}
+    \subitem {p\discretionary {-}{}{}Id}, \hyperpage{173}
+    \subitem {pderiv}, \hyperpage{173}
+    \subitem {set\discretionary {-}{}{}Derivative}, \hyperpage{173}
+    \subitem {set\discretionary {-}{}{}Id}, \hyperpage{173}
+  \item {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::o\discretionary {-}{}{}Freq\discretionary {-}{}{}Core}, 
+		\hyperpage{213}
+    \subitem {$\sim $o\discretionary {-}{}{}Freq\discretionary {-}{}{}Core}, 
+		\hyperpage{215}
+    \subitem {Err\discretionary {-}{}{}Log}, \hyperpage{216}
+    \subitem {o\discretionary {-}{}{}Freq\discretionary {-}{}{}Core}, 
+		\hyperpage{215}
+    \subitem {Out\discretionary {-}{}{}Log}, \hyperpage{216}
+    \subitem {seaerr}, \hyperpage{216}
+    \subitem {seaout}, \hyperpage{216}
+    \subitem {set\discretionary {-}{}{}Err\discretionary {-}{}{}Log}, 
+		\hyperpage{215}
+    \subitem {set\discretionary {-}{}{}Out\discretionary {-}{}{}Log}, 
+		\hyperpage{215}
+    \subitem {write\discretionary {-}{}{}Error}, \hyperpage{215}
+    \subitem {write\discretionary {-}{}{}Log}, \hyperpage{215}
+  \item {Out\discretionary {-}{}{}Log}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::o\discretionary {-}{}{}Freq\discretionary {-}{}{}Core}, 
+		\hyperpage{216}
+  \item {output\discretionary {-}{}{}Bodies\discretionary {-}{}{}File}
+    \subitem {osea\discretionary {-}{}{}::\discretionary {-}{}{}File\discretionary {-}{}{}Reader}, 
+		\hyperpage{122}
+  \item {output\discretionary {-}{}{}Control\discretionary {-}{}{}File}
+    \subitem {osea\discretionary {-}{}{}::\discretionary {-}{}{}File\discretionary {-}{}{}Reader}, 
+		\hyperpage{122}
+  \item {output\discretionary {-}{}{}Data\discretionary {-}{}{}File}
+    \subitem {osea\discretionary {-}{}{}::\discretionary {-}{}{}File\discretionary {-}{}{}Reader}, 
+		\hyperpage{122}
+  \item {Output\discretionary {-}{}{}Derived}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Output\discretionary {-}{}{}Derived}, 
+		\hyperpage{219}
+  \item {output\discretionary {-}{}{}Forces\discretionary {-}{}{}File}
+    \subitem {osea\discretionary {-}{}{}::\discretionary {-}{}{}File\discretionary {-}{}{}Reader}, 
+		\hyperpage{123}
+  \item {output\discretionary {-}{}{}Sea\discretionary {-}{}{}Env\discretionary {-}{}{}File}
+    \subitem {osea\discretionary {-}{}{}::\discretionary {-}{}{}File\discretionary {-}{}{}Reader}, 
+		\hyperpage{123}
+  \item {Outputs\discretionary {-}{}{}Body}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Outputs\discretionary {-}{}{}Body}, 
+		\hyperpage{229}
+
+  \indexspace
+
+  \item {p\discretionary {-}{}{}Bod}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Equationof\discretionary {-}{}{}Motion}, 
+		\hyperpage{118}
+  \item {p\discretionary {-}{}{}Class\discretionary {-}{}{}Name}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Output\discretionary {-}{}{}Derived}, 
+		\hyperpage{224}
+  \item {p\discretionary {-}{}{}Coefficients}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Force\discretionary {-}{}{}Active}, 
+		\hyperpage{139}
+  \item {p\discretionary {-}{}{}Cur\discretionary {-}{}{}Ord}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Equationof\discretionary {-}{}{}Motion}, 
+		\hyperpage{118}
+  \item {p\discretionary {-}{}{}Cur\discretionary {-}{}{}Var}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Equationof\discretionary {-}{}{}Motion}, 
+		\hyperpage{118}
+  \item {p\discretionary {-}{}{}Data\discretionary {-}{}{}Index}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Force\discretionary {-}{}{}Active}, 
+		\hyperpage{139}
+  \item {p\discretionary {-}{}{}Derivative}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Force\discretionary {-}{}{}React}, 
+		\hyperpage{145}
+  \item {p\discretionary {-}{}{}Description}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Equationof\discretionary {-}{}{}Motion}, 
+		\hyperpage{118}
+  \item {p\discretionary {-}{}{}Id}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::mat\discretionary {-}{}{}Force\discretionary {-}{}{}React}, 
+		\hyperpage{173}
+  \item {p\discretionary {-}{}{}Name}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Equationof\discretionary {-}{}{}Motion}, 
+		\hyperpage{118}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Output\discretionary {-}{}{}Derived}, 
+		\hyperpage{224}
+  \item {p\discretionary {-}{}{}Parent\discretionary {-}{}{}Body}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Output\discretionary {-}{}{}Derived}, 
+		\hyperpage{224}
+  \item {p\discretionary {-}{}{}Sys\discretionary {-}{}{}Index}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Force}, 
+		\hyperpage{135}
+  \item {Parse}
+    \subitem {osea\discretionary {-}{}{}::\discretionary {-}{}{}Parser}, 
+		\hyperpage{245}
+  \item {Parser}
+    \subitem {osea\discretionary {-}{}{}::\discretionary {-}{}{}Parser}, 
+		\hyperpage{243}
+  \item {pderiv}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::mat\discretionary {-}{}{}Force\discretionary {-}{}{}React}, 
+		\hyperpage{173}
+  \item {pt\discretionary {-}{}{}Soln}
+    \subitem {osea\discretionary {-}{}{}::ofreq}, \hyperpage{35}
+  \item {pt\discretionary {-}{}{}System}
+    \subitem {osea\discretionary {-}{}{}::\discretionary {-}{}{}Dictionary}, 
+		\hyperpage{71}
+
+  \indexspace
+
+  \item {read\discretionary {-}{}{}Bodies}
+    \subitem {osea\discretionary {-}{}{}::\discretionary {-}{}{}File\discretionary {-}{}{}Reader}, 
+		\hyperpage{123}
+  \item {read\discretionary {-}{}{}Control}
+    \subitem {osea\discretionary {-}{}{}::\discretionary {-}{}{}File\discretionary {-}{}{}Reader}, 
+		\hyperpage{123}
+  \item {read\discretionary {-}{}{}Data}
+    \subitem {osea\discretionary {-}{}{}::\discretionary {-}{}{}File\discretionary {-}{}{}Reader}, 
+		\hyperpage{123}
+  \item {Read\discretionary {-}{}{}Files}
+    \subitem {ofreq.\discretionary {-}{}{}cpp}, \hyperpage{318}
+  \item {read\discretionary {-}{}{}Forces}
+    \subitem {osea\discretionary {-}{}{}::\discretionary {-}{}{}File\discretionary {-}{}{}Reader}, 
+		\hyperpage{124}
+  \item {read\discretionary {-}{}{}Hydro\discretionary {-}{}{}File}
+    \subitem {osea\discretionary {-}{}{}::\discretionary {-}{}{}File\discretionary {-}{}{}Reader}, 
+		\hyperpage{124}
+  \item {read\discretionary {-}{}{}Sea\discretionary {-}{}{}Env}
+    \subitem {osea\discretionary {-}{}{}::\discretionary {-}{}{}File\discretionary {-}{}{}Reader}, 
+		\hyperpage{124}
+  \item {ref\discretionary {-}{}{}Body}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Solution}, 
+		\hyperpage{251}
+  \item {ref\discretionary {-}{}{}Body\discretionary {-}{}{}Name}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Body}, 
+		\hyperpage{53}
+  \item {ref\discretionary {-}{}{}Cur\discretionary {-}{}{}Body}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Outputs\discretionary {-}{}{}Body}, 
+		\hyperpage{239}
+  \item {ref\discretionary {-}{}{}Cur\discretionary {-}{}{}Output}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Outputs\discretionary {-}{}{}Body}, 
+		\hyperpage{239}
+  \item {ref\discretionary {-}{}{}Cur\discretionary {-}{}{}Solution}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Outputs\discretionary {-}{}{}Body}, 
+		\hyperpage{239}
+  \item {ref\discretionary {-}{}{}Data\discretionary {-}{}{}Index}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Equation}, 
+		\hyperpage{99}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Equationof\discretionary {-}{}{}Motion}, 
+		\hyperpage{114}
+  \item {ref\discretionary {-}{}{}Data\discretionary {-}{}{}Solution}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Body}, 
+		\hyperpage{53}
+  \item {ref\discretionary {-}{}{}Description}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Equationof\discretionary {-}{}{}Motion}, 
+		\hyperpage{114}
+  \item {ref\discretionary {-}{}{}Force\discretionary {-}{}{}Active\discretionary {-}{}{}\_\discretionary {-}{}{}user}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}System}, 
+		\hyperpage{267}
+  \item {ref\discretionary {-}{}{}Force\discretionary {-}{}{}Cross\discretionary {-}{}{}\_\discretionary {-}{}{}user}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}System}, 
+		\hyperpage{267}
+  \item {ref\discretionary {-}{}{}Force\discretionary {-}{}{}React\discretionary {-}{}{}\_\discretionary {-}{}{}user}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}System}, 
+		\hyperpage{267}
+  \item {ref\discretionary {-}{}{}Heading}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Body}, 
+		\hyperpage{53}
+  \item {ref\discretionary {-}{}{}Hydro\discretionary {-}{}{}Bod\discretionary {-}{}{}Name}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Body}, 
+		\hyperpage{54}
+  \item {ref\discretionary {-}{}{}Mass}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::mat\discretionary {-}{}{}Body}, 
+		\hyperpage{161}
+  \item {ref\discretionary {-}{}{}Name}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Equationof\discretionary {-}{}{}Motion}, 
+		\hyperpage{114}
+  \item {ref\discretionary {-}{}{}Outputs\discretionary {-}{}{}Body}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}File\discretionary {-}{}{}Writer}, 
+		\hyperpage{130}
+  \item {ref\discretionary {-}{}{}Posn}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Body}, 
+		\hyperpage{54}
+  \item {ref\discretionary {-}{}{}Result}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Outputs\discretionary {-}{}{}Body}, 
+		\hyperpage{239}
+  \item {ref\discretionary {-}{}{}Soln\discretionary {-}{}{}Mat}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Solution}, 
+		\hyperpage{251}
+  \item {ref\discretionary {-}{}{}Solution}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Body}, 
+		\hyperpage{54}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Solution\discretionary {-}{}{}Set}, 
+		\hyperpage{254}
+  \item {ref\discretionary {-}{}{}Sub\discretionary {-}{}{}Object}
+    \subitem {osea\discretionary {-}{}{}::\discretionary {-}{}{}Parser}, 
+		\hyperpage{246}
+  \item {Reference\discretionary {-}{}{}System}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}System}, 
+		\hyperpage{266}
+  \item {Reset}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Motion\discretionary {-}{}{}Model}, 
+		\hyperpage{191}
+  \item {resize}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Solution\discretionary {-}{}{}Set}, 
+		\hyperpage{255}
+
+  \indexspace
+
+  \item {Sea\discretionary {-}{}{}Enviroment}, \hyperpage{246}
+    \subitem {$\sim $\discretionary {-}{}{}Sea\discretionary {-}{}{}Enviroment}, 
+		\hyperpage{246}
+    \subitem {Sea\discretionary {-}{}{}Enviroment}, \hyperpage{246}
+    \subitem {Sea\discretionary {-}{}{}Enviroment}, \hyperpage{246}
+    \subitem {set\discretionary {-}{}{}Spread\discretionary {-}{}{}Model\discretionary {-}{}{}Direction\discretionary {-}{}{}Angle}, 
+		\hyperpage{247}
+    \subitem {set\discretionary {-}{}{}Spread\discretionary {-}{}{}Model\discretionary {-}{}{}Name}, 
+		\hyperpage{247}
+    \subitem {set\discretionary {-}{}{}Spread\discretionary {-}{}{}Model\discretionary {-}{}{}Scaling\discretionary {-}{}{}Factor}, 
+		\hyperpage{247}
+    \subitem {set\discretionary {-}{}{}Spread\discretionary {-}{}{}Model\discretionary {-}{}{}Wave\discretionary {-}{}{}Spectrum\discretionary {-}{}{}Name}, 
+		\hyperpage{247}
+    \subitem {set\discretionary {-}{}{}Wave\discretionary {-}{}{}Spectrum\discretionary {-}{}{}Frequencies}, 
+		\hyperpage{247}
+    \subitem {set\discretionary {-}{}{}Wave\discretionary {-}{}{}Spectrum\discretionary {-}{}{}Name}, 
+		\hyperpage{247}
+    \subitem {set\discretionary {-}{}{}Wave\discretionary {-}{}{}Spectrum\discretionary {-}{}{}Wave\discretionary {-}{}{}Energy}, 
+		\hyperpage{248}
+    \subitem {test\discretionary {-}{}{}Print}, \hyperpage{248}
+  \item {seaerr}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::o\discretionary {-}{}{}Freq\discretionary {-}{}{}Core}, 
+		\hyperpage{216}
+  \item {seaout}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::o\discretionary {-}{}{}Freq\discretionary {-}{}{}Core}, 
+		\hyperpage{216}
+  \item {send\discretionary {-}{}{}Output}
+    \subitem {osea\discretionary {-}{}{}::\discretionary {-}{}{}File\discretionary {-}{}{}Reader}, 
+		\hyperpage{124}
+  \item {set\discretionary {-}{}{}Analysis\discretionary {-}{}{}Type}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}System}, 
+		\hyperpage{268}
+  \item {set\discretionary {-}{}{}Arguments}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Equationof\discretionary {-}{}{}Motion}, 
+		\hyperpage{115}
+  \item {set\discretionary {-}{}{}Body}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Motion\discretionary {-}{}{}Model}, 
+		\hyperpage{191}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Solution}, 
+		\hyperpage{251}
+  \item {set\discretionary {-}{}{}Body\discretionary {-}{}{}Name}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Body}, 
+		\hyperpage{54}
+  \item {set\discretionary {-}{}{}Cen\discretionary {-}{}{}X}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Body}, 
+		\hyperpage{55}
+  \item {set\discretionary {-}{}{}Cen\discretionary {-}{}{}Y}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Body}, 
+		\hyperpage{55}
+  \item {set\discretionary {-}{}{}Cen\discretionary {-}{}{}Z}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Body}, 
+		\hyperpage{55}
+  \item {set\discretionary {-}{}{}Class\discretionary {-}{}{}Name}
+    \subitem {osea\discretionary {-}{}{}::\discretionary {-}{}{}Object\discretionary {-}{}{}Group}, 
+		\hyperpage{213}
+  \item {set\discretionary {-}{}{}Coeff}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Force\discretionary {-}{}{}Active}, 
+		\hyperpage{139}
+  \item {set\discretionary {-}{}{}Coefficient}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Equation}, 
+		\hyperpage{99}
+  \item {set\discretionary {-}{}{}Cur\discretionary {-}{}{}Body}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Outputs\discretionary {-}{}{}Body}, 
+		\hyperpage{240}
+  \item {set\discretionary {-}{}{}Cur\discretionary {-}{}{}Derivative}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Force\discretionary {-}{}{}React}, 
+		\hyperpage{145}
+  \item {set\discretionary {-}{}{}Cur\discretionary {-}{}{}Equation\discretionary {-}{}{}Num}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Force\discretionary {-}{}{}React}, 
+		\hyperpage{145}
+  \item {set\discretionary {-}{}{}Cur\discretionary {-}{}{}Freq\discretionary {-}{}{}Ind}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}System}, 
+		\hyperpage{268}
+  \item {set\discretionary {-}{}{}Cur\discretionary {-}{}{}Output}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Outputs\discretionary {-}{}{}Body}, 
+		\hyperpage{240}
+  \item {set\discretionary {-}{}{}Cur\discretionary {-}{}{}Wave\discretionary {-}{}{}Dir}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Outputs\discretionary {-}{}{}Body}, 
+		\hyperpage{240}
+  \item {set\discretionary {-}{}{}Cur\discretionary {-}{}{}Wave\discretionary {-}{}{}Dir\discretionary {-}{}{}Ind}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}System}, 
+		\hyperpage{268}
+  \item {set\discretionary {-}{}{}Data\discretionary {-}{}{}Index}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Equation}, 
+		\hyperpage{99}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Equationof\discretionary {-}{}{}Motion}, 
+		\hyperpage{115}
+  \item {set\discretionary {-}{}{}Debug\discretionary {-}{}{}Data}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Equationof\discretionary {-}{}{}Motion}, 
+		\hyperpage{115}
+  \item {set\discretionary {-}{}{}Derivative}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Global\discretionary {-}{}{}Acceleration}, 
+		\hyperpage{147}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Global\discretionary {-}{}{}Motion}, 
+		\hyperpage{149}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Global\discretionary {-}{}{}Solution}, 
+		\hyperpage{152}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Global\discretionary {-}{}{}Velocity}, 
+		\hyperpage{154}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::mat\discretionary {-}{}{}Force\discretionary {-}{}{}React}, 
+		\hyperpage{173}
+  \item {set\discretionary {-}{}{}Description}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Equationof\discretionary {-}{}{}Motion}, 
+		\hyperpage{115}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Motion\discretionary {-}{}{}Model}, 
+		\hyperpage{192}
+  \item {set\discretionary {-}{}{}Dictionary}
+    \subitem {osea\discretionary {-}{}{}::\discretionary {-}{}{}File\discretionary {-}{}{}Reader}, 
+		\hyperpage{125}
+  \item {set\discretionary {-}{}{}Err\discretionary {-}{}{}Log}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::o\discretionary {-}{}{}Freq\discretionary {-}{}{}Core}, 
+		\hyperpage{215}
+  \item {set\discretionary {-}{}{}Force\discretionary {-}{}{}Name}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Force}, 
+		\hyperpage{135}
+  \item {set\discretionary {-}{}{}Format}
+    \subitem {osea\discretionary {-}{}{}::\discretionary {-}{}{}Object\discretionary {-}{}{}Group}, 
+		\hyperpage{213}
+  \item {set\discretionary {-}{}{}Formula}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Eqn\discretionary {-}{}{}Rotation}, 
+		\hyperpage{83}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Eqn\discretionary {-}{}{}Translation}, 
+		\hyperpage{94}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Equationof\discretionary {-}{}{}Motion}, 
+		\hyperpage{116}
+  \item {set\discretionary {-}{}{}Freq}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Motion\discretionary {-}{}{}Model}, 
+		\hyperpage{192}
+  \item {set\discretionary {-}{}{}Header}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}File\discretionary {-}{}{}Writer}, 
+		\hyperpage{130}
+  \item {set\discretionary {-}{}{}Heading}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Body}, 
+		\hyperpage{55}
+  \item {set\discretionary {-}{}{}Hydro\discretionary {-}{}{}Bod\discretionary {-}{}{}Name}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Body}, 
+		\hyperpage{55}
+  \item {set\discretionary {-}{}{}Id}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::mat\discretionary {-}{}{}Body}, 
+		\hyperpage{161}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::mat\discretionary {-}{}{}Force\discretionary {-}{}{}Active}, 
+		\hyperpage{164}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::mat\discretionary {-}{}{}Force\discretionary {-}{}{}React}, 
+		\hyperpage{173}
+  \item {set\discretionary {-}{}{}Linked\discretionary {-}{}{}Body}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::mat\discretionary {-}{}{}Force\discretionary {-}{}{}Cross}, 
+		\hyperpage{168}
+  \item {set\discretionary {-}{}{}Linked\discretionary {-}{}{}Id}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::mat\discretionary {-}{}{}Force\discretionary {-}{}{}Cross}, 
+		\hyperpage{168}
+  \item {set\discretionary {-}{}{}List\discretionary {-}{}{}Body}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Outputs\discretionary {-}{}{}Body}, 
+		\hyperpage{240}
+  \item {set\discretionary {-}{}{}List\discretionary {-}{}{}Freq}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Outputs\discretionary {-}{}{}Body}, 
+		\hyperpage{241}
+  \item {set\discretionary {-}{}{}List\discretionary {-}{}{}Wave\discretionary {-}{}{}Dir}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Outputs\discretionary {-}{}{}Body}, 
+		\hyperpage{241}
+  \item {set\discretionary {-}{}{}Mass}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Body}, 
+		\hyperpage{55}
+  \item {set\discretionary {-}{}{}Mass\discretionary {-}{}{}Matrix}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Body}, 
+		\hyperpage{56}
+  \item {set\discretionary {-}{}{}Model\discretionary {-}{}{}Id}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::mat\discretionary {-}{}{}Body}, 
+		\hyperpage{161}
+  \item {set\discretionary {-}{}{}Mom\discretionary {-}{}{}Ixx}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Body}, 
+		\hyperpage{56}
+  \item {set\discretionary {-}{}{}Mom\discretionary {-}{}{}Ixy}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Body}, 
+		\hyperpage{56}
+  \item {set\discretionary {-}{}{}Mom\discretionary {-}{}{}Ixz}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Body}, 
+		\hyperpage{56}
+  \item {set\discretionary {-}{}{}Mom\discretionary {-}{}{}Iyy}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Body}, 
+		\hyperpage{56}
+  \item {set\discretionary {-}{}{}Mom\discretionary {-}{}{}Iyz}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Body}, 
+		\hyperpage{56}
+  \item {set\discretionary {-}{}{}Mom\discretionary {-}{}{}Izz}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Body}, 
+		\hyperpage{57}
+  \item {set\discretionary {-}{}{}Motion\discretionary {-}{}{}Model}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Body}, 
+		\hyperpage{57}
+  \item {set\discretionary {-}{}{}Name}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Equationof\discretionary {-}{}{}Motion}, 
+		\hyperpage{116}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Motion\discretionary {-}{}{}Model}, 
+		\hyperpage{192}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Output\discretionary {-}{}{}Derived}, 
+		\hyperpage{223}
+  \item {set\discretionary {-}{}{}Object}
+    \subitem {osea\discretionary {-}{}{}::\discretionary {-}{}{}Dictionary}, 
+		\hyperpage{71}
+  \item {set\discretionary {-}{}{}Out\discretionary {-}{}{}Log}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::o\discretionary {-}{}{}Freq\discretionary {-}{}{}Core}, 
+		\hyperpage{215}
+  \item {set\discretionary {-}{}{}Output\discretionary {-}{}{}Body}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Output\discretionary {-}{}{}Derived}, 
+		\hyperpage{223}
+  \item {set\discretionary {-}{}{}Outputs\discretionary {-}{}{}Body}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}File\discretionary {-}{}{}Writer}, 
+		\hyperpage{130}
+  \item {set\discretionary {-}{}{}Path}
+    \subitem {osea\discretionary {-}{}{}::\discretionary {-}{}{}File\discretionary {-}{}{}Reader}, 
+		\hyperpage{125}
+  \item {set\discretionary {-}{}{}Posn\discretionary {-}{}{}X}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Body}, 
+		\hyperpage{57}
+  \item {set\discretionary {-}{}{}Posn\discretionary {-}{}{}Y}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Body}, 
+		\hyperpage{57}
+  \item {set\discretionary {-}{}{}Posn\discretionary {-}{}{}Z}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Body}, 
+		\hyperpage{57}
+  \item {set\discretionary {-}{}{}Project\discretionary {-}{}{}Dir}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}File\discretionary {-}{}{}Writer}, 
+		\hyperpage{130}
+  \item {set\discretionary {-}{}{}Soln\discretionary {-}{}{}Mat}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Body}, 
+		\hyperpage{58}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Solution}, 
+		\hyperpage{251}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Solution\discretionary {-}{}{}Set}, 
+		\hyperpage{255}
+  \item {set\discretionary {-}{}{}Solution\discretionary {-}{}{}Set}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Outputs\discretionary {-}{}{}Body}, 
+		\hyperpage{241}
+  \item {set\discretionary {-}{}{}Spread\discretionary {-}{}{}Model}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}System}, 
+		\hyperpage{268}
+  \item {set\discretionary {-}{}{}Spread\discretionary {-}{}{}Model\discretionary {-}{}{}Direction\discretionary {-}{}{}Angle}
+    \subitem {Sea\discretionary {-}{}{}Enviroment}, \hyperpage{247}
+  \item {set\discretionary {-}{}{}Spread\discretionary {-}{}{}Model\discretionary {-}{}{}Name}
+    \subitem {Sea\discretionary {-}{}{}Enviroment}, \hyperpage{247}
+  \item {set\discretionary {-}{}{}Spread\discretionary {-}{}{}Model\discretionary {-}{}{}Scaling\discretionary {-}{}{}Factor}
+    \subitem {Sea\discretionary {-}{}{}Enviroment}, \hyperpage{247}
+  \item {set\discretionary {-}{}{}Spread\discretionary {-}{}{}Model\discretionary {-}{}{}Wave\discretionary {-}{}{}Spectrum\discretionary {-}{}{}Name}
+    \subitem {Sea\discretionary {-}{}{}Enviroment}, \hyperpage{247}
+  \item {set\discretionary {-}{}{}System}
+    \subitem {osea\discretionary {-}{}{}::\discretionary {-}{}{}Dictionary}, 
+		\hyperpage{71}
+    \subitem {osea\discretionary {-}{}{}::\discretionary {-}{}{}File\discretionary {-}{}{}Reader}, 
+		\hyperpage{125}
+  \item {set\discretionary {-}{}{}System\discretionary {-}{}{}Index}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Force}, 
+		\hyperpage{135}
+  \item {set\discretionary {-}{}{}Version}
+    \subitem {osea\discretionary {-}{}{}::\discretionary {-}{}{}Object\discretionary {-}{}{}Group}, 
+		\hyperpage{213}
+  \item {set\discretionary {-}{}{}Wave\discretionary {-}{}{}Directions}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}System}, 
+		\hyperpage{268}
+  \item {set\discretionary {-}{}{}Wave\discretionary {-}{}{}Freq}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Motion\discretionary {-}{}{}Solver}, 
+		\hyperpage{205}
+  \item {set\discretionary {-}{}{}Wave\discretionary {-}{}{}Frequencies}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}System}, 
+		\hyperpage{268}
+  \item {set\discretionary {-}{}{}Wave\discretionary {-}{}{}Spectrum\discretionary {-}{}{}Frequencies}
+    \subitem {Sea\discretionary {-}{}{}Enviroment}, \hyperpage{247}
+  \item {set\discretionary {-}{}{}Wave\discretionary {-}{}{}Spectrum\discretionary {-}{}{}Name}
+    \subitem {Sea\discretionary {-}{}{}Enviroment}, \hyperpage{247}
+  \item {set\discretionary {-}{}{}Wave\discretionary {-}{}{}Spectrum\discretionary {-}{}{}Wave\discretionary {-}{}{}Energy}
+    \subitem {Sea\discretionary {-}{}{}Enviroment}, \hyperpage{248}
+  \item {setlist\discretionary {-}{}{}Body}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Motion\discretionary {-}{}{}Model}, 
+		\hyperpage{192}
+  \item {size}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Solution\discretionary {-}{}{}Set}, 
+		\hyperpage{255}
+  \item {Solution}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Solution}, 
+		\hyperpage{250}
+  \item {Solution\discretionary {-}{}{}Set}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Solution\discretionary {-}{}{}Set}, 
+		\hyperpage{253}
+  \item {Sum}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Equationof\discretionary {-}{}{}Motion}, 
+		\hyperpage{116, 117}
+  \item {sum\discretionary {-}{}{}Active\discretionary {-}{}{}Set}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Motion\discretionary {-}{}{}Solver}, 
+		\hyperpage{205}
+  \item {sum\discretionary {-}{}{}Cross\discretionary {-}{}{}Set}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Motion\discretionary {-}{}{}Solver}, 
+		\hyperpage{205}
+  \item {sum\discretionary {-}{}{}Derivative}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Motion\discretionary {-}{}{}Solver}, 
+		\hyperpage{205, 206}
+  \item {sum\discretionary {-}{}{}React\discretionary {-}{}{}Set}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Motion\discretionary {-}{}{}Solver}, 
+		\hyperpage{206}
+  \item {sysofreq}
+    \subitem {ofreq.\discretionary {-}{}{}cpp}, \hyperpage{319}
+  \item {System}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}System}, 
+		\hyperpage{259}
+
+  \indexspace
+
+  \item {test\discretionary {-}{}{}Print}
+    \subitem {Sea\discretionary {-}{}{}Enviroment}, \hyperpage{248}
+
+  \indexspace
+
+  \item {undef\discretionary {-}{}{}Arg}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Equationof\discretionary {-}{}{}Motion}, 
+		\hyperpage{119}
+  \item {use\discretionary {-}{}{}Force\discretionary {-}{}{}Active\discretionary {-}{}{}\_\discretionary {-}{}{}hydro}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Motion\discretionary {-}{}{}Model}, 
+		\hyperpage{192, 193}
+  \item {use\discretionary {-}{}{}Force\discretionary {-}{}{}Active\discretionary {-}{}{}\_\discretionary {-}{}{}user}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Motion\discretionary {-}{}{}Model}, 
+		\hyperpage{193, 194}
+  \item {use\discretionary {-}{}{}Force\discretionary {-}{}{}Cross\discretionary {-}{}{}\_\discretionary {-}{}{}hydro}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Motion\discretionary {-}{}{}Model}, 
+		\hyperpage{194, 195}
+  \item {use\discretionary {-}{}{}Force\discretionary {-}{}{}Cross\discretionary {-}{}{}\_\discretionary {-}{}{}user}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Motion\discretionary {-}{}{}Model}, 
+		\hyperpage{196, 197}
+  \item {use\discretionary {-}{}{}Force\discretionary {-}{}{}Mass}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Motion\discretionary {-}{}{}Model}, 
+		\hyperpage{197, 198}
+  \item {use\discretionary {-}{}{}Force\discretionary {-}{}{}React\discretionary {-}{}{}\_\discretionary {-}{}{}hydro}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Motion\discretionary {-}{}{}Model}, 
+		\hyperpage{198, 199}
+  \item {use\discretionary {-}{}{}Force\discretionary {-}{}{}React\discretionary {-}{}{}\_\discretionary {-}{}{}user}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Motion\discretionary {-}{}{}Model}, 
+		\hyperpage{199--201}
+
+  \indexspace
+
+  \item {V\discretionary {-}{}{}A\discretionary {-}{}{}R\discretionary {-}{}{}F\discretionary {-}{}{}O\discretionary {-}{}{}L\discretionary {-}{}{}D\discretionary {-}{}{}E\discretionary {-}{}{}R}
+    \subitem {ofreq.\discretionary {-}{}{}cpp}, \hyperpage{319}
+  \item {var}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}Equationof\discretionary {-}{}{}Motion}, 
+		\hyperpage{117}
+  \item {vec\discretionary {-}{}{}Keyword}
+    \subitem {osea}, \hyperpage{34}
+  \item {vec\discretionary {-}{}{}Object}
+    \subitem {osea}, \hyperpage{34}
+  \item {vec\discretionary {-}{}{}Value}
+    \subitem {osea}, \hyperpage{34}
+
+  \indexspace
+
+  \item {write\discretionary {-}{}{}Error}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::o\discretionary {-}{}{}Freq\discretionary {-}{}{}Core}, 
+		\hyperpage{215}
+  \item {write\discretionary {-}{}{}Frequency}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}File\discretionary {-}{}{}Writer}, 
+		\hyperpage{131}
+  \item {write\discretionary {-}{}{}Global\discretionary {-}{}{}Acceleration}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}File\discretionary {-}{}{}Writer}, 
+		\hyperpage{131}
+  \item {write\discretionary {-}{}{}Global\discretionary {-}{}{}Motion}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}File\discretionary {-}{}{}Writer}, 
+		\hyperpage{131}
+  \item {write\discretionary {-}{}{}Global\discretionary {-}{}{}Solution}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}File\discretionary {-}{}{}Writer}, 
+		\hyperpage{131}
+  \item {write\discretionary {-}{}{}Global\discretionary {-}{}{}Velocity}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}File\discretionary {-}{}{}Writer}, 
+		\hyperpage{131}
+  \item {write\discretionary {-}{}{}Log}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::o\discretionary {-}{}{}Freq\discretionary {-}{}{}Core}, 
+		\hyperpage{215}
+  \item {write\discretionary {-}{}{}Wave\discretionary {-}{}{}Direction}
+    \subitem {osea\discretionary {-}{}{}::ofreq\discretionary {-}{}{}::\discretionary {-}{}{}File\discretionary {-}{}{}Writer}, 
+		\hyperpage{132}
+
+\end{theindex}

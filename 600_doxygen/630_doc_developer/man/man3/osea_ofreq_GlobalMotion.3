@@ -1,0 +1,81 @@
+.TH "osea::ofreq::GlobalMotion" 3 "Sat Apr 5 2014" "Version 0.4" "oFreq" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+osea::ofreq::GlobalMotion \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <globalmotion\&.h>\fP
+.PP
+Inherits \fBosea::ofreq::GlobalSolution\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBGlobalMotion\fP ()"
+.br
+.ti -1c
+.RI "\fBGlobalMotion\fP (\fBOutputsBody\fP *input)"
+.br
+.RI "\fIConstructor that also sets the pointer to the \fBOutputsBody\fP object which contains the \fBOutputDerived\fP object\&. \fP"
+.ti -1c
+.RI "\fB~GlobalMotion\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetDerivative\fP (int ord)"
+.br
+.RI "\fISets the order of the derivative for the object\&. \fP"
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+This class represents the Global Motion \fBSolution\fP\&. 
+.PP
+Definition at line 84 of file globalmotion\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "GlobalMotion::GlobalMotion ()"
+This default constructor creates a Global Motion object\&. 
+.PP
+Definition at line 41 of file globalmotion\&.cpp\&.
+.SS "GlobalMotion::GlobalMotion (\fBOutputsBody\fP *input)"
+
+.PP
+Constructor that also sets the pointer to the \fBOutputsBody\fP object which contains the \fBOutputDerived\fP object\&. \fBParameters:\fP
+.RS 4
+\fIinput\fP Pointer to the \fBOutputsBody\fP objec that contains this \fBOutputDerived\fP object\&. Pointer passed by value\&.
+.RE
+.PP
+\fBSee Also:\fP
+.RS 4
+setOutputsBody() 
+.RE
+.PP
+
+.PP
+Definition at line 50 of file globalmotion\&.cpp\&.
+.SS "GlobalMotion::~GlobalMotion ()"
+The default destructor, nothing happens here\&. 
+.PP
+Definition at line 59 of file globalmotion\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void GlobalMotion::setDerivative (intord)\fC [virtual]\fP"
+
+.PP
+Sets the order of the derivative for the object\&. \fBParameters:\fP
+.RS 4
+\fIord\fP Integer input that specifies the order of the derivative\&. Value can be anything from 0 or larger\&. Variable is passed by value\&. 
+.RE
+.PP
+
+.PP
+Reimplemented from \fBosea::ofreq::GlobalSolution\fP\&.
+.PP
+Definition at line 64 of file globalmotion\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for oFreq from the source code\&.

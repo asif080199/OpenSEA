@@ -1,0 +1,209 @@
+\hypertarget{classosea_1_1ofreq_1_1_derivative}{\section{osea\-:\-:ofreq\-:\-:Derivative Class Reference}
+\label{classosea_1_1ofreq_1_1_derivative}\index{osea\-::ofreq\-::\-Derivative@{osea\-::ofreq\-::\-Derivative}}
+}
+
+
+{\ttfamily \#include $<$derivative.\-h$>$}
+
+
+
+Inheritance diagram for osea\-:\-:ofreq\-:\-:Derivative\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=218pt]{classosea_1_1ofreq_1_1_derivative__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classosea_1_1ofreq_1_1_derivative_adc03ec3ad150bc0de66a3e7200cd368f}{Derivative} ()
+\item 
+\hyperlink{classosea_1_1ofreq_1_1_derivative_a7fc4ee53f460dfb98b3db2e9c9830cf9}{$\sim$\-Derivative} ()
+\item 
+std\-::vector$<$ \hyperlink{classosea_1_1ofreq_1_1_equation}{Equation} $>$ \& \hyperlink{classosea_1_1ofreq_1_1_derivative_a7fa63ee738fcafcf3fccb796da095946}{list\-Equation} ()
+\begin{DoxyCompactList}\small\item\em The list of equations. \end{DoxyCompactList}\item 
+\hyperlink{classosea_1_1ofreq_1_1_equation}{Equation} \& \hyperlink{classosea_1_1ofreq_1_1_derivative_a57fc9f8fc2bb6b416b9ade4f79f2bf1d}{list\-Equation} (unsigned int number)
+\begin{DoxyCompactList}\small\item\em Retrieve the equation specified by the number. \end{DoxyCompactList}\item 
+\hyperlink{classosea_1_1ofreq_1_1_equation}{Equation} \& \hyperlink{classosea_1_1ofreq_1_1_derivative_a11a3da237e1cf7a4fe03d38b131aab0f}{list\-Data\-Equation} (int index\-In)
+\begin{DoxyCompactList}\small\item\em Returns the equation requested. Only specified by the data index property of the equation object. \end{DoxyCompactList}\item 
+std\-::vector$<$ \hyperlink{classosea_1_1ofreq_1_1_equation}{Equation} $>$ \& \hyperlink{classosea_1_1ofreq_1_1_derivative_ac783649fb9e8f4ab83bb666367a979c7}{list\-Data\-Equation} ()
+\begin{DoxyCompactList}\small\item\em Returns the list of equation objects. \end{DoxyCompactList}\item 
+int \hyperlink{classosea_1_1ofreq_1_1_derivative_ac95af6fb993314a578b3f0d3cd57a9cc}{get\-Equation\-List\-Size} ()
+\item 
+void \hyperlink{classosea_1_1ofreq_1_1_derivative_a1a50f2020c3a1408f963537218de5c5e}{add\-Model\-Equation} (std\-::vector$<$ double $>$ list\-Coeffs\-In, int Eqn\-Data\-In=-\/1)
+\begin{DoxyCompactList}\small\item\em Creates a new equation object and adds it to the list of equation objects contained in this derivative. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+This class holds data for a derivative. 
+
+Definition at line 84 of file derivative.\-h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classosea_1_1ofreq_1_1_derivative_adc03ec3ad150bc0de66a3e7200cd368f}{\index{osea\-::ofreq\-::\-Derivative@{osea\-::ofreq\-::\-Derivative}!Derivative@{Derivative}}
+\index{Derivative@{Derivative}!osea::ofreq::Derivative@{osea\-::ofreq\-::\-Derivative}}
+\subsubsection[{Derivative}]{\setlength{\rightskip}{0pt plus 5cm}Derivative\-::\-Derivative (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_derivative_adc03ec3ad150bc0de66a3e7200cd368f}
+This default constructor creates a \hyperlink{classosea_1_1ofreq_1_1_body}{Body} object. 
+
+Definition at line 36 of file derivative.\-cpp.
+
+\hypertarget{classosea_1_1ofreq_1_1_derivative_a7fc4ee53f460dfb98b3db2e9c9830cf9}{\index{osea\-::ofreq\-::\-Derivative@{osea\-::ofreq\-::\-Derivative}!$\sim$\-Derivative@{$\sim$\-Derivative}}
+\index{$\sim$\-Derivative@{$\sim$\-Derivative}!osea::ofreq::Derivative@{osea\-::ofreq\-::\-Derivative}}
+\subsubsection[{$\sim$\-Derivative}]{\setlength{\rightskip}{0pt plus 5cm}Derivative\-::$\sim$\-Derivative (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_derivative_a7fc4ee53f460dfb98b3db2e9c9830cf9}
+The default destructor, nothing happens here. 
+
+Definition at line 41 of file derivative.\-cpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classosea_1_1ofreq_1_1_derivative_a1a50f2020c3a1408f963537218de5c5e}{\index{osea\-::ofreq\-::\-Derivative@{osea\-::ofreq\-::\-Derivative}!add\-Model\-Equation@{add\-Model\-Equation}}
+\index{add\-Model\-Equation@{add\-Model\-Equation}!osea::ofreq::Derivative@{osea\-::ofreq\-::\-Derivative}}
+\subsubsection[{add\-Model\-Equation}]{\setlength{\rightskip}{0pt plus 5cm}void Derivative\-::add\-Model\-Equation (
+\begin{DoxyParamCaption}
+\item[{std\-::vector$<$ double $>$}]{list\-Coeffs\-In, }
+\item[{int}]{Eqn\-Data\-In = {\ttfamily -\/1}}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_derivative_a1a50f2020c3a1408f963537218de5c5e}
+
+
+Creates a new equation object and adds it to the list of equation objects contained in this derivative. 
+
+New equation object is created automatically within this function. Function merely takes the list of input coefficients and creates all equation objects necessary from that. 
+\begin{DoxyParams}{Parameters}
+{\em Eqn\-Data\-In} & Integer. The data index of the equation object. If no input is provided, the function assumes the data index to be the index of the equation's current place in the vector. \\
+\hline
+{\em list\-Coeffs\-In} & Vector of doubles. The list of coefficients. Each coefficient corresponds to a single variable. List of coefficients is organized by {\itshape data index}. The coefficient's position in the list is it's data index. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 103 of file derivative.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classosea_1_1ofreq_1_1_derivative_a1a50f2020c3a1408f963537218de5c5e_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classosea_1_1ofreq_1_1_derivative_ac95af6fb993314a578b3f0d3cd57a9cc}{\index{osea\-::ofreq\-::\-Derivative@{osea\-::ofreq\-::\-Derivative}!get\-Equation\-List\-Size@{get\-Equation\-List\-Size}}
+\index{get\-Equation\-List\-Size@{get\-Equation\-List\-Size}!osea::ofreq::Derivative@{osea\-::ofreq\-::\-Derivative}}
+\subsubsection[{get\-Equation\-List\-Size}]{\setlength{\rightskip}{0pt plus 5cm}int Derivative\-::get\-Equation\-List\-Size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_derivative_ac95af6fb993314a578b3f0d3cd57a9cc}
+Retrieve the size of the equation list. \begin{DoxyReturn}{Returns}
+The size of the equation list. 
+\end{DoxyReturn}
+
+
+Definition at line 97 of file derivative.\-cpp.
+
+\hypertarget{classosea_1_1ofreq_1_1_derivative_a11a3da237e1cf7a4fe03d38b131aab0f}{\index{osea\-::ofreq\-::\-Derivative@{osea\-::ofreq\-::\-Derivative}!list\-Data\-Equation@{list\-Data\-Equation}}
+\index{list\-Data\-Equation@{list\-Data\-Equation}!osea::ofreq::Derivative@{osea\-::ofreq\-::\-Derivative}}
+\subsubsection[{list\-Data\-Equation}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Equation} \& Derivative\-::list\-Data\-Equation (
+\begin{DoxyParamCaption}
+\item[{int}]{index\-In}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_derivative_a11a3da237e1cf7a4fe03d38b131aab0f}
+
+
+Returns the equation requested. Only specified by the data index property of the equation object. 
+
+Returns the equation requested. Only specified by the data index property of the equation object. 
+\begin{DoxyParams}{Parameters}
+{\em index\-In} & The integer describing the data index for the equation requested. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{classosea_1_1ofreq_1_1_equation}{Equation} object specified by the Data\-Index of index\-In. Value returned is by value. 
+\end{DoxyReturn}
+
+
+Definition at line 67 of file derivative.\-cpp.
+
+\hypertarget{classosea_1_1ofreq_1_1_derivative_ac783649fb9e8f4ab83bb666367a979c7}{\index{osea\-::ofreq\-::\-Derivative@{osea\-::ofreq\-::\-Derivative}!list\-Data\-Equation@{list\-Data\-Equation}}
+\index{list\-Data\-Equation@{list\-Data\-Equation}!osea::ofreq::Derivative@{osea\-::ofreq\-::\-Derivative}}
+\subsubsection[{list\-Data\-Equation}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<$ {\bf Equation} $>$ \& Derivative\-::list\-Data\-Equation (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_derivative_ac783649fb9e8f4ab83bb666367a979c7}
+
+
+Returns the list of equation objects. 
+
+This is the same as the \hyperlink{classosea_1_1ofreq_1_1_derivative_a7fa63ee738fcafcf3fccb796da095946}{list\-Equation()} function, just under a different name. \begin{DoxyReturn}{Returns}
+Returns a vector of \hyperlink{classosea_1_1ofreq_1_1_equation}{Equation} objects. Returned value passed by reference. 
+\end{DoxyReturn}
+
+
+Definition at line 90 of file derivative.\-cpp.
+
+\hypertarget{classosea_1_1ofreq_1_1_derivative_a7fa63ee738fcafcf3fccb796da095946}{\index{osea\-::ofreq\-::\-Derivative@{osea\-::ofreq\-::\-Derivative}!list\-Equation@{list\-Equation}}
+\index{list\-Equation@{list\-Equation}!osea::ofreq::Derivative@{osea\-::ofreq\-::\-Derivative}}
+\subsubsection[{list\-Equation}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ {\bf Equation} $>$ \& Derivative\-::list\-Equation (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_derivative_a7fa63ee738fcafcf3fccb796da095946}
+
+
+The list of equations. 
+
+\begin{DoxyReturn}{Returns}
+Returns a vector of \hyperlink{classosea_1_1ofreq_1_1_equation}{Equation} objects. Returned value passed by reference. 
+\end{DoxyReturn}
+
+
+Definition at line 47 of file derivative.\-cpp.
+
+\hypertarget{classosea_1_1ofreq_1_1_derivative_a57fc9f8fc2bb6b416b9ade4f79f2bf1d}{\index{osea\-::ofreq\-::\-Derivative@{osea\-::ofreq\-::\-Derivative}!list\-Equation@{list\-Equation}}
+\index{list\-Equation@{list\-Equation}!osea::ofreq::Derivative@{osea\-::ofreq\-::\-Derivative}}
+\subsubsection[{list\-Equation}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Equation} \& Derivative\-::list\-Equation (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{number}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_derivative_a57fc9f8fc2bb6b416b9ade4f79f2bf1d}
+
+
+Retrieve the equation specified by the number. 
+
+Retrieves the equation specified by the number. Value returned is a reference to the equation object. Allows editting of the equation object, or just data access. 
+\begin{DoxyParams}{Parameters}
+{\em number} & Integer representing which equation number should be returned. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Value returned is a reference to the equation object. Allows editting of the equation object, or just data access. 
+\end{DoxyReturn}
+
+
+Definition at line 54 of file derivative.\-cpp.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/home/\-Ship\-\_\-\-Design/\-Projects/\-D\-M\-S1305 Open\-S\-E\-A/master/200\-\_\-src/bin/ofreq/global\-\_\-objects/\hyperlink{derivative_8h}{derivative.\-h}\item 
+/home/\-Ship\-\_\-\-Design/\-Projects/\-D\-M\-S1305 Open\-S\-E\-A/master/200\-\_\-src/bin/ofreq/global\-\_\-objects/\hyperlink{derivative_8cpp}{derivative.\-cpp}\end{DoxyCompactItemize}

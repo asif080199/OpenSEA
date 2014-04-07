@@ -1,0 +1,451 @@
+\hypertarget{classosea_1_1ofreq_1_1_file_writer}{\section{osea\-:\-:ofreq\-:\-:File\-Writer Class Reference}
+\label{classosea_1_1ofreq_1_1_file_writer}\index{osea\-::ofreq\-::\-File\-Writer@{osea\-::ofreq\-::\-File\-Writer}}
+}
+
+
+{\ttfamily \#include $<$filewriter.\-h$>$}
+
+
+
+Inheritance diagram for osea\-:\-:ofreq\-:\-:File\-Writer\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=218pt]{classosea_1_1ofreq_1_1_file_writer__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classosea_1_1ofreq_1_1_file_writer_aa6b362f5b306dd3409af81a463e97f40}{File\-Writer} ()
+\begin{DoxyCompactList}\small\item\em The default constructor. \end{DoxyCompactList}\item 
+\hyperlink{classosea_1_1ofreq_1_1_file_writer_aa99ec25b5ed26ad1542eb94104fef1ce}{File\-Writer} (std\-::string root\-Path, \hyperlink{classosea_1_1ofreq_1_1_outputs_body}{Outputs\-Body} \&Body\-In)
+\begin{DoxyCompactList}\small\item\em Constructor that includes the two important properties that must be declared for \hyperlink{classosea_1_1ofreq_1_1_file_writer}{File\-Writer} to work correctly. The root path for the project must be declared. And the pointer to the \hyperlink{classosea_1_1ofreq_1_1_outputs_body}{Outputs\-Body} object must be declared. \end{DoxyCompactList}\item 
+\hyperlink{classosea_1_1ofreq_1_1_file_writer_ae5490307dcaf9237f4c1b8b8df433e03}{$\sim$\-File\-Writer} ()
+\item 
+void \hyperlink{classosea_1_1ofreq_1_1_file_writer_aa1dbf0e1a54a78fb62d799187752b002}{set\-Project\-Dir} (std\-::string dir\-In)
+\begin{DoxyCompactList}\small\item\em Sets the path to the project directory. Assumes the std\-::string specifying the path does not end with a slash mark. The class will automatically add the slash mark. If a slash mark is present, the function will automatically remove it. \end{DoxyCompactList}\item 
+bool \hyperlink{classosea_1_1ofreq_1_1_file_writer_a74a40c3c47b4d12582a2aa44c38d9d07}{clear\-Files} ()
+\item 
+\hyperlink{classosea_1_1ofreq_1_1_outputs_body}{Outputs\-Body} \& \hyperlink{classosea_1_1ofreq_1_1_file_writer_a77da1b41e1332209f39243fcca4d1287}{ref\-Outputs\-Body} ()
+\begin{DoxyCompactList}\small\item\em Provides direct access to the \hyperlink{classosea_1_1ofreq_1_1_outputs_body}{Outputs\-Body} object. The \hyperlink{classosea_1_1ofreq_1_1_outputs_body}{Outputs\-Body} object must be set for the file\-Writer to work. All file data comes from the \hyperlink{classosea_1_1ofreq_1_1_file_writer}{File\-Writer} object. \end{DoxyCompactList}\item 
+void \hyperlink{classosea_1_1ofreq_1_1_file_writer_af0234f3573308ca6f5b7178f662b3993}{set\-Outputs\-Body} (\hyperlink{classosea_1_1ofreq_1_1_outputs_body}{Outputs\-Body} $\ast$input)
+\begin{DoxyCompactList}\small\item\em Sets the outputs body object, pointer input. \end{DoxyCompactList}\item 
+\hyperlink{classosea_1_1ofreq_1_1_outputs_body}{Outputs\-Body} $\ast$ \hyperlink{classosea_1_1ofreq_1_1_file_writer_a2794a9410be184745cd98f26df801ab2}{get\-Outputs\-Body} ()
+\begin{DoxyCompactList}\small\item\em Returns a pointer to the Outputs \hyperlink{classosea_1_1ofreq_1_1_body}{Body} object. \end{DoxyCompactList}\item 
+bool \hyperlink{classosea_1_1ofreq_1_1_file_writer_afc22f7afcd30f676e5385133247ed84d}{file\-Exists} (std\-::string filename)
+\begin{DoxyCompactList}\small\item\em Test is a file exists. Function automatically assumes that the file is located in the directory associated with the \hyperlink{classosea_1_1ofreq_1_1_file_writer_a9748d987475a225b49e14f48b8be0cd6}{get\-Cur\-Wave\-Ind()} function. Returns true if the file exists and is valid. Returns false if the file does not exist or the directory does not exist. \end{DoxyCompactList}\item 
+void \hyperlink{classosea_1_1ofreq_1_1_file_writer_a310daaf404e9a0ef1f609eaea85e1bb0}{set\-Header} (std\-::string file\-Path\-In)
+\begin{DoxyCompactList}\small\item\em Reads in from input file the header to be used in all files. This is a basic header text that should be at the top of all Open\-S\-E\-A output files. Simple identification of the program. Nothing specific for output. \end{DoxyCompactList}\item 
+int \hyperlink{classosea_1_1ofreq_1_1_file_writer_af8b7b6236b90e1734161f6158f64482b}{write\-Wave\-Direction} ()
+\begin{DoxyCompactList}\small\item\em Writes the directions list to file. \end{DoxyCompactList}\item 
+int \hyperlink{classosea_1_1ofreq_1_1_file_writer_a99e8d1ffb93b50966735bb90d0f4e082}{write\-Frequency} ()
+\item 
+int \hyperlink{classosea_1_1ofreq_1_1_file_writer_ada34dffe391a0daeac192bd4b7ed0ce5}{write\-Global\-Motion} ()
+\begin{DoxyCompactList}\small\item\em Writes the output file of global motions. If file exists, appends to the file, assuming the appended file is a new body object. \end{DoxyCompactList}\item 
+int \hyperlink{classosea_1_1ofreq_1_1_file_writer_a9887a28316fca1417da81c95b04c2208}{write\-Global\-Velocity} ()
+\begin{DoxyCompactList}\small\item\em Writes the output file of global velocities. If file exists, appends to the file, assuming the appended file is a new body object. \end{DoxyCompactList}\item 
+int \hyperlink{classosea_1_1ofreq_1_1_file_writer_a1c49975afb40d028c42027e5239bcdaa}{write\-Global\-Acceleration} ()
+\begin{DoxyCompactList}\small\item\em Writes the output file of global accelerations. If file exists, appends to the file, assuming the appended file is a new body object. \end{DoxyCompactList}\item 
+int \hyperlink{classosea_1_1ofreq_1_1_file_writer_ae5977c7303f36b1ae0b71bf9251c8a59}{write\-Global\-Solution} ()
+\begin{DoxyCompactList}\small\item\em Writes the output file of global solutions. If file exists, appends to the file, assuming the appended file is a new body object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{classosea_1_1ofreq_1_1_file_writer_a9748d987475a225b49e14f48b8be0cd6}{get\-Cur\-Wave\-Ind} ()
+\begin{DoxyCompactList}\small\item\em Gets the index of the current wave direction. The index is used to specify which directory to write the file into. \end{DoxyCompactList}\item 
+std\-::string \hyperlink{classosea_1_1ofreq_1_1_file_writer_a82a3acb66bd5c0396836386258608a40}{get\-Cur\-Wave\-Dir} ()
+\begin{DoxyCompactList}\small\item\em Returns the std\-::string containing the folder path for the current wave direction. Path name includes the slash mark. For example, if using wave index 0, the std\-::string output would be\-: \char`\"{}d0/\char`\"{}. \end{DoxyCompactList}\item 
+bool \hyperlink{classosea_1_1ofreq_1_1_file_writer_ae8deeb9fc4323edf326fb0dadc4f9380}{create\-Dir} (std\-::string path)
+\begin{DoxyCompactList}\small\item\em Creates the directory specified by the std\-::string path. Assumes any specified directory is under the root project directory. \end{DoxyCompactList}\item 
+std\-::string \hyperlink{classosea_1_1ofreq_1_1_file_writer_a8b2b109105916979fe152960bbadcf7f}{get\-Info\-Block} (std\-::string name\-In)
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+This class write all outputs to files. All output data is based on the attached \hyperlink{classosea_1_1ofreq_1_1_outputs_body}{Outputs\-Body} object. To use the filewriter object, follow this sequence of steps\-: 1.) Create object. 2.) Set \hyperlink{classosea_1_1ofreq_1_1_outputs_body}{Outputs\-Body} object associated with the file. 3.) Set the filesystem path to the root directory for the current run of ofreq. 4.) Run the \hyperlink{classosea_1_1ofreq_1_1_file_writer_a74a40c3c47b4d12582a2aa44c38d9d07}{clear\-Files()} function, which will clear out any pre-\/existing files. 5.) Run the write\-File function for the specified file that you want to write out.
+
+Note that the \hyperlink{classosea_1_1ofreq_1_1_outputs_body}{Outputs\-Body} object also provides the information on the current wave direction. And the \hyperlink{classosea_1_1ofreq_1_1_file_writer}{File\-Writer} changes its directory to write to depending on the current wave direction. So the \hyperlink{classosea_1_1ofreq_1_1_outputs_body}{Outputs\-Body} object must be updated before writing a new wave direction. 
+
+Definition at line 103 of file filewriter.\-h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classosea_1_1ofreq_1_1_file_writer_aa6b362f5b306dd3409af81a463e97f40}{\index{osea\-::ofreq\-::\-File\-Writer@{osea\-::ofreq\-::\-File\-Writer}!File\-Writer@{File\-Writer}}
+\index{File\-Writer@{File\-Writer}!osea::ofreq::FileWriter@{osea\-::ofreq\-::\-File\-Writer}}
+\subsubsection[{File\-Writer}]{\setlength{\rightskip}{0pt plus 5cm}File\-Writer\-::\-File\-Writer (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_file_writer_aa6b362f5b306dd3409af81a463e97f40}
+
+
+The default constructor. 
+
+
+
+Definition at line 89 of file filewriter.\-cpp.
+
+\hypertarget{classosea_1_1ofreq_1_1_file_writer_aa99ec25b5ed26ad1542eb94104fef1ce}{\index{osea\-::ofreq\-::\-File\-Writer@{osea\-::ofreq\-::\-File\-Writer}!File\-Writer@{File\-Writer}}
+\index{File\-Writer@{File\-Writer}!osea::ofreq::FileWriter@{osea\-::ofreq\-::\-File\-Writer}}
+\subsubsection[{File\-Writer}]{\setlength{\rightskip}{0pt plus 5cm}osea\-::ofreq\-::\-File\-Writer\-::\-File\-Writer (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{root\-Path, }
+\item[{{\bf Outputs\-Body} \&}]{Body\-In}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_file_writer_aa99ec25b5ed26ad1542eb94104fef1ce}
+
+
+Constructor that includes the two important properties that must be declared for \hyperlink{classosea_1_1ofreq_1_1_file_writer}{File\-Writer} to work correctly. The root path for the project must be declared. And the pointer to the \hyperlink{classosea_1_1ofreq_1_1_outputs_body}{Outputs\-Body} object must be declared. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em root\-Path} & The full fule system path to the root directory of the currently running o\-Freq project. Not the path to the o\-Freq executable files. This is the path to the directory containing input and output files. \\
+\hline
+{\em Body\-In} & The \hyperlink{classosea_1_1ofreq_1_1_outputs_body}{Outputs\-Body} object that will be used to write out data for the \hyperlink{classosea_1_1ofreq_1_1_file_writer}{File\-Writer}. The \hyperlink{classosea_1_1ofreq_1_1_outputs_body}{Outputs\-Body} object supplies the data, and the \hyperlink{classosea_1_1ofreq_1_1_file_writer}{File\-Writer} writes that data to the A\-S\-C\-I\-I text file. The \hyperlink{classosea_1_1ofreq_1_1_outputs_body}{Outputs\-Body} object also provides the information on the current wave direction. So the \hyperlink{classosea_1_1ofreq_1_1_outputs_body}{Outputs\-Body} object must be updated before writing a new wave direction. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classosea_1_1ofreq_1_1_outputs_body}{Outputs\-Body} 
+\end{DoxySeeAlso}
+\hypertarget{classosea_1_1ofreq_1_1_file_writer_ae5490307dcaf9237f4c1b8b8df433e03}{\index{osea\-::ofreq\-::\-File\-Writer@{osea\-::ofreq\-::\-File\-Writer}!$\sim$\-File\-Writer@{$\sim$\-File\-Writer}}
+\index{$\sim$\-File\-Writer@{$\sim$\-File\-Writer}!osea::ofreq::FileWriter@{osea\-::ofreq\-::\-File\-Writer}}
+\subsubsection[{$\sim$\-File\-Writer}]{\setlength{\rightskip}{0pt plus 5cm}File\-Writer\-::$\sim$\-File\-Writer (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_file_writer_ae5490307dcaf9237f4c1b8b8df433e03}
+The default destructor, nothing happens here. 
+
+Definition at line 104 of file filewriter.\-cpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classosea_1_1ofreq_1_1_file_writer_a74a40c3c47b4d12582a2aa44c38d9d07}{\index{osea\-::ofreq\-::\-File\-Writer@{osea\-::ofreq\-::\-File\-Writer}!clear\-Files@{clear\-Files}}
+\index{clear\-Files@{clear\-Files}!osea::ofreq::FileWriter@{osea\-::ofreq\-::\-File\-Writer}}
+\subsubsection[{clear\-Files}]{\setlength{\rightskip}{0pt plus 5cm}bool File\-Writer\-::clear\-Files (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_file_writer_a74a40c3c47b4d12582a2aa44c38d9d07}
+Remove all old directiories \& files written by o\-Freq previous run. \begin{DoxyReturn}{Returns}
+Return true if all files \& directories were successfully deleted. 
+\end{DoxyReturn}
+
+
+Definition at line 124 of file filewriter.\-cpp.
+
+\hypertarget{classosea_1_1ofreq_1_1_file_writer_ae8deeb9fc4323edf326fb0dadc4f9380}{\index{osea\-::ofreq\-::\-File\-Writer@{osea\-::ofreq\-::\-File\-Writer}!create\-Dir@{create\-Dir}}
+\index{create\-Dir@{create\-Dir}!osea::ofreq::FileWriter@{osea\-::ofreq\-::\-File\-Writer}}
+\subsubsection[{create\-Dir}]{\setlength{\rightskip}{0pt plus 5cm}bool File\-Writer\-::create\-Dir (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{path}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classosea_1_1ofreq_1_1_file_writer_ae8deeb9fc4323edf326fb0dadc4f9380}
+
+
+Creates the directory specified by the std\-::string path. Assumes any specified directory is under the root project directory. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & std\-::string. The path of the directory to create. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns true if creation sucessful. 
+\end{DoxyReturn}
+
+
+Definition at line 858 of file filewriter.\-cpp.
+
+\hypertarget{classosea_1_1ofreq_1_1_file_writer_afc22f7afcd30f676e5385133247ed84d}{\index{osea\-::ofreq\-::\-File\-Writer@{osea\-::ofreq\-::\-File\-Writer}!file\-Exists@{file\-Exists}}
+\index{file\-Exists@{file\-Exists}!osea::ofreq::FileWriter@{osea\-::ofreq\-::\-File\-Writer}}
+\subsubsection[{file\-Exists}]{\setlength{\rightskip}{0pt plus 5cm}bool File\-Writer\-::file\-Exists (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{filename}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_file_writer_afc22f7afcd30f676e5385133247ed84d}
+
+
+Test is a file exists. Function automatically assumes that the file is located in the directory associated with the \hyperlink{classosea_1_1ofreq_1_1_file_writer_a9748d987475a225b49e14f48b8be0cd6}{get\-Cur\-Wave\-Ind()} function. Returns true if the file exists and is valid. Returns false if the file does not exist or the directory does not exist. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & std\-::string. Specifies the filename to search for. Only needs to specify local filename. Directory information is already inferred from previous settings with the \hyperlink{classosea_1_1ofreq_1_1_outputs_body}{Outputs\-Body} object. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns boolean variable. True if the file exists. False if the file or any required directories do not exist. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classosea_1_1ofreq_1_1_file_writer_a9748d987475a225b49e14f48b8be0cd6}{File\-Writer\-::get\-Cur\-Wave\-Ind()} 
+\end{DoxySeeAlso}
+
+
+Definition at line 173 of file filewriter.\-cpp.
+
+\hypertarget{classosea_1_1ofreq_1_1_file_writer_a82a3acb66bd5c0396836386258608a40}{\index{osea\-::ofreq\-::\-File\-Writer@{osea\-::ofreq\-::\-File\-Writer}!get\-Cur\-Wave\-Dir@{get\-Cur\-Wave\-Dir}}
+\index{get\-Cur\-Wave\-Dir@{get\-Cur\-Wave\-Dir}!osea::ofreq::FileWriter@{osea\-::ofreq\-::\-File\-Writer}}
+\subsubsection[{get\-Cur\-Wave\-Dir}]{\setlength{\rightskip}{0pt plus 5cm}string File\-Writer\-::get\-Cur\-Wave\-Dir (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classosea_1_1ofreq_1_1_file_writer_a82a3acb66bd5c0396836386258608a40}
+
+
+Returns the std\-::string containing the folder path for the current wave direction. Path name includes the slash mark. For example, if using wave index 0, the std\-::string output would be\-: \char`\"{}d0/\char`\"{}. 
+
+\begin{DoxyReturn}{Returns}
+std\-::string output. Has the path name for the current wave directory. 
+\end{DoxyReturn}
+
+
+Definition at line 848 of file filewriter.\-cpp.
+
+\hypertarget{classosea_1_1ofreq_1_1_file_writer_a9748d987475a225b49e14f48b8be0cd6}{\index{osea\-::ofreq\-::\-File\-Writer@{osea\-::ofreq\-::\-File\-Writer}!get\-Cur\-Wave\-Ind@{get\-Cur\-Wave\-Ind}}
+\index{get\-Cur\-Wave\-Ind@{get\-Cur\-Wave\-Ind}!osea::ofreq::FileWriter@{osea\-::ofreq\-::\-File\-Writer}}
+\subsubsection[{get\-Cur\-Wave\-Ind}]{\setlength{\rightskip}{0pt plus 5cm}int File\-Writer\-::get\-Cur\-Wave\-Ind (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classosea_1_1ofreq_1_1_file_writer_a9748d987475a225b49e14f48b8be0cd6}
+
+
+Gets the index of the current wave direction. The index is used to specify which directory to write the file into. 
+
+\begin{DoxyReturn}{Returns}
+Returns integer which specifies the index of the current wave direction. Index specifies the wave direction in the list of wave directions. Valid values are any integer from 0 or greater. 
+\end{DoxyReturn}
+
+
+Definition at line 842 of file filewriter.\-cpp.
+
+\hypertarget{classosea_1_1ofreq_1_1_file_writer_a8b2b109105916979fe152960bbadcf7f}{\index{osea\-::ofreq\-::\-File\-Writer@{osea\-::ofreq\-::\-File\-Writer}!get\-Info\-Block@{get\-Info\-Block}}
+\index{get\-Info\-Block@{get\-Info\-Block}!osea::ofreq::FileWriter@{osea\-::ofreq\-::\-File\-Writer}}
+\subsubsection[{get\-Info\-Block}]{\setlength{\rightskip}{0pt plus 5cm}string File\-Writer\-::get\-Info\-Block (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{name\-In}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classosea_1_1ofreq_1_1_file_writer_a8b2b109105916979fe152960bbadcf7f}
+Set information about the file to be written after header and above data, included in the seafile block. 
+\begin{DoxyParams}{Parameters}
+{\em name\-In} & The name of the object. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns std\-::string. std\-::string contains the file info for the output file. Everything written into the seafile block. Variable passed by value. 
+\end{DoxyReturn}
+
+
+Definition at line 873 of file filewriter.\-cpp.
+
+\hypertarget{classosea_1_1ofreq_1_1_file_writer_a2794a9410be184745cd98f26df801ab2}{\index{osea\-::ofreq\-::\-File\-Writer@{osea\-::ofreq\-::\-File\-Writer}!get\-Outputs\-Body@{get\-Outputs\-Body}}
+\index{get\-Outputs\-Body@{get\-Outputs\-Body}!osea::ofreq::FileWriter@{osea\-::ofreq\-::\-File\-Writer}}
+\subsubsection[{get\-Outputs\-Body}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Outputs\-Body} $\ast$ File\-Writer\-::get\-Outputs\-Body (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_file_writer_a2794a9410be184745cd98f26df801ab2}
+
+
+Returns a pointer to the Outputs \hyperlink{classosea_1_1ofreq_1_1_body}{Body} object. 
+
+\begin{DoxyReturn}{Returns}
+Returns a pointer to the Outputs \hyperlink{classosea_1_1ofreq_1_1_body}{Body} object. Returned pointer passed by value. 
+\end{DoxyReturn}
+
+
+Definition at line 167 of file filewriter.\-cpp.
+
+\hypertarget{classosea_1_1ofreq_1_1_file_writer_a77da1b41e1332209f39243fcca4d1287}{\index{osea\-::ofreq\-::\-File\-Writer@{osea\-::ofreq\-::\-File\-Writer}!ref\-Outputs\-Body@{ref\-Outputs\-Body}}
+\index{ref\-Outputs\-Body@{ref\-Outputs\-Body}!osea::ofreq::FileWriter@{osea\-::ofreq\-::\-File\-Writer}}
+\subsubsection[{ref\-Outputs\-Body}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Outputs\-Body} \& File\-Writer\-::ref\-Outputs\-Body (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_file_writer_a77da1b41e1332209f39243fcca4d1287}
+
+
+Provides direct access to the \hyperlink{classosea_1_1ofreq_1_1_outputs_body}{Outputs\-Body} object. The \hyperlink{classosea_1_1ofreq_1_1_outputs_body}{Outputs\-Body} object must be set for the file\-Writer to work. All file data comes from the \hyperlink{classosea_1_1ofreq_1_1_file_writer}{File\-Writer} object. 
+
+\begin{DoxyReturn}{Returns}
+Returns reference to the \hyperlink{classosea_1_1ofreq_1_1_outputs_body}{Outputs\-Body} object. Variable passed by reference. 
+\end{DoxyReturn}
+
+
+Definition at line 155 of file filewriter.\-cpp.
+
+\hypertarget{classosea_1_1ofreq_1_1_file_writer_a310daaf404e9a0ef1f609eaea85e1bb0}{\index{osea\-::ofreq\-::\-File\-Writer@{osea\-::ofreq\-::\-File\-Writer}!set\-Header@{set\-Header}}
+\index{set\-Header@{set\-Header}!osea::ofreq::FileWriter@{osea\-::ofreq\-::\-File\-Writer}}
+\subsubsection[{set\-Header}]{\setlength{\rightskip}{0pt plus 5cm}void File\-Writer\-::set\-Header (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{file\-Path\-In}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_file_writer_a310daaf404e9a0ef1f609eaea85e1bb0}
+
+
+Reads in from input file the header to be used in all files. This is a basic header text that should be at the top of all Open\-S\-E\-A output files. Simple identification of the program. Nothing specific for output. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\-Path\-In} & String variable specifying the full location of the folder which has the text for the header file. Header file must be a simple A\-S\-C\-I\-I text file. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 193 of file filewriter.\-cpp.
+
+\hypertarget{classosea_1_1ofreq_1_1_file_writer_af0234f3573308ca6f5b7178f662b3993}{\index{osea\-::ofreq\-::\-File\-Writer@{osea\-::ofreq\-::\-File\-Writer}!set\-Outputs\-Body@{set\-Outputs\-Body}}
+\index{set\-Outputs\-Body@{set\-Outputs\-Body}!osea::ofreq::FileWriter@{osea\-::ofreq\-::\-File\-Writer}}
+\subsubsection[{set\-Outputs\-Body}]{\setlength{\rightskip}{0pt plus 5cm}void File\-Writer\-::set\-Outputs\-Body (
+\begin{DoxyParamCaption}
+\item[{{\bf Outputs\-Body} $\ast$}]{input}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_file_writer_af0234f3573308ca6f5b7178f662b3993}
+
+
+Sets the outputs body object, pointer input. 
+
+Takes a pointer to the Outputs body object as input and stores that pointer for future use. 
+\begin{DoxyParams}{Parameters}
+{\em input} & Pointer to the Outputs \hyperlink{classosea_1_1ofreq_1_1_body}{Body} object. Pointer variable passed by value. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 161 of file filewriter.\-cpp.
+
+\hypertarget{classosea_1_1ofreq_1_1_file_writer_aa1dbf0e1a54a78fb62d799187752b002}{\index{osea\-::ofreq\-::\-File\-Writer@{osea\-::ofreq\-::\-File\-Writer}!set\-Project\-Dir@{set\-Project\-Dir}}
+\index{set\-Project\-Dir@{set\-Project\-Dir}!osea::ofreq::FileWriter@{osea\-::ofreq\-::\-File\-Writer}}
+\subsubsection[{set\-Project\-Dir}]{\setlength{\rightskip}{0pt plus 5cm}void File\-Writer\-::set\-Project\-Dir (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{dir\-In}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_file_writer_aa1dbf0e1a54a78fb62d799187752b002}
+
+
+Sets the path to the project directory. Assumes the std\-::string specifying the path does not end with a slash mark. The class will automatically add the slash mark. If a slash mark is present, the function will automatically remove it. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dir\-In} & std\-::string specifying the path to the project directory. Variable passed by value. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 110 of file filewriter.\-cpp.
+
+\hypertarget{classosea_1_1ofreq_1_1_file_writer_a99e8d1ffb93b50966735bb90d0f4e082}{\index{osea\-::ofreq\-::\-File\-Writer@{osea\-::ofreq\-::\-File\-Writer}!write\-Frequency@{write\-Frequency}}
+\index{write\-Frequency@{write\-Frequency}!osea::ofreq::FileWriter@{osea\-::ofreq\-::\-File\-Writer}}
+\subsubsection[{write\-Frequency}]{\setlength{\rightskip}{0pt plus 5cm}int File\-Writer\-::write\-Frequency (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_file_writer_a99e8d1ffb93b50966735bb90d0f4e082}
+Writes the frequencies list to file. \begin{DoxyReturn}{Returns}
+Integer reports status of file writing. Returns of succesful. Otherwise returns a non-\/zero value that is the error code. Returned variable passed by value. 
+\end{DoxyReturn}
+
+
+Definition at line 286 of file filewriter.\-cpp.
+
+\hypertarget{classosea_1_1ofreq_1_1_file_writer_a1c49975afb40d028c42027e5239bcdaa}{\index{osea\-::ofreq\-::\-File\-Writer@{osea\-::ofreq\-::\-File\-Writer}!write\-Global\-Acceleration@{write\-Global\-Acceleration}}
+\index{write\-Global\-Acceleration@{write\-Global\-Acceleration}!osea::ofreq::FileWriter@{osea\-::ofreq\-::\-File\-Writer}}
+\subsubsection[{write\-Global\-Acceleration}]{\setlength{\rightskip}{0pt plus 5cm}int File\-Writer\-::write\-Global\-Acceleration (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_file_writer_a1c49975afb40d028c42027e5239bcdaa}
+
+
+Writes the output file of global accelerations. If file exists, appends to the file, assuming the appended file is a new body object. 
+
+\begin{DoxyReturn}{Returns}
+Integer reports status of file writing. Returns of succesful. Otherwise returns a non-\/zero value that is the error code. Returned variable passed by value. 
+\end{DoxyReturn}
+
+
+Definition at line 589 of file filewriter.\-cpp.
+
+\hypertarget{classosea_1_1ofreq_1_1_file_writer_ada34dffe391a0daeac192bd4b7ed0ce5}{\index{osea\-::ofreq\-::\-File\-Writer@{osea\-::ofreq\-::\-File\-Writer}!write\-Global\-Motion@{write\-Global\-Motion}}
+\index{write\-Global\-Motion@{write\-Global\-Motion}!osea::ofreq::FileWriter@{osea\-::ofreq\-::\-File\-Writer}}
+\subsubsection[{write\-Global\-Motion}]{\setlength{\rightskip}{0pt plus 5cm}int File\-Writer\-::write\-Global\-Motion (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_file_writer_ada34dffe391a0daeac192bd4b7ed0ce5}
+
+
+Writes the output file of global motions. If file exists, appends to the file, assuming the appended file is a new body object. 
+
+\begin{DoxyReturn}{Returns}
+Integer reports status of file writing. Returns of succesful. Otherwise returns a non-\/zero value that is the error code. Returned variable passed by value. 
+\end{DoxyReturn}
+
+
+Definition at line 336 of file filewriter.\-cpp.
+
+\hypertarget{classosea_1_1ofreq_1_1_file_writer_ae5977c7303f36b1ae0b71bf9251c8a59}{\index{osea\-::ofreq\-::\-File\-Writer@{osea\-::ofreq\-::\-File\-Writer}!write\-Global\-Solution@{write\-Global\-Solution}}
+\index{write\-Global\-Solution@{write\-Global\-Solution}!osea::ofreq::FileWriter@{osea\-::ofreq\-::\-File\-Writer}}
+\subsubsection[{write\-Global\-Solution}]{\setlength{\rightskip}{0pt plus 5cm}int File\-Writer\-::write\-Global\-Solution (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_file_writer_ae5977c7303f36b1ae0b71bf9251c8a59}
+
+
+Writes the output file of global solutions. If file exists, appends to the file, assuming the appended file is a new body object. 
+
+\begin{DoxyReturn}{Returns}
+Integer reports status of file writing. Returns of succesful. Otherwise returns a non-\/zero value that is the error code. Returned variable passed by value. 
+\end{DoxyReturn}
+
+
+Definition at line 714 of file filewriter.\-cpp.
+
+\hypertarget{classosea_1_1ofreq_1_1_file_writer_a9887a28316fca1417da81c95b04c2208}{\index{osea\-::ofreq\-::\-File\-Writer@{osea\-::ofreq\-::\-File\-Writer}!write\-Global\-Velocity@{write\-Global\-Velocity}}
+\index{write\-Global\-Velocity@{write\-Global\-Velocity}!osea::ofreq::FileWriter@{osea\-::ofreq\-::\-File\-Writer}}
+\subsubsection[{write\-Global\-Velocity}]{\setlength{\rightskip}{0pt plus 5cm}int File\-Writer\-::write\-Global\-Velocity (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_file_writer_a9887a28316fca1417da81c95b04c2208}
+
+
+Writes the output file of global velocities. If file exists, appends to the file, assuming the appended file is a new body object. 
+
+\begin{DoxyReturn}{Returns}
+Integer reports status of file writing. Returns of succesful. Otherwise returns a non-\/zero value that is the error code. Returned variable passed by value. 
+\end{DoxyReturn}
+
+
+Definition at line 464 of file filewriter.\-cpp.
+
+\hypertarget{classosea_1_1ofreq_1_1_file_writer_af8b7b6236b90e1734161f6158f64482b}{\index{osea\-::ofreq\-::\-File\-Writer@{osea\-::ofreq\-::\-File\-Writer}!write\-Wave\-Direction@{write\-Wave\-Direction}}
+\index{write\-Wave\-Direction@{write\-Wave\-Direction}!osea::ofreq::FileWriter@{osea\-::ofreq\-::\-File\-Writer}}
+\subsubsection[{write\-Wave\-Direction}]{\setlength{\rightskip}{0pt plus 5cm}int File\-Writer\-::write\-Wave\-Direction (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_file_writer_af8b7b6236b90e1734161f6158f64482b}
+
+
+Writes the directions list to file. 
+
+\begin{DoxyReturn}{Returns}
+Integer reports status of file writing. Returns of succesful. Otherwise returns a non-\/zero value that is the error code. Returned variable passed by value. 
+\end{DoxyReturn}
+
+
+Definition at line 236 of file filewriter.\-cpp.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/home/\-Ship\-\_\-\-Design/\-Projects/\-D\-M\-S1305 Open\-S\-E\-A/master/200\-\_\-src/bin/ofreq/file\-\_\-writer/\hyperlink{filewriter_8h}{filewriter.\-h}\item 
+/home/\-Ship\-\_\-\-Design/\-Projects/\-D\-M\-S1305 Open\-S\-E\-A/master/200\-\_\-src/bin/ofreq/file\-\_\-writer/\hyperlink{filewriter_8cpp}{filewriter.\-cpp}\end{DoxyCompactItemize}

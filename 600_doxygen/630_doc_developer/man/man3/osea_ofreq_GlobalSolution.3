@@ -1,0 +1,171 @@
+.TH "osea::ofreq::GlobalSolution" 3 "Sat Apr 5 2014" "Version 0.4" "oFreq" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+osea::ofreq::GlobalSolution \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <globalsolution\&.h>\fP
+.PP
+Inherits \fBosea::ofreq::OutputDerived\fP\&.
+.PP
+Inherited by \fBosea::ofreq::GlobalAcceleration\fP, \fBosea::ofreq::GlobalMotion\fP, and \fBosea::ofreq::GlobalVelocity\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBGlobalSolution\fP ()"
+.br
+.ti -1c
+.RI "\fBGlobalSolution\fP (\fBOutputsBody\fP *input)"
+.br
+.RI "\fIConstructor that also sets the pointer to the \fBOutputsBody\fP object which contains the \fBOutputDerived\fP object\&. \fP"
+.ti -1c
+.RI "\fB~GlobalSolution\fP ()"
+.br
+.ti -1c
+.RI "virtual void \fBsetDerivative\fP (int ord)"
+.br
+.RI "\fISets the order of the derivative for the object\&. \fP"
+.ti -1c
+.RI "int \fBgetDerivative\fP ()"
+.br
+.RI "\fIGets the order of derivative set for the object\&. \fP"
+.ti -1c
+.RI "int \fBcalcOutput\fP (int freqIn)"
+.br
+.RI "\fICalculates the \fBGlobalSolution\fP output\&. \fBGlobalSolution\fP is the direct output of the solution for each body, translated into body coordinates\&. The output is modified to provide the specified order of derivative for the solution\&. \fP"
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSolution\fP & \fBgetSolution\fP (double freqIn)"
+.br
+.RI "\fIGets the solution matrix to perform operations on\&. Accesses the solution matrix from the parent body\&. \fP"
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "int \fBorderDerivative\fP"
+.br
+.RI "\fIThe order of derivative to use for calculating output\&. Set by child classes for specifying specific outputs\&. \fP"
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+This class represents the Global \fBSolution\fP\&. The Global \fBSolution\fP is the direct output of the solved values for each body\&. It provides the motions calculated for each body, translated back to body coordinate system\&. The \fBGlobalSolution\fP can output any desired derivative of the solved motions\&. Several other child classes are derived from this class\&. The only difference is that for those other classes, the order of derivative is predefined\&. 
+.PP
+\fBSee Also:\fP
+.RS 4
+\fBGlobalMotion\fP 
+.PP
+\fBGlobalVelocity\fP 
+.PP
+\fBGlobalAcceleration\fP 
+.RE
+.PP
+
+.PP
+Definition at line 99 of file globalsolution\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "GlobalSolution::GlobalSolution ()"
+This default constructor creates a Global \fBSolution\fP object\&. 
+.PP
+Definition at line 38 of file globalsolution\&.cpp\&.
+.SS "GlobalSolution::GlobalSolution (\fBOutputsBody\fP *input)"
+
+.PP
+Constructor that also sets the pointer to the \fBOutputsBody\fP object which contains the \fBOutputDerived\fP object\&. \fBParameters:\fP
+.RS 4
+\fIinput\fP Pointer to the \fBOutputsBody\fP objec that contains this \fBOutputDerived\fP object\&. Pointer passed by value\&.
+.RE
+.PP
+\fBSee Also:\fP
+.RS 4
+setOutputsBody() 
+.RE
+.PP
+
+.PP
+Definition at line 46 of file globalsolution\&.cpp\&.
+.SS "GlobalSolution::~GlobalSolution ()"
+The default destructor, nothing happens here\&. 
+.PP
+Definition at line 58 of file globalsolution\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "int GlobalSolution::calcOutput (intfreqIn)\fC [virtual]\fP"
+
+.PP
+Calculates the \fBGlobalSolution\fP output\&. \fBGlobalSolution\fP is the direct output of the solution for each body, translated into body coordinates\&. The output is modified to provide the specified order of derivative for the solution\&. \fBParameters:\fP
+.RS 4
+\fIfreqIn\fP The wave frequency to use for calculating the \fBOutputDerived\fP object\&. Most outputs will depend on the wave frequency\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Returns a complex matrix that is the \fBGlobalSolution\fP object\&. The complex matrix is a single column matrix\&. Each rows in the matrix represents a new degree of freedom variable\&. 
+.RE
+.PP
+
+.PP
+Implements \fBosea::ofreq::OutputDerived\fP\&.
+.PP
+Definition at line 77 of file globalsolution\&.cpp\&.
+.SS "int GlobalSolution::getDerivative ()"
+
+.PP
+Gets the order of derivative set for the object\&. \fBReturns:\fP
+.RS 4
+Integer that specifies the order of the derivative\&. Value can be anything from 0 or larger\&. Variable is passed by value\&. 
+.RE
+.PP
+
+.PP
+Definition at line 70 of file globalsolution\&.cpp\&.
+.SS "\fBSolution\fP & GlobalSolution::getSolution (doublefreqIn)\fC [protected]\fP"
+
+.PP
+Gets the solution matrix to perform operations on\&. Accesses the solution matrix from the parent body\&. \fBParameters:\fP
+.RS 4
+\fIfreqIn\fP The wave frequency\&. Used to identify which variable to access in the solution matrix\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Returns the \fBSolution\fP object to use for calculations\&. Variable is passed by reference\&. 
+.RE
+.PP
+
+.PP
+Definition at line 114 of file globalsolution\&.cpp\&.
+.SS "void GlobalSolution::setDerivative (intord)\fC [virtual]\fP"
+
+.PP
+Sets the order of the derivative for the object\&. \fBParameters:\fP
+.RS 4
+\fIord\fP Integer input that specifies the order of the derivative\&. Value can be anything from 0 or larger\&. Variable is passed by value\&. 
+.RE
+.PP
+
+.PP
+Reimplemented in \fBosea::ofreq::GlobalAcceleration\fP, \fBosea::ofreq::GlobalMotion\fP, and \fBosea::ofreq::GlobalVelocity\fP\&.
+.PP
+Definition at line 63 of file globalsolution\&.cpp\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "int osea::ofreq::GlobalSolution::orderDerivative\fC [protected]\fP"
+
+.PP
+The order of derivative to use for calculating output\&. Set by child classes for specifying specific outputs\&. 
+.PP
+Definition at line 154 of file globalsolution\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for oFreq from the source code\&.

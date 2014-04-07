@@ -1,0 +1,1071 @@
+\contentsline {chapter}{\numberline {1}Summary}{1}{chapter.1}
+\contentsline {chapter}{\numberline {2}Format Standards}{5}{chapter.2}
+\contentsline {section}{\numberline {2.1}Header Comment Standard}{5}{section.2.1}
+\contentsline {section}{\numberline {2.2}C\discretionary {-}{}{}P\discretionary {-}{}{}P File Comment Standard}{5}{section.2.2}
+\contentsline {section}{\numberline {2.3}Object Naming Paradigm}{5}{section.2.3}
+\contentsline {section}{\numberline {2.4}Qt Platform Specific Code}{6}{section.2.4}
+\contentsline {chapter}{\numberline {3}Format of Inputs}{7}{chapter.3}
+\contentsline {section}{\numberline {3.1}Text File Inputs}{7}{section.3.1}
+\contentsline {section}{\numberline {3.2}Input Syntax}{8}{section.3.2}
+\contentsline {section}{\numberline {3.3}List of Input Values}{8}{section.3.3}
+\contentsline {chapter}{\numberline {4}Program\discretionary {-}{}{}Execution}{9}{chapter.4}
+\contentsline {chapter}{\numberline {5}File Reader Process}{11}{chapter.5}
+\contentsline {chapter}{\numberline {6}U\discretionary {-}{}{}M\discretionary {-}{}{}L Process Diagrams}{13}{chapter.6}
+\contentsline {section}{\numberline {6.1}Overall Process}{13}{section.6.1}
+\contentsline {section}{\numberline {6.2}File Writer Process}{13}{section.6.2}
+\contentsline {section}{\numberline {6.3}Motion Model Process}{13}{section.6.3}
+\contentsline {section}{\numberline {6.4}Motion Solver Process}{13}{section.6.4}
+\contentsline {section}{\numberline {6.5}Resonant Solver Process}{13}{section.6.5}
+\contentsline {section}{\numberline {6.6}Wave Calculations Process}{14}{section.6.6}
+\contentsline {section}{\numberline {6.7}Outputs Calculation}{14}{section.6.7}
+\contentsline {chapter}{\numberline {7}Validation}{15}{chapter.7}
+\contentsline {section}{\numberline {7.1}Simple Test 1}{16}{section.7.1}
+\contentsline {section}{\numberline {7.2}Simple Test 2}{16}{section.7.2}
+\contentsline {section}{\numberline {7.3}Simple Test 3}{16}{section.7.3}
+\contentsline {section}{\numberline {7.4}Simple Test 4}{17}{section.7.4}
+\contentsline {section}{\numberline {7.5}Multi-\/body Test 1}{17}{section.7.5}
+\contentsline {section}{\numberline {7.6}Multi-\/body Test 2}{17}{section.7.6}
+\contentsline {section}{\numberline {7.7}Multi-\/body Test 3}{18}{section.7.7}
+\contentsline {section}{\numberline {7.8}Multi-\/body Test 4}{18}{section.7.8}
+\contentsline {section}{\numberline {7.9}Frequency Variation Test}{19}{section.7.9}
+\contentsline {chapter}{\numberline {8}Test List}{21}{chapter.8}
+\contentsline {chapter}{\numberline {9}Todo List}{23}{chapter.9}
+\contentsline {chapter}{\numberline {10}Namespace Index}{25}{chapter.10}
+\contentsline {section}{\numberline {10.1}Namespace List}{25}{section.10.1}
+\contentsline {chapter}{\numberline {11}Hierarchical Index}{27}{chapter.11}
+\contentsline {section}{\numberline {11.1}Class Hierarchy}{27}{section.11.1}
+\contentsline {chapter}{\numberline {12}Class Index}{29}{chapter.12}
+\contentsline {section}{\numberline {12.1}Class List}{29}{section.12.1}
+\contentsline {chapter}{\numberline {13}File Index}{31}{chapter.13}
+\contentsline {section}{\numberline {13.1}File List}{31}{section.13.1}
+\contentsline {chapter}{\numberline {14}Namespace Documentation}{33}{chapter.14}
+\contentsline {section}{\numberline {14.1}osea Namespace Reference}{33}{section.14.1}
+\contentsline {subsection}{\numberline {14.1.1}Detailed Description}{33}{subsection.14.1.1}
+\contentsline {subsection}{\numberline {14.1.2}Typedef Documentation}{34}{subsection.14.1.2}
+\contentsline {subsubsection}{\numberline {14.1.2.1}vec\discretionary {-}{}{}Keyword}{34}{subsubsection.14.1.2.1}
+\contentsline {subsubsection}{\numberline {14.1.2.2}vec\discretionary {-}{}{}Object}{34}{subsubsection.14.1.2.2}
+\contentsline {subsubsection}{\numberline {14.1.2.3}vec\discretionary {-}{}{}Value}{34}{subsubsection.14.1.2.3}
+\contentsline {section}{\numberline {14.2}osea\discretionary {-}{}{}:\discretionary {-}{}{}:ofreq Namespace Reference}{34}{section.14.2}
+\contentsline {subsection}{\numberline {14.2.1}Detailed Description}{35}{subsection.14.2.1}
+\contentsline {subsection}{\numberline {14.2.2}Typedef Documentation}{35}{subsection.14.2.2}
+\contentsline {subsubsection}{\numberline {14.2.2.1}complex\discretionary {-}{}{}Double}{35}{subsubsection.14.2.2.1}
+\contentsline {subsubsection}{\numberline {14.2.2.2}cx\discretionary {-}{}{}\_\discretionary {-}{}{}vector}{35}{subsubsection.14.2.2.2}
+\contentsline {subsubsection}{\numberline {14.2.2.3}pt\discretionary {-}{}{}Soln}{35}{subsubsection.14.2.2.3}
+\contentsline {chapter}{\numberline {15}Class Documentation}{37}{chapter.15}
+\contentsline {section}{\numberline {15.1}osea\discretionary {-}{}{}:\discretionary {-}{}{}:ofreq\discretionary {-}{}{}:\discretionary {-}{}{}:Body Class Reference}{37}{section.15.1}
+\contentsline {subsection}{\numberline {15.1.1}Detailed Description}{41}{subsection.15.1.1}
+\contentsline {subsection}{\numberline {15.1.2}Constructor \& Destructor Documentation}{41}{subsection.15.1.2}
+\contentsline {subsubsection}{\numberline {15.1.2.1}Body}{41}{subsubsection.15.1.2.1}
+\contentsline {subsubsection}{\numberline {15.1.2.2}$\sim $\discretionary {-}{}{}Body}{42}{subsubsection.15.1.2.2}
+\contentsline {subsection}{\numberline {15.1.3}Member Function Documentation}{42}{subsection.15.1.3}
+\contentsline {subsubsection}{\numberline {15.1.3.1}Copy}{42}{subsubsection.15.1.3.1}
+\contentsline {subsubsection}{\numberline {15.1.3.2}get\discretionary {-}{}{}Body\discretionary {-}{}{}Name}{42}{subsubsection.15.1.3.2}
+\contentsline {subsubsection}{\numberline {15.1.3.3}get\discretionary {-}{}{}Cen}{42}{subsubsection.15.1.3.3}
+\contentsline {subsubsection}{\numberline {15.1.3.4}get\discretionary {-}{}{}Cen\discretionary {-}{}{}X}{42}{subsubsection.15.1.3.4}
+\contentsline {subsubsection}{\numberline {15.1.3.5}get\discretionary {-}{}{}Cen\discretionary {-}{}{}Y}{43}{subsubsection.15.1.3.5}
+\contentsline {subsubsection}{\numberline {15.1.3.6}get\discretionary {-}{}{}Cen\discretionary {-}{}{}Z}{43}{subsubsection.15.1.3.6}
+\contentsline {subsubsection}{\numberline {15.1.3.7}get\discretionary {-}{}{}Equation\discretionary {-}{}{}Count}{43}{subsubsection.15.1.3.7}
+\contentsline {subsubsection}{\numberline {15.1.3.8}get\discretionary {-}{}{}Heading}{43}{subsubsection.15.1.3.8}
+\contentsline {subsubsection}{\numberline {15.1.3.9}get\discretionary {-}{}{}Hydro\discretionary {-}{}{}Bod\discretionary {-}{}{}Name}{43}{subsubsection.15.1.3.9}
+\contentsline {subsubsection}{\numberline {15.1.3.10}get\discretionary {-}{}{}Mass}{44}{subsubsection.15.1.3.10}
+\contentsline {subsubsection}{\numberline {15.1.3.11}get\discretionary {-}{}{}Mass\discretionary {-}{}{}Matrix}{44}{subsubsection.15.1.3.11}
+\contentsline {subsubsection}{\numberline {15.1.3.12}get\discretionary {-}{}{}Mom\discretionary {-}{}{}Ixx}{44}{subsubsection.15.1.3.12}
+\contentsline {subsubsection}{\numberline {15.1.3.13}get\discretionary {-}{}{}Mom\discretionary {-}{}{}Ixy}{44}{subsubsection.15.1.3.13}
+\contentsline {subsubsection}{\numberline {15.1.3.14}get\discretionary {-}{}{}Mom\discretionary {-}{}{}Ixz}{44}{subsubsection.15.1.3.14}
+\contentsline {subsubsection}{\numberline {15.1.3.15}get\discretionary {-}{}{}Mom\discretionary {-}{}{}Iyy}{44}{subsubsection.15.1.3.15}
+\contentsline {subsubsection}{\numberline {15.1.3.16}get\discretionary {-}{}{}Mom\discretionary {-}{}{}Iyz}{45}{subsubsection.15.1.3.16}
+\contentsline {subsubsection}{\numberline {15.1.3.17}get\discretionary {-}{}{}Mom\discretionary {-}{}{}Izz}{45}{subsubsection.15.1.3.17}
+\contentsline {subsubsection}{\numberline {15.1.3.18}get\discretionary {-}{}{}Motion\discretionary {-}{}{}Model}{45}{subsubsection.15.1.3.18}
+\contentsline {subsubsection}{\numberline {15.1.3.19}get\discretionary {-}{}{}Posn}{45}{subsubsection.15.1.3.19}
+\contentsline {subsubsection}{\numberline {15.1.3.20}get\discretionary {-}{}{}Posn\discretionary {-}{}{}X}{45}{subsubsection.15.1.3.20}
+\contentsline {subsubsection}{\numberline {15.1.3.21}get\discretionary {-}{}{}Posn\discretionary {-}{}{}Y}{46}{subsubsection.15.1.3.21}
+\contentsline {subsubsection}{\numberline {15.1.3.22}get\discretionary {-}{}{}Posn\discretionary {-}{}{}Z}{46}{subsubsection.15.1.3.22}
+\contentsline {subsubsection}{\numberline {15.1.3.23}get\discretionary {-}{}{}Solution}{46}{subsubsection.15.1.3.23}
+\contentsline {subsubsection}{\numberline {15.1.3.24}init\discretionary {-}{}{}Mass\discretionary {-}{}{}Mat}{46}{subsubsection.15.1.3.24}
+\contentsline {subsubsection}{\numberline {15.1.3.25}list\discretionary {-}{}{}Cross\discretionary {-}{}{}Body\discretionary {-}{}{}\_\discretionary {-}{}{}hydro}{46}{subsubsection.15.1.3.25}
+\contentsline {subsubsection}{\numberline {15.1.3.26}list\discretionary {-}{}{}Cross\discretionary {-}{}{}Body\discretionary {-}{}{}\_\discretionary {-}{}{}hydro}{47}{subsubsection.15.1.3.26}
+\contentsline {subsubsection}{\numberline {15.1.3.27}list\discretionary {-}{}{}Cross\discretionary {-}{}{}Body\discretionary {-}{}{}\_\discretionary {-}{}{}user}{47}{subsubsection.15.1.3.27}
+\contentsline {subsubsection}{\numberline {15.1.3.28}list\discretionary {-}{}{}Cross\discretionary {-}{}{}Body\discretionary {-}{}{}\_\discretionary {-}{}{}user}{47}{subsubsection.15.1.3.28}
+\contentsline {subsubsection}{\numberline {15.1.3.29}list\discretionary {-}{}{}Force\discretionary {-}{}{}Active\discretionary {-}{}{}\_\discretionary {-}{}{}hydro}{47}{subsubsection.15.1.3.29}
+\contentsline {subsubsection}{\numberline {15.1.3.30}list\discretionary {-}{}{}Force\discretionary {-}{}{}Active\discretionary {-}{}{}\_\discretionary {-}{}{}hydro}{48}{subsubsection.15.1.3.30}
+\contentsline {subsubsection}{\numberline {15.1.3.31}list\discretionary {-}{}{}Force\discretionary {-}{}{}Active\discretionary {-}{}{}\_\discretionary {-}{}{}user}{48}{subsubsection.15.1.3.31}
+\contentsline {subsubsection}{\numberline {15.1.3.32}list\discretionary {-}{}{}Force\discretionary {-}{}{}Active\discretionary {-}{}{}\_\discretionary {-}{}{}user}{48}{subsubsection.15.1.3.32}
+\contentsline {subsubsection}{\numberline {15.1.3.33}list\discretionary {-}{}{}Force\discretionary {-}{}{}Cross\discretionary {-}{}{}\_\discretionary {-}{}{}hydro}{48}{subsubsection.15.1.3.33}
+\contentsline {subsubsection}{\numberline {15.1.3.34}list\discretionary {-}{}{}Force\discretionary {-}{}{}Cross\discretionary {-}{}{}\_\discretionary {-}{}{}hydro}{49}{subsubsection.15.1.3.34}
+\contentsline {subsubsection}{\numberline {15.1.3.35}list\discretionary {-}{}{}Force\discretionary {-}{}{}Cross\discretionary {-}{}{}\_\discretionary {-}{}{}user}{49}{subsubsection.15.1.3.35}
+\contentsline {subsubsection}{\numberline {15.1.3.36}list\discretionary {-}{}{}Force\discretionary {-}{}{}Cross\discretionary {-}{}{}\_\discretionary {-}{}{}user}{49}{subsubsection.15.1.3.36}
+\contentsline {subsubsection}{\numberline {15.1.3.37}list\discretionary {-}{}{}Force\discretionary {-}{}{}React\discretionary {-}{}{}\_\discretionary {-}{}{}hydro}{50}{subsubsection.15.1.3.37}
+\contentsline {subsubsection}{\numberline {15.1.3.38}list\discretionary {-}{}{}Force\discretionary {-}{}{}React\discretionary {-}{}{}\_\discretionary {-}{}{}hydro}{50}{subsubsection.15.1.3.38}
+\contentsline {subsubsection}{\numberline {15.1.3.39}list\discretionary {-}{}{}Force\discretionary {-}{}{}React\discretionary {-}{}{}\_\discretionary {-}{}{}user}{50}{subsubsection.15.1.3.39}
+\contentsline {subsubsection}{\numberline {15.1.3.40}list\discretionary {-}{}{}Force\discretionary {-}{}{}React\discretionary {-}{}{}\_\discretionary {-}{}{}user}{50}{subsubsection.15.1.3.40}
+\contentsline {subsubsection}{\numberline {15.1.3.41}list\discretionary {-}{}{}Named\discretionary {-}{}{}Link\discretionary {-}{}{}\_\discretionary {-}{}{}hydro}{51}{subsubsection.15.1.3.41}
+\contentsline {subsubsection}{\numberline {15.1.3.42}list\discretionary {-}{}{}Named\discretionary {-}{}{}Link\discretionary {-}{}{}\_\discretionary {-}{}{}hydro}{51}{subsubsection.15.1.3.42}
+\contentsline {subsubsection}{\numberline {15.1.3.43}list\discretionary {-}{}{}Named\discretionary {-}{}{}Link\discretionary {-}{}{}\_\discretionary {-}{}{}user}{52}{subsubsection.15.1.3.43}
+\contentsline {subsubsection}{\numberline {15.1.3.44}list\discretionary {-}{}{}Named\discretionary {-}{}{}Link\discretionary {-}{}{}\_\discretionary {-}{}{}user}{52}{subsubsection.15.1.3.44}
+\contentsline {subsubsection}{\numberline {15.1.3.45}Mass\discretionary {-}{}{}Matrix}{52}{subsubsection.15.1.3.45}
+\contentsline {subsubsection}{\numberline {15.1.3.46}operator==}{53}{subsubsection.15.1.3.46}
+\contentsline {subsubsection}{\numberline {15.1.3.47}ref\discretionary {-}{}{}Body\discretionary {-}{}{}Name}{53}{subsubsection.15.1.3.47}
+\contentsline {subsubsection}{\numberline {15.1.3.48}ref\discretionary {-}{}{}Data\discretionary {-}{}{}Solution}{53}{subsubsection.15.1.3.48}
+\contentsline {subsubsection}{\numberline {15.1.3.49}ref\discretionary {-}{}{}Data\discretionary {-}{}{}Solution}{53}{subsubsection.15.1.3.49}
+\contentsline {subsubsection}{\numberline {15.1.3.50}ref\discretionary {-}{}{}Heading}{54}{subsubsection.15.1.3.50}
+\contentsline {subsubsection}{\numberline {15.1.3.51}ref\discretionary {-}{}{}Hydro\discretionary {-}{}{}Bod\discretionary {-}{}{}Name}{54}{subsubsection.15.1.3.51}
+\contentsline {subsubsection}{\numberline {15.1.3.52}ref\discretionary {-}{}{}Posn}{54}{subsubsection.15.1.3.52}
+\contentsline {subsubsection}{\numberline {15.1.3.53}ref\discretionary {-}{}{}Solution}{54}{subsubsection.15.1.3.53}
+\contentsline {subsubsection}{\numberline {15.1.3.54}set\discretionary {-}{}{}Body\discretionary {-}{}{}Name}{54}{subsubsection.15.1.3.54}
+\contentsline {subsubsection}{\numberline {15.1.3.55}set\discretionary {-}{}{}Cen\discretionary {-}{}{}X}{55}{subsubsection.15.1.3.55}
+\contentsline {subsubsection}{\numberline {15.1.3.56}set\discretionary {-}{}{}Cen\discretionary {-}{}{}Y}{55}{subsubsection.15.1.3.56}
+\contentsline {subsubsection}{\numberline {15.1.3.57}set\discretionary {-}{}{}Cen\discretionary {-}{}{}Z}{55}{subsubsection.15.1.3.57}
+\contentsline {subsubsection}{\numberline {15.1.3.58}set\discretionary {-}{}{}Heading}{55}{subsubsection.15.1.3.58}
+\contentsline {subsubsection}{\numberline {15.1.3.59}set\discretionary {-}{}{}Hydro\discretionary {-}{}{}Bod\discretionary {-}{}{}Name}{55}{subsubsection.15.1.3.59}
+\contentsline {subsubsection}{\numberline {15.1.3.60}set\discretionary {-}{}{}Mass}{55}{subsubsection.15.1.3.60}
+\contentsline {subsubsection}{\numberline {15.1.3.61}set\discretionary {-}{}{}Mass\discretionary {-}{}{}Matrix}{56}{subsubsection.15.1.3.61}
+\contentsline {subsubsection}{\numberline {15.1.3.62}set\discretionary {-}{}{}Mom\discretionary {-}{}{}Ixx}{56}{subsubsection.15.1.3.62}
+\contentsline {subsubsection}{\numberline {15.1.3.63}set\discretionary {-}{}{}Mom\discretionary {-}{}{}Ixy}{56}{subsubsection.15.1.3.63}
+\contentsline {subsubsection}{\numberline {15.1.3.64}set\discretionary {-}{}{}Mom\discretionary {-}{}{}Ixz}{56}{subsubsection.15.1.3.64}
+\contentsline {subsubsection}{\numberline {15.1.3.65}set\discretionary {-}{}{}Mom\discretionary {-}{}{}Iyy}{56}{subsubsection.15.1.3.65}
+\contentsline {subsubsection}{\numberline {15.1.3.66}set\discretionary {-}{}{}Mom\discretionary {-}{}{}Iyz}{57}{subsubsection.15.1.3.66}
+\contentsline {subsubsection}{\numberline {15.1.3.67}set\discretionary {-}{}{}Mom\discretionary {-}{}{}Izz}{57}{subsubsection.15.1.3.67}
+\contentsline {subsubsection}{\numberline {15.1.3.68}set\discretionary {-}{}{}Motion\discretionary {-}{}{}Model}{57}{subsubsection.15.1.3.68}
+\contentsline {subsubsection}{\numberline {15.1.3.69}set\discretionary {-}{}{}Posn\discretionary {-}{}{}X}{57}{subsubsection.15.1.3.69}
+\contentsline {subsubsection}{\numberline {15.1.3.70}set\discretionary {-}{}{}Posn\discretionary {-}{}{}Y}{57}{subsubsection.15.1.3.70}
+\contentsline {subsubsection}{\numberline {15.1.3.71}set\discretionary {-}{}{}Posn\discretionary {-}{}{}Z}{58}{subsubsection.15.1.3.71}
+\contentsline {subsubsection}{\numberline {15.1.3.72}set\discretionary {-}{}{}Soln\discretionary {-}{}{}Mat}{58}{subsubsection.15.1.3.72}
+\contentsline {section}{\numberline {15.2}osea\discretionary {-}{}{}:\discretionary {-}{}{}:ofreq\discretionary {-}{}{}:\discretionary {-}{}{}:Derivative Class Reference}{58}{section.15.2}
+\contentsline {subsection}{\numberline {15.2.1}Detailed Description}{60}{subsection.15.2.1}
+\contentsline {subsection}{\numberline {15.2.2}Constructor \& Destructor Documentation}{60}{subsection.15.2.2}
+\contentsline {subsubsection}{\numberline {15.2.2.1}Derivative}{60}{subsubsection.15.2.2.1}
+\contentsline {subsubsection}{\numberline {15.2.2.2}$\sim $\discretionary {-}{}{}Derivative}{60}{subsubsection.15.2.2.2}
+\contentsline {subsection}{\numberline {15.2.3}Member Function Documentation}{60}{subsection.15.2.3}
+\contentsline {subsubsection}{\numberline {15.2.3.1}add\discretionary {-}{}{}Model\discretionary {-}{}{}Equation}{60}{subsubsection.15.2.3.1}
+\contentsline {subsubsection}{\numberline {15.2.3.2}get\discretionary {-}{}{}Equation\discretionary {-}{}{}List\discretionary {-}{}{}Size}{60}{subsubsection.15.2.3.2}
+\contentsline {subsubsection}{\numberline {15.2.3.3}list\discretionary {-}{}{}Data\discretionary {-}{}{}Equation}{60}{subsubsection.15.2.3.3}
+\contentsline {subsubsection}{\numberline {15.2.3.4}list\discretionary {-}{}{}Data\discretionary {-}{}{}Equation}{61}{subsubsection.15.2.3.4}
+\contentsline {subsubsection}{\numberline {15.2.3.5}list\discretionary {-}{}{}Equation}{61}{subsubsection.15.2.3.5}
+\contentsline {subsubsection}{\numberline {15.2.3.6}list\discretionary {-}{}{}Equation}{61}{subsubsection.15.2.3.6}
+\contentsline {section}{\numberline {15.3}osea\discretionary {-}{}{}:\discretionary {-}{}{}:ofreq\discretionary {-}{}{}:\discretionary {-}{}{}:dict\discretionary {-}{}{}Bodies Class Reference}{61}{section.15.3}
+\contentsline {subsection}{\numberline {15.3.1}Detailed Description}{62}{subsection.15.3.1}
+\contentsline {subsection}{\numberline {15.3.2}Constructor \& Destructor Documentation}{63}{subsection.15.3.2}
+\contentsline {subsubsection}{\numberline {15.3.2.1}dict\discretionary {-}{}{}Bodies}{63}{subsubsection.15.3.2.1}
+\contentsline {subsection}{\numberline {15.3.3}Member Function Documentation}{63}{subsection.15.3.3}
+\contentsline {subsubsection}{\numberline {15.3.3.1}define\discretionary {-}{}{}Class}{63}{subsubsection.15.3.3.1}
+\contentsline {subsubsection}{\numberline {15.3.3.2}define\discretionary {-}{}{}Key}{63}{subsubsection.15.3.3.2}
+\contentsline {section}{\numberline {15.4}osea\discretionary {-}{}{}:\discretionary {-}{}{}:ofreq\discretionary {-}{}{}:\discretionary {-}{}{}:dict\discretionary {-}{}{}Control Class Reference}{64}{section.15.4}
+\contentsline {subsection}{\numberline {15.4.1}Detailed Description}{65}{subsection.15.4.1}
+\contentsline {subsection}{\numberline {15.4.2}Constructor \& Destructor Documentation}{65}{subsection.15.4.2}
+\contentsline {subsubsection}{\numberline {15.4.2.1}dict\discretionary {-}{}{}Control}{65}{subsubsection.15.4.2.1}
+\contentsline {subsection}{\numberline {15.4.3}Member Function Documentation}{65}{subsection.15.4.3}
+\contentsline {subsubsection}{\numberline {15.4.3.1}define\discretionary {-}{}{}Class}{65}{subsubsection.15.4.3.1}
+\contentsline {subsubsection}{\numberline {15.4.3.2}define\discretionary {-}{}{}Key}{65}{subsubsection.15.4.3.2}
+\contentsline {section}{\numberline {15.5}osea\discretionary {-}{}{}:\discretionary {-}{}{}:ofreq\discretionary {-}{}{}:\discretionary {-}{}{}:dict\discretionary {-}{}{}Forces Class Reference}{66}{section.15.5}
+\contentsline {subsection}{\numberline {15.5.1}Detailed Description}{67}{subsection.15.5.1}
+\contentsline {subsection}{\numberline {15.5.2}Constructor \& Destructor Documentation}{67}{subsection.15.5.2}
+\contentsline {subsubsection}{\numberline {15.5.2.1}dict\discretionary {-}{}{}Forces}{67}{subsubsection.15.5.2.1}
+\contentsline {subsection}{\numberline {15.5.3}Member Function Documentation}{67}{subsection.15.5.3}
+\contentsline {subsubsection}{\numberline {15.5.3.1}define\discretionary {-}{}{}Class}{67}{subsubsection.15.5.3.1}
+\contentsline {subsubsection}{\numberline {15.5.3.2}define\discretionary {-}{}{}Key}{68}{subsubsection.15.5.3.2}
+\contentsline {section}{\numberline {15.6}osea\discretionary {-}{}{}:\discretionary {-}{}{}:Dictionary Class Reference}{68}{section.15.6}
+\contentsline {subsection}{\numberline {15.6.1}Detailed Description}{70}{subsection.15.6.1}
+\contentsline {subsection}{\numberline {15.6.2}Constructor \& Destructor Documentation}{70}{subsection.15.6.2}
+\contentsline {subsubsection}{\numberline {15.6.2.1}Dictionary}{70}{subsubsection.15.6.2.1}
+\contentsline {subsubsection}{\numberline {15.6.2.2}Dictionary}{70}{subsubsection.15.6.2.2}
+\contentsline {subsection}{\numberline {15.6.3}Member Function Documentation}{70}{subsection.15.6.3}
+\contentsline {subsubsection}{\numberline {15.6.3.1}convert\discretionary {-}{}{}Complex}{70}{subsubsection.15.6.3.1}
+\contentsline {subsubsection}{\numberline {15.6.3.2}define\discretionary {-}{}{}Class}{70}{subsubsection.15.6.3.2}
+\contentsline {subsubsection}{\numberline {15.6.3.3}define\discretionary {-}{}{}Key}{71}{subsubsection.15.6.3.3}
+\contentsline {subsubsection}{\numberline {15.6.3.4}set\discretionary {-}{}{}Object}{71}{subsubsection.15.6.3.4}
+\contentsline {subsubsection}{\numberline {15.6.3.5}set\discretionary {-}{}{}System}{71}{subsubsection.15.6.3.5}
+\contentsline {subsection}{\numberline {15.6.4}Member Data Documentation}{71}{subsection.15.6.4}
+\contentsline {subsubsection}{\numberline {15.6.4.1}pt\discretionary {-}{}{}System}{72}{subsubsection.15.6.4.1}
+\contentsline {section}{\numberline {15.7}osea\discretionary {-}{}{}:\discretionary {-}{}{}:ofreq\discretionary {-}{}{}:\discretionary {-}{}{}:Eqn\discretionary {-}{}{}Rotation Class Reference}{72}{section.15.7}
+\contentsline {subsection}{\numberline {15.7.1}Detailed Description}{75}{subsection.15.7.1}
+\contentsline {subsection}{\numberline {15.7.2}Constructor \& Destructor Documentation}{76}{subsection.15.7.2}
+\contentsline {subsubsection}{\numberline {15.7.2.1}Eqn\discretionary {-}{}{}Rotation}{76}{subsubsection.15.7.2.1}
+\contentsline {subsubsection}{\numberline {15.7.2.2}Eqn\discretionary {-}{}{}Rotation}{77}{subsubsection.15.7.2.2}
+\contentsline {subsubsection}{\numberline {15.7.2.3}Eqn\discretionary {-}{}{}Rotation}{77}{subsubsection.15.7.2.3}
+\contentsline {subsubsection}{\numberline {15.7.2.4}$\sim $\discretionary {-}{}{}Eqn\discretionary {-}{}{}Rotation}{77}{subsubsection.15.7.2.4}
+\contentsline {subsection}{\numberline {15.7.3}Member Function Documentation}{77}{subsection.15.7.3}
+\contentsline {subsubsection}{\numberline {15.7.3.1}Func1}{77}{subsubsection.15.7.3.1}
+\contentsline {subsubsection}{\numberline {15.7.3.2}Func10}{78}{subsubsection.15.7.3.2}
+\contentsline {subsubsection}{\numberline {15.7.3.3}Func11}{78}{subsubsection.15.7.3.3}
+\contentsline {subsubsection}{\numberline {15.7.3.4}Func12}{78}{subsubsection.15.7.3.4}
+\contentsline {subsubsection}{\numberline {15.7.3.5}Func13}{78}{subsubsection.15.7.3.5}
+\contentsline {subsubsection}{\numberline {15.7.3.6}Func14}{78}{subsubsection.15.7.3.6}
+\contentsline {subsubsection}{\numberline {15.7.3.7}Func15}{78}{subsubsection.15.7.3.7}
+\contentsline {subsubsection}{\numberline {15.7.3.8}Func16}{78}{subsubsection.15.7.3.8}
+\contentsline {subsubsection}{\numberline {15.7.3.9}Func17}{78}{subsubsection.15.7.3.9}
+\contentsline {subsubsection}{\numberline {15.7.3.10}Func18}{79}{subsubsection.15.7.3.10}
+\contentsline {subsubsection}{\numberline {15.7.3.11}Func19}{79}{subsubsection.15.7.3.11}
+\contentsline {subsubsection}{\numberline {15.7.3.12}Func2}{79}{subsubsection.15.7.3.12}
+\contentsline {subsubsection}{\numberline {15.7.3.13}Func20}{79}{subsubsection.15.7.3.13}
+\contentsline {subsubsection}{\numberline {15.7.3.14}Func21}{79}{subsubsection.15.7.3.14}
+\contentsline {subsubsection}{\numberline {15.7.3.15}Func22}{79}{subsubsection.15.7.3.15}
+\contentsline {subsubsection}{\numberline {15.7.3.16}Func23}{79}{subsubsection.15.7.3.16}
+\contentsline {subsubsection}{\numberline {15.7.3.17}Func24}{79}{subsubsection.15.7.3.17}
+\contentsline {subsubsection}{\numberline {15.7.3.18}Func25}{79}{subsubsection.15.7.3.18}
+\contentsline {subsubsection}{\numberline {15.7.3.19}Func26}{80}{subsubsection.15.7.3.19}
+\contentsline {subsubsection}{\numberline {15.7.3.20}Func27}{80}{subsubsection.15.7.3.20}
+\contentsline {subsubsection}{\numberline {15.7.3.21}Func28}{80}{subsubsection.15.7.3.21}
+\contentsline {subsubsection}{\numberline {15.7.3.22}Func29}{80}{subsubsection.15.7.3.22}
+\contentsline {subsubsection}{\numberline {15.7.3.23}Func3}{80}{subsubsection.15.7.3.23}
+\contentsline {subsubsection}{\numberline {15.7.3.24}Func30}{80}{subsubsection.15.7.3.24}
+\contentsline {subsubsection}{\numberline {15.7.3.25}Func31}{80}{subsubsection.15.7.3.25}
+\contentsline {subsubsection}{\numberline {15.7.3.26}Func32}{80}{subsubsection.15.7.3.26}
+\contentsline {subsubsection}{\numberline {15.7.3.27}Func33}{80}{subsubsection.15.7.3.27}
+\contentsline {subsubsection}{\numberline {15.7.3.28}Func34}{81}{subsubsection.15.7.3.28}
+\contentsline {subsubsection}{\numberline {15.7.3.29}Func35}{81}{subsubsection.15.7.3.29}
+\contentsline {subsubsection}{\numberline {15.7.3.30}Func36}{81}{subsubsection.15.7.3.30}
+\contentsline {subsubsection}{\numberline {15.7.3.31}Func37}{81}{subsubsection.15.7.3.31}
+\contentsline {subsubsection}{\numberline {15.7.3.32}Func38}{81}{subsubsection.15.7.3.32}
+\contentsline {subsubsection}{\numberline {15.7.3.33}Func39}{81}{subsubsection.15.7.3.33}
+\contentsline {subsubsection}{\numberline {15.7.3.34}Func4}{81}{subsubsection.15.7.3.34}
+\contentsline {subsubsection}{\numberline {15.7.3.35}Func40}{81}{subsubsection.15.7.3.35}
+\contentsline {subsubsection}{\numberline {15.7.3.36}Func41}{81}{subsubsection.15.7.3.36}
+\contentsline {subsubsection}{\numberline {15.7.3.37}Func42}{82}{subsubsection.15.7.3.37}
+\contentsline {subsubsection}{\numberline {15.7.3.38}Func43}{82}{subsubsection.15.7.3.38}
+\contentsline {subsubsection}{\numberline {15.7.3.39}Func44}{82}{subsubsection.15.7.3.39}
+\contentsline {subsubsection}{\numberline {15.7.3.40}Func45}{82}{subsubsection.15.7.3.40}
+\contentsline {subsubsection}{\numberline {15.7.3.41}Func46}{82}{subsubsection.15.7.3.41}
+\contentsline {subsubsection}{\numberline {15.7.3.42}Func47}{82}{subsubsection.15.7.3.42}
+\contentsline {subsubsection}{\numberline {15.7.3.43}Func48}{82}{subsubsection.15.7.3.43}
+\contentsline {subsubsection}{\numberline {15.7.3.44}Func49}{82}{subsubsection.15.7.3.44}
+\contentsline {subsubsection}{\numberline {15.7.3.45}Func5}{82}{subsubsection.15.7.3.45}
+\contentsline {subsubsection}{\numberline {15.7.3.46}Func50}{83}{subsubsection.15.7.3.46}
+\contentsline {subsubsection}{\numberline {15.7.3.47}Func6}{83}{subsubsection.15.7.3.47}
+\contentsline {subsubsection}{\numberline {15.7.3.48}Func7}{83}{subsubsection.15.7.3.48}
+\contentsline {subsubsection}{\numberline {15.7.3.49}Func8}{83}{subsubsection.15.7.3.49}
+\contentsline {subsubsection}{\numberline {15.7.3.50}Func9}{83}{subsubsection.15.7.3.50}
+\contentsline {subsubsection}{\numberline {15.7.3.51}set\discretionary {-}{}{}Formula}{83}{subsubsection.15.7.3.51}
+\contentsline {section}{\numberline {15.8}osea\discretionary {-}{}{}:\discretionary {-}{}{}:ofreq\discretionary {-}{}{}:\discretionary {-}{}{}:Eqn\discretionary {-}{}{}Translation Class Reference}{83}{section.15.8}
+\contentsline {subsection}{\numberline {15.8.1}Detailed Description}{86}{subsection.15.8.1}
+\contentsline {subsection}{\numberline {15.8.2}Constructor \& Destructor Documentation}{87}{subsection.15.8.2}
+\contentsline {subsubsection}{\numberline {15.8.2.1}Eqn\discretionary {-}{}{}Translation}{87}{subsubsection.15.8.2.1}
+\contentsline {subsubsection}{\numberline {15.8.2.2}Eqn\discretionary {-}{}{}Translation}{88}{subsubsection.15.8.2.2}
+\contentsline {subsubsection}{\numberline {15.8.2.3}Eqn\discretionary {-}{}{}Translation}{88}{subsubsection.15.8.2.3}
+\contentsline {subsubsection}{\numberline {15.8.2.4}$\sim $\discretionary {-}{}{}Eqn\discretionary {-}{}{}Translation}{88}{subsubsection.15.8.2.4}
+\contentsline {subsection}{\numberline {15.8.3}Member Function Documentation}{88}{subsection.15.8.3}
+\contentsline {subsubsection}{\numberline {15.8.3.1}Func1}{88}{subsubsection.15.8.3.1}
+\contentsline {subsubsection}{\numberline {15.8.3.2}Func10}{89}{subsubsection.15.8.3.2}
+\contentsline {subsubsection}{\numberline {15.8.3.3}Func11}{89}{subsubsection.15.8.3.3}
+\contentsline {subsubsection}{\numberline {15.8.3.4}Func12}{89}{subsubsection.15.8.3.4}
+\contentsline {subsubsection}{\numberline {15.8.3.5}Func13}{89}{subsubsection.15.8.3.5}
+\contentsline {subsubsection}{\numberline {15.8.3.6}Func14}{89}{subsubsection.15.8.3.6}
+\contentsline {subsubsection}{\numberline {15.8.3.7}Func15}{89}{subsubsection.15.8.3.7}
+\contentsline {subsubsection}{\numberline {15.8.3.8}Func16}{89}{subsubsection.15.8.3.8}
+\contentsline {subsubsection}{\numberline {15.8.3.9}Func17}{89}{subsubsection.15.8.3.9}
+\contentsline {subsubsection}{\numberline {15.8.3.10}Func18}{90}{subsubsection.15.8.3.10}
+\contentsline {subsubsection}{\numberline {15.8.3.11}Func19}{90}{subsubsection.15.8.3.11}
+\contentsline {subsubsection}{\numberline {15.8.3.12}Func2}{90}{subsubsection.15.8.3.12}
+\contentsline {subsubsection}{\numberline {15.8.3.13}Func20}{90}{subsubsection.15.8.3.13}
+\contentsline {subsubsection}{\numberline {15.8.3.14}Func21}{90}{subsubsection.15.8.3.14}
+\contentsline {subsubsection}{\numberline {15.8.3.15}Func22}{90}{subsubsection.15.8.3.15}
+\contentsline {subsubsection}{\numberline {15.8.3.16}Func23}{90}{subsubsection.15.8.3.16}
+\contentsline {subsubsection}{\numberline {15.8.3.17}Func24}{90}{subsubsection.15.8.3.17}
+\contentsline {subsubsection}{\numberline {15.8.3.18}Func25}{90}{subsubsection.15.8.3.18}
+\contentsline {subsubsection}{\numberline {15.8.3.19}Func26}{91}{subsubsection.15.8.3.19}
+\contentsline {subsubsection}{\numberline {15.8.3.20}Func27}{91}{subsubsection.15.8.3.20}
+\contentsline {subsubsection}{\numberline {15.8.3.21}Func28}{91}{subsubsection.15.8.3.21}
+\contentsline {subsubsection}{\numberline {15.8.3.22}Func29}{91}{subsubsection.15.8.3.22}
+\contentsline {subsubsection}{\numberline {15.8.3.23}Func3}{91}{subsubsection.15.8.3.23}
+\contentsline {subsubsection}{\numberline {15.8.3.24}Func30}{91}{subsubsection.15.8.3.24}
+\contentsline {subsubsection}{\numberline {15.8.3.25}Func31}{91}{subsubsection.15.8.3.25}
+\contentsline {subsubsection}{\numberline {15.8.3.26}Func32}{91}{subsubsection.15.8.3.26}
+\contentsline {subsubsection}{\numberline {15.8.3.27}Func33}{91}{subsubsection.15.8.3.27}
+\contentsline {subsubsection}{\numberline {15.8.3.28}Func34}{92}{subsubsection.15.8.3.28}
+\contentsline {subsubsection}{\numberline {15.8.3.29}Func35}{92}{subsubsection.15.8.3.29}
+\contentsline {subsubsection}{\numberline {15.8.3.30}Func36}{92}{subsubsection.15.8.3.30}
+\contentsline {subsubsection}{\numberline {15.8.3.31}Func37}{92}{subsubsection.15.8.3.31}
+\contentsline {subsubsection}{\numberline {15.8.3.32}Func38}{92}{subsubsection.15.8.3.32}
+\contentsline {subsubsection}{\numberline {15.8.3.33}Func39}{92}{subsubsection.15.8.3.33}
+\contentsline {subsubsection}{\numberline {15.8.3.34}Func4}{92}{subsubsection.15.8.3.34}
+\contentsline {subsubsection}{\numberline {15.8.3.35}Func40}{92}{subsubsection.15.8.3.35}
+\contentsline {subsubsection}{\numberline {15.8.3.36}Func41}{92}{subsubsection.15.8.3.36}
+\contentsline {subsubsection}{\numberline {15.8.3.37}Func42}{93}{subsubsection.15.8.3.37}
+\contentsline {subsubsection}{\numberline {15.8.3.38}Func43}{93}{subsubsection.15.8.3.38}
+\contentsline {subsubsection}{\numberline {15.8.3.39}Func44}{93}{subsubsection.15.8.3.39}
+\contentsline {subsubsection}{\numberline {15.8.3.40}Func45}{93}{subsubsection.15.8.3.40}
+\contentsline {subsubsection}{\numberline {15.8.3.41}Func46}{93}{subsubsection.15.8.3.41}
+\contentsline {subsubsection}{\numberline {15.8.3.42}Func47}{93}{subsubsection.15.8.3.42}
+\contentsline {subsubsection}{\numberline {15.8.3.43}Func48}{93}{subsubsection.15.8.3.43}
+\contentsline {subsubsection}{\numberline {15.8.3.44}Func49}{93}{subsubsection.15.8.3.44}
+\contentsline {subsubsection}{\numberline {15.8.3.45}Func5}{93}{subsubsection.15.8.3.45}
+\contentsline {subsubsection}{\numberline {15.8.3.46}Func50}{94}{subsubsection.15.8.3.46}
+\contentsline {subsubsection}{\numberline {15.8.3.47}Func6}{94}{subsubsection.15.8.3.47}
+\contentsline {subsubsection}{\numberline {15.8.3.48}Func7}{94}{subsubsection.15.8.3.48}
+\contentsline {subsubsection}{\numberline {15.8.3.49}Func8}{94}{subsubsection.15.8.3.49}
+\contentsline {subsubsection}{\numberline {15.8.3.50}Func9}{94}{subsubsection.15.8.3.50}
+\contentsline {subsubsection}{\numberline {15.8.3.51}set\discretionary {-}{}{}Formula}{94}{subsubsection.15.8.3.51}
+\contentsline {section}{\numberline {15.9}osea\discretionary {-}{}{}:\discretionary {-}{}{}:ofreq\discretionary {-}{}{}:\discretionary {-}{}{}:Equation Class Reference}{94}{section.15.9}
+\contentsline {subsection}{\numberline {15.9.1}Detailed Description}{96}{subsection.15.9.1}
+\contentsline {subsection}{\numberline {15.9.2}Constructor \& Destructor Documentation}{96}{subsection.15.9.2}
+\contentsline {subsubsection}{\numberline {15.9.2.1}Equation}{96}{subsubsection.15.9.2.1}
+\contentsline {subsubsection}{\numberline {15.9.2.2}Equation}{96}{subsubsection.15.9.2.2}
+\contentsline {subsubsection}{\numberline {15.9.2.3}$\sim $\discretionary {-}{}{}Equation}{96}{subsubsection.15.9.2.3}
+\contentsline {subsection}{\numberline {15.9.3}Member Function Documentation}{96}{subsection.15.9.3}
+\contentsline {subsubsection}{\numberline {15.9.3.1}add\discretionary {-}{}{}Variable}{96}{subsubsection.15.9.3.1}
+\contentsline {subsubsection}{\numberline {15.9.3.2}get\discretionary {-}{}{}Coefficient}{97}{subsubsection.15.9.3.2}
+\contentsline {subsubsection}{\numberline {15.9.3.3}get\discretionary {-}{}{}Coefficient\discretionary {-}{}{}List\discretionary {-}{}{}Size}{97}{subsubsection.15.9.3.3}
+\contentsline {subsubsection}{\numberline {15.9.3.4}get\discretionary {-}{}{}Data\discretionary {-}{}{}Index}{97}{subsubsection.15.9.3.4}
+\contentsline {subsubsection}{\numberline {15.9.3.5}list\discretionary {-}{}{}Coefficient}{97}{subsubsection.15.9.3.5}
+\contentsline {subsubsection}{\numberline {15.9.3.6}list\discretionary {-}{}{}Coefficient}{98}{subsubsection.15.9.3.6}
+\contentsline {subsubsection}{\numberline {15.9.3.7}list\discretionary {-}{}{}Data\discretionary {-}{}{}Variable}{98}{subsubsection.15.9.3.7}
+\contentsline {subsubsection}{\numberline {15.9.3.8}list\discretionary {-}{}{}Data\discretionary {-}{}{}Variable}{98}{subsubsection.15.9.3.8}
+\contentsline {subsubsection}{\numberline {15.9.3.9}ref\discretionary {-}{}{}Data\discretionary {-}{}{}Index}{99}{subsubsection.15.9.3.9}
+\contentsline {subsubsection}{\numberline {15.9.3.10}set\discretionary {-}{}{}Coefficient}{99}{subsubsection.15.9.3.10}
+\contentsline {subsubsection}{\numberline {15.9.3.11}set\discretionary {-}{}{}Data\discretionary {-}{}{}Index}{99}{subsubsection.15.9.3.11}
+\contentsline {section}{\numberline {15.10}osea\discretionary {-}{}{}:\discretionary {-}{}{}:ofreq\discretionary {-}{}{}:\discretionary {-}{}{}:Equationof\discretionary {-}{}{}Motion Class Reference}{99}{section.15.10}
+\contentsline {subsection}{\numberline {15.10.1}Detailed Description}{103}{subsection.15.10.1}
+\contentsline {subsection}{\numberline {15.10.2}Constructor \& Destructor Documentation}{103}{subsection.15.10.2}
+\contentsline {subsubsection}{\numberline {15.10.2.1}Equationof\discretionary {-}{}{}Motion}{103}{subsubsection.15.10.2.1}
+\contentsline {subsubsection}{\numberline {15.10.2.2}Equationof\discretionary {-}{}{}Motion}{104}{subsubsection.15.10.2.2}
+\contentsline {subsubsection}{\numberline {15.10.2.3}Equationof\discretionary {-}{}{}Motion}{104}{subsubsection.15.10.2.3}
+\contentsline {subsubsection}{\numberline {15.10.2.4}$\sim $\discretionary {-}{}{}Equationof\discretionary {-}{}{}Motion}{104}{subsubsection.15.10.2.4}
+\contentsline {subsection}{\numberline {15.10.3}Member Function Documentation}{104}{subsection.15.10.3}
+\contentsline {subsubsection}{\numberline {15.10.3.1}body}{104}{subsubsection.15.10.3.1}
+\contentsline {subsubsection}{\numberline {15.10.3.2}curbody}{105}{subsubsection.15.10.3.2}
+\contentsline {subsubsection}{\numberline {15.10.3.3}Ddt}{105}{subsubsection.15.10.3.3}
+\contentsline {subsubsection}{\numberline {15.10.3.4}Evaluate}{105}{subsubsection.15.10.3.4}
+\contentsline {subsubsection}{\numberline {15.10.3.5}Force\discretionary {-}{}{}Active\discretionary {-}{}{}\_\discretionary {-}{}{}hydro}{105}{subsubsection.15.10.3.5}
+\contentsline {subsubsection}{\numberline {15.10.3.6}Force\discretionary {-}{}{}Active\discretionary {-}{}{}\_\discretionary {-}{}{}user}{106}{subsubsection.15.10.3.6}
+\contentsline {subsubsection}{\numberline {15.10.3.7}Force\discretionary {-}{}{}Cross\discretionary {-}{}{}\_\discretionary {-}{}{}hydro}{106}{subsubsection.15.10.3.7}
+\contentsline {subsubsection}{\numberline {15.10.3.8}Force\discretionary {-}{}{}Cross\discretionary {-}{}{}\_\discretionary {-}{}{}user}{106}{subsubsection.15.10.3.8}
+\contentsline {subsubsection}{\numberline {15.10.3.9}Force\discretionary {-}{}{}Mass}{106}{subsubsection.15.10.3.9}
+\contentsline {subsubsection}{\numberline {15.10.3.10}Force\discretionary {-}{}{}React\discretionary {-}{}{}\_\discretionary {-}{}{}hydro}{107}{subsubsection.15.10.3.10}
+\contentsline {subsubsection}{\numberline {15.10.3.11}Force\discretionary {-}{}{}React\discretionary {-}{}{}\_\discretionary {-}{}{}user}{107}{subsubsection.15.10.3.11}
+\contentsline {subsubsection}{\numberline {15.10.3.12}Func1}{107}{subsubsection.15.10.3.12}
+\contentsline {subsubsection}{\numberline {15.10.3.13}Func10}{108}{subsubsection.15.10.3.13}
+\contentsline {subsubsection}{\numberline {15.10.3.14}Func11}{108}{subsubsection.15.10.3.14}
+\contentsline {subsubsection}{\numberline {15.10.3.15}Func12}{108}{subsubsection.15.10.3.15}
+\contentsline {subsubsection}{\numberline {15.10.3.16}Func13}{108}{subsubsection.15.10.3.16}
+\contentsline {subsubsection}{\numberline {15.10.3.17}Func14}{108}{subsubsection.15.10.3.17}
+\contentsline {subsubsection}{\numberline {15.10.3.18}Func15}{108}{subsubsection.15.10.3.18}
+\contentsline {subsubsection}{\numberline {15.10.3.19}Func16}{108}{subsubsection.15.10.3.19}
+\contentsline {subsubsection}{\numberline {15.10.3.20}Func17}{108}{subsubsection.15.10.3.20}
+\contentsline {subsubsection}{\numberline {15.10.3.21}Func18}{108}{subsubsection.15.10.3.21}
+\contentsline {subsubsection}{\numberline {15.10.3.22}Func19}{109}{subsubsection.15.10.3.22}
+\contentsline {subsubsection}{\numberline {15.10.3.23}Func2}{109}{subsubsection.15.10.3.23}
+\contentsline {subsubsection}{\numberline {15.10.3.24}Func20}{109}{subsubsection.15.10.3.24}
+\contentsline {subsubsection}{\numberline {15.10.3.25}Func21}{109}{subsubsection.15.10.3.25}
+\contentsline {subsubsection}{\numberline {15.10.3.26}Func22}{109}{subsubsection.15.10.3.26}
+\contentsline {subsubsection}{\numberline {15.10.3.27}Func23}{109}{subsubsection.15.10.3.27}
+\contentsline {subsubsection}{\numberline {15.10.3.28}Func24}{109}{subsubsection.15.10.3.28}
+\contentsline {subsubsection}{\numberline {15.10.3.29}Func25}{109}{subsubsection.15.10.3.29}
+\contentsline {subsubsection}{\numberline {15.10.3.30}Func26}{109}{subsubsection.15.10.3.30}
+\contentsline {subsubsection}{\numberline {15.10.3.31}Func27}{110}{subsubsection.15.10.3.31}
+\contentsline {subsubsection}{\numberline {15.10.3.32}Func28}{110}{subsubsection.15.10.3.32}
+\contentsline {subsubsection}{\numberline {15.10.3.33}Func29}{110}{subsubsection.15.10.3.33}
+\contentsline {subsubsection}{\numberline {15.10.3.34}Func3}{110}{subsubsection.15.10.3.34}
+\contentsline {subsubsection}{\numberline {15.10.3.35}Func30}{110}{subsubsection.15.10.3.35}
+\contentsline {subsubsection}{\numberline {15.10.3.36}Func31}{110}{subsubsection.15.10.3.36}
+\contentsline {subsubsection}{\numberline {15.10.3.37}Func32}{110}{subsubsection.15.10.3.37}
+\contentsline {subsubsection}{\numberline {15.10.3.38}Func33}{110}{subsubsection.15.10.3.38}
+\contentsline {subsubsection}{\numberline {15.10.3.39}Func34}{110}{subsubsection.15.10.3.39}
+\contentsline {subsubsection}{\numberline {15.10.3.40}Func35}{111}{subsubsection.15.10.3.40}
+\contentsline {subsubsection}{\numberline {15.10.3.41}Func36}{111}{subsubsection.15.10.3.41}
+\contentsline {subsubsection}{\numberline {15.10.3.42}Func37}{111}{subsubsection.15.10.3.42}
+\contentsline {subsubsection}{\numberline {15.10.3.43}Func38}{111}{subsubsection.15.10.3.43}
+\contentsline {subsubsection}{\numberline {15.10.3.44}Func39}{111}{subsubsection.15.10.3.44}
+\contentsline {subsubsection}{\numberline {15.10.3.45}Func4}{111}{subsubsection.15.10.3.45}
+\contentsline {subsubsection}{\numberline {15.10.3.46}Func40}{111}{subsubsection.15.10.3.46}
+\contentsline {subsubsection}{\numberline {15.10.3.47}Func41}{111}{subsubsection.15.10.3.47}
+\contentsline {subsubsection}{\numberline {15.10.3.48}Func42}{111}{subsubsection.15.10.3.48}
+\contentsline {subsubsection}{\numberline {15.10.3.49}Func43}{112}{subsubsection.15.10.3.49}
+\contentsline {subsubsection}{\numberline {15.10.3.50}Func44}{112}{subsubsection.15.10.3.50}
+\contentsline {subsubsection}{\numberline {15.10.3.51}Func45}{112}{subsubsection.15.10.3.51}
+\contentsline {subsubsection}{\numberline {15.10.3.52}Func46}{112}{subsubsection.15.10.3.52}
+\contentsline {subsubsection}{\numberline {15.10.3.53}Func47}{112}{subsubsection.15.10.3.53}
+\contentsline {subsubsection}{\numberline {15.10.3.54}Func48}{112}{subsubsection.15.10.3.54}
+\contentsline {subsubsection}{\numberline {15.10.3.55}Func49}{112}{subsubsection.15.10.3.55}
+\contentsline {subsubsection}{\numberline {15.10.3.56}Func5}{112}{subsubsection.15.10.3.56}
+\contentsline {subsubsection}{\numberline {15.10.3.57}Func50}{112}{subsubsection.15.10.3.57}
+\contentsline {subsubsection}{\numberline {15.10.3.58}Func6}{113}{subsubsection.15.10.3.58}
+\contentsline {subsubsection}{\numberline {15.10.3.59}Func7}{113}{subsubsection.15.10.3.59}
+\contentsline {subsubsection}{\numberline {15.10.3.60}Func8}{113}{subsubsection.15.10.3.60}
+\contentsline {subsubsection}{\numberline {15.10.3.61}Func9}{113}{subsubsection.15.10.3.61}
+\contentsline {subsubsection}{\numberline {15.10.3.62}get\discretionary {-}{}{}Data\discretionary {-}{}{}Index}{113}{subsubsection.15.10.3.62}
+\contentsline {subsubsection}{\numberline {15.10.3.63}Kronecker}{113}{subsubsection.15.10.3.63}
+\contentsline {subsubsection}{\numberline {15.10.3.64}ord}{114}{subsubsection.15.10.3.64}
+\contentsline {subsubsection}{\numberline {15.10.3.65}ref\discretionary {-}{}{}Data\discretionary {-}{}{}Index}{114}{subsubsection.15.10.3.65}
+\contentsline {subsubsection}{\numberline {15.10.3.66}ref\discretionary {-}{}{}Description}{114}{subsubsection.15.10.3.66}
+\contentsline {subsubsection}{\numberline {15.10.3.67}ref\discretionary {-}{}{}Name}{115}{subsubsection.15.10.3.67}
+\contentsline {subsubsection}{\numberline {15.10.3.68}set\discretionary {-}{}{}Arguments}{115}{subsubsection.15.10.3.68}
+\contentsline {subsubsection}{\numberline {15.10.3.69}set\discretionary {-}{}{}Data\discretionary {-}{}{}Index}{115}{subsubsection.15.10.3.69}
+\contentsline {subsubsection}{\numberline {15.10.3.70}set\discretionary {-}{}{}Debug\discretionary {-}{}{}Data}{115}{subsubsection.15.10.3.70}
+\contentsline {subsubsection}{\numberline {15.10.3.71}set\discretionary {-}{}{}Description}{116}{subsubsection.15.10.3.71}
+\contentsline {subsubsection}{\numberline {15.10.3.72}set\discretionary {-}{}{}Formula}{116}{subsubsection.15.10.3.72}
+\contentsline {subsubsection}{\numberline {15.10.3.73}set\discretionary {-}{}{}Name}{116}{subsubsection.15.10.3.73}
+\contentsline {subsubsection}{\numberline {15.10.3.74}Sum}{116}{subsubsection.15.10.3.74}
+\contentsline {subsubsection}{\numberline {15.10.3.75}Sum}{117}{subsubsection.15.10.3.75}
+\contentsline {subsubsection}{\numberline {15.10.3.76}Sum}{117}{subsubsection.15.10.3.76}
+\contentsline {subsubsection}{\numberline {15.10.3.77}var}{118}{subsubsection.15.10.3.77}
+\contentsline {subsection}{\numberline {15.10.4}Member Data Documentation}{118}{subsection.15.10.4}
+\contentsline {subsubsection}{\numberline {15.10.4.1}argcount}{118}{subsubsection.15.10.4.1}
+\contentsline {subsubsection}{\numberline {15.10.4.2}argvalue}{118}{subsubsection.15.10.4.2}
+\contentsline {subsubsection}{\numberline {15.10.4.3}p\discretionary {-}{}{}Bod}{118}{subsubsection.15.10.4.3}
+\contentsline {subsubsection}{\numberline {15.10.4.4}p\discretionary {-}{}{}Cur\discretionary {-}{}{}Ord}{118}{subsubsection.15.10.4.4}
+\contentsline {subsubsection}{\numberline {15.10.4.5}p\discretionary {-}{}{}Cur\discretionary {-}{}{}Var}{118}{subsubsection.15.10.4.5}
+\contentsline {subsubsection}{\numberline {15.10.4.6}p\discretionary {-}{}{}Description}{118}{subsubsection.15.10.4.6}
+\contentsline {subsubsection}{\numberline {15.10.4.7}p\discretionary {-}{}{}Name}{119}{subsubsection.15.10.4.7}
+\contentsline {subsubsection}{\numberline {15.10.4.8}undef\discretionary {-}{}{}Arg}{119}{subsubsection.15.10.4.8}
+\contentsline {section}{\numberline {15.11}osea\discretionary {-}{}{}:\discretionary {-}{}{}:File\discretionary {-}{}{}Reader Class Reference}{119}{section.15.11}
+\contentsline {subsection}{\numberline {15.11.1}Detailed Description}{121}{subsection.15.11.1}
+\contentsline {subsection}{\numberline {15.11.2}Constructor \& Destructor Documentation}{122}{subsection.15.11.2}
+\contentsline {subsubsection}{\numberline {15.11.2.1}File\discretionary {-}{}{}Reader}{122}{subsubsection.15.11.2.1}
+\contentsline {subsubsection}{\numberline {15.11.2.2}File\discretionary {-}{}{}Reader}{122}{subsubsection.15.11.2.2}
+\contentsline {subsubsection}{\numberline {15.11.2.3}$\sim $\discretionary {-}{}{}File\discretionary {-}{}{}Reader}{122}{subsubsection.15.11.2.3}
+\contentsline {subsection}{\numberline {15.11.3}Member Function Documentation}{122}{subsection.15.11.3}
+\contentsline {subsubsection}{\numberline {15.11.3.1}output\discretionary {-}{}{}Bodies\discretionary {-}{}{}File}{122}{subsubsection.15.11.3.1}
+\contentsline {subsubsection}{\numberline {15.11.3.2}output\discretionary {-}{}{}Control\discretionary {-}{}{}File}{122}{subsubsection.15.11.3.2}
+\contentsline {subsubsection}{\numberline {15.11.3.3}output\discretionary {-}{}{}Data\discretionary {-}{}{}File}{122}{subsubsection.15.11.3.3}
+\contentsline {subsubsection}{\numberline {15.11.3.4}output\discretionary {-}{}{}Forces\discretionary {-}{}{}File}{123}{subsubsection.15.11.3.4}
+\contentsline {subsubsection}{\numberline {15.11.3.5}output\discretionary {-}{}{}Sea\discretionary {-}{}{}Env\discretionary {-}{}{}File}{123}{subsubsection.15.11.3.5}
+\contentsline {subsubsection}{\numberline {15.11.3.6}read\discretionary {-}{}{}Bodies}{123}{subsubsection.15.11.3.6}
+\contentsline {subsubsection}{\numberline {15.11.3.7}read\discretionary {-}{}{}Control}{123}{subsubsection.15.11.3.7}
+\contentsline {subsubsection}{\numberline {15.11.3.8}read\discretionary {-}{}{}Data}{124}{subsubsection.15.11.3.8}
+\contentsline {subsubsection}{\numberline {15.11.3.9}read\discretionary {-}{}{}Forces}{124}{subsubsection.15.11.3.9}
+\contentsline {subsubsection}{\numberline {15.11.3.10}read\discretionary {-}{}{}Hydro\discretionary {-}{}{}File}{124}{subsubsection.15.11.3.10}
+\contentsline {subsubsection}{\numberline {15.11.3.11}read\discretionary {-}{}{}Sea\discretionary {-}{}{}Env}{124}{subsubsection.15.11.3.11}
+\contentsline {subsubsection}{\numberline {15.11.3.12}send\discretionary {-}{}{}Output}{124}{subsubsection.15.11.3.12}
+\contentsline {subsubsection}{\numberline {15.11.3.13}set\discretionary {-}{}{}Dictionary}{125}{subsubsection.15.11.3.13}
+\contentsline {subsubsection}{\numberline {15.11.3.14}set\discretionary {-}{}{}Path}{125}{subsubsection.15.11.3.14}
+\contentsline {subsubsection}{\numberline {15.11.3.15}set\discretionary {-}{}{}System}{125}{subsubsection.15.11.3.15}
+\contentsline {section}{\numberline {15.12}osea\discretionary {-}{}{}:\discretionary {-}{}{}:ofreq\discretionary {-}{}{}:\discretionary {-}{}{}:File\discretionary {-}{}{}Writer Class Reference}{125}{section.15.12}
+\contentsline {subsection}{\numberline {15.12.1}Detailed Description}{127}{subsection.15.12.1}
+\contentsline {subsection}{\numberline {15.12.2}Constructor \& Destructor Documentation}{128}{subsection.15.12.2}
+\contentsline {subsubsection}{\numberline {15.12.2.1}File\discretionary {-}{}{}Writer}{128}{subsubsection.15.12.2.1}
+\contentsline {subsubsection}{\numberline {15.12.2.2}File\discretionary {-}{}{}Writer}{128}{subsubsection.15.12.2.2}
+\contentsline {subsubsection}{\numberline {15.12.2.3}$\sim $\discretionary {-}{}{}File\discretionary {-}{}{}Writer}{128}{subsubsection.15.12.2.3}
+\contentsline {subsection}{\numberline {15.12.3}Member Function Documentation}{128}{subsection.15.12.3}
+\contentsline {subsubsection}{\numberline {15.12.3.1}clear\discretionary {-}{}{}Files}{128}{subsubsection.15.12.3.1}
+\contentsline {subsubsection}{\numberline {15.12.3.2}create\discretionary {-}{}{}Dir}{128}{subsubsection.15.12.3.2}
+\contentsline {subsubsection}{\numberline {15.12.3.3}file\discretionary {-}{}{}Exists}{129}{subsubsection.15.12.3.3}
+\contentsline {subsubsection}{\numberline {15.12.3.4}get\discretionary {-}{}{}Cur\discretionary {-}{}{}Wave\discretionary {-}{}{}Dir}{129}{subsubsection.15.12.3.4}
+\contentsline {subsubsection}{\numberline {15.12.3.5}get\discretionary {-}{}{}Cur\discretionary {-}{}{}Wave\discretionary {-}{}{}Ind}{129}{subsubsection.15.12.3.5}
+\contentsline {subsubsection}{\numberline {15.12.3.6}get\discretionary {-}{}{}Info\discretionary {-}{}{}Block}{129}{subsubsection.15.12.3.6}
+\contentsline {subsubsection}{\numberline {15.12.3.7}get\discretionary {-}{}{}Outputs\discretionary {-}{}{}Body}{130}{subsubsection.15.12.3.7}
+\contentsline {subsubsection}{\numberline {15.12.3.8}ref\discretionary {-}{}{}Outputs\discretionary {-}{}{}Body}{130}{subsubsection.15.12.3.8}
+\contentsline {subsubsection}{\numberline {15.12.3.9}set\discretionary {-}{}{}Header}{130}{subsubsection.15.12.3.9}
+\contentsline {subsubsection}{\numberline {15.12.3.10}set\discretionary {-}{}{}Outputs\discretionary {-}{}{}Body}{130}{subsubsection.15.12.3.10}
+\contentsline {subsubsection}{\numberline {15.12.3.11}set\discretionary {-}{}{}Project\discretionary {-}{}{}Dir}{130}{subsubsection.15.12.3.11}
+\contentsline {subsubsection}{\numberline {15.12.3.12}write\discretionary {-}{}{}Frequency}{131}{subsubsection.15.12.3.12}
+\contentsline {subsubsection}{\numberline {15.12.3.13}write\discretionary {-}{}{}Global\discretionary {-}{}{}Acceleration}{131}{subsubsection.15.12.3.13}
+\contentsline {subsubsection}{\numberline {15.12.3.14}write\discretionary {-}{}{}Global\discretionary {-}{}{}Motion}{131}{subsubsection.15.12.3.14}
+\contentsline {subsubsection}{\numberline {15.12.3.15}write\discretionary {-}{}{}Global\discretionary {-}{}{}Solution}{131}{subsubsection.15.12.3.15}
+\contentsline {subsubsection}{\numberline {15.12.3.16}write\discretionary {-}{}{}Global\discretionary {-}{}{}Velocity}{132}{subsubsection.15.12.3.16}
+\contentsline {subsubsection}{\numberline {15.12.3.17}write\discretionary {-}{}{}Wave\discretionary {-}{}{}Direction}{132}{subsubsection.15.12.3.17}
+\contentsline {section}{\numberline {15.13}osea\discretionary {-}{}{}:\discretionary {-}{}{}:ofreq\discretionary {-}{}{}:\discretionary {-}{}{}:Force Class Reference}{132}{section.15.13}
+\contentsline {subsection}{\numberline {15.13.1}Detailed Description}{134}{subsection.15.13.1}
+\contentsline {subsection}{\numberline {15.13.2}Constructor \& Destructor Documentation}{134}{subsection.15.13.2}
+\contentsline {subsubsection}{\numberline {15.13.2.1}Force}{134}{subsubsection.15.13.2.1}
+\contentsline {subsubsection}{\numberline {15.13.2.2}Force}{134}{subsubsection.15.13.2.2}
+\contentsline {subsubsection}{\numberline {15.13.2.3}$\sim $\discretionary {-}{}{}Force}{134}{subsubsection.15.13.2.3}
+\contentsline {subsection}{\numberline {15.13.3}Member Function Documentation}{135}{subsection.15.13.3}
+\contentsline {subsubsection}{\numberline {15.13.3.1}get\discretionary {-}{}{}Force\discretionary {-}{}{}Name}{135}{subsubsection.15.13.3.1}
+\contentsline {subsubsection}{\numberline {15.13.3.2}get\discretionary {-}{}{}System\discretionary {-}{}{}Index}{135}{subsubsection.15.13.3.2}
+\contentsline {subsubsection}{\numberline {15.13.3.3}set\discretionary {-}{}{}Force\discretionary {-}{}{}Name}{135}{subsubsection.15.13.3.3}
+\contentsline {subsubsection}{\numberline {15.13.3.4}set\discretionary {-}{}{}System\discretionary {-}{}{}Index}{135}{subsubsection.15.13.3.4}
+\contentsline {subsection}{\numberline {15.13.4}Member Data Documentation}{135}{subsection.15.13.4}
+\contentsline {subsubsection}{\numberline {15.13.4.1}force\discretionary {-}{}{}Name}{135}{subsubsection.15.13.4.1}
+\contentsline {subsubsection}{\numberline {15.13.4.2}p\discretionary {-}{}{}Sys\discretionary {-}{}{}Index}{136}{subsubsection.15.13.4.2}
+\contentsline {section}{\numberline {15.14}osea\discretionary {-}{}{}:\discretionary {-}{}{}:ofreq\discretionary {-}{}{}:\discretionary {-}{}{}:Force\discretionary {-}{}{}Active Class Reference}{136}{section.15.14}
+\contentsline {subsection}{\numberline {15.14.1}Detailed Description}{137}{subsection.15.14.1}
+\contentsline {subsection}{\numberline {15.14.2}Constructor \& Destructor Documentation}{137}{subsection.15.14.2}
+\contentsline {subsubsection}{\numberline {15.14.2.1}Force\discretionary {-}{}{}Active}{137}{subsubsection.15.14.2.1}
+\contentsline {subsubsection}{\numberline {15.14.2.2}$\sim $\discretionary {-}{}{}Force\discretionary {-}{}{}Active}{137}{subsubsection.15.14.2.2}
+\contentsline {subsection}{\numberline {15.14.3}Member Function Documentation}{137}{subsection.15.14.3}
+\contentsline {subsubsection}{\numberline {15.14.3.1}add\discretionary {-}{}{}Equation}{137}{subsubsection.15.14.3.1}
+\contentsline {subsubsection}{\numberline {15.14.3.2}get\discretionary {-}{}{}Equation}{138}{subsubsection.15.14.3.2}
+\contentsline {subsubsection}{\numberline {15.14.3.3}list\discretionary {-}{}{}Coefficient}{138}{subsubsection.15.14.3.3}
+\contentsline {subsubsection}{\numberline {15.14.3.4}list\discretionary {-}{}{}Coefficient}{138}{subsubsection.15.14.3.4}
+\contentsline {subsubsection}{\numberline {15.14.3.5}list\discretionary {-}{}{}Data\discretionary {-}{}{}Equation}{138}{subsubsection.15.14.3.5}
+\contentsline {subsubsection}{\numberline {15.14.3.6}list\discretionary {-}{}{}Data\discretionary {-}{}{}Equation}{139}{subsubsection.15.14.3.6}
+\contentsline {subsubsection}{\numberline {15.14.3.7}set\discretionary {-}{}{}Coeff}{139}{subsubsection.15.14.3.7}
+\contentsline {subsection}{\numberline {15.14.4}Member Data Documentation}{139}{subsection.15.14.4}
+\contentsline {subsubsection}{\numberline {15.14.4.1}p\discretionary {-}{}{}Coefficients}{139}{subsubsection.15.14.4.1}
+\contentsline {subsubsection}{\numberline {15.14.4.2}p\discretionary {-}{}{}Data\discretionary {-}{}{}Index}{139}{subsubsection.15.14.4.2}
+\contentsline {section}{\numberline {15.15}osea\discretionary {-}{}{}:\discretionary {-}{}{}:ofreq\discretionary {-}{}{}:\discretionary {-}{}{}:Force\discretionary {-}{}{}Cross Class Reference}{140}{section.15.15}
+\contentsline {subsection}{\numberline {15.15.1}Detailed Description}{140}{subsection.15.15.1}
+\contentsline {subsection}{\numberline {15.15.2}Constructor \& Destructor Documentation}{140}{subsection.15.15.2}
+\contentsline {subsubsection}{\numberline {15.15.2.1}Force\discretionary {-}{}{}Cross}{141}{subsubsection.15.15.2.1}
+\contentsline {subsubsection}{\numberline {15.15.2.2}$\sim $\discretionary {-}{}{}Force\discretionary {-}{}{}Cross}{141}{subsubsection.15.15.2.2}
+\contentsline {section}{\numberline {15.16}osea\discretionary {-}{}{}:\discretionary {-}{}{}:ofreq\discretionary {-}{}{}:\discretionary {-}{}{}:Force\discretionary {-}{}{}React Class Reference}{141}{section.15.16}
+\contentsline {subsection}{\numberline {15.16.1}Detailed Description}{143}{subsection.15.16.1}
+\contentsline {subsection}{\numberline {15.16.2}Constructor \& Destructor Documentation}{143}{subsection.15.16.2}
+\contentsline {subsubsection}{\numberline {15.16.2.1}Force\discretionary {-}{}{}React}{143}{subsubsection.15.16.2.1}
+\contentsline {subsubsection}{\numberline {15.16.2.2}$\sim $\discretionary {-}{}{}Force\discretionary {-}{}{}React}{143}{subsubsection.15.16.2.2}
+\contentsline {subsection}{\numberline {15.16.3}Member Function Documentation}{143}{subsection.15.16.3}
+\contentsline {subsubsection}{\numberline {15.16.3.1}add\discretionary {-}{}{}Derivative}{143}{subsubsection.15.16.3.1}
+\contentsline {subsubsection}{\numberline {15.16.3.2}add\discretionary {-}{}{}Derivative}{144}{subsubsection.15.16.3.2}
+\contentsline {subsubsection}{\numberline {15.16.3.3}get\discretionary {-}{}{}Derivative}{144}{subsubsection.15.16.3.3}
+\contentsline {subsubsection}{\numberline {15.16.3.4}get\discretionary {-}{}{}Max\discretionary {-}{}{}Ord}{144}{subsubsection.15.16.3.4}
+\contentsline {subsubsection}{\numberline {15.16.3.5}list\discretionary {-}{}{}Derivative}{144}{subsubsection.15.16.3.5}
+\contentsline {subsubsection}{\numberline {15.16.3.6}list\discretionary {-}{}{}Derivative}{144}{subsubsection.15.16.3.6}
+\contentsline {subsubsection}{\numberline {15.16.3.7}set\discretionary {-}{}{}Cur\discretionary {-}{}{}Derivative}{145}{subsubsection.15.16.3.7}
+\contentsline {subsubsection}{\numberline {15.16.3.8}set\discretionary {-}{}{}Cur\discretionary {-}{}{}Equation\discretionary {-}{}{}Num}{145}{subsubsection.15.16.3.8}
+\contentsline {subsection}{\numberline {15.16.4}Member Data Documentation}{145}{subsection.15.16.4}
+\contentsline {subsubsection}{\numberline {15.16.4.1}current\discretionary {-}{}{}Derivative}{145}{subsubsection.15.16.4.1}
+\contentsline {subsubsection}{\numberline {15.16.4.2}current\discretionary {-}{}{}Equation}{145}{subsubsection.15.16.4.2}
+\contentsline {subsubsection}{\numberline {15.16.4.3}p\discretionary {-}{}{}Derivative}{145}{subsubsection.15.16.4.3}
+\contentsline {section}{\numberline {15.17}osea\discretionary {-}{}{}:\discretionary {-}{}{}:ofreq\discretionary {-}{}{}:\discretionary {-}{}{}:Global\discretionary {-}{}{}Acceleration Class Reference}{146}{section.15.17}
+\contentsline {subsection}{\numberline {15.17.1}Detailed Description}{146}{subsection.15.17.1}
+\contentsline {subsection}{\numberline {15.17.2}Constructor \& Destructor Documentation}{146}{subsection.15.17.2}
+\contentsline {subsubsection}{\numberline {15.17.2.1}Global\discretionary {-}{}{}Acceleration}{147}{subsubsection.15.17.2.1}
+\contentsline {subsubsection}{\numberline {15.17.2.2}Global\discretionary {-}{}{}Acceleration}{147}{subsubsection.15.17.2.2}
+\contentsline {subsubsection}{\numberline {15.17.2.3}$\sim $\discretionary {-}{}{}Global\discretionary {-}{}{}Acceleration}{147}{subsubsection.15.17.2.3}
+\contentsline {subsection}{\numberline {15.17.3}Member Function Documentation}{147}{subsection.15.17.3}
+\contentsline {subsubsection}{\numberline {15.17.3.1}set\discretionary {-}{}{}Derivative}{147}{subsubsection.15.17.3.1}
+\contentsline {section}{\numberline {15.18}osea\discretionary {-}{}{}:\discretionary {-}{}{}:ofreq\discretionary {-}{}{}:\discretionary {-}{}{}:Global\discretionary {-}{}{}Motion Class Reference}{147}{section.15.18}
+\contentsline {subsection}{\numberline {15.18.1}Detailed Description}{148}{subsection.15.18.1}
+\contentsline {subsection}{\numberline {15.18.2}Constructor \& Destructor Documentation}{148}{subsection.15.18.2}
+\contentsline {subsubsection}{\numberline {15.18.2.1}Global\discretionary {-}{}{}Motion}{148}{subsubsection.15.18.2.1}
+\contentsline {subsubsection}{\numberline {15.18.2.2}Global\discretionary {-}{}{}Motion}{149}{subsubsection.15.18.2.2}
+\contentsline {subsubsection}{\numberline {15.18.2.3}$\sim $\discretionary {-}{}{}Global\discretionary {-}{}{}Motion}{149}{subsubsection.15.18.2.3}
+\contentsline {subsection}{\numberline {15.18.3}Member Function Documentation}{149}{subsection.15.18.3}
+\contentsline {subsubsection}{\numberline {15.18.3.1}set\discretionary {-}{}{}Derivative}{149}{subsubsection.15.18.3.1}
+\contentsline {section}{\numberline {15.19}osea\discretionary {-}{}{}:\discretionary {-}{}{}:ofreq\discretionary {-}{}{}:\discretionary {-}{}{}:Global\discretionary {-}{}{}Solution Class Reference}{149}{section.15.19}
+\contentsline {subsection}{\numberline {15.19.1}Detailed Description}{151}{subsection.15.19.1}
+\contentsline {subsection}{\numberline {15.19.2}Constructor \& Destructor Documentation}{151}{subsection.15.19.2}
+\contentsline {subsubsection}{\numberline {15.19.2.1}Global\discretionary {-}{}{}Solution}{151}{subsubsection.15.19.2.1}
+\contentsline {subsubsection}{\numberline {15.19.2.2}Global\discretionary {-}{}{}Solution}{151}{subsubsection.15.19.2.2}
+\contentsline {subsubsection}{\numberline {15.19.2.3}$\sim $\discretionary {-}{}{}Global\discretionary {-}{}{}Solution}{151}{subsubsection.15.19.2.3}
+\contentsline {subsection}{\numberline {15.19.3}Member Function Documentation}{151}{subsection.15.19.3}
+\contentsline {subsubsection}{\numberline {15.19.3.1}calc\discretionary {-}{}{}Output}{152}{subsubsection.15.19.3.1}
+\contentsline {subsubsection}{\numberline {15.19.3.2}get\discretionary {-}{}{}Derivative}{152}{subsubsection.15.19.3.2}
+\contentsline {subsubsection}{\numberline {15.19.3.3}get\discretionary {-}{}{}Solution}{152}{subsubsection.15.19.3.3}
+\contentsline {subsubsection}{\numberline {15.19.3.4}set\discretionary {-}{}{}Derivative}{152}{subsubsection.15.19.3.4}
+\contentsline {subsection}{\numberline {15.19.4}Member Data Documentation}{153}{subsection.15.19.4}
+\contentsline {subsubsection}{\numberline {15.19.4.1}order\discretionary {-}{}{}Derivative}{153}{subsubsection.15.19.4.1}
+\contentsline {section}{\numberline {15.20}osea\discretionary {-}{}{}:\discretionary {-}{}{}:ofreq\discretionary {-}{}{}:\discretionary {-}{}{}:Global\discretionary {-}{}{}Velocity Class Reference}{153}{section.15.20}
+\contentsline {subsection}{\numberline {15.20.1}Detailed Description}{154}{subsection.15.20.1}
+\contentsline {subsection}{\numberline {15.20.2}Constructor \& Destructor Documentation}{154}{subsection.15.20.2}
+\contentsline {subsubsection}{\numberline {15.20.2.1}Global\discretionary {-}{}{}Velocity}{154}{subsubsection.15.20.2.1}
+\contentsline {subsubsection}{\numberline {15.20.2.2}Global\discretionary {-}{}{}Velocity}{154}{subsubsection.15.20.2.2}
+\contentsline {subsubsection}{\numberline {15.20.2.3}$\sim $\discretionary {-}{}{}Global\discretionary {-}{}{}Velocity}{154}{subsubsection.15.20.2.3}
+\contentsline {subsection}{\numberline {15.20.3}Member Function Documentation}{154}{subsection.15.20.3}
+\contentsline {subsubsection}{\numberline {15.20.3.1}set\discretionary {-}{}{}Derivative}{154}{subsubsection.15.20.3.1}
+\contentsline {section}{\numberline {15.21}osea\discretionary {-}{}{}:\discretionary {-}{}{}:ofreq\discretionary {-}{}{}:\discretionary {-}{}{}:mat\discretionary {-}{}{}Body Class Reference}{155}{section.15.21}
+\contentsline {subsection}{\numberline {15.21.1}Detailed Description}{156}{subsection.15.21.1}
+\contentsline {subsection}{\numberline {15.21.2}Constructor \& Destructor Documentation}{156}{subsection.15.21.2}
+\contentsline {subsubsection}{\numberline {15.21.2.1}mat\discretionary {-}{}{}Body}{156}{subsubsection.15.21.2.1}
+\contentsline {subsubsection}{\numberline {15.21.2.2}$\sim $mat\discretionary {-}{}{}Body}{157}{subsubsection.15.21.2.2}
+\contentsline {subsection}{\numberline {15.21.3}Member Function Documentation}{157}{subsection.15.21.3}
+\contentsline {subsubsection}{\numberline {15.21.3.1}get\discretionary {-}{}{}Force\discretionary {-}{}{}React\discretionary {-}{}{}\_\discretionary {-}{}{}mass}{157}{subsubsection.15.21.3.1}
+\contentsline {subsubsection}{\numberline {15.21.3.2}get\discretionary {-}{}{}Id}{157}{subsubsection.15.21.3.2}
+\contentsline {subsubsection}{\numberline {15.21.3.3}get\discretionary {-}{}{}Model\discretionary {-}{}{}Id}{157}{subsubsection.15.21.3.3}
+\contentsline {subsubsection}{\numberline {15.21.3.4}list\discretionary {-}{}{}Force\discretionary {-}{}{}Active\discretionary {-}{}{}\_\discretionary {-}{}{}hydro}{157}{subsubsection.15.21.3.4}
+\contentsline {subsubsection}{\numberline {15.21.3.5}list\discretionary {-}{}{}Force\discretionary {-}{}{}Active\discretionary {-}{}{}\_\discretionary {-}{}{}hydro}{158}{subsubsection.15.21.3.5}
+\contentsline {subsubsection}{\numberline {15.21.3.6}list\discretionary {-}{}{}Force\discretionary {-}{}{}Active\discretionary {-}{}{}\_\discretionary {-}{}{}user}{158}{subsubsection.15.21.3.6}
+\contentsline {subsubsection}{\numberline {15.21.3.7}list\discretionary {-}{}{}Force\discretionary {-}{}{}Active\discretionary {-}{}{}\_\discretionary {-}{}{}user}{158}{subsubsection.15.21.3.7}
+\contentsline {subsubsection}{\numberline {15.21.3.8}list\discretionary {-}{}{}Force\discretionary {-}{}{}Cross\discretionary {-}{}{}\_\discretionary {-}{}{}hydro}{158}{subsubsection.15.21.3.8}
+\contentsline {subsubsection}{\numberline {15.21.3.9}list\discretionary {-}{}{}Force\discretionary {-}{}{}Cross\discretionary {-}{}{}\_\discretionary {-}{}{}hydro}{159}{subsubsection.15.21.3.9}
+\contentsline {subsubsection}{\numberline {15.21.3.10}list\discretionary {-}{}{}Force\discretionary {-}{}{}Cross\discretionary {-}{}{}\_\discretionary {-}{}{}user}{159}{subsubsection.15.21.3.10}
+\contentsline {subsubsection}{\numberline {15.21.3.11}list\discretionary {-}{}{}Force\discretionary {-}{}{}Cross\discretionary {-}{}{}\_\discretionary {-}{}{}user}{159}{subsubsection.15.21.3.11}
+\contentsline {subsubsection}{\numberline {15.21.3.12}list\discretionary {-}{}{}Force\discretionary {-}{}{}React\discretionary {-}{}{}\_\discretionary {-}{}{}hydro}{160}{subsubsection.15.21.3.12}
+\contentsline {subsubsection}{\numberline {15.21.3.13}list\discretionary {-}{}{}Force\discretionary {-}{}{}React\discretionary {-}{}{}\_\discretionary {-}{}{}hydro}{160}{subsubsection.15.21.3.13}
+\contentsline {subsubsection}{\numberline {15.21.3.14}list\discretionary {-}{}{}Force\discretionary {-}{}{}React\discretionary {-}{}{}\_\discretionary {-}{}{}user}{160}{subsubsection.15.21.3.14}
+\contentsline {subsubsection}{\numberline {15.21.3.15}list\discretionary {-}{}{}Force\discretionary {-}{}{}React\discretionary {-}{}{}\_\discretionary {-}{}{}user}{160}{subsubsection.15.21.3.15}
+\contentsline {subsubsection}{\numberline {15.21.3.16}ref\discretionary {-}{}{}Mass}{161}{subsubsection.15.21.3.16}
+\contentsline {subsubsection}{\numberline {15.21.3.17}set\discretionary {-}{}{}Id}{161}{subsubsection.15.21.3.17}
+\contentsline {subsubsection}{\numberline {15.21.3.18}set\discretionary {-}{}{}Model\discretionary {-}{}{}Id}{161}{subsubsection.15.21.3.18}
+\contentsline {section}{\numberline {15.22}osea\discretionary {-}{}{}:\discretionary {-}{}{}:ofreq\discretionary {-}{}{}:\discretionary {-}{}{}:mat\discretionary {-}{}{}Force\discretionary {-}{}{}Active Class Reference}{162}{section.15.22}
+\contentsline {subsection}{\numberline {15.22.1}Detailed Description}{163}{subsection.15.22.1}
+\contentsline {subsection}{\numberline {15.22.2}Constructor \& Destructor Documentation}{163}{subsection.15.22.2}
+\contentsline {subsubsection}{\numberline {15.22.2.1}mat\discretionary {-}{}{}Force\discretionary {-}{}{}Active}{163}{subsubsection.15.22.2.1}
+\contentsline {subsubsection}{\numberline {15.22.2.2}$\sim $mat\discretionary {-}{}{}Force\discretionary {-}{}{}Active}{163}{subsubsection.15.22.2.2}
+\contentsline {subsection}{\numberline {15.22.3}Member Function Documentation}{163}{subsection.15.22.3}
+\contentsline {subsubsection}{\numberline {15.22.3.1}get\discretionary {-}{}{}Id}{163}{subsubsection.15.22.3.1}
+\contentsline {subsubsection}{\numberline {15.22.3.2}get\discretionary {-}{}{}Mat\discretionary {-}{}{}Size}{163}{subsubsection.15.22.3.2}
+\contentsline {subsubsection}{\numberline {15.22.3.3}list\discretionary {-}{}{}Coefficient}{163}{subsubsection.15.22.3.3}
+\contentsline {subsubsection}{\numberline {15.22.3.4}operator+}{164}{subsubsection.15.22.3.4}
+\contentsline {subsubsection}{\numberline {15.22.3.5}operator-\/}{164}{subsubsection.15.22.3.5}
+\contentsline {subsubsection}{\numberline {15.22.3.6}set\discretionary {-}{}{}Id}{164}{subsubsection.15.22.3.6}
+\contentsline {section}{\numberline {15.23}osea\discretionary {-}{}{}:\discretionary {-}{}{}:ofreq\discretionary {-}{}{}:\discretionary {-}{}{}:mat\discretionary {-}{}{}Force\discretionary {-}{}{}Cross Class Reference}{164}{section.15.23}
+\contentsline {subsection}{\numberline {15.23.1}Detailed Description}{166}{subsection.15.23.1}
+\contentsline {subsection}{\numberline {15.23.2}Constructor \& Destructor Documentation}{166}{subsection.15.23.2}
+\contentsline {subsubsection}{\numberline {15.23.2.1}mat\discretionary {-}{}{}Force\discretionary {-}{}{}Cross}{166}{subsubsection.15.23.2.1}
+\contentsline {subsubsection}{\numberline {15.23.2.2}mat\discretionary {-}{}{}Force\discretionary {-}{}{}Cross}{166}{subsubsection.15.23.2.2}
+\contentsline {subsubsection}{\numberline {15.23.2.3}$\sim $mat\discretionary {-}{}{}Force\discretionary {-}{}{}Cross}{166}{subsubsection.15.23.2.3}
+\contentsline {subsection}{\numberline {15.23.3}Member Function Documentation}{166}{subsection.15.23.3}
+\contentsline {subsubsection}{\numberline {15.23.3.1}get\discretionary {-}{}{}Linked\discretionary {-}{}{}Body}{166}{subsubsection.15.23.3.1}
+\contentsline {subsubsection}{\numberline {15.23.3.2}get\discretionary {-}{}{}Linked\discretionary {-}{}{}Id}{166}{subsubsection.15.23.3.2}
+\contentsline {subsubsection}{\numberline {15.23.3.3}get\discretionary {-}{}{}Mat\discretionary {-}{}{}Dims}{167}{subsubsection.15.23.3.3}
+\contentsline {subsubsection}{\numberline {15.23.3.4}operator+}{167}{subsubsection.15.23.3.4}
+\contentsline {subsubsection}{\numberline {15.23.3.5}operator-\/}{167}{subsubsection.15.23.3.5}
+\contentsline {subsubsection}{\numberline {15.23.3.6}set\discretionary {-}{}{}Linked\discretionary {-}{}{}Body}{168}{subsubsection.15.23.3.6}
+\contentsline {subsubsection}{\numberline {15.23.3.7}set\discretionary {-}{}{}Linked\discretionary {-}{}{}Id}{168}{subsubsection.15.23.3.7}
+\contentsline {section}{\numberline {15.24}osea\discretionary {-}{}{}:\discretionary {-}{}{}:ofreq\discretionary {-}{}{}:\discretionary {-}{}{}:mat\discretionary {-}{}{}Force\discretionary {-}{}{}React Class Reference}{168}{section.15.24}
+\contentsline {subsection}{\numberline {15.24.1}Detailed Description}{170}{subsection.15.24.1}
+\contentsline {subsection}{\numberline {15.24.2}Constructor \& Destructor Documentation}{170}{subsection.15.24.2}
+\contentsline {subsubsection}{\numberline {15.24.2.1}mat\discretionary {-}{}{}Force\discretionary {-}{}{}React}{170}{subsubsection.15.24.2.1}
+\contentsline {subsubsection}{\numberline {15.24.2.2}mat\discretionary {-}{}{}Force\discretionary {-}{}{}React}{170}{subsubsection.15.24.2.2}
+\contentsline {subsubsection}{\numberline {15.24.2.3}$\sim $mat\discretionary {-}{}{}Force\discretionary {-}{}{}React}{171}{subsubsection.15.24.2.3}
+\contentsline {subsection}{\numberline {15.24.3}Member Function Documentation}{171}{subsection.15.24.3}
+\contentsline {subsubsection}{\numberline {15.24.3.1}get\discretionary {-}{}{}Derivative}{171}{subsubsection.15.24.3.1}
+\contentsline {subsubsection}{\numberline {15.24.3.2}get\discretionary {-}{}{}Id}{171}{subsubsection.15.24.3.2}
+\contentsline {subsubsection}{\numberline {15.24.3.3}get\discretionary {-}{}{}Mat\discretionary {-}{}{}Size}{171}{subsubsection.15.24.3.3}
+\contentsline {subsubsection}{\numberline {15.24.3.4}get\discretionary {-}{}{}Max\discretionary {-}{}{}Order}{171}{subsubsection.15.24.3.4}
+\contentsline {subsubsection}{\numberline {15.24.3.5}list\discretionary {-}{}{}Derivative}{172}{subsubsection.15.24.3.5}
+\contentsline {subsubsection}{\numberline {15.24.3.6}list\discretionary {-}{}{}Derivative}{172}{subsubsection.15.24.3.6}
+\contentsline {subsubsection}{\numberline {15.24.3.7}operator+}{172}{subsubsection.15.24.3.7}
+\contentsline {subsubsection}{\numberline {15.24.3.8}operator-\/}{172}{subsubsection.15.24.3.8}
+\contentsline {subsubsection}{\numberline {15.24.3.9}set\discretionary {-}{}{}Derivative}{173}{subsubsection.15.24.3.9}
+\contentsline {subsubsection}{\numberline {15.24.3.10}set\discretionary {-}{}{}Id}{173}{subsubsection.15.24.3.10}
+\contentsline {subsection}{\numberline {15.24.4}Member Data Documentation}{173}{subsection.15.24.4}
+\contentsline {subsubsection}{\numberline {15.24.4.1}pderiv}{173}{subsubsection.15.24.4.1}
+\contentsline {subsubsection}{\numberline {15.24.4.2}p\discretionary {-}{}{}Id}{173}{subsubsection.15.24.4.2}
+\contentsline {section}{\numberline {15.25}osea\discretionary {-}{}{}:\discretionary {-}{}{}:ofreq\discretionary {-}{}{}:\discretionary {-}{}{}:Model6\discretionary {-}{}{}D\discretionary {-}{}{}O\discretionary {-}{}{}F Class Reference}{174}{section.15.25}
+\contentsline {subsection}{\numberline {15.25.1}Detailed Description}{175}{subsection.15.25.1}
+\contentsline {subsection}{\numberline {15.25.2}Constructor \& Destructor Documentation}{175}{subsection.15.25.2}
+\contentsline {subsubsection}{\numberline {15.25.2.1}Model6\discretionary {-}{}{}D\discretionary {-}{}{}O\discretionary {-}{}{}F}{175}{subsubsection.15.25.2.1}
+\contentsline {subsubsection}{\numberline {15.25.2.2}Model6\discretionary {-}{}{}D\discretionary {-}{}{}O\discretionary {-}{}{}F}{175}{subsubsection.15.25.2.2}
+\contentsline {subsubsection}{\numberline {15.25.2.3}$\sim $\discretionary {-}{}{}Model6\discretionary {-}{}{}D\discretionary {-}{}{}O\discretionary {-}{}{}F}{175}{subsubsection.15.25.2.3}
+\contentsline {subsection}{\numberline {15.25.3}Member Function Documentation}{176}{subsection.15.25.3}
+\contentsline {subsubsection}{\numberline {15.25.3.1}Define\discretionary {-}{}{}Equations}{176}{subsubsection.15.25.3.1}
+\contentsline {section}{\numberline {15.26}osea\discretionary {-}{}{}:\discretionary {-}{}{}:ofreq\discretionary {-}{}{}:\discretionary {-}{}{}:Motion\discretionary {-}{}{}Model Class Reference}{176}{section.15.26}
+\contentsline {subsection}{\numberline {15.26.1}Detailed Description}{181}{subsection.15.26.1}
+\contentsline {subsection}{\numberline {15.26.2}Constructor \& Destructor Documentation}{181}{subsection.15.26.2}
+\contentsline {subsubsection}{\numberline {15.26.2.1}Motion\discretionary {-}{}{}Model}{181}{subsubsection.15.26.2.1}
+\contentsline {subsubsection}{\numberline {15.26.2.2}Motion\discretionary {-}{}{}Model}{181}{subsubsection.15.26.2.2}
+\contentsline {subsubsection}{\numberline {15.26.2.3}$\sim $\discretionary {-}{}{}Motion\discretionary {-}{}{}Model}{181}{subsubsection.15.26.2.3}
+\contentsline {subsection}{\numberline {15.26.3}Member Function Documentation}{181}{subsection.15.26.3}
+\contentsline {subsubsection}{\numberline {15.26.3.1}Add\discretionary {-}{}{}Equation}{181}{subsubsection.15.26.3.1}
+\contentsline {subsubsection}{\numberline {15.26.3.2}Coefficient\discretionary {-}{}{}Only}{182}{subsubsection.15.26.3.2}
+\contentsline {subsubsection}{\numberline {15.26.3.3}Define\discretionary {-}{}{}Equations}{182}{subsubsection.15.26.3.3}
+\contentsline {subsubsection}{\numberline {15.26.3.4}Evaluate}{182}{subsubsection.15.26.3.4}
+\contentsline {subsubsection}{\numberline {15.26.3.5}get\discretionary {-}{}{}Active\discretionary {-}{}{}Only}{183}{subsubsection.15.26.3.5}
+\contentsline {subsubsection}{\numberline {15.26.3.6}get\discretionary {-}{}{}Body}{183}{subsubsection.15.26.3.6}
+\contentsline {subsubsection}{\numberline {15.26.3.7}get\discretionary {-}{}{}Data\discretionary {-}{}{}Index}{183}{subsubsection.15.26.3.7}
+\contentsline {subsubsection}{\numberline {15.26.3.8}get\discretionary {-}{}{}Description}{183}{subsubsection.15.26.3.8}
+\contentsline {subsubsection}{\numberline {15.26.3.9}get\discretionary {-}{}{}Freq}{184}{subsubsection.15.26.3.9}
+\contentsline {subsubsection}{\numberline {15.26.3.10}get\discretionary {-}{}{}Mat\discretionary {-}{}{}Force\discretionary {-}{}{}Active\discretionary {-}{}{}\_\discretionary {-}{}{}hydro}{184}{subsubsection.15.26.3.10}
+\contentsline {subsubsection}{\numberline {15.26.3.11}get\discretionary {-}{}{}Mat\discretionary {-}{}{}Force\discretionary {-}{}{}Active\discretionary {-}{}{}\_\discretionary {-}{}{}user}{184}{subsubsection.15.26.3.11}
+\contentsline {subsubsection}{\numberline {15.26.3.12}get\discretionary {-}{}{}Mat\discretionary {-}{}{}Force\discretionary {-}{}{}Cross\discretionary {-}{}{}\_\discretionary {-}{}{}hydro}{185}{subsubsection.15.26.3.12}
+\contentsline {subsubsection}{\numberline {15.26.3.13}get\discretionary {-}{}{}Mat\discretionary {-}{}{}Force\discretionary {-}{}{}Cross\discretionary {-}{}{}\_\discretionary {-}{}{}user}{185}{subsubsection.15.26.3.13}
+\contentsline {subsubsection}{\numberline {15.26.3.14}get\discretionary {-}{}{}Mat\discretionary {-}{}{}Force\discretionary {-}{}{}Mass}{185}{subsubsection.15.26.3.14}
+\contentsline {subsubsection}{\numberline {15.26.3.15}get\discretionary {-}{}{}Mat\discretionary {-}{}{}Force\discretionary {-}{}{}React\discretionary {-}{}{}\_\discretionary {-}{}{}hydro}{186}{subsubsection.15.26.3.15}
+\contentsline {subsubsection}{\numberline {15.26.3.16}get\discretionary {-}{}{}Mat\discretionary {-}{}{}Force\discretionary {-}{}{}React\discretionary {-}{}{}\_\discretionary {-}{}{}user}{186}{subsubsection.15.26.3.16}
+\contentsline {subsubsection}{\numberline {15.26.3.17}get\discretionary {-}{}{}Name}{186}{subsubsection.15.26.3.17}
+\contentsline {subsubsection}{\numberline {15.26.3.18}list\discretionary {-}{}{}Body}{186}{subsubsection.15.26.3.18}
+\contentsline {subsubsection}{\numberline {15.26.3.19}list\discretionary {-}{}{}Body}{187}{subsubsection.15.26.3.19}
+\contentsline {subsubsection}{\numberline {15.26.3.20}list\discretionary {-}{}{}Comp\discretionary {-}{}{}Cross\discretionary {-}{}{}Bod\discretionary {-}{}{}\_\discretionary {-}{}{}hydro}{187}{subsubsection.15.26.3.20}
+\contentsline {subsubsection}{\numberline {15.26.3.21}list\discretionary {-}{}{}Comp\discretionary {-}{}{}Cross\discretionary {-}{}{}Bod\discretionary {-}{}{}\_\discretionary {-}{}{}hydro}{187}{subsubsection.15.26.3.21}
+\contentsline {subsubsection}{\numberline {15.26.3.22}list\discretionary {-}{}{}Comp\discretionary {-}{}{}Cross\discretionary {-}{}{}Bod\discretionary {-}{}{}\_\discretionary {-}{}{}user}{188}{subsubsection.15.26.3.22}
+\contentsline {subsubsection}{\numberline {15.26.3.23}list\discretionary {-}{}{}Comp\discretionary {-}{}{}Cross\discretionary {-}{}{}Bod\discretionary {-}{}{}\_\discretionary {-}{}{}user}{188}{subsubsection.15.26.3.23}
+\contentsline {subsubsection}{\numberline {15.26.3.24}list\discretionary {-}{}{}Data}{189}{subsubsection.15.26.3.24}
+\contentsline {subsubsection}{\numberline {15.26.3.25}list\discretionary {-}{}{}Data}{189}{subsubsection.15.26.3.25}
+\contentsline {subsubsection}{\numberline {15.26.3.26}list\discretionary {-}{}{}Data\discretionary {-}{}{}Equation}{189}{subsubsection.15.26.3.26}
+\contentsline {subsubsection}{\numberline {15.26.3.27}list\discretionary {-}{}{}Data\discretionary {-}{}{}Equation}{189}{subsubsection.15.26.3.27}
+\contentsline {subsubsection}{\numberline {15.26.3.28}list\discretionary {-}{}{}Data\discretionary {-}{}{}Index}{190}{subsubsection.15.26.3.28}
+\contentsline {subsubsection}{\numberline {15.26.3.29}list\discretionary {-}{}{}Data\discretionary {-}{}{}Index}{190}{subsubsection.15.26.3.29}
+\contentsline {subsubsection}{\numberline {15.26.3.30}list\discretionary {-}{}{}Equation}{190}{subsubsection.15.26.3.30}
+\contentsline {subsubsection}{\numberline {15.26.3.31}list\discretionary {-}{}{}Equation}{191}{subsubsection.15.26.3.31}
+\contentsline {subsubsection}{\numberline {15.26.3.32}Max\discretionary {-}{}{}Data\discretionary {-}{}{}Index}{191}{subsubsection.15.26.3.32}
+\contentsline {subsubsection}{\numberline {15.26.3.33}num\discretionary {-}{}{}Equations}{191}{subsubsection.15.26.3.33}
+\contentsline {subsubsection}{\numberline {15.26.3.34}Reset}{191}{subsubsection.15.26.3.34}
+\contentsline {subsubsection}{\numberline {15.26.3.35}set\discretionary {-}{}{}Body}{191}{subsubsection.15.26.3.35}
+\contentsline {subsubsection}{\numberline {15.26.3.36}set\discretionary {-}{}{}Description}{192}{subsubsection.15.26.3.36}
+\contentsline {subsubsection}{\numberline {15.26.3.37}set\discretionary {-}{}{}Freq}{192}{subsubsection.15.26.3.37}
+\contentsline {subsubsection}{\numberline {15.26.3.38}setlist\discretionary {-}{}{}Body}{192}{subsubsection.15.26.3.38}
+\contentsline {subsubsection}{\numberline {15.26.3.39}set\discretionary {-}{}{}Name}{192}{subsubsection.15.26.3.39}
+\contentsline {subsubsection}{\numberline {15.26.3.40}use\discretionary {-}{}{}Force\discretionary {-}{}{}Active\discretionary {-}{}{}\_\discretionary {-}{}{}hydro}{192}{subsubsection.15.26.3.40}
+\contentsline {subsubsection}{\numberline {15.26.3.41}use\discretionary {-}{}{}Force\discretionary {-}{}{}Active\discretionary {-}{}{}\_\discretionary {-}{}{}hydro}{193}{subsubsection.15.26.3.41}
+\contentsline {subsubsection}{\numberline {15.26.3.42}use\discretionary {-}{}{}Force\discretionary {-}{}{}Active\discretionary {-}{}{}\_\discretionary {-}{}{}hydro}{193}{subsubsection.15.26.3.42}
+\contentsline {subsubsection}{\numberline {15.26.3.43}use\discretionary {-}{}{}Force\discretionary {-}{}{}Active\discretionary {-}{}{}\_\discretionary {-}{}{}user}{193}{subsubsection.15.26.3.43}
+\contentsline {subsubsection}{\numberline {15.26.3.44}use\discretionary {-}{}{}Force\discretionary {-}{}{}Active\discretionary {-}{}{}\_\discretionary {-}{}{}user}{194}{subsubsection.15.26.3.44}
+\contentsline {subsubsection}{\numberline {15.26.3.45}use\discretionary {-}{}{}Force\discretionary {-}{}{}Active\discretionary {-}{}{}\_\discretionary {-}{}{}user}{194}{subsubsection.15.26.3.45}
+\contentsline {subsubsection}{\numberline {15.26.3.46}use\discretionary {-}{}{}Force\discretionary {-}{}{}Cross\discretionary {-}{}{}\_\discretionary {-}{}{}hydro}{194}{subsubsection.15.26.3.46}
+\contentsline {subsubsection}{\numberline {15.26.3.47}use\discretionary {-}{}{}Force\discretionary {-}{}{}Cross\discretionary {-}{}{}\_\discretionary {-}{}{}hydro}{195}{subsubsection.15.26.3.47}
+\contentsline {subsubsection}{\numberline {15.26.3.48}use\discretionary {-}{}{}Force\discretionary {-}{}{}Cross\discretionary {-}{}{}\_\discretionary {-}{}{}hydro}{195}{subsubsection.15.26.3.48}
+\contentsline {subsubsection}{\numberline {15.26.3.49}use\discretionary {-}{}{}Force\discretionary {-}{}{}Cross\discretionary {-}{}{}\_\discretionary {-}{}{}hydro}{195}{subsubsection.15.26.3.49}
+\contentsline {subsubsection}{\numberline {15.26.3.50}use\discretionary {-}{}{}Force\discretionary {-}{}{}Cross\discretionary {-}{}{}\_\discretionary {-}{}{}hydro}{196}{subsubsection.15.26.3.50}
+\contentsline {subsubsection}{\numberline {15.26.3.51}use\discretionary {-}{}{}Force\discretionary {-}{}{}Cross\discretionary {-}{}{}\_\discretionary {-}{}{}user}{196}{subsubsection.15.26.3.51}
+\contentsline {subsubsection}{\numberline {15.26.3.52}use\discretionary {-}{}{}Force\discretionary {-}{}{}Cross\discretionary {-}{}{}\_\discretionary {-}{}{}user}{196}{subsubsection.15.26.3.52}
+\contentsline {subsubsection}{\numberline {15.26.3.53}use\discretionary {-}{}{}Force\discretionary {-}{}{}Cross\discretionary {-}{}{}\_\discretionary {-}{}{}user}{196}{subsubsection.15.26.3.53}
+\contentsline {subsubsection}{\numberline {15.26.3.54}use\discretionary {-}{}{}Force\discretionary {-}{}{}Cross\discretionary {-}{}{}\_\discretionary {-}{}{}user}{197}{subsubsection.15.26.3.54}
+\contentsline {subsubsection}{\numberline {15.26.3.55}use\discretionary {-}{}{}Force\discretionary {-}{}{}Cross\discretionary {-}{}{}\_\discretionary {-}{}{}user}{197}{subsubsection.15.26.3.55}
+\contentsline {subsubsection}{\numberline {15.26.3.56}use\discretionary {-}{}{}Force\discretionary {-}{}{}Mass}{197}{subsubsection.15.26.3.56}
+\contentsline {subsubsection}{\numberline {15.26.3.57}use\discretionary {-}{}{}Force\discretionary {-}{}{}Mass}{198}{subsubsection.15.26.3.57}
+\contentsline {subsubsection}{\numberline {15.26.3.58}use\discretionary {-}{}{}Force\discretionary {-}{}{}Mass}{198}{subsubsection.15.26.3.58}
+\contentsline {subsubsection}{\numberline {15.26.3.59}use\discretionary {-}{}{}Force\discretionary {-}{}{}React\discretionary {-}{}{}\_\discretionary {-}{}{}hydro}{198}{subsubsection.15.26.3.59}
+\contentsline {subsubsection}{\numberline {15.26.3.60}use\discretionary {-}{}{}Force\discretionary {-}{}{}React\discretionary {-}{}{}\_\discretionary {-}{}{}hydro}{198}{subsubsection.15.26.3.60}
+\contentsline {subsubsection}{\numberline {15.26.3.61}use\discretionary {-}{}{}Force\discretionary {-}{}{}React\discretionary {-}{}{}\_\discretionary {-}{}{}hydro}{199}{subsubsection.15.26.3.61}
+\contentsline {subsubsection}{\numberline {15.26.3.62}use\discretionary {-}{}{}Force\discretionary {-}{}{}React\discretionary {-}{}{}\_\discretionary {-}{}{}hydro}{199}{subsubsection.15.26.3.62}
+\contentsline {subsubsection}{\numberline {15.26.3.63}use\discretionary {-}{}{}Force\discretionary {-}{}{}React\discretionary {-}{}{}\_\discretionary {-}{}{}hydro}{199}{subsubsection.15.26.3.63}
+\contentsline {subsubsection}{\numberline {15.26.3.64}use\discretionary {-}{}{}Force\discretionary {-}{}{}React\discretionary {-}{}{}\_\discretionary {-}{}{}user}{200}{subsubsection.15.26.3.64}
+\contentsline {subsubsection}{\numberline {15.26.3.65}use\discretionary {-}{}{}Force\discretionary {-}{}{}React\discretionary {-}{}{}\_\discretionary {-}{}{}user}{200}{subsubsection.15.26.3.65}
+\contentsline {subsubsection}{\numberline {15.26.3.66}use\discretionary {-}{}{}Force\discretionary {-}{}{}React\discretionary {-}{}{}\_\discretionary {-}{}{}user}{200}{subsubsection.15.26.3.66}
+\contentsline {subsubsection}{\numberline {15.26.3.67}use\discretionary {-}{}{}Force\discretionary {-}{}{}React\discretionary {-}{}{}\_\discretionary {-}{}{}user}{201}{subsubsection.15.26.3.67}
+\contentsline {subsubsection}{\numberline {15.26.3.68}use\discretionary {-}{}{}Force\discretionary {-}{}{}React\discretionary {-}{}{}\_\discretionary {-}{}{}user}{201}{subsubsection.15.26.3.68}
+\contentsline {section}{\numberline {15.27}osea\discretionary {-}{}{}:\discretionary {-}{}{}:ofreq\discretionary {-}{}{}:\discretionary {-}{}{}:Motion\discretionary {-}{}{}Solver Class Reference}{201}{section.15.27}
+\contentsline {subsection}{\numberline {15.27.1}Detailed Description}{203}{subsection.15.27.1}
+\contentsline {subsection}{\numberline {15.27.2}Constructor \& Destructor Documentation}{203}{subsection.15.27.2}
+\contentsline {subsubsection}{\numberline {15.27.2.1}Motion\discretionary {-}{}{}Solver}{203}{subsubsection.15.27.2.1}
+\contentsline {subsubsection}{\numberline {15.27.2.2}Motion\discretionary {-}{}{}Solver}{203}{subsubsection.15.27.2.2}
+\contentsline {subsubsection}{\numberline {15.27.2.3}$\sim $\discretionary {-}{}{}Motion\discretionary {-}{}{}Solver}{203}{subsubsection.15.27.2.3}
+\contentsline {subsection}{\numberline {15.27.3}Member Function Documentation}{204}{subsection.15.27.3}
+\contentsline {subsubsection}{\numberline {15.27.3.1}add\discretionary {-}{}{}Body}{204}{subsubsection.15.27.3.1}
+\contentsline {subsubsection}{\numberline {15.27.3.2}calculate\discretionary {-}{}{}Outputs}{204}{subsubsection.15.27.3.2}
+\contentsline {subsubsection}{\numberline {15.27.3.3}list\discretionary {-}{}{}Solution}{204}{subsubsection.15.27.3.3}
+\contentsline {subsubsection}{\numberline {15.27.3.4}list\discretionary {-}{}{}Solution}{204}{subsubsection.15.27.3.4}
+\contentsline {subsubsection}{\numberline {15.27.3.5}set\discretionary {-}{}{}Wave\discretionary {-}{}{}Freq}{205}{subsubsection.15.27.3.5}
+\contentsline {subsubsection}{\numberline {15.27.3.6}sum\discretionary {-}{}{}Active\discretionary {-}{}{}Set}{205}{subsubsection.15.27.3.6}
+\contentsline {subsubsection}{\numberline {15.27.3.7}sum\discretionary {-}{}{}Cross\discretionary {-}{}{}Set}{205}{subsubsection.15.27.3.7}
+\contentsline {subsubsection}{\numberline {15.27.3.8}sum\discretionary {-}{}{}Derivative}{206}{subsubsection.15.27.3.8}
+\contentsline {subsubsection}{\numberline {15.27.3.9}sum\discretionary {-}{}{}Derivative}{206}{subsubsection.15.27.3.9}
+\contentsline {subsubsection}{\numberline {15.27.3.10}sum\discretionary {-}{}{}React\discretionary {-}{}{}Set}{206}{subsubsection.15.27.3.10}
+\contentsline {section}{\numberline {15.28}osea\discretionary {-}{}{}:\discretionary {-}{}{}:Object\discretionary {-}{}{}Group Class Reference}{207}{section.15.28}
+\contentsline {subsection}{\numberline {15.28.1}Detailed Description}{209}{subsection.15.28.1}
+\contentsline {subsection}{\numberline {15.28.2}Constructor \& Destructor Documentation}{209}{subsection.15.28.2}
+\contentsline {subsubsection}{\numberline {15.28.2.1}Object\discretionary {-}{}{}Group}{209}{subsubsection.15.28.2.1}
+\contentsline {subsubsection}{\numberline {15.28.2.2}$\sim $\discretionary {-}{}{}Object\discretionary {-}{}{}Group}{209}{subsubsection.15.28.2.2}
+\contentsline {subsection}{\numberline {15.28.3}Member Function Documentation}{209}{subsection.15.28.3}
+\contentsline {subsubsection}{\numberline {15.28.3.1}add\discretionary {-}{}{}Key\discretionary {-}{}{}Set}{209}{subsubsection.15.28.3.1}
+\contentsline {subsubsection}{\numberline {15.28.3.2}add\discretionary {-}{}{}Key\discretionary {-}{}{}Set}{209}{subsubsection.15.28.3.2}
+\contentsline {subsubsection}{\numberline {15.28.3.3}add\discretionary {-}{}{}Key\discretionary {-}{}{}Val}{209}{subsubsection.15.28.3.3}
+\contentsline {subsubsection}{\numberline {15.28.3.4}add\discretionary {-}{}{}Key\discretionary {-}{}{}Val}{210}{subsubsection.15.28.3.4}
+\contentsline {subsubsection}{\numberline {15.28.3.5}add\discretionary {-}{}{}Key\discretionary {-}{}{}Word}{210}{subsubsection.15.28.3.5}
+\contentsline {subsubsection}{\numberline {15.28.3.6}add\discretionary {-}{}{}Sub\discretionary {-}{}{}Object}{210}{subsubsection.15.28.3.6}
+\contentsline {subsubsection}{\numberline {15.28.3.7}add\discretionary {-}{}{}Sub\discretionary {-}{}{}Object}{210}{subsubsection.15.28.3.7}
+\contentsline {subsubsection}{\numberline {15.28.3.8}get\discretionary {-}{}{}Class\discretionary {-}{}{}Name}{210}{subsubsection.15.28.3.8}
+\contentsline {subsubsection}{\numberline {15.28.3.9}get\discretionary {-}{}{}Format}{211}{subsubsection.15.28.3.9}
+\contentsline {subsubsection}{\numberline {15.28.3.10}get\discretionary {-}{}{}Key}{211}{subsubsection.15.28.3.10}
+\contentsline {subsubsection}{\numberline {15.28.3.11}get\discretionary {-}{}{}Val}{211}{subsubsection.15.28.3.11}
+\contentsline {subsubsection}{\numberline {15.28.3.12}get\discretionary {-}{}{}Version}{211}{subsubsection.15.28.3.12}
+\contentsline {subsubsection}{\numberline {15.28.3.13}list\discretionary {-}{}{}Key}{211}{subsubsection.15.28.3.13}
+\contentsline {subsubsection}{\numberline {15.28.3.14}list\discretionary {-}{}{}Key}{212}{subsubsection.15.28.3.14}
+\contentsline {subsubsection}{\numberline {15.28.3.15}list\discretionary {-}{}{}Object}{212}{subsubsection.15.28.3.15}
+\contentsline {subsubsection}{\numberline {15.28.3.16}list\discretionary {-}{}{}Object}{212}{subsubsection.15.28.3.16}
+\contentsline {subsubsection}{\numberline {15.28.3.17}list\discretionary {-}{}{}Val}{212}{subsubsection.15.28.3.17}
+\contentsline {subsubsection}{\numberline {15.28.3.18}list\discretionary {-}{}{}Val}{213}{subsubsection.15.28.3.18}
+\contentsline {subsubsection}{\numberline {15.28.3.19}set\discretionary {-}{}{}Class\discretionary {-}{}{}Name}{213}{subsubsection.15.28.3.19}
+\contentsline {subsubsection}{\numberline {15.28.3.20}set\discretionary {-}{}{}Format}{213}{subsubsection.15.28.3.20}
+\contentsline {subsubsection}{\numberline {15.28.3.21}set\discretionary {-}{}{}Version}{213}{subsubsection.15.28.3.21}
+\contentsline {section}{\numberline {15.29}osea\discretionary {-}{}{}:\discretionary {-}{}{}:ofreq\discretionary {-}{}{}:\discretionary {-}{}{}:o\discretionary {-}{}{}Freq\discretionary {-}{}{}Core Class Reference}{213}{section.15.29}
+\contentsline {subsection}{\numberline {15.29.1}Detailed Description}{214}{subsection.15.29.1}
+\contentsline {subsection}{\numberline {15.29.2}Constructor \& Destructor Documentation}{215}{subsection.15.29.2}
+\contentsline {subsubsection}{\numberline {15.29.2.1}o\discretionary {-}{}{}Freq\discretionary {-}{}{}Core}{215}{subsubsection.15.29.2.1}
+\contentsline {subsubsection}{\numberline {15.29.2.2}$\sim $o\discretionary {-}{}{}Freq\discretionary {-}{}{}Core}{215}{subsubsection.15.29.2.2}
+\contentsline {subsection}{\numberline {15.29.3}Member Function Documentation}{215}{subsection.15.29.3}
+\contentsline {subsubsection}{\numberline {15.29.3.1}set\discretionary {-}{}{}Err\discretionary {-}{}{}Log}{215}{subsubsection.15.29.3.1}
+\contentsline {subsubsection}{\numberline {15.29.3.2}set\discretionary {-}{}{}Out\discretionary {-}{}{}Log}{215}{subsubsection.15.29.3.2}
+\contentsline {subsubsection}{\numberline {15.29.3.3}write\discretionary {-}{}{}Error}{215}{subsubsection.15.29.3.3}
+\contentsline {subsubsection}{\numberline {15.29.3.4}write\discretionary {-}{}{}Log}{215}{subsubsection.15.29.3.4}
+\contentsline {subsection}{\numberline {15.29.4}Member Data Documentation}{216}{subsection.15.29.4}
+\contentsline {subsubsection}{\numberline {15.29.4.1}Err\discretionary {-}{}{}Log}{216}{subsubsection.15.29.4.1}
+\contentsline {subsubsection}{\numberline {15.29.4.2}Out\discretionary {-}{}{}Log}{216}{subsubsection.15.29.4.2}
+\contentsline {subsubsection}{\numberline {15.29.4.3}seaerr}{216}{subsubsection.15.29.4.3}
+\contentsline {subsubsection}{\numberline {15.29.4.4}seaout}{216}{subsubsection.15.29.4.4}
+\contentsline {section}{\numberline {15.30}osea\discretionary {-}{}{}:\discretionary {-}{}{}:ofreq\discretionary {-}{}{}:\discretionary {-}{}{}:Output\discretionary {-}{}{}Derived Class Reference}{216}{section.15.30}
+\contentsline {subsection}{\numberline {15.30.1}Detailed Description}{219}{subsection.15.30.1}
+\contentsline {subsection}{\numberline {15.30.2}Constructor \& Destructor Documentation}{219}{subsection.15.30.2}
+\contentsline {subsubsection}{\numberline {15.30.2.1}Output\discretionary {-}{}{}Derived}{219}{subsubsection.15.30.2.1}
+\contentsline {subsubsection}{\numberline {15.30.2.2}Output\discretionary {-}{}{}Derived}{219}{subsubsection.15.30.2.2}
+\contentsline {subsubsection}{\numberline {15.30.2.3}$\sim $\discretionary {-}{}{}Output\discretionary {-}{}{}Derived}{219}{subsubsection.15.30.2.3}
+\contentsline {subsection}{\numberline {15.30.3}Member Function Documentation}{220}{subsection.15.30.3}
+\contentsline {subsubsection}{\numberline {15.30.3.1}add\discretionary {-}{}{}Result}{220}{subsubsection.15.30.3.1}
+\contentsline {subsubsection}{\numberline {15.30.3.2}calc\discretionary {-}{}{}Output}{220}{subsubsection.15.30.3.2}
+\contentsline {subsubsection}{\numberline {15.30.3.3}get\discretionary {-}{}{}Class\discretionary {-}{}{}Name}{220}{subsubsection.15.30.3.3}
+\contentsline {subsubsection}{\numberline {15.30.3.4}get\discretionary {-}{}{}Cur\discretionary {-}{}{}Body\discretionary {-}{}{}Index}{221}{subsubsection.15.30.3.4}
+\contentsline {subsubsection}{\numberline {15.30.3.5}get\discretionary {-}{}{}Cur\discretionary {-}{}{}Wave\discretionary {-}{}{}Dir}{221}{subsubsection.15.30.3.5}
+\contentsline {subsubsection}{\numberline {15.30.3.6}get\discretionary {-}{}{}Cur\discretionary {-}{}{}Wave\discretionary {-}{}{}Ind}{221}{subsubsection.15.30.3.6}
+\contentsline {subsubsection}{\numberline {15.30.3.7}get\discretionary {-}{}{}Name}{221}{subsubsection.15.30.3.7}
+\contentsline {subsubsection}{\numberline {15.30.3.8}list\discretionary {-}{}{}Body}{221}{subsubsection.15.30.3.8}
+\contentsline {subsubsection}{\numberline {15.30.3.9}list\discretionary {-}{}{}Body}{222}{subsubsection.15.30.3.9}
+\contentsline {subsubsection}{\numberline {15.30.3.10}list\discretionary {-}{}{}Freq}{222}{subsubsection.15.30.3.10}
+\contentsline {subsubsection}{\numberline {15.30.3.11}list\discretionary {-}{}{}Freq}{222}{subsubsection.15.30.3.11}
+\contentsline {subsubsection}{\numberline {15.30.3.12}list\discretionary {-}{}{}Solution\discretionary {-}{}{}Set}{222}{subsubsection.15.30.3.12}
+\contentsline {subsubsection}{\numberline {15.30.3.13}list\discretionary {-}{}{}Solution\discretionary {-}{}{}Set}{223}{subsubsection.15.30.3.13}
+\contentsline {subsubsection}{\numberline {15.30.3.14}list\discretionary {-}{}{}Wave\discretionary {-}{}{}Dir}{223}{subsubsection.15.30.3.14}
+\contentsline {subsubsection}{\numberline {15.30.3.15}list\discretionary {-}{}{}Wave\discretionary {-}{}{}Dir}{223}{subsubsection.15.30.3.15}
+\contentsline {subsubsection}{\numberline {15.30.3.16}set\discretionary {-}{}{}Name}{223}{subsubsection.15.30.3.16}
+\contentsline {subsubsection}{\numberline {15.30.3.17}set\discretionary {-}{}{}Output\discretionary {-}{}{}Body}{224}{subsubsection.15.30.3.17}
+\contentsline {subsection}{\numberline {15.30.4}Member Data Documentation}{224}{subsection.15.30.4}
+\contentsline {subsubsection}{\numberline {15.30.4.1}p\discretionary {-}{}{}Class\discretionary {-}{}{}Name}{224}{subsubsection.15.30.4.1}
+\contentsline {subsubsection}{\numberline {15.30.4.2}p\discretionary {-}{}{}Name}{224}{subsubsection.15.30.4.2}
+\contentsline {subsubsection}{\numberline {15.30.4.3}p\discretionary {-}{}{}Parent\discretionary {-}{}{}Body}{224}{subsubsection.15.30.4.3}
+\contentsline {section}{\numberline {15.31}osea\discretionary {-}{}{}:\discretionary {-}{}{}:ofreq\discretionary {-}{}{}:\discretionary {-}{}{}:Outputs\discretionary {-}{}{}Body Class Reference}{225}{section.15.31}
+\contentsline {subsection}{\numberline {15.31.1}Detailed Description}{228}{subsection.15.31.1}
+\contentsline {subsection}{\numberline {15.31.2}Constructor \& Destructor Documentation}{229}{subsection.15.31.2}
+\contentsline {subsubsection}{\numberline {15.31.2.1}Outputs\discretionary {-}{}{}Body}{229}{subsubsection.15.31.2.1}
+\contentsline {subsubsection}{\numberline {15.31.2.2}Outputs\discretionary {-}{}{}Body}{229}{subsubsection.15.31.2.2}
+\contentsline {subsubsection}{\numberline {15.31.2.3}$\sim $\discretionary {-}{}{}Outputs\discretionary {-}{}{}Body}{229}{subsubsection.15.31.2.3}
+\contentsline {subsection}{\numberline {15.31.3}Member Function Documentation}{229}{subsection.15.31.3}
+\contentsline {subsubsection}{\numberline {15.31.3.1}add\discretionary {-}{}{}Global\discretionary {-}{}{}Acceleration}{229}{subsubsection.15.31.3.1}
+\contentsline {subsubsection}{\numberline {15.31.3.2}add\discretionary {-}{}{}Global\discretionary {-}{}{}Acceleration}{230}{subsubsection.15.31.3.2}
+\contentsline {subsubsection}{\numberline {15.31.3.3}add\discretionary {-}{}{}Global\discretionary {-}{}{}Motion}{230}{subsubsection.15.31.3.3}
+\contentsline {subsubsection}{\numberline {15.31.3.4}add\discretionary {-}{}{}Global\discretionary {-}{}{}Motion}{230}{subsubsection.15.31.3.4}
+\contentsline {subsubsection}{\numberline {15.31.3.5}add\discretionary {-}{}{}Global\discretionary {-}{}{}Solution}{230}{subsubsection.15.31.3.5}
+\contentsline {subsubsection}{\numberline {15.31.3.6}add\discretionary {-}{}{}Global\discretionary {-}{}{}Solution}{230}{subsubsection.15.31.3.6}
+\contentsline {subsubsection}{\numberline {15.31.3.7}add\discretionary {-}{}{}Global\discretionary {-}{}{}Velocity}{230}{subsubsection.15.31.3.7}
+\contentsline {subsubsection}{\numberline {15.31.3.8}add\discretionary {-}{}{}Global\discretionary {-}{}{}Velocity}{231}{subsubsection.15.31.3.8}
+\contentsline {subsubsection}{\numberline {15.31.3.9}calc\discretionary {-}{}{}Global\discretionary {-}{}{}Acceleration}{231}{subsubsection.15.31.3.9}
+\contentsline {subsubsection}{\numberline {15.31.3.10}calc\discretionary {-}{}{}Global\discretionary {-}{}{}Motion}{231}{subsubsection.15.31.3.10}
+\contentsline {subsubsection}{\numberline {15.31.3.11}calc\discretionary {-}{}{}Global\discretionary {-}{}{}Solution}{232}{subsubsection.15.31.3.11}
+\contentsline {subsubsection}{\numberline {15.31.3.12}calc\discretionary {-}{}{}Global\discretionary {-}{}{}Velocity}{232}{subsubsection.15.31.3.12}
+\contentsline {subsubsection}{\numberline {15.31.3.13}Clear\discretionary {-}{}{}Result}{233}{subsubsection.15.31.3.13}
+\contentsline {subsubsection}{\numberline {15.31.3.14}get\discretionary {-}{}{}Cur\discretionary {-}{}{}Body\discretionary {-}{}{}Index}{233}{subsubsection.15.31.3.14}
+\contentsline {subsubsection}{\numberline {15.31.3.15}get\discretionary {-}{}{}Cur\discretionary {-}{}{}Output}{233}{subsubsection.15.31.3.15}
+\contentsline {subsubsection}{\numberline {15.31.3.16}get\discretionary {-}{}{}Cur\discretionary {-}{}{}Wave\discretionary {-}{}{}Dir}{233}{subsubsection.15.31.3.16}
+\contentsline {subsubsection}{\numberline {15.31.3.17}get\discretionary {-}{}{}Cur\discretionary {-}{}{}Wave\discretionary {-}{}{}Ind}{233}{subsubsection.15.31.3.17}
+\contentsline {subsubsection}{\numberline {15.31.3.18}Initialize}{234}{subsubsection.15.31.3.18}
+\contentsline {subsubsection}{\numberline {15.31.3.19}list\discretionary {-}{}{}Body}{234}{subsubsection.15.31.3.19}
+\contentsline {subsubsection}{\numberline {15.31.3.20}list\discretionary {-}{}{}Body}{234}{subsubsection.15.31.3.20}
+\contentsline {subsubsection}{\numberline {15.31.3.21}list\discretionary {-}{}{}Freq}{234}{subsubsection.15.31.3.21}
+\contentsline {subsubsection}{\numberline {15.31.3.22}list\discretionary {-}{}{}Freq}{235}{subsubsection.15.31.3.22}
+\contentsline {subsubsection}{\numberline {15.31.3.23}list\discretionary {-}{}{}Global\discretionary {-}{}{}Acceleration}{235}{subsubsection.15.31.3.23}
+\contentsline {subsubsection}{\numberline {15.31.3.24}list\discretionary {-}{}{}Global\discretionary {-}{}{}Acceleration}{235}{subsubsection.15.31.3.24}
+\contentsline {subsubsection}{\numberline {15.31.3.25}list\discretionary {-}{}{}Global\discretionary {-}{}{}Motion}{235}{subsubsection.15.31.3.25}
+\contentsline {subsubsection}{\numberline {15.31.3.26}list\discretionary {-}{}{}Global\discretionary {-}{}{}Motion}{236}{subsubsection.15.31.3.26}
+\contentsline {subsubsection}{\numberline {15.31.3.27}list\discretionary {-}{}{}Global\discretionary {-}{}{}Solution}{236}{subsubsection.15.31.3.27}
+\contentsline {subsubsection}{\numberline {15.31.3.28}list\discretionary {-}{}{}Global\discretionary {-}{}{}Solution}{236}{subsubsection.15.31.3.28}
+\contentsline {subsubsection}{\numberline {15.31.3.29}list\discretionary {-}{}{}Global\discretionary {-}{}{}Velocity}{236}{subsubsection.15.31.3.29}
+\contentsline {subsubsection}{\numberline {15.31.3.30}list\discretionary {-}{}{}Global\discretionary {-}{}{}Velocity}{237}{subsubsection.15.31.3.30}
+\contentsline {subsubsection}{\numberline {15.31.3.31}list\discretionary {-}{}{}Result}{237}{subsubsection.15.31.3.31}
+\contentsline {subsubsection}{\numberline {15.31.3.32}list\discretionary {-}{}{}Result}{237}{subsubsection.15.31.3.32}
+\contentsline {subsubsection}{\numberline {15.31.3.33}list\discretionary {-}{}{}Solution\discretionary {-}{}{}Set}{238}{subsubsection.15.31.3.33}
+\contentsline {subsubsection}{\numberline {15.31.3.34}list\discretionary {-}{}{}Solution\discretionary {-}{}{}Set}{238}{subsubsection.15.31.3.34}
+\contentsline {subsubsection}{\numberline {15.31.3.35}list\discretionary {-}{}{}Wave\discretionary {-}{}{}Dir}{238}{subsubsection.15.31.3.35}
+\contentsline {subsubsection}{\numberline {15.31.3.36}list\discretionary {-}{}{}Wave\discretionary {-}{}{}Dir}{238}{subsubsection.15.31.3.36}
+\contentsline {subsubsection}{\numberline {15.31.3.37}ref\discretionary {-}{}{}Cur\discretionary {-}{}{}Body}{239}{subsubsection.15.31.3.37}
+\contentsline {subsubsection}{\numberline {15.31.3.38}ref\discretionary {-}{}{}Cur\discretionary {-}{}{}Output}{239}{subsubsection.15.31.3.38}
+\contentsline {subsubsection}{\numberline {15.31.3.39}ref\discretionary {-}{}{}Cur\discretionary {-}{}{}Solution}{239}{subsubsection.15.31.3.39}
+\contentsline {subsubsection}{\numberline {15.31.3.40}ref\discretionary {-}{}{}Result}{239}{subsubsection.15.31.3.40}
+\contentsline {subsubsection}{\numberline {15.31.3.41}set\discretionary {-}{}{}Cur\discretionary {-}{}{}Body}{240}{subsubsection.15.31.3.41}
+\contentsline {subsubsection}{\numberline {15.31.3.42}set\discretionary {-}{}{}Cur\discretionary {-}{}{}Output}{240}{subsubsection.15.31.3.42}
+\contentsline {subsubsection}{\numberline {15.31.3.43}set\discretionary {-}{}{}Cur\discretionary {-}{}{}Wave\discretionary {-}{}{}Dir}{240}{subsubsection.15.31.3.43}
+\contentsline {subsubsection}{\numberline {15.31.3.44}set\discretionary {-}{}{}List\discretionary {-}{}{}Body}{240}{subsubsection.15.31.3.44}
+\contentsline {subsubsection}{\numberline {15.31.3.45}set\discretionary {-}{}{}List\discretionary {-}{}{}Freq}{241}{subsubsection.15.31.3.45}
+\contentsline {subsubsection}{\numberline {15.31.3.46}set\discretionary {-}{}{}List\discretionary {-}{}{}Wave\discretionary {-}{}{}Dir}{241}{subsubsection.15.31.3.46}
+\contentsline {subsubsection}{\numberline {15.31.3.47}set\discretionary {-}{}{}Solution\discretionary {-}{}{}Set}{241}{subsubsection.15.31.3.47}
+\contentsline {section}{\numberline {15.32}osea\discretionary {-}{}{}:\discretionary {-}{}{}:Parser Class Reference}{241}{section.15.32}
+\contentsline {subsection}{\numberline {15.32.1}Detailed Description}{243}{subsection.15.32.1}
+\contentsline {subsection}{\numberline {15.32.2}Constructor \& Destructor Documentation}{243}{subsection.15.32.2}
+\contentsline {subsubsection}{\numberline {15.32.2.1}Parser}{243}{subsubsection.15.32.2.1}
+\contentsline {subsubsection}{\numberline {15.32.2.2}$\sim $\discretionary {-}{}{}Parser}{243}{subsubsection.15.32.2.2}
+\contentsline {subsection}{\numberline {15.32.3}Member Function Documentation}{243}{subsection.15.32.3}
+\contentsline {subsubsection}{\numberline {15.32.3.1}get\discretionary {-}{}{}Object}{243}{subsubsection.15.32.3.1}
+\contentsline {subsubsection}{\numberline {15.32.3.2}get\discretionary {-}{}{}Sub\discretionary {-}{}{}Object}{244}{subsubsection.15.32.3.2}
+\contentsline {subsubsection}{\numberline {15.32.3.3}list\discretionary {-}{}{}Key}{244}{subsubsection.15.32.3.3}
+\contentsline {subsubsection}{\numberline {15.32.3.4}list\discretionary {-}{}{}Key}{244}{subsubsection.15.32.3.4}
+\contentsline {subsubsection}{\numberline {15.32.3.5}list\discretionary {-}{}{}Object}{244}{subsubsection.15.32.3.5}
+\contentsline {subsubsection}{\numberline {15.32.3.6}list\discretionary {-}{}{}Object}{244}{subsubsection.15.32.3.6}
+\contentsline {subsubsection}{\numberline {15.32.3.7}list\discretionary {-}{}{}Val}{245}{subsubsection.15.32.3.7}
+\contentsline {subsubsection}{\numberline {15.32.3.8}list\discretionary {-}{}{}Val}{245}{subsubsection.15.32.3.8}
+\contentsline {subsubsection}{\numberline {15.32.3.9}Parse}{245}{subsubsection.15.32.3.9}
+\contentsline {subsubsection}{\numberline {15.32.3.10}ref\discretionary {-}{}{}Sub\discretionary {-}{}{}Object}{246}{subsubsection.15.32.3.10}
+\contentsline {section}{\numberline {15.33}Sea\discretionary {-}{}{}Enviroment Class Reference}{246}{section.15.33}
+\contentsline {subsection}{\numberline {15.33.1}Detailed Description}{246}{subsection.15.33.1}
+\contentsline {subsection}{\numberline {15.33.2}Constructor \& Destructor Documentation}{246}{subsection.15.33.2}
+\contentsline {subsubsection}{\numberline {15.33.2.1}Sea\discretionary {-}{}{}Enviroment}{246}{subsubsection.15.33.2.1}
+\contentsline {subsubsection}{\numberline {15.33.2.2}$\sim $\discretionary {-}{}{}Sea\discretionary {-}{}{}Enviroment}{247}{subsubsection.15.33.2.2}
+\contentsline {subsection}{\numberline {15.33.3}Member Function Documentation}{247}{subsection.15.33.3}
+\contentsline {subsubsection}{\numberline {15.33.3.1}set\discretionary {-}{}{}Spread\discretionary {-}{}{}Model\discretionary {-}{}{}Direction\discretionary {-}{}{}Angle}{247}{subsubsection.15.33.3.1}
+\contentsline {subsubsection}{\numberline {15.33.3.2}set\discretionary {-}{}{}Spread\discretionary {-}{}{}Model\discretionary {-}{}{}Name}{247}{subsubsection.15.33.3.2}
+\contentsline {subsubsection}{\numberline {15.33.3.3}set\discretionary {-}{}{}Spread\discretionary {-}{}{}Model\discretionary {-}{}{}Scaling\discretionary {-}{}{}Factor}{247}{subsubsection.15.33.3.3}
+\contentsline {subsubsection}{\numberline {15.33.3.4}set\discretionary {-}{}{}Spread\discretionary {-}{}{}Model\discretionary {-}{}{}Wave\discretionary {-}{}{}Spectrum\discretionary {-}{}{}Name}{247}{subsubsection.15.33.3.4}
+\contentsline {subsubsection}{\numberline {15.33.3.5}set\discretionary {-}{}{}Wave\discretionary {-}{}{}Spectrum\discretionary {-}{}{}Frequencies}{247}{subsubsection.15.33.3.5}
+\contentsline {subsubsection}{\numberline {15.33.3.6}set\discretionary {-}{}{}Wave\discretionary {-}{}{}Spectrum\discretionary {-}{}{}Name}{247}{subsubsection.15.33.3.6}
+\contentsline {subsubsection}{\numberline {15.33.3.7}set\discretionary {-}{}{}Wave\discretionary {-}{}{}Spectrum\discretionary {-}{}{}Wave\discretionary {-}{}{}Energy}{248}{subsubsection.15.33.3.7}
+\contentsline {subsubsection}{\numberline {15.33.3.8}test\discretionary {-}{}{}Print}{248}{subsubsection.15.33.3.8}
+\contentsline {section}{\numberline {15.34}osea\discretionary {-}{}{}:\discretionary {-}{}{}:ofreq\discretionary {-}{}{}:\discretionary {-}{}{}:Solution Class Reference}{248}{section.15.34}
+\contentsline {subsection}{\numberline {15.34.1}Detailed Description}{250}{subsection.15.34.1}
+\contentsline {subsection}{\numberline {15.34.2}Constructor \& Destructor Documentation}{250}{subsection.15.34.2}
+\contentsline {subsubsection}{\numberline {15.34.2.1}Solution}{250}{subsubsection.15.34.2.1}
+\contentsline {subsubsection}{\numberline {15.34.2.2}Solution}{250}{subsubsection.15.34.2.2}
+\contentsline {subsubsection}{\numberline {15.34.2.3}$\sim $\discretionary {-}{}{}Solution}{250}{subsubsection.15.34.2.3}
+\contentsline {subsection}{\numberline {15.34.3}Member Function Documentation}{250}{subsection.15.34.3}
+\contentsline {subsubsection}{\numberline {15.34.3.1}get\discretionary {-}{}{}Soln\discretionary {-}{}{}Mat}{250}{subsubsection.15.34.3.1}
+\contentsline {subsubsection}{\numberline {15.34.3.2}get\discretionary {-}{}{}Soln\discretionary {-}{}{}Mat}{251}{subsubsection.15.34.3.2}
+\contentsline {subsubsection}{\numberline {15.34.3.3}ref\discretionary {-}{}{}Body}{251}{subsubsection.15.34.3.3}
+\contentsline {subsubsection}{\numberline {15.34.3.4}ref\discretionary {-}{}{}Soln\discretionary {-}{}{}Mat}{251}{subsubsection.15.34.3.4}
+\contentsline {subsubsection}{\numberline {15.34.3.5}set\discretionary {-}{}{}Body}{251}{subsubsection.15.34.3.5}
+\contentsline {subsubsection}{\numberline {15.34.3.6}set\discretionary {-}{}{}Soln\discretionary {-}{}{}Mat}{252}{subsubsection.15.34.3.6}
+\contentsline {section}{\numberline {15.35}osea\discretionary {-}{}{}:\discretionary {-}{}{}:ofreq\discretionary {-}{}{}:\discretionary {-}{}{}:Solution\discretionary {-}{}{}Set Class Reference}{252}{section.15.35}
+\contentsline {subsection}{\numberline {15.35.1}Detailed Description}{253}{subsection.15.35.1}
+\contentsline {subsection}{\numberline {15.35.2}Constructor \& Destructor Documentation}{253}{subsection.15.35.2}
+\contentsline {subsubsection}{\numberline {15.35.2.1}Solution\discretionary {-}{}{}Set}{253}{subsubsection.15.35.2.1}
+\contentsline {subsubsection}{\numberline {15.35.2.2}Solution\discretionary {-}{}{}Set}{253}{subsubsection.15.35.2.2}
+\contentsline {subsubsection}{\numberline {15.35.2.3}$\sim $\discretionary {-}{}{}Solution\discretionary {-}{}{}Set}{254}{subsubsection.15.35.2.3}
+\contentsline {subsection}{\numberline {15.35.3}Member Function Documentation}{254}{subsection.15.35.3}
+\contentsline {subsubsection}{\numberline {15.35.3.1}get\discretionary {-}{}{}Solution}{254}{subsubsection.15.35.3.1}
+\contentsline {subsubsection}{\numberline {15.35.3.2}n\discretionary {-}{}{}\_\discretionary {-}{}{}dirs}{254}{subsubsection.15.35.3.2}
+\contentsline {subsubsection}{\numberline {15.35.3.3}n\discretionary {-}{}{}\_\discretionary {-}{}{}freqs}{254}{subsubsection.15.35.3.3}
+\contentsline {subsubsection}{\numberline {15.35.3.4}ref\discretionary {-}{}{}Solution}{254}{subsubsection.15.35.3.4}
+\contentsline {subsubsection}{\numberline {15.35.3.5}resize}{255}{subsubsection.15.35.3.5}
+\contentsline {subsubsection}{\numberline {15.35.3.6}set\discretionary {-}{}{}Soln\discretionary {-}{}{}Mat}{255}{subsubsection.15.35.3.6}
+\contentsline {subsubsection}{\numberline {15.35.3.7}size}{255}{subsubsection.15.35.3.7}
+\contentsline {section}{\numberline {15.36}osea\discretionary {-}{}{}:\discretionary {-}{}{}:ofreq\discretionary {-}{}{}:\discretionary {-}{}{}:System Class Reference}{255}{section.15.36}
+\contentsline {subsection}{\numberline {15.36.1}Detailed Description}{258}{subsection.15.36.1}
+\contentsline {subsection}{\numberline {15.36.2}Constructor \& Destructor Documentation}{259}{subsection.15.36.2}
+\contentsline {subsubsection}{\numberline {15.36.2.1}System}{259}{subsubsection.15.36.2.1}
+\contentsline {subsubsection}{\numberline {15.36.2.2}$\sim $\discretionary {-}{}{}System}{259}{subsubsection.15.36.2.2}
+\contentsline {subsection}{\numberline {15.36.3}Member Function Documentation}{259}{subsection.15.36.3}
+\contentsline {subsubsection}{\numberline {15.36.3.1}add\discretionary {-}{}{}Body}{259}{subsubsection.15.36.3.1}
+\contentsline {subsubsection}{\numberline {15.36.3.2}add\discretionary {-}{}{}Body}{259}{subsubsection.15.36.3.2}
+\contentsline {subsubsection}{\numberline {15.36.3.3}add\discretionary {-}{}{}Force\discretionary {-}{}{}Active\discretionary {-}{}{}\_\discretionary {-}{}{}user}{259}{subsubsection.15.36.3.3}
+\contentsline {subsubsection}{\numberline {15.36.3.4}add\discretionary {-}{}{}Force\discretionary {-}{}{}Active\discretionary {-}{}{}\_\discretionary {-}{}{}user}{260}{subsubsection.15.36.3.4}
+\contentsline {subsubsection}{\numberline {15.36.3.5}add\discretionary {-}{}{}Force\discretionary {-}{}{}Cross\discretionary {-}{}{}\_\discretionary {-}{}{}user}{260}{subsubsection.15.36.3.5}
+\contentsline {subsubsection}{\numberline {15.36.3.6}add\discretionary {-}{}{}Force\discretionary {-}{}{}Cross\discretionary {-}{}{}\_\discretionary {-}{}{}user}{260}{subsubsection.15.36.3.6}
+\contentsline {subsubsection}{\numberline {15.36.3.7}add\discretionary {-}{}{}Force\discretionary {-}{}{}React\discretionary {-}{}{}\_\discretionary {-}{}{}user}{260}{subsubsection.15.36.3.7}
+\contentsline {subsubsection}{\numberline {15.36.3.8}add\discretionary {-}{}{}Force\discretionary {-}{}{}React\discretionary {-}{}{}\_\discretionary {-}{}{}user}{260}{subsubsection.15.36.3.8}
+\contentsline {subsubsection}{\numberline {15.36.3.9}add\discretionary {-}{}{}Output}{261}{subsubsection.15.36.3.9}
+\contentsline {subsubsection}{\numberline {15.36.3.10}add\discretionary {-}{}{}Output}{261}{subsubsection.15.36.3.10}
+\contentsline {subsubsection}{\numberline {15.36.3.11}clear\discretionary {-}{}{}Force}{261}{subsubsection.15.36.3.11}
+\contentsline {subsubsection}{\numberline {15.36.3.12}get\discretionary {-}{}{}Cur\discretionary {-}{}{}Freq}{261}{subsubsection.15.36.3.12}
+\contentsline {subsubsection}{\numberline {15.36.3.13}get\discretionary {-}{}{}Cur\discretionary {-}{}{}Freq\discretionary {-}{}{}Ind}{262}{subsubsection.15.36.3.13}
+\contentsline {subsubsection}{\numberline {15.36.3.14}get\discretionary {-}{}{}Cur\discretionary {-}{}{}Wave\discretionary {-}{}{}Dir}{262}{subsubsection.15.36.3.14}
+\contentsline {subsubsection}{\numberline {15.36.3.15}get\discretionary {-}{}{}Cur\discretionary {-}{}{}Wave\discretionary {-}{}{}Dir\discretionary {-}{}{}Ind}{262}{subsubsection.15.36.3.15}
+\contentsline {subsubsection}{\numberline {15.36.3.16}get\discretionary {-}{}{}Wave\discretionary {-}{}{}Directions}{262}{subsubsection.15.36.3.16}
+\contentsline {subsubsection}{\numberline {15.36.3.17}get\discretionary {-}{}{}Wave\discretionary {-}{}{}Frequencies}{262}{subsubsection.15.36.3.17}
+\contentsline {subsubsection}{\numberline {15.36.3.18}link\discretionary {-}{}{}Bodies}{263}{subsubsection.15.36.3.18}
+\contentsline {subsubsection}{\numberline {15.36.3.19}list\discretionary {-}{}{}Body}{263}{subsubsection.15.36.3.19}
+\contentsline {subsubsection}{\numberline {15.36.3.20}list\discretionary {-}{}{}Body}{263}{subsubsection.15.36.3.20}
+\contentsline {subsubsection}{\numberline {15.36.3.21}list\discretionary {-}{}{}Force\discretionary {-}{}{}Active\discretionary {-}{}{}\_\discretionary {-}{}{}user}{263}{subsubsection.15.36.3.21}
+\contentsline {subsubsection}{\numberline {15.36.3.22}list\discretionary {-}{}{}Force\discretionary {-}{}{}Active\discretionary {-}{}{}\_\discretionary {-}{}{}user}{264}{subsubsection.15.36.3.22}
+\contentsline {subsubsection}{\numberline {15.36.3.23}list\discretionary {-}{}{}Force\discretionary {-}{}{}Cross\discretionary {-}{}{}\_\discretionary {-}{}{}user}{264}{subsubsection.15.36.3.23}
+\contentsline {subsubsection}{\numberline {15.36.3.24}list\discretionary {-}{}{}Force\discretionary {-}{}{}Cross\discretionary {-}{}{}\_\discretionary {-}{}{}user}{264}{subsubsection.15.36.3.24}
+\contentsline {subsubsection}{\numberline {15.36.3.25}list\discretionary {-}{}{}Force\discretionary {-}{}{}React\discretionary {-}{}{}\_\discretionary {-}{}{}user}{264}{subsubsection.15.36.3.25}
+\contentsline {subsubsection}{\numberline {15.36.3.26}list\discretionary {-}{}{}Force\discretionary {-}{}{}React\discretionary {-}{}{}\_\discretionary {-}{}{}user}{264}{subsubsection.15.36.3.26}
+\contentsline {subsubsection}{\numberline {15.36.3.27}list\discretionary {-}{}{}Model}{265}{subsubsection.15.36.3.27}
+\contentsline {subsubsection}{\numberline {15.36.3.28}list\discretionary {-}{}{}Model}{265}{subsubsection.15.36.3.28}
+\contentsline {subsubsection}{\numberline {15.36.3.29}list\discretionary {-}{}{}Model}{265}{subsubsection.15.36.3.29}
+\contentsline {subsubsection}{\numberline {15.36.3.30}list\discretionary {-}{}{}Output}{266}{subsubsection.15.36.3.30}
+\contentsline {subsubsection}{\numberline {15.36.3.31}list\discretionary {-}{}{}Output}{266}{subsubsection.15.36.3.31}
+\contentsline {subsubsection}{\numberline {15.36.3.32}list\discretionary {-}{}{}Wave\discretionary {-}{}{}Directions}{266}{subsubsection.15.36.3.32}
+\contentsline {subsubsection}{\numberline {15.36.3.33}list\discretionary {-}{}{}Wave\discretionary {-}{}{}Frequencies}{266}{subsubsection.15.36.3.33}
+\contentsline {subsubsection}{\numberline {15.36.3.34}Reference\discretionary {-}{}{}System}{267}{subsubsection.15.36.3.34}
+\contentsline {subsubsection}{\numberline {15.36.3.35}ref\discretionary {-}{}{}Force\discretionary {-}{}{}Active\discretionary {-}{}{}\_\discretionary {-}{}{}user}{267}{subsubsection.15.36.3.35}
+\contentsline {subsubsection}{\numberline {15.36.3.36}ref\discretionary {-}{}{}Force\discretionary {-}{}{}Cross\discretionary {-}{}{}\_\discretionary {-}{}{}user}{267}{subsubsection.15.36.3.36}
+\contentsline {subsubsection}{\numberline {15.36.3.37}ref\discretionary {-}{}{}Force\discretionary {-}{}{}React\discretionary {-}{}{}\_\discretionary {-}{}{}user}{267}{subsubsection.15.36.3.37}
+\contentsline {subsubsection}{\numberline {15.36.3.38}set\discretionary {-}{}{}Analysis\discretionary {-}{}{}Type}{268}{subsubsection.15.36.3.38}
+\contentsline {subsubsection}{\numberline {15.36.3.39}set\discretionary {-}{}{}Cur\discretionary {-}{}{}Freq\discretionary {-}{}{}Ind}{268}{subsubsection.15.36.3.39}
+\contentsline {subsubsection}{\numberline {15.36.3.40}set\discretionary {-}{}{}Cur\discretionary {-}{}{}Wave\discretionary {-}{}{}Dir\discretionary {-}{}{}Ind}{268}{subsubsection.15.36.3.40}
+\contentsline {subsubsection}{\numberline {15.36.3.41}set\discretionary {-}{}{}Spread\discretionary {-}{}{}Model}{268}{subsubsection.15.36.3.41}
+\contentsline {subsubsection}{\numberline {15.36.3.42}set\discretionary {-}{}{}Wave\discretionary {-}{}{}Directions}{268}{subsubsection.15.36.3.42}
+\contentsline {subsubsection}{\numberline {15.36.3.43}set\discretionary {-}{}{}Wave\discretionary {-}{}{}Frequencies}{269}{subsubsection.15.36.3.43}
+\contentsline {chapter}{\numberline {16}File Documentation}{271}{chapter.16}
+\contentsline {section}{\numberline {16.1}100\discretionary {-}{}{}\_\discretionary {-}{}{}doc/130\discretionary {-}{}{}\_\discretionary {-}{}{}doc\discretionary {-}{}{}\_\discretionary {-}{}{}developer/\discretionary {-}{}{}Coding\discretionary {-}{}{}Format\discretionary {-}{}{}Standards.dox File Reference}{271}{section.16.1}
+\contentsline {section}{\numberline {16.2}100\discretionary {-}{}{}\_\discretionary {-}{}{}doc/130\discretionary {-}{}{}\_\discretionary {-}{}{}doc\discretionary {-}{}{}\_\discretionary {-}{}{}developer/\discretionary {-}{}{}Coding\discretionary {-}{}{}Standard/\discretionary {-}{}{}C\discretionary {-}{}{}P\discretionary {-}{}{}P\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Comments.dox File Reference}{271}{section.16.2}
+\contentsline {section}{\numberline {16.3}100\discretionary {-}{}{}\_\discretionary {-}{}{}doc/130\discretionary {-}{}{}\_\discretionary {-}{}{}doc\discretionary {-}{}{}\_\discretionary {-}{}{}developer/\discretionary {-}{}{}Coding\discretionary {-}{}{}Standard/\discretionary {-}{}{}Header\discretionary {-}{}{}Comment.dox File Reference}{271}{section.16.3}
+\contentsline {section}{\numberline {16.4}100\discretionary {-}{}{}\_\discretionary {-}{}{}doc/130\discretionary {-}{}{}\_\discretionary {-}{}{}doc\discretionary {-}{}{}\_\discretionary {-}{}{}developer/\discretionary {-}{}{}Coding\discretionary {-}{}{}Standard/\discretionary {-}{}{}Object\discretionary {-}{}{}Paradigm.dox File Reference}{271}{section.16.4}
+\contentsline {section}{\numberline {16.5}100\discretionary {-}{}{}\_\discretionary {-}{}{}doc/130\discretionary {-}{}{}\_\discretionary {-}{}{}doc\discretionary {-}{}{}\_\discretionary {-}{}{}developer/\discretionary {-}{}{}Coding\discretionary {-}{}{}Standard/\discretionary {-}{}{}Qt\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Platform\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Code.dox File Reference}{271}{section.16.5}
+\contentsline {section}{\numberline {16.6}100\discretionary {-}{}{}\_\discretionary {-}{}{}doc/130\discretionary {-}{}{}\_\discretionary {-}{}{}doc\discretionary {-}{}{}\_\discretionary {-}{}{}developer/\discretionary {-}{}{}Input\discretionary {-}{}{}Formatting.dox File Reference}{271}{section.16.6}
+\contentsline {section}{\numberline {16.7}100\discretionary {-}{}{}\_\discretionary {-}{}{}doc/130\discretionary {-}{}{}\_\discretionary {-}{}{}doc\discretionary {-}{}{}\_\discretionary {-}{}{}developer/\discretionary {-}{}{}Inputs/\discretionary {-}{}{}Input\discretionary {-}{}{}Syntax.dox File Reference}{271}{section.16.7}
+\contentsline {section}{\numberline {16.8}100\discretionary {-}{}{}\_\discretionary {-}{}{}doc/130\discretionary {-}{}{}\_\discretionary {-}{}{}doc\discretionary {-}{}{}\_\discretionary {-}{}{}developer/\discretionary {-}{}{}Inputs/\discretionary {-}{}{}Input\discretionary {-}{}{}Values.dox File Reference}{271}{section.16.8}
+\contentsline {section}{\numberline {16.9}100\discretionary {-}{}{}\_\discretionary {-}{}{}doc/130\discretionary {-}{}{}\_\discretionary {-}{}{}doc\discretionary {-}{}{}\_\discretionary {-}{}{}developer/\discretionary {-}{}{}Inputs/\discretionary {-}{}{}Why\discretionary {-}{}{}Text\discretionary {-}{}{}Files.dox File Reference}{271}{section.16.9}
+\contentsline {section}{\numberline {16.10}100\discretionary {-}{}{}\_\discretionary {-}{}{}doc/130\discretionary {-}{}{}\_\discretionary {-}{}{}doc\discretionary {-}{}{}\_\discretionary {-}{}{}developer/mainpage.dox File Reference}{271}{section.16.10}
+\contentsline {section}{\numberline {16.11}100\discretionary {-}{}{}\_\discretionary {-}{}{}doc/130\discretionary {-}{}{}\_\discretionary {-}{}{}doc\discretionary {-}{}{}\_\discretionary {-}{}{}developer/\discretionary {-}{}{}Program\discretionary {-}{}{}Execution.dox File Reference}{271}{section.16.11}
+\contentsline {section}{\numberline {16.12}100\discretionary {-}{}{}\_\discretionary {-}{}{}doc/130\discretionary {-}{}{}\_\discretionary {-}{}{}doc\discretionary {-}{}{}\_\discretionary {-}{}{}developer/\discretionary {-}{}{}U\discretionary {-}{}{}M\discretionary {-}{}{}L\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Process.dox File Reference}{271}{section.16.12}
+\contentsline {section}{\numberline {16.13}100\discretionary {-}{}{}\_\discretionary {-}{}{}doc/130\discretionary {-}{}{}\_\discretionary {-}{}{}doc\discretionary {-}{}{}\_\discretionary {-}{}{}developer/\discretionary {-}{}{}U\discretionary {-}{}{}M\discretionary {-}{}{}L\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Process/\discretionary {-}{}{}U\discretionary {-}{}{}M\discretionary {-}{}{}L\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}File\discretionary {-}{}{}Reader.dox File Reference}{271}{section.16.13}
+\contentsline {section}{\numberline {16.14}100\discretionary {-}{}{}\_\discretionary {-}{}{}doc/130\discretionary {-}{}{}\_\discretionary {-}{}{}doc\discretionary {-}{}{}\_\discretionary {-}{}{}developer/\discretionary {-}{}{}U\discretionary {-}{}{}M\discretionary {-}{}{}L\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Process/\discretionary {-}{}{}U\discretionary {-}{}{}M\discretionary {-}{}{}L\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Motion\discretionary {-}{}{}Model.dox File Reference}{271}{section.16.14}
+\contentsline {section}{\numberline {16.15}100\discretionary {-}{}{}\_\discretionary {-}{}{}doc/130\discretionary {-}{}{}\_\discretionary {-}{}{}doc\discretionary {-}{}{}\_\discretionary {-}{}{}developer/\discretionary {-}{}{}U\discretionary {-}{}{}M\discretionary {-}{}{}L\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Process/\discretionary {-}{}{}U\discretionary {-}{}{}M\discretionary {-}{}{}L\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Motion\discretionary {-}{}{}Solver.dox File Reference}{272}{section.16.15}
+\contentsline {section}{\numberline {16.16}100\discretionary {-}{}{}\_\discretionary {-}{}{}doc/130\discretionary {-}{}{}\_\discretionary {-}{}{}doc\discretionary {-}{}{}\_\discretionary {-}{}{}developer/\discretionary {-}{}{}U\discretionary {-}{}{}M\discretionary {-}{}{}L\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Process/\discretionary {-}{}{}U\discretionary {-}{}{}M\discretionary {-}{}{}L\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Outputs\discretionary {-}{}{}Calculation.dox File Reference}{272}{section.16.16}
+\contentsline {section}{\numberline {16.17}100\discretionary {-}{}{}\_\discretionary {-}{}{}doc/130\discretionary {-}{}{}\_\discretionary {-}{}{}doc\discretionary {-}{}{}\_\discretionary {-}{}{}developer/\discretionary {-}{}{}U\discretionary {-}{}{}M\discretionary {-}{}{}L\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Process/\discretionary {-}{}{}U\discretionary {-}{}{}M\discretionary {-}{}{}L\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Overall.dox File Reference}{272}{section.16.17}
+\contentsline {section}{\numberline {16.18}100\discretionary {-}{}{}\_\discretionary {-}{}{}doc/130\discretionary {-}{}{}\_\discretionary {-}{}{}doc\discretionary {-}{}{}\_\discretionary {-}{}{}developer/\discretionary {-}{}{}U\discretionary {-}{}{}M\discretionary {-}{}{}L\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Process/\discretionary {-}{}{}U\discretionary {-}{}{}M\discretionary {-}{}{}L\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Resonant\discretionary {-}{}{}Solver.dox File Reference}{272}{section.16.18}
+\contentsline {section}{\numberline {16.19}100\discretionary {-}{}{}\_\discretionary {-}{}{}doc/130\discretionary {-}{}{}\_\discretionary {-}{}{}doc\discretionary {-}{}{}\_\discretionary {-}{}{}developer/\discretionary {-}{}{}U\discretionary {-}{}{}M\discretionary {-}{}{}L\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Process/\discretionary {-}{}{}U\discretionary {-}{}{}M\discretionary {-}{}{}L\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Wave\discretionary {-}{}{}Calculation.dox File Reference}{272}{section.16.19}
+\contentsline {section}{\numberline {16.20}100\discretionary {-}{}{}\_\discretionary {-}{}{}doc/130\discretionary {-}{}{}\_\discretionary {-}{}{}doc\discretionary {-}{}{}\_\discretionary {-}{}{}developer/\discretionary {-}{}{}U\discretionary {-}{}{}M\discretionary {-}{}{}L\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Process/\discretionary {-}{}{}U\discretionary {-}{}{}M\discretionary {-}{}{}L\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Writing\discretionary {-}{}{}Files.dox File Reference}{272}{section.16.20}
+\contentsline {section}{\numberline {16.21}100\discretionary {-}{}{}\_\discretionary {-}{}{}doc/130\discretionary {-}{}{}\_\discretionary {-}{}{}doc\discretionary {-}{}{}\_\discretionary {-}{}{}developer/validation.dox File Reference}{272}{section.16.21}
+\contentsline {section}{\numberline {16.22}100\discretionary {-}{}{}\_\discretionary {-}{}{}doc/130\discretionary {-}{}{}\_\discretionary {-}{}{}doc\discretionary {-}{}{}\_\discretionary {-}{}{}developer/\discretionary {-}{}{}Validation/\discretionary {-}{}{}Multi\discretionary {-}{}{}Body\discretionary {-}{}{}Test1.dox File Reference}{272}{section.16.22}
+\contentsline {section}{\numberline {16.23}100\discretionary {-}{}{}\_\discretionary {-}{}{}doc/130\discretionary {-}{}{}\_\discretionary {-}{}{}doc\discretionary {-}{}{}\_\discretionary {-}{}{}developer/\discretionary {-}{}{}Validation/\discretionary {-}{}{}Multi\discretionary {-}{}{}Body\discretionary {-}{}{}Test2.dox File Reference}{272}{section.16.23}
+\contentsline {section}{\numberline {16.24}100\discretionary {-}{}{}\_\discretionary {-}{}{}doc/130\discretionary {-}{}{}\_\discretionary {-}{}{}doc\discretionary {-}{}{}\_\discretionary {-}{}{}developer/\discretionary {-}{}{}Validation/\discretionary {-}{}{}Multi\discretionary {-}{}{}Body\discretionary {-}{}{}Test3.dox File Reference}{272}{section.16.24}
+\contentsline {section}{\numberline {16.25}100\discretionary {-}{}{}\_\discretionary {-}{}{}doc/130\discretionary {-}{}{}\_\discretionary {-}{}{}doc\discretionary {-}{}{}\_\discretionary {-}{}{}developer/\discretionary {-}{}{}Validation/\discretionary {-}{}{}Multi\discretionary {-}{}{}Body\discretionary {-}{}{}Test4.dox File Reference}{272}{section.16.25}
+\contentsline {section}{\numberline {16.26}100\discretionary {-}{}{}\_\discretionary {-}{}{}doc/130\discretionary {-}{}{}\_\discretionary {-}{}{}doc\discretionary {-}{}{}\_\discretionary {-}{}{}developer/\discretionary {-}{}{}Validation/\discretionary {-}{}{}Simple\discretionary {-}{}{}Test1.dox File Reference}{272}{section.16.26}
+\contentsline {section}{\numberline {16.27}100\discretionary {-}{}{}\_\discretionary {-}{}{}doc/130\discretionary {-}{}{}\_\discretionary {-}{}{}doc\discretionary {-}{}{}\_\discretionary {-}{}{}developer/\discretionary {-}{}{}Validation/\discretionary {-}{}{}Simple\discretionary {-}{}{}Test2.dox File Reference}{272}{section.16.27}
+\contentsline {section}{\numberline {16.28}100\discretionary {-}{}{}\_\discretionary {-}{}{}doc/130\discretionary {-}{}{}\_\discretionary {-}{}{}doc\discretionary {-}{}{}\_\discretionary {-}{}{}developer/\discretionary {-}{}{}Validation/\discretionary {-}{}{}Simple\discretionary {-}{}{}Test3.dox File Reference}{272}{section.16.28}
+\contentsline {section}{\numberline {16.29}100\discretionary {-}{}{}\_\discretionary {-}{}{}doc/130\discretionary {-}{}{}\_\discretionary {-}{}{}doc\discretionary {-}{}{}\_\discretionary {-}{}{}developer/\discretionary {-}{}{}Validation/\discretionary {-}{}{}Simple\discretionary {-}{}{}Test4.dox File Reference}{272}{section.16.29}
+\contentsline {section}{\numberline {16.30}100\discretionary {-}{}{}\_\discretionary {-}{}{}doc/130\discretionary {-}{}{}\_\discretionary {-}{}{}doc\discretionary {-}{}{}\_\discretionary {-}{}{}developer/\discretionary {-}{}{}Validation/\discretionary {-}{}{}Test\discretionary {-}{}{}Frequency.dox File Reference}{272}{section.16.30}
+\contentsline {section}{\numberline {16.31}bin/ofreq/derived\discretionary {-}{}{}\_\discretionary {-}{}{}outputs/globalacceleration.cpp File Reference}{273}{section.16.31}
+\contentsline {section}{\numberline {16.32}bin/ofreq/derived\discretionary {-}{}{}\_\discretionary {-}{}{}outputs/globalacceleration.h File Reference}{273}{section.16.32}
+\contentsline {section}{\numberline {16.33}bin/ofreq/derived\discretionary {-}{}{}\_\discretionary {-}{}{}outputs/globalmotion.cpp File Reference}{274}{section.16.33}
+\contentsline {section}{\numberline {16.34}bin/ofreq/derived\discretionary {-}{}{}\_\discretionary {-}{}{}outputs/globalmotion.h File Reference}{274}{section.16.34}
+\contentsline {section}{\numberline {16.35}bin/ofreq/derived\discretionary {-}{}{}\_\discretionary {-}{}{}outputs/globalsolution.cpp File Reference}{275}{section.16.35}
+\contentsline {section}{\numberline {16.36}bin/ofreq/derived\discretionary {-}{}{}\_\discretionary {-}{}{}outputs/globalsolution.h File Reference}{275}{section.16.36}
+\contentsline {section}{\numberline {16.37}bin/ofreq/derived\discretionary {-}{}{}\_\discretionary {-}{}{}outputs/globalvelocity.cpp File Reference}{277}{section.16.37}
+\contentsline {section}{\numberline {16.38}bin/ofreq/derived\discretionary {-}{}{}\_\discretionary {-}{}{}outputs/globalvelocity.h File Reference}{277}{section.16.38}
+\contentsline {section}{\numberline {16.39}bin/ofreq/derived\discretionary {-}{}{}\_\discretionary {-}{}{}outputs/outputderived.cpp File Reference}{278}{section.16.39}
+\contentsline {section}{\numberline {16.40}bin/ofreq/derived\discretionary {-}{}{}\_\discretionary {-}{}{}outputs/outputderived.h File Reference}{278}{section.16.40}
+\contentsline {section}{\numberline {16.41}bin/ofreq/derived\discretionary {-}{}{}\_\discretionary {-}{}{}outputs/outputsbody.cpp File Reference}{279}{section.16.41}
+\contentsline {section}{\numberline {16.42}bin/ofreq/derived\discretionary {-}{}{}\_\discretionary {-}{}{}outputs/outputsbody.h File Reference}{279}{section.16.42}
+\contentsline {section}{\numberline {16.43}bin/ofreq/file\discretionary {-}{}{}\_\discretionary {-}{}{}reader/dictbodies.cpp File Reference}{280}{section.16.43}
+\contentsline {section}{\numberline {16.44}bin/ofreq/file\discretionary {-}{}{}\_\discretionary {-}{}{}reader/dictbodies.h File Reference}{281}{section.16.44}
+\contentsline {section}{\numberline {16.45}bin/ofreq/file\discretionary {-}{}{}\_\discretionary {-}{}{}reader/dictcontrol.cpp File Reference}{281}{section.16.45}
+\contentsline {section}{\numberline {16.46}bin/ofreq/file\discretionary {-}{}{}\_\discretionary {-}{}{}reader/dictcontrol.h File Reference}{282}{section.16.46}
+\contentsline {section}{\numberline {16.47}bin/ofreq/file\discretionary {-}{}{}\_\discretionary {-}{}{}reader/dictforces.cpp File Reference}{283}{section.16.47}
+\contentsline {section}{\numberline {16.48}bin/ofreq/file\discretionary {-}{}{}\_\discretionary {-}{}{}reader/dictforces.h File Reference}{283}{section.16.48}
+\contentsline {section}{\numberline {16.49}bin/ofreq/file\discretionary {-}{}{}\_\discretionary {-}{}{}reader/dictionary.cpp File Reference}{284}{section.16.49}
+\contentsline {section}{\numberline {16.50}bin/ofreq/file\discretionary {-}{}{}\_\discretionary {-}{}{}reader/dictionary.h File Reference}{284}{section.16.50}
+\contentsline {section}{\numberline {16.51}bin/ofreq/file\discretionary {-}{}{}\_\discretionary {-}{}{}reader/filereader.cpp File Reference}{285}{section.16.51}
+\contentsline {section}{\numberline {16.52}bin/ofreq/file\discretionary {-}{}{}\_\discretionary {-}{}{}reader/filereader.h File Reference}{285}{section.16.52}
+\contentsline {section}{\numberline {16.53}bin/ofreq/file\discretionary {-}{}{}\_\discretionary {-}{}{}reader/objectgroup.cpp File Reference}{286}{section.16.53}
+\contentsline {section}{\numberline {16.54}bin/ofreq/file\discretionary {-}{}{}\_\discretionary {-}{}{}reader/objectgroup.h File Reference}{286}{section.16.54}
+\contentsline {section}{\numberline {16.55}bin/ofreq/file\discretionary {-}{}{}\_\discretionary {-}{}{}reader/parser.cpp File Reference}{288}{section.16.55}
+\contentsline {section}{\numberline {16.56}bin/ofreq/file\discretionary {-}{}{}\_\discretionary {-}{}{}reader/parser.h File Reference}{288}{section.16.56}
+\contentsline {section}{\numberline {16.57}bin/ofreq/file\discretionary {-}{}{}\_\discretionary {-}{}{}writer/filewriter.cpp File Reference}{289}{section.16.57}
+\contentsline {section}{\numberline {16.58}bin/ofreq/file\discretionary {-}{}{}\_\discretionary {-}{}{}writer/filewriter.h File Reference}{289}{section.16.58}
+\contentsline {section}{\numberline {16.59}bin/ofreq/global\discretionary {-}{}{}\_\discretionary {-}{}{}objects/body.cpp File Reference}{290}{section.16.59}
+\contentsline {section}{\numberline {16.60}bin/ofreq/global\discretionary {-}{}{}\_\discretionary {-}{}{}objects/body.h File Reference}{290}{section.16.60}
+\contentsline {section}{\numberline {16.61}bin/ofreq/global\discretionary {-}{}{}\_\discretionary {-}{}{}objects/derivative.cpp File Reference}{291}{section.16.61}
+\contentsline {section}{\numberline {16.62}bin/ofreq/global\discretionary {-}{}{}\_\discretionary {-}{}{}objects/derivative.h File Reference}{291}{section.16.62}
+\contentsline {section}{\numberline {16.63}bin/ofreq/global\discretionary {-}{}{}\_\discretionary {-}{}{}objects/equation.cpp File Reference}{292}{section.16.63}
+\contentsline {section}{\numberline {16.64}bin/ofreq/global\discretionary {-}{}{}\_\discretionary {-}{}{}objects/equation.h File Reference}{293}{section.16.64}
+\contentsline {section}{\numberline {16.65}bin/ofreq/global\discretionary {-}{}{}\_\discretionary {-}{}{}objects/force.cpp File Reference}{294}{section.16.65}
+\contentsline {section}{\numberline {16.66}bin/ofreq/global\discretionary {-}{}{}\_\discretionary {-}{}{}objects/force.h File Reference}{294}{section.16.66}
+\contentsline {section}{\numberline {16.67}bin/ofreq/global\discretionary {-}{}{}\_\discretionary {-}{}{}objects/forceactive.cpp File Reference}{295}{section.16.67}
+\contentsline {section}{\numberline {16.68}bin/ofreq/global\discretionary {-}{}{}\_\discretionary {-}{}{}objects/forceactive.h File Reference}{295}{section.16.68}
+\contentsline {subsection}{\numberline {16.68.1}Macro Definition Documentation}{296}{subsection.16.68.1}
+\contentsline {subsubsection}{\numberline {16.68.1.1}F\discretionary {-}{}{}O\discretionary {-}{}{}R\discretionary {-}{}{}C\discretionary {-}{}{}E\discretionary {-}{}{}A\discretionary {-}{}{}C\discretionary {-}{}{}T\discretionary {-}{}{}I\discretionary {-}{}{}V\discretionary {-}{}{}E\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}H}{296}{subsubsection.16.68.1.1}
+\contentsline {section}{\numberline {16.69}bin/ofreq/global\discretionary {-}{}{}\_\discretionary {-}{}{}objects/forcecross.cpp File Reference}{297}{section.16.69}
+\contentsline {section}{\numberline {16.70}bin/ofreq/global\discretionary {-}{}{}\_\discretionary {-}{}{}objects/forcecross.h File Reference}{297}{section.16.70}
+\contentsline {section}{\numberline {16.71}bin/ofreq/global\discretionary {-}{}{}\_\discretionary {-}{}{}objects/forcereact.cpp File Reference}{298}{section.16.71}
+\contentsline {section}{\numberline {16.72}bin/ofreq/global\discretionary {-}{}{}\_\discretionary {-}{}{}objects/forcereact.h File Reference}{298}{section.16.72}
+\contentsline {section}{\numberline {16.73}bin/ofreq/global\discretionary {-}{}{}\_\discretionary {-}{}{}objects/ofreqcore.cpp File Reference}{299}{section.16.73}
+\contentsline {section}{\numberline {16.74}bin/ofreq/global\discretionary {-}{}{}\_\discretionary {-}{}{}objects/ofreqcore.h File Reference}{299}{section.16.74}
+\contentsline {section}{\numberline {16.75}bin/ofreq/global\discretionary {-}{}{}\_\discretionary {-}{}{}objects/solution.cpp File Reference}{300}{section.16.75}
+\contentsline {section}{\numberline {16.76}bin/ofreq/global\discretionary {-}{}{}\_\discretionary {-}{}{}objects/solution.h File Reference}{300}{section.16.76}
+\contentsline {section}{\numberline {16.77}bin/ofreq/global\discretionary {-}{}{}\_\discretionary {-}{}{}objects/solutionset.cpp File Reference}{301}{section.16.77}
+\contentsline {section}{\numberline {16.78}bin/ofreq/global\discretionary {-}{}{}\_\discretionary {-}{}{}objects/solutionset.h File Reference}{301}{section.16.78}
+\contentsline {section}{\numberline {16.79}bin/ofreq/global\discretionary {-}{}{}\_\discretionary {-}{}{}objects/system.cpp File Reference}{303}{section.16.79}
+\contentsline {section}{\numberline {16.80}bin/ofreq/global\discretionary {-}{}{}\_\discretionary {-}{}{}objects/system.h File Reference}{303}{section.16.80}
+\contentsline {section}{\numberline {16.81}bin/ofreq/motion\discretionary {-}{}{}\_\discretionary {-}{}{}model/eqnrotation.cpp File Reference}{304}{section.16.81}
+\contentsline {section}{\numberline {16.82}bin/ofreq/motion\discretionary {-}{}{}\_\discretionary {-}{}{}model/eqnrotation.h File Reference}{304}{section.16.82}
+\contentsline {section}{\numberline {16.83}bin/ofreq/motion\discretionary {-}{}{}\_\discretionary {-}{}{}model/eqntranslation.cpp File Reference}{305}{section.16.83}
+\contentsline {section}{\numberline {16.84}bin/ofreq/motion\discretionary {-}{}{}\_\discretionary {-}{}{}model/eqntranslation.h File Reference}{306}{section.16.84}
+\contentsline {section}{\numberline {16.85}bin/ofreq/motion\discretionary {-}{}{}\_\discretionary {-}{}{}model/equationofmotion.cpp File Reference}{306}{section.16.85}
+\contentsline {section}{\numberline {16.86}bin/ofreq/motion\discretionary {-}{}{}\_\discretionary {-}{}{}model/equationofmotion.h File Reference}{307}{section.16.86}
+\contentsline {section}{\numberline {16.87}bin/ofreq/motion\discretionary {-}{}{}\_\discretionary {-}{}{}model/model6dof.cpp File Reference}{308}{section.16.87}
+\contentsline {section}{\numberline {16.88}bin/ofreq/motion\discretionary {-}{}{}\_\discretionary {-}{}{}model/model6dof.h File Reference}{308}{section.16.88}
+\contentsline {section}{\numberline {16.89}bin/ofreq/motion\discretionary {-}{}{}\_\discretionary {-}{}{}model/motionmodel.cpp File Reference}{309}{section.16.89}
+\contentsline {section}{\numberline {16.90}bin/ofreq/motion\discretionary {-}{}{}\_\discretionary {-}{}{}model/motionmodel.h File Reference}{309}{section.16.90}
+\contentsline {section}{\numberline {16.91}bin/ofreq/motion\discretionary {-}{}{}\_\discretionary {-}{}{}solver/matbody.cpp File Reference}{310}{section.16.91}
+\contentsline {section}{\numberline {16.92}bin/ofreq/motion\discretionary {-}{}{}\_\discretionary {-}{}{}solver/matbody.h File Reference}{310}{section.16.92}
+\contentsline {section}{\numberline {16.93}bin/ofreq/motion\discretionary {-}{}{}\_\discretionary {-}{}{}solver/matforceactive.cpp File Reference}{311}{section.16.93}
+\contentsline {section}{\numberline {16.94}bin/ofreq/motion\discretionary {-}{}{}\_\discretionary {-}{}{}solver/matforceactive.h File Reference}{311}{section.16.94}
+\contentsline {section}{\numberline {16.95}bin/ofreq/motion\discretionary {-}{}{}\_\discretionary {-}{}{}solver/matforcecross.cpp File Reference}{312}{section.16.95}
+\contentsline {section}{\numberline {16.96}bin/ofreq/motion\discretionary {-}{}{}\_\discretionary {-}{}{}solver/matforcecross.h File Reference}{313}{section.16.96}
+\contentsline {section}{\numberline {16.97}bin/ofreq/motion\discretionary {-}{}{}\_\discretionary {-}{}{}solver/matforcereact.cpp File Reference}{314}{section.16.97}
+\contentsline {section}{\numberline {16.98}bin/ofreq/motion\discretionary {-}{}{}\_\discretionary {-}{}{}solver/matforcereact.h File Reference}{314}{section.16.98}
+\contentsline {section}{\numberline {16.99}bin/ofreq/motion\discretionary {-}{}{}\_\discretionary {-}{}{}solver/motionsolver.cpp File Reference}{315}{section.16.99}
+\contentsline {section}{\numberline {16.100}bin/ofreq/motion\discretionary {-}{}{}\_\discretionary {-}{}{}solver/motionsolver.h File Reference}{315}{section.16.100}
+\contentsline {section}{\numberline {16.101}bin/ofreq/ofreq.cpp File Reference}{316}{section.16.101}
+\contentsline {subsection}{\numberline {16.101.1}Function Documentation}{317}{subsection.16.101.1}
+\contentsline {subsubsection}{\numberline {16.101.1.1}build\discretionary {-}{}{}Mat\discretionary {-}{}{}Body}{317}{subsubsection.16.101.1.1}
+\contentsline {subsubsection}{\numberline {16.101.1.2}calc\discretionary {-}{}{}Output}{317}{subsubsection.16.101.1.2}
+\contentsline {subsubsection}{\numberline {16.101.1.3}get\discretionary {-}{}{}Path}{317}{subsubsection.16.101.1.3}
+\contentsline {subsubsection}{\numberline {16.101.1.4}get\discretionary {-}{}{}Path}{318}{subsubsection.16.101.1.4}
+\contentsline {subsubsection}{\numberline {16.101.1.5}main}{318}{subsubsection.16.101.1.5}
+\contentsline {subsubsection}{\numberline {16.101.1.6}Read\discretionary {-}{}{}Files}{318}{subsubsection.16.101.1.6}
+\contentsline {subsection}{\numberline {16.101.2}Variable Documentation}{319}{subsection.16.101.2}
+\contentsline {subsubsection}{\numberline {16.101.2.1}B\discretionary {-}{}{}I\discretionary {-}{}{}N\discretionary {-}{}{}F\discretionary {-}{}{}O\discretionary {-}{}{}L\discretionary {-}{}{}D\discretionary {-}{}{}E\discretionary {-}{}{}R}{319}{subsubsection.16.101.2.1}
+\contentsline {subsubsection}{\numberline {16.101.2.2}E\discretionary {-}{}{}T\discretionary {-}{}{}C\discretionary {-}{}{}F\discretionary {-}{}{}O\discretionary {-}{}{}L\discretionary {-}{}{}D\discretionary {-}{}{}E\discretionary {-}{}{}R}{319}{subsubsection.16.101.2.2}
+\contentsline {subsubsection}{\numberline {16.101.2.3}E\discretionary {-}{}{}X\discretionary {-}{}{}E\discretionary {-}{}{}C\discretionary {-}{}{}F\discretionary {-}{}{}O\discretionary {-}{}{}L\discretionary {-}{}{}D\discretionary {-}{}{}E\discretionary {-}{}{}R}{319}{subsubsection.16.101.2.3}
+\contentsline {subsubsection}{\numberline {16.101.2.4}E\discretionary {-}{}{}X\discretionary {-}{}{}E\discretionary {-}{}{}C\discretionary {-}{}{}N\discretionary {-}{}{}A\discretionary {-}{}{}M\discretionary {-}{}{}E}{319}{subsubsection.16.101.2.4}
+\contentsline {subsubsection}{\numberline {16.101.2.5}L\discretionary {-}{}{}I\discretionary {-}{}{}B\discretionary {-}{}{}F\discretionary {-}{}{}O\discretionary {-}{}{}L\discretionary {-}{}{}D\discretionary {-}{}{}E\discretionary {-}{}{}R}{319}{subsubsection.16.101.2.5}
+\contentsline {subsubsection}{\numberline {16.101.2.6}list\discretionary {-}{}{}Mat\discretionary {-}{}{}Body}{319}{subsubsection.16.101.2.6}
+\contentsline {subsubsection}{\numberline {16.101.2.7}list\discretionary {-}{}{}Solutions}{319}{subsubsection.16.101.2.7}
+\contentsline {subsubsection}{\numberline {16.101.2.8}Logs}{319}{subsubsection.16.101.2.8}
+\contentsline {subsubsection}{\numberline {16.101.2.9}o\discretionary {-}{}{}Freq\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}Directory}{319}{subsubsection.16.101.2.9}
+\contentsline {subsubsection}{\numberline {16.101.2.10}sysofreq}{319}{subsubsection.16.101.2.10}
+\contentsline {subsubsection}{\numberline {16.101.2.11}V\discretionary {-}{}{}A\discretionary {-}{}{}R\discretionary {-}{}{}F\discretionary {-}{}{}O\discretionary {-}{}{}L\discretionary {-}{}{}D\discretionary {-}{}{}E\discretionary {-}{}{}R}{319}{subsubsection.16.101.2.11}
+\contentsline {section}{\numberline {16.102}bin/ofreq/wave\discretionary {-}{}{}\_\discretionary {-}{}{}calcs/seaenviroment.h File Reference}{320}{section.16.102}
+\contentsline {chapter}{\numberline {17}Example Documentation}{321}{chapter.17}
+\contentsline {section}{\numberline {17.1}Example\discretionary {-}{}{}Text\discretionary {-}{}{}Header.\discretionary {-}{}{}txt}{321}{section.17.1}
+\contentsline {part}{Index}{321}{section.17.1}

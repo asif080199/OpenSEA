@@ -1,0 +1,10 @@
+/**
+\page coordinate_systems Coordinate Systems
+
+Two coordinate systems are used in ofreq:
+
+\subpage global_coordinates
+
+\subpage body_coordinates
+
+*/

@@ -1,0 +1,619 @@
+.TH "osea::ofreq::EqnTranslation" 3 "Sat Apr 5 2014" "Version 0.4" "oFreq" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+osea::ofreq::EqnTranslation \- 
+.PP
+The \fBEqnTranslation\fP class\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <eqntranslation\&.h>\fP
+.PP
+Inherits \fBosea::ofreq::EquationofMotion\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBEqnTranslation\fP (\fBMotionModel\fP *modelIn)"
+.br
+.RI "\fIDefault contrustor\&. Contains a reference to the motion model class which constructs it\&. \fP"
+.ti -1c
+.RI "\fBEqnTranslation\fP (\fBMotionModel\fP *modelIn, std::string NameIn)"
+.br
+.RI "\fIContrustor with name\&. Contains a reference to the motion model class which constructs it\&. \fP"
+.ti -1c
+.RI "\fBEqnTranslation\fP (\fBMotionModel\fP *modelIn, std::string NameIn, int IndexIn)"
+.br
+.RI "\fIContrustor with name and index\&. Contains a reference to the motion model class which constructs it\&. \fP"
+.ti -1c
+.RI "\fB~EqnTranslation\fP ()"
+.br
+.RI "\fIDefault destructor\&. \fP"
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "std::complex< double > \fBsetFormula\fP ()"
+.br
+.RI "\fIThe formula used by the equation of motion\&. \fP"
+.ti -1c
+.RI "std::complex< double > \fBFunc1\fP ()"
+.br
+.RI "\fIFunc1 through Func50 provide user custom defined functions\&. \fP"
+.ti -1c
+.RI "std::complex< double > \fBFunc2\fP ()"
+.br
+.ti -1c
+.RI "std::complex< double > \fBFunc3\fP ()"
+.br
+.ti -1c
+.RI "std::complex< double > \fBFunc4\fP ()"
+.br
+.ti -1c
+.RI "std::complex< double > \fBFunc5\fP ()"
+.br
+.ti -1c
+.RI "std::complex< double > \fBFunc6\fP ()"
+.br
+.ti -1c
+.RI "std::complex< double > \fBFunc7\fP ()"
+.br
+.ti -1c
+.RI "std::complex< double > \fBFunc8\fP ()"
+.br
+.ti -1c
+.RI "std::complex< double > \fBFunc9\fP ()"
+.br
+.ti -1c
+.RI "std::complex< double > \fBFunc10\fP ()"
+.br
+.ti -1c
+.RI "std::complex< double > \fBFunc11\fP ()"
+.br
+.ti -1c
+.RI "std::complex< double > \fBFunc12\fP ()"
+.br
+.ti -1c
+.RI "std::complex< double > \fBFunc13\fP ()"
+.br
+.ti -1c
+.RI "std::complex< double > \fBFunc14\fP ()"
+.br
+.ti -1c
+.RI "std::complex< double > \fBFunc15\fP ()"
+.br
+.ti -1c
+.RI "std::complex< double > \fBFunc16\fP ()"
+.br
+.ti -1c
+.RI "std::complex< double > \fBFunc17\fP ()"
+.br
+.ti -1c
+.RI "std::complex< double > \fBFunc18\fP ()"
+.br
+.ti -1c
+.RI "std::complex< double > \fBFunc19\fP ()"
+.br
+.ti -1c
+.RI "std::complex< double > \fBFunc20\fP ()"
+.br
+.ti -1c
+.RI "std::complex< double > \fBFunc21\fP ()"
+.br
+.ti -1c
+.RI "std::complex< double > \fBFunc22\fP ()"
+.br
+.ti -1c
+.RI "std::complex< double > \fBFunc23\fP ()"
+.br
+.ti -1c
+.RI "std::complex< double > \fBFunc24\fP ()"
+.br
+.ti -1c
+.RI "std::complex< double > \fBFunc25\fP ()"
+.br
+.ti -1c
+.RI "std::complex< double > \fBFunc26\fP ()"
+.br
+.ti -1c
+.RI "std::complex< double > \fBFunc27\fP ()"
+.br
+.ti -1c
+.RI "std::complex< double > \fBFunc28\fP ()"
+.br
+.ti -1c
+.RI "std::complex< double > \fBFunc29\fP ()"
+.br
+.ti -1c
+.RI "std::complex< double > \fBFunc30\fP ()"
+.br
+.ti -1c
+.RI "std::complex< double > \fBFunc31\fP ()"
+.br
+.ti -1c
+.RI "std::complex< double > \fBFunc32\fP ()"
+.br
+.ti -1c
+.RI "std::complex< double > \fBFunc33\fP ()"
+.br
+.ti -1c
+.RI "std::complex< double > \fBFunc34\fP ()"
+.br
+.ti -1c
+.RI "std::complex< double > \fBFunc35\fP ()"
+.br
+.ti -1c
+.RI "std::complex< double > \fBFunc36\fP ()"
+.br
+.ti -1c
+.RI "std::complex< double > \fBFunc37\fP ()"
+.br
+.ti -1c
+.RI "std::complex< double > \fBFunc38\fP ()"
+.br
+.ti -1c
+.RI "std::complex< double > \fBFunc39\fP ()"
+.br
+.ti -1c
+.RI "std::complex< double > \fBFunc40\fP ()"
+.br
+.ti -1c
+.RI "std::complex< double > \fBFunc41\fP ()"
+.br
+.ti -1c
+.RI "std::complex< double > \fBFunc42\fP ()"
+.br
+.ti -1c
+.RI "std::complex< double > \fBFunc43\fP ()"
+.br
+.ti -1c
+.RI "std::complex< double > \fBFunc44\fP ()"
+.br
+.ti -1c
+.RI "std::complex< double > \fBFunc45\fP ()"
+.br
+.ti -1c
+.RI "std::complex< double > \fBFunc46\fP ()"
+.br
+.ti -1c
+.RI "std::complex< double > \fBFunc47\fP ()"
+.br
+.ti -1c
+.RI "std::complex< double > \fBFunc48\fP ()"
+.br
+.ti -1c
+.RI "std::complex< double > \fBFunc49\fP ()"
+.br
+.ti -1c
+.RI "std::complex< double > \fBFunc50\fP ()"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+The \fBEqnTranslation\fP class\&. 
+
+This class defines motion for linear translation in one of the three principle axes\&. (X-axis, Y-axis, Z-axis)\&. This is specific to rigid body motion and intended for applicaiton in a six-degree of freedom (6DOF) motion model\&. 
+.PP
+ This class is a derived equation of motion\&. It inherits all the programming needed to define an equation of motion from the class \fBEquationofMotion\fP\&.
+.PP
+Custom equation classes serve a specific purpose\&. All the programming necessary to define an equation of motion within the program ofreq is already contained within the class \fBEquationofMotion\fP\&. All that programming gets inherited from the class\&. The only thing the custom class needs to define is the specific equation for this purpose\&. That equation is contained inside the function \fBsetFormula()\fP\&. Everything else is already defined, as far as programming\&.
+.PP
+There are specific requirements for how to define the custom \fBEquationofMotion\fP class\&. These instructions assume the user has some basic experience with C++ programming\&. If not, first try a few tutorials\&. There are numerous tutorials on the internet\&. You should specifically familiarize yourself with concepts such as namespaces, classes, objects, and functions\&. Every effort was made to isolate the user from the complexity of the ofreq program, but some basic understand of program operation is needed\&.
+.PP
+Assuming you have a basic knowledge of C++ programming, you can create your custom equation of motion by editing the \&.cpp file associated with this class\&. Follow these basic rules:
+.PP
+1\&.) Always create a backup of every file before you edit it\&.
+.PP
+2\&.) Only edit the \&.cpp file\&. Leave the header file alone (the \&.h file)\&. The header file creates the linking necessary to make everything work correctly\&.
+.PP
+3\&.) Only define your equation within the function \fBsetFormula()\fP\&.
+.PP
+4\&.) Do not add function definitions to the header file unless you are familiar with C++ class programming and know how to safely add the function into the class definition\&. If you need to define custom functions for your equstions, the safest thing is to define them strictly within your source code file (\&.cpp file)\&. Just remember that all functions must be fully defined before they get used within the code\&.
+.PP
+5\&.) There are several functions inheritted from the \fBEquationofMotion\fP class\&. You can use these to refer to the different forces when developing your own equation of motion\&. oFreq recognizes seven (7) basic force types shown below, with the function name to reference them in the \fBEquationofMotion\fP\&. (Arguments for each function are not shown, for sake of clarity\&. 5\&.1) \fBForceMass()\fP = The forces associated with the mass of an object\&. This includes direct mass for straight linear motion, and moment of inertia for rotational motion\&. 5\&.2) \fBForceActive_hydro()\fP = The forces which are independant of body motions\&. The hydro subcategory refers to active forces that specifically come from hydrodynamic forces\&. This includes the forces from incident waves\&. Sometimes call the Froude-Krylov forces\&. 5\&.3) \fBForceActive_user()\fP = The forces which are independant of body motions\&. The user subcategory refers to active forces specifically defined by the user in the ofreq run file\&. These may be some external force such as an active control system\&. Regardless, it is customed defined by the user\&. 5\&.4) \fBForceReact_hydro()\fP = The forces which are reactive and dependant on body motions\&. This includes derivatives of body motions\&. The hydro subcategory refers to reactive forces hydrodynamic in origin\&. This would include body hydrostatic properties, added damping, and added mass\&. 5\&.5) \fBForceReact_user()\fP = The forces which are reactive and dependant on body motions\&. This includes derivatives of body motions\&. The user subcategory refers to reactive forces defined by the user\&. This might include external forces such as a mooring line or dynamic positioning system\&. In any case, these are reactive forces defined at run time in the ofreq input files\&. 5\&.6) \fBForceCross_hydro()\fP = The forces which are reactive and dependant on the body motions of another body\&. This is only applicable to multi-body systems\&. Examples might be two vessels near each other\&. The program can accept equations that use the cross-body forces but are only applied to a single body problem\&. The hydro subcategory refers to reactive forces hydrodynamic in origin\&. This would include body hydrostatic properties, added damping, and added mass, except that these forces would be dependant on the motions of another body\&. 5\&.7) \fBForceCross_user()\fP = The forces which are reactive and dependant on the body motions of another body\&. This is only applicable to multi-body systems\&. Examples might be two vessels near each other\&. The program can accept equations that use the cross-body forces but are only applied to a single body problem\&. The user subcategory refers to reactive forces defined by the user\&. This might include external forces such as a mooring line or dynamic positioning system\&. In any case, these are reactive forces defined at run time in the ofreq input files\&.
+.PP
+6\&.) Use of the \fBSum()\fP Function\&. There are three possible implementations of the \fBSum()\fP function\&. The input syntax determines which function to use\&. 6\&.1) Sum a finite value: This implementation occurrs when a variable is provided as the argument for for the summation\&. The variable must be of data type complex<double>\&. The variable will not change during the summation\&. Variable is passed by value\&. 6\&.2) Sum a function contained within the class: This is the most common implementation of the \fBSum()\fP function\&. The class has 50 functions provided for your use\&. They are named Func1 through Func50\&. You may enter any code within these functions\&. But the functions do not accept any inputs\&. This is a limitation of program\&. The functions will update with each iteration of the \fBSum()\fP function\&. Anyhthing that you wish to change during summation must be captured within one of the custom functions\&. This also includes references to any other class functions\&. To implement the custom function, you simply type in the function name as a string input\&. Example: Sum( 'Func1()', 'body', 0, 1)
+.PP
+And then the function definition for Func1 would be: \fBFunc1()\fP { return ForceReact_hydro(\fBord()\fP, \fBvar()\fP) * Ddt(\fBvar()\fP, \fBord()\fP); }
+.PP
+This was just one example\&. Any combination may be used within the custom function\&. 6\&.3) Sum a function not contained within the class\&. This is mostly used for debugging when you wish to test a custom equation of motion, isolated from the main program\&. The returned data type from the function must be complex<double>\&. To use your external function within the \fBSum()\fP function, you must enter as a function pointer\&. The Sum function expects a pointer to a function\&. You would enter it as follows (all capitals are the terms you change for your specific function):
+.PP
+output = Sum( &FUNCTION_NAME, index, from, to);
+.PP
+Two key points to notice: The function name was preceded with a reference symbol ( & ); and I only stated the function name\&. I did not include the brackets to explicitely state that it's a function\&. Don't include the brackets\&. You will get a compiler error if you do\&.
+.PP
+\fBSee Also:\fP
+.RS 4
+\fBEquationofMotion\fP 
+.PP
+\fBMotionModel\fP 
+.RE
+.PP
+
+.PP
+Definition at line 186 of file eqntranslation\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "EqnTranslation::EqnTranslation (\fBMotionModel\fP *modelIn)"
+
+.PP
+Default contrustor\&. Contains a reference to the motion model class which constructs it\&. Default contrustor\&. Contains a reference to the motion model class which constructs it\&. The constructing class is necessary because several functions in the EquationOfMotion class use data in the constructing class, the motion model class\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fImodelIn\fP A pointer to the motion model object that created the equation of motion\&. 
+.RE
+.PP
+
+.PP
+Definition at line 38 of file eqntranslation\&.cpp\&.
+.SS "EqnTranslation::EqnTranslation (\fBMotionModel\fP *modelIn, std::stringNameIn)"
+
+.PP
+Contrustor with name\&. Contains a reference to the motion model class which constructs it\&. Default contrustor\&. Contains a reference to the motion model class which constructs it\&. The constructing class is necessary because several functions in the EquationOfMotion class use data in the constructing class, the motion model class\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fImodelIn\fP A pointer to the motion model object that created the equation of motion\&. 
+.br
+\fINameIn\fP A name for what physical property the equation solves for\&. Used for user output\&. Not critical to program execution\&. 
+.RE
+.PP
+
+.PP
+Definition at line 45 of file eqntranslation\&.cpp\&.
+.SS "EqnTranslation::EqnTranslation (\fBMotionModel\fP *modelIn, std::stringNameIn, intIndexIn)"
+
+.PP
+Contrustor with name and index\&. Contains a reference to the motion model class which constructs it\&. Default contrustor\&. Contains a reference to the motion model class which constructs it\&. The constructing class is necessary because several functions in the EquationOfMotion class use data in the constructing class, the motion model class\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fImodelIn\fP A pointer to the motion model object that created the equation of motion\&. 
+.br
+\fINameIn\fP A name for what physical property the equation solves for\&. Used for user output\&. Not critical to program execution\&. 
+.br
+\fIIndexIn\fP Sets the index for the \fBEquation\fP of Motion\&. The index is how the equation determines which numbers to access on the data\&. The following indices are used\&. Any higher indices can extend beyond this range, and the program easily adapts\&. But the following three are reserved\&. Unused indices are not transferred to the matrices when solved\&. So unused indices to not negatively impact calculation performance\&. However, using excessively large indices (say 500 when you only have 3 equations) will result in large matrices and unecessary memory requirements\&. THe following index reservations apply\&. 1: Translation in x-direction\&. Specific to rigid body motion\&. 2: Translation in y-direction\&. Specific to rigid body motion\&. 3: Translation in z-direction\&. Specific to rigid body motion\&. 4: Rotation about x-direction\&. Specific to rigid body motion\&. 5: Rotation about y-direction\&. Specific to rigid body motion\&. 6: Rotation about z-direction\&. Specific to rigid body motion\&. 
+.RE
+.PP
+
+.PP
+Definition at line 52 of file eqntranslation\&.cpp\&.
+.SS "EqnTranslation::~EqnTranslation ()"
+
+.PP
+Default destructor\&. 
+.PP
+Definition at line 59 of file eqntranslation\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "std::complex< double > EqnTranslation::Func1 ()\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Func1 through Func50 provide user custom defined functions\&. These are custom functions that the user may need to create to define their equations of motion\&. The only restriction is that the functions can not take any arguments\&. Any arguments required must be supplied through a set of global variables\&. Sorry, that's just a restriction of how the code is written and the use of the C++ language\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+Returns a complex<double> variable\&. Returned variabled passed by value\&. 
+.RE
+.PP
+
+.PP
+Reimplemented from \fBosea::ofreq::EquationofMotion\fP\&.
+.PP
+Definition at line 139 of file eqntranslation\&.cpp\&.
+.SS "std::complex< double > EqnTranslation::Func10 ()\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Reimplemented from \fBosea::ofreq::EquationofMotion\fP\&.
+.PP
+Definition at line 204 of file eqntranslation\&.cpp\&.
+.SS "std::complex< double > EqnTranslation::Func11 ()\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Reimplemented from \fBosea::ofreq::EquationofMotion\fP\&.
+.PP
+Definition at line 211 of file eqntranslation\&.cpp\&.
+.SS "std::complex< double > EqnTranslation::Func12 ()\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Reimplemented from \fBosea::ofreq::EquationofMotion\fP\&.
+.PP
+Definition at line 217 of file eqntranslation\&.cpp\&.
+.SS "std::complex< double > EqnTranslation::Func13 ()\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Reimplemented from \fBosea::ofreq::EquationofMotion\fP\&.
+.PP
+Definition at line 223 of file eqntranslation\&.cpp\&.
+.SS "std::complex< double > EqnTranslation::Func14 ()\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Reimplemented from \fBosea::ofreq::EquationofMotion\fP\&.
+.PP
+Definition at line 229 of file eqntranslation\&.cpp\&.
+.SS "std::complex< double > EqnTranslation::Func15 ()\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Reimplemented from \fBosea::ofreq::EquationofMotion\fP\&.
+.PP
+Definition at line 235 of file eqntranslation\&.cpp\&.
+.SS "std::complex< double > EqnTranslation::Func16 ()\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Reimplemented from \fBosea::ofreq::EquationofMotion\fP\&.
+.PP
+Definition at line 241 of file eqntranslation\&.cpp\&.
+.SS "std::complex< double > EqnTranslation::Func17 ()\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Reimplemented from \fBosea::ofreq::EquationofMotion\fP\&.
+.PP
+Definition at line 247 of file eqntranslation\&.cpp\&.
+.SS "std::complex< double > EqnTranslation::Func18 ()\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Reimplemented from \fBosea::ofreq::EquationofMotion\fP\&.
+.PP
+Definition at line 253 of file eqntranslation\&.cpp\&.
+.SS "std::complex< double > EqnTranslation::Func19 ()\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Reimplemented from \fBosea::ofreq::EquationofMotion\fP\&.
+.PP
+Definition at line 259 of file eqntranslation\&.cpp\&.
+.SS "std::complex< double > EqnTranslation::Func2 ()\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Reimplemented from \fBosea::ofreq::EquationofMotion\fP\&.
+.PP
+Definition at line 146 of file eqntranslation\&.cpp\&.
+.SS "std::complex< double > EqnTranslation::Func20 ()\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Reimplemented from \fBosea::ofreq::EquationofMotion\fP\&.
+.PP
+Definition at line 265 of file eqntranslation\&.cpp\&.
+.SS "std::complex< double > EqnTranslation::Func21 ()\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Reimplemented from \fBosea::ofreq::EquationofMotion\fP\&.
+.PP
+Definition at line 271 of file eqntranslation\&.cpp\&.
+.SS "std::complex< double > EqnTranslation::Func22 ()\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Reimplemented from \fBosea::ofreq::EquationofMotion\fP\&.
+.PP
+Definition at line 277 of file eqntranslation\&.cpp\&.
+.SS "std::complex< double > EqnTranslation::Func23 ()\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Reimplemented from \fBosea::ofreq::EquationofMotion\fP\&.
+.PP
+Definition at line 283 of file eqntranslation\&.cpp\&.
+.SS "std::complex< double > EqnTranslation::Func24 ()\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Reimplemented from \fBosea::ofreq::EquationofMotion\fP\&.
+.PP
+Definition at line 289 of file eqntranslation\&.cpp\&.
+.SS "std::complex< double > EqnTranslation::Func25 ()\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Reimplemented from \fBosea::ofreq::EquationofMotion\fP\&.
+.PP
+Definition at line 295 of file eqntranslation\&.cpp\&.
+.SS "std::complex< double > EqnTranslation::Func26 ()\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Reimplemented from \fBosea::ofreq::EquationofMotion\fP\&.
+.PP
+Definition at line 301 of file eqntranslation\&.cpp\&.
+.SS "std::complex< double > EqnTranslation::Func27 ()\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Reimplemented from \fBosea::ofreq::EquationofMotion\fP\&.
+.PP
+Definition at line 307 of file eqntranslation\&.cpp\&.
+.SS "std::complex< double > EqnTranslation::Func28 ()\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Reimplemented from \fBosea::ofreq::EquationofMotion\fP\&.
+.PP
+Definition at line 313 of file eqntranslation\&.cpp\&.
+.SS "std::complex< double > EqnTranslation::Func29 ()\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Reimplemented from \fBosea::ofreq::EquationofMotion\fP\&.
+.PP
+Definition at line 319 of file eqntranslation\&.cpp\&.
+.SS "std::complex< double > EqnTranslation::Func3 ()\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Reimplemented from \fBosea::ofreq::EquationofMotion\fP\&.
+.PP
+Definition at line 153 of file eqntranslation\&.cpp\&.
+.SS "std::complex< double > EqnTranslation::Func30 ()\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Reimplemented from \fBosea::ofreq::EquationofMotion\fP\&.
+.PP
+Definition at line 325 of file eqntranslation\&.cpp\&.
+.SS "std::complex< double > EqnTranslation::Func31 ()\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Reimplemented from \fBosea::ofreq::EquationofMotion\fP\&.
+.PP
+Definition at line 331 of file eqntranslation\&.cpp\&.
+.SS "std::complex< double > EqnTranslation::Func32 ()\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Reimplemented from \fBosea::ofreq::EquationofMotion\fP\&.
+.PP
+Definition at line 337 of file eqntranslation\&.cpp\&.
+.SS "std::complex< double > EqnTranslation::Func33 ()\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Reimplemented from \fBosea::ofreq::EquationofMotion\fP\&.
+.PP
+Definition at line 343 of file eqntranslation\&.cpp\&.
+.SS "std::complex< double > EqnTranslation::Func34 ()\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Reimplemented from \fBosea::ofreq::EquationofMotion\fP\&.
+.PP
+Definition at line 349 of file eqntranslation\&.cpp\&.
+.SS "std::complex< double > EqnTranslation::Func35 ()\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Reimplemented from \fBosea::ofreq::EquationofMotion\fP\&.
+.PP
+Definition at line 355 of file eqntranslation\&.cpp\&.
+.SS "std::complex< double > EqnTranslation::Func36 ()\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Reimplemented from \fBosea::ofreq::EquationofMotion\fP\&.
+.PP
+Definition at line 361 of file eqntranslation\&.cpp\&.
+.SS "std::complex< double > EqnTranslation::Func37 ()\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Reimplemented from \fBosea::ofreq::EquationofMotion\fP\&.
+.PP
+Definition at line 367 of file eqntranslation\&.cpp\&.
+.SS "std::complex< double > EqnTranslation::Func38 ()\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Reimplemented from \fBosea::ofreq::EquationofMotion\fP\&.
+.PP
+Definition at line 373 of file eqntranslation\&.cpp\&.
+.SS "std::complex< double > EqnTranslation::Func39 ()\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Reimplemented from \fBosea::ofreq::EquationofMotion\fP\&.
+.PP
+Definition at line 379 of file eqntranslation\&.cpp\&.
+.SS "std::complex< double > EqnTranslation::Func4 ()\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Reimplemented from \fBosea::ofreq::EquationofMotion\fP\&.
+.PP
+Definition at line 160 of file eqntranslation\&.cpp\&.
+.SS "std::complex< double > EqnTranslation::Func40 ()\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Reimplemented from \fBosea::ofreq::EquationofMotion\fP\&.
+.PP
+Definition at line 385 of file eqntranslation\&.cpp\&.
+.SS "std::complex< double > EqnTranslation::Func41 ()\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Reimplemented from \fBosea::ofreq::EquationofMotion\fP\&.
+.PP
+Definition at line 391 of file eqntranslation\&.cpp\&.
+.SS "std::complex< double > EqnTranslation::Func42 ()\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Reimplemented from \fBosea::ofreq::EquationofMotion\fP\&.
+.PP
+Definition at line 397 of file eqntranslation\&.cpp\&.
+.SS "std::complex< double > EqnTranslation::Func43 ()\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Reimplemented from \fBosea::ofreq::EquationofMotion\fP\&.
+.PP
+Definition at line 403 of file eqntranslation\&.cpp\&.
+.SS "std::complex< double > EqnTranslation::Func44 ()\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Reimplemented from \fBosea::ofreq::EquationofMotion\fP\&.
+.PP
+Definition at line 409 of file eqntranslation\&.cpp\&.
+.SS "std::complex< double > EqnTranslation::Func45 ()\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Reimplemented from \fBosea::ofreq::EquationofMotion\fP\&.
+.PP
+Definition at line 415 of file eqntranslation\&.cpp\&.
+.SS "std::complex< double > EqnTranslation::Func46 ()\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Reimplemented from \fBosea::ofreq::EquationofMotion\fP\&.
+.PP
+Definition at line 421 of file eqntranslation\&.cpp\&.
+.SS "std::complex< double > EqnTranslation::Func47 ()\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Reimplemented from \fBosea::ofreq::EquationofMotion\fP\&.
+.PP
+Definition at line 427 of file eqntranslation\&.cpp\&.
+.SS "std::complex< double > EqnTranslation::Func48 ()\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Reimplemented from \fBosea::ofreq::EquationofMotion\fP\&.
+.PP
+Definition at line 433 of file eqntranslation\&.cpp\&.
+.SS "std::complex< double > EqnTranslation::Func49 ()\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Reimplemented from \fBosea::ofreq::EquationofMotion\fP\&.
+.PP
+Definition at line 439 of file eqntranslation\&.cpp\&.
+.SS "std::complex< double > EqnTranslation::Func5 ()\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Reimplemented from \fBosea::ofreq::EquationofMotion\fP\&.
+.PP
+Definition at line 167 of file eqntranslation\&.cpp\&.
+.SS "std::complex< double > EqnTranslation::Func50 ()\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Reimplemented from \fBosea::ofreq::EquationofMotion\fP\&.
+.PP
+Definition at line 445 of file eqntranslation\&.cpp\&.
+.SS "std::complex< double > EqnTranslation::Func6 ()\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Reimplemented from \fBosea::ofreq::EquationofMotion\fP\&.
+.PP
+Definition at line 174 of file eqntranslation\&.cpp\&.
+.SS "std::complex< double > EqnTranslation::Func7 ()\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Reimplemented from \fBosea::ofreq::EquationofMotion\fP\&.
+.PP
+Definition at line 182 of file eqntranslation\&.cpp\&.
+.SS "std::complex< double > EqnTranslation::Func8 ()\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Reimplemented from \fBosea::ofreq::EquationofMotion\fP\&.
+.PP
+Definition at line 189 of file eqntranslation\&.cpp\&.
+.SS "std::complex< double > EqnTranslation::Func9 ()\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Reimplemented from \fBosea::ofreq::EquationofMotion\fP\&.
+.PP
+Definition at line 197 of file eqntranslation\&.cpp\&.
+.SS "complex< double > EqnTranslation::setFormula ()\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+The formula used by the equation of motion\&. The formula used by the equation of motion\&. The formula gets rewritten in a unique form\&. Rearrange any equations so that they have zero on the right hand size\&.
+.PP
+Example: If the formula were Ax + By = F, it must be rearranged to: Ax + By - F = 0
+.PP
+The formula can also make use of several math functions provided by the equation of motion object\&. 
+.PP
+Reimplemented from \fBosea::ofreq::EquationofMotion\fP\&.
+.PP
+Definition at line 84 of file eqntranslation\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for oFreq from the source code\&.

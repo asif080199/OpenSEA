@@ -1,0 +1,223 @@
+\hypertarget{classosea_1_1ofreq_1_1_solution}{\section{osea\-:\-:ofreq\-:\-:Solution Class Reference}
+\label{classosea_1_1ofreq_1_1_solution}\index{osea\-::ofreq\-::\-Solution@{osea\-::ofreq\-::\-Solution}}
+}
+
+
+{\ttfamily \#include $<$solution.\-h$>$}
+
+
+
+Inheritance diagram for osea\-:\-:ofreq\-:\-:Solution\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=218pt]{classosea_1_1ofreq_1_1_solution__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classosea_1_1ofreq_1_1_solution_ab55bd4b023d596ce11aaf737b9a6123b}{Solution} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\hyperlink{classosea_1_1ofreq_1_1_solution_a94b7a7a4ba3f9ce130be62f2ca3768a4}{Solution} (\hyperlink{classosea_1_1ofreq_1_1_body}{Body} \&bod\-In)
+\begin{DoxyCompactList}\small\item\em Creates the object and sets the reference body for the object. \end{DoxyCompactList}\item 
+\hyperlink{classosea_1_1ofreq_1_1_solution_a5d245f7409aacf6ace5e965b7879a580}{$\sim$\-Solution} ()
+\begin{DoxyCompactList}\small\item\em Default destructor. \end{DoxyCompactList}\item 
+arma\-::cx\-\_\-mat \& \hyperlink{classosea_1_1ofreq_1_1_solution_a97e6a64afec87dd0fa217f1d49449ac9}{ref\-Soln\-Mat} ()
+\begin{DoxyCompactList}\small\item\em Returns direct access to the solution matrix. \end{DoxyCompactList}\item 
+arma\-::cx\-\_\-mat \hyperlink{classosea_1_1ofreq_1_1_solution_a00801ca01862410a65fba3215bc8a789}{get\-Soln\-Mat} ()
+\begin{DoxyCompactList}\small\item\em Returns the solution matrix. \end{DoxyCompactList}\item 
+std\-::complex$<$ double $>$ \hyperlink{classosea_1_1ofreq_1_1_solution_a8f850820d65445470f4a0a5351f990e7}{get\-Soln\-Mat} (int index)
+\begin{DoxyCompactList}\small\item\em Returns a single entry in the solution matrix. Entry specified by index. \end{DoxyCompactList}\item 
+void \hyperlink{classosea_1_1ofreq_1_1_solution_a169b35ae15b49ca4096ea7e0ea927fec}{set\-Soln\-Mat} (arma\-::cx\-\_\-mat mat\-In)
+\begin{DoxyCompactList}\small\item\em Sets the solution matrix as a whole. \end{DoxyCompactList}\item 
+\hyperlink{classosea_1_1ofreq_1_1_body}{Body} \& \hyperlink{classosea_1_1ofreq_1_1_solution_a95519db148bcece14c88aab53f4ced0e}{ref\-Body} ()
+\begin{DoxyCompactList}\small\item\em Returns reference pointer to the reference body. Variable passed by reference. \end{DoxyCompactList}\item 
+void \hyperlink{classosea_1_1ofreq_1_1_solution_affec6f64a60e9ad3b5a236302e2dd820}{set\-Body} (\hyperlink{classosea_1_1ofreq_1_1_body}{Body} $\ast$input)
+\begin{DoxyCompactList}\small\item\em Sets the body object that the solution object is relevant to. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+This class defines a solution object. The solution object records the basic value of motion solution. The motion solution is translated back into body coordinate system. 
+
+Definition at line 89 of file solution.\-h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classosea_1_1ofreq_1_1_solution_ab55bd4b023d596ce11aaf737b9a6123b}{\index{osea\-::ofreq\-::\-Solution@{osea\-::ofreq\-::\-Solution}!Solution@{Solution}}
+\index{Solution@{Solution}!osea::ofreq::Solution@{osea\-::ofreq\-::\-Solution}}
+\subsubsection[{Solution}]{\setlength{\rightskip}{0pt plus 5cm}Solution\-::\-Solution (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_solution_ab55bd4b023d596ce11aaf737b9a6123b}
+
+
+Default constructor. 
+
+Default constructor. Nothing done here. 
+
+Definition at line 38 of file solution.\-cpp.
+
+\hypertarget{classosea_1_1ofreq_1_1_solution_a94b7a7a4ba3f9ce130be62f2ca3768a4}{\index{osea\-::ofreq\-::\-Solution@{osea\-::ofreq\-::\-Solution}!Solution@{Solution}}
+\index{Solution@{Solution}!osea::ofreq::Solution@{osea\-::ofreq\-::\-Solution}}
+\subsubsection[{Solution}]{\setlength{\rightskip}{0pt plus 5cm}osea\-::ofreq\-::\-Solution\-::\-Solution (
+\begin{DoxyParamCaption}
+\item[{{\bf Body} \&}]{bod\-In}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_solution_a94b7a7a4ba3f9ce130be62f2ca3768a4}
+
+
+Creates the object and sets the reference body for the object. 
+
+Creates the object and sets the reference body for the object. 
+\begin{DoxyParams}{Parameters}
+{\em bod\-In} & The reference body. Variabled passed by reference. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classosea_1_1ofreq_1_1_solution_a5d245f7409aacf6ace5e965b7879a580}{\index{osea\-::ofreq\-::\-Solution@{osea\-::ofreq\-::\-Solution}!$\sim$\-Solution@{$\sim$\-Solution}}
+\index{$\sim$\-Solution@{$\sim$\-Solution}!osea::ofreq::Solution@{osea\-::ofreq\-::\-Solution}}
+\subsubsection[{$\sim$\-Solution}]{\setlength{\rightskip}{0pt plus 5cm}Solution\-::$\sim$\-Solution (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_solution_a5d245f7409aacf6ace5e965b7879a580}
+
+
+Default destructor. 
+
+Default destructor. Nothing done here. 
+
+Definition at line 44 of file solution.\-cpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classosea_1_1ofreq_1_1_solution_a00801ca01862410a65fba3215bc8a789}{\index{osea\-::ofreq\-::\-Solution@{osea\-::ofreq\-::\-Solution}!get\-Soln\-Mat@{get\-Soln\-Mat}}
+\index{get\-Soln\-Mat@{get\-Soln\-Mat}!osea::ofreq::Solution@{osea\-::ofreq\-::\-Solution}}
+\subsubsection[{get\-Soln\-Mat}]{\setlength{\rightskip}{0pt plus 5cm}cx\-\_\-mat Solution\-::get\-Soln\-Mat (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_solution_a00801ca01862410a65fba3215bc8a789}
+
+
+Returns the solution matrix. 
+
+It gets filled with the output from the motion solver. Output is a column matrix (n by 1) of complex numbers. Output is in units of meters.
+
+Returns the solution matrix as a whole. \begin{DoxyReturn}{Returns}
+Returned value is a complex number matrix. Returned variable is passed by value. 
+\end{DoxyReturn}
+
+
+Definition at line 64 of file solution.\-cpp.
+
+\hypertarget{classosea_1_1ofreq_1_1_solution_a8f850820d65445470f4a0a5351f990e7}{\index{osea\-::ofreq\-::\-Solution@{osea\-::ofreq\-::\-Solution}!get\-Soln\-Mat@{get\-Soln\-Mat}}
+\index{get\-Soln\-Mat@{get\-Soln\-Mat}!osea::ofreq::Solution@{osea\-::ofreq\-::\-Solution}}
+\subsubsection[{get\-Soln\-Mat}]{\setlength{\rightskip}{0pt plus 5cm}complex$<$ double $>$ Solution\-::get\-Soln\-Mat (
+\begin{DoxyParamCaption}
+\item[{int}]{index}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_solution_a8f850820d65445470f4a0a5351f990e7}
+
+
+Returns a single entry in the solution matrix. Entry specified by index. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & The index of the entry to retrieve from the solution matrix. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns a complex number data type. Single value from the solution matrix. Value specified by the index input. Variable passed by value. 
+\end{DoxyReturn}
+
+
+Definition at line 57 of file solution.\-cpp.
+
+\hypertarget{classosea_1_1ofreq_1_1_solution_a95519db148bcece14c88aab53f4ced0e}{\index{osea\-::ofreq\-::\-Solution@{osea\-::ofreq\-::\-Solution}!ref\-Body@{ref\-Body}}
+\index{ref\-Body@{ref\-Body}!osea::ofreq::Solution@{osea\-::ofreq\-::\-Solution}}
+\subsubsection[{ref\-Body}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Body} \& Solution\-::ref\-Body (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_solution_a95519db148bcece14c88aab53f4ced0e}
+
+
+Returns reference pointer to the reference body. Variable passed by reference. 
+
+Returns reference pointer to the reference body. Variable passed by reference. Used for direct access to the reference body and all its member functions. \begin{DoxyReturn}{Returns}
+Returns reference pointer to the reference body. Variable passed by reference. 
+\end{DoxyReturn}
+
+
+Definition at line 79 of file solution.\-cpp.
+
+\hypertarget{classosea_1_1ofreq_1_1_solution_a97e6a64afec87dd0fa217f1d49449ac9}{\index{osea\-::ofreq\-::\-Solution@{osea\-::ofreq\-::\-Solution}!ref\-Soln\-Mat@{ref\-Soln\-Mat}}
+\index{ref\-Soln\-Mat@{ref\-Soln\-Mat}!osea::ofreq::Solution@{osea\-::ofreq\-::\-Solution}}
+\subsubsection[{ref\-Soln\-Mat}]{\setlength{\rightskip}{0pt plus 5cm}cx\-\_\-mat \& Solution\-::ref\-Soln\-Mat (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_solution_a97e6a64afec87dd0fa217f1d49449ac9}
+
+
+Returns direct access to the solution matrix. 
+
+Returns direct access to the solution matrix. Provides a pointer to the solution matrix. It gets filled with the output from the motion solver. Output is a column matrix (n by 1) of complex numbers. Output is in units of meters. \begin{DoxyReturn}{Returns}
+Returns direct access to the solution matrix. Provides a pointer to the solution matrix. Returned variable is passed by reference. 
+\end{DoxyReturn}
+
+
+Definition at line 50 of file solution.\-cpp.
+
+\hypertarget{classosea_1_1ofreq_1_1_solution_affec6f64a60e9ad3b5a236302e2dd820}{\index{osea\-::ofreq\-::\-Solution@{osea\-::ofreq\-::\-Solution}!set\-Body@{set\-Body}}
+\index{set\-Body@{set\-Body}!osea::ofreq::Solution@{osea\-::ofreq\-::\-Solution}}
+\subsubsection[{set\-Body}]{\setlength{\rightskip}{0pt plus 5cm}void Solution\-::set\-Body (
+\begin{DoxyParamCaption}
+\item[{{\bf Body} $\ast$}]{input}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_solution_affec6f64a60e9ad3b5a236302e2dd820}
+
+
+Sets the body object that the solution object is relevant to. 
+
+The solution set in this object is specific to a single body. The set\-Body method allows you to create a pointer to that \hyperlink{classosea_1_1ofreq_1_1_body}{Body} object for reference and use in other sections of code. 
+\begin{DoxyParams}{Parameters}
+{\em input} & Pointer to the \hyperlink{classosea_1_1ofreq_1_1_body}{Body} object. Pointer variable passed by value. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 86 of file solution.\-cpp.
+
+\hypertarget{classosea_1_1ofreq_1_1_solution_a169b35ae15b49ca4096ea7e0ea927fec}{\index{osea\-::ofreq\-::\-Solution@{osea\-::ofreq\-::\-Solution}!set\-Soln\-Mat@{set\-Soln\-Mat}}
+\index{set\-Soln\-Mat@{set\-Soln\-Mat}!osea::ofreq::Solution@{osea\-::ofreq\-::\-Solution}}
+\subsubsection[{set\-Soln\-Mat}]{\setlength{\rightskip}{0pt plus 5cm}void Solution\-::set\-Soln\-Mat (
+\begin{DoxyParamCaption}
+\item[{arma\-::cx\-\_\-mat}]{mat\-In}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_solution_a169b35ae15b49ca4096ea7e0ea927fec}
+
+
+Sets the solution matrix as a whole. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mat\-In} & The input matrix to set as the solution matrix. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 71 of file solution.\-cpp.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/home/\-Ship\-\_\-\-Design/\-Projects/\-D\-M\-S1305 Open\-S\-E\-A/master/200\-\_\-src/bin/ofreq/global\-\_\-objects/\hyperlink{solution_8h}{solution.\-h}\item 
+/home/\-Ship\-\_\-\-Design/\-Projects/\-D\-M\-S1305 Open\-S\-E\-A/master/200\-\_\-src/bin/ofreq/global\-\_\-objects/\hyperlink{solution_8cpp}{solution.\-cpp}\end{DoxyCompactItemize}

@@ -1,0 +1,236 @@
+\hypertarget{classosea_1_1_dictionary}{\section{osea\-:\-:Dictionary Class Reference}
+\label{classosea_1_1_dictionary}\index{osea\-::\-Dictionary@{osea\-::\-Dictionary}}
+}
+
+
+{\ttfamily \#include $<$dictionary.\-h$>$}
+
+
+
+Inheritance diagram for osea\-:\-:Dictionary\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classosea_1_1_dictionary__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{classosea_1_1_dictionary_a900221a385d133644aedcadbae90c2be}{set\-Object} (\hyperlink{classosea_1_1_object_group}{Object\-Group} input)
+\begin{DoxyCompactList}\small\item\em Public signal for the \hyperlink{classosea_1_1_object_group}{Object\-Group} object that is sent to the \hyperlink{classosea_1_1_dictionary}{Dictionary} object for procesing. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classosea_1_1_dictionary_a4f5b4ce990794a633ff8b69b8c021b66}{set\-System} (\hyperlink{classosea_1_1ofreq_1_1_system}{ofreq\-::\-System} $\ast$pt\-Input)
+\begin{DoxyCompactList}\small\item\em Sets the system object for the dictionary to reference. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classosea_1_1_dictionary_a6ff9dd5005c8796e0cc13a8bc4cb2288}{Dictionary} (Q\-Object $\ast$parent)
+\item 
+\hyperlink{classosea_1_1_dictionary_aee8d612bc9d323c38faba045ba384b8b}{Dictionary} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual int \hyperlink{classosea_1_1_dictionary_ae96470181c8b1762204493fa45e96d7c}{define\-Key} (std\-::string key\-In, std\-::vector$<$ std\-::string $>$ val\-In)
+\begin{DoxyCompactList}\small\item\em Pure virtual function that defines how to interpret the key values. Contains a list of key names and corresponding actions to take for interpretting each key value. \end{DoxyCompactList}\item 
+virtual int \hyperlink{classosea_1_1_dictionary_a42843f64aa966b8c686d9e3750cbdb4b}{define\-Class} (std\-::string name\-In)
+\begin{DoxyCompactList}\small\item\em Pure virtual function that defines how to interpret the class name. Class name implies declaration of a new object of the class named by the class name. This is a separate set of definitions to handle class declarations. \end{DoxyCompactList}\item 
+std\-::complex$<$ double $>$ \hyperlink{classosea_1_1_dictionary_ac714952a7fcf99ab69de015c606322ad}{convert\-Complex} (std\-::string input)
+\begin{DoxyCompactList}\small\item\em Converts a std\-::string of a complex number into a complex object (double base type) i.\-e. std\-::complex$<$double$>$. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classosea_1_1ofreq_1_1_system}{ofreq\-::\-System} $\ast$ \hyperlink{classosea_1_1_dictionary_a72bf4127a7ee1fb2b784abb6df020fed}{pt\-System}
+\begin{DoxyCompactList}\small\item\em Pointer to the System object. Used to reference any important variables in the System object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+This is a virtual class definition, inheritted by each file\-Dictionary object. Contains the basic functions for how to recursively progress through the definitions for an \hyperlink{classosea_1_1_object_group}{Object\-Group} object that is fed in. \begin{DoxySeeAlso}{See Also}
+\hyperlink{classosea_1_1_object_group}{Object\-Group} 
+\end{DoxySeeAlso}
+
+
+Definition at line 84 of file dictionary.\-h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classosea_1_1_dictionary_a6ff9dd5005c8796e0cc13a8bc4cb2288}{\index{osea\-::\-Dictionary@{osea\-::\-Dictionary}!Dictionary@{Dictionary}}
+\index{Dictionary@{Dictionary}!osea::Dictionary@{osea\-::\-Dictionary}}
+\subsubsection[{Dictionary}]{\setlength{\rightskip}{0pt plus 5cm}Dictionary\-::\-Dictionary (
+\begin{DoxyParamCaption}
+\item[{Q\-Object $\ast$}]{parent}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [explicit]}}}\label{classosea_1_1_dictionary_a6ff9dd5005c8796e0cc13a8bc4cb2288}
+
+
+Definition at line 36 of file dictionary.\-cpp.
+
+\hypertarget{classosea_1_1_dictionary_aee8d612bc9d323c38faba045ba384b8b}{\index{osea\-::\-Dictionary@{osea\-::\-Dictionary}!Dictionary@{Dictionary}}
+\index{Dictionary@{Dictionary}!osea::Dictionary@{osea\-::\-Dictionary}}
+\subsubsection[{Dictionary}]{\setlength{\rightskip}{0pt plus 5cm}Dictionary\-::\-Dictionary (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1_dictionary_aee8d612bc9d323c38faba045ba384b8b}
+
+
+Definition at line 42 of file dictionary.\-cpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classosea_1_1_dictionary_ac714952a7fcf99ab69de015c606322ad}{\index{osea\-::\-Dictionary@{osea\-::\-Dictionary}!convert\-Complex@{convert\-Complex}}
+\index{convert\-Complex@{convert\-Complex}!osea::Dictionary@{osea\-::\-Dictionary}}
+\subsubsection[{convert\-Complex}]{\setlength{\rightskip}{0pt plus 5cm}complex$<$ double $>$ Dictionary\-::convert\-Complex (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{input}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classosea_1_1_dictionary_ac714952a7fcf99ab69de015c606322ad}
+
+
+Converts a std\-::string of a complex number into a complex object (double base type) i.\-e. std\-::complex$<$double$>$. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em input} & The std\-::string which holds the complex number. Valid input formats are\-: 1.\-00+1.00i 1.\-00-\/1.\-00i 1.\-00+i1.00 1.\-00-\/i1.\-00 1.\-414$<$0.\-785398 (angle must be in radians) 1.\-414$<$-\/0.\-785398 (angle must be in radians) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns a std\-::complex$<$double$>$ object. Variable passed by value. 
+\end{DoxyReturn}
+
+
+Definition at line 105 of file dictionary.\-cpp.
+
+\hypertarget{classosea_1_1_dictionary_a42843f64aa966b8c686d9e3750cbdb4b}{\index{osea\-::\-Dictionary@{osea\-::\-Dictionary}!define\-Class@{define\-Class}}
+\index{define\-Class@{define\-Class}!osea::Dictionary@{osea\-::\-Dictionary}}
+\subsubsection[{define\-Class}]{\setlength{\rightskip}{0pt plus 5cm}int Dictionary\-::define\-Class (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{name\-In}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{classosea_1_1_dictionary_a42843f64aa966b8c686d9e3750cbdb4b}
+
+
+Pure virtual function that defines how to interpret the class name. Class name implies declaration of a new object of the class named by the class name. This is a separate set of definitions to handle class declarations. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name\-In} & std\-::string, variable passed by value. The name of the class name. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns status of assigning key. Returned value is an integer, passed by value. See list of return codes below\-: 0\-: Key definition found. Success. 1\-: No key found. / General error message. 2\-: Key is invalid within current active object. 99\-: Function virtual definition only. Not currently defined. 
+\end{DoxyReturn}
+
+
+Reimplemented in \hyperlink{classosea_1_1ofreq_1_1dict_bodies_a3c00a8e8b6d24304cef35bcc50e7699b}{osea\-::ofreq\-::dict\-Bodies}, \hyperlink{classosea_1_1ofreq_1_1dict_forces_a4e1fd8cea0c9c689daf6eed864073485}{osea\-::ofreq\-::dict\-Forces}, and \hyperlink{classosea_1_1ofreq_1_1dict_control_a8c9cbaf3a2d4601dca4ad74667594a9e}{osea\-::ofreq\-::dict\-Control}.
+
+
+
+Definition at line 97 of file dictionary.\-cpp.
+
+\hypertarget{classosea_1_1_dictionary_ae96470181c8b1762204493fa45e96d7c}{\index{osea\-::\-Dictionary@{osea\-::\-Dictionary}!define\-Key@{define\-Key}}
+\index{define\-Key@{define\-Key}!osea::Dictionary@{osea\-::\-Dictionary}}
+\subsubsection[{define\-Key}]{\setlength{\rightskip}{0pt plus 5cm}int Dictionary\-::define\-Key (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{key\-In, }
+\item[{std\-::vector$<$ std\-::string $>$}]{val\-In}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{classosea_1_1_dictionary_ae96470181c8b1762204493fa45e96d7c}
+
+
+Pure virtual function that defines how to interpret the key values. Contains a list of key names and corresponding actions to take for interpretting each key value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key\-In} & std\-::string containing the key name. Variable passed by value. \\
+\hline
+{\em val\-In} & Vector of strings containing the key values. Variable passed by value. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns status of assigning key. Returned value is an integer, passed by value. See list of return codes below\-: 0\-: Key definition found. Success. 1\-: No key found. / General error message. 2\-: Key is invalid within current active object. 99\-: Function virtual definition only. Not currently defined. 
+\end{DoxyReturn}
+
+
+Reimplemented in \hyperlink{classosea_1_1ofreq_1_1dict_bodies_aff461cb5ceda5eee1a12da69aca94e1e}{osea\-::ofreq\-::dict\-Bodies}, \hyperlink{classosea_1_1ofreq_1_1dict_forces_ad2aef64f85e81b8b070ae732d757237e}{osea\-::ofreq\-::dict\-Forces}, and \hyperlink{classosea_1_1ofreq_1_1dict_control_a048421f7c1bc9b8a023a159c59407bb9}{osea\-::ofreq\-::dict\-Control}.
+
+
+
+Definition at line 89 of file dictionary.\-cpp.
+
+\hypertarget{classosea_1_1_dictionary_a900221a385d133644aedcadbae90c2be}{\index{osea\-::\-Dictionary@{osea\-::\-Dictionary}!set\-Object@{set\-Object}}
+\index{set\-Object@{set\-Object}!osea::Dictionary@{osea\-::\-Dictionary}}
+\subsubsection[{set\-Object}]{\setlength{\rightskip}{0pt plus 5cm}void Dictionary\-::set\-Object (
+\begin{DoxyParamCaption}
+\item[{{\bf Object\-Group}}]{input}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [slot]}}}\label{classosea_1_1_dictionary_a900221a385d133644aedcadbae90c2be}
+
+
+Public signal for the \hyperlink{classosea_1_1_object_group}{Object\-Group} object that is sent to the \hyperlink{classosea_1_1_dictionary}{Dictionary} object for procesing. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em input} & The \hyperlink{classosea_1_1_object_group}{Object\-Group} object that contains the class definitions. Variable passed by value. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 54 of file dictionary.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classosea_1_1_dictionary_a900221a385d133644aedcadbae90c2be_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classosea_1_1_dictionary_a4f5b4ce990794a633ff8b69b8c021b66}{\index{osea\-::\-Dictionary@{osea\-::\-Dictionary}!set\-System@{set\-System}}
+\index{set\-System@{set\-System}!osea::Dictionary@{osea\-::\-Dictionary}}
+\subsubsection[{set\-System}]{\setlength{\rightskip}{0pt plus 5cm}void Dictionary\-::set\-System (
+\begin{DoxyParamCaption}
+\item[{{\bf ofreq\-::\-System} $\ast$}]{pt\-Input}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [slot]}}}\label{classosea_1_1_dictionary_a4f5b4ce990794a633ff8b69b8c021b66}
+
+
+Sets the system object for the dictionary to reference. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pt\-System} & Pointer to the System object. Variable passed by value. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 80 of file dictionary.\-cpp.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classosea_1_1_dictionary_a72bf4127a7ee1fb2b784abb6df020fed}{\index{osea\-::\-Dictionary@{osea\-::\-Dictionary}!pt\-System@{pt\-System}}
+\index{pt\-System@{pt\-System}!osea::Dictionary@{osea\-::\-Dictionary}}
+\subsubsection[{pt\-System}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ofreq\-::\-System}$\ast$ osea\-::\-Dictionary\-::pt\-System\hspace{0.3cm}{\ttfamily [protected]}}}\label{classosea_1_1_dictionary_a72bf4127a7ee1fb2b784abb6df020fed}
+
+
+Pointer to the System object. Used to reference any important variables in the System object. 
+
+
+
+Definition at line 166 of file dictionary.\-h.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/home/\-Ship\-\_\-\-Design/\-Projects/\-D\-M\-S1305 Open\-S\-E\-A/master/200\-\_\-src/bin/ofreq/file\-\_\-reader/\hyperlink{dictionary_8h}{dictionary.\-h}\item 
+/home/\-Ship\-\_\-\-Design/\-Projects/\-D\-M\-S1305 Open\-S\-E\-A/master/200\-\_\-src/bin/ofreq/file\-\_\-reader/\hyperlink{dictionary_8cpp}{dictionary.\-cpp}\end{DoxyCompactItemize}

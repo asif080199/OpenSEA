@@ -1,0 +1,6 @@
+<map id="osea::ofreq::SolutionSet::setSolnMat" name="osea::ofreq::SolutionSet::setSolnMat">
+<area shape="rect" id="node3" href="$classosea_1_1ofreq_1_1_solution.html#affec6f64a60e9ad3b5a236302e2dd820" title="Sets the body object that the solution object is relevant to." alt="" coords="246,5,413,49"/>
+<area shape="rect" id="node5" href="$classosea_1_1ofreq_1_1_solution.html#a95519db148bcece14c88aab53f4ced0e" title="Returns reference pointer to the reference body. Variable passed by reference." alt="" coords="246,73,413,117"/>
+<area shape="rect" id="node7" href="$classosea_1_1ofreq_1_1_solution.html#a169b35ae15b49ca4096ea7e0ea927fec" title="Sets the solution matrix as a whole." alt="" coords="246,141,413,185"/>
+<area shape="rect" id="node9" href="$classosea_1_1ofreq_1_1_solution.html#a00801ca01862410a65fba3215bc8a789" title="Returns the solution matrix." alt="" coords="246,209,413,253"/>
+</map>

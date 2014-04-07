@@ -1,0 +1,126 @@
+.TH "osea::ofreq::matForceActive" 3 "Sat Apr 5 2014" "Version 0.4" "oFreq" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+osea::ofreq::matForceActive \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <matforceactive\&.h>\fP
+.PP
+Inherits \fBosea::ofreq::oFreqCore\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBmatForceActive\fP ()"
+.br
+.ti -1c
+.RI "\fB~matForceActive\fP ()"
+.br
+.ti -1c
+.RI "\fBmatForceActive\fP \fBoperator+\fP (\fBmatForceActive\fP &forceOther)"
+.br
+.ti -1c
+.RI "\fBmatForceActive\fP \fBoperator-\fP (\fBmatForceActive\fP &forceOther)"
+.br
+.ti -1c
+.RI "arma::cx_mat & \fBlistCoefficient\fP ()"
+.br
+.RI "\fIReturns the coefficients matrix\&. \fP"
+.ti -1c
+.RI "void \fBsetId\fP (int num)"
+.br
+.RI "\fISets the force id number for the object\&. \fP"
+.ti -1c
+.RI "int \fBgetId\fP ()"
+.br
+.RI "\fIReturns the force id number for the object\&. \fP"
+.ti -1c
+.RI "int \fBgetMatSize\fP ()"
+.br
+.RI "\fIReturns the size of the matrix in each order of derivative\&. \fP"
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+This class holds all data for an active force matrix\&. 
+.PP
+Definition at line 85 of file matforceactive\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "matForceActive::matForceActive ()"
+The default constructor\&. 
+.PP
+Definition at line 34 of file matforceactive\&.cpp\&.
+.SS "matForceActive::~matForceActive ()"
+The default destructor, nothing happens here\&. 
+.PP
+Definition at line 39 of file matforceactive\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "int matForceActive::getId ()"
+
+.PP
+Returns the force id number for the object\&. This is similar to the name parameter in other force objects\&. It is an identifier\&. In this case, a numerical identifier\&. Normally correlates to the objects index in a vector of other objects of the same class\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+Returns the force id number, integer data type\&. 
+.RE
+.PP
+
+.PP
+Definition at line 140 of file matforceactive\&.cpp\&.
+.SS "int matForceActive::getMatSize ()"
+
+.PP
+Returns the size of the matrix in each order of derivative\&. Returns the size of the matrix in each order of derivative\&. Integer output type\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+Returns the size of the matrix in each order of derivative\&. 
+.RE
+.PP
+
+.PP
+Definition at line 146 of file matforceactive\&.cpp\&.
+.SS "cx_mat & matForceActive::listCoefficient ()"
+
+.PP
+Returns the coefficients matrix\&. Returns the coefficients matrix\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+Returns the coefficients matrix\&. 
+.RE
+.PP
+
+.PP
+Definition at line 128 of file matforceactive\&.cpp\&.
+.SS "\fBmatForceActive\fP matForceActive::operator+ (\fBmatForceActive\fP &forceOther)"
+
+.PP
+Definition at line 44 of file matforceactive\&.cpp\&.
+.SS "\fBmatForceActive\fP matForceActive::operator- (\fBmatForceActive\fP &forceOther)"
+
+.PP
+Definition at line 86 of file matforceactive\&.cpp\&.
+.SS "void matForceActive::setId (intnum)"
+
+.PP
+Sets the force id number for the object\&. This is similar to the name parameter in other force objects\&. It is an identifier\&. In this case, a numerical identifier\&. Normally correlates to the objects index in a vector of other objects of the same class\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fInum\fP The integer number to input as the objects integer id\&. 
+.RE
+.PP
+
+.PP
+Definition at line 134 of file matforceactive\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for oFreq from the source code\&.

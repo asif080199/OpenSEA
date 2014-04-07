@@ -1,0 +1,339 @@
+\hypertarget{classosea_1_1ofreq_1_1_equation}{\section{osea\-:\-:ofreq\-:\-:Equation Class Reference}
+\label{classosea_1_1ofreq_1_1_equation}\index{osea\-::ofreq\-::\-Equation@{osea\-::ofreq\-::\-Equation}}
+}
+
+
+{\ttfamily \#include $<$equation.\-h$>$}
+
+
+
+Inheritance diagram for osea\-:\-:ofreq\-:\-:Equation\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=230pt]{classosea_1_1ofreq_1_1_equation__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classosea_1_1ofreq_1_1_equation_a68511fc719250ed80f86c50de9136733}{Equation} ()
+\item 
+\hyperlink{classosea_1_1ofreq_1_1_equation_a37fec641aec75302c37590d191421790}{Equation} (int Index\-In)
+\begin{DoxyCompactList}\small\item\em Constructor with setting the data index. \end{DoxyCompactList}\item 
+\hyperlink{classosea_1_1ofreq_1_1_equation_a097243d0dfd608330fc91f115a0d15bb}{$\sim$\-Equation} ()
+\item 
+std\-::vector$<$ double $>$ \& \hyperlink{classosea_1_1ofreq_1_1_equation_a40be3415ddc7ebc7aa93829f3eb750f0}{list\-Coefficient} ()
+\begin{DoxyCompactList}\small\item\em Direct access to the list of coefficients. \end{DoxyCompactList}\item 
+double \& \hyperlink{classosea_1_1ofreq_1_1_equation_acce479a17f90df340bcf9cabf06258a2}{list\-Coefficient} (unsigned int index)
+\begin{DoxyCompactList}\small\item\em Provides direct access to a coefficient from the list of coefficients. \end{DoxyCompactList}\item 
+std\-::vector$<$ double $>$ \& \hyperlink{classosea_1_1ofreq_1_1_equation_a47c6d4a1c29fb55c16d0a9bd3a739e0a}{list\-Data\-Variable} ()
+\begin{DoxyCompactList}\small\item\em Provides direct access to the list of coefficients. \end{DoxyCompactList}\item 
+double \& \hyperlink{classosea_1_1ofreq_1_1_equation_ab9b8c047c7567253a5e51ec11c3a3a41}{list\-Data\-Variable} (int Data\-Index)
+\begin{DoxyCompactList}\small\item\em Provides direct access to a coefficient from the list of coefficients. \end{DoxyCompactList}\item 
+double \hyperlink{classosea_1_1ofreq_1_1_equation_a6aa77458d50e80de2a31708756c7925b}{get\-Coefficient} (int number)
+\begin{DoxyCompactList}\small\item\em Get the coefficient at the specified number. \end{DoxyCompactList}\item 
+void \hyperlink{classosea_1_1ofreq_1_1_equation_a96dd6f24624703a1ff3ffb4d19a76582}{set\-Coefficient} (int number, double coeff\-In)
+\begin{DoxyCompactList}\small\item\em Set the coefficient value at the specified index number. \end{DoxyCompactList}\item 
+unsigned int \hyperlink{classosea_1_1ofreq_1_1_equation_aa3ceaac689d9cfef1a1b3123d8ec4027}{get\-Coefficient\-List\-Size} ()
+\item 
+void \hyperlink{classosea_1_1ofreq_1_1_equation_aa9e40c1cc6fb3cb030e9956663025a87}{set\-Data\-Index} (int index)
+\begin{DoxyCompactList}\small\item\em Set the index number of any equation data that should be retrieved. \end{DoxyCompactList}\item 
+int \hyperlink{classosea_1_1ofreq_1_1_equation_ac5fd13eba76ddbbf4813823fad4166e2}{get\-Data\-Index} ()
+\begin{DoxyCompactList}\small\item\em Get the index number of any equation data that should be retrieved. \end{DoxyCompactList}\item 
+int \& \hyperlink{classosea_1_1ofreq_1_1_equation_a5964477a42f3941a968f249b89742d73}{ref\-Data\-Index} ()
+\begin{DoxyCompactList}\small\item\em Exposed access to the data access variable. \end{DoxyCompactList}\item 
+void \hyperlink{classosea_1_1ofreq_1_1_equation_ade50004f0b16312e1c350be010a84440}{add\-Variable} (double Coeff\-In, int Var\-Data\-In=-\/1)
+\begin{DoxyCompactList}\small\item\em This function adds a data variable to the list of variables contained in the equation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+This class holds data for an equation. 
+
+Definition at line 83 of file equation.\-h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classosea_1_1ofreq_1_1_equation_a68511fc719250ed80f86c50de9136733}{\index{osea\-::ofreq\-::\-Equation@{osea\-::ofreq\-::\-Equation}!Equation@{Equation}}
+\index{Equation@{Equation}!osea::ofreq::Equation@{osea\-::ofreq\-::\-Equation}}
+\subsubsection[{Equation}]{\setlength{\rightskip}{0pt plus 5cm}Equation\-::\-Equation (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_equation_a68511fc719250ed80f86c50de9136733}
+This default constructor. 
+
+Definition at line 36 of file equation.\-cpp.
+
+\hypertarget{classosea_1_1ofreq_1_1_equation_a37fec641aec75302c37590d191421790}{\index{osea\-::ofreq\-::\-Equation@{osea\-::ofreq\-::\-Equation}!Equation@{Equation}}
+\index{Equation@{Equation}!osea::ofreq::Equation@{osea\-::ofreq\-::\-Equation}}
+\subsubsection[{Equation}]{\setlength{\rightskip}{0pt plus 5cm}Equation\-::\-Equation (
+\begin{DoxyParamCaption}
+\item[{int}]{Index\-In}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_equation_a37fec641aec75302c37590d191421790}
+
+
+Constructor with setting the data index. 
+
+Constructor with setting the data index. 
+\begin{DoxyParams}{Parameters}
+{\em Index\-In} & The integer specifying the data index number. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 45 of file equation.\-cpp.
+
+\hypertarget{classosea_1_1ofreq_1_1_equation_a097243d0dfd608330fc91f115a0d15bb}{\index{osea\-::ofreq\-::\-Equation@{osea\-::ofreq\-::\-Equation}!$\sim$\-Equation@{$\sim$\-Equation}}
+\index{$\sim$\-Equation@{$\sim$\-Equation}!osea::ofreq::Equation@{osea\-::ofreq\-::\-Equation}}
+\subsubsection[{$\sim$\-Equation}]{\setlength{\rightskip}{0pt plus 5cm}Equation\-::$\sim$\-Equation (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_equation_a097243d0dfd608330fc91f115a0d15bb}
+The default destructor, nothing happens here. 
+
+Definition at line 53 of file equation.\-cpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classosea_1_1ofreq_1_1_equation_ade50004f0b16312e1c350be010a84440}{\index{osea\-::ofreq\-::\-Equation@{osea\-::ofreq\-::\-Equation}!add\-Variable@{add\-Variable}}
+\index{add\-Variable@{add\-Variable}!osea::ofreq::Equation@{osea\-::ofreq\-::\-Equation}}
+\subsubsection[{add\-Variable}]{\setlength{\rightskip}{0pt plus 5cm}void Equation\-::add\-Variable (
+\begin{DoxyParamCaption}
+\item[{double}]{Coeff\-In, }
+\item[{int}]{Var\-Data\-In = {\ttfamily -\/1}}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_equation_ade50004f0b16312e1c350be010a84440}
+
+
+This function adds a data variable to the list of variables contained in the equation. 
+
+Two parameters are necessary to add data variable to the list. The first parameter records the actual coefficient used in the equation. The second parameter records the data index for the new entry. 
+\begin{DoxyParams}{Parameters}
+{\em Coeff\-In} & Double. The actual coefficient used in the equation. Variable passed by value. \\
+\hline
+{\em Var\-Data\-In} & Integer. The data index of the new variable passed to the equation. Variable passed by value. If no value is provided, the function defaults to using the coefficients index in the containin vector. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 143 of file equation.\-cpp.
+
+\hypertarget{classosea_1_1ofreq_1_1_equation_a6aa77458d50e80de2a31708756c7925b}{\index{osea\-::ofreq\-::\-Equation@{osea\-::ofreq\-::\-Equation}!get\-Coefficient@{get\-Coefficient}}
+\index{get\-Coefficient@{get\-Coefficient}!osea::ofreq::Equation@{osea\-::ofreq\-::\-Equation}}
+\subsubsection[{get\-Coefficient}]{\setlength{\rightskip}{0pt plus 5cm}double Equation\-::get\-Coefficient (
+\begin{DoxyParamCaption}
+\item[{int}]{number}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_equation_a6aa77458d50e80de2a31708756c7925b}
+
+
+Get the coefficient at the specified number. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em number} & The index number of the coefficient to retrieve. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns a double precision floating point number of the coefficient at the index specified by number. 
+\end{DoxyReturn}
+
+
+Definition at line 99 of file equation.\-cpp.
+
+\hypertarget{classosea_1_1ofreq_1_1_equation_aa3ceaac689d9cfef1a1b3123d8ec4027}{\index{osea\-::ofreq\-::\-Equation@{osea\-::ofreq\-::\-Equation}!get\-Coefficient\-List\-Size@{get\-Coefficient\-List\-Size}}
+\index{get\-Coefficient\-List\-Size@{get\-Coefficient\-List\-Size}!osea::ofreq::Equation@{osea\-::ofreq\-::\-Equation}}
+\subsubsection[{get\-Coefficient\-List\-Size}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int Equation\-::get\-Coefficient\-List\-Size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_equation_aa3ceaac689d9cfef1a1b3123d8ec4027}
+Retrieve the size of the coefficient list. \begin{DoxyReturn}{Returns}
+The size of the coefficient list. 
+\end{DoxyReturn}
+
+
+Definition at line 119 of file equation.\-cpp.
+
+\hypertarget{classosea_1_1ofreq_1_1_equation_ac5fd13eba76ddbbf4813823fad4166e2}{\index{osea\-::ofreq\-::\-Equation@{osea\-::ofreq\-::\-Equation}!get\-Data\-Index@{get\-Data\-Index}}
+\index{get\-Data\-Index@{get\-Data\-Index}!osea::ofreq::Equation@{osea\-::ofreq\-::\-Equation}}
+\subsubsection[{get\-Data\-Index}]{\setlength{\rightskip}{0pt plus 5cm}int Equation\-::get\-Data\-Index (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_equation_ac5fd13eba76ddbbf4813823fad4166e2}
+
+
+Get the index number of any equation data that should be retrieved. 
+
+Get the index number of any equation data that should be retrieved. Because the first six values in the index are reserved for 6\-D\-O\-F, it is necessary that equation objects should be able to specify their index as something other than their place in a containing vector. The default initialization value for this is -\/1, which indicates the index is not set. Any number less than zero indicates the index is not set. 
+\begin{DoxyParams}{Parameters}
+{\em index} & Integer. The index number that should be retrieved. Any number less than zero indicates the index is not set. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 131 of file equation.\-cpp.
+
+\hypertarget{classosea_1_1ofreq_1_1_equation_a40be3415ddc7ebc7aa93829f3eb750f0}{\index{osea\-::ofreq\-::\-Equation@{osea\-::ofreq\-::\-Equation}!list\-Coefficient@{list\-Coefficient}}
+\index{list\-Coefficient@{list\-Coefficient}!osea::ofreq::Equation@{osea\-::ofreq\-::\-Equation}}
+\subsubsection[{list\-Coefficient}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ double $>$ \& Equation\-::list\-Coefficient (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_equation_a40be3415ddc7ebc7aa93829f3eb750f0}
+
+
+Direct access to the list of coefficients. 
+
+\begin{DoxyReturn}{Returns}
+The list of coefficients. Returned variable passed by reference. 
+\end{DoxyReturn}
+
+
+Definition at line 58 of file equation.\-cpp.
+
+\hypertarget{classosea_1_1ofreq_1_1_equation_acce479a17f90df340bcf9cabf06258a2}{\index{osea\-::ofreq\-::\-Equation@{osea\-::ofreq\-::\-Equation}!list\-Coefficient@{list\-Coefficient}}
+\index{list\-Coefficient@{list\-Coefficient}!osea::ofreq::Equation@{osea\-::ofreq\-::\-Equation}}
+\subsubsection[{list\-Coefficient}]{\setlength{\rightskip}{0pt plus 5cm}double \& Equation\-::list\-Coefficient (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{index}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_equation_acce479a17f90df340bcf9cabf06258a2}
+
+
+Provides direct access to a coefficient from the list of coefficients. 
+
+Returns a value from the list of coefficents. Which value to return is specified by the input index. 
+\begin{DoxyParams}{Parameters}
+{\em index} & Unsigned integer. Specifies which value to return from the list of coefficients. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns a double. Returned variable is a value from the list of coefficients. Returned variable is passed by reference. 
+\end{DoxyReturn}
+
+
+Definition at line 65 of file equation.\-cpp.
+
+\hypertarget{classosea_1_1ofreq_1_1_equation_a47c6d4a1c29fb55c16d0a9bd3a739e0a}{\index{osea\-::ofreq\-::\-Equation@{osea\-::ofreq\-::\-Equation}!list\-Data\-Variable@{list\-Data\-Variable}}
+\index{list\-Data\-Variable@{list\-Data\-Variable}!osea::ofreq::Equation@{osea\-::ofreq\-::\-Equation}}
+\subsubsection[{list\-Data\-Variable}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<$ double $>$ \& Equation\-::list\-Data\-Variable (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_equation_a47c6d4a1c29fb55c16d0a9bd3a739e0a}
+
+
+Provides direct access to the list of coefficients. 
+
+\begin{DoxyReturn}{Returns}
+The list of coefficients. Returned variable passed by reference. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classosea_1_1ofreq_1_1_equation_a40be3415ddc7ebc7aa93829f3eb750f0}{list\-Coefficient()} 
+\end{DoxySeeAlso}
+
+
+Definition at line 71 of file equation.\-cpp.
+
+\hypertarget{classosea_1_1ofreq_1_1_equation_ab9b8c047c7567253a5e51ec11c3a3a41}{\index{osea\-::ofreq\-::\-Equation@{osea\-::ofreq\-::\-Equation}!list\-Data\-Variable@{list\-Data\-Variable}}
+\index{list\-Data\-Variable@{list\-Data\-Variable}!osea::ofreq::Equation@{osea\-::ofreq\-::\-Equation}}
+\subsubsection[{list\-Data\-Variable}]{\setlength{\rightskip}{0pt plus 5cm}double \& Equation\-::list\-Data\-Variable (
+\begin{DoxyParamCaption}
+\item[{int}]{Data\-Index}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_equation_ab9b8c047c7567253a5e51ec11c3a3a41}
+
+
+Provides direct access to a coefficient from the list of coefficients. 
+
+Returns a value from the list of coefficents. Which value to return is specified by the data index. This is like the list\-Coefficient method. But that method returned values based on the index of occurrence in the vector. This method returns values based on the specified data index property. 
+\begin{DoxyParams}{Parameters}
+{\em Data\-Index} & Integer. Specifies which value to return from the list of coefficients. Specification is by the data index of each variable. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns a double. Returned variable is a value from the list of coefficients. Returned variable is passed by reference. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See Also}
+list\-Coefficient(index) 
+\end{DoxySeeAlso}
+
+
+Definition at line 77 of file equation.\-cpp.
+
+\hypertarget{classosea_1_1ofreq_1_1_equation_a5964477a42f3941a968f249b89742d73}{\index{osea\-::ofreq\-::\-Equation@{osea\-::ofreq\-::\-Equation}!ref\-Data\-Index@{ref\-Data\-Index}}
+\index{ref\-Data\-Index@{ref\-Data\-Index}!osea::ofreq::Equation@{osea\-::ofreq\-::\-Equation}}
+\subsubsection[{ref\-Data\-Index}]{\setlength{\rightskip}{0pt plus 5cm}int \& Equation\-::ref\-Data\-Index (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_equation_a5964477a42f3941a968f249b89742d73}
+
+
+Exposed access to the data access variable. 
+
+\begin{DoxyReturn}{Returns}
+Returns the data access variable. Return passed by reference. 
+\end{DoxyReturn}
+
+
+Definition at line 137 of file equation.\-cpp.
+
+\hypertarget{classosea_1_1ofreq_1_1_equation_a96dd6f24624703a1ff3ffb4d19a76582}{\index{osea\-::ofreq\-::\-Equation@{osea\-::ofreq\-::\-Equation}!set\-Coefficient@{set\-Coefficient}}
+\index{set\-Coefficient@{set\-Coefficient}!osea::ofreq::Equation@{osea\-::ofreq\-::\-Equation}}
+\subsubsection[{set\-Coefficient}]{\setlength{\rightskip}{0pt plus 5cm}void Equation\-::set\-Coefficient (
+\begin{DoxyParamCaption}
+\item[{int}]{number, }
+\item[{double}]{coeff\-In}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_equation_a96dd6f24624703a1ff3ffb4d19a76582}
+
+
+Set the coefficient value at the specified index number. 
+
+Set the coefficient value at the specified index number. 
+\begin{DoxyParams}{Parameters}
+{\em number} & Integer. The index number of the coefficient to set. \\
+\hline
+{\em coeff\-In} & Double precision floating number. The value of the coefficient to set at the specified index. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 106 of file equation.\-cpp.
+
+\hypertarget{classosea_1_1ofreq_1_1_equation_aa9e40c1cc6fb3cb030e9956663025a87}{\index{osea\-::ofreq\-::\-Equation@{osea\-::ofreq\-::\-Equation}!set\-Data\-Index@{set\-Data\-Index}}
+\index{set\-Data\-Index@{set\-Data\-Index}!osea::ofreq::Equation@{osea\-::ofreq\-::\-Equation}}
+\subsubsection[{set\-Data\-Index}]{\setlength{\rightskip}{0pt plus 5cm}void Equation\-::set\-Data\-Index (
+\begin{DoxyParamCaption}
+\item[{int}]{index}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_equation_aa9e40c1cc6fb3cb030e9956663025a87}
+
+
+Set the index number of any equation data that should be retrieved. 
+
+Set the index number of any equation data that should be retrieved. Because the first six values in the index are reserved for 6\-D\-O\-F, it is necessary that equation objects should be able to specify their index as something other than their place in a containing vector. The default initialization value for this is -\/1, which indicates the index is not set. Any number less than zero indicates the index is not set. 
+\begin{DoxyParams}{Parameters}
+{\em index} & The index number that should be set. Any number less than zero indicates the index is not set. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 125 of file equation.\-cpp.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/home/\-Ship\-\_\-\-Design/\-Projects/\-D\-M\-S1305 Open\-S\-E\-A/master/200\-\_\-src/bin/ofreq/global\-\_\-objects/\hyperlink{equation_8h}{equation.\-h}\item 
+/home/\-Ship\-\_\-\-Design/\-Projects/\-D\-M\-S1305 Open\-S\-E\-A/master/200\-\_\-src/bin/ofreq/global\-\_\-objects/\hyperlink{equation_8cpp}{equation.\-cpp}\end{DoxyCompactItemize}

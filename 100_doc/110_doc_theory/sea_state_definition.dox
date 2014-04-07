@@ -1,0 +1,30 @@
+/**
+\page sea_state_definition Sea State Definition
+
+\todo Write sea state definition guide.
+
+Slight note:  There is often debate within the naval architecture community of the proper spelling 
+of the word sea state.  In this documention, we will use it as two words to recognize the fact that 
+any sea state is composed of two components.
+
+- Wave direction variation
+- Wave frequency variation
+
+
+# Direction Models
+
+Wave direction variation.  Be warned that because the program allows definition of radically 
+different models between wave spectra, the program must use linear interpolation between defined 
+wave directions.  So use closely spaced wave directions to reduce interpolation errors when it 
+really matters.
+
+\subpage wave_direction_models
+
+
+# Wave Spectra
+
+Wave frequency variation.  Several models are avaiable within ofreq.
+
+\subpage wave_spectra
+
+*/

@@ -1,0 +1,156 @@
+Valication is an important part of the development for software engineering. This is a formalized method of quality control checks to ensure the program works correctly. The formalized method is a two step process\-:
+
+
+\begin{DoxyEnumerate}
+\item Verification
+\item Validation
+\end{DoxyEnumerate}
+
+\subsection*{Verification}
+
+Verification is quality control on the equations as implemented within the program. This focuses on two main elements. First, confirming that the equations were actually coded into the program as they should be. A typo can make a large difference for equations.
+
+The second process is to ensure algebraic implementations match the original equations. In engineering software, many of the equations involve differential equations and calculus. However, computers do not have any native understanding of calculus. So, we represent the differential equations as a series of algebraic equations, using a branch of science called \href{http://en.wikipedia.org/wiki/Finite_difference}{\tt finite difference mathematics}.
+
+The algebraic representations are sometimes very complicated. Verification involves checking each algebraic equation and working backwards to ensure it matches the original differential equation. This is largely a theoretical exercise and not covered in the Developer's Manual. You will find the full details of verification in the Theory Manual.
+
+\subsection*{Validation}
+
+Validation essentially checks for bugs in the software, specifically focused on the equations. This is typically done by comparing the software to a series of test cases and comparing results. The following test cases were used for development of ofreq. They start as simple cases to validate basic functionality, and move to progressively more complex cases that systematically test all of ofreq's features.
+
+\subsubsection*{Single Body Tests}
+
+These test focus only on single body performance for ofreq.
+
+\hyperlink{SimpleTest1}{Simple Test 1}
+
+\hyperlink{SimpleTest2}{Simple Test 2}
+
+\hyperlink{SimpleTest3}{Simple Test 3}
+
+\hyperlink{SimpleTest4}{Simple Test 4}
+
+\subsubsection*{Multiple Body Tests}
+
+These tests repeat all the features tested in the simple version. But now they focus on multiple-\/bodies present in the analysis.
+
+\hyperlink{MultiBodyTest1}{Multi-\/body Test 1}
+
+\hyperlink{MultiBodyTest2}{Multi-\/body Test 2}
+
+\hyperlink{MultiBodyTest3}{Multi-\/body Test 3}
+
+\hyperlink{MultiBodyTest4}{Multi-\/body Test 4}
+
+\subsubsection*{Other Tests}
+
+Tests that do not fit nicely into any of the other categories, but they are still just as important.
+
+\hyperlink{TestFrequency}{Frequency Variation Test} \hypertarget{SimpleTest1}{}\section{Simple Test 1}\label{SimpleTest1}
+\begin{DoxyRefDesc}{Test}
+\item[\hyperlink{test__test000005}{Test}]Post test resuls from Simple Test 1.\end{DoxyRefDesc}
+
+
+\section*{Purpose}
+
+\section*{Methodology}
+
+\section*{Results}
+
+\section*{Conclusion}\hypertarget{SimpleTest2}{}\section{Simple Test 2}\label{SimpleTest2}
+\begin{DoxyRefDesc}{Test}
+\item[\hyperlink{test__test000006}{Test}]Run Simple Test 2 and post test results.\end{DoxyRefDesc}
+
+
+\section*{Purpose}
+
+\section*{Methodology}
+
+\section*{Results}
+
+\section*{Conclusion}\hypertarget{SimpleTest3}{}\section{Simple Test 3}\label{SimpleTest3}
+\begin{DoxyRefDesc}{Test}
+\item[\hyperlink{test__test000007}{Test}]Run Simple Test 3 and post test results.\end{DoxyRefDesc}
+
+
+\section*{Purpose}
+
+\section*{Methodology}
+
+\section*{Results}
+
+\section*{Conclusion}\hypertarget{SimpleTest4}{}\section{Simple Test 4}\label{SimpleTest4}
+\begin{DoxyRefDesc}{Test}
+\item[\hyperlink{test__test000008}{Test}]Run Simple Test 4 and post test results.\end{DoxyRefDesc}
+
+
+\section*{Purpose}
+
+\section*{Methodology}
+
+\section*{Results}
+
+\section*{Conclusion}\hypertarget{MultiBodyTest1}{}\section{Multi-\/body Test 1}\label{MultiBodyTest1}
+\begin{DoxyRefDesc}{Test}
+\item[\hyperlink{test__test000001}{Test}]Run Multi-\/\-Body Test 1 and post test results.\end{DoxyRefDesc}
+
+
+\section*{Purpose}
+
+This is like the simple test 1. But it utilizes multiple bodies and ensures all features of multi-\/body support are working. Includes checking of cross-\/body forces.
+
+\section*{Methodology}
+
+\section*{Results}
+
+\section*{Conclusion}\hypertarget{MultiBodyTest2}{}\section{Multi-\/body Test 2}\label{MultiBodyTest2}
+\begin{DoxyRefDesc}{Test}
+\item[\hyperlink{test__test000002}{Test}]Run Multi-\/\-Body Test 2 and post test results.\end{DoxyRefDesc}
+
+
+\section*{Purpose}
+
+This is like the simple test 2. But it utilizes multiple bodies and ensures all features of multi-\/body support are working. Includes checking of cross-\/body forces.
+
+\section*{Methodology}
+
+\section*{Results}
+
+\section*{Conclusion}\hypertarget{MultiBodyTest3}{}\section{Multi-\/body Test 3}\label{MultiBodyTest3}
+\begin{DoxyRefDesc}{Test}
+\item[\hyperlink{test__test000003}{Test}]Run Multi-\/\-Body Test 3 and post test results.\end{DoxyRefDesc}
+
+
+\section*{Purpose}
+
+This is like the simple test 3. But it utilizes multiple bodies and ensures all features of multi-\/body support are working. Includes checking of cross-\/body forces.
+
+\section*{Methodology}
+
+\section*{Results}
+
+\section*{Conclusion}\hypertarget{MultiBodyTest4}{}\section{Multi-\/body Test 4}\label{MultiBodyTest4}
+\begin{DoxyRefDesc}{Test}
+\item[\hyperlink{test__test000004}{Test}]Run Multi-\/\-Body Test 4 and post test results.\end{DoxyRefDesc}
+
+
+\section*{Purpose}
+
+This is like the simple test 4. But it utilizes multiple bodies and ensures all features of multi-\/body support are working. Includes checking of cross-\/body forces.
+
+\section*{Methodology}
+
+\section*{Results}
+
+\section*{Conclusion}\hypertarget{TestFrequency}{}\section{Frequency Variation Test}\label{TestFrequency}
+\begin{DoxyRefDesc}{Test}
+\item[\hyperlink{test__test000009}{Test}]Run Frequency Variation Test and post test results.\end{DoxyRefDesc}
+
+
+\section*{Purpose}
+
+\section*{Methodology}
+
+\section*{Results}
+
+\section*{Conclusion}

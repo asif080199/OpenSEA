@@ -1,0 +1,4 @@
+<map id="osea::ofreq::OutputDerived" name="osea::ofreq::OutputDerived">
+<area shape="rect" id="node5" href="$classosea_1_1ofreq_1_1_global_solution.html" title="{osea::ofreq::GlobalSolution\n|# orderDerivative\l|+ GlobalSolution()\l+ GlobalSolution()\l+ ~GlobalSolution()\l+ setDerivative()\l+ getDerivative()\l+ calcOutput()\l# getSolution()\l}" alt="" coords="5,603,215,781"/>
+<area shape="rect" id="node2" href="$classosea_1_1ofreq_1_1o_freq_core.html" title="The core oFreq class. All oFreq classes inherit from this class." alt="" coords="18,6,203,215"/>
+</map>

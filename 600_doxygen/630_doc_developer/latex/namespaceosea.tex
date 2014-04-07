@@ -1,0 +1,67 @@
+\hypertarget{namespaceosea}{\section{osea Namespace Reference}
+\label{namespaceosea}\index{osea@{osea}}
+}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \hyperlink{namespaceosea_1_1ofreq}{ofreq}
+\end{DoxyCompactItemize}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classosea_1_1_dictionary}{Dictionary}
+\item 
+class \hyperlink{classosea_1_1_file_reader}{File\-Reader}
+\item 
+class \hyperlink{classosea_1_1_object_group}{Object\-Group}
+\begin{DoxyCompactList}\small\item\em The \hyperlink{classosea_1_1_object_group}{Object\-Group} class contains groupings of object definitions captured from an input file. It is a data container to hold the segmented input file for interpretation. The container contains three things\-: 1.) Object class name (as specified by input file) 2.) Vector of keyword names 3.) Vector of keyword values. Each entry in the vector of values is also a vector. This allows the definition of lists. A list will be as long as it needs to be for specification of all values in the list. The index of the value is specified by its position in the vector list. The value is the entry. \end{DoxyCompactList}\item 
+class \hyperlink{classosea_1_1_parser}{Parser}
+\begin{DoxyCompactList}\small\item\em The \hyperlink{classosea_1_1_parser}{Parser} class takes an input segment of strings and segments that segment. It strips out comments. It recognizes quotation marks and groups those segments together. \hyperlink{classosea_1_1_parser}{Parser} finally returns a series of \hyperlink{classosea_1_1_object_group}{Object\-Group} objects. Each \hyperlink{classosea_1_1_object_group}{Object\-Group} contains the classname and a list of keyword value pairs. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef std\-::vector\\*
+$<$ std\-::vector$<$ std\-::string $>$ $>$ \hyperlink{namespaceosea_ae7c5f2bab0fab3931b2ef51a0ad04cc2}{vec\-Value}
+\begin{DoxyCompactList}\small\item\em Type definition used to store key values. Must be a vector of vectors because a value may also be a list of values. \end{DoxyCompactList}\item 
+typedef std\-::vector$<$ std\-::string $>$ \hyperlink{namespaceosea_af47d453cb217c2c461685cd6e754c070}{vec\-Keyword}
+\begin{DoxyCompactList}\small\item\em Type defintion used to store keywords. \end{DoxyCompactList}\item 
+typedef std\-::vector\\*
+$<$ \hyperlink{classosea_1_1_object_group}{Object\-Group} $\ast$ $>$ \hyperlink{namespaceosea_ab25fb67447fccb23f5683988d96d2dc2}{vec\-Object}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The namespace for all code created under the Open\-S\-E\-A project. There are also several sub-\/namespaces, one associated with each primary program under osea. 1.) ohydro\-: Code associated with the program ohydro. 2.) ofreq\-: Code associated with the program ofreq. 3.) otime\-: Code associated with the program otime. 4.) ofourier\-: Code associated with the program ofourier. 5.) obatch\-: Code associated with the program obatch. 6.) guisea\-: Code assocaited with the G\-U\-I that interacts with all Open\-S\-E\-A programs. Any code that may have common utility amongst all programs, such as file reading objects, goes under the generic osea namespace. Any code that is only useful within the specific program it serves, goes under the specific namespace. When in doubt, default to just the osea namespace.
+
+The namespaces are not intended to create an organizational structure. They are only intended to prevent name conflicts. 
+
+\subsection{Typedef Documentation}
+\hypertarget{namespaceosea_af47d453cb217c2c461685cd6e754c070}{\index{osea@{osea}!vec\-Keyword@{vec\-Keyword}}
+\index{vec\-Keyword@{vec\-Keyword}!osea@{osea}}
+\subsubsection[{vec\-Keyword}]{\setlength{\rightskip}{0pt plus 5cm}typedef std\-::vector$<$ std\-::string $>$ {\bf osea\-::vec\-Keyword}}}\label{namespaceosea_af47d453cb217c2c461685cd6e754c070}
+
+
+Type defintion used to store keywords. 
+
+
+
+Definition at line 83 of file objectgroup.\-h.
+
+\hypertarget{namespaceosea_ab25fb67447fccb23f5683988d96d2dc2}{\index{osea@{osea}!vec\-Object@{vec\-Object}}
+\index{vec\-Object@{vec\-Object}!osea@{osea}}
+\subsubsection[{vec\-Object}]{\setlength{\rightskip}{0pt plus 5cm}typedef std\-::vector$<${\bf Object\-Group}$\ast$$>$ {\bf osea\-::vec\-Object}}}\label{namespaceosea_ab25fb67447fccb23f5683988d96d2dc2}
+
+
+Definition at line 85 of file objectgroup.\-h.
+
+\hypertarget{namespaceosea_ae7c5f2bab0fab3931b2ef51a0ad04cc2}{\index{osea@{osea}!vec\-Value@{vec\-Value}}
+\index{vec\-Value@{vec\-Value}!osea@{osea}}
+\subsubsection[{vec\-Value}]{\setlength{\rightskip}{0pt plus 5cm}typedef std\-::vector$<$ std\-::vector$<$ std\-::string $>$ $>$ {\bf osea\-::vec\-Value}}}\label{namespaceosea_ae7c5f2bab0fab3931b2ef51a0ad04cc2}
+
+
+Type definition used to store key values. Must be a vector of vectors because a value may also be a list of values. 
+
+
+
+Definition at line 70 of file objectgroup.\-h.
+

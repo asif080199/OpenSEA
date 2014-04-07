@@ -1,0 +1,19 @@
+/**
+\page seakeeping_fundamentals Seakeeping Fundamentals
+
+\todo Expand the seakeeping fundamentals section.  A little introductory knowledge.
+
+
+\subpage frequency_domain_analysis
+
+\subpage linear_algebra
+
+\subpage waves
+
+\subpage wave_interactions_with_bodies
+
+\subpage hydrodynamic_data
+
+
+
+*/

@@ -1,0 +1,34 @@
+/**
+\page bodies Bodies
+
+\todo Documentation on theoretical basis for bodies.  Include links to the body coordinate system.
+
+# Body Mass
+
+Rigid body mass.  Meant for 6DOF rigid body only.
+
+
+## Simulating Additional Mass
+
+You can simulate additional mass items by entering them as a reactive force object.
+
+
+# Body Forces
+
+- Mass Forces
+- Reactive Forces - User
+  - Can be any order of derivative from 0 to no limit.  Very useful for modeling behavior of 
+control systems.
+- Reactive Forces - Hydrodynamic
+  - Normally automatically included.  None if you set the hydrodynamic body name to "none".
+- Active Forces - User
+- Actve Forces - Hydrodynamic
+- Crossbody Forces - User
+- Crossbody Forces - Hydrodynamic
+
+
+# Multibody Support
+
+\subpage multibody_support
+
+*/

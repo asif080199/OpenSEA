@@ -1,0 +1,73 @@
+/**
+\page Validation
+
+Valication is an important part of the development for software engineering.  This is a formalized 
+method of quality control checks to ensure the program works correctly.  The formalized method is a 
+two step process:
+
+-# Verification
+-# Validation
+
+
+## Verification
+
+Verification is quality control on the equations as implemented within the program.  This focuses 
+on two main elements.  First, confirming that the equations were actually coded into the program as 
+they should be.  A typo can make a large difference for equations.
+
+The second process is to ensure algebraic implementations match the original equations.  In 
+engineering software, many of the equations involve differential equations and calculus.  However, 
+computers do not have any native understanding of calculus.  So, we represent the differential 
+equations as a series of algebraic equations, using a branch of science called [finite difference 
+mathematics](http://en.wikipedia.org/wiki/Finite_difference).
+
+The algebraic representations are sometimes very complicated.  Verification involves checking each 
+algebraic equation and working backwards to ensure it matches the original differential equation.  
+This is largely a theoretical exercise and not covered in the Developer's Manual.  You will find 
+the full details of verification in the Theory Manual.
+
+
+## Validation
+
+Validation essentially checks for bugs in the software, specifically focused on the equations.  
+This is typically done by comparing the software to a series of test cases and comparing results.  
+The following test cases were used for development of ofreq.  They start as simple cases to 
+validate basic functionality, and move to progressively more complex cases that systematically test 
+all of ofreq's features.
+
+
+### Single Body Tests
+
+These test focus only on single body performance for ofreq.
+
+\subpage SimpleTest1
+
+\subpage SimpleTest2
+
+\subpage SimpleTest3
+
+\subpage SimpleTest4
+
+
+### Multiple Body Tests
+
+These tests repeat all the features tested in the simple version.  But now they focus on 
+multiple-bodies present in the analysis.
+
+\subpage MultiBodyTest1
+
+\subpage MultiBodyTest2
+
+\subpage MultiBodyTest3
+
+\subpage MultiBodyTest4
+
+
+### Other Tests
+
+Tests that do not fit nicely into any of the other categories, but they are still just as important.
+
+\subpage TestFrequency
+
+
+*/

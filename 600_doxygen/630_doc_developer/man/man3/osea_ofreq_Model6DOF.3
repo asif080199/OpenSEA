@@ -1,0 +1,110 @@
+.TH "osea::ofreq::Model6DOF" 3 "Sat Apr 5 2014" "Version 0.4" "oFreq" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+osea::ofreq::Model6DOF \- 
+.PP
+The motion model for standard six-degree of freedom rigid-body dynamics problems\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <model6dof\&.h>\fP
+.PP
+Inherits \fBosea::ofreq::MotionModel\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBModel6DOF\fP ()"
+.br
+.RI "\fIThe default constructor\&. \fP"
+.ti -1c
+.RI "\fBModel6DOF\fP (std::vector< \fBBody\fP > &listBodIn)"
+.br
+.RI "\fIConstructor\&. This is the preferred constructor as it supplies the body data\&. \fP"
+.ti -1c
+.RI "\fB~Model6DOF\fP ()"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBDefineEquations\fP ()"
+.br
+.RI "\fIThe function used to define the equation of motion objects\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+The motion model for standard six-degree of freedom rigid-body dynamics problems\&. 
+
+.PP
+.PP
+This is where each \fBEquationofMotion\fP object is created\&. Can also be any object from a class that is derived from the \fBEquationofMotion\fP object\&. Before adding equations within this motion model, the individual equation must be defined\&. These will be new objects inheritted from the \fBEquationofMotion\fP object\&. Once those new equation clases are defined, they can be used in the motion model\&.
+.PP
+Using an \fBEquationofMotion\fP in the motion model will generally follow the following sequence\&. All step are executed within the DefineEquations function\&. 1\&.) Create a new object from the appropriate class which is derived from the \fBEquationofMotion\fP\&. When creating the equation of motion, you must include the pointer to the existing motion model\&. Use the keyword this when creating the new object\&. 2\&.) Set the data index for the equation\&. This is probably the most important step\&. Regardless of what name you give the equation, the program ofreq only sees the equation as one in a list of equations, and refers to it by its index within that list\&. Any input data (such as hydrodynamic or user coefficients) is similarly referenced by that index\&. When you set the data index, you tell ofreq which index in the list of data is has available should correspond to this specific equation\&. (Set the data index using the function setDataIndex()\&. 3\&.) Set the name for the new object\&. This is just the short name or equation symbol\&. (Use the function \fBsetName()\fP to set it\&.) 4\&.) Set the description for the new object\&. This is the more extensive name for the equation\&. (Use the function \fBsetDescription()\fP to set it\&.) 5\&.) Now that you set all the appropriate information, add the equation of motion into the list of equations used by this motion model\&. (Use the function \fBAddEquation()\fP)\&.
+.PP
+Once you define all the equations, you will also want to define a name for your motion model\&. This is the name you will use to select the motion model within the input files\&. It can be any sequence you want and include spaces\&. One name is already reserved as part of the standard program models\&. You can not use the following name: '6DOF' - Reserved\&.*
+.PP
+\fBSee Also:\fP
+.RS 4
+\fBAddEquation()\fP 
+.PP
+\fBEquationofMotion\fP 
+.RE
+.PP
+
+.PP
+Definition at line 121 of file model6dof\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "Model6DOF::Model6DOF ()"
+
+.PP
+The default constructor\&. 
+.PP
+Definition at line 36 of file model6dof\&.cpp\&.
+.SS "Model6DOF::Model6DOF (std::vector< \fBBody\fP > &listBodIn)"
+
+.PP
+Constructor\&. This is the preferred constructor as it supplies the body data\&. \fBParameters:\fP
+.RS 4
+\fIlistBodIn\fP The vector of the body objects to input\&. 
+.RE
+.PP
+
+.PP
+Definition at line 44 of file model6dof\&.cpp\&.
+.SS "Model6DOF::~Model6DOF ()"
+Default destructor\&. 
+.PP
+Definition at line 52 of file model6dof\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void Model6DOF::DefineEquations ()\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+The function used to define the equation of motion objects\&. This function gets executed when the Motion model is first created\&. It contains all the statements to add the appropriate equations to the motion model\&. This is where each \fBEquationofMotion\fP object is created\&. Can also be any object from a class that is derived from the \fBEquationofMotion\fP object\&. Before definining equations within this motion model, the individual equation must be defined\&. These will be new objects inheritted from the \fBEquationofMotion\fP object\&. Once those new equation clases are defined, they can be used in the motion model\&.
+.PP
+Using an \fBEquationofMotion\fP in the motion model will generally follow the following sequence\&. All step are executed within the DefineEquations function\&. 1\&.) Create a new object from the appropriate class which is derived from the \fBEquationofMotion\fP\&. When creating the equation of motion, you must include the pointer to the existing motion model\&. Use the keyword this when creating the new object\&. 2\&.) Set the data index for the equation\&. This is probably the most important step\&. Regardless of what name you give the equation, the program ofreq only sees the equation as one in a list of equations, and refers to it by its index within that list\&. Any input data (such as hydrodynamic or user coefficients) is similarly referenced by that index\&. When you set the data index, you tell ofreq which index in the list of data is has available should correspond to this specific equation\&. (Set the data index using the function setDataIndex()\&. 3\&.) Set the name for the new object\&. This is just the short name or equation symbol\&. (Use the function \fBsetName()\fP to set it\&.) 4\&.) Set the description for the new object\&. This is the more extensive name for the equation\&. (Use the function \fBsetDescription()\fP to set it\&.) 5\&.) Now that you set all the appropriate information, add the equation of motion into the list of equations used by this motion model\&. (Use the function \fBAddEquation()\fP)\&.
+.PP
+Once you define all the equations, you will also want to define a name for your motion model\&. This is the name you will use to select the motion model within the input files\&. It can be any sequence you want and include spaces\&. One name is already reserved as part of the standard program models\&. You can not use the following name: '6DOF' - Reserved\&.
+.PP
+\fBSee Also:\fP
+.RS 4
+\fBAddEquation()\fP 
+.PP
+\fBEquationofMotion\fP 
+.RE
+.PP
+
+.PP
+Reimplemented from \fBosea::ofreq::MotionModel\fP\&.
+.PP
+Definition at line 77 of file model6dof\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for oFreq from the source code\&.

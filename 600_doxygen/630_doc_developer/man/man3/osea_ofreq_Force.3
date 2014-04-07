@@ -1,0 +1,151 @@
+.TH "osea::ofreq::Force" 3 "Sat Apr 5 2014" "Version 0.4" "oFreq" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+osea::ofreq::Force \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <force\&.h>\fP
+.PP
+Inherits \fBosea::ofreq::oFreqCore\fP\&.
+.PP
+Inherited by \fBosea::ofreq::ForceActive\fP, and \fBosea::ofreq::ForceReact\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBForce\fP ()"
+.br
+.ti -1c
+.RI "\fBForce\fP (int indexIn)"
+.br
+.RI "\fIOverloaded constructor for \fBForce\fP object\&. Allows the \fBSystem\fP object to pass the index of the newly created \fBForce\fP object in the list of other similar \fBForce\fP objects\&. Used during object creation for proper association with \fBBody\fP object\&. \fP"
+.ti -1c
+.RI "virtual \fB~Force\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetForceName\fP (std::string)"
+.br
+.ti -1c
+.RI "std::string \fBgetForceName\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetSystemIndex\fP (int indexIn)"
+.br
+.RI "\fISets the system index\&. The index of the \fBForce\fP object as it exists in the list of other similar \fBForce\fP objects contained under the \fBSystem\fP object\&. \fP"
+.ti -1c
+.RI "int \fBgetSystemIndex\fP ()"
+.br
+.RI "\fIGets the system index\&. The index of the \fBForce\fP object as it exists in the list of other similar \fBForce\fP objects contained under the \fBSystem\fP object\&. \fP"
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "std::string \fBforceName\fP"
+.br
+.ti -1c
+.RI "int \fBpSysIndex\fP"
+.br
+.RI "\fIThe index of the \fBForce\fP object as it exists in the list of other similar \fBForce\fP objects contained under the \fBSystem\fP object\&. \fP"
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+This (base) class holds data for a force object\&. 
+.PP
+Definition at line 83 of file force\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "Force::Force ()"
+The default constructor\&. 
+.PP
+Definition at line 33 of file force\&.cpp\&.
+.SS "Force::Force (intindexIn)"
+
+.PP
+Overloaded constructor for \fBForce\fP object\&. Allows the \fBSystem\fP object to pass the index of the newly created \fBForce\fP object in the list of other similar \fBForce\fP objects\&. Used during object creation for proper association with \fBBody\fP object\&. \fBParameters:\fP
+.RS 4
+\fIindexIn\fP Integer\&. The index of the \fBForce\fP object as it exists in the list of other similar \fBForce\fP objects contained under the \fBSystem\fP object\&. Variable passed by value\&. 
+.RE
+.PP
+\fBSee Also:\fP
+.RS 4
+\fBdictBodies\fP 
+.PP
+\fBSystem\fP 
+.PP
+\fBBody\fP 
+.RE
+.PP
+
+.PP
+Definition at line 38 of file force\&.cpp\&.
+.SS "Force::~Force ()\fC [virtual]\fP"
+The default destructor, nothing happens here\&. 
+.PP
+Definition at line 45 of file force\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "string Force::getForceName ()"
+Retrieve the name of the force\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+newName The name of the force\&. 
+.RE
+.PP
+
+.PP
+Definition at line 56 of file force\&.cpp\&.
+.SS "int Force::getSystemIndex ()"
+
+.PP
+Gets the system index\&. The index of the \fBForce\fP object as it exists in the list of other similar \fBForce\fP objects contained under the \fBSystem\fP object\&. \fBReturns:\fP
+.RS 4
+Integer\&. The index of the \fBForce\fP object as it exists in the list of other similar \fBForce\fP objects contained under the \fBSystem\fP object\&. Variable passed by value\&. 
+.RE
+.PP
+
+.PP
+Definition at line 68 of file force\&.cpp\&.
+.SS "void Force::setForceName (std::string)"
+Sets the name of the force\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fInewName\fP The name of the force\&. 
+.RE
+.PP
+
+.PP
+Definition at line 50 of file force\&.cpp\&.
+.SS "void Force::setSystemIndex (intindexIn)"
+
+.PP
+Sets the system index\&. The index of the \fBForce\fP object as it exists in the list of other similar \fBForce\fP objects contained under the \fBSystem\fP object\&. \fBParameters:\fP
+.RS 4
+\fIindexIn\fP Integer\&. The index of the \fBForce\fP object as it exists in the list of other similar \fBForce\fP objects contained under the \fBSystem\fP object\&. Variable passed by value\&. 
+.RE
+.PP
+
+.PP
+Definition at line 62 of file force\&.cpp\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "std::string osea::ofreq::Force::forceName\fC [protected]\fP"
+The force name\&. 
+.PP
+Definition at line 141 of file force\&.h\&.
+.SS "int osea::ofreq::Force::pSysIndex\fC [protected]\fP"
+
+.PP
+The index of the \fBForce\fP object as it exists in the list of other similar \fBForce\fP objects contained under the \fBSystem\fP object\&. 
+.PP
+Definition at line 148 of file force\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for oFreq from the source code\&.

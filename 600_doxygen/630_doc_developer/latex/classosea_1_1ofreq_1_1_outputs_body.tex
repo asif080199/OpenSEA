@@ -1,0 +1,1230 @@
+\hypertarget{classosea_1_1ofreq_1_1_outputs_body}{\section{osea\-:\-:ofreq\-:\-:Outputs\-Body Class Reference}
+\label{classosea_1_1ofreq_1_1_outputs_body}\index{osea\-::ofreq\-::\-Outputs\-Body@{osea\-::ofreq\-::\-Outputs\-Body}}
+}
+
+
+{\ttfamily \#include $<$outputsbody.\-h$>$}
+
+
+
+Inheritance diagram for osea\-:\-:ofreq\-:\-:Outputs\-Body\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=232pt]{classosea_1_1ofreq_1_1_outputs_body__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classosea_1_1ofreq_1_1_outputs_body_a6898483a0919f9bb9cd82e3036a59a14}{Outputs\-Body} ()
+\begin{DoxyCompactList}\small\item\em Default constructor for the \hyperlink{classosea_1_1ofreq_1_1_outputs_body}{Outputs\-Body} object. Nothing happens here. \end{DoxyCompactList}\item 
+\hyperlink{classosea_1_1ofreq_1_1_outputs_body_a03921b36c8a8323eb08355d267c0c626}{Outputs\-Body} (std\-::vector$<$ \hyperlink{classosea_1_1ofreq_1_1_body}{Body} $>$ \&list\-Bod, std\-::vector$<$ \hyperlink{classosea_1_1ofreq_1_1_solution_set}{Solution\-Set} $>$ \&list\-Soln, std\-::vector$<$ double $>$ \&\hyperlink{classosea_1_1ofreq_1_1_outputs_body_a6b28621ef475c1d917270e2259e1629f}{list\-Freq}, std\-::vector$<$ double $>$ \&\hyperlink{classosea_1_1ofreq_1_1_outputs_body_a710a66d19fb8ba5a6c9c15e0143f832e}{list\-Wave\-Dir})
+\begin{DoxyCompactList}\small\item\em Overloaded constructor for the \hyperlink{classosea_1_1ofreq_1_1_outputs_body}{Outputs\-Body} object. Includes inputs for \hyperlink{classosea_1_1ofreq_1_1_body}{Body} list, \hyperlink{classosea_1_1ofreq_1_1_solution}{Solution} list, frequencies list, and wave directions list. All inputs are passed by reference and held as constant variables to avoid changing the referenced variables. \end{DoxyCompactList}\item 
+\hyperlink{classosea_1_1ofreq_1_1_outputs_body_a9ec0c3721f511168c425b792bdaf2d62}{$\sim$\-Outputs\-Body} ()
+\begin{DoxyCompactList}\small\item\em Default destructor. Nothing happens here. \end{DoxyCompactList}\item 
+void \hyperlink{classosea_1_1ofreq_1_1_outputs_body_a662db07d35c5f329098a70a838ec868c}{Initialize} ()
+\begin{DoxyCompactList}\small\item\em Creates each of the \hyperlink{classosea_1_1ofreq_1_1_output_derived}{Output\-Derived} objects in their respective lists. \end{DoxyCompactList}\item 
+void \hyperlink{classosea_1_1ofreq_1_1_outputs_body_affe1a6cc1e310a6b84edec3804340354}{set\-List\-Body} (std\-::vector$<$ \hyperlink{classosea_1_1ofreq_1_1_body}{Body} $>$ \&list\-In)
+\begin{DoxyCompactList}\small\item\em Sets the list of \hyperlink{classosea_1_1ofreq_1_1_body}{Body} objects to calculate derived outputs for. Derived outputs are calculated for only one \hyperlink{classosea_1_1ofreq_1_1_body}{Body} object in the list. The rest are included as reference for cross-\/body forces. \end{DoxyCompactList}\item 
+void \hyperlink{classosea_1_1ofreq_1_1_outputs_body_a9d77d0704823b360ce4f6e8203203d51}{set\-Solution\-Set} (std\-::vector$<$ \hyperlink{classosea_1_1ofreq_1_1_solution_set}{Solution\-Set} $>$ \&list\-In)
+\begin{DoxyCompactList}\small\item\em Sets the list of \hyperlink{classosea_1_1ofreq_1_1_solution_set}{Solution\-Set} objects to calculate derived outputs for. Derived outputs are calculated for only one \hyperlink{classosea_1_1ofreq_1_1_solution_set}{Solution\-Set} object in the list. The rest are included as reference for cross-\/body forces. \end{DoxyCompactList}\item 
+std\-::vector$<$ \hyperlink{classosea_1_1ofreq_1_1_solution_set}{Solution\-Set} $>$ \& \hyperlink{classosea_1_1ofreq_1_1_outputs_body_af05d17b2ae5f861198bd56fafa8da3d1}{list\-Solution\-Set} ()
+\begin{DoxyCompactList}\small\item\em Provides the list of the \hyperlink{classosea_1_1ofreq_1_1_solution_set}{Solution\-Set} objects. \end{DoxyCompactList}\item 
+\hyperlink{classosea_1_1ofreq_1_1_solution_set}{Solution\-Set} \& \hyperlink{classosea_1_1ofreq_1_1_outputs_body_ae3e9d0060457376bb42661db79392d4b}{list\-Solution\-Set} (int index)
+\begin{DoxyCompactList}\small\item\em Provides a single entry from the list of the \hyperlink{classosea_1_1ofreq_1_1_solution_set}{Solution\-Set} objects. \end{DoxyCompactList}\item 
+\hyperlink{classosea_1_1ofreq_1_1_solution_set}{osea\-::ofreq\-::\-Solution\-Set} \& \hyperlink{classosea_1_1ofreq_1_1_outputs_body_abc2caacb89c3574f31286f5a0e967671}{ref\-Cur\-Solution} ()
+\begin{DoxyCompactList}\small\item\em Provides access to the solution object for the current body. Saves the trouble of trying to remember which is the current body. \end{DoxyCompactList}\item 
+void \hyperlink{classosea_1_1ofreq_1_1_outputs_body_a66e80853f6e8cad402a67c45502d0f03}{set\-List\-Freq} (std\-::vector$<$ double $>$ \&list\-In)
+\begin{DoxyCompactList}\small\item\em Sets the list of wave frequencies. \end{DoxyCompactList}\item 
+std\-::vector$<$ double $>$ \& \hyperlink{classosea_1_1ofreq_1_1_outputs_body_a6b28621ef475c1d917270e2259e1629f}{list\-Freq} ()
+\begin{DoxyCompactList}\small\item\em Gets the list of wave frequencies. Provides direct access to the list. \end{DoxyCompactList}\item 
+double \& \hyperlink{classosea_1_1ofreq_1_1_outputs_body_aea5ac6ef687c5dc979817b967bc9dfe2}{list\-Freq} (int index)
+\begin{DoxyCompactList}\small\item\em Returns individual frequency from the list of wave frequencies. \end{DoxyCompactList}\item 
+void \hyperlink{classosea_1_1ofreq_1_1_outputs_body_aec7bf6b2bb30646a4f45045810265d84}{set\-List\-Wave\-Dir} (std\-::vector$<$ double $>$ \&list\-In)
+\begin{DoxyCompactList}\small\item\em Sets the list of wave directions. \end{DoxyCompactList}\item 
+std\-::vector$<$ double $>$ \& \hyperlink{classosea_1_1ofreq_1_1_outputs_body_a710a66d19fb8ba5a6c9c15e0143f832e}{list\-Wave\-Dir} ()
+\begin{DoxyCompactList}\small\item\em Gets the list of wave directions. Provides direct access to the list. \end{DoxyCompactList}\item 
+double \& \hyperlink{classosea_1_1ofreq_1_1_outputs_body_abc0b04ccd535145e9c9528cde8cd4d15}{list\-Wave\-Dir} (int index)
+\begin{DoxyCompactList}\small\item\em Returns individual wave direction from the list of wave directions. \end{DoxyCompactList}\item 
+void \hyperlink{classosea_1_1ofreq_1_1_outputs_body_a7d2b93ecaf1fa39257444bdf3194eacc}{set\-Cur\-Wave\-Dir} (int index)
+\begin{DoxyCompactList}\small\item\em Sets the current wave direction. \end{DoxyCompactList}\item 
+int \hyperlink{classosea_1_1ofreq_1_1_outputs_body_acac6b220f8d472d3cc7e9102022c88ff}{get\-Cur\-Wave\-Ind} ()
+\begin{DoxyCompactList}\small\item\em Returns the index of the current wave directio entry. \end{DoxyCompactList}\item 
+double \hyperlink{classosea_1_1ofreq_1_1_outputs_body_a21deeef0aaace27fa376c6222bc8b0a4}{get\-Cur\-Wave\-Dir} ()
+\begin{DoxyCompactList}\small\item\em Gets the current wave direction. Output is the actual value for the current wave direction, in units of radians. \end{DoxyCompactList}\item 
+void \hyperlink{classosea_1_1ofreq_1_1_outputs_body_a4b33361c2888937d2aa450f3e6df200d}{set\-Cur\-Body} (int index)
+\begin{DoxyCompactList}\small\item\em Sets the current \hyperlink{classosea_1_1ofreq_1_1_body}{Body} to use. Input selects from the list of supplied \hyperlink{classosea_1_1ofreq_1_1_body}{Body} objects. \end{DoxyCompactList}\item 
+int \hyperlink{classosea_1_1ofreq_1_1_outputs_body_a7331d48ef7cee6bd23ac0ab487894d6c}{get\-Cur\-Body\-Index} ()
+\begin{DoxyCompactList}\small\item\em Gets the index of the current \hyperlink{classosea_1_1ofreq_1_1_body}{Body} in the list of \hyperlink{classosea_1_1ofreq_1_1_body}{Body} objects. \end{DoxyCompactList}\item 
+\hyperlink{classosea_1_1ofreq_1_1_body}{Body} \& \hyperlink{classosea_1_1ofreq_1_1_outputs_body_afdb3f49b84baf1a6b2de8a5d014abfe5}{ref\-Cur\-Body} ()
+\begin{DoxyCompactList}\small\item\em Gets the current \hyperlink{classosea_1_1ofreq_1_1_body}{Body} objects used by the class for calculating Derived Outputs. The returned value depends on the last input of set\-Cur\-Body. \end{DoxyCompactList}\item 
+std\-::vector$<$ \hyperlink{classosea_1_1ofreq_1_1_body}{Body} $>$ \& \hyperlink{classosea_1_1ofreq_1_1_outputs_body_a52d2c3942f90741a576d4f979cb1333b}{list\-Body} ()
+\begin{DoxyCompactList}\small\item\em Provides direct access to the list of Bodies. \end{DoxyCompactList}\item 
+\hyperlink{classosea_1_1ofreq_1_1_body}{Body} \& \hyperlink{classosea_1_1ofreq_1_1_outputs_body_a126aac91daccbc9a7dc39bc160bc34be}{list\-Body} (int bod\-In)
+\begin{DoxyCompactList}\small\item\em Direct access to an individual \hyperlink{classosea_1_1ofreq_1_1_body}{Body} from the list of Bodies. \end{DoxyCompactList}\item 
+void \hyperlink{classosea_1_1ofreq_1_1_outputs_body_af8cf39f2529bd1aa2e6f7987e3d59438}{set\-Cur\-Output} (\hyperlink{classosea_1_1ofreq_1_1_output_derived}{Output\-Derived} $\ast$input)
+\begin{DoxyCompactList}\small\item\em Sets the pointer to the last \hyperlink{classosea_1_1ofreq_1_1_output_derived}{Output\-Derived} object that calculated the results and wrote them for access. \end{DoxyCompactList}\item 
+\hyperlink{classosea_1_1ofreq_1_1_output_derived}{Output\-Derived} \& \hyperlink{classosea_1_1ofreq_1_1_outputs_body_a56090278e50472fd7aff1faa236a765d}{ref\-Cur\-Output} ()
+\begin{DoxyCompactList}\small\item\em Provides direct access to the last \hyperlink{classosea_1_1ofreq_1_1_output_derived}{Output\-Derived} object that calculated the results. \end{DoxyCompactList}\item 
+\hyperlink{classosea_1_1ofreq_1_1_output_derived}{Output\-Derived} $\ast$ \hyperlink{classosea_1_1ofreq_1_1_outputs_body_abc4561b06217666d8d87f7c493b5c147}{get\-Cur\-Output} ()
+\begin{DoxyCompactList}\small\item\em Provides direct access to the last \hyperlink{classosea_1_1ofreq_1_1_output_derived}{Output\-Derived} object that calculated the results. \end{DoxyCompactList}\item 
+std\-::vector$<$ arma\-::cx\-\_\-mat $\ast$ $>$ \& \hyperlink{classosea_1_1ofreq_1_1_outputs_body_a9921ceff88abf0deb7729921b244f8b2}{list\-Result} ()
+\begin{DoxyCompactList}\small\item\em The results from calculation of a Derived\-Output. \end{DoxyCompactList}\item 
+arma\-::cx\-\_\-mat \& \hyperlink{classosea_1_1ofreq_1_1_outputs_body_a3e8a0cf3a1289b7d72e38f1cda4cbb03}{list\-Result} (unsigned int index)
+\begin{DoxyCompactList}\small\item\em The results from calculation of a Derived\-Output. \end{DoxyCompactList}\item 
+arma\-::cx\-\_\-mat $\ast$\& \hyperlink{classosea_1_1ofreq_1_1_outputs_body_aedcd200c75fd6076b35f8683aa89c129}{ref\-Result} (unsigned int index)
+\begin{DoxyCompactList}\small\item\em The results from calculation of a Derived\-Output. \end{DoxyCompactList}\item 
+void \hyperlink{classosea_1_1ofreq_1_1_outputs_body_adf79e0890716bf481699c2f043934478}{Clear\-Result} ()
+\begin{DoxyCompactList}\small\item\em Clears all calculated results. \end{DoxyCompactList}\item 
+std\-::vector$<$ \hyperlink{classosea_1_1ofreq_1_1_global_motion}{Global\-Motion} $\ast$ $>$ \& \hyperlink{classosea_1_1ofreq_1_1_outputs_body_a517f818c77bac914ade0c345187e852c}{list\-Global\-Motion} ()
+\begin{DoxyCompactList}\small\item\em Returns the list of \hyperlink{classosea_1_1ofreq_1_1_global_motion}{Global\-Motion} objects. \end{DoxyCompactList}\item 
+\hyperlink{classosea_1_1ofreq_1_1_global_motion}{Global\-Motion} \& \hyperlink{classosea_1_1ofreq_1_1_outputs_body_a663088b51a3645982f5cc2111a72563a}{list\-Global\-Motion} (unsigned int index)
+\begin{DoxyCompactList}\small\item\em Returns the \hyperlink{classosea_1_1ofreq_1_1_global_motion}{Global\-Motion} object from the list of \hyperlink{classosea_1_1ofreq_1_1_global_motion}{Global\-Motion} objects. \end{DoxyCompactList}\item 
+int \hyperlink{classosea_1_1ofreq_1_1_outputs_body_a4d34ba129bf256740731225b11c579bf}{calc\-Global\-Motion} (unsigned int index=0)
+\begin{DoxyCompactList}\small\item\em Calculates the \hyperlink{classosea_1_1ofreq_1_1_global_motion}{Global\-Motion} object from the list of \hyperlink{classosea_1_1ofreq_1_1_global_motion}{Global\-Motion} objects. \end{DoxyCompactList}\item 
+void \hyperlink{classosea_1_1ofreq_1_1_outputs_body_a015653c3344d036543668ffe7b4a41db}{add\-Global\-Motion} (\hyperlink{classosea_1_1ofreq_1_1_global_motion}{Global\-Motion} $\ast$input)
+\begin{DoxyCompactList}\small\item\em Adds a new \hyperlink{classosea_1_1ofreq_1_1_global_motion}{Global\-Motion} object to the list of \hyperlink{classosea_1_1ofreq_1_1_global_motion}{Global\-Motion} objects. This version sets the new \hyperlink{classosea_1_1ofreq_1_1_global_motion}{Global\-Motion} object equal to the information passed in. \end{DoxyCompactList}\item 
+void \hyperlink{classosea_1_1ofreq_1_1_outputs_body_a889dcf6d9be6e910c110018e0a309eae}{add\-Global\-Motion} ()
+\begin{DoxyCompactList}\small\item\em Overloaded function for adding a \hyperlink{classosea_1_1ofreq_1_1_global_motion}{Global\-Motion} object to the list of \hyperlink{classosea_1_1ofreq_1_1_global_motion}{Global\-Motion} objects. This version has no input \hyperlink{classosea_1_1ofreq_1_1_global_motion}{Global\-Motion} object and automatically creates a blank \hyperlink{classosea_1_1ofreq_1_1_global_motion}{Global\-Motion} object. \end{DoxyCompactList}\item 
+int \hyperlink{classosea_1_1ofreq_1_1_outputs_body_a91d2e73648558390e883ba9546433577}{calc\-Global\-Velocity} (unsigned int index=0)
+\begin{DoxyCompactList}\small\item\em Calculates the \hyperlink{classosea_1_1ofreq_1_1_global_velocity}{Global\-Velocity} object from the list of \hyperlink{classosea_1_1ofreq_1_1_global_velocity}{Global\-Velocity} objects. \end{DoxyCompactList}\item 
+std\-::vector$<$ \hyperlink{classosea_1_1ofreq_1_1_global_velocity}{Global\-Velocity} $\ast$ $>$ \& \hyperlink{classosea_1_1ofreq_1_1_outputs_body_abfe65137648e62d545cc2d11a87db65e}{list\-Global\-Velocity} ()
+\begin{DoxyCompactList}\small\item\em Returns the list of \hyperlink{classosea_1_1ofreq_1_1_global_velocity}{Global\-Velocity} objects. \end{DoxyCompactList}\item 
+\hyperlink{classosea_1_1ofreq_1_1_global_velocity}{Global\-Velocity} \& \hyperlink{classosea_1_1ofreq_1_1_outputs_body_aff6a59ad46b75242919810b72e221dd9}{list\-Global\-Velocity} (unsigned int index)
+\begin{DoxyCompactList}\small\item\em Returns the \hyperlink{classosea_1_1ofreq_1_1_global_velocity}{Global\-Velocity} object from the list of \hyperlink{classosea_1_1ofreq_1_1_global_velocity}{Global\-Velocity} objects. \end{DoxyCompactList}\item 
+void \hyperlink{classosea_1_1ofreq_1_1_outputs_body_aa334cb10ee07542372cdcef0a7ecf750}{add\-Global\-Velocity} (\hyperlink{classosea_1_1ofreq_1_1_global_velocity}{Global\-Velocity} $\ast$input)
+\begin{DoxyCompactList}\small\item\em Adds a new \hyperlink{classosea_1_1ofreq_1_1_global_velocity}{Global\-Velocity} object to the list of \hyperlink{classosea_1_1ofreq_1_1_global_velocity}{Global\-Velocity} objects. This version sets the new \hyperlink{classosea_1_1ofreq_1_1_global_velocity}{Global\-Velocity} object equal to the information passed in. \end{DoxyCompactList}\item 
+void \hyperlink{classosea_1_1ofreq_1_1_outputs_body_a07a548f3df9fa5aff4223a60f5f1b56c}{add\-Global\-Velocity} ()
+\begin{DoxyCompactList}\small\item\em Overloaded function for adding a \hyperlink{classosea_1_1ofreq_1_1_global_velocity}{Global\-Velocity} object to the list of \hyperlink{classosea_1_1ofreq_1_1_global_velocity}{Global\-Velocity} objects. This version has no input \hyperlink{classosea_1_1ofreq_1_1_global_velocity}{Global\-Velocity} object and automatically creates a blank \hyperlink{classosea_1_1ofreq_1_1_global_velocity}{Global\-Velocity} object. \end{DoxyCompactList}\item 
+int \hyperlink{classosea_1_1ofreq_1_1_outputs_body_a4be242a9a54fef3ba42674f815c7ae61}{calc\-Global\-Acceleration} (unsigned int index=0)
+\begin{DoxyCompactList}\small\item\em Calculates the \hyperlink{classosea_1_1ofreq_1_1_global_acceleration}{Global\-Acceleration} object from the list of \hyperlink{classosea_1_1ofreq_1_1_global_acceleration}{Global\-Acceleration} objects. \end{DoxyCompactList}\item 
+std\-::vector\\*
+$<$ \hyperlink{classosea_1_1ofreq_1_1_global_acceleration}{Global\-Acceleration} $\ast$ $>$ \& \hyperlink{classosea_1_1ofreq_1_1_outputs_body_ad840585a6d2ccb29085477408d877299}{list\-Global\-Acceleration} ()
+\begin{DoxyCompactList}\small\item\em Returns the list of \hyperlink{classosea_1_1ofreq_1_1_global_acceleration}{Global\-Acceleration} objects. \end{DoxyCompactList}\item 
+\hyperlink{classosea_1_1ofreq_1_1_global_acceleration}{Global\-Acceleration} \& \hyperlink{classosea_1_1ofreq_1_1_outputs_body_a76c051c2dd085912f7803ad89017fbcd}{list\-Global\-Acceleration} (unsigned int index)
+\begin{DoxyCompactList}\small\item\em Returns the \hyperlink{classosea_1_1ofreq_1_1_global_acceleration}{Global\-Acceleration} object from the list of \hyperlink{classosea_1_1ofreq_1_1_global_acceleration}{Global\-Acceleration} objects. \end{DoxyCompactList}\item 
+void \hyperlink{classosea_1_1ofreq_1_1_outputs_body_aa726a0eca1105d15bd23fd1cb51ecc67}{add\-Global\-Acceleration} (\hyperlink{classosea_1_1ofreq_1_1_global_acceleration}{Global\-Acceleration} $\ast$input)
+\begin{DoxyCompactList}\small\item\em Adds a new \hyperlink{classosea_1_1ofreq_1_1_global_acceleration}{Global\-Acceleration} object to the list of \hyperlink{classosea_1_1ofreq_1_1_global_acceleration}{Global\-Acceleration} objects. This version sets the new \hyperlink{classosea_1_1ofreq_1_1_global_acceleration}{Global\-Acceleration} object equal to the information passed in. \end{DoxyCompactList}\item 
+void \hyperlink{classosea_1_1ofreq_1_1_outputs_body_a3205155873f5db270a71377e5ff80bb4}{add\-Global\-Acceleration} ()
+\begin{DoxyCompactList}\small\item\em Overloaded function for adding a \hyperlink{classosea_1_1ofreq_1_1_global_acceleration}{Global\-Acceleration} object to the list of \hyperlink{classosea_1_1ofreq_1_1_global_acceleration}{Global\-Acceleration} objects. This version has no input \hyperlink{classosea_1_1ofreq_1_1_global_acceleration}{Global\-Acceleration} object and automatically creates a blank \hyperlink{classosea_1_1ofreq_1_1_global_acceleration}{Global\-Acceleration} object. \end{DoxyCompactList}\item 
+int \hyperlink{classosea_1_1ofreq_1_1_outputs_body_a0d970726f3d24a2014f3f872852e9c6f}{calc\-Global\-Solution} (unsigned int index=0)
+\begin{DoxyCompactList}\small\item\em Calculates the \hyperlink{classosea_1_1ofreq_1_1_global_solution}{Global\-Solution} object from the list of \hyperlink{classosea_1_1ofreq_1_1_global_solution}{Global\-Solution} objects. \end{DoxyCompactList}\item 
+std\-::vector$<$ \hyperlink{classosea_1_1ofreq_1_1_global_solution}{Global\-Solution} $\ast$ $>$ \& \hyperlink{classosea_1_1ofreq_1_1_outputs_body_aef867ab4e6884f0dad8fcc8d57a18cdb}{list\-Global\-Solution} ()
+\begin{DoxyCompactList}\small\item\em Returns the list of \hyperlink{classosea_1_1ofreq_1_1_global_solution}{Global\-Solution} objects. \end{DoxyCompactList}\item 
+\hyperlink{classosea_1_1ofreq_1_1_global_solution}{Global\-Solution} \& \hyperlink{classosea_1_1ofreq_1_1_outputs_body_a8f79408b1a84cc54f52743514b88b659}{list\-Global\-Solution} (unsigned int index)
+\begin{DoxyCompactList}\small\item\em Returns the \hyperlink{classosea_1_1ofreq_1_1_global_solution}{Global\-Solution} object from the list of \hyperlink{classosea_1_1ofreq_1_1_global_solution}{Global\-Solution} objects. \end{DoxyCompactList}\item 
+void \hyperlink{classosea_1_1ofreq_1_1_outputs_body_ac5657a2f9a4ac48a56db7b081864ea8d}{add\-Global\-Solution} (\hyperlink{classosea_1_1ofreq_1_1_global_solution}{Global\-Solution} $\ast$input)
+\begin{DoxyCompactList}\small\item\em Adds a new \hyperlink{classosea_1_1ofreq_1_1_global_solution}{Global\-Solution} object to the list of \hyperlink{classosea_1_1ofreq_1_1_global_solution}{Global\-Solution} objects. This version sets the new \hyperlink{classosea_1_1ofreq_1_1_global_solution}{Global\-Solution} object equal to the information passed in. \end{DoxyCompactList}\item 
+void \hyperlink{classosea_1_1ofreq_1_1_outputs_body_a13ae87153fcf43774b970aad94f0ca27}{add\-Global\-Solution} ()
+\begin{DoxyCompactList}\small\item\em Overloaded function for adding a \hyperlink{classosea_1_1ofreq_1_1_global_solution}{Global\-Solution} object to the list of \hyperlink{classosea_1_1ofreq_1_1_global_solution}{Global\-Solution} objects. This version has no input \hyperlink{classosea_1_1ofreq_1_1_global_solution}{Global\-Solution} object and automatically creates a blank \hyperlink{classosea_1_1ofreq_1_1_global_solution}{Global\-Solution} object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+This class holds all types of derived outputs for a single body object. Each derived output type is contained in a vector. This allows multiple instances of each output type. To save on memory, an output type is not calculated until it is requested. And then the derived output immediately returns the calculations. Outputs are typically returned as a vector of objects. Each row in the vector represents a different wave frequency. The object contained in the returned vector The meaning may change with each derived output type. You should check the documentation for each derived output.
+
+Each derived output is listed as its own item in the class. Each derived output class has the following methods associated with it. (For this generic example, the term Output refers to any derived output object.)
+\begin{DoxyEnumerate}
+\item ref\-Output\-: Pointer to the output object itself.
+\item get\-Output\-: Calculates the output and writes the result out as a cx\-\_\-matrix object.
+\item add\-Output\-: Adds a new output object to the list of objects. Optionally takes the supplied output. Otherwise creates a new output object in the vector list.
+\end{DoxyEnumerate}
+
+To use the outputs\-Body class, you must supply several properties to it. These properties give the outputs class full knowledge of the current state of affairs. This allows the different derived outputs to have the most flexibility for how to calculate results. Set the following properties\-:
+
+Data Sets\-:
+\begin{DoxyEnumerate}
+\item Bodies list
+\item Solutions list
+\item Frequencies list
+\item Wave directions list
+\end{DoxyEnumerate}
+
+Individual properties
+\begin{DoxyEnumerate}
+\item Current body for outputs\-Body object.
+\item Current wave direction.
+\end{DoxyEnumerate}
+
+Once these properties are set, you may calculate derived outputs. Inputs for derived outputs may be set before all these properties are set.
+
+The following derived outputs are available\-: \begin{DoxySeeAlso}{See Also}
+\hyperlink{classosea_1_1ofreq_1_1_global_solution}{Global\-Solution} 
+
+\hyperlink{classosea_1_1ofreq_1_1_global_motion}{Global\-Motion} 
+
+\hyperlink{classosea_1_1ofreq_1_1_global_velocity}{Global\-Velocity} 
+
+\hyperlink{classosea_1_1ofreq_1_1_global_acceleration}{Global\-Acceleration}
+\end{DoxySeeAlso}
+Developers note\-: The original scheme had the \hyperlink{classosea_1_1ofreq_1_1_output_derived}{Output\-Derived} class include a pointer to the contain parent class, \hyperlink{classosea_1_1ofreq_1_1_outputs_body}{Outputs\-Body}. But this creates a cyclic dependency of header files, and will not compile. The only resolution I found to this was to not include the parent class and pass all the necessary information to each individual \hyperlink{classosea_1_1ofreq_1_1_output_derived}{Output\-Derived} object. This is tedious, but within the reasons of the methods defined by the \hyperlink{classosea_1_1ofreq_1_1_outputs_body}{Outputs\-Body} class. And it allow compilation. All data items are passed by reference to avoid excess memory duplication. 
+
+Definition at line 145 of file outputsbody.\-h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classosea_1_1ofreq_1_1_outputs_body_a6898483a0919f9bb9cd82e3036a59a14}{\index{osea\-::ofreq\-::\-Outputs\-Body@{osea\-::ofreq\-::\-Outputs\-Body}!Outputs\-Body@{Outputs\-Body}}
+\index{Outputs\-Body@{Outputs\-Body}!osea::ofreq::OutputsBody@{osea\-::ofreq\-::\-Outputs\-Body}}
+\subsubsection[{Outputs\-Body}]{\setlength{\rightskip}{0pt plus 5cm}Outputs\-Body\-::\-Outputs\-Body (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_outputs_body_a6898483a0919f9bb9cd82e3036a59a14}
+
+
+Default constructor for the \hyperlink{classosea_1_1ofreq_1_1_outputs_body}{Outputs\-Body} object. Nothing happens here. 
+
+
+
+Definition at line 34 of file outputsbody.\-cpp.
+
+\hypertarget{classosea_1_1ofreq_1_1_outputs_body_a03921b36c8a8323eb08355d267c0c626}{\index{osea\-::ofreq\-::\-Outputs\-Body@{osea\-::ofreq\-::\-Outputs\-Body}!Outputs\-Body@{Outputs\-Body}}
+\index{Outputs\-Body@{Outputs\-Body}!osea::ofreq::OutputsBody@{osea\-::ofreq\-::\-Outputs\-Body}}
+\subsubsection[{Outputs\-Body}]{\setlength{\rightskip}{0pt plus 5cm}osea\-::ofreq\-::\-Outputs\-Body\-::\-Outputs\-Body (
+\begin{DoxyParamCaption}
+\item[{std\-::vector$<$ {\bf Body} $>$ \&}]{list\-Bod, }
+\item[{std\-::vector$<$ {\bf Solution\-Set} $>$ \&}]{list\-Soln, }
+\item[{std\-::vector$<$ double $>$ \&}]{list\-Freq, }
+\item[{std\-::vector$<$ double $>$ \&}]{list\-Wave\-Dir}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_outputs_body_a03921b36c8a8323eb08355d267c0c626}
+
+
+Overloaded constructor for the \hyperlink{classosea_1_1ofreq_1_1_outputs_body}{Outputs\-Body} object. Includes inputs for \hyperlink{classosea_1_1ofreq_1_1_body}{Body} list, \hyperlink{classosea_1_1ofreq_1_1_solution}{Solution} list, frequencies list, and wave directions list. All inputs are passed by reference and held as constant variables to avoid changing the referenced variables. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em list\-Bod} & The vector of \hyperlink{classosea_1_1ofreq_1_1_body}{Body} objects to use for the object. Contains all the information about \hyperlink{classosea_1_1ofreq_1_1_body}{Body} forces. \\
+\hline
+{\em list\-Soln} & The vector of \hyperlink{classosea_1_1ofreq_1_1_solution_set}{Solution\-Set} objects to use for the object. Contains all the information about solutions for each body. Each \hyperlink{classosea_1_1ofreq_1_1_solution_set}{Solution\-Set} object in the vector represents the solutions for all frequencies for a single \hyperlink{classosea_1_1ofreq_1_1_body}{Body} object. \\
+\hline
+{\em list\-Freq} & The vector of wave frequencies to use for the object. Each wave frequency corresponds to a \hyperlink{classosea_1_1ofreq_1_1_solution}{Solution} object in the \hyperlink{classosea_1_1ofreq_1_1_solution_set}{Solution\-Set} object. \\
+\hline
+{\em list\-Wave\-Dir} & The vector of wave directions to use for the object. This is provided mostly for reference. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classosea_1_1ofreq_1_1_outputs_body_a9ec0c3721f511168c425b792bdaf2d62}{\index{osea\-::ofreq\-::\-Outputs\-Body@{osea\-::ofreq\-::\-Outputs\-Body}!$\sim$\-Outputs\-Body@{$\sim$\-Outputs\-Body}}
+\index{$\sim$\-Outputs\-Body@{$\sim$\-Outputs\-Body}!osea::ofreq::OutputsBody@{osea\-::ofreq\-::\-Outputs\-Body}}
+\subsubsection[{$\sim$\-Outputs\-Body}]{\setlength{\rightskip}{0pt plus 5cm}Outputs\-Body\-::$\sim$\-Outputs\-Body (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_outputs_body_a9ec0c3721f511168c425b792bdaf2d62}
+
+
+Default destructor. Nothing happens here. 
+
+
+
+Definition at line 59 of file outputsbody.\-cpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classosea_1_1ofreq_1_1_outputs_body_aa726a0eca1105d15bd23fd1cb51ecc67}{\index{osea\-::ofreq\-::\-Outputs\-Body@{osea\-::ofreq\-::\-Outputs\-Body}!add\-Global\-Acceleration@{add\-Global\-Acceleration}}
+\index{add\-Global\-Acceleration@{add\-Global\-Acceleration}!osea::ofreq::OutputsBody@{osea\-::ofreq\-::\-Outputs\-Body}}
+\subsubsection[{add\-Global\-Acceleration}]{\setlength{\rightskip}{0pt plus 5cm}void Outputs\-Body\-::add\-Global\-Acceleration (
+\begin{DoxyParamCaption}
+\item[{{\bf Global\-Acceleration} $\ast$}]{input}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_outputs_body_aa726a0eca1105d15bd23fd1cb51ecc67}
+
+
+Adds a new \hyperlink{classosea_1_1ofreq_1_1_global_acceleration}{Global\-Acceleration} object to the list of \hyperlink{classosea_1_1ofreq_1_1_global_acceleration}{Global\-Acceleration} objects. This version sets the new \hyperlink{classosea_1_1ofreq_1_1_global_acceleration}{Global\-Acceleration} object equal to the information passed in. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em input} & Pointer to the new \hyperlink{classosea_1_1ofreq_1_1_global_acceleration}{Global\-Acceleration} object to add to the list of \hyperlink{classosea_1_1ofreq_1_1_global_acceleration}{Global\-Acceleration} objects. Pointer is passed by value. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 493 of file outputsbody.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classosea_1_1ofreq_1_1_outputs_body_aa726a0eca1105d15bd23fd1cb51ecc67_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classosea_1_1ofreq_1_1_outputs_body_a3205155873f5db270a71377e5ff80bb4}{\index{osea\-::ofreq\-::\-Outputs\-Body@{osea\-::ofreq\-::\-Outputs\-Body}!add\-Global\-Acceleration@{add\-Global\-Acceleration}}
+\index{add\-Global\-Acceleration@{add\-Global\-Acceleration}!osea::ofreq::OutputsBody@{osea\-::ofreq\-::\-Outputs\-Body}}
+\subsubsection[{add\-Global\-Acceleration}]{\setlength{\rightskip}{0pt plus 5cm}void Outputs\-Body\-::add\-Global\-Acceleration (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_outputs_body_a3205155873f5db270a71377e5ff80bb4}
+
+
+Overloaded function for adding a \hyperlink{classosea_1_1ofreq_1_1_global_acceleration}{Global\-Acceleration} object to the list of \hyperlink{classosea_1_1ofreq_1_1_global_acceleration}{Global\-Acceleration} objects. This version has no input \hyperlink{classosea_1_1ofreq_1_1_global_acceleration}{Global\-Acceleration} object and automatically creates a blank \hyperlink{classosea_1_1ofreq_1_1_global_acceleration}{Global\-Acceleration} object. 
+
+
+
+Definition at line 501 of file outputsbody.\-cpp.
+
+\hypertarget{classosea_1_1ofreq_1_1_outputs_body_a015653c3344d036543668ffe7b4a41db}{\index{osea\-::ofreq\-::\-Outputs\-Body@{osea\-::ofreq\-::\-Outputs\-Body}!add\-Global\-Motion@{add\-Global\-Motion}}
+\index{add\-Global\-Motion@{add\-Global\-Motion}!osea::ofreq::OutputsBody@{osea\-::ofreq\-::\-Outputs\-Body}}
+\subsubsection[{add\-Global\-Motion}]{\setlength{\rightskip}{0pt plus 5cm}void Outputs\-Body\-::add\-Global\-Motion (
+\begin{DoxyParamCaption}
+\item[{{\bf Global\-Motion} $\ast$}]{input}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_outputs_body_a015653c3344d036543668ffe7b4a41db}
+
+
+Adds a new \hyperlink{classosea_1_1ofreq_1_1_global_motion}{Global\-Motion} object to the list of \hyperlink{classosea_1_1ofreq_1_1_global_motion}{Global\-Motion} objects. This version sets the new \hyperlink{classosea_1_1ofreq_1_1_global_motion}{Global\-Motion} object equal to the information passed in. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em input} & Pointer to the new \hyperlink{classosea_1_1ofreq_1_1_global_motion}{Global\-Motion} object to add to the list of \hyperlink{classosea_1_1ofreq_1_1_global_motion}{Global\-Motion} objects. Pointer is passed by value. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 351 of file outputsbody.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classosea_1_1ofreq_1_1_outputs_body_a015653c3344d036543668ffe7b4a41db_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classosea_1_1ofreq_1_1_outputs_body_a889dcf6d9be6e910c110018e0a309eae}{\index{osea\-::ofreq\-::\-Outputs\-Body@{osea\-::ofreq\-::\-Outputs\-Body}!add\-Global\-Motion@{add\-Global\-Motion}}
+\index{add\-Global\-Motion@{add\-Global\-Motion}!osea::ofreq::OutputsBody@{osea\-::ofreq\-::\-Outputs\-Body}}
+\subsubsection[{add\-Global\-Motion}]{\setlength{\rightskip}{0pt plus 5cm}void Outputs\-Body\-::add\-Global\-Motion (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_outputs_body_a889dcf6d9be6e910c110018e0a309eae}
+
+
+Overloaded function for adding a \hyperlink{classosea_1_1ofreq_1_1_global_motion}{Global\-Motion} object to the list of \hyperlink{classosea_1_1ofreq_1_1_global_motion}{Global\-Motion} objects. This version has no input \hyperlink{classosea_1_1ofreq_1_1_global_motion}{Global\-Motion} object and automatically creates a blank \hyperlink{classosea_1_1ofreq_1_1_global_motion}{Global\-Motion} object. 
+
+
+
+Definition at line 360 of file outputsbody.\-cpp.
+
+\hypertarget{classosea_1_1ofreq_1_1_outputs_body_ac5657a2f9a4ac48a56db7b081864ea8d}{\index{osea\-::ofreq\-::\-Outputs\-Body@{osea\-::ofreq\-::\-Outputs\-Body}!add\-Global\-Solution@{add\-Global\-Solution}}
+\index{add\-Global\-Solution@{add\-Global\-Solution}!osea::ofreq::OutputsBody@{osea\-::ofreq\-::\-Outputs\-Body}}
+\subsubsection[{add\-Global\-Solution}]{\setlength{\rightskip}{0pt plus 5cm}void Outputs\-Body\-::add\-Global\-Solution (
+\begin{DoxyParamCaption}
+\item[{{\bf Global\-Solution} $\ast$}]{input}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_outputs_body_ac5657a2f9a4ac48a56db7b081864ea8d}
+
+
+Adds a new \hyperlink{classosea_1_1ofreq_1_1_global_solution}{Global\-Solution} object to the list of \hyperlink{classosea_1_1ofreq_1_1_global_solution}{Global\-Solution} objects. This version sets the new \hyperlink{classosea_1_1ofreq_1_1_global_solution}{Global\-Solution} object equal to the information passed in. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em input} & Pointer to the new \hyperlink{classosea_1_1ofreq_1_1_global_solution}{Global\-Solution} object to add to the list of \hyperlink{classosea_1_1ofreq_1_1_global_solution}{Global\-Solution} objects. Pointer is passed by value. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 562 of file outputsbody.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classosea_1_1ofreq_1_1_outputs_body_ac5657a2f9a4ac48a56db7b081864ea8d_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classosea_1_1ofreq_1_1_outputs_body_a13ae87153fcf43774b970aad94f0ca27}{\index{osea\-::ofreq\-::\-Outputs\-Body@{osea\-::ofreq\-::\-Outputs\-Body}!add\-Global\-Solution@{add\-Global\-Solution}}
+\index{add\-Global\-Solution@{add\-Global\-Solution}!osea::ofreq::OutputsBody@{osea\-::ofreq\-::\-Outputs\-Body}}
+\subsubsection[{add\-Global\-Solution}]{\setlength{\rightskip}{0pt plus 5cm}void Outputs\-Body\-::add\-Global\-Solution (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_outputs_body_a13ae87153fcf43774b970aad94f0ca27}
+
+
+Overloaded function for adding a \hyperlink{classosea_1_1ofreq_1_1_global_solution}{Global\-Solution} object to the list of \hyperlink{classosea_1_1ofreq_1_1_global_solution}{Global\-Solution} objects. This version has no input \hyperlink{classosea_1_1ofreq_1_1_global_solution}{Global\-Solution} object and automatically creates a blank \hyperlink{classosea_1_1ofreq_1_1_global_solution}{Global\-Solution} object. 
+
+
+
+Definition at line 570 of file outputsbody.\-cpp.
+
+\hypertarget{classosea_1_1ofreq_1_1_outputs_body_aa334cb10ee07542372cdcef0a7ecf750}{\index{osea\-::ofreq\-::\-Outputs\-Body@{osea\-::ofreq\-::\-Outputs\-Body}!add\-Global\-Velocity@{add\-Global\-Velocity}}
+\index{add\-Global\-Velocity@{add\-Global\-Velocity}!osea::ofreq::OutputsBody@{osea\-::ofreq\-::\-Outputs\-Body}}
+\subsubsection[{add\-Global\-Velocity}]{\setlength{\rightskip}{0pt plus 5cm}void Outputs\-Body\-::add\-Global\-Velocity (
+\begin{DoxyParamCaption}
+\item[{{\bf Global\-Velocity} $\ast$}]{input}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_outputs_body_aa334cb10ee07542372cdcef0a7ecf750}
+
+
+Adds a new \hyperlink{classosea_1_1ofreq_1_1_global_velocity}{Global\-Velocity} object to the list of \hyperlink{classosea_1_1ofreq_1_1_global_velocity}{Global\-Velocity} objects. This version sets the new \hyperlink{classosea_1_1ofreq_1_1_global_velocity}{Global\-Velocity} object equal to the information passed in. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em input} & Pointer to the new \hyperlink{classosea_1_1ofreq_1_1_global_velocity}{Global\-Velocity} object to add to the list of \hyperlink{classosea_1_1ofreq_1_1_global_velocity}{Global\-Velocity} objects. Pointer is passed by value. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 422 of file outputsbody.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classosea_1_1ofreq_1_1_outputs_body_aa334cb10ee07542372cdcef0a7ecf750_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classosea_1_1ofreq_1_1_outputs_body_a07a548f3df9fa5aff4223a60f5f1b56c}{\index{osea\-::ofreq\-::\-Outputs\-Body@{osea\-::ofreq\-::\-Outputs\-Body}!add\-Global\-Velocity@{add\-Global\-Velocity}}
+\index{add\-Global\-Velocity@{add\-Global\-Velocity}!osea::ofreq::OutputsBody@{osea\-::ofreq\-::\-Outputs\-Body}}
+\subsubsection[{add\-Global\-Velocity}]{\setlength{\rightskip}{0pt plus 5cm}void Outputs\-Body\-::add\-Global\-Velocity (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_outputs_body_a07a548f3df9fa5aff4223a60f5f1b56c}
+
+
+Overloaded function for adding a \hyperlink{classosea_1_1ofreq_1_1_global_velocity}{Global\-Velocity} object to the list of \hyperlink{classosea_1_1ofreq_1_1_global_velocity}{Global\-Velocity} objects. This version has no input \hyperlink{classosea_1_1ofreq_1_1_global_velocity}{Global\-Velocity} object and automatically creates a blank \hyperlink{classosea_1_1ofreq_1_1_global_velocity}{Global\-Velocity} object. 
+
+
+
+Definition at line 430 of file outputsbody.\-cpp.
+
+\hypertarget{classosea_1_1ofreq_1_1_outputs_body_a4be242a9a54fef3ba42674f815c7ae61}{\index{osea\-::ofreq\-::\-Outputs\-Body@{osea\-::ofreq\-::\-Outputs\-Body}!calc\-Global\-Acceleration@{calc\-Global\-Acceleration}}
+\index{calc\-Global\-Acceleration@{calc\-Global\-Acceleration}!osea::ofreq::OutputsBody@{osea\-::ofreq\-::\-Outputs\-Body}}
+\subsubsection[{calc\-Global\-Acceleration}]{\setlength{\rightskip}{0pt plus 5cm}int Outputs\-Body\-::calc\-Global\-Acceleration (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{index = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_outputs_body_a4be242a9a54fef3ba42674f815c7ae61}
+
+
+Calculates the \hyperlink{classosea_1_1ofreq_1_1_global_acceleration}{Global\-Acceleration} object from the list of \hyperlink{classosea_1_1ofreq_1_1_global_acceleration}{Global\-Acceleration} objects. 
+
+Outputs from calculation is written to the results matrix. You can retrieve the results from the calculation by use of the get\-Result() function. Calculating any other Derived\-Output will erase your results from the Results matrix and you will need to recalculate them. 
+\begin{DoxyParams}{Parameters}
+{\em index} & The index of which \hyperlink{classosea_1_1ofreq_1_1_global_acceleration}{Global\-Acceleration} object to retrieve from the list of objects. For this Derived Output, there is only one \hyperlink{classosea_1_1ofreq_1_1_global_acceleration}{Global\-Acceleration} object per \hyperlink{classosea_1_1ofreq_1_1_outputs_body}{Outputs\-Body}. The default value selects this object. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns an integer for output. This integer is not the calculation result. It reports on whether the calculation is successful. A returned value of zero (0) means a successful calculation. Other returned values are error codes, each with their own meaning. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classosea_1_1ofreq_1_1_global_acceleration}{Global\-Acceleration} 
+\end{DoxySeeAlso}
+
+
+Definition at line 462 of file outputsbody.\-cpp.
+
+\hypertarget{classosea_1_1ofreq_1_1_outputs_body_a4d34ba129bf256740731225b11c579bf}{\index{osea\-::ofreq\-::\-Outputs\-Body@{osea\-::ofreq\-::\-Outputs\-Body}!calc\-Global\-Motion@{calc\-Global\-Motion}}
+\index{calc\-Global\-Motion@{calc\-Global\-Motion}!osea::ofreq::OutputsBody@{osea\-::ofreq\-::\-Outputs\-Body}}
+\subsubsection[{calc\-Global\-Motion}]{\setlength{\rightskip}{0pt plus 5cm}int Outputs\-Body\-::calc\-Global\-Motion (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{index = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_outputs_body_a4d34ba129bf256740731225b11c579bf}
+
+
+Calculates the \hyperlink{classosea_1_1ofreq_1_1_global_motion}{Global\-Motion} object from the list of \hyperlink{classosea_1_1ofreq_1_1_global_motion}{Global\-Motion} objects. 
+
+Outputs from calculation is written to the results matrix. You can retrieve the results from the calculation by use of the get\-Result() function. Calculating any other Derived\-Output will erase your results from the Results matrix and you will need to recalculate them. 
+\begin{DoxyParams}{Parameters}
+{\em index} & The index of which \hyperlink{classosea_1_1ofreq_1_1_global_motion}{Global\-Motion} object to retrieve from the list of objects. For this Derived Output, there is only one \hyperlink{classosea_1_1ofreq_1_1_global_motion}{Global\-Motion} object per \hyperlink{classosea_1_1ofreq_1_1_outputs_body}{Outputs\-Body}. The default value selects this object. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns an integer for output. This integer is not the calculation result. It reports on whether the calculation is successful. A returned value of zero (0) means a successful calculation. Other returned values are error codes, each with their own meaning. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classosea_1_1ofreq_1_1_global_motion}{Global\-Motion} 
+\end{DoxySeeAlso}
+
+
+Definition at line 320 of file outputsbody.\-cpp.
+
+\hypertarget{classosea_1_1ofreq_1_1_outputs_body_a0d970726f3d24a2014f3f872852e9c6f}{\index{osea\-::ofreq\-::\-Outputs\-Body@{osea\-::ofreq\-::\-Outputs\-Body}!calc\-Global\-Solution@{calc\-Global\-Solution}}
+\index{calc\-Global\-Solution@{calc\-Global\-Solution}!osea::ofreq::OutputsBody@{osea\-::ofreq\-::\-Outputs\-Body}}
+\subsubsection[{calc\-Global\-Solution}]{\setlength{\rightskip}{0pt plus 5cm}int Outputs\-Body\-::calc\-Global\-Solution (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{index = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_outputs_body_a0d970726f3d24a2014f3f872852e9c6f}
+
+
+Calculates the \hyperlink{classosea_1_1ofreq_1_1_global_solution}{Global\-Solution} object from the list of \hyperlink{classosea_1_1ofreq_1_1_global_solution}{Global\-Solution} objects. 
+
+Outputs from calculation is written to the results matrix. You can retrieve the results from the calculation by use of the get\-Result() function. Calculating any other Derived\-Output will erase your results from the Results matrix and you will need to recalculate them. 
+\begin{DoxyParams}{Parameters}
+{\em index} & The index of which \hyperlink{classosea_1_1ofreq_1_1_global_solution}{Global\-Solution} object to retrieve from the list of objects. For this Derived Output, there is only one \hyperlink{classosea_1_1ofreq_1_1_global_solution}{Global\-Solution} object per \hyperlink{classosea_1_1ofreq_1_1_outputs_body}{Outputs\-Body}. The default value selects this object. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns an integer for output. This integer is not the calculation result. It reports on whether the calculation is successful. A returned value of zero (0) means a successful calculation. Other returned values are error codes, each with their own meaning. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classosea_1_1ofreq_1_1_global_solution}{Global\-Solution} 
+\end{DoxySeeAlso}
+
+
+Definition at line 531 of file outputsbody.\-cpp.
+
+\hypertarget{classosea_1_1ofreq_1_1_outputs_body_a91d2e73648558390e883ba9546433577}{\index{osea\-::ofreq\-::\-Outputs\-Body@{osea\-::ofreq\-::\-Outputs\-Body}!calc\-Global\-Velocity@{calc\-Global\-Velocity}}
+\index{calc\-Global\-Velocity@{calc\-Global\-Velocity}!osea::ofreq::OutputsBody@{osea\-::ofreq\-::\-Outputs\-Body}}
+\subsubsection[{calc\-Global\-Velocity}]{\setlength{\rightskip}{0pt plus 5cm}int Outputs\-Body\-::calc\-Global\-Velocity (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{index = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_outputs_body_a91d2e73648558390e883ba9546433577}
+
+
+Calculates the \hyperlink{classosea_1_1ofreq_1_1_global_velocity}{Global\-Velocity} object from the list of \hyperlink{classosea_1_1ofreq_1_1_global_velocity}{Global\-Velocity} objects. 
+
+Outputs from calculation is written to the results matrix. You can retrieve the results from the calculation by use of the get\-Result() function. Calculating any other Derived\-Output will erase your results from the Results matrix and you will need to recalculate them. 
+\begin{DoxyParams}{Parameters}
+{\em index} & The index of which \hyperlink{classosea_1_1ofreq_1_1_global_velocity}{Global\-Velocity} object to retrieve from the list of objects. For this Derived Output, there is only one \hyperlink{classosea_1_1ofreq_1_1_global_velocity}{Global\-Velocity} object per \hyperlink{classosea_1_1ofreq_1_1_outputs_body}{Outputs\-Body}. The default value selects this object. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns an integer for output. This integer is not the calculation result. It reports on whether the calculation is successful. A returned value of zero (0) means a successful calculation. Other returned values are error codes, each with their own meaning. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classosea_1_1ofreq_1_1_global_velocity}{Global\-Velocity} 
+\end{DoxySeeAlso}
+
+
+Definition at line 391 of file outputsbody.\-cpp.
+
+\hypertarget{classosea_1_1ofreq_1_1_outputs_body_adf79e0890716bf481699c2f043934478}{\index{osea\-::ofreq\-::\-Outputs\-Body@{osea\-::ofreq\-::\-Outputs\-Body}!Clear\-Result@{Clear\-Result}}
+\index{Clear\-Result@{Clear\-Result}!osea::ofreq::OutputsBody@{osea\-::ofreq\-::\-Outputs\-Body}}
+\subsubsection[{Clear\-Result}]{\setlength{\rightskip}{0pt plus 5cm}void Outputs\-Body\-::\-Clear\-Result (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_outputs_body_adf79e0890716bf481699c2f043934478}
+
+
+Clears all calculated results. 
+
+Clears the calculated results from all internal storage. And removes any pointers to the Derived\-Output object that calculated the result. The Derived\-Output object itself is not deleted. 
+
+Definition at line 277 of file outputsbody.\-cpp.
+
+\hypertarget{classosea_1_1ofreq_1_1_outputs_body_a7331d48ef7cee6bd23ac0ab487894d6c}{\index{osea\-::ofreq\-::\-Outputs\-Body@{osea\-::ofreq\-::\-Outputs\-Body}!get\-Cur\-Body\-Index@{get\-Cur\-Body\-Index}}
+\index{get\-Cur\-Body\-Index@{get\-Cur\-Body\-Index}!osea::ofreq::OutputsBody@{osea\-::ofreq\-::\-Outputs\-Body}}
+\subsubsection[{get\-Cur\-Body\-Index}]{\setlength{\rightskip}{0pt plus 5cm}int Outputs\-Body\-::get\-Cur\-Body\-Index (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_outputs_body_a7331d48ef7cee6bd23ac0ab487894d6c}
+
+
+Gets the index of the current \hyperlink{classosea_1_1ofreq_1_1_body}{Body} in the list of \hyperlink{classosea_1_1ofreq_1_1_body}{Body} objects. 
+
+\begin{DoxyReturn}{Returns}
+Returns the index of the current \hyperlink{classosea_1_1ofreq_1_1_body}{Body} assigned to this \hyperlink{classosea_1_1ofreq_1_1_outputs_body}{Outputs\-Body} object. This differs from other function \hyperlink{classosea_1_1ofreq_1_1_outputs_body_afdb3f49b84baf1a6b2de8a5d014abfe5}{ref\-Cur\-Body()} because \hyperlink{classosea_1_1ofreq_1_1_outputs_body_afdb3f49b84baf1a6b2de8a5d014abfe5}{ref\-Cur\-Body()} returns a pointer to the body directly. But this function, \hyperlink{classosea_1_1ofreq_1_1_outputs_body_a7331d48ef7cee6bd23ac0ab487894d6c}{get\-Cur\-Body\-Index()} returns the integer index of the \hyperlink{classosea_1_1ofreq_1_1_body}{Body} object in the vector list of \hyperlink{classosea_1_1ofreq_1_1_body}{Body} objects. Returned variable is passed by value. 
+\end{DoxyReturn}
+
+
+Definition at line 201 of file outputsbody.\-cpp.
+
+\hypertarget{classosea_1_1ofreq_1_1_outputs_body_abc4561b06217666d8d87f7c493b5c147}{\index{osea\-::ofreq\-::\-Outputs\-Body@{osea\-::ofreq\-::\-Outputs\-Body}!get\-Cur\-Output@{get\-Cur\-Output}}
+\index{get\-Cur\-Output@{get\-Cur\-Output}!osea::ofreq::OutputsBody@{osea\-::ofreq\-::\-Outputs\-Body}}
+\subsubsection[{get\-Cur\-Output}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Output\-Derived} $\ast$ Outputs\-Body\-::get\-Cur\-Output (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_outputs_body_abc4561b06217666d8d87f7c493b5c147}
+
+
+Provides direct access to the last \hyperlink{classosea_1_1ofreq_1_1_output_derived}{Output\-Derived} object that calculated the results. 
+
+When a call is made to calculate the outputs of a Derived\-Output object, that object writes its results to the Results storage in the \hyperlink{classosea_1_1ofreq_1_1_outputs_body}{Outputs\-Body}. The pointer is then set to that \hyperlink{classosea_1_1ofreq_1_1_output_derived}{Output\-Derived} object. This is in case you need to access the \hyperlink{classosea_1_1ofreq_1_1_output_derived}{Output\-Derived} object for any reason. You don't need to remember which object did the calculation. You can just access the object. \begin{DoxyReturn}{Returns}
+Returns a pointer to the \hyperlink{classosea_1_1ofreq_1_1_output_derived}{Output\-Derived} object that performed the last calculation. Pointer passed by value. 
+\end{DoxyReturn}
+
+
+Definition at line 237 of file outputsbody.\-cpp.
+
+\hypertarget{classosea_1_1ofreq_1_1_outputs_body_a21deeef0aaace27fa376c6222bc8b0a4}{\index{osea\-::ofreq\-::\-Outputs\-Body@{osea\-::ofreq\-::\-Outputs\-Body}!get\-Cur\-Wave\-Dir@{get\-Cur\-Wave\-Dir}}
+\index{get\-Cur\-Wave\-Dir@{get\-Cur\-Wave\-Dir}!osea::ofreq::OutputsBody@{osea\-::ofreq\-::\-Outputs\-Body}}
+\subsubsection[{get\-Cur\-Wave\-Dir}]{\setlength{\rightskip}{0pt plus 5cm}double Outputs\-Body\-::get\-Cur\-Wave\-Dir (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_outputs_body_a21deeef0aaace27fa376c6222bc8b0a4}
+
+
+Gets the current wave direction. Output is the actual value for the current wave direction, in units of radians. 
+
+\begin{DoxyReturn}{Returns}
+Returns a double that is the current wave direction, in units of radians. Variable is passed by value. 
+\end{DoxyReturn}
+
+
+Definition at line 189 of file outputsbody.\-cpp.
+
+\hypertarget{classosea_1_1ofreq_1_1_outputs_body_acac6b220f8d472d3cc7e9102022c88ff}{\index{osea\-::ofreq\-::\-Outputs\-Body@{osea\-::ofreq\-::\-Outputs\-Body}!get\-Cur\-Wave\-Ind@{get\-Cur\-Wave\-Ind}}
+\index{get\-Cur\-Wave\-Ind@{get\-Cur\-Wave\-Ind}!osea::ofreq::OutputsBody@{osea\-::ofreq\-::\-Outputs\-Body}}
+\subsubsection[{get\-Cur\-Wave\-Ind}]{\setlength{\rightskip}{0pt plus 5cm}int Outputs\-Body\-::get\-Cur\-Wave\-Ind (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_outputs_body_acac6b220f8d472d3cc7e9102022c88ff}
+
+
+Returns the index of the current wave directio entry. 
+
+\begin{DoxyReturn}{Returns}
+Integer. Returns the index of the current wave directio entry. Variable passed by value. 
+\end{DoxyReturn}
+
+
+Definition at line 183 of file outputsbody.\-cpp.
+
+\hypertarget{classosea_1_1ofreq_1_1_outputs_body_a662db07d35c5f329098a70a838ec868c}{\index{osea\-::ofreq\-::\-Outputs\-Body@{osea\-::ofreq\-::\-Outputs\-Body}!Initialize@{Initialize}}
+\index{Initialize@{Initialize}!osea::ofreq::OutputsBody@{osea\-::ofreq\-::\-Outputs\-Body}}
+\subsubsection[{Initialize}]{\setlength{\rightskip}{0pt plus 5cm}void Outputs\-Body\-::\-Initialize (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_outputs_body_a662db07d35c5f329098a70a838ec868c}
+
+
+Creates each of the \hyperlink{classosea_1_1ofreq_1_1_output_derived}{Output\-Derived} objects in their respective lists. 
+
+Each list of \hyperlink{classosea_1_1ofreq_1_1_output_derived}{Output\-Derived} object can contain any number of objects. The initialize function is called to generate each of these \hyperlink{classosea_1_1ofreq_1_1_output_derived}{Output\-Derived} objects. 
+
+Definition at line 86 of file outputsbody.\-cpp.
+
+\hypertarget{classosea_1_1ofreq_1_1_outputs_body_a52d2c3942f90741a576d4f979cb1333b}{\index{osea\-::ofreq\-::\-Outputs\-Body@{osea\-::ofreq\-::\-Outputs\-Body}!list\-Body@{list\-Body}}
+\index{list\-Body@{list\-Body}!osea::ofreq::OutputsBody@{osea\-::ofreq\-::\-Outputs\-Body}}
+\subsubsection[{list\-Body}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<$ {\bf Body} $>$ \& Outputs\-Body\-::list\-Body (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_outputs_body_a52d2c3942f90741a576d4f979cb1333b}
+
+
+Provides direct access to the list of Bodies. 
+
+\begin{DoxyReturn}{Returns}
+Reference to vector of \hyperlink{classosea_1_1ofreq_1_1_body}{Body} objects. Variable passed by reference. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classosea_1_1ofreq_1_1_body}{Body} 
+\end{DoxySeeAlso}
+
+
+Definition at line 213 of file outputsbody.\-cpp.
+
+\hypertarget{classosea_1_1ofreq_1_1_outputs_body_a126aac91daccbc9a7dc39bc160bc34be}{\index{osea\-::ofreq\-::\-Outputs\-Body@{osea\-::ofreq\-::\-Outputs\-Body}!list\-Body@{list\-Body}}
+\index{list\-Body@{list\-Body}!osea::ofreq::OutputsBody@{osea\-::ofreq\-::\-Outputs\-Body}}
+\subsubsection[{list\-Body}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Body} \& Outputs\-Body\-::list\-Body (
+\begin{DoxyParamCaption}
+\item[{int}]{bod\-In}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_outputs_body_a126aac91daccbc9a7dc39bc160bc34be}
+
+
+Direct access to an individual \hyperlink{classosea_1_1ofreq_1_1_body}{Body} from the list of Bodies. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em bod\-In} & Integer specifying which \hyperlink{classosea_1_1ofreq_1_1_body}{Body} object to access in the list of Bodies. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns reference to the \hyperlink{classosea_1_1ofreq_1_1_body}{Body} object specified by input bod\-In. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classosea_1_1ofreq_1_1_outputs_body_a52d2c3942f90741a576d4f979cb1333b}{list\-Body()} 
+\end{DoxySeeAlso}
+
+
+Definition at line 219 of file outputsbody.\-cpp.
+
+\hypertarget{classosea_1_1ofreq_1_1_outputs_body_a6b28621ef475c1d917270e2259e1629f}{\index{osea\-::ofreq\-::\-Outputs\-Body@{osea\-::ofreq\-::\-Outputs\-Body}!list\-Freq@{list\-Freq}}
+\index{list\-Freq@{list\-Freq}!osea::ofreq::OutputsBody@{osea\-::ofreq\-::\-Outputs\-Body}}
+\subsubsection[{list\-Freq}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ double $>$ \& Outputs\-Body\-::list\-Freq (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_outputs_body_a6b28621ef475c1d917270e2259e1629f}
+
+
+Gets the list of wave frequencies. Provides direct access to the list. 
+
+\begin{DoxyReturn}{Returns}
+Returns the vector of doubles representing the wave frequencies. Frequencies entered in units of radians per second. Variable is passed by reference. 
+\end{DoxyReturn}
+
+
+Definition at line 147 of file outputsbody.\-cpp.
+
+\hypertarget{classosea_1_1ofreq_1_1_outputs_body_aea5ac6ef687c5dc979817b967bc9dfe2}{\index{osea\-::ofreq\-::\-Outputs\-Body@{osea\-::ofreq\-::\-Outputs\-Body}!list\-Freq@{list\-Freq}}
+\index{list\-Freq@{list\-Freq}!osea::ofreq::OutputsBody@{osea\-::ofreq\-::\-Outputs\-Body}}
+\subsubsection[{list\-Freq}]{\setlength{\rightskip}{0pt plus 5cm}double \& Outputs\-Body\-::list\-Freq (
+\begin{DoxyParamCaption}
+\item[{int}]{index}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_outputs_body_aea5ac6ef687c5dc979817b967bc9dfe2}
+
+
+Returns individual frequency from the list of wave frequencies. 
+
+Returns the frequency specified by the index. 
+\begin{DoxyParams}{Parameters}
+{\em index} & Integer. The index which specifies which wave frequency to return. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Double. Returns individual frequency from the list of wave frequencies. Returned variabled is passed by reference. 
+\end{DoxyReturn}
+
+
+Definition at line 153 of file outputsbody.\-cpp.
+
+\hypertarget{classosea_1_1ofreq_1_1_outputs_body_ad840585a6d2ccb29085477408d877299}{\index{osea\-::ofreq\-::\-Outputs\-Body@{osea\-::ofreq\-::\-Outputs\-Body}!list\-Global\-Acceleration@{list\-Global\-Acceleration}}
+\index{list\-Global\-Acceleration@{list\-Global\-Acceleration}!osea::ofreq::OutputsBody@{osea\-::ofreq\-::\-Outputs\-Body}}
+\subsubsection[{list\-Global\-Acceleration}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ {\bf Global\-Acceleration} $\ast$ $>$ \& Outputs\-Body\-::list\-Global\-Acceleration (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_outputs_body_ad840585a6d2ccb29085477408d877299}
+
+
+Returns the list of \hyperlink{classosea_1_1ofreq_1_1_global_acceleration}{Global\-Acceleration} objects. 
+
+\begin{DoxyReturn}{Returns}
+Returns a vector of pointers to each of the global motion objects. Returned variable passed by reference. 
+\end{DoxyReturn}
+
+
+Definition at line 439 of file outputsbody.\-cpp.
+
+\hypertarget{classosea_1_1ofreq_1_1_outputs_body_a76c051c2dd085912f7803ad89017fbcd}{\index{osea\-::ofreq\-::\-Outputs\-Body@{osea\-::ofreq\-::\-Outputs\-Body}!list\-Global\-Acceleration@{list\-Global\-Acceleration}}
+\index{list\-Global\-Acceleration@{list\-Global\-Acceleration}!osea::ofreq::OutputsBody@{osea\-::ofreq\-::\-Outputs\-Body}}
+\subsubsection[{list\-Global\-Acceleration}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Global\-Acceleration} \& Outputs\-Body\-::list\-Global\-Acceleration (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{index}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_outputs_body_a76c051c2dd085912f7803ad89017fbcd}
+
+
+Returns the \hyperlink{classosea_1_1ofreq_1_1_global_acceleration}{Global\-Acceleration} object from the list of \hyperlink{classosea_1_1ofreq_1_1_global_acceleration}{Global\-Acceleration} objects. 
+
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classosea_1_1ofreq_1_1_global_acceleration}{Global\-Acceleration} 
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em index} & The index of which \hyperlink{classosea_1_1ofreq_1_1_global_acceleration}{Global\-Acceleration} object to retrieve from the list of objects. For this Derived Output, there is only one \hyperlink{classosea_1_1ofreq_1_1_global_acceleration}{Global\-Acceleration} object per \hyperlink{classosea_1_1ofreq_1_1_outputs_body}{Outputs\-Body}. The default value selects this object. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns the \hyperlink{classosea_1_1ofreq_1_1_global_acceleration}{Global\-Acceleration} object from the list of \hyperlink{classosea_1_1ofreq_1_1_global_acceleration}{Global\-Acceleration} objects. Returned variable is passed by reference. Returns only the object specified by the input index. 
+\end{DoxyReturn}
+
+
+Definition at line 445 of file outputsbody.\-cpp.
+
+\hypertarget{classosea_1_1ofreq_1_1_outputs_body_a517f818c77bac914ade0c345187e852c}{\index{osea\-::ofreq\-::\-Outputs\-Body@{osea\-::ofreq\-::\-Outputs\-Body}!list\-Global\-Motion@{list\-Global\-Motion}}
+\index{list\-Global\-Motion@{list\-Global\-Motion}!osea::ofreq::OutputsBody@{osea\-::ofreq\-::\-Outputs\-Body}}
+\subsubsection[{list\-Global\-Motion}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<$ {\bf Global\-Motion} $\ast$ $>$ \& Outputs\-Body\-::list\-Global\-Motion (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_outputs_body_a517f818c77bac914ade0c345187e852c}
+
+
+Returns the list of \hyperlink{classosea_1_1ofreq_1_1_global_motion}{Global\-Motion} objects. 
+
+\begin{DoxyReturn}{Returns}
+Returns a vector of pointers to each of the global motion objects. Returned variable passed by reference. 
+\end{DoxyReturn}
+
+
+Definition at line 298 of file outputsbody.\-cpp.
+
+\hypertarget{classosea_1_1ofreq_1_1_outputs_body_a663088b51a3645982f5cc2111a72563a}{\index{osea\-::ofreq\-::\-Outputs\-Body@{osea\-::ofreq\-::\-Outputs\-Body}!list\-Global\-Motion@{list\-Global\-Motion}}
+\index{list\-Global\-Motion@{list\-Global\-Motion}!osea::ofreq::OutputsBody@{osea\-::ofreq\-::\-Outputs\-Body}}
+\subsubsection[{list\-Global\-Motion}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Global\-Motion} \& Outputs\-Body\-::list\-Global\-Motion (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{index}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_outputs_body_a663088b51a3645982f5cc2111a72563a}
+
+
+Returns the \hyperlink{classosea_1_1ofreq_1_1_global_motion}{Global\-Motion} object from the list of \hyperlink{classosea_1_1ofreq_1_1_global_motion}{Global\-Motion} objects. 
+
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classosea_1_1ofreq_1_1_global_motion}{Global\-Motion} 
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em index} & The index of which \hyperlink{classosea_1_1ofreq_1_1_global_motion}{Global\-Motion} object to retrieve from the list of objects. For this Derived Output, there is only one \hyperlink{classosea_1_1ofreq_1_1_global_motion}{Global\-Motion} object per \hyperlink{classosea_1_1ofreq_1_1_outputs_body}{Outputs\-Body}. The default value selects this object. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns the \hyperlink{classosea_1_1ofreq_1_1_global_motion}{Global\-Motion} object from the list of \hyperlink{classosea_1_1ofreq_1_1_global_motion}{Global\-Motion} objects. Returned variable is passed by reference. Returns only the object specified by the input index. 
+\end{DoxyReturn}
+
+
+Definition at line 304 of file outputsbody.\-cpp.
+
+\hypertarget{classosea_1_1ofreq_1_1_outputs_body_aef867ab4e6884f0dad8fcc8d57a18cdb}{\index{osea\-::ofreq\-::\-Outputs\-Body@{osea\-::ofreq\-::\-Outputs\-Body}!list\-Global\-Solution@{list\-Global\-Solution}}
+\index{list\-Global\-Solution@{list\-Global\-Solution}!osea::ofreq::OutputsBody@{osea\-::ofreq\-::\-Outputs\-Body}}
+\subsubsection[{list\-Global\-Solution}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ {\bf Global\-Solution} $\ast$ $>$ \& Outputs\-Body\-::list\-Global\-Solution (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_outputs_body_aef867ab4e6884f0dad8fcc8d57a18cdb}
+
+
+Returns the list of \hyperlink{classosea_1_1ofreq_1_1_global_solution}{Global\-Solution} objects. 
+
+\begin{DoxyReturn}{Returns}
+Returns a vector of pointers to each of the global motion objects. Returned variable passed by reference. 
+\end{DoxyReturn}
+
+
+Definition at line 509 of file outputsbody.\-cpp.
+
+\hypertarget{classosea_1_1ofreq_1_1_outputs_body_a8f79408b1a84cc54f52743514b88b659}{\index{osea\-::ofreq\-::\-Outputs\-Body@{osea\-::ofreq\-::\-Outputs\-Body}!list\-Global\-Solution@{list\-Global\-Solution}}
+\index{list\-Global\-Solution@{list\-Global\-Solution}!osea::ofreq::OutputsBody@{osea\-::ofreq\-::\-Outputs\-Body}}
+\subsubsection[{list\-Global\-Solution}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Global\-Solution} \& Outputs\-Body\-::list\-Global\-Solution (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{index}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_outputs_body_a8f79408b1a84cc54f52743514b88b659}
+
+
+Returns the \hyperlink{classosea_1_1ofreq_1_1_global_solution}{Global\-Solution} object from the list of \hyperlink{classosea_1_1ofreq_1_1_global_solution}{Global\-Solution} objects. 
+
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classosea_1_1ofreq_1_1_global_solution}{Global\-Solution} 
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em index} & The index of which \hyperlink{classosea_1_1ofreq_1_1_global_solution}{Global\-Solution} object to retrieve from the list of objects. For this Derived Output, there is only one \hyperlink{classosea_1_1ofreq_1_1_global_solution}{Global\-Solution} object per \hyperlink{classosea_1_1ofreq_1_1_outputs_body}{Outputs\-Body}. The default value selects this object. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns the \hyperlink{classosea_1_1ofreq_1_1_global_solution}{Global\-Solution} object from the list of \hyperlink{classosea_1_1ofreq_1_1_global_solution}{Global\-Solution} objects. Returned variable is passed by reference. Returns only the object specified by the input index. 
+\end{DoxyReturn}
+
+
+Definition at line 515 of file outputsbody.\-cpp.
+
+\hypertarget{classosea_1_1ofreq_1_1_outputs_body_abfe65137648e62d545cc2d11a87db65e}{\index{osea\-::ofreq\-::\-Outputs\-Body@{osea\-::ofreq\-::\-Outputs\-Body}!list\-Global\-Velocity@{list\-Global\-Velocity}}
+\index{list\-Global\-Velocity@{list\-Global\-Velocity}!osea::ofreq::OutputsBody@{osea\-::ofreq\-::\-Outputs\-Body}}
+\subsubsection[{list\-Global\-Velocity}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<$ {\bf Global\-Velocity} $\ast$ $>$ \& Outputs\-Body\-::list\-Global\-Velocity (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_outputs_body_abfe65137648e62d545cc2d11a87db65e}
+
+
+Returns the list of \hyperlink{classosea_1_1ofreq_1_1_global_velocity}{Global\-Velocity} objects. 
+
+\begin{DoxyReturn}{Returns}
+Returns a vector of pointers to each of the global motion objects. Returned variable passed by reference. 
+\end{DoxyReturn}
+
+
+Definition at line 369 of file outputsbody.\-cpp.
+
+\hypertarget{classosea_1_1ofreq_1_1_outputs_body_aff6a59ad46b75242919810b72e221dd9}{\index{osea\-::ofreq\-::\-Outputs\-Body@{osea\-::ofreq\-::\-Outputs\-Body}!list\-Global\-Velocity@{list\-Global\-Velocity}}
+\index{list\-Global\-Velocity@{list\-Global\-Velocity}!osea::ofreq::OutputsBody@{osea\-::ofreq\-::\-Outputs\-Body}}
+\subsubsection[{list\-Global\-Velocity}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Global\-Velocity} \& Outputs\-Body\-::list\-Global\-Velocity (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{index}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_outputs_body_aff6a59ad46b75242919810b72e221dd9}
+
+
+Returns the \hyperlink{classosea_1_1ofreq_1_1_global_velocity}{Global\-Velocity} object from the list of \hyperlink{classosea_1_1ofreq_1_1_global_velocity}{Global\-Velocity} objects. 
+
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classosea_1_1ofreq_1_1_global_velocity}{Global\-Velocity} 
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em index} & The index of which \hyperlink{classosea_1_1ofreq_1_1_global_velocity}{Global\-Velocity} object to retrieve from the list of objects. For this Derived Output, there is only one \hyperlink{classosea_1_1ofreq_1_1_global_velocity}{Global\-Velocity} object per \hyperlink{classosea_1_1ofreq_1_1_outputs_body}{Outputs\-Body}. The default value selects this object. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns the \hyperlink{classosea_1_1ofreq_1_1_global_velocity}{Global\-Velocity} object from the list of \hyperlink{classosea_1_1ofreq_1_1_global_velocity}{Global\-Velocity} objects. Returned variable is passed by reference. Returns only the object specified by the input index. 
+\end{DoxyReturn}
+
+
+Definition at line 375 of file outputsbody.\-cpp.
+
+\hypertarget{classosea_1_1ofreq_1_1_outputs_body_a9921ceff88abf0deb7729921b244f8b2}{\index{osea\-::ofreq\-::\-Outputs\-Body@{osea\-::ofreq\-::\-Outputs\-Body}!list\-Result@{list\-Result}}
+\index{list\-Result@{list\-Result}!osea::ofreq::OutputsBody@{osea\-::ofreq\-::\-Outputs\-Body}}
+\subsubsection[{list\-Result}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<$ arma\-::cx\-\_\-mat $\ast$ $>$ \& Outputs\-Body\-::list\-Result (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_outputs_body_a9921ceff88abf0deb7729921b244f8b2}
+
+
+The results from calculation of a Derived\-Output. 
+
+When a call is made to calculate a Derived\-Output object, the object stores the results of its calculation in the results matrix. Those results can be accessed through this method. This method is also used by the Derived\-Output object to write the results. Derived\-Output object automatically resizes the output buffer as needed. The output buffer is a vector storing pointers to matrices of complex numbers. \begin{DoxyReturn}{Returns}
+Returns direct access to the stored results matrix. Returned variable is a vector storing pointers to matrices of complex numbers. matrix of undetermined size. Returned variable is passed by reference. 
+\end{DoxyReturn}
+
+
+Definition at line 243 of file outputsbody.\-cpp.
+
+\hypertarget{classosea_1_1ofreq_1_1_outputs_body_a3e8a0cf3a1289b7d72e38f1cda4cbb03}{\index{osea\-::ofreq\-::\-Outputs\-Body@{osea\-::ofreq\-::\-Outputs\-Body}!list\-Result@{list\-Result}}
+\index{list\-Result@{list\-Result}!osea::ofreq::OutputsBody@{osea\-::ofreq\-::\-Outputs\-Body}}
+\subsubsection[{list\-Result}]{\setlength{\rightskip}{0pt plus 5cm}arma\-::cx\-\_\-mat \& Outputs\-Body\-::list\-Result (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{index}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_outputs_body_a3e8a0cf3a1289b7d72e38f1cda4cbb03}
+
+
+The results from calculation of a Derived\-Output. 
+
+When a call is made to calculate a Derived\-Output object, the object stores the results of its calculation in the results matrix. Those results can be accessed through this method. This method is also used by the Derived\-Output object to write the results. Derived\-Output object automatically resizes the output buffer as needed. The output buffer is a vector storing pointers to matrices of complex numbers. 
+\begin{DoxyParams}{Parameters}
+{\em index} & Integer input that specifies which matrix to retrieve from the list of results. Most commonly, the index represents the index of a wave frequency from the list of wave frequencies. (i.\-e. The list is organized by wave frequencies.) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns direct access to the stored results matrix. Returned variable is a matrix of complex numbers. Matrix of undetermined size. Returned variable is passed by reference. 
+\end{DoxyReturn}
+
+
+Definition at line 249 of file outputsbody.\-cpp.
+
+\hypertarget{classosea_1_1ofreq_1_1_outputs_body_af05d17b2ae5f861198bd56fafa8da3d1}{\index{osea\-::ofreq\-::\-Outputs\-Body@{osea\-::ofreq\-::\-Outputs\-Body}!list\-Solution\-Set@{list\-Solution\-Set}}
+\index{list\-Solution\-Set@{list\-Solution\-Set}!osea::ofreq::OutputsBody@{osea\-::ofreq\-::\-Outputs\-Body}}
+\subsubsection[{list\-Solution\-Set}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<$ {\bf Solution\-Set} $>$ \& Outputs\-Body\-::list\-Solution\-Set (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_outputs_body_af05d17b2ae5f861198bd56fafa8da3d1}
+
+
+Provides the list of the \hyperlink{classosea_1_1ofreq_1_1_solution_set}{Solution\-Set} objects. 
+
+Derived outputs are calculated for only one \hyperlink{classosea_1_1ofreq_1_1_solution_set}{Solution\-Set} object in the list. The rest are included as reference for cross-\/body forces. \begin{DoxyReturn}{Returns}
+Returns a vector containing the \hyperlink{classosea_1_1ofreq_1_1_solution_set}{Solution\-Set} objects. Variable passed by reference. 
+\end{DoxyReturn}
+
+
+Definition at line 116 of file outputsbody.\-cpp.
+
+\hypertarget{classosea_1_1ofreq_1_1_outputs_body_ae3e9d0060457376bb42661db79392d4b}{\index{osea\-::ofreq\-::\-Outputs\-Body@{osea\-::ofreq\-::\-Outputs\-Body}!list\-Solution\-Set@{list\-Solution\-Set}}
+\index{list\-Solution\-Set@{list\-Solution\-Set}!osea::ofreq::OutputsBody@{osea\-::ofreq\-::\-Outputs\-Body}}
+\subsubsection[{list\-Solution\-Set}]{\setlength{\rightskip}{0pt plus 5cm}{\bf osea\-::ofreq\-::\-Solution\-Set} \& Outputs\-Body\-::list\-Solution\-Set (
+\begin{DoxyParamCaption}
+\item[{int}]{index}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_outputs_body_ae3e9d0060457376bb42661db79392d4b}
+
+
+Provides a single entry from the list of the \hyperlink{classosea_1_1ofreq_1_1_solution_set}{Solution\-Set} objects. 
+
+Derived outputs are calculated for only one \hyperlink{classosea_1_1ofreq_1_1_solution_set}{Solution\-Set} object in the list. The rest are included as reference for cross-\/body forces. This implementation of the function only returns a single entry from the list. 
+\begin{DoxyParams}{Parameters}
+{\em index} & Integer. Specifies the index for which to retrieve the solution set. If the requested index is out of bounds, the program will return an error. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns a single \hyperlink{classosea_1_1ofreq_1_1_solution_set}{Solution\-Set} object requested from the list of \hyperlink{classosea_1_1ofreq_1_1_solution_set}{Solution\-Set} objects. Requested variable is passed by reference. 
+\end{DoxyReturn}
+
+
+Definition at line 122 of file outputsbody.\-cpp.
+
+\hypertarget{classosea_1_1ofreq_1_1_outputs_body_a710a66d19fb8ba5a6c9c15e0143f832e}{\index{osea\-::ofreq\-::\-Outputs\-Body@{osea\-::ofreq\-::\-Outputs\-Body}!list\-Wave\-Dir@{list\-Wave\-Dir}}
+\index{list\-Wave\-Dir@{list\-Wave\-Dir}!osea::ofreq::OutputsBody@{osea\-::ofreq\-::\-Outputs\-Body}}
+\subsubsection[{list\-Wave\-Dir}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ double $>$ \& Outputs\-Body\-::list\-Wave\-Dir (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_outputs_body_a710a66d19fb8ba5a6c9c15e0143f832e}
+
+
+Gets the list of wave directions. Provides direct access to the list. 
+
+\begin{DoxyReturn}{Returns}
+Returns the vector of doubles representing the wave directions. Directions entered in units of radians. Variable is passed by reference. 
+\end{DoxyReturn}
+
+
+Definition at line 165 of file outputsbody.\-cpp.
+
+\hypertarget{classosea_1_1ofreq_1_1_outputs_body_abc0b04ccd535145e9c9528cde8cd4d15}{\index{osea\-::ofreq\-::\-Outputs\-Body@{osea\-::ofreq\-::\-Outputs\-Body}!list\-Wave\-Dir@{list\-Wave\-Dir}}
+\index{list\-Wave\-Dir@{list\-Wave\-Dir}!osea::ofreq::OutputsBody@{osea\-::ofreq\-::\-Outputs\-Body}}
+\subsubsection[{list\-Wave\-Dir}]{\setlength{\rightskip}{0pt plus 5cm}double \& Outputs\-Body\-::list\-Wave\-Dir (
+\begin{DoxyParamCaption}
+\item[{int}]{index}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_outputs_body_abc0b04ccd535145e9c9528cde8cd4d15}
+
+
+Returns individual wave direction from the list of wave directions. 
+
+Returns the wave direction specified by the index. Wave directions are measured in radians. True North is zero, with positive angles going counter-\/clockwise. 
+\begin{DoxyParams}{Parameters}
+{\em index} & Integer. The index which specifies which wave direction to return. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Double. Returns individual wave direction from the list of wave directions. Returned variable is passed by reference. 
+\end{DoxyReturn}
+
+
+Definition at line 171 of file outputsbody.\-cpp.
+
+\hypertarget{classosea_1_1ofreq_1_1_outputs_body_afdb3f49b84baf1a6b2de8a5d014abfe5}{\index{osea\-::ofreq\-::\-Outputs\-Body@{osea\-::ofreq\-::\-Outputs\-Body}!ref\-Cur\-Body@{ref\-Cur\-Body}}
+\index{ref\-Cur\-Body@{ref\-Cur\-Body}!osea::ofreq::OutputsBody@{osea\-::ofreq\-::\-Outputs\-Body}}
+\subsubsection[{ref\-Cur\-Body}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Body} \& Outputs\-Body\-::ref\-Cur\-Body (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_outputs_body_afdb3f49b84baf1a6b2de8a5d014abfe5}
+
+
+Gets the current \hyperlink{classosea_1_1ofreq_1_1_body}{Body} objects used by the class for calculating Derived Outputs. The returned value depends on the last input of set\-Cur\-Body. 
+
+\begin{DoxyReturn}{Returns}
+Returns a pointer the \hyperlink{classosea_1_1ofreq_1_1_body}{Body} object used by the class for calculating Derived Outputs. The returned variable is passed by reference. 
+\end{DoxyReturn}
+
+
+Definition at line 207 of file outputsbody.\-cpp.
+
+\hypertarget{classosea_1_1ofreq_1_1_outputs_body_a56090278e50472fd7aff1faa236a765d}{\index{osea\-::ofreq\-::\-Outputs\-Body@{osea\-::ofreq\-::\-Outputs\-Body}!ref\-Cur\-Output@{ref\-Cur\-Output}}
+\index{ref\-Cur\-Output@{ref\-Cur\-Output}!osea::ofreq::OutputsBody@{osea\-::ofreq\-::\-Outputs\-Body}}
+\subsubsection[{ref\-Cur\-Output}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Output\-Derived} \& Outputs\-Body\-::ref\-Cur\-Output (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_outputs_body_a56090278e50472fd7aff1faa236a765d}
+
+
+Provides direct access to the last \hyperlink{classosea_1_1ofreq_1_1_output_derived}{Output\-Derived} object that calculated the results. 
+
+When a call is made to calculate the outputs of a Derived\-Output object, that object writes its results to the Results storage in the \hyperlink{classosea_1_1ofreq_1_1_outputs_body}{Outputs\-Body}. The pointer is then set to that \hyperlink{classosea_1_1ofreq_1_1_output_derived}{Output\-Derived} object. This is in case you need to access the \hyperlink{classosea_1_1ofreq_1_1_output_derived}{Output\-Derived} object for any reason. You don't need to remember which object did the calculation. You can just access the object. \begin{DoxyReturn}{Returns}
+Returns the \hyperlink{classosea_1_1ofreq_1_1_output_derived}{Output\-Derived} object that performed the last calculation. Variable passed by reference. 
+\end{DoxyReturn}
+
+
+Definition at line 231 of file outputsbody.\-cpp.
+
+\hypertarget{classosea_1_1ofreq_1_1_outputs_body_abc2caacb89c3574f31286f5a0e967671}{\index{osea\-::ofreq\-::\-Outputs\-Body@{osea\-::ofreq\-::\-Outputs\-Body}!ref\-Cur\-Solution@{ref\-Cur\-Solution}}
+\index{ref\-Cur\-Solution@{ref\-Cur\-Solution}!osea::ofreq::OutputsBody@{osea\-::ofreq\-::\-Outputs\-Body}}
+\subsubsection[{ref\-Cur\-Solution}]{\setlength{\rightskip}{0pt plus 5cm}{\bf osea\-::ofreq\-::\-Solution\-Set} \& Outputs\-Body\-::ref\-Cur\-Solution (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_outputs_body_abc2caacb89c3574f31286f5a0e967671}
+
+
+Provides access to the solution object for the current body. Saves the trouble of trying to remember which is the current body. 
+
+\begin{DoxyReturn}{Returns}
+Returns the solution object for the current body. Returned variable passed by reference. 
+\end{DoxyReturn}
+
+
+Definition at line 135 of file outputsbody.\-cpp.
+
+\hypertarget{classosea_1_1ofreq_1_1_outputs_body_aedcd200c75fd6076b35f8683aa89c129}{\index{osea\-::ofreq\-::\-Outputs\-Body@{osea\-::ofreq\-::\-Outputs\-Body}!ref\-Result@{ref\-Result}}
+\index{ref\-Result@{ref\-Result}!osea::ofreq::OutputsBody@{osea\-::ofreq\-::\-Outputs\-Body}}
+\subsubsection[{ref\-Result}]{\setlength{\rightskip}{0pt plus 5cm}arma\-::cx\-\_\-mat $\ast$\& Outputs\-Body\-::ref\-Result (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{index}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_outputs_body_aedcd200c75fd6076b35f8683aa89c129}
+
+
+The results from calculation of a Derived\-Output. 
+
+When a call is made to calculate a Derived\-Output object, the object stores the results of its calculation in the results matrix. Those results can be accessed through this method. This method is also used by the Derived\-Output object to write the results. Derived\-Output object automatically resizes the output buffer as needed. The output buffer is a vector storing pointers to matrices of complex numbers. 
+\begin{DoxyParams}{Parameters}
+{\em index} & Integer input that specifies which matrix to retrieve from the list of results. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns a pointer to the stored results matrix. Returned variable is a pointer to a matrix of complex numbers. Matrix of undetermined size. Returned variable is passed by reference. 
+\end{DoxyReturn}
+
+
+Definition at line 263 of file outputsbody.\-cpp.
+
+\hypertarget{classosea_1_1ofreq_1_1_outputs_body_a4b33361c2888937d2aa450f3e6df200d}{\index{osea\-::ofreq\-::\-Outputs\-Body@{osea\-::ofreq\-::\-Outputs\-Body}!set\-Cur\-Body@{set\-Cur\-Body}}
+\index{set\-Cur\-Body@{set\-Cur\-Body}!osea::ofreq::OutputsBody@{osea\-::ofreq\-::\-Outputs\-Body}}
+\subsubsection[{set\-Cur\-Body}]{\setlength{\rightskip}{0pt plus 5cm}void Outputs\-Body\-::set\-Cur\-Body (
+\begin{DoxyParamCaption}
+\item[{int}]{index}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_outputs_body_a4b33361c2888937d2aa450f3e6df200d}
+
+
+Sets the current \hyperlink{classosea_1_1ofreq_1_1_body}{Body} to use. Input selects from the list of supplied \hyperlink{classosea_1_1ofreq_1_1_body}{Body} objects. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & Integer input that selects from the list of supplied \hyperlink{classosea_1_1ofreq_1_1_body}{Body} objects. Variable is passed by value. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 195 of file outputsbody.\-cpp.
+
+\hypertarget{classosea_1_1ofreq_1_1_outputs_body_af8cf39f2529bd1aa2e6f7987e3d59438}{\index{osea\-::ofreq\-::\-Outputs\-Body@{osea\-::ofreq\-::\-Outputs\-Body}!set\-Cur\-Output@{set\-Cur\-Output}}
+\index{set\-Cur\-Output@{set\-Cur\-Output}!osea::ofreq::OutputsBody@{osea\-::ofreq\-::\-Outputs\-Body}}
+\subsubsection[{set\-Cur\-Output}]{\setlength{\rightskip}{0pt plus 5cm}void Outputs\-Body\-::set\-Cur\-Output (
+\begin{DoxyParamCaption}
+\item[{{\bf Output\-Derived} $\ast$}]{input}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_outputs_body_af8cf39f2529bd1aa2e6f7987e3d59438}
+
+
+Sets the pointer to the last \hyperlink{classosea_1_1ofreq_1_1_output_derived}{Output\-Derived} object that calculated the results and wrote them for access. 
+
+When a call is made to calculate the outputs of a Derived\-Output object, that object writes its results to the Results storage in the \hyperlink{classosea_1_1ofreq_1_1_outputs_body}{Outputs\-Body}. The pointer is then set to that \hyperlink{classosea_1_1ofreq_1_1_output_derived}{Output\-Derived} object. This is in case you need to access the \hyperlink{classosea_1_1ofreq_1_1_output_derived}{Output\-Derived} object for any reason. You don't need to remember which object did the calculation. You can just access the object. 
+\begin{DoxyParams}{Parameters}
+{\em input} & Pointer to the \hyperlink{classosea_1_1ofreq_1_1_output_derived}{Output\-Derived} object that performed the last results calculation. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 225 of file outputsbody.\-cpp.
+
+\hypertarget{classosea_1_1ofreq_1_1_outputs_body_a7d2b93ecaf1fa39257444bdf3194eacc}{\index{osea\-::ofreq\-::\-Outputs\-Body@{osea\-::ofreq\-::\-Outputs\-Body}!set\-Cur\-Wave\-Dir@{set\-Cur\-Wave\-Dir}}
+\index{set\-Cur\-Wave\-Dir@{set\-Cur\-Wave\-Dir}!osea::ofreq::OutputsBody@{osea\-::ofreq\-::\-Outputs\-Body}}
+\subsubsection[{set\-Cur\-Wave\-Dir}]{\setlength{\rightskip}{0pt plus 5cm}void Outputs\-Body\-::set\-Cur\-Wave\-Dir (
+\begin{DoxyParamCaption}
+\item[{int}]{index}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_outputs_body_a7d2b93ecaf1fa39257444bdf3194eacc}
+
+
+Sets the current wave direction. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & Integer input specifying the index of the current wave direction from the list set by set\-List\-Wave\-Dir. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 177 of file outputsbody.\-cpp.
+
+\hypertarget{classosea_1_1ofreq_1_1_outputs_body_affe1a6cc1e310a6b84edec3804340354}{\index{osea\-::ofreq\-::\-Outputs\-Body@{osea\-::ofreq\-::\-Outputs\-Body}!set\-List\-Body@{set\-List\-Body}}
+\index{set\-List\-Body@{set\-List\-Body}!osea::ofreq::OutputsBody@{osea\-::ofreq\-::\-Outputs\-Body}}
+\subsubsection[{set\-List\-Body}]{\setlength{\rightskip}{0pt plus 5cm}void Outputs\-Body\-::set\-List\-Body (
+\begin{DoxyParamCaption}
+\item[{std\-::vector$<$ {\bf Body} $>$ \&}]{list\-In}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_outputs_body_affe1a6cc1e310a6b84edec3804340354}
+
+
+Sets the list of \hyperlink{classosea_1_1ofreq_1_1_body}{Body} objects to calculate derived outputs for. Derived outputs are calculated for only one \hyperlink{classosea_1_1ofreq_1_1_body}{Body} object in the list. The rest are included as reference for cross-\/body forces. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em list\-In} & The vector of \hyperlink{classosea_1_1ofreq_1_1_body}{Body} objects to assign to this \hyperlink{classosea_1_1ofreq_1_1_outputs_body}{Outputs\-Body}. Input is passed by reference. Input is held as a constant value, so that it can not be modified by the class. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 104 of file outputsbody.\-cpp.
+
+\hypertarget{classosea_1_1ofreq_1_1_outputs_body_a66e80853f6e8cad402a67c45502d0f03}{\index{osea\-::ofreq\-::\-Outputs\-Body@{osea\-::ofreq\-::\-Outputs\-Body}!set\-List\-Freq@{set\-List\-Freq}}
+\index{set\-List\-Freq@{set\-List\-Freq}!osea::ofreq::OutputsBody@{osea\-::ofreq\-::\-Outputs\-Body}}
+\subsubsection[{set\-List\-Freq}]{\setlength{\rightskip}{0pt plus 5cm}void Outputs\-Body\-::set\-List\-Freq (
+\begin{DoxyParamCaption}
+\item[{std\-::vector$<$ double $>$ \&}]{list\-In}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_outputs_body_a66e80853f6e8cad402a67c45502d0f03}
+
+
+Sets the list of wave frequencies. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em list\-In} & The vector of doubles representing the wave frequencies. Frequencies entered in units of radians per second. Input is passed by reference and held as a constant so that the class can not change the frequencies. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 141 of file outputsbody.\-cpp.
+
+\hypertarget{classosea_1_1ofreq_1_1_outputs_body_aec7bf6b2bb30646a4f45045810265d84}{\index{osea\-::ofreq\-::\-Outputs\-Body@{osea\-::ofreq\-::\-Outputs\-Body}!set\-List\-Wave\-Dir@{set\-List\-Wave\-Dir}}
+\index{set\-List\-Wave\-Dir@{set\-List\-Wave\-Dir}!osea::ofreq::OutputsBody@{osea\-::ofreq\-::\-Outputs\-Body}}
+\subsubsection[{set\-List\-Wave\-Dir}]{\setlength{\rightskip}{0pt plus 5cm}void Outputs\-Body\-::set\-List\-Wave\-Dir (
+\begin{DoxyParamCaption}
+\item[{std\-::vector$<$ double $>$ \&}]{list\-In}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_outputs_body_aec7bf6b2bb30646a4f45045810265d84}
+
+
+Sets the list of wave directions. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em list\-In} & The vector of doubles representing the wave directions. Directions entered in units of radians. Input is passed by reference and held as a constant so that the class can not change the directions. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 159 of file outputsbody.\-cpp.
+
+\hypertarget{classosea_1_1ofreq_1_1_outputs_body_a9d77d0704823b360ce4f6e8203203d51}{\index{osea\-::ofreq\-::\-Outputs\-Body@{osea\-::ofreq\-::\-Outputs\-Body}!set\-Solution\-Set@{set\-Solution\-Set}}
+\index{set\-Solution\-Set@{set\-Solution\-Set}!osea::ofreq::OutputsBody@{osea\-::ofreq\-::\-Outputs\-Body}}
+\subsubsection[{set\-Solution\-Set}]{\setlength{\rightskip}{0pt plus 5cm}void Outputs\-Body\-::set\-Solution\-Set (
+\begin{DoxyParamCaption}
+\item[{std\-::vector$<$ {\bf Solution\-Set} $>$ \&}]{list\-In}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_outputs_body_a9d77d0704823b360ce4f6e8203203d51}
+
+
+Sets the list of \hyperlink{classosea_1_1ofreq_1_1_solution_set}{Solution\-Set} objects to calculate derived outputs for. Derived outputs are calculated for only one \hyperlink{classosea_1_1ofreq_1_1_solution_set}{Solution\-Set} object in the list. The rest are included as reference for cross-\/body forces. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em list\-In} & The vector of \hyperlink{classosea_1_1ofreq_1_1_solution_set}{Solution\-Set} objects to assign to this \hyperlink{classosea_1_1ofreq_1_1_outputs_body}{Outputs\-Body}. Input is passed by reference. Inputs is held as a constant value, so that it can not be modified by the class. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 110 of file outputsbody.\-cpp.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/home/\-Ship\-\_\-\-Design/\-Projects/\-D\-M\-S1305 Open\-S\-E\-A/master/200\-\_\-src/bin/ofreq/derived\-\_\-outputs/\hyperlink{outputsbody_8h}{outputsbody.\-h}\item 
+/home/\-Ship\-\_\-\-Design/\-Projects/\-D\-M\-S1305 Open\-S\-E\-A/master/200\-\_\-src/bin/ofreq/derived\-\_\-outputs/\hyperlink{outputsbody_8cpp}{outputsbody.\-cpp}\end{DoxyCompactItemize}

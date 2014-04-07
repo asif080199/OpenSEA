@@ -1,0 +1,433 @@
+\hypertarget{classosea_1_1_file_reader}{\section{osea\-:\-:File\-Reader Class Reference}
+\label{classosea_1_1_file_reader}\index{osea\-::\-File\-Reader@{osea\-::\-File\-Reader}}
+}
+
+
+{\ttfamily \#include $<$filereader.\-h$>$}
+
+
+
+Inheritance diagram for osea\-:\-:File\-Reader\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=297pt]{classosea_1_1_file_reader__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{classosea_1_1_file_reader_aafe1acb27e25c2774c04c21a808748a4}{read\-Hydro\-File} (std\-::string path)
+\begin{DoxyCompactList}\small\item\em Reads hydrodynamic input files. \end{DoxyCompactList}\item 
+void \hyperlink{classosea_1_1_file_reader_a54b42892f8c4de66ad1f7bfd1e8e0a27}{set\-System} (\hyperlink{classosea_1_1ofreq_1_1_system}{ofreq\-::\-System} $\ast$pt\-Input)
+\begin{DoxyCompactList}\small\item\em Sets the system object for the dictionary to reference. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classosea_1_1_file_reader_a705af41cd541f983951b6988082c632c}{output\-Control\-File} (\hyperlink{classosea_1_1_object_group}{Object\-Group} output)
+\begin{DoxyCompactList}\small\item\em Sends output of objects discovered when reading the Control file. Top level objects can include\-: \end{DoxyCompactList}\item 
+void \hyperlink{classosea_1_1_file_reader_a79f10f1fd00fac75e83152980e34a6ea}{output\-Bodies\-File} (\hyperlink{classosea_1_1_object_group}{Object\-Group} output)
+\begin{DoxyCompactList}\small\item\em Sends output of objects discovered when reading the Bodies file. Top level objects can include\-: \end{DoxyCompactList}\item 
+void \hyperlink{classosea_1_1_file_reader_a7f061059a96d02e453890e3b6874c17c}{output\-Data\-File} (\hyperlink{classosea_1_1_object_group}{Object\-Group} output)
+\begin{DoxyCompactList}\small\item\em Sends output of objects discovered when reading the Data file. Top level objects can include\-: \end{DoxyCompactList}\item 
+void \hyperlink{classosea_1_1_file_reader_a02f58d7d0c309a7de4599d5220c3ac65}{output\-Forces\-File} (\hyperlink{classosea_1_1_object_group}{Object\-Group} output)
+\begin{DoxyCompactList}\small\item\em Sends output of objects discovered when reading the Forces file. Top level objects can include\-: \end{DoxyCompactList}\item 
+void \hyperlink{classosea_1_1_file_reader_a25198e57b3c7f8fbca043ecce848d008}{output\-Sea\-Env\-File} (\hyperlink{classosea_1_1_object_group}{Object\-Group} output)
+\begin{DoxyCompactList}\small\item\em Sends output of objects discovered when reading the Sea\-Env file. Top level objects can include\-: \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classosea_1_1_file_reader_a615dcb2443cad1f2ca123c7c0c334480}{File\-Reader} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\hyperlink{classosea_1_1_file_reader_a518fc07a4da5ff10374302fd253d3f45}{File\-Reader} (std\-::string Path)
+\begin{DoxyCompactList}\small\item\em Constructor with input for file path that holds input files. \end{DoxyCompactList}\item 
+\hyperlink{classosea_1_1_file_reader_a1382969e8f1468f3b04ad4b44ab39dee}{$\sim$\-File\-Reader} ()
+\item 
+void \hyperlink{classosea_1_1_file_reader_a0b12de2af52dc0cdfae5ab337bf494dc}{set\-Path} (std\-::string input)
+\begin{DoxyCompactList}\small\item\em Sets the path to the working directory that all control files are located in. \end{DoxyCompactList}\item 
+int \hyperlink{classosea_1_1_file_reader_a967cab6ec0822fd8bcf392873a8a82b1}{read\-Control} ()
+\begin{DoxyCompactList}\small\item\em Reads in the control file and parses its inputs. \end{DoxyCompactList}\item 
+int \hyperlink{classosea_1_1_file_reader_a44770836db4ab430139118727ace6547}{read\-Bodies} ()
+\begin{DoxyCompactList}\small\item\em Reads in the Bodies file and parses its inputs. \end{DoxyCompactList}\item 
+int \hyperlink{classosea_1_1_file_reader_ab78d2f631eb8e64b0a68d25eeca80be5}{read\-Forces} ()
+\begin{DoxyCompactList}\small\item\em Reads in the Forces file and parses its inputs. \end{DoxyCompactList}\item 
+int \hyperlink{classosea_1_1_file_reader_a1f8a6bd4b5c53f80cc94d64d6dd1f2da}{read\-Sea\-Env} ()
+\begin{DoxyCompactList}\small\item\em Reads in the Sea Environment input file and parses its inputs. \end{DoxyCompactList}\item 
+int \hyperlink{classosea_1_1_file_reader_a814f8b06adcc190d4042509797eef6d2}{read\-Data} ()
+\begin{DoxyCompactList}\small\item\em Reads in the Data input file and parses its inputs. \end{DoxyCompactList}\item 
+void \hyperlink{classosea_1_1_file_reader_a3cbdb7eab632abafcfd055aa92f47b73}{set\-Dictionary} (\hyperlink{classosea_1_1_dictionary}{osea\-::\-Dictionary} \&dict\-In)
+\begin{DoxyCompactList}\small\item\em Sets the dictionary object to be used for processing any data read from the input files. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classosea_1_1_file_reader_aa57b483154b47ad0126d97debb53c638}{send\-Output} (int index)
+\begin{DoxyCompactList}\small\item\em Sends the results of parsing the input file onto the dictionary object. Use for processing the input file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\hyperlink{classosea_1_1_file_reader}{File\-Reader} is the next generation of superseded class\-: Read\-Input\-File. \hyperlink{classosea_1_1_file_reader}{File\-Reader} simply reads the text file and parses it into keword value pairs. \hyperlink{classosea_1_1_file_reader}{File\-Reader} reads in the input files. It then passes those input files to the \hyperlink{classosea_1_1_parser}{Parser} object. \hyperlink{classosea_1_1_parser}{Parser} then segments the file in a series of object groupings with a vector list of keyword value pairs. The file reader interprets a limited number of those keywords to recognize new object declarations. It creates the new objects. It then parses the information in that object into a series of keyword-\/value pairs. Each pair is sent to a \hyperlink{classosea_1_1_dictionary}{Dictionary} object that interprets the information. Information is sent using Qt Slots and Signals.
+
+To use this class, the following sequence must be followed. 1.) Create \hyperlink{classosea_1_1_file_reader}{File\-Reader} object. 2.) Create \hyperlink{classosea_1_1_dictionary}{Dictionary} objects for each file type you will read. 3.) Satisfy any follow on dependencies for \hyperlink{classosea_1_1_dictionary}{Dictionary} objects. 4.) Qt Connect \hyperlink{classosea_1_1_file_reader}{File\-Reader} to \hyperlink{classosea_1_1_dictionary}{Dictionary} objects. 5.) Qt Connect \hyperlink{classosea_1_1_file_reader}{File\-Reader} to System object. 6.) Feed in the target path to the \hyperlink{classosea_1_1_file_reader}{File\-Reader} object. 7.) Read each file type in turn. The \hyperlink{classosea_1_1_file_reader}{File\-Reader} object will automatically find the file with the correct filename, read it, parse it, and send the resulting keyword-\/value pairs to the appropriate \hyperlink{classosea_1_1_dictionary}{Dictionary} object. 
+
+Definition at line 105 of file filereader.\-h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classosea_1_1_file_reader_a615dcb2443cad1f2ca123c7c0c334480}{\index{osea\-::\-File\-Reader@{osea\-::\-File\-Reader}!File\-Reader@{File\-Reader}}
+\index{File\-Reader@{File\-Reader}!osea::FileReader@{osea\-::\-File\-Reader}}
+\subsubsection[{File\-Reader}]{\setlength{\rightskip}{0pt plus 5cm}File\-Reader\-::\-File\-Reader (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1_file_reader_a615dcb2443cad1f2ca123c7c0c334480}
+
+
+Default constructor. 
+
+
+
+Definition at line 71 of file filereader.\-cpp.
+
+\hypertarget{classosea_1_1_file_reader_a518fc07a4da5ff10374302fd253d3f45}{\index{osea\-::\-File\-Reader@{osea\-::\-File\-Reader}!File\-Reader@{File\-Reader}}
+\index{File\-Reader@{File\-Reader}!osea::FileReader@{osea\-::\-File\-Reader}}
+\subsubsection[{File\-Reader}]{\setlength{\rightskip}{0pt plus 5cm}osea\-::\-File\-Reader\-::\-File\-Reader (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{Path}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1_file_reader_a518fc07a4da5ff10374302fd253d3f45}
+
+
+Constructor with input for file path that holds input files. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Path} & The full path to the working directory. Variable passed by value. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classosea_1_1_file_reader_a1382969e8f1468f3b04ad4b44ab39dee}{\index{osea\-::\-File\-Reader@{osea\-::\-File\-Reader}!$\sim$\-File\-Reader@{$\sim$\-File\-Reader}}
+\index{$\sim$\-File\-Reader@{$\sim$\-File\-Reader}!osea::FileReader@{osea\-::\-File\-Reader}}
+\subsubsection[{$\sim$\-File\-Reader}]{\setlength{\rightskip}{0pt plus 5cm}File\-Reader\-::$\sim$\-File\-Reader (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1_file_reader_a1382969e8f1468f3b04ad4b44ab39dee}
+Default destructor. Nothing happens here. 
+
+Definition at line 84 of file filereader.\-cpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classosea_1_1_file_reader_a79f10f1fd00fac75e83152980e34a6ea}{\index{osea\-::\-File\-Reader@{osea\-::\-File\-Reader}!output\-Bodies\-File@{output\-Bodies\-File}}
+\index{output\-Bodies\-File@{output\-Bodies\-File}!osea::FileReader@{osea\-::\-File\-Reader}}
+\subsubsection[{output\-Bodies\-File}]{\setlength{\rightskip}{0pt plus 5cm}void osea\-::\-File\-Reader\-::output\-Bodies\-File (
+\begin{DoxyParamCaption}
+\item[{{\bf Object\-Group}}]{output}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{classosea_1_1_file_reader_a79f10f1fd00fac75e83152980e34a6ea}
+
+
+Sends output of objects discovered when reading the Bodies file. Top level objects can include\-: 
+
+
+\begin{DoxyEnumerate}
+\item Body object. \begin{DoxySeeAlso}{See Also}
+Body 
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em output} & The \hyperlink{classosea_1_1_object_group}{Object\-Group} object parsed out of the file. Variable passed by value. \\
+\hline
+\end{DoxyParams}
+
+\end{DoxyEnumerate}\hypertarget{classosea_1_1_file_reader_a705af41cd541f983951b6988082c632c}{\index{osea\-::\-File\-Reader@{osea\-::\-File\-Reader}!output\-Control\-File@{output\-Control\-File}}
+\index{output\-Control\-File@{output\-Control\-File}!osea::FileReader@{osea\-::\-File\-Reader}}
+\subsubsection[{output\-Control\-File}]{\setlength{\rightskip}{0pt plus 5cm}void osea\-::\-File\-Reader\-::output\-Control\-File (
+\begin{DoxyParamCaption}
+\item[{{\bf Object\-Group}}]{output}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{classosea_1_1_file_reader_a705af41cd541f983951b6988082c632c}
+
+
+Sends output of objects discovered when reading the Control file. Top level objects can include\-: 
+
+
+\begin{DoxyEnumerate}
+\item System object. \begin{DoxySeeAlso}{See Also}
+System 
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em output} & The \hyperlink{classosea_1_1_object_group}{Object\-Group} object parsed out of the file. Variable passed by value. \\
+\hline
+\end{DoxyParams}
+
+\end{DoxyEnumerate}\hypertarget{classosea_1_1_file_reader_a7f061059a96d02e453890e3b6874c17c}{\index{osea\-::\-File\-Reader@{osea\-::\-File\-Reader}!output\-Data\-File@{output\-Data\-File}}
+\index{output\-Data\-File@{output\-Data\-File}!osea::FileReader@{osea\-::\-File\-Reader}}
+\subsubsection[{output\-Data\-File}]{\setlength{\rightskip}{0pt plus 5cm}void osea\-::\-File\-Reader\-::output\-Data\-File (
+\begin{DoxyParamCaption}
+\item[{{\bf Object\-Group}}]{output}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{classosea_1_1_file_reader_a7f061059a96d02e453890e3b6874c17c}
+
+
+Sends output of objects discovered when reading the Data file. Top level objects can include\-: 
+
+
+\begin{DoxyEnumerate}
+\item hydrofiles 
+\begin{DoxyParams}{Parameters}
+{\em output} & The \hyperlink{classosea_1_1_object_group}{Object\-Group} object parsed out of the file. Variable passed by value. \\
+\hline
+\end{DoxyParams}
+
+\end{DoxyEnumerate}\hypertarget{classosea_1_1_file_reader_a02f58d7d0c309a7de4599d5220c3ac65}{\index{osea\-::\-File\-Reader@{osea\-::\-File\-Reader}!output\-Forces\-File@{output\-Forces\-File}}
+\index{output\-Forces\-File@{output\-Forces\-File}!osea::FileReader@{osea\-::\-File\-Reader}}
+\subsubsection[{output\-Forces\-File}]{\setlength{\rightskip}{0pt plus 5cm}void osea\-::\-File\-Reader\-::output\-Forces\-File (
+\begin{DoxyParamCaption}
+\item[{{\bf Object\-Group}}]{output}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{classosea_1_1_file_reader_a02f58d7d0c309a7de4599d5220c3ac65}
+
+
+Sends output of objects discovered when reading the Forces file. Top level objects can include\-: 
+
+
+\begin{DoxyEnumerate}
+\item Force\-Active
+\item Force\-Reactive
+\item Force\-Cross\-Body \begin{DoxySeeAlso}{See Also}
+Force\-Active 
+
+Force\-Cross 
+
+Force\-React 
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em output} & The \hyperlink{classosea_1_1_object_group}{Object\-Group} object parsed out of the file. Variable passed by value. \\
+\hline
+\end{DoxyParams}
+
+\end{DoxyEnumerate}\hypertarget{classosea_1_1_file_reader_a25198e57b3c7f8fbca043ecce848d008}{\index{osea\-::\-File\-Reader@{osea\-::\-File\-Reader}!output\-Sea\-Env\-File@{output\-Sea\-Env\-File}}
+\index{output\-Sea\-Env\-File@{output\-Sea\-Env\-File}!osea::FileReader@{osea\-::\-File\-Reader}}
+\subsubsection[{output\-Sea\-Env\-File}]{\setlength{\rightskip}{0pt plus 5cm}void osea\-::\-File\-Reader\-::output\-Sea\-Env\-File (
+\begin{DoxyParamCaption}
+\item[{{\bf Object\-Group}}]{output}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [signal]}}}\label{classosea_1_1_file_reader_a25198e57b3c7f8fbca043ecce848d008}
+
+
+Sends output of objects discovered when reading the Sea\-Env file. Top level objects can include\-: 
+
+
+\begin{DoxyEnumerate}
+\item Wave\-\_\-\-Custom
+\item Sea\-\_\-\-Custom 
+\begin{DoxyParams}{Parameters}
+{\em output} & The \hyperlink{classosea_1_1_object_group}{Object\-Group} object parsed out of the file. Variable passed by value. \\
+\hline
+\end{DoxyParams}
+
+\end{DoxyEnumerate}\hypertarget{classosea_1_1_file_reader_a44770836db4ab430139118727ace6547}{\index{osea\-::\-File\-Reader@{osea\-::\-File\-Reader}!read\-Bodies@{read\-Bodies}}
+\index{read\-Bodies@{read\-Bodies}!osea::FileReader@{osea\-::\-File\-Reader}}
+\subsubsection[{read\-Bodies}]{\setlength{\rightskip}{0pt plus 5cm}int File\-Reader\-::read\-Bodies (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1_file_reader_a44770836db4ab430139118727ace6547}
+
+
+Reads in the Bodies file and parses its inputs. 
+
+\begin{DoxyReturn}{Returns}
+Returns integer to report success or failure of file parsing. Returns 0 for success. Returns 1 for file does not exist. 
+\end{DoxyReturn}
+
+
+Definition at line 124 of file filereader.\-cpp.
+
+\hypertarget{classosea_1_1_file_reader_a967cab6ec0822fd8bcf392873a8a82b1}{\index{osea\-::\-File\-Reader@{osea\-::\-File\-Reader}!read\-Control@{read\-Control}}
+\index{read\-Control@{read\-Control}!osea::FileReader@{osea\-::\-File\-Reader}}
+\subsubsection[{read\-Control}]{\setlength{\rightskip}{0pt plus 5cm}int File\-Reader\-::read\-Control (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1_file_reader_a967cab6ec0822fd8bcf392873a8a82b1}
+
+
+Reads in the control file and parses its inputs. 
+
+\begin{DoxyReturn}{Returns}
+Returns integer to report success or failure of file parsing. Returns 0 for success. Returns 1 for file does not exist. 
+\end{DoxyReturn}
+
+
+Definition at line 104 of file filereader.\-cpp.
+
+\hypertarget{classosea_1_1_file_reader_a814f8b06adcc190d4042509797eef6d2}{\index{osea\-::\-File\-Reader@{osea\-::\-File\-Reader}!read\-Data@{read\-Data}}
+\index{read\-Data@{read\-Data}!osea::FileReader@{osea\-::\-File\-Reader}}
+\subsubsection[{read\-Data}]{\setlength{\rightskip}{0pt plus 5cm}int File\-Reader\-::read\-Data (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1_file_reader_a814f8b06adcc190d4042509797eef6d2}
+
+
+Reads in the Data input file and parses its inputs. 
+
+\begin{DoxyReturn}{Returns}
+Returns integer to report success or failure of file parsing. Returns 0 for success. Returns 1 for file does not exist. 
+\end{DoxyReturn}
+
+
+Definition at line 190 of file filereader.\-cpp.
+
+\hypertarget{classosea_1_1_file_reader_ab78d2f631eb8e64b0a68d25eeca80be5}{\index{osea\-::\-File\-Reader@{osea\-::\-File\-Reader}!read\-Forces@{read\-Forces}}
+\index{read\-Forces@{read\-Forces}!osea::FileReader@{osea\-::\-File\-Reader}}
+\subsubsection[{read\-Forces}]{\setlength{\rightskip}{0pt plus 5cm}int File\-Reader\-::read\-Forces (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1_file_reader_ab78d2f631eb8e64b0a68d25eeca80be5}
+
+
+Reads in the Forces file and parses its inputs. 
+
+\begin{DoxyReturn}{Returns}
+Returns integer to report success or failure of file parsing. Returns 0 for success. Returns 1 for file does not exist. 
+\end{DoxyReturn}
+
+
+Definition at line 150 of file filereader.\-cpp.
+
+\hypertarget{classosea_1_1_file_reader_aafe1acb27e25c2774c04c21a808748a4}{\index{osea\-::\-File\-Reader@{osea\-::\-File\-Reader}!read\-Hydro\-File@{read\-Hydro\-File}}
+\index{read\-Hydro\-File@{read\-Hydro\-File}!osea::FileReader@{osea\-::\-File\-Reader}}
+\subsubsection[{read\-Hydro\-File}]{\setlength{\rightskip}{0pt plus 5cm}int File\-Reader\-::read\-Hydro\-File (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{path}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{classosea_1_1_file_reader_aafe1acb27e25c2774c04c21a808748a4}
+
+
+Reads hydrodynamic input files. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & The full path to the hydrodynamic input file to read. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns integer to report success or failure of file parsing. Returns 0 for success. Returns 1 for file does not exist. 
+\end{DoxyReturn}
+
+
+Definition at line 222 of file filereader.\-cpp.
+
+\hypertarget{classosea_1_1_file_reader_a1f8a6bd4b5c53f80cc94d64d6dd1f2da}{\index{osea\-::\-File\-Reader@{osea\-::\-File\-Reader}!read\-Sea\-Env@{read\-Sea\-Env}}
+\index{read\-Sea\-Env@{read\-Sea\-Env}!osea::FileReader@{osea\-::\-File\-Reader}}
+\subsubsection[{read\-Sea\-Env}]{\setlength{\rightskip}{0pt plus 5cm}int File\-Reader\-::read\-Sea\-Env (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1_file_reader_a1f8a6bd4b5c53f80cc94d64d6dd1f2da}
+
+
+Reads in the Sea Environment input file and parses its inputs. 
+
+\begin{DoxyReturn}{Returns}
+Returns integer to report success or failure of file parsing. Returns 0 for success. Returns 1 for file does not exist. 
+\end{DoxyReturn}
+
+
+Definition at line 170 of file filereader.\-cpp.
+
+\hypertarget{classosea_1_1_file_reader_aa57b483154b47ad0126d97debb53c638}{\index{osea\-::\-File\-Reader@{osea\-::\-File\-Reader}!send\-Output@{send\-Output}}
+\index{send\-Output@{send\-Output}!osea::FileReader@{osea\-::\-File\-Reader}}
+\subsubsection[{send\-Output}]{\setlength{\rightskip}{0pt plus 5cm}void File\-Reader\-::send\-Output (
+\begin{DoxyParamCaption}
+\item[{int}]{index}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classosea_1_1_file_reader_aa57b483154b47ad0126d97debb53c638}
+
+
+Sends the results of parsing the input file onto the dictionary object. Use for processing the input file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & Integer. The index which specifies which object in the list of recognized objects to use. Variable passed by value. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 238 of file filereader.\-cpp.
+
+\hypertarget{classosea_1_1_file_reader_a3cbdb7eab632abafcfd055aa92f47b73}{\index{osea\-::\-File\-Reader@{osea\-::\-File\-Reader}!set\-Dictionary@{set\-Dictionary}}
+\index{set\-Dictionary@{set\-Dictionary}!osea::FileReader@{osea\-::\-File\-Reader}}
+\subsubsection[{set\-Dictionary}]{\setlength{\rightskip}{0pt plus 5cm}void File\-Reader\-::set\-Dictionary (
+\begin{DoxyParamCaption}
+\item[{{\bf osea\-::\-Dictionary} \&}]{dict\-In}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1_file_reader_a3cbdb7eab632abafcfd055aa92f47b73}
+
+
+Sets the dictionary object to be used for processing any data read from the input files. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dict\-In} & The dictionary object that you want to use for processing the file. This can change between reading individual files. Variable is passed by reference and stored as a pointer in the object. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 210 of file filereader.\-cpp.
+
+\hypertarget{classosea_1_1_file_reader_a0b12de2af52dc0cdfae5ab337bf494dc}{\index{osea\-::\-File\-Reader@{osea\-::\-File\-Reader}!set\-Path@{set\-Path}}
+\index{set\-Path@{set\-Path}!osea::FileReader@{osea\-::\-File\-Reader}}
+\subsubsection[{set\-Path}]{\setlength{\rightskip}{0pt plus 5cm}void File\-Reader\-::set\-Path (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{input}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1_file_reader_a0b12de2af52dc0cdfae5ab337bf494dc}
+
+
+Sets the path to the working directory that all control files are located in. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em input} & The full path to the working directory. Do not include directory separator (S\-L\-A\-S\-H, \char`\"{}/\char`\"{}) at end of std\-::string. Variable passed by value. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 90 of file filereader.\-cpp.
+
+\hypertarget{classosea_1_1_file_reader_a54b42892f8c4de66ad1f7bfd1e8e0a27}{\index{osea\-::\-File\-Reader@{osea\-::\-File\-Reader}!set\-System@{set\-System}}
+\index{set\-System@{set\-System}!osea::FileReader@{osea\-::\-File\-Reader}}
+\subsubsection[{set\-System}]{\setlength{\rightskip}{0pt plus 5cm}void File\-Reader\-::set\-System (
+\begin{DoxyParamCaption}
+\item[{{\bf ofreq\-::\-System} $\ast$}]{pt\-Input}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{classosea_1_1_file_reader_a54b42892f8c4de66ad1f7bfd1e8e0a27}
+
+
+Sets the system object for the dictionary to reference. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pt\-System} & Pointer to the System object. Variable passed by value. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 229 of file filereader.\-cpp.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/home/\-Ship\-\_\-\-Design/\-Projects/\-D\-M\-S1305 Open\-S\-E\-A/master/200\-\_\-src/bin/ofreq/file\-\_\-reader/\hyperlink{filereader_8h}{filereader.\-h}\item 
+/home/\-Ship\-\_\-\-Design/\-Projects/\-D\-M\-S1305 Open\-S\-E\-A/master/200\-\_\-src/bin/ofreq/file\-\_\-reader/\hyperlink{filereader_8cpp}{filereader.\-cpp}\end{DoxyCompactItemize}

@@ -1,0 +1,198 @@
+.TH "osea::ofreq::ForceActive" 3 "Sat Apr 5 2014" "Version 0.4" "oFreq" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+osea::ofreq::ForceActive \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <forceactive\&.h>\fP
+.PP
+Inherits \fBosea::ofreq::Force\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBForceActive\fP ()"
+.br
+.ti -1c
+.RI "virtual \fB~ForceActive\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetCoeff\fP (std::complex< double > coeffIn, unsigned int index=-1)"
+.br
+.RI "\fISets the coefficient for the specified index\&. \fP"
+.ti -1c
+.RI "void \fBaddEquation\fP (std::complex< double > eqIn, int dataIndex=-1)"
+.br
+.RI "\fIAdds an equation to the list of equations / coefficients stored in the forceActive object\&. \fP"
+.ti -1c
+.RI "std::vector< \fBcomplexDouble\fP > & \fBlistCoefficient\fP ()"
+.br
+.ti -1c
+.RI "\fBcomplexDouble\fP & \fBlistCoefficient\fP (unsigned int index)"
+.br
+.RI "\fIProvides direct access to a coefficient from the list of coefficients\&. \fP"
+.ti -1c
+.RI "std::vector< \fBcomplexDouble\fP > & \fBlistDataEquation\fP ()"
+.br
+.RI "\fIAnother implementation of function listCoefficient\&. But this one uses the Data index\&. \fP"
+.ti -1c
+.RI "\fBcomplexDouble\fP & \fBlistDataEquation\fP (int index)"
+.br
+.RI "\fIAnother implementation of function listCoefficient(index)\&. \fP"
+.ti -1c
+.RI "\fBcomplexDouble\fP \fBgetEquation\fP (int number)"
+.br
+.RI "\fIGet a specific number from the list of coefficients\&. \fP"
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "std::vector< \fBcomplexDouble\fP > \fBpCoefficients\fP"
+.br
+.ti -1c
+.RI "std::vector< int > \fBpDataIndex\fP"
+.br
+.RI "\fIThe list of data indices for each coefficient\&. The \fBlistDataEquation()\fP method will lookup items by their data index, instead of their occurance index in the container vector\&. This vector contains those data indices used for that search by dataIndex\&. \fP"
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+This class holds data for an active force\&. 
+.PP
+Definition at line 86 of file forceactive\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "ForceActive::ForceActive ()"
+The default constructor\&. 
+.PP
+Definition at line 36 of file forceactive\&.cpp\&.
+.SS "ForceActive::~ForceActive ()\fC [virtual]\fP"
+The default destructor, nothing happens here\&. 
+.PP
+Definition at line 41 of file forceactive\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void ForceActive::addEquation (std::complex< double >eqIn, intdataIndex = \fC-1\fP)"
+
+.PP
+Adds an equation to the list of equations / coefficients stored in the forceActive object\&. Expands the current list of equations / coefficients by adding the inputs to the end of the list\&. Adds both the coefficient specified, and the corresponding equation data index\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIeqIn\fP Complex double input\&. This is the coefficient value stored for the specified equation\&. Variable passed by value\&. 
+.br
+\fIdataIndex\fP Integer input\&. This is the data index specified\&. When objects are retrieved by their data index, they will lookup this value\&. 
+.RE
+.PP
+
+.PP
+Definition at line 60 of file forceactive\&.cpp\&.
+.SS "\fBcomplexDouble\fP ForceActive::getEquation (intnumber)"
+
+.PP
+Get a specific number from the list of coefficients\&. Get a specific number from the list of coefficients\&. Similar to getCoefficients(), only instead of returning the entire vector of coefficients, this only returns a single value in the list\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fInumber\fP Integer specifying which number should be retrieved from the list\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Complex Double which is the input coefficient for the active force on the equation specified by number\&. Returns by value, not by reference\&. 
+.RE
+.PP
+
+.PP
+Definition at line 116 of file forceactive\&.cpp\&.
+.SS "vector< \fBcomplexDouble\fP > & ForceActive::listCoefficient ()"
+Retrieve the list of coefficients\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+The list of coefficients\&. 
+.RE
+.PP
+
+.PP
+Definition at line 77 of file forceactive\&.cpp\&.
+.SS "\fBcomplexDouble\fP & ForceActive::listCoefficient (unsigned intindex)"
+
+.PP
+Provides direct access to a coefficient from the list of coefficients\&. Returns a value from the list of coefficents\&. Which value to return is specified by the input index\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIindex\fP Unsigned integer\&. Specifies which value to return from the list of coefficients\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Returns a complex double\&. Returned variable is a value from the list of coefficients\&. Returned variable is passed by reference\&. 
+.RE
+.PP
+
+.PP
+Definition at line 83 of file forceactive\&.cpp\&.
+.SS "vector< \fBcomplexDouble\fP > & ForceActive::listDataEquation ()"
+
+.PP
+Another implementation of function listCoefficient\&. But this one uses the Data index\&. \fBReturns:\fP
+.RS 4
+Vector containing the list of coefficients\&. Argument passed by reference\&. 
+.RE
+.PP
+
+.PP
+Definition at line 89 of file forceactive\&.cpp\&.
+.SS "\fBcomplexDouble\fP & ForceActive::listDataEquation (intindex)"
+
+.PP
+Another implementation of function listCoefficient(index)\&. Provides direct access to items in the list of equations\&. Returns a single variable from the list of coefficients\&. Variable is accessed by data index, and not by vector occurrence index\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIindex\fP Integer\&. Specifies which value to return from the list of coefficients\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Returns a complex double\&. Returned variable is a value from the list of coefficients\&. Returned variable is passed by reference\&. 
+.RE
+.PP
+
+.PP
+Definition at line 95 of file forceactive\&.cpp\&.
+.SS "void ForceActive::setCoeff (std::complex< double >coeffIn, unsigned intindex = \fC-1\fP)"
+
+.PP
+Sets the coefficient for the specified index\&. \fBParameters:\fP
+.RS 4
+\fIcoeffIn\fP The value of the coefficient to specify\&. Added as a complex number\&. Variable passed by value\&. 
+.br
+\fIindex\fP The equation index of the coefficient to specify\&. 
+.RE
+.PP
+
+.PP
+Definition at line 46 of file forceactive\&.cpp\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "std::vector<\fBcomplexDouble\fP> osea::ofreq::ForceActive::pCoefficients\fC [protected]\fP"
+The list of force coeffients\&. 
+.PP
+Definition at line 169 of file forceactive\&.h\&.
+.SS "std::vector<int> osea::ofreq::ForceActive::pDataIndex\fC [protected]\fP"
+
+.PP
+The list of data indices for each coefficient\&. The \fBlistDataEquation()\fP method will lookup items by their data index, instead of their occurance index in the container vector\&. This vector contains those data indices used for that search by dataIndex\&. 
+.PP
+Definition at line 177 of file forceactive\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for oFreq from the source code\&.

@@ -1,0 +1,4 @@
+<map id="osea::ofreq::OutputDerived" name="osea::ofreq::OutputDerived">
+<area shape="rect" id="node2" href="$classosea_1_1ofreq_1_1o_freq_core.html" title="The core oFreq class. All oFreq classes inherit from this class." alt="" coords="31,5,197,200"/>
+<area shape="rect" id="node4" href="$classosea_1_1ofreq_1_1_outputs_body.html" title="{osea::ofreq::OutputsBody\n||+ OutputsBody()\l+ OutputsBody()\l+ ~OutputsBody()\l+ Initialize()\l+ setListBody()\l+ setSolutionSet()\l+ listSolutionSet()\l+ listSolutionSet()\l+ refCurSolution()\l+ setListFreq()\land 40 more...\l}" alt="" coords="113,251,289,475"/>
+</map>

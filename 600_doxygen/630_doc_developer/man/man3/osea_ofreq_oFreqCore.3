@@ -1,0 +1,152 @@
+.TH "osea::ofreq::oFreqCore" 3 "Sat Apr 5 2014" "Version 0.4" "oFreq" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+osea::ofreq::oFreqCore \- 
+.PP
+The core oFreq class\&. All oFreq classes inherit from this class\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <ofreqcore\&.h>\fP
+.PP
+Inherited by \fBosea::Dictionary\fP, \fBosea::FileReader\fP, \fBosea::ObjectGroup\fP, \fBosea::ofreq::Body\fP, \fBosea::ofreq::Derivative\fP, \fBosea::ofreq::Equation\fP, \fBosea::ofreq::EquationofMotion\fP\fC [private]\fP, \fBosea::ofreq::FileWriter\fP, \fBosea::ofreq::Force\fP, \fBosea::ofreq::matBody\fP, \fBosea::ofreq::matForceActive\fP, \fBosea::ofreq::matForceReact\fP, \fBosea::ofreq::MotionModel\fP\fC [private]\fP, \fBosea::ofreq::MotionSolver\fP, \fBosea::ofreq::OutputDerived\fP, \fBosea::ofreq::OutputsBody\fP, \fBosea::ofreq::Solution\fP, \fBosea::ofreq::SolutionSet\fP, \fBosea::ofreq::System\fP, and \fBosea::Parser\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBoFreqCore\fP ()"
+.br
+.ti -1c
+.RI "virtual \fB~oFreqCore\fP ()"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBsetOutLog\fP (std::string dirIn)"
+.br
+.RI "\fIOpens the output log file and prepares it for writing\&. \fP"
+.ti -1c
+.RI "void \fBsetErrLog\fP (std::string dirIn)"
+.br
+.RI "\fIOpens the error log file and prepares it for writing\&. \fP"
+.ti -1c
+.RI "void \fBwriteLog\fP (std::string mesIn)"
+.br
+.RI "\fIWrites output of a log message to the log file\&. Adds in a date and time stamp to the log\&. \fP"
+.ti -1c
+.RI "void \fBwriteError\fP (std::string mesIn)"
+.br
+.RI "\fIWrites output of an error message to the error file\&. Adds in a date, time, and class name to the log\&. \fP"
+.in -1c
+.SS "Static Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "static std::ofstream \fBOutLog\fP"
+.br
+.RI "\fIThe log file for an oFreq run\&. Records normal actions for the program\&. Informs user of regular program developments\&. Through inheritence of the \fBoFreqCore\fP class, this object is available to every object in the oFreq application\&. Also provided with a second name of seaout\&. \fP"
+.ti -1c
+.RI "static std::ofstream & \fBseaout\fP = \fBOutLog\fP"
+.br
+.ti -1c
+.RI "static std::ofstream \fBErrLog\fP"
+.br
+.RI "\fIThe error log file for an oFreq run\&. Records any errors or warnings for the program\&. Informs user of errors and warnings and where they occurred\&. Through inheritence of the \fBoFreqCore\fP class, this object is available for every object in the oFreq application\&. Also provided with a second name of seaerr\&. \fP"
+.ti -1c
+.RI "static std::ofstream & \fBseaerr\fP = \fBErrLog\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+The core oFreq class\&. All oFreq classes inherit from this class\&. 
+
+Core oFreq class\&. All oFreq classes inherit from this class\&. Includes definition for anything fundamental and common to the entire program\&. Major items are any code used for application debugging\&. Also includes some objects to give everything access to log and error files for the program\&. 
+.PP
+Definition at line 91 of file ofreqcore\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "oFreqCore::oFreqCore ()"
+Default constructor\&. Nothing happens here\&. 
+.PP
+Definition at line 52 of file ofreqcore\&.cpp\&.
+.SS "oFreqCore::~oFreqCore ()\fC [virtual]\fP"
+Default destructor\&. Nothing happens here\&. 
+.PP
+Definition at line 58 of file ofreqcore\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void oFreqCore::setErrLog (std::stringdirIn)\fC [protected]\fP"
+
+.PP
+Opens the error log file and prepares it for writing\&. \fBParameters:\fP
+.RS 4
+\fIdirIn\fP std::string parameter\&. Designates the directory path to use for writing the error file\&. 
+.RE
+.PP
+
+.PP
+Definition at line 91 of file ofreqcore\&.cpp\&.
+.SS "void oFreqCore::setOutLog (std::stringdirIn)\fC [protected]\fP"
+
+.PP
+Opens the output log file and prepares it for writing\&. \fBParameters:\fP
+.RS 4
+\fIdirIn\fP std::string parameter\&. Designates the directory path to use for writing the log file\&. 
+.RE
+.PP
+
+.PP
+Definition at line 75 of file ofreqcore\&.cpp\&.
+.SS "void oFreqCore::writeError (std::stringmesIn)\fC [protected]\fP"
+
+.PP
+Writes output of an error message to the error file\&. Adds in a date, time, and class name to the log\&. \fBParameters:\fP
+.RS 4
+\fImesIn\fP std::string variable\&. The message to write to the log file\&. 
+.RE
+.PP
+
+.PP
+Definition at line 121 of file ofreqcore\&.cpp\&.
+.SS "void oFreqCore::writeLog (std::stringmesIn)\fC [protected]\fP"
+
+.PP
+Writes output of a log message to the log file\&. Adds in a date and time stamp to the log\&. \fBParameters:\fP
+.RS 4
+\fImesIn\fP std::string variable\&. The message to write to the log file\&. 
+.RE
+.PP
+
+.PP
+Definition at line 107 of file ofreqcore\&.cpp\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "std::ofstream oFreqCore::ErrLog\fC [static]\fP, \fC [protected]\fP"
+
+.PP
+The error log file for an oFreq run\&. Records any errors or warnings for the program\&. Informs user of errors and warnings and where they occurred\&. Through inheritence of the \fBoFreqCore\fP class, this object is available for every object in the oFreq application\&. Also provided with a second name of seaerr\&. 
+.PP
+Definition at line 132 of file ofreqcore\&.h\&.
+.SS "std::ofstream oFreqCore::OutLog\fC [static]\fP, \fC [protected]\fP"
+
+.PP
+The log file for an oFreq run\&. Records normal actions for the program\&. Informs user of regular program developments\&. Through inheritence of the \fBoFreqCore\fP class, this object is available to every object in the oFreq application\&. Also provided with a second name of seaout\&. 
+.PP
+Definition at line 123 of file ofreqcore\&.h\&.
+.SS "std::ofstream & oFreqCore::seaerr = \fBErrLog\fP\fC [static]\fP, \fC [protected]\fP"
+
+.PP
+Definition at line 133 of file ofreqcore\&.h\&.
+.SS "std::ofstream & oFreqCore::seaout = \fBOutLog\fP\fC [static]\fP, \fC [protected]\fP"
+
+.PP
+Definition at line 124 of file ofreqcore\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for oFreq from the source code\&.

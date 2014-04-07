@@ -1,0 +1,23 @@
+/**
+\page wave_calculation  Individual Wave Calculations
+
+\todo write documentation for individual wave calculations
+
+# Calculation from Sea State Definition
+
+Note:  This documentation will alsways speak in terms of _wave amplitude_, not height.  Although 
+wave height is more convenient, ofreq tried to maintain a clear and consistent representation for 
+all inputs.  Therefore, all inputs are expected in their base, strict, mathematically correct 
+format.  It may be inconvenient, but it is consistent, simple, and universally known.  This reduces 
+chances for misunderstanding.
+
+# Non-Linear Wave Amplitude
+
+\subpage non-linear_wave
+
+# Hydrodynamic Coefficients
+
+\subpage hydrodynamic_coefficients
+
+
+*/

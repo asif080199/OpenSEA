@@ -1,0 +1,126 @@
+.TH "SeaEnviroment" 3 "Sat Apr 5 2014" "Version 0.4" "oFreq" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SeaEnviroment \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <seaenviroment\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSeaEnviroment\fP ()"
+.br
+.ti -1c
+.RI "\fB~SeaEnviroment\fP ()"
+.br
+.ti -1c
+.RI "void \fBtestPrint\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetWaveSpectrumName\fP (string)"
+.br
+.ti -1c
+.RI "void \fBsetWaveSpectrumFrequencies\fP (vector< double >)"
+.br
+.ti -1c
+.RI "void \fBsetWaveSpectrumWaveEnergy\fP (vector< double >)"
+.br
+.ti -1c
+.RI "void \fBsetSpreadModelName\fP (string)"
+.br
+.ti -1c
+.RI "void \fBsetSpreadModelDirectionAngle\fP (double)"
+.br
+.ti -1c
+.RI "void \fBsetSpreadModelWaveSpectrumName\fP (string)"
+.br
+.ti -1c
+.RI "void \fBsetSpreadModelScalingFactor\fP (double)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+This class holds all data for the sea enviroment\&. 
+.PP
+Definition at line 53 of file seaenviroment\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "SeaEnviroment::SeaEnviroment ()"
+The default constructor\&. 
+.SS "SeaEnviroment::~SeaEnviroment ()"
+The default destructor, nothing happens here\&. 
+.SH "Member Function Documentation"
+.PP 
+.SS "void SeaEnviroment::setSpreadModelDirectionAngle (double)"
+Sets spread model direction angle\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIval\fP The direction angle\&. 
+.RE
+.PP
+
+.SS "void SeaEnviroment::setSpreadModelName (string)"
+Sets the spread model name\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fInewName\fP The name of the spread model to be used\&. 
+.RE
+.PP
+
+.SS "void SeaEnviroment::setSpreadModelScalingFactor (double)"
+Sets scaling factor\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIval\fP The scaling factor\&. 
+.RE
+.PP
+
+.SS "void SeaEnviroment::setSpreadModelWaveSpectrumName (string)"
+Sets spread model direction angle\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fInewName\fP The name of the wave spectrum\&. 
+.RE
+.PP
+
+.SS "void SeaEnviroment::setWaveSpectrumFrequencies (vector< double >)"
+Sets the wave frequencies\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIvecIn\fP The list of wave frequencies\&. 
+.RE
+.PP
+
+.SS "void SeaEnviroment::setWaveSpectrumName (string)"
+Sets the wave spectrum\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fInewName\fP The name of the wave spectrum\&. 
+.RE
+.PP
+
+.SS "void SeaEnviroment::setWaveSpectrumWaveEnergy (vector< double >)"
+Sets the wave energy\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIvecIn\fP The list of wave energy\&. 
+.RE
+.PP
+
+.SS "void SeaEnviroment::testPrint ()"
+Test print to console the values of all data members\&. 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for oFreq from the source code\&.

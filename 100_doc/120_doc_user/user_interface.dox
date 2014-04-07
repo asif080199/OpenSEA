@@ -1,0 +1,24 @@
+/**
+\page user_interface User Interface
+
+\todo write documentation for user interface.  
+- What are the main things they should know about the interface.
+
+# General Information
+
+\subpage input_syntax
+
+\subpage why_text_files
+
+
+# File Structure
+
+\subpage file_structure
+
+
+# Input Files
+
+\ref input_files
+
+
+*/

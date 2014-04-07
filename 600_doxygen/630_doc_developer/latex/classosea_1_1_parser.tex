@@ -1,0 +1,333 @@
+\hypertarget{classosea_1_1_parser}{\section{osea\-:\-:Parser Class Reference}
+\label{classosea_1_1_parser}\index{osea\-::\-Parser@{osea\-::\-Parser}}
+}
+
+
+The \hyperlink{classosea_1_1_parser}{Parser} class takes an input segment of strings and segments that segment. It strips out comments. It recognizes quotation marks and groups those segments together. \hyperlink{classosea_1_1_parser}{Parser} finally returns a series of \hyperlink{classosea_1_1_object_group}{Object\-Group} objects. Each \hyperlink{classosea_1_1_object_group}{Object\-Group} contains the classname and a list of keyword value pairs.  
+
+
+
+
+{\ttfamily \#include $<$parser.\-h$>$}
+
+
+
+Inheritance diagram for osea\-:\-:Parser\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=218pt]{classosea_1_1_parser__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classosea_1_1_parser_a12234f6cd36b61af4b50c94a179422c1}{Parser} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. Nothing happens here. \end{DoxyCompactList}\item 
+\hyperlink{classosea_1_1_parser_a3e658b5917a93a3ef648050d060e3a93}{$\sim$\-Parser} ()
+\item 
+void \hyperlink{classosea_1_1_parser_a819455e27dc19323cdfd2f9354e11ec2}{Parse} (std\-::istream \&infile, int bracket\-\_\-count=0)
+\begin{DoxyCompactList}\small\item\em Parses the input files into a vector of key-\/value pairs. \end{DoxyCompactList}\item 
+\hyperlink{classosea_1_1_object_group}{Object\-Group} \hyperlink{classosea_1_1_parser_ab8e77da06e72ede97238d28bad4a9ae6}{get\-Object} (int index=0)
+\begin{DoxyCompactList}\small\item\em Gets the \hyperlink{classosea_1_1_object_group}{Object\-Group} object. \end{DoxyCompactList}\item 
+std\-::vector$<$ \hyperlink{classosea_1_1_object_group}{Object\-Group} $>$ \& \hyperlink{classosea_1_1_parser_a93885957453b4b7e346ee1b2b79d05f8}{list\-Object} ()
+\begin{DoxyCompactList}\small\item\em Provides direct access to the vector of \hyperlink{classosea_1_1_object_group}{Object\-Group} objects processed by the \hyperlink{classosea_1_1_parser}{Parser} object. \end{DoxyCompactList}\item 
+\hyperlink{classosea_1_1_object_group}{Object\-Group} \& \hyperlink{classosea_1_1_parser_ac7323370460e1373acf710cbe2014c9a}{list\-Object} (unsigned int index)
+\begin{DoxyCompactList}\small\item\em Provides direct access to the \hyperlink{classosea_1_1_object_group}{Object\-Group} object specified by index. \end{DoxyCompactList}\item 
+\hyperlink{namespaceosea_af47d453cb217c2c461685cd6e754c070}{vec\-Keyword} \& \hyperlink{classosea_1_1_parser_a2ffe797d5380aed4e9a9dd400e8ab79d}{list\-Key} ()
+\begin{DoxyCompactList}\small\item\em Provides direct access to thelist of key words. \end{DoxyCompactList}\item 
+std\-::string \& \hyperlink{classosea_1_1_parser_a3b378364d4b4c3f58f7b3ea7e156ac98}{list\-Key} (int index)
+\begin{DoxyCompactList}\small\item\em Provides direct access to an individual item in the list of key words. \end{DoxyCompactList}\item 
+\hyperlink{namespaceosea_ae7c5f2bab0fab3931b2ef51a0ad04cc2}{vec\-Value} \& \hyperlink{classosea_1_1_parser_ac8e87b248b0a427add910f8f7f72183d}{list\-Val} ()
+\begin{DoxyCompactList}\small\item\em Provides direct access to the list of key values. \end{DoxyCompactList}\item 
+std\-::vector$<$ std\-::string $>$ \& \hyperlink{classosea_1_1_parser_a312496911fbc7212187b7638a61d8227}{list\-Val} (int index)
+\begin{DoxyCompactList}\small\item\em Provides direct access to an individual item in the list of key values. \end{DoxyCompactList}\item 
+std\-::vector$<$ \hyperlink{classosea_1_1_object_group}{Object\-Group} $\ast$ $>$ \& \hyperlink{classosea_1_1_parser_a4e0dcef1ae5785c46f2fb6d935090595}{ref\-Sub\-Object} (int index1=0)
+\begin{DoxyCompactList}\small\item\em Provides direct access to the list of Sub\-Objects. \end{DoxyCompactList}\item 
+\hyperlink{classosea_1_1_object_group}{Object\-Group} \hyperlink{classosea_1_1_parser_aac0035a33352c645ef101d9dc52008db}{get\-Sub\-Object} (int index, int index1=0)
+\begin{DoxyCompactList}\small\item\em Returns the sub\-Object referenced by the index. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+The \hyperlink{classosea_1_1_parser}{Parser} class takes an input segment of strings and segments that segment. It strips out comments. It recognizes quotation marks and groups those segments together. \hyperlink{classosea_1_1_parser}{Parser} finally returns a series of \hyperlink{classosea_1_1_object_group}{Object\-Group} objects. Each \hyperlink{classosea_1_1_object_group}{Object\-Group} contains the classname and a list of keyword value pairs. 
+
+The parser and \hyperlink{classosea_1_1_object_group}{Object\-Group} are both setup to allow endless recursion of class definitions. You can easily define classes within classes in the input files, with no limits. 
+
+Definition at line 102 of file parser.\-h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classosea_1_1_parser_a12234f6cd36b61af4b50c94a179422c1}{\index{osea\-::\-Parser@{osea\-::\-Parser}!Parser@{Parser}}
+\index{Parser@{Parser}!osea::Parser@{osea\-::\-Parser}}
+\subsubsection[{Parser}]{\setlength{\rightskip}{0pt plus 5cm}Parser\-::\-Parser (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1_parser_a12234f6cd36b61af4b50c94a179422c1}
+
+
+Default constructor. Nothing happens here. 
+
+
+
+Definition at line 54 of file parser.\-cpp.
+
+\hypertarget{classosea_1_1_parser_a3e658b5917a93a3ef648050d060e3a93}{\index{osea\-::\-Parser@{osea\-::\-Parser}!$\sim$\-Parser@{$\sim$\-Parser}}
+\index{$\sim$\-Parser@{$\sim$\-Parser}!osea::Parser@{osea\-::\-Parser}}
+\subsubsection[{$\sim$\-Parser}]{\setlength{\rightskip}{0pt plus 5cm}Parser\-::$\sim$\-Parser (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1_parser_a3e658b5917a93a3ef648050d060e3a93}
+Default destructor. Nothing happens here. 
+
+Definition at line 64 of file parser.\-cpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classosea_1_1_parser_ab8e77da06e72ede97238d28bad4a9ae6}{\index{osea\-::\-Parser@{osea\-::\-Parser}!get\-Object@{get\-Object}}
+\index{get\-Object@{get\-Object}!osea::Parser@{osea\-::\-Parser}}
+\subsubsection[{get\-Object}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Object\-Group} Parser\-::get\-Object (
+\begin{DoxyParamCaption}
+\item[{int}]{index = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1_parser_ab8e77da06e72ede97238d28bad4a9ae6}
+
+
+Gets the \hyperlink{classosea_1_1_object_group}{Object\-Group} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & Index of which \hyperlink{classosea_1_1_object_group}{Object\-Group} object to retrieve. If not specified, the default is the first object in the list. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns vector of \hyperlink{classosea_1_1_object_group}{Object\-Group} objects. Each entry in the vector represents an object. Variable passed by value. 
+\end{DoxyReturn}
+
+
+Definition at line 117 of file parser.\-cpp.
+
+\hypertarget{classosea_1_1_parser_aac0035a33352c645ef101d9dc52008db}{\index{osea\-::\-Parser@{osea\-::\-Parser}!get\-Sub\-Object@{get\-Sub\-Object}}
+\index{get\-Sub\-Object@{get\-Sub\-Object}!osea::Parser@{osea\-::\-Parser}}
+\subsubsection[{get\-Sub\-Object}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Object\-Group} Parser\-::get\-Sub\-Object (
+\begin{DoxyParamCaption}
+\item[{int}]{index, }
+\item[{int}]{index1 = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1_parser_aac0035a33352c645ef101d9dc52008db}
+
+
+Returns the sub\-Object referenced by the index. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & Specifies which Sub\-Object to return from the list of Sub\-Objects. \\
+\hline
+{\em index1} & Index of which \hyperlink{classosea_1_1_object_group}{Object\-Group} object to retrieve. If not specified, the default is the first object in the list. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns a Sub\-Object from the list of Sub\-Objects. Returned variable is passed by value. Contains the actual object and not a pointer to the object. 
+\end{DoxyReturn}
+
+
+Definition at line 165 of file parser.\-cpp.
+
+\hypertarget{classosea_1_1_parser_a2ffe797d5380aed4e9a9dd400e8ab79d}{\index{osea\-::\-Parser@{osea\-::\-Parser}!list\-Key@{list\-Key}}
+\index{list\-Key@{list\-Key}!osea::Parser@{osea\-::\-Parser}}
+\subsubsection[{list\-Key}]{\setlength{\rightskip}{0pt plus 5cm}{\bf vec\-Keyword} \& Parser\-::list\-Key (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1_parser_a2ffe797d5380aed4e9a9dd400e8ab79d}
+
+
+Provides direct access to thelist of key words. 
+
+\begin{DoxyReturn}{Returns}
+Returns a reference to the list of key words. Variable passed by reference. 
+\end{DoxyReturn}
+
+
+Definition at line 135 of file parser.\-cpp.
+
+\hypertarget{classosea_1_1_parser_a3b378364d4b4c3f58f7b3ea7e156ac98}{\index{osea\-::\-Parser@{osea\-::\-Parser}!list\-Key@{list\-Key}}
+\index{list\-Key@{list\-Key}!osea::Parser@{osea\-::\-Parser}}
+\subsubsection[{list\-Key}]{\setlength{\rightskip}{0pt plus 5cm}string \& Parser\-::list\-Key (
+\begin{DoxyParamCaption}
+\item[{int}]{index}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1_parser_a3b378364d4b4c3f58f7b3ea7e156ac98}
+
+
+Provides direct access to an individual item in the list of key words. 
+
+Returns the key word specified by the index. 
+\begin{DoxyParams}{Parameters}
+{\em index} & Integer. The index of the key word to retrieve. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\-::string. The key word specified by index. Returned variable passed by reference. 
+\end{DoxyReturn}
+
+
+Definition at line 141 of file parser.\-cpp.
+
+\hypertarget{classosea_1_1_parser_a93885957453b4b7e346ee1b2b79d05f8}{\index{osea\-::\-Parser@{osea\-::\-Parser}!list\-Object@{list\-Object}}
+\index{list\-Object@{list\-Object}!osea::Parser@{osea\-::\-Parser}}
+\subsubsection[{list\-Object}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ {\bf Object\-Group} $>$ \& Parser\-::list\-Object (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1_parser_a93885957453b4b7e346ee1b2b79d05f8}
+
+
+Provides direct access to the vector of \hyperlink{classosea_1_1_object_group}{Object\-Group} objects processed by the \hyperlink{classosea_1_1_parser}{Parser} object. 
+
+\begin{DoxyReturn}{Returns}
+Returns reference to the vector of \hyperlink{classosea_1_1_object_group}{Object\-Group} objects. Variable passed by reference. 
+\end{DoxyReturn}
+
+
+Definition at line 123 of file parser.\-cpp.
+
+\hypertarget{classosea_1_1_parser_ac7323370460e1373acf710cbe2014c9a}{\index{osea\-::\-Parser@{osea\-::\-Parser}!list\-Object@{list\-Object}}
+\index{list\-Object@{list\-Object}!osea::Parser@{osea\-::\-Parser}}
+\subsubsection[{list\-Object}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Object\-Group} \& Parser\-::list\-Object (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{index}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1_parser_ac7323370460e1373acf710cbe2014c9a}
+
+
+Provides direct access to the \hyperlink{classosea_1_1_object_group}{Object\-Group} object specified by index. 
+
+Returns entry from the list of \hyperlink{classosea_1_1_object_group}{Object\-Group} objects. Returned entry is specified by index. 
+\begin{DoxyParams}{Parameters}
+{\em index} & Unsigned integer. The index of the \hyperlink{classosea_1_1_object_group}{Object\-Group} object to return from the list. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns \hyperlink{classosea_1_1_object_group}{Object\-Group} object. Returned variable is passed by reference. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classosea_1_1_object_group}{Object\-Group} 
+\end{DoxySeeAlso}
+
+
+Definition at line 129 of file parser.\-cpp.
+
+\hypertarget{classosea_1_1_parser_ac8e87b248b0a427add910f8f7f72183d}{\index{osea\-::\-Parser@{osea\-::\-Parser}!list\-Val@{list\-Val}}
+\index{list\-Val@{list\-Val}!osea::Parser@{osea\-::\-Parser}}
+\subsubsection[{list\-Val}]{\setlength{\rightskip}{0pt plus 5cm}{\bf vec\-Value} \& Parser\-::list\-Val (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1_parser_ac8e87b248b0a427add910f8f7f72183d}
+
+
+Provides direct access to the list of key values. 
+
+\begin{DoxyReturn}{Returns}
+Returns a reference to the list of key values. Variable passed by reference. 
+\end{DoxyReturn}
+
+
+Definition at line 147 of file parser.\-cpp.
+
+\hypertarget{classosea_1_1_parser_a312496911fbc7212187b7638a61d8227}{\index{osea\-::\-Parser@{osea\-::\-Parser}!list\-Val@{list\-Val}}
+\index{list\-Val@{list\-Val}!osea::Parser@{osea\-::\-Parser}}
+\subsubsection[{list\-Val}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ string $>$ \& Parser\-::list\-Val (
+\begin{DoxyParamCaption}
+\item[{int}]{index}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1_parser_a312496911fbc7212187b7638a61d8227}
+
+
+Provides direct access to an individual item in the list of key values. 
+
+Returns the key value specified by the index. 
+\begin{DoxyParams}{Parameters}
+{\em index} & Integer. T\-He index of the key value to retrieve. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Vector of strings. The key value specified by the index. Returned variable passed by reference. 
+\end{DoxyReturn}
+
+
+Definition at line 153 of file parser.\-cpp.
+
+\hypertarget{classosea_1_1_parser_a819455e27dc19323cdfd2f9354e11ec2}{\index{osea\-::\-Parser@{osea\-::\-Parser}!Parse@{Parse}}
+\index{Parse@{Parse}!osea::Parser@{osea\-::\-Parser}}
+\subsubsection[{Parse}]{\setlength{\rightskip}{0pt plus 5cm}void Parser\-::\-Parse (
+\begin{DoxyParamCaption}
+\item[{std\-::istream \&}]{infile, }
+\item[{int}]{bracket\-\_\-count = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1_parser_a819455e27dc19323cdfd2f9354e11ec2}
+
+
+Parses the input files into a vector of key-\/value pairs. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em infile} & The input file to parse. Istream. Variable passed by reference. \\
+\hline
+{\em bracket\-\_\-count} & The count of object definition brackets. Used as a termination condition in the parsing process. Provides control for any recursive instances of the \hyperlink{classosea_1_1_parser_a819455e27dc19323cdfd2f9354e11ec2}{Parse()} function. Default is 0. The bracket count updates while parsing, as the \hyperlink{classosea_1_1_parser}{Parser} finds new opening (\{) and closing (\}) brackets. Parsing continues as long as the bracket count is equal to or above the bracket count fed into the \hyperlink{classosea_1_1_parser}{Parser} as an argument. At this point, the function behavior does not change with what the actual value of bracket\-\_\-count is. Parsing only requires that bracket\-\_\-count is $>$= its starting value. However, several development attempts indicated that the behavior the Parse function may become dependent on the value of bracket\-\_\-count. So it is left in as an argument to allow functionality expansion in any future development. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See Also}
+Parse\-Commands() 
+\end{DoxySeeAlso}
+
+
+Definition at line 70 of file parser.\-cpp.
+
+\hypertarget{classosea_1_1_parser_a4e0dcef1ae5785c46f2fb6d935090595}{\index{osea\-::\-Parser@{osea\-::\-Parser}!ref\-Sub\-Object@{ref\-Sub\-Object}}
+\index{ref\-Sub\-Object@{ref\-Sub\-Object}!osea::Parser@{osea\-::\-Parser}}
+\subsubsection[{ref\-Sub\-Object}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ {\bf Object\-Group} $\ast$ $>$ \& Parser\-::ref\-Sub\-Object (
+\begin{DoxyParamCaption}
+\item[{int}]{index1 = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1_parser_a4e0dcef1ae5785c46f2fb6d935090595}
+
+
+Provides direct access to the list of Sub\-Objects. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index1} & Index of which \hyperlink{classosea_1_1_object_group}{Object\-Group} object to retrieve. If not specified, the default is the first object in the list. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns a reference to the list of Sub\-Objects detected by the parser. Returned variable passed by reference. Returned variable is a vector of pointers to the Sub\-Objects. 
+\end{DoxyReturn}
+
+
+Definition at line 159 of file parser.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classosea_1_1_parser_a4e0dcef1ae5785c46f2fb6d935090595_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/home/\-Ship\-\_\-\-Design/\-Projects/\-D\-M\-S1305 Open\-S\-E\-A/master/200\-\_\-src/bin/ofreq/file\-\_\-reader/\hyperlink{parser_8h}{parser.\-h}\item 
+/home/\-Ship\-\_\-\-Design/\-Projects/\-D\-M\-S1305 Open\-S\-E\-A/master/200\-\_\-src/bin/ofreq/file\-\_\-reader/\hyperlink{parser_8cpp}{parser.\-cpp}\end{DoxyCompactItemize}

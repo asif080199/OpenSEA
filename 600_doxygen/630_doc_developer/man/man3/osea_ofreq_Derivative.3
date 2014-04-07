@@ -1,0 +1,153 @@
+.TH "osea::ofreq::Derivative" 3 "Sat Apr 5 2014" "Version 0.4" "oFreq" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+osea::ofreq::Derivative \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <derivative\&.h>\fP
+.PP
+Inherits \fBosea::ofreq::oFreqCore\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBDerivative\fP ()"
+.br
+.ti -1c
+.RI "\fB~Derivative\fP ()"
+.br
+.ti -1c
+.RI "std::vector< \fBEquation\fP > & \fBlistEquation\fP ()"
+.br
+.RI "\fIThe list of equations\&. \fP"
+.ti -1c
+.RI "\fBEquation\fP & \fBlistEquation\fP (unsigned int number)"
+.br
+.RI "\fIRetrieve the equation specified by the number\&. \fP"
+.ti -1c
+.RI "\fBEquation\fP & \fBlistDataEquation\fP (int indexIn)"
+.br
+.RI "\fIReturns the equation requested\&. Only specified by the data index property of the equation object\&. \fP"
+.ti -1c
+.RI "std::vector< \fBEquation\fP > & \fBlistDataEquation\fP ()"
+.br
+.RI "\fIReturns the list of equation objects\&. \fP"
+.ti -1c
+.RI "int \fBgetEquationListSize\fP ()"
+.br
+.ti -1c
+.RI "void \fBaddModelEquation\fP (std::vector< double > listCoeffsIn, int EqnDataIn=-1)"
+.br
+.RI "\fICreates a new equation object and adds it to the list of equation objects contained in this derivative\&. \fP"
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+This class holds data for a derivative\&. 
+.PP
+Definition at line 84 of file derivative\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "Derivative::Derivative ()"
+This default constructor creates a \fBBody\fP object\&. 
+.PP
+Definition at line 36 of file derivative\&.cpp\&.
+.SS "Derivative::~Derivative ()"
+The default destructor, nothing happens here\&. 
+.PP
+Definition at line 41 of file derivative\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void Derivative::addModelEquation (std::vector< double >listCoeffsIn, intEqnDataIn = \fC-1\fP)"
+
+.PP
+Creates a new equation object and adds it to the list of equation objects contained in this derivative\&. New equation object is created automatically within this function\&. Function merely takes the list of input coefficients and creates all equation objects necessary from that\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIEqnDataIn\fP Integer\&. The data index of the equation object\&. If no input is provided, the function assumes the data index to be the index of the equation's current place in the vector\&. 
+.br
+\fIlistCoeffsIn\fP Vector of doubles\&. The list of coefficients\&. Each coefficient corresponds to a single variable\&. List of coefficients is organized by \fIdata index\fP\&. The coefficient's position in the list is it's data index\&. 
+.RE
+.PP
+
+.PP
+Definition at line 103 of file derivative\&.cpp\&.
+.SS "int Derivative::getEquationListSize ()"
+Retrieve the size of the equation list\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+The size of the equation list\&. 
+.RE
+.PP
+
+.PP
+Definition at line 97 of file derivative\&.cpp\&.
+.SS "\fBEquation\fP & Derivative::listDataEquation (intindexIn)"
+
+.PP
+Returns the equation requested\&. Only specified by the data index property of the equation object\&. Returns the equation requested\&. Only specified by the data index property of the equation object\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIindexIn\fP The integer describing the data index for the equation requested\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+\fBEquation\fP object specified by the DataIndex of indexIn\&. Value returned is by value\&. 
+.RE
+.PP
+
+.PP
+Definition at line 67 of file derivative\&.cpp\&.
+.SS "std::vector< \fBEquation\fP > & Derivative::listDataEquation ()"
+
+.PP
+Returns the list of equation objects\&. This is the same as the \fBlistEquation()\fP function, just under a different name\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+Returns a vector of \fBEquation\fP objects\&. Returned value passed by reference\&. 
+.RE
+.PP
+
+.PP
+Definition at line 90 of file derivative\&.cpp\&.
+.SS "vector< \fBEquation\fP > & Derivative::listEquation ()"
+
+.PP
+The list of equations\&. \fBReturns:\fP
+.RS 4
+Returns a vector of \fBEquation\fP objects\&. Returned value passed by reference\&. 
+.RE
+.PP
+
+.PP
+Definition at line 47 of file derivative\&.cpp\&.
+.SS "\fBEquation\fP & Derivative::listEquation (unsigned intnumber)"
+
+.PP
+Retrieve the equation specified by the number\&. Retrieves the equation specified by the number\&. Value returned is a reference to the equation object\&. Allows editting of the equation object, or just data access\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fInumber\fP Integer representing which equation number should be returned\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Value returned is a reference to the equation object\&. Allows editting of the equation object, or just data access\&. 
+.RE
+.PP
+
+.PP
+Definition at line 54 of file derivative\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for oFreq from the source code\&.

@@ -1,0 +1,79 @@
+\section*{Frequency Based Dynamic Analysis}
+
+
+
+o\-Freq has two modes of operation. It performs frequency based linear response analysis. Or, it calculates resonant frequencies and mode shapes. The program incorporates user forces and hydrodynamic forces.
+
+\section*{Features}
+
+\subsection*{Dynamic Response Analysis}
+
+The program conducts dynamic response analysis. The program accepts a collection of hydrodynamic and user defined forces, and body mass. These forces are then combined to solve for response motions. Response amplitude and phase are calculated for each individual degree of freedom The program is flexible enough to allow definition of any system of motion, with unlimited degrees of freedom.
+
+\subsection*{Resonant Frequency Analysis}
+
+All the features of response analysis, but this time the program solves for resonant frequency. It provides efficient calculation of resonant frequencies and resulting mode shapes for each resonant frequency. Relative response amplitude and relative response forces are presented.
+
+\subsection*{Multiple Body Support}
+
+o\-Freq supports unlimited numbers of body definitions! Each body can have its own location and orientation. Body interactions are possible through hydrodynamic forces or custom user defined forces.
+
+\subsection*{Hydrodynamic Forces Support}
+
+o\-Freq supports hydrodynamic interaction from previous calculations of o\-Hydro. The user simply specifies the path to the o\-Hydro run directory, and o\-Freq automatically integrates the following hydrodynamic forces.
+
+
+\begin{DoxyItemize}
+\item Hydrodynamic Active Forces\-: Forces independent of body responses and frequency. Provides inputs to drive the motion of the body.
+\item Hydrodynamic Reactive Forces\-: Forces dependent on body responses. Defined through linear coefficients. Each coefficient can be specified for an individual equation, variable in that equation, and order of derivative associated with that variable. Forces are defined up to second order derivatives. This includes hydrostatic forces, added damping, and added mass.
+\item Hydrodynamic Cross-\/\-Body Forces\-: Reactive forces that depend on the motion variables of another body. Body coupling are two-\/way by default, but structure of force definition does allow one-\/way coupling.
+\end{DoxyItemize}
+
+\subsection*{Custom User Forces}
+
+The user can define custom forces acting on the body. All forces offer fine level definition down to the individual equation of motion, variable, and order of derivative. Three force types are available.
+
+
+\begin{DoxyItemize}
+\item User Active Forces\-: Forces independent of body responses and frequency. Provides inputs to drive the motion of the body.
+\item User Reactive Forces\-: Forces dependent on body responses. Defined through linear coefficients. Each coefficient can be specified for an individual equation, variable in that equation, and order of derivative associated with that variable. Unlimited orders of derivative are allowed. Typical uses may only go up to definition for a second order derivative (acceleration), but you can go to higher orders without limit. This is especially useful for modeling active control systems.
+\item User Cross-\/\-Body Forces\-: Reactive forces that depend on the motion variables of another body. Body coupling can be one-\/way or two-\/way. All the features of reactive forces are still available\-: equation, variable, and derivative specification; unlimited derivatives, etc.
+\end{DoxyItemize}
+
+The method of force definition also allows the user to create a library of custom forces and select from individual force sets within the library. Multiple force sets can be selected.
+
+\subsection*{Standard Motion Models}
+
+o\-Freq implements the following standard motion models by default. The user can select a different motion model for each body defined.
+
+
+\begin{DoxyItemize}
+\item Six degree of freedom.
+\end{DoxyItemize}
+
+\subsection*{User Customized Motion Models}
+
+Want to do more? o\-Freq supports up to 25 different motion model definitions. The user can reprogram these motion models to create a custom equation of motion. A working knowledge of C++ programming is required, but the models are isolated from the rest of the program. It is possible to create customized models without reprogramming the entire application.
+
+Custom motion models can access all hydrodynamic forces, user defined forces, and body mass properties. They can be created in any combination desired. The program permits an unlimited number of equations, with any combination of mathematical operators for equation definition. This allows unlimited flexibility. No matter what the system, if you can write the mathematics for it, o\-Freq can solve the dynamics.
+
+\subsection*{Plethora of Outputs}
+
+All outputs are A\-S\-C\-I\-I text files by default. Nothing is hidden in binary files. All information is accessible and reviewable by the user. These files are formatted to easily copy into spreadsheet programs for additional post processing. And there are plenty of outputs to choose from. The program provides the following outputs by default.
+
+
+\begin{DoxyItemize}
+\item Global motion amplitude and phase for each body
+\item Global velocity amplitude and phase for each body
+\item Global acceleration amplitude and phase for each body
+\item Amplitude and phase of reactive forces for each motion and each order of derivative. (Still in development)
+\item Wave frequencies, formatted for copying into spreadsheets
+\item Wave directions, formatted for copying into spreadsheets
+\item Wave energy spectrum generated, for each direction (Still in development)
+\item Amplitude and phase of hydrodynamic force for wave amplitudes specified. (Still in development)
+\item Wave amplitudes for frequencies specified. (Still in development)
+\item Local motion amplitude and phase for each body. Multiple local locations can be defined. (Still in development)
+\item Local velocity amplitude and phase for each body. Multiple local locations can be defined. (Still in development)
+\item Local acceleration amplitude and phase for each body. Multiple local locations can be defined. (Still in development)
+\item Calculated energy extracted for each degree of freedom. (Still in development) 
+\end{DoxyItemize}

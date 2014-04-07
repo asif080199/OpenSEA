@@ -1,0 +1,52 @@
+\contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}
+\contentsline {chapter}{\numberline {2}Bodies}{3}{chapter.2}
+\contentsline {section}{\numberline {2.1}Multibody Support}{3}{section.2.1}
+\contentsline {chapter}{\numberline {3}Coordinate Systems}{5}{chapter.3}
+\contentsline {section}{\numberline {3.1}Global Coordinates}{5}{section.3.1}
+\contentsline {section}{\numberline {3.2}Body Coordinate System}{5}{section.3.2}
+\contentsline {chapter}{\numberline {4}Motion Models}{7}{chapter.4}
+\contentsline {section}{\numberline {4.1}Standard Motion Models}{7}{section.4.1}
+\contentsline {subsection}{\numberline {4.1.1}6 Degree of Freedom (6 D\discretionary {-}{}{}O\discretionary {-}{}{}F) Motion Model}{7}{subsection.4.1.1}
+\contentsline {section}{\numberline {4.2}Custom Motion Models}{7}{section.4.2}
+\contentsline {chapter}{\numberline {5}Motion Solver}{9}{chapter.5}
+\contentsline {chapter}{\numberline {6}Outputs}{11}{chapter.6}
+\contentsline {section}{\numberline {6.1}Wave Directions}{12}{section.6.1}
+\contentsline {section}{\numberline {6.2}Wave Frequencies}{13}{section.6.2}
+\contentsline {section}{\numberline {6.3}Wave Spectra}{13}{section.6.3}
+\contentsline {section}{\numberline {6.4}Global Derivative}{14}{section.6.4}
+\contentsline {section}{\numberline {6.5}Global Motion}{14}{section.6.5}
+\contentsline {section}{\numberline {6.6}Global Velocity}{15}{section.6.6}
+\contentsline {section}{\numberline {6.7}Global Acceleration}{16}{section.6.7}
+\contentsline {section}{\numberline {6.8}Local Derivative}{16}{section.6.8}
+\contentsline {section}{\numberline {6.9}Local Motion}{17}{section.6.9}
+\contentsline {section}{\numberline {6.10}Local Velocity}{17}{section.6.10}
+\contentsline {section}{\numberline {6.11}Local Acceleration}{18}{section.6.11}
+\contentsline {section}{\numberline {6.12}Global Forces}{19}{section.6.12}
+\contentsline {section}{\numberline {6.13}Local Forces}{19}{section.6.13}
+\contentsline {section}{\numberline {6.14}Power}{20}{section.6.14}
+\contentsline {section}{\numberline {6.15}Absolute Efficiency}{21}{section.6.15}
+\contentsline {section}{\numberline {6.16}Relative Efficiency}{21}{section.6.16}
+\contentsline {section}{\numberline {6.17}Motion Sickness Index}{22}{section.6.17}
+\contentsline {section}{\numberline {6.18}Subjective Motion Assessment}{22}{section.6.18}
+\contentsline {chapter}{\numberline {7}Resonant Solver}{25}{chapter.7}
+\contentsline {chapter}{\numberline {8}Sea State Definition}{27}{chapter.8}
+\contentsline {section}{\numberline {8.1}Wave Direction Models}{27}{section.8.1}
+\contentsline {subsection}{\numberline {8.1.1}Model Cos$^\wedge $2 Wave Direction Model}{27}{subsection.8.1.1}
+\contentsline {section}{\numberline {8.2}Wave Spectra}{28}{section.8.2}
+\contentsline {subsection}{\numberline {8.2.1}I\discretionary {-}{}{}T\discretionary {-}{}{}T\discretionary {-}{}{}C (Bretschneider) Wave Spectra}{28}{subsection.8.2.1}
+\contentsline {subsection}{\numberline {8.2.2}J\discretionary {-}{}{}O\discretionary {-}{}{}N\discretionary {-}{}{}S\discretionary {-}{}{}W\discretionary {-}{}{}A\discretionary {-}{}{}P Wave Spectra}{28}{subsection.8.2.2}
+\contentsline {subsection}{\numberline {8.2.3}Ochi 2 Parameter Wave Spectra}{28}{subsection.8.2.3}
+\contentsline {subsection}{\numberline {8.2.4}Pierson-\/\discretionary {-}{}{}Moskowitz Wave Spectra}{28}{subsection.8.2.4}
+\contentsline {chapter}{\numberline {9}Seakeeping Fundamentals}{29}{chapter.9}
+\contentsline {section}{\numberline {9.1}Frequency Domain Aanalysis}{29}{section.9.1}
+\contentsline {section}{\numberline {9.2}Linear Algebra}{29}{section.9.2}
+\contentsline {section}{\numberline {9.3}Waves}{29}{section.9.3}
+\contentsline {section}{\numberline {9.4}Wave Interactions with Bodies}{30}{section.9.4}
+\contentsline {section}{\numberline {9.5}Hydrodynamic Data}{30}{section.9.5}
+\contentsline {chapter}{\numberline {10}Verification}{31}{chapter.10}
+\contentsline {chapter}{\numberline {11}Individual Wave Calculations}{33}{chapter.11}
+\contentsline {section}{\numberline {11.1}Non-\/\discretionary {-}{}{}Linear Wave Amplitude Calculation}{33}{section.11.1}
+\contentsline {section}{\numberline {11.2}Hydrodynamic Coefficients}{34}{section.11.2}
+\contentsline {chapter}{\numberline {12}Definitions}{35}{chapter.12}
+\contentsline {chapter}{\numberline {13}Todo List}{37}{chapter.13}
+\contentsline {part}{Index}{39}{chapter.13}

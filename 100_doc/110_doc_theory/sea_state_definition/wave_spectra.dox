@@ -1,0 +1,17 @@
+/**
+\page wave_spectra Wave Spectra
+
+\todo Write wave spectra page.
+
+\subpage ittc_spectra
+
+\subpage jonswap_spectra
+
+\subpage ochi-2param_spectra
+
+\subpage p-m_spectra
+
+\todo Add other spectra to the list of wave spectra.
+
+
+*/

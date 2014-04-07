@@ -1,0 +1,412 @@
+.TH "osea::ofreq::matBody" 3 "Sat Apr 5 2014" "Version 0.4" "oFreq" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+osea::ofreq::matBody \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <matbody\&.h>\fP
+.PP
+Inherits \fBosea::ofreq::oFreqCore\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBmatBody\fP ()"
+.br
+.ti -1c
+.RI "\fB~matBody\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetId\fP (int num)"
+.br
+.RI "\fISets the force id number for the object\&. \fP"
+.ti -1c
+.RI "int \fBgetId\fP ()"
+.br
+.RI "\fIReturns the force id number for the object\&. \fP"
+.ti -1c
+.RI "void \fBsetModelId\fP (int num)"
+.br
+.RI "\fISets the integer id of the motion model used by the \fBmatBody\fP object\&. \fP"
+.ti -1c
+.RI "int \fBgetModelId\fP ()"
+.br
+.RI "\fIGets the integer id of the motion model used by the \fBmatBody\fP object\&. \fP"
+.ti -1c
+.RI "arma::cx_mat & \fBrefMass\fP ()"
+.br
+.RI "\fIReturns a reference to the mass matrix\&. \fP"
+.ti -1c
+.RI "\fBmatForceReact\fP \fBgetForceReact_mass\fP ()"
+.br
+.RI "\fIReturns the mass matrix as a reactive force matrix\&. \fP"
+.ti -1c
+.RI "std::vector< \fBmatForceReact\fP > & \fBlistForceReact_user\fP ()"
+.br
+.RI "\fIReturns a reference to the Reactive \fBForce\fP, user objects\&. \fP"
+.ti -1c
+.RI "\fBmatForceReact\fP & \fBlistForceReact_user\fP (unsigned int index)"
+.br
+.RI "\fIReturns a reference to the Reactive \fBForce\fP, user object specified by the index\&. \fP"
+.ti -1c
+.RI "std::vector< \fBmatForceCross\fP > & \fBlistForceCross_user\fP ()"
+.br
+.RI "\fIReturns a reference to the Cross-Body \fBForce\fP, user objects\&. \fP"
+.ti -1c
+.RI "\fBmatForceCross\fP & \fBlistForceCross_user\fP (unsigned int index)"
+.br
+.RI "\fIReturns a reference to the Cross-Body \fBForce\fP, user object specified by the index\&. \fP"
+.ti -1c
+.RI "std::vector< \fBmatForceActive\fP > & \fBlistForceActive_user\fP ()"
+.br
+.RI "\fIReturns a reference to the Active \fBForce\fP, user objects\&. \fP"
+.ti -1c
+.RI "\fBmatForceActive\fP & \fBlistForceActive_user\fP (unsigned int index)"
+.br
+.RI "\fIReturns a reference to the Active \fBForce\fP, user object specified by the index\&. \fP"
+.ti -1c
+.RI "std::vector< \fBmatForceReact\fP > & \fBlistForceReact_hydro\fP ()"
+.br
+.RI "\fIReturns a reference to the Reactive \fBForce\fP, hydro objects\&. \fP"
+.ti -1c
+.RI "\fBmatForceReact\fP & \fBlistForceReact_hydro\fP (unsigned int index)"
+.br
+.RI "\fIReturns a reference to the Reactive \fBForce\fP, hydro object specified by the index\&. \fP"
+.ti -1c
+.RI "std::vector< \fBmatForceCross\fP > & \fBlistForceCross_hydro\fP ()"
+.br
+.RI "\fIReturns a reference to the Cross-Body \fBForce\fP, hydro objects\&. \fP"
+.ti -1c
+.RI "\fBmatForceCross\fP & \fBlistForceCross_hydro\fP (unsigned int index)"
+.br
+.RI "\fIReturns a reference to the Cross-Body \fBForce\fP, hydro object specified by the index\&. \fP"
+.ti -1c
+.RI "std::vector< \fBmatForceActive\fP > & \fBlistForceActive_hydro\fP ()"
+.br
+.RI "\fIReturns a reference to the Active \fBForce\fP, hydro objects\&. \fP"
+.ti -1c
+.RI "\fBmatForceActive\fP & \fBlistForceActive_hydro\fP (unsigned int index)"
+.br
+.RI "\fIReturns a reference to the Active \fBForce\fP, hydro object specified by the index\&. \fP"
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+This class holds all data for a body and related force matrices\&. The \fBmatBody\fP class contains data defined in a pure mathematical context\&. It is prepared for combination and solution\&. User interface items, such as relative coordinates and body names are stripped out\&. Definitions of equations, derivatives, and variables are replaced by sets of matrices\&. The body still contains force objects, but the objects are defined in terms of matrices\&. Each force object contains a vector of matrices, denoted by the derivative property\&. Each matrix within that vector represents a derivative, starting with order 0 (index 0 in the vector\&.) Each matrix is organized so that rows = equations, and columns = variables\&.
+.PP
+The class definition also includes a number and size property\&. The number denotes the body's position within a vector of bodies\&. The size denotes the number of equations used\&. This in turn notes how big the matrices must be to accomodate any forces from the body\&. 
+.PP
+Definition at line 108 of file matbody\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "matBody::matBody ()"
+The default constructor\&. 
+.PP
+Definition at line 37 of file matbody\&.cpp\&.
+.SS "matBody::~matBody ()"
+The default destructor, nothing happens here\&. 
+.PP
+Definition at line 42 of file matbody\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBmatForceReact\fP matBody::getForceReact_mass ()"
+
+.PP
+Returns the mass matrix as a reactive force matrix\&. This allows the motion solver to easily add the body mass in with the other reactive force matrices\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+Returns a matrix reactive force object\&. Object contains the mass matrix for the body\&. Returned variabled passed by value\&. 
+.RE
+.PP
+
+.PP
+Definition at line 77 of file matbody\&.cpp\&.
+.SS "int matBody::getId ()"
+
+.PP
+Returns the force id number for the object\&. This is similar to the name parameter in other force objects\&. It is an identifier\&. In this case, a numerical identifier\&. Normally correlates to the objects index in a vector of other objects of the same class\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+Returns the force id number, integer data type\&. 
+.RE
+.PP
+
+.PP
+Definition at line 53 of file matbody\&.cpp\&.
+.SS "int matBody::getModelId ()"
+
+.PP
+Gets the integer id of the motion model used by the \fBmatBody\fP object\&. Gets the integer id of the motion model used by the \fBmatBody\fP object\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+Returns the integer id of the motion model used by the \fBmatBody\fP object\&. Variable is passed by value\&. 
+.RE
+.PP
+
+.PP
+Definition at line 65 of file matbody\&.cpp\&.
+.SS "vector< \fBmatForceActive\fP > & matBody::listForceActive_hydro ()"
+
+.PP
+Returns a reference to the Active \fBForce\fP, hydro objects\&. Returns a reference to the Active \fBForce\fP, hydro objects\&. This is a vector list of the Active \fBForce\fP objects\&. Provides direct access to the variable and all the member functions of the vector class\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+This is a vector list of the Active \fBForce\fP objects\&. Provides direct access to the variable and all the member functions of the vector class\&. Variable passed by reference\&. 
+.RE
+.PP
+
+.PP
+Definition at line 150 of file matbody\&.cpp\&.
+.SS "\fBmatForceActive\fP & matBody::listForceActive_hydro (unsigned intindex)"
+
+.PP
+Returns a reference to the Active \fBForce\fP, hydro object specified by the index\&. This is a single item from the vector list of the Active \fBForce\fP objects\&. Provides direct access to the variable\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIindex\fP Unsigned integer\&. Index to specify which variable retrieve from the vector\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Returns \fBmatForceActive\fP object specified by index\&. Returned variable passed by reference\&. 
+.RE
+.PP
+\fBSee Also:\fP
+.RS 4
+\fBmatForceActive\fP 
+.RE
+.PP
+
+.PP
+Definition at line 156 of file matbody\&.cpp\&.
+.SS "vector< \fBmatForceActive\fP > & matBody::listForceActive_user ()"
+
+.PP
+Returns a reference to the Active \fBForce\fP, user objects\&. Returns a reference to the Active \fBForce\fP, user objects\&. This is a vector list of the Active \fBForce\fP objects\&. Provides direct access to the variable and all the member functions of the vector class\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+This is a vector list of the Active \fBForce\fP objects\&. Provides direct access to the variable and all the member functions of the vector class\&. Variable passed by reference\&. 
+.RE
+.PP
+
+.PP
+Definition at line 114 of file matbody\&.cpp\&.
+.SS "\fBmatForceActive\fP & matBody::listForceActive_user (unsigned intindex)"
+
+.PP
+Returns a reference to the Active \fBForce\fP, user object specified by the index\&. This is a single item from the vector list of the Active \fBForce\fP objects\&. Provides direct access to the variable\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIindex\fP Unsigned integer\&. Index to specify which variable retrieve from the vector\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Returns \fBmatForceActive\fP object specified by index\&. Returned variable passed by reference\&. 
+.RE
+.PP
+\fBSee Also:\fP
+.RS 4
+\fBmatForceActive\fP 
+.RE
+.PP
+
+.PP
+Definition at line 120 of file matbody\&.cpp\&.
+.SS "vector< \fBmatForceCross\fP > & matBody::listForceCross_hydro ()"
+
+.PP
+Returns a reference to the Cross-Body \fBForce\fP, hydro objects\&. Returns a reference to the Cross-Body \fBForce\fP, hydro objects\&. This is a vector list of the Cross-Body \fBForce\fP objects\&. Provides direct access to the variable and all the member functions of the vector class\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+This is a vector list of the Cross-Body \fBForce\fP objects\&. Provides direct access to the variable and all the member functions of the vector class\&. Variable passed by reference\&. 
+.RE
+.PP
+
+.PP
+Definition at line 138 of file matbody\&.cpp\&.
+.SS "\fBmatForceCross\fP & matBody::listForceCross_hydro (unsigned intindex)"
+
+.PP
+Returns a reference to the Cross-Body \fBForce\fP, hydro object specified by the index\&. This is a single item from the vector list of the Cross-Body \fBForce\fP objects\&. Provides direct access to the variable\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIindex\fP Unsigned integer\&. Index to specify which variable retrieve from the vector\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Returns \fBmatForceCross\fP object specified by index\&. Returned variable passed by reference\&. 
+.RE
+.PP
+\fBSee Also:\fP
+.RS 4
+\fBmatForceCross\fP 
+.RE
+.PP
+
+.PP
+Definition at line 144 of file matbody\&.cpp\&.
+.SS "vector< \fBmatForceCross\fP > & matBody::listForceCross_user ()"
+
+.PP
+Returns a reference to the Cross-Body \fBForce\fP, user objects\&. Returns a reference to the Cross-Body \fBForce\fP, user objects\&. This is a vector list of the Cross-Body \fBForce\fP objects\&. Provides direct access to the variable and all the member functions of the vector class\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+This is a vector list of the Cross-Body \fBForce\fP objects\&. Provides direct access to the variable and all the member functions of the vector class\&. Variable passed by reference\&. 
+.RE
+.PP
+
+.PP
+Definition at line 102 of file matbody\&.cpp\&.
+.SS "\fBmatForceCross\fP & matBody::listForceCross_user (unsigned intindex)"
+
+.PP
+Returns a reference to the Cross-Body \fBForce\fP, user object specified by the index\&. This is a single item from the vector list of the Cross-Body \fBForce\fP objects\&. Provides direct access to the variable\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIindex\fP Unsigned integer\&. Index to specify which variable retrieve from the vector\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Returns \fBmatForceCross\fP object specified by index\&. Returned variable passed by reference\&. 
+.RE
+.PP
+\fBSee Also:\fP
+.RS 4
+\fBmatForceCross\fP 
+.RE
+.PP
+
+.PP
+Definition at line 108 of file matbody\&.cpp\&.
+.SS "vector< \fBmatForceReact\fP > & matBody::listForceReact_hydro ()"
+
+.PP
+Returns a reference to the Reactive \fBForce\fP, hydro objects\&. Returns a reference to the Reactive \fBForce\fP, hydro objects\&. This is a vector list of the Reactive \fBForce\fP objects\&. Provides direct access to the variable and all the member functions of the vector class\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+This is a vector list of the Reactive \fBForce\fP objects\&. Provides direct access to the variable and all the member functions of the vector class\&. Variable passed by reference\&. 
+.RE
+.PP
+
+.PP
+Definition at line 126 of file matbody\&.cpp\&.
+.SS "\fBmatForceReact\fP & matBody::listForceReact_hydro (unsigned intindex)"
+
+.PP
+Returns a reference to the Reactive \fBForce\fP, hydro object specified by the index\&. This is a single item from the vector list of the Reactive \fBForce\fP objects\&. Provides direct access to the variable\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIindex\fP Unsigned integer\&. Index to specify which variable retrieve from the vector\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Returns \fBmatForceReact\fP object specified by index\&. Returned variable passed by reference\&. 
+.RE
+.PP
+\fBSee Also:\fP
+.RS 4
+\fBmatForceReact\fP 
+.RE
+.PP
+
+.PP
+Definition at line 132 of file matbody\&.cpp\&.
+.SS "vector< \fBmatForceReact\fP > & matBody::listForceReact_user ()"
+
+.PP
+Returns a reference to the Reactive \fBForce\fP, user objects\&. Returns a reference to the Reactive \fBForce\fP, user objects\&. This is a vector list of the Reactive \fBForce\fP objects\&. Provides direct access to the variable and all the member functions of the vector class\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+This is a vector list of the Reactive \fBForce\fP objects\&. Provides direct access to the variable and all the member functions of the vector class\&. Variable passed by reference\&. 
+.RE
+.PP
+
+.PP
+Definition at line 90 of file matbody\&.cpp\&.
+.SS "\fBmatForceReact\fP & matBody::listForceReact_user (unsigned intindex)"
+
+.PP
+Returns a reference to the Reactive \fBForce\fP, user object specified by the index\&. This is a single item from the vector list of the Reactive \fBForce\fP objects\&. Provides direct access to the variable\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIindex\fP Unsigned integer\&. Index to specify which variable retrieve from the vector\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Returns \fBmatForceReact\fP object specified by index\&. Returned variable passed by reference\&. 
+.RE
+.PP
+\fBSee Also:\fP
+.RS 4
+\fBmatForceReact\fP 
+.RE
+.PP
+
+.PP
+Definition at line 96 of file matbody\&.cpp\&.
+.SS "cx_mat & matBody::refMass ()"
+
+.PP
+Returns a reference to the mass matrix\&. Returns a reference to the mass matrix\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+Returns a reference to the mass matrix\&. Variable passed by reference\&. 
+.RE
+.PP
+
+.PP
+Definition at line 71 of file matbody\&.cpp\&.
+.SS "void matBody::setId (intnum)"
+
+.PP
+Sets the force id number for the object\&. This is similar to the name parameter in other force objects\&. It is an identifier\&. In this case, a numerical identifier\&. Normally correlates to the objects index in a vector of other objects of the same class\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fInum\fP The integer number to input as the objects integer id\&. 
+.RE
+.PP
+
+.PP
+Definition at line 47 of file matbody\&.cpp\&.
+.SS "void matBody::setModelId (intnum)"
+
+.PP
+Sets the integer id of the motion model used by the \fBmatBody\fP object\&. Sets the integer id of the motion model used by the \fBmatBody\fP object\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fInum\fP Integer\&. The integer id of the motion model used by the \fBmatBody\fP object\&. Variable is passed by value\&. 
+.RE
+.PP
+
+.PP
+Definition at line 59 of file matbody\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for oFreq from the source code\&.

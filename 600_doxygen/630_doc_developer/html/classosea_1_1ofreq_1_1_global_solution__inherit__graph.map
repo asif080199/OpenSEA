@@ -1,0 +1,6 @@
+<map id="osea::ofreq::GlobalSolution" name="osea::ofreq::GlobalSolution">
+<area shape="rect" id="node5" href="$classosea_1_1ofreq_1_1_global_acceleration.html" title="{osea::ofreq::GlobalAcceleration\n||+ GlobalAcceleration()\l+ GlobalAcceleration()\l+ ~GlobalAcceleration()\l+ setDerivative()\l}" alt="" coords="5,571,245,701"/>
+<area shape="rect" id="node7" href="$classosea_1_1ofreq_1_1_global_motion.html" title="{osea::ofreq::GlobalMotion\n||+ GlobalMotion()\l+ GlobalMotion()\l+ ~GlobalMotion()\l+ setDerivative()\l}" alt="" coords="270,571,471,701"/>
+<area shape="rect" id="node9" href="$classosea_1_1ofreq_1_1_global_velocity.html" title="{osea::ofreq::GlobalVelocity\n||+ GlobalVelocity()\l+ GlobalVelocity()\l+ ~GlobalVelocity()\l+ setDerivative()\l}" alt="" coords="495,571,704,701"/>
+<area shape="rect" id="node2" href="$classosea_1_1ofreq_1_1_output_derived.html" title="{osea::ofreq::OutputDerived\n|# pName\l# pClassName\l# pParentBody\l|+ OutputDerived()\l+ OutputDerived()\l+ ~OutputDerived()\l+ setOutputBody()\l+ getName()\l+ getClassName()\l+ setName()\l+ getCurWaveInd()\l+ calcOutput()\l+ listBody()\land 9 more...\l# addResult()\l}" alt="" coords="265,6,476,295"/>
+</map>

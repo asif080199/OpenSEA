@@ -1,0 +1,64 @@
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{todo__todo000038}{Todo}]write documentation for user interface.
+\begin{DoxyItemize}
+\item What are the main things they should know about the interface.
+\end{DoxyItemize}\end{DoxyRefDesc}
+
+
+\section*{General Information}
+
+\hyperlink{input_syntax}{Input Syntax}
+
+\hyperlink{why_text_files}{Text File Inputs}
+
+\section*{File Structure}
+
+\hyperlink{file_structure}{File Structure}
+
+\section*{Input Files}
+
+\hyperlink{input_files}{Input Files} \hypertarget{input_syntax}{}\section{Input Syntax}\label{input_syntax}
+\section*{Input File Structure}
+
+\subsection*{Dynamic Structure}\hypertarget{why_text_files}{}\section{Text File Inputs}\label{why_text_files}
+\section*{Why Text File Interface?}
+
+A major criticism of ofreq is that is does not natively use a G\-U\-I interface. The subject of text file interaces was given careful consideration. There are several reasons why text file interfaces were used. T\-He first and primary reason is\-:
+
+
+\begin{DoxyItemize}
+\item Provide a neutral interface between people with software engineering specialization and people with marine engineering specialization.
+\end{DoxyItemize}
+
+Many sections of ofreq require detailed knowledge of marine engineering and seakeeping mathematics. This is knowledge that most software engineers do not normally posses. On the other hand, most marine engineers are not competent enough with programming to handle coding a G\-U\-I interface. But the marine engineer can normally handle a text file interface. The text file interfaces provide a neutral format that is easily handled by people in both skill sets\-: marine engineering and software engineering.
+
+The intent is always to provide a G\-U\-I for ofreq. However, this G\-U\-I will stand on its own and support the entire Open\-S\-E\-A software suite.
+
+There are several other reasons for the text file interface.
+
+
+\begin{DoxyEnumerate}
+\item Some advanced users (whole companies) may want to incorporate ofreq into their own calculation software. In that case, the user will create their own interace. A text based interface allows users to develop third-\/party G\-U\-I's without re-\/coding and recompiling ofreq.
+\item Many times users need to extract individual pieces of information from the outputs. The text file interface makes it very easy to extract information and paste into spreadsheet applications.
+\item Users may log into remote computers to use this software. Advanced engineering software, such as Open\-S\-E\-A, is often installed on power machines devoted exclusively for intense computations. Sometimes these remote connections lack a G\-U\-I interface. In that case, o\-Freq can still be used through console only.
+\item Eventually, Open\-S\-E\-A will include a batch program that creates batch runs of these programs and edits the text files for both input and output. A text interface leaves open the most options for that batch program.
+\end{DoxyEnumerate}
+
+For all of these reasons, the text interface is the way I decided to go. It only makes sense because I intend to eventualy supplement this with a G\-U\-I interface. \hypertarget{file_structure}{}\section{File Structure}\label{file_structure}
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{todo__todo000037}{Todo}]Write file structure documentation.\end{DoxyRefDesc}
+
+
+\section*{System Folder}
+
+Stuff
+
+\section*{Constant Folder}
+
+Stuff
+
+\section*{Output Folders}
+
+\subsection*{Wave direction folders}
+
+\subsection*{Resonant Frequency folders}

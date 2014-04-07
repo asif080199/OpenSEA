@@ -1,0 +1,9 @@
+<map id="osea::Dictionary::setObject" name="osea::Dictionary::setObject">
+<area shape="rect" id="node3" href="$classosea_1_1_dictionary.html#a42843f64aa966b8c686d9e3750cbdb4b" title="Pure virtual function that defines how to interpret the class name. Class name implies declaration of..." alt="" coords="277,5,461,49"/>
+<area shape="rect" id="node5" href="$classosea_1_1_object_group.html#aa158e9516621ab6e2b690bad6c6619b5" title="Gets the class name, as specified by the input file." alt="" coords="288,73,451,117"/>
+<area shape="rect" id="node7" href="$classosea_1_1_object_group.html#a0f44d28c868ba60971af1a7aceb2e5bd" title="Provides direct access to thelist of key words." alt="" coords="288,141,451,185"/>
+<area shape="rect" id="node9" href="$classosea_1_1_dictionary.html#ae96470181c8b1762204493fa45e96d7c" title="Pure virtual function that defines how to interpret the key values. Contains a list of key names and ..." alt="" coords="265,209,474,237"/>
+<area shape="rect" id="node11" href="$classosea_1_1_object_group.html#a818bd77a51e5617fb26481d09eb16714" title="Gets a key word as specified by the index." alt="" coords="288,261,451,305"/>
+<area shape="rect" id="node13" href="$classosea_1_1_object_group.html#a35ccc728179fdc3db8712f553746caf9" title="Gets the key value as specified by the index." alt="" coords="288,329,451,373"/>
+<area shape="rect" id="node15" href="$classosea_1_1_object_group.html#a13cd6186adf626bf61b279f1f6f75790" title="Provides direct access to the list of sub object definitions." alt="" coords="288,397,451,441"/>
+</map>

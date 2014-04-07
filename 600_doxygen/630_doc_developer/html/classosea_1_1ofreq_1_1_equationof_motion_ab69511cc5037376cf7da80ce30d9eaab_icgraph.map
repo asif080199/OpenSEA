@@ -1,0 +1,11 @@
+<map id="osea::ofreq::EquationofMotion::var" name="osea::ofreq::EquationofMotion::var">
+<area shape="rect" id="node3" href="$classosea_1_1ofreq_1_1_eqn_rotation.html#aac7de76e4a8da885b4c06f9e694afff1" title="Func1 through Func50 provide user custom defined functions." alt="" coords="295,5,467,46"/>
+<area shape="rect" id="node5" href="$classosea_1_1ofreq_1_1_eqn_rotation.html#a6287a211f6758d536848dab92d18e081" title="osea::ofreq::EqnRotation\l::Func2" alt="" coords="295,70,467,111"/>
+<area shape="rect" id="node7" href="$classosea_1_1ofreq_1_1_eqn_rotation.html#abfad91e6b9cffc60a6e85ea6a46ff64d" title="osea::ofreq::EqnRotation\l::Func3" alt="" coords="295,135,467,177"/>
+<area shape="rect" id="node9" href="$classosea_1_1ofreq_1_1_eqn_rotation.html#a93e98c20eda7e3f040c4ac354ec82a74" title="osea::ofreq::EqnRotation\l::Func4" alt="" coords="295,201,467,242"/>
+<area shape="rect" id="node11" href="$classosea_1_1ofreq_1_1_eqn_rotation.html#a39df2d7a20142545d67b95bc73c7f477" title="osea::ofreq::EqnRotation\l::Func7" alt="" coords="295,266,467,307"/>
+<area shape="rect" id="node13" href="$classosea_1_1ofreq_1_1_eqn_translation.html#a147be15e86663c1af76ca2ecaeece82d" title="Func1 through Func50 provide user custom defined functions." alt="" coords="286,331,477,373"/>
+<area shape="rect" id="node15" href="$classosea_1_1ofreq_1_1_eqn_translation.html#acf2fcd62e136144499258d4ec5bfb6f5" title="osea::ofreq::EqnTranslation\l::Func3" alt="" coords="286,397,477,438"/>
+<area shape="rect" id="node17" href="$classosea_1_1ofreq_1_1_eqn_translation.html#a37eb73b4fed858ff008c0ba4d333b1f8" title="osea::ofreq::EqnTranslation\l::Func5" alt="" coords="286,462,477,503"/>
+<area shape="rect" id="node19" href="$classosea_1_1ofreq_1_1_eqn_translation.html#a606323f2a3caab467e05e76b987bce19" title="osea::ofreq::EqnTranslation\l::Func7" alt="" coords="286,527,477,569"/>
+</map>

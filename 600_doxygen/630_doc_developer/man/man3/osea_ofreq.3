@@ -1,0 +1,147 @@
+.TH "osea::ofreq" 3 "Sat Apr 5 2014" "Version 0.4" "oFreq" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+osea::ofreq \- 
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBGlobalAcceleration\fP"
+.br
+.ti -1c
+.RI "class \fBGlobalMotion\fP"
+.br
+.ti -1c
+.RI "class \fBGlobalSolution\fP"
+.br
+.ti -1c
+.RI "class \fBGlobalVelocity\fP"
+.br
+.ti -1c
+.RI "class \fBOutputDerived\fP"
+.br
+.ti -1c
+.RI "class \fBOutputsBody\fP"
+.br
+.ti -1c
+.RI "class \fBdictBodies\fP"
+.br
+.ti -1c
+.RI "class \fBdictControl\fP"
+.br
+.ti -1c
+.RI "class \fBdictForces\fP"
+.br
+.ti -1c
+.RI "class \fBFileWriter\fP"
+.br
+.ti -1c
+.RI "class \fBBody\fP"
+.br
+.ti -1c
+.RI "class \fBDerivative\fP"
+.br
+.ti -1c
+.RI "class \fBEquation\fP"
+.br
+.ti -1c
+.RI "class \fBForce\fP"
+.br
+.ti -1c
+.RI "class \fBForceActive\fP"
+.br
+.ti -1c
+.RI "class \fBForceCross\fP"
+.br
+.ti -1c
+.RI "class \fBForceReact\fP"
+.br
+.ti -1c
+.RI "class \fBoFreqCore\fP"
+.br
+.RI "\fIThe core oFreq class\&. All oFreq classes inherit from this class\&. \fP"
+.ti -1c
+.RI "class \fBSolution\fP"
+.br
+.ti -1c
+.RI "class \fBSolutionSet\fP"
+.br
+.ti -1c
+.RI "class \fBSystem\fP"
+.br
+.ti -1c
+.RI "class \fBEqnRotation\fP"
+.br
+.RI "\fIThe \fBEqnRotation\fP class\&. \fP"
+.ti -1c
+.RI "class \fBEqnTranslation\fP"
+.br
+.RI "\fIThe \fBEqnTranslation\fP class\&. \fP"
+.ti -1c
+.RI "class \fBEquationofMotion\fP"
+.br
+.ti -1c
+.RI "class \fBModel6DOF\fP"
+.br
+.RI "\fIThe motion model for standard six-degree of freedom rigid-body dynamics problems\&. \fP"
+.ti -1c
+.RI "class \fBMotionModel\fP"
+.br
+.ti -1c
+.RI "class \fBmatBody\fP"
+.br
+.ti -1c
+.RI "class \fBmatForceActive\fP"
+.br
+.ti -1c
+.RI "class \fBmatForceCross\fP"
+.br
+.ti -1c
+.RI "class \fBmatForceReact\fP"
+.br
+.ti -1c
+.RI "class \fBMotionSolver\fP"
+.br
+.in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef std::complex< double > \fBcomplexDouble\fP"
+.br
+.ti -1c
+.RI "typedef std::vector
+.br
+< std::complex< double > > \fBcx_vector\fP"
+.br
+.RI "\fIType definition for a vector of complex numbers\&. Used to return the calculated output\&. \fP"
+.ti -1c
+.RI "typedef std::vector< \fBSolution\fP * > \fBptSoln\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+The namespace of all code specifically associated with ofreq\&. 
+.SH "Typedef Documentation"
+.PP 
+.SS "typedef std::complex< double > \fBosea::ofreq::complexDouble\fP"
+Simple typedef for complexDouble represents std::complex<double> 
+.PP
+Definition at line 82 of file globalsolution\&.h\&.
+.SS "typedef std::vector< std::complex<double> > \fBosea::ofreq::cx_vector\fP"
+
+.PP
+Type definition for a vector of complex numbers\&. Used to return the calculated output\&. 
+.PP
+Definition at line 93 of file outputsbody\&.h\&.
+.SS "typedef std::vector<\fBSolution\fP*> \fBosea::ofreq::ptSoln\fP"
+Type definition for a vector of pointers to \fBSolution\fP object\&. 
+.PP
+Definition at line 82 of file solutionset\&.h\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for oFreq from the source code\&.

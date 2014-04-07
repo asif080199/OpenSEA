@@ -1,0 +1,20 @@
+/**
+\page body_coordinates Body Coordinate System
+
+\todo write body coordinate system documentation.
+
+# Translation
+
+
+# Rotation
+
+
+# Relative to Body Motion
+
+
+# Order of Translation and Rotation Application
+
+Specify that first we apply the linear translation, with respect to orientation of the global 
+coordinate system.  And then the body is rotated with respect to its own heading.
+
+*/

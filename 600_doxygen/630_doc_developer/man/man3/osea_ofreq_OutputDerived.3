@@ -1,0 +1,452 @@
+.TH "osea::ofreq::OutputDerived" 3 "Sat Apr 5 2014" "Version 0.4" "oFreq" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+osea::ofreq::OutputDerived \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <outputderived\&.h>\fP
+.PP
+Inherits \fBosea::ofreq::oFreqCore\fP\&.
+.PP
+Inherited by \fBosea::ofreq::GlobalSolution\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBOutputDerived\fP ()"
+.br
+.RI "\fIDefault constructor\&. Nothing happens here\&. \fP"
+.ti -1c
+.RI "\fBOutputDerived\fP (\fBOutputsBody\fP *input)"
+.br
+.RI "\fIConstructor that also sets the pointer to the \fBOutputsBody\fP object which contains the \fBOutputDerived\fP object\&. \fP"
+.ti -1c
+.RI "\fB~OutputDerived\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetOutputBody\fP (\fBOutputsBody\fP *input)"
+.br
+.RI "\fISets the pointer to the \fBOutputsBody\fP object which contains this \fBOutputDerived\fP object\&. \fP"
+.ti -1c
+.RI "std::string \fBgetName\fP ()"
+.br
+.RI "\fIReturns the name of the \fBOutputDerived\fP object\&. This is a name set by the user to idenfity the object\&. If multiple objects of the same type are created, the name can also distinguish between the various objects\&. \fP"
+.ti -1c
+.RI "std::string \fBgetClassName\fP ()"
+.br
+.RI "\fIReturns the name of the class used to create the \fBOutputDerived\fP object\&. This is the name set to identify the type of output object\&. If multiple objects of the same type are created, the class name will be the same for all objects\&. \fP"
+.ti -1c
+.RI "void \fBsetName\fP (std::string nameIn)"
+.br
+.RI "\fISets the name of the \fBOutputDerived\fP object\&. This is a name set by the user to idenfity the object\&. If multiple objects of the same type are created, the name can also distinguish between the various objects\&. \fP"
+.ti -1c
+.RI "int \fBgetCurWaveInd\fP ()"
+.br
+.RI "\fIGets the index of the current wave direction used by the \fBOutputDerived\fP object\&. Some child classes will need this to determine proper calculation of output\&. This differs from the \fBgetCurWaveDir()\fP method in that the other method returns the actual value of the angle\&. This returns the index of the current angle in the list of wave directions\&. \fP"
+.ti -1c
+.RI "virtual int \fBcalcOutput\fP (int freqIn=-1)=0"
+.br
+.RI "\fIPure virtual member\&. Calculates the output from the \fBOutputDerived\fP object\&. \fP"
+.ti -1c
+.RI "std::vector< \fBBody\fP > & \fBlistBody\fP ()"
+.br
+.RI "\fIReturns the list of body objects\&. Only a c++ reference to the list of body objects\&. \fP"
+.ti -1c
+.RI "\fBBody\fP & \fBlistBody\fP (int bodIn)"
+.br
+.RI "\fIReturns a reference to an individual \fBBody\fP in the list of \fBBody\fP objects\&. \fP"
+.ti -1c
+.RI "std::vector< \fBSolutionSet\fP > & \fBlistSolutionSet\fP ()"
+.br
+.RI "\fIReturns a vector of \fBSolutionSet\fP objects\&. \fP"
+.ti -1c
+.RI "\fBSolutionSet\fP & \fBlistSolutionSet\fP (int index)"
+.br
+.RI "\fIReturns a vector of \fBSolutionSet\fP objects\&. \fP"
+.ti -1c
+.RI "std::vector< double > & \fBlistFreq\fP ()"
+.br
+.RI "\fIGets the list of frequencies\&. Frequencies are in radians per second\&. \fP"
+.ti -1c
+.RI "double & \fBlistFreq\fP (int index)"
+.br
+.RI "\fIReturns individual frequency from the list of wave frequencies\&. \fP"
+.ti -1c
+.RI "std::vector< double > & \fBlistWaveDir\fP ()"
+.br
+.RI "\fIGets the list of wave directions\&. Wave directions are measured in radians\&. True North is zero, with positive angles going counter-clockwise\&. \fP"
+.ti -1c
+.RI "double & \fBlistWaveDir\fP (int index)"
+.br
+.RI "\fIReturns individual wave direction from the list of wave directions\&. \fP"
+.ti -1c
+.RI "double \fBgetCurWaveDir\fP ()"
+.br
+.RI "\fIGets the current wave direction\&. Output is the actual value for the current wave direction, in units of radians\&. \fP"
+.ti -1c
+.RI "int \fBgetCurBodyIndex\fP ()"
+.br
+.RI "\fIGets the integer index of the current body\&. This represents the \fBBody\fP object that the derived output is associated with\&. \fP"
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBaddResult\fP (arma::cx_mat *input, int index=-1)"
+.br
+.RI "\fIAdds a result to the list of results in the \fBOutputsBody\fP\&. \fP"
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "std::string \fBpName\fP"
+.br
+.RI "\fIThe name for the derived output object\&. This is a name set by the user to idenfity the object\&. If multiple objects of the same type are created, the name can also distinguish between the various objects\&. \fP"
+.ti -1c
+.RI "std::string \fBpClassName\fP"
+.br
+.RI "\fIThe actual name of the class\&. This is used in outputs writing to file\&. The class name must be hard coded as a variable because functions such as typeid produce unreliable formatting of the output\&. The class name is automatically set by the class constructor\&. Getter functions can only retrieve the variable\&. Not alter it\&. \fP"
+.ti -1c
+.RI "\fBOutputsBody\fP * \fBpParentBody\fP"
+.br
+.RI "\fIPointer to the \fBOutputsBody\fP object\&. \fP"
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+This abstract class represents the Derived Outputs\&. Derived outputs are any additional information that needs to be calculated from basic information within a body\&. That can be anything from taking derivatives to calculating an empirical equation for motion sickness incidence\&. The constructor for this class requires a pointer to the parent class to access any further information required for calculation\&.
+.PP
+The Derived Output class can not be used directly\&. Individual types of Derived Outputs must be developed and inherit this Derived Output class\&. This abstract class provides a common framework that all Derived Outputs must share\&. The most important part is the \fBcalcOutput()\fP method\&. Everything that uses a Derived Output object expects to have this \fBcalcOutput()\fP method, and will call it by that name\&.
+.PP
+\fBSee Also:\fP
+.RS 4
+\fBOutputDerived::calcOutput()\fP; 
+.RE
+.PP
+
+.PP
+Definition at line 101 of file outputderived\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "OutputDerived::OutputDerived ()"
+
+.PP
+Default constructor\&. Nothing happens here\&. 
+.PP
+Definition at line 38 of file outputderived\&.cpp\&.
+.SS "OutputDerived::OutputDerived (\fBOutputsBody\fP *input)"
+
+.PP
+Constructor that also sets the pointer to the \fBOutputsBody\fP object which contains the \fBOutputDerived\fP object\&. \fBParameters:\fP
+.RS 4
+\fIinput\fP Pointer to the \fBOutputsBody\fP objec that contains this \fBOutputDerived\fP object\&. Pointer passed by value\&.
+.RE
+.PP
+\fBSee Also:\fP
+.RS 4
+setOutputsBody() 
+.RE
+.PP
+
+.PP
+Definition at line 43 of file outputderived\&.cpp\&.
+.SS "OutputDerived::~OutputDerived ()"
+The default destructor\&. Nothing happens here\&. 
+.PP
+Definition at line 50 of file outputderived\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void OutputDerived::addResult (arma::cx_mat *input, intindex = \fC-1\fP)\fC [protected]\fP"
+
+.PP
+Adds a result to the list of results in the \fBOutputsBody\fP\&. The list of results contains all the results from calculating each DerivedOutput\&. The DerivedOutput objects also have direct access to this list\&. But this function handles all the tedious tasks of resizing the list and preventing anything from going out of bounds\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIinput\fP The result that you wish to add to the list of results\&. Input is a pointer to a matrix of complex numbers\&. Please be sure to create all your matrices on the stack so they don't get destroyed once they go out of scope\&. Don't worry about memory cleanup\&. The \fBOutputsBody\fP object has a Reset() function that automatically deletes all variables from the list of results and clears the memory\&. 
+.br
+\fIindex\fP [Optional] Integer input\&. The index specifies the index in the vector in which you wish to enter the result\&. This input is optional\&. If no index is specified, the function automatically adds the result as a new entry on the end of the list\&. 
+.RE
+.PP
+
+.PP
+Definition at line 149 of file outputderived\&.cpp\&.
+.SS "virtual int osea::ofreq::OutputDerived::calcOutput (intfreqIn = \fC-1\fP)\fC [pure virtual]\fP"
+
+.PP
+Pure virtual member\&. Calculates the output from the \fBOutputDerived\fP object\&. Writes results of calculation to the Results matrix in the \fBOutputsBody\fP object that contains this \fBOutputDerived\fP object\&. Calling the \fBcalcOutput()\fP function only generates the results\&. They must be retrieved from the \fBOutputsBody\fP object in a separate function, using getResult() function\&.
+.PP
+Results written to the Results matrix are always stored in a matrix of complex values\&. The exact meaning and organization of the complex matrix changes with each type of \fBOutputDerived\fP object created as a child of this class\&. The cx_mat data type is used because that is the most natural data type for the largest number of \fBOutputDerived\fP objects\&. It isn't always the best, but it can usually work well for the intended purposes\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfreqIn\fP The wave frequency to use for calculating the \fBOutputDerived\fP object\&. Specifies the index of the wave frequency to retrieve from the list of wave frequencies\&. Most outputs will depend on the wave frequency\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Returns an integer for output\&. This integer is not the calculation result\&. It reports on whether the calculation is successful\&. A returned value of zero (0) means a successful calculation\&. Other returned values are error codes, each with their own meaning\&. 
+.RE
+.PP
+\fBSee Also:\fP
+.RS 4
+OutputsBody::getResult() 
+.RE
+.PP
+
+.PP
+Implemented in \fBosea::ofreq::GlobalSolution\fP\&.
+.SS "std::string OutputDerived::getClassName ()"
+
+.PP
+Returns the name of the class used to create the \fBOutputDerived\fP object\&. This is the name set to identify the type of output object\&. If multiple objects of the same type are created, the class name will be the same for all objects\&. \fBReturns:\fP
+.RS 4
+Returns the class name of the \fBOutputDerived\fP object\&. std::string variable\&. Variable passed by value\&. 
+.RE
+.PP
+
+.PP
+Definition at line 67 of file outputderived\&.cpp\&.
+.SS "int OutputDerived::getCurBodyIndex ()"
+
+.PP
+Gets the integer index of the current body\&. This represents the \fBBody\fP object that the derived output is associated with\&. \fBReturns:\fP
+.RS 4
+Returns the integer index of the current \fBBody\fP object associated with this derived output object\&. Variable is passed by value\&. 
+.RE
+.PP
+
+.PP
+Definition at line 133 of file outputderived\&.cpp\&.
+.SS "double OutputDerived::getCurWaveDir ()"
+
+.PP
+Gets the current wave direction\&. Output is the actual value for the current wave direction, in units of radians\&. \fBReturns:\fP
+.RS 4
+Returns a double that is the current wave direction, in units of radians\&. Variable is passed by value\&. 
+.RE
+.PP
+
+.PP
+Definition at line 127 of file outputderived\&.cpp\&.
+.SS "int OutputDerived::getCurWaveInd ()"
+
+.PP
+Gets the index of the current wave direction used by the \fBOutputDerived\fP object\&. Some child classes will need this to determine proper calculation of output\&. This differs from the \fBgetCurWaveDir()\fP method in that the other method returns the actual value of the angle\&. This returns the index of the current angle in the list of wave directions\&. \fBReturns:\fP
+.RS 4
+Returns an integer that represents the index of the current angle in the list of wave directions\&. Variable passed by value\&. 
+.RE
+.PP
+
+.PP
+Definition at line 139 of file outputderived\&.cpp\&.
+.SS "std::string OutputDerived::getName ()"
+
+.PP
+Returns the name of the \fBOutputDerived\fP object\&. This is a name set by the user to idenfity the object\&. If multiple objects of the same type are created, the name can also distinguish between the various objects\&. \fBReturns:\fP
+.RS 4
+Returns the name of the \fBOutputDerived\fP object\&. std::string variable\&. Variable passed by value\&. 
+.RE
+.PP
+
+.PP
+Definition at line 61 of file outputderived\&.cpp\&.
+.SS "vector< \fBBody\fP > & OutputDerived::listBody ()"
+
+.PP
+Returns the list of body objects\&. Only a c++ reference to the list of body objects\&. \fBReturns:\fP
+.RS 4
+Returns reference to the list of \fBBody\fP objects\&. Variable passed by reference\&. 
+.RE
+.PP
+
+.PP
+Definition at line 79 of file outputderived\&.cpp\&.
+.SS "\fBBody\fP & OutputDerived::listBody (intbodIn)"
+
+.PP
+Returns a reference to an individual \fBBody\fP in the list of \fBBody\fP objects\&. \fBParameters:\fP
+.RS 4
+\fIbodIn\fP The integer index of the body you wish to retrieve from the list of \fBBody\fP objects\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Returns the \fBBody\fP object requested\&. Returned variable is passed by reference\&. 
+.RE
+.PP
+
+.PP
+Definition at line 85 of file outputderived\&.cpp\&.
+.SS "vector< double > & OutputDerived::listFreq ()"
+
+.PP
+Gets the list of frequencies\&. Frequencies are in radians per second\&. \fBReturns:\fP
+.RS 4
+Returns the list of wave frequencies\&. Variable is passed by reference\&. Variable is stored internally as a pointer\&. 
+.RE
+.PP
+
+.PP
+Definition at line 103 of file outputderived\&.cpp\&.
+.SS "double & OutputDerived::listFreq (intindex)"
+
+.PP
+Returns individual frequency from the list of wave frequencies\&. Returns the frequency specified by the index\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIindex\fP Integer\&. The index which specifies which wave frequency to return\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Double\&. Returns individual frequency from the list of wave frequencies\&. Returned variabled is passed by reference\&. 
+.RE
+.PP
+
+.PP
+Definition at line 109 of file outputderived\&.cpp\&.
+.SS "vector< \fBSolutionSet\fP > & OutputDerived::listSolutionSet ()"
+
+.PP
+Returns a vector of \fBSolutionSet\fP objects\&. \fBReturns:\fP
+.RS 4
+Returns a vector of \fBSolutionSet\fP objects\&. Internal storage is just a set of pointers to the object\&. Variable is passed by reference\&. 
+.RE
+.PP
+
+.PP
+Definition at line 91 of file outputderived\&.cpp\&.
+.SS "\fBSolutionSet\fP & OutputDerived::listSolutionSet (intindex)"
+
+.PP
+Returns a vector of \fBSolutionSet\fP objects\&. \fBParameters:\fP
+.RS 4
+\fIindex\fP Integer\&. Specifies the index for which to retrieve the solution set\&. If the requested index is out of bounds, the program will return an error\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Returns a vector of \fBSolutionSet\fP objects\&. Internal storage is just a set of pointers to the object\&. Variable is passed by reference\&. 
+.RE
+.PP
+
+.PP
+Definition at line 97 of file outputderived\&.cpp\&.
+.SS "vector< double > & OutputDerived::listWaveDir ()"
+
+.PP
+Gets the list of wave directions\&. Wave directions are measured in radians\&. True North is zero, with positive angles going counter-clockwise\&. \fBReturns:\fP
+.RS 4
+Returns the vector of doubles containing the wave directions\&. Variable passed by reference\&. Variable is stored internally as a pointer\&. 
+.RE
+.PP
+
+.PP
+Definition at line 115 of file outputderived\&.cpp\&.
+.SS "double & OutputDerived::listWaveDir (intindex)"
+
+.PP
+Returns individual wave direction from the list of wave directions\&. Returns the wave direction specified by the index\&. Wave directions are measured in radians\&. True North is zero, with positive angles going counter-clockwise\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIindex\fP Integer\&. The index which specifies which wave direction to return\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Double\&. Returns individual wave direction from the list of wave directions\&. Returned variable is passed by reference\&. 
+.RE
+.PP
+
+.PP
+Definition at line 121 of file outputderived\&.cpp\&.
+.SS "void OutputDerived::setName (std::stringnameIn)"
+
+.PP
+Sets the name of the \fBOutputDerived\fP object\&. This is a name set by the user to idenfity the object\&. If multiple objects of the same type are created, the name can also distinguish between the various objects\&. \fBParameters:\fP
+.RS 4
+\fInameIn\fP std::string variable\&. Sets the name of the \fBOutputDerived\fP object\&. Variable passed by value\&. 
+.RE
+.PP
+
+.PP
+Definition at line 73 of file outputderived\&.cpp\&.
+.SS "void OutputDerived::setOutputBody (\fBOutputsBody\fP *input)"
+
+.PP
+Sets the pointer to the \fBOutputsBody\fP object which contains this \fBOutputDerived\fP object\&. The \fBOutputsBody\fP object contains critical information that each DerivedOutput object may require\&. This information is made avaiable through the pParentBody pointer\&. Available information includes:
+.IP "\(bu" 2
+list of \fBBody\fP objects\&.
+.IP "\(bu" 2
+list of \fBSolutionSet\fP objects\&.
+.IP "\(bu" 2
+list of wave frequencies\&. Wave frequency recorded in units of radians per second\&.
+.IP "\(bu" 2
+list of wave directions\&. Wave direction recorded in units of radians\&. Zero is true North direction\&. Oriented positive counter-clockwise\&.
+.IP "\(bu" 2
+The current wave direction used for calculating the DerivedOutput objects\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIinput\fP Pointer to the \fBOutputsBody\fP objec that contains this \fBOutputDerived\fP object\&. Pointer passed by value\&.
+.RE
+.PP
+\fBSee Also:\fP
+.RS 4
+\fBOutputsBody\fP 
+.RE
+.PP
+
+.PP
+
+.PP
+Definition at line 55 of file outputderived\&.cpp\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "std::string osea::ofreq::OutputDerived::pClassName\fC [protected]\fP"
+
+.PP
+The actual name of the class\&. This is used in outputs writing to file\&. The class name must be hard coded as a variable because functions such as typeid produce unreliable formatting of the output\&. The class name is automatically set by the class constructor\&. Getter functions can only retrieve the variable\&. Not alter it\&. 
+.PP
+Definition at line 308 of file outputderived\&.h\&.
+.SS "std::string osea::ofreq::OutputDerived::pName\fC [protected]\fP"
+
+.PP
+The name for the derived output object\&. This is a name set by the user to idenfity the object\&. If multiple objects of the same type are created, the name can also distinguish between the various objects\&. 
+.PP
+Definition at line 299 of file outputderived\&.h\&.
+.SS "\fBOutputsBody\fP* osea::ofreq::OutputDerived::pParentBody\fC [protected]\fP"
+
+.PP
+Pointer to the \fBOutputsBody\fP object\&. The \fBOutputsBody\fP object contains critical information that each DerivedOutput object may require\&. This information is made avaiable through the pParentBody pointer\&. Available information includes:
+.IP "\(bu" 2
+list of \fBBody\fP objects\&.
+.IP "\(bu" 2
+list of \fBSolutionSet\fP objects\&.
+.IP "\(bu" 2
+list of wave frequencies\&. Wave frequency recorded in units of radians per second\&.
+.IP "\(bu" 2
+list of wave directions\&. Wave direction recorded in units of radians\&. Zero is true North direction\&. Oriented positive counter-clockwise\&.
+.IP "\(bu" 2
+THe current wave direction used for calculating the DerivedOutput objects\&.
+.PP
+.PP
+\fBSee Also:\fP
+.RS 4
+\fBOutputsBody\fP 
+.RE
+.PP
+
+.PP
+Definition at line 342 of file outputderived\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for oFreq from the source code\&.

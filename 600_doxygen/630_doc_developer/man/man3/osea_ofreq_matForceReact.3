@@ -1,0 +1,277 @@
+.TH "osea::ofreq::matForceReact" 3 "Sat Apr 5 2014" "Version 0.4" "oFreq" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+osea::ofreq::matForceReact \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <matforcereact\&.h>\fP
+.PP
+Inherits \fBosea::ofreq::oFreqCore\fP\&.
+.PP
+Inherited by \fBosea::ofreq::matForceCross\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBmatForceReact\fP ()"
+.br
+.ti -1c
+.RI "\fBmatForceReact\fP (std::vector< arma::cx_mat > forceIn)"
+.br
+.RI "\fIThe constructor\&. Takes a vector of complex matrices and stores them as derivatives\&. \fP"
+.ti -1c
+.RI "virtual \fB~matForceReact\fP ()"
+.br
+.ti -1c
+.RI "virtual \fBmatForceReact\fP \fBoperator+\fP (\fBmatForceReact\fP &forceOther)"
+.br
+.RI "\fIOperator overload to add two \fBmatForceReact\fP objects together\&. \fP"
+.ti -1c
+.RI "virtual \fBmatForceReact\fP \fBoperator-\fP (\fBmatForceReact\fP &forceOther)"
+.br
+.RI "\fIOperator overload to subtract two \fBmatForceReact\fP objects together\&. \fP"
+.ti -1c
+.RI "int \fBgetMaxOrder\fP ()"
+.br
+.RI "\fIThe maximum order of the derivatives\&. \fP"
+.ti -1c
+.RI "arma::cx_mat \fBgetDerivative\fP (int order)"
+.br
+.RI "\fI\fBDerivative\fP Returns the complex matrix for only the order of derivative specified\&. \fP"
+.ti -1c
+.RI "void \fBsetDerivative\fP (unsigned int order, arma::cx_mat Coeff)"
+.br
+.RI "\fIInputs a derivative matrix\&. \fP"
+.ti -1c
+.RI "std::vector< arma::cx_mat > & \fBlistDerivative\fP ()"
+.br
+.RI "\fIProvides direct access to the vector of derivatives\&. \fP"
+.ti -1c
+.RI "arma::cx_mat & \fBlistDerivative\fP (unsigned int index)"
+.br
+.RI "\fIProvides direct access to the derivative specified by the index\&. \fP"
+.ti -1c
+.RI "void \fBsetId\fP (int num)"
+.br
+.RI "\fISets the force id number for the object\&. \fP"
+.ti -1c
+.RI "int \fBgetId\fP ()"
+.br
+.RI "\fIReturns the force id number for the object\&. \fP"
+.ti -1c
+.RI "int \fBgetMatSize\fP ()"
+.br
+.RI "\fIReturns the size of the matrix in each order of derivative\&. \fP"
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "std::vector< arma::cx_mat > \fBpderiv\fP"
+.br
+.RI "\fIDefines the vector of derivatives\&. \fP"
+.ti -1c
+.RI "int \fBpId\fP"
+.br
+.RI "\fIthe number of the object in the outside vector that contains it\&. \fP"
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+This class holds data for reactive force matrix whch includes force coefficients\&. 
+.PP
+Definition at line 89 of file matforcereact\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "matForceReact::matForceReact ()"
+The default constructor\&. 
+.PP
+Definition at line 34 of file matforcereact\&.cpp\&.
+.SS "osea::ofreq::matForceReact::matForceReact (std::vector< arma::cx_mat >forceIn)"
+
+.PP
+The constructor\&. Takes a vector of complex matrices and stores them as derivatives\&. The constructor\&. Takes a vector of complex matrices and stores them as derivatives\&. Assumes that the matrices in the vector are order in sequence of increasing order of derivative\&. (index 0 = derivative order 0\&.) 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIforceIn\fP The list of forces\&. 
+.RE
+.PP
+
+.SS "matForceReact::~matForceReact ()\fC [virtual]\fP"
+The default destructor, nothing happens here\&. 
+.PP
+Definition at line 39 of file matforcereact\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "cx_mat matForceReact::getDerivative (intorder)"
+
+.PP
+\fBDerivative\fP Returns the complex matrix for only the order of derivative specified\&. \fBDerivative\fP Returns the complex matrix for only the order of derivative specified\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIorder\fP Integer input to specify the order of the derivative\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Returns a complex matrix that contains the force coefficients for the given order of derivative\&. Passed as a value\&. 
+.RE
+.PP
+
+.PP
+Definition at line 204 of file matforcereact\&.cpp\&.
+.SS "int matForceReact::getId ()"
+
+.PP
+Returns the force id number for the object\&. This is similar to the name parameter in other force objects\&. It is an identifier\&. In this case, a numerical identifier\&. Normally correlates to the objects index in a vector of other objects of the same class\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+Returns the force id number, integer data type\&. 
+.RE
+.PP
+
+.PP
+Definition at line 291 of file matforcereact\&.cpp\&.
+.SS "int matForceReact::getMatSize ()"
+
+.PP
+Returns the size of the matrix in each order of derivative\&. Returns the size of the matrix in each order of derivative\&. Integer output type\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+Returns the size of the matrix in each order of derivative\&. 
+.RE
+.PP
+
+.PP
+Definition at line 297 of file matforcereact\&.cpp\&.
+.SS "int matForceReact::getMaxOrder ()"
+
+.PP
+The maximum order of the derivatives\&. The maximum order of the derivatives (Integer)\&. Also the total size of the vector containing the derivatives\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+Returns the maximum order of derivatives in the force\&. 
+.RE
+.PP
+
+.PP
+Definition at line 195 of file matforcereact\&.cpp\&.
+.SS "vector< cx_mat > & matForceReact::listDerivative ()"
+
+.PP
+Provides direct access to the vector of derivatives\&. Provides direct access to the vector of derivatives\&. Allows for use of vector operations on the derivatives object\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+Returns reference to the vector of complex matrices which contain the derivatives\&. Variable passed by reference\&. 
+.RE
+.PP
+
+.PP
+Definition at line 227 of file matforcereact\&.cpp\&.
+.SS "cx_mat & matForceReact::listDerivative (unsigned intindex)"
+
+.PP
+Provides direct access to the derivative specified by the index\&. Allows for direct access to edit the derivative or just retrieve information from\&. Index is also the order of the derivative\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIindex\fP Unsigned integer\&. Specifies the index of which derivative to retrieve from the list\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Complex matrix returned\&. Returns the complex matrix for the derivative specified by the index\&. Returned variable is passed by reference\&. 
+.RE
+.PP
+
+.PP
+Definition at line 233 of file matforcereact\&.cpp\&.
+.SS "\fBmatForceReact\fP matForceReact::operator+ (\fBmatForceReact\fP &forceOther)\fC [virtual]\fP"
+
+.PP
+Operator overload to add two \fBmatForceReact\fP objects together\&. This overloads the + operator to add two \fBmatForceReact\fP objects together\&. Functions are added on a per-derivative basis\&. The function recognizes the derivative matrices contained within each object\&. Only derivatives of the same order are added together\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIforceOther\fP The other objects of type \fBmatForceReact\fP that will be added\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Returns an object of type \fBmatForceReact\fP\&. The new object will contain the same order of derivatives as the highest derivative of the two added functions\&. 
+.RE
+.PP
+
+.PP
+Definition at line 53 of file matforcereact\&.cpp\&.
+.SS "\fBmatForceReact\fP matForceReact::operator- (\fBmatForceReact\fP &forceOther)\fC [virtual]\fP"
+
+.PP
+Operator overload to subtract two \fBmatForceReact\fP objects together\&. This overloads the - operator to subtract two \fBmatForceReact\fP objects together\&. Functions are subtracted on a per-derivative basis\&. The function recognizes the derivative matrices contained within each object\&. Only derivatives of the same order are subtracted together\&. Order of operations does matter\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIforceOther\fP The other objects of type \fBmatForceReact\fP that will be subtracted\&. forceOther is always subtracted from the calling object\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Returns an object of type \fBmatForceReact\fP\&. The new object will contain the same order of derivatives as the highest derivative of the two subtracted functions\&. 
+.RE
+.PP
+
+.PP
+Definition at line 124 of file matforcereact\&.cpp\&.
+.SS "void matForceReact::setDerivative (unsigned intorder, arma::cx_matCoeff)"
+
+.PP
+Inputs a derivative matrix\&. \fBParameters:\fP
+.RS 4
+\fIorder\fP The order of the derivative matrix\&. Also is sequence in the vector that contains the matrices\&. 
+.br
+\fICoeff\fP The matrix of complex numbers that contains the force coefficients for the derivative\&. Passed as a value, not a reference\&. 
+.RE
+.PP
+
+.PP
+Definition at line 210 of file matforcereact\&.cpp\&.
+.SS "void matForceReact::setId (intnum)"
+
+.PP
+Sets the force id number for the object\&. This is similar to the name parameter in other force objects\&. It is an identifier\&. In this case, a numerical identifier\&. Normally correlates to the objects index in a vector of other objects of the same class\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fInum\fP The integer number to input as the objects integer id\&. 
+.RE
+.PP
+
+.PP
+Definition at line 285 of file matforcereact\&.cpp\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "std::vector<arma::cx_mat> osea::ofreq::matForceReact::pderiv\fC [protected]\fP"
+
+.PP
+Defines the vector of derivatives\&. Defines the vector of derivatives\&. Each entry in vector represents the order of the derivative\&. 
+.PP
+Definition at line 225 of file matforcereact\&.h\&.
+.SS "int osea::ofreq::matForceReact::pId\fC [protected]\fP"
+
+.PP
+the number of the object in the outside vector that contains it\&. This is similar to the name parameter in other force objects\&. It is an identifier\&. In this case, a numerical identifier\&. Normally correlates to the objects index in a vector of other objects of the same class\&. 
+.PP
+Definition at line 234 of file matforcereact\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for oFreq from the source code\&.

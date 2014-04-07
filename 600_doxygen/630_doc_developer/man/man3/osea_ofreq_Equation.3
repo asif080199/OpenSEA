@@ -1,0 +1,266 @@
+.TH "osea::ofreq::Equation" 3 "Sat Apr 5 2014" "Version 0.4" "oFreq" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+osea::ofreq::Equation \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <equation\&.h>\fP
+.PP
+Inherits \fBosea::ofreq::oFreqCore\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBEquation\fP ()"
+.br
+.ti -1c
+.RI "\fBEquation\fP (int IndexIn)"
+.br
+.RI "\fIConstructor with setting the data index\&. \fP"
+.ti -1c
+.RI "\fB~Equation\fP ()"
+.br
+.ti -1c
+.RI "std::vector< double > & \fBlistCoefficient\fP ()"
+.br
+.RI "\fIDirect access to the list of coefficients\&. \fP"
+.ti -1c
+.RI "double & \fBlistCoefficient\fP (unsigned int index)"
+.br
+.RI "\fIProvides direct access to a coefficient from the list of coefficients\&. \fP"
+.ti -1c
+.RI "std::vector< double > & \fBlistDataVariable\fP ()"
+.br
+.RI "\fIProvides direct access to the list of coefficients\&. \fP"
+.ti -1c
+.RI "double & \fBlistDataVariable\fP (int DataIndex)"
+.br
+.RI "\fIProvides direct access to a coefficient from the list of coefficients\&. \fP"
+.ti -1c
+.RI "double \fBgetCoefficient\fP (int number)"
+.br
+.RI "\fIGet the coefficient at the specified number\&. \fP"
+.ti -1c
+.RI "void \fBsetCoefficient\fP (int number, double coeffIn)"
+.br
+.RI "\fISet the coefficient value at the specified index number\&. \fP"
+.ti -1c
+.RI "unsigned int \fBgetCoefficientListSize\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetDataIndex\fP (int index)"
+.br
+.RI "\fISet the index number of any equation data that should be retrieved\&. \fP"
+.ti -1c
+.RI "int \fBgetDataIndex\fP ()"
+.br
+.RI "\fIGet the index number of any equation data that should be retrieved\&. \fP"
+.ti -1c
+.RI "int & \fBrefDataIndex\fP ()"
+.br
+.RI "\fIExposed access to the data access variable\&. \fP"
+.ti -1c
+.RI "void \fBaddVariable\fP (double CoeffIn, int VarDataIn=-1)"
+.br
+.RI "\fIThis function adds a data variable to the list of variables contained in the equation\&. \fP"
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+This class holds data for an equation\&. 
+.PP
+Definition at line 83 of file equation\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "Equation::Equation ()"
+This default constructor\&. 
+.PP
+Definition at line 36 of file equation\&.cpp\&.
+.SS "Equation::Equation (intIndexIn)"
+
+.PP
+Constructor with setting the data index\&. Constructor with setting the data index\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIIndexIn\fP The integer specifying the data index number\&. 
+.RE
+.PP
+
+.PP
+Definition at line 45 of file equation\&.cpp\&.
+.SS "Equation::~Equation ()"
+The default destructor, nothing happens here\&. 
+.PP
+Definition at line 53 of file equation\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void Equation::addVariable (doubleCoeffIn, intVarDataIn = \fC-1\fP)"
+
+.PP
+This function adds a data variable to the list of variables contained in the equation\&. Two parameters are necessary to add data variable to the list\&. The first parameter records the actual coefficient used in the equation\&. The second parameter records the data index for the new entry\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fICoeffIn\fP Double\&. The actual coefficient used in the equation\&. Variable passed by value\&. 
+.br
+\fIVarDataIn\fP Integer\&. The data index of the new variable passed to the equation\&. Variable passed by value\&. If no value is provided, the function defaults to using the coefficients index in the containin vector\&. 
+.RE
+.PP
+
+.PP
+Definition at line 143 of file equation\&.cpp\&.
+.SS "double Equation::getCoefficient (intnumber)"
+
+.PP
+Get the coefficient at the specified number\&. \fBParameters:\fP
+.RS 4
+\fInumber\fP The index number of the coefficient to retrieve\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Returns a double precision floating point number of the coefficient at the index specified by number\&. 
+.RE
+.PP
+
+.PP
+Definition at line 99 of file equation\&.cpp\&.
+.SS "unsigned int Equation::getCoefficientListSize ()"
+Retrieve the size of the coefficient list\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+The size of the coefficient list\&. 
+.RE
+.PP
+
+.PP
+Definition at line 119 of file equation\&.cpp\&.
+.SS "int Equation::getDataIndex ()"
+
+.PP
+Get the index number of any equation data that should be retrieved\&. Get the index number of any equation data that should be retrieved\&. Because the first six values in the index are reserved for 6DOF, it is necessary that equation objects should be able to specify their index as something other than their place in a containing vector\&. The default initialization value for this is -1, which indicates the index is not set\&. Any number less than zero indicates the index is not set\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIindex\fP Integer\&. The index number that should be retrieved\&. Any number less than zero indicates the index is not set\&. 
+.RE
+.PP
+
+.PP
+Definition at line 131 of file equation\&.cpp\&.
+.SS "vector< double > & Equation::listCoefficient ()"
+
+.PP
+Direct access to the list of coefficients\&. \fBReturns:\fP
+.RS 4
+The list of coefficients\&. Returned variable passed by reference\&. 
+.RE
+.PP
+
+.PP
+Definition at line 58 of file equation\&.cpp\&.
+.SS "double & Equation::listCoefficient (unsigned intindex)"
+
+.PP
+Provides direct access to a coefficient from the list of coefficients\&. Returns a value from the list of coefficents\&. Which value to return is specified by the input index\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIindex\fP Unsigned integer\&. Specifies which value to return from the list of coefficients\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Returns a double\&. Returned variable is a value from the list of coefficients\&. Returned variable is passed by reference\&. 
+.RE
+.PP
+
+.PP
+Definition at line 65 of file equation\&.cpp\&.
+.SS "std::vector< double > & Equation::listDataVariable ()"
+
+.PP
+Provides direct access to the list of coefficients\&. \fBReturns:\fP
+.RS 4
+The list of coefficients\&. Returned variable passed by reference\&. 
+.RE
+.PP
+\fBSee Also:\fP
+.RS 4
+\fBlistCoefficient()\fP 
+.RE
+.PP
+
+.PP
+Definition at line 71 of file equation\&.cpp\&.
+.SS "double & Equation::listDataVariable (intDataIndex)"
+
+.PP
+Provides direct access to a coefficient from the list of coefficients\&. Returns a value from the list of coefficents\&. Which value to return is specified by the data index\&. This is like the listCoefficient method\&. But that method returned values based on the index of occurrence in the vector\&. This method returns values based on the specified data index property\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIDataIndex\fP Integer\&. Specifies which value to return from the list of coefficients\&. Specification is by the data index of each variable\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Returns a double\&. Returned variable is a value from the list of coefficients\&. Returned variable is passed by reference\&. 
+.RE
+.PP
+\fBSee Also:\fP
+.RS 4
+listCoefficient(index) 
+.RE
+.PP
+
+.PP
+Definition at line 77 of file equation\&.cpp\&.
+.SS "int & Equation::refDataIndex ()"
+
+.PP
+Exposed access to the data access variable\&. \fBReturns:\fP
+.RS 4
+Returns the data access variable\&. Return passed by reference\&. 
+.RE
+.PP
+
+.PP
+Definition at line 137 of file equation\&.cpp\&.
+.SS "void Equation::setCoefficient (intnumber, doublecoeffIn)"
+
+.PP
+Set the coefficient value at the specified index number\&. Set the coefficient value at the specified index number\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fInumber\fP Integer\&. The index number of the coefficient to set\&. 
+.br
+\fIcoeffIn\fP Double precision floating number\&. The value of the coefficient to set at the specified index\&. 
+.RE
+.PP
+
+.PP
+Definition at line 106 of file equation\&.cpp\&.
+.SS "void Equation::setDataIndex (intindex)"
+
+.PP
+Set the index number of any equation data that should be retrieved\&. Set the index number of any equation data that should be retrieved\&. Because the first six values in the index are reserved for 6DOF, it is necessary that equation objects should be able to specify their index as something other than their place in a containing vector\&. The default initialization value for this is -1, which indicates the index is not set\&. Any number less than zero indicates the index is not set\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIindex\fP The index number that should be set\&. Any number less than zero indicates the index is not set\&. 
+.RE
+.PP
+
+.PP
+Definition at line 125 of file equation\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for oFreq from the source code\&.

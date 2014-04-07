@@ -1,0 +1,5 @@
+<map id="osea::ofreq::MotionSolver::sumDerivative" name="osea::ofreq::MotionSolver::sumDerivative">
+<area shape="rect" id="node3" href="$classosea_1_1ofreq_1_1mat_force_react.html#a9e9d9119e2ca2b49d0faea0897f7e300" title="Returns the size of the matrix in each order of derivative." alt="" coords="254,5,471,49"/>
+<area shape="rect" id="node5" href="$classosea_1_1ofreq_1_1mat_force_react.html#aa163ad7393a29dc15fc2c490f88ef5cd" title="The maximum order of the derivatives." alt="" coords="254,73,471,117"/>
+<area shape="rect" id="node7" href="$classosea_1_1ofreq_1_1mat_force_react.html#a916eb8547f09eb3bf67092f0f64ac59c" title="Derivative Returns the complex matrix for only the order of derivative specified." alt="" coords="254,141,471,185"/>
+</map>

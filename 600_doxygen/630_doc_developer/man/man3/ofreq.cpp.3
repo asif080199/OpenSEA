@@ -1,0 +1,261 @@
+.TH "ofreq.cpp" 3 "Sat Apr 5 2014" "Version 0.4" "oFreq" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ofreq.cpp \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <QCoreApplication>\fP
+.br
+\fC#include '\&./motion_solver/motionsolver\&.h'\fP
+.br
+\fC#include '\&./motion_model/motionmodel\&.h'\fP
+.br
+\fC#include '\&./motion_solver/matbody\&.h'\fP
+.br
+\fC#include '\&./motion_solver/matforceactive\&.h'\fP
+.br
+\fC#include '\&./motion_solver/matforcecross\&.h'\fP
+.br
+\fC#include '\&./motion_solver/matforcereact\&.h'\fP
+.br
+\fC#include '\&./file_writer/filewriter\&.h'\fP
+.br
+\fC#include '\&./derived_outputs/outputsbody\&.h'\fP
+.br
+\fC#include '\&./global_objects/solutionset\&.h'\fP
+.br
+\fC#include '\&./global_objects/solution\&.h'\fP
+.br
+\fC#include '\&./global_objects/system\&.h'\fP
+.br
+\fC#include '\&./file_reader/dictcontrol\&.h'\fP
+.br
+\fC#include '\&./file_reader/dictforces\&.h'\fP
+.br
+\fC#include '\&./file_reader/dictbodies\&.h'\fP
+.br
+\fC#include '\&./file_reader/filereader\&.h'\fP
+.br
+\fC#include '\&./global_objects/ofreqcore\&.h'\fP
+.br
+\fC#include <string>\fP
+.br
+\fC#include <iostream>\fP
+.br
+\fC#include <fstream>\fP
+.br
+\fC#include <stdio\&.h>\fP
+.br
+\fC#include <QtGlobal>\fP
+.br
+\fC#include '\&./motion_model/model6dof\&.h'\fP
+.br
+
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBbuildMatBody\fP (int bod, bool useCoeff=true)"
+.br
+.RI "\fIBuilds a matrix body object for the body specified by the integer\&. Uses the motion model identified by the Body object\&. \fP"
+.ti -1c
+.RI "void \fBcalcOutput\fP (\fBOutputsBody\fP &OutputIn, \fBFileWriter\fP &WriterIn)"
+.br
+.RI "\fICalculates derived outputs using the OutputsBody object and then writes those outputs to files\&. \fP"
+.ti -1c
+.RI "void \fBReadFiles\fP (string runPath)"
+.br
+.RI "\fIReads in all the input files\&. Creates the necessary objects for file reading\&. And connects those objects using Qt slots and signals\&. Finally proceeds through each file and reads it\&. All parsing is accomplished by the FileReader object\&. File interpretation is processed through the Dictionary objects\&. \fP"
+.ti -1c
+.RI "std::string \fBgetPath\fP (std::string typePath='exec')"
+.br
+.RI "\fIFinds the path of the critical files for the program\&. \fP"
+.ti -1c
+.RI "int \fBmain\fP (int argc, char *argv[])"
+.br
+.RI "\fIThe main function that runs ofreq program\&. \fP"
+.ti -1c
+.RI "std::string \fBgetPath\fP (string typePath)"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "vector< \fBmatBody\fP > \fBlistMatBody\fP"
+.br
+.ti -1c
+.RI "vector< \fBSolutionSet\fP > \fBlistSolutions\fP"
+.br
+.ti -1c
+.RI "\fBSystem\fP \fBsysofreq\fP"
+.br
+.ti -1c
+.RI "\fBoFreqCore\fP \fBLogs\fP"
+.br
+.ti -1c
+.RI "const std::string \fBEXECNAME\fP = 'ofreq'"
+.br
+.ti -1c
+.RI "const std::string \fBEXECFOLDER\fP = 'ofreq_debug'"
+.br
+.ti -1c
+.RI "const std::string \fBVARFOLDER\fP = 'var'"
+.br
+.ti -1c
+.RI "const std::string \fBLIBFOLDER\fP = 'lib'"
+.br
+.ti -1c
+.RI "const std::string \fBETCFOLDER\fP = 'etc'"
+.br
+.ti -1c
+.RI "const std::string \fBBINFOLDER\fP = 'bin'"
+.br
+.ti -1c
+.RI "string \fBoFreq_Directory\fP = ''"
+.br
+.in -1c
+.SH "Function Documentation"
+.PP 
+.SS "void buildMatBody (intbod, booluseCoeff = \fCtrue\fP)"
+
+.PP
+Builds a matrix body object for the body specified by the integer\&. Uses the motion model identified by the Body object\&. \fBParameters:\fP
+.RS 4
+\fIbod\fP Which body to use for building the matix body\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Returns a matBody object, fully provisioned with all necessary data\&. 
+.RE
+.PP
+
+.PP
+Definition at line 352 of file ofreq\&.cpp\&.
+.SS "void calcOutput (\fBOutputsBody\fP &OutputIn, \fBFileWriter\fP &WriterIn)"
+
+.PP
+Calculates derived outputs using the OutputsBody object and then writes those outputs to files\&. \fBParameters:\fP
+.RS 4
+\fIOutputIn\fP The OutputsBody object that will calculate the derived outputs\&. All properties for the OutputsBody object must be set by the time the function is called\&. Variable passed by reference\&. 
+.br
+\fIWriterIn\fP The FileWriter object that will receive the outputs from the OutputsBody object and write those outputs to a file\&. 
+.RE
+.PP
+
+.PP
+Definition at line 520 of file ofreq\&.cpp\&.
+.SS "std::string getPath (std::stringtypePath = \fC'exec'\fP)"
+
+.PP
+Finds the path of the critical files for the program\&. Finds the path of one of four possible folders that are critical to the oSea program\&. Includes platform dependant code so that this function should work both under Windows or Linux\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fItypePath\fP String that specifies which path to get\&. Options are: 'exec': Path to the directory of the executable file\&. NOT the directory the program was called from\&. 'lib': Path to the lib directory that is common to all oSea programs\&. 'var': Path to the var directory that is common to all oSea programs\&. 'etc': Path to the etc directory that is common to all oSea programs\&. 'bin': Path to the binaries directory\&. Binaries for individual programs are included in sub folders\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Returns std::string that is the full absolute path to the specified \&. Returned variable passed by value\&. 
+.RE
+.PP
+
+.SS "std::string getPath (stringtypePath)"
+
+.PP
+Definition at line 626 of file ofreq\&.cpp\&.
+.SS "int main (intargc, char *argv[])"
+
+.PP
+The main function that runs ofreq program\&. The main function that runs ofreq program\&. It proceeds through in several stages\&. This briefly outlines them\&. 0\&. Initialize a few variables\&.
+.IP "1." 4
+Read in input files\&.
+.IP "2." 4
+Interpret / parse input files and use them to build the program objects\&.
+.IP "3." 4
+Use the motion model to convert input objects into matrix force objects\&. The particular motion model used changes with each Body object\&.
+.IP "4." 4
+Setup the motion solver\&. Feed all the data in\&.
+.IP "5." 4
+Set the operating frequency and use the motion solver to solve equations of motion\&.
+.IP "6." 4
+Store results in Solution object\&.
+.IP "7." 4
+Repeat steps 4 through 6 for each wave direction and wave frequency\&.
+.IP "8." 4
+Use the results to calculate derived outputs\&.
+.IP "9." 4
+Write the calculated outputs to output files\&. 
+.PP
+
+.PP
+Definition at line 189 of file ofreq\&.cpp\&.
+.SS "void ReadFiles (stringrunPath)"
+
+.PP
+Reads in all the input files\&. Creates the necessary objects for file reading\&. And connects those objects using Qt slots and signals\&. Finally proceeds through each file and reads it\&. All parsing is accomplished by the FileReader object\&. File interpretation is processed through the Dictionary objects\&. \fBParameters:\fP
+.RS 4
+\fIrunPath\fP String\&. The path to the root directory of the input files\&. 
+.RE
+.PP
+\fBSee Also:\fP
+.RS 4
+Dictionary 
+.RE
+.PP
+
+.PP
+Definition at line 597 of file ofreq\&.cpp\&.
+.SH "Variable Documentation"
+.PP 
+.SS "const std::string BINFOLDER = 'bin'"
+
+.PP
+Definition at line 110 of file ofreq\&.cpp\&.
+.SS "const std::string ETCFOLDER = 'etc'"
+
+.PP
+Definition at line 107 of file ofreq\&.cpp\&.
+.SS "const std::string EXECFOLDER = 'ofreq_debug'"
+
+.PP
+Definition at line 98 of file ofreq\&.cpp\&.
+.SS "const std::string EXECNAME = 'ofreq'"
+
+.PP
+Definition at line 95 of file ofreq\&.cpp\&.
+.SS "const std::string LIBFOLDER = 'lib'"
+
+.PP
+Definition at line 104 of file ofreq\&.cpp\&.
+.SS "vector<\fBmatBody\fP> listMatBody"
+
+.PP
+Definition at line 83 of file ofreq\&.cpp\&.
+.SS "vector<\fBSolutionSet\fP> listSolutions"
+
+.PP
+Definition at line 86 of file ofreq\&.cpp\&.
+.SS "\fBoFreqCore\fP Logs"
+
+.PP
+Definition at line 92 of file ofreq\&.cpp\&.
+.SS "string oFreq_Directory = ''"
+
+.PP
+Definition at line 169 of file ofreq\&.cpp\&.
+.SS "\fBSystem\fP sysofreq"
+
+.PP
+Definition at line 89 of file ofreq\&.cpp\&.
+.SS "const std::string VARFOLDER = 'var'"
+
+.PP
+Definition at line 101 of file ofreq\&.cpp\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for oFreq from the source code\&.

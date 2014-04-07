@@ -1,0 +1,396 @@
+.TH "osea::ObjectGroup" 3 "Sat Apr 5 2014" "Version 0.4" "oFreq" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+osea::ObjectGroup \- 
+.PP
+The \fBObjectGroup\fP class contains groupings of object definitions captured from an input file\&. It is a data container to hold the segmented input file for interpretation\&. The container contains three things: 1\&.) Object class name (as specified by input file) 2\&.) Vector of keyword names 3\&.) Vector of keyword values\&. Each entry in the vector of values is also a vector\&. This allows the definition of lists\&. A list will be as long as it needs to be for specification of all values in the list\&. The index of the value is specified by its position in the vector list\&. The value is the entry\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <objectgroup\&.h>\fP
+.PP
+Inherits \fBosea::ofreq::oFreqCore\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBObjectGroup\fP ()"
+.br
+.RI "\fIDefault constructor\&. \fP"
+.ti -1c
+.RI "\fB~ObjectGroup\fP ()"
+.br
+.RI "\fIDefault destructor\&. \fP"
+.ti -1c
+.RI "void \fBsetClassName\fP (std::string input)"
+.br
+.RI "\fISets the class name, as specified by the input file\&. \fP"
+.ti -1c
+.RI "std::string \fBgetClassName\fP ()"
+.br
+.RI "\fIGets the class name, as specified by the input file\&. \fP"
+.ti -1c
+.RI "\fBvecKeyword\fP & \fBlistKey\fP ()"
+.br
+.RI "\fIProvides direct access to thelist of key words\&. \fP"
+.ti -1c
+.RI "std::string & \fBlistKey\fP (int index)"
+.br
+.RI "\fIProvides direct access to an individual item in the list of key words\&. \fP"
+.ti -1c
+.RI "\fBvecValue\fP & \fBlistVal\fP ()"
+.br
+.RI "\fIProvides direct access to the list of key values\&. \fP"
+.ti -1c
+.RI "std::vector< std::string > & \fBlistVal\fP (int index)"
+.br
+.RI "\fIProvides direct access to an individual item in the list of key values\&. \fP"
+.ti -1c
+.RI "std::vector< \fBObjectGroup\fP * > & \fBlistObject\fP ()"
+.br
+.RI "\fIProvides direct access to the list of sub object definitions\&. \fP"
+.ti -1c
+.RI "\fBObjectGroup\fP * \fBlistObject\fP (int index)"
+.br
+.RI "\fIProvides direct access to an individual item in the list of \fBObjectGroup\fP objects\&. \fP"
+.ti -1c
+.RI "void \fBaddSubObject\fP (\fBObjectGroup\fP objIn)"
+.br
+.RI "\fIAdds an object to the list of \fBObjectGroup\fP objects defined under this existing \fBObjectGroup\fP\&. \fP"
+.ti -1c
+.RI "void \fBaddSubObject\fP ()"
+.br
+.RI "\fIAdds an object to the list of \fBObjectGroup\fP objects defined under this existing \fBObjectGroup\fP\&. \fP"
+.ti -1c
+.RI "void \fBaddKeySet\fP (std::string key, std::string val)"
+.br
+.RI "\fIAdds a new keyword-value set to the \fBObjectGroup\fP definition\&. \fP"
+.ti -1c
+.RI "void \fBaddKeySet\fP (std::string key, std::vector< std::string > val)"
+.br
+.RI "\fIOverloaded function that adds a new keyword-value set to the \fBObjectGroup\fP definition\&. This version of the method is used for passing lists in the keyword-value set definition\&. \fP"
+.ti -1c
+.RI "void \fBaddKeyWord\fP (std::string word, int index=-1)"
+.br
+.RI "\fIAdds a key word to the list of key words\&. Only adds the word\&. Not the value\&. \fP"
+.ti -1c
+.RI "void \fBaddKeyVal\fP (std::string val, int index=-1)"
+.br
+.RI "\fIaddKeyVal Adds a key value to the list of key values\&. Only adds the value\&. Not the word\&. \fP"
+.ti -1c
+.RI "void \fBaddKeyVal\fP (std::vector< std::string > val, int index=-1)"
+.br
+.RI "\fIaddKeyVal Adds a key value to the list of key values\&. Only adds the value\&. Not the word\&. This is a function overload that allows for adding vector lists of key values\&. \fP"
+.ti -1c
+.RI "std::string \fBgetKey\fP (int index)"
+.br
+.RI "\fIGets a key word as specified by the index\&. \fP"
+.ti -1c
+.RI "std::vector< std::string > \fBgetVal\fP (int index)"
+.br
+.RI "\fIGets the key value as specified by the index\&. \fP"
+.ti -1c
+.RI "void \fBsetVersion\fP (std::string input)"
+.br
+.RI "\fISets the version property of the object\&. \fP"
+.ti -1c
+.RI "std::string \fBgetVersion\fP ()"
+.br
+.RI "\fIGets the version property of the object\&. \fP"
+.ti -1c
+.RI "void \fBsetFormat\fP (std::string input)"
+.br
+.RI "\fISets the format property of the object\&. \fP"
+.ti -1c
+.RI "std::string \fBgetFormat\fP ()"
+.br
+.RI "\fIGets the format property of the object\&. \fP"
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+The \fBObjectGroup\fP class contains groupings of object definitions captured from an input file\&. It is a data container to hold the segmented input file for interpretation\&. The container contains three things: 1\&.) Object class name (as specified by input file) 2\&.) Vector of keyword names 3\&.) Vector of keyword values\&. Each entry in the vector of values is also a vector\&. This allows the definition of lists\&. A list will be as long as it needs to be for specification of all values in the list\&. The index of the value is specified by its position in the vector list\&. The value is the entry\&. 
+.PP
+Definition at line 97 of file objectgroup\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "ObjectGroup::ObjectGroup ()"
+
+.PP
+Default constructor\&. 
+.PP
+Definition at line 36 of file objectgroup\&.cpp\&.
+.SS "ObjectGroup::~ObjectGroup ()"
+
+.PP
+Default destructor\&. 
+.PP
+Definition at line 41 of file objectgroup\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void osea::ObjectGroup::addKeySet (std::stringkey, std::stringval)"
+
+.PP
+Adds a new keyword-value set to the \fBObjectGroup\fP definition\&. \fBParameters:\fP
+.RS 4
+\fIkey\fP The key word to input\&. Variable passed by value\&. 
+.br
+\fIval\fP The key value to input\&. Can only be a single value\&. Variable passed by value\&. 
+.RE
+.PP
+
+.SS "void osea::ObjectGroup::addKeySet (std::stringkey, std::vector< std::string >val)"
+
+.PP
+Overloaded function that adds a new keyword-value set to the \fBObjectGroup\fP definition\&. This version of the method is used for passing lists in the keyword-value set definition\&. \fBParameters:\fP
+.RS 4
+\fIkey\fP The key word to input\&. Variable passed by value\&. 
+.br
+\fIval\fP The list of key values to input\&. Vector list\&. The index of each entry in the vector represents its index in the input file\&. The value of the entry represents the value in the input file\&. Blank entries are allowed\&. 
+.RE
+.PP
+
+.SS "void osea::ObjectGroup::addKeyVal (std::stringval, intindex = \fC-1\fP)"
+
+.PP
+addKeyVal Adds a key value to the list of key values\&. Only adds the value\&. Not the word\&. \fBParameters:\fP
+.RS 4
+\fIval\fP std::string input\&. The key value to add to the set\&. Variable passed by value\&. Assumes a single key value\&. 
+.br
+\fIindex\fP The index of where to add the key value to the set\&. If left at the default setting, the value is automatically added to the end of the current list\&. Variable passed by value\&. 
+.RE
+.PP
+
+.SS "void osea::ObjectGroup::addKeyVal (std::vector< std::string >val, intindex = \fC-1\fP)"
+
+.PP
+addKeyVal Adds a key value to the list of key values\&. Only adds the value\&. Not the word\&. This is a function overload that allows for adding vector lists of key values\&. \fBParameters:\fP
+.RS 4
+\fIval\fP Vector of std::string inputs\&. The vector of values to add to the key\&. Variable passed by value\&. Assumes a vector of key values\&. 
+.br
+\fIindex\fP The index of where to add the key value to the set\&. If left at the default setting, the value is automatically added to the end of the current list\&. Variable passed by value\&. 
+.RE
+.PP
+
+.SS "void ObjectGroup::addKeyWord (std::stringword, intindex = \fC-1\fP)"
+
+.PP
+Adds a key word to the list of key words\&. Only adds the word\&. Not the value\&. \fBParameters:\fP
+.RS 4
+\fIword\fP std::string input\&. The key word to add to the set\&. Variable passed by value\&. 
+.br
+\fIindex\fP The index of where to add the key word to the set\&. If left at the default setting, the word is automatically added to the end of the current list\&. Variable passed by value\&. 
+.RE
+.PP
+
+.PP
+Definition at line 127 of file objectgroup\&.cpp\&.
+.SS "void ObjectGroup::addSubObject (\fBObjectGroup\fPobjIn)"
+
+.PP
+Adds an object to the list of \fBObjectGroup\fP objects defined under this existing \fBObjectGroup\fP\&. \fBParameters:\fP
+.RS 4
+\fIobjIn\fP An \fBObjectGroup\fP object\&. Variable passed by value\&. 
+.RE
+.PP
+
+.PP
+Definition at line 95 of file objectgroup\&.cpp\&.
+.SS "void ObjectGroup::addSubObject ()"
+
+.PP
+Adds an object to the list of \fBObjectGroup\fP objects defined under this existing \fBObjectGroup\fP\&. 
+.PP
+Definition at line 103 of file objectgroup\&.cpp\&.
+.SS "string ObjectGroup::getClassName ()"
+
+.PP
+Gets the class name, as specified by the input file\&. \fBReturns:\fP
+.RS 4
+Returns std::string that represents the name of the class, as specified by the input file\&. Variable passed by value\&. 
+.RE
+.PP
+
+.PP
+Definition at line 53 of file objectgroup\&.cpp\&.
+.SS "string ObjectGroup::getFormat ()"
+
+.PP
+Gets the format property of the object\&. \fBReturns:\fP
+.RS 4
+Returns std::string output\&. The format property of the object\&. Variable passed by value\&. 
+.RE
+.PP
+
+.PP
+Definition at line 196 of file objectgroup\&.cpp\&.
+.SS "string ObjectGroup::getKey (intindex)"
+
+.PP
+Gets a key word as specified by the index\&. \fBParameters:\fP
+.RS 4
+\fIindex\fP Integer\&. Specifies the index of which key word to grab\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Returns a std::string object that represents the key word\&. Variable passed by value\&. 
+.RE
+.PP
+
+.PP
+Definition at line 166 of file objectgroup\&.cpp\&.
+.SS "vector< string > ObjectGroup::getVal (intindex)"
+
+.PP
+Gets the key value as specified by the index\&. \fBParameters:\fP
+.RS 4
+\fIindex\fP Integer\&. Specifies the index of which key word to grab\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Returns a vector of std::string objects that represent the key value\&. For cases of a single key value, the vector will only be one entry long\&. For cases of lists, the vector has an unlimited length\&. Variable passed by value\&. 
+.RE
+.PP
+
+.PP
+Definition at line 172 of file objectgroup\&.cpp\&.
+.SS "string ObjectGroup::getVersion ()"
+
+.PP
+Gets the version property of the object\&. \fBReturns:\fP
+.RS 4
+Returns std::string output\&. The version property of the object\&. Variable passed by value\&. 
+.RE
+.PP
+
+.PP
+Definition at line 184 of file objectgroup\&.cpp\&.
+.SS "\fBvecKeyword\fP & ObjectGroup::listKey ()"
+
+.PP
+Provides direct access to thelist of key words\&. \fBReturns:\fP
+.RS 4
+Returns a reference to the list of key words\&. Variable passed by reference\&. 
+.RE
+.PP
+
+.PP
+Definition at line 59 of file objectgroup\&.cpp\&.
+.SS "string & ObjectGroup::listKey (intindex)"
+
+.PP
+Provides direct access to an individual item in the list of key words\&. Returns the key word specified by the index\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIindex\fP Integer\&. The index of the key word to retrieve\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+std::string\&. The key word specified by index\&. Returned variable passed by reference\&. 
+.RE
+.PP
+
+.PP
+Definition at line 65 of file objectgroup\&.cpp\&.
+.SS "vector< \fBObjectGroup\fP * > & ObjectGroup::listObject ()"
+
+.PP
+Provides direct access to the list of sub object definitions\&. \fBReturns:\fP
+.RS 4
+Returns a reference to the list of objects\&. Variable passed by reference\&. Returned variable is a vector of pointers to \fBObjectGroup\fP objects\&. 
+.RE
+.PP
+
+.PP
+Definition at line 83 of file objectgroup\&.cpp\&.
+.SS "\fBObjectGroup\fP * ObjectGroup::listObject (intindex)"
+
+.PP
+Provides direct access to an individual item in the list of \fBObjectGroup\fP objects\&. Returns a pointer to the \fBObjectGroup\fP object specified by the index\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIindex\fP Integer\&. The index of the \fBObjectGroup\fP object to retrieve\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Returns a pointer to an \fBObjectGroup\fP object\&. The object specified by the index\&. Returned pointer is passed by value\&. 
+.RE
+.PP
+
+.PP
+Definition at line 89 of file objectgroup\&.cpp\&.
+.SS "\fBvecValue\fP & ObjectGroup::listVal ()"
+
+.PP
+Provides direct access to the list of key values\&. \fBReturns:\fP
+.RS 4
+Returns a reference to the list of key values\&. Variable passed by reference\&. 
+.RE
+.PP
+
+.PP
+Definition at line 71 of file objectgroup\&.cpp\&.
+.SS "vector< string > & ObjectGroup::listVal (intindex)"
+
+.PP
+Provides direct access to an individual item in the list of key values\&. Returns the key value specified by the index\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIindex\fP Integer\&. THe index of the key value to retrieve\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Vector of strings\&. The key value specified by the index\&. Returned variable passed by reference\&. 
+.RE
+.PP
+
+.PP
+Definition at line 77 of file objectgroup\&.cpp\&.
+.SS "void ObjectGroup::setClassName (std::stringinput)"
+
+.PP
+Sets the class name, as specified by the input file\&. \fBParameters:\fP
+.RS 4
+\fIinput\fP std::string\&. The name of the class, as specified by the input file\&. Variable passed by value\&. 
+.RE
+.PP
+
+.PP
+Definition at line 47 of file objectgroup\&.cpp\&.
+.SS "void ObjectGroup::setFormat (std::stringinput)"
+
+.PP
+Sets the format property of the object\&. \fBParameters:\fP
+.RS 4
+\fIinput\fP std::string input\&. The format property of the object\&. Variable passed by value\&. 
+.RE
+.PP
+
+.PP
+Definition at line 190 of file objectgroup\&.cpp\&.
+.SS "void ObjectGroup::setVersion (std::stringinput)"
+
+.PP
+Sets the version property of the object\&. \fBParameters:\fP
+.RS 4
+\fIinput\fP std::string input\&. The version property of the object\&. Variable passed by value\&. 
+.RE
+.PP
+
+.PP
+Definition at line 178 of file objectgroup\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for oFreq from the source code\&.

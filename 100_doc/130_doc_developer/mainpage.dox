@@ -1,0 +1,73 @@
+/**
+\mainpage Summary
+
+# Frequency Based Dynamic Analysis
+
+![Frequency Analysis](/home/nicholas/Projects/DMS1305 OpenSEA/master/100_doc/130_doc_developer/images/ofreqMainPage.png)
+
+oFreq has two modes of operation.  It performs frequency based linear response analysis.  Or, it calculates resonant frequencies and mode shapes.  The program incorporates user forces and hydrodynamic forces.
+
+# Features
+
+## Dynamic Response Analysis
+
+The program conducts dynamic response analysis.  The program accepts a collection of hydrodynamic and user defined forces, and body mass.  These forces are then combined to solve for response motions.  Response amplitude and phase are calculated for each individual degree of freedom  The program is flexible enough to allow definition of any system of motion, with unlimited degrees of freedom.
+
+## Resonant Frequency Analysis
+
+All the features of response analysis, but this time the program solves for resonant frequency.  It provides efficient calculation of resonant frequencies and resulting mode shapes for each resonant frequency.  Relative response amplitude and relative response forces are presented.
+
+## Multiple Body Support
+
+oFreq supports unlimited numbers of body definitions!  Each body can have its own location and orientation.  Body interactions are possible through hydrodynamic forces or custom user defined forces.
+
+## Hydrodynamic Forces Support
+
+oFreq supports hydrodynamic interaction from previous calculations of oHydro.  The user simply specifies the path to the oHydro run directory, and oFreq automatically integrates the following hydrodynamic forces.
+
+- Hydrodynamic Active Forces:  Forces independent of body responses and frequency.  Provides inputs to drive the motion of the body.
+- Hydrodynamic Reactive Forces:  Forces dependent on body responses.  Defined through linear coefficients.  Each coefficient can be specified for an individual equation, variable in that equation, and order of derivative associated with that variable.  Forces are defined up to second order derivatives.  This includes hydrostatic forces, added damping, and added mass.
+- Hydrodynamic Cross-Body Forces:  Reactive forces that depend on the motion variables of another body.  Body coupling are two-way by default, but structure of force definition does allow one-way coupling.
+
+## Custom User Forces
+
+The user can define custom forces acting on the body.  All forces offer fine level definition down to the individual equation of motion, variable, and order of derivative.  Three force types are available.
+
+- User Active Forces:  Forces independent of body responses and frequency.  Provides inputs to drive the motion of the body.
+- User Reactive Forces:  Forces dependent on body responses.  Defined through linear coefficients.  Each coefficient can be specified for an individual equation, variable in that equation, and order of derivative associated with that variable.  Unlimited orders of derivative are allowed.  Typical uses may only go up to definition for a second order derivative (acceleration), but you can go to higher orders without limit.  This is especially useful for modeling active control systems.
+- User Cross-Body Forces:  Reactive forces that depend on the motion variables of another body.  Body coupling can be one-way or two-way.  All the features of reactive forces are still available:  equation, variable, and derivative specification; unlimited derivatives, etc.
+
+The method of force definition also allows the user to create a library of custom forces and select from individual force sets within the library.  Multiple force sets can be selected.
+
+## Standard Motion Models
+
+oFreq implements the following standard motion models by default.  The user can select a different motion model for each body defined.
+
+- Six degree of freedom.
+
+## User Customized Motion Models
+
+Want to do more?  oFreq supports up to 25 different motion model definitions.  The user can reprogram these motion models to create a custom equation of motion.  A working knowledge of C++ programming is required, but the models are isolated from the rest of the program.  It is possible to create customized models without reprogramming the entire application.
+
+Custom motion models can access all hydrodynamic forces, user defined forces, and body mass properties.  They can be created in any combination desired.  The program permits an unlimited number of equations, with any combination of mathematical operators for equation definition.  This allows unlimited flexibility.  No matter what the system, if you can write the mathematics for it, oFreq can solve the dynamics.
+
+## Plethora of Outputs
+
+All outputs are ASCII text files by default.  Nothing is hidden in binary files.  All information is accessible and reviewable by the user.  These files are formatted to easily copy into spreadsheet programs for additional post processing.  And there are plenty of outputs to choose from.  The program provides the following outputs by default.
+
+- Global motion amplitude and phase for each body
+- Global velocity amplitude and phase for each body
+- Global acceleration amplitude and phase for each body
+- Amplitude and phase of reactive forces for each motion and each order of derivative. (Still in development)
+- Wave frequencies, formatted for copying into spreadsheets
+- Wave directions, formatted for copying into spreadsheets
+- Wave energy spectrum generated, for each direction (Still in development)
+- Amplitude and phase of hydrodynamic force for wave amplitudes specified. (Still in development)
+- Wave amplitudes for frequencies specified.  (Still in development)
+- Local motion amplitude and phase for each body.  Multiple local locations can be defined.  (Still in development)
+- Local velocity amplitude and phase for each body.  Multiple local locations can be defined.  (Still in development)
+- Local acceleration amplitude and phase for each body.  Multiple local locations can be defined.  (Still in development)
+- Calculated energy extracted for each degree of freedom.  (Still in development)
+
+
+*/

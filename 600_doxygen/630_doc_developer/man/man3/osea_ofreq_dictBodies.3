@@ -1,0 +1,98 @@
+.TH "osea::ofreq::dictBodies" 3 "Sat Apr 5 2014" "Version 0.4" "oFreq" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+osea::ofreq::dictBodies \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <dictbodies\&.h>\fP
+.PP
+Inherits \fBosea::Dictionary\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBdictBodies\fP ()"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "int \fBdefineKey\fP (std::string keyIn, std::vector< std::string > valIn)"
+.br
+.RI "\fIFunction that defines how to interpret the key values\&. Contains a list of key names and corresponding actions to take for interpretting each key value\&. \fP"
+.ti -1c
+.RI "int \fBdefineClass\fP (std::string nameIn)"
+.br
+.RI "\fIFunction that defines how to interpret the class name\&. Class name implies declaration of a new object of the class named by the class name\&. This is a separate set of definitions to handle class declarations\&. \fP"
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+The \fBdictBodies\fP class defines the key-word value pairs associated with the Bodies\&.in input file\&. Just as a normal dictionary defines the meaning of words, the \fBdictBodies\fP class works in the same way\&. The \fBdictBodies\fP class takes individual pairs of keywords and values\&. It has a definition for each of these keywords\&. The definition is whatever actions are necessary to process the value of key-pair and apply it to the program\&. This may include variable type conversions\&. It will also use slots and signals to retrieve pointers to any appropriate objects that the \fBdictBodies\fP object needs to interact with\&. It will use the properties of those objects to apply the values it finds in the key-value pair\&. Any objects created in the \fBdictBodies\fP class can be safely deleted once all file reading is done\&.
+.PP
+Note: The code for the \fBdictBodies\fP object always references the last object in the list\&. This assumes that no other commands get issued in the input file between the creation of an object and the definition of key-value pairs associated with that object\&. Currently, I can not imagine any situation where this assumption would be violated\&. But do consider this when planning error recovery methods\&. 
+.PP
+\fBSee Also:\fP
+.RS 4
+\fBDictionary\fP 
+.PP
+\fBFileReader\fP 
+.RE
+.PP
+
+.PP
+Definition at line 96 of file dictbodies\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "dictBodies::dictBodies ()"
+
+.PP
+Definition at line 67 of file dictbodies\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "int dictBodies::defineClass (std::stringnameIn)\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Function that defines how to interpret the class name\&. Class name implies declaration of a new object of the class named by the class name\&. This is a separate set of definitions to handle class declarations\&. \fBParameters:\fP
+.RS 4
+\fInameIn\fP std::string, variable passed by value\&. The name of the class name\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Returns status of assigning key\&. Returned value is an integer, passed by value\&. See list of return codes below: 0: Key definition found\&. Success\&. 1: No key found\&. / General error message\&. 2: Key is invalid within current active object\&. 99: Function virtual definition only\&. Not currently defined\&. 
+.RE
+.PP
+
+.PP
+Reimplemented from \fBosea::Dictionary\fP\&.
+.PP
+Definition at line 328 of file dictbodies\&.cpp\&.
+.SS "int dictBodies::defineKey (std::stringkeyIn, std::vector< std::string >valIn)\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Function that defines how to interpret the key values\&. Contains a list of key names and corresponding actions to take for interpretting each key value\&. \fBParameters:\fP
+.RS 4
+\fIkeyIn\fP std::string containing the key name\&. Variable passed by value\&. 
+.br
+\fIvalIn\fP Vector of strings containing the key values\&. Variable passed by value\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Returns status of assigning key\&. Returned value is an integer, passed by value\&. See list of return codes below: 0: Key definition found\&. Success\&. 1: No key found\&. / General error message\&. 2: Key is invalid within current active object\&. 99: Function virtual definition only\&. Not currently defined\&. 
+.RE
+.PP
+
+.PP
+Reimplemented from \fBosea::Dictionary\fP\&.
+.PP
+Definition at line 83 of file dictbodies\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for oFreq from the source code\&.

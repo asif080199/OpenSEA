@@ -1,0 +1,182 @@
+.TH "osea::ofreq::matForceCross" 3 "Sat Apr 5 2014" "Version 0.4" "oFreq" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+osea::ofreq::matForceCross \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <matforcecross\&.h>\fP
+.PP
+Inherits \fBosea::ofreq::matForceReact\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBmatForceCross\fP ()"
+.br
+.ti -1c
+.RI "\fBmatForceCross\fP (std::vector< arma::cx_mat > forceIn)"
+.br
+.RI "\fIThe constructor\&. Takes a vector of complex matrices and stores them as derivatives\&. \fP"
+.ti -1c
+.RI "\fB~matForceCross\fP ()"
+.br
+.ti -1c
+.RI "\fBmatForceCross\fP \fBoperator+\fP (\fBmatForceCross\fP &forceOther)"
+.br
+.RI "\fIOperator overload to add two \fBmatForceCross\fP objects together\&. \fP"
+.ti -1c
+.RI "\fBmatForceCross\fP \fBoperator-\fP (\fBmatForceCross\fP &forceOther)"
+.br
+.RI "\fIOperator overload to subtract two \fBmatForceCross\fP objects together\&. \fP"
+.ti -1c
+.RI "void \fBsetLinkedBody\fP (\fBmatBody\fP &BodIn)"
+.br
+.ti -1c
+.RI "\fBmatBody\fP * \fBgetLinkedBody\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetLinkedId\fP (int bodId)"
+.br
+.RI "\fISets the id of the linked body\&. \fP"
+.ti -1c
+.RI "int \fBgetLinkedId\fP ()"
+.br
+.RI "\fIGets the id of the linked body\&. \fP"
+.ti -1c
+.RI "std::vector< int > \fBgetMatDims\fP ()"
+.br
+.RI "\fIReturns the size of the matrix in each order of derivative\&. \fP"
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+*This class defines the cross body force matrix\&. It is an extension of the reactive force matrix class\&. The main *difference is that this class includes an additional property for the connected body\&. 
+.PP
+Definition at line 93 of file matforcecross\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "matForceCross::matForceCross ()"
+The default constructor 
+.PP
+Definition at line 35 of file matforcecross\&.cpp\&.
+.SS "osea::ofreq::matForceCross::matForceCross (std::vector< arma::cx_mat >forceIn)"
+
+.PP
+The constructor\&. Takes a vector of complex matrices and stores them as derivatives\&. The constructor\&. Takes a vector of complex matrices and stores them as derivatives\&. Assumes that the matrices in the vector are order in sequence of increasing order of derivative\&. (index 0 = derivative order 0\&.) 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIforceIn\fP The list of forces\&. 
+.RE
+.PP
+
+.SS "matForceCross::~matForceCross ()"
+The default destructor\&. Nothing happens here\&. 
+.PP
+Definition at line 55 of file matforcecross\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBmatBody\fP * matForceCross::getLinkedBody ()"
+Return the linked body for the cross body object 
+.PP
+\fBReturns:\fP
+.RS 4
+Returns a pointer to the \fBmatBody\fP object that this force relates to\&. 
+.RE
+.PP
+
+.PP
+Definition at line 239 of file matforcecross\&.cpp\&.
+.SS "int matForceCross::getLinkedId ()"
+
+.PP
+Gets the id of the linked body\&. Gets the id of the linked body\&. The id is like the body's name\&. This is normally the index of the body within the vector of other bodies\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+Integer value which is the body's id\&. This is normally the index of the body within the vector of other bodies\&. 
+.RE
+.PP
+
+.PP
+Definition at line 251 of file matforcecross\&.cpp\&.
+.SS "vector< int > matForceCross::getMatDims ()"
+
+.PP
+Returns the size of the matrix in each order of derivative\&. Returns the size of the matrix in each order of derivative\&. Integer output type\&. Reports both number of columns and number of rows\&. Vector of 2 integers output\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+Returns a vector of two integers specifying size of matrix\&. First output is number of rows\&. Second output is number of columns\&. 
+.RE
+.PP
+
+.PP
+Definition at line 257 of file matforcecross\&.cpp\&.
+.SS "\fBmatForceCross\fP matForceCross::operator+ (\fBmatForceCross\fP &forceOther)"
+
+.PP
+Operator overload to add two \fBmatForceCross\fP objects together\&. This overloads the + operator to add two \fBmatForceCross\fP objects together\&. Functions are added on a per-derivative basis\&. The function recognizes the derivative matrices contained within each object\&. Only derivatives of the same order are added together\&. The function also checks the linked body parameter\&. Only objects with the same linked body are added together\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIforceOther\fP The other objects of type \fBmatForceCross\fP that will be added\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Returns an object of type \fBmatForceCross\fP\&. The new object will contain the same order of derivatives as the highest derivative of the two added functions\&. 
+.RE
+.PP
+
+.PP
+Definition at line 60 of file matforcecross\&.cpp\&.
+.SS "\fBmatForceCross\fP matForceCross::operator- (\fBmatForceCross\fP &forceOther)"
+
+.PP
+Operator overload to subtract two \fBmatForceCross\fP objects together\&. This overloads the - operator to subtract two \fBmatForceCross\fP objects together\&. Functions are subtracted on a per-derivative basis\&. The function recognizes the derivative matrices contained within each object\&. Only derivatives of the same order are subtracted together\&. Order of operations does matter\&. The function also checks the linked body parameter\&. Only objects with the same linked body are added together\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIforceOther\fP The other objects of type \fBmatForceCross\fP that will be subtracted\&. forceOther is always subtracted from the calling object\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Returns an object of type \fBmatForceCross\fP\&. The new object will contain the same order of derivatives as the highest derivative of the two subtracted functions\&. 
+.RE
+.PP
+
+.PP
+Definition at line 145 of file matforcecross\&.cpp\&.
+.SS "void matForceCross::setLinkedBody (\fBmatBody\fP &BodIn)"
+Set linked body for cross body object\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIBodIn\fP pointer to the \fBmatBody\fP object that this linked force relates to\&. 
+.RE
+.PP
+
+.PP
+Definition at line 230 of file matforcecross\&.cpp\&.
+.SS "void matForceCross::setLinkedId (intbodId)"
+
+.PP
+Sets the id of the linked body\&. Sets the id of the linked body\&. The id is like the body's name\&. This is normally the index of the body within the vector of other bodies\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIbodId\fP The integer of the body id\&. This is normally the index of the body within the vector of other bodies\&. 
+.RE
+.PP
+
+.PP
+Definition at line 245 of file matforcecross\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for oFreq from the source code\&.

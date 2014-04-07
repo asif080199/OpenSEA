@@ -1,0 +1,252 @@
+.TH "osea::Parser" 3 "Sat Apr 5 2014" "Version 0.4" "oFreq" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+osea::Parser \- 
+.PP
+The \fBParser\fP class takes an input segment of strings and segments that segment\&. It strips out comments\&. It recognizes quotation marks and groups those segments together\&. \fBParser\fP finally returns a series of \fBObjectGroup\fP objects\&. Each \fBObjectGroup\fP contains the classname and a list of keyword value pairs\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <parser\&.h>\fP
+.PP
+Inherits \fBosea::ofreq::oFreqCore\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBParser\fP ()"
+.br
+.RI "\fIDefault constructor\&. Nothing happens here\&. \fP"
+.ti -1c
+.RI "\fB~Parser\fP ()"
+.br
+.ti -1c
+.RI "void \fBParse\fP (std::istream &infile, int bracket_count=0)"
+.br
+.RI "\fIParses the input files into a vector of key-value pairs\&. \fP"
+.ti -1c
+.RI "\fBObjectGroup\fP \fBgetObject\fP (int index=0)"
+.br
+.RI "\fIGets the \fBObjectGroup\fP object\&. \fP"
+.ti -1c
+.RI "std::vector< \fBObjectGroup\fP > & \fBlistObject\fP ()"
+.br
+.RI "\fIProvides direct access to the vector of \fBObjectGroup\fP objects processed by the \fBParser\fP object\&. \fP"
+.ti -1c
+.RI "\fBObjectGroup\fP & \fBlistObject\fP (unsigned int index)"
+.br
+.RI "\fIProvides direct access to the \fBObjectGroup\fP object specified by index\&. \fP"
+.ti -1c
+.RI "\fBvecKeyword\fP & \fBlistKey\fP ()"
+.br
+.RI "\fIProvides direct access to thelist of key words\&. \fP"
+.ti -1c
+.RI "std::string & \fBlistKey\fP (int index)"
+.br
+.RI "\fIProvides direct access to an individual item in the list of key words\&. \fP"
+.ti -1c
+.RI "\fBvecValue\fP & \fBlistVal\fP ()"
+.br
+.RI "\fIProvides direct access to the list of key values\&. \fP"
+.ti -1c
+.RI "std::vector< std::string > & \fBlistVal\fP (int index)"
+.br
+.RI "\fIProvides direct access to an individual item in the list of key values\&. \fP"
+.ti -1c
+.RI "std::vector< \fBObjectGroup\fP * > & \fBrefSubObject\fP (int index1=0)"
+.br
+.RI "\fIProvides direct access to the list of SubObjects\&. \fP"
+.ti -1c
+.RI "\fBObjectGroup\fP \fBgetSubObject\fP (int index, int index1=0)"
+.br
+.RI "\fIReturns the subObject referenced by the index\&. \fP"
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+The \fBParser\fP class takes an input segment of strings and segments that segment\&. It strips out comments\&. It recognizes quotation marks and groups those segments together\&. \fBParser\fP finally returns a series of \fBObjectGroup\fP objects\&. Each \fBObjectGroup\fP contains the classname and a list of keyword value pairs\&. 
+
+The parser and \fBObjectGroup\fP are both setup to allow endless recursion of class definitions\&. You can easily define classes within classes in the input files, with no limits\&. 
+.PP
+Definition at line 102 of file parser\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "Parser::Parser ()"
+
+.PP
+Default constructor\&. Nothing happens here\&. 
+.PP
+Definition at line 54 of file parser\&.cpp\&.
+.SS "Parser::~Parser ()"
+Default destructor\&. Nothing happens here\&. 
+.PP
+Definition at line 64 of file parser\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBObjectGroup\fP Parser::getObject (intindex = \fC0\fP)"
+
+.PP
+Gets the \fBObjectGroup\fP object\&. \fBParameters:\fP
+.RS 4
+\fIindex\fP Index of which \fBObjectGroup\fP object to retrieve\&. If not specified, the default is the first object in the list\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Returns vector of \fBObjectGroup\fP objects\&. Each entry in the vector represents an object\&. Variable passed by value\&. 
+.RE
+.PP
+
+.PP
+Definition at line 117 of file parser\&.cpp\&.
+.SS "\fBObjectGroup\fP Parser::getSubObject (intindex, intindex1 = \fC0\fP)"
+
+.PP
+Returns the subObject referenced by the index\&. \fBParameters:\fP
+.RS 4
+\fIindex\fP Specifies which SubObject to return from the list of SubObjects\&. 
+.br
+\fIindex1\fP Index of which \fBObjectGroup\fP object to retrieve\&. If not specified, the default is the first object in the list\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Returns a SubObject from the list of SubObjects\&. Returned variable is passed by value\&. Contains the actual object and not a pointer to the object\&. 
+.RE
+.PP
+
+.PP
+Definition at line 165 of file parser\&.cpp\&.
+.SS "\fBvecKeyword\fP & Parser::listKey ()"
+
+.PP
+Provides direct access to thelist of key words\&. \fBReturns:\fP
+.RS 4
+Returns a reference to the list of key words\&. Variable passed by reference\&. 
+.RE
+.PP
+
+.PP
+Definition at line 135 of file parser\&.cpp\&.
+.SS "string & Parser::listKey (intindex)"
+
+.PP
+Provides direct access to an individual item in the list of key words\&. Returns the key word specified by the index\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIindex\fP Integer\&. The index of the key word to retrieve\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+std::string\&. The key word specified by index\&. Returned variable passed by reference\&. 
+.RE
+.PP
+
+.PP
+Definition at line 141 of file parser\&.cpp\&.
+.SS "vector< \fBObjectGroup\fP > & Parser::listObject ()"
+
+.PP
+Provides direct access to the vector of \fBObjectGroup\fP objects processed by the \fBParser\fP object\&. \fBReturns:\fP
+.RS 4
+Returns reference to the vector of \fBObjectGroup\fP objects\&. Variable passed by reference\&. 
+.RE
+.PP
+
+.PP
+Definition at line 123 of file parser\&.cpp\&.
+.SS "\fBObjectGroup\fP & Parser::listObject (unsigned intindex)"
+
+.PP
+Provides direct access to the \fBObjectGroup\fP object specified by index\&. Returns entry from the list of \fBObjectGroup\fP objects\&. Returned entry is specified by index\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIindex\fP Unsigned integer\&. The index of the \fBObjectGroup\fP object to return from the list\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Returns \fBObjectGroup\fP object\&. Returned variable is passed by reference\&. 
+.RE
+.PP
+\fBSee Also:\fP
+.RS 4
+\fBObjectGroup\fP 
+.RE
+.PP
+
+.PP
+Definition at line 129 of file parser\&.cpp\&.
+.SS "\fBvecValue\fP & Parser::listVal ()"
+
+.PP
+Provides direct access to the list of key values\&. \fBReturns:\fP
+.RS 4
+Returns a reference to the list of key values\&. Variable passed by reference\&. 
+.RE
+.PP
+
+.PP
+Definition at line 147 of file parser\&.cpp\&.
+.SS "vector< string > & Parser::listVal (intindex)"
+
+.PP
+Provides direct access to an individual item in the list of key values\&. Returns the key value specified by the index\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIindex\fP Integer\&. THe index of the key value to retrieve\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Vector of strings\&. The key value specified by the index\&. Returned variable passed by reference\&. 
+.RE
+.PP
+
+.PP
+Definition at line 153 of file parser\&.cpp\&.
+.SS "void Parser::Parse (std::istream &infile, intbracket_count = \fC0\fP)"
+
+.PP
+Parses the input files into a vector of key-value pairs\&. \fBParameters:\fP
+.RS 4
+\fIinfile\fP The input file to parse\&. Istream\&. Variable passed by reference\&. 
+.br
+\fIbracket_count\fP The count of object definition brackets\&. Used as a termination condition in the parsing process\&. Provides control for any recursive instances of the \fBParse()\fP function\&. Default is 0\&. The bracket count updates while parsing, as the \fBParser\fP finds new opening ({) and closing (}) brackets\&. Parsing continues as long as the bracket count is equal to or above the bracket count fed into the \fBParser\fP as an argument\&. At this point, the function behavior does not change with what the actual value of bracket_count is\&. Parsing only requires that bracket_count is >= its starting value\&. However, several development attempts indicated that the behavior the Parse function may become dependent on the value of bracket_count\&. So it is left in as an argument to allow functionality expansion in any future development\&. 
+.RE
+.PP
+\fBSee Also:\fP
+.RS 4
+ParseCommands() 
+.RE
+.PP
+
+.PP
+Definition at line 70 of file parser\&.cpp\&.
+.SS "vector< \fBObjectGroup\fP * > & Parser::refSubObject (intindex1 = \fC0\fP)"
+
+.PP
+Provides direct access to the list of SubObjects\&. \fBParameters:\fP
+.RS 4
+\fIindex1\fP Index of which \fBObjectGroup\fP object to retrieve\&. If not specified, the default is the first object in the list\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Returns a reference to the list of SubObjects detected by the parser\&. Returned variable passed by reference\&. Returned variable is a vector of pointers to the SubObjects\&. 
+.RE
+.PP
+
+.PP
+Definition at line 159 of file parser\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for oFreq from the source code\&.

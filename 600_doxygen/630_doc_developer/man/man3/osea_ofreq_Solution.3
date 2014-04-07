@@ -1,0 +1,170 @@
+.TH "osea::ofreq::Solution" 3 "Sat Apr 5 2014" "Version 0.4" "oFreq" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+osea::ofreq::Solution \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <solution\&.h>\fP
+.PP
+Inherits \fBosea::ofreq::oFreqCore\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSolution\fP ()"
+.br
+.RI "\fIDefault constructor\&. \fP"
+.ti -1c
+.RI "\fBSolution\fP (\fBBody\fP &bodIn)"
+.br
+.RI "\fICreates the object and sets the reference body for the object\&. \fP"
+.ti -1c
+.RI "\fB~Solution\fP ()"
+.br
+.RI "\fIDefault destructor\&. \fP"
+.ti -1c
+.RI "arma::cx_mat & \fBrefSolnMat\fP ()"
+.br
+.RI "\fIReturns direct access to the solution matrix\&. \fP"
+.ti -1c
+.RI "arma::cx_mat \fBgetSolnMat\fP ()"
+.br
+.RI "\fIReturns the solution matrix\&. \fP"
+.ti -1c
+.RI "std::complex< double > \fBgetSolnMat\fP (int index)"
+.br
+.RI "\fIReturns a single entry in the solution matrix\&. Entry specified by index\&. \fP"
+.ti -1c
+.RI "void \fBsetSolnMat\fP (arma::cx_mat matIn)"
+.br
+.RI "\fISets the solution matrix as a whole\&. \fP"
+.ti -1c
+.RI "\fBBody\fP & \fBrefBody\fP ()"
+.br
+.RI "\fIReturns reference pointer to the reference body\&. Variable passed by reference\&. \fP"
+.ti -1c
+.RI "void \fBsetBody\fP (\fBBody\fP *input)"
+.br
+.RI "\fISets the body object that the solution object is relevant to\&. \fP"
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+This class defines a solution object\&. The solution object records the basic value of motion solution\&. The motion solution is translated back into body coordinate system\&. 
+.PP
+Definition at line 89 of file solution\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "Solution::Solution ()"
+
+.PP
+Default constructor\&. Default constructor\&. Nothing done here\&. 
+.PP
+Definition at line 38 of file solution\&.cpp\&.
+.SS "osea::ofreq::Solution::Solution (\fBBody\fP &bodIn)"
+
+.PP
+Creates the object and sets the reference body for the object\&. Creates the object and sets the reference body for the object\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIbodIn\fP The reference body\&. Variabled passed by reference\&. 
+.RE
+.PP
+
+.SS "Solution::~Solution ()"
+
+.PP
+Default destructor\&. Default destructor\&. Nothing done here\&. 
+.PP
+Definition at line 44 of file solution\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "cx_mat Solution::getSolnMat ()"
+
+.PP
+Returns the solution matrix\&. It gets filled with the output from the motion solver\&. Output is a column matrix (n by 1) of complex numbers\&. Output is in units of meters\&.
+.PP
+Returns the solution matrix as a whole\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+Returned value is a complex number matrix\&. Returned variable is passed by value\&. 
+.RE
+.PP
+
+.PP
+Definition at line 64 of file solution\&.cpp\&.
+.SS "complex< double > Solution::getSolnMat (intindex)"
+
+.PP
+Returns a single entry in the solution matrix\&. Entry specified by index\&. \fBParameters:\fP
+.RS 4
+\fIindex\fP The index of the entry to retrieve from the solution matrix\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Returns a complex number data type\&. Single value from the solution matrix\&. Value specified by the index input\&. Variable passed by value\&. 
+.RE
+.PP
+
+.PP
+Definition at line 57 of file solution\&.cpp\&.
+.SS "\fBBody\fP & Solution::refBody ()"
+
+.PP
+Returns reference pointer to the reference body\&. Variable passed by reference\&. Returns reference pointer to the reference body\&. Variable passed by reference\&. Used for direct access to the reference body and all its member functions\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+Returns reference pointer to the reference body\&. Variable passed by reference\&. 
+.RE
+.PP
+
+.PP
+Definition at line 79 of file solution\&.cpp\&.
+.SS "cx_mat & Solution::refSolnMat ()"
+
+.PP
+Returns direct access to the solution matrix\&. Returns direct access to the solution matrix\&. Provides a pointer to the solution matrix\&. It gets filled with the output from the motion solver\&. Output is a column matrix (n by 1) of complex numbers\&. Output is in units of meters\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+Returns direct access to the solution matrix\&. Provides a pointer to the solution matrix\&. Returned variable is passed by reference\&. 
+.RE
+.PP
+
+.PP
+Definition at line 50 of file solution\&.cpp\&.
+.SS "void Solution::setBody (\fBBody\fP *input)"
+
+.PP
+Sets the body object that the solution object is relevant to\&. The solution set in this object is specific to a single body\&. The setBody method allows you to create a pointer to that \fBBody\fP object for reference and use in other sections of code\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIinput\fP Pointer to the \fBBody\fP object\&. Pointer variable passed by value\&. 
+.RE
+.PP
+
+.PP
+Definition at line 86 of file solution\&.cpp\&.
+.SS "void Solution::setSolnMat (arma::cx_matmatIn)"
+
+.PP
+Sets the solution matrix as a whole\&. \fBParameters:\fP
+.RS 4
+\fImatIn\fP The input matrix to set as the solution matrix\&. 
+.RE
+.PP
+
+.PP
+Definition at line 71 of file solution\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for oFreq from the source code\&.

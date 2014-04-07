@@ -1,0 +1,367 @@
+\hypertarget{classosea_1_1ofreq_1_1mat_force_react}{\section{osea\-:\-:ofreq\-:\-:mat\-Force\-React Class Reference}
+\label{classosea_1_1ofreq_1_1mat_force_react}\index{osea\-::ofreq\-::mat\-Force\-React@{osea\-::ofreq\-::mat\-Force\-React}}
+}
+
+
+{\ttfamily \#include $<$matforcereact.\-h$>$}
+
+
+
+Inheritance diagram for osea\-:\-:ofreq\-:\-:mat\-Force\-React\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classosea_1_1ofreq_1_1mat_force_react__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classosea_1_1ofreq_1_1mat_force_react_a7ab246a401282eb86db5db5036eedc48}{mat\-Force\-React} ()
+\item 
+\hyperlink{classosea_1_1ofreq_1_1mat_force_react_a2587d123951b9f092bef18b694a59673}{mat\-Force\-React} (std\-::vector$<$ arma\-::cx\-\_\-mat $>$ force\-In)
+\begin{DoxyCompactList}\small\item\em The constructor. Takes a vector of complex matrices and stores them as derivatives. \end{DoxyCompactList}\item 
+virtual \hyperlink{classosea_1_1ofreq_1_1mat_force_react_a4c70511a7f49650d56b0a2ed42bf4f8b}{$\sim$mat\-Force\-React} ()
+\item 
+virtual \hyperlink{classosea_1_1ofreq_1_1mat_force_react}{mat\-Force\-React} \hyperlink{classosea_1_1ofreq_1_1mat_force_react_a8f65b2f67fd6169167cc9735370c99eb}{operator+} (\hyperlink{classosea_1_1ofreq_1_1mat_force_react}{mat\-Force\-React} \&force\-Other)
+\begin{DoxyCompactList}\small\item\em Operator overload to add two \hyperlink{classosea_1_1ofreq_1_1mat_force_react}{mat\-Force\-React} objects together. \end{DoxyCompactList}\item 
+virtual \hyperlink{classosea_1_1ofreq_1_1mat_force_react}{mat\-Force\-React} \hyperlink{classosea_1_1ofreq_1_1mat_force_react_ad3be4d341c5fdabf28634cf102a8fbc9}{operator-\/} (\hyperlink{classosea_1_1ofreq_1_1mat_force_react}{mat\-Force\-React} \&force\-Other)
+\begin{DoxyCompactList}\small\item\em Operator overload to subtract two \hyperlink{classosea_1_1ofreq_1_1mat_force_react}{mat\-Force\-React} objects together. \end{DoxyCompactList}\item 
+int \hyperlink{classosea_1_1ofreq_1_1mat_force_react_aa163ad7393a29dc15fc2c490f88ef5cd}{get\-Max\-Order} ()
+\begin{DoxyCompactList}\small\item\em The maximum order of the derivatives. \end{DoxyCompactList}\item 
+arma\-::cx\-\_\-mat \hyperlink{classosea_1_1ofreq_1_1mat_force_react_a916eb8547f09eb3bf67092f0f64ac59c}{get\-Derivative} (int order)
+\begin{DoxyCompactList}\small\item\em \hyperlink{classosea_1_1ofreq_1_1_derivative}{Derivative} Returns the complex matrix for only the order of derivative specified. \end{DoxyCompactList}\item 
+void \hyperlink{classosea_1_1ofreq_1_1mat_force_react_aab3ce2d56835cfac91cd019f3a7db021}{set\-Derivative} (unsigned int order, arma\-::cx\-\_\-mat Coeff)
+\begin{DoxyCompactList}\small\item\em Inputs a derivative matrix. \end{DoxyCompactList}\item 
+std\-::vector$<$ arma\-::cx\-\_\-mat $>$ \& \hyperlink{classosea_1_1ofreq_1_1mat_force_react_a52f785374b8e9b6e4d33e0eac95c8622}{list\-Derivative} ()
+\begin{DoxyCompactList}\small\item\em Provides direct access to the vector of derivatives. \end{DoxyCompactList}\item 
+arma\-::cx\-\_\-mat \& \hyperlink{classosea_1_1ofreq_1_1mat_force_react_af05d5675a035a111264a37472e9ba479}{list\-Derivative} (unsigned int index)
+\begin{DoxyCompactList}\small\item\em Provides direct access to the derivative specified by the index. \end{DoxyCompactList}\item 
+void \hyperlink{classosea_1_1ofreq_1_1mat_force_react_a778765a5296698179dee923397032756}{set\-Id} (int num)
+\begin{DoxyCompactList}\small\item\em Sets the force id number for the object. \end{DoxyCompactList}\item 
+int \hyperlink{classosea_1_1ofreq_1_1mat_force_react_ad6416ceeafeb1f1852911fce0536b7f0}{get\-Id} ()
+\begin{DoxyCompactList}\small\item\em Returns the force id number for the object. \end{DoxyCompactList}\item 
+int \hyperlink{classosea_1_1ofreq_1_1mat_force_react_a9e9d9119e2ca2b49d0faea0897f7e300}{get\-Mat\-Size} ()
+\begin{DoxyCompactList}\small\item\em Returns the size of the matrix in each order of derivative. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\-::vector$<$ arma\-::cx\-\_\-mat $>$ \hyperlink{classosea_1_1ofreq_1_1mat_force_react_a827cccb59204d98738a4d98b78942b45}{pderiv}
+\begin{DoxyCompactList}\small\item\em Defines the vector of derivatives. \end{DoxyCompactList}\item 
+int \hyperlink{classosea_1_1ofreq_1_1mat_force_react_a890a6fbcf9900d4a37ff05533f350f50}{p\-Id}
+\begin{DoxyCompactList}\small\item\em the number of the object in the outside vector that contains it. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+This class holds data for reactive force matrix whch includes force coefficients. 
+
+Definition at line 89 of file matforcereact.\-h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classosea_1_1ofreq_1_1mat_force_react_a7ab246a401282eb86db5db5036eedc48}{\index{osea\-::ofreq\-::mat\-Force\-React@{osea\-::ofreq\-::mat\-Force\-React}!mat\-Force\-React@{mat\-Force\-React}}
+\index{mat\-Force\-React@{mat\-Force\-React}!osea::ofreq::matForceReact@{osea\-::ofreq\-::mat\-Force\-React}}
+\subsubsection[{mat\-Force\-React}]{\setlength{\rightskip}{0pt plus 5cm}mat\-Force\-React\-::mat\-Force\-React (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1mat_force_react_a7ab246a401282eb86db5db5036eedc48}
+The default constructor. 
+
+Definition at line 34 of file matforcereact.\-cpp.
+
+\hypertarget{classosea_1_1ofreq_1_1mat_force_react_a2587d123951b9f092bef18b694a59673}{\index{osea\-::ofreq\-::mat\-Force\-React@{osea\-::ofreq\-::mat\-Force\-React}!mat\-Force\-React@{mat\-Force\-React}}
+\index{mat\-Force\-React@{mat\-Force\-React}!osea::ofreq::matForceReact@{osea\-::ofreq\-::mat\-Force\-React}}
+\subsubsection[{mat\-Force\-React}]{\setlength{\rightskip}{0pt plus 5cm}osea\-::ofreq\-::mat\-Force\-React\-::mat\-Force\-React (
+\begin{DoxyParamCaption}
+\item[{std\-::vector$<$ arma\-::cx\-\_\-mat $>$}]{force\-In}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1mat_force_react_a2587d123951b9f092bef18b694a59673}
+
+
+The constructor. Takes a vector of complex matrices and stores them as derivatives. 
+
+The constructor. Takes a vector of complex matrices and stores them as derivatives. Assumes that the matrices in the vector are order in sequence of increasing order of derivative. (index 0 = derivative order 0.) 
+\begin{DoxyParams}{Parameters}
+{\em force\-In} & The list of forces. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classosea_1_1ofreq_1_1mat_force_react_a4c70511a7f49650d56b0a2ed42bf4f8b}{\index{osea\-::ofreq\-::mat\-Force\-React@{osea\-::ofreq\-::mat\-Force\-React}!$\sim$mat\-Force\-React@{$\sim$mat\-Force\-React}}
+\index{$\sim$mat\-Force\-React@{$\sim$mat\-Force\-React}!osea::ofreq::matForceReact@{osea\-::ofreq\-::mat\-Force\-React}}
+\subsubsection[{$\sim$mat\-Force\-React}]{\setlength{\rightskip}{0pt plus 5cm}mat\-Force\-React\-::$\sim$mat\-Force\-React (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classosea_1_1ofreq_1_1mat_force_react_a4c70511a7f49650d56b0a2ed42bf4f8b}
+The default destructor, nothing happens here. 
+
+Definition at line 39 of file matforcereact.\-cpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classosea_1_1ofreq_1_1mat_force_react_a916eb8547f09eb3bf67092f0f64ac59c}{\index{osea\-::ofreq\-::mat\-Force\-React@{osea\-::ofreq\-::mat\-Force\-React}!get\-Derivative@{get\-Derivative}}
+\index{get\-Derivative@{get\-Derivative}!osea::ofreq::matForceReact@{osea\-::ofreq\-::mat\-Force\-React}}
+\subsubsection[{get\-Derivative}]{\setlength{\rightskip}{0pt plus 5cm}cx\-\_\-mat mat\-Force\-React\-::get\-Derivative (
+\begin{DoxyParamCaption}
+\item[{int}]{order}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1mat_force_react_a916eb8547f09eb3bf67092f0f64ac59c}
+
+
+\hyperlink{classosea_1_1ofreq_1_1_derivative}{Derivative} Returns the complex matrix for only the order of derivative specified. 
+
+\hyperlink{classosea_1_1ofreq_1_1_derivative}{Derivative} Returns the complex matrix for only the order of derivative specified. 
+\begin{DoxyParams}{Parameters}
+{\em order} & Integer input to specify the order of the derivative. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns a complex matrix that contains the force coefficients for the given order of derivative. Passed as a value. 
+\end{DoxyReturn}
+
+
+Definition at line 204 of file matforcereact.\-cpp.
+
+\hypertarget{classosea_1_1ofreq_1_1mat_force_react_ad6416ceeafeb1f1852911fce0536b7f0}{\index{osea\-::ofreq\-::mat\-Force\-React@{osea\-::ofreq\-::mat\-Force\-React}!get\-Id@{get\-Id}}
+\index{get\-Id@{get\-Id}!osea::ofreq::matForceReact@{osea\-::ofreq\-::mat\-Force\-React}}
+\subsubsection[{get\-Id}]{\setlength{\rightskip}{0pt plus 5cm}int mat\-Force\-React\-::get\-Id (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1mat_force_react_ad6416ceeafeb1f1852911fce0536b7f0}
+
+
+Returns the force id number for the object. 
+
+This is similar to the name parameter in other force objects. It is an identifier. In this case, a numerical identifier. Normally correlates to the objects index in a vector of other objects of the same class. \begin{DoxyReturn}{Returns}
+Returns the force id number, integer data type. 
+\end{DoxyReturn}
+
+
+Definition at line 291 of file matforcereact.\-cpp.
+
+\hypertarget{classosea_1_1ofreq_1_1mat_force_react_a9e9d9119e2ca2b49d0faea0897f7e300}{\index{osea\-::ofreq\-::mat\-Force\-React@{osea\-::ofreq\-::mat\-Force\-React}!get\-Mat\-Size@{get\-Mat\-Size}}
+\index{get\-Mat\-Size@{get\-Mat\-Size}!osea::ofreq::matForceReact@{osea\-::ofreq\-::mat\-Force\-React}}
+\subsubsection[{get\-Mat\-Size}]{\setlength{\rightskip}{0pt plus 5cm}int mat\-Force\-React\-::get\-Mat\-Size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1mat_force_react_a9e9d9119e2ca2b49d0faea0897f7e300}
+
+
+Returns the size of the matrix in each order of derivative. 
+
+Returns the size of the matrix in each order of derivative. Integer output type. \begin{DoxyReturn}{Returns}
+Returns the size of the matrix in each order of derivative. 
+\end{DoxyReturn}
+
+
+Definition at line 297 of file matforcereact.\-cpp.
+
+\hypertarget{classosea_1_1ofreq_1_1mat_force_react_aa163ad7393a29dc15fc2c490f88ef5cd}{\index{osea\-::ofreq\-::mat\-Force\-React@{osea\-::ofreq\-::mat\-Force\-React}!get\-Max\-Order@{get\-Max\-Order}}
+\index{get\-Max\-Order@{get\-Max\-Order}!osea::ofreq::matForceReact@{osea\-::ofreq\-::mat\-Force\-React}}
+\subsubsection[{get\-Max\-Order}]{\setlength{\rightskip}{0pt plus 5cm}int mat\-Force\-React\-::get\-Max\-Order (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1mat_force_react_aa163ad7393a29dc15fc2c490f88ef5cd}
+
+
+The maximum order of the derivatives. 
+
+The maximum order of the derivatives (Integer). Also the total size of the vector containing the derivatives. \begin{DoxyReturn}{Returns}
+Returns the maximum order of derivatives in the force. 
+\end{DoxyReturn}
+
+
+Definition at line 195 of file matforcereact.\-cpp.
+
+\hypertarget{classosea_1_1ofreq_1_1mat_force_react_a52f785374b8e9b6e4d33e0eac95c8622}{\index{osea\-::ofreq\-::mat\-Force\-React@{osea\-::ofreq\-::mat\-Force\-React}!list\-Derivative@{list\-Derivative}}
+\index{list\-Derivative@{list\-Derivative}!osea::ofreq::matForceReact@{osea\-::ofreq\-::mat\-Force\-React}}
+\subsubsection[{list\-Derivative}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ cx\-\_\-mat $>$ \& mat\-Force\-React\-::list\-Derivative (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1mat_force_react_a52f785374b8e9b6e4d33e0eac95c8622}
+
+
+Provides direct access to the vector of derivatives. 
+
+Provides direct access to the vector of derivatives. Allows for use of vector operations on the derivatives object. \begin{DoxyReturn}{Returns}
+Returns reference to the vector of complex matrices which contain the derivatives. Variable passed by reference. 
+\end{DoxyReturn}
+
+
+Definition at line 227 of file matforcereact.\-cpp.
+
+\hypertarget{classosea_1_1ofreq_1_1mat_force_react_af05d5675a035a111264a37472e9ba479}{\index{osea\-::ofreq\-::mat\-Force\-React@{osea\-::ofreq\-::mat\-Force\-React}!list\-Derivative@{list\-Derivative}}
+\index{list\-Derivative@{list\-Derivative}!osea::ofreq::matForceReact@{osea\-::ofreq\-::mat\-Force\-React}}
+\subsubsection[{list\-Derivative}]{\setlength{\rightskip}{0pt plus 5cm}cx\-\_\-mat \& mat\-Force\-React\-::list\-Derivative (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{index}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1mat_force_react_af05d5675a035a111264a37472e9ba479}
+
+
+Provides direct access to the derivative specified by the index. 
+
+Allows for direct access to edit the derivative or just retrieve information from. Index is also the order of the derivative. 
+\begin{DoxyParams}{Parameters}
+{\em index} & Unsigned integer. Specifies the index of which derivative to retrieve from the list. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Complex matrix returned. Returns the complex matrix for the derivative specified by the index. Returned variable is passed by reference. 
+\end{DoxyReturn}
+
+
+Definition at line 233 of file matforcereact.\-cpp.
+
+\hypertarget{classosea_1_1ofreq_1_1mat_force_react_a8f65b2f67fd6169167cc9735370c99eb}{\index{osea\-::ofreq\-::mat\-Force\-React@{osea\-::ofreq\-::mat\-Force\-React}!operator+@{operator+}}
+\index{operator+@{operator+}!osea::ofreq::matForceReact@{osea\-::ofreq\-::mat\-Force\-React}}
+\subsubsection[{operator+}]{\setlength{\rightskip}{0pt plus 5cm}{\bf mat\-Force\-React} mat\-Force\-React\-::operator+ (
+\begin{DoxyParamCaption}
+\item[{{\bf mat\-Force\-React} \&}]{force\-Other}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classosea_1_1ofreq_1_1mat_force_react_a8f65b2f67fd6169167cc9735370c99eb}
+
+
+Operator overload to add two \hyperlink{classosea_1_1ofreq_1_1mat_force_react}{mat\-Force\-React} objects together. 
+
+This overloads the + operator to add two \hyperlink{classosea_1_1ofreq_1_1mat_force_react}{mat\-Force\-React} objects together. Functions are added on a per-\/derivative basis. The function recognizes the derivative matrices contained within each object. Only derivatives of the same order are added together. 
+\begin{DoxyParams}{Parameters}
+{\em force\-Other} & The other objects of type \hyperlink{classosea_1_1ofreq_1_1mat_force_react}{mat\-Force\-React} that will be added. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns an object of type \hyperlink{classosea_1_1ofreq_1_1mat_force_react}{mat\-Force\-React}. The new object will contain the same order of derivatives as the highest derivative of the two added functions. 
+\end{DoxyReturn}
+
+
+Definition at line 53 of file matforcereact.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classosea_1_1ofreq_1_1mat_force_react_a8f65b2f67fd6169167cc9735370c99eb_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classosea_1_1ofreq_1_1mat_force_react_ad3be4d341c5fdabf28634cf102a8fbc9}{\index{osea\-::ofreq\-::mat\-Force\-React@{osea\-::ofreq\-::mat\-Force\-React}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!osea::ofreq::matForceReact@{osea\-::ofreq\-::mat\-Force\-React}}
+\subsubsection[{operator-\/}]{\setlength{\rightskip}{0pt plus 5cm}{\bf mat\-Force\-React} mat\-Force\-React\-::operator-\/ (
+\begin{DoxyParamCaption}
+\item[{{\bf mat\-Force\-React} \&}]{force\-Other}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classosea_1_1ofreq_1_1mat_force_react_ad3be4d341c5fdabf28634cf102a8fbc9}
+
+
+Operator overload to subtract two \hyperlink{classosea_1_1ofreq_1_1mat_force_react}{mat\-Force\-React} objects together. 
+
+This overloads the -\/ operator to subtract two \hyperlink{classosea_1_1ofreq_1_1mat_force_react}{mat\-Force\-React} objects together. Functions are subtracted on a per-\/derivative basis. The function recognizes the derivative matrices contained within each object. Only derivatives of the same order are subtracted together. Order of operations does matter. 
+\begin{DoxyParams}{Parameters}
+{\em force\-Other} & The other objects of type \hyperlink{classosea_1_1ofreq_1_1mat_force_react}{mat\-Force\-React} that will be subtracted. force\-Other is always subtracted from the calling object. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns an object of type \hyperlink{classosea_1_1ofreq_1_1mat_force_react}{mat\-Force\-React}. The new object will contain the same order of derivatives as the highest derivative of the two subtracted functions. 
+\end{DoxyReturn}
+
+
+Definition at line 124 of file matforcereact.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classosea_1_1ofreq_1_1mat_force_react_ad3be4d341c5fdabf28634cf102a8fbc9_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classosea_1_1ofreq_1_1mat_force_react_aab3ce2d56835cfac91cd019f3a7db021}{\index{osea\-::ofreq\-::mat\-Force\-React@{osea\-::ofreq\-::mat\-Force\-React}!set\-Derivative@{set\-Derivative}}
+\index{set\-Derivative@{set\-Derivative}!osea::ofreq::matForceReact@{osea\-::ofreq\-::mat\-Force\-React}}
+\subsubsection[{set\-Derivative}]{\setlength{\rightskip}{0pt plus 5cm}void mat\-Force\-React\-::set\-Derivative (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{order, }
+\item[{arma\-::cx\-\_\-mat}]{Coeff}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1mat_force_react_aab3ce2d56835cfac91cd019f3a7db021}
+
+
+Inputs a derivative matrix. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em order} & The order of the derivative matrix. Also is sequence in the vector that contains the matrices. \\
+\hline
+{\em Coeff} & The matrix of complex numbers that contains the force coefficients for the derivative. Passed as a value, not a reference. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 210 of file matforcereact.\-cpp.
+
+\hypertarget{classosea_1_1ofreq_1_1mat_force_react_a778765a5296698179dee923397032756}{\index{osea\-::ofreq\-::mat\-Force\-React@{osea\-::ofreq\-::mat\-Force\-React}!set\-Id@{set\-Id}}
+\index{set\-Id@{set\-Id}!osea::ofreq::matForceReact@{osea\-::ofreq\-::mat\-Force\-React}}
+\subsubsection[{set\-Id}]{\setlength{\rightskip}{0pt plus 5cm}void mat\-Force\-React\-::set\-Id (
+\begin{DoxyParamCaption}
+\item[{int}]{num}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1mat_force_react_a778765a5296698179dee923397032756}
+
+
+Sets the force id number for the object. 
+
+This is similar to the name parameter in other force objects. It is an identifier. In this case, a numerical identifier. Normally correlates to the objects index in a vector of other objects of the same class. 
+\begin{DoxyParams}{Parameters}
+{\em num} & The integer number to input as the objects integer id. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 285 of file matforcereact.\-cpp.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classosea_1_1ofreq_1_1mat_force_react_a827cccb59204d98738a4d98b78942b45}{\index{osea\-::ofreq\-::mat\-Force\-React@{osea\-::ofreq\-::mat\-Force\-React}!pderiv@{pderiv}}
+\index{pderiv@{pderiv}!osea::ofreq::matForceReact@{osea\-::ofreq\-::mat\-Force\-React}}
+\subsubsection[{pderiv}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<$arma\-::cx\-\_\-mat$>$ osea\-::ofreq\-::mat\-Force\-React\-::pderiv\hspace{0.3cm}{\ttfamily [protected]}}}\label{classosea_1_1ofreq_1_1mat_force_react_a827cccb59204d98738a4d98b78942b45}
+
+
+Defines the vector of derivatives. 
+
+Defines the vector of derivatives. Each entry in vector represents the order of the derivative. 
+
+Definition at line 225 of file matforcereact.\-h.
+
+\hypertarget{classosea_1_1ofreq_1_1mat_force_react_a890a6fbcf9900d4a37ff05533f350f50}{\index{osea\-::ofreq\-::mat\-Force\-React@{osea\-::ofreq\-::mat\-Force\-React}!p\-Id@{p\-Id}}
+\index{p\-Id@{p\-Id}!osea::ofreq::matForceReact@{osea\-::ofreq\-::mat\-Force\-React}}
+\subsubsection[{p\-Id}]{\setlength{\rightskip}{0pt plus 5cm}int osea\-::ofreq\-::mat\-Force\-React\-::p\-Id\hspace{0.3cm}{\ttfamily [protected]}}}\label{classosea_1_1ofreq_1_1mat_force_react_a890a6fbcf9900d4a37ff05533f350f50}
+
+
+the number of the object in the outside vector that contains it. 
+
+This is similar to the name parameter in other force objects. It is an identifier. In this case, a numerical identifier. Normally correlates to the objects index in a vector of other objects of the same class. 
+
+Definition at line 234 of file matforcereact.\-h.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/home/\-Ship\-\_\-\-Design/\-Projects/\-D\-M\-S1305 Open\-S\-E\-A/master/200\-\_\-src/bin/ofreq/motion\-\_\-solver/\hyperlink{matforcereact_8h}{matforcereact.\-h}\item 
+/home/\-Ship\-\_\-\-Design/\-Projects/\-D\-M\-S1305 Open\-S\-E\-A/master/200\-\_\-src/bin/ofreq/motion\-\_\-solver/\hyperlink{matforcereact_8cpp}{matforcereact.\-cpp}\end{DoxyCompactItemize}

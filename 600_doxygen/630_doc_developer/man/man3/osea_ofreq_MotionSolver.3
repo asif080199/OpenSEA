@@ -1,0 +1,260 @@
+.TH "osea::ofreq::MotionSolver" 3 "Sat Apr 5 2014" "Version 0.4" "oFreq" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+osea::ofreq::MotionSolver \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <motionsolver\&.h>\fP
+.PP
+Inherits \fBosea::ofreq::oFreqCore\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBMotionSolver\fP ()"
+.br
+.RI "\fIThe default constructor\&. \fP"
+.ti -1c
+.RI "\fBMotionSolver\fP (std::vector< \fBmatBody\fP > listBodIn)"
+.br
+.RI "\fIConstructor\&. Initialize with objects already added\&. \fP"
+.ti -1c
+.RI "\fB~MotionSolver\fP ()"
+.br
+.ti -1c
+.RI "void \fBaddBody\fP (\fBmatBody\fP bodIn)"
+.br
+.RI "\fIAdd a body to the motion solver set\&. \fP"
+.ti -1c
+.RI "\fBmatForceReact\fP * \fBsumReactSet\fP (std::vector< \fBmatForceReact\fP > listForces)"
+.br
+.RI "\fISum Reactive forces for each set\&. \fP"
+.ti -1c
+.RI "std::vector< \fBmatForceCross\fP * > \fBsumCrossSet\fP (std::vector< \fBmatForceCross\fP > listForces)"
+.br
+.RI "\fISum cross-body forces for each set\&. \fP"
+.ti -1c
+.RI "arma::cx_mat * \fBsumActiveSet\fP (std::vector< \fBmatForceActive\fP > listForces)"
+.br
+.RI "\fISum active forces for each set\&. \fP"
+.ti -1c
+.RI "arma::cx_mat * \fBsumDerivative\fP (\fBmatForceReact\fP *forceIn)"
+.br
+.RI "\fISums all derivatives for the reactive force object entered\&. \fP"
+.ti -1c
+.RI "std::vector< arma::cx_mat * > \fBsumDerivative\fP (std::vector< \fBmatForceCross\fP * > forceIn)"
+.br
+.RI "\fISums all derivatives for the cross-body force objects entered\&. \fP"
+.ti -1c
+.RI "void \fBsetWaveFreq\fP (double freqIn)"
+.br
+.RI "\fISets the current wave frequency\&. \fP"
+.ti -1c
+.RI "void \fBcalculateOutputs\fP ()"
+.br
+.RI "\fICalculate the \fBSolution\fP\&. \fP"
+.ti -1c
+.RI "std::vector< arma::cx_mat > & \fBlistSolution\fP ()"
+.br
+.RI "\fIGet the solution for the solved equation\&. \fP"
+.ti -1c
+.RI "arma::cx_mat & \fBlistSolution\fP (unsigned int bod)"
+.br
+.RI "\fIGet the solution for the solved equation, for a single body\&. \fP"
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+This class holds data for the motion solver and performs calculations on all of the data to get the solution matrix\&. The motion solver performs a series of operations\&. 1\&.) Sum each force object for all forces within a set\&. 2\&.) Sum each force object for all the derivatives defined within each force\&. Applied frequency dependence\&. 3\&.) Sum user reactive forces, hydro reactive forces, and body mass into a single object for each body\&. 4\&.) Sum user cross-body forces, hydro cross-body forces into a single object for each body\&. 5\&.) Sum user active forces and hydro active forces into a single object for each body\&. 6\&.) Assemble reactive forces and cross-body forces into a single global response matrix\&. ([A]) 7\&.) Assemble active forces into a single global active force matrix\&. ([F]) 8\&.) Solve the linear system system of equations formed by the equation [A] * [x] = [F] 9\&.) Redistribute the solution back to each body object\&. 
+.PP
+Definition at line 97 of file motionsolver\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "MotionSolver::MotionSolver ()"
+
+.PP
+The default constructor\&. 
+.PP
+Definition at line 37 of file motionsolver\&.cpp\&.
+.SS "osea::ofreq::MotionSolver::MotionSolver (std::vector< \fBmatBody\fP >listBodIn)"
+
+.PP
+Constructor\&. Initialize with objects already added\&. This constructor combines creation of the class with adding the body objects to the class at the same time\&. The list of \fBmatBody\fP objects is added to the set of bodies that the motion solver solves\&. Bodies inputs are passed by value, and not by reference\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIlistBodIn\fP The vector list of bodies to add to the motion solver object\&. 
+.RE
+.PP
+
+.SS "MotionSolver::~MotionSolver ()"
+The default destructor, nothing happens here\&. 
+.PP
+Definition at line 51 of file motionsolver\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void MotionSolver::addBody (\fBmatBody\fPbodIn)"
+
+.PP
+Add a body to the motion solver set\&. Add a body to the motion solver set\&. After initialization, this is how the motion solver gets the correct data to perform math operations on\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIThe\fP \fBmatBody\fP object to add the motion solver set\&. \fBBody\fP inputs are added passed by value, and not by reference\&. 
+.RE
+.PP
+
+.PP
+Definition at line 56 of file motionsolver\&.cpp\&.
+.SS "void MotionSolver::calculateOutputs ()"
+
+.PP
+Calculate the \fBSolution\fP\&. 
+.PP
+Definition at line 260 of file motionsolver\&.cpp\&.
+.SS "vector< cx_mat > & MotionSolver::listSolution ()"
+
+.PP
+Get the solution for the solved equation\&. Get the solution for the solved equation\&. Returns the full vector of complex matrices\&. Each element in the vector is a solution matrix specific to the body\&. The vector is ordered in the same sequence that the bodies were added to the motionsolver object\&. This is the vector of solutions for each \fBBody\fP object\&. It applies to a single wave frequency and single wave direction\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+Returns the full vector of complex matrices\&. Each element in the vector is a solution matrix specific to the body\&. The vector is ordered in the same sequence that the bodies were added to the motionsolver object\&. Returned variable passed by reference\&. 
+.RE
+.PP
+
+.PP
+Definition at line 493 of file motionsolver\&.cpp\&.
+.SS "cx_mat & MotionSolver::listSolution (unsigned intbod)"
+
+.PP
+Get the solution for the solved equation, for a single body\&. Returns the solution for solved equations for a single \fBBody\fP object\&. This is a matrix of solutions for equations of motion\&. It applies to a single \fBBody\fP, single wave frequency, single wave direction\&. The Bodies are ordered in the same sequence in which they were added to the motionsolver object\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIbod\fP Integer\&. Specifies which \fBBody\fP object the solution should be retrieved for\&. The Bodies are ordered in the same sequence in which they were added to the motionsolver object\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Returns a matrix of complex doubles\&. This matrix contains the solution of motions for the \fBBody\fP specified\&. Returned variable passed by reference\&. 
+.RE
+.PP
+\fBSee Also:\fP
+.RS 4
+\fBBody\fP 
+.RE
+.PP
+
+.PP
+Definition at line 499 of file motionsolver\&.cpp\&.
+.SS "void MotionSolver::setWaveFreq (doublefreqIn)"
+
+.PP
+Sets the current wave frequency\&. Sets the current wave frequency\&. This is used in calculating the summations and must be set before calling the solve method\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfreqIn\fP The input wave frequency\&. A double precision floating point value\&. Used when summing derivatives\&. 
+.RE
+.PP
+
+.PP
+Definition at line 253 of file motionsolver\&.cpp\&.
+.SS "cx_mat * MotionSolver::sumActiveSet (std::vector< \fBmatForceActive\fP >listForces)"
+
+.PP
+Sum active forces for each set\&. Takes the input vector and sums all force objects together to create an aggregate force that is the total of all force objects supplied in the input vector (listForces)\&. If the input vector is empty, the function returns a NULL pointer\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIlistForces\fP Vector of \fBmatForceActive\fP objects\&. Vector can be unlimited size\&. Each entry in the vector is one of the active forces to be added into the total aggregate active force\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+The Sum of active force matrix\&. Variable is returned as pointer\&. 
+.RE
+.PP
+
+.PP
+Definition at line 128 of file motionsolver\&.cpp\&.
+.SS "vector< \fBmatForceCross\fP * > MotionSolver::sumCrossSet (std::vector< \fBmatForceCross\fP >listForces)"
+
+.PP
+Sum cross-body forces for each set\&. This gets handled a little differently from reactive forces, as the linked body for the force depends on whether two objects are summed together\&. Output from this function is a vector of cross-body forces\&. Each entry in the vector contains a cross-body force object\&. If the input list of forces (listForces) is empty, the function returns a NULL pointer\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fICrossBodMat\fP The vector of cross-body force matrices\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+A vector of complex matrices, with each entry in the vectors representing a cross-body force linked to a specific body\&. Returned variable is a pointer\&. 
+.RE
+.PP
+
+.PP
+Definition at line 87 of file motionsolver\&.cpp\&.
+.SS "cx_mat * MotionSolver::sumDerivative (\fBmatForceReact\fP *forceIn)"
+
+.PP
+Sums all derivatives for the reactive force object entered\&. Matrix force objects normally store a separate matrix of coefficients for each derivative\&. However, to solve for object motions at a given frequency, it is necessary to combine the various derivatives into a single matrix\&. The function uses a formula to combine the various derivative formulas into a single output matrix\&. The output matrix is only valid for the specific frequency set at the time of calling this function\&. If the input object is a NULL pointer, the function also returns a NULL pointer\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIforceIn\fP The reactive force matrix\&. Variable is a pointer to a \fBmatForceReact\fP object\&. Variable passed by value\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Single matrix that is the derivative sum of each matrix for each derivative contained within the input object\&. Returned variable is a pointer\&. Returned pointer is set to NULL if input pointer is NULL\&. 
+.RE
+.PP
+
+.PP
+Definition at line 164 of file motionsolver\&.cpp\&.
+.SS "vector< cx_mat * > MotionSolver::sumDerivative (std::vector< \fBmatForceCross\fP * >forceIn)"
+
+.PP
+Sums all derivatives for the cross-body force objects entered\&. Matrix force objects normally store a separate matrix of coefficients for each derivative\&. However, to solve for object motions at a given frequency, it is necessary to combine the various derivatives into a single matrix\&. The function uses a formula to combine the various derivative formulas into a single output matrix\&. The output matrix is only valid for the specific frequency set at the time of calling this function\&. If the input object is a NULL pointer, the function also returns a NULL pointer\&. For the cross-body forces, the function expects a vector of cross-body forces\&. These are all for a single \fBBody\fP object\&. Each \fBmatForceCross\fP object in the vector represents a cross-body force that depends on the motions of another body\&. So for N bodies, it is possible for the vector to contain up to N - 1 \fBmatForceCross\fP objects\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIforceIn\fP The cross-body force matrix\&. Variable is a vector of pointers to \fBmatForceCross\fP objects\&. Variable passed by value\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Returns vector of single matrices\&. Each matrix in the vector is the derivative sum of each matrix for each derivative contained within the input \fBmatForceCross\fP object\&. Returned variable is a pointer to a vector of single matrices\&. Returned pointer is set to NULL if input pointer is NULL\&. 
+.RE
+.PP
+
+.PP
+Definition at line 207 of file motionsolver\&.cpp\&.
+.SS "\fBmatForceReact\fP * MotionSolver::sumReactSet (std::vector< \fBmatForceReact\fP >listForces)"
+
+.PP
+Sum Reactive forces for each set\&. Sum Reactive forces for each set\&. This iterates through each reactive force in a set and adds the forces together\&. It respects derivatives in the summation\&. If the input list of forces is empty (listForces), the function returns a NULL pointer\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIlistForces\fP The list of reactive forces associated with each body\&. This list may be anything from zero to infinite number of entries\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+The Sum of reactive force matrices\&. Returned variable is a pointer\&. 
+.RE
+.PP
+
+.PP
+Definition at line 62 of file motionsolver\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for oFreq from the source code\&.

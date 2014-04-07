@@ -1,0 +1,45 @@
+.TH "parser.h" 3 "Sat Apr 5 2014" "Version 0.4" "oFreq" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+parser.h \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <vector>\fP
+.br
+\fC#include <string>\fP
+.br
+\fC#include <istream>\fP
+.br
+\fC#include <iostream>\fP
+.br
+\fC#include <algorithm>\fP
+.br
+\fC#include <cstdlib>\fP
+.br
+\fC#include <fstream>\fP
+.br
+\fC#include 'objectgroup\&.h'\fP
+.br
+\fC#include '\&.\&./global_objects/ofreqcore\&.h'\fP
+.br
+
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBosea::Parser\fP"
+.br
+.RI "\fIThe \fBParser\fP class takes an input segment of strings and segments that segment\&. It strips out comments\&. It recognizes quotation marks and groups those segments together\&. \fBParser\fP finally returns a series of \fBObjectGroup\fP objects\&. Each \fBObjectGroup\fP contains the classname and a list of keyword value pairs\&. \fP"
+.in -1c
+.SS "Namespaces"
+
+.in +1c
+.ti -1c
+.RI "namespace \fBosea\fP"
+.br
+.in -1c
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for oFreq from the source code\&.

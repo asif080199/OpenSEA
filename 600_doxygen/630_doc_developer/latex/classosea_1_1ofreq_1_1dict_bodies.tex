@@ -1,0 +1,124 @@
+\hypertarget{classosea_1_1ofreq_1_1dict_bodies}{\section{osea\-:\-:ofreq\-:\-:dict\-Bodies Class Reference}
+\label{classosea_1_1ofreq_1_1dict_bodies}\index{osea\-::ofreq\-::dict\-Bodies@{osea\-::ofreq\-::dict\-Bodies}}
+}
+
+
+{\ttfamily \#include $<$dictbodies.\-h$>$}
+
+
+
+Inheritance diagram for osea\-:\-:ofreq\-:\-:dict\-Bodies\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=218pt]{classosea_1_1ofreq_1_1dict_bodies__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classosea_1_1ofreq_1_1dict_bodies_af8245ee07739bfa399051cbb5aac7f9d}{dict\-Bodies} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{classosea_1_1ofreq_1_1dict_bodies_aff461cb5ceda5eee1a12da69aca94e1e}{define\-Key} (std\-::string key\-In, std\-::vector$<$ std\-::string $>$ val\-In)
+\begin{DoxyCompactList}\small\item\em Function that defines how to interpret the key values. Contains a list of key names and corresponding actions to take for interpretting each key value. \end{DoxyCompactList}\item 
+int \hyperlink{classosea_1_1ofreq_1_1dict_bodies_a3c00a8e8b6d24304cef35bcc50e7699b}{define\-Class} (std\-::string name\-In)
+\begin{DoxyCompactList}\small\item\em Function that defines how to interpret the class name. Class name implies declaration of a new object of the class named by the class name. This is a separate set of definitions to handle class declarations. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+The \hyperlink{classosea_1_1ofreq_1_1dict_bodies}{dict\-Bodies} class defines the key-\/word value pairs associated with the Bodies.\-in input file. Just as a normal dictionary defines the meaning of words, the \hyperlink{classosea_1_1ofreq_1_1dict_bodies}{dict\-Bodies} class works in the same way. The \hyperlink{classosea_1_1ofreq_1_1dict_bodies}{dict\-Bodies} class takes individual pairs of keywords and values. It has a definition for each of these keywords. The definition is whatever actions are necessary to process the value of key-\/pair and apply it to the program. This may include variable type conversions. It will also use slots and signals to retrieve pointers to any appropriate objects that the \hyperlink{classosea_1_1ofreq_1_1dict_bodies}{dict\-Bodies} object needs to interact with. It will use the properties of those objects to apply the values it finds in the key-\/value pair. Any objects created in the \hyperlink{classosea_1_1ofreq_1_1dict_bodies}{dict\-Bodies} class can be safely deleted once all file reading is done.
+
+Note\-: The code for the \hyperlink{classosea_1_1ofreq_1_1dict_bodies}{dict\-Bodies} object always references the last object in the list. This assumes that no other commands get issued in the input file between the creation of an object and the definition of key-\/value pairs associated with that object. Currently, I can not imagine any situation where this assumption would be violated. But do consider this when planning error recovery methods. \begin{DoxySeeAlso}{See Also}
+\hyperlink{classosea_1_1_dictionary}{Dictionary} 
+
+\hyperlink{classosea_1_1_file_reader}{File\-Reader} 
+\end{DoxySeeAlso}
+
+
+Definition at line 96 of file dictbodies.\-h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classosea_1_1ofreq_1_1dict_bodies_af8245ee07739bfa399051cbb5aac7f9d}{\index{osea\-::ofreq\-::dict\-Bodies@{osea\-::ofreq\-::dict\-Bodies}!dict\-Bodies@{dict\-Bodies}}
+\index{dict\-Bodies@{dict\-Bodies}!osea::ofreq::dictBodies@{osea\-::ofreq\-::dict\-Bodies}}
+\subsubsection[{dict\-Bodies}]{\setlength{\rightskip}{0pt plus 5cm}dict\-Bodies\-::dict\-Bodies (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1dict_bodies_af8245ee07739bfa399051cbb5aac7f9d}
+
+
+Definition at line 67 of file dictbodies.\-cpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classosea_1_1ofreq_1_1dict_bodies_a3c00a8e8b6d24304cef35bcc50e7699b}{\index{osea\-::ofreq\-::dict\-Bodies@{osea\-::ofreq\-::dict\-Bodies}!define\-Class@{define\-Class}}
+\index{define\-Class@{define\-Class}!osea::ofreq::dictBodies@{osea\-::ofreq\-::dict\-Bodies}}
+\subsubsection[{define\-Class}]{\setlength{\rightskip}{0pt plus 5cm}int dict\-Bodies\-::define\-Class (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{name\-In}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{classosea_1_1ofreq_1_1dict_bodies_a3c00a8e8b6d24304cef35bcc50e7699b}
+
+
+Function that defines how to interpret the class name. Class name implies declaration of a new object of the class named by the class name. This is a separate set of definitions to handle class declarations. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name\-In} & std\-::string, variable passed by value. The name of the class name. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns status of assigning key. Returned value is an integer, passed by value. See list of return codes below\-: 0\-: Key definition found. Success. 1\-: No key found. / General error message. 2\-: Key is invalid within current active object. 99\-: Function virtual definition only. Not currently defined. 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classosea_1_1_dictionary_a42843f64aa966b8c686d9e3750cbdb4b}{osea\-::\-Dictionary}.
+
+
+
+Definition at line 328 of file dictbodies.\-cpp.
+
+\hypertarget{classosea_1_1ofreq_1_1dict_bodies_aff461cb5ceda5eee1a12da69aca94e1e}{\index{osea\-::ofreq\-::dict\-Bodies@{osea\-::ofreq\-::dict\-Bodies}!define\-Key@{define\-Key}}
+\index{define\-Key@{define\-Key}!osea::ofreq::dictBodies@{osea\-::ofreq\-::dict\-Bodies}}
+\subsubsection[{define\-Key}]{\setlength{\rightskip}{0pt plus 5cm}int dict\-Bodies\-::define\-Key (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{key\-In, }
+\item[{std\-::vector$<$ std\-::string $>$}]{val\-In}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{classosea_1_1ofreq_1_1dict_bodies_aff461cb5ceda5eee1a12da69aca94e1e}
+
+
+Function that defines how to interpret the key values. Contains a list of key names and corresponding actions to take for interpretting each key value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key\-In} & std\-::string containing the key name. Variable passed by value. \\
+\hline
+{\em val\-In} & Vector of strings containing the key values. Variable passed by value. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns status of assigning key. Returned value is an integer, passed by value. See list of return codes below\-: 0\-: Key definition found. Success. 1\-: No key found. / General error message. 2\-: Key is invalid within current active object. 99\-: Function virtual definition only. Not currently defined. 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classosea_1_1_dictionary_ae96470181c8b1762204493fa45e96d7c}{osea\-::\-Dictionary}.
+
+
+
+Definition at line 83 of file dictbodies.\-cpp.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/home/\-Ship\-\_\-\-Design/\-Projects/\-D\-M\-S1305 Open\-S\-E\-A/master/200\-\_\-src/bin/ofreq/file\-\_\-reader/\hyperlink{dictbodies_8h}{dictbodies.\-h}\item 
+/home/\-Ship\-\_\-\-Design/\-Projects/\-D\-M\-S1305 Open\-S\-E\-A/master/200\-\_\-src/bin/ofreq/file\-\_\-reader/\hyperlink{dictbodies_8cpp}{dictbodies.\-cpp}\end{DoxyCompactItemize}

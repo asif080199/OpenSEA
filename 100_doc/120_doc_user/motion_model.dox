@@ -1,0 +1,21 @@
+/**
+\page motion_model Motion Model
+
+\todo Write general purpose information for motion models.  
+- What are they.  
+- Why do we need them.
+- Do we care about them?
+- What can we do with them.
+Emphasise that they let us convert motions into forces.
+
+
+# Standard Motion Models
+
+\subpage standard_motion_models
+
+
+# Custom Motion Models
+
+\subpage custom_motion_models
+
+*/

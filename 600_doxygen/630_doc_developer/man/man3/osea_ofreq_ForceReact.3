@@ -1,0 +1,204 @@
+.TH "osea::ofreq::ForceReact" 3 "Sat Apr 5 2014" "Version 0.4" "oFreq" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+osea::ofreq::ForceReact \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <forcereact\&.h>\fP
+.PP
+Inherits \fBosea::ofreq::Force\fP\&.
+.PP
+Inherited by \fBosea::ofreq::ForceCross\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBForceReact\fP ()"
+.br
+.ti -1c
+.RI "\fB~ForceReact\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetCurDerivative\fP (int)"
+.br
+.ti -1c
+.RI "void \fBsetCurEquationNum\fP (int)"
+.br
+.ti -1c
+.RI "std::vector< \fBDerivative\fP > & \fBlistDerivative\fP ()"
+.br
+.RI "\fIAnother implementation of getDerivatives, under a different name\&. \fP"
+.ti -1c
+.RI "\fBDerivative\fP \fBgetDerivative\fP (unsigned int num)"
+.br
+.RI "\fIRetrieve the derivative object specified by the index number\&. \fP"
+.ti -1c
+.RI "\fBDerivative\fP & \fBlistDerivative\fP (unsigned int num)"
+.br
+.RI "\fIRetrieve the derivative object specified by the index number\&. \fP"
+.ti -1c
+.RI "void \fBaddDerivative\fP ()"
+.br
+.RI "\fIAdds a \fBDerivative\fP object to the list of derivatives\&. Creates a blank derivative object\&. Assumed to be the latest order of derivative in the list\&. \fP"
+.ti -1c
+.RI "void \fBaddDerivative\fP (\fBDerivative\fP derivIn, unsigned int ordIn)"
+.br
+.RI "\fIAdds a \fBDerivative\fP object in the list of derivatives\&. Sets the new objects as the input for the new derivative object\&. Uses the properties of the \fBDerivative\fP object to set the correct index\&. \fP"
+.ti -1c
+.RI "int \fBgetMaxOrd\fP ()"
+.br
+.RI "\fIReturns the maximum order of the derivatives included in the force object\&. \fP"
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "std::vector< \fBDerivative\fP > \fBpDerivative\fP"
+.br
+.ti -1c
+.RI "int \fBcurrentDerivative\fP"
+.br
+.ti -1c
+.RI "int \fBcurrentEquation\fP"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+This class holds all of the data for a reactive force\&. 
+.PP
+Definition at line 83 of file forcereact\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "ForceReact::ForceReact ()"
+This default constructor\&. 
+.PP
+Definition at line 33 of file forcereact\&.cpp\&.
+.SS "ForceReact::~ForceReact ()"
+The default destructor, nothing happens here\&. 
+.PP
+Definition at line 37 of file forcereact\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void ForceReact::addDerivative ()"
+
+.PP
+Adds a \fBDerivative\fP object to the list of derivatives\&. Creates a blank derivative object\&. Assumed to be the latest order of derivative in the list\&. 
+.PP
+Definition at line 92 of file forcereact\&.cpp\&.
+.SS "void ForceReact::addDerivative (\fBDerivative\fPderivIn, unsigned intordIn)"
+
+.PP
+Adds a \fBDerivative\fP object in the list of derivatives\&. Sets the new objects as the input for the new derivative object\&. Uses the properties of the \fBDerivative\fP object to set the correct index\&. \fBParameters:\fP
+.RS 4
+\fIderivIn\fP The derivative object to add to the list of derivatives\&. 
+.br
+\fIordIn\fP The order of the derivative\&. 
+.RE
+.PP
+
+.PP
+Definition at line 99 of file forcereact\&.cpp\&.
+.SS "\fBDerivative\fP ForceReact::getDerivative (unsigned intnum)"
+
+.PP
+Retrieve the derivative object specified by the index number\&. Retrieve the derivative object specified by the index number\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fInum\fP The index number of the derivative object\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Returns the derivative object specified by integer num\&. Returned value is by value\&. 
+.RE
+.PP
+
+.PP
+Definition at line 59 of file forcereact\&.cpp\&.
+.SS "int ForceReact::getMaxOrd ()"
+
+.PP
+Returns the maximum order of the derivatives included in the force object\&. Returns the maximum order of the derivatives included in the force object\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+Returns integer\&. Returns the maximum order of the derivatives included in the force object\&. Returned result passed by value\&. 
+.RE
+.PP
+
+.PP
+Definition at line 115 of file forcereact\&.cpp\&.
+.SS "vector< \fBDerivative\fP > & ForceReact::listDerivative ()"
+
+.PP
+Another implementation of getDerivatives, under a different name\&. \fBReturns:\fP
+.RS 4
+Returns the vector of derviative objects\&. Returned object is by reference\&. 
+.RE
+.PP
+
+.PP
+Definition at line 53 of file forcereact\&.cpp\&.
+.SS "\fBDerivative\fP & ForceReact::listDerivative (unsigned intnum)"
+
+.PP
+Retrieve the derivative object specified by the index number\&. Retrieve the derivative object specified by the index number\&. Retrieves a pointer to the derivative object\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fInum\fP The index number of the derivative object\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Returns a pointer to the derivative object specified by integer num\&. Returned value is by reference\&. 
+.RE
+.PP
+
+.PP
+Definition at line 75 of file forcereact\&.cpp\&.
+.SS "void ForceReact::setCurDerivative (intnewOrder)"
+Sets the current derivative\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIneworder\fP The order of derivative\&. 
+.RE
+.PP
+
+.PP
+Definition at line 41 of file forcereact\&.cpp\&.
+.SS "void ForceReact::setCurEquationNum (intnewEquationNum)"
+Sets the current number of the equation\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fInewEquationNum\fP The number of the equation\&. 
+.RE
+.PP
+
+.PP
+Definition at line 47 of file forcereact\&.cpp\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "int osea::ofreq::ForceReact::currentDerivative\fC [protected]\fP"
+The current order derivative\&. 
+.PP
+Definition at line 165 of file forcereact\&.h\&.
+.SS "int osea::ofreq::ForceReact::currentEquation\fC [protected]\fP"
+This current equation number\&. 
+.PP
+Definition at line 166 of file forcereact\&.h\&.
+.SS "std::vector<\fBDerivative\fP> osea::ofreq::ForceReact::pDerivative\fC [protected]\fP"
+This list of derivatives\&. 
+.PP
+Definition at line 164 of file forcereact\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for oFreq from the source code\&.

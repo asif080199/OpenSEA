@@ -1,0 +1,6 @@
+<map id="osea::ofreq::EquationofMotion::curbody" name="osea::ofreq::EquationofMotion::curbody">
+<area shape="rect" id="node3" href="$classosea_1_1ofreq_1_1_eqn_rotation.html#acb3797b3ec3fb5d2fdccfe6ee800e470" title="osea::ofreq::EqnRotation\l::Func6" alt="" coords="266,5,438,46"/>
+<area shape="rect" id="node5" href="$classosea_1_1ofreq_1_1_eqn_rotation.html#a47de6dace20f98dbfe8559f8e4acb19e" title="osea::ofreq::EqnRotation\l::Func9" alt="" coords="266,70,438,111"/>
+<area shape="rect" id="node7" href="$classosea_1_1ofreq_1_1_eqn_translation.html#aa094532bc1384cabaf532573e8ab3db7" title="osea::ofreq::EqnTranslation\l::Func6" alt="" coords="257,135,447,177"/>
+<area shape="rect" id="node9" href="$classosea_1_1ofreq_1_1_eqn_translation.html#a1b622a723ceade1afb98c238d4dfc4c6" title="osea::ofreq::EqnTranslation\l::Func8" alt="" coords="257,201,447,242"/>
+</map>

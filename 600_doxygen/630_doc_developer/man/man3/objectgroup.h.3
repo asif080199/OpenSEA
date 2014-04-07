@@ -1,0 +1,52 @@
+.TH "objectgroup.h" 3 "Sat Apr 5 2014" "Version 0.4" "oFreq" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+objectgroup.h \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <vector>\fP
+.br
+\fC#include <string>\fP
+.br
+\fC#include '\&.\&./global_objects/ofreqcore\&.h'\fP
+.br
+
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBosea::ObjectGroup\fP"
+.br
+.RI "\fIThe \fBObjectGroup\fP class contains groupings of object definitions captured from an input file\&. It is a data container to hold the segmented input file for interpretation\&. The container contains three things: 1\&.) Object class name (as specified by input file) 2\&.) Vector of keyword names 3\&.) Vector of keyword values\&. Each entry in the vector of values is also a vector\&. This allows the definition of lists\&. A list will be as long as it needs to be for specification of all values in the list\&. The index of the value is specified by its position in the vector list\&. The value is the entry\&. \fP"
+.in -1c
+.SS "Namespaces"
+
+.in +1c
+.ti -1c
+.RI "namespace \fBosea\fP"
+.br
+.in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef std::vector
+.br
+< std::vector< std::string > > \fBosea::vecValue\fP"
+.br
+.RI "\fIType definition used to store key values\&. Must be a vector of vectors because a value may also be a list of values\&. \fP"
+.ti -1c
+.RI "typedef std::vector< std::string > \fBosea::vecKeyword\fP"
+.br
+.RI "\fIType defintion used to store keywords\&. \fP"
+.ti -1c
+.RI "typedef std::vector
+.br
+< ObjectGroup * > \fBosea::vecObject\fP"
+.br
+.in -1c
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for oFreq from the source code\&.

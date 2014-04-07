@@ -1,0 +1,42 @@
+.TH "osea::ofreq::ForceCross" 3 "Sat Apr 5 2014" "Version 0.4" "oFreq" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+osea::ofreq::ForceCross \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <forcecross\&.h>\fP
+.PP
+Inherits \fBosea::ofreq::ForceReact\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBForceCross\fP ()"
+.br
+.ti -1c
+.RI "\fB~ForceCross\fP ()"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+This class holds data for a cross body force\&. A cross body force is very closely related to a reactive force object and they behave almost exactly the same\&. The only difference is that the force within a reactive force object which is owned by \fBBody\fP A, they are dependant on the motions of that \fBBody\fP\&. But for a cross-body force object: The forces from the Cross-body force owned by \fBBody\fP A are dependant on the motions of another body\&. 
+.PP
+Definition at line 85 of file forcecross\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "ForceCross::ForceCross ()"
+This default constructor creates a \fBBody\fP object\&. 
+.PP
+Definition at line 32 of file forcecross\&.cpp\&.
+.SS "ForceCross::~ForceCross ()"
+The default destructor, nothing happens here\&. 
+.PP
+Definition at line 37 of file forcecross\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for oFreq from the source code\&.

@@ -1,0 +1,5 @@
+<map id="osea::ofreq::dictControl::defineKey" name="osea::ofreq::dictControl::defineKey">
+<area shape="rect" id="node3" href="$classosea_1_1ofreq_1_1_system.html#a76c67d09ec93cb654c6fd49d00e12485" title="osea::ofreq::System\l::setAnalysisType" alt="" coords="247,5,409,49"/>
+<area shape="rect" id="node5" href="$classosea_1_1ofreq_1_1_system.html#ac044fdc41aa436151bea0c81c8f70bc1" title="osea::ofreq::System\l::setWaveFrequencies" alt="" coords="240,73,416,117"/>
+<area shape="rect" id="node7" href="$classosea_1_1ofreq_1_1_system.html#a246decc05b383e47fba6d42318cf64ef" title="osea::ofreq::System\l::setWaveDirections" alt="" coords="247,141,409,185"/>
+</map>

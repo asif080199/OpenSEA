@@ -1,0 +1,940 @@
+.TH "osea::ofreq::OutputsBody" 3 "Sat Apr 5 2014" "Version 0.4" "oFreq" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+osea::ofreq::OutputsBody \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <outputsbody\&.h>\fP
+.PP
+Inherits \fBosea::ofreq::oFreqCore\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBOutputsBody\fP ()"
+.br
+.RI "\fIDefault constructor for the \fBOutputsBody\fP object\&. Nothing happens here\&. \fP"
+.ti -1c
+.RI "\fBOutputsBody\fP (std::vector< \fBBody\fP > &listBod, std::vector< \fBSolutionSet\fP > &listSoln, std::vector< double > &\fBlistFreq\fP, std::vector< double > &\fBlistWaveDir\fP)"
+.br
+.RI "\fIOverloaded constructor for the \fBOutputsBody\fP object\&. Includes inputs for \fBBody\fP list, \fBSolution\fP list, frequencies list, and wave directions list\&. All inputs are passed by reference and held as constant variables to avoid changing the referenced variables\&. \fP"
+.ti -1c
+.RI "\fB~OutputsBody\fP ()"
+.br
+.RI "\fIDefault destructor\&. Nothing happens here\&. \fP"
+.ti -1c
+.RI "void \fBInitialize\fP ()"
+.br
+.RI "\fICreates each of the \fBOutputDerived\fP objects in their respective lists\&. \fP"
+.ti -1c
+.RI "void \fBsetListBody\fP (std::vector< \fBBody\fP > &listIn)"
+.br
+.RI "\fISets the list of \fBBody\fP objects to calculate derived outputs for\&. Derived outputs are calculated for only one \fBBody\fP object in the list\&. The rest are included as reference for cross-body forces\&. \fP"
+.ti -1c
+.RI "void \fBsetSolutionSet\fP (std::vector< \fBSolutionSet\fP > &listIn)"
+.br
+.RI "\fISets the list of \fBSolutionSet\fP objects to calculate derived outputs for\&. Derived outputs are calculated for only one \fBSolutionSet\fP object in the list\&. The rest are included as reference for cross-body forces\&. \fP"
+.ti -1c
+.RI "std::vector< \fBSolutionSet\fP > & \fBlistSolutionSet\fP ()"
+.br
+.RI "\fIProvides the list of the \fBSolutionSet\fP objects\&. \fP"
+.ti -1c
+.RI "\fBSolutionSet\fP & \fBlistSolutionSet\fP (int index)"
+.br
+.RI "\fIProvides a single entry from the list of the \fBSolutionSet\fP objects\&. \fP"
+.ti -1c
+.RI "\fBosea::ofreq::SolutionSet\fP & \fBrefCurSolution\fP ()"
+.br
+.RI "\fIProvides access to the solution object for the current body\&. Saves the trouble of trying to remember which is the current body\&. \fP"
+.ti -1c
+.RI "void \fBsetListFreq\fP (std::vector< double > &listIn)"
+.br
+.RI "\fISets the list of wave frequencies\&. \fP"
+.ti -1c
+.RI "std::vector< double > & \fBlistFreq\fP ()"
+.br
+.RI "\fIGets the list of wave frequencies\&. Provides direct access to the list\&. \fP"
+.ti -1c
+.RI "double & \fBlistFreq\fP (int index)"
+.br
+.RI "\fIReturns individual frequency from the list of wave frequencies\&. \fP"
+.ti -1c
+.RI "void \fBsetListWaveDir\fP (std::vector< double > &listIn)"
+.br
+.RI "\fISets the list of wave directions\&. \fP"
+.ti -1c
+.RI "std::vector< double > & \fBlistWaveDir\fP ()"
+.br
+.RI "\fIGets the list of wave directions\&. Provides direct access to the list\&. \fP"
+.ti -1c
+.RI "double & \fBlistWaveDir\fP (int index)"
+.br
+.RI "\fIReturns individual wave direction from the list of wave directions\&. \fP"
+.ti -1c
+.RI "void \fBsetCurWaveDir\fP (int index)"
+.br
+.RI "\fISets the current wave direction\&. \fP"
+.ti -1c
+.RI "int \fBgetCurWaveInd\fP ()"
+.br
+.RI "\fIReturns the index of the current wave directio entry\&. \fP"
+.ti -1c
+.RI "double \fBgetCurWaveDir\fP ()"
+.br
+.RI "\fIGets the current wave direction\&. Output is the actual value for the current wave direction, in units of radians\&. \fP"
+.ti -1c
+.RI "void \fBsetCurBody\fP (int index)"
+.br
+.RI "\fISets the current \fBBody\fP to use\&. Input selects from the list of supplied \fBBody\fP objects\&. \fP"
+.ti -1c
+.RI "int \fBgetCurBodyIndex\fP ()"
+.br
+.RI "\fIGets the index of the current \fBBody\fP in the list of \fBBody\fP objects\&. \fP"
+.ti -1c
+.RI "\fBBody\fP & \fBrefCurBody\fP ()"
+.br
+.RI "\fIGets the current \fBBody\fP objects used by the class for calculating Derived Outputs\&. The returned value depends on the last input of setCurBody\&. \fP"
+.ti -1c
+.RI "std::vector< \fBBody\fP > & \fBlistBody\fP ()"
+.br
+.RI "\fIProvides direct access to the list of Bodies\&. \fP"
+.ti -1c
+.RI "\fBBody\fP & \fBlistBody\fP (int bodIn)"
+.br
+.RI "\fIDirect access to an individual \fBBody\fP from the list of Bodies\&. \fP"
+.ti -1c
+.RI "void \fBsetCurOutput\fP (\fBOutputDerived\fP *input)"
+.br
+.RI "\fISets the pointer to the last \fBOutputDerived\fP object that calculated the results and wrote them for access\&. \fP"
+.ti -1c
+.RI "\fBOutputDerived\fP & \fBrefCurOutput\fP ()"
+.br
+.RI "\fIProvides direct access to the last \fBOutputDerived\fP object that calculated the results\&. \fP"
+.ti -1c
+.RI "\fBOutputDerived\fP * \fBgetCurOutput\fP ()"
+.br
+.RI "\fIProvides direct access to the last \fBOutputDerived\fP object that calculated the results\&. \fP"
+.ti -1c
+.RI "std::vector< arma::cx_mat * > & \fBlistResult\fP ()"
+.br
+.RI "\fIThe results from calculation of a DerivedOutput\&. \fP"
+.ti -1c
+.RI "arma::cx_mat & \fBlistResult\fP (unsigned int index)"
+.br
+.RI "\fIThe results from calculation of a DerivedOutput\&. \fP"
+.ti -1c
+.RI "arma::cx_mat *& \fBrefResult\fP (unsigned int index)"
+.br
+.RI "\fIThe results from calculation of a DerivedOutput\&. \fP"
+.ti -1c
+.RI "void \fBClearResult\fP ()"
+.br
+.RI "\fIClears all calculated results\&. \fP"
+.ti -1c
+.RI "std::vector< \fBGlobalMotion\fP * > & \fBlistGlobalMotion\fP ()"
+.br
+.RI "\fIReturns the list of \fBGlobalMotion\fP objects\&. \fP"
+.ti -1c
+.RI "\fBGlobalMotion\fP & \fBlistGlobalMotion\fP (unsigned int index)"
+.br
+.RI "\fIReturns the \fBGlobalMotion\fP object from the list of \fBGlobalMotion\fP objects\&. \fP"
+.ti -1c
+.RI "int \fBcalcGlobalMotion\fP (unsigned int index=0)"
+.br
+.RI "\fICalculates the \fBGlobalMotion\fP object from the list of \fBGlobalMotion\fP objects\&. \fP"
+.ti -1c
+.RI "void \fBaddGlobalMotion\fP (\fBGlobalMotion\fP *input)"
+.br
+.RI "\fIAdds a new \fBGlobalMotion\fP object to the list of \fBGlobalMotion\fP objects\&. This version sets the new \fBGlobalMotion\fP object equal to the information passed in\&. \fP"
+.ti -1c
+.RI "void \fBaddGlobalMotion\fP ()"
+.br
+.RI "\fIOverloaded function for adding a \fBGlobalMotion\fP object to the list of \fBGlobalMotion\fP objects\&. This version has no input \fBGlobalMotion\fP object and automatically creates a blank \fBGlobalMotion\fP object\&. \fP"
+.ti -1c
+.RI "int \fBcalcGlobalVelocity\fP (unsigned int index=0)"
+.br
+.RI "\fICalculates the \fBGlobalVelocity\fP object from the list of \fBGlobalVelocity\fP objects\&. \fP"
+.ti -1c
+.RI "std::vector< \fBGlobalVelocity\fP * > & \fBlistGlobalVelocity\fP ()"
+.br
+.RI "\fIReturns the list of \fBGlobalVelocity\fP objects\&. \fP"
+.ti -1c
+.RI "\fBGlobalVelocity\fP & \fBlistGlobalVelocity\fP (unsigned int index)"
+.br
+.RI "\fIReturns the \fBGlobalVelocity\fP object from the list of \fBGlobalVelocity\fP objects\&. \fP"
+.ti -1c
+.RI "void \fBaddGlobalVelocity\fP (\fBGlobalVelocity\fP *input)"
+.br
+.RI "\fIAdds a new \fBGlobalVelocity\fP object to the list of \fBGlobalVelocity\fP objects\&. This version sets the new \fBGlobalVelocity\fP object equal to the information passed in\&. \fP"
+.ti -1c
+.RI "void \fBaddGlobalVelocity\fP ()"
+.br
+.RI "\fIOverloaded function for adding a \fBGlobalVelocity\fP object to the list of \fBGlobalVelocity\fP objects\&. This version has no input \fBGlobalVelocity\fP object and automatically creates a blank \fBGlobalVelocity\fP object\&. \fP"
+.ti -1c
+.RI "int \fBcalcGlobalAcceleration\fP (unsigned int index=0)"
+.br
+.RI "\fICalculates the \fBGlobalAcceleration\fP object from the list of \fBGlobalAcceleration\fP objects\&. \fP"
+.ti -1c
+.RI "std::vector
+.br
+< \fBGlobalAcceleration\fP * > & \fBlistGlobalAcceleration\fP ()"
+.br
+.RI "\fIReturns the list of \fBGlobalAcceleration\fP objects\&. \fP"
+.ti -1c
+.RI "\fBGlobalAcceleration\fP & \fBlistGlobalAcceleration\fP (unsigned int index)"
+.br
+.RI "\fIReturns the \fBGlobalAcceleration\fP object from the list of \fBGlobalAcceleration\fP objects\&. \fP"
+.ti -1c
+.RI "void \fBaddGlobalAcceleration\fP (\fBGlobalAcceleration\fP *input)"
+.br
+.RI "\fIAdds a new \fBGlobalAcceleration\fP object to the list of \fBGlobalAcceleration\fP objects\&. This version sets the new \fBGlobalAcceleration\fP object equal to the information passed in\&. \fP"
+.ti -1c
+.RI "void \fBaddGlobalAcceleration\fP ()"
+.br
+.RI "\fIOverloaded function for adding a \fBGlobalAcceleration\fP object to the list of \fBGlobalAcceleration\fP objects\&. This version has no input \fBGlobalAcceleration\fP object and automatically creates a blank \fBGlobalAcceleration\fP object\&. \fP"
+.ti -1c
+.RI "int \fBcalcGlobalSolution\fP (unsigned int index=0)"
+.br
+.RI "\fICalculates the \fBGlobalSolution\fP object from the list of \fBGlobalSolution\fP objects\&. \fP"
+.ti -1c
+.RI "std::vector< \fBGlobalSolution\fP * > & \fBlistGlobalSolution\fP ()"
+.br
+.RI "\fIReturns the list of \fBGlobalSolution\fP objects\&. \fP"
+.ti -1c
+.RI "\fBGlobalSolution\fP & \fBlistGlobalSolution\fP (unsigned int index)"
+.br
+.RI "\fIReturns the \fBGlobalSolution\fP object from the list of \fBGlobalSolution\fP objects\&. \fP"
+.ti -1c
+.RI "void \fBaddGlobalSolution\fP (\fBGlobalSolution\fP *input)"
+.br
+.RI "\fIAdds a new \fBGlobalSolution\fP object to the list of \fBGlobalSolution\fP objects\&. This version sets the new \fBGlobalSolution\fP object equal to the information passed in\&. \fP"
+.ti -1c
+.RI "void \fBaddGlobalSolution\fP ()"
+.br
+.RI "\fIOverloaded function for adding a \fBGlobalSolution\fP object to the list of \fBGlobalSolution\fP objects\&. This version has no input \fBGlobalSolution\fP object and automatically creates a blank \fBGlobalSolution\fP object\&. \fP"
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+This class holds all types of derived outputs for a single body object\&. Each derived output type is contained in a vector\&. This allows multiple instances of each output type\&. To save on memory, an output type is not calculated until it is requested\&. And then the derived output immediately returns the calculations\&. Outputs are typically returned as a vector of objects\&. Each row in the vector represents a different wave frequency\&. The object contained in the returned vector The meaning may change with each derived output type\&. You should check the documentation for each derived output\&.
+.PP
+Each derived output is listed as its own item in the class\&. Each derived output class has the following methods associated with it\&. (For this generic example, the term Output refers to any derived output object\&.)
+.IP "1." 4
+refOutput: Pointer to the output object itself\&.
+.IP "2." 4
+getOutput: Calculates the output and writes the result out as a cx_matrix object\&.
+.IP "3." 4
+addOutput: Adds a new output object to the list of objects\&. Optionally takes the supplied output\&. Otherwise creates a new output object in the vector list\&.
+.PP
+.PP
+To use the outputsBody class, you must supply several properties to it\&. These properties give the outputs class full knowledge of the current state of affairs\&. This allows the different derived outputs to have the most flexibility for how to calculate results\&. Set the following properties:
+.PP
+Data Sets:
+.IP "1." 4
+Bodies list
+.IP "2." 4
+Solutions list
+.IP "3." 4
+Frequencies list
+.IP "4." 4
+Wave directions list
+.PP
+.PP
+Individual properties
+.IP "1." 4
+Current body for outputsBody object\&.
+.IP "2." 4
+Current wave direction\&.
+.PP
+.PP
+Once these properties are set, you may calculate derived outputs\&. Inputs for derived outputs may be set before all these properties are set\&.
+.PP
+The following derived outputs are available: 
+.PP
+\fBSee Also:\fP
+.RS 4
+\fBGlobalSolution\fP 
+.PP
+\fBGlobalMotion\fP 
+.PP
+\fBGlobalVelocity\fP 
+.PP
+\fBGlobalAcceleration\fP
+.RE
+.PP
+Developers note: The original scheme had the \fBOutputDerived\fP class include a pointer to the contain parent class, \fBOutputsBody\fP\&. But this creates a cyclic dependency of header files, and will not compile\&. The only resolution I found to this was to not include the parent class and pass all the necessary information to each individual \fBOutputDerived\fP object\&. This is tedious, but within the reasons of the methods defined by the \fBOutputsBody\fP class\&. And it allow compilation\&. All data items are passed by reference to avoid excess memory duplication\&. 
+.PP
+Definition at line 145 of file outputsbody\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "OutputsBody::OutputsBody ()"
+
+.PP
+Default constructor for the \fBOutputsBody\fP object\&. Nothing happens here\&. 
+.PP
+Definition at line 34 of file outputsbody\&.cpp\&.
+.SS "osea::ofreq::OutputsBody::OutputsBody (std::vector< \fBBody\fP > &listBod, std::vector< \fBSolutionSet\fP > &listSoln, std::vector< double > &listFreq, std::vector< double > &listWaveDir)"
+
+.PP
+Overloaded constructor for the \fBOutputsBody\fP object\&. Includes inputs for \fBBody\fP list, \fBSolution\fP list, frequencies list, and wave directions list\&. All inputs are passed by reference and held as constant variables to avoid changing the referenced variables\&. \fBParameters:\fP
+.RS 4
+\fIlistBod\fP The vector of \fBBody\fP objects to use for the object\&. Contains all the information about \fBBody\fP forces\&. 
+.br
+\fIlistSoln\fP The vector of \fBSolutionSet\fP objects to use for the object\&. Contains all the information about solutions for each body\&. Each \fBSolutionSet\fP object in the vector represents the solutions for all frequencies for a single \fBBody\fP object\&. 
+.br
+\fIlistFreq\fP The vector of wave frequencies to use for the object\&. Each wave frequency corresponds to a \fBSolution\fP object in the \fBSolutionSet\fP object\&. 
+.br
+\fIlistWaveDir\fP The vector of wave directions to use for the object\&. This is provided mostly for reference\&. 
+.RE
+.PP
+
+.SS "OutputsBody::~OutputsBody ()"
+
+.PP
+Default destructor\&. Nothing happens here\&. 
+.PP
+Definition at line 59 of file outputsbody\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void OutputsBody::addGlobalAcceleration (\fBGlobalAcceleration\fP *input)"
+
+.PP
+Adds a new \fBGlobalAcceleration\fP object to the list of \fBGlobalAcceleration\fP objects\&. This version sets the new \fBGlobalAcceleration\fP object equal to the information passed in\&. \fBParameters:\fP
+.RS 4
+\fIinput\fP Pointer to the new \fBGlobalAcceleration\fP object to add to the list of \fBGlobalAcceleration\fP objects\&. Pointer is passed by value\&. 
+.RE
+.PP
+
+.PP
+Definition at line 493 of file outputsbody\&.cpp\&.
+.SS "void OutputsBody::addGlobalAcceleration ()"
+
+.PP
+Overloaded function for adding a \fBGlobalAcceleration\fP object to the list of \fBGlobalAcceleration\fP objects\&. This version has no input \fBGlobalAcceleration\fP object and automatically creates a blank \fBGlobalAcceleration\fP object\&. 
+.PP
+Definition at line 501 of file outputsbody\&.cpp\&.
+.SS "void OutputsBody::addGlobalMotion (\fBGlobalMotion\fP *input)"
+
+.PP
+Adds a new \fBGlobalMotion\fP object to the list of \fBGlobalMotion\fP objects\&. This version sets the new \fBGlobalMotion\fP object equal to the information passed in\&. \fBParameters:\fP
+.RS 4
+\fIinput\fP Pointer to the new \fBGlobalMotion\fP object to add to the list of \fBGlobalMotion\fP objects\&. Pointer is passed by value\&. 
+.RE
+.PP
+
+.PP
+Definition at line 351 of file outputsbody\&.cpp\&.
+.SS "void OutputsBody::addGlobalMotion ()"
+
+.PP
+Overloaded function for adding a \fBGlobalMotion\fP object to the list of \fBGlobalMotion\fP objects\&. This version has no input \fBGlobalMotion\fP object and automatically creates a blank \fBGlobalMotion\fP object\&. 
+.PP
+Definition at line 360 of file outputsbody\&.cpp\&.
+.SS "void OutputsBody::addGlobalSolution (\fBGlobalSolution\fP *input)"
+
+.PP
+Adds a new \fBGlobalSolution\fP object to the list of \fBGlobalSolution\fP objects\&. This version sets the new \fBGlobalSolution\fP object equal to the information passed in\&. \fBParameters:\fP
+.RS 4
+\fIinput\fP Pointer to the new \fBGlobalSolution\fP object to add to the list of \fBGlobalSolution\fP objects\&. Pointer is passed by value\&. 
+.RE
+.PP
+
+.PP
+Definition at line 562 of file outputsbody\&.cpp\&.
+.SS "void OutputsBody::addGlobalSolution ()"
+
+.PP
+Overloaded function for adding a \fBGlobalSolution\fP object to the list of \fBGlobalSolution\fP objects\&. This version has no input \fBGlobalSolution\fP object and automatically creates a blank \fBGlobalSolution\fP object\&. 
+.PP
+Definition at line 570 of file outputsbody\&.cpp\&.
+.SS "void OutputsBody::addGlobalVelocity (\fBGlobalVelocity\fP *input)"
+
+.PP
+Adds a new \fBGlobalVelocity\fP object to the list of \fBGlobalVelocity\fP objects\&. This version sets the new \fBGlobalVelocity\fP object equal to the information passed in\&. \fBParameters:\fP
+.RS 4
+\fIinput\fP Pointer to the new \fBGlobalVelocity\fP object to add to the list of \fBGlobalVelocity\fP objects\&. Pointer is passed by value\&. 
+.RE
+.PP
+
+.PP
+Definition at line 422 of file outputsbody\&.cpp\&.
+.SS "void OutputsBody::addGlobalVelocity ()"
+
+.PP
+Overloaded function for adding a \fBGlobalVelocity\fP object to the list of \fBGlobalVelocity\fP objects\&. This version has no input \fBGlobalVelocity\fP object and automatically creates a blank \fBGlobalVelocity\fP object\&. 
+.PP
+Definition at line 430 of file outputsbody\&.cpp\&.
+.SS "int OutputsBody::calcGlobalAcceleration (unsigned intindex = \fC0\fP)"
+
+.PP
+Calculates the \fBGlobalAcceleration\fP object from the list of \fBGlobalAcceleration\fP objects\&. Outputs from calculation is written to the results matrix\&. You can retrieve the results from the calculation by use of the getResult() function\&. Calculating any other DerivedOutput will erase your results from the Results matrix and you will need to recalculate them\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIindex\fP The index of which \fBGlobalAcceleration\fP object to retrieve from the list of objects\&. For this Derived Output, there is only one \fBGlobalAcceleration\fP object per \fBOutputsBody\fP\&. The default value selects this object\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Returns an integer for output\&. This integer is not the calculation result\&. It reports on whether the calculation is successful\&. A returned value of zero (0) means a successful calculation\&. Other returned values are error codes, each with their own meaning\&. 
+.RE
+.PP
+\fBSee Also:\fP
+.RS 4
+\fBGlobalAcceleration\fP 
+.RE
+.PP
+
+.PP
+Definition at line 462 of file outputsbody\&.cpp\&.
+.SS "int OutputsBody::calcGlobalMotion (unsigned intindex = \fC0\fP)"
+
+.PP
+Calculates the \fBGlobalMotion\fP object from the list of \fBGlobalMotion\fP objects\&. Outputs from calculation is written to the results matrix\&. You can retrieve the results from the calculation by use of the getResult() function\&. Calculating any other DerivedOutput will erase your results from the Results matrix and you will need to recalculate them\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIindex\fP The index of which \fBGlobalMotion\fP object to retrieve from the list of objects\&. For this Derived Output, there is only one \fBGlobalMotion\fP object per \fBOutputsBody\fP\&. The default value selects this object\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Returns an integer for output\&. This integer is not the calculation result\&. It reports on whether the calculation is successful\&. A returned value of zero (0) means a successful calculation\&. Other returned values are error codes, each with their own meaning\&. 
+.RE
+.PP
+\fBSee Also:\fP
+.RS 4
+\fBGlobalMotion\fP 
+.RE
+.PP
+
+.PP
+Definition at line 320 of file outputsbody\&.cpp\&.
+.SS "int OutputsBody::calcGlobalSolution (unsigned intindex = \fC0\fP)"
+
+.PP
+Calculates the \fBGlobalSolution\fP object from the list of \fBGlobalSolution\fP objects\&. Outputs from calculation is written to the results matrix\&. You can retrieve the results from the calculation by use of the getResult() function\&. Calculating any other DerivedOutput will erase your results from the Results matrix and you will need to recalculate them\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIindex\fP The index of which \fBGlobalSolution\fP object to retrieve from the list of objects\&. For this Derived Output, there is only one \fBGlobalSolution\fP object per \fBOutputsBody\fP\&. The default value selects this object\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Returns an integer for output\&. This integer is not the calculation result\&. It reports on whether the calculation is successful\&. A returned value of zero (0) means a successful calculation\&. Other returned values are error codes, each with their own meaning\&. 
+.RE
+.PP
+\fBSee Also:\fP
+.RS 4
+\fBGlobalSolution\fP 
+.RE
+.PP
+
+.PP
+Definition at line 531 of file outputsbody\&.cpp\&.
+.SS "int OutputsBody::calcGlobalVelocity (unsigned intindex = \fC0\fP)"
+
+.PP
+Calculates the \fBGlobalVelocity\fP object from the list of \fBGlobalVelocity\fP objects\&. Outputs from calculation is written to the results matrix\&. You can retrieve the results from the calculation by use of the getResult() function\&. Calculating any other DerivedOutput will erase your results from the Results matrix and you will need to recalculate them\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIindex\fP The index of which \fBGlobalVelocity\fP object to retrieve from the list of objects\&. For this Derived Output, there is only one \fBGlobalVelocity\fP object per \fBOutputsBody\fP\&. The default value selects this object\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Returns an integer for output\&. This integer is not the calculation result\&. It reports on whether the calculation is successful\&. A returned value of zero (0) means a successful calculation\&. Other returned values are error codes, each with their own meaning\&. 
+.RE
+.PP
+\fBSee Also:\fP
+.RS 4
+\fBGlobalVelocity\fP 
+.RE
+.PP
+
+.PP
+Definition at line 391 of file outputsbody\&.cpp\&.
+.SS "void OutputsBody::ClearResult ()"
+
+.PP
+Clears all calculated results\&. Clears the calculated results from all internal storage\&. And removes any pointers to the DerivedOutput object that calculated the result\&. The DerivedOutput object itself is not deleted\&. 
+.PP
+Definition at line 277 of file outputsbody\&.cpp\&.
+.SS "int OutputsBody::getCurBodyIndex ()"
+
+.PP
+Gets the index of the current \fBBody\fP in the list of \fBBody\fP objects\&. \fBReturns:\fP
+.RS 4
+Returns the index of the current \fBBody\fP assigned to this \fBOutputsBody\fP object\&. This differs from other function \fBrefCurBody()\fP because \fBrefCurBody()\fP returns a pointer to the body directly\&. But this function, \fBgetCurBodyIndex()\fP returns the integer index of the \fBBody\fP object in the vector list of \fBBody\fP objects\&. Returned variable is passed by value\&. 
+.RE
+.PP
+
+.PP
+Definition at line 201 of file outputsbody\&.cpp\&.
+.SS "\fBOutputDerived\fP * OutputsBody::getCurOutput ()"
+
+.PP
+Provides direct access to the last \fBOutputDerived\fP object that calculated the results\&. When a call is made to calculate the outputs of a DerivedOutput object, that object writes its results to the Results storage in the \fBOutputsBody\fP\&. The pointer is then set to that \fBOutputDerived\fP object\&. This is in case you need to access the \fBOutputDerived\fP object for any reason\&. You don't need to remember which object did the calculation\&. You can just access the object\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+Returns a pointer to the \fBOutputDerived\fP object that performed the last calculation\&. Pointer passed by value\&. 
+.RE
+.PP
+
+.PP
+Definition at line 237 of file outputsbody\&.cpp\&.
+.SS "double OutputsBody::getCurWaveDir ()"
+
+.PP
+Gets the current wave direction\&. Output is the actual value for the current wave direction, in units of radians\&. \fBReturns:\fP
+.RS 4
+Returns a double that is the current wave direction, in units of radians\&. Variable is passed by value\&. 
+.RE
+.PP
+
+.PP
+Definition at line 189 of file outputsbody\&.cpp\&.
+.SS "int OutputsBody::getCurWaveInd ()"
+
+.PP
+Returns the index of the current wave directio entry\&. \fBReturns:\fP
+.RS 4
+Integer\&. Returns the index of the current wave directio entry\&. Variable passed by value\&. 
+.RE
+.PP
+
+.PP
+Definition at line 183 of file outputsbody\&.cpp\&.
+.SS "void OutputsBody::Initialize ()"
+
+.PP
+Creates each of the \fBOutputDerived\fP objects in their respective lists\&. Each list of \fBOutputDerived\fP object can contain any number of objects\&. The initialize function is called to generate each of these \fBOutputDerived\fP objects\&. 
+.PP
+Definition at line 86 of file outputsbody\&.cpp\&.
+.SS "std::vector< \fBBody\fP > & OutputsBody::listBody ()"
+
+.PP
+Provides direct access to the list of Bodies\&. \fBReturns:\fP
+.RS 4
+Reference to vector of \fBBody\fP objects\&. Variable passed by reference\&. 
+.RE
+.PP
+\fBSee Also:\fP
+.RS 4
+\fBBody\fP 
+.RE
+.PP
+
+.PP
+Definition at line 213 of file outputsbody\&.cpp\&.
+.SS "\fBBody\fP & OutputsBody::listBody (intbodIn)"
+
+.PP
+Direct access to an individual \fBBody\fP from the list of Bodies\&. \fBParameters:\fP
+.RS 4
+\fIbodIn\fP Integer specifying which \fBBody\fP object to access in the list of Bodies\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Returns reference to the \fBBody\fP object specified by input bodIn\&. 
+.RE
+.PP
+\fBSee Also:\fP
+.RS 4
+\fBlistBody()\fP 
+.RE
+.PP
+
+.PP
+Definition at line 219 of file outputsbody\&.cpp\&.
+.SS "vector< double > & OutputsBody::listFreq ()"
+
+.PP
+Gets the list of wave frequencies\&. Provides direct access to the list\&. \fBReturns:\fP
+.RS 4
+Returns the vector of doubles representing the wave frequencies\&. Frequencies entered in units of radians per second\&. Variable is passed by reference\&. 
+.RE
+.PP
+
+.PP
+Definition at line 147 of file outputsbody\&.cpp\&.
+.SS "double & OutputsBody::listFreq (intindex)"
+
+.PP
+Returns individual frequency from the list of wave frequencies\&. Returns the frequency specified by the index\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIindex\fP Integer\&. The index which specifies which wave frequency to return\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Double\&. Returns individual frequency from the list of wave frequencies\&. Returned variabled is passed by reference\&. 
+.RE
+.PP
+
+.PP
+Definition at line 153 of file outputsbody\&.cpp\&.
+.SS "vector< \fBGlobalAcceleration\fP * > & OutputsBody::listGlobalAcceleration ()"
+
+.PP
+Returns the list of \fBGlobalAcceleration\fP objects\&. \fBReturns:\fP
+.RS 4
+Returns a vector of pointers to each of the global motion objects\&. Returned variable passed by reference\&. 
+.RE
+.PP
+
+.PP
+Definition at line 439 of file outputsbody\&.cpp\&.
+.SS "\fBGlobalAcceleration\fP & OutputsBody::listGlobalAcceleration (unsigned intindex)"
+
+.PP
+Returns the \fBGlobalAcceleration\fP object from the list of \fBGlobalAcceleration\fP objects\&. \fBSee Also:\fP
+.RS 4
+\fBGlobalAcceleration\fP 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIindex\fP The index of which \fBGlobalAcceleration\fP object to retrieve from the list of objects\&. For this Derived Output, there is only one \fBGlobalAcceleration\fP object per \fBOutputsBody\fP\&. The default value selects this object\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Returns the \fBGlobalAcceleration\fP object from the list of \fBGlobalAcceleration\fP objects\&. Returned variable is passed by reference\&. Returns only the object specified by the input index\&. 
+.RE
+.PP
+
+.PP
+Definition at line 445 of file outputsbody\&.cpp\&.
+.SS "std::vector< \fBGlobalMotion\fP * > & OutputsBody::listGlobalMotion ()"
+
+.PP
+Returns the list of \fBGlobalMotion\fP objects\&. \fBReturns:\fP
+.RS 4
+Returns a vector of pointers to each of the global motion objects\&. Returned variable passed by reference\&. 
+.RE
+.PP
+
+.PP
+Definition at line 298 of file outputsbody\&.cpp\&.
+.SS "\fBGlobalMotion\fP & OutputsBody::listGlobalMotion (unsigned intindex)"
+
+.PP
+Returns the \fBGlobalMotion\fP object from the list of \fBGlobalMotion\fP objects\&. \fBSee Also:\fP
+.RS 4
+\fBGlobalMotion\fP 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIindex\fP The index of which \fBGlobalMotion\fP object to retrieve from the list of objects\&. For this Derived Output, there is only one \fBGlobalMotion\fP object per \fBOutputsBody\fP\&. The default value selects this object\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Returns the \fBGlobalMotion\fP object from the list of \fBGlobalMotion\fP objects\&. Returned variable is passed by reference\&. Returns only the object specified by the input index\&. 
+.RE
+.PP
+
+.PP
+Definition at line 304 of file outputsbody\&.cpp\&.
+.SS "vector< \fBGlobalSolution\fP * > & OutputsBody::listGlobalSolution ()"
+
+.PP
+Returns the list of \fBGlobalSolution\fP objects\&. \fBReturns:\fP
+.RS 4
+Returns a vector of pointers to each of the global motion objects\&. Returned variable passed by reference\&. 
+.RE
+.PP
+
+.PP
+Definition at line 509 of file outputsbody\&.cpp\&.
+.SS "\fBGlobalSolution\fP & OutputsBody::listGlobalSolution (unsigned intindex)"
+
+.PP
+Returns the \fBGlobalSolution\fP object from the list of \fBGlobalSolution\fP objects\&. \fBSee Also:\fP
+.RS 4
+\fBGlobalSolution\fP 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIindex\fP The index of which \fBGlobalSolution\fP object to retrieve from the list of objects\&. For this Derived Output, there is only one \fBGlobalSolution\fP object per \fBOutputsBody\fP\&. The default value selects this object\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Returns the \fBGlobalSolution\fP object from the list of \fBGlobalSolution\fP objects\&. Returned variable is passed by reference\&. Returns only the object specified by the input index\&. 
+.RE
+.PP
+
+.PP
+Definition at line 515 of file outputsbody\&.cpp\&.
+.SS "std::vector< \fBGlobalVelocity\fP * > & OutputsBody::listGlobalVelocity ()"
+
+.PP
+Returns the list of \fBGlobalVelocity\fP objects\&. \fBReturns:\fP
+.RS 4
+Returns a vector of pointers to each of the global motion objects\&. Returned variable passed by reference\&. 
+.RE
+.PP
+
+.PP
+Definition at line 369 of file outputsbody\&.cpp\&.
+.SS "\fBGlobalVelocity\fP & OutputsBody::listGlobalVelocity (unsigned intindex)"
+
+.PP
+Returns the \fBGlobalVelocity\fP object from the list of \fBGlobalVelocity\fP objects\&. \fBSee Also:\fP
+.RS 4
+\fBGlobalVelocity\fP 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIindex\fP The index of which \fBGlobalVelocity\fP object to retrieve from the list of objects\&. For this Derived Output, there is only one \fBGlobalVelocity\fP object per \fBOutputsBody\fP\&. The default value selects this object\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Returns the \fBGlobalVelocity\fP object from the list of \fBGlobalVelocity\fP objects\&. Returned variable is passed by reference\&. Returns only the object specified by the input index\&. 
+.RE
+.PP
+
+.PP
+Definition at line 375 of file outputsbody\&.cpp\&.
+.SS "std::vector< arma::cx_mat * > & OutputsBody::listResult ()"
+
+.PP
+The results from calculation of a DerivedOutput\&. When a call is made to calculate a DerivedOutput object, the object stores the results of its calculation in the results matrix\&. Those results can be accessed through this method\&. This method is also used by the DerivedOutput object to write the results\&. DerivedOutput object automatically resizes the output buffer as needed\&. The output buffer is a vector storing pointers to matrices of complex numbers\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+Returns direct access to the stored results matrix\&. Returned variable is a vector storing pointers to matrices of complex numbers\&. matrix of undetermined size\&. Returned variable is passed by reference\&. 
+.RE
+.PP
+
+.PP
+Definition at line 243 of file outputsbody\&.cpp\&.
+.SS "arma::cx_mat & OutputsBody::listResult (unsigned intindex)"
+
+.PP
+The results from calculation of a DerivedOutput\&. When a call is made to calculate a DerivedOutput object, the object stores the results of its calculation in the results matrix\&. Those results can be accessed through this method\&. This method is also used by the DerivedOutput object to write the results\&. DerivedOutput object automatically resizes the output buffer as needed\&. The output buffer is a vector storing pointers to matrices of complex numbers\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIindex\fP Integer input that specifies which matrix to retrieve from the list of results\&. Most commonly, the index represents the index of a wave frequency from the list of wave frequencies\&. (i\&.e\&. The list is organized by wave frequencies\&.) 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Returns direct access to the stored results matrix\&. Returned variable is a matrix of complex numbers\&. Matrix of undetermined size\&. Returned variable is passed by reference\&. 
+.RE
+.PP
+
+.PP
+Definition at line 249 of file outputsbody\&.cpp\&.
+.SS "std::vector< \fBSolutionSet\fP > & OutputsBody::listSolutionSet ()"
+
+.PP
+Provides the list of the \fBSolutionSet\fP objects\&. Derived outputs are calculated for only one \fBSolutionSet\fP object in the list\&. The rest are included as reference for cross-body forces\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+Returns a vector containing the \fBSolutionSet\fP objects\&. Variable passed by reference\&. 
+.RE
+.PP
+
+.PP
+Definition at line 116 of file outputsbody\&.cpp\&.
+.SS "\fBosea::ofreq::SolutionSet\fP & OutputsBody::listSolutionSet (intindex)"
+
+.PP
+Provides a single entry from the list of the \fBSolutionSet\fP objects\&. Derived outputs are calculated for only one \fBSolutionSet\fP object in the list\&. The rest are included as reference for cross-body forces\&. This implementation of the function only returns a single entry from the list\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIindex\fP Integer\&. Specifies the index for which to retrieve the solution set\&. If the requested index is out of bounds, the program will return an error\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Returns a single \fBSolutionSet\fP object requested from the list of \fBSolutionSet\fP objects\&. Requested variable is passed by reference\&. 
+.RE
+.PP
+
+.PP
+Definition at line 122 of file outputsbody\&.cpp\&.
+.SS "vector< double > & OutputsBody::listWaveDir ()"
+
+.PP
+Gets the list of wave directions\&. Provides direct access to the list\&. \fBReturns:\fP
+.RS 4
+Returns the vector of doubles representing the wave directions\&. Directions entered in units of radians\&. Variable is passed by reference\&. 
+.RE
+.PP
+
+.PP
+Definition at line 165 of file outputsbody\&.cpp\&.
+.SS "double & OutputsBody::listWaveDir (intindex)"
+
+.PP
+Returns individual wave direction from the list of wave directions\&. Returns the wave direction specified by the index\&. Wave directions are measured in radians\&. True North is zero, with positive angles going counter-clockwise\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIindex\fP Integer\&. The index which specifies which wave direction to return\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Double\&. Returns individual wave direction from the list of wave directions\&. Returned variable is passed by reference\&. 
+.RE
+.PP
+
+.PP
+Definition at line 171 of file outputsbody\&.cpp\&.
+.SS "\fBBody\fP & OutputsBody::refCurBody ()"
+
+.PP
+Gets the current \fBBody\fP objects used by the class for calculating Derived Outputs\&. The returned value depends on the last input of setCurBody\&. \fBReturns:\fP
+.RS 4
+Returns a pointer the \fBBody\fP object used by the class for calculating Derived Outputs\&. The returned variable is passed by reference\&. 
+.RE
+.PP
+
+.PP
+Definition at line 207 of file outputsbody\&.cpp\&.
+.SS "\fBOutputDerived\fP & OutputsBody::refCurOutput ()"
+
+.PP
+Provides direct access to the last \fBOutputDerived\fP object that calculated the results\&. When a call is made to calculate the outputs of a DerivedOutput object, that object writes its results to the Results storage in the \fBOutputsBody\fP\&. The pointer is then set to that \fBOutputDerived\fP object\&. This is in case you need to access the \fBOutputDerived\fP object for any reason\&. You don't need to remember which object did the calculation\&. You can just access the object\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+Returns the \fBOutputDerived\fP object that performed the last calculation\&. Variable passed by reference\&. 
+.RE
+.PP
+
+.PP
+Definition at line 231 of file outputsbody\&.cpp\&.
+.SS "\fBosea::ofreq::SolutionSet\fP & OutputsBody::refCurSolution ()"
+
+.PP
+Provides access to the solution object for the current body\&. Saves the trouble of trying to remember which is the current body\&. \fBReturns:\fP
+.RS 4
+Returns the solution object for the current body\&. Returned variable passed by reference\&. 
+.RE
+.PP
+
+.PP
+Definition at line 135 of file outputsbody\&.cpp\&.
+.SS "arma::cx_mat *& OutputsBody::refResult (unsigned intindex)"
+
+.PP
+The results from calculation of a DerivedOutput\&. When a call is made to calculate a DerivedOutput object, the object stores the results of its calculation in the results matrix\&. Those results can be accessed through this method\&. This method is also used by the DerivedOutput object to write the results\&. DerivedOutput object automatically resizes the output buffer as needed\&. The output buffer is a vector storing pointers to matrices of complex numbers\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIindex\fP Integer input that specifies which matrix to retrieve from the list of results\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Returns a pointer to the stored results matrix\&. Returned variable is a pointer to a matrix of complex numbers\&. Matrix of undetermined size\&. Returned variable is passed by reference\&. 
+.RE
+.PP
+
+.PP
+Definition at line 263 of file outputsbody\&.cpp\&.
+.SS "void OutputsBody::setCurBody (intindex)"
+
+.PP
+Sets the current \fBBody\fP to use\&. Input selects from the list of supplied \fBBody\fP objects\&. \fBParameters:\fP
+.RS 4
+\fIindex\fP Integer input that selects from the list of supplied \fBBody\fP objects\&. Variable is passed by value\&. 
+.RE
+.PP
+
+.PP
+Definition at line 195 of file outputsbody\&.cpp\&.
+.SS "void OutputsBody::setCurOutput (\fBOutputDerived\fP *input)"
+
+.PP
+Sets the pointer to the last \fBOutputDerived\fP object that calculated the results and wrote them for access\&. When a call is made to calculate the outputs of a DerivedOutput object, that object writes its results to the Results storage in the \fBOutputsBody\fP\&. The pointer is then set to that \fBOutputDerived\fP object\&. This is in case you need to access the \fBOutputDerived\fP object for any reason\&. You don't need to remember which object did the calculation\&. You can just access the object\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIinput\fP Pointer to the \fBOutputDerived\fP object that performed the last results calculation\&. 
+.RE
+.PP
+
+.PP
+Definition at line 225 of file outputsbody\&.cpp\&.
+.SS "void OutputsBody::setCurWaveDir (intindex)"
+
+.PP
+Sets the current wave direction\&. \fBParameters:\fP
+.RS 4
+\fIindex\fP Integer input specifying the index of the current wave direction from the list set by setListWaveDir\&. 
+.RE
+.PP
+
+.PP
+Definition at line 177 of file outputsbody\&.cpp\&.
+.SS "void OutputsBody::setListBody (std::vector< \fBBody\fP > &listIn)"
+
+.PP
+Sets the list of \fBBody\fP objects to calculate derived outputs for\&. Derived outputs are calculated for only one \fBBody\fP object in the list\&. The rest are included as reference for cross-body forces\&. \fBParameters:\fP
+.RS 4
+\fIlistIn\fP The vector of \fBBody\fP objects to assign to this \fBOutputsBody\fP\&. Input is passed by reference\&. Input is held as a constant value, so that it can not be modified by the class\&. 
+.RE
+.PP
+
+.PP
+Definition at line 104 of file outputsbody\&.cpp\&.
+.SS "void OutputsBody::setListFreq (std::vector< double > &listIn)"
+
+.PP
+Sets the list of wave frequencies\&. \fBParameters:\fP
+.RS 4
+\fIlistIn\fP The vector of doubles representing the wave frequencies\&. Frequencies entered in units of radians per second\&. Input is passed by reference and held as a constant so that the class can not change the frequencies\&. 
+.RE
+.PP
+
+.PP
+Definition at line 141 of file outputsbody\&.cpp\&.
+.SS "void OutputsBody::setListWaveDir (std::vector< double > &listIn)"
+
+.PP
+Sets the list of wave directions\&. \fBParameters:\fP
+.RS 4
+\fIlistIn\fP The vector of doubles representing the wave directions\&. Directions entered in units of radians\&. Input is passed by reference and held as a constant so that the class can not change the directions\&. 
+.RE
+.PP
+
+.PP
+Definition at line 159 of file outputsbody\&.cpp\&.
+.SS "void OutputsBody::setSolutionSet (std::vector< \fBSolutionSet\fP > &listIn)"
+
+.PP
+Sets the list of \fBSolutionSet\fP objects to calculate derived outputs for\&. Derived outputs are calculated for only one \fBSolutionSet\fP object in the list\&. The rest are included as reference for cross-body forces\&. \fBParameters:\fP
+.RS 4
+\fIlistIn\fP The vector of \fBSolutionSet\fP objects to assign to this \fBOutputsBody\fP\&. Input is passed by reference\&. Inputs is held as a constant value, so that it can not be modified by the class\&. 
+.RE
+.PP
+
+.PP
+Definition at line 110 of file outputsbody\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for oFreq from the source code\&.

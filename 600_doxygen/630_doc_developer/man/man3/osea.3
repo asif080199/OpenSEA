@@ -1,0 +1,78 @@
+.TH "osea" 3 "Sat Apr 5 2014" "Version 0.4" "oFreq" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+osea \- 
+.SH SYNOPSIS
+.br
+.PP
+.SS "Namespaces"
+
+.in +1c
+.ti -1c
+.RI "namespace \fBofreq\fP"
+.br
+.in -1c
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBDictionary\fP"
+.br
+.ti -1c
+.RI "class \fBFileReader\fP"
+.br
+.ti -1c
+.RI "class \fBObjectGroup\fP"
+.br
+.RI "\fIThe \fBObjectGroup\fP class contains groupings of object definitions captured from an input file\&. It is a data container to hold the segmented input file for interpretation\&. The container contains three things: 1\&.) Object class name (as specified by input file) 2\&.) Vector of keyword names 3\&.) Vector of keyword values\&. Each entry in the vector of values is also a vector\&. This allows the definition of lists\&. A list will be as long as it needs to be for specification of all values in the list\&. The index of the value is specified by its position in the vector list\&. The value is the entry\&. \fP"
+.ti -1c
+.RI "class \fBParser\fP"
+.br
+.RI "\fIThe \fBParser\fP class takes an input segment of strings and segments that segment\&. It strips out comments\&. It recognizes quotation marks and groups those segments together\&. \fBParser\fP finally returns a series of \fBObjectGroup\fP objects\&. Each \fBObjectGroup\fP contains the classname and a list of keyword value pairs\&. \fP"
+.in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef std::vector
+.br
+< std::vector< std::string > > \fBvecValue\fP"
+.br
+.RI "\fIType definition used to store key values\&. Must be a vector of vectors because a value may also be a list of values\&. \fP"
+.ti -1c
+.RI "typedef std::vector< std::string > \fBvecKeyword\fP"
+.br
+.RI "\fIType defintion used to store keywords\&. \fP"
+.ti -1c
+.RI "typedef std::vector
+.br
+< \fBObjectGroup\fP * > \fBvecObject\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+The namespace for all code created under the OpenSEA project\&. There are also several sub-namespaces, one associated with each primary program under osea\&. 1\&.) ohydro: Code associated with the program ohydro\&. 2\&.) ofreq: Code associated with the program ofreq\&. 3\&.) otime: Code associated with the program otime\&. 4\&.) ofourier: Code associated with the program ofourier\&. 5\&.) obatch: Code associated with the program obatch\&. 6\&.) guisea: Code assocaited with the GUI that interacts with all OpenSEA programs\&. Any code that may have common utility amongst all programs, such as file reading objects, goes under the generic osea namespace\&. Any code that is only useful within the specific program it serves, goes under the specific namespace\&. When in doubt, default to just the osea namespace\&.
+.PP
+The namespaces are not intended to create an organizational structure\&. They are only intended to prevent name conflicts\&. 
+.SH "Typedef Documentation"
+.PP 
+.SS "typedef std::vector< std::string > \fBosea::vecKeyword\fP"
+
+.PP
+Type defintion used to store keywords\&. 
+.PP
+Definition at line 83 of file objectgroup\&.h\&.
+.SS "typedef std::vector<\fBObjectGroup\fP*> \fBosea::vecObject\fP"
+
+.PP
+Definition at line 85 of file objectgroup\&.h\&.
+.SS "typedef std::vector< std::vector< std::string > > \fBosea::vecValue\fP"
+
+.PP
+Type definition used to store key values\&. Must be a vector of vectors because a value may also be a list of values\&. 
+.PP
+Definition at line 70 of file objectgroup\&.h\&.
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for oFreq from the source code\&.

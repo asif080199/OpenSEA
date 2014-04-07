@@ -1,0 +1,23 @@
+/**
+\page UML_Process UML Process Diagrams
+
+# Header 1
+
+\subpage UML_Overall
+
+\subpage UML_Filereader
+
+\subpage UML_WritingFiles
+
+\subpage UML_MotionModel
+
+\subpage UML_MotionSolver
+
+\subpage UML_ResonantSolver
+
+\subpage UML_WaveCalculation
+
+\subpage UML_OutputsCalculation
+
+
+*/

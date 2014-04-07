@@ -1,0 +1,324 @@
+\hypertarget{ofreq_8cpp}{\section{/home/\-Ship\-\_\-\-Design/\-Projects/\-D\-M\-S1305 Open\-S\-E\-A/master/200\-\_\-src/bin/ofreq/ofreq.cpp File Reference}
+\label{ofreq_8cpp}\index{/home/\-Ship\-\_\-\-Design/\-Projects/\-D\-M\-S1305 Open\-S\-E\-A/master/200\-\_\-src/bin/ofreq/ofreq.\-cpp@{/home/\-Ship\-\_\-\-Design/\-Projects/\-D\-M\-S1305 Open\-S\-E\-A/master/200\-\_\-src/bin/ofreq/ofreq.\-cpp}}
+}
+{\ttfamily \#include $<$Q\-Core\-Application$>$}\\*
+{\ttfamily \#include \char`\"{}./motion\-\_\-solver/motionsolver.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}./motion\-\_\-model/motionmodel.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}./motion\-\_\-solver/matbody.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}./motion\-\_\-solver/matforceactive.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}./motion\-\_\-solver/matforcecross.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}./motion\-\_\-solver/matforcereact.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}./file\-\_\-writer/filewriter.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}./derived\-\_\-outputs/outputsbody.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}./global\-\_\-objects/solutionset.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}./global\-\_\-objects/solution.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}./global\-\_\-objects/system.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}./file\-\_\-reader/dictcontrol.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}./file\-\_\-reader/dictforces.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}./file\-\_\-reader/dictbodies.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}./file\-\_\-reader/filereader.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}./global\-\_\-objects/ofreqcore.\-h\char`\"{}}\\*
+{\ttfamily \#include $<$string$>$}\\*
+{\ttfamily \#include $<$iostream$>$}\\*
+{\ttfamily \#include $<$fstream$>$}\\*
+{\ttfamily \#include $<$stdio.\-h$>$}\\*
+{\ttfamily \#include $<$Qt\-Global$>$}\\*
+{\ttfamily \#include \char`\"{}./motion\-\_\-model/model6dof.\-h\char`\"{}}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{ofreq_8cpp_ae4f5357a8bd0350f803c714b4ee65e5f}{build\-Mat\-Body} (int bod, bool use\-Coeff=true)
+\begin{DoxyCompactList}\small\item\em Builds a matrix body object for the body specified by the integer. Uses the motion model identified by the Body object. \end{DoxyCompactList}\item 
+void \hyperlink{ofreq_8cpp_a1d0ef4483ecbdad9fca66d078cf77b84}{calc\-Output} (\hyperlink{classosea_1_1ofreq_1_1_outputs_body}{Outputs\-Body} \&Output\-In, \hyperlink{classosea_1_1ofreq_1_1_file_writer}{File\-Writer} \&Writer\-In)
+\begin{DoxyCompactList}\small\item\em Calculates derived outputs using the Outputs\-Body object and then writes those outputs to files. \end{DoxyCompactList}\item 
+void \hyperlink{ofreq_8cpp_a05c644f110f0266e88c9166f5195d094}{Read\-Files} (string run\-Path)
+\begin{DoxyCompactList}\small\item\em Reads in all the input files. Creates the necessary objects for file reading. And connects those objects using Qt slots and signals. Finally proceeds through each file and reads it. All parsing is accomplished by the File\-Reader object. File interpretation is processed through the Dictionary objects. \end{DoxyCompactList}\item 
+std\-::string \hyperlink{ofreq_8cpp_aa6c822b97be0f88ca8a9dddea5f196b0}{get\-Path} (std\-::string type\-Path=\char`\"{}exec\char`\"{})
+\begin{DoxyCompactList}\small\item\em Finds the path of the critical files for the program. \end{DoxyCompactList}\item 
+int \hyperlink{ofreq_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{main} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em The main function that runs ofreq program. \end{DoxyCompactList}\item 
+std\-::string \hyperlink{ofreq_8cpp_a7cee39a8534ed20d363192598547c15c}{get\-Path} (string type\-Path)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+vector$<$ \hyperlink{classosea_1_1ofreq_1_1mat_body}{mat\-Body} $>$ \hyperlink{ofreq_8cpp_ae65a6f04a567a61bbf157f9248467c32}{list\-Mat\-Body}
+\item 
+vector$<$ \hyperlink{classosea_1_1ofreq_1_1_solution_set}{Solution\-Set} $>$ \hyperlink{ofreq_8cpp_a8967aa91b78cde6625abafa790db9c8d}{list\-Solutions}
+\item 
+\hyperlink{classosea_1_1ofreq_1_1_system}{System} \hyperlink{ofreq_8cpp_ab1060ec8f360c6324a22e6f43acb4ccd}{sysofreq}
+\item 
+\hyperlink{classosea_1_1ofreq_1_1o_freq_core}{o\-Freq\-Core} \hyperlink{ofreq_8cpp_ab6ce5496066a07cb8fa3e86e2feebcde}{Logs}
+\item 
+const std\-::string \hyperlink{ofreq_8cpp_a97f3298c7a3de4c0adbe043daf57fcff}{E\-X\-E\-C\-N\-A\-M\-E} = \char`\"{}ofreq\char`\"{}
+\item 
+const std\-::string \hyperlink{ofreq_8cpp_aadc9c75a375cb02cea99400bc6e27b8c}{E\-X\-E\-C\-F\-O\-L\-D\-E\-R} = \char`\"{}ofreq\-\_\-debug\char`\"{}
+\item 
+const std\-::string \hyperlink{ofreq_8cpp_a6ad03e17fc12b15e30440e9bbc2dc560}{V\-A\-R\-F\-O\-L\-D\-E\-R} = \char`\"{}var\char`\"{}
+\item 
+const std\-::string \hyperlink{ofreq_8cpp_a0d217227c3aae1ccf7c5055fcb5b2b38}{L\-I\-B\-F\-O\-L\-D\-E\-R} = \char`\"{}lib\char`\"{}
+\item 
+const std\-::string \hyperlink{ofreq_8cpp_a4dd0d2c507c9def72ef7f5bd3c56dcdf}{E\-T\-C\-F\-O\-L\-D\-E\-R} = \char`\"{}etc\char`\"{}
+\item 
+const std\-::string \hyperlink{ofreq_8cpp_a722a56f99cbece2de0f9cb4917e23c2a}{B\-I\-N\-F\-O\-L\-D\-E\-R} = \char`\"{}bin\char`\"{}
+\item 
+string \hyperlink{ofreq_8cpp_a65afce74b09b37ba07fcaca80a62dfed}{o\-Freq\-\_\-\-Directory} = \char`\"{}\char`\"{}
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{ofreq_8cpp_ae4f5357a8bd0350f803c714b4ee65e5f}{\index{ofreq.\-cpp@{ofreq.\-cpp}!build\-Mat\-Body@{build\-Mat\-Body}}
+\index{build\-Mat\-Body@{build\-Mat\-Body}!ofreq.cpp@{ofreq.\-cpp}}
+\subsubsection[{build\-Mat\-Body}]{\setlength{\rightskip}{0pt plus 5cm}void build\-Mat\-Body (
+\begin{DoxyParamCaption}
+\item[{int}]{bod, }
+\item[{bool}]{use\-Coeff = {\ttfamily true}}
+\end{DoxyParamCaption}
+)}}\label{ofreq_8cpp_ae4f5357a8bd0350f803c714b4ee65e5f}
+
+
+Builds a matrix body object for the body specified by the integer. Uses the motion model identified by the Body object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em bod} & Which body to use for building the matix body. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns a mat\-Body object, fully provisioned with all necessary data. 
+\end{DoxyReturn}
+
+
+Definition at line 352 of file ofreq.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{ofreq_8cpp_ae4f5357a8bd0350f803c714b4ee65e5f_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{ofreq_8cpp_a1d0ef4483ecbdad9fca66d078cf77b84}{\index{ofreq.\-cpp@{ofreq.\-cpp}!calc\-Output@{calc\-Output}}
+\index{calc\-Output@{calc\-Output}!ofreq.cpp@{ofreq.\-cpp}}
+\subsubsection[{calc\-Output}]{\setlength{\rightskip}{0pt plus 5cm}void calc\-Output (
+\begin{DoxyParamCaption}
+\item[{{\bf Outputs\-Body} \&}]{Output\-In, }
+\item[{{\bf File\-Writer} \&}]{Writer\-In}
+\end{DoxyParamCaption}
+)}}\label{ofreq_8cpp_a1d0ef4483ecbdad9fca66d078cf77b84}
+
+
+Calculates derived outputs using the Outputs\-Body object and then writes those outputs to files. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Output\-In} & The Outputs\-Body object that will calculate the derived outputs. All properties for the Outputs\-Body object must be set by the time the function is called. Variable passed by reference. \\
+\hline
+{\em Writer\-In} & The File\-Writer object that will receive the outputs from the Outputs\-Body object and write those outputs to a file. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 520 of file ofreq.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=342pt]{ofreq_8cpp_a1d0ef4483ecbdad9fca66d078cf77b84_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{ofreq_8cpp_aa6c822b97be0f88ca8a9dddea5f196b0}{\index{ofreq.\-cpp@{ofreq.\-cpp}!get\-Path@{get\-Path}}
+\index{get\-Path@{get\-Path}!ofreq.cpp@{ofreq.\-cpp}}
+\subsubsection[{get\-Path}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string get\-Path (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{type\-Path = {\ttfamily \char`\"{}exec\char`\"{}}}
+\end{DoxyParamCaption}
+)}}\label{ofreq_8cpp_aa6c822b97be0f88ca8a9dddea5f196b0}
+
+
+Finds the path of the critical files for the program. 
+
+Finds the path of one of four possible folders that are critical to the o\-Sea program. Includes platform dependant code so that this function should work both under Windows or Linux. 
+\begin{DoxyParams}{Parameters}
+{\em type\-Path} & String that specifies which path to get. Options are\-: \char`\"{}exec\char`\"{}\-: Path to the directory of the executable file. N\-O\-T the directory the program was called from. \char`\"{}lib\char`\"{}\-: Path to the lib directory that is common to all o\-Sea programs. \char`\"{}var\char`\"{}\-: Path to the var directory that is common to all o\-Sea programs. \char`\"{}etc\char`\"{}\-: Path to the etc directory that is common to all o\-Sea programs. \char`\"{}bin\char`\"{}\-: Path to the binaries directory. Binaries for individual programs are included in sub folders. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns std\-::string that is the full absolute path to the specified . Returned variable passed by value. 
+\end{DoxyReturn}
+\hypertarget{ofreq_8cpp_a7cee39a8534ed20d363192598547c15c}{\index{ofreq.\-cpp@{ofreq.\-cpp}!get\-Path@{get\-Path}}
+\index{get\-Path@{get\-Path}!ofreq.cpp@{ofreq.\-cpp}}
+\subsubsection[{get\-Path}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string get\-Path (
+\begin{DoxyParamCaption}
+\item[{string}]{type\-Path}
+\end{DoxyParamCaption}
+)}}\label{ofreq_8cpp_a7cee39a8534ed20d363192598547c15c}
+
+
+Definition at line 626 of file ofreq.\-cpp.
+
+\hypertarget{ofreq_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{\index{ofreq.\-cpp@{ofreq.\-cpp}!main@{main}}
+\index{main@{main}!ofreq.cpp@{ofreq.\-cpp}}
+\subsubsection[{main}]{\setlength{\rightskip}{0pt plus 5cm}int main (
+\begin{DoxyParamCaption}
+\item[{int}]{argc, }
+\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+)}}\label{ofreq_8cpp_a0ddf1224851353fc92bfbff6f499fa97}
+
+
+The main function that runs ofreq program. 
+
+The main function that runs ofreq program. It proceeds through in several stages. This briefly outlines them. 0. Initialize a few variables.
+\begin{DoxyEnumerate}
+\item Read in input files.
+\item Interpret / parse input files and use them to build the program objects.
+\item Use the motion model to convert input objects into matrix force objects. The particular motion model used changes with each Body object.
+\item Setup the motion solver. Feed all the data in.
+\item Set the operating frequency and use the motion solver to solve equations of motion.
+\item Store results in Solution object.
+\item Repeat steps 4 through 6 for each wave direction and wave frequency.
+\item Use the results to calculate derived outputs.
+\item Write the calculated outputs to output files. 
+\end{DoxyEnumerate}
+
+Definition at line 189 of file ofreq.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{ofreq_8cpp_a0ddf1224851353fc92bfbff6f499fa97_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{ofreq_8cpp_a05c644f110f0266e88c9166f5195d094}{\index{ofreq.\-cpp@{ofreq.\-cpp}!Read\-Files@{Read\-Files}}
+\index{Read\-Files@{Read\-Files}!ofreq.cpp@{ofreq.\-cpp}}
+\subsubsection[{Read\-Files}]{\setlength{\rightskip}{0pt plus 5cm}void Read\-Files (
+\begin{DoxyParamCaption}
+\item[{string}]{run\-Path}
+\end{DoxyParamCaption}
+)}}\label{ofreq_8cpp_a05c644f110f0266e88c9166f5195d094}
+
+
+Reads in all the input files. Creates the necessary objects for file reading. And connects those objects using Qt slots and signals. Finally proceeds through each file and reads it. All parsing is accomplished by the File\-Reader object. File interpretation is processed through the Dictionary objects. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em run\-Path} & String. The path to the root directory of the input files. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See Also}
+Dictionary 
+\end{DoxySeeAlso}
+
+
+Definition at line 597 of file ofreq.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{ofreq_8cpp_a05c644f110f0266e88c9166f5195d094_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Variable Documentation}
+\hypertarget{ofreq_8cpp_a722a56f99cbece2de0f9cb4917e23c2a}{\index{ofreq.\-cpp@{ofreq.\-cpp}!B\-I\-N\-F\-O\-L\-D\-E\-R@{B\-I\-N\-F\-O\-L\-D\-E\-R}}
+\index{B\-I\-N\-F\-O\-L\-D\-E\-R@{B\-I\-N\-F\-O\-L\-D\-E\-R}!ofreq.cpp@{ofreq.\-cpp}}
+\subsubsection[{B\-I\-N\-F\-O\-L\-D\-E\-R}]{\setlength{\rightskip}{0pt plus 5cm}const std\-::string B\-I\-N\-F\-O\-L\-D\-E\-R = \char`\"{}bin\char`\"{}}}\label{ofreq_8cpp_a722a56f99cbece2de0f9cb4917e23c2a}
+
+
+Definition at line 110 of file ofreq.\-cpp.
+
+\hypertarget{ofreq_8cpp_a4dd0d2c507c9def72ef7f5bd3c56dcdf}{\index{ofreq.\-cpp@{ofreq.\-cpp}!E\-T\-C\-F\-O\-L\-D\-E\-R@{E\-T\-C\-F\-O\-L\-D\-E\-R}}
+\index{E\-T\-C\-F\-O\-L\-D\-E\-R@{E\-T\-C\-F\-O\-L\-D\-E\-R}!ofreq.cpp@{ofreq.\-cpp}}
+\subsubsection[{E\-T\-C\-F\-O\-L\-D\-E\-R}]{\setlength{\rightskip}{0pt plus 5cm}const std\-::string E\-T\-C\-F\-O\-L\-D\-E\-R = \char`\"{}etc\char`\"{}}}\label{ofreq_8cpp_a4dd0d2c507c9def72ef7f5bd3c56dcdf}
+
+
+Definition at line 107 of file ofreq.\-cpp.
+
+\hypertarget{ofreq_8cpp_aadc9c75a375cb02cea99400bc6e27b8c}{\index{ofreq.\-cpp@{ofreq.\-cpp}!E\-X\-E\-C\-F\-O\-L\-D\-E\-R@{E\-X\-E\-C\-F\-O\-L\-D\-E\-R}}
+\index{E\-X\-E\-C\-F\-O\-L\-D\-E\-R@{E\-X\-E\-C\-F\-O\-L\-D\-E\-R}!ofreq.cpp@{ofreq.\-cpp}}
+\subsubsection[{E\-X\-E\-C\-F\-O\-L\-D\-E\-R}]{\setlength{\rightskip}{0pt plus 5cm}const std\-::string E\-X\-E\-C\-F\-O\-L\-D\-E\-R = \char`\"{}ofreq\-\_\-debug\char`\"{}}}\label{ofreq_8cpp_aadc9c75a375cb02cea99400bc6e27b8c}
+
+
+Definition at line 98 of file ofreq.\-cpp.
+
+\hypertarget{ofreq_8cpp_a97f3298c7a3de4c0adbe043daf57fcff}{\index{ofreq.\-cpp@{ofreq.\-cpp}!E\-X\-E\-C\-N\-A\-M\-E@{E\-X\-E\-C\-N\-A\-M\-E}}
+\index{E\-X\-E\-C\-N\-A\-M\-E@{E\-X\-E\-C\-N\-A\-M\-E}!ofreq.cpp@{ofreq.\-cpp}}
+\subsubsection[{E\-X\-E\-C\-N\-A\-M\-E}]{\setlength{\rightskip}{0pt plus 5cm}const std\-::string E\-X\-E\-C\-N\-A\-M\-E = \char`\"{}ofreq\char`\"{}}}\label{ofreq_8cpp_a97f3298c7a3de4c0adbe043daf57fcff}
+
+
+Definition at line 95 of file ofreq.\-cpp.
+
+\hypertarget{ofreq_8cpp_a0d217227c3aae1ccf7c5055fcb5b2b38}{\index{ofreq.\-cpp@{ofreq.\-cpp}!L\-I\-B\-F\-O\-L\-D\-E\-R@{L\-I\-B\-F\-O\-L\-D\-E\-R}}
+\index{L\-I\-B\-F\-O\-L\-D\-E\-R@{L\-I\-B\-F\-O\-L\-D\-E\-R}!ofreq.cpp@{ofreq.\-cpp}}
+\subsubsection[{L\-I\-B\-F\-O\-L\-D\-E\-R}]{\setlength{\rightskip}{0pt plus 5cm}const std\-::string L\-I\-B\-F\-O\-L\-D\-E\-R = \char`\"{}lib\char`\"{}}}\label{ofreq_8cpp_a0d217227c3aae1ccf7c5055fcb5b2b38}
+
+
+Definition at line 104 of file ofreq.\-cpp.
+
+\hypertarget{ofreq_8cpp_ae65a6f04a567a61bbf157f9248467c32}{\index{ofreq.\-cpp@{ofreq.\-cpp}!list\-Mat\-Body@{list\-Mat\-Body}}
+\index{list\-Mat\-Body@{list\-Mat\-Body}!ofreq.cpp@{ofreq.\-cpp}}
+\subsubsection[{list\-Mat\-Body}]{\setlength{\rightskip}{0pt plus 5cm}vector$<${\bf mat\-Body}$>$ list\-Mat\-Body}}\label{ofreq_8cpp_ae65a6f04a567a61bbf157f9248467c32}
+
+
+Definition at line 83 of file ofreq.\-cpp.
+
+\hypertarget{ofreq_8cpp_a8967aa91b78cde6625abafa790db9c8d}{\index{ofreq.\-cpp@{ofreq.\-cpp}!list\-Solutions@{list\-Solutions}}
+\index{list\-Solutions@{list\-Solutions}!ofreq.cpp@{ofreq.\-cpp}}
+\subsubsection[{list\-Solutions}]{\setlength{\rightskip}{0pt plus 5cm}vector$<${\bf Solution\-Set}$>$ list\-Solutions}}\label{ofreq_8cpp_a8967aa91b78cde6625abafa790db9c8d}
+
+
+Definition at line 86 of file ofreq.\-cpp.
+
+\hypertarget{ofreq_8cpp_ab6ce5496066a07cb8fa3e86e2feebcde}{\index{ofreq.\-cpp@{ofreq.\-cpp}!Logs@{Logs}}
+\index{Logs@{Logs}!ofreq.cpp@{ofreq.\-cpp}}
+\subsubsection[{Logs}]{\setlength{\rightskip}{0pt plus 5cm}{\bf o\-Freq\-Core} Logs}}\label{ofreq_8cpp_ab6ce5496066a07cb8fa3e86e2feebcde}
+
+
+Definition at line 92 of file ofreq.\-cpp.
+
+\hypertarget{ofreq_8cpp_a65afce74b09b37ba07fcaca80a62dfed}{\index{ofreq.\-cpp@{ofreq.\-cpp}!o\-Freq\-\_\-\-Directory@{o\-Freq\-\_\-\-Directory}}
+\index{o\-Freq\-\_\-\-Directory@{o\-Freq\-\_\-\-Directory}!ofreq.cpp@{ofreq.\-cpp}}
+\subsubsection[{o\-Freq\-\_\-\-Directory}]{\setlength{\rightskip}{0pt plus 5cm}string o\-Freq\-\_\-\-Directory = \char`\"{}\char`\"{}}}\label{ofreq_8cpp_a65afce74b09b37ba07fcaca80a62dfed}
+
+
+Definition at line 169 of file ofreq.\-cpp.
+
+\hypertarget{ofreq_8cpp_ab1060ec8f360c6324a22e6f43acb4ccd}{\index{ofreq.\-cpp@{ofreq.\-cpp}!sysofreq@{sysofreq}}
+\index{sysofreq@{sysofreq}!ofreq.cpp@{ofreq.\-cpp}}
+\subsubsection[{sysofreq}]{\setlength{\rightskip}{0pt plus 5cm}{\bf System} sysofreq}}\label{ofreq_8cpp_ab1060ec8f360c6324a22e6f43acb4ccd}
+
+
+Definition at line 89 of file ofreq.\-cpp.
+
+\hypertarget{ofreq_8cpp_a6ad03e17fc12b15e30440e9bbc2dc560}{\index{ofreq.\-cpp@{ofreq.\-cpp}!V\-A\-R\-F\-O\-L\-D\-E\-R@{V\-A\-R\-F\-O\-L\-D\-E\-R}}
+\index{V\-A\-R\-F\-O\-L\-D\-E\-R@{V\-A\-R\-F\-O\-L\-D\-E\-R}!ofreq.cpp@{ofreq.\-cpp}}
+\subsubsection[{V\-A\-R\-F\-O\-L\-D\-E\-R}]{\setlength{\rightskip}{0pt plus 5cm}const std\-::string V\-A\-R\-F\-O\-L\-D\-E\-R = \char`\"{}var\char`\"{}}}\label{ofreq_8cpp_a6ad03e17fc12b15e30440e9bbc2dc560}
+
+
+Definition at line 101 of file ofreq.\-cpp.
+

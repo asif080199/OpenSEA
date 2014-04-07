@@ -1,0 +1,129 @@
+\hypertarget{classosea_1_1ofreq_1_1_global_motion}{\section{osea\-:\-:ofreq\-:\-:Global\-Motion Class Reference}
+\label{classosea_1_1ofreq_1_1_global_motion}\index{osea\-::ofreq\-::\-Global\-Motion@{osea\-::ofreq\-::\-Global\-Motion}}
+}
+
+
+{\ttfamily \#include $<$globalmotion.\-h$>$}
+
+
+
+Inheritance diagram for osea\-:\-:ofreq\-:\-:Global\-Motion\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=236pt]{classosea_1_1ofreq_1_1_global_motion__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classosea_1_1ofreq_1_1_global_motion_afe0b801895608782addf27d231bce572}{Global\-Motion} ()
+\item 
+\hyperlink{classosea_1_1ofreq_1_1_global_motion_ae7155de9b1cb90cbd1d36e7714c1a3ce}{Global\-Motion} (\hyperlink{classosea_1_1ofreq_1_1_outputs_body}{Outputs\-Body} $\ast$input)
+\begin{DoxyCompactList}\small\item\em Constructor that also sets the pointer to the \hyperlink{classosea_1_1ofreq_1_1_outputs_body}{Outputs\-Body} object which contains the \hyperlink{classosea_1_1ofreq_1_1_output_derived}{Output\-Derived} object. \end{DoxyCompactList}\item 
+\hyperlink{classosea_1_1ofreq_1_1_global_motion_aee21eade3de9cb666a6b8fa42cf1e9e1}{$\sim$\-Global\-Motion} ()
+\item 
+void \hyperlink{classosea_1_1ofreq_1_1_global_motion_a15a8c0d57ffedf65a1cd84154cdaa6ae}{set\-Derivative} (int ord)
+\begin{DoxyCompactList}\small\item\em Sets the order of the derivative for the object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+This class represents the Global Motion \hyperlink{classosea_1_1ofreq_1_1_solution}{Solution}. 
+
+Definition at line 84 of file globalmotion.\-h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classosea_1_1ofreq_1_1_global_motion_afe0b801895608782addf27d231bce572}{\index{osea\-::ofreq\-::\-Global\-Motion@{osea\-::ofreq\-::\-Global\-Motion}!Global\-Motion@{Global\-Motion}}
+\index{Global\-Motion@{Global\-Motion}!osea::ofreq::GlobalMotion@{osea\-::ofreq\-::\-Global\-Motion}}
+\subsubsection[{Global\-Motion}]{\setlength{\rightskip}{0pt plus 5cm}Global\-Motion\-::\-Global\-Motion (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_global_motion_afe0b801895608782addf27d231bce572}
+This default constructor creates a Global Motion object. 
+
+Definition at line 41 of file globalmotion.\-cpp.
+
+\hypertarget{classosea_1_1ofreq_1_1_global_motion_ae7155de9b1cb90cbd1d36e7714c1a3ce}{\index{osea\-::ofreq\-::\-Global\-Motion@{osea\-::ofreq\-::\-Global\-Motion}!Global\-Motion@{Global\-Motion}}
+\index{Global\-Motion@{Global\-Motion}!osea::ofreq::GlobalMotion@{osea\-::ofreq\-::\-Global\-Motion}}
+\subsubsection[{Global\-Motion}]{\setlength{\rightskip}{0pt plus 5cm}Global\-Motion\-::\-Global\-Motion (
+\begin{DoxyParamCaption}
+\item[{{\bf Outputs\-Body} $\ast$}]{input}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_global_motion_ae7155de9b1cb90cbd1d36e7714c1a3ce}
+
+
+Constructor that also sets the pointer to the \hyperlink{classosea_1_1ofreq_1_1_outputs_body}{Outputs\-Body} object which contains the \hyperlink{classosea_1_1ofreq_1_1_output_derived}{Output\-Derived} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em input} & Pointer to the \hyperlink{classosea_1_1ofreq_1_1_outputs_body}{Outputs\-Body} objec that contains this \hyperlink{classosea_1_1ofreq_1_1_output_derived}{Output\-Derived} object. Pointer passed by value.\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See Also}
+set\-Outputs\-Body() 
+\end{DoxySeeAlso}
+
+
+Definition at line 50 of file globalmotion.\-cpp.
+
+\hypertarget{classosea_1_1ofreq_1_1_global_motion_aee21eade3de9cb666a6b8fa42cf1e9e1}{\index{osea\-::ofreq\-::\-Global\-Motion@{osea\-::ofreq\-::\-Global\-Motion}!$\sim$\-Global\-Motion@{$\sim$\-Global\-Motion}}
+\index{$\sim$\-Global\-Motion@{$\sim$\-Global\-Motion}!osea::ofreq::GlobalMotion@{osea\-::ofreq\-::\-Global\-Motion}}
+\subsubsection[{$\sim$\-Global\-Motion}]{\setlength{\rightskip}{0pt plus 5cm}Global\-Motion\-::$\sim$\-Global\-Motion (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_global_motion_aee21eade3de9cb666a6b8fa42cf1e9e1}
+The default destructor, nothing happens here. 
+
+Definition at line 59 of file globalmotion.\-cpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classosea_1_1ofreq_1_1_global_motion_a15a8c0d57ffedf65a1cd84154cdaa6ae}{\index{osea\-::ofreq\-::\-Global\-Motion@{osea\-::ofreq\-::\-Global\-Motion}!set\-Derivative@{set\-Derivative}}
+\index{set\-Derivative@{set\-Derivative}!osea::ofreq::GlobalMotion@{osea\-::ofreq\-::\-Global\-Motion}}
+\subsubsection[{set\-Derivative}]{\setlength{\rightskip}{0pt plus 5cm}void Global\-Motion\-::set\-Derivative (
+\begin{DoxyParamCaption}
+\item[{int}]{ord}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classosea_1_1ofreq_1_1_global_motion_a15a8c0d57ffedf65a1cd84154cdaa6ae}
+
+
+Sets the order of the derivative for the object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ord} & Integer input that specifies the order of the derivative. Value can be anything from 0 or larger. Variable is passed by value. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classosea_1_1ofreq_1_1_global_solution_a537163391f1f55d073720b20f69acfa5}{osea\-::ofreq\-::\-Global\-Solution}.
+
+
+
+Definition at line 64 of file globalmotion.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classosea_1_1ofreq_1_1_global_motion_a15a8c0d57ffedf65a1cd84154cdaa6ae_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/home/\-Ship\-\_\-\-Design/\-Projects/\-D\-M\-S1305 Open\-S\-E\-A/master/200\-\_\-src/bin/ofreq/derived\-\_\-outputs/\hyperlink{globalmotion_8h}{globalmotion.\-h}\item 
+/home/\-Ship\-\_\-\-Design/\-Projects/\-D\-M\-S1305 Open\-S\-E\-A/master/200\-\_\-src/bin/ofreq/derived\-\_\-outputs/\hyperlink{globalmotion_8cpp}{globalmotion.\-cpp}\end{DoxyCompactItemize}

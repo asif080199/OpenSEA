@@ -1,0 +1,1326 @@
+.TH "osea::ofreq::MotionModel" 3 "Sat Apr 5 2014" "Version 0.4" "oFreq" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+osea::ofreq::MotionModel \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <motionmodel\&.h>\fP
+.PP
+Inherits \fBosea::ofreq::oFreqCore\fP\&.
+.PP
+Inherited by \fBosea::ofreq::Model6DOF\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBMotionModel\fP ()"
+.br
+.ti -1c
+.RI "\fBMotionModel\fP (std::vector< \fBBody\fP > &listBodIn)"
+.br
+.RI "\fIConstructor\&. This is the preferred constructor as it supplies the body data\&. \fP"
+.ti -1c
+.RI "virtual \fB~MotionModel\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetlistBody\fP (std::vector< \fBBody\fP > &listBodIn)"
+.br
+.RI "\fIInputs the list of body data\&. \fP"
+.ti -1c
+.RI "void \fBsetBody\fP (int bod)"
+.br
+.RI "\fISets the index for the body that all calculations are based on\&. \fP"
+.ti -1c
+.RI "int \fBgetBody\fP ()"
+.br
+.RI "\fIGets the index for the body that all calculations are based on\&. \fP"
+.ti -1c
+.RI "bool & \fBCoefficientOnly\fP ()"
+.br
+.RI "\fIDetermines whether the class should calculate force coefficients or actual force values\&. True = Calculate force coefficients only\&. False = Calculate force values\&. Default = (False) Calculate force values\&. \fP"
+.ti -1c
+.RI "bool \fBgetActiveOnly\fP ()"
+.br
+.RI "\fIBoolean to track whether only the active forces are requested\&. \fP"
+.ti -1c
+.RI "std::vector< int > & \fBlistCompCrossBod_hydro\fP ()"
+.br
+.RI "\fIRecords the index of the body object referenced by the cross body\&. \fP"
+.ti -1c
+.RI "int & \fBlistCompCrossBod_hydro\fP (int crossbodIn)"
+.br
+.RI "\fIRecords the index of the body object referenced by the cross body\&. \fP"
+.ti -1c
+.RI "std::vector< int > & \fBlistCompCrossBod_user\fP ()"
+.br
+.RI "\fIRecords the index of the body object referenced by the cross body\&. \fP"
+.ti -1c
+.RI "int & \fBlistCompCrossBod_user\fP (int crossbodIn)"
+.br
+.RI "\fIRecords the index of the body object referenced by the cross body\&. \fP"
+.ti -1c
+.RI "void \fBReset\fP ()"
+.br
+.RI "\fIResets the class data to have all input coefficients\&. Any evaluation after a reset will produce a value of zero\&. \fBForce\fP coefficients will be zero and force values will be zero\&. \fP"
+.ti -1c
+.RI "void \fBsetFreq\fP (double freq)"
+.br
+.RI "\fISets the current operating frequency for the function\&. Only necessary when calculating true forces and using derivatives defined in the motion model\&. Otherwise, you can safely ignore this function\&. \fP"
+.ti -1c
+.RI "double \fBgetFreq\fP ()"
+.br
+.RI "\fIGets the current operating frequency for the function\&. Only necessary when calculating true forces and using derivatives defined in the motion model\&. Otherwise, you can safely ignore this function\&. \fP"
+.ti -1c
+.RI "void \fBuseForceActive_user\fP (unsigned int force, unsigned int eqn)"
+.br
+.RI "\fIPasses information to the object to use input coefficients from the entry specified\&. \fP"
+.ti -1c
+.RI "void \fBuseForceActive_user\fP (unsigned int force)"
+.br
+.RI "\fIPasses information to the object to use input coefficients from the entry specified\&. \fP"
+.ti -1c
+.RI "void \fBuseForceActive_user\fP ()"
+.br
+.RI "\fIPasses information to the object to use input coefficients from the entry specified\&. \fP"
+.ti -1c
+.RI "void \fBuseForceActive_hydro\fP (unsigned int force, unsigned int eqn)"
+.br
+.RI "\fIPasses information to the object to use input coefficients from the entry specified\&. \fP"
+.ti -1c
+.RI "void \fBuseForceActive_hydro\fP (unsigned int force)"
+.br
+.RI "\fIPasses information to the object to use input coefficients from the entry specified\&. \fP"
+.ti -1c
+.RI "void \fBuseForceActive_hydro\fP ()"
+.br
+.RI "\fIPasses information to the object to use input coefficients from the entry specified\&. \fP"
+.ti -1c
+.RI "void \fBuseForceReact_user\fP (unsigned int force, unsigned int ord, unsigned int eqn, unsigned int var)"
+.br
+.RI "\fIPasses information to the object to use input coefficients from the entry specified\&. \fP"
+.ti -1c
+.RI "void \fBuseForceReact_user\fP (unsigned int force, unsigned int ord, unsigned int eqn)"
+.br
+.RI "\fIPasses information to the object to use input coefficients from the entry specified\&. \fP"
+.ti -1c
+.RI "void \fBuseForceReact_user\fP (unsigned int force, unsigned int ord)"
+.br
+.RI "\fIPasses information to the object to use input coefficients from the entry specified\&. \fP"
+.ti -1c
+.RI "void \fBuseForceReact_user\fP (unsigned int force)"
+.br
+.RI "\fIPasses information to the object to use input coefficients from the entry specified\&. \fP"
+.ti -1c
+.RI "void \fBuseForceReact_user\fP ()"
+.br
+.RI "\fIPasses information to the object to use input coefficients from the entry specified\&. \fP"
+.ti -1c
+.RI "void \fBuseForceReact_hydro\fP (unsigned int force, unsigned int ord, unsigned int eqn, unsigned int var)"
+.br
+.RI "\fIPasses information to the object to use input coefficients from the entry specified\&. \fP"
+.ti -1c
+.RI "void \fBuseForceReact_hydro\fP (unsigned int force, unsigned int ord, unsigned int eqn)"
+.br
+.RI "\fIPasses information to the object to use input coefficients from the entry specified\&. \fP"
+.ti -1c
+.RI "void \fBuseForceReact_hydro\fP (unsigned int force, unsigned int ord)"
+.br
+.RI "\fIPasses information to the object to use input coefficients from the entry specified\&. \fP"
+.ti -1c
+.RI "void \fBuseForceReact_hydro\fP (unsigned int force)"
+.br
+.RI "\fIPasses information to the object to use input coefficients from the entry specified\&. \fP"
+.ti -1c
+.RI "void \fBuseForceReact_hydro\fP ()"
+.br
+.RI "\fIPasses information to the object to use input coefficients from the entry specified\&. \fP"
+.ti -1c
+.RI "void \fBuseForceCross_user\fP (unsigned int force, unsigned int ord, unsigned int eqn, unsigned int var)"
+.br
+.RI "\fIPasses information to the object to use input coefficients from the entry specified\&. \fP"
+.ti -1c
+.RI "void \fBuseForceCross_user\fP (unsigned int force, unsigned int ord, unsigned int eqn)"
+.br
+.RI "\fIPasses information to the object to use input coefficients from the entry specified\&. \fP"
+.ti -1c
+.RI "void \fBuseForceCross_user\fP (unsigned int force, unsigned int ord)"
+.br
+.RI "\fIPasses information to the object to use input coefficients from the entry specified\&. \fP"
+.ti -1c
+.RI "void \fBuseForceCross_user\fP (unsigned int force)"
+.br
+.RI "\fIPasses information to the object to use input coefficients from the entry specified\&. \fP"
+.ti -1c
+.RI "void \fBuseForceCross_user\fP ()"
+.br
+.RI "\fIPasses information to the object to use input coefficients from the entry specified\&. \fP"
+.ti -1c
+.RI "void \fBuseForceCross_hydro\fP (unsigned int force, unsigned int ord, unsigned int eqn, unsigned int var)"
+.br
+.RI "\fIPasses information to the object to use input coefficients from the entry specified\&. \fP"
+.ti -1c
+.RI "void \fBuseForceCross_hydro\fP (unsigned int force, unsigned int ord, unsigned int eqn)"
+.br
+.RI "\fIPasses information to the object to use input coefficients from the entry specified\&. \fP"
+.ti -1c
+.RI "void \fBuseForceCross_hydro\fP (unsigned int force, unsigned int ord)"
+.br
+.RI "\fIPasses information to the object to use input coefficients from the entry specified\&. \fP"
+.ti -1c
+.RI "void \fBuseForceCross_hydro\fP (unsigned int force)"
+.br
+.RI "\fIPasses information to the object to use input coefficients from the entry specified\&. \fP"
+.ti -1c
+.RI "void \fBuseForceCross_hydro\fP ()"
+.br
+.RI "\fIPasses information to the object to use input coefficients from the entry specified\&. \fP"
+.ti -1c
+.RI "void \fBuseForceMass\fP (unsigned int eqn, unsigned int var)"
+.br
+.RI "\fIPasses information to the object to use input coefficients from the entry specified\&. \fP"
+.ti -1c
+.RI "void \fBuseForceMass\fP (unsigned int eqn)"
+.br
+.RI "\fIPasses information to the object to use input coefficients from the entry specified\&. \fP"
+.ti -1c
+.RI "void \fBuseForceMass\fP ()"
+.br
+.RI "\fIPasses information to the object to use input coefficients from the entry specified\&. \fP"
+.ti -1c
+.RI "arma::cx_mat \fBgetMatForceActive_user\fP (int force)"
+.br
+.RI "\fIEvaluates the motion model for a whole range of equations on the specified force\&. \fP"
+.ti -1c
+.RI "arma::cx_mat \fBgetMatForceActive_hydro\fP (int force)"
+.br
+.RI "\fIEvaluates the motion model for a whole range of equations on the specified force\&. \fP"
+.ti -1c
+.RI "arma::cx_mat \fBgetMatForceReact_user\fP (int force, int ord)"
+.br
+.RI "\fIEvaluates the motion model for a whole range of equations and variable on the specified force and order of derivative\&. \fP"
+.ti -1c
+.RI "arma::cx_mat \fBgetMatForceReact_hydro\fP (int force, int ord)"
+.br
+.RI "\fIEvaluates the motion model for a whole range of equations and variable on the specified force and order of derivative\&. \fP"
+.ti -1c
+.RI "arma::cx_mat \fBgetMatForceCross_user\fP (int force, int ord)"
+.br
+.RI "\fIEvaluates the motion model for a whole range of equations and variable on the specified force and order of derivative\&. \fP"
+.ti -1c
+.RI "arma::cx_mat \fBgetMatForceCross_hydro\fP (int force, int ord)"
+.br
+.RI "\fIEvaluates the motion model for a whole range of equations and variable on the specified force and order of derivative\&. \fP"
+.ti -1c
+.RI "arma::cx_mat \fBgetMatForceMass\fP ()"
+.br
+.RI "\fIEvaluates the motion model for a whole range of equations and variable on the specified force and order of derivative\&. \fP"
+.ti -1c
+.RI "std::complex< double > \fBEvaluate\fP (int eqn)"
+.br
+.RI "\fITriggers evaluation of the currently activated set of input coefficients\&. \fP"
+.ti -1c
+.RI "int \fBnumEquations\fP ()"
+.br
+.RI "\fIReports the number of equations used in the motion model\&. \fP"
+.ti -1c
+.RI "std::vector< int > & \fBlistDataIndex\fP ()"
+.br
+.RI "\fIReturns a vector containing all equation indices\&. This may be the same as the number of equations\&. However, if they are custom equations, they must avoid the first six indices, which are reserved for standard 6dof models\&. This means that the data index may not start at zero, which is why the data index vector is returned\&. It allows you to see for each entry in the slot, what the index is for that equation\&. \fP"
+.ti -1c
+.RI "int & \fBlistDataIndex\fP (unsigned int index)"
+.br
+.RI "\fIReturns an enry from a vector containing all equation indices\&. \fP"
+.ti -1c
+.RI "std::vector< int > \fBgetDataIndex\fP ()"
+.br
+.RI "\fIAssembles and gets the vector of equation indices\&. \fP"
+.ti -1c
+.RI "int \fBMaxDataIndex\fP ()"
+.br
+.RI "\fIReturns the maximum number of the data index\&. \fP"
+.ti -1c
+.RI "void \fBsetName\fP (std::string nameIn)"
+.br
+.RI "\fIName for the motion model\&. \fP"
+.ti -1c
+.RI "std::string \fBgetName\fP ()"
+.br
+.RI "\fIName for the motion model\&. \fP"
+.ti -1c
+.RI "void \fBsetDescription\fP (std::string DescIn)"
+.br
+.RI "\fIDescription for the motion model\&. \fP"
+.ti -1c
+.RI "std::string \fBgetDescription\fP ()"
+.br
+.RI "\fIDescription for the motion model\&. \fP"
+.ti -1c
+.RI "std::vector< \fBBody\fP > & \fBlistBody\fP ()"
+.br
+.RI "\fIProvides direct access to the list of Bodies referenced by the motion model\&. \fP"
+.ti -1c
+.RI "\fBBody\fP & \fBlistBody\fP (int bodIn)"
+.br
+.RI "\fIDirect access to an individual \fBBody\fP from the list of Bodies contained in the motion model\&. \fP"
+.ti -1c
+.RI "std::vector< \fBBody\fP > & \fBlistData\fP ()"
+.br
+.RI "\fIProvides direct access to the list of Bodies used as data for the motion model\&. \fP"
+.ti -1c
+.RI "\fBBody\fP & \fBlistData\fP (int dataIn)"
+.br
+.RI "\fIDirect access to an individual \fBBody\fP from the list of Data contained in the motion model\&. \fP"
+.ti -1c
+.RI "std::vector< \fBEquationofMotion\fP * > & \fBlistEquation\fP ()"
+.br
+.RI "\fIProvides direct access to the list of equation of motion objects used in the motion model\&. \fP"
+.ti -1c
+.RI "\fBEquationofMotion\fP & \fBlistEquation\fP (int eqIn)"
+.br
+.RI "\fIDirect access to an individual \fBEquationofMotion\fP object from the list of Equations contained in the motion model\&. \fP"
+.ti -1c
+.RI "std::vector< \fBEquationofMotion\fP * > & \fBlistDataEquation\fP ()"
+.br
+.RI "\fIProvides direct access to the list of equation of motion objects used in the motion model\&. \fP"
+.ti -1c
+.RI "\fBEquationofMotion\fP & \fBlistDataEquation\fP (int eqIn)"
+.br
+.RI "\fIDirect access to an individual \fBEquationofMotion\fP object from the list of Equations contained in the motion model\&. \fP"
+.ti -1c
+.RI "void \fBAddEquation\fP (\fBEquationofMotion\fP *eqIn)"
+.br
+.RI "\fIThis adds an equation of motion to the motion model\&. \fP"
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual void \fBDefineEquations\fP ()"
+.br
+.RI "\fIThe function used to define the equation of motion objects\&. \fP"
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+This class provides the functionality to translate between input coefficients in the body class and the force coefficients in the \fBmatBody\fP class\&. Most important, it acts as an interface for advanced users to enter their own equations of motion\&. This was devised to create a very generic interface that could allow any sort of definition for equations\&. The use of functions for the class should use the following sequence\&. 1\&.) Create class: constructor 2\&.) Set body data (if not already done in constructor): setListBodies 3\&.) Set the current body working with: setBody 4\&.) Set the current wave frequency working with: setFreq 5\&.) Set whether calculating coefficients or values (default: Values): calcCoefficient 6\&.) Reset the forces you wish to use\&. 7\&.) Set the new list of forces you wish to use\&.: useForceAct_usr useForceAct_hydro useForceReact_usr useForceReact_hydro useForceCross_usr useForceCross_hydro useForceMass 7\&.) Evaluate the motion model to produce a single complex value result\&. 
+.PP
+Definition at line 106 of file motionmodel\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "MotionModel::MotionModel ()"
+Default constructor\&. 
+.PP
+Definition at line 37 of file motionmodel\&.cpp\&.
+.SS "osea::ofreq::MotionModel::MotionModel (std::vector< \fBBody\fP > &listBodIn)"
+
+.PP
+Constructor\&. This is the preferred constructor as it supplies the body data\&. \fBParameters:\fP
+.RS 4
+\fIlistBodIn\fP The vector of the body objects to input\&. 
+.RE
+.PP
+
+.SS "MotionModel::~MotionModel ()\fC [virtual]\fP"
+Default destructor\&. 
+.PP
+Definition at line 53 of file motionmodel\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void MotionModel::AddEquation (\fBEquationofMotion\fP *eqIn)"
+
+.PP
+This adds an equation of motion to the motion model\&. Adds the equation of motion on to the end of the vector of equation of motions\&. Also works for any objects derived from the \fBEquationofMotion\fP object, which is how this method should really be used\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIeqIn\fP EquationfMotion object\&. The object that you want to add to the list of equations of motion\&. Also works for any object classes derived from the EquationOfMotion\&. Variable passed by value, so it will make a copy of the input variable\&. 
+.RE
+.PP
+\fBSee Also:\fP
+.RS 4
+\fBDefineEquations()\fP 
+.RE
+.PP
+
+.PP
+Definition at line 2075 of file motionmodel\&.cpp\&.
+.SS "bool & MotionModel::CoefficientOnly ()"
+
+.PP
+Determines whether the class should calculate force coefficients or actual force values\&. True = Calculate force coefficients only\&. False = Calculate force values\&. Default = (False) Calculate force values\&. \fBReturns:\fP
+.RS 4
+Boolean to determine whether should calculate coefficients or values\&. 
+.RE
+.PP
+
+.PP
+Definition at line 96 of file motionmodel\&.cpp\&.
+.SS "void MotionModel::DefineEquations ()\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+The function used to define the equation of motion objects\&. This function gets executed when the Motion model is first created\&. It contains all the statements to add the appropriate equations to the motion model\&. This is where each \fBEquationofMotion\fP object is created\&. Can also be any object from a class that is derived from the \fBEquationofMotion\fP object\&. Before definining equations within this motion model, the individual equation must be defined\&. These will be new objects inheritted from the \fBEquationofMotion\fP object\&. Once those new equation clases are defined, they can be used in the motion model\&.
+.PP
+Using an \fBEquationofMotion\fP in the motion model will generally follow the following sequence\&. All step are executed within the DefineEquations function\&. 1\&.) Create a new object from the appropriate class which is derived from the \fBEquationofMotion\fP\&. When creating the equation of motion, you must include the pointer to the existing motion model\&. Use the keyword this when creating the new object\&. 2\&.) Set the data index for the equation\&. This is probably the most important step\&. Regardless of what name you give the equation, the program ofreq only sees the equation as one in a list of equations, and refers to it by its index within that list\&. Any input data (such as hydrodynamic or user coefficients) is similarly referenced by that index\&. When you set the data index, you tell ofreq which index in the list of data is has available should correspond to this specific equation\&. (Set the data index using the function setDataIndex()\&. 3\&.) Set the name for the new object\&. This is just the short name or equation symbol\&. (Use the function \fBsetName()\fP to set it\&.) 4\&.) Set the description for the new object\&. This is the more extensive name for the equation\&. (Use the function \fBsetDescription()\fP to set it\&.) 5\&.) Now that you set all the appropriate information, add the equation of motion into the list of equations used by this motion model\&. (Use the function \fBAddEquation()\fP)\&.
+.PP
+\fBSee Also:\fP
+.RS 4
+\fBAddEquation()\fP 
+.PP
+\fBEquationofMotion\fP 
+.RE
+.PP
+
+.PP
+Reimplemented in \fBosea::ofreq::Model6DOF\fP\&.
+.PP
+Definition at line 2087 of file motionmodel\&.cpp\&.
+.SS "complex< double > MotionModel::Evaluate (inteqn)"
+
+.PP
+Triggers evaluation of the currently activated set of input coefficients\&. Triggers evaluation of the currently activated set of input coefficients\&. If Calc_Coeff is set to True, then evaluation will only generate the force coefficients from the resulting evaluation\&. Otherwise, the evaluation will use the currently defined solution data and evaluate for force values\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIeqn\fP Integer representing which equation object to evaluate\&. Integer specifies the Data index of the equation\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Returns a complex number representing the force under the currently set conditions\&. 
+.RE
+.PP
+
+.PP
+Definition at line 1903 of file motionmodel\&.cpp\&.
+.SS "bool MotionModel::getActiveOnly ()"
+
+.PP
+Boolean to track whether only the active forces are requested\&. Boolean to track whether only the active forces are requested\&. The active forces are included negatively in the equation of motion\&. They should be on the opposite side of the equation and included as a positive constant\&. The final matrix body accomplishes this\&. And when only active forces are requested, they should be sent out as positive values\&. However, when pulling the information out, the signs must be reversed\&. The boolean variable triggers to determine if this should happen\&. If any reactive or cross-body forces are activated as well, this variable is set false\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+Returns boolean variable\&. Variable passed by value\&. Returns true if only active forces are used in the equation of motion\&. Returns false if any reactive or cross-body forces are used in the equation of motion\&. 
+.RE
+.PP
+
+.PP
+Definition at line 103 of file motionmodel\&.cpp\&.
+.SS "int MotionModel::getBody ()"
+
+.PP
+Gets the index for the body that all calculations are based on\&. \fBReturns:\fP
+.RS 4
+Returns integer specifying the number of the body currently in use\&. Integer corresponds to the sequence of bodies in the vector supplied with the body\&. If no \fBBody\fP is currently set, the function returns -1\&. 
+.RE
+.PP
+
+.PP
+Definition at line 87 of file motionmodel\&.cpp\&.
+.SS "std::vector< int > MotionModel::getDataIndex ()"
+
+.PP
+Assembles and gets the vector of equation indices\&. The list of equation indices may be the same as the number of equations\&. However, if they are custom equations, they must avoid the first six indices, which are reserved for standard 6dof models\&. This means that the data index may not start at zero, which is why the data index vector is returned\&. It allows you to see for each entry in the slot, what the index is for that equation\&. This method also searches through all the included equation objects to retrieve their data index automatically\&. So if you have an imcomplete list, this method will automatically complete the list before returning the vector of the complete list of data indices\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+Returns a vector containing all the equation indices currently in use\&. 
+.RE
+.PP
+
+.PP
+Definition at line 1962 of file motionmodel\&.cpp\&.
+.SS "string MotionModel::getDescription ()"
+
+.PP
+Description for the motion model\&. Description for the motion model\&. Used by the user to provide a more extensive description of the motion model\&. Used purely for user information\&. Not used for model identification\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+std::string\&. The description for the motion model\&. Variable passed by value\&. 
+.RE
+.PP
+
+.PP
+Definition at line 2017 of file motionmodel\&.cpp\&.
+.SS "double MotionModel::getFreq ()"
+
+.PP
+Gets the current operating frequency for the function\&. Only necessary when calculating true forces and using derivatives defined in the motion model\&. Otherwise, you can safely ignore this function\&. \fBReturns:\fP
+.RS 4
+Double precision variable that is the current wave frequency value\&. Variable returned by value\&. 
+.RE
+.PP
+
+.PP
+Definition at line 198 of file motionmodel\&.cpp\&.
+.SS "cx_mat MotionModel::getMatForceActive_hydro (intforce)"
+
+.PP
+Evaluates the motion model for a whole range of equations on the specified force\&. Evaluates the motion model for a whole range of equations on the specified force\&. Returns a complex matrix that contains the results of the entire evaluation\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIforce\fP Integer specifying which force object to evaluate\&. Integer specifies the vector occurrence index of the force\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Returns a complex matrix that contains the results of the entire evaluation\&. Returned argument passed by value\&. 
+.RE
+.PP
+
+.PP
+Definition at line 1654 of file motionmodel\&.cpp\&.
+.SS "cx_mat MotionModel::getMatForceActive_user (intforce)"
+
+.PP
+Evaluates the motion model for a whole range of equations on the specified force\&. Evaluates the motion model for a whole range of equations on the specified force\&. Returns a complex matrix that contains the results of the entire evaluation\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIforce\fP Integer specifying which force object to evaluate\&. Integer specifies the vector occurrence index of the force\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Returns a complex matrix that contains the results of the entire evaluation\&. Returned argument passed by value\&. 
+.RE
+.PP
+
+.PP
+Definition at line 1623 of file motionmodel\&.cpp\&.
+.SS "cx_mat MotionModel::getMatForceCross_hydro (intforce, intord)"
+
+.PP
+Evaluates the motion model for a whole range of equations and variable on the specified force and order of derivative\&. Evaluates the motion model for a whole range of equations and variable on the specified force and order of derivative\&. Returns a complex matrix that contains the results of the entire evaluation\&. Saves some time on computing effort\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIforce\fP Integer specifying the force object to use\&. Integer specifies the vector occurrence index of the force\&. 
+.br
+\fIord\fP Integer specifying which order of derivative to use on the specified force object\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Returns a complex matrix that contains the results of the entire evaluation\&. Saves some time on computing effort\&. 
+.RE
+.PP
+
+.PP
+Definition at line 1817 of file motionmodel\&.cpp\&.
+.SS "cx_mat MotionModel::getMatForceCross_user (intforce, intord)"
+
+.PP
+Evaluates the motion model for a whole range of equations and variable on the specified force and order of derivative\&. Evaluates the motion model for a whole range of equations and variable on the specified force and order of derivative\&. Returns a complex matrix that contains the results of the entire evaluation\&. Saves some time on computing effort\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIforce\fP Integer specifying the force object to use\&. Integer specifies the vector occurrence index of the force\&. 
+.br
+\fIord\fP Integer specifying which order of derivative to use on the specified force object\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Returns a complex matrix that contains the results of the entire evaluation\&. Saves some time on computing effort\&. 
+.RE
+.PP
+
+.PP
+Definition at line 1774 of file motionmodel\&.cpp\&.
+.SS "cx_mat MotionModel::getMatForceMass ()"
+
+.PP
+Evaluates the motion model for a whole range of equations and variable on the specified force and order of derivative\&. Evaluates the motion model for a whole range of equations and variable on the specified force and order of derivative\&. Returns a complex matrix that contains the results of the entire evaluation\&. Saves some time on computing effort\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+Returns a complex matrix that contains the results of the entire evaluation\&. Saves some time on computing effort\&. 
+.RE
+.PP
+
+.PP
+Definition at line 1860 of file motionmodel\&.cpp\&.
+.SS "cx_mat MotionModel::getMatForceReact_hydro (intforce, intord)"
+
+.PP
+Evaluates the motion model for a whole range of equations and variable on the specified force and order of derivative\&. Evaluates the motion model for a whole range of equations and variable on the specified force and order of derivative\&. Returns a complex matrix that contains the results of the entire evaluation\&. Saves some time on computing effort\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIforce\fP Integer specifying the force object to use\&. Integer specifies the vector occurrence index of the force\&. 
+.br
+\fIord\fP Integer specifying which order of derivative to use on the specified force object\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Returns a complex matrix that contains the results of the entire evaluation\&. Saves some time on computing effort\&. 
+.RE
+.PP
+
+.PP
+Definition at line 1731 of file motionmodel\&.cpp\&.
+.SS "cx_mat MotionModel::getMatForceReact_user (intforce, intord)"
+
+.PP
+Evaluates the motion model for a whole range of equations and variable on the specified force and order of derivative\&. Evaluates the motion model for a whole range of equations and variable on the specified force and order of derivative\&. Returns a complex matrix that contains the results of the entire evaluation\&. Saves some time on computing effort\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIforce\fP Integer specifying the force object to use\&. Integer specifies the vector occurrence index of the force\&. 
+.br
+\fIord\fP Integer specifying which order of derivative to use on the specified force object\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Returns a complex matrix that contains the results of the entire evaluation\&. Saves some time on computing effort\&. 
+.RE
+.PP
+
+.PP
+Definition at line 1685 of file motionmodel\&.cpp\&.
+.SS "string MotionModel::getName ()"
+
+.PP
+Name for the motion model\&. Name for the motion model\&. Used by the user to identify the motion model\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+The name to set for the motion model\&. std::string variable\&. Variable passed by value\&. 
+.RE
+.PP
+
+.PP
+Definition at line 2005 of file motionmodel\&.cpp\&.
+.SS "vector< \fBBody\fP > & MotionModel::listBody ()"
+
+.PP
+Provides direct access to the list of Bodies referenced by the motion model\&. \fBReturns:\fP
+.RS 4
+Reference to vector of \fBBody\fP objects\&. Variable passed by reference\&. 
+.RE
+.PP
+\fBSee Also:\fP
+.RS 4
+\fBBody\fP 
+.RE
+.PP
+
+.PP
+Definition at line 2023 of file motionmodel\&.cpp\&.
+.SS "\fBBody\fP & MotionModel::listBody (intbodIn)"
+
+.PP
+Direct access to an individual \fBBody\fP from the list of Bodies contained in the motion model\&. \fBParameters:\fP
+.RS 4
+\fIbodIn\fP Integer specifying which \fBBody\fP object to access in the list of Bodies\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Returns reference to the \fBBody\fP object specified by input bodIn\&. 
+.RE
+.PP
+\fBSee Also:\fP
+.RS 4
+\fBlistBody()\fP 
+.RE
+.PP
+
+.PP
+Definition at line 2029 of file motionmodel\&.cpp\&.
+.SS "vector< int > & MotionModel::listCompCrossBod_hydro ()"
+
+.PP
+Records the index of the body object referenced by the cross body\&. Records the index of the body object referenced by the cross body\&. Each body object contains a list of pointers for the cross-body objects\&. Each cross-body force has a pointer associated with it\&. This pointer points to another body object\&. This allows comparison between memory addresses of different body objects\&. However, when the body objects are copied over, the pointers are now pointing to different, invalid memory addresses\&. to eliminate this problem in the motion model, the model will record the position of the body object in the vector of body objects\&. This forms a vector\&. Each entry in the vector represents one cross-body force for the current body\&. The integer entry in the vector is the integer index of the body that the cross-body force is linked to\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+Returns a vector of integers\&. Returned variable is passed by reference\&. Each entry in the vector represents one cross-body force for the current body\&. The integer entry in the vector is the integer index of the body that the cross-body force is linked to\&. 
+.RE
+.PP
+
+.PP
+Definition at line 109 of file motionmodel\&.cpp\&.
+.SS "int & MotionModel::listCompCrossBod_hydro (intcrossbodIn)"
+
+.PP
+Records the index of the body object referenced by the cross body\&. Records the index of the body object referenced by the cross body\&. Each body object contains a list of pointers for the cross-body objects\&. Each cross-body force has a pointer associated with it\&. This pointer points to another body object\&. This allows comparison between memory addresses of different body objects\&. However, when the body objects are copied over, the pointers are now pointing to different, invalid memory addresses\&. to eliminate this problem in the motion model, the model will record the position of the body object in the vector of body objects\&. This forms a vector\&. Each entry in the vector represents one cross-body force for the current body\&. The integer entry in the vector is the integer index of the body that the cross-body force is linked to\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIcrossbodIn\fP Integer parameter\&. Specified the index of which value to retrieve from the list of values for the CrossBod indices\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Returns an integer\&. Variable passed by reference\&. Returned integer is the index of the \fBBody\fP object referenced by the cross-body force located at the index specified by CrossBod\&. Example: CrossBod (index) -> (vector of cross body forces) -> Index of \fBBody\fP object that cross-body force points to\&. 
+.RE
+.PP
+
+.PP
+Definition at line 115 of file motionmodel\&.cpp\&.
+.SS "vector< int > & MotionModel::listCompCrossBod_user ()"
+
+.PP
+Records the index of the body object referenced by the cross body\&. Records the index of the body object referenced by the cross body\&. Each body object contains a list of pointers for the cross-body objects\&. Each cross-body force has a pointer associated with it\&. This pointer points to another body object\&. This allows comparison between memory addresses of different body objects\&. However, when the body objects are copied over, the pointers are now pointing to different, invalid memory addresses\&. to eliminate this problem in the motion model, the model will record the position of the body object in the vector of body objects\&. This forms a vector\&. Each entry in the vector represents one cross-body force for the current body\&. The integer entry in the vector is the integer index of the body that the cross-body force is linked to\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+Returns a vector of integers\&. Returned variable is passed by reference\&. Each entry in the vector represents one cross-body force for the current body\&. The integer entry in the vector is the integer index of the body that the cross-body force is linked to\&. 
+.RE
+.PP
+
+.PP
+Definition at line 121 of file motionmodel\&.cpp\&.
+.SS "int & MotionModel::listCompCrossBod_user (intcrossbodIn)"
+
+.PP
+Records the index of the body object referenced by the cross body\&. Records the index of the body object referenced by the cross body\&. Each body object contains a list of pointers for the cross-body objects\&. Each cross-body force has a pointer associated with it\&. This pointer points to another body object\&. This allows comparison between memory addresses of different body objects\&. However, when the body objects are copied over, the pointers are now pointing to different, invalid memory addresses\&. to eliminate this problem in the motion model, the model will record the position of the body object in the vector of body objects\&. This forms a vector\&. Each entry in the vector represents one cross-body force for the current body\&. The integer entry in the vector is the integer index of the body that the cross-body force is linked to\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIcrossbodIn\fP Integer parameter\&. Specified the index of which value to retrieve from the list of values for the CrossBod indices\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Returns an integer\&. Variable passed by reference\&. Returned integer is the index of the \fBBody\fP object referenced by the cross-body force located at the index specified by CrossBod\&. Example: CrossBod (index) -> (vector of cross body forces) -> Index of \fBBody\fP object that cross-body force points to\&. 
+.RE
+.PP
+
+.PP
+Definition at line 127 of file motionmodel\&.cpp\&.
+.SS "vector< \fBBody\fP > & MotionModel::listData ()"
+
+.PP
+Provides direct access to the list of Bodies used as data for the motion model\&. \fBReturns:\fP
+.RS 4
+Reference to the vector of \fBBody\fP objects used as data\&. Variable passed by reference\&. 
+.RE
+.PP
+\fBSee Also:\fP
+.RS 4
+Bodyy 
+.RE
+.PP
+
+.PP
+Definition at line 2035 of file motionmodel\&.cpp\&.
+.SS "\fBBody\fP & MotionModel::listData (intdataIn)"
+
+.PP
+Direct access to an individual \fBBody\fP from the list of Data contained in the motion model\&. \fBParameters:\fP
+.RS 4
+\fIdataIn\fP Integer specifying which \fBBody\fP object to access from the list of Data\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Returns reference to the \fBBody\fP object specified by dataIn\&. 
+.RE
+.PP
+\fBSee Also:\fP
+.RS 4
+\fBlistData()\fP 
+.RE
+.PP
+
+.PP
+Definition at line 2041 of file motionmodel\&.cpp\&.
+.SS "std::vector< \fBEquationofMotion\fP * > & MotionModel::listDataEquation ()"
+
+.PP
+Provides direct access to the list of equation of motion objects used in the motion model\&. This is the same as the \fBlistEquation()\fP function, but just under a different name\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+Reference to the vector of \fBEquationofMotion\fP objects\&. Variable passed by reference\&. Each entry in the vector is a pointer to the relevent equation of motion object\&. 
+.RE
+.PP
+\fBSee Also:\fP
+.RS 4
+\fBEquationofMotion\fP 
+.PP
+\fBMotionModel::listEquation()\fP 
+.RE
+.PP
+
+.PP
+Definition at line 2059 of file motionmodel\&.cpp\&.
+.SS "\fBEquationofMotion\fP & MotionModel::listDataEquation (inteqIn)"
+
+.PP
+Direct access to an individual \fBEquationofMotion\fP object from the list of Equations contained in the motion model\&. This function specifies the requested equation through the use of the equation's data index\&. Not its normal occurrence index in the vector\&. The data index is the number of the data this equation will retrieve, not its sequence in the vector that stores it\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIeqIn\fP Integer\&. The data index of the \fBEquationofMotion\fP object requested\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Returns reference to the \fBEquationofMotion\fP object specified by eqIn\&. Returned variable passed by reference\&. 
+.RE
+.PP
+
+.PP
+Definition at line 2065 of file motionmodel\&.cpp\&.
+.SS "vector< int > & MotionModel::listDataIndex ()"
+
+.PP
+Returns a vector containing all equation indices\&. This may be the same as the number of equations\&. However, if they are custom equations, they must avoid the first six indices, which are reserved for standard 6dof models\&. This means that the data index may not start at zero, which is why the data index vector is returned\&. It allows you to see for each entry in the slot, what the index is for that equation\&. \fBReturns:\fP
+.RS 4
+Returns a vector containing all the equation indices currently in use\&. Returned vector is passed by reference\&. 
+.RE
+.PP
+
+.PP
+Definition at line 1920 of file motionmodel\&.cpp\&.
+.SS "int & MotionModel::listDataIndex (unsigned intindex)"
+
+.PP
+Returns an enry from a vector containing all equation indices\&. The requested entry is specified by the input variable index\&. The list of equation data indices may be the same as the number of equations\&. However, if they are custom equations, they must avoid the first six indices, which are reeserved for standard 6dof models\&. This means that the data index may not start at zero, which is why the entries of the data index vector are exposed for retrieval and manipulation\&. It allows you to see for each entry in the slot, which the data index is for that equation\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIindex\fP Integer variable\&. Passed by value\&. Specified the index of which entry in the data index you want to see\&. If the requested index is beyond the current limits of the vectors, the vector is automatically resized, but never larger than the number of current equations\&. Each entry in the index represents an equation\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Returns an integer variable\&. Variable passed by value\&. The returned variable is an entry from the vector of all equation data indices currently in use\&. 
+.RE
+.PP
+
+.PP
+Definition at line 1927 of file motionmodel\&.cpp\&.
+.SS "vector< \fBEquationofMotion\fP * > & MotionModel::listEquation ()"
+
+.PP
+Provides direct access to the list of equation of motion objects used in the motion model\&. \fBReturns:\fP
+.RS 4
+Reference to the vector of \fBEquationofMotion\fP objects\&. Variable passed by reference\&. Each entry in the vector is a pointer to the relevent equation of motion object\&. 
+.RE
+.PP
+\fBSee Also:\fP
+.RS 4
+\fBEquationofMotion\fP 
+.RE
+.PP
+
+.PP
+Definition at line 2047 of file motionmodel\&.cpp\&.
+.SS "\fBEquationofMotion\fP & MotionModel::listEquation (inteqIn)"
+
+.PP
+Direct access to an individual \fBEquationofMotion\fP object from the list of Equations contained in the motion model\&. \fBParameters:\fP
+.RS 4
+\fIeqIn\fP Integer specifying which \fBEquationofMotion\fP object to access from the list of Equations 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Returns reference to the \fBEquationofMotion\fP object specified by eqIn\&. 
+.RE
+.PP
+
+.PP
+Definition at line 2053 of file motionmodel\&.cpp\&.
+.SS "int MotionModel::MaxDataIndex ()"
+
+.PP
+Returns the maximum number of the data index\&. Returns the maximum number of the data index\&. This may be the same as the number of equations\&. Very few equations may be used\&. However, if they are custom equations, they must avoid the first six indices, which are reserved for standard 6dof models\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+Returns integer number representing the maximum number of the data index found from all equations\&. 
+.RE
+.PP
+
+.PP
+Definition at line 1977 of file motionmodel\&.cpp\&.
+.SS "int MotionModel::numEquations ()"
+
+.PP
+Reports the number of equations used in the motion model\&. Reports the number of equations used in the motion model\&. This lets the \fBmatBody\fP object know how many equations to prepare for\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+Returns the number of equations used in the motion model\&. 
+.RE
+.PP
+
+.PP
+Definition at line 1913 of file motionmodel\&.cpp\&.
+.SS "void MotionModel::Reset ()"
+
+.PP
+Resets the class data to have all input coefficients\&. Any evaluation after a reset will produce a value of zero\&. \fBForce\fP coefficients will be zero and force values will be zero\&. 
+.PP
+Definition at line 133 of file motionmodel\&.cpp\&.
+.SS "void MotionModel::setBody (intbod)"
+
+.PP
+Sets the index for the body that all calculations are based on\&. \fBParameters:\fP
+.RS 4
+\fIInteger\fP input specifying the number of the body to use\&. Integer corresponds to the sequence of bodies in the vector supplied with the body\&. 
+.RE
+.PP
+
+.PP
+Definition at line 76 of file motionmodel\&.cpp\&.
+.SS "void MotionModel::setDescription (std::stringDescIn)"
+
+.PP
+Description for the motion model\&. Description for the motion model\&. Used by the user to provide a more extensive description of the motion model\&. Used purely for user information\&. Not used for model identification\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIDescIn\fP std::string\&. The description for the motion model\&. Variable passed by value\&. 
+.RE
+.PP
+
+.PP
+Definition at line 2011 of file motionmodel\&.cpp\&.
+.SS "void MotionModel::setFreq (doublefreq)"
+
+.PP
+Sets the current operating frequency for the function\&. Only necessary when calculating true forces and using derivatives defined in the motion model\&. Otherwise, you can safely ignore this function\&. \fBParameters:\fP
+.RS 4
+\fIDouble\fP precision value that sets the current wave frequency value\&. 
+.RE
+.PP
+
+.PP
+Definition at line 191 of file motionmodel\&.cpp\&.
+.SS "void MotionModel::setlistBody (std::vector< \fBBody\fP > &listBodIn)"
+
+.PP
+Inputs the list of body data\&. \fBParameters:\fP
+.RS 4
+\fIlistBodIn\fP The vector of body objects to input\&. 
+.RE
+.PP
+
+.PP
+Definition at line 69 of file motionmodel\&.cpp\&.
+.SS "void MotionModel::setName (std::stringnameIn)"
+
+.PP
+Name for the motion model\&. Name for the motion model\&. Used by the user to identify the motion model\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fInameIn\fP The name to set for the motion model\&. std::string variable\&. Variable passed by value\&. 
+.RE
+.PP
+
+.PP
+Definition at line 1999 of file motionmodel\&.cpp\&.
+.SS "void MotionModel::useForceActive_hydro (unsigned intforce, unsigned inteqn)"
+
+.PP
+Passes information to the object to use input coefficients from the entry specified\&. Passes information to the object to use input coefficients from the entry specified\&. Limits inputs to only the force object type specified by the method\&. Calls to useForce methods are cumulative\&. Sucessive calls to different entries in the same force sequence will add their coefficients to the sets for evaluation\&. Can be combined with other useForce methods\&. Multiple calls to the same useForce method with the same index coordinates are not cumulative\&. An input coefficient can either be on or off, not multiple instances of the exact same coefficient\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIforce\fP Integer specifying which force to use in the set of forces for the given force type\&. 
+.br
+\fIeqn\fP Integer specifying which equation to use in the selected force\&. Based on data index\&. 
+.RE
+.PP
+
+.PP
+Definition at line 333 of file motionmodel\&.cpp\&.
+.SS "void MotionModel::useForceActive_hydro (unsigned intforce)"
+
+.PP
+Passes information to the object to use input coefficients from the entry specified\&. Passes information to the object to use input coefficients from the entry specified\&. Limits inputs to only the force object type specified by the method\&. Calls to useForce methods are cumulative\&. Sucessive calls to different entries in the same force sequence will add their coefficients to the sets for evaluation\&. Can be combined with other useForce methods\&. Multiple calls to the same useForce method with the same index coordinates are not cumulative\&. An input coefficient can either be on or off, not multiple instances of the exact same coefficient\&. With only the force number specified, all equations are used as coefficients\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIforce\fP Integer specifying which force to use in the set of forces for the given force type\&. 
+.RE
+.PP
+
+.PP
+Definition at line 385 of file motionmodel\&.cpp\&.
+.SS "void MotionModel::useForceActive_hydro ()"
+
+.PP
+Passes information to the object to use input coefficients from the entry specified\&. Passes information to the object to use input coefficients from the entry specified\&. Limits inputs to only the force object type specified by the method\&. Calls to useForce methods are cumulative\&. Sucessive calls to different entries in the same force sequence will add their coefficients to the sets for evaluation\&. Can be combined with other useForce methods\&. Multiple calls to the same useForce method with the same index coordinates are not cumulative\&. An input coefficient can either be on or off, not multiple instances of the exact same coefficient\&. All forces and all coefficients are used\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIforce\fP Integer specifying which force to use in the set of forces for the given force type\&. 
+.RE
+.PP
+
+.PP
+Definition at line 446 of file motionmodel\&.cpp\&.
+.SS "void MotionModel::useForceActive_user (unsigned intforce, unsigned inteqn)"
+
+.PP
+Passes information to the object to use input coefficients from the entry specified\&. Passes information to the object to use input coefficients from the entry specified\&. Limits inputs to only the force object type specified by the method\&. Calls to useForce methods are cumulative\&. Sucessive calls to different entries in the same force sequence will add their coefficients to the sets for evaluation\&. Can be combined with other useForce methods\&. Multiple calls to the same useForce method with the same index coordinates are not cumulative\&. An input coefficient can either be on or off, not multiple instances of the exact same coefficient\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIforce\fP Integer specifying which force to use in the set of forces for the given force type\&. 
+.br
+\fIeqn\fP Integer specifying which equation to use in the selected force\&. Based on data index\&. 
+.RE
+.PP
+
+.PP
+Definition at line 205 of file motionmodel\&.cpp\&.
+.SS "void MotionModel::useForceActive_user (unsigned intforce)"
+
+.PP
+Passes information to the object to use input coefficients from the entry specified\&. Passes information to the object to use input coefficients from the entry specified\&. Limits inputs to only the force object type specified by the method\&. Calls to useForce methods are cumulative\&. Sucessive calls to different entries in the same force sequence will add their coefficients to the sets for evaluation\&. Can be combined with other useForce methods\&. Multiple calls to the same useForce method with the same index coordinates are not cumulative\&. An input coefficient can either be on or off, not multiple instances of the exact same coefficient\&. With only the force number specified, all equations are used as coefficients\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIforce\fP Integer specifying which force to use in the set of forces for the given force type\&. 
+.RE
+.PP
+
+.PP
+Definition at line 257 of file motionmodel\&.cpp\&.
+.SS "void MotionModel::useForceActive_user ()"
+
+.PP
+Passes information to the object to use input coefficients from the entry specified\&. Passes information to the object to use input coefficients from the entry specified\&. Limits inputs to only the force object type specified by the method\&. Calls to useForce methods are cumulative\&. Sucessive calls to different entries in the same force sequence will add their coefficients to the sets for evaluation\&. Can be combined with other useForce methods\&. Multiple calls to the same useForce method with the same index coordinates are not cumulative\&. An input coefficient can either be on or off, not multiple instances of the exact same coefficient\&. All forces and all coefficients are used\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIforce\fP Integer specifying which force to use in the set of forces for the given force type\&. 
+.RE
+.PP
+
+.PP
+Definition at line 320 of file motionmodel\&.cpp\&.
+.SS "void MotionModel::useForceCross_hydro (unsigned intforce, unsigned intord, unsigned inteqn, unsigned intvar)"
+
+.PP
+Passes information to the object to use input coefficients from the entry specified\&. Passes information to the object to use input coefficients from the entry specified\&. Limits inputs to only the force object type specified by the method\&. Calls to useForce methods are cumulative\&. Sucessive calls to different entries in the same force sequence will add their coefficients to the sets for evaluation\&. Can be combined with other useForce methods\&. Multiple calls to the same useForce method with the same index coordinates are not cumulative\&. An input coefficient can either be on or off, not multiple instances of the exact same coefficient\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIforce\fP Integer specifying which force to use in the set of forces for the given force type\&. 
+.br
+\fIord\fP Integer specifying which order of derviative to use for the selected force\&. 
+.br
+\fIeqn\fP Integer specifying which equation to use in the selected force\&. Based on data index\&. 
+.br
+\fIvar\fP Integer specifying which variable to use from the selected equation\&. Based on data index\&. 
+.RE
+.PP
+
+.PP
+Definition at line 1270 of file motionmodel\&.cpp\&.
+.SS "void MotionModel::useForceCross_hydro (unsigned intforce, unsigned intord, unsigned inteqn)"
+
+.PP
+Passes information to the object to use input coefficients from the entry specified\&. Passes information to the object to use input coefficients from the entry specified\&. Limits inputs to only the force object type specified by the method\&. Calls to useForce methods are cumulative\&. Sucessive calls to different entries in the same force sequence will add their coefficients to the sets for evaluation\&. Can be combined with other useForce methods\&. Multiple calls to the same useForce method with the same index coordinates are not cumulative\&. An input coefficient can either be on or off, not multiple instances of the exact same coefficient\&. This method uses all coefficients for all variables within the specified equation, derivative, and force\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIforce\fP Integer specifying which force to use in the set of forces for the given force type\&. 
+.br
+\fIord\fP Integer specifying which order of derviative to use for the selected force\&. 
+.br
+\fIeqn\fP Integer specifying which equation to use in the selected force\&. Based on data index\&. 
+.RE
+.PP
+
+.PP
+Definition at line 1385 of file motionmodel\&.cpp\&.
+.SS "void MotionModel::useForceCross_hydro (unsigned intforce, unsigned intord)"
+
+.PP
+Passes information to the object to use input coefficients from the entry specified\&. Passes information to the object to use input coefficients from the entry specified\&. Limits inputs to only the force object type specified by the method\&. Calls to useForce methods are cumulative\&. Sucessive calls to different entries in the same force sequence will add their coefficients to the sets for evaluation\&. Can be combined with other useForce methods\&. Multiple calls to the same useForce method with the same index coordinates are not cumulative\&. An input coefficient can either be on or off, not multiple instances of the exact same coefficient\&. This method uses all coefficients for all variables and all equations within the specified derivative and force\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIforce\fP Integer specifying which force to use in the set of forces for the given force type\&. 
+.br
+\fIord\fP Integer specifying which order of derviative to use for the selected force\&. 
+.RE
+.PP
+
+.PP
+Definition at line 1435 of file motionmodel\&.cpp\&.
+.SS "void MotionModel::useForceCross_hydro (unsigned intforce)"
+
+.PP
+Passes information to the object to use input coefficients from the entry specified\&. Passes information to the object to use input coefficients from the entry specified\&. Limits inputs to only the force object type specified by the method\&. Calls to useForce methods are cumulative\&. Sucessive calls to different entries in the same force sequence will add their coefficients to the sets for evaluation\&. Can be combined with other useForce methods\&. Multiple calls to the same useForce method with the same index coordinates are not cumulative\&. An input coefficient can either be on or off, not multiple instances of the exact same coefficient\&. This method uses all coefficients for all variables and all equations within all derivatives within the specified force 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIforce\fP Integer specifying which force to use in the set of forces for the given force type\&. 
+.RE
+.PP
+
+.PP
+Definition at line 1474 of file motionmodel\&.cpp\&.
+.SS "void MotionModel::useForceCross_hydro ()"
+
+.PP
+Passes information to the object to use input coefficients from the entry specified\&. Passes information to the object to use input coefficients from the entry specified\&. Limits inputs to only the force object type specified by the method\&. Calls to useForce methods are cumulative\&. Sucessive calls to different entries in the same force sequence will add their coefficients to the sets for evaluation\&. Can be combined with other useForce methods\&. Multiple calls to the same useForce method with the same index coordinates are not cumulative\&. An input coefficient can either be on or off, not multiple instances of the exact same coefficient\&. This method uses all coefficients for all variables and all equations within all derivatives within all forces available\&. 
+.PP
+Definition at line 1505 of file motionmodel\&.cpp\&.
+.SS "void MotionModel::useForceCross_user (unsigned intforce, unsigned intord, unsigned inteqn, unsigned intvar)"
+
+.PP
+Passes information to the object to use input coefficients from the entry specified\&. Passes information to the object to use input coefficients from the entry specified\&. Limits inputs to only the force object type specified by the method\&. Calls to useForce methods are cumulative\&. Sucessive calls to different entries in the same force sequence will add their coefficients to the sets for evaluation\&. Can be combined with other useForce methods\&. Multiple calls to the same useForce method with the same index coordinates are not cumulative\&. An input coefficient can either be on or off, not multiple instances of the exact same coefficient\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIforce\fP Integer specifying which force to use in the set of forces for the given force type\&. 
+.br
+\fIord\fP Integer specifying which order of derviative to use for the selected force\&. 
+.br
+\fIeqn\fP Integer specifying which equation to use in the selected force\&. Based on data index\&. 
+.br
+\fIvar\fP Integer specifying which variable to use from the selected equation\&. Based on data index\&. 
+.RE
+.PP
+
+.PP
+Definition at line 1019 of file motionmodel\&.cpp\&.
+.SS "void MotionModel::useForceCross_user (unsigned intforce, unsigned intord, unsigned inteqn)"
+
+.PP
+Passes information to the object to use input coefficients from the entry specified\&. Passes information to the object to use input coefficients from the entry specified\&. Limits inputs to only the force object type specified by the method\&. Calls to useForce methods are cumulative\&. Sucessive calls to different entries in the same force sequence will add their coefficients to the sets for evaluation\&. Can be combined with other useForce methods\&. Multiple calls to the same useForce method with the same index coordinates are not cumulative\&. An input coefficient can either be on or off, not multiple instances of the exact same coefficient\&. This method uses all coefficients for all variables within the specified equation, derivative, and force\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIforce\fP Integer specifying which force to use in the set of forces for the given force type\&. 
+.br
+\fIord\fP Integer specifying which order of derviative to use for the selected force\&. 
+.br
+\fIeqn\fP Integer specifying which equation to use in the selected force\&. Based on data index\&. 
+.RE
+.PP
+
+.PP
+Definition at line 1136 of file motionmodel\&.cpp\&.
+.SS "void MotionModel::useForceCross_user (unsigned intforce, unsigned intord)"
+
+.PP
+Passes information to the object to use input coefficients from the entry specified\&. Passes information to the object to use input coefficients from the entry specified\&. Limits inputs to only the force object type specified by the method\&. Calls to useForce methods are cumulative\&. Sucessive calls to different entries in the same force sequence will add their coefficients to the sets for evaluation\&. Can be combined with other useForce methods\&. Multiple calls to the same useForce method with the same index coordinates are not cumulative\&. An input coefficient can either be on or off, not multiple instances of the exact same coefficient\&. This method uses all coefficients for all variables and all equations within the specified derivative and force\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIforce\fP Integer specifying which force to use in the set of forces for the given force type\&. 
+.br
+\fIord\fP Integer specifying which order of derviative to use for the selected force\&. 
+.RE
+.PP
+
+.PP
+Definition at line 1186 of file motionmodel\&.cpp\&.
+.SS "void MotionModel::useForceCross_user (unsigned intforce)"
+
+.PP
+Passes information to the object to use input coefficients from the entry specified\&. Passes information to the object to use input coefficients from the entry specified\&. Limits inputs to only the force object type specified by the method\&. Calls to useForce methods are cumulative\&. Sucessive calls to different entries in the same force sequence will add their coefficients to the sets for evaluation\&. Can be combined with other useForce methods\&. Multiple calls to the same useForce method with the same index coordinates are not cumulative\&. An input coefficient can either be on or off, not multiple instances of the exact same coefficient\&. This method uses all coefficients for all variables and all equations within all derivatives within the specified force 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIforce\fP Integer specifying which force to use in the set of forces for the given force type\&. 
+.RE
+.PP
+
+.PP
+Definition at line 1225 of file motionmodel\&.cpp\&.
+.SS "void MotionModel::useForceCross_user ()"
+
+.PP
+Passes information to the object to use input coefficients from the entry specified\&. Passes information to the object to use input coefficients from the entry specified\&. Limits inputs to only the force object type specified by the method\&. Calls to useForce methods are cumulative\&. Sucessive calls to different entries in the same force sequence will add their coefficients to the sets for evaluation\&. Can be combined with other useForce methods\&. Multiple calls to the same useForce method with the same index coordinates are not cumulative\&. An input coefficient can either be on or off, not multiple instances of the exact same coefficient\&. This method uses all coefficients for all variables and all equations within all derivatives within all forces available\&. 
+.PP
+Definition at line 1256 of file motionmodel\&.cpp\&.
+.SS "void MotionModel::useForceMass (unsigned inteqn, unsigned intvar)"
+
+.PP
+Passes information to the object to use input coefficients from the entry specified\&. Passes information to the object to use input coefficients from the entry specified\&. Limits inputs to only the force object type specified by the method\&. Calls to useForce methods are cumulative\&. Sucessive calls to different entries in the same force sequence will add their coefficients to the sets for evaluation\&. Can be combined with other useForce methods\&. Multiple calls to the same useForce method with the same index coordinates are not cumulative\&. An input coefficient can either be on or off, not multiple instances of the exact same coefficient\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIeqn\fP Integer specifying which equation to use in the selected force\&. Based on data index\&. 
+.br
+\fIvar\fP Integer specifying which variable to use from the selected equation\&. Based on data index\&. 
+.RE
+.PP
+
+.PP
+Definition at line 1519 of file motionmodel\&.cpp\&.
+.SS "void MotionModel::useForceMass (unsigned inteqn)"
+
+.PP
+Passes information to the object to use input coefficients from the entry specified\&. Passes information to the object to use input coefficients from the entry specified\&. Limits inputs to only the force object type specified by the method\&. Calls to useForce methods are cumulative\&. Sucessive calls to different entries in the same force sequence will add their coefficients to the sets for evaluation\&. Can be combined with other useForce methods\&. Multiple calls to the same useForce method with the same index coordinates are not cumulative\&. An input coefficient can either be on or off, not multiple instances of the exact same coefficient\&. This implementation will copy over all variables for the specified equation\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIeqn\fP Integer specifying which equation to use in the selected force\&. Based on data index\&. 
+.RE
+.PP
+
+.PP
+Definition at line 1567 of file motionmodel\&.cpp\&.
+.SS "void MotionModel::useForceMass ()"
+
+.PP
+Passes information to the object to use input coefficients from the entry specified\&. Passes information to the object to use input coefficients from the entry specified\&. Limits inputs to only the force object type specified by the method\&. Calls to useForce methods are cumulative\&. Sucessive calls to different entries in the same force sequence will add their coefficients to the sets for evaluation\&. Can be combined with other useForce methods\&. Multiple calls to the same useForce method with the same index coordinates are not cumulative\&. An input coefficient can either be on or off, not multiple instances of the exact same coefficient\&. This implementation will copy over all variables for all equations\&. 
+.PP
+Definition at line 1606 of file motionmodel\&.cpp\&.
+.SS "void MotionModel::useForceReact_hydro (unsigned intforce, unsigned intord, unsigned inteqn, unsigned intvar)"
+
+.PP
+Passes information to the object to use input coefficients from the entry specified\&. Passes information to the object to use input coefficients from the entry specified\&. Limits inputs to only the force object type specified by the method\&. Calls to useForce methods are cumulative\&. Sucessive calls to different entries in the same force sequence will add their coefficients to the sets for evaluation\&. Can be combined with other useForce methods\&. Multiple calls to the same useForce method with the same index coordinates are not cumulative\&. An input coefficient can either be on or off, not multiple instances of the exact same coefficient\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIforce\fP Integer specifying which force to use in the set of forces for the given force type\&. 
+.br
+\fIord\fP Integer specifying which order of derviative to use for the selected force\&. 
+.br
+\fIeqn\fP Integer specifying which equation to use in the selected force\&. Based on data index\&. 
+.br
+\fIvar\fP Integer specifying which variable to use from the selected equation\&. Based on data index\&. 
+.RE
+.PP
+
+.PP
+Definition at line 732 of file motionmodel\&.cpp\&.
+.SS "void MotionModel::useForceReact_hydro (unsigned intforce, unsigned intord, unsigned inteqn)"
+
+.PP
+Passes information to the object to use input coefficients from the entry specified\&. Passes information to the object to use input coefficients from the entry specified\&. Limits inputs to only the force object type specified by the method\&. Calls to useForce methods are cumulative\&. Sucessive calls to different entries in the same force sequence will add their coefficients to the sets for evaluation\&. Can be combined with other useForce methods\&. Multiple calls to the same useForce method with the same index coordinates are not cumulative\&. An input coefficient can either be on or off, not multiple instances of the exact same coefficient\&. This method uses all coefficients for all variables within the specified equation, derivative, and force\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIforce\fP Integer specifying which force to use in the set of forces for the given force type\&. 
+.br
+\fIord\fP Integer specifying which order of derviative to use for the selected force\&. 
+.br
+\fIeqn\fP Integer specifying which equation to use in the selected force\&. Based on data index\&. 
+.RE
+.PP
+
+.PP
+Definition at line 830 of file motionmodel\&.cpp\&.
+.SS "void MotionModel::useForceReact_hydro (unsigned intforce, unsigned intord)"
+
+.PP
+Passes information to the object to use input coefficients from the entry specified\&. Passes information to the object to use input coefficients from the entry specified\&. Limits inputs to only the force object type specified by the method\&. Calls to useForce methods are cumulative\&. Sucessive calls to different entries in the same force sequence will add their coefficients to the sets for evaluation\&. Can be combined with other useForce methods\&. Multiple calls to the same useForce method with the same index coordinates are not cumulative\&. An input coefficient can either be on or off, not multiple instances of the exact same coefficient\&. This method uses all coefficients for all variables and all equations within the specified derivative and force\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIforce\fP Integer specifying which force to use in the set of forces for the given force type\&. 
+.br
+\fIord\fP Integer specifying which order of derviative to use for the selected force\&. 
+.RE
+.PP
+
+.PP
+Definition at line 935 of file motionmodel\&.cpp\&.
+.SS "void MotionModel::useForceReact_hydro (unsigned intforce)"
+
+.PP
+Passes information to the object to use input coefficients from the entry specified\&. Passes information to the object to use input coefficients from the entry specified\&. Limits inputs to only the force object type specified by the method\&. Calls to useForce methods are cumulative\&. Sucessive calls to different entries in the same force sequence will add their coefficients to the sets for evaluation\&. Can be combined with other useForce methods\&. Multiple calls to the same useForce method with the same index coordinates are not cumulative\&. An input coefficient can either be on or off, not multiple instances of the exact same coefficient\&. This method uses all coefficients for all variables and all equations within all derivatives within the specified force 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIforce\fP Integer specifying which force to use in the set of forces for the given force type\&. 
+.RE
+.PP
+
+.PP
+Definition at line 974 of file motionmodel\&.cpp\&.
+.SS "void MotionModel::useForceReact_hydro ()"
+
+.PP
+Passes information to the object to use input coefficients from the entry specified\&. Passes information to the object to use input coefficients from the entry specified\&. Limits inputs to only the force object type specified by the method\&. Calls to useForce methods are cumulative\&. Sucessive calls to different entries in the same force sequence will add their coefficients to the sets for evaluation\&. Can be combined with other useForce methods\&. Multiple calls to the same useForce method with the same index coordinates are not cumulative\&. An input coefficient can either be on or off, not multiple instances of the exact same coefficient\&. This method uses all coefficients for all variables and all equations within all derivatives within all forces available\&. 
+.PP
+Definition at line 1005 of file motionmodel\&.cpp\&.
+.SS "void MotionModel::useForceReact_user (unsigned intforce, unsigned intord, unsigned inteqn, unsigned intvar)"
+
+.PP
+Passes information to the object to use input coefficients from the entry specified\&. Passes information to the object to use input coefficients from the entry specified\&. Limits inputs to only the force object type specified by the method\&. Calls to useForce methods are cumulative\&. Sucessive calls to different entries in the same force sequence will add their coefficients to the sets for evaluation\&. Can be combined with other useForce methods\&. Multiple calls to the same useForce method with the same index coordinates are not cumulative\&. An input coefficient can either be on or off, not multiple instances of the exact same coefficient\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIforce\fP Integer specifying which force to use in the set of forces for the given force type\&. 
+.br
+\fIord\fP Integer specifying which order of derviative to use for the selected force\&. 
+.br
+\fIeqn\fP Integer specifying which equation to use in the selected force\&. Based on data index\&. 
+.br
+\fIvar\fP Integer specifying which variable to use from the selected equation\&. Based on data index\&. 
+.RE
+.PP
+
+.PP
+Definition at line 459 of file motionmodel\&.cpp\&.
+.SS "void MotionModel::useForceReact_user (unsigned intforce, unsigned intord, unsigned inteqn)"
+
+.PP
+Passes information to the object to use input coefficients from the entry specified\&. Passes information to the object to use input coefficients from the entry specified\&. Limits inputs to only the force object type specified by the method\&. Calls to useForce methods are cumulative\&. Sucessive calls to different entries in the same force sequence will add their coefficients to the sets for evaluation\&. Can be combined with other useForce methods\&. Multiple calls to the same useForce method with the same index coordinates are not cumulative\&. An input coefficient can either be on or off, not multiple instances of the exact same coefficient\&. This method uses all coefficients for all variables within the specified equation, derivative, and force\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIforce\fP Integer specifying which force to use in the set of forces for the given force type\&. 
+.br
+\fIord\fP Integer specifying which order of derviative to use for the selected force\&. 
+.br
+\fIeqn\fP Integer specifying which equation to use in the selected force\&. Based on data index\&. 
+.RE
+.PP
+
+.PP
+Definition at line 555 of file motionmodel\&.cpp\&.
+.SS "void MotionModel::useForceReact_user (unsigned intforce, unsigned intord)"
+
+.PP
+Passes information to the object to use input coefficients from the entry specified\&. Passes information to the object to use input coefficients from the entry specified\&. Limits inputs to only the force object type specified by the method\&. Calls to useForce methods are cumulative\&. Sucessive calls to different entries in the same force sequence will add their coefficients to the sets for evaluation\&. Can be combined with other useForce methods\&. Multiple calls to the same useForce method with the same index coordinates are not cumulative\&. An input coefficient can either be on or off, not multiple instances of the exact same coefficient\&. This method uses all coefficients for all variables and all equations within the specified derivative and force\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIforce\fP Integer specifying which force to use in the set of forces for the given force type\&. 
+.br
+\fIord\fP Integer specifying which order of derviative to use for the selected force\&. 
+.RE
+.PP
+
+.PP
+Definition at line 648 of file motionmodel\&.cpp\&.
+.SS "void MotionModel::useForceReact_user (unsigned intforce)"
+
+.PP
+Passes information to the object to use input coefficients from the entry specified\&. Passes information to the object to use input coefficients from the entry specified\&. Limits inputs to only the force object type specified by the method\&. Calls to useForce methods are cumulative\&. Sucessive calls to different entries in the same force sequence will add their coefficients to the sets for evaluation\&. Can be combined with other useForce methods\&. Multiple calls to the same useForce method with the same index coordinates are not cumulative\&. An input coefficient can either be on or off, not multiple instances of the exact same coefficient\&. This method uses all coefficients for all variables and all equations within all derivatives within the specified force 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIforce\fP Integer specifying which force to use in the set of forces for the given force type\&. 
+.RE
+.PP
+
+.PP
+Definition at line 687 of file motionmodel\&.cpp\&.
+.SS "void MotionModel::useForceReact_user ()"
+
+.PP
+Passes information to the object to use input coefficients from the entry specified\&. Passes information to the object to use input coefficients from the entry specified\&. Limits inputs to only the force object type specified by the method\&. Calls to useForce methods are cumulative\&. Sucessive calls to different entries in the same force sequence will add their coefficients to the sets for evaluation\&. Can be combined with other useForce methods\&. Multiple calls to the same useForce method with the same index coordinates are not cumulative\&. An input coefficient can either be on or off, not multiple instances of the exact same coefficient\&. This method uses all coefficients for all variables and all equations within all derivatives within all forces available\&. 
+.PP
+Definition at line 718 of file motionmodel\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for oFreq from the source code\&.

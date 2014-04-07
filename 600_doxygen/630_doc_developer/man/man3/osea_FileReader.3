@@ -1,0 +1,344 @@
+.TH "osea::FileReader" 3 "Sat Apr 5 2014" "Version 0.4" "oFreq" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+osea::FileReader \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <filereader\&.h>\fP
+.PP
+Inherits QObject, and \fBosea::ofreq::oFreqCore\fP\&.
+.SS "Public Slots"
+
+.in +1c
+.ti -1c
+.RI "int \fBreadHydroFile\fP (std::string path)"
+.br
+.RI "\fIReads hydrodynamic input files\&. \fP"
+.ti -1c
+.RI "void \fBsetSystem\fP (\fBofreq::System\fP *ptInput)"
+.br
+.RI "\fISets the system object for the dictionary to reference\&. \fP"
+.in -1c
+.SS "Signals"
+
+.in +1c
+.ti -1c
+.RI "void \fBoutputControlFile\fP (\fBObjectGroup\fP output)"
+.br
+.RI "\fISends output of objects discovered when reading the Control file\&. Top level objects can include: \fP"
+.ti -1c
+.RI "void \fBoutputBodiesFile\fP (\fBObjectGroup\fP output)"
+.br
+.RI "\fISends output of objects discovered when reading the Bodies file\&. Top level objects can include: \fP"
+.ti -1c
+.RI "void \fBoutputDataFile\fP (\fBObjectGroup\fP output)"
+.br
+.RI "\fISends output of objects discovered when reading the Data file\&. Top level objects can include: \fP"
+.ti -1c
+.RI "void \fBoutputForcesFile\fP (\fBObjectGroup\fP output)"
+.br
+.RI "\fISends output of objects discovered when reading the Forces file\&. Top level objects can include: \fP"
+.ti -1c
+.RI "void \fBoutputSeaEnvFile\fP (\fBObjectGroup\fP output)"
+.br
+.RI "\fISends output of objects discovered when reading the SeaEnv file\&. Top level objects can include: \fP"
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBFileReader\fP ()"
+.br
+.RI "\fIDefault constructor\&. \fP"
+.ti -1c
+.RI "\fBFileReader\fP (std::string Path)"
+.br
+.RI "\fIConstructor with input for file path that holds input files\&. \fP"
+.ti -1c
+.RI "\fB~FileReader\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetPath\fP (std::string input)"
+.br
+.RI "\fISets the path to the working directory that all control files are located in\&. \fP"
+.ti -1c
+.RI "int \fBreadControl\fP ()"
+.br
+.RI "\fIReads in the control file and parses its inputs\&. \fP"
+.ti -1c
+.RI "int \fBreadBodies\fP ()"
+.br
+.RI "\fIReads in the Bodies file and parses its inputs\&. \fP"
+.ti -1c
+.RI "int \fBreadForces\fP ()"
+.br
+.RI "\fIReads in the Forces file and parses its inputs\&. \fP"
+.ti -1c
+.RI "int \fBreadSeaEnv\fP ()"
+.br
+.RI "\fIReads in the Sea Environment input file and parses its inputs\&. \fP"
+.ti -1c
+.RI "int \fBreadData\fP ()"
+.br
+.RI "\fIReads in the Data input file and parses its inputs\&. \fP"
+.ti -1c
+.RI "void \fBsetDictionary\fP (\fBosea::Dictionary\fP &dictIn)"
+.br
+.RI "\fISets the dictionary object to be used for processing any data read from the input files\&. \fP"
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBsendOutput\fP (int index)"
+.br
+.RI "\fISends the results of parsing the input file onto the dictionary object\&. Use for processing the input file\&. \fP"
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+\fBFileReader\fP is the next generation of superseded class: ReadInputFile\&. \fBFileReader\fP simply reads the text file and parses it into keword value pairs\&. \fBFileReader\fP reads in the input files\&. It then passes those input files to the \fBParser\fP object\&. \fBParser\fP then segments the file in a series of object groupings with a vector list of keyword value pairs\&. The file reader interprets a limited number of those keywords to recognize new object declarations\&. It creates the new objects\&. It then parses the information in that object into a series of keyword-value pairs\&. Each pair is sent to a \fBDictionary\fP object that interprets the information\&. Information is sent using Qt Slots and Signals\&.
+.PP
+To use this class, the following sequence must be followed\&. 1\&.) Create \fBFileReader\fP object\&. 2\&.) Create \fBDictionary\fP objects for each file type you will read\&. 3\&.) Satisfy any follow on dependencies for \fBDictionary\fP objects\&. 4\&.) Qt Connect \fBFileReader\fP to \fBDictionary\fP objects\&. 5\&.) Qt Connect \fBFileReader\fP to System object\&. 6\&.) Feed in the target path to the \fBFileReader\fP object\&. 7\&.) Read each file type in turn\&. The \fBFileReader\fP object will automatically find the file with the correct filename, read it, parse it, and send the resulting keyword-value pairs to the appropriate \fBDictionary\fP object\&. 
+.PP
+Definition at line 105 of file filereader\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "FileReader::FileReader ()"
+
+.PP
+Default constructor\&. 
+.PP
+Definition at line 71 of file filereader\&.cpp\&.
+.SS "osea::FileReader::FileReader (std::stringPath)"
+
+.PP
+Constructor with input for file path that holds input files\&. \fBParameters:\fP
+.RS 4
+\fIPath\fP The full path to the working directory\&. Variable passed by value\&. 
+.RE
+.PP
+
+.SS "FileReader::~FileReader ()"
+Default destructor\&. Nothing happens here\&. 
+.PP
+Definition at line 84 of file filereader\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void osea::FileReader::outputBodiesFile (\fBObjectGroup\fPoutput)\fC [signal]\fP"
+
+.PP
+Sends output of objects discovered when reading the Bodies file\&. Top level objects can include: .IP "1." 4
+Body object\&. 
+.PP
+\fBSee Also:\fP
+.RS 4
+Body 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIoutput\fP The \fBObjectGroup\fP object parsed out of the file\&. Variable passed by value\&. 
+.RE
+.PP
+
+.PP
+
+.SS "void osea::FileReader::outputControlFile (\fBObjectGroup\fPoutput)\fC [signal]\fP"
+
+.PP
+Sends output of objects discovered when reading the Control file\&. Top level objects can include: .IP "1." 4
+System object\&. 
+.PP
+\fBSee Also:\fP
+.RS 4
+System 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIoutput\fP The \fBObjectGroup\fP object parsed out of the file\&. Variable passed by value\&. 
+.RE
+.PP
+
+.PP
+
+.SS "void osea::FileReader::outputDataFile (\fBObjectGroup\fPoutput)\fC [signal]\fP"
+
+.PP
+Sends output of objects discovered when reading the Data file\&. Top level objects can include: .IP "1." 4
+hydrofiles 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIoutput\fP The \fBObjectGroup\fP object parsed out of the file\&. Variable passed by value\&. 
+.RE
+.PP
+
+.PP
+
+.SS "void osea::FileReader::outputForcesFile (\fBObjectGroup\fPoutput)\fC [signal]\fP"
+
+.PP
+Sends output of objects discovered when reading the Forces file\&. Top level objects can include: .IP "1." 4
+ForceActive
+.IP "2." 4
+ForceReactive
+.IP "3." 4
+ForceCrossBody 
+.PP
+\fBSee Also:\fP
+.RS 4
+ForceActive 
+.PP
+ForceCross 
+.PP
+ForceReact 
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIoutput\fP The \fBObjectGroup\fP object parsed out of the file\&. Variable passed by value\&. 
+.RE
+.PP
+
+.PP
+
+.SS "void osea::FileReader::outputSeaEnvFile (\fBObjectGroup\fPoutput)\fC [signal]\fP"
+
+.PP
+Sends output of objects discovered when reading the SeaEnv file\&. Top level objects can include: .IP "1." 4
+Wave_Custom
+.IP "2." 4
+Sea_Custom 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIoutput\fP The \fBObjectGroup\fP object parsed out of the file\&. Variable passed by value\&. 
+.RE
+.PP
+
+.PP
+
+.SS "int FileReader::readBodies ()"
+
+.PP
+Reads in the Bodies file and parses its inputs\&. \fBReturns:\fP
+.RS 4
+Returns integer to report success or failure of file parsing\&. Returns 0 for success\&. Returns 1 for file does not exist\&. 
+.RE
+.PP
+
+.PP
+Definition at line 124 of file filereader\&.cpp\&.
+.SS "int FileReader::readControl ()"
+
+.PP
+Reads in the control file and parses its inputs\&. \fBReturns:\fP
+.RS 4
+Returns integer to report success or failure of file parsing\&. Returns 0 for success\&. Returns 1 for file does not exist\&. 
+.RE
+.PP
+
+.PP
+Definition at line 104 of file filereader\&.cpp\&.
+.SS "int FileReader::readData ()"
+
+.PP
+Reads in the Data input file and parses its inputs\&. \fBReturns:\fP
+.RS 4
+Returns integer to report success or failure of file parsing\&. Returns 0 for success\&. Returns 1 for file does not exist\&. 
+.RE
+.PP
+
+.PP
+Definition at line 190 of file filereader\&.cpp\&.
+.SS "int FileReader::readForces ()"
+
+.PP
+Reads in the Forces file and parses its inputs\&. \fBReturns:\fP
+.RS 4
+Returns integer to report success or failure of file parsing\&. Returns 0 for success\&. Returns 1 for file does not exist\&. 
+.RE
+.PP
+
+.PP
+Definition at line 150 of file filereader\&.cpp\&.
+.SS "int FileReader::readHydroFile (std::stringpath)\fC [slot]\fP"
+
+.PP
+Reads hydrodynamic input files\&. \fBParameters:\fP
+.RS 4
+\fIpath\fP The full path to the hydrodynamic input file to read\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Returns integer to report success or failure of file parsing\&. Returns 0 for success\&. Returns 1 for file does not exist\&. 
+.RE
+.PP
+
+.PP
+Definition at line 222 of file filereader\&.cpp\&.
+.SS "int FileReader::readSeaEnv ()"
+
+.PP
+Reads in the Sea Environment input file and parses its inputs\&. \fBReturns:\fP
+.RS 4
+Returns integer to report success or failure of file parsing\&. Returns 0 for success\&. Returns 1 for file does not exist\&. 
+.RE
+.PP
+
+.PP
+Definition at line 170 of file filereader\&.cpp\&.
+.SS "void FileReader::sendOutput (intindex)\fC [protected]\fP"
+
+.PP
+Sends the results of parsing the input file onto the dictionary object\&. Use for processing the input file\&. \fBParameters:\fP
+.RS 4
+\fIindex\fP Integer\&. The index which specifies which object in the list of recognized objects to use\&. Variable passed by value\&. 
+.RE
+.PP
+
+.PP
+Definition at line 238 of file filereader\&.cpp\&.
+.SS "void FileReader::setDictionary (\fBosea::Dictionary\fP &dictIn)"
+
+.PP
+Sets the dictionary object to be used for processing any data read from the input files\&. \fBParameters:\fP
+.RS 4
+\fIdictIn\fP The dictionary object that you want to use for processing the file\&. This can change between reading individual files\&. Variable is passed by reference and stored as a pointer in the object\&. 
+.RE
+.PP
+
+.PP
+Definition at line 210 of file filereader\&.cpp\&.
+.SS "void FileReader::setPath (std::stringinput)"
+
+.PP
+Sets the path to the working directory that all control files are located in\&. \fBParameters:\fP
+.RS 4
+\fIinput\fP The full path to the working directory\&. Do not include directory separator (SLASH, '/') at end of std::string\&. Variable passed by value\&. 
+.RE
+.PP
+
+.PP
+Definition at line 90 of file filereader\&.cpp\&.
+.SS "void FileReader::setSystem (\fBofreq::System\fP *ptInput)\fC [slot]\fP"
+
+.PP
+Sets the system object for the dictionary to reference\&. \fBParameters:\fP
+.RS 4
+\fIptSystem\fP Pointer to the System object\&. Variable passed by value\&. 
+.RE
+.PP
+
+.PP
+Definition at line 229 of file filereader\&.cpp\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for oFreq from the source code\&.

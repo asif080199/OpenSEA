@@ -1,0 +1,10 @@
+<map id="calcOutput" name="calcOutput">
+<area shape="rect" id="node3" href="$classosea_1_1ofreq_1_1_file_writer.html#a77da1b41e1332209f39243fcca4d1287" title="Provides direct access to the OutputsBody object. The OutputsBody object must be set for the fileWrit..." alt="" coords="165,5,341,49"/>
+<area shape="rect" id="node5" href="$classosea_1_1ofreq_1_1_system.html#a18cbe26b239cf4ee83210ac6679f773f" title="Provides direct access to the list of wave directions." alt="" coords="173,73,334,117"/>
+<area shape="rect" id="node7" href="$classosea_1_1ofreq_1_1_system.html#a1bdee1bedde63db2d813fda1036f8299" title="Sets the current wave index." alt="" coords="173,141,334,185"/>
+<area shape="rect" id="node9" href="$classosea_1_1ofreq_1_1_outputs_body.html#a7d2b93ecaf1fa39257444bdf3194eacc" title="Sets the current wave direction." alt="" coords="152,209,355,253"/>
+<area shape="rect" id="node11" href="$classosea_1_1ofreq_1_1_file_writer.html#ada34dffe391a0daeac192bd4b7ed0ce5" title="Writes the output file of global motions. If file exists, appends to the file, assuming the appended ..." alt="" coords="165,277,341,321"/>
+<area shape="rect" id="node13" href="$classosea_1_1ofreq_1_1_file_writer.html#a9887a28316fca1417da81c95b04c2208" title="Writes the output file of global velocities. If file exists, appends to the file, assuming the append..." alt="" coords="165,345,341,389"/>
+<area shape="rect" id="node15" href="$classosea_1_1ofreq_1_1_file_writer.html#a1c49975afb40d028c42027e5239bcdaa" title="Writes the output file of global accelerations. If file exists, appends to the file, assuming the appended file is a new body object." alt="" coords="156,413,351,457"/>
+<area shape="rect" id="node17" href="$classosea_1_1ofreq_1_1_file_writer.html#ae5977c7303f36b1ae0b71bf9251c8a59" title="Writes the output file of global solutions. If file exists, appends to the file, assuming the appende..." alt="" coords="165,481,341,525"/>
+</map>

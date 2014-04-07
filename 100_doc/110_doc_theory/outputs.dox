@@ -1,0 +1,79 @@
+/**
+\page outputs Outputs
+
+\todo write documentation for outputs page.
+
+# Calculation of RAO
+
+All outputs include the absolute magnitude of response.  And the response amplitude operator (RAO) 
+for that output.  RAO's are their own list, given separately after the absolute response.
+
+
+# Basic Feedback Outputs
+
+\subpage wave_directions
+
+\subpage wave_frequencies
+
+\subpage output_wave_spectra
+
+
+# Global Solution Outputs
+
+\subpage global_derivative
+
+\subpage global_motion
+
+\subpage global_velocity
+
+\subpage global_acceleration
+
+
+# Local Solution Outputs
+
+\subpage local_derivative
+
+\subpage local_motion
+
+\subpage local_velocity
+
+\subpage local_acceleration
+
+
+# Force Outputs
+
+\subpage global_force
+
+\subpage local_force
+
+
+# Power Outputs
+
+Outputs about power are often used for research into items such as wave energy extraction devices.  
+They may also be useful for preliminary assessments of body structures.
+
+\subpage power
+
+
+# Efficiency Outputs
+
+These are some customized outputs used by ofreq for efficiency assessments of wave energy 
+extraction devices.
+
+\subpage efficiency_absolute
+
+\subpage efficiency_relative
+
+
+# Human Tolerance Outputs
+
+Sometimes, human tolerances are the limiting criteria for seakeeping performance.  Ofreq includes 
+outputs for classice algorithms on human tolerance, based on the ship motions.
+
+\subpage local_msi
+
+\subpage local_sma
+
+
+*/
+

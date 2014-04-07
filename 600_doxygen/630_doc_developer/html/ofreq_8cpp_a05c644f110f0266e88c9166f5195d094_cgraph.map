@@ -1,0 +1,9 @@
+<map id="ReadFiles" name="ReadFiles">
+<area shape="rect" id="node3" href="$classosea_1_1_file_reader.html#a54b42892f8c4de66ad1f7bfd1e8e0a27" title="Sets the system object for the dictionary to reference." alt="" coords="153,5,375,33"/>
+<area shape="rect" id="node5" href="$classosea_1_1_dictionary.html#a4f5b4ce990794a633ff8b69b8c021b66" title="Sets the system object for the dictionary to reference." alt="" coords="157,57,371,85"/>
+<area shape="rect" id="node7" href="$classosea_1_1_file_reader.html#a0b12de2af52dc0cdfae5ab337bf494dc" title="Sets the path to the working directory that all control files are located in." alt="" coords="163,109,365,137"/>
+<area shape="rect" id="node9" href="$classosea_1_1_file_reader.html#a3cbdb7eab632abafcfd055aa92f47b73" title="Sets the dictionary object to be used for processing any data read from the input files..." alt="" coords="145,161,383,189"/>
+<area shape="rect" id="node11" href="$classosea_1_1_file_reader.html#a967cab6ec0822fd8bcf392873a8a82b1" title="Reads in the control file and parses its inputs." alt="" coords="149,213,379,241"/>
+<area shape="rect" id="node13" href="$classosea_1_1_file_reader.html#ab78d2f631eb8e64b0a68d25eeca80be5" title="Reads in the Forces file and parses its inputs." alt="" coords="151,265,377,293"/>
+<area shape="rect" id="node15" href="$classosea_1_1_file_reader.html#a44770836db4ab430139118727ace6547" title="Reads in the Bodies file and parses its inputs." alt="" coords="151,317,377,345"/>
+</map>

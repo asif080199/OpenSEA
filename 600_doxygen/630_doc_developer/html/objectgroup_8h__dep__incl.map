@@ -1,0 +1,16 @@
+<map id="objectgroup.h" name="objectgroup.h">
+<area shape="rect" id="node3" href="$dictionary_8h.html" title="dictionary.h" alt="" coords="296,80,387,107"/>
+<area shape="rect" id="node23" href="$filereader_8h.html" title="filereader.h" alt="" coords="493,155,581,181"/>
+<area shape="rect" id="node28" href="$parser_8h.html" title="parser.h" alt="" coords="538,80,608,107"/>
+<area shape="rect" id="node34" href="$objectgroup_8cpp.html" title="objectgroup.cpp" alt="" coords="633,80,748,107"/>
+<area shape="rect" id="node5" href="$dictbodies_8h.html" title="dictbodies.h" alt="" coords="255,155,349,181"/>
+<area shape="rect" id="node11" href="$dictcontrol_8h.html" title="dictcontrol.h" alt="" coords="375,155,468,181"/>
+<area shape="rect" id="node16" href="$dictforces_8h.html" title="dictforces.h" alt="" coords="12,155,103,181"/>
+<area shape="rect" id="node21" href="$dictionary_8cpp.html" title="dictionary.cpp" alt="" coords="127,155,231,181"/>
+<area shape="rect" id="node7" href="$dictbodies_8cpp.html" title="dictbodies.cpp" alt="" coords="134,229,241,256"/>
+<area shape="rect" id="node9" href="$ofreq_8cpp.html" title="ofreq.cpp" alt="" coords="267,229,343,256"/>
+<area shape="rect" id="node13" href="$dictcontrol_8cpp.html" title="dictcontrol.cpp" alt="" coords="368,229,475,256"/>
+<area shape="rect" id="node18" href="$dictforces_8cpp.html" title="dictforces.cpp" alt="" coords="5,229,109,256"/>
+<area shape="rect" id="node25" href="$filereader_8cpp.html" title="filereader.cpp" alt="" coords="499,229,601,256"/>
+<area shape="rect" id="node31" href="$parser_8cpp.html" title="parser.cpp" alt="" coords="606,155,689,181"/>
+</map>

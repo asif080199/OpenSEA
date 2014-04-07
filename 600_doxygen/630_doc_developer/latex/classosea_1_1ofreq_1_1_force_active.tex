@@ -1,0 +1,267 @@
+\hypertarget{classosea_1_1ofreq_1_1_force_active}{\section{osea\-:\-:ofreq\-:\-:Force\-Active Class Reference}
+\label{classosea_1_1ofreq_1_1_force_active}\index{osea\-::ofreq\-::\-Force\-Active@{osea\-::ofreq\-::\-Force\-Active}}
+}
+
+
+{\ttfamily \#include $<$forceactive.\-h$>$}
+
+
+
+Inheritance diagram for osea\-:\-:ofreq\-:\-:Force\-Active\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=224pt]{classosea_1_1ofreq_1_1_force_active__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classosea_1_1ofreq_1_1_force_active_ae006e3394f8c925c6a3218686c5cc8ae}{Force\-Active} ()
+\item 
+virtual \hyperlink{classosea_1_1ofreq_1_1_force_active_aa2db4bc1fb74ecb6e0ee46c59a40dd2a}{$\sim$\-Force\-Active} ()
+\item 
+void \hyperlink{classosea_1_1ofreq_1_1_force_active_a488373dc9f5d8f5b07cee3615a2390fe}{set\-Coeff} (std\-::complex$<$ double $>$ coeff\-In, unsigned int index=-\/1)
+\begin{DoxyCompactList}\small\item\em Sets the coefficient for the specified index. \end{DoxyCompactList}\item 
+void \hyperlink{classosea_1_1ofreq_1_1_force_active_a6c63d2be73033f1c061fd71ce9d58065}{add\-Equation} (std\-::complex$<$ double $>$ eq\-In, int data\-Index=-\/1)
+\begin{DoxyCompactList}\small\item\em Adds an equation to the list of equations / coefficients stored in the force\-Active object. \end{DoxyCompactList}\item 
+std\-::vector$<$ \hyperlink{namespaceosea_1_1ofreq_a40cad4695a41123a7ae6ab0b6e8b1664}{complex\-Double} $>$ \& \hyperlink{classosea_1_1ofreq_1_1_force_active_a6cc1157859625b457b82ff745f0b5ff4}{list\-Coefficient} ()
+\item 
+\hyperlink{namespaceosea_1_1ofreq_a40cad4695a41123a7ae6ab0b6e8b1664}{complex\-Double} \& \hyperlink{classosea_1_1ofreq_1_1_force_active_aac0948404f2f21b013b9a02b38087191}{list\-Coefficient} (unsigned int index)
+\begin{DoxyCompactList}\small\item\em Provides direct access to a coefficient from the list of coefficients. \end{DoxyCompactList}\item 
+std\-::vector$<$ \hyperlink{namespaceosea_1_1ofreq_a40cad4695a41123a7ae6ab0b6e8b1664}{complex\-Double} $>$ \& \hyperlink{classosea_1_1ofreq_1_1_force_active_a6c41c64d60a90442ab2caffcefe703f1}{list\-Data\-Equation} ()
+\begin{DoxyCompactList}\small\item\em Another implementation of function list\-Coefficient. But this one uses the Data index. \end{DoxyCompactList}\item 
+\hyperlink{namespaceosea_1_1ofreq_a40cad4695a41123a7ae6ab0b6e8b1664}{complex\-Double} \& \hyperlink{classosea_1_1ofreq_1_1_force_active_aa05812dcc8b83df534134888015f75e6}{list\-Data\-Equation} (int index)
+\begin{DoxyCompactList}\small\item\em Another implementation of function list\-Coefficient(index). \end{DoxyCompactList}\item 
+\hyperlink{namespaceosea_1_1ofreq_a40cad4695a41123a7ae6ab0b6e8b1664}{complex\-Double} \hyperlink{classosea_1_1ofreq_1_1_force_active_a2e01f54c3071d2f8831fb7763cf14500}{get\-Equation} (int number)
+\begin{DoxyCompactList}\small\item\em Get a specific number from the list of coefficients. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\-::vector$<$ \hyperlink{namespaceosea_1_1ofreq_a40cad4695a41123a7ae6ab0b6e8b1664}{complex\-Double} $>$ \hyperlink{classosea_1_1ofreq_1_1_force_active_af5731f3a699256f0b0b61b77701b236a}{p\-Coefficients}
+\item 
+std\-::vector$<$ int $>$ \hyperlink{classosea_1_1ofreq_1_1_force_active_a5fe90d49624efff55c2cc641f394f8f4}{p\-Data\-Index}
+\begin{DoxyCompactList}\small\item\em The list of data indices for each coefficient. The \hyperlink{classosea_1_1ofreq_1_1_force_active_a6c41c64d60a90442ab2caffcefe703f1}{list\-Data\-Equation()} method will lookup items by their data index, instead of their occurance index in the container vector. This vector contains those data indices used for that search by data\-Index. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+This class holds data for an active force. 
+
+Definition at line 86 of file forceactive.\-h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classosea_1_1ofreq_1_1_force_active_ae006e3394f8c925c6a3218686c5cc8ae}{\index{osea\-::ofreq\-::\-Force\-Active@{osea\-::ofreq\-::\-Force\-Active}!Force\-Active@{Force\-Active}}
+\index{Force\-Active@{Force\-Active}!osea::ofreq::ForceActive@{osea\-::ofreq\-::\-Force\-Active}}
+\subsubsection[{Force\-Active}]{\setlength{\rightskip}{0pt plus 5cm}Force\-Active\-::\-Force\-Active (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_force_active_ae006e3394f8c925c6a3218686c5cc8ae}
+The default constructor. 
+
+Definition at line 36 of file forceactive.\-cpp.
+
+\hypertarget{classosea_1_1ofreq_1_1_force_active_aa2db4bc1fb74ecb6e0ee46c59a40dd2a}{\index{osea\-::ofreq\-::\-Force\-Active@{osea\-::ofreq\-::\-Force\-Active}!$\sim$\-Force\-Active@{$\sim$\-Force\-Active}}
+\index{$\sim$\-Force\-Active@{$\sim$\-Force\-Active}!osea::ofreq::ForceActive@{osea\-::ofreq\-::\-Force\-Active}}
+\subsubsection[{$\sim$\-Force\-Active}]{\setlength{\rightskip}{0pt plus 5cm}Force\-Active\-::$\sim$\-Force\-Active (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classosea_1_1ofreq_1_1_force_active_aa2db4bc1fb74ecb6e0ee46c59a40dd2a}
+The default destructor, nothing happens here. 
+
+Definition at line 41 of file forceactive.\-cpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classosea_1_1ofreq_1_1_force_active_a6c63d2be73033f1c061fd71ce9d58065}{\index{osea\-::ofreq\-::\-Force\-Active@{osea\-::ofreq\-::\-Force\-Active}!add\-Equation@{add\-Equation}}
+\index{add\-Equation@{add\-Equation}!osea::ofreq::ForceActive@{osea\-::ofreq\-::\-Force\-Active}}
+\subsubsection[{add\-Equation}]{\setlength{\rightskip}{0pt plus 5cm}void Force\-Active\-::add\-Equation (
+\begin{DoxyParamCaption}
+\item[{std\-::complex$<$ double $>$}]{eq\-In, }
+\item[{int}]{data\-Index = {\ttfamily -\/1}}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_force_active_a6c63d2be73033f1c061fd71ce9d58065}
+
+
+Adds an equation to the list of equations / coefficients stored in the force\-Active object. 
+
+Expands the current list of equations / coefficients by adding the inputs to the end of the list. Adds both the coefficient specified, and the corresponding equation data index. 
+\begin{DoxyParams}{Parameters}
+{\em eq\-In} & Complex double input. This is the coefficient value stored for the specified equation. Variable passed by value. \\
+\hline
+{\em data\-Index} & Integer input. This is the data index specified. When objects are retrieved by their data index, they will lookup this value. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 60 of file forceactive.\-cpp.
+
+\hypertarget{classosea_1_1ofreq_1_1_force_active_a2e01f54c3071d2f8831fb7763cf14500}{\index{osea\-::ofreq\-::\-Force\-Active@{osea\-::ofreq\-::\-Force\-Active}!get\-Equation@{get\-Equation}}
+\index{get\-Equation@{get\-Equation}!osea::ofreq::ForceActive@{osea\-::ofreq\-::\-Force\-Active}}
+\subsubsection[{get\-Equation}]{\setlength{\rightskip}{0pt plus 5cm}{\bf complex\-Double} Force\-Active\-::get\-Equation (
+\begin{DoxyParamCaption}
+\item[{int}]{number}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_force_active_a2e01f54c3071d2f8831fb7763cf14500}
+
+
+Get a specific number from the list of coefficients. 
+
+Get a specific number from the list of coefficients. Similar to get\-Coefficients(), only instead of returning the entire vector of coefficients, this only returns a single value in the list. 
+\begin{DoxyParams}{Parameters}
+{\em number} & Integer specifying which number should be retrieved from the list. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Complex Double which is the input coefficient for the active force on the equation specified by number. Returns by value, not by reference. 
+\end{DoxyReturn}
+
+
+Definition at line 116 of file forceactive.\-cpp.
+
+\hypertarget{classosea_1_1ofreq_1_1_force_active_a6cc1157859625b457b82ff745f0b5ff4}{\index{osea\-::ofreq\-::\-Force\-Active@{osea\-::ofreq\-::\-Force\-Active}!list\-Coefficient@{list\-Coefficient}}
+\index{list\-Coefficient@{list\-Coefficient}!osea::ofreq::ForceActive@{osea\-::ofreq\-::\-Force\-Active}}
+\subsubsection[{list\-Coefficient}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ {\bf complex\-Double} $>$ \& Force\-Active\-::list\-Coefficient (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_force_active_a6cc1157859625b457b82ff745f0b5ff4}
+Retrieve the list of coefficients. \begin{DoxyReturn}{Returns}
+The list of coefficients. 
+\end{DoxyReturn}
+
+
+Definition at line 77 of file forceactive.\-cpp.
+
+\hypertarget{classosea_1_1ofreq_1_1_force_active_aac0948404f2f21b013b9a02b38087191}{\index{osea\-::ofreq\-::\-Force\-Active@{osea\-::ofreq\-::\-Force\-Active}!list\-Coefficient@{list\-Coefficient}}
+\index{list\-Coefficient@{list\-Coefficient}!osea::ofreq::ForceActive@{osea\-::ofreq\-::\-Force\-Active}}
+\subsubsection[{list\-Coefficient}]{\setlength{\rightskip}{0pt plus 5cm}{\bf complex\-Double} \& Force\-Active\-::list\-Coefficient (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{index}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_force_active_aac0948404f2f21b013b9a02b38087191}
+
+
+Provides direct access to a coefficient from the list of coefficients. 
+
+Returns a value from the list of coefficents. Which value to return is specified by the input index. 
+\begin{DoxyParams}{Parameters}
+{\em index} & Unsigned integer. Specifies which value to return from the list of coefficients. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns a complex double. Returned variable is a value from the list of coefficients. Returned variable is passed by reference. 
+\end{DoxyReturn}
+
+
+Definition at line 83 of file forceactive.\-cpp.
+
+\hypertarget{classosea_1_1ofreq_1_1_force_active_a6c41c64d60a90442ab2caffcefe703f1}{\index{osea\-::ofreq\-::\-Force\-Active@{osea\-::ofreq\-::\-Force\-Active}!list\-Data\-Equation@{list\-Data\-Equation}}
+\index{list\-Data\-Equation@{list\-Data\-Equation}!osea::ofreq::ForceActive@{osea\-::ofreq\-::\-Force\-Active}}
+\subsubsection[{list\-Data\-Equation}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ {\bf complex\-Double} $>$ \& Force\-Active\-::list\-Data\-Equation (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_force_active_a6c41c64d60a90442ab2caffcefe703f1}
+
+
+Another implementation of function list\-Coefficient. But this one uses the Data index. 
+
+\begin{DoxyReturn}{Returns}
+Vector containing the list of coefficients. Argument passed by reference. 
+\end{DoxyReturn}
+
+
+Definition at line 89 of file forceactive.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classosea_1_1ofreq_1_1_force_active_a6c41c64d60a90442ab2caffcefe703f1_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classosea_1_1ofreq_1_1_force_active_aa05812dcc8b83df534134888015f75e6}{\index{osea\-::ofreq\-::\-Force\-Active@{osea\-::ofreq\-::\-Force\-Active}!list\-Data\-Equation@{list\-Data\-Equation}}
+\index{list\-Data\-Equation@{list\-Data\-Equation}!osea::ofreq::ForceActive@{osea\-::ofreq\-::\-Force\-Active}}
+\subsubsection[{list\-Data\-Equation}]{\setlength{\rightskip}{0pt plus 5cm}{\bf complex\-Double} \& Force\-Active\-::list\-Data\-Equation (
+\begin{DoxyParamCaption}
+\item[{int}]{index}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_force_active_aa05812dcc8b83df534134888015f75e6}
+
+
+Another implementation of function list\-Coefficient(index). 
+
+Provides direct access to items in the list of equations. Returns a single variable from the list of coefficients. Variable is accessed by data index, and not by vector occurrence index. 
+\begin{DoxyParams}{Parameters}
+{\em index} & Integer. Specifies which value to return from the list of coefficients. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns a complex double. Returned variable is a value from the list of coefficients. Returned variable is passed by reference. 
+\end{DoxyReturn}
+
+
+Definition at line 95 of file forceactive.\-cpp.
+
+\hypertarget{classosea_1_1ofreq_1_1_force_active_a488373dc9f5d8f5b07cee3615a2390fe}{\index{osea\-::ofreq\-::\-Force\-Active@{osea\-::ofreq\-::\-Force\-Active}!set\-Coeff@{set\-Coeff}}
+\index{set\-Coeff@{set\-Coeff}!osea::ofreq::ForceActive@{osea\-::ofreq\-::\-Force\-Active}}
+\subsubsection[{set\-Coeff}]{\setlength{\rightskip}{0pt plus 5cm}void Force\-Active\-::set\-Coeff (
+\begin{DoxyParamCaption}
+\item[{std\-::complex$<$ double $>$}]{coeff\-In, }
+\item[{unsigned int}]{index = {\ttfamily -\/1}}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_force_active_a488373dc9f5d8f5b07cee3615a2390fe}
+
+
+Sets the coefficient for the specified index. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em coeff\-In} & The value of the coefficient to specify. Added as a complex number. Variable passed by value. \\
+\hline
+{\em index} & The equation index of the coefficient to specify. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 46 of file forceactive.\-cpp.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classosea_1_1ofreq_1_1_force_active_af5731f3a699256f0b0b61b77701b236a}{\index{osea\-::ofreq\-::\-Force\-Active@{osea\-::ofreq\-::\-Force\-Active}!p\-Coefficients@{p\-Coefficients}}
+\index{p\-Coefficients@{p\-Coefficients}!osea::ofreq::ForceActive@{osea\-::ofreq\-::\-Force\-Active}}
+\subsubsection[{p\-Coefficients}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<${\bf complex\-Double}$>$ osea\-::ofreq\-::\-Force\-Active\-::p\-Coefficients\hspace{0.3cm}{\ttfamily [protected]}}}\label{classosea_1_1ofreq_1_1_force_active_af5731f3a699256f0b0b61b77701b236a}
+The list of force coeffients. 
+
+Definition at line 169 of file forceactive.\-h.
+
+\hypertarget{classosea_1_1ofreq_1_1_force_active_a5fe90d49624efff55c2cc641f394f8f4}{\index{osea\-::ofreq\-::\-Force\-Active@{osea\-::ofreq\-::\-Force\-Active}!p\-Data\-Index@{p\-Data\-Index}}
+\index{p\-Data\-Index@{p\-Data\-Index}!osea::ofreq::ForceActive@{osea\-::ofreq\-::\-Force\-Active}}
+\subsubsection[{p\-Data\-Index}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<$int$>$ osea\-::ofreq\-::\-Force\-Active\-::p\-Data\-Index\hspace{0.3cm}{\ttfamily [protected]}}}\label{classosea_1_1ofreq_1_1_force_active_a5fe90d49624efff55c2cc641f394f8f4}
+
+
+The list of data indices for each coefficient. The \hyperlink{classosea_1_1ofreq_1_1_force_active_a6c41c64d60a90442ab2caffcefe703f1}{list\-Data\-Equation()} method will lookup items by their data index, instead of their occurance index in the container vector. This vector contains those data indices used for that search by data\-Index. 
+
+
+
+Definition at line 177 of file forceactive.\-h.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/home/\-Ship\-\_\-\-Design/\-Projects/\-D\-M\-S1305 Open\-S\-E\-A/master/200\-\_\-src/bin/ofreq/global\-\_\-objects/\hyperlink{forceactive_8h}{forceactive.\-h}\item 
+/home/\-Ship\-\_\-\-Design/\-Projects/\-D\-M\-S1305 Open\-S\-E\-A/master/200\-\_\-src/bin/ofreq/global\-\_\-objects/\hyperlink{forceactive_8cpp}{forceactive.\-cpp}\end{DoxyCompactItemize}

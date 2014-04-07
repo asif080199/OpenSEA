@@ -1,0 +1,173 @@
+.TH "osea::Dictionary" 3 "Sat Apr 5 2014" "Version 0.4" "oFreq" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+osea::Dictionary \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <dictionary\&.h>\fP
+.PP
+Inherits QObject, and \fBosea::ofreq::oFreqCore\fP\&.
+.PP
+Inherited by \fBosea::ofreq::dictBodies\fP, \fBosea::ofreq::dictControl\fP, and \fBosea::ofreq::dictForces\fP\&.
+.SS "Public Slots"
+
+.in +1c
+.ti -1c
+.RI "virtual void \fBsetObject\fP (\fBObjectGroup\fP input)"
+.br
+.RI "\fIPublic signal for the \fBObjectGroup\fP object that is sent to the \fBDictionary\fP object for procesing\&. \fP"
+.ti -1c
+.RI "virtual void \fBsetSystem\fP (\fBofreq::System\fP *ptInput)"
+.br
+.RI "\fISets the system object for the dictionary to reference\&. \fP"
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBDictionary\fP (QObject *parent)"
+.br
+.ti -1c
+.RI "\fBDictionary\fP ()"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual int \fBdefineKey\fP (std::string keyIn, std::vector< std::string > valIn)"
+.br
+.RI "\fIPure virtual function that defines how to interpret the key values\&. Contains a list of key names and corresponding actions to take for interpretting each key value\&. \fP"
+.ti -1c
+.RI "virtual int \fBdefineClass\fP (std::string nameIn)"
+.br
+.RI "\fIPure virtual function that defines how to interpret the class name\&. Class name implies declaration of a new object of the class named by the class name\&. This is a separate set of definitions to handle class declarations\&. \fP"
+.ti -1c
+.RI "std::complex< double > \fBconvertComplex\fP (std::string input)"
+.br
+.RI "\fIConverts a std::string of a complex number into a complex object (double base type) i\&.e\&. std::complex<double>\&. \fP"
+.in -1c
+.SS "Protected Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBofreq::System\fP * \fBptSystem\fP"
+.br
+.RI "\fIPointer to the System object\&. Used to reference any important variables in the System object\&. \fP"
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+This is a virtual class definition, inheritted by each fileDictionary object\&. Contains the basic functions for how to recursively progress through the definitions for an \fBObjectGroup\fP object that is fed in\&. 
+.PP
+\fBSee Also:\fP
+.RS 4
+\fBObjectGroup\fP 
+.RE
+.PP
+
+.PP
+Definition at line 84 of file dictionary\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "Dictionary::Dictionary (QObject *parent)\fC [explicit]\fP"
+
+.PP
+Definition at line 36 of file dictionary\&.cpp\&.
+.SS "Dictionary::Dictionary ()"
+
+.PP
+Definition at line 42 of file dictionary\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "complex< double > Dictionary::convertComplex (std::stringinput)\fC [protected]\fP"
+
+.PP
+Converts a std::string of a complex number into a complex object (double base type) i\&.e\&. std::complex<double>\&. \fBParameters:\fP
+.RS 4
+\fIinput\fP The std::string which holds the complex number\&. Valid input formats are: 1\&.00+1\&.00i 1\&.00-1\&.00i 1\&.00+i1\&.00 1\&.00-i1\&.00 1\&.414<0\&.785398 (angle must be in radians) 1\&.414<-0\&.785398 (angle must be in radians) 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Returns a std::complex<double> object\&. Variable passed by value\&. 
+.RE
+.PP
+
+.PP
+Definition at line 105 of file dictionary\&.cpp\&.
+.SS "int Dictionary::defineClass (std::stringnameIn)\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Pure virtual function that defines how to interpret the class name\&. Class name implies declaration of a new object of the class named by the class name\&. This is a separate set of definitions to handle class declarations\&. \fBParameters:\fP
+.RS 4
+\fInameIn\fP std::string, variable passed by value\&. The name of the class name\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Returns status of assigning key\&. Returned value is an integer, passed by value\&. See list of return codes below: 0: Key definition found\&. Success\&. 1: No key found\&. / General error message\&. 2: Key is invalid within current active object\&. 99: Function virtual definition only\&. Not currently defined\&. 
+.RE
+.PP
+
+.PP
+Reimplemented in \fBosea::ofreq::dictBodies\fP, \fBosea::ofreq::dictForces\fP, and \fBosea::ofreq::dictControl\fP\&.
+.PP
+Definition at line 97 of file dictionary\&.cpp\&.
+.SS "int Dictionary::defineKey (std::stringkeyIn, std::vector< std::string >valIn)\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Pure virtual function that defines how to interpret the key values\&. Contains a list of key names and corresponding actions to take for interpretting each key value\&. \fBParameters:\fP
+.RS 4
+\fIkeyIn\fP std::string containing the key name\&. Variable passed by value\&. 
+.br
+\fIvalIn\fP Vector of strings containing the key values\&. Variable passed by value\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Returns status of assigning key\&. Returned value is an integer, passed by value\&. See list of return codes below: 0: Key definition found\&. Success\&. 1: No key found\&. / General error message\&. 2: Key is invalid within current active object\&. 99: Function virtual definition only\&. Not currently defined\&. 
+.RE
+.PP
+
+.PP
+Reimplemented in \fBosea::ofreq::dictBodies\fP, \fBosea::ofreq::dictForces\fP, and \fBosea::ofreq::dictControl\fP\&.
+.PP
+Definition at line 89 of file dictionary\&.cpp\&.
+.SS "void Dictionary::setObject (\fBObjectGroup\fPinput)\fC [virtual]\fP, \fC [slot]\fP"
+
+.PP
+Public signal for the \fBObjectGroup\fP object that is sent to the \fBDictionary\fP object for procesing\&. \fBParameters:\fP
+.RS 4
+\fIinput\fP The \fBObjectGroup\fP object that contains the class definitions\&. Variable passed by value\&. 
+.RE
+.PP
+
+.PP
+Definition at line 54 of file dictionary\&.cpp\&.
+.SS "void Dictionary::setSystem (\fBofreq::System\fP *ptInput)\fC [virtual]\fP, \fC [slot]\fP"
+
+.PP
+Sets the system object for the dictionary to reference\&. \fBParameters:\fP
+.RS 4
+\fIptSystem\fP Pointer to the System object\&. Variable passed by value\&. 
+.RE
+.PP
+
+.PP
+Definition at line 80 of file dictionary\&.cpp\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBofreq::System\fP* osea::Dictionary::ptSystem\fC [protected]\fP"
+
+.PP
+Pointer to the System object\&. Used to reference any important variables in the System object\&. 
+.PP
+Definition at line 166 of file dictionary\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for oFreq from the source code\&.

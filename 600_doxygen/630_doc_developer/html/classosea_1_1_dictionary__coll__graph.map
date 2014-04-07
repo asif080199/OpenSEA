@@ -1,0 +1,4 @@
+<map id="osea::Dictionary" name="osea::Dictionary">
+<area shape="rect" id="node6" href="$classosea_1_1ofreq_1_1_system.html" title="{osea::ofreq::System\n||+ System()\l+ ~System()\l+ setWaveFrequencies()\l+ setWaveDirections()\l+ setSpreadModel()\l+ getWaveFrequencies()\l+ listWaveFrequencies()\l+ getWaveDirections()\l+ listWaveDirections()\l+ setCurWaveDirInd()\land 19 more...\l+ setAnalysisType()\l+ addBody()\l+ addBody()\l+ addOutput()\l+ addOutput()\l+ addForceActive_user()\l+ addForceActive_user()\l+ addForceReact_user()\l+ addForceReact_user()\l+ addForceCross_user()\l+ addForceCross_user()\l+ linkBodies()\l+ listModel()\l+ listModel()\l+ listModel()\l}" alt="" coords="50,251,221,695"/>
+<area shape="rect" id="node4" href="$classosea_1_1ofreq_1_1o_freq_core.html" title="The core oFreq class. All oFreq classes inherit from this class." alt="" coords="142,5,308,200"/>
+</map>

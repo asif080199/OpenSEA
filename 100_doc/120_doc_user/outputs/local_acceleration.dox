@@ -1,0 +1,51 @@
+/**
+\page local_acceleration Local Acceleration
+
+\todo write documentation for local acceleration.
+
+# Output
+
+
+# Calculation Method
+
+This calculation should include the \f$ sin(\theta)\f$ terms.  For example:
+
+\f[
+
+  \ddot x_2 = ... + g sin \left ( \theta \right )
+ 
+\f]
+
+# Limitations
+
+
+# Application to Custom Motion Models
+
+  \f[
+    |I_2|=\left| \int_{0}^T \psi(t) 
+             \left\{ 
+                u(a,t)-
+                \int_{\gamma(t)}^a 
+                \frac{d\theta}{k(\theta,t)}
+                \int_{a}^\theta c(\xi)u_t(\xi,t)\,d\xi
+             \right\} dt
+          \right|
+  \f]
+
+
+# RAO Calculation
+
+State how the RAO is calculated.  For every output, ofreq calculates both the true response value, 
+and the RAO for that value. They are listed sequentially.  First the response, then the RAO.  
+
+## RAO Normalization.
+
+Sometimes it can be very confusing which part of the input wave properties are used to normalize 
+the output.  This section should explicitely state how the RAO was calculated.
+
+## RAO Units
+
+Sometimes it can be very confusing what the units of an RAO are.  So this should clarify.
+
+
+*/
