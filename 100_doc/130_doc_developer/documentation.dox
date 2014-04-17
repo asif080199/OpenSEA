@@ -1,0 +1,234 @@
+/**
+\page documentation Creating Documentation
+
+\tableofcontents
+
+# Introduction {#documentation_intro}
+
+This section covers the basic procedures for how to generate documentation for the OpenSEA project.  This includes the types of documentation, which 
+applications to use for documentation generation, and how to generate the documentation.
+
+Accurate documentation is critical for this 
+project.  Even more critical than having code completely bug free.  The users must trust the program, and to do that, they will want to thoroughly 
+understand how the program operates.  To that end, every application in OpenSEA has three documentation manuals associated with it.
+1. Developer Manual
+2. Theory Manual
+3. User Manual
+
+Each manual has a specific purpose.  You can read more in the following sections.  Beyond these three manuals, there is also some documentation that 
+is common to all three manuals.  This is documented separately and then referenced for inclusion in all three manuals.
+
+The OpenSEA project uses two completely different applications for generating documentation.
+1. Doxygen
+  - Used to document source code.
+2. Open Office / Libre Office
+  - Used to document user manual and theory manual.
+  
+These two systems then get combined together with the Qt help project system to generate a single coherent set of documentation.
+
+## Why Two Systems {#documentation_twosyst}
+
+Why create two documentation systems?  Doesn't it cause extra confusion?  Short answer:  Yes, but the extra effort is worth the reliability and 
+efficiency of features.  This is a case of once again appealing to the primary developer roles on the OpenSEA project: software engineers, and marine 
+engineers.
+
+The code is best documented with Doxygen.  This allows the authors to write code documention directly in the source files when they write the code.  
+That ensures the documentation is directly avaiable, maintains consistency with the code, and saves on many hours of writing and formating separate 
+documentation.
+
+But there is another side of documentation:  the user.  The common user for OpenSEA has an advanced technical background and was trained to suspect 
+all programs are wrong until thoroughly validated and documented.  Thus is it is important to have extensive documentation on theory and use of the 
+program.  This builds user confidence.  
+
+The development environment of Open Office / Libre Office is ideally suited to the user and theory manauls.  These manuals need to read more 
+like a scientific paper.  Simple things like spelling and typos can quickly undermine user confidence.  Open Office / Libre Office includes all the 
+authoring tools necessary to automatically check for these items.  It also includes automatic referencing and a bibliography.  All necessary for the 
+scientific background of this program.
+
+Finally, it is still important to present a consistent appearance for easier user interface.  The Qt help system can combine the two authoring 
+systems together into a single, final set of user documentation with all the expected features of searches, an index, and table of contents.
+
+
+# Documentation Manuals {#documentation_manuals}
+
+There are three main documentation manuals.  Each with their own style and purpose.  And there is also commmon documentation that gets included in 
+all three manuals.  
+
+
+## Developer Manual {#documentation_developer}
+
+The developer manual contains all the details of the software coding itself.
+- Generated using doxygen.
+- The full API for the code.
+- Output is html files
+- Doxygen automatically generates the help project file.
+
+The majority of the documentation is written in the source code files.  Doxygen scans these source code files and generates a full code API from 
+them.  It also generates UML style class diagrams and call diagrams.  Beyond the code API, the developer documentation also includes anything the 
+developers need to know for enhancing the code and adding to the OpenSEA project (specifically adding to source code).  For example, this whole 
+section on how to create project documentation is in the Developer Documentation.
+
+Any documentation not included as part os the source code is added under a separate file structure.  Doxygen can scan through multiple folders to 
+create a single document which includes API and supplemental documentation.  Organize the file structure similar to the final documentation 
+structure.  Sub-pages go within a sub-folder.  Each documentation page is a separate text file, with a .dox file extension.  All files are plain text 
+ASII files.  
+
+\note Each documentation page is a separate text file, with a .dox file extension.  All files are plain text 
+ASII files.  File formatting is Markdown
+
+Files are formatted using Markdown formating.  This is specifically the version of Markdown supported by Doxygen.  [Doxygen Markdown Support] 
+(http://www.stack.nl/~dimitri/doxygen/manual/markdown.html)  Doxygen also supports [mathematical 
+formulas](http://www.stack.nl/~dimitri/doxygen/manual/formulas.html), using Latex.  However, there should be very limited formulas included in the 
+developer documentation.
+
+Output from Doxygen should be html output, with the Qt .qhp file included.  Write the Doxygen output to a completely separate folder from the 
+original files.  Keep the originals separated from the final output.  This makes it easier to quickly revise the documentation.
+
+
+## Theory Manual {#documentation_theory}
+
+The theory manual explains the math and science behind the OpenSEA project.  
+- Generated using Open Office / Libre Office
+- The equations behind the program
+- More styled like a scientific paper
+- Output is html files, generated from Libre Office / Open Office
+
+It does not reproduce an entire education on naval architecture and 
+seakeeping theory.  But within the science of seakeeping, there are many approaches and methods.  The theory documentation should explicitely detail 
+out the following things:
+
+1. Exactly what the equations were
+2. Exactly what methods were used
+3. Exactly what assumptions were made
+4. Exactly what simplifications were made
+
+Place the theory documentation in its own separate folder.  Each documentation page should be a separate file.  Organize the file structure similar 
+to the final documentation structure.  Sub-pages go within a sub-folder.  The final Qt project file will specify the exact organization, so the file 
+structure does not need to be 100% perfect.
+
+Files are formatted using Open Office / Libre Office.  A file template is provided.  This template must be used.  It is absolutely critical that the 
+styles are used within this template.  __Do not create your own styles or directly format anything.__  This is because the final documentation 
+replaces the formatting in the documentation with a reference to an external cascading style sheet (CSS) formatting.  But the style names must remain 
+the same.  Otherwise the styles referenced in the documentation page do not match the formatting instructions in the CSS sheet.  
+
+Save the original files as .odt files.  And then use SaveAs to publish the files as html files.  Write the html files to a completely separate folder 
+from the original files.  Keep the originals separated from the final output.  This makes it easier to quickly revise the documentation.  The final 
+.html files do not need to maintain the same folder structure as the originals.  The Qt Project file handles that.
+
+
+## User Manual {#documentation_user}
+
+The user manual handles the nuts and bolts of how to actually operate the program.  What command to enter for each step.
+- Generated using Open Office / Libre Office
+- The instructions for operating the programs
+- Styled like a classic help file.  Practical and simple
+- Output is html files, generated from Libre Office / Open Office
+
+The user documentation covers all the operational instructions.  This is where you explain the general process of how to operate the program.  
+Explain the concepts and how the data is organized.  Get down to the practical details.  Even simple things like:  what units are the inputs given 
+in?  Also include general concepts.  Example:  explain what a body is within the program.  Also include any tutorials and worked examples in this 
+user documentation.
+
+Place the user documentation in its own separate folder.  Each documentation page should be a separate file.  Organize the file structure similar 
+to the final documentation structure.  Sub-pages go within a sub-folder.  The final Qt project file will specify the exact organization, so the file 
+structure does not need to be 100% perfect.
+
+Files are formatted using Open Office / Libre Office.  A file template is provided.  This template must be used.  It is absolutely critical that the 
+styles are used within this template.  __Do not create your own styles or directly format anything.__  This is because the final documentation 
+replaces the formatting in the documentation with a reference to an external cascading style sheet (CSS) formatting.  But the style names must remain 
+the same.  Otherwise the styles referenced in the documentation page do not match the formatting instructions in the CSS sheet.  
+
+Save the original files as .odt files.  And then use SaveAs to publish the files as html files.  Write the html files to a completely separate folder 
+from the original files.  Keep the originals separated from the final output.  This makes it easier to quickly revise the documentation.  The final 
+.html files do not need to maintain the same folder structure as the originals.  The Qt Project file handles that.
+
+
+## Common Documentation {#documentation_common}
+
+Finally, there is some documentation that is common to every manual.  This is included in its own separate folder and referenced by all three manauls.
+- Generated using Open Office / Libre Office
+- Really basic, common information
+- Styled like a dictionary or other reference material.
+- Output is html files, generated from Libre Office / Open Office
+
+The common documentation should be items like definitions for terms used in the program.  Or common units of measurement for inputs and outputs.  
+Really basic stuff.
+
+
+# Document Numbering System
+
+Every document in the document numbering system must have a unique identifier number associated with it.  The subpage explains the document 
+numbering system.  All developers must respect it.  (Or come up with a better system and help me implement it.)
+
+\subpage docnumbersys
+
+
+# Combining For Final Output {#documentation_combine}
+
+You noticed that all manuals produce html output.  This is the neutral medium that all the authoring tools publish to.  We then use the Qt Help 
+Project system to combine the html files into a single cohesive documentation file.  Go through the following steps to publish the documentation.
+
+1. For each manual, create The _Q_t _C_ompressed _H_elp file (.qch) from the html files.
+
+   a. First create the help project configuration file (.qhp).
+   
+   b. Then execute the following command (linux operating system) to compile the compressed help file.  doc.qhp is the name of the 
+configuration file and output.qch is the name of the output Qt compressed help file.
+
+    qhelpgenerator doc.qhp -o output.qch
+
+2. Repeat this process for each manual.  You should have three separate .qhp files when done.
+3. Next create the final combined help collection file.  
+
+   a. Create a collection configuration file (.qhcp)
+   
+   b. Then execute the following command (linux operating system) to compile the final help collection file.  mycollection.qhcp is the name of 
+the configuration file and collection_output.qhc is the name of the final compiled collection file.
+
+    qcollectiongenerator mycollection.qhcp -o collection_output.qhc
+     
+See the sub sections below for details on what to enter for each configuration file and how it all goes together.  You can also look at this tutorial 
+online, which gives a great overview for the process.
+
+[How to Create Qt Help Files](http://www.off-soft.net/en/develop/qt/qt1-8-2.html)
+
+
+## Help Projects
+
+\subpage helpproject
+
+| File Type | Commentary |
+| :-------: | :--------- |
+| .qch file | _Q_ t _C_ ompressed _H_ elp files. HTML documents are written in (including attached images and other information) to the SQLite3 database.  Create qhelpgenerator command. |
+| .qhp file | _Q_ t _H_ elp _P_ roject file.  Configuration file that controls the generation of the qch file.  Also controls the list of HTML files to include. |
+
+
+## Help Collections
+
+\subpage collection
+
+| File Type | Commentary |
+| :-------: | :--------- |
+| .qhc file | _Q_ t _H_ elp _C_ ollection files.  SQLite3 files are compiled into a database.  Qhc includes file management and appearance of the help browser.  Create qcollectiongenerator command. |
+| .qhcp file | _Q_ t _H_ elp _C_ ollection _P_roject file.  Configuration file that controls the generation of the qhc file.  Specifies which .qch files to include.  Here, QtAssistant You can also customize some parts of the screen. |
+
+
+# Using the Documentation {#documentation_using}
+
+So you went through all that and created a Qt help file.  But how to actually open it?  We open is using the program Qt Assistant.  And as part of 
+the program, we specify a command option that indiciates which help file to open.
+
+    assistant -collectionfile mycollection.qhc
+
+Where assistant is the linux command to start Qt Assistant.  You can enter this into any terminal command line.  And mycollection is the name of the 
+compiled help collection file.  This file should include all three manuals.
+
+The Qt Assistant also has an API to call help pages from within the program you write.  You can learn more at the subpages.
+
+\subpage assistant
+
+\subpage helpengine_api
+
+
+
+*/

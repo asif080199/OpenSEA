@@ -19,5 +19,6 @@ var searchData=
   ['addsubobject',['addSubObject',['../classosea_1_1_object_group.html#ab705c0409d674106c28518368e5108ad',1,'osea::ObjectGroup::addSubObject(ObjectGroup objIn)'],['../classosea_1_1_object_group.html#a71804670b83abe0c161f5fdebc598373',1,'osea::ObjectGroup::addSubObject()']]],
   ['addvariable',['addVariable',['../classosea_1_1ofreq_1_1_equation.html#ade50004f0b16312e1c350be010a84440',1,'osea::ofreq::Equation']]],
   ['argcount',['argcount',['../classosea_1_1ofreq_1_1_equationof_motion.html#a13a15811fd575ac0fccf0d463218657b',1,'osea::ofreq::EquationofMotion']]],
-  ['argvalue',['argvalue',['../classosea_1_1ofreq_1_1_equationof_motion.html#a1a9bf7f3460368c102aa8d4edec9b500',1,'osea::ofreq::EquationofMotion']]]
+  ['argvalue',['argvalue',['../classosea_1_1ofreq_1_1_equationof_motion.html#a1a9bf7f3460368c102aa8d4edec9b500',1,'osea::ofreq::EquationofMotion']]],
+  ['assistant_2edox',['assistant.dox',['../assistant_8dox.html',1,'']]]
 ];

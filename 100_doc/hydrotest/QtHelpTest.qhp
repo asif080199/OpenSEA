@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <QtHelpProject version="1.0">
+     <namespace>mycompany.com.myapplication.1.0</namespace>
+     <virtualFolder>doc</virtualFolder>
+     <customFilter name="My Application 1.0">
+         <filterAttribute>myapp</filterAttribute>
+         <filterAttribute>1.0</filterAttribute>
+     </customFilter>
+     <filterSection>
+         <filterAttribute>myapp</filterAttribute>
+         <filterAttribute>1.0</filterAttribute>
+         <toc>
+	     <section title="My Application Manual" ref="index.html"/>
+         </toc>
+         <keywords>
+         </keywords>
+         <files>
+             <file>index.html</file>
+	     <file>*.html</file>
+             <file>*.gif</file>
+             <file>*.png</file>
+         </files>
+     </filterSection>
+ </QtHelpProject>

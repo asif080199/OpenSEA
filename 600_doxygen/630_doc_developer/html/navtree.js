@@ -2,12 +2,12 @@ var NAVTREE =
 [
   [ "oFreq", "index.html", [
     [ "Summary", "index.html", null ],
-    [ "Definitions", "definitions.html", null ],
     [ "Format Standards", "_coding.html", "_coding" ],
+    [ "Creating Documentation", "documentation.html", "documentation" ],
     [ "Format of Inputs", "_input_formatting.html", "_input_formatting" ],
     [ "ProgramExecution", "_program_execution.html", null ],
-    [ "File Reader Process", "_u_m_l__file_reader.html", null ],
     [ "UML Process Diagrams", "_u_m_l__process.html", "_u_m_l__process" ],
+    [ "File Reader Process", "_u_m_l__file_reader.html", null ],
     [ "Validation", "_validation.html", "_validation" ],
     [ "Test List", "test.html", null ],
     [ "Todo List", "todo.html", null ],
@@ -44,10 +44,10 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "_c_p_p__comments.html",
-"classosea_1_1ofreq_1_1_eqn_rotation.html#af65a4aac860fcb92951fb2e8b1f7d35a",
-"classosea_1_1ofreq_1_1_model6_d_o_f.html#a0048de3d40838c93e2130ebb5130f3a1",
-"classosea_1_1ofreq_1_1mat_body.html#a6a51e55baec56037eee824ec53af9b5d",
-"objectgroup_8h.html#ab25fb67447fccb23f5683988d96d2dc2"
+"classosea_1_1ofreq_1_1_eqn_rotation.html#ad9d03b176d6793189ac15f195fd2074e",
+"classosea_1_1ofreq_1_1_global_velocity.html",
+"classosea_1_1ofreq_1_1mat_body.html",
+"index.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

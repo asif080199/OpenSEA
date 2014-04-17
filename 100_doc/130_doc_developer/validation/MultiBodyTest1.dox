@@ -1,0 +1,18 @@
+/**
+\page MultiBodyTest1 Multi-body Test 1
+
+\test Run Multi-Body Test 1 and post test results.
+
+# Purpose
+This is like the simple test 1.  But it utilizes multiple bodies and ensures all features of 
+multi-body support are working.  Includes checking of cross-body forces.
+
+# Methodology
+
+
+# Results
+
+
+# Conclusion
+
+*/

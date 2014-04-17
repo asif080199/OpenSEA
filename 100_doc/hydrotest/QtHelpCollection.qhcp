@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+ <QHelpCollectionProject version="1.0">
+     <assistant>
+         <title>My Application Help</title>
+         <startPage>qthelp://com.mycompany.1_0_0/doc/index.html</startPage>
+         <currentFilter>My Application 1.0</currentFilter>
+         <enableFilterFunctionality visible="true">true</enableFilterFunctionality>
+         <enableDocumentationManager>false</enableDocumentationManager>
+         <enableAddressBar visible="true">true</enableAddressBar>
+         <cacheDirectory>mycompany/myapplication</cacheDirectory>
+         <aboutMenuText>
+             <text>About My Application</text>
+             <text language="en">About My Application...</text>
+         </aboutMenuText>
+     </assistant>
+     <docFiles>
+         <register>
+             <file>doc.qch</file>
+	     <file>doc2.qch</file>
+	     <file>doc3.qch</file>
+         </register>
+     </docFiles>
+ </QHelpCollectionProject> 

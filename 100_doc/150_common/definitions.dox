@@ -1,0 +1,21 @@
+/**
+\page definitions Definitions
+
+\todo Write definitions of common terms used in ofreq.  See if I can find some way to generate a 
+list that will automatically link the terms.  I may need to trick Doxygen to believe that 
+definition is a function or some other similar piece of code.
+
+Items to define:
+- Hydrodynamic Active Force
+- User Active Force
+- Hydrodynamic Reactive Force
+- User Reactive Force
+- Hydrodynamic Crossbody Force
+- User Crossbody Force
+- Linked body
+- Sending body (crossbody forces)
+- Receiving body (crossbody forces)
+
+
+*/
+

@@ -1,0 +1,112 @@
+/**
+\page collection Qt Collection Files
+\tableofcontents
+
+# Reference {#collection_reference}
+
+Go to the following page for full details of the Qt Collection Files
+
+[The Qt Help Framework](*http://qt-project.org/doc/qt-4.8/qthelp-framework.html#creating-a-qt-help-collection)
+
+
+# Overview {#colection_overview}
+
+The Qt help system includes tools for generating and viewing Qt help files. In addition it provides classes for accessing help contents 
+programatically to be able to integrate online help into Qt applications.
+
+The actual help data, meaning the table of contents, index keywords or HTML documents, is contained in Qt compressed help files. So, one such a help 
+file represents usually one manual or documentation set. Since most products are more comprehensive and consist of a number of tools, one manual is 
+rarely enough. Instead, more manuals which should be accessible at the same time, exist. Ideally, it should also be possible to reference certain 
+points of interest of one manual to another. Therefore, the Qt help system operates on help collection files which include any number of compressed 
+help files.
+
+However, having collection files to merge many documentation sets may lead to some problems. For example, one index keyword may be defined in 
+different documentations. So, when only seeing it in the index and activating it, you cannot be sure that the expected documentation will be shown. 
+Therefore, the Qt help system offers the possibiltiy to filter the help contents after certain attributes. This requires however, that the attributes 
+have been assigned to the help contents before the generation of the compressed help file.
+
+As already mentioned, the Qt compressed help file contains all data, so there is no need any longer to ship all single HTML files. Instead, only the 
+compressed help file and optionally the collection file has to be distributed. The collection file is optional since any existing collection file, 
+e.g. from an older release could be used.
+
+So, in general, there are four files interacting with the help system, two used for generating Qt help and two meant for distribution:
+
+| Name		| Extension		| Brief Description |
+| :------------ | :-------------------- | :---------------- |
+|Qt Help Project	| .qhp	 | The input file for the help generator consisting of the table of contents, indices and references to the actual documentation files (*.html); it also defines a unique namespace for the documentation. |
+| Qt Compressed Help	| .qch	| The output file of the help generator. This binary file contains all information specified in the help project file along with all compressed documentation files. |
+| Qt Help Collection Project	| .qhcp	 | The input file for the help collection generator. It contains references to compressed help files which should be included in the collection; it also may contain other information for customizing Qt Assistant. |
+| Qt Help Collection	| .qhc	| The output of the help collection generator. This is the file QHelpEngine operates on. It contains references to any number of compressed help files as well as additional information, such as custom filters. |
+
+# Generating Qt Help {#collection_gen}
+
+Building help files for the Qt help system assumes that the HTML documentation files already exist.
+
+Once the HTML documents are in place, a Qt Help Project file, with an extension of .qhp has to be created. After specifying all relevant information 
+in this file, it needs to be compiled by calling:
+
+	qhelpgenerator doc.qhp -o doc.qch
+
+The file 'doc.qch' contains then all HTML files in compressed form along with the table of contents and index keywords. To test if the generated file 
+is correct, open Qt Assistant and install the file via the Settings|Documentation page.
+
+For the standard Qt source build, the .qhp file is generated and placed in the same directory as the HTML pages.
+
+
+# Creating a Qt Help Collection {#collection_create}
+
+The first step is to create a Qt Help Collection Project file. Since a Qt help collection stores primarily references to compressed help files, the 
+project 'mycollection.qhcp' file looks unsurprisingly simple:
+
+	<?xml version="1.0" encoding="utf-8" ?>
+	<QHelpCollectionProject version="1.0">
+	    <docFiles>
+		<register>
+		    <file>doc.qch</file>
+		</register>
+	    </docFiles>
+	</QHelpCollectionProject>
+ 
+
+For actually creating the collection file call:
+
+	qcollectiongenerator mycollection.qhcp -o mycollection.qhc
+
+Instead of running two tools, one for generating the compressed help and one for generating the collection file, it is also possible to just run the 
+qcollectiongenerator tool with a slightly modified project file instructing the generator to create the compressed help first.
+
+	...
+	<docFiles>
+	    <generate>
+		<file>
+		    <input>doc.qhp</input>
+		    <output>doc.qch</output>
+		</file>
+	    </generate>
+	    <register>
+		<file>doc.qch</file>
+	    </register>
+	</docFiles>
+	...
+
+Of course, it is possible to specify more than one file in the 'generate' or 'register' section, so any number of compressed help files can be 
+generated and registered in one go.
+
+
+# Using Qt Help {#collection_usinghelp}
+
+Accessing the help contents can be done in two ways: Using Qt Assistant as documentation browser or using the QHelpEngine API for embedding the help 
+contents directly in an application.
+
+
+# Using Qt Assistant {#collection_usingassistant}
+
+Qt Assistant operates on a collection file which can be specified before start up. If no collection file is given, a default one will be created and 
+used. In either case, it is possible to register any Qt compressed help file and access the help contents.
+
+When using Assistant as the help browser for an application, it would be desirable that it can be customized to fit better to the application and 
+doesn't look like an independent, standalone help browser. To achieve this, several additional properties can be set in an Qt help collection file, to 
+change e.g. the title or application icon of Qt Assistant. For more information on this topic have a look at the Qt Assistant manual.
+
+
+*/

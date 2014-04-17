@@ -1,0 +1,31 @@
+/**
+\page WhyTextFiles Text File Inputs
+# Why Text File Interface?
+
+A major criticism of ofreq is that is does not natively use a GUI interface.  The subject of text file interaces was given careful consideration.  
+There are several reasons why text file interfaces were used.  THe first and primary reason is:
+
+- Provide a neutral interface between people with software engineering specialization and people with marine engineering specialization.
+
+Many sections of ofreq require detailed knowledge of marine engineering and seakeeping mathematics.  This is knowledge that most software engineers
+do not normally posses.  On the other hand, most marine engineers are not competent enough with programming to handle coding a GUI interface.  But
+the marine engineer can normally handle a text file interface.  The text file interfaces provide a neutral format that is easily handled by
+people in both skill sets:  marine engineering and software engineering.
+
+The intent is always to provide a GUI for ofreq.  However, this GUI will stand on its own and support the entire OpenSEA software suite.
+
+There are several other reasons for the text file interface.
+
+1. Some advanced users (whole companies) may want to incorporate ofreq into their own calculation software.  In that case, the user will create their
+own interace.  A text based interface allows users to develop third-party GUI's without re-coding and recompiling ofreq.
+2. Many times users need to extract individual pieces of information from the outputs.  The text file interface makes it very easy to extract information
+and paste into spreadsheet applications.
+3. Users may log into remote computers to use this software.  Advanced engineering software, such as OpenSEA, is often installed on power machines
+devoted exclusively for intense computations.  Sometimes these remote connections lack a GUI interface.  In that case, oFreq can still be used through
+console only.
+4. Eventually, OpenSEA will include a batch program that creates batch runs of these programs and edits the text files for both input and output.  
+A text interface leaves open the most options for that batch program.
+
+For all of these reasons, the text interface is the way I decided to go.  It only makes sense because I intend to eventualy supplement this with a GUI 
+interface.
+*/

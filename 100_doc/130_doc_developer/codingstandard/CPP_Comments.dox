@@ -1,0 +1,25 @@
+/**
+
+\page CPP_Comments CPP File Comment Standard
+
+# Format of Coding for .CPP Files
+
+  
+  
+    
+
+# Commenting of Files
+
+  
+  
+    
+
+# Required Text for Every .CPP File
+
+Place the following text at the top of every cpp file.  This is a legal protection to ensure we don't get a lawsuit.
+Otherwise, comment styles are completely free within the file.  Please comment heavily to explain your code.
+
+\example ExampleTextHeader.cpp
+
+
+*/

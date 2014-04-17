@@ -1,4 +1,4 @@
 var examples =
 [
-    [ "ExampleTextHeader.txt", "_example_text_header_8txt-example.html", null ]
+    [ "ExampleTextHeader.cpp", "_example_text_header_8cpp-example.html", null ]
 ];

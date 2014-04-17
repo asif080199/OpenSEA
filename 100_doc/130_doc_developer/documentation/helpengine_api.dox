@@ -1,0 +1,38 @@
+/**
+\page helpengine_api Qt Help Engine API
+
+
+# Using QHelpEngine API {#helpengine_api}
+
+Instead of showing the help in an external application like the Qt Assistant, it is also possible to embed the online help in the application. The 
+contents can then be retrieved via the QHelpEngine class and can be displayed in nearly any form. Showing it in a QTextBrowser is probably the most 
+common way, but embedding it in What's This help is also perfectly possible.
+
+Retrieving help data from the file engine does not involve a lot of code. The first step is to create an instance of the help engine. Then we ask the 
+engine for the links assigned to the identifier, in this case "MyDialog::ChangeButton". If a link was found, meaning at least one help document 
+exists 
+to this topic, we get the actual help contents by calling fileData() and display the document to the user.
+
+
+	QHelpEngineCore helpEngine("mycollection.qhc");
+	...
+
+
+	// get all file references for the identifier
+	QMap<QString, QUrl> links =
+	    helpEngine.linksForIdentifier(QLatin1String("MyDialog::ChangeButton"));
+
+	// If help is available for this keyword, get the help data
+	// of the first file reference.
+	if (links.count()) {
+	    QByteArray helpData = helpEngine->fileData(links.constBegin().value());
+	    // show the documentation to the user
+	    if (!helpData.isEmpty())
+		displayHelp(helpData);
+	}
+
+For further information on how to use the API, have a look at the QHelpEngine class reference.
+
+
+
+*/

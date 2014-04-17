@@ -1,0 +1,33 @@
+/**
+\page wave_directions Wave Directions
+
+\todo write documentation for wave directions.  
+
+# Output
+
+
+# Calculation Method
+
+
+# Limitations
+
+
+# Application to Custom Motion Models
+
+
+# RAO Calculation
+
+State how the RAO is calculated.  For every output, ofreq calculates both the true response value, 
+and the RAO for that value. They are listed sequentially.  First the response, then the RAO.  
+
+## RAO Normalization.
+
+Sometimes it can be very confusing which part of the input wave properties are used to normalize 
+the output.  This section should explicitely state how the RAO was calculated.
+
+## RAO Units
+
+Sometimes it can be very confusing what the units of an RAO are.  So this should clarify.
+
+
+*/

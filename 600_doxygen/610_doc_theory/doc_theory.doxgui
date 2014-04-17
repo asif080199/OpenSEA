@@ -679,7 +679,7 @@ WARN_LOGFILE           =
 # with spaces.
 
 INPUT                  = "/home/nicholas/Projects/DMS1305 OpenSEA/master/100_doc/110_doc_theory/" \
-                         "/home/nicholas/Projects/DMS1305 OpenSEA/master/100_doc/150_definitions/"
+                         "/home/nicholas/Projects/DMS1305 OpenSEA/master/100_doc/150_common/"
 
 # This tag can be used to specify the character encoding of the source files 
 # that doxygen parses. Internally doxygen uses the UTF-8 encoding, which is 
@@ -962,7 +962,7 @@ HTML_STYLESHEET        =
 # robust against future updates. Doxygen will copy the style sheet file to 
 # the output directory.
 
-HTML_EXTRA_STYLESHEET  = ../customdoxygen.css
+HTML_EXTRA_STYLESHEET  = ../OpenSEA_NumberedHeader.css
 
 # The HTML_EXTRA_FILES tag can be used to specify one or more extra images or 
 # other source files which should be copied to the HTML output directory. Note 
