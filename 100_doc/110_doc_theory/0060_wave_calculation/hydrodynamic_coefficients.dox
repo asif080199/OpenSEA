@@ -1,0 +1,12 @@
+/**
+\page hydrodynamic_coefficients Hydrodynamic Coefficients
+
+__Still in Development__
+
+\todo write documentation for hydrodynamic coefficients.
+
+# Non-linear Hydrodynamic Coefficients
+
+The program does consider non-linear interpolation between wave amplitudes.  
+
+*/
