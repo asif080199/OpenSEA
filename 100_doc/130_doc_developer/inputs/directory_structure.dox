@@ -1,0 +1,120 @@
+/**
+\page directory_structure Directory Structure
+
+An oFreq analysis is completely contained within a specified root directory.  This root directory can be anywhere on the file system.
+Under the root structure, inputs and outputs are organized into multiple files and folders.
+
+# Structure of Inputs {#directory_structure_inputs}
+
+All the input files are located within two folders:
+
+1. "system" folder
+2. "constant" folders
+
+The folder names are specific.  oFreq always expects folders with those given names.  Folder names are never capitalized.  
+
+\note No filenames in oFreq are capitalized.  Other development projects have run into problems trying to build for windows and linux, because linux filesystems distinguish between lowercase and uppercase letters.  The developers relied on that feature and then the program would not work on MS Windows without major revision.  oFreq will avoid the entire issue by _always_ using lowercase letters in every file and folder name.
+
+Within each folder, there are several input files.
+
+    root folder/
+    --->  system folder/
+    ---> | ---> control.in
+    --->  constant folder/
+    ---> | ---> bodies.in
+    ---> | ---> data.in
+    ---> | ---> forces.in
+    ---> | ---> seaenv.in
+    
+
+## System Folder {#system1}
+
+The system folder controls the operation of the program.  This goes beyond input and output data to specify exactly what type of analysis oFreq should conduct.  Some of the basic inputs that get used by everything are also inside this folder.
+
+
+### Control.in
+
+The filename is "control.in", and oFreq expects that exact filename.  Currently, this is the only file under the system folder.  It controls the operation of the program.
+
+
+## Constant Folder {#constant1}
+
+The constant folder contains all the input files.  These specify the physics details for the analysis.
+
+
+### Bodies.in
+
+The filename is "bodies.in", and oFreq expects that exact filename.  This file combines many of the other elements and defines the body objects used in the analysis.  The definition of a body object may include assignment of several other objects, which are defined in separate files.  The body object is the central information storage concept.  Many different elements are organized under this.
+
+
+### Data.in
+
+The filename is "data.in", and oFreq expects that exact filename.  This file specifies the location of any hydrodyanmic data that gets included in the analysis.
+
+
+### Forces.in
+
+The filename is "forces.in", and oFreq expects that exact filename.  This file defines the multiple force objects that can be used in the analysis.  Definition of a force object does not require its use in the analysis.  This file only contains the definition.  The force objects are actually initialized and assigned in the bodies.in file.  This separation allows the user to build a library of common forces and only use the forces they require.
+
+
+### Seaenv.in
+
+The filename is "seaenv.in", and oFreq expects that exact filename.  This file defines multiple sea envronments that can be used in the analysis.  Definition of a sea environment does not require its use in the analysis.  This file only contains the definitions.  The invidual environments are selected within the "control.in" file.  THis separation allows the user to build a library of common sea environment definitions and only use the definition they require.
+
+
+
+# Structure of Outputs {#outputs_structure1}
+
+On running an analysis, oFreq will generate multiple output files and organize the files into multiple folders.  oFreq always generates all output files, regardless if they are needed for the analysis.  The intent is that oFreq always supplies the most complete set of information.  Any post processing programs can filter the selection of data from that output.  The following example shows a typical layout of the directory structure.
+
+    root folder/
+    --->  directions.out
+    --->  frequencies.out
+    --->  d0 folder/
+    ---> | --->  outputfiles.out
+    --->  d1 folder/
+    ---> | --->  outputfiles.out
+    ...
+    --->  dN folder/
+    ---> | --->  outputfiles.out
+    
+    --->  rd0 folder/
+    ---> | ---> resonant output files.out
+    --->  rd1 folder/
+    ---> | ---> resonant output files.output
+    ...
+    --->  rdN folder/
+    ---> | ---> resonant output files.out
+    
+## Root Folder {#root}
+
+Under the root folder are two very important output files.
+
+1. directions.out
+2. frequencies.out
+
+These are essentially index files.  All the calculated outputs depend on wave direction and wave frequency.  But the directions and freuqencies are not included in any list of outputs.  Everything is simply presented in ordered lists.  The sequence of the lists corresponds to the sequence that they appear in these two files under the root directory.
+
+For example, all wave directions are given a folder.  They start from d0 and count up.  The folder for d0 corresponds to the first wave direction listed in the file directions.out.  The folder d1 corresponds to the second wave direction listed in the file directions.out and so on.  
+
+
+## d0, d1, ... dN Folder {#dfolder}
+
+Each one of these folders corresponds to a wave direction.  These folders are generated when a response analysis is requested from oFreq.  Response analysis is the most often requested type of analysis.
+
+Results are organized by wave directions.  Directions are numbered from d0, counting up.  The folder names do not state the actual wave direction.  They only state its place in the sequence of wave directions.  The sequence of folders corresponds to the sequence that they appear in the file "directions.out"
+
+For example, all wave directions are given a folder.  They start from d0 and count up.  The folder for d0 corresponds to the first wave direction listed in the file directions.out.  The folder d1 corresponds to the second wave direction listed in the file directions.out and so on.  
+
+All outputs are listed under each folder for wave direction.  Each output type is given its own file.  All files are named with a .out extension.  WIthin each file, outputs are listed by wave frequency.
+
+
+## rd0, rd1, ...rdN Folder {#rdfolder}
+
+These folders are just like the wave directions folders.  Each folder name is specific to the sequence in the file "directions.out"  The only difference is that these folders are generated when a resonant analysis is requested from oFreq.  The folders are given a slightly different name for two reasons:
+
+1. Prevent the folders overwritting any data in the d0, d1, ... dN folders.
+2. Provide a clear indicator that the outputs written to these folders are for a special type of analysis.
+
+
+*/

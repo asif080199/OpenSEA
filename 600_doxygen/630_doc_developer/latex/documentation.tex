@@ -240,19 +240,15 @@ James &T01-\/0001.\-0100 \\\cline{1-2}
 John &T01-\/0001.\-0100.\-0020 \\\cline{1-2}
 George &T01-\/0001.\-0100.\-0020.\-1000 \\\cline{1-2}
 \end{TabularC}
-$|$
+
 
 Notice that at the top level, the identifier number only had four digits. Each sub-\/level increases the nubmer of digits assigned to the document number. Also notice that each level used a different numbering sytem. Sequential numbers do not need to be consecutive. You can skip numbers to leave room for other documents added later. You can use your own numbering system for each individual level. There are only the following rules for the numbering system.
 
 
 \begin{DoxyEnumerate}
 \item Each level must use a four digit number. Include zeros to fill in any digits you do not use.
-\end{DoxyEnumerate}
-\begin{DoxyEnumerate}
 \item Each level must be separated by a period (.).
 \item Each sub-\/level must use the exact number from its parent level.
-\end{DoxyEnumerate}
-\begin{DoxyEnumerate}
 \item You can recursively add levels without limit.
 \item Every document must have a unique identifier. The full document number can not be repeated in any other document.
 \end{DoxyEnumerate}\hypertarget{docnumbersys_why-system}{}\subsection{Why such a Detailed System}\label{docnumbersys_why-system}

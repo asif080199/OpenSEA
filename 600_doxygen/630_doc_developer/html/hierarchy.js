@@ -49,5 +49,6 @@ var hierarchy =
       [ "osea::FileReader", "classosea_1_1_file_reader.html", null ],
       [ "osea::ofreq::System", "classosea_1_1ofreq_1_1_system.html", null ]
     ] ],
-    [ "SeaEnviroment", "class_sea_enviroment.html", null ]
+    [ "SeaEnviroment", "class_sea_enviroment.html", null ],
+    [ "Test", "class_test.html", null ]
 ];

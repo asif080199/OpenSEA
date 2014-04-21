@@ -1,11 +1,11 @@
 var searchData=
 [
-  ['objectgroup',['ObjectGroup',['../classosea_1_1_object_group.html',1,'osea']]],
+  ['object_20naming_20paradigm',['Object Naming Paradigm',['../object_paradigm.html',1,'coding_standard']]],
+  ['object_5fparadigm_2edox',['object_paradigm.dox',['../object__paradigm_8dox.html',1,'']]],
   ['objectgroup',['ObjectGroup',['../classosea_1_1_object_group.html#af4d309432161dab231e33e83acaf4161',1,'osea::ObjectGroup']]],
+  ['objectgroup',['ObjectGroup',['../classosea_1_1_object_group.html',1,'osea']]],
   ['objectgroup_2ecpp',['objectgroup.cpp',['../objectgroup_8cpp.html',1,'']]],
   ['objectgroup_2eh',['objectgroup.h',['../objectgroup_8h.html',1,'']]],
-  ['object_20naming_20paradigm',['Object Naming Paradigm',['../_object_paradigm.html',1,'Coding']]],
-  ['objectparadigm_2edox',['ObjectParadigm.dox',['../_object_paradigm_8dox.html',1,'']]],
   ['ofreq',['ofreq',['../namespaceosea_1_1ofreq.html',1,'osea']]],
   ['ofreq_2ecpp',['ofreq.cpp',['../ofreq_8cpp.html',1,'']]],
   ['ofreq_5fdirectory',['oFreq_Directory',['../ofreq_8cpp.html#a65afce74b09b37ba07fcaca80a62dfed',1,'ofreq.cpp']]],
@@ -33,6 +33,6 @@ var searchData=
   ['outputsbody_2ecpp',['outputsbody.cpp',['../outputsbody_8cpp.html',1,'']]],
   ['outputsbody_2eh',['outputsbody.h',['../outputsbody_8h.html',1,'']]],
   ['outputseaenvfile',['outputSeaEnvFile',['../classosea_1_1_file_reader.html#a25198e57b3c7f8fbca043ecce848d008',1,'osea::FileReader']]],
-  ['outputs_20calculation',['Outputs Calculation',['../_u_m_l__outputs_calculation.html',1,'UML_Process']]],
-  ['overall_20process',['Overall Process',['../_u_m_l__overall.html',1,'UML_Process']]]
+  ['outputs_20calculation',['Outputs Calculation',['../uml_outputscalculation.html',1,'UML_Process']]],
+  ['overall_20process',['Overall Process',['../uml_overall.html',1,'UML_Process']]]
 ];

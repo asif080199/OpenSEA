@@ -1,0 +1,53 @@
+/**
+
+\page cpp_comments CPP File Comment Standard
+
+The formatting of CPP files is mostly free.  Organize the files any way that is most efficient for you.  For the sake of your fellow coders, please make sure your file is organized by some logic.  Best of all is to follow the organization logic of the header files. 
+
+# Commenting of Files
+
+__Heavily comment your files.__
+
+- Include comments to describe every variable declaration
+- Comments should describe what you accomplish with each piece of code.
+  + Any time you perform any operation.  Describe what that accomplished.
+- If you do anything that doesn't follow a straight linear sequence, explain it in the comments.
+- If you do something very clever, explain why you did it that way.
+- List any problems.
+- List any sections that need an error handler.
+
+ 
+# Required Text for Every .CPP File
+
+Place the following text at the top of every cpp file.  This is a legal protection to ensure we don't get a lawsuit.
+Otherwise, comment styles are completely free within the file.  Please comment heavily to explain your code.
+
+    /*----------------------------------------*- C++ -*------------------------------------------------------------------*\
+    | O pen         | OpenSea: The Open Source Seakeeping Suite                                                           |
+    | S eakeeping   | Web:     www.opensea.dmsonline.us                                                                   |
+    | E valuation   |                                                                                                     |
+    | A nalysis     |                                                                                                     |
+    \*-------------------------------------------------------------------------------------------------------------------*/
+    
+    //License
+    /*-------------------------------------------------------------------------------------------------------------------*\
+    *Copyright Datawave Marine Solutions, 2013.
+    *This file is part of OpenSEA.
+
+    *OpenSEA is free software: you can redistribute it and/or modify
+    *it under the terms of the GNU General Public License as published by
+    *the Free Software Foundation, either version 3 of the License, or
+    *(at your option) any later version.
+
+    *OpenSEA is distributed in the hope that it will be useful,
+    *but WITHOUT ANY WARRANTY; without even the implied warranty of
+    *MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    *GNU General Public License for more details.
+
+    *You should have received a copy of the GNU General Public License
+    *along with OpenSEA.  If not, see <http://www.gnu.org/licenses/>.
+    \*-------------------------------------------------------------------------------------------------------------------*/ 
+
+
+
+*/

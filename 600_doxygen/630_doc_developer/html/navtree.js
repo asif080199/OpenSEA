@@ -2,12 +2,11 @@ var NAVTREE =
 [
   [ "oFreq", "index.html", [
     [ "Summary", "index.html", null ],
-    [ "Format Standards", "_coding.html", "_coding" ],
+    [ "Coding Format Standards", "coding_standard.html", "coding_standard" ],
     [ "Creating Documentation", "documentation.html", "documentation" ],
-    [ "Format of Inputs", "_input_formatting.html", "_input_formatting" ],
-    [ "ProgramExecution", "_program_execution.html", null ],
+    [ "Format of Inputs", "input_format.html", "input_format" ],
+    [ "Program Execution", "program_execution.html", null ],
     [ "UML Process Diagrams", "_u_m_l__process.html", "_u_m_l__process" ],
-    [ "File Reader Process", "_u_m_l__file_reader.html", null ],
     [ "Validation", "_validation.html", "_validation" ],
     [ "Test List", "test.html", null ],
     [ "Todo List", "todo.html", null ],
@@ -15,6 +14,7 @@ var NAVTREE =
       [ "Namespace List", "namespaces.html", "namespaces" ],
       [ "Namespace Members", "namespacemembers.html", [
         [ "All", "namespacemembers.html", null ],
+        [ "Variables", "namespacemembers_vars.html", null ],
         [ "Typedefs", "namespacemembers_type.html", null ]
       ] ]
     ] ],
@@ -36,18 +36,17 @@ var NAVTREE =
         [ "Variables", "globals_vars.html", null ],
         [ "Macros", "globals_defs.html", null ]
       ] ]
-    ] ],
-    [ "Examples", "examples.html", "examples" ]
+    ] ]
   ] ]
 ];
 
 var NAVTREEINDEX =
 [
-"_c_p_p__comments.html",
-"classosea_1_1ofreq_1_1_eqn_rotation.html#ad9d03b176d6793189ac15f195fd2074e",
-"classosea_1_1ofreq_1_1_global_velocity.html",
-"classosea_1_1ofreq_1_1mat_body.html",
-"index.html"
+"_multi_body_test1.html",
+"classosea_1_1ofreq_1_1_eqn_translation.html#a37eb73b4fed858ff008c0ba4d333b1f8",
+"classosea_1_1ofreq_1_1_motion_model.html#a27842d2b76ab078534c0626601da446b",
+"classosea_1_1ofreq_1_1mat_body.html#afcc3a6a87689dfbb5dfa72648a46c355",
+"matforceactive_8h.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

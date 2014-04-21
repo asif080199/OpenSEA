@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['whytextfiles_2edox',['WhyTextFiles.dox',['../_why_text_files_8dox.html',1,'']]]
+  ['why_5ftext_5ffiles_2edox',['why_text_files.dox',['../why__text__files_8dox.html',1,'']]]
 ];

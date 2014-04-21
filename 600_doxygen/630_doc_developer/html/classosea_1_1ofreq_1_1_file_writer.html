@@ -19,6 +19,7 @@
   $(document).ready(function() { searchBox.OnSelectItem(0); });
 </script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="OpenSEA_std.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -49,7 +50,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
-      <li><a href="examples.html"><span>Examples</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -149,7 +149,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a2794a9410be184745cd98f26df801ab2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a pointer to the Outputs <a class="el" href="classosea_1_1ofreq_1_1_body.html">Body</a> object.  <a href="#a2794a9410be184745cd98f26df801ab2"></a><br/></td></tr>
 <tr class="separator:a2794a9410be184745cd98f26df801ab2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afc22f7afcd30f676e5385133247ed84d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classosea_1_1ofreq_1_1_file_writer.html#afc22f7afcd30f676e5385133247ed84d">fileExists</a> (std::string filename)</td></tr>
-<tr class="memdesc:afc22f7afcd30f676e5385133247ed84d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Test is a file exists. Function automatically assumes that the file is located in the directory associated with the <a class="el" href="classosea_1_1ofreq_1_1_file_writer.html#a9748d987475a225b49e14f48b8be0cd6" title="Gets the index of the current wave direction. The index is used to specify which directory to write t...">getCurWaveInd()</a> function. Returns true if the file exists and is valid. Returns false if the file does not exist or the directory does not exist.  <a href="#afc22f7afcd30f676e5385133247ed84d"></a><br/></td></tr>
+<tr class="memdesc:afc22f7afcd30f676e5385133247ed84d"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_test.html">Test</a> is a file exists. Function automatically assumes that the file is located in the directory associated with the <a class="el" href="classosea_1_1ofreq_1_1_file_writer.html#a9748d987475a225b49e14f48b8be0cd6" title="Gets the index of the current wave direction. The index is used to specify which directory to write t...">getCurWaveInd()</a> function. Returns true if the file exists and is valid. Returns false if the file does not exist or the directory does not exist.  <a href="#afc22f7afcd30f676e5385133247ed84d"></a><br/></td></tr>
 <tr class="separator:afc22f7afcd30f676e5385133247ed84d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a310daaf404e9a0ef1f609eaea85e1bb0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classosea_1_1ofreq_1_1_file_writer.html#a310daaf404e9a0ef1f609eaea85e1bb0">setHeader</a> (std::string filePathIn)</td></tr>
 <tr class="memdesc:a310daaf404e9a0ef1f609eaea85e1bb0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads in from input file the header to be used in all files. This is a basic header text that should be at the top of all OpenSEA output files. Simple identification of the program. Nothing specific for output.  <a href="#a310daaf404e9a0ef1f609eaea85e1bb0"></a><br/></td></tr>
@@ -366,7 +366,7 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Test is a file exists. Function automatically assumes that the file is located in the directory associated with the <a class="el" href="classosea_1_1ofreq_1_1_file_writer.html#a9748d987475a225b49e14f48b8be0cd6" title="Gets the index of the current wave direction. The index is used to specify which directory to write t...">getCurWaveInd()</a> function. Returns true if the file exists and is valid. Returns false if the file does not exist or the directory does not exist. </p>
+<p><a class="el" href="class_test.html">Test</a> is a file exists. Function automatically assumes that the file is located in the directory associated with the <a class="el" href="classosea_1_1ofreq_1_1_file_writer.html#a9748d987475a225b49e14f48b8be0cd6" title="Gets the index of the current wave direction. The index is used to specify which directory to write t...">getCurWaveInd()</a> function. Returns true if the file exists and is valid. Returns false if the file does not exist or the directory does not exist. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">filename</td><td>std::string. Specifies the filename to search for. Only needs to specify local filename. Directory information is already inferred from previous settings with the <a class="el" href="classosea_1_1ofreq_1_1_outputs_body.html">OutputsBody</a> object. </td></tr>
@@ -718,7 +718,7 @@ Additional Inherited Members</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespaceosea.html">osea</a></li><li class="navelem"><a class="el" href="namespaceosea_1_1ofreq.html">ofreq</a></li><li class="navelem"><a class="el" href="classosea_1_1ofreq_1_1_file_writer.html">FileWriter</a></li>
-    <li class="footer">Generated on Sun Apr 13 2014 11:17:15 for oFreq by
+    <li class="footer">Generated on Sun Apr 20 2014 16:21:18 for oFreq by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.2 </li>
   </ul>

@@ -1,0 +1,36 @@
+/**
+\page input_format Format of Inputs
+
+This page covers inputs.  All inputs in oFreq are through text files.  The syntax for the text file format is very versatile and allows a fairly complex set of combinations.  The inputs are also divided into different files and organized within a specific directory structure.  The following sections cover everything you need to know about how the inputs are organized and formatted.
+
+
+# Explanation for Text Files
+
+\subpage why_text_files
+
+First question you probably asked was why did we use text file.  Learn more.
+
+
+# Organization of Input Files
+
+\subpage directory_structure
+
+Remember that the inputs are organized in to multiple files within a directory structure.  Before you can edit the inputs, you need to know how to find the right file.
+
+
+# File Formatting
+
+\subpage input_syntax
+
+So you found the right file, but the content looks a lot like c++ code.  Learn more about the format standard here and discover how to use it.
+
+
+# File Content
+
+\subpage input_values
+
+Now you know the rules, but what are all the possible inputs for a user?  This subpage provides a full list of every input.
+
+
+
+*/

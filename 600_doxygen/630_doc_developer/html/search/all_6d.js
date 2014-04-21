@@ -40,6 +40,6 @@ var searchData=
   ['multibodytest3_2edox',['MultiBodyTest3.dox',['../_multi_body_test3_8dox.html',1,'']]],
   ['multi_2dbody_20test_204',['Multi-body Test 4',['../_multi_body_test4.html',1,'Validation']]],
   ['multibodytest4_2edox',['MultiBodyTest4.dox',['../_multi_body_test4_8dox.html',1,'']]],
-  ['motion_20model_20process',['Motion Model Process',['../_u_m_l__motion_model.html',1,'UML_Process']]],
-  ['motion_20solver_20process',['Motion Solver Process',['../_u_m_l__motion_solver.html',1,'UML_Process']]]
+  ['motion_20model_20process',['Motion Model Process',['../uml_motionmodel.html',1,'UML_Process']]],
+  ['motion_20solver_20process',['Motion Solver Process',['../uml_motionsolver.html',1,'UML_Process']]]
 ];

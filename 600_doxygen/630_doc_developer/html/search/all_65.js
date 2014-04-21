@@ -8,8 +8,8 @@ var searchData=
   ['eqntranslation',['EqnTranslation',['../classosea_1_1ofreq_1_1_eqn_translation.html#afa65eb0f7d46e25938a73a7a9551784b',1,'osea::ofreq::EqnTranslation::EqnTranslation(MotionModel *modelIn)'],['../classosea_1_1ofreq_1_1_eqn_translation.html#ac4a2602609edc1b3ca19b86940880ee5',1,'osea::ofreq::EqnTranslation::EqnTranslation(MotionModel *modelIn, std::string NameIn)'],['../classosea_1_1ofreq_1_1_eqn_translation.html#ab6f7dccce7f207cf6fb0f506772f053a',1,'osea::ofreq::EqnTranslation::EqnTranslation(MotionModel *modelIn, std::string NameIn, int IndexIn)']]],
   ['eqntranslation_2ecpp',['eqntranslation.cpp',['../eqntranslation_8cpp.html',1,'']]],
   ['eqntranslation_2eh',['eqntranslation.h',['../eqntranslation_8h.html',1,'']]],
-  ['equation',['Equation',['../classosea_1_1ofreq_1_1_equation.html#a68511fc719250ed80f86c50de9136733',1,'osea::ofreq::Equation::Equation()'],['../classosea_1_1ofreq_1_1_equation.html#a37fec641aec75302c37590d191421790',1,'osea::ofreq::Equation::Equation(int IndexIn)']]],
   ['equation',['Equation',['../classosea_1_1ofreq_1_1_equation.html',1,'osea::ofreq']]],
+  ['equation',['Equation',['../classosea_1_1ofreq_1_1_equation.html#a68511fc719250ed80f86c50de9136733',1,'osea::ofreq::Equation::Equation()'],['../classosea_1_1ofreq_1_1_equation.html#a37fec641aec75302c37590d191421790',1,'osea::ofreq::Equation::Equation(int IndexIn)']]],
   ['equation_2ecpp',['equation.cpp',['../equation_8cpp.html',1,'']]],
   ['equation_2eh',['equation.h',['../equation_8h.html',1,'']]],
   ['equationofmotion',['EquationofMotion',['../classosea_1_1ofreq_1_1_equationof_motion.html',1,'osea::ofreq']]],
@@ -19,7 +19,6 @@ var searchData=
   ['errlog',['ErrLog',['../classosea_1_1ofreq_1_1o_freq_core.html#a5e31044ee80fa436289e569c8080b21e',1,'osea::ofreq::oFreqCore']]],
   ['etcfolder',['ETCFOLDER',['../ofreq_8cpp.html#a4dd0d2c507c9def72ef7f5bd3c56dcdf',1,'ofreq.cpp']]],
   ['evaluate',['Evaluate',['../classosea_1_1ofreq_1_1_equationof_motion.html#a7198b4661f6c0a4c1f280863228bd63c',1,'osea::ofreq::EquationofMotion::Evaluate()'],['../classosea_1_1ofreq_1_1_motion_model.html#a331d96a45df8ca0911fc4610705c3a30',1,'osea::ofreq::MotionModel::Evaluate()']]],
-  ['exampletextheader_2ecpp',['ExampleTextHeader.cpp',['../_example_text_header_8cpp.html',1,'']]],
   ['execfolder',['EXECFOLDER',['../ofreq_8cpp.html#aadc9c75a375cb02cea99400bc6e27b8c',1,'ofreq.cpp']]],
   ['execname',['EXECNAME',['../ofreq_8cpp.html#a97f3298c7a3de4c0adbe043daf57fcff',1,'ofreq.cpp']]]
 ];

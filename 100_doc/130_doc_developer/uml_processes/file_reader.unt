@@ -1,0 +1,1334 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<XPD:UNIT xmlns:XPD="http://www.staruml.com" version="1">
+<XPD:HEADER>
+<XPD:SUBUNITS>
+</XPD:SUBUNITS>
+</XPD:HEADER>
+<XPD:BODY>
+<XPD:OBJ name="DocumentElement" type="UMLModel" guid="m2UFfbOZ+USWnD7aotNqegAA">
+<XPD:ATTR name="Name" type="string">File Reader</XPD:ATTR>
+<XPD:ATTR name="#OwnedElements" type="integer">7</XPD:ATTR>
+<XPD:OBJ name="OwnedElements[0]" type="UMLClass" guid="P6I3mFmIs0OKV0F9/odpTAAA">
+<XPD:ATTR name="Name" type="string">ObjectGroup</XPD:ATTR>
+<XPD:REF name="Namespace">m2UFfbOZ+USWnD7aotNqegAA</XPD:REF>
+<XPD:ATTR name="#Views" type="integer">4</XPD:ATTR>
+<XPD:REF name="Views[0]">soSstO9MKEGVTehGoXYawQAA</XPD:REF>
+<XPD:REF name="Views[1]">k54YKJk1ikWv1RjnHzM4VQAA</XPD:REF>
+<XPD:REF name="Views[2]">nAT/nclxeEqaV7a1KqQJ1gAA</XPD:REF>
+<XPD:REF name="Views[3]">/A4cV6JloE+vwb/whtzeVQAA</XPD:REF>
+<XPD:ATTR name="#Generalizations" type="integer">1</XPD:ATTR>
+<XPD:REF name="Generalizations[0]" pathname="::Implementation Model::osea::">k51v34dPF0auRizkUiBN3QAA</XPD:REF>
+<XPD:ATTR name="#Operations" type="integer">23</XPD:ATTR>
+<XPD:OBJ name="Operations[0]" type="UMLOperation" guid="BMXZaF350kihxCOPRqfaoAAA">
+<XPD:ATTR name="Name" type="string">ObjectGroup</XPD:ATTR>
+<XPD:ATTR name="StereotypeProfile" type="string">UMLStandard</XPD:ATTR>
+<XPD:ATTR name="StereotypeName" type="string">create</XPD:ATTR>
+<XPD:ATTR name="Visibility" type="UMLVisibilityKind">vkPrivate</XPD:ATTR>
+<XPD:REF name="Owner">P6I3mFmIs0OKV0F9/odpTAAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="Operations[1]" type="UMLOperation" guid="cM5J3Dl8s0Ond7s8M9e2wgAA">
+<XPD:ATTR name="Name" type="string">ObjectGroup</XPD:ATTR>
+<XPD:ATTR name="StereotypeProfile" type="string">UMLStandard</XPD:ATTR>
+<XPD:ATTR name="StereotypeName" type="string">destroy</XPD:ATTR>
+<XPD:ATTR name="Visibility" type="UMLVisibilityKind">vkPrivate</XPD:ATTR>
+<XPD:REF name="Owner">P6I3mFmIs0OKV0F9/odpTAAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="Operations[2]" type="UMLOperation" guid="gF/Vl0lPM0+KitMe0EZqKQAA">
+<XPD:ATTR name="Name" type="string">setClassName</XPD:ATTR>
+<XPD:REF name="Owner">P6I3mFmIs0OKV0F9/odpTAAA</XPD:REF>
+<XPD:ATTR name="#Parameters" type="integer">2</XPD:ATTR>
+<XPD:OBJ name="Parameters[0]" type="UMLParameter" guid="IWs9rIlToUCOZJO1z7SMoAAA">
+<XPD:ATTR name="Name" type="string">input</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">std::string</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">gF/Vl0lPM0+KitMe0EZqKQAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="Parameters[1]" type="UMLParameter" guid="3VtXUnjdZE+EOxRA/K9GRgAA">
+<XPD:ATTR name="Name" type="string">return</XPD:ATTR>
+<XPD:ATTR name="DirectionKind" type="UMLParameterDirectionKind">pdkReturn</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">void</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">gF/Vl0lPM0+KitMe0EZqKQAA</XPD:REF>
+</XPD:OBJ>
+</XPD:OBJ>
+<XPD:OBJ name="Operations[3]" type="UMLOperation" guid="TMcRu1qAa0qE1T6+OERP/gAA">
+<XPD:ATTR name="Name" type="string">getClassName</XPD:ATTR>
+<XPD:REF name="Owner">P6I3mFmIs0OKV0F9/odpTAAA</XPD:REF>
+<XPD:ATTR name="#Parameters" type="integer">1</XPD:ATTR>
+<XPD:OBJ name="Parameters[0]" type="UMLParameter" guid="+UkFW8kvEEu5if8KjSw8XQAA">
+<XPD:ATTR name="Name" type="string">return</XPD:ATTR>
+<XPD:ATTR name="DirectionKind" type="UMLParameterDirectionKind">pdkReturn</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">std::string</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">TMcRu1qAa0qE1T6+OERP/gAA</XPD:REF>
+</XPD:OBJ>
+</XPD:OBJ>
+<XPD:OBJ name="Operations[4]" type="UMLOperation" guid="815fc4dRfUKKSKxtNbZBZgAA">
+<XPD:ATTR name="Name" type="string">listKey</XPD:ATTR>
+<XPD:REF name="Owner">P6I3mFmIs0OKV0F9/odpTAAA</XPD:REF>
+<XPD:ATTR name="#Parameters" type="integer">1</XPD:ATTR>
+<XPD:OBJ name="Parameters[0]" type="UMLParameter" guid="C6+dI81rekSlsjrVXyYaRAAA">
+<XPD:ATTR name="Name" type="string">return</XPD:ATTR>
+<XPD:ATTR name="DirectionKind" type="UMLParameterDirectionKind">pdkReturn</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">815fc4dRfUKKSKxtNbZBZgAA</XPD:REF>
+<XPD:REF name="Type_" pathname="::Implementation Model::osea::vecKeyword">/k8wSPUFeUS1XKGk4xboLgAA</XPD:REF>
+<XPD:ATTR name="#TaggedValues" type="integer">1</XPD:ATTR>
+<XPD:OBJ name="TaggedValues[0]" type="TaggedValue" guid="mapjsIe8s0iYzIaQOB13AwAA">
+<XPD:ATTR name="ProfileName" type="string">Cpp</XPD:ATTR>
+<XPD:ATTR name="TagDefinitionSetName" type="string">CppPointer</XPD:ATTR>
+<XPD:ATTR name="Name" type="string">CppPointer</XPD:ATTR>
+<XPD:ATTR name="DataValue" type="string">&amp;</XPD:ATTR>
+<XPD:REF name="TaggedModel">C6+dI81rekSlsjrVXyYaRAAA</XPD:REF>
+</XPD:OBJ>
+</XPD:OBJ>
+</XPD:OBJ>
+<XPD:OBJ name="Operations[5]" type="UMLOperation" guid="aicJULyH4EugYAf2o0J5xwAA">
+<XPD:ATTR name="Name" type="string">listKey</XPD:ATTR>
+<XPD:REF name="Owner">P6I3mFmIs0OKV0F9/odpTAAA</XPD:REF>
+<XPD:ATTR name="#Parameters" type="integer">2</XPD:ATTR>
+<XPD:OBJ name="Parameters[0]" type="UMLParameter" guid="9kTW4B1YlUu83a2p8UkGSQAA">
+<XPD:ATTR name="Name" type="string">index</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">int</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">aicJULyH4EugYAf2o0J5xwAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="Parameters[1]" type="UMLParameter" guid="UHbgi5WcnUOGpnLQipgPpQAA">
+<XPD:ATTR name="Name" type="string">return</XPD:ATTR>
+<XPD:ATTR name="DirectionKind" type="UMLParameterDirectionKind">pdkReturn</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">std::string</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">aicJULyH4EugYAf2o0J5xwAA</XPD:REF>
+<XPD:ATTR name="#TaggedValues" type="integer">1</XPD:ATTR>
+<XPD:OBJ name="TaggedValues[0]" type="TaggedValue" guid="vb/jmK9htESCDUzMR4J+LgAA">
+<XPD:ATTR name="ProfileName" type="string">Cpp</XPD:ATTR>
+<XPD:ATTR name="TagDefinitionSetName" type="string">CppPointer</XPD:ATTR>
+<XPD:ATTR name="Name" type="string">CppPointer</XPD:ATTR>
+<XPD:ATTR name="DataValue" type="string">&amp;</XPD:ATTR>
+<XPD:REF name="TaggedModel">UHbgi5WcnUOGpnLQipgPpQAA</XPD:REF>
+</XPD:OBJ>
+</XPD:OBJ>
+</XPD:OBJ>
+<XPD:OBJ name="Operations[6]" type="UMLOperation" guid="iWItJky3u0uzjAVbpLFEHAAA">
+<XPD:ATTR name="Name" type="string">listVal</XPD:ATTR>
+<XPD:REF name="Owner">P6I3mFmIs0OKV0F9/odpTAAA</XPD:REF>
+<XPD:ATTR name="#Parameters" type="integer">1</XPD:ATTR>
+<XPD:OBJ name="Parameters[0]" type="UMLParameter" guid="+US+G24VwUOa/Cz2OCp/NQAA">
+<XPD:ATTR name="Name" type="string">return</XPD:ATTR>
+<XPD:ATTR name="DirectionKind" type="UMLParameterDirectionKind">pdkReturn</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">iWItJky3u0uzjAVbpLFEHAAA</XPD:REF>
+<XPD:REF name="Type_" pathname="::Implementation Model::osea::vecValue">2Ouc0M/JjUq2Hd8QtJoaBgAA</XPD:REF>
+<XPD:ATTR name="#TaggedValues" type="integer">1</XPD:ATTR>
+<XPD:OBJ name="TaggedValues[0]" type="TaggedValue" guid="w9YoPpLfXUCwHVBrotXwGgAA">
+<XPD:ATTR name="ProfileName" type="string">Cpp</XPD:ATTR>
+<XPD:ATTR name="TagDefinitionSetName" type="string">CppPointer</XPD:ATTR>
+<XPD:ATTR name="Name" type="string">CppPointer</XPD:ATTR>
+<XPD:ATTR name="DataValue" type="string">&amp;</XPD:ATTR>
+<XPD:REF name="TaggedModel">+US+G24VwUOa/Cz2OCp/NQAA</XPD:REF>
+</XPD:OBJ>
+</XPD:OBJ>
+</XPD:OBJ>
+<XPD:OBJ name="Operations[7]" type="UMLOperation" guid="Tan/U59PkUmrB7g8BbWGbQAA">
+<XPD:ATTR name="Name" type="string">listVal</XPD:ATTR>
+<XPD:REF name="Owner">P6I3mFmIs0OKV0F9/odpTAAA</XPD:REF>
+<XPD:ATTR name="#Parameters" type="integer">2</XPD:ATTR>
+<XPD:OBJ name="Parameters[0]" type="UMLParameter" guid="Yc4PF/9S7kC6/E009iwYPwAA">
+<XPD:ATTR name="Name" type="string">index</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">int</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">Tan/U59PkUmrB7g8BbWGbQAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="Parameters[1]" type="UMLParameter" guid="6QGGig2a6kO2IF4G5fD3KQAA">
+<XPD:ATTR name="Name" type="string">return</XPD:ATTR>
+<XPD:ATTR name="DirectionKind" type="UMLParameterDirectionKind">pdkReturn</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">std::vector&lt;std::string&gt;</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">Tan/U59PkUmrB7g8BbWGbQAA</XPD:REF>
+<XPD:ATTR name="#TaggedValues" type="integer">1</XPD:ATTR>
+<XPD:OBJ name="TaggedValues[0]" type="TaggedValue" guid="7knNN+uAS0StN9B0LfCxswAA">
+<XPD:ATTR name="ProfileName" type="string">Cpp</XPD:ATTR>
+<XPD:ATTR name="TagDefinitionSetName" type="string">CppPointer</XPD:ATTR>
+<XPD:ATTR name="Name" type="string">CppPointer</XPD:ATTR>
+<XPD:ATTR name="DataValue" type="string">&amp;</XPD:ATTR>
+<XPD:REF name="TaggedModel">6QGGig2a6kO2IF4G5fD3KQAA</XPD:REF>
+</XPD:OBJ>
+</XPD:OBJ>
+</XPD:OBJ>
+<XPD:OBJ name="Operations[8]" type="UMLOperation" guid="3Sh+a04ceEiFfuDZu4MyjwAA">
+<XPD:ATTR name="Name" type="string">listObject</XPD:ATTR>
+<XPD:REF name="Owner">P6I3mFmIs0OKV0F9/odpTAAA</XPD:REF>
+<XPD:ATTR name="#Parameters" type="integer">1</XPD:ATTR>
+<XPD:OBJ name="Parameters[0]" type="UMLParameter" guid="2HS8G9cq9EG7eLyLAwqEywAA">
+<XPD:ATTR name="Name" type="string">return</XPD:ATTR>
+<XPD:ATTR name="DirectionKind" type="UMLParameterDirectionKind">pdkReturn</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">std::vector&lt;ObjectGroup*&gt;</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">3Sh+a04ceEiFfuDZu4MyjwAA</XPD:REF>
+<XPD:ATTR name="#TaggedValues" type="integer">1</XPD:ATTR>
+<XPD:OBJ name="TaggedValues[0]" type="TaggedValue" guid="QD8T9NLUUUOZYIQrDLxH3AAA">
+<XPD:ATTR name="ProfileName" type="string">Cpp</XPD:ATTR>
+<XPD:ATTR name="TagDefinitionSetName" type="string">CppPointer</XPD:ATTR>
+<XPD:ATTR name="Name" type="string">CppPointer</XPD:ATTR>
+<XPD:ATTR name="DataValue" type="string">&amp;</XPD:ATTR>
+<XPD:REF name="TaggedModel">2HS8G9cq9EG7eLyLAwqEywAA</XPD:REF>
+</XPD:OBJ>
+</XPD:OBJ>
+</XPD:OBJ>
+<XPD:OBJ name="Operations[9]" type="UMLOperation" guid="6xq8Y7qon0Cucrd6Yrg9WwAA">
+<XPD:ATTR name="Name" type="string">listObject</XPD:ATTR>
+<XPD:REF name="Owner">P6I3mFmIs0OKV0F9/odpTAAA</XPD:REF>
+<XPD:ATTR name="#Parameters" type="integer">2</XPD:ATTR>
+<XPD:OBJ name="Parameters[0]" type="UMLParameter" guid="4chUK66MT0G5ZjK7ijc68gAA">
+<XPD:ATTR name="Name" type="string">index</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">int</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">6xq8Y7qon0Cucrd6Yrg9WwAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="Parameters[1]" type="UMLParameter" guid="axf1JvJ+VkaGeNi6C40k0gAA">
+<XPD:ATTR name="Name" type="string">return</XPD:ATTR>
+<XPD:ATTR name="DirectionKind" type="UMLParameterDirectionKind">pdkReturn</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">6xq8Y7qon0Cucrd6Yrg9WwAA</XPD:REF>
+<XPD:REF name="Type_">P6I3mFmIs0OKV0F9/odpTAAA</XPD:REF>
+<XPD:ATTR name="#TaggedValues" type="integer">1</XPD:ATTR>
+<XPD:OBJ name="TaggedValues[0]" type="TaggedValue" guid="SNslWmSdfUaqyh160n02+gAA">
+<XPD:ATTR name="ProfileName" type="string">Cpp</XPD:ATTR>
+<XPD:ATTR name="TagDefinitionSetName" type="string">CppPointer</XPD:ATTR>
+<XPD:ATTR name="Name" type="string">CppPointer</XPD:ATTR>
+<XPD:ATTR name="DataValue" type="string">*</XPD:ATTR>
+<XPD:REF name="TaggedModel">axf1JvJ+VkaGeNi6C40k0gAA</XPD:REF>
+</XPD:OBJ>
+</XPD:OBJ>
+</XPD:OBJ>
+<XPD:OBJ name="Operations[10]" type="UMLOperation" guid="8OY8vMATFk6S1uHy6a9w9AAA">
+<XPD:ATTR name="Name" type="string">addSubObject</XPD:ATTR>
+<XPD:REF name="Owner">P6I3mFmIs0OKV0F9/odpTAAA</XPD:REF>
+<XPD:ATTR name="#Parameters" type="integer">2</XPD:ATTR>
+<XPD:OBJ name="Parameters[0]" type="UMLParameter" guid="xG8Fjav5bk6UuWNmD7tyZAAA">
+<XPD:ATTR name="Name" type="string">objIn</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">8OY8vMATFk6S1uHy6a9w9AAA</XPD:REF>
+<XPD:REF name="Type_">P6I3mFmIs0OKV0F9/odpTAAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="Parameters[1]" type="UMLParameter" guid="OvDWl06al06K7potMqBY1gAA">
+<XPD:ATTR name="Name" type="string">return</XPD:ATTR>
+<XPD:ATTR name="DirectionKind" type="UMLParameterDirectionKind">pdkReturn</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">void</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">8OY8vMATFk6S1uHy6a9w9AAA</XPD:REF>
+</XPD:OBJ>
+</XPD:OBJ>
+<XPD:OBJ name="Operations[11]" type="UMLOperation" guid="ghz2l5xJmU+sjhUDPhmzVQAA">
+<XPD:ATTR name="Name" type="string">addSubObject</XPD:ATTR>
+<XPD:REF name="Owner">P6I3mFmIs0OKV0F9/odpTAAA</XPD:REF>
+<XPD:ATTR name="#Parameters" type="integer">1</XPD:ATTR>
+<XPD:OBJ name="Parameters[0]" type="UMLParameter" guid="eSkjVR0H3UiaIe8oyjq+QgAA">
+<XPD:ATTR name="Name" type="string">return</XPD:ATTR>
+<XPD:ATTR name="DirectionKind" type="UMLParameterDirectionKind">pdkReturn</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">void</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">ghz2l5xJmU+sjhUDPhmzVQAA</XPD:REF>
+</XPD:OBJ>
+</XPD:OBJ>
+<XPD:OBJ name="Operations[12]" type="UMLOperation" guid="KtUikeS14UO4djBqa9+QFAAA">
+<XPD:ATTR name="Name" type="string">addKeySet</XPD:ATTR>
+<XPD:REF name="Owner">P6I3mFmIs0OKV0F9/odpTAAA</XPD:REF>
+<XPD:ATTR name="#Parameters" type="integer">3</XPD:ATTR>
+<XPD:OBJ name="Parameters[0]" type="UMLParameter" guid="WPREnx0CuEOy2LQsM3wZwgAA">
+<XPD:ATTR name="Name" type="string">key</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">std::string</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">KtUikeS14UO4djBqa9+QFAAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="Parameters[1]" type="UMLParameter" guid="wpguAKVC3k2vUgr+8Fz5GgAA">
+<XPD:ATTR name="Name" type="string">val</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">std::string</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">KtUikeS14UO4djBqa9+QFAAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="Parameters[2]" type="UMLParameter" guid="SV0YjAtP/kmOy5p6kSY9TAAA">
+<XPD:ATTR name="Name" type="string">return</XPD:ATTR>
+<XPD:ATTR name="DirectionKind" type="UMLParameterDirectionKind">pdkReturn</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">void</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">KtUikeS14UO4djBqa9+QFAAA</XPD:REF>
+</XPD:OBJ>
+</XPD:OBJ>
+<XPD:OBJ name="Operations[13]" type="UMLOperation" guid="9DtYsK1HIkqoW1+QJ0xAfgAA">
+<XPD:ATTR name="Name" type="string">addKeySet</XPD:ATTR>
+<XPD:REF name="Owner">P6I3mFmIs0OKV0F9/odpTAAA</XPD:REF>
+<XPD:ATTR name="#Parameters" type="integer">3</XPD:ATTR>
+<XPD:OBJ name="Parameters[0]" type="UMLParameter" guid="U00srSSY+UOEujy9TWrlVAAA">
+<XPD:ATTR name="Name" type="string">key</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">std::string</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">9DtYsK1HIkqoW1+QJ0xAfgAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="Parameters[1]" type="UMLParameter" guid="X9zOBrmhJUKNaAdldAFbGQAA">
+<XPD:ATTR name="Name" type="string">val</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">std::vector&lt;std::string&gt;</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">9DtYsK1HIkqoW1+QJ0xAfgAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="Parameters[2]" type="UMLParameter" guid="j2f1UCzo7EWo0Fy6e0aB3AAA">
+<XPD:ATTR name="Name" type="string">return</XPD:ATTR>
+<XPD:ATTR name="DirectionKind" type="UMLParameterDirectionKind">pdkReturn</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">void</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">9DtYsK1HIkqoW1+QJ0xAfgAA</XPD:REF>
+</XPD:OBJ>
+</XPD:OBJ>
+<XPD:OBJ name="Operations[14]" type="UMLOperation" guid="R+SZWqlWDUm6+TPEOblHkAAA">
+<XPD:ATTR name="Name" type="string">addKeyWord</XPD:ATTR>
+<XPD:REF name="Owner">P6I3mFmIs0OKV0F9/odpTAAA</XPD:REF>
+<XPD:ATTR name="#Parameters" type="integer">3</XPD:ATTR>
+<XPD:OBJ name="Parameters[0]" type="UMLParameter" guid="+DMK3SzvYE+jNAXz1IW14wAA">
+<XPD:ATTR name="Name" type="string">word</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">std::string</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">R+SZWqlWDUm6+TPEOblHkAAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="Parameters[1]" type="UMLParameter" guid="aJy55rj9lkOo31fcvxEuJQAA">
+<XPD:ATTR name="Name" type="string">index</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">int</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">R+SZWqlWDUm6+TPEOblHkAAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="Parameters[2]" type="UMLParameter" guid="m8ekpy/h6kSQPVXIYdpPoAAA">
+<XPD:ATTR name="Name" type="string">return</XPD:ATTR>
+<XPD:ATTR name="DirectionKind" type="UMLParameterDirectionKind">pdkReturn</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">void</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">R+SZWqlWDUm6+TPEOblHkAAA</XPD:REF>
+</XPD:OBJ>
+</XPD:OBJ>
+<XPD:OBJ name="Operations[15]" type="UMLOperation" guid="alqVOva890+YE434PmL75gAA">
+<XPD:ATTR name="Name" type="string">addKeyVal</XPD:ATTR>
+<XPD:REF name="Owner">P6I3mFmIs0OKV0F9/odpTAAA</XPD:REF>
+<XPD:ATTR name="#Parameters" type="integer">3</XPD:ATTR>
+<XPD:OBJ name="Parameters[0]" type="UMLParameter" guid="rdEOzUWFjU+UxYj1bi9jxgAA">
+<XPD:ATTR name="Name" type="string">val</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">std::string</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">alqVOva890+YE434PmL75gAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="Parameters[1]" type="UMLParameter" guid="38pHPV2X20uG1uNzVQtaWAAA">
+<XPD:ATTR name="Name" type="string">index</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">int</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">alqVOva890+YE434PmL75gAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="Parameters[2]" type="UMLParameter" guid="UPA7d3lqjEG9je8FJimepgAA">
+<XPD:ATTR name="Name" type="string">return</XPD:ATTR>
+<XPD:ATTR name="DirectionKind" type="UMLParameterDirectionKind">pdkReturn</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">void</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">alqVOva890+YE434PmL75gAA</XPD:REF>
+</XPD:OBJ>
+</XPD:OBJ>
+<XPD:OBJ name="Operations[16]" type="UMLOperation" guid="3h2Vmxwx0Uy+hI2Ov6+xGQAA">
+<XPD:ATTR name="Name" type="string">addKeyVal</XPD:ATTR>
+<XPD:REF name="Owner">P6I3mFmIs0OKV0F9/odpTAAA</XPD:REF>
+<XPD:ATTR name="#Parameters" type="integer">3</XPD:ATTR>
+<XPD:OBJ name="Parameters[0]" type="UMLParameter" guid="aoH0sPQ2qkGfEjhI9SljJQAA">
+<XPD:ATTR name="Name" type="string">val</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">std::vector&lt;std::string&gt;</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">3h2Vmxwx0Uy+hI2Ov6+xGQAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="Parameters[1]" type="UMLParameter" guid="5/iIMQunTEC5c3dCKs9xIgAA">
+<XPD:ATTR name="Name" type="string">index</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">int</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">3h2Vmxwx0Uy+hI2Ov6+xGQAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="Parameters[2]" type="UMLParameter" guid="yZUkSFbgNU2RjuYA6DIObQAA">
+<XPD:ATTR name="Name" type="string">return</XPD:ATTR>
+<XPD:ATTR name="DirectionKind" type="UMLParameterDirectionKind">pdkReturn</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">void</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">3h2Vmxwx0Uy+hI2Ov6+xGQAA</XPD:REF>
+</XPD:OBJ>
+</XPD:OBJ>
+<XPD:OBJ name="Operations[17]" type="UMLOperation" guid="8C2hvoz1M0OxY3IV6zcmrgAA">
+<XPD:ATTR name="Name" type="string">getKey</XPD:ATTR>
+<XPD:REF name="Owner">P6I3mFmIs0OKV0F9/odpTAAA</XPD:REF>
+<XPD:ATTR name="#Parameters" type="integer">2</XPD:ATTR>
+<XPD:OBJ name="Parameters[0]" type="UMLParameter" guid="NrpRuV4qtkeyhgbqnpcPcAAA">
+<XPD:ATTR name="Name" type="string">index</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">int</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">8C2hvoz1M0OxY3IV6zcmrgAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="Parameters[1]" type="UMLParameter" guid="5SaVvxMnoEKE9DQ9MCM6ggAA">
+<XPD:ATTR name="Name" type="string">return</XPD:ATTR>
+<XPD:ATTR name="DirectionKind" type="UMLParameterDirectionKind">pdkReturn</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">std::string</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">8C2hvoz1M0OxY3IV6zcmrgAA</XPD:REF>
+</XPD:OBJ>
+</XPD:OBJ>
+<XPD:OBJ name="Operations[18]" type="UMLOperation" guid="qtIpJGIFtk+gqYajfXQZNAAA">
+<XPD:ATTR name="Name" type="string">getVal</XPD:ATTR>
+<XPD:REF name="Owner">P6I3mFmIs0OKV0F9/odpTAAA</XPD:REF>
+<XPD:ATTR name="#Parameters" type="integer">2</XPD:ATTR>
+<XPD:OBJ name="Parameters[0]" type="UMLParameter" guid="MsPuXg1fpUqbBM0LpwHXQgAA">
+<XPD:ATTR name="Name" type="string">index</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">int</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">qtIpJGIFtk+gqYajfXQZNAAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="Parameters[1]" type="UMLParameter" guid="aMBRxtE6yEiPX+4eaEfTMwAA">
+<XPD:ATTR name="Name" type="string">return</XPD:ATTR>
+<XPD:ATTR name="DirectionKind" type="UMLParameterDirectionKind">pdkReturn</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">std::vector&lt;std::string&gt;</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">qtIpJGIFtk+gqYajfXQZNAAA</XPD:REF>
+</XPD:OBJ>
+</XPD:OBJ>
+<XPD:OBJ name="Operations[19]" type="UMLOperation" guid="pIu13yhdn0yrb1bSOjYMdgAA">
+<XPD:ATTR name="Name" type="string">setVersion</XPD:ATTR>
+<XPD:REF name="Owner">P6I3mFmIs0OKV0F9/odpTAAA</XPD:REF>
+<XPD:ATTR name="#Parameters" type="integer">2</XPD:ATTR>
+<XPD:OBJ name="Parameters[0]" type="UMLParameter" guid="Nim2l1n+X0axrBKw5QnVqQAA">
+<XPD:ATTR name="Name" type="string">input</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">std::string</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">pIu13yhdn0yrb1bSOjYMdgAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="Parameters[1]" type="UMLParameter" guid="ta103HLVl0GTgSdYlhpikQAA">
+<XPD:ATTR name="Name" type="string">return</XPD:ATTR>
+<XPD:ATTR name="DirectionKind" type="UMLParameterDirectionKind">pdkReturn</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">void</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">pIu13yhdn0yrb1bSOjYMdgAA</XPD:REF>
+</XPD:OBJ>
+</XPD:OBJ>
+<XPD:OBJ name="Operations[20]" type="UMLOperation" guid="BAMPm0Fp40isfSyHb3/YxwAA">
+<XPD:ATTR name="Name" type="string">getVersion</XPD:ATTR>
+<XPD:REF name="Owner">P6I3mFmIs0OKV0F9/odpTAAA</XPD:REF>
+<XPD:ATTR name="#Parameters" type="integer">1</XPD:ATTR>
+<XPD:OBJ name="Parameters[0]" type="UMLParameter" guid="awHmzaDJAka9+D0JJSok9gAA">
+<XPD:ATTR name="Name" type="string">return</XPD:ATTR>
+<XPD:ATTR name="DirectionKind" type="UMLParameterDirectionKind">pdkReturn</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">std::string</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">BAMPm0Fp40isfSyHb3/YxwAA</XPD:REF>
+</XPD:OBJ>
+</XPD:OBJ>
+<XPD:OBJ name="Operations[21]" type="UMLOperation" guid="PbFng0eZ+kqlBA5dNfKpTwAA">
+<XPD:ATTR name="Name" type="string">setFormat</XPD:ATTR>
+<XPD:REF name="Owner">P6I3mFmIs0OKV0F9/odpTAAA</XPD:REF>
+<XPD:ATTR name="#Parameters" type="integer">2</XPD:ATTR>
+<XPD:OBJ name="Parameters[0]" type="UMLParameter" guid="dTQoZwunPEWwW5x8HPikTgAA">
+<XPD:ATTR name="Name" type="string">input</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">std::string</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">PbFng0eZ+kqlBA5dNfKpTwAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="Parameters[1]" type="UMLParameter" guid="raATqq5VnU2S0xUwqhPPHAAA">
+<XPD:ATTR name="Name" type="string">return</XPD:ATTR>
+<XPD:ATTR name="DirectionKind" type="UMLParameterDirectionKind">pdkReturn</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">void</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">PbFng0eZ+kqlBA5dNfKpTwAA</XPD:REF>
+</XPD:OBJ>
+</XPD:OBJ>
+<XPD:OBJ name="Operations[22]" type="UMLOperation" guid="39Xe93Beo0y/18MNV7VgyQAA">
+<XPD:ATTR name="Name" type="string">getFormat</XPD:ATTR>
+<XPD:REF name="Owner">P6I3mFmIs0OKV0F9/odpTAAA</XPD:REF>
+<XPD:ATTR name="#Parameters" type="integer">1</XPD:ATTR>
+<XPD:OBJ name="Parameters[0]" type="UMLParameter" guid="lTqYl9SRA0a5rqq1lcL52QAA">
+<XPD:ATTR name="Name" type="string">return</XPD:ATTR>
+<XPD:ATTR name="DirectionKind" type="UMLParameterDirectionKind">pdkReturn</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">std::string</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">39Xe93Beo0y/18MNV7VgyQAA</XPD:REF>
+</XPD:OBJ>
+</XPD:OBJ>
+<XPD:ATTR name="#TypedParameters" type="integer">11</XPD:ATTR>
+<XPD:REF name="TypedParameters[0]">axf1JvJ+VkaGeNi6C40k0gAA</XPD:REF>
+<XPD:REF name="TypedParameters[1]">xG8Fjav5bk6UuWNmD7tyZAAA</XPD:REF>
+<XPD:REF name="TypedParameters[2]">uhtI+An6fUqngUt8sGxtIAAA</XPD:REF>
+<XPD:REF name="TypedParameters[3]">l/WwDs4EdU2c0grwJ6f3RwAA</XPD:REF>
+<XPD:REF name="TypedParameters[4]">NpAVWsPb7ESwrhrmx3BEWwAA</XPD:REF>
+<XPD:REF name="TypedParameters[5]">YQwPn54BFEOYUMi1RxmwDwAA</XPD:REF>
+<XPD:REF name="TypedParameters[6]">eqk5JCOmBUejH/OoQSSDYgAA</XPD:REF>
+<XPD:REF name="TypedParameters[7]">97kbbsBOmkOTxo7tkgXwwwAA</XPD:REF>
+<XPD:REF name="TypedParameters[8]">W6l/H79DH0CUSix/66v5mAAA</XPD:REF>
+<XPD:REF name="TypedParameters[9]">blGwSIrUvkiVsTirkAuSxgAA</XPD:REF>
+<XPD:REF name="TypedParameters[10]">hYEyFMkgaEaHTKQ/LxLAPgAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="OwnedElements[1]" type="UMLClass" guid="m3Y8GBYMfEKBWg0XhTFoQwAA">
+<XPD:ATTR name="Name" type="string">Dictionary</XPD:ATTR>
+<XPD:REF name="Namespace">m2UFfbOZ+USWnD7aotNqegAA</XPD:REF>
+<XPD:ATTR name="#Views" type="integer">4</XPD:ATTR>
+<XPD:REF name="Views[0]">TezcQyfxL0iMfPKubjdlmQAA</XPD:REF>
+<XPD:REF name="Views[1]">xNstCM94s0i/E/zhJiE1JwAA</XPD:REF>
+<XPD:REF name="Views[2]">tCYM6tDS9U2GOQX7Mu7YFgAA</XPD:REF>
+<XPD:REF name="Views[3]">AwmSThHBmEijoA/TK9yy5AAA</XPD:REF>
+<XPD:ATTR name="#Generalizations" type="integer">1</XPD:ATTR>
+<XPD:REF name="Generalizations[0]" pathname="::Implementation Model::osea::">Bq7gXjmcz0mlJml7R2wrdwAA</XPD:REF>
+<XPD:ATTR name="#Specializations" type="integer">3</XPD:ATTR>
+<XPD:REF name="Specializations[0]" pathname="::Implementation Model::osea::ofreq::">3EVW78J32EaAKC+WHhknuwAA</XPD:REF>
+<XPD:REF name="Specializations[1]" pathname="::Implementation Model::osea::ofreq::">cfTyjoEjf0aHtofKZtyyxQAA</XPD:REF>
+<XPD:REF name="Specializations[2]" pathname="::Implementation Model::osea::ofreq::">YQ4AyKmmo02FCHPuj1tikQAA</XPD:REF>
+<XPD:ATTR name="#Operations" type="integer">8</XPD:ATTR>
+<XPD:OBJ name="Operations[0]" type="UMLOperation" guid="k0V4TF3ySU6zMlX6Rp+2mgAA">
+<XPD:ATTR name="StereotypeProfile" type="string">Cpp</XPD:ATTR>
+<XPD:ATTR name="StereotypeName" type="string">CppMacro</XPD:ATTR>
+<XPD:ATTR name="Visibility" type="UMLVisibilityKind">vkPrivate</XPD:ATTR>
+<XPD:REF name="Owner">m3Y8GBYMfEKBWg0XhTFoQwAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="Operations[1]" type="UMLOperation" guid="fVYF/7zCRk2SsPGAT3woowAA">
+<XPD:ATTR name="Name" type="string">Dictionary</XPD:ATTR>
+<XPD:ATTR name="StereotypeProfile" type="string">UMLStandard</XPD:ATTR>
+<XPD:ATTR name="StereotypeName" type="string">create</XPD:ATTR>
+<XPD:ATTR name="Visibility" type="UMLVisibilityKind">vkPrivate</XPD:ATTR>
+<XPD:REF name="Owner">m3Y8GBYMfEKBWg0XhTFoQwAA</XPD:REF>
+<XPD:ATTR name="#Parameters" type="integer">1</XPD:ATTR>
+<XPD:OBJ name="Parameters[0]" type="UMLParameter" guid="/FopJqNsJEG5kI1V5gmBmgAA">
+<XPD:ATTR name="Name" type="string">parent</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">QObject</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">fVYF/7zCRk2SsPGAT3woowAA</XPD:REF>
+<XPD:ATTR name="#TaggedValues" type="integer">1</XPD:ATTR>
+<XPD:OBJ name="TaggedValues[0]" type="TaggedValue" guid="LCyyXio2X0qX3qrgmNozkgAA">
+<XPD:ATTR name="ProfileName" type="string">Cpp</XPD:ATTR>
+<XPD:ATTR name="TagDefinitionSetName" type="string">CppPointer</XPD:ATTR>
+<XPD:ATTR name="Name" type="string">CppPointer</XPD:ATTR>
+<XPD:ATTR name="DataValue" type="string">*</XPD:ATTR>
+<XPD:REF name="TaggedModel">/FopJqNsJEG5kI1V5gmBmgAA</XPD:REF>
+</XPD:OBJ>
+</XPD:OBJ>
+</XPD:OBJ>
+<XPD:OBJ name="Operations[2]" type="UMLOperation" guid="gkmTDVsD8UmOJTtr35qU/wAA">
+<XPD:ATTR name="Name" type="string">Dictionary</XPD:ATTR>
+<XPD:ATTR name="StereotypeProfile" type="string">UMLStandard</XPD:ATTR>
+<XPD:ATTR name="StereotypeName" type="string">create</XPD:ATTR>
+<XPD:ATTR name="Visibility" type="UMLVisibilityKind">vkPrivate</XPD:ATTR>
+<XPD:REF name="Owner">m3Y8GBYMfEKBWg0XhTFoQwAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="Operations[3]" type="UMLOperation" guid="UrhO3tc/IkCJnh/C4vMV2QAA">
+<XPD:ATTR name="Name" type="string">setObject</XPD:ATTR>
+<XPD:REF name="Owner">m3Y8GBYMfEKBWg0XhTFoQwAA</XPD:REF>
+<XPD:ATTR name="#TaggedValues" type="integer">1</XPD:ATTR>
+<XPD:OBJ name="TaggedValues[0]" type="TaggedValue" guid="MEbGTUdxUE2CIil5VhQApgAA">
+<XPD:ATTR name="ProfileName" type="string">Cpp</XPD:ATTR>
+<XPD:ATTR name="TagDefinitionSetName" type="string">CppVirtual</XPD:ATTR>
+<XPD:ATTR name="Name" type="string">CppVirtual</XPD:ATTR>
+<XPD:ATTR name="DataValue" type="string">True</XPD:ATTR>
+<XPD:REF name="TaggedModel">UrhO3tc/IkCJnh/C4vMV2QAA</XPD:REF>
+</XPD:OBJ>
+<XPD:ATTR name="#Parameters" type="integer">2</XPD:ATTR>
+<XPD:OBJ name="Parameters[0]" type="UMLParameter" guid="uhtI+An6fUqngUt8sGxtIAAA">
+<XPD:ATTR name="Name" type="string">input</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">UrhO3tc/IkCJnh/C4vMV2QAA</XPD:REF>
+<XPD:REF name="Type_">P6I3mFmIs0OKV0F9/odpTAAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="Parameters[1]" type="UMLParameter" guid="M8gJRT3/NkOagid50PdeAQAA">
+<XPD:ATTR name="Name" type="string">return</XPD:ATTR>
+<XPD:ATTR name="DirectionKind" type="UMLParameterDirectionKind">pdkReturn</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">void</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">UrhO3tc/IkCJnh/C4vMV2QAA</XPD:REF>
+</XPD:OBJ>
+</XPD:OBJ>
+<XPD:OBJ name="Operations[4]" type="UMLOperation" guid="IHWdh8u9gUWZUCD+pAyKoAAA">
+<XPD:ATTR name="Name" type="string">setSystem</XPD:ATTR>
+<XPD:REF name="Owner">m3Y8GBYMfEKBWg0XhTFoQwAA</XPD:REF>
+<XPD:ATTR name="#TaggedValues" type="integer">1</XPD:ATTR>
+<XPD:OBJ name="TaggedValues[0]" type="TaggedValue" guid="WFvg4mNNhEWddHEsnI0YPgAA">
+<XPD:ATTR name="ProfileName" type="string">Cpp</XPD:ATTR>
+<XPD:ATTR name="TagDefinitionSetName" type="string">CppVirtual</XPD:ATTR>
+<XPD:ATTR name="Name" type="string">CppVirtual</XPD:ATTR>
+<XPD:ATTR name="DataValue" type="string">True</XPD:ATTR>
+<XPD:REF name="TaggedModel">IHWdh8u9gUWZUCD+pAyKoAAA</XPD:REF>
+</XPD:OBJ>
+<XPD:ATTR name="#Parameters" type="integer">2</XPD:ATTR>
+<XPD:OBJ name="Parameters[0]" type="UMLParameter" guid="xIwPvfELPk2hjc3lpYVmHAAA">
+<XPD:ATTR name="Name" type="string">ptInput</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">IHWdh8u9gUWZUCD+pAyKoAAA</XPD:REF>
+<XPD:REF name="Type_" pathname="::Global Objects::System">H07nd0XrdUC5Or60wR0kfAAA</XPD:REF>
+<XPD:ATTR name="#TaggedValues" type="integer">1</XPD:ATTR>
+<XPD:OBJ name="TaggedValues[0]" type="TaggedValue" guid="l2qZJ1jVFUyhm2L2ZjHaLgAA">
+<XPD:ATTR name="ProfileName" type="string">Cpp</XPD:ATTR>
+<XPD:ATTR name="TagDefinitionSetName" type="string">CppPointer</XPD:ATTR>
+<XPD:ATTR name="Name" type="string">CppPointer</XPD:ATTR>
+<XPD:ATTR name="DataValue" type="string">*</XPD:ATTR>
+<XPD:REF name="TaggedModel">xIwPvfELPk2hjc3lpYVmHAAA</XPD:REF>
+</XPD:OBJ>
+</XPD:OBJ>
+<XPD:OBJ name="Parameters[1]" type="UMLParameter" guid="sgmU1tewtUK3Lz4dPxEyKAAA">
+<XPD:ATTR name="Name" type="string">return</XPD:ATTR>
+<XPD:ATTR name="DirectionKind" type="UMLParameterDirectionKind">pdkReturn</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">void</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">IHWdh8u9gUWZUCD+pAyKoAAA</XPD:REF>
+</XPD:OBJ>
+</XPD:OBJ>
+<XPD:OBJ name="Operations[5]" type="UMLOperation" guid="LcSb6fX1f0utgWAaWCYVNQAA">
+<XPD:ATTR name="Name" type="string">defineKey</XPD:ATTR>
+<XPD:ATTR name="Visibility" type="UMLVisibilityKind">vkProtected</XPD:ATTR>
+<XPD:REF name="Owner">m3Y8GBYMfEKBWg0XhTFoQwAA</XPD:REF>
+<XPD:ATTR name="#TaggedValues" type="integer">1</XPD:ATTR>
+<XPD:OBJ name="TaggedValues[0]" type="TaggedValue" guid="SVdA7QjgfkinShTESGZkYQAA">
+<XPD:ATTR name="ProfileName" type="string">Cpp</XPD:ATTR>
+<XPD:ATTR name="TagDefinitionSetName" type="string">CppVirtual</XPD:ATTR>
+<XPD:ATTR name="Name" type="string">CppVirtual</XPD:ATTR>
+<XPD:ATTR name="DataValue" type="string">True</XPD:ATTR>
+<XPD:REF name="TaggedModel">LcSb6fX1f0utgWAaWCYVNQAA</XPD:REF>
+</XPD:OBJ>
+<XPD:ATTR name="#Parameters" type="integer">3</XPD:ATTR>
+<XPD:OBJ name="Parameters[0]" type="UMLParameter" guid="ihvInMg+10yXeq1XO2+X2QAA">
+<XPD:ATTR name="Name" type="string">keyIn</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">std::string</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">LcSb6fX1f0utgWAaWCYVNQAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="Parameters[1]" type="UMLParameter" guid="vi0HSJsUmEqQXc/J+gJ1kAAA">
+<XPD:ATTR name="Name" type="string">valIn</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">std::vector&lt;std::string&gt;</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">LcSb6fX1f0utgWAaWCYVNQAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="Parameters[2]" type="UMLParameter" guid="UzHgfQItCEGNq3IzpNa//QAA">
+<XPD:ATTR name="Name" type="string">return</XPD:ATTR>
+<XPD:ATTR name="DirectionKind" type="UMLParameterDirectionKind">pdkReturn</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">int</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">LcSb6fX1f0utgWAaWCYVNQAA</XPD:REF>
+</XPD:OBJ>
+</XPD:OBJ>
+<XPD:OBJ name="Operations[6]" type="UMLOperation" guid="DONLEIrLyUS6TmFK73Bd3AAA">
+<XPD:ATTR name="Name" type="string">defineClass</XPD:ATTR>
+<XPD:ATTR name="Visibility" type="UMLVisibilityKind">vkProtected</XPD:ATTR>
+<XPD:REF name="Owner">m3Y8GBYMfEKBWg0XhTFoQwAA</XPD:REF>
+<XPD:ATTR name="#TaggedValues" type="integer">1</XPD:ATTR>
+<XPD:OBJ name="TaggedValues[0]" type="TaggedValue" guid="qhyOEdbuOEGRTxB0oJC6wgAA">
+<XPD:ATTR name="ProfileName" type="string">Cpp</XPD:ATTR>
+<XPD:ATTR name="TagDefinitionSetName" type="string">CppVirtual</XPD:ATTR>
+<XPD:ATTR name="Name" type="string">CppVirtual</XPD:ATTR>
+<XPD:ATTR name="DataValue" type="string">True</XPD:ATTR>
+<XPD:REF name="TaggedModel">DONLEIrLyUS6TmFK73Bd3AAA</XPD:REF>
+</XPD:OBJ>
+<XPD:ATTR name="#Parameters" type="integer">2</XPD:ATTR>
+<XPD:OBJ name="Parameters[0]" type="UMLParameter" guid="LaBcqwDUgE6ePswfDSsj/QAA">
+<XPD:ATTR name="Name" type="string">nameIn</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">std::string</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">DONLEIrLyUS6TmFK73Bd3AAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="Parameters[1]" type="UMLParameter" guid="oY9TAP10q0COs7g8n7ZQ5wAA">
+<XPD:ATTR name="Name" type="string">return</XPD:ATTR>
+<XPD:ATTR name="DirectionKind" type="UMLParameterDirectionKind">pdkReturn</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">int</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">DONLEIrLyUS6TmFK73Bd3AAA</XPD:REF>
+</XPD:OBJ>
+</XPD:OBJ>
+<XPD:OBJ name="Operations[7]" type="UMLOperation" guid="iLYOPVRP7U6ZLZ6QVoXYSQAA">
+<XPD:ATTR name="Name" type="string">convertComplex</XPD:ATTR>
+<XPD:ATTR name="Visibility" type="UMLVisibilityKind">vkProtected</XPD:ATTR>
+<XPD:REF name="Owner">m3Y8GBYMfEKBWg0XhTFoQwAA</XPD:REF>
+<XPD:ATTR name="#Parameters" type="integer">2</XPD:ATTR>
+<XPD:OBJ name="Parameters[0]" type="UMLParameter" guid="csihywc/Dkqj7IghqHdNLgAA">
+<XPD:ATTR name="Name" type="string">input</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">std::string</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">iLYOPVRP7U6ZLZ6QVoXYSQAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="Parameters[1]" type="UMLParameter" guid="IgV8ZUvsoEWBGA/K9xCCVQAA">
+<XPD:ATTR name="Name" type="string">return</XPD:ATTR>
+<XPD:ATTR name="DirectionKind" type="UMLParameterDirectionKind">pdkReturn</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">std::complex&lt;double&gt;</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">iLYOPVRP7U6ZLZ6QVoXYSQAA</XPD:REF>
+</XPD:OBJ>
+</XPD:OBJ>
+<XPD:ATTR name="#TypedParameters" type="integer">1</XPD:ATTR>
+<XPD:REF name="TypedParameters[0]">MRaD/GJAzk2rsxLPcRQROAAA</XPD:REF>
+<XPD:ATTR name="#Attributes" type="integer">1</XPD:ATTR>
+<XPD:OBJ name="Attributes[0]" type="UMLAttribute" guid="II42QG47LkeueIowRVY8twAA">
+<XPD:ATTR name="Name" type="string">ptSystem</XPD:ATTR>
+<XPD:ATTR name="Visibility" type="UMLVisibilityKind">vkProtected</XPD:ATTR>
+<XPD:REF name="Type_" pathname="::Global Objects::System">H07nd0XrdUC5Or60wR0kfAAA</XPD:REF>
+<XPD:REF name="Owner">m3Y8GBYMfEKBWg0XhTFoQwAA</XPD:REF>
+<XPD:ATTR name="#TaggedValues" type="integer">1</XPD:ATTR>
+<XPD:OBJ name="TaggedValues[0]" type="TaggedValue" guid="Yu1occPvnkmK3bVMQftlQAAA">
+<XPD:ATTR name="ProfileName" type="string">Cpp</XPD:ATTR>
+<XPD:ATTR name="TagDefinitionSetName" type="string">CppPointer</XPD:ATTR>
+<XPD:ATTR name="Name" type="string">CppPointer</XPD:ATTR>
+<XPD:ATTR name="DataValue" type="string">*</XPD:ATTR>
+<XPD:REF name="TaggedModel">II42QG47LkeueIowRVY8twAA</XPD:REF>
+</XPD:OBJ>
+</XPD:OBJ>
+</XPD:OBJ>
+<XPD:OBJ name="OwnedElements[2]" type="UMLClass" guid="pg4DN1/gYkygsL7BY5FTswAA">
+<XPD:ATTR name="Name" type="string">FileReader</XPD:ATTR>
+<XPD:REF name="Namespace">m2UFfbOZ+USWnD7aotNqegAA</XPD:REF>
+<XPD:ATTR name="#Views" type="integer">4</XPD:ATTR>
+<XPD:REF name="Views[0]">JnzUG8b7CkueD9oy2jMUyQAA</XPD:REF>
+<XPD:REF name="Views[1]">guyOvWscyUi0Cy/RQO242wAA</XPD:REF>
+<XPD:REF name="Views[2]">9KRaIGJSpkaEeT6KK60VYAAA</XPD:REF>
+<XPD:REF name="Views[3]">uZEN8M4M7UmvE5NRfJc3MwAA</XPD:REF>
+<XPD:ATTR name="#Generalizations" type="integer">1</XPD:ATTR>
+<XPD:REF name="Generalizations[0]" pathname="::Implementation Model::osea::">+b93zyxWakOmGsT3534xQgAA</XPD:REF>
+<XPD:ATTR name="#Operations" type="integer">19</XPD:ATTR>
+<XPD:OBJ name="Operations[0]" type="UMLOperation" guid="MVnOF2KnPEGYZs3w6YTqUAAA">
+<XPD:ATTR name="StereotypeProfile" type="string">Cpp</XPD:ATTR>
+<XPD:ATTR name="StereotypeName" type="string">CppMacro</XPD:ATTR>
+<XPD:ATTR name="Visibility" type="UMLVisibilityKind">vkPrivate</XPD:ATTR>
+<XPD:REF name="Owner">pg4DN1/gYkygsL7BY5FTswAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="Operations[1]" type="UMLOperation" guid="X1O59mnviUCAvXtdARQjuQAA">
+<XPD:ATTR name="Name" type="string">FileReader</XPD:ATTR>
+<XPD:ATTR name="StereotypeProfile" type="string">UMLStandard</XPD:ATTR>
+<XPD:ATTR name="StereotypeName" type="string">create</XPD:ATTR>
+<XPD:ATTR name="Visibility" type="UMLVisibilityKind">vkPrivate</XPD:ATTR>
+<XPD:REF name="Owner">pg4DN1/gYkygsL7BY5FTswAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="Operations[2]" type="UMLOperation" guid="Nun9zVf6lkSg26PFSOuH6QAA">
+<XPD:ATTR name="Name" type="string">FileReader</XPD:ATTR>
+<XPD:ATTR name="StereotypeProfile" type="string">UMLStandard</XPD:ATTR>
+<XPD:ATTR name="StereotypeName" type="string">create</XPD:ATTR>
+<XPD:ATTR name="Visibility" type="UMLVisibilityKind">vkPrivate</XPD:ATTR>
+<XPD:REF name="Owner">pg4DN1/gYkygsL7BY5FTswAA</XPD:REF>
+<XPD:ATTR name="#Parameters" type="integer">1</XPD:ATTR>
+<XPD:OBJ name="Parameters[0]" type="UMLParameter" guid="WmCqel29i0+CwvrEP17acQAA">
+<XPD:ATTR name="Name" type="string">Path</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">std::string</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">Nun9zVf6lkSg26PFSOuH6QAA</XPD:REF>
+</XPD:OBJ>
+</XPD:OBJ>
+<XPD:OBJ name="Operations[3]" type="UMLOperation" guid="OuiZW4W0u0iQyV4pWSumcAAA">
+<XPD:ATTR name="Name" type="string">FileReader</XPD:ATTR>
+<XPD:ATTR name="StereotypeProfile" type="string">UMLStandard</XPD:ATTR>
+<XPD:ATTR name="StereotypeName" type="string">destroy</XPD:ATTR>
+<XPD:ATTR name="Visibility" type="UMLVisibilityKind">vkPrivate</XPD:ATTR>
+<XPD:REF name="Owner">pg4DN1/gYkygsL7BY5FTswAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="Operations[4]" type="UMLOperation" guid="DPG8Os8kLkiusKCj9KKoJQAA">
+<XPD:ATTR name="Name" type="string">setPath</XPD:ATTR>
+<XPD:REF name="Owner">pg4DN1/gYkygsL7BY5FTswAA</XPD:REF>
+<XPD:ATTR name="#Parameters" type="integer">2</XPD:ATTR>
+<XPD:OBJ name="Parameters[0]" type="UMLParameter" guid="zfZdI0EbSU29iY2ynnXu8wAA">
+<XPD:ATTR name="Name" type="string">input</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">std::string</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">DPG8Os8kLkiusKCj9KKoJQAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="Parameters[1]" type="UMLParameter" guid="HKrjL/lmk0u50wMgU1pT3gAA">
+<XPD:ATTR name="Name" type="string">return</XPD:ATTR>
+<XPD:ATTR name="DirectionKind" type="UMLParameterDirectionKind">pdkReturn</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">void</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">DPG8Os8kLkiusKCj9KKoJQAA</XPD:REF>
+</XPD:OBJ>
+</XPD:OBJ>
+<XPD:OBJ name="Operations[5]" type="UMLOperation" guid="QPU5gcTA/EShTqZbH+JPrQAA">
+<XPD:ATTR name="Name" type="string">readControl</XPD:ATTR>
+<XPD:REF name="Owner">pg4DN1/gYkygsL7BY5FTswAA</XPD:REF>
+<XPD:ATTR name="#Parameters" type="integer">1</XPD:ATTR>
+<XPD:OBJ name="Parameters[0]" type="UMLParameter" guid="3e3HdF+g20KjX07/SqA1vwAA">
+<XPD:ATTR name="Name" type="string">return</XPD:ATTR>
+<XPD:ATTR name="DirectionKind" type="UMLParameterDirectionKind">pdkReturn</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">int</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">QPU5gcTA/EShTqZbH+JPrQAA</XPD:REF>
+</XPD:OBJ>
+</XPD:OBJ>
+<XPD:OBJ name="Operations[6]" type="UMLOperation" guid="fi6Scal030+5uH6h6rE31AAA">
+<XPD:ATTR name="Name" type="string">readBodies</XPD:ATTR>
+<XPD:REF name="Owner">pg4DN1/gYkygsL7BY5FTswAA</XPD:REF>
+<XPD:ATTR name="#Parameters" type="integer">1</XPD:ATTR>
+<XPD:OBJ name="Parameters[0]" type="UMLParameter" guid="cXag1GC/1U2g4bc2QDM9sgAA">
+<XPD:ATTR name="Name" type="string">return</XPD:ATTR>
+<XPD:ATTR name="DirectionKind" type="UMLParameterDirectionKind">pdkReturn</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">int</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">fi6Scal030+5uH6h6rE31AAA</XPD:REF>
+</XPD:OBJ>
+</XPD:OBJ>
+<XPD:OBJ name="Operations[7]" type="UMLOperation" guid="pqG25COexk27Q0HTqNmBLgAA">
+<XPD:ATTR name="Name" type="string">readForces</XPD:ATTR>
+<XPD:REF name="Owner">pg4DN1/gYkygsL7BY5FTswAA</XPD:REF>
+<XPD:ATTR name="#Parameters" type="integer">1</XPD:ATTR>
+<XPD:OBJ name="Parameters[0]" type="UMLParameter" guid="MluSj861HE2+s1YVv2/mywAA">
+<XPD:ATTR name="Name" type="string">return</XPD:ATTR>
+<XPD:ATTR name="DirectionKind" type="UMLParameterDirectionKind">pdkReturn</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">int</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">pqG25COexk27Q0HTqNmBLgAA</XPD:REF>
+</XPD:OBJ>
+</XPD:OBJ>
+<XPD:OBJ name="Operations[8]" type="UMLOperation" guid="02G/87ZMVECcu4jDlZMOjgAA">
+<XPD:ATTR name="Name" type="string">readSeaEnv</XPD:ATTR>
+<XPD:REF name="Owner">pg4DN1/gYkygsL7BY5FTswAA</XPD:REF>
+<XPD:ATTR name="#Parameters" type="integer">1</XPD:ATTR>
+<XPD:OBJ name="Parameters[0]" type="UMLParameter" guid="anCJh/u1tES9hOnyuyyvSgAA">
+<XPD:ATTR name="Name" type="string">return</XPD:ATTR>
+<XPD:ATTR name="DirectionKind" type="UMLParameterDirectionKind">pdkReturn</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">int</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">02G/87ZMVECcu4jDlZMOjgAA</XPD:REF>
+</XPD:OBJ>
+</XPD:OBJ>
+<XPD:OBJ name="Operations[9]" type="UMLOperation" guid="YP/LomrJMESZdKEv8ilvzAAA">
+<XPD:ATTR name="Name" type="string">readData</XPD:ATTR>
+<XPD:REF name="Owner">pg4DN1/gYkygsL7BY5FTswAA</XPD:REF>
+<XPD:ATTR name="#Parameters" type="integer">1</XPD:ATTR>
+<XPD:OBJ name="Parameters[0]" type="UMLParameter" guid="igLP+uTQB0enJOqAYVvcZAAA">
+<XPD:ATTR name="Name" type="string">return</XPD:ATTR>
+<XPD:ATTR name="DirectionKind" type="UMLParameterDirectionKind">pdkReturn</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">int</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">YP/LomrJMESZdKEv8ilvzAAA</XPD:REF>
+</XPD:OBJ>
+</XPD:OBJ>
+<XPD:OBJ name="Operations[10]" type="UMLOperation" guid="1sc59ofEREijsdsGdEgFJwAA">
+<XPD:ATTR name="Name" type="string">setDictionary</XPD:ATTR>
+<XPD:REF name="Owner">pg4DN1/gYkygsL7BY5FTswAA</XPD:REF>
+<XPD:ATTR name="#Parameters" type="integer">2</XPD:ATTR>
+<XPD:OBJ name="Parameters[0]" type="UMLParameter" guid="MRaD/GJAzk2rsxLPcRQROAAA">
+<XPD:ATTR name="Name" type="string">dictIn</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">1sc59ofEREijsdsGdEgFJwAA</XPD:REF>
+<XPD:REF name="Type_">m3Y8GBYMfEKBWg0XhTFoQwAA</XPD:REF>
+<XPD:ATTR name="#TaggedValues" type="integer">1</XPD:ATTR>
+<XPD:OBJ name="TaggedValues[0]" type="TaggedValue" guid="x9JqhUDaAkWLkFYKBy2rtQAA">
+<XPD:ATTR name="ProfileName" type="string">Cpp</XPD:ATTR>
+<XPD:ATTR name="TagDefinitionSetName" type="string">CppPointer</XPD:ATTR>
+<XPD:ATTR name="Name" type="string">CppPointer</XPD:ATTR>
+<XPD:ATTR name="DataValue" type="string">&amp;</XPD:ATTR>
+<XPD:REF name="TaggedModel">MRaD/GJAzk2rsxLPcRQROAAA</XPD:REF>
+</XPD:OBJ>
+</XPD:OBJ>
+<XPD:OBJ name="Parameters[1]" type="UMLParameter" guid="OjNLx08xnka6hg5HBZsElAAA">
+<XPD:ATTR name="Name" type="string">return</XPD:ATTR>
+<XPD:ATTR name="DirectionKind" type="UMLParameterDirectionKind">pdkReturn</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">void</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">1sc59ofEREijsdsGdEgFJwAA</XPD:REF>
+</XPD:OBJ>
+</XPD:OBJ>
+<XPD:OBJ name="Operations[11]" type="UMLOperation" guid="d68fuXCoBU25Kt3vsiWTNAAA">
+<XPD:ATTR name="Name" type="string">readHydroFile</XPD:ATTR>
+<XPD:REF name="Owner">pg4DN1/gYkygsL7BY5FTswAA</XPD:REF>
+<XPD:ATTR name="#Parameters" type="integer">2</XPD:ATTR>
+<XPD:OBJ name="Parameters[0]" type="UMLParameter" guid="HOW9qliEmkqLf9qqCO/4yQAA">
+<XPD:ATTR name="Name" type="string">path</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">std::string</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">d68fuXCoBU25Kt3vsiWTNAAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="Parameters[1]" type="UMLParameter" guid="zMrDGN29MEGYbEVkW//4xgAA">
+<XPD:ATTR name="Name" type="string">return</XPD:ATTR>
+<XPD:ATTR name="DirectionKind" type="UMLParameterDirectionKind">pdkReturn</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">int</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">d68fuXCoBU25Kt3vsiWTNAAA</XPD:REF>
+</XPD:OBJ>
+</XPD:OBJ>
+<XPD:OBJ name="Operations[12]" type="UMLOperation" guid="NTisnICJT0Gty8Qb+urzXwAA">
+<XPD:ATTR name="Name" type="string">setSystem</XPD:ATTR>
+<XPD:REF name="Owner">pg4DN1/gYkygsL7BY5FTswAA</XPD:REF>
+<XPD:ATTR name="#Parameters" type="integer">2</XPD:ATTR>
+<XPD:OBJ name="Parameters[0]" type="UMLParameter" guid="65McvjVbPUqlXi8AxN0lqAAA">
+<XPD:ATTR name="Name" type="string">ptInput</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">NTisnICJT0Gty8Qb+urzXwAA</XPD:REF>
+<XPD:REF name="Type_" pathname="::Global Objects::System">H07nd0XrdUC5Or60wR0kfAAA</XPD:REF>
+<XPD:ATTR name="#TaggedValues" type="integer">1</XPD:ATTR>
+<XPD:OBJ name="TaggedValues[0]" type="TaggedValue" guid="LD+MhIhS8UOj5Mi+QicpCQAA">
+<XPD:ATTR name="ProfileName" type="string">Cpp</XPD:ATTR>
+<XPD:ATTR name="TagDefinitionSetName" type="string">CppPointer</XPD:ATTR>
+<XPD:ATTR name="Name" type="string">CppPointer</XPD:ATTR>
+<XPD:ATTR name="DataValue" type="string">*</XPD:ATTR>
+<XPD:REF name="TaggedModel">65McvjVbPUqlXi8AxN0lqAAA</XPD:REF>
+</XPD:OBJ>
+</XPD:OBJ>
+<XPD:OBJ name="Parameters[1]" type="UMLParameter" guid="hEo92VaZKUCqKCVl5VXd9gAA">
+<XPD:ATTR name="Name" type="string">return</XPD:ATTR>
+<XPD:ATTR name="DirectionKind" type="UMLParameterDirectionKind">pdkReturn</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">void</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">NTisnICJT0Gty8Qb+urzXwAA</XPD:REF>
+</XPD:OBJ>
+</XPD:OBJ>
+<XPD:OBJ name="Operations[13]" type="UMLOperation" guid="B7RCWGnDV0GlyGCY3Cbx4gAA">
+<XPD:ATTR name="Name" type="string">outputControlFile</XPD:ATTR>
+<XPD:REF name="Owner">pg4DN1/gYkygsL7BY5FTswAA</XPD:REF>
+<XPD:ATTR name="#Parameters" type="integer">2</XPD:ATTR>
+<XPD:OBJ name="Parameters[0]" type="UMLParameter" guid="l/WwDs4EdU2c0grwJ6f3RwAA">
+<XPD:ATTR name="Name" type="string">output</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">B7RCWGnDV0GlyGCY3Cbx4gAA</XPD:REF>
+<XPD:REF name="Type_">P6I3mFmIs0OKV0F9/odpTAAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="Parameters[1]" type="UMLParameter" guid="/wJ6HLDZAkCjPlLE5HOqPwAA">
+<XPD:ATTR name="Name" type="string">return</XPD:ATTR>
+<XPD:ATTR name="DirectionKind" type="UMLParameterDirectionKind">pdkReturn</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">void</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">B7RCWGnDV0GlyGCY3Cbx4gAA</XPD:REF>
+</XPD:OBJ>
+</XPD:OBJ>
+<XPD:OBJ name="Operations[14]" type="UMLOperation" guid="KUEubnLt8EGeO3wH97p39wAA">
+<XPD:ATTR name="Name" type="string">outputBodiesFile</XPD:ATTR>
+<XPD:REF name="Owner">pg4DN1/gYkygsL7BY5FTswAA</XPD:REF>
+<XPD:ATTR name="#Parameters" type="integer">2</XPD:ATTR>
+<XPD:OBJ name="Parameters[0]" type="UMLParameter" guid="NpAVWsPb7ESwrhrmx3BEWwAA">
+<XPD:ATTR name="Name" type="string">output</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">KUEubnLt8EGeO3wH97p39wAA</XPD:REF>
+<XPD:REF name="Type_">P6I3mFmIs0OKV0F9/odpTAAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="Parameters[1]" type="UMLParameter" guid="PQ71pHIuYEO9x/WPojMYSQAA">
+<XPD:ATTR name="Name" type="string">return</XPD:ATTR>
+<XPD:ATTR name="DirectionKind" type="UMLParameterDirectionKind">pdkReturn</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">void</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">KUEubnLt8EGeO3wH97p39wAA</XPD:REF>
+</XPD:OBJ>
+</XPD:OBJ>
+<XPD:OBJ name="Operations[15]" type="UMLOperation" guid="Qbghes11gkWA9Jz9uqoOWAAA">
+<XPD:ATTR name="Name" type="string">outputDataFile</XPD:ATTR>
+<XPD:REF name="Owner">pg4DN1/gYkygsL7BY5FTswAA</XPD:REF>
+<XPD:ATTR name="#Parameters" type="integer">2</XPD:ATTR>
+<XPD:OBJ name="Parameters[0]" type="UMLParameter" guid="YQwPn54BFEOYUMi1RxmwDwAA">
+<XPD:ATTR name="Name" type="string">output</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">Qbghes11gkWA9Jz9uqoOWAAA</XPD:REF>
+<XPD:REF name="Type_">P6I3mFmIs0OKV0F9/odpTAAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="Parameters[1]" type="UMLParameter" guid="rsHsYxtczUuf3HyZ9aYZzwAA">
+<XPD:ATTR name="Name" type="string">return</XPD:ATTR>
+<XPD:ATTR name="DirectionKind" type="UMLParameterDirectionKind">pdkReturn</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">void</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">Qbghes11gkWA9Jz9uqoOWAAA</XPD:REF>
+</XPD:OBJ>
+</XPD:OBJ>
+<XPD:OBJ name="Operations[16]" type="UMLOperation" guid="6UN4NY0i1EWJ+F+N0kfv3gAA">
+<XPD:ATTR name="Name" type="string">outputForcesFile</XPD:ATTR>
+<XPD:REF name="Owner">pg4DN1/gYkygsL7BY5FTswAA</XPD:REF>
+<XPD:ATTR name="#Parameters" type="integer">2</XPD:ATTR>
+<XPD:OBJ name="Parameters[0]" type="UMLParameter" guid="eqk5JCOmBUejH/OoQSSDYgAA">
+<XPD:ATTR name="Name" type="string">output</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">6UN4NY0i1EWJ+F+N0kfv3gAA</XPD:REF>
+<XPD:REF name="Type_">P6I3mFmIs0OKV0F9/odpTAAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="Parameters[1]" type="UMLParameter" guid="xpt94YLnKUSGwFBibQsG3gAA">
+<XPD:ATTR name="Name" type="string">return</XPD:ATTR>
+<XPD:ATTR name="DirectionKind" type="UMLParameterDirectionKind">pdkReturn</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">void</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">6UN4NY0i1EWJ+F+N0kfv3gAA</XPD:REF>
+</XPD:OBJ>
+</XPD:OBJ>
+<XPD:OBJ name="Operations[17]" type="UMLOperation" guid="gkXm5pX7Wkmz1JptaN4baQAA">
+<XPD:ATTR name="Name" type="string">outputSeaEnvFile</XPD:ATTR>
+<XPD:REF name="Owner">pg4DN1/gYkygsL7BY5FTswAA</XPD:REF>
+<XPD:ATTR name="#Parameters" type="integer">2</XPD:ATTR>
+<XPD:OBJ name="Parameters[0]" type="UMLParameter" guid="97kbbsBOmkOTxo7tkgXwwwAA">
+<XPD:ATTR name="Name" type="string">output</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">gkXm5pX7Wkmz1JptaN4baQAA</XPD:REF>
+<XPD:REF name="Type_">P6I3mFmIs0OKV0F9/odpTAAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="Parameters[1]" type="UMLParameter" guid="R3adId80e0aNKblmhwabOgAA">
+<XPD:ATTR name="Name" type="string">return</XPD:ATTR>
+<XPD:ATTR name="DirectionKind" type="UMLParameterDirectionKind">pdkReturn</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">void</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">gkXm5pX7Wkmz1JptaN4baQAA</XPD:REF>
+</XPD:OBJ>
+</XPD:OBJ>
+<XPD:OBJ name="Operations[18]" type="UMLOperation" guid="IEpc0tcGoUmcA2X+Gqz2vgAA">
+<XPD:ATTR name="Name" type="string">sendOutput</XPD:ATTR>
+<XPD:ATTR name="Visibility" type="UMLVisibilityKind">vkProtected</XPD:ATTR>
+<XPD:REF name="Owner">pg4DN1/gYkygsL7BY5FTswAA</XPD:REF>
+<XPD:ATTR name="#Parameters" type="integer">2</XPD:ATTR>
+<XPD:OBJ name="Parameters[0]" type="UMLParameter" guid="OewjLEcHM0+WkVB87KH0WgAA">
+<XPD:ATTR name="Name" type="string">index</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">int</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">IEpc0tcGoUmcA2X+Gqz2vgAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="Parameters[1]" type="UMLParameter" guid="D8LdSp52WEu+UE42U3LvjQAA">
+<XPD:ATTR name="Name" type="string">return</XPD:ATTR>
+<XPD:ATTR name="DirectionKind" type="UMLParameterDirectionKind">pdkReturn</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">void</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">IEpc0tcGoUmcA2X+Gqz2vgAA</XPD:REF>
+</XPD:OBJ>
+</XPD:OBJ>
+</XPD:OBJ>
+<XPD:OBJ name="OwnedElements[3]" type="UMLClass" guid="sXrUKLNtYUaoe99vD5gfbgAA">
+<XPD:ATTR name="Name" type="string">Parser</XPD:ATTR>
+<XPD:REF name="Namespace">m2UFfbOZ+USWnD7aotNqegAA</XPD:REF>
+<XPD:ATTR name="#Views" type="integer">4</XPD:ATTR>
+<XPD:REF name="Views[0]">QWbd3L5SLUWxNBOPxISPRQAA</XPD:REF>
+<XPD:REF name="Views[1]">u54HtE20zUKQyFR+BGpCJAAA</XPD:REF>
+<XPD:REF name="Views[2]">7dFSbzInuU2GBEHqPxkOFAAA</XPD:REF>
+<XPD:REF name="Views[3]">NUglmqTYyUWADrT6os51HQAA</XPD:REF>
+<XPD:ATTR name="#Generalizations" type="integer">1</XPD:ATTR>
+<XPD:REF name="Generalizations[0]" pathname="::Implementation Model::osea::">MJRbRTDbTEKKQ3u3mmkZsgAA</XPD:REF>
+<XPD:ATTR name="#Operations" type="integer">12</XPD:ATTR>
+<XPD:OBJ name="Operations[0]" type="UMLOperation" guid="olGGL3v2IkuwOl9p6eErwQAA">
+<XPD:ATTR name="Name" type="string">Parser</XPD:ATTR>
+<XPD:ATTR name="StereotypeProfile" type="string">UMLStandard</XPD:ATTR>
+<XPD:ATTR name="StereotypeName" type="string">create</XPD:ATTR>
+<XPD:ATTR name="Visibility" type="UMLVisibilityKind">vkPrivate</XPD:ATTR>
+<XPD:REF name="Owner">sXrUKLNtYUaoe99vD5gfbgAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="Operations[1]" type="UMLOperation" guid="8231dPfN5kmN+sRMlURM+QAA">
+<XPD:ATTR name="Name" type="string">Parser</XPD:ATTR>
+<XPD:ATTR name="StereotypeProfile" type="string">UMLStandard</XPD:ATTR>
+<XPD:ATTR name="StereotypeName" type="string">destroy</XPD:ATTR>
+<XPD:ATTR name="Visibility" type="UMLVisibilityKind">vkPrivate</XPD:ATTR>
+<XPD:REF name="Owner">sXrUKLNtYUaoe99vD5gfbgAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="Operations[2]" type="UMLOperation" guid="9jO1IzF4dkS3n77o90ewwgAA">
+<XPD:ATTR name="Name" type="string">Parse</XPD:ATTR>
+<XPD:REF name="Owner">sXrUKLNtYUaoe99vD5gfbgAA</XPD:REF>
+<XPD:ATTR name="#Parameters" type="integer">3</XPD:ATTR>
+<XPD:OBJ name="Parameters[0]" type="UMLParameter" guid="OKcsWznR70ukOhKUYFJ+hAAA">
+<XPD:ATTR name="Name" type="string">infile</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">std::istream</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">9jO1IzF4dkS3n77o90ewwgAA</XPD:REF>
+<XPD:ATTR name="#TaggedValues" type="integer">1</XPD:ATTR>
+<XPD:OBJ name="TaggedValues[0]" type="TaggedValue" guid="zEkEZgQ4rE+ZQXHcchVCKgAA">
+<XPD:ATTR name="ProfileName" type="string">Cpp</XPD:ATTR>
+<XPD:ATTR name="TagDefinitionSetName" type="string">CppPointer</XPD:ATTR>
+<XPD:ATTR name="Name" type="string">CppPointer</XPD:ATTR>
+<XPD:ATTR name="DataValue" type="string">&amp;</XPD:ATTR>
+<XPD:REF name="TaggedModel">OKcsWznR70ukOhKUYFJ+hAAA</XPD:REF>
+</XPD:OBJ>
+</XPD:OBJ>
+<XPD:OBJ name="Parameters[1]" type="UMLParameter" guid="fIr55o9C4UioEyzw1r9vqgAA">
+<XPD:ATTR name="Name" type="string">bracket_count</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">int</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">9jO1IzF4dkS3n77o90ewwgAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="Parameters[2]" type="UMLParameter" guid="dm6ZMSgAL0q+G5lVU7XdggAA">
+<XPD:ATTR name="Name" type="string">return</XPD:ATTR>
+<XPD:ATTR name="DirectionKind" type="UMLParameterDirectionKind">pdkReturn</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">void</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">9jO1IzF4dkS3n77o90ewwgAA</XPD:REF>
+</XPD:OBJ>
+</XPD:OBJ>
+<XPD:OBJ name="Operations[3]" type="UMLOperation" guid="aWD+SfMSPUueIpG1hBfoVAAA">
+<XPD:ATTR name="Name" type="string">getObject</XPD:ATTR>
+<XPD:REF name="Owner">sXrUKLNtYUaoe99vD5gfbgAA</XPD:REF>
+<XPD:ATTR name="#Parameters" type="integer">2</XPD:ATTR>
+<XPD:OBJ name="Parameters[0]" type="UMLParameter" guid="sVfRNSA1wkKfADy5bWdlHQAA">
+<XPD:ATTR name="Name" type="string">index</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">int</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">aWD+SfMSPUueIpG1hBfoVAAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="Parameters[1]" type="UMLParameter" guid="W6l/H79DH0CUSix/66v5mAAA">
+<XPD:ATTR name="Name" type="string">return</XPD:ATTR>
+<XPD:ATTR name="DirectionKind" type="UMLParameterDirectionKind">pdkReturn</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">aWD+SfMSPUueIpG1hBfoVAAA</XPD:REF>
+<XPD:REF name="Type_">P6I3mFmIs0OKV0F9/odpTAAA</XPD:REF>
+</XPD:OBJ>
+</XPD:OBJ>
+<XPD:OBJ name="Operations[4]" type="UMLOperation" guid="sKEnL3IlWkWTEht21WcAYwAA">
+<XPD:ATTR name="Name" type="string">listObject</XPD:ATTR>
+<XPD:REF name="Owner">sXrUKLNtYUaoe99vD5gfbgAA</XPD:REF>
+<XPD:ATTR name="#Parameters" type="integer">1</XPD:ATTR>
+<XPD:OBJ name="Parameters[0]" type="UMLParameter" guid="zqvUSal15UeHzdLklW7YpwAA">
+<XPD:ATTR name="Name" type="string">return</XPD:ATTR>
+<XPD:ATTR name="DirectionKind" type="UMLParameterDirectionKind">pdkReturn</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">std::vector&lt;ObjectGroup&gt;</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">sKEnL3IlWkWTEht21WcAYwAA</XPD:REF>
+<XPD:ATTR name="#TaggedValues" type="integer">1</XPD:ATTR>
+<XPD:OBJ name="TaggedValues[0]" type="TaggedValue" guid="1EX5Sn2FY0ODYiSo8cglpQAA">
+<XPD:ATTR name="ProfileName" type="string">Cpp</XPD:ATTR>
+<XPD:ATTR name="TagDefinitionSetName" type="string">CppPointer</XPD:ATTR>
+<XPD:ATTR name="Name" type="string">CppPointer</XPD:ATTR>
+<XPD:ATTR name="DataValue" type="string">&amp;</XPD:ATTR>
+<XPD:REF name="TaggedModel">zqvUSal15UeHzdLklW7YpwAA</XPD:REF>
+</XPD:OBJ>
+</XPD:OBJ>
+</XPD:OBJ>
+<XPD:OBJ name="Operations[5]" type="UMLOperation" guid="V8kIajF5JUepftdmb95RjwAA">
+<XPD:ATTR name="Name" type="string">listObject</XPD:ATTR>
+<XPD:REF name="Owner">sXrUKLNtYUaoe99vD5gfbgAA</XPD:REF>
+<XPD:ATTR name="#Parameters" type="integer">2</XPD:ATTR>
+<XPD:OBJ name="Parameters[0]" type="UMLParameter" guid="rQy2cr9B7U2wCJnEuiSqfAAA">
+<XPD:ATTR name="Name" type="string">index</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">unsigned int</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">V8kIajF5JUepftdmb95RjwAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="Parameters[1]" type="UMLParameter" guid="blGwSIrUvkiVsTirkAuSxgAA">
+<XPD:ATTR name="Name" type="string">return</XPD:ATTR>
+<XPD:ATTR name="DirectionKind" type="UMLParameterDirectionKind">pdkReturn</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">V8kIajF5JUepftdmb95RjwAA</XPD:REF>
+<XPD:REF name="Type_">P6I3mFmIs0OKV0F9/odpTAAA</XPD:REF>
+<XPD:ATTR name="#TaggedValues" type="integer">1</XPD:ATTR>
+<XPD:OBJ name="TaggedValues[0]" type="TaggedValue" guid="mxYyaJPYdkGM1N+YfoyO9QAA">
+<XPD:ATTR name="ProfileName" type="string">Cpp</XPD:ATTR>
+<XPD:ATTR name="TagDefinitionSetName" type="string">CppPointer</XPD:ATTR>
+<XPD:ATTR name="Name" type="string">CppPointer</XPD:ATTR>
+<XPD:ATTR name="DataValue" type="string">&amp;</XPD:ATTR>
+<XPD:REF name="TaggedModel">blGwSIrUvkiVsTirkAuSxgAA</XPD:REF>
+</XPD:OBJ>
+</XPD:OBJ>
+</XPD:OBJ>
+<XPD:OBJ name="Operations[6]" type="UMLOperation" guid="gzwQd6rgPkqV431c55EVKAAA">
+<XPD:ATTR name="Name" type="string">listKey</XPD:ATTR>
+<XPD:REF name="Owner">sXrUKLNtYUaoe99vD5gfbgAA</XPD:REF>
+<XPD:ATTR name="#Parameters" type="integer">1</XPD:ATTR>
+<XPD:OBJ name="Parameters[0]" type="UMLParameter" guid="hAr651Jrmk6LEB9U/SUNWwAA">
+<XPD:ATTR name="Name" type="string">return</XPD:ATTR>
+<XPD:ATTR name="DirectionKind" type="UMLParameterDirectionKind">pdkReturn</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">gzwQd6rgPkqV431c55EVKAAA</XPD:REF>
+<XPD:REF name="Type_" pathname="::Implementation Model::osea::vecKeyword">/k8wSPUFeUS1XKGk4xboLgAA</XPD:REF>
+<XPD:ATTR name="#TaggedValues" type="integer">1</XPD:ATTR>
+<XPD:OBJ name="TaggedValues[0]" type="TaggedValue" guid="FI4egpjNw0Sx/OowZz3f4QAA">
+<XPD:ATTR name="ProfileName" type="string">Cpp</XPD:ATTR>
+<XPD:ATTR name="TagDefinitionSetName" type="string">CppPointer</XPD:ATTR>
+<XPD:ATTR name="Name" type="string">CppPointer</XPD:ATTR>
+<XPD:ATTR name="DataValue" type="string">&amp;</XPD:ATTR>
+<XPD:REF name="TaggedModel">hAr651Jrmk6LEB9U/SUNWwAA</XPD:REF>
+</XPD:OBJ>
+</XPD:OBJ>
+</XPD:OBJ>
+<XPD:OBJ name="Operations[7]" type="UMLOperation" guid="MK/8vKTSzEqcvOHIU/apyAAA">
+<XPD:ATTR name="Name" type="string">listKey</XPD:ATTR>
+<XPD:REF name="Owner">sXrUKLNtYUaoe99vD5gfbgAA</XPD:REF>
+<XPD:ATTR name="#Parameters" type="integer">2</XPD:ATTR>
+<XPD:OBJ name="Parameters[0]" type="UMLParameter" guid="qJ1xtbEeNUygT5mR9eqDsQAA">
+<XPD:ATTR name="Name" type="string">index</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">int</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">MK/8vKTSzEqcvOHIU/apyAAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="Parameters[1]" type="UMLParameter" guid="/oFnLAB7gUm0efBKw+6RYwAA">
+<XPD:ATTR name="Name" type="string">return</XPD:ATTR>
+<XPD:ATTR name="DirectionKind" type="UMLParameterDirectionKind">pdkReturn</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">std::string</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">MK/8vKTSzEqcvOHIU/apyAAA</XPD:REF>
+<XPD:ATTR name="#TaggedValues" type="integer">1</XPD:ATTR>
+<XPD:OBJ name="TaggedValues[0]" type="TaggedValue" guid="k6PdkTxiT0Wu1eKRQrifVwAA">
+<XPD:ATTR name="ProfileName" type="string">Cpp</XPD:ATTR>
+<XPD:ATTR name="TagDefinitionSetName" type="string">CppPointer</XPD:ATTR>
+<XPD:ATTR name="Name" type="string">CppPointer</XPD:ATTR>
+<XPD:ATTR name="DataValue" type="string">&amp;</XPD:ATTR>
+<XPD:REF name="TaggedModel">/oFnLAB7gUm0efBKw+6RYwAA</XPD:REF>
+</XPD:OBJ>
+</XPD:OBJ>
+</XPD:OBJ>
+<XPD:OBJ name="Operations[8]" type="UMLOperation" guid="4UhySddCAUu087yek01YewAA">
+<XPD:ATTR name="Name" type="string">listVal</XPD:ATTR>
+<XPD:REF name="Owner">sXrUKLNtYUaoe99vD5gfbgAA</XPD:REF>
+<XPD:ATTR name="#Parameters" type="integer">1</XPD:ATTR>
+<XPD:OBJ name="Parameters[0]" type="UMLParameter" guid="pRNHXvjvRk6tJGvDk0hUngAA">
+<XPD:ATTR name="Name" type="string">return</XPD:ATTR>
+<XPD:ATTR name="DirectionKind" type="UMLParameterDirectionKind">pdkReturn</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">4UhySddCAUu087yek01YewAA</XPD:REF>
+<XPD:REF name="Type_" pathname="::Implementation Model::osea::vecValue">2Ouc0M/JjUq2Hd8QtJoaBgAA</XPD:REF>
+<XPD:ATTR name="#TaggedValues" type="integer">1</XPD:ATTR>
+<XPD:OBJ name="TaggedValues[0]" type="TaggedValue" guid="5whmciYawEuDC38QNlIhkwAA">
+<XPD:ATTR name="ProfileName" type="string">Cpp</XPD:ATTR>
+<XPD:ATTR name="TagDefinitionSetName" type="string">CppPointer</XPD:ATTR>
+<XPD:ATTR name="Name" type="string">CppPointer</XPD:ATTR>
+<XPD:ATTR name="DataValue" type="string">&amp;</XPD:ATTR>
+<XPD:REF name="TaggedModel">pRNHXvjvRk6tJGvDk0hUngAA</XPD:REF>
+</XPD:OBJ>
+</XPD:OBJ>
+</XPD:OBJ>
+<XPD:OBJ name="Operations[9]" type="UMLOperation" guid="6JFtuCwB5UCuf15flWciZAAA">
+<XPD:ATTR name="Name" type="string">listVal</XPD:ATTR>
+<XPD:REF name="Owner">sXrUKLNtYUaoe99vD5gfbgAA</XPD:REF>
+<XPD:ATTR name="#Parameters" type="integer">2</XPD:ATTR>
+<XPD:OBJ name="Parameters[0]" type="UMLParameter" guid="oYKL0dpOcEqU7qT8SlkdywAA">
+<XPD:ATTR name="Name" type="string">index</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">int</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">6JFtuCwB5UCuf15flWciZAAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="Parameters[1]" type="UMLParameter" guid="DHeTJ5GHgUywxEVvnWSGsAAA">
+<XPD:ATTR name="Name" type="string">return</XPD:ATTR>
+<XPD:ATTR name="DirectionKind" type="UMLParameterDirectionKind">pdkReturn</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">std::vector&lt;std::string&gt;</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">6JFtuCwB5UCuf15flWciZAAA</XPD:REF>
+<XPD:ATTR name="#TaggedValues" type="integer">1</XPD:ATTR>
+<XPD:OBJ name="TaggedValues[0]" type="TaggedValue" guid="ycQAxW4l50G9pw82tIXzLwAA">
+<XPD:ATTR name="ProfileName" type="string">Cpp</XPD:ATTR>
+<XPD:ATTR name="TagDefinitionSetName" type="string">CppPointer</XPD:ATTR>
+<XPD:ATTR name="Name" type="string">CppPointer</XPD:ATTR>
+<XPD:ATTR name="DataValue" type="string">&amp;</XPD:ATTR>
+<XPD:REF name="TaggedModel">DHeTJ5GHgUywxEVvnWSGsAAA</XPD:REF>
+</XPD:OBJ>
+</XPD:OBJ>
+</XPD:OBJ>
+<XPD:OBJ name="Operations[10]" type="UMLOperation" guid="Tgmwjvuwa0WoHXl9YdRUGAAA">
+<XPD:ATTR name="Name" type="string">refSubObject</XPD:ATTR>
+<XPD:REF name="Owner">sXrUKLNtYUaoe99vD5gfbgAA</XPD:REF>
+<XPD:ATTR name="#Parameters" type="integer">2</XPD:ATTR>
+<XPD:OBJ name="Parameters[0]" type="UMLParameter" guid="KJtdJGMee061rVgdokmDfwAA">
+<XPD:ATTR name="Name" type="string">index1</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">int</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">Tgmwjvuwa0WoHXl9YdRUGAAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="Parameters[1]" type="UMLParameter" guid="uqZIdCRPnUScAzM/VzIE6gAA">
+<XPD:ATTR name="Name" type="string">return</XPD:ATTR>
+<XPD:ATTR name="DirectionKind" type="UMLParameterDirectionKind">pdkReturn</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">std::vector&lt;ObjectGroup*&gt;</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">Tgmwjvuwa0WoHXl9YdRUGAAA</XPD:REF>
+<XPD:ATTR name="#TaggedValues" type="integer">1</XPD:ATTR>
+<XPD:OBJ name="TaggedValues[0]" type="TaggedValue" guid="tWPfJVi2c0ylogWa//nRGgAA">
+<XPD:ATTR name="ProfileName" type="string">Cpp</XPD:ATTR>
+<XPD:ATTR name="TagDefinitionSetName" type="string">CppPointer</XPD:ATTR>
+<XPD:ATTR name="Name" type="string">CppPointer</XPD:ATTR>
+<XPD:ATTR name="DataValue" type="string">&amp;</XPD:ATTR>
+<XPD:REF name="TaggedModel">uqZIdCRPnUScAzM/VzIE6gAA</XPD:REF>
+</XPD:OBJ>
+</XPD:OBJ>
+</XPD:OBJ>
+<XPD:OBJ name="Operations[11]" type="UMLOperation" guid="UuXgzqhUhk2Mc9W4iUL2uAAA">
+<XPD:ATTR name="Name" type="string">getSubObject</XPD:ATTR>
+<XPD:REF name="Owner">sXrUKLNtYUaoe99vD5gfbgAA</XPD:REF>
+<XPD:ATTR name="#Parameters" type="integer">3</XPD:ATTR>
+<XPD:OBJ name="Parameters[0]" type="UMLParameter" guid="oe1NLiDjBk6946zIxWIpdAAA">
+<XPD:ATTR name="Name" type="string">index</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">int</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">UuXgzqhUhk2Mc9W4iUL2uAAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="Parameters[1]" type="UMLParameter" guid="L0UIyYJaY0ys1qz/PG02VwAA">
+<XPD:ATTR name="Name" type="string">index1</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">int</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">UuXgzqhUhk2Mc9W4iUL2uAAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="Parameters[2]" type="UMLParameter" guid="hYEyFMkgaEaHTKQ/LxLAPgAA">
+<XPD:ATTR name="Name" type="string">return</XPD:ATTR>
+<XPD:ATTR name="DirectionKind" type="UMLParameterDirectionKind">pdkReturn</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">UuXgzqhUhk2Mc9W4iUL2uAAA</XPD:REF>
+<XPD:REF name="Type_">P6I3mFmIs0OKV0F9/odpTAAA</XPD:REF>
+</XPD:OBJ>
+</XPD:OBJ>
+</XPD:OBJ>
+<XPD:OBJ name="OwnedElements[4]" type="UMLClass" guid="QygPHiJqRkSWuk+MFy0GNQAA">
+<XPD:ATTR name="Name" type="string">dictControl</XPD:ATTR>
+<XPD:REF name="Namespace">m2UFfbOZ+USWnD7aotNqegAA</XPD:REF>
+<XPD:ATTR name="#Views" type="integer">4</XPD:ATTR>
+<XPD:REF name="Views[0]">MqLT0a67OEaid5V81F0ucwAA</XPD:REF>
+<XPD:REF name="Views[1]">tjmQ5ckKdUWqG/kOuPg0zwAA</XPD:REF>
+<XPD:REF name="Views[2]">GwsG09Swek2Fllgs0B/YUgAA</XPD:REF>
+<XPD:REF name="Views[3]">0E8TNrYEIESodKOH/md0bQAA</XPD:REF>
+<XPD:ATTR name="#Generalizations" type="integer">1</XPD:ATTR>
+<XPD:REF name="Generalizations[0]" pathname="::Implementation Model::osea::ofreq::">3EVW78J32EaAKC+WHhknuwAA</XPD:REF>
+<XPD:ATTR name="#Operations" type="integer">4</XPD:ATTR>
+<XPD:OBJ name="Operations[0]" type="UMLOperation" guid="IblzG0VLu0azNghj/ZlGIwAA">
+<XPD:ATTR name="StereotypeProfile" type="string">Cpp</XPD:ATTR>
+<XPD:ATTR name="StereotypeName" type="string">CppMacro</XPD:ATTR>
+<XPD:ATTR name="Visibility" type="UMLVisibilityKind">vkPrivate</XPD:ATTR>
+<XPD:REF name="Owner">QygPHiJqRkSWuk+MFy0GNQAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="Operations[1]" type="UMLOperation" guid="nmHfYltv4UqDjiRpp5G1kAAA">
+<XPD:ATTR name="Name" type="string">dictControl</XPD:ATTR>
+<XPD:ATTR name="StereotypeProfile" type="string">UMLStandard</XPD:ATTR>
+<XPD:ATTR name="StereotypeName" type="string">create</XPD:ATTR>
+<XPD:ATTR name="Visibility" type="UMLVisibilityKind">vkPrivate</XPD:ATTR>
+<XPD:REF name="Owner">QygPHiJqRkSWuk+MFy0GNQAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="Operations[2]" type="UMLOperation" guid="yqokKPSkbEG8Nou3szZ+UgAA">
+<XPD:ATTR name="Name" type="string">defineKey</XPD:ATTR>
+<XPD:ATTR name="Visibility" type="UMLVisibilityKind">vkProtected</XPD:ATTR>
+<XPD:REF name="Owner">QygPHiJqRkSWuk+MFy0GNQAA</XPD:REF>
+<XPD:ATTR name="#Parameters" type="integer">3</XPD:ATTR>
+<XPD:OBJ name="Parameters[0]" type="UMLParameter" guid="j1a7BkBoz0uPF/QJAUtOngAA">
+<XPD:ATTR name="Name" type="string">keyIn</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">std::string</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">yqokKPSkbEG8Nou3szZ+UgAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="Parameters[1]" type="UMLParameter" guid="t5Ble9hhskC12X4ifRBdcwAA">
+<XPD:ATTR name="Name" type="string">valIn</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">std::vector&lt;std::string&gt;</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">yqokKPSkbEG8Nou3szZ+UgAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="Parameters[2]" type="UMLParameter" guid="VUMee56nTUyz/xGlbwYPgQAA">
+<XPD:ATTR name="Name" type="string">return</XPD:ATTR>
+<XPD:ATTR name="DirectionKind" type="UMLParameterDirectionKind">pdkReturn</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">int</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">yqokKPSkbEG8Nou3szZ+UgAA</XPD:REF>
+</XPD:OBJ>
+</XPD:OBJ>
+<XPD:OBJ name="Operations[3]" type="UMLOperation" guid="DOnuYr5kx0+Nwb1WA52KpQAA">
+<XPD:ATTR name="Name" type="string">defineClass</XPD:ATTR>
+<XPD:ATTR name="Visibility" type="UMLVisibilityKind">vkProtected</XPD:ATTR>
+<XPD:REF name="Owner">QygPHiJqRkSWuk+MFy0GNQAA</XPD:REF>
+<XPD:ATTR name="#Parameters" type="integer">2</XPD:ATTR>
+<XPD:OBJ name="Parameters[0]" type="UMLParameter" guid="5MBCF5BPjUKvGrB9uZiO/wAA">
+<XPD:ATTR name="Name" type="string">nameIn</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">std::string</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">DOnuYr5kx0+Nwb1WA52KpQAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="Parameters[1]" type="UMLParameter" guid="5zyVw1Y4AkCj4UgF/cw39AAA">
+<XPD:ATTR name="Name" type="string">return</XPD:ATTR>
+<XPD:ATTR name="DirectionKind" type="UMLParameterDirectionKind">pdkReturn</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">int</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">DOnuYr5kx0+Nwb1WA52KpQAA</XPD:REF>
+</XPD:OBJ>
+</XPD:OBJ>
+</XPD:OBJ>
+<XPD:OBJ name="OwnedElements[5]" type="UMLClass" guid="b/VrQ3DNCk+rd+YZZLa6lAAA">
+<XPD:ATTR name="Name" type="string">dictBodies</XPD:ATTR>
+<XPD:REF name="Namespace">m2UFfbOZ+USWnD7aotNqegAA</XPD:REF>
+<XPD:ATTR name="#Views" type="integer">4</XPD:ATTR>
+<XPD:REF name="Views[0]">NIbx1FVjpkeUax8TJ/aACAAA</XPD:REF>
+<XPD:REF name="Views[1]">AuwaJnwJIkese3ExwrdMJAAA</XPD:REF>
+<XPD:REF name="Views[2]">GRrOzalo/UKi2RO+Ihh5nwAA</XPD:REF>
+<XPD:REF name="Views[3]">t4D3w8NwQkOpn6hFNvevEAAA</XPD:REF>
+<XPD:ATTR name="#Generalizations" type="integer">1</XPD:ATTR>
+<XPD:REF name="Generalizations[0]" pathname="::Implementation Model::osea::ofreq::">cfTyjoEjf0aHtofKZtyyxQAA</XPD:REF>
+<XPD:ATTR name="#Operations" type="integer">4</XPD:ATTR>
+<XPD:OBJ name="Operations[0]" type="UMLOperation" guid="+xPj0En/qE2zmuwIMy5fKwAA">
+<XPD:ATTR name="StereotypeProfile" type="string">Cpp</XPD:ATTR>
+<XPD:ATTR name="StereotypeName" type="string">CppMacro</XPD:ATTR>
+<XPD:ATTR name="Visibility" type="UMLVisibilityKind">vkPrivate</XPD:ATTR>
+<XPD:REF name="Owner">b/VrQ3DNCk+rd+YZZLa6lAAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="Operations[1]" type="UMLOperation" guid="u5gJVW9h/0aiiFCZqXLO1QAA">
+<XPD:ATTR name="Name" type="string">dictBodies</XPD:ATTR>
+<XPD:ATTR name="StereotypeProfile" type="string">UMLStandard</XPD:ATTR>
+<XPD:ATTR name="StereotypeName" type="string">create</XPD:ATTR>
+<XPD:ATTR name="Visibility" type="UMLVisibilityKind">vkPrivate</XPD:ATTR>
+<XPD:REF name="Owner">b/VrQ3DNCk+rd+YZZLa6lAAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="Operations[2]" type="UMLOperation" guid="XU4XELPjLUuuT+IGYNmi3gAA">
+<XPD:ATTR name="Name" type="string">defineKey</XPD:ATTR>
+<XPD:ATTR name="Visibility" type="UMLVisibilityKind">vkProtected</XPD:ATTR>
+<XPD:REF name="Owner">b/VrQ3DNCk+rd+YZZLa6lAAA</XPD:REF>
+<XPD:ATTR name="#Parameters" type="integer">3</XPD:ATTR>
+<XPD:OBJ name="Parameters[0]" type="UMLParameter" guid="2c7MKEQhUkW17oYLZ3FT8AAA">
+<XPD:ATTR name="Name" type="string">keyIn</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">std::string</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">XU4XELPjLUuuT+IGYNmi3gAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="Parameters[1]" type="UMLParameter" guid="RAYjLEneVEqMhY3MBXvr2AAA">
+<XPD:ATTR name="Name" type="string">valIn</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">std::vector&lt;std::string&gt;</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">XU4XELPjLUuuT+IGYNmi3gAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="Parameters[2]" type="UMLParameter" guid="0PilfyQlqki0g413QHZ+mAAA">
+<XPD:ATTR name="Name" type="string">return</XPD:ATTR>
+<XPD:ATTR name="DirectionKind" type="UMLParameterDirectionKind">pdkReturn</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">int</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">XU4XELPjLUuuT+IGYNmi3gAA</XPD:REF>
+</XPD:OBJ>
+</XPD:OBJ>
+<XPD:OBJ name="Operations[3]" type="UMLOperation" guid="0bljd91ItkyGt0xt4pAfMwAA">
+<XPD:ATTR name="Name" type="string">defineClass</XPD:ATTR>
+<XPD:ATTR name="Visibility" type="UMLVisibilityKind">vkProtected</XPD:ATTR>
+<XPD:REF name="Owner">b/VrQ3DNCk+rd+YZZLa6lAAA</XPD:REF>
+<XPD:ATTR name="#Parameters" type="integer">2</XPD:ATTR>
+<XPD:OBJ name="Parameters[0]" type="UMLParameter" guid="4AgJp0lPsEKC7LWLWjw1XAAA">
+<XPD:ATTR name="Name" type="string">nameIn</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">std::string</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">0bljd91ItkyGt0xt4pAfMwAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="Parameters[1]" type="UMLParameter" guid="Au3ghig6TEWr4zcZQOdKgQAA">
+<XPD:ATTR name="Name" type="string">return</XPD:ATTR>
+<XPD:ATTR name="DirectionKind" type="UMLParameterDirectionKind">pdkReturn</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">int</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">0bljd91ItkyGt0xt4pAfMwAA</XPD:REF>
+</XPD:OBJ>
+</XPD:OBJ>
+</XPD:OBJ>
+<XPD:OBJ name="OwnedElements[6]" type="UMLClass" guid="3UTysF2WmUaz4ajo9UC6jAAA">
+<XPD:ATTR name="Name" type="string">dictForces</XPD:ATTR>
+<XPD:REF name="Namespace">m2UFfbOZ+USWnD7aotNqegAA</XPD:REF>
+<XPD:ATTR name="#Views" type="integer">4</XPD:ATTR>
+<XPD:REF name="Views[0]">v66YeNjFE0+GsmEd/j1kCQAA</XPD:REF>
+<XPD:REF name="Views[1]">J6ohGpUxRU253gl4bgdP/gAA</XPD:REF>
+<XPD:REF name="Views[2]">KjFZtwRURkaWVaY4tPy9NQAA</XPD:REF>
+<XPD:REF name="Views[3]">LHJs0OFFEkCI0aRfU+iVkAAA</XPD:REF>
+<XPD:ATTR name="#Generalizations" type="integer">1</XPD:ATTR>
+<XPD:REF name="Generalizations[0]" pathname="::Implementation Model::osea::ofreq::">YQ4AyKmmo02FCHPuj1tikQAA</XPD:REF>
+<XPD:ATTR name="#Operations" type="integer">4</XPD:ATTR>
+<XPD:OBJ name="Operations[0]" type="UMLOperation" guid="D5VQ7darGEKD/ryMibp3PAAA">
+<XPD:ATTR name="StereotypeProfile" type="string">Cpp</XPD:ATTR>
+<XPD:ATTR name="StereotypeName" type="string">CppMacro</XPD:ATTR>
+<XPD:ATTR name="Visibility" type="UMLVisibilityKind">vkPrivate</XPD:ATTR>
+<XPD:REF name="Owner">3UTysF2WmUaz4ajo9UC6jAAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="Operations[1]" type="UMLOperation" guid="YXxj5IpbrUe9vojTTEAkzQAA">
+<XPD:ATTR name="Name" type="string">dictForces</XPD:ATTR>
+<XPD:ATTR name="StereotypeProfile" type="string">UMLStandard</XPD:ATTR>
+<XPD:ATTR name="StereotypeName" type="string">create</XPD:ATTR>
+<XPD:ATTR name="Visibility" type="UMLVisibilityKind">vkPrivate</XPD:ATTR>
+<XPD:REF name="Owner">3UTysF2WmUaz4ajo9UC6jAAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="Operations[2]" type="UMLOperation" guid="wHekH6Crk0u658rwDK74ZgAA">
+<XPD:ATTR name="Name" type="string">defineKey</XPD:ATTR>
+<XPD:ATTR name="Visibility" type="UMLVisibilityKind">vkProtected</XPD:ATTR>
+<XPD:REF name="Owner">3UTysF2WmUaz4ajo9UC6jAAA</XPD:REF>
+<XPD:ATTR name="#Parameters" type="integer">3</XPD:ATTR>
+<XPD:OBJ name="Parameters[0]" type="UMLParameter" guid="yjU/2DGMZkmOy1S9GgDo9AAA">
+<XPD:ATTR name="Name" type="string">keyIn</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">std::string</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">wHekH6Crk0u658rwDK74ZgAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="Parameters[1]" type="UMLParameter" guid="wtpD1AeBfkKwCDJ7pAnnUQAA">
+<XPD:ATTR name="Name" type="string">valIn</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">std::vector&lt;std::string&gt;</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">wHekH6Crk0u658rwDK74ZgAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="Parameters[2]" type="UMLParameter" guid="hC2huR04dkyKBp6UAasNCAAA">
+<XPD:ATTR name="Name" type="string">return</XPD:ATTR>
+<XPD:ATTR name="DirectionKind" type="UMLParameterDirectionKind">pdkReturn</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">int</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">wHekH6Crk0u658rwDK74ZgAA</XPD:REF>
+</XPD:OBJ>
+</XPD:OBJ>
+<XPD:OBJ name="Operations[3]" type="UMLOperation" guid="btev9EoMkUKg4uEnDI+S5QAA">
+<XPD:ATTR name="Name" type="string">defineClass</XPD:ATTR>
+<XPD:ATTR name="Visibility" type="UMLVisibilityKind">vkProtected</XPD:ATTR>
+<XPD:REF name="Owner">3UTysF2WmUaz4ajo9UC6jAAA</XPD:REF>
+<XPD:ATTR name="#Parameters" type="integer">2</XPD:ATTR>
+<XPD:OBJ name="Parameters[0]" type="UMLParameter" guid="J51qjvlCr021KX723nWeDQAA">
+<XPD:ATTR name="Name" type="string">nameIn</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">std::string</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">btev9EoMkUKg4uEnDI+S5QAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="Parameters[1]" type="UMLParameter" guid="kGbh5hdWtUucgDArWPn7owAA">
+<XPD:ATTR name="Name" type="string">return</XPD:ATTR>
+<XPD:ATTR name="DirectionKind" type="UMLParameterDirectionKind">pdkReturn</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">int</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">btev9EoMkUKg4uEnDI+S5QAA</XPD:REF>
+</XPD:OBJ>
+</XPD:OBJ>
+</XPD:OBJ>
+</XPD:OBJ>
+</XPD:BODY>
+</XPD:UNIT>

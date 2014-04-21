@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['wave_20calculations_20process',['Wave Calculations Process',['../_u_m_l__wave_calculation.html',1,'UML_Process']]],
-  ['whytextfiles_2edox',['WhyTextFiles.dox',['../_why_text_files_8dox.html',1,'']]],
+  ['wave_20calculations_20process',['Wave Calculations Process',['../uml_wavecalculation.html',1,'UML_Process']]],
+  ['why_5ftext_5ffiles_2edox',['why_text_files.dox',['../why__text__files_8dox.html',1,'']]],
   ['writeerror',['writeError',['../classosea_1_1ofreq_1_1o_freq_core.html#a4671f6ce9f5eb62b1a587a1118934dee',1,'osea::ofreq::oFreqCore']]],
   ['writefrequency',['writeFrequency',['../classosea_1_1ofreq_1_1_file_writer.html#a99e8d1ffb93b50966735bb90d0f4e082',1,'osea::ofreq::FileWriter']]],
   ['writeglobalacceleration',['writeGlobalAcceleration',['../classosea_1_1ofreq_1_1_file_writer.html#a1c49975afb40d028c42027e5239bcdaa',1,'osea::ofreq::FileWriter']]],

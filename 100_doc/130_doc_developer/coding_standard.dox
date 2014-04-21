@@ -1,0 +1,15 @@
+/**
+
+\page coding_standard Coding Format Standards
+
+The oFreq project does maintain a coding format standard.  This eases the transition and interaction between all the various contributors.  Please read the standard and please follow it.  If you don't like the standard, suggest that we change it, but please do not ignore it.
+
+\subpage header_comment Header Comment Standard
+
+\subpage cpp_comments .CPP File Comment Standard
+
+\subpage object_paradigm Object Naming Paradigm
+
+\subpage qt_platform_code Qt Platform Specific Code
+
+*/

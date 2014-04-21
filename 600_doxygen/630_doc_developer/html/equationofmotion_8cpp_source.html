@@ -19,6 +19,7 @@
   $(document).ready(function() { searchBox.OnSelectItem(0); });
 </script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="OpenSEA_std.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -49,7 +50,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
-      <li><a href="examples.html"><span>Examples</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -414,7 +414,7 @@ $(document).ready(function(){initNavTree('equationofmotion_8cpp_source.html','')
 <div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;                    <span class="comment">//Get value and add.</span></div>
 <div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;                    output +=</div>
 <div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;                            pParentModel-&gt;listData(curBodComp).</div>
-<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;                            listForceActive_hydro(force())-&gt;</div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;                            listForceActive_hydro(<a class="code" href="input__syntax_8dox.html#ab0a92c70357da47fe86696522eab7dc8">force</a>())-&gt;</div>
 <div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;                            listDataEquation(eqComp);</div>
 <div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;                }</div>
 <div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;                <span class="keywordflow">catch</span>(...)</div>
@@ -460,11 +460,11 @@ $(document).ready(function(){initNavTree('equationofmotion_8cpp_source.html','')
 <div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;                {</div>
 <div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;                    <span class="comment">//get value</span></div>
 <div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;                    std::complex&lt;double&gt; test = pParentModel-&gt;listData(curBodComp).</div>
-<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;                                                listForceActive_user(force())-&gt;</div>
+<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;                                                listForceActive_user(<a class="code" href="input__syntax_8dox.html#ab0a92c70357da47fe86696522eab7dc8">force</a>())-&gt;</div>
 <div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;                                                listDataEquation(eqComp);</div>
 <div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;                    output +=</div>
 <div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;                            pParentModel-&gt;listData(curBodComp).</div>
-<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;                            listForceActive_user(force())-&gt;</div>
+<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;                            listForceActive_user(<a class="code" href="input__syntax_8dox.html#ab0a92c70357da47fe86696522eab7dc8">force</a>())-&gt;</div>
 <div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;                            listDataEquation(eqComp);</div>
 <div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;                }</div>
 <div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;                <span class="keywordflow">catch</span> (...)</div>
@@ -502,7 +502,7 @@ $(document).ready(function(){initNavTree('equationofmotion_8cpp_source.html','')
 <div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;        <span class="keywordflow">for</span> (pCurForce = 0 ; pCurForce &lt; pParentModel-&gt;listData(curBodComp).listForceReact_hydro().size() ; pCurForce++)</div>
 <div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;        {</div>
 <div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;            <span class="comment">//Out of bounds check for forces</span></div>
-<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;            <span class="keywordflow">if</span> ((force() &lt;= pParentModel-&gt;listData(curBodComp).</div>
+<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;            <span class="keywordflow">if</span> ((<a class="code" href="input__syntax_8dox.html#ab0a92c70357da47fe86696522eab7dc8">force</a>() &lt;= pParentModel-&gt;listData(curBodComp).</div>
 <div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;                    listForceReact_hydro().</div>
 <div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;                    size() - 1) &amp;&amp;</div>
 <div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;                    !(pParentModel-&gt;listData(curBodComp).listForceReact_hydro().empty())</div>
@@ -511,7 +511,7 @@ $(document).ready(function(){initNavTree('equationofmotion_8cpp_source.html','')
 <div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;                <span class="comment">//Out of bounds check for refDerivatives</span></div>
 <div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;                <span class="keywordflow">if</span> (ordIn &lt;= pParentModel-&gt;</div>
 <div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;                        listData(curBodComp).</div>
-<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;                        listForceReact_hydro(force())-&gt;</div>
+<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;                        listForceReact_hydro(<a class="code" href="input__syntax_8dox.html#ab0a92c70357da47fe86696522eab7dc8">force</a>())-&gt;</div>
 <div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;                        listDerivative().</div>
 <div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;                        size() - 1)</div>
 <div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;                {</div>
@@ -521,7 +521,7 @@ $(document).ready(function(){initNavTree('equationofmotion_8cpp_source.html','')
 <div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;                        output.real(</div>
 <div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;                                    output.real() +</div>
 <div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;                                    pParentModel-&gt;listData(curBodComp).</div>
-<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;                                    listForceReact_hydro(force())-&gt;</div>
+<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;                                    listForceReact_hydro(<a class="code" href="input__syntax_8dox.html#ab0a92c70357da47fe86696522eab7dc8">force</a>())-&gt;</div>
 <div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;                                    listDerivative(ordIn).</div>
 <div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;                                    listDataEquation(eqComp).</div>
 <div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;                                    listDataVariable(varIn)</div>
@@ -559,7 +559,7 @@ $(document).ready(function(){initNavTree('equationofmotion_8cpp_source.html','')
 <div class="line"><a name="l00450"></a><span class="lineno">  450</span>&#160;        <span class="keywordflow">for</span> (pCurForce = 0 ; pCurForce &lt; pParentModel-&gt;listData(curBodComp).listForceReact_user().size() ; pCurForce++)</div>
 <div class="line"><a name="l00451"></a><span class="lineno">  451</span>&#160;        {</div>
 <div class="line"><a name="l00452"></a><span class="lineno">  452</span>&#160;            <span class="comment">//Out of bounds check for forces</span></div>
-<div class="line"><a name="l00453"></a><span class="lineno">  453</span>&#160;            <span class="keywordflow">if</span> ((force() &lt;= pParentModel-&gt;listData(curBodComp).</div>
+<div class="line"><a name="l00453"></a><span class="lineno">  453</span>&#160;            <span class="keywordflow">if</span> ((<a class="code" href="input__syntax_8dox.html#ab0a92c70357da47fe86696522eab7dc8">force</a>() &lt;= pParentModel-&gt;listData(curBodComp).</div>
 <div class="line"><a name="l00454"></a><span class="lineno">  454</span>&#160;                    listForceReact_user().</div>
 <div class="line"><a name="l00455"></a><span class="lineno">  455</span>&#160;                    size() - 1) &amp;&amp;</div>
 <div class="line"><a name="l00456"></a><span class="lineno">  456</span>&#160;                    !(pParentModel-&gt;listData(curBodComp).listForceReact_user().empty())</div>
@@ -568,7 +568,7 @@ $(document).ready(function(){initNavTree('equationofmotion_8cpp_source.html','')
 <div class="line"><a name="l00459"></a><span class="lineno">  459</span>&#160;                <span class="comment">//Out of bounds check for refDerivatives</span></div>
 <div class="line"><a name="l00460"></a><span class="lineno">  460</span>&#160;                <span class="keywordflow">if</span> (ordIn &lt;= pParentModel-&gt;</div>
 <div class="line"><a name="l00461"></a><span class="lineno">  461</span>&#160;                        listData(curBodComp).</div>
-<div class="line"><a name="l00462"></a><span class="lineno">  462</span>&#160;                        listForceReact_user(force())-&gt;</div>
+<div class="line"><a name="l00462"></a><span class="lineno">  462</span>&#160;                        listForceReact_user(<a class="code" href="input__syntax_8dox.html#ab0a92c70357da47fe86696522eab7dc8">force</a>())-&gt;</div>
 <div class="line"><a name="l00463"></a><span class="lineno">  463</span>&#160;                        listDerivative().</div>
 <div class="line"><a name="l00464"></a><span class="lineno">  464</span>&#160;                        size() - 1)</div>
 <div class="line"><a name="l00465"></a><span class="lineno">  465</span>&#160;                {</div>
@@ -578,7 +578,7 @@ $(document).ready(function(){initNavTree('equationofmotion_8cpp_source.html','')
 <div class="line"><a name="l00469"></a><span class="lineno">  469</span>&#160;                        output.real(</div>
 <div class="line"><a name="l00470"></a><span class="lineno">  470</span>&#160;                                    output.real() +</div>
 <div class="line"><a name="l00471"></a><span class="lineno">  471</span>&#160;                                    pParentModel-&gt;listData(curBodComp).</div>
-<div class="line"><a name="l00472"></a><span class="lineno">  472</span>&#160;                                    listForceReact_user(force())-&gt;</div>
+<div class="line"><a name="l00472"></a><span class="lineno">  472</span>&#160;                                    listForceReact_user(<a class="code" href="input__syntax_8dox.html#ab0a92c70357da47fe86696522eab7dc8">force</a>())-&gt;</div>
 <div class="line"><a name="l00473"></a><span class="lineno">  473</span>&#160;                                    listDerivative(ordIn).</div>
 <div class="line"><a name="l00474"></a><span class="lineno">  474</span>&#160;                                    listDataEquation(eqComp).</div>
 <div class="line"><a name="l00475"></a><span class="lineno">  475</span>&#160;                                    listDataVariable(varIn)</div>
@@ -620,7 +620,7 @@ $(document).ready(function(){initNavTree('equationofmotion_8cpp_source.html','')
 <div class="line"><a name="l00511"></a><span class="lineno">  511</span>&#160;             size() ; pCurForce++)</div>
 <div class="line"><a name="l00512"></a><span class="lineno">  512</span>&#160;        {</div>
 <div class="line"><a name="l00513"></a><span class="lineno">  513</span>&#160;            <span class="comment">//Out of bounds check for forces</span></div>
-<div class="line"><a name="l00514"></a><span class="lineno">  514</span>&#160;            <span class="keywordflow">if</span> ((force() &lt;= pParentModel-&gt;listData(curBodComp).</div>
+<div class="line"><a name="l00514"></a><span class="lineno">  514</span>&#160;            <span class="keywordflow">if</span> ((<a class="code" href="input__syntax_8dox.html#ab0a92c70357da47fe86696522eab7dc8">force</a>() &lt;= pParentModel-&gt;listData(curBodComp).</div>
 <div class="line"><a name="l00515"></a><span class="lineno">  515</span>&#160;                    listForceCross_hydro().</div>
 <div class="line"><a name="l00516"></a><span class="lineno">  516</span>&#160;                    size() - 1) &amp;&amp;</div>
 <div class="line"><a name="l00517"></a><span class="lineno">  517</span>&#160;                    !(pParentModel-&gt;listData(curBodComp).listForceCross_hydro().empty())</div>
@@ -628,7 +628,7 @@ $(document).ready(function(){initNavTree('equationofmotion_8cpp_source.html','')
 <div class="line"><a name="l00519"></a><span class="lineno">  519</span>&#160;            {</div>
 <div class="line"><a name="l00520"></a><span class="lineno">  520</span>&#160;                <span class="comment">//Out of bounds check for refDerivatives</span></div>
 <div class="line"><a name="l00521"></a><span class="lineno">  521</span>&#160;                <span class="keywordflow">if</span> (ordIn &lt;= pParentModel-&gt;listData(curBodComp).</div>
-<div class="line"><a name="l00522"></a><span class="lineno">  522</span>&#160;                        listForceCross_hydro(force())-&gt;</div>
+<div class="line"><a name="l00522"></a><span class="lineno">  522</span>&#160;                        listForceCross_hydro(<a class="code" href="input__syntax_8dox.html#ab0a92c70357da47fe86696522eab7dc8">force</a>())-&gt;</div>
 <div class="line"><a name="l00523"></a><span class="lineno">  523</span>&#160;                        listDerivative().</div>
 <div class="line"><a name="l00524"></a><span class="lineno">  524</span>&#160;                        size() - 1)</div>
 <div class="line"><a name="l00525"></a><span class="lineno">  525</span>&#160;                {</div>
@@ -641,7 +641,7 @@ $(document).ready(function(){initNavTree('equationofmotion_8cpp_source.html','')
 <div class="line"><a name="l00532"></a><span class="lineno">  532</span>&#160;                            output.real(</div>
 <div class="line"><a name="l00533"></a><span class="lineno">  533</span>&#160;                                    output.real() +</div>
 <div class="line"><a name="l00534"></a><span class="lineno">  534</span>&#160;                                    pParentModel-&gt;listData(curBodComp).</div>
-<div class="line"><a name="l00535"></a><span class="lineno">  535</span>&#160;                                    listForceCross_hydro(force())-&gt;</div>
+<div class="line"><a name="l00535"></a><span class="lineno">  535</span>&#160;                                    listForceCross_hydro(<a class="code" href="input__syntax_8dox.html#ab0a92c70357da47fe86696522eab7dc8">force</a>())-&gt;</div>
 <div class="line"><a name="l00536"></a><span class="lineno">  536</span>&#160;                                    listDerivative(ordIn).</div>
 <div class="line"><a name="l00537"></a><span class="lineno">  537</span>&#160;                                    listDataEquation(eqComp).</div>
 <div class="line"><a name="l00538"></a><span class="lineno">  538</span>&#160;                                    listDataVariable(varIn)</div>
@@ -684,7 +684,7 @@ $(document).ready(function(){initNavTree('equationofmotion_8cpp_source.html','')
 <div class="line"><a name="l00575"></a><span class="lineno">  575</span>&#160;             size() ; pCurForce++)</div>
 <div class="line"><a name="l00576"></a><span class="lineno">  576</span>&#160;        {</div>
 <div class="line"><a name="l00577"></a><span class="lineno">  577</span>&#160;            <span class="comment">//Out of bounds check for forces</span></div>
-<div class="line"><a name="l00578"></a><span class="lineno">  578</span>&#160;            <span class="keywordflow">if</span> ((force() &lt;= pParentModel-&gt;listData(curBodComp).</div>
+<div class="line"><a name="l00578"></a><span class="lineno">  578</span>&#160;            <span class="keywordflow">if</span> ((<a class="code" href="input__syntax_8dox.html#ab0a92c70357da47fe86696522eab7dc8">force</a>() &lt;= pParentModel-&gt;listData(curBodComp).</div>
 <div class="line"><a name="l00579"></a><span class="lineno">  579</span>&#160;                    listForceCross_user().</div>
 <div class="line"><a name="l00580"></a><span class="lineno">  580</span>&#160;                    size() - 1) &amp;&amp;</div>
 <div class="line"><a name="l00581"></a><span class="lineno">  581</span>&#160;                    !(pParentModel-&gt;listData(curBodComp).listForceCross_user().empty())</div>
@@ -692,7 +692,7 @@ $(document).ready(function(){initNavTree('equationofmotion_8cpp_source.html','')
 <div class="line"><a name="l00583"></a><span class="lineno">  583</span>&#160;            {</div>
 <div class="line"><a name="l00584"></a><span class="lineno">  584</span>&#160;                <span class="comment">//Out of bounds check for refDerivatives</span></div>
 <div class="line"><a name="l00585"></a><span class="lineno">  585</span>&#160;                <span class="keywordflow">if</span> (ordIn &lt;= pParentModel-&gt;listData(curBodComp).</div>
-<div class="line"><a name="l00586"></a><span class="lineno">  586</span>&#160;                        listForceCross_user(force())-&gt;</div>
+<div class="line"><a name="l00586"></a><span class="lineno">  586</span>&#160;                        listForceCross_user(<a class="code" href="input__syntax_8dox.html#ab0a92c70357da47fe86696522eab7dc8">force</a>())-&gt;</div>
 <div class="line"><a name="l00587"></a><span class="lineno">  587</span>&#160;                        listDerivative().</div>
 <div class="line"><a name="l00588"></a><span class="lineno">  588</span>&#160;                        size() - 1)</div>
 <div class="line"><a name="l00589"></a><span class="lineno">  589</span>&#160;                {</div>
@@ -704,7 +704,7 @@ $(document).ready(function(){initNavTree('equationofmotion_8cpp_source.html','')
 <div class="line"><a name="l00595"></a><span class="lineno">  595</span>&#160;                        output.real(</div>
 <div class="line"><a name="l00596"></a><span class="lineno">  596</span>&#160;                                    output.real() +</div>
 <div class="line"><a name="l00597"></a><span class="lineno">  597</span>&#160;                                    pParentModel-&gt;listData(curBodComp).</div>
-<div class="line"><a name="l00598"></a><span class="lineno">  598</span>&#160;                                    listForceCross_user(force())-&gt;</div>
+<div class="line"><a name="l00598"></a><span class="lineno">  598</span>&#160;                                    listForceCross_user(<a class="code" href="input__syntax_8dox.html#ab0a92c70357da47fe86696522eab7dc8">force</a>())-&gt;</div>
 <div class="line"><a name="l00599"></a><span class="lineno">  599</span>&#160;                                    listDerivative(ordIn).</div>
 <div class="line"><a name="l00600"></a><span class="lineno">  600</span>&#160;                                    listDataEquation(eqComp).</div>
 <div class="line"><a name="l00601"></a><span class="lineno">  601</span>&#160;                                    listDataVariable(varIn)</div>
@@ -960,7 +960,7 @@ $(document).ready(function(){initNavTree('equationofmotion_8cpp_source.html','')
 <div class="line"><a name="l00851"></a><span class="lineno">  851</span>&#160;}</div>
 <div class="line"><a name="l00852"></a><span class="lineno">  852</span>&#160;</div>
 <div class="line"><a name="l00853"></a><span class="lineno">  853</span>&#160;<span class="comment">//------------------------------------------Function Separator --------------------------------------------------------</span></div>
-<div class="line"><a name="l00854"></a><span class="lineno"><a class="code" href="classosea_1_1ofreq_1_1_equationof_motion.html#ab255de5deaef7394c788bb68a432aec0">  854</a></span>&#160;std::complex&lt;double&gt; EquationofMotion::Sum(std::complex&lt;double&gt; (*force)(<span class="keywordtype">void</span>), <span class="keywordtype">int</span> from, <span class="keywordtype">int</span> to)</div>
+<div class="line"><a name="l00854"></a><span class="lineno"><a class="code" href="classosea_1_1ofreq_1_1_equationof_motion.html#ab255de5deaef7394c788bb68a432aec0">  854</a></span>&#160;std::complex&lt;double&gt; EquationofMotion::Sum(std::complex&lt;double&gt; (*<a class="code" href="input__syntax_8dox.html#ab0a92c70357da47fe86696522eab7dc8">force</a>)(<span class="keywordtype">void</span>), <span class="keywordtype">int</span> from, <span class="keywordtype">int</span> to)</div>
 <div class="line"><a name="l00855"></a><span class="lineno">  855</span>&#160;{</div>
 <div class="line"><a name="l00856"></a><span class="lineno">  856</span>&#160;    <span class="comment">//Create variable for output</span></div>
 <div class="line"><a name="l00857"></a><span class="lineno">  857</span>&#160;    std::complex&lt;double&gt; output(0,0);        <span class="comment">//Output variable</span></div>
@@ -968,14 +968,14 @@ $(document).ready(function(){initNavTree('equationofmotion_8cpp_source.html','')
 <div class="line"><a name="l00859"></a><span class="lineno">  859</span>&#160;    <span class="comment">//Sum value</span></div>
 <div class="line"><a name="l00860"></a><span class="lineno">  860</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = from; i &lt;= to; i++)</div>
 <div class="line"><a name="l00861"></a><span class="lineno">  861</span>&#160;    {</div>
-<div class="line"><a name="l00862"></a><span class="lineno">  862</span>&#160;        output = output + force();</div>
+<div class="line"><a name="l00862"></a><span class="lineno">  862</span>&#160;        output = output + <a class="code" href="input__syntax_8dox.html#ab0a92c70357da47fe86696522eab7dc8">force</a>();</div>
 <div class="line"><a name="l00863"></a><span class="lineno">  863</span>&#160;    }</div>
 <div class="line"><a name="l00864"></a><span class="lineno">  864</span>&#160;</div>
 <div class="line"><a name="l00865"></a><span class="lineno">  865</span>&#160;    <span class="keywordflow">return</span> output;</div>
 <div class="line"><a name="l00866"></a><span class="lineno">  866</span>&#160;}</div>
 <div class="line"><a name="l00867"></a><span class="lineno">  867</span>&#160;</div>
 <div class="line"><a name="l00868"></a><span class="lineno">  868</span>&#160;<span class="comment">//------------------------------------------Function Separator --------------------------------------------------------</span></div>
-<div class="line"><a name="l00869"></a><span class="lineno"><a class="code" href="classosea_1_1ofreq_1_1_equationof_motion.html#a44797e6d9ebed0de563ac08d15f8035f">  869</a></span>&#160;std::complex&lt;double&gt; EquationofMotion::Sum(std::complex&lt;double&gt; force, <span class="keywordtype">int</span> from, <span class="keywordtype">int</span> to)</div>
+<div class="line"><a name="l00869"></a><span class="lineno"><a class="code" href="classosea_1_1ofreq_1_1_equationof_motion.html#a44797e6d9ebed0de563ac08d15f8035f">  869</a></span>&#160;std::complex&lt;double&gt; EquationofMotion::Sum(std::complex&lt;double&gt; <a class="code" href="input__syntax_8dox.html#ab0a92c70357da47fe86696522eab7dc8">force</a>, <span class="keywordtype">int</span> from, <span class="keywordtype">int</span> to)</div>
 <div class="line"><a name="l00870"></a><span class="lineno">  870</span>&#160;{</div>
 <div class="line"><a name="l00871"></a><span class="lineno">  871</span>&#160;    <span class="comment">//Create variable for output</span></div>
 <div class="line"><a name="l00872"></a><span class="lineno">  872</span>&#160;    std::complex&lt;double&gt; output(0,0);        <span class="comment">//Output variable</span></div>
@@ -983,7 +983,7 @@ $(document).ready(function(){initNavTree('equationofmotion_8cpp_source.html','')
 <div class="line"><a name="l00874"></a><span class="lineno">  874</span>&#160;    <span class="comment">//Sum constant value</span></div>
 <div class="line"><a name="l00875"></a><span class="lineno">  875</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = from; i &lt;= to; i++)</div>
 <div class="line"><a name="l00876"></a><span class="lineno">  876</span>&#160;    {</div>
-<div class="line"><a name="l00877"></a><span class="lineno">  877</span>&#160;        output = output + force;</div>
+<div class="line"><a name="l00877"></a><span class="lineno">  877</span>&#160;        output = output + <a class="code" href="input__syntax_8dox.html#ab0a92c70357da47fe86696522eab7dc8">force</a>;</div>
 <div class="line"><a name="l00878"></a><span class="lineno">  878</span>&#160;    }</div>
 <div class="line"><a name="l00879"></a><span class="lineno">  879</span>&#160;</div>
 <div class="line"><a name="l00880"></a><span class="lineno">  880</span>&#160;    <span class="keywordflow">return</span> output;</div>
@@ -1348,7 +1348,7 @@ $(document).ready(function(){initNavTree('equationofmotion_8cpp_source.html','')
 <div class="line"><a name="l01239"></a><span class="lineno"> 1239</span>&#160;}</div>
 <div class="line"><a name="l01240"></a><span class="lineno"> 1240</span>&#160;</div>
 <div class="line"><a name="l01241"></a><span class="lineno"> 1241</span>&#160;<span class="comment">//------------------------------------------Function Separator --------------------------------------------------------</span></div>
-<div class="line"><a name="l01242"></a><span class="lineno"> 1242</span>&#160;<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> EquationofMotion::force()</div>
+<div class="line"><a name="l01242"></a><span class="lineno"> 1242</span>&#160;<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="input__syntax_8dox.html#ab0a92c70357da47fe86696522eab7dc8">EquationofMotion::force</a>()</div>
 <div class="line"><a name="l01243"></a><span class="lineno"> 1243</span>&#160;{</div>
 <div class="line"><a name="l01244"></a><span class="lineno"> 1244</span>&#160;    <span class="comment">//Returns integer for the current force.  Also includes checks for out-of-bounds error limits.</span></div>
 <div class="line"><a name="l01245"></a><span class="lineno"> 1245</span>&#160;    <span class="keywordtype">int</span> output;</div>
@@ -1833,7 +1833,7 @@ $(document).ready(function(){initNavTree('equationofmotion_8cpp_source.html','')
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_23f348e8ba55a0160060942ac74032b3.html">Ship_Design</a></li><li class="navelem"><a class="el" href="dir_32bc05b0fde861d04fc14d256025b916.html">Projects</a></li><li class="navelem"><a class="el" href="dir_7c6947441d5931ae20198b3a65638935.html">DMS1305 OpenSEA</a></li><li class="navelem"><a class="el" href="dir_89a1e223a870de66ea9bb8af5a64b66a.html">master</a></li><li class="navelem"><a class="el" href="dir_3e5a548d512ef5c129198c9d46d449bf.html">200_src</a></li><li class="navelem"><a class="el" href="dir_bba8c3db2b660b10b65c0de2c6dead61.html">bin</a></li><li class="navelem"><a class="el" href="dir_7f5c63becb388d31684bbdc3bae36aac.html">ofreq</a></li><li class="navelem"><a class="el" href="dir_ea8088412dc3e91171ae318270208bdf.html">motion_model</a></li><li class="navelem"><a class="el" href="equationofmotion_8cpp.html">equationofmotion.cpp</a></li>
-    <li class="footer">Generated on Sun Apr 13 2014 11:16:40 for oFreq by
+    <li class="footer">Generated on Sun Apr 20 2014 16:20:41 for oFreq by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.2 </li>
   </ul>

@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<XPD:UNIT xmlns:XPD="http://www.staruml.com" version="1">
+<XPD:HEADER>
+<XPD:SUBUNITS>
+</XPD:SUBUNITS>
+</XPD:HEADER>
+<XPD:BODY>
+<XPD:OBJ name="DocumentElement" type="UMLModel" guid="yXtpW/tE8UOYoqbjw3XzVgAA">
+<XPD:ATTR name="Name" type="string">Wave Calculation</XPD:ATTR>
+<XPD:ATTR name="#OwnedElements" type="integer">1</XPD:ATTR>
+<XPD:OBJ name="OwnedElements[0]" type="UMLClass" guid="44cXXq1IyESwwJIfN5I9sgAA">
+<XPD:ATTR name="Name" type="string">SeaEnviroment</XPD:ATTR>
+<XPD:REF name="Namespace">yXtpW/tE8UOYoqbjw3XzVgAA</XPD:REF>
+<XPD:ATTR name="#Views" type="integer">4</XPD:ATTR>
+<XPD:REF name="Views[0]">P5oUv557fEaMF5QuOfL9jQAA</XPD:REF>
+<XPD:REF name="Views[1]">ucvQMw9gEUy2HhH9O86KFQAA</XPD:REF>
+<XPD:REF name="Views[2]">wZt8fdyZgk+3vhbNnV/SiQAA</XPD:REF>
+<XPD:REF name="Views[3]">4YqYzecKCUSQCQYBvm3XvAAA</XPD:REF>
+<XPD:ATTR name="#Operations" type="integer">10</XPD:ATTR>
+<XPD:OBJ name="Operations[0]" type="UMLOperation" guid="GvkkeZ6QSk+5/9604n/BogAA">
+<XPD:ATTR name="Name" type="string">SeaEnviroment</XPD:ATTR>
+<XPD:ATTR name="StereotypeProfile" type="string">UMLStandard</XPD:ATTR>
+<XPD:ATTR name="StereotypeName" type="string">create</XPD:ATTR>
+<XPD:ATTR name="Visibility" type="UMLVisibilityKind">vkPrivate</XPD:ATTR>
+<XPD:REF name="Owner">44cXXq1IyESwwJIfN5I9sgAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="Operations[1]" type="UMLOperation" guid="CTfB4xoGpUaISPcYAKpATwAA">
+<XPD:ATTR name="Name" type="string">SeaEnviroment</XPD:ATTR>
+<XPD:ATTR name="StereotypeProfile" type="string">UMLStandard</XPD:ATTR>
+<XPD:ATTR name="StereotypeName" type="string">destroy</XPD:ATTR>
+<XPD:ATTR name="Visibility" type="UMLVisibilityKind">vkPrivate</XPD:ATTR>
+<XPD:REF name="Owner">44cXXq1IyESwwJIfN5I9sgAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="Operations[2]" type="UMLOperation" guid="/BDYUkFyoUKWuumA4OJGRAAA">
+<XPD:ATTR name="Name" type="string">testPrint</XPD:ATTR>
+<XPD:REF name="Owner">44cXXq1IyESwwJIfN5I9sgAA</XPD:REF>
+<XPD:ATTR name="#Parameters" type="integer">1</XPD:ATTR>
+<XPD:OBJ name="Parameters[0]" type="UMLParameter" guid="p4kOrn5eREmIvQg+TRoXqQAA">
+<XPD:ATTR name="Name" type="string">return</XPD:ATTR>
+<XPD:ATTR name="DirectionKind" type="UMLParameterDirectionKind">pdkReturn</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">void</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">/BDYUkFyoUKWuumA4OJGRAAA</XPD:REF>
+</XPD:OBJ>
+</XPD:OBJ>
+<XPD:OBJ name="Operations[3]" type="UMLOperation" guid="Lm7MEODHZkuOwmtWLn9tcwAA">
+<XPD:ATTR name="Name" type="string">setWaveSpectrumName</XPD:ATTR>
+<XPD:REF name="Owner">44cXXq1IyESwwJIfN5I9sgAA</XPD:REF>
+<XPD:ATTR name="#Parameters" type="integer">2</XPD:ATTR>
+<XPD:OBJ name="Parameters[0]" type="UMLParameter" guid="IhKoLW9RIk20gOsyHZjJ8AAA">
+<XPD:ATTR name="TypeExpression" type="string">string</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">Lm7MEODHZkuOwmtWLn9tcwAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="Parameters[1]" type="UMLParameter" guid="6aVSbfaRHkWifdZR7YkohgAA">
+<XPD:ATTR name="Name" type="string">return</XPD:ATTR>
+<XPD:ATTR name="DirectionKind" type="UMLParameterDirectionKind">pdkReturn</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">void</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">Lm7MEODHZkuOwmtWLn9tcwAA</XPD:REF>
+</XPD:OBJ>
+</XPD:OBJ>
+<XPD:OBJ name="Operations[4]" type="UMLOperation" guid="wJVTpwEUiU+WbBa6rg/pagAA">
+<XPD:ATTR name="Name" type="string">setWaveSpectrumFrequencies</XPD:ATTR>
+<XPD:REF name="Owner">44cXXq1IyESwwJIfN5I9sgAA</XPD:REF>
+<XPD:ATTR name="#Parameters" type="integer">2</XPD:ATTR>
+<XPD:OBJ name="Parameters[0]" type="UMLParameter" guid="kTtW+51Be0GiYDCLJnnSrwAA">
+<XPD:ATTR name="TypeExpression" type="string">vector&lt;double&gt;</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">wJVTpwEUiU+WbBa6rg/pagAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="Parameters[1]" type="UMLParameter" guid="7zMDYpjvbU6ldbOLzgp56QAA">
+<XPD:ATTR name="Name" type="string">return</XPD:ATTR>
+<XPD:ATTR name="DirectionKind" type="UMLParameterDirectionKind">pdkReturn</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">void</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">wJVTpwEUiU+WbBa6rg/pagAA</XPD:REF>
+</XPD:OBJ>
+</XPD:OBJ>
+<XPD:OBJ name="Operations[5]" type="UMLOperation" guid="gK2c0x7R6U6Fk/L8noa8JQAA">
+<XPD:ATTR name="Name" type="string">setWaveSpectrumWaveEnergy</XPD:ATTR>
+<XPD:REF name="Owner">44cXXq1IyESwwJIfN5I9sgAA</XPD:REF>
+<XPD:ATTR name="#Parameters" type="integer">2</XPD:ATTR>
+<XPD:OBJ name="Parameters[0]" type="UMLParameter" guid="cl3Q/1LwD0OsvWgBoPcmngAA">
+<XPD:ATTR name="TypeExpression" type="string">vector&lt;double&gt;</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">gK2c0x7R6U6Fk/L8noa8JQAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="Parameters[1]" type="UMLParameter" guid="VN3z1aCSBEWQq5hxgLqMpwAA">
+<XPD:ATTR name="Name" type="string">return</XPD:ATTR>
+<XPD:ATTR name="DirectionKind" type="UMLParameterDirectionKind">pdkReturn</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">void</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">gK2c0x7R6U6Fk/L8noa8JQAA</XPD:REF>
+</XPD:OBJ>
+</XPD:OBJ>
+<XPD:OBJ name="Operations[6]" type="UMLOperation" guid="ZFCSGchdSECZRPUsrUd65wAA">
+<XPD:ATTR name="Name" type="string">setSpreadModelName</XPD:ATTR>
+<XPD:REF name="Owner">44cXXq1IyESwwJIfN5I9sgAA</XPD:REF>
+<XPD:ATTR name="#Parameters" type="integer">2</XPD:ATTR>
+<XPD:OBJ name="Parameters[0]" type="UMLParameter" guid="wzRQ5sMHskyQXn+0TVrnmQAA">
+<XPD:ATTR name="TypeExpression" type="string">string</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">ZFCSGchdSECZRPUsrUd65wAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="Parameters[1]" type="UMLParameter" guid="Yfbi8PFRh0aQyCELkSftgAAA">
+<XPD:ATTR name="Name" type="string">return</XPD:ATTR>
+<XPD:ATTR name="DirectionKind" type="UMLParameterDirectionKind">pdkReturn</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">void</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">ZFCSGchdSECZRPUsrUd65wAA</XPD:REF>
+</XPD:OBJ>
+</XPD:OBJ>
+<XPD:OBJ name="Operations[7]" type="UMLOperation" guid="QbRkBRiQbkyE+c/LmvvozwAA">
+<XPD:ATTR name="Name" type="string">setSpreadModelDirectionAngle</XPD:ATTR>
+<XPD:REF name="Owner">44cXXq1IyESwwJIfN5I9sgAA</XPD:REF>
+<XPD:ATTR name="#Parameters" type="integer">2</XPD:ATTR>
+<XPD:OBJ name="Parameters[0]" type="UMLParameter" guid="OT7LMw2FCk2wFplkDEECxwAA">
+<XPD:ATTR name="TypeExpression" type="string">double</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">QbRkBRiQbkyE+c/LmvvozwAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="Parameters[1]" type="UMLParameter" guid="kq7tWzIw0EGoFKJ+csQtYAAA">
+<XPD:ATTR name="Name" type="string">return</XPD:ATTR>
+<XPD:ATTR name="DirectionKind" type="UMLParameterDirectionKind">pdkReturn</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">void</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">QbRkBRiQbkyE+c/LmvvozwAA</XPD:REF>
+</XPD:OBJ>
+</XPD:OBJ>
+<XPD:OBJ name="Operations[8]" type="UMLOperation" guid="8xXGnT1W00++Fa0kmfmfHwAA">
+<XPD:ATTR name="Name" type="string">setSpreadModelWaveSpectrumName</XPD:ATTR>
+<XPD:REF name="Owner">44cXXq1IyESwwJIfN5I9sgAA</XPD:REF>
+<XPD:ATTR name="#Parameters" type="integer">2</XPD:ATTR>
+<XPD:OBJ name="Parameters[0]" type="UMLParameter" guid="CGgwbG2HcEiDGsCPf/wBEAAA">
+<XPD:ATTR name="TypeExpression" type="string">string</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">8xXGnT1W00++Fa0kmfmfHwAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="Parameters[1]" type="UMLParameter" guid="uY1ry9s71U6hHk8IQwjG1QAA">
+<XPD:ATTR name="Name" type="string">return</XPD:ATTR>
+<XPD:ATTR name="DirectionKind" type="UMLParameterDirectionKind">pdkReturn</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">void</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">8xXGnT1W00++Fa0kmfmfHwAA</XPD:REF>
+</XPD:OBJ>
+</XPD:OBJ>
+<XPD:OBJ name="Operations[9]" type="UMLOperation" guid="TmZ0s4ZFOEmIHt4qTMEFxAAA">
+<XPD:ATTR name="Name" type="string">setSpreadModelScalingFactor</XPD:ATTR>
+<XPD:REF name="Owner">44cXXq1IyESwwJIfN5I9sgAA</XPD:REF>
+<XPD:ATTR name="#Parameters" type="integer">2</XPD:ATTR>
+<XPD:OBJ name="Parameters[0]" type="UMLParameter" guid="gVEpwsy/AkKJswNd1z5hLAAA">
+<XPD:ATTR name="TypeExpression" type="string">double</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">TmZ0s4ZFOEmIHt4qTMEFxAAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="Parameters[1]" type="UMLParameter" guid="TUMCVZpWrUq1hejvdzZXLQAA">
+<XPD:ATTR name="Name" type="string">return</XPD:ATTR>
+<XPD:ATTR name="DirectionKind" type="UMLParameterDirectionKind">pdkReturn</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">void</XPD:ATTR>
+<XPD:REF name="BehavioralFeature">TmZ0s4ZFOEmIHt4qTMEFxAAA</XPD:REF>
+</XPD:OBJ>
+</XPD:OBJ>
+</XPD:OBJ>
+</XPD:OBJ>
+</XPD:BODY>
+</XPD:UNIT>

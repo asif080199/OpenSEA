@@ -1,23 +1,48 @@
 /**
 \page UML_Process UML Process Diagrams
 
-# Header 1
+This page lists all the major UML process diagrams.  The individual code provides call diagrams for each object.  And there are inheritence diagrams list for each object.  But none of those diagrams provide any high level description of the overall process.  These UML diagrams are intended to provide that introductory description.  They do not include all details of every function, but they do communicate the major processes.
 
-\subpage UML_Overall
+# Overall Summary
 
-\subpage UML_Filereader
+\subpage uml_overall
 
-\subpage UML_WritingFiles
 
-\subpage UML_MotionModel
+# File Input Operations
 
-\subpage UML_MotionSolver
+\subpage uml_filereader
 
-\subpage UML_ResonantSolver
 
-\subpage UML_WaveCalculation
+# Calculation of the Wave Amplitude
 
-\subpage UML_OutputsCalculation
+\subpage uml_wavecalculation
+
+
+# Using the Motion Model
+
+\subpage uml_motionmodel
+
+
+# Motion Solvers
+
+\subpage uml_motionsolver
+
+The motion solver is used to calculate the absolute response for a defined analysis.  This is the frequently used analysis.
+
+\subpage uml_resonantsolver
+
+The resonant solver is used to calculate resonsant frequencies and provide relative outputs.
+
+
+# Calculating and Writing Outputs
+
+\subpage uml_outputscalculation
+
+First we calculate all the derived outputs based on the solved values for body motions.
+
+\subpage uml_writingfiles
+
+Then the filewriter writes the calculated values to the output files.
 
 
 */

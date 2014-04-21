@@ -19,6 +19,7 @@
   $(document).ready(function() { searchBox.OnSelectItem(0); });
 </script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="OpenSEA_std.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -49,7 +50,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
-      <li><a href="examples.html"><span>Examples</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -102,21 +102,31 @@ $(document).ready(function(){initNavTree('_u_m_l__process.html','');});
 <div class="title">UML Process Diagrams </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><h1>Header 1</h1>
-<p><a class="el" href="_u_m_l__overall.html">Overall Process</a></p>
-<p>UML_Filereader</p>
-<p><a class="el" href="_u_m_l__writing_files.html">File Writer Process</a></p>
-<p><a class="el" href="_u_m_l__motion_model.html">Motion Model Process</a></p>
-<p><a class="el" href="_u_m_l__motion_solver.html">Motion Solver Process</a></p>
-<p><a class="el" href="_u_m_l__resonant_solver.html">Resonant Solver Process</a></p>
-<p><a class="el" href="_u_m_l__wave_calculation.html">Wave Calculations Process</a></p>
-<p><a class="el" href="_u_m_l__outputs_calculation.html">Outputs Calculation</a> </p>
+<div class="textblock"><p>This page lists all the major UML process diagrams. The individual code provides call diagrams for each object. And there are inheritence diagrams list for each object. But none of those diagrams provide any high level description of the overall process. These UML diagrams are intended to provide that introductory description. They do not include all details of every function, but they do communicate the major processes.</p>
+<h1>Overall Summary</h1>
+<p><a class="el" href="uml_overall.html">Overall Process</a></p>
+<h1>File Input Operations</h1>
+<p><a class="el" href="uml_filereader.html">File Reader Process</a></p>
+<h1>Calculation of the Wave Amplitude</h1>
+<p><a class="el" href="uml_wavecalculation.html">Wave Calculations Process</a></p>
+<h1>Using the Motion Model</h1>
+<p><a class="el" href="uml_motionmodel.html">Motion Model Process</a></p>
+<h1>Motion Solvers</h1>
+<p><a class="el" href="uml_motionsolver.html">Motion Solver Process</a></p>
+<p>The motion solver is used to calculate the absolute response for a defined analysis. This is the frequently used analysis.</p>
+<p><a class="el" href="uml_resonantsolver.html">Resonant Solver Process</a></p>
+<p>The resonant solver is used to calculate resonsant frequencies and provide relative outputs.</p>
+<h1>Calculating and Writing Outputs</h1>
+<p><a class="el" href="uml_outputscalculation.html">Outputs Calculation</a></p>
+<p>First we calculate all the derived outputs based on the solved values for body motions.</p>
+<p><a class="el" href="uml_writingfiles.html">File Writer Process</a></p>
+<p>Then the filewriter writes the calculated values to the output files. </p>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Sun Apr 13 2014 11:17:04 for oFreq by
+    <li class="footer">Generated on Sun Apr 20 2014 16:21:07 for oFreq by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.2 </li>
   </ul>

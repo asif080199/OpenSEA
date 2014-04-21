@@ -1,39 +1,62 @@
-\section*{Header 1}
+This page lists all the major U\-M\-L process diagrams. The individual code provides call diagrams for each object. And there are inheritence diagrams list for each object. But none of those diagrams provide any high level description of the overall process. These U\-M\-L diagrams are intended to provide that introductory description. They do not include all details of every function, but they do communicate the major processes.
 
-\hyperlink{UML_Overall}{Overall Process}
+\section*{Overall Summary}
 
-U\-M\-L\-\_\-\-Filereader
+\hyperlink{uml_overall}{Overall Process}
 
-\hyperlink{UML_WritingFiles}{File Writer Process}
+\section*{File Input Operations}
 
-\hyperlink{UML_MotionModel}{Motion Model Process}
+\hyperlink{uml_filereader}{File Reader Process}
 
-\hyperlink{UML_MotionSolver}{Motion Solver Process}
+\section*{Calculation of the Wave Amplitude}
 
-\hyperlink{UML_ResonantSolver}{Resonant Solver Process}
+\hyperlink{uml_wavecalculation}{Wave Calculations Process}
 
-\hyperlink{UML_WaveCalculation}{Wave Calculations Process}
+\section*{Using the Motion Model}
 
-\hyperlink{UML_OutputsCalculation}{Outputs Calculation} \hypertarget{UML_Overall}{}\section{Overall Process}\label{UML_Overall}
+\hyperlink{uml_motionmodel}{Motion Model Process}
+
+\section*{Motion Solvers}
+
+\hyperlink{uml_motionsolver}{Motion Solver Process}
+
+The motion solver is used to calculate the absolute response for a defined analysis. This is the frequently used analysis.
+
+\hyperlink{uml_resonantsolver}{Resonant Solver Process}
+
+The resonant solver is used to calculate resonsant frequencies and provide relative outputs.
+
+\section*{Calculating and Writing Outputs}
+
+\hyperlink{uml_outputscalculation}{Outputs Calculation}
+
+First we calculate all the derived outputs based on the solved values for body motions.
+
+\hyperlink{uml_writingfiles}{File Writer Process}
+
+Then the filewriter writes the calculated values to the output files. \hypertarget{uml_overall}{}\section{Overall Process}\label{uml_overall}
 \begin{DoxyRefDesc}{Todo}
 \item[\hyperlink{todo__todo000005}{Todo}]U\-M\-L Overall process diagram\end{DoxyRefDesc}
-\hypertarget{UML_WritingFiles}{}\section{File Writer Process}\label{UML_WritingFiles}
+\hypertarget{uml_filereader}{}\section{File Reader Process}\label{uml_filereader}
 \begin{DoxyRefDesc}{Todo}
-\item[\hyperlink{todo__todo000008}{Todo}]file writer process diagram. May need to combine this with the Outputs Calculation U\-M\-L process diagram.\end{DoxyRefDesc}
-\hypertarget{UML_MotionModel}{}\section{Motion Model Process}\label{UML_MotionModel}
-\begin{DoxyRefDesc}{Todo}
-\item[\hyperlink{todo__todo000002}{Todo}]U\-M\-L Motion Model Process Diagram\end{DoxyRefDesc}
-\hypertarget{UML_MotionSolver}{}\section{Motion Solver Process}\label{UML_MotionSolver}
-\begin{DoxyRefDesc}{Todo}
-\item[\hyperlink{todo__todo000003}{Todo}]U\-M\-L Motion Solver Process\end{DoxyRefDesc}
-\hypertarget{UML_ResonantSolver}{}\section{Resonant Solver Process}\label{UML_ResonantSolver}
-\begin{DoxyRefDesc}{Todo}
-\item[\hyperlink{todo__todo000006}{Todo}]U\-M\-L resonant solver process diagram\end{DoxyRefDesc}
-\hypertarget{UML_WaveCalculation}{}\section{Wave Calculations Process}\label{UML_WaveCalculation}
+\item[\hyperlink{todo__todo000001}{Todo}]U\-M\-L File Reader Diagram\end{DoxyRefDesc}
+\hypertarget{uml_wavecalculation}{}\section{Wave Calculations Process}\label{uml_wavecalculation}
 \begin{DoxyRefDesc}{Todo}
 \item[\hyperlink{todo__todo000007}{Todo}]U\-M\-L wave Calculations process diagram. 
 
 create wave calculations code\end{DoxyRefDesc}
-\hypertarget{UML_OutputsCalculation}{}\section{Outputs Calculation}\label{UML_OutputsCalculation}
+\hypertarget{uml_motionmodel}{}\section{Motion Model Process}\label{uml_motionmodel}
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{todo__todo000002}{Todo}]U\-M\-L Motion Model Process Diagram\end{DoxyRefDesc}
+\hypertarget{uml_motionsolver}{}\section{Motion Solver Process}\label{uml_motionsolver}
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{todo__todo000003}{Todo}]U\-M\-L Motion Solver Process\end{DoxyRefDesc}
+\hypertarget{uml_resonantsolver}{}\section{Resonant Solver Process}\label{uml_resonantsolver}
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{todo__todo000006}{Todo}]U\-M\-L resonant solver process diagram\end{DoxyRefDesc}
+\hypertarget{uml_outputscalculation}{}\section{Outputs Calculation}\label{uml_outputscalculation}
 \begin{DoxyRefDesc}{Todo}
 \item[\hyperlink{todo__todo000004}{Todo}]U\-M\-L Outputs Calculation Process Diagram\end{DoxyRefDesc}
+\hypertarget{uml_writingfiles}{}\section{File Writer Process}\label{uml_writingfiles}
+\begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{todo__todo000008}{Todo}]file writer process diagram. May need to combine this with the Outputs Calculation U\-M\-L process diagram.\end{DoxyRefDesc}

@@ -1,9 +1,7 @@
 var dir_3a328b0058cd576ef706e97a2370c18a =
 [
     [ "globalacceleration.cpp", "globalacceleration_8cpp.html", null ],
-    [ "globalacceleration.h", "globalacceleration_8h.html", [
-      [ "GlobalAcceleration", "classosea_1_1ofreq_1_1_global_acceleration.html", "classosea_1_1ofreq_1_1_global_acceleration" ]
-    ] ],
+    [ "globalacceleration.h", "globalacceleration_8h.html", "globalacceleration_8h" ],
     [ "globalmotion.cpp", "globalmotion_8cpp.html", null ],
     [ "globalmotion.h", "globalmotion_8h.html", [
       [ "GlobalMotion", "classosea_1_1ofreq_1_1_global_motion.html", "classosea_1_1ofreq_1_1_global_motion" ]

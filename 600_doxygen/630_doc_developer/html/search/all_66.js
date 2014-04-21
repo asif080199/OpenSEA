@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['format_20standards',['Format Standards',['../_coding.html',1,'']]],
   ['fileexists',['fileExists',['../classosea_1_1ofreq_1_1_file_writer.html#afc22f7afcd30f676e5385133247ed84d',1,'osea::ofreq::FileWriter']]],
   ['filereader',['FileReader',['../classosea_1_1_file_reader.html',1,'osea']]],
   ['filereader',['FileReader',['../classosea_1_1_file_reader.html#a615dcb2443cad1f2ca123c7c0c334480',1,'osea::FileReader::FileReader()'],['../classosea_1_1_file_reader.html#a518fc07a4da5ff10374302fd253d3f45',1,'osea::FileReader::FileReader(std::string Path)']]],
@@ -10,10 +9,11 @@ var searchData=
   ['filewriter',['FileWriter',['../classosea_1_1ofreq_1_1_file_writer.html#aa6b362f5b306dd3409af81a463e97f40',1,'osea::ofreq::FileWriter::FileWriter()'],['../classosea_1_1ofreq_1_1_file_writer.html#aa99ec25b5ed26ad1542eb94104fef1ce',1,'osea::ofreq::FileWriter::FileWriter(std::string rootPath, OutputsBody &amp;BodyIn)']]],
   ['filewriter_2ecpp',['filewriter.cpp',['../filewriter_8cpp.html',1,'']]],
   ['filewriter_2eh',['filewriter.h',['../filewriter_8h.html',1,'']]],
-  ['force',['Force',['../classosea_1_1ofreq_1_1_force.html#a00983e3bbc206a00bb9253deafc4e424',1,'osea::ofreq::Force::Force()'],['../classosea_1_1ofreq_1_1_force.html#a17b130fe437ef6c78162f6d4fb7fc909',1,'osea::ofreq::Force::Force(int indexIn)']]],
+  ['force',['Force',['../classosea_1_1ofreq_1_1_force.html#a00983e3bbc206a00bb9253deafc4e424',1,'osea::ofreq::Force::Force()'],['../classosea_1_1ofreq_1_1_force.html#a17b130fe437ef6c78162f6d4fb7fc909',1,'osea::ofreq::Force::Force(int indexIn)'],['../input__syntax_8dox.html#ab0a92c70357da47fe86696522eab7dc8',1,'force():&#160;input_syntax.dox']]],
   ['force',['Force',['../classosea_1_1ofreq_1_1_force.html',1,'osea::ofreq']]],
   ['force_2ecpp',['force.cpp',['../force_8cpp.html',1,'']]],
   ['force_2eh',['force.h',['../force_8h.html',1,'']]],
+  ['force_5factive',['force_active',['../input__syntax_8dox.html#a09f79fdfedb53de23a0046804e91075d',1,'input_syntax.dox']]],
   ['forceactive',['ForceActive',['../classosea_1_1ofreq_1_1_force_active.html',1,'osea::ofreq']]],
   ['forceactive',['ForceActive',['../classosea_1_1ofreq_1_1_force_active.html#ae006e3394f8c925c6a3218686c5cc8ae',1,'osea::ofreq::ForceActive']]],
   ['forceactive_2ecpp',['forceactive.cpp',['../forceactive_8cpp.html',1,'']]],
@@ -85,8 +85,9 @@ var searchData=
   ['func7',['Func7',['../classosea_1_1ofreq_1_1_eqn_rotation.html#a39df2d7a20142545d67b95bc73c7f477',1,'osea::ofreq::EqnRotation::Func7()'],['../classosea_1_1ofreq_1_1_eqn_translation.html#a606323f2a3caab467e05e76b987bce19',1,'osea::ofreq::EqnTranslation::Func7()'],['../classosea_1_1ofreq_1_1_equationof_motion.html#a99c266e01afc3f20b7154db38344a050',1,'osea::ofreq::EquationofMotion::Func7()']]],
   ['func8',['Func8',['../classosea_1_1ofreq_1_1_eqn_rotation.html#aa4983c923f72cec31dd00d3bdf81a1c9',1,'osea::ofreq::EqnRotation::Func8()'],['../classosea_1_1ofreq_1_1_eqn_translation.html#a1b622a723ceade1afb98c238d4dfc4c6',1,'osea::ofreq::EqnTranslation::Func8()'],['../classosea_1_1ofreq_1_1_equationof_motion.html#a20b071061e22794f809e8e4a711385a9',1,'osea::ofreq::EquationofMotion::Func8()']]],
   ['func9',['Func9',['../classosea_1_1ofreq_1_1_eqn_rotation.html#a47de6dace20f98dbfe8559f8e4acb19e',1,'osea::ofreq::EqnRotation::Func9()'],['../classosea_1_1ofreq_1_1_eqn_translation.html#aca66c64f6ad96f40a73349d47cc141fc',1,'osea::ofreq::EqnTranslation::Func9()'],['../classosea_1_1ofreq_1_1_equationof_motion.html#aa5544ff6b4afe0982124ba173392cde6',1,'osea::ofreq::EquationofMotion::Func9()']]],
-  ['format_20of_20inputs',['Format of Inputs',['../_input_formatting.html',1,'']]],
+  ['functions',['functions',['../header__comment_8dox.html#a380ff23b583814c22c2de2b26c3b00d5',1,'header_comment.dox']]],
+  ['format_20of_20inputs',['Format of Inputs',['../input_format.html',1,'']]],
   ['frequency_20variation_20test',['Frequency Variation Test',['../_test_frequency.html',1,'Validation']]],
-  ['file_20reader_20process',['File Reader Process',['../_u_m_l__file_reader.html',1,'']]],
-  ['file_20writer_20process',['File Writer Process',['../_u_m_l__writing_files.html',1,'UML_Process']]]
+  ['file_20reader_20process',['File Reader Process',['../uml_filereader.html',1,'UML_Process']]],
+  ['file_20writer_20process',['File Writer Process',['../uml_writingfiles.html',1,'UML_Process']]]
 ];

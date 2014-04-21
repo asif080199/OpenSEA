@@ -1,0 +1,257 @@
+/**
+
+\page header_comment Header Comment Standard
+
+The header format is strictly controlled.  This provides a common format so that all of us have the header file to use as a roadmap when we read your code.
+
+
+# Legally Required Text {#requiredtext}
+
+If you ignore everything else about this format standard, at least place the following text at the top of every header file.  This is a legal protection to ensure we don't get a lawsuit.
+
+    /*----------------------------------------*- C++ -*------------------------------------------------------------------*\
+    | O pen         | OpenSea: The Open Source Seakeeping Suite                                                           |
+    | S eakeeping   | Web:     www.opensea.dmsonline.us                                                                   |
+    | E valuation   |                                                                                                     |
+    | A nalysis     |                                                                                                     |
+    \*-------------------------------------------------------------------------------------------------------------------*/
+
+/**
+    //License
+    /*-------------------------------------------------------------------------------------------------------------------*\
+    *Copyright Datawave Marine Solutions, 2013.
+    *This file is part of OpenSEA.
+
+    *OpenSEA is free software: you can redistribute it and/or modify
+    *it under the terms of the GNU General Public License as published by
+    *the Free Software Foundation, either version 3 of the License, or
+    *(at your option) any later version.
+
+    *OpenSEA is distributed in the hope that it will be useful,
+    *but WITHOUT ANY WARRANTY; without even the implied warranty of
+    *MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    *GNU General Public License for more details.
+
+    *You should have received a copy of the GNU General Public License
+    *along with OpenSEA.  If not, see <http://www.gnu.org/licenses/>.
+    \*-------------------------------------------------------------------------------------------------------------------*/ 
+
+/**    
+
+# Example File {#examplefile}
+
+The following shows an example of the header file formatting standard.
+
+
+
+
+      /*----------------------------------------*- C++ -*------------------------------------------------------------------*\
+      | O pen         | OpenSea: The Open Source Seakeeping Suite                                                           |
+      | S eakeeping   | Web:     www.opensea.dmsonline.us                                                                   |
+      | E valuation   |                                                                                                     |
+      | A nalysis     |                                                                                                     |
+      \*-------------------------------------------------------------------------------------------------------------------*/
+     
+      /*-------------------------------------------------------------------------------------------------------------------*\
+      *Revision History
+      *---------------------------------------------------------------------------------------------------------------------
+      *Date		Author				Description
+      *---------------------------------------------------------------------------------------------------------------------
+      *Mar 09 2013	Nicholas Barczak		Initially Created
+      * 
+      \*-------------------------------------------------------------------------------------------------------------------*/
+
+      //License
+      /*-------------------------------------------------------------------------------------------------------------------*\
+      *Copyright Datawave Marine Solutions, 2013.
+      *This file is part of OpenSEA.
+
+      *OpenSEA is free software: you can redistribute it and/or modify
+      *it under the terms of the GNU General Public License as published by
+      *the Free Software Foundation, either version 3 of the License, or
+      *(at your option) any later version.
+
+      *OpenSEA is distributed in the hope that it will be useful,
+      *but WITHOUT ANY WARRANTY; without even the implied warranty of
+      *MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+      *GNU General Public License for more details.
+
+      *You should have received a copy of the GNU General Public License
+      *along with OpenSEA.  If not, see <http://www.gnu.org/licenses/>.
+      \*-------------------------------------------------------------------------------------------------------------------*/
+      
+/**      
+
+      //######################################### Class Separator ###########################################################
+      //Put header file includes and constant variables in here.
+      
+      //######################################### Class Separator ###########################################################
+      //Put this at the beginning of each class definition, right before the Doxygen formatted explanation.
+      //Start doxygen documentation like this:
+      /**
+      * Doxygen documentation  Describes class definition.
+      */
+      
+/**      
+
+      class classname;
+      //Put this at the beginnning of section separations.  Valid sections are:
+
+      //==========================================Section Separator =========================================================
+      public:
+
+      //==========================================Section Separator =========================================================
+      signals:
+	
+      //==========================================Section Separator =========================================================
+      public slots:
+
+      //==========================================Section Separator =========================================================
+      protected:
+	
+      //==========================================Section Separator =========================================================
+      private:
+
+      //Please at least include the public, protected, and private sections for each class defintion.  We are trying to 
+      //achieve a uniformity in the structure of the header files, so that anyone can quickly understand the structure of 
+      //the code.
+
+	  //------------------------------------------Function Separator ----------------------------------------------------
+	  //Put this separator at the beginning of each function definition.  Any properties can also be grouped into a 
+	  //single function separator.  Include doxygen documentation marks for each function definition.
+	  /**
+	  * Doxygen description of the function
+	  * @param paramname description for parameters
+	  * @param paramname2 description for second parameter.
+	  * ...
+	  * @return Description of the returned value from the function.
+	  */
+
+/**
+	  
+	  
+# Format Standard broken down. {#doxydown}
+
+## Branding Header {#brandheader}
+
+This is just some branding at the top of the code.  If you are proud of your program, give it some recognition.  Hence the branding header.
+
+
+      /*----------------------------------------*- C++ -*------------------------------------------------------------------*\
+      | O pen         | OpenSea: The Open Source Seakeeping Suite                                                           |
+      | S eakeeping   | Web:     www.opensea.dmsonline.us                                                                   |
+      | E valuation   |                                                                                                     |
+      | A nalysis     |                                                                                                     |
+      \*-------------------------------------------------------------------------------------------------------------------*/
+      
+      
+## Revision History {#revhist}
+
+I know that we include comments with each revision that we submit.  But those submittals often include multiple files.
+This rev history block is to describe the specific changes for this file.  Once you debug and are ready to release the class definition at rev 1.0, please start tracking rev history in this comment block.
+
+
+      /*-------------------------------------------------------------------------------------------------------------------*\
+      *Revision History
+      *---------------------------------------------------------------------------------------------------------------------
+      *Date		Author				Description
+      *---------------------------------------------------------------------------------------------------------------------
+      *Mar 09 2013	Nicholas Barczak		Initially Created
+      * 
+      \*-------------------------------------------------------------------------------------------------------------------*/
+      
+      
+## Legally Required Test {#legaltextext2}
+
+This is legally required text and stops us from getting a lawsuit.  Please always, always, always include it.
+
+
+      //License
+      /*-------------------------------------------------------------------------------------------------------------------*\
+      *Copyright Datawave Marine Solutions, 2013.
+      *This file is part of OpenSEA.
+
+      *OpenSEA is free software: you can redistribute it and/or modify
+      *it under the terms of the GNU General Public License as published by
+      *the Free Software Foundation, either version 3 of the License, or
+      *(at your option) any later version.
+
+      *OpenSEA is distributed in the hope that it will be useful,
+      *but WITHOUT ANY WARRANTY; without even the implied warranty of
+      *MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+      *GNU General Public License for more details.
+
+      *You should have received a copy of the GNU General Public License
+      *along with OpenSEA.  If not, see <http://www.gnu.org/licenses/>.
+      \*-------------------------------------------------------------------------------------------------------------------*/
+      
+      
+## Include Statements {#include2}
+
+This is where you put all the include statements.  Any other header files you need to include.  Or any other preprocessor directives.  They all go in this section.  
+
+      //######################################### Class Separator ###########################################################
+      //Put header file includes and constant variables in here.
+	  
+	  
+	 
+   
+      
+## Class Definitions {#classdef2}
+
+Put a separator at the beginning to let everyone know that we are starting something important.  And then include the doxygen documentation to describe what this class is and how to use it.  If use of the class requires a specific sequence of functions, include that in the documentation.
+
+      //######################################### Class Separator ###########################################################
+      //Put this at the beginning of each class definition, right before the Doxygen formatted explanation.
+      //Start doxygen documentation like this:
+      /**
+      * Doxygen documentation  Describes class definition.
+      */
+      
+/**      
+
+      class classname;
+	 
+
+	 
+## Function Type Separators {#funcsep}
+
+Group your functions depending on the access level each one is permitted.  Separate each section of access level by a section separator.  Becuase this project is coded in Qt, there are also signals and slots for access levels.
+
+
+      //==========================================Section Separator =========================================================
+      public:
+
+      //==========================================Section Separator =========================================================
+      signals:
+	
+      //==========================================Section Separator =========================================================
+      public slots:
+
+      //==========================================Section Separator =========================================================
+      protected:
+	
+      //==========================================Section Separator =========================================================
+      private:
+      
+      //Please at least include the public, protected, and private sections for each class defintion.  We are trying to 
+      //achieve a uniformity in the structure of the header files, so that anyone can quickly understand the structure of 
+      //the code.
+      
+      
+      
+## Function Separator {#funcsep2}      
+
+Begin each function with a function separator.  And below that list the full doxygen documentation.  Specify any  parameters and return value within the doxygen documention.  When you specify details for parameters and returned values, be sure to also describe if the variable is passed by value or by reference, or as a pointer.  We have use for all three within the oFreq code.
+
+	  //------------------------------------------Function Separator ----------------------------------------------------
+	  //Put this separator at the beginning of each function definition.  Any properties can also be grouped into a 
+	  //single function separator.  Include doxygen documentation marks for each function definition.
+	  /**
+	  * Doxygen description of the function
+	  * @param paramname description for parameters
+	  * @param paramname2 description for second parameter.
+	  * ...
+	  * @return Description of the returned value from the function.
+	  */
+

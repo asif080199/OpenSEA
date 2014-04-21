@@ -31,5 +31,5 @@ var searchData=
   ['refsubobject',['refSubObject',['../classosea_1_1_parser.html#a4e0dcef1ae5785c46f2fb6d935090595',1,'osea::Parser']]],
   ['reset',['Reset',['../classosea_1_1ofreq_1_1_motion_model.html#a27842d2b76ab078534c0626601da446b',1,'osea::ofreq::MotionModel']]],
   ['resize',['resize',['../classosea_1_1ofreq_1_1_solution_set.html#a1f01e0b7d5b72c8b225f15dc8d921315',1,'osea::ofreq::SolutionSet']]],
-  ['resonant_20solver_20process',['Resonant Solver Process',['../_u_m_l__resonant_solver.html',1,'UML_Process']]]
+  ['resonant_20solver_20process',['Resonant Solver Process',['../uml_resonantsolver.html',1,'UML_Process']]]
 ];

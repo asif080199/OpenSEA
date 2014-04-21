@@ -19,6 +19,7 @@
   $(document).ready(function() { searchBox.OnSelectItem(0); });
 </script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="OpenSEA_std.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -49,7 +50,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
-      <li><a href="examples.html"><span>Examples</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -102,15 +102,17 @@ $(document).ready(function(){initNavTree('_input_syntax.html','');});
 <div class="title">Input Syntax </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><h1>Input File Structure</h1>
-<h2>Dynamic Structure</h2>
+<div class="textblock"><p>The input files are formatted very similar to C++ code. Only the input files do not have as robust of a command structure. They are more limited. This page details that command structure. It only describes the syntax of the input files. It does not describe their contents. The syntax is uniform across all input files. The same syntax is also used to write output files. This allows output from oFreq to be easily read by another program in the OpenSEA suite.</p>
+<h1><a class="anchor" id="example1"></a>
+Example Input File</h1>
+<p>The following example shows input file that includes all major elements of the file syntax.</p>
+<p>/*---------------------------&mdash;*- C++ -*---------------------------------&mdash;*\ | O pen | OpenSea: The Open Source Seakeeping Suite | | S eakeeping | Version: 1.0 | | E valuation | Web: www.opensea.dmsonline.us | | A nalysis | | *------------------------------------------------------------------------&mdash; </p>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="_input_formatting.html">Format of Inputs</a></li>
-    <li class="footer">Generated on Sun Apr 13 2014 11:17:03 for oFreq by
+    <li class="footer">Generated on Sun Apr 20 2014 16:00:51 for oFreq by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.2 </li>
   </ul>

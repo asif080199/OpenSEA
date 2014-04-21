@@ -1,0 +1,29 @@
+/**
+
+\page object_paradigm Object Naming Paradigm
+
+For ease of coding, we would like to have a single object naming paradigm.  This controls how we name methods and functions contained within an object.  
+
+# Object Names {#objectname}
+
+Individual object names and class names are fairly free and flexible.  Just please make the naming convention logical.  (And following a simple logic.)
+
+
+# Function Names {#functionname}
+
+Please use the following paradigm for naming any new functions in oFreq.
+
+1. Functions are described as an action prefix, followed by the subject, all as one word. Example:
+   getObject     
+2. The action verb is not capitalized.  The first leter of the subject is capitalized.  If the subject is made of multiple words, 
+   write it all as one word, capitalizing each word.  Example:  getObjectTwoBecauseItsOneWord
+3. Use the following conventions for verbs on objects:
+     get:	Retrieve something from the object.  Retrieved variable passed by value.
+     ref:	Retrieve something from the object.  Retrieved variable passed by reference.
+     set:	Change some information into the object.  Inserted variable passed by value.
+     add:	Insert some new information into the object.  Usually associated with adding an entry to a vector.
+     list:	Access a vector from the object.
+     list(index):	Access a specific item in the vector from the object.
+4. Any time you create a list function, you must also create a list(index) function.
+     
+*/

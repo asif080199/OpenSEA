@@ -1,0 +1,42 @@
+/**
+\page concept_overall Overall Process
+
+\todo write documentation for ofreq overall process.
+
+# Create New Directory
+
+
+# Define Inputs
+
+
+## System Control
+
+control.in file.
+
+
+## Bodies
+
+bodies.in file.
+
+
+## Hydrodynamic Data
+
+data.in file.
+
+
+## User Forces
+
+forces.in file
+
+
+## Sea Environment
+
+seaenv.in file
+
+
+# Run Program
+
+# Review Outputs
+
+
+*/

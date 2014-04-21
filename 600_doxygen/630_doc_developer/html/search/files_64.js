@@ -10,6 +10,7 @@ var searchData=
   ['dictforces_2eh',['dictforces.h',['../dictforces_8h.html',1,'']]],
   ['dictionary_2ecpp',['dictionary.cpp',['../dictionary_8cpp.html',1,'']]],
   ['dictionary_2eh',['dictionary.h',['../dictionary_8h.html',1,'']]],
+  ['directory_5fstructure_2edox',['directory_structure.dox',['../directory__structure_8dox.html',1,'']]],
   ['docnumbersys_2edox',['docnumbersys.dox',['../docnumbersys_8dox.html',1,'']]],
   ['documentation_2edox',['documentation.dox',['../documentation_8dox.html',1,'']]]
 ];

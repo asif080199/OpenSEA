@@ -1,0 +1,145 @@
+This page covers inputs. All inputs in o\-Freq are through text files. The syntax for the text file format is very versatile and allows a fairly complex set of combinations. The inputs are also divided into different files and organized within a specific directory structure. The following sections cover everything you need to know about how the inputs are organized and formatted.
+
+\section*{Explanation for Text Files}
+
+\hyperlink{why_text_files}{Text File Inputs}
+
+First question you probably asked was why did we use text file. Learn more.
+
+\section*{Organization of Input Files}
+
+\hyperlink{directory_structure}{Directory Structure}
+
+Remember that the inputs are organized in to multiple files within a directory structure. Before you can edit the inputs, you need to know how to find the right file.
+
+\section*{File Formatting}
+
+\hyperlink{input_syntax}{Input Syntax}
+
+So you found the right file, but the content looks a lot like c++ code. Learn more about the format standard here and discover how to use it.
+
+\section*{File Content}
+
+\hyperlink{input_values}{List of Input Values}
+
+Now you know the rules, but what are all the possible inputs for a user? This subpage provides a full list of every input. \hypertarget{why_text_files}{}\section{Text File Inputs}\label{why_text_files}
+\section*{Why Text File Interface?}
+
+A major criticism of ofreq is that is does not natively use a G\-U\-I interface. The subject of text file interaces was given careful consideration. There are several reasons why text file interfaces were used. T\-He first and primary reason is\-:
+
+
+\begin{DoxyItemize}
+\item Provide a neutral interface between people with software engineering specialization and people with marine engineering specialization.
+\end{DoxyItemize}
+
+Many sections of ofreq require detailed knowledge of marine engineering and seakeeping mathematics. This is knowledge that most software engineers do not normally posses. On the other hand, most marine engineers are not competent enough with programming to handle coding a G\-U\-I interface. But the marine engineer can normally handle a text file interface. The text file interfaces provide a neutral format that is easily handled by people in both skill sets\-: marine engineering and software engineering.
+
+The intent is always to provide a G\-U\-I for ofreq. However, this G\-U\-I will stand on its own and support the entire Open\-S\-E\-A software suite.
+
+There are several other reasons for the text file interface.
+
+
+\begin{DoxyEnumerate}
+\item Some advanced users (whole companies) may want to incorporate ofreq into their own calculation software. In that case, the user will create their own interace. A text based interface allows users to develop third-\/party G\-U\-I's without re-\/coding and recompiling ofreq.
+\item Many times users need to extract individual pieces of information from the outputs. The text file interface makes it very easy to extract information and paste into spreadsheet applications.
+\item Users may log into remote computers to use this software. Advanced engineering software, such as Open\-S\-E\-A, is often installed on power machines devoted exclusively for intense computations. Sometimes these remote connections lack a G\-U\-I interface. In that case, o\-Freq can still be used through console only.
+\item Eventually, Open\-S\-E\-A will include a batch program that creates batch runs of these programs and edits the text files for both input and output. A text interface leaves open the most options for that batch program.
+\end{DoxyEnumerate}
+
+For all of these reasons, the text interface is the way I decided to go. It only makes sense because I intend to eventualy supplement this with a G\-U\-I interface. \hypertarget{directory_structure}{}\section{Directory Structure}\label{directory_structure}
+An o\-Freq analysis is completely contained within a specified root directory. This root directory can be anywhere on the file system. Under the root structure, inputs and outputs are organized into multiple files and folders.\hypertarget{directory_structure_directory_structure_inputs}{}\subsection{Structure of Inputs}\label{directory_structure_directory_structure_inputs}
+All the input files are located within two folders\-:
+
+
+\begin{DoxyEnumerate}
+\item \char`\"{}system\char`\"{} folder
+\item \char`\"{}constant\char`\"{} folders
+\end{DoxyEnumerate}
+
+The folder names are specific. o\-Freq always expects folders with those given names. Folder names are never capitalized.
+
+\begin{DoxyNote}{Note}
+No filenames in o\-Freq are capitalized. Other development projects have run into problems trying to build for windows and linux, because linux filesystems distinguish between lowercase and uppercase letters. The developers relied on that feature and then the program would not work on M\-S Windows without major revision. o\-Freq will avoid the entire issue by {\itshape always} using lowercase letters in every file and folder name.
+\end{DoxyNote}
+Within each folder, there are several input files. \begin{DoxyVerb}root folder/
+--->  system folder/
+---> | ---> control.in
+--->  constant folder/
+---> | ---> bodies.in
+---> | ---> data.in
+---> | ---> forces.in
+---> | ---> seaenv.in
+\end{DoxyVerb}
+\hypertarget{directory_structure_system1}{}\subsubsection{System Folder}\label{directory_structure_system1}
+The system folder controls the operation of the program. This goes beyond input and output data to specify exactly what type of analysis o\-Freq should conduct. Some of the basic inputs that get used by everything are also inside this folder.
+
+\subsubsection*{Control.\-in \{\#control.\-in\}}
+
+The filename is \char`\"{}control.\-in\char`\"{}, and o\-Freq expects that exact filename. Currently, this is the only file under the system folder. It controls the operation of the program.\hypertarget{directory_structure_constant1}{}\subsubsection{Constant Folder}\label{directory_structure_constant1}
+The constant folder contains all the input files. These specify the physics details for the analysis.
+
+\subsubsection*{Bodies.\-in \{\#bodies.\-in\}}
+
+The filename is \char`\"{}bodies.\-in\char`\"{}, and o\-Freq expects that exact filename. This file combines many of the other elements and defines the body objects used in the analysis. The definition of a body object may include assignment of several other objects, which are defined in separate files. The body object is the central information storage concept. Many different elements are organized under this.
+
+\subsubsection*{Data.\-in \{\#data.\-in\}}
+
+The filename is \char`\"{}data.\-in\char`\"{}, and o\-Freq expects that exact filename. This file specifies the location of any hydrodyanmic data that gets included in the analysis.
+
+\subsubsection*{Forces.\-in \{\#forces.\-in\}}
+
+The filename is \char`\"{}forces.\-in\char`\"{}, and o\-Freq expects that exact filename. This file defines the multiple force objects that can be used in the analysis. Definition of a force object does not require its use in the analysis. This file only contains the definition. The force objects are actually initialized and assigned in the bodies.\-in file. This separation allows the user to build a library of common forces and only use the forces they require.
+
+\subsubsection*{Seaenv.\-in \{\#seaenv.\-in\}}
+
+The filename is \char`\"{}seaenv.\-in\char`\"{}, and o\-Freq expects that exact filename. This file defines multiple sea envronments that can be used in the analysis. Definition of a sea environment does not require its use in the analysis. This file only contains the definitions. The invidual environments are selected within the \char`\"{}control.\-in\char`\"{} file. T\-His separation allows the user to build a library of common sea environment definitions and only use the definition they require.\hypertarget{directory_structure_outputs_structure1}{}\subsection{Structure of Outputs}\label{directory_structure_outputs_structure1}
+On running an analysis, o\-Freq will generate multiple output files and organize the files into multiple folders. o\-Freq always generates all output files, regardless if they are needed for the analysis. The intent is that o\-Freq always supplies the most complete set of information. Any post processing programs can filter the selection of data from that output. The following example shows a typical layout of the directory structure. \begin{DoxyVerb}root folder/
+--->  directions.out
+--->  frequencies.out
+--->  d0 folder/
+---> | --->  outputfiles.out
+--->  d1 folder/
+---> | --->  outputfiles.out
+...
+--->  dN folder/
+---> | --->  outputfiles.out
+
+--->  rd0 folder/
+---> | ---> resonant output files.out
+--->  rd1 folder/
+---> | ---> resonant output files.output
+...
+--->  rdN folder/
+---> | ---> resonant output files.out
+\end{DoxyVerb}
+\hypertarget{directory_structure_root}{}\subsubsection{Root Folder}\label{directory_structure_root}
+Under the root folder are two very important output files.
+
+
+\begin{DoxyEnumerate}
+\item directions.\-out
+\item frequencies.\-out
+\end{DoxyEnumerate}
+
+These are essentially index files. All the calculated outputs depend on wave direction and wave frequency. But the directions and freuqencies are not included in any list of outputs. Everything is simply presented in ordered lists. The sequence of the lists corresponds to the sequence that they appear in these two files under the root directory.
+
+For example, all wave directions are given a folder. They start from d0 and count up. The folder for d0 corresponds to the first wave direction listed in the file directions.\-out. The folder d1 corresponds to the second wave direction listed in the file directions.\-out and so on.\hypertarget{directory_structure_dfolder}{}\subsubsection{d0, d1, ... d\-N Folder}\label{directory_structure_dfolder}
+Each one of these folders corresponds to a wave direction. These folders are generated when a response analysis is requested from o\-Freq. Response analysis is the most often requested type of analysis.
+
+Results are organized by wave directions. Directions are numbered from d0, counting up. The folder names do not state the actual wave direction. They only state its place in the sequence of wave directions. The sequence of folders corresponds to the sequence that they appear in the file \char`\"{}directions.\-out\char`\"{}
+
+For example, all wave directions are given a folder. They start from d0 and count up. The folder for d0 corresponds to the first wave direction listed in the file directions.\-out. The folder d1 corresponds to the second wave direction listed in the file directions.\-out and so on.
+
+All outputs are listed under each folder for wave direction. Each output type is given its own file. All files are named with a .out extension. W\-Ithin each file, outputs are listed by wave frequency.\hypertarget{directory_structure_rdfolder}{}\subsubsection{rd0, rd1, ...\-rd\-N Folder}\label{directory_structure_rdfolder}
+These folders are just like the wave directions folders. Each folder name is specific to the sequence in the file \char`\"{}directions.\-out\char`\"{} The only difference is that these folders are generated when a resonant analysis is requested from o\-Freq. The folders are given a slightly different name for two reasons\-:
+
+
+\begin{DoxyEnumerate}
+\item Prevent the folders overwritting any data in the d0, d1, ... d\-N folders.
+\item Provide a clear indicator that the outputs written to these folders are for a special type of analysis. 
+\end{DoxyEnumerate}\hypertarget{input_syntax}{}\section{Input Syntax}\label{input_syntax}
+The input files are formatted very similar to C++ code. Only the input files do not have as robust of a command structure. They are more limited. This page details that command structure. It only describes the syntax of the input files. It does not describe their contents. The syntax is uniform across all input files. The same syntax is also used to write output files. This allows output from o\-Freq to be easily read by another program in the Open\-S\-E\-A suite.\hypertarget{input_syntax_example1}{}\subsection{Example Input File}\label{input_syntax_example1}
+The following example shows input file that includes all major elements of the file syntax.
+
+/$\ast$-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/---$\ast$-\/ C++ -\/$\ast$-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/---$\ast$\textbackslash{} $|$ O pen $|$ Open\-Sea\-: The Open Source Seakeeping Suite $|$ $|$ S eakeeping $|$ Version\-: 1.\-0 $|$ $|$ E valuation $|$ Web\-: www.\-opensea.\-dmsonline.\-us $|$ $|$ A nalysis $|$ $|$ $\ast$-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/--- \hypertarget{input_values}{}\section{List of Input Values}\label{input_values}
+Replace this later with the chm generated list of input values. 

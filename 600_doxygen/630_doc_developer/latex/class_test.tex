@@ -1,0 +1,70 @@
+\hypertarget{class_test}{\section{Test Class Reference}
+\label{class_test}\index{Test@{Test}}
+}
+
+
+\subsection{Detailed Description}
+License /$\ast$-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/---------------$\ast$\textbackslash{} $\ast$\-Copyright Datawave Marine Solutions, 2013. $\ast$\-This file is part of Open\-S\-E\-A.
+
+$\ast$\-Open\-S\-E\-A is free software\-: you can redistribute it and/or modify $\ast$it under the terms of the G\-N\-U General Public License as published by $\ast$the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+
+$\ast$\-Open\-S\-E\-A is distributed in the hope that it will be useful, $\ast$but W\-I\-T\-H\-O\-U\-T A\-N\-Y W\-A\-R\-R\-A\-N\-T\-Y; without even the implied warranty of $\ast$\-M\-E\-R\-C\-H\-A\-N\-T\-A\-B\-I\-L\-I\-T\-Y or F\-I\-T\-N\-E\-S\-S F\-O\-R A P\-A\-R\-T\-I\-C\-U\-L\-A\-R P\-U\-R\-P\-O\-S\-E. See the $\ast$\-G\-N\-U General Public License for more details.
+
+$\ast$\-You should have received a copy of the G\-N\-U General Public License $\ast$along with Open\-S\-E\-A. If not, see \href{http://www.gnu.org/licenses/}{\tt http\-://www.\-gnu.\-org/licenses/}. $\ast$-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/---------------\hypertarget{class_test_examplefile}{}\subsection{Example File}\label{class_test_examplefile}
+The following shows an example of the header file formatting standard. \begin{DoxyVerb}  /*----------------------------------------*- C++ -*------------------------------------------------------------------*\
+  | O pen         | OpenSea: The Open Source Seakeeping Suite                                                           |
+  | S eakeeping   | Web:     www.opensea.dmsonline.us                                                                   |
+  | E valuation   |                                                                                                     |
+  | A nalysis     |                                                                                                     |
+  \*------------------------------------------------------------------------------------------------------------------- \end{DoxyVerb}
+
+
+\subparagraph*{\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\# Class Separator}
+
+Put header file includes and constant variables in here.
+
+\subparagraph*{\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\# Class Separator}
+
+Put this at the beginning of each class definition, right before the Doxygen formatted explanation. Start doxygen documentation like this\-: /$\ast$$\ast$ Doxygen documentation Describes class definition.
+
+class classname; Put this at the beginnning of section separations. Valid sections are\-:
+
+==========================================Section Separator ========================================================= public\-:
+
+==========================================Section Separator ========================================================= signals\-:
+
+==========================================Section Separator ========================================================= public slots\-:
+
+==========================================Section Separator ========================================================= protected\-:
+
+==========================================Section Separator ========================================================= private\-:
+
+Please at least include the public, protected, and private sections for each class defintion. We are trying to achieve a uniformity in the structure of the header files, so that anyone can quickly understand the structure of the code.
+
+-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/------Function Separator -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/------ Put this separator at the beginning of each function definition. Any properties can also be grouped into a single function separator. Include doxygen documentation marks for each function definition. /$\ast$$\ast$ Doxygen description of the function 
+\begin{DoxyParams}{Parameters}
+{\em paramname} & description for parameters \\
+\hline
+{\em paramname2} & description for second parameter. ... \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Description of the returned value from the function.
+\end{DoxyReturn}
+\hypertarget{class_test_doxydown}{}\subsection{Format Standard broken down.}\label{class_test_doxydown}
+\hypertarget{class_test_brandheader}{}\subsubsection{Branding Header}\label{class_test_brandheader}
+This is just some branding at the top of the code. If you are proud of your program, give it some recognition. Hence the branding header. \begin{DoxyVerb}  /*----------------------------------------*- C++ -*------------------------------------------------------------------*\
+  | O pen         | OpenSea: The Open Source Seakeeping Suite                                                           |
+  | S eakeeping   | Web:     www.opensea.dmsonline.us                                                                   |
+  | E valuation   |                                                                                                     |
+  | A nalysis     |                                                                                                     |
+  \*------------------------------------------------------------------------------------------------------------------- \end{DoxyVerb}
+ 
+
+Definition at line 151 of file header\-\_\-comment.\-dox.
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/home/\-Ship\-\_\-\-Design/\-Projects/\-D\-M\-S1305 Open\-S\-E\-A/master/100\-\_\-doc/130\-\_\-doc\-\_\-developer/coding\-\_\-standard/\hyperlink{header__comment_8dox}{header\-\_\-comment.\-dox}\end{DoxyCompactItemize}

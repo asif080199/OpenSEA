@@ -1,0 +1,279 @@
+/**
+\page input_syntax Input Syntax
+
+The input files are formatted very similar to C++ code.  Only the input files do not have as robust of a command structure.  They are more limited.  This page details that command structure.  It only describes the syntax of the input files.  It does not describe their contents.  The syntax is uniform across all input files.  The same syntax is also used to write output files.  This allows output from oFreq to be easily read by another program in the OpenSEA suite.
+
+# Example Input File {#example1}
+
+	The following example shows input file that includes all major elements of the file syntax.
+
+*	/*------------------------------*- C++ -*------------------------------------*\
+*	| O pen         | OpenSea:  The Open Source Seakeeping Suite                  |
+*	| S eakeeping   | Version:  1.0                                               |
+*	| E valuation   | Web:      www.opensea.dmsonline.us                          |
+*	| A nalysis     |                                                             |
+*	\*---------------------------------------------------------------------------*/
+*	seafile
+*	{
+*	    version     1.0;
+*	    format      ascii;
+*	    object      dictionary;
+*	}
+*
+*	// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+*	//                     A C T I V E   F O R C E S                             //
+*	// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+*	// Defines user active forces
+*
+*	force_active {
+*	  //User defined name of user active force.  Other objects refer to this name
+*	  name "active force 1";
+*
+*	  //Coefficients for user defined active forces.
+*	  //Entered as complex numbers in one of the following formats
+*	  //R<tht
+*	  //a+ib
+*	  //a-ib
+*	  //a+bi
+	  //a-bi
+	  //(a,b)
+
+	  force {
+	    equation 1;
+	    coeff /*F1 = */ 0.00+2.00i;
+	  }
+
+	  force {
+	    equation 2;
+	    coeff /*F2 = */ 1<0.785;
+	  }
+
+	  force {
+	    equation 3;
+	    coeff /*F3 = */ (3.00,2.00);
+	  }
+
+	// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+	//                   R E A C T I V E   F O R C E S                           //
+	// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+	// Defines user reactive forces
+
+	/*Definition sequence for reactive forces
+	force set
+	  > derivative 
+	    > equation set
+	      > force coefficients (list)
+		> coefficient for each variable
+	*/
+
+	force_reactive {
+	  name "reactive force 1";
+	  derivative {
+	    order 0;
+	    equation {
+	      number 1;
+	      force (
+	      /*C_x1 = */ 1:2.00
+	      );
+	    }
+
+	    equation {
+	      number 2;
+	      force (
+	      1.00
+	      2.00
+		3.00
+	      4.00
+	      5.00
+	      6.00      
+	      );
+	    }
+	  }
+	} 
+
+The various elements of this example are now discussed.
+
+
+# Text Flow {#textflow}
+
+The syntax of text flow is free flowing, just like in c++.  Carriage returns can be entered at any point. All code can be contained a single line if desired.  Indents are ignored.  The following rules are used for text flow.
+
+1. Elements are separated by either:
+    1. A carriage return.
+    2. A space (consecutive spaces and tabs are all treated as a single space).
+2. A semicolon ends a statement.
+
+
+# Commenting {#comment1}
+
+Comments are possible in on input files.  Comments take two forms:
+
+1. Line comments
+2. Block comments
+
+## Line Comments {#linecomments}
+
+Line comments are noted by a double forward slash.
+
+      // Comment.
+
+The program will ignore all text beyond that double forward slash until it encounters a carriage return.
+
+## Block comments {#blockcomment}
+
+Block comments have a beginning and an end. 
+
+1. They are begun with a forward slash and star. /*
+2. They end with a star and forward slash.  */
+
+The program will only ignore the text between the beginning and end symbols.  You can even include code after the comment on the same line and oFreq will resume processing after the comment statement.
+
+      Start of Code /* Comment */  More Code
+
+      
+# Object Declaration {#objectdeclare}
+
+The program works primarily through object declarations.  An object is declared, and then properties are defined within the scope of that object.
+
+1. Objects begin with a recognized object name, a space, and an opening bracket.  {
+    1. Object names can not contain any spaces.
+    2. The opening bracket can be on the same line as the object name, or a different line.
+2. Objects end with a closing bracket.  }
+    1. The closing bracket can be on the same line as the object name, or  a different line.
+    2. The closing bracket does not include a closing semicolon.  
+	1. Use this:   }
+	2. Do not use this:   };
+3. You can indent your code withing the object definition, but indentation is not required.
+
+Object definitions are recursive.  You can define an object within another object.  The program allows recursion without limit.  You can keep going down for an infinite number of levels.  Of course, that is only the syntax formatting.  The declaration of a new object level must have some meaning within the input file.
+
+Example:
+
+      object_name {
+	      Object properties
+      }
+
+      
+# Object Properties {#object_prop}
+
+Object properties are specified as pairs of keywords and values.  The keywords must be one of the predefined words recognized by the program.  The pair of keyword and value is ended with an ending statement.
+
+Example:
+
+	keyword value;
+	mass 1.0;
+
+	
+# Value Lists {#value_lists}
+
+Some keywords allow the user to enter a list of values, instead of a single value.  
+
+1. The list is started with an opening parentheses.  (
+2. The list ends with a closing parentheses.   )
+3. The keyword, value part must still end with a semicolon.  ;
+4. Items within the list can be indented or not.  This has no effect on interpretation of the input.
+5. Items within the list can be separated by a carriage return or by a space.
+
+Example 1:
+
+      keyword (
+	      item1
+	      item2
+	      item3
+      );
+
+Example 2:
+
+      keyword (item1 item2 item3);
+
+      
+## List Formats {#list_format}
+
+Often, the sequence of items within a list is important to the program analysis.  Because of this, items within the list can be specified through one of two formats.
+
+1. Direct entry
+2. Indexed entry
+
+When using the direct entry method, only the values are typed into the list.  The items are indexed in the order that they appear.
+
+Example:
+
+      keyword (
+	      item1 (list index 1)
+	      item2 (list index 2)
+	      item3 (list index 3)
+      );
+
+      
+The indexed entry method allows the user to specify the index that each item should be stored at.  This format has the index first specified, separated by a colon, and then the value for that index.  There should not be any spaces between the index, colon, and the value.
+
+Example:
+
+	keyword (
+		3:item1 (list index 3)
+		1:item2 (list index 1)
+		2:item3 (list index 2)
+	);
+
+This method can also be used to define a list where only one item is significant.  Whenever an index is defined, the program will automatically resize the list to include that index.  Any item indexes not previously defined are assigned a value of zero.
+
+Example:
+
+	keyword (
+		3:item1
+	);
+
+Resulting list:
+
+1. 0.00
+2. 0.00
+3. item1
+
+
+# Complex Numbers {#complex_num}
+
+Complex numbers are frequently used in oFreq and the OpenSEA suite.  The program will accept these in several possible formats.  For all the following examples, use the following definitions:
+
+a = 	Real component of a complex number.
+
+b = 	Imaginary component of a complex number.
+
+R = 	Magnitude of a complex number. \f$ R = \sqrt{a^2 + b^2} \f$
+
+tht = 	Phase angle of a complex number. \f$ tht = atan \left ( b \over a \right ) \f$
+
+
+The program permits the following methods to define a complex number.
+
+1. Polar notation: Enter the magnitude, a left angle bracket, and then the phase angle.  Do not put spaces between magnitude and phase angle:  R<tht
+2. Rectangular notation:  Enter the real component, a plus or minus sign, the imaginary component, and then the symbol for an imaginary number (i).  The plus or minus will be interpreted as the sign of the imaginary component.  Do not include any spaces between the components.
+    1. a+bi
+    2. a-bi
+    3. -a+bi
+    4. -a-bi
+    5. a+ib
+    6. a-ib
+    7. -a+ib
+    8. -a-ib
+3. Component notation:  Enter an opening parentheses, the real component, a comma, the imaginary component, and a closing parentheses.  Do not include spaces between any components.
+    1. (a,b)
+
+Be careful with the third method of declaring complex numbers.  This method is very similar to how lists are declared.  The program has several data checks to differentiate between a complex number and the beginning of a list, but if it finds an opening parentheses without any keyword declaration before it, it will assume the notation for a complex number.
+
+
+# Special File Header {#special_file_header}
+
+All input files have a special header included at the top of the file.  This is a special object declaration.  It must be the first object declared within any input file.
+
+      seafile
+      {
+	  version     1.0;
+	  format      ascii;
+	  object      dictionary;
+      }
+
+
+With the current state of the project, this object declaration does nothing to change the file interpretation.  But as the project advances and expands, this header object will become very important to distinguish between different code versions and different file formats.
+The header object is always declared with the object name “seafile”.
+
+*/
