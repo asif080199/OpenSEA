@@ -218,9 +218,13 @@ void Body::setMass(double newMass)
         index = findIndex(Tx);
         pMassMat(index, index) = newMass;
     }
-    catch(...)
+    catch(std::exception &err)
     {
-        //Error handler.  For now, do nothing
+        //Error handler.
+        logErr.Write("Error occurred.  Object:  Body, Function:  setMass()\n" +
+                     string("Operation:  set mass for X-axis translation\n") +
+                     string("Error Message:  ") + string(err.what()));
+        logStd.Write("Errors occurred.  Please check error log for details.");
     }
 
     try
@@ -229,9 +233,13 @@ void Body::setMass(double newMass)
         index = findIndex(1);
         pMassMat(index, index) = newMass;
     }
-    catch(...)
+    catch(std::exception &err)
     {
-        //Error handler.  For now, do nothing.
+        //Error handler.
+        logErr.Write("Error occurred.  Object:  Body, Function:  setMass()\n" +
+                     string("Operation:  set mass for Y-axis translation\n") +
+                     string("Error Message:  ") + string(err.what()));
+        logStd.Write("Errors occurred.  Please check error log for details.");
     }
 
     try
@@ -240,9 +248,13 @@ void Body::setMass(double newMass)
         index = findIndex(Tz);
         pMassMat(index, index) = newMass;
     }
-    catch(...)
+    catch(std::exception &err)
     {
-        //Error handler.  For now, do nothing.
+        //Error handler.
+        logErr.Write("Error occurred.  Object:  Body, Function:  setMass()\n" +
+                     string("Operation:  set mass for Z-axis translation\n") +
+                     string("Error Message:  ") + string(err.what()));
+        logStd.Write("Errors occurred.  Please check error log for details.");
     }
 
     //Calculate mass coupling.
@@ -276,9 +288,13 @@ double Body::getMass()
                 //Check the next index
                 index = findIndex(Tz);   //Check for Z-axis translation.
             }
-            catch(...)
+            catch(std::exception &err)
             {
-                //Error handler.  Do something.
+                //Error handler.
+                logErr.Write("Error occurred.  Object:  Body, Function:  getMass()\n" +
+                             string("Operation:  find index for mass matrix\n") +
+                             string("Error Message:  ") + string(err.what()));
+                logStd.Write("Errors occurred.  Please check error log for details.");
                 return 0;
             }
         }
@@ -301,9 +317,12 @@ void Body::setMomIxx(double newXX)
         index = findIndex(Rx);
         pMassMat(index, index) = newXX;
     }
-    catch(...)
+    catch(std::exception &err)
     {
-        //Error handler.  For now, do nothing.
+        //Error handler.
+        logErr.Write("Error occurred.  Object:  Body, Function:  setMomIxx()\n" +
+                     string("Error Message:  ") + string(err.what()));
+        logStd.Write("Errors occurred.  Please check error log for details.");
     }
 }
 
@@ -322,8 +341,12 @@ double Body::getMomIxx()
 
         return pMassMat(index, index);
     }
-    catch(...)
+    catch(std::exception &err)
     {
+        //Error handler.
+        logErr.Write("Error occurred.  Object:  Body, Function:  getMomIxx()\n" +
+                     string("Error Message:  ") + string(err.what()));
+        logStd.Write("Errors occurred.  Please check error log for details.");
         return 0;
     }
 }
@@ -343,9 +366,12 @@ void Body::setMomIyy(double newYY)
 
         pMassMat(index, index) = newYY;
     }
-    catch(...)
+    catch(std::exception &err)
     {
-        //Do nothing.
+        //Error handler.
+        logErr.Write("Error occurred.  Object:  Body, Function:  setMomIyy()\n" +
+                     string("Error Message:  ") + string(err.what()));
+        logStd.Write("Errors occurred.  Please check error log for details.");
     }
 }
 
@@ -364,8 +390,12 @@ double Body::getMomIyy()
 
         return pMassMat(index, index);
     }
-    catch(...)
+    catch(std::exception &err)
     {
+        //Error handler.
+        logErr.Write("Error occurred.  Object:  Body, Function:  getMomIyy()\n" +
+                     string("Error Message:  ") + string(err.what()));
+        logStd.Write("Errors occurred.  Please check error log for details.");
         return 0;
     }
 }
@@ -385,9 +415,12 @@ void Body::setMomIzz(double newZZ)
 
         pMassMat(index, index) = newZZ;
     }
-    catch(...)
+    catch(std::exception &err)
     {
-        //Do nothing.
+        //Error handler.
+        logErr.Write("Error occurred.  Object:  Body, Function:  setMomIzz()\n" +
+                     string("Error Message:  ") + string(err.what()));
+        logStd.Write("Errors occurred.  Please check error log for details.");
     }
 }
 
@@ -406,8 +439,12 @@ double Body::getMomIzz()
 
         return pMassMat(index, index);
     }
-    catch(...)
+    catch(std::exception &err)
     {
+        //Error handler.
+        logErr.Write("Error occurred.  Object:  Body, Function:  getMomIzz()\n" +
+                     string("Error Message:  ") + string(err.what()));
+        logStd.Write("Errors occurred.  Please check error log for details.");
         return 0;
     }
 }
@@ -428,9 +465,12 @@ void Body::setMomIxy(double newXY)
 
         pMassMat(index1, index2) = newXY;
     }
-    catch(...)
+    catch(std::exception &err)
     {
-        //Do nothing for now.
+        //Error handler.
+        logErr.Write("Error occurred.  Object:  Body, Function:  setMomIxy()\n" +
+                     string("Error Message:  ") + string(err.what()));
+        logStd.Write("Errors occurred.  Please check error log for details.");
     }
 }
 
@@ -450,8 +490,12 @@ double Body::getMomIxy()
 
         return pMassMat(index1, index2);
     }
-    catch(...)
+    catch(std::exception &err)
     {
+        //Error handler.
+        logErr.Write("Error occurred.  Object:  Body, Function:  getMomIxy()\n" +
+                     string("Error Message:  ") + string(err.what()));
+        logStd.Write("Errors occurred.  Please check error log for details.");
         return 0;
     }
 }
@@ -472,9 +516,12 @@ void Body::setMomIxz(double newXZ)
 
         pMassMat(index1, index2) = newXZ;
     }
-    catch(...)
+    catch(std::exception &err)
     {
-        //Do nothing for now.
+        //Error handler.
+        logErr.Write("Error occurred.  Object:  Body, Function:  setMomIxz()\n" +
+                     string("Error Message:  ") + string(err.what()));
+        logStd.Write("Errors occurred.  Please check error log for details.");
     }
 }
 
@@ -494,8 +541,12 @@ double Body::getMomIxz()
 
         return pMassMat(index1, index2);
     }
-    catch(...)
+    catch(std::exception &err)
     {
+        //Error handler.
+        logErr.Write("Error occurred.  Object:  Body, Function:  gettMomIxz()\n" +
+                     string("Error Message:  ") + string(err.what()));
+        logStd.Write("Errors occurred.  Please check error log for details.");
         return 0;
     }
 }
@@ -516,9 +567,12 @@ void Body::setMomIyz(double newYZ)
 
         pMassMat(index1, index2) = newYZ;
     }
-    catch(...)
+    catch(std::exception &err)
     {
-        //Do nothing for now.
+        //Error handler.
+        logErr.Write("Error occurred.  Object:  Body, Function:  setMomIyz()\n" +
+                     string("Error Message:  ") + string(err.what()));
+        logStd.Write("Errors occurred.  Please check error log for details.");
     }
 }
 
@@ -538,8 +592,12 @@ double Body::getMomIyz()
 
         return pMassMat(index1, index2);
     }
-    catch(...)
+    catch(std::exception &err)
     {
+        //Error handler.
+        logErr.Write("Error occurred.  Object:  Body, Function:  getMomIyz()\n" +
+                     string("Error Message:  ") + string(err.what()));
+        logStd.Write("Errors occurred.  Please check error log for details.");
         return 0;
     }
 }
@@ -571,7 +629,9 @@ void Body::setMassMatrix(Mat<double> MassMatIn)
     pMassMat = MassMatIn;
 
     //Add mass coupling
-    setMassCouple();
+    //setMassCouple();
+    //Not doing mass coupling because if the program specified the exact mass matrix, there is probably a reason.
+    //The mass matrix should _not_ get changed by mass coupling.
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
@@ -629,9 +689,6 @@ Mat<double> Body::getCen()
 void Body::setPosnX(double input)
 {
     pPosn(Tx,0) = input;
-
-    //Add mass coupling
-    setMassCouple();
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
@@ -644,9 +701,6 @@ double Body::getPosnX()
 void Body::setPosnY(double input)
 {
     pPosn(Ty,0) = input;
-
-    //Add mass coupling
-    setMassCouple();
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
@@ -659,9 +713,6 @@ double Body::getPosnY()
 void Body::setPosnZ(double input)
 {
     pPosn(Tz,0) = input;
-
-    //Add mass coupling
-    setMassCouple();
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
@@ -1102,9 +1153,9 @@ void Body::setMassCouple()
         index4 = findIndex(Ry);
 
         //Mass coupling for moment Y
-        pMassMat(index4, index0) = -1 * pMassMat(index1, index1) * pCentroid(Tz, 0);
+        pMassMat(index4, index0) = +1 * pMassMat(index1, index1) * pCentroid(Tz, 0);
         pMassMat(index4, index1) = 0;
-        pMassMat(index4, index2) = pMassMat(index1, index1) * pCentroid(Tx, 0);
+        pMassMat(index4, index2) = -1 * pMassMat(index1, index1) * pCentroid(Tx, 0);
     }
     catch(...)
     {

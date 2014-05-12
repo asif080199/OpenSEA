@@ -7,7 +7,7 @@
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
 
-#include "../../../../200_src/bin/ofreq/global_objects/system.h"
+#include "../../../../200_src/bin/ofreq/system_objects/system.h"
 #if !defined(Q_MOC_OUTPUT_REVISION)
 #error "The header file 'system.h' doesn't include <QObject>."
 #elif Q_MOC_OUTPUT_REVISION != 63

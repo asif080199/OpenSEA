@@ -772,7 +772,7 @@ std::complex<double> EquationofMotion::Sum(std::string FuncName, std::string ind
         if (to == undefArg)
         {
             //Get limit
-            to = maxvar() - 1;
+            to = sizevar() - 1;
         }
 
         //Sum for variable count.
@@ -1180,18 +1180,6 @@ std::complex<double> EquationofMotion::Func50()
     return complex<double>(0,0);
 }
 
-//==========================================Section Separator =========================================================
-//Private Members
-
-//------------------------------------------Function Separator --------------------------------------------------------
-int EquationofMotion::maxvar()
-{
-    //Returns the maximum index of variables.
-    return pParentModel->listEquation().size() - 1 + 1;
-    //Showed -1 to indicate that we are taking the index of the last entry.
-    //Showed +1 to indicate the conversion from computer to human numbering.
-}
-
 //------------------------------------------Function Separator --------------------------------------------------------
 int EquationofMotion::maxbody()
 {
@@ -1199,6 +1187,48 @@ int EquationofMotion::maxbody()
     return pParentModel->listData().size() - 1 + 1;
     //subtracted 1 to show change from list size to list index.
     //Showed +1 to indicate the conversion from computer to human numbering.
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+int EquationofMotion::minvar()
+{
+    //Searches through the equations of motion to find the minimum variable index
+    int out;
+    for (int i = 0; i < pParentModel->listEquation().size(); i++)
+    {
+        if (i = 0)
+        {
+            out = pParentModel->listEquation(i).getDataIndex();
+        }
+        else
+        {
+            if(out > pParentModel->listEquation(i).getDataIndex())
+                out = pParentModel->listEquation(i).getDataIndex();
+        }
+    }
+
+    return out;
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+int EquationofMotion::maxvar()
+{
+    //Searches through the equations of motion to find the maximum variable index
+    int out;
+    for (int i = 0; i < pParentModel->listEquation().size(); i++)
+    {
+        if (i = 0)
+        {
+            out = pParentModel->listEquation(i).getDataIndex();
+        }
+        else
+        {
+            if(out < pParentModel->listEquation(i).getDataIndex())
+                out = pParentModel->listEquation(i).getDataIndex();
+        }
+    }
+
+    return out;
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
@@ -1234,9 +1264,14 @@ int EquationofMotion::maxord()
             maxme = temp;
     }
 
+    //Don't need to check the ForceMass().  That is always ord = 2.
+
     //Write output
     return maxme;
 }
+
+//==========================================Section Separator =========================================================
+//Private Members
 
 //------------------------------------------Function Separator --------------------------------------------------------
 unsigned int EquationofMotion::force()
@@ -1717,4 +1752,13 @@ int EquationofMotion::findIndex(int indexIn)
     }
 
     return output;
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+int EquationofMotion::sizevar()
+{
+    //Returns the maximum index of variables.
+    return pParentModel->listEquation().size() - 1 + 1;
+    //Showed -1 to indicate that we are taking the index of the last entry.
+    //Showed +1 to indicate the conversion from computer to human numbering.
 }

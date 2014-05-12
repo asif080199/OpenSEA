@@ -11,6 +11,7 @@
  *Date          Author				Description
  *---------------------------------------------------------------------------------------------------------------------
  *Aug 30, 2013  Nicholas Barczak    Initially created
+ *May 7, 2014       Nicholas Barczak    Debugged and updated to Rev 1.0
  *
 \*-------------------------------------------------------------------------------------------------------------------*/
 
@@ -40,8 +41,8 @@
 
 #include <QObject>
 #include "objectgroup.h"
-#include "../global_objects/system.h"
-#include "../global_objects/ofreqcore.h"
+#include "../system_objects/system.h"
+#include "../system_objects/ofreqcore.h"
 #include <complex>
 #include <vector>
 #include <string>

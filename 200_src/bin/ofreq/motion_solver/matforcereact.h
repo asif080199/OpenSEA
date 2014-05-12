@@ -13,6 +13,7 @@
  *May 15, 2013	Shane Honanie       Initially created
  *Aug 02, 2013  Nicholas Barczak    Added operator overloads and more consistent matrix definition of forces.
  *                                  Also added methods for derivative access.
+ *May 7, 2014       Nicholas Barczak    Debugged and updated to Rev 1.0
  *
 \*-------------------------------------------------------------------------------------------------------------------*/
 
@@ -47,7 +48,7 @@
 #elif defined Q_OS_LINUX
     #include <armadillo>    //Armadillo library included with standard system libraries.
 #endif
-#include "../global_objects/ofreqcore.h"
+#include "../system_objects/ofreqcore.h"
 
 //######################################### Class Separator ###########################################################
 //Namespace declarations

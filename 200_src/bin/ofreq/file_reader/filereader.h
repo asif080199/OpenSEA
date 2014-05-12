@@ -16,6 +16,7 @@
  *                                      simply reads the text file and parses it into keword value pairs.  These
  *                                      pairs are then sent to Dictionary classes which interpret the keyword value
  *                                      pairs.
+ *May 7, 2014       Nicholas Barczak    Debugged and updated to Rev 1.0
  *
 \*-------------------------------------------------------------------------------------------------------------------*/
 
@@ -49,8 +50,8 @@
 #include <vector>
 #include "parser.h"
 #include "objectgroup.h"
-#include "../global_objects/system.h"
-#include "../global_objects/ofreqcore.h"
+#include "../system_objects/system.h"
+#include "../system_objects/ofreqcore.h"
 #include "dictionary.h"
 
 //######################################### Class Separator ###########################################################

@@ -12,6 +12,7 @@
  *---------------------------------------------------------------------------------------------------------------------
  *Aug 25 2013       Nicholas Barczak    Initially created
  *Oct 31, 2013      Nicholas Barczak    Debugged and updated to rev 1.0
+ *May 7, 2014       Nicholas Barczak    Debugged and updated to Rev 1.0
  *
 \*-------------------------------------------------------------------------------------------------------------------*/
 
@@ -40,7 +41,7 @@
 #define OBJECTGROUP_H
 #include <vector>
 #include <string>
-#include "../global_objects/ofreqcore.h"
+#include "../system_objects/ofreqcore.h"
 
 //######################################### Class Separator ###########################################################
 //Namespace declarations

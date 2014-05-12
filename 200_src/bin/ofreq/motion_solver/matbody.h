@@ -13,6 +13,7 @@
  *May 15, 2013  Shane Honanie       Initially created
  *Aug 01 2013   Nicholas Barczak    Added header comments
  *Aug 02 2013   Nicholas Barczak    Recreated new body definition around matrices.
+ *May 7, 2014       Nicholas Barczak    Debugged and updated to Rev 1.0
  *
 \*-------------------------------------------------------------------------------------------------------------------*/
 
@@ -53,7 +54,7 @@
 #endif
 #include "../global_objects/body.h"
 #include "../global_objects/derivative.h"
-#include "../global_objects/ofreqcore.h"
+#include "../system_objects/ofreqcore.h"
 #include "matforcereact.h"
 #include "matforceactive.h"
 #include "matforcecross.h"

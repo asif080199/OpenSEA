@@ -250,7 +250,8 @@ int dictForces::defineClass(string nameIn)
         if (pForceType != 1)
         {
             //Return error message about using keyword in wrong location.
-            writeError("force object designation can only be used within an active force object.");
+            logStd.Write("Error!  Please see the error log for more details.");
+            logErr.Write("force object designation can only be used within an active force object.");
         }
 
         //Report back success

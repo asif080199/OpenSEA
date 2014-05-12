@@ -104,7 +104,7 @@ void FileReader::setPath(string input)
 int FileReader::readControl()
 {
     //Read control input file
-    writeLog("Reading input file.");
+    logStd.Write("Reading control input file . . .");
 
     //Set filename
     string filename;
@@ -116,6 +116,8 @@ int FileReader::readControl()
     //Read file
     int out = readFile(filename);
 
+    logStd.Write(". . . done.");
+
     //Write output
     return out;
 }
@@ -124,7 +126,7 @@ int FileReader::readControl()
 int FileReader::readBodies()
 {
     //Read Bodies input file
-    writeLog("Reading Bodies file.");
+    logStd.Write("Reading bodies input file . . .");
 
     //Set filename
     string filename;
@@ -142,6 +144,8 @@ int FileReader::readBodies()
         ptSystem->linkBodies(i);
     }
 
+    logStd.Write(". . . done.");
+
     //write output
     return out;
 }
@@ -150,7 +154,7 @@ int FileReader::readBodies()
 int FileReader::readForces()
 {
     //Read forces input file
-    writeLog("Reading Forces file.");
+    logStd.Write("Reading forces input file . . .");
 
     //Set filename
     string filename;
@@ -162,6 +166,8 @@ int FileReader::readForces()
     //Read file
     int out = readFile(filename);
 
+    logStd.Write(". . . done.");
+
     //Write output
     return out;
 }
@@ -170,7 +176,7 @@ int FileReader::readForces()
 int FileReader::readSeaEnv()
 {
     //Read sea environment input file
-    writeLog("Reading Environment File.");
+    logStd.Write("Reading seaenv input file . . .");
 
     //Set filename
     string filename;
@@ -182,6 +188,8 @@ int FileReader::readSeaEnv()
     //Read file
     int out = readFile(filename);
 
+    logStd.Write(". . . done");
+
     //Write output
     return out;
 }
@@ -190,7 +198,7 @@ int FileReader::readSeaEnv()
 int FileReader::readData()
 {
     //Read data input file
-    writeLog("Reading data file.");
+    logStd.Write("Reading data input file . . .");
 
     //Set filename
     string filename;
@@ -201,6 +209,8 @@ int FileReader::readData()
 
     //Read file
     int out = readFile(filename);
+
+    logStd.Write(". . . done.");
 
     //Write output
     return out;
@@ -251,55 +261,60 @@ int FileReader::readFile(string path)
     //Create input file
     ifstream InputFile(path.c_str());
 
-    //Test if file exists
-    if(!InputFile)
+    try
     {
-        writeError("file does not exist:  " + path);
-        writeLog("file does not exist:  " + path);
-        return 1;
-        exit(1);
-    }
+        //Test if file exists
+        if(!InputFile)
+            throw std::ios_base::failure("Could not open file:  " + path);
 
-    //Parse file
-    Parser myParse;
-    myParse.Parse(InputFile);
+        //Parse file
+        Parser myParse;
+        myParse.Parse(InputFile);
 
-    //variables to record seafile parameters.
-    string version;     //version of the sea file.
-    string format;      //format of the sea file.
-    int sea_index = 0;  //Index of where the sea file object is located.
+        //variables to record seafile parameters.
+        string version;     //version of the sea file.
+        string format;      //format of the sea file.
+        int sea_index = 0;  //Index of where the sea file object is located.
 
-    //Get results
-    for (unsigned int i = sea_index; i < myParse.listObject().size(); i++)
-    {
-        //Check if the first object is an opensea file definition.
-        if (myParse.listObject(i).getClassName().find(OBJ_SEAFILE) != std::string::npos)
+        //Get results
+        for (unsigned int i = sea_index; i < myParse.listObject().size(); i++)
         {
-            //True.  Process as a seafile object.
-            for (unsigned int j = 0; j < myParse.listObject(sea_index).listKey().size(); j++)
+            //Check if the first object is an opensea file definition.
+            if (myParse.listObject(i).getClassName().find(OBJ_SEAFILE) != std::string::npos)
             {
-                if (myParse.listObject(sea_index).getKey(j) == KEY_VERSION)
+                //True.  Process as a seafile object.
+                for (unsigned int j = 0; j < myParse.listObject(sea_index).listKey().size(); j++)
                 {
-                    //Response if the key is the version number.
-                    version = myParse.listObject(sea_index).getVal(j).at(0);
-                }
-                else if(myParse.listObject(sea_index).getKey(j) == KEY_FORMAT)
-                {
-                    //Response if the key is the format designator.
-                    format = myParse.listObject(sea_index).getVal(j).at(0);
+                    if (myParse.listObject(sea_index).getKey(j) == KEY_VERSION)
+                    {
+                        //Response if the key is the version number.
+                        version = myParse.listObject(sea_index).getVal(j).at(0);
+                    }
+                    else if(myParse.listObject(sea_index).getKey(j) == KEY_FORMAT)
+                    {
+                        //Response if the key is the format designator.
+                        format = myParse.listObject(sea_index).getVal(j).at(0);
+                    }
                 }
             }
-        }
-        else
-        {
-            //False.  Process as normal file object.
-            //Add objects to list.
-            plistObjects.push_back(myParse.getObject(i));
+            else
+            {
+                //False.  Process as normal file object.
+                //Add objects to list.
+                plistObjects.push_back(myParse.getObject(i));
 
-            //Add version and format to object.
-            plistObjects.at(i - 1).setVersion(version);     //Assumes the sea_index is 0
-            plistObjects.at(i - 1).setFormat(format);       //Assumes the sea_index is 0
+                //Add version and format to object.
+                plistObjects.at(i - 1).setVersion(version);     //Assumes the sea_index is 0
+                plistObjects.at(i - 1).setFormat(format);       //Assumes the sea_index is 0
+            }
         }
+    }
+    catch (std::exception &err)
+    {
+        logErr.Write(string(err.what()));
+        logStd.Write(string(err.what()));
+        return 1;
+        exit(1);
     }
 
     //Close file

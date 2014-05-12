@@ -464,18 +464,19 @@ void MotionSolver::calculateOutputs()
         }
     }
 
-    //Debug print out matrix values
-    DebugMatrix("Global Reactive Matrix", globReactiveMat);
-    DebugMatrix("Global Active Matrix", globActiveMat);
-
     //Solve for Unknown Matrix (the X Matrix) --    A*X=B where X is the unknown
     try
     {
         globSolnMat = solve(globReactiveMat, globActiveMat, true); //true arg for more precise calculations
     }
-    catch (int err)
+    catch (std::exception &err)
     {
-        //Insert error handler later.
+        logErr.Write("Failed to solve the global motion matrix.  Matrix values printed below.\n" +
+                     string("Error Message:  ") + string(err.what()) + "\n\n");
+
+        //Debug print out matrix values
+        DebugMatrix("Global Reactive Matrix", globReactiveMat);
+        DebugMatrix("Global Active Matrix", globActiveMat);
     }
 
     //Debug print out solution matrix
@@ -562,11 +563,8 @@ cx_mat MotionSolver::SumSingle(cx_mat *Input1, cx_mat *Input2, int ForceType)
 void MotionSolver::DebugMatrix(std::string Name, cx_mat& input)
 {
     //Write output of name
-    cout << endl << Name << " = " << endl;
+    logErr.Write(Name + " = ");
 
     //Print out matrix.
-    input.print();
-
-    //Put a few more carriage returns in.
-    cout << endl << endl;
+    input.print(logErr.outFile);
 }

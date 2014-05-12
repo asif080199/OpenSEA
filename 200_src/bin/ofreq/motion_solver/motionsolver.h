@@ -12,6 +12,7 @@
  *---------------------------------------------------------------------------------------------------------------------
  *May 15, 2013	Shane Honanie		Initially Created
  *Aug 01, 2013  Nicholas Barczak    Added support for unlimited number of bodies in assembled global motion matrix.
+ *May 7, 2014       Nicholas Barczak    Debugged and updated to Rev 1.0
  *
 \*-------------------------------------------------------------------------------------------------------------------*/
 
@@ -47,7 +48,7 @@
 #include "matbody.h"
 #include "matforcereact.h"
 #include "matforcecross.h"
-#include "../global_objects/ofreqcore.h"
+#include "../system_objects/ofreqcore.h"
 
 //######################################### Class Separator ###########################################################
 //Namespace declarations

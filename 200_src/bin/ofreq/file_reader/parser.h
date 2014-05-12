@@ -46,7 +46,8 @@
 #include <cstdlib>
 #include <fstream>
 #include "objectgroup.h"
-#include "../global_objects/ofreqcore.h"
+#include "../global_objects/ioword.h"
+#include "../system_objects/ofreqcore.h"
 
 //######################################### Class Separator ###########################################################
 //Namespace declarations
@@ -99,7 +100,7 @@ class Parser;       //This forward declaration is required because the class def
  * define classes within classes in the input files, with no limits.
  *
  */
-class Parser : public osea::ofreq::oFreqCore
+class Parser : public osea::ofreq::ioword
 {
 //==========================================Section Separator =========================================================
 public:
@@ -327,25 +328,7 @@ private:
      * 0:   No object designator detected.  Nothing done.
      * -1:  OBJECT_END detected.  Object count decreased.
      */
-    int ObjectCheck(std::string &inString);
-
-    //------------------------------------------Function Separator ----------------------------------------------------
-    // Characters within Input files
-    static std::string COMMENT_LINE; /**< Line Comment. */
-    static std::string COMMENT_BLOCK_BEGIN; /**< Block Comment Begin. */
-    static std::string COMMENT_BLOCK_END; /**< Block comment end. */
-    static std::string END_STATEMENT; /**< End of statement. */
-    static std::string OBJECT_BEGIN; /**< Object scope begin. */
-    static std::string OBJECT_END; /**< Object scope end */
-    static std::string LIST_BEGIN; /**< List scope begin. */
-    static std::string LIST_END; /**< List scope end. */
-    static std::string KEY_VAL_SEPARATOR; /**< Key/Val pair seperator. */
-    static char EOL; /**< newline. */
-    static int MAX_IGNORE; /**< Max # of chars to ignore. */
-    static std::string OBJ_SEAFILE; /**< seafile object name, used to ignore seafile block. */
-    static std::string QUOTE;    /**< Quotation symbol " */
-    static std::string SPACE; /**< Just a space " " */
-    static std::string RETURN; /**< The return character "\n" */
+    int ObjectCheck(std::string &inString);   
 };
 
 }   //Namespace osea

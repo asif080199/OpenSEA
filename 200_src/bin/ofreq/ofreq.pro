@@ -26,7 +26,6 @@ SOURCES += ofreq.cpp \
     derived_outputs/globalmotion.cpp \
     derived_outputs/globalacceleration.cpp \
     file_writer/filewriter.cpp \
-    global_objects/system.cpp \
     motion_solver/motionsolver.cpp \
     motion_solver/matbody.cpp \
     motion_model/equationofmotion.cpp \
@@ -43,7 +42,6 @@ SOURCES += ofreq.cpp \
     motion_solver/matforcecross.cpp \
     motion_solver/matforceactive.cpp \
     motion_solver/matforcereact.cpp \
-    global_objects/ofreqcore.cpp \
     global_objects/forcereact.cpp \
     global_objects/forcecross.cpp \
     global_objects/forceactive.cpp \
@@ -53,7 +51,11 @@ SOURCES += ofreq.cpp \
     global_objects/body.cpp \
     motion_model/eqntranslation.cpp \
     motion_model/eqnrotation.cpp \
-    motion_model/model6dof.cpp
+    motion_model/model6dof.cpp \
+    system_objects/system.cpp \
+    system_objects/log.cpp \
+    system_objects/ofreqcore.cpp \
+    global_objects/ioword.cpp
 
 HEADERS += \
     derived_outputs/outputsbody.h \
@@ -63,7 +65,6 @@ HEADERS += \
     derived_outputs/globalmotion.h \
     derived_outputs/globalacceleration.h \
     file_writer/filewriter.h \
-    global_objects/system.h \
     motion_solver/motionsolver.h \
     motion_solver/matbody.h \
     motion_model/equationofmotion.h \
@@ -80,7 +81,6 @@ HEADERS += \
     motion_solver/matforcecross.h \
     motion_solver/matforceactive.h \
     motion_solver/matforcereact.h \
-    global_objects/ofreqcore.h \
     global_objects/forcereact.h \
     global_objects/forcecross.h \
     global_objects/forceactive.h \
@@ -90,7 +90,11 @@ HEADERS += \
     global_objects/body.h \
     motion_model/eqntranslation.h \
     motion_model/eqnrotation.h \
-    motion_model/model6dof.h
+    motion_model/model6dof.h \
+    system_objects/system.h \
+    system_objects/log.h \
+    system_objects/ofreqcore.h \
+    global_objects/ioword.h
 
 # Include header files path for libraries
 INCLUDEPATH += \

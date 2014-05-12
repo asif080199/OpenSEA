@@ -11,6 +11,7 @@
  *Date          Author				Description
  *---------------------------------------------------------------------------------------------------------------------
  *May 15, 2013  Shane Honanie       Initially created.
+ *May 7, 2014       Nicholas Barczak    Debugged and updated to Rev 1.0
  *
 \*-------------------------------------------------------------------------------------------------------------------*/
 
@@ -39,7 +40,7 @@
 #ifndef FORCE_H
 #define FORCE_H
 #include "equation.h"
-#include "../global_objects/ofreqcore.h"
+#include "../system_objects/ofreqcore.h"
 #include <string>
 #include <iostream>
 #include <fstream>

@@ -134,13 +134,20 @@ Solution &GlobalSolution::getSolution(double freqIn)
     try
     {
         if (!matchFind) //Throw an error if the search never found a matching frequency.
-            throw 2;
+            throw std::runtime_error("Object:  Global Solution, Function:  getSolution()\n" +
+                                     string("Error:  Could not locate an index entry that matches the requested frequency.") +
+                                     string("  This may occur if the frequency requested was not in the list of defined") +
+                                     string(" frequencies."));
 
         return pParentBody->refCurSolution().refSolution(getCurWaveInd(), freqIndex);
     }
-    catch (int err)
+    catch (std::exception &err)
     {
-        //error handler later
+        //Write out error message.
+        logErr.Write(string(err.what()));
+
+        //Stop program execution.
+        exit(1);
     }
 }
 

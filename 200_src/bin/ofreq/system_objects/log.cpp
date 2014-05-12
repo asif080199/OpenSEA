@@ -1,0 +1,251 @@
+/*----------------------------------------*- C++ -*------------------------------------------------------------------*\
+| O pen         | OpenSea: The Open Source Seakeeping Suite                                                           |
+| S eakeeping	| Web:     www.opensea.dmsonline.us                                                                   |
+| E valuation   |                                                                                                     |
+| A nalysis     |                                                                                                     |
+\*-------------------------------------------------------------------------------------------------------------------*/
+
+//License
+/*-------------------------------------------------------------------------------------------------------------------*\
+ *Copyright Datawave Marine Solutions, 2013.
+ *This file is part of OpenSEA.
+
+ *OpenSEA is free software: you can redistribute it and/or modify
+ *it under the terms of the GNU General Public License as published by
+ *the Free Software Foundation, either version 3 of the License, or
+ *(at your option) any later version.
+
+ *OpenSEA is distributed in the hope that it will be useful,
+ *but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *GNU General Public License for more details.
+
+ *You should have received a copy of the GNU General Public License
+ *along with OpenSEA.  If not, see <http://www.gnu.org/licenses/>.
+\*-------------------------------------------------------------------------------------------------------------------*/
+
+#include "log.h"
+
+using namespace osea::ofreq;
+using namespace std;
+
+//==========================================Section Separator =========================================================
+//Static initialization
+#ifdef Q_OS_WIN
+    std::string Log::SLASH = "\\";  /**< Directory separator in a string path., windows version**/
+#elif defined Q_OS_LINUX
+    std::string Log::SLASH = "/";   /**< Directory separator in a string path., linux version**/
+#endif
+
+
+//==========================================Section Separator =========================================================
+//Public Functions
+
+//------------------------------------------Function Separator --------------------------------------------------------
+Log::Log()
+{
+    defaultOutput = "Both";
+    defaultTimestamp = 1;
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+Log::~Log()
+{
+    outFile.close();
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+void Log::Write(std::string msg, int timestamp, std::string output)
+{
+    //Write output of file
+    std::string msgOut = "";
+
+    //Check if using default output
+    if (output == "Default")
+        output = defaultOutput;
+
+    //Check if using default timestamp.
+    if (timestamp == 0)
+    {
+        timestamp = defaultTimestamp;
+    }
+
+    //Step 1:  Decide which type of output to go with.
+    if ((output == "Log") ||
+            (output == "log") ||
+            (output == "File") ||
+            (output == "file"))
+    {
+        //Case for writing to log file only.
+
+        //Check if should write a timestamp.
+        if (timestamp == 1)
+        {
+            //First write date and time.
+            time_t rawtime;
+            struct tm * timeinfo;
+            char buffer [21];
+
+            time(&rawtime);
+            timeinfo = localtime(&rawtime);
+            strftime(buffer,21,"%Y-%b-%d %H:%M:%S",timeinfo);
+            outFile << buffer << "\t";
+        }
+
+        //Write out the message and append carriage return
+        outFile << msg << endl;
+    }
+    else if ((output == "Screen") ||
+             (output == "screen") ||
+             (output == "Message") ||
+             (output == "message"))
+    {
+        //Case for writing to screen only
+
+        //Check if should write a timestamp.
+        if (timestamp == 1)
+        {
+            //First write date and time.
+            time_t rawtime;
+            struct tm * timeinfo;
+            char buffer [21];
+
+            time(&rawtime);
+            timeinfo = localtime(&rawtime);
+            strftime(buffer,21,"%Y-%b-%d %H:%M:%S",timeinfo);
+            outFile << buffer << "\t";
+        }
+
+        //Write out the message and append carriage return
+        std::cout << msg << endl;
+    }
+    else if ((output == "Both") ||
+             (output == "both") ||
+             (output == "Dual") ||
+             (output == "dual") ||
+             (output == "All") ||
+             (output == "all"))
+    {
+        //Case for writing to both log file and screen.
+
+        //Check if should write a timestamp.
+        if (timestamp == 1)
+        {
+            //First write date and time.
+            time_t rawtime;
+            struct tm * timeinfo;
+            char buffer [21];
+
+            time(&rawtime);
+            timeinfo = localtime(&rawtime);
+            strftime(buffer,21,"%Y-%b-%d %H:%M:%S",timeinfo);
+            outFile << buffer << "\t";
+            outFile << buffer << "\t";
+        }
+
+        //Write out the message and append carriage return
+        outFile << msg << endl;
+        std::cout << msg << endl;
+    }
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+void Log::WriteLog(std::string msg, int timestamp)
+{
+    //Write to the log file only
+    Write(msg, timestamp, "Log");
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+void Log::WriteScreen(std::string msg, int timestamp)
+{
+    //Write to the screen only
+    Write(msg, timestamp, "Screen");
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+void Log::setLogFile(std::string pathIn)
+{
+    //Parse the log file
+    parsePath(pathIn);
+
+    //Open file
+    outFile.close();
+    outFile.open(fileDir + SLASH + fileName,std::ofstream::app);
+    //File automatically appends to end of any existing files.
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+void Log::deleteLog(std::string pathIn)
+{
+    //Parse the log file, if specified
+    if (pathIn != "")
+        parsePath(pathIn);
+
+    //Get the Qstring for filename
+    QString filename = QString::fromStdString(fileDir + SLASH + fileName);
+    QFile file(filename);
+
+    //Check if the file exists.  If so, delete it.
+    if (file.exists())
+        file.remove();
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+void Log::cls()
+{
+    //Print many carriage returns.
+    cout << string(100, '\n');
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+void Log::setDefaultOutput(std::string output)
+{
+    defaultOutput = output;
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+void Log::setDefaultTimeStamp(bool timein)
+{
+    if (timein)
+        defaultTimestamp = 1;
+    else
+        defaultTimestamp = -1;
+}
+
+//==========================================Section Separator =========================================================
+//Protected Funcitons
+
+
+//==========================================Section Separator =========================================================
+//Private Functions
+
+//------------------------------------------Function Separator --------------------------------------------------------
+void Log::parsePath(std::string pathIn)
+{
+    //Parse the path to pull out the file name.
+
+    //Get position of last diretory separator.
+    std::size_t pos = pathIn.rfind(SLASH);
+
+    //Parse out directory
+    if (pos == std::string::npos)
+    {
+        //no directory included.
+        fileDir = ".";
+    }
+    else
+    {
+        fileDir = pathIn.substr(0,pos - 1);
+    }
+
+    //Parse out filename
+    if (pos == std::string::npos)
+    {
+        fileName = pathIn;
+    }
+    else
+    {
+        fileName = pathIn.substr(pos+1);
+    }
+}

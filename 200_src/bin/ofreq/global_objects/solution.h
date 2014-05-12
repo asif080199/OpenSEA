@@ -11,6 +11,7 @@
  *Date          Author                  Description
  *---------------------------------------------------------------------------------------------------------------------
  *Aug 10, 2013	Nicholas Barczak		Initially Created
+ *May 7, 2014       Nicholas Barczak    Debugged and updated to Rev 1.0
  *
 \*-------------------------------------------------------------------------------------------------------------------*/
 
@@ -44,7 +45,7 @@
 #elif defined Q_OS_LINUX
     #include <armadillo>    //Armadillo library included with standard system libraries.
 #endif
-#include "./ofreqcore.h"
+#include "../system_objects/ofreqcore.h"
 
 //######################################### Class Separator ###########################################################
 //Namespace declarations

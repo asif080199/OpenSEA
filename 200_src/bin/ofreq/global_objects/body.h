@@ -14,6 +14,7 @@
  *Aug 01 2013   Nicholas Barczak    Added comments to header file.
  *Aug 03 2013   Nicholas Barczak    Reactored file for shorter property names and put a few public variables as
  *                                  private.
+ *May 7, 2014       Nicholas Barczak    Debugged and updated to Rev 1.0
  *
 \*-------------------------------------------------------------------------------------------------------------------*/
 
@@ -54,7 +55,7 @@
 #include "forceactive.h"
 #include "forcecross.h"
 #include "forcereact.h"
-#include "../global_objects/ofreqcore.h"
+#include "../system_objects/ofreqcore.h"
 
 //######################################### Class Separator ###########################################################
 //Namespace declarations

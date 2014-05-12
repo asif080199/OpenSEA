@@ -14,6 +14,7 @@
  *Aug 13, 2013      Nicholas Barczak    Updated to reflect new motion model and motion solver paradigm.  Supplied more
  *                                      information to outputsBody object.  And separated each derived output as a
  *                                      vector of objects, each called through its own property.
+ *May 7, 2014       Nicholas Barczak    Debugged and updated to Rev 1.0
  *
 \*-------------------------------------------------------------------------------------------------------------------*/
 
@@ -55,7 +56,7 @@
 #include "globalvelocity.h"
 #include "../global_objects/solutionset.h"
 #include "../global_objects/body.h"
-#include "../global_objects/ofreqcore.h"
+#include "../system_objects/ofreqcore.h"
 
 //######################################### Class Separator ###########################################################
 //Namespace declarations

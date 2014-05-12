@@ -11,6 +11,7 @@
  *Date              Author                  Description
  *---------------------------------------------------------------------------------------------------------------------
  *Aug 03 2013       Nicholas Barczak        Initially created
+ *May 7, 2014       Nicholas Barczak    Debugged and updated to Rev 1.0
  *
 \*-------------------------------------------------------------------------------------------------------------------*/
 
@@ -44,7 +45,7 @@
 #include <QtGlobal>
 #include <QObject>
 #include <functional>
-#include "../global_objects/ofreqcore.h"
+#include "../system_objects/ofreqcore.h"
 #ifdef Q_OS_WIN
     #include "armadillo.h"  //References the armadillo library in lib folder.
 #elif defined Q_OS_LINUX
@@ -562,6 +563,58 @@ protected:
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
+     * @brief Returns the maximum number of items that can be iterated through on the order of derivative index.
+     *
+     * Returns the maximum number of items that can be iterated through on the order of derivative index.  Used for summation
+     * functions.  Automatically finds the upper limit of any summation loops.  The lower limit is always 0 and does
+     * not require a special function.  This is the maximum order from the following force types (function arguments
+     * not shown for brevity).
+     * - ForceReact_user()
+     * - ForceReact_hydro()
+     * - ForceCross_user()
+     * - ForceCross_hydro()
+     * - ForceMass()
+     * @return Returns the maximum number of items that can be iterated through on the order of derivative index.
+     */
+    int maxord();
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Returns the maximum number of items that can be iterated through on the body index.
+     *
+     * Returns the maximum number of items that can be iterated through on the body index.  Used for summation
+     * functions.  Automatically finds the upper limit of any summation loops.  The lower limit is always 0 and does
+     * not require a special function.
+     * @return Returns the maximum number of items that can be iterated through on the body index.
+     */
+    int maxbody();
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Returns the index of the minimum variable index for the equations of motion defined within the motion
+     * model.
+     *
+     * This function is not required for any specific object in the equation of motion.  It was provided purely as an
+     * index function for the user to utilize when creating complicated equations of motion.
+     * @return Returns an integer.  Variable passed by value.  Returned variable is the minimum index of the
+     * equations of motion listed in the motion model.
+     */
+    int minvar();
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Returns the index of the maximum variable index for the equations of motion defined within the motion
+     * model.
+     *
+     * This function is not required for any specific object in the equation of motion.  It was provided purely as an
+     * index function for the user to utilize when creating complicated equations of motion.
+     * @return Returns an integer.  Variable passed by value.  Returned variable is the maximum index of the
+     * equations of motion listed in the motion model.
+     */
+    int maxvar();
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
      * @brief Func1 through Func50 provide user custom defined functions.
      *
      * These are custom functions that the user may need to create to define their equations of motion.  The only
@@ -623,41 +676,6 @@ protected:
 
 //==========================================Section Separator =========================================================
 private:
-    //------------------------------------------Function Separator ----------------------------------------------------
-    /**
-     * @brief Returns the maximum number of items that can be iterated through on the variable index.
-     *
-     * Returns the maximum number of items that can be iterated through on the variable index.  Used for summation
-     * functions.  Automatically finds the upper limit of any summation loops.  The lower limit is always 1 and does
-     * not require a special function.
-     *
-     * Returned value is expressed in human notation.  Numbering starts with 1.
-     * @return Returns the maximum number of items that can be iterated through on the variable index.
-     */
-    int maxvar();
-
-    //------------------------------------------Function Separator ----------------------------------------------------
-    /**
-     * @brief Returns the maximum number of items that can be iterated through on the order of derivative index.
-     *
-     * Returns the maximum number of items that can be iterated through on the order of derivative index.  Used for summation
-     * functions.  Automatically finds the upper limit of any summation loops.  The lower limit is always 0 and does
-     * not require a special function.
-     * @return Returns the maximum number of items that can be iterated through on the order of derivative index.
-     */
-    int maxord();
-
-    //------------------------------------------Function Separator ----------------------------------------------------
-    /**
-     * @brief Returns the maximum number of items that can be iterated through on the body index.
-     *
-     * Returns the maximum number of items that can be iterated through on the body index.  Used for summation
-     * functions.  Automatically finds the upper limit of any summation loops.  The lower limit is always 0 and does
-     * not require a special function.
-     * @return Returns the maximum number of items that can be iterated through on the body index.
-     */
-    int maxbody();
-
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
      * @brief Reference to the motion model object which created the object.
@@ -764,6 +782,19 @@ private:
      * @return Returns the integer specifying the position of the object in the vector of equation objects.
      */
     int findIndex(int indexIn);
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Returns the maximum number of items that can be iterated through on the variable index.
+     *
+     * Returns the maximum number of items that can be iterated through on the variable index.  Used for summation
+     * functions.  Automatically finds the upper limit of any summation loops.  The lower limit is always 1 and does
+     * not require a special function.
+     *
+     * Returned value is expressed in human notation.  Numbering starts with 1.
+     * @return Returns the maximum number of items that can be iterated through on the variable index.
+     */
+    int sizevar();
 };
 
 }   //Namespace ofreq

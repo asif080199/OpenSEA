@@ -1537,7 +1537,7 @@ void MotionModel::useForceMass(unsigned int eqn, unsigned int var)
         if (curBody < 0 || curBody > plistData.size() - 1)
         {
             //Throw error for current body not defined.
-            throw 1;
+            throw std::runtime_error("Error:  index for current body not defined.");
         }
 
         //Get vector occurrence index for equation and variable
@@ -1548,18 +1548,11 @@ void MotionModel::useForceMass(unsigned int eqn, unsigned int var)
         plistData[curBody].MassMatrix()(indexeqn, indexvar) =
                 plistBody->at(curBody).getMassMatrix()(indexeqn, indexvar);
     }
-    catch (int err)
+    catch (std::exception &err)
     {
-        //Error handler
-        switch(err)
-        {
-        case 1:     //Case for curBody not defined.
-            //Add error handler in here later.
-            break;
-        default:    //Case for any unknown error.
-            int ouch = 1;
-        }
-
+        logErr.Write("Object:  MotionModel, Function:  useForceMass()\n" +
+                     string("Error Message:  ") + string(err.what()));
+        logStd.Write("Errors occurred.  Please check the error log for details.");
     }
 }
 
@@ -1931,7 +1924,7 @@ int &MotionModel::listDataIndex(unsigned int index)
     {
         //Check if requested index exceeds limits of number of equations
         if (index > numEquations())
-            throw 1;
+            throw std::out_of_range("The requested index exceeds the limits of number of equations.");
 
         //Not out of bounds.  Instead resize vector and insert data.
         if (pDataIndex.size() - 1 < index)
@@ -1940,21 +1933,11 @@ int &MotionModel::listDataIndex(unsigned int index)
         //Provide access to the new data slot in the vector
         return pDataIndex.at(index);
     }
-    catch(int err)
+    catch (std::exception &err)
     {
-        switch(err)
-        {
-        case 1:
-            //Write error handler later.
-            err = 0;
-        break;
-
-        default:
-            //Default error handler.
-            err = 0;
-        }
-
-        return err;
+        logErr.Write("Object:  MotionModel, Function:  listDataIndex()\n" +
+                     string("Error Message:  ") + string(err.what()));
+        logStd.Write("Errors occurred.  Please check the error log for details.");
     }
 }
 

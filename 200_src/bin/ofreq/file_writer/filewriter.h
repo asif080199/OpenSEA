@@ -11,6 +11,7 @@
  *Date              Author				Description
  *---------------------------------------------------------------------------------------------------------------------
  *May 15 2013       Shane Honanie       Initially created
+ *May 7, 2014       Nicholas Barczak    Debugged and updated to Rev 1.0
  *
 \*-------------------------------------------------------------------------------------------------------------------*/
 
@@ -49,7 +50,8 @@
 #include "../derived_outputs/outputsbody.h"
 #include <boost/filesystem.hpp>
 #include <boost/lexical_cast.hpp>
-#include "../global_objects/ofreqcore.h"
+#include "../system_objects/ofreqcore.h"
+#include "../global_objects/ioword.h"
 
 //######################################### Class Separator ###########################################################
 //Namespace declarations
@@ -100,7 +102,7 @@ class OutputsBody;
  * updated before writing a new wave direction.
  */
 
-class FileWriter : public osea::ofreq::oFreqCore
+class FileWriter : public osea::ofreq::ioword
 {
 //==========================================Section Separator =========================================================
 public:
@@ -333,20 +335,6 @@ private:
     static std::string NAME_DIR; /**< The starting character for the wave direction directory.**/
     static std::string NAME_RES; /**< The starting character for the resonant frequency directory.**/
     static std::string SLASH; /**< The directory separator in a std::string path.*/
-
-    //------------------------------------------Function Separator ----------------------------------------------------
-    //General File Content Marks
-    static std::string LIST_BEGIN2;
-    static std::string LIST_END2;
-    static std::string OBJECT_BEGIN2;
-    static std::string OBJECT_END2;
-    static std::string END;
-    static std::string TAB_REF;
-    static std::string SPACE;
-    static std::string BREAK_TOP;
-    static std::string BREAK_BOTTOM;
-    static std::string QUOTE;
-    static int DIGIT; /** The number of digits to use in precision of floating point numbers.*/
 
     //------------------------------------------Function Separator ----------------------------------------------------
     //Key-Value Markers

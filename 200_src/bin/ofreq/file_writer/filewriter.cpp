@@ -49,14 +49,6 @@ string FileWriter::NAME_RES = "r"; /**< The starting character for the resonant 
 
 //------------------------------------------Function Separator ----------------------------------------------------
 //General File Content Marks
-string FileWriter::LIST_BEGIN2 = "(";
-string FileWriter::LIST_END2 = ")";
-string FileWriter::OBJECT_BEGIN2 = "{";
-string FileWriter::OBJECT_END2 = "}";
-string FileWriter::END = ";";
-string FileWriter::TAB_REF = "  ";
-string FileWriter::SPACE = " ";
-string FileWriter::QUOTE = "\"";
 string FileWriter::KEY_NAME = "name";
 string FileWriter::KEY_DATA = "data";
 string FileWriter::KEY_VALUE = "value";
@@ -69,9 +61,6 @@ string FileWriter::KEY_BODY = "body";
 string FileWriter::VAL_VERSION = "1.0";
 string FileWriter::VAL_FORMAT = "ascii";
 string FileWriter::VAL_SEAFILE = "seafile";
-string FileWriter::BREAK_TOP = "// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //\n";
-string FileWriter::BREAK_BOTTOM = "// ************************************************************************* //";
-int FileWriter::DIGIT = 6; /** The number of digits to use in precision of floating point numbers.*/
 
 //==========================================Section Separator =========================================================
 //Filename Markers
@@ -125,6 +114,7 @@ bool FileWriter::clearFiles()
 {
     string numToDelete = "0";
     string curDirectoryPath = NAME_DIR + numToDelete; //start at directory "d0"
+    bool test;      //Test results of deleting contents of directory.
 
     //Remove the direcions & frequencies file outputs if they exist
     if(exists(projectDirectory + SLASH + FILE_DIRECTIONS))
@@ -135,17 +125,25 @@ bool FileWriter::clearFiles()
 
     while(exists(projectDirectory + SLASH + curDirectoryPath)) //check if current directory exists
     {
-        if(!remove_all(projectDirectory + SLASH + curDirectoryPath))
-        {
-            cerr << "Failed to delete " + projectDirectory + SLASH + curDirectoryPath << endl;
-            return false;
-        }
-        else //increment to next directory
-        {
+        try {
+            //Remove files
+            test = remove_all(projectDirectory + SLASH + curDirectoryPath);
+
+            if (!test)
+                throw std::runtime_error("Failed to delete all files.  Problem directory:  " + curDirectoryPath +
+                                     "\n\tPerhaps not all files have write permissions?");
+
+            //Increment to the next directory
             int numToDeleteHelper = boost::lexical_cast<int>(numToDelete);
             ++numToDeleteHelper;
             numToDelete = boost::lexical_cast<string>(numToDeleteHelper);
             curDirectoryPath = NAME_DIR + numToDelete;
+        }
+        catch (std::exception &err)
+        {
+            //Write out the error message.  Keep executing.  Failure to delete a file may not necessarily
+            //be a problem.
+            logErr.Write(string(err.what()));
         }
     }
     return true; //all directories deleted successfully
@@ -211,18 +209,23 @@ void FileWriter::setHeader(string filePathIn)
 
     ifstream header_fileInput(fileIn.c_str(), std::ios::in);
 
-    if (!header_fileInput)
-    {
-        cerr << fileIn + ":  file does not exist." << endl;
-    }
-    else
-    {
+    try {
+        //Check if file exists and was open
+        if (!header_fileInput)
+            throw ios_base::failure("Could not read header file.  Location:  " + fileIn +
+                                    "\n This can occurr if the file does not exist or does not have read permissions.");
+
         header_fileInput.seekg(0, std::ios::end);
         header.resize(header_fileInput.tellg());
         header_fileInput.seekg(0, std::ios::beg);
         header_fileInput.read(&header[0], header.size());
         //Close file
         header_fileInput.close();
+    }
+    catch (std::exception &err)
+    {
+        //Write out error message
+        logErr.Write(string(err.what()));
     }
 }
 
@@ -238,6 +241,8 @@ int FileWriter::writeWaveDirection()
     ofstream output;
     string writeFilename;
     int errVal = 0;             //Output error code.  Default value set to no error.
+
+    logStd.Write("Wave directions");
 
     //Get filename
     writeFilename = projectDirectory + SLASH + FILE_DIRECTIONS;
@@ -258,7 +263,7 @@ int FileWriter::writeWaveDirection()
             output << BREAK_TOP;
 
             //Add beginning of data
-            output << KEY_DIRECTION + SPACE + LIST_BEGIN2 << endl;
+            output << KEY_DIRECTION + SPACE + LIST_BEGIN << endl;
 
             //Write outputs
             for(unsigned int i = 0; i < pOutput->listWaveDir().size(); i ++)
@@ -267,16 +272,18 @@ int FileWriter::writeWaveDirection()
             }
 
             //Close the list and finish
-            output << LIST_END2 << END << "\n\n" << BREAK_BOTTOM;
+            output << LIST_END << END << "\n\n" << BREAK_BOTTOM;
 
             //Close file
             output.close();
         }
     }
-    catch (int err)
+    catch(std::exception &err)
     {
-        //Add error handler later
-        errVal = err;
+        logErr.Write("Unknown Error Occurred.  Object:  FileWriter, Function:  writeWaveDirection()\n" +
+                     string("Error Message:  ") + string(string(err.what())));
+        logStd.Write("Errors occurred.  Please check the error log for details.");
+        errVal = 1;
     }
 
     return errVal;
@@ -288,6 +295,8 @@ int FileWriter::writeFrequency()
     ofstream output;
     string writeFilename;
     int errVal = 0;             //Output error code.  Default value set to no error.
+
+    logStd.Write("Wave frequencies");
 
     //Get filename
     writeFilename = projectDirectory + SLASH + FILE_FREQUENCIES;
@@ -308,7 +317,7 @@ int FileWriter::writeFrequency()
             output << BREAK_TOP;
 
             //Add beginning of data
-            output << KEY_FREQUENCY + SPACE + LIST_BEGIN2 << endl;
+            output << KEY_FREQUENCY + SPACE + LIST_BEGIN << endl;
 
             //Write outputs
             for(unsigned int i = 0; i < pOutput->listFreq().size(); i ++)
@@ -317,16 +326,18 @@ int FileWriter::writeFrequency()
             }
 
             //Close the list and finish
-            output << LIST_END2 << END << "\n\n" << BREAK_BOTTOM;
+            output << LIST_END << END << "\n\n" << BREAK_BOTTOM;
 
             //Close file
             output.close();
         }
     }
-    catch (int err)
+    catch(std::exception &err)
     {
-        //Add error handler later
-        errVal = err;
+        logErr.Write("Unknown Error Occurred.  Object:  FileWriter, Function:  writeFrequency()\n" +
+                     string("Error Message:  ") + string(err.what()));
+        logStd.Write("Errors occurred.  Please check the error log for details.");
+        errVal = 1;
     }
 
     return errVal;
@@ -339,6 +350,8 @@ int FileWriter::writeGlobalMotion()
     string classname;               //The name of the class type that contains the file elements.
     int errVal = 0;                 //Returned value for error codes from calculations.  Default set to no error.
     bool outputAvail = false;       //Boolean to track if any output objects are even available.
+
+    logStd.Write("\tBody motions");
 
     //Check if output objects even exist.
     if (pOutput->listGlobalMotion().size() == 0)
@@ -383,7 +396,7 @@ int FileWriter::writeGlobalMotion()
     if (outputAvail)
     {
         //Write output for beginning of body
-        output << KEY_BODY << SPACE << OBJECT_BEGIN2 << endl;
+        output << KEY_BODY << SPACE << OBJECT_BEGIN << endl;
         output << TAB() << KEY_NAME << SPACE << QUOTE << pOutput->refCurBody().refBodyName() << QUOTE << END << endl;
 
         //Repeat process for each item in object list
@@ -396,10 +409,10 @@ int FileWriter::writeGlobalMotion()
 
                 //Check for errors
                 if (errVal != 0)
-                    throw errVal;
+                    throw std::runtime_error("Error calculating derived output:  body motion");
 
                 //Start the output object.
-                output << TAB() << classname << SPACE << OBJECT_BEGIN2 << endl;
+                output << TAB() << classname << SPACE << OBJECT_BEGIN << endl;
                 output << TAB() << KEY_NAME << SPACE << QUOTE << pOutput->listGlobalMotion(i).getName() << QUOTE;
                 output << END << endl;
 
@@ -407,11 +420,11 @@ int FileWriter::writeGlobalMotion()
                 for (unsigned int j = 0; j < pOutput->listFreq().size(); j++)
                 {
                     //Create data signifier
-                    output << TAB(2) << KEY_DATA << SPACE << OBJECT_BEGIN2 << endl;
+                    output << TAB(2) << KEY_DATA << SPACE << OBJECT_BEGIN << endl;
                     //Add frequency designator
                     output << TAB(3) << KEY_FREQUENCY << SPACE << (j+1) << END << endl;
                     //Add value indicator
-                    output << TAB(3) << KEY_VALUE << SPACE << LIST_BEGIN2 << endl;
+                    output << TAB(3) << KEY_VALUE << SPACE << LIST_BEGIN << endl;
 
                     //Write out data for given frequency.
                     for (unsigned int k = 0; k < pOutput->listResult(j).n_rows; k++)
@@ -434,23 +447,25 @@ int FileWriter::writeGlobalMotion()
                         }
                     }
                     //Close list
-                    output << TAB(3) << LIST_END2 << END << endl;
+                    output << TAB(3) << LIST_END << END << endl;
                     //Close data object
-                    output << TAB(2) << OBJECT_END2 << endl;
+                    output << TAB(2) << OBJECT_END << endl;
                 }
             }
-            catch(int err)
+            catch(std::exception &err)
             {
-                //Error handler
-                return errVal;
+                logErr.Write("Unknown Error Occurred.  Object:  FileWriter, Function:  writeGlobalMotion()\n" +
+                             string("Error Message:  ") + string(err.what()));
+                logStd.Write("Errors occurred.  Please check the error log for details.");
+                errVal = 1;
             }
 
             //End the output object
-            output << TAB() << OBJECT_END2 << "\n";
+            output << TAB() << OBJECT_END << EOL;
         }
 
         //Write output for ending of body
-        output << OBJECT_END2 << "\n" << BREAK_BOTTOM << "\n";
+        output << OBJECT_END << EOL << BREAK_BOTTOM << EOL;
     }
 
     //Close file
@@ -467,6 +482,8 @@ int FileWriter::writeGlobalVelocity()
     string classname;               //The name of the class type that contains the file elements.
     int errVal = 0;                 //Returned value for error codes from calculations.  Default set to no error.
     bool outputAvail = false;       //Boolean to track if any output objects are even available.
+
+    logStd.Write("\tBody velocities");
 
     //Check if output objects even exist.
     if (pOutput->listGlobalVelocity().size() == 0)
@@ -511,7 +528,7 @@ int FileWriter::writeGlobalVelocity()
     if (outputAvail)
     {
         //Write output for beginning of body
-        output << KEY_BODY << SPACE << OBJECT_BEGIN2 << endl;
+        output << KEY_BODY << SPACE << OBJECT_BEGIN << endl;
         output << TAB() << KEY_NAME << SPACE << QUOTE << pOutput->refCurBody().refBodyName() << QUOTE << END << endl;
 
         //Repeat process for each item in object list
@@ -524,10 +541,10 @@ int FileWriter::writeGlobalVelocity()
 
                 //Check for errors
                 if (errVal != 0)
-                    throw errVal;
+                    throw std::runtime_error("Error calculating derived output:  body velocity");
 
                 //Start the output object.
-                output << TAB() << classname << SPACE << OBJECT_BEGIN2 << endl;
+                output << TAB() << classname << SPACE << OBJECT_BEGIN << endl;
                 output << TAB() << KEY_NAME << SPACE << QUOTE << pOutput->listGlobalVelocity(i).getName() << QUOTE;
                 output << END << endl;
 
@@ -535,11 +552,11 @@ int FileWriter::writeGlobalVelocity()
                 for (unsigned int j = 0; j < pOutput->listFreq().size(); j++)
                 {
                     //Create data signifier
-                    output << TAB(2) << KEY_DATA << SPACE << OBJECT_BEGIN2 << endl;
+                    output << TAB(2) << KEY_DATA << SPACE << OBJECT_BEGIN << endl;
                     //Add frequency designator
                     output << TAB(3) << KEY_FREQUENCY << SPACE << (j+1) << END << endl;
                     //Add value indicator
-                    output << TAB(3) << KEY_VALUE << SPACE << LIST_BEGIN2 << endl;
+                    output << TAB(3) << KEY_VALUE << SPACE << LIST_BEGIN << endl;
 
                     //Write out data for given frequency.
                     for (unsigned int k = 0; k < pOutput->listResult(j).n_rows; k++)
@@ -559,23 +576,25 @@ int FileWriter::writeGlobalVelocity()
                             output << "+" << pOutput->listResult(j)(k,0).imag() << "i" << endl;
                     }
                     //Close list
-                    output << TAB(3) << LIST_END2 << END << endl;
+                    output << TAB(3) << LIST_END << END << endl;
                     //Close data object
-                    output << TAB(2) << OBJECT_END2 << endl;
+                    output << TAB(2) << OBJECT_END << endl;
                 }
             }
-            catch(int err)
+            catch(std::exception &err)
             {
-                //Error handler
-                return errVal;
+                logErr.Write("Unknown Error Occurred.  Object:  FileWriter, Function:  writeGlobalVelocity()\n" +
+                             string("Error Message:  ") + string(err.what()));
+                logStd.Write("Errors occurred.  Please check the error log for details.");
+                errVal = 1;
             }
 
             //End the output object
-            output << TAB() << OBJECT_END2 << "\n";
+            output << TAB() << OBJECT_END << EOL;
         }
 
         //Write output for ending of body
-        output << OBJECT_END2 << "\n" << BREAK_BOTTOM << "\n";
+        output << OBJECT_END << EOL << BREAK_BOTTOM << EOL;
     }
 
     //Close file
@@ -592,6 +611,9 @@ int FileWriter::writeGlobalAcceleration()
     string classname;               //The name of the class type that contains the file elements.
     int errVal = 0;                 //Returned value for error codes from calculations.  Default set to no error.
     bool outputAvail = false;       //Boolean to track if any output objects are even available.
+
+    //Write output log
+    logStd.Write("\tBody accelerations");
 
     //Check if output objects even exist.
     if (pOutput->listGlobalAcceleration().size() == 0)
@@ -636,7 +658,7 @@ int FileWriter::writeGlobalAcceleration()
     if (outputAvail)
     {
         //Write output for beginning of body
-        output << KEY_BODY << SPACE << OBJECT_BEGIN2 << endl;
+        output << KEY_BODY << SPACE << OBJECT_BEGIN << endl;
         output << TAB() << KEY_NAME << SPACE << QUOTE << pOutput->refCurBody().refBodyName() << QUOTE << END << endl;
 
         //Repeat process for each item in object list
@@ -649,10 +671,10 @@ int FileWriter::writeGlobalAcceleration()
 
                 //Check for errors
                 if (errVal != 0)
-                    throw errVal;
+                    throw std::runtime_error("Error calculating derived output:  body acceleration");
 
                 //Start the output object.
-                output << TAB() << classname << SPACE << OBJECT_BEGIN2 << endl;
+                output << TAB() << classname << SPACE << OBJECT_BEGIN << endl;
                 output << TAB() << KEY_NAME << SPACE << QUOTE << pOutput->listGlobalAcceleration(i).getName() << QUOTE;
                 output << END << endl;
 
@@ -660,11 +682,11 @@ int FileWriter::writeGlobalAcceleration()
                 for (unsigned int j = 0; j < pOutput->listFreq().size(); j++)
                 {
                     //Create data signifier
-                    output << TAB(2) << KEY_DATA << SPACE << OBJECT_BEGIN2 << endl;
+                    output << TAB(2) << KEY_DATA << SPACE << OBJECT_BEGIN << endl;
                     //Add frequency designator
                     output << TAB(3) << KEY_FREQUENCY << SPACE << (j+1) << END << endl;
                     //Add value indicator
-                    output << TAB(3) << KEY_VALUE << SPACE << LIST_BEGIN2 << endl;
+                    output << TAB(3) << KEY_VALUE << SPACE << LIST_BEGIN << endl;
 
                     //Write out data for given frequency.
                     for (unsigned int k = 0; k < pOutput->listResult(j).n_rows; k++)
@@ -684,23 +706,25 @@ int FileWriter::writeGlobalAcceleration()
                             output << "+" << pOutput->listResult(j)(k,0).imag() << "i" << endl;
                     }
                     //Close list
-                    output << TAB(3) << LIST_END2 << END << endl;
+                    output << TAB(3) << LIST_END << END << endl;
                     //Close data object
-                    output << TAB(2) << OBJECT_END2 << endl;
+                    output << TAB(2) << OBJECT_END << endl;
                 }
             }
-            catch(int err)
+            catch(std::exception &err)
             {
-                //Error handler
-                return errVal;
+                logErr.Write("Unknown Error Occurred.  Object:  FileWriter, Function:  writeGlobalAcceleration()\n" +
+                             string("Error Message:  ") + string(err.what()));
+                logStd.Write("Errors occurred.  Please check the error log for details.");
+                errVal = 1;
             }
 
             //End the output object
-            output << TAB() << OBJECT_END2 << "\n";
+            output << TAB() << OBJECT_END << EOL;
         }
 
         //Write output for ending of body
-        output << OBJECT_END2 << "\n" << BREAK_BOTTOM << "\n";
+        output << OBJECT_END << EOL << BREAK_BOTTOM << EOL;
     }
 
     //Close file
@@ -717,6 +741,9 @@ int FileWriter::writeGlobalSolution()
     string classname;               //The name of the class type that contains the file elements.
     int errVal = 0;                 //Returned value for error codes from calculations.  Default set to no error.
     bool outputAvail = false;       //Boolean to track if any output objects are even available.
+
+    //Write output log
+    logStd.Write("\tBody derivative solution");
 
     //Check if output objects even exist.
     if (pOutput->listGlobalSolution().size() == 0)
@@ -761,7 +788,7 @@ int FileWriter::writeGlobalSolution()
     if (outputAvail)
     {
         //Write output for beginning of body
-        output << KEY_BODY << SPACE << OBJECT_BEGIN2 << endl;
+        output << KEY_BODY << SPACE << OBJECT_BEGIN << endl;
         output << TAB() << KEY_NAME << SPACE << QUOTE << pOutput->refCurBody().refBodyName() << QUOTE << END << endl;
 
         //Repeat process for each item in object list
@@ -774,10 +801,10 @@ int FileWriter::writeGlobalSolution()
 
                 //Check for errors
                 if (errVal != 0)
-                    throw errVal;
+                    throw std::runtime_error("Error calculating derived output:  body derivative solution");
 
                 //Start the output object.
-                output << TAB() << classname << SPACE << OBJECT_BEGIN2 << endl;
+                output << TAB() << classname << SPACE << OBJECT_BEGIN << endl;
                 output << TAB() << KEY_NAME << SPACE << QUOTE << pOutput->listGlobalSolution(i).getName() << QUOTE;
                 output << END << endl;
 
@@ -785,11 +812,11 @@ int FileWriter::writeGlobalSolution()
                 for (unsigned int j = 0; j < pOutput->listFreq().size(); j++)
                 {
                     //Create data signifier
-                    output << TAB(2) << KEY_DATA << SPACE << OBJECT_BEGIN2 << endl;
+                    output << TAB(2) << KEY_DATA << SPACE << OBJECT_BEGIN << endl;
                     //Add frequency designator
                     output << TAB(3) << KEY_FREQUENCY << SPACE << (j+1) << END << endl;
                     //Add value indicator
-                    output << TAB(3) << KEY_VALUE << SPACE << LIST_BEGIN2 << endl;
+                    output << TAB(3) << KEY_VALUE << SPACE << LIST_BEGIN << endl;
 
                     //Write out data for given frequency.
                     for (unsigned int k = 0; k < pOutput->listResult(j).n_rows; k++)
@@ -809,23 +836,24 @@ int FileWriter::writeGlobalSolution()
                             output << "+" << pOutput->listResult(j)(k,0).imag() << "i" << endl;
                     }
                     //Close list
-                    output << TAB(3) << LIST_END2 << END << endl;
+                    output << TAB(3) << LIST_END << END << endl;
                     //Close data object
-                    output << TAB(2) << OBJECT_END2 << endl;
+                    output << TAB(2) << OBJECT_END << endl;
                 }
             }
-            catch(int err)
+            catch(std::exception &err)
             {
-                //Error handler
-                return errVal;
+                logErr.Write("Unknown Error Occurred.  Object:  FileWriter, Function:  writeGlobalSolution()\n" +
+                             string("Error Message:  ") + string(err.what()));
+                logStd.Write("Errors occurred.  Please check the error log for details.");
+                errVal = 1;
             }
-
             //End the output object
-            output << TAB() << OBJECT_END2 << "\n";
+            output << TAB() << OBJECT_END << EOL;
         }
 
         //Write output for ending of body
-        output << OBJECT_END2 << "\n" << BREAK_BOTTOM << "\n";
+        output << OBJECT_END << EOL << BREAK_BOTTOM << EOL;
     }
 
     //Close file
@@ -872,9 +900,9 @@ bool FileWriter::createDir(string path)
 //------------------------------------------Function Separator --------------------------------------------------------
 string FileWriter::getInfoBlock(string nameIn)
 {
-    return VAL_SEAFILE + "\n" + OBJECT_BEGIN2 + "\n" + TAB() + KEY_VERSION + TAB() + VAL_VERSION + END + "\n" + TAB()
+    return VAL_SEAFILE + EOL + OBJECT_BEGIN + EOL + TAB() + KEY_VERSION + TAB() + VAL_VERSION + END + EOL + TAB()
             + KEY_FORMAT + TAB()
-            + VAL_FORMAT + END + "\n" + TAB() + KEY_OBJECT + TAB() + nameIn + END + "\n" + OBJECT_END2 + "\n\n";
+            + VAL_FORMAT + END + EOL + TAB() + KEY_OBJECT + TAB() + nameIn + END + EOL + OBJECT_END + "\n\n";
 }
 
 //==========================================Section Separator =========================================================

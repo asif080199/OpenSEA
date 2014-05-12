@@ -63,16 +63,39 @@ void Dictionary::setObject(ObjectGroup input)
     for (unsigned int i = 0; i < input.listKey().size(); i++)
     {
         //define the key
-        returnVal = defineKey(input.getKey(i), input.getVal(i));
-        //Need to create error handler later to handle what happens if returnVal not 0
+        try {
+            returnVal = defineKey(input.getKey(i), input.getVal(i));
+
+            if (returnVal != 0)
+                throw std::runtime_error("Error reading in key and value pair.\n" +
+                                         string("Key:  ") + string(input.getKey(i)) + string("\nValue:  ") +
+                                         string(input.getVal(i)[0]));
+        }
+        catch(std::exception &err)
+        {
+            //Write out error message and stop execution.
+            logErr.Write(string(err.what()));
+            logStd.Write("Errors Found.  Please check the error log.");
+            exit(1);
+        }
     }
 
     //Next proceed through each of the sub classes defined for the ObjectGroup object.
     for (unsigned int i = 0; i < input.listObject().size(); i++)
     {
         //define the class
-        setObject(*(input.listObject(i)));
-        //Need to create error handler later to handle what happens if returnVal not 0
+        try {
+            setObject(*(input.listObject(i)));
+        }
+        catch(std::exception &err)
+        {
+            //Write out error message and stop execution.
+            logErr.Write("Error reading in object definition.\n" +
+                         string("Object Name:  ") + string(input.listObject(i)->getClassName()) +
+                         string("\nError Code:  ") + string(err.what()));
+            logStd.Write("Errors Found.  Please check the error log.");
+            exit(1);
+        }
     }
 }
 

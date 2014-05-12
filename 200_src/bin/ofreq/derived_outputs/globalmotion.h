@@ -12,6 +12,7 @@
  *---------------------------------------------------------------------------------------------------------------------
  *May 15 2013       Shane Honanie       Initially created
  *Aug 13, 2013      Nicholas Barczak    Updated to reflect new motion model and motion solver paradigm.
+ *May 7, 2014       Nicholas Barczak    Debugged and updated to Rev 1.0
  *
 \*-------------------------------------------------------------------------------------------------------------------*/
 

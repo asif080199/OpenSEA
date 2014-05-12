@@ -125,9 +125,14 @@ osea::ofreq::SolutionSet &OutputsBody::listSolutionSet(int index)
     {
         return plistSolution->at(index);
     }
-    catch(int err)
+    catch(std::exception &err)
     {
-        //Add in error handler later
+        //Write error message
+        logErr.Write("Unknown error occurred.  Object:  OutputsBody, Function:  listSolutionSet()\n" +
+                     std::string("Error Message:  ") + std::string(string(err.what())));
+
+        //Stop program execution
+        exit(1);
     }
 }
 
@@ -335,11 +340,12 @@ int OutputsBody::calcGlobalMotion(unsigned int index)
             {
                 errVal = listGlobalMotion(index).calcOutput(i);
                 if (errVal != 0)
-                    throw errVal;
+                    throw std::runtime_error("Failed to calculate derived output:  body motion.");
             }
-            catch (int err)
+            catch (std::exception &err)
             {
-                return err;
+                //Write error message
+                logErr.Write(string(err.what()));
             }
         }
     }
@@ -406,11 +412,12 @@ int OutputsBody::calcGlobalVelocity(unsigned int index)
             {
                 errVal = listGlobalVelocity(index).calcOutput(i);
                 if (errVal != 0)
-                    throw errVal;
+                    throw std::runtime_error("Failed to calculate derived output:  body velocity.");
             }
-            catch (int err)
+            catch (std::exception &err)
             {
-                return err;
+                //Write error message
+                logErr.Write(string(err.what()));
             }
         }
     }
@@ -477,11 +484,12 @@ int OutputsBody::calcGlobalAcceleration(unsigned int index)
             {
                 errVal = listGlobalAcceleration(index).calcOutput(i);
                 if (errVal != 0)
-                    throw errVal;
+                    throw std::runtime_error("Failed to calculate derived output:  body acceleration.");
             }
-            catch (int err)
+            catch (std::exception &err)
             {
-                return err;
+                //Write error message
+                logErr.Write(string(err.what()));
             }
         }
     }
@@ -546,11 +554,12 @@ int OutputsBody::calcGlobalSolution(unsigned int index)
             {
                 errVal = listGlobalSolution(index).calcOutput(i);
                 if (errVal != 0)
-                    throw errVal;
+                    throw std::runtime_error("Failed to calculate derived output:  body derivative solution.");
             }
-            catch (int err)
+            catch (std::exception &err)
             {
-                return err;
+                //Write error message
+                logErr.Write(string(err.what()));
             }
         }
     }

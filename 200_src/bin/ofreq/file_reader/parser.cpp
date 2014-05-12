@@ -31,21 +31,7 @@ using namespace osea;
 
 //==========================================Section Separator =========================================================
 //Static Initialization
-string Parser::COMMENT_LINE = "//"; /**< Line Comment. */
-string Parser::COMMENT_BLOCK_BEGIN = "/*"; /**< Block Comment Begin. */
-string Parser::COMMENT_BLOCK_END = "*/"; /**< Block comment end. */
-string Parser::END_STATEMENT = ";"; /**< End of statement. */
-string Parser::OBJECT_BEGIN = "{"; /**< Object scope begin. */
-string Parser::OBJECT_END = "}"; /**< Object scope end */
-string Parser::LIST_BEGIN = "("; /**< List scope begin. */
-string Parser::LIST_END = ")"; /**< List scope end. */
-string Parser::KEY_VAL_SEPARATOR= ":"; /**< Key/Val pair seperator. */
-char Parser::EOL = '\n'; /**< newline. */
-int Parser::MAX_IGNORE = 150000; /**< Max # of chars to ignore. */
-string Parser::OBJ_SEAFILE = "seafile"; /**< seafile object name, used to ignore seafile block. */
-string Parser::QUOTE = "\"";
-string Parser::SPACE = " ";
-string Parser::RETURN = "\n";
+
 
 //==========================================Section Separator =========================================================
 //Public Functions
@@ -180,7 +166,7 @@ std::string Parser::CommentFilter(std::string curString, std::istream &infile)
     //-----------------------------------
     if (curString.find(COMMENT_LINE) != std::string::npos)
     {
-        infile.ignore(MAX_IGNORE, EOL);
+        infile.ignore(MAX_IGNORE, *(EOL.data()));
 
         //return blank string
         return "";
@@ -221,7 +207,7 @@ std::string Parser::CommentFilter(std::string curString, std::istream &infile)
 void Parser::ParseCommands(istream &infile, string curString, string prevString, int &bracket_count)
 {
     char ignoreChars[2];        //Characters that will be ignored by the file
-    ignoreChars[0] = END_STATEMENT[0];     //Ignore the characters for the end statement
+    ignoreChars[0] = END[0];     //Ignore the characters for the end statement
     ignoreChars[1] = QUOTE[0];             //Ignore the characters for the quotation.
     bool advanceKeySet = false;                     //Tracks whether we need to advance to the next key set.
 
@@ -249,7 +235,7 @@ void Parser::ParseCommands(istream &infile, string curString, string prevString,
         //Check if need to advance to the next key set.  Check for it now because the next step is to strip
         //out the end statement data.
         //-----------------------------------
-        if (curString.find(END_STATEMENT) != std::string::npos)
+        if (curString.find(END) != std::string::npos)
             advanceKeySet = true;
         else
             advanceKeySet = false;
@@ -356,8 +342,9 @@ void Parser::ParseCommands(istream &infile, string curString, string prevString,
 
                 if (infile.eof())
                 {
-                    writeError("Error:  Illegal input list format");
-                        break;
+                    logStd.Write("Error!  Please see the error log for more details.");
+                    logErr.Write("Error:  Illegal input list format");
+                    break;
                 }
 
                 infile >> curString;    //Get the next character
@@ -372,14 +359,15 @@ void Parser::ParseCommands(istream &infile, string curString, string prevString,
             }
             else
             {
-                writeError("Error:  No key word found to match key value.");
+                logStd.Write("Error!  Please see the error log for more details.");
+                logErr.Write("Error:  No key word found to match key value.");
             }
 
             theList.clear();
 
             //Check if need to advance to the next key set.
             //-----------------------------------
-            if (curString.find(END_STATEMENT) != std::string::npos)
+            if (curString.find(END) != std::string::npos)
                 advanceKeySet = true;
             else
                 advanceKeySet = false;
@@ -446,7 +434,7 @@ int Parser::ObjectCheck(istream &infile)
     char junk;  //Junk variable to read off white spaces.
     char curChar = infile.peek();
 
-    while (curChar == SPACE[0] || curChar == RETURN[0])
+    while (curChar == SPACE[0] || curChar == EOL[0])
     {
         //Eliminate junk variable.
         infile.read(&junk,1);

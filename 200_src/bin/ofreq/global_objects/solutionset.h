@@ -11,6 +11,7 @@
  *Date          Author                  Description
  *---------------------------------------------------------------------------------------------------------------------
  *Mar 09 2013	Nicholas Barczak		Initially Created
+ *May 7, 2014       Nicholas Barczak    Debugged and updated to Rev 1.0
  *
 \*-------------------------------------------------------------------------------------------------------------------*/
 
@@ -47,7 +48,7 @@
 #elif defined Q_OS_LINUX
     //References for linux go in here.
 #endif
-#include "./ofreqcore.h"
+#include "../system_objects/ofreqcore.h"
 
 //######################################### Class Separator ###########################################################
 //Namespace declarations

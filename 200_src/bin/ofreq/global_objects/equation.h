@@ -12,6 +12,7 @@
  *---------------------------------------------------------------------------------------------------------------------
  *May 15, 2013  Shane Honanie       Initially created.
  *Aug 04, 2013  Nicholas Barczak    Rewrote to use private variables.
+ *May 7, 2014       Nicholas Barczak    Debugged and updated to Rev 1.0
  *
 \*-------------------------------------------------------------------------------------------------------------------*/
 
@@ -43,7 +44,7 @@
 #include <iostream>
 #include <fstream>
 #include <vector>
-#include "../global_objects/ofreqcore.h"
+#include "../system_objects/ofreqcore.h"
 
 //######################################### Class Separator ###########################################################
 //Namespace declarations

@@ -48,12 +48,12 @@
 #include "./derived_outputs/outputsbody.h"
 #include "./global_objects/solutionset.h"
 #include "./global_objects/solution.h"
-#include "./global_objects/system.h"
+#include "./system_objects/system.h"
 #include "./file_reader/dictcontrol.h"
 #include "./file_reader/dictforces.h"
 #include "./file_reader/dictbodies.h"
 #include "./file_reader/filereader.h"
-#include "./global_objects/ofreqcore.h"
+#include "./system_objects/ofreqcore.h"
 #include <string>
 #include <iostream>
 #include <fstream>
@@ -88,9 +88,6 @@ vector<SolutionSet> listSolutions;
 //System object.  Used to control entire execution.
 System sysofreq;
 
-//ofreqcore object.  For writing error messages.
-oFreqCore Logs;
-
 //Name of executable file itself
 const std::string EXECNAME = "ofreq";
 
@@ -111,7 +108,7 @@ const std::string BINFOLDER = "bin";
 
 //######################################### Function Prototypes #######################################################
 
-//------------------------------------------Function Separator ----------------------------------------------------
+//------------------------------------------Function Separator --------------------------------------------------------
 /**
  * @brief Builds a matrix body object for the body specified by the integer.  Uses the motion model identified by the
  * Body object.
@@ -120,7 +117,7 @@ const std::string BINFOLDER = "bin";
  */
 void buildMatBody(int bod, bool useCoeff=true);
 
-//------------------------------------------Function Separator ----------------------------------------------------
+//------------------------------------------Function Separator --------------------------------------------------------
 /**
  * @brief Calculates derived outputs using the OutputsBody object and then writes those outputs to files.
  * @param OutputIn The OutputsBody object that will calculate the derived outputs.  All properties for the OutputsBody
@@ -130,7 +127,7 @@ void buildMatBody(int bod, bool useCoeff=true);
  */
 void calcOutput(OutputsBody &OutputIn, FileWriter &WriterIn);
 
-//------------------------------------------Function Separator ----------------------------------------------------
+//------------------------------------------Function Separator --------------------------------------------------------
 /**
  * @brief Reads in all the input files.  Creates the necessary objects for file reading.  And connects those objects
  * using Qt slots and signals.  Finally proceeds through each file and reads it.  All parsing is accomplished by
@@ -140,7 +137,7 @@ void calcOutput(OutputsBody &OutputIn, FileWriter &WriterIn);
  */
 void ReadFiles(string runPath);
 
-//------------------------------------------Function Separator ----------------------------------------------------
+//------------------------------------------Function Separator --------------------------------------------------------
 /**
  * @brief Finds the path of the critical files for the program.
  *
@@ -156,6 +153,26 @@ void ReadFiles(string runPath);
  * value.
  */
 std::string getPath(std::string typePath = "exec");
+
+//------------------------------------------Function Separator --------------------------------------------------------
+/**
+ * @brief The write monitor function writes out the critical variables for monitoring solution progress.
+ *
+ * The following outputs are included in the writeMonitor function:
+ * - current wave direction
+ * - current wave frequency
+ * - current total iteration (the function uses this to calculate percent complete).
+ * @param dirIn Integer.  Variable passed by value.  The index of the current wave direction.  Start numbering from 0.
+ * @param freqIn Integer.  Variable passed by value.  The index of the current wave frequency.  Start numbering from 0.
+ * @param iterIn Integer.  Variable passed by value.  The index of the current iteration.  Start numbering from 0.
+ */
+void writeMonitor(int dirIn, int freqIn, int iterIn);
+
+//------------------------------------------Function Separator --------------------------------------------------------
+/**
+ * @brief Writes the headers of the log files.
+ */
+void writeLogHeader();
 
 //############################################ Class Prototypes #######################################################
 
@@ -188,16 +205,6 @@ string oFreq_Directory = "";
 
 int main(int argc, char *argv[])
 {
-//    QCoreApplication a(argc, argv);
-    ofreq::oFreqCore freqCore;
-
-//    //Create a header for output to the screen
-//    oFreqCore::OutLog << string(100,'\n');
-//    oFreqCore::OutLog << "==========================================================\n";
-//    oFreqCore::OutLog << "OpenSEA:  oFreq";
-//    oFreqCore::OutLog << "==========================================================\n";
-//    oFreqCore::OutLog << string(5,'\n');
-
 	//if command line arg supplied, use that directory
 	//or assume the current working directory
     if (argc == 2)
@@ -214,6 +221,16 @@ int main(int argc, char *argv[])
         oFreq_Directory = cCurrentPath;
     }
 
+    //Setup the output log files
+    //---------------------------------------------------------------------------
+    sysofreq.setLogFiles(oFreq_Directory);
+
+    //Clear the screen and create an introductory header
+    //---------------------------------------------------------------------------
+    sysofreq.logStd.cls();
+    writeLogHeader();
+
+
     //Clear out any previous output files
     //---------------------------------------------------------------------------
     //Setup filewriter for outputs
@@ -224,7 +241,10 @@ int main(int argc, char *argv[])
 
     //Read input files and interpret data.
     //---------------------------------------------------------------------------
+    sysofreq.logStd.Write("Reading input files");
+    sysofreq.logStd.Write("=================================================================================");
     ReadFiles(oFreq_Directory);
+    sysofreq.logStd.Write("\n\n\n");
 
     //Start creating main objects
     //---------------------------------------------------------------------------
@@ -239,6 +259,12 @@ int main(int argc, char *argv[])
 
     //Iterate through each wave direction and wave frequency to solve
     //---------------------------------------------------------------------------
+    //Create an iterator to track the loops.
+    int itertrack = 0;
+
+    sysofreq.logStd.Write("Solving equations");
+    sysofreq.logStd.Write("=================================================================================");
+
     for(unsigned int i = 0; i < sysofreq.listWaveDirections().size(); i++)
 	{
         //Set the current wave direction
@@ -279,8 +305,37 @@ int main(int argc, char *argv[])
                 soln.setSolnMat(theMotionSolver.listSolution(k));
                 listSolutions[k].setSolnMat(i, j, soln);
 			}
+
+            //Update the iterator
+            itertrack += 1;
+
+            //Update the monitor log
+            writeMonitor(i,j,itertrack);
+
+            //Write output to standard log
+            string msg;
+            ostringstream convert;
+            msg = "Wave Direction:  ";
+            convert << (i+1);
+            msg += convert.str() + " of ";
+            convert.str("");
+            convert << sysofreq.listWaveDirections().size();
+            msg += convert.str();
+            convert.str("");
+            msg += "\t\tFrequency:  ";
+            convert << (j+1);
+            msg += convert.str() + " of ";
+            convert.str("");
+            convert << sysofreq.listWaveFrequencies().size();
+            msg += convert.str();
+            sysofreq.logStd.Write(msg);
+            convert.str("");
 		}
     }
+
+    sysofreq.logStd.Write("\n\n\n");
+    sysofreq.logStd.Write("Calculating Outputs");
+    sysofreq.logStd.Write("=================================================================================");
 
     //Write outputs
     //---------------------------------------------------------------------------
@@ -315,13 +370,11 @@ int main(int argc, char *argv[])
             {
                 testwrite = Writer.writeFrequency();
                 if (testwrite != 0)
-                    throw testwrite;
+                    throw std::runtime_error("Failed to write wave frequencies file.");
             }
-            catch(int err)
+            catch(std::exception &err)
             {
-                testwrite = err;
-                cerr << "Error Writing Frequency Outputs" << endl;
-                cerr << "Error Code:  " << testwrite << endl;
+                sysofreq.logErr.Write(string(err.what()));
             }
 
             //Write wave directions list
@@ -329,13 +382,11 @@ int main(int argc, char *argv[])
             {
                 testwrite = Writer.writeWaveDirection();
                 if (testwrite != 0)
-                    throw testwrite;
+                    throw std::runtime_error("Error writing wave directions outputs.");
             }
-            catch(int err)
+            catch(std::exception &err)
             {
-                testwrite = err;
-                cerr << "Error Writing Wave Direction Outputs" << endl;
-                cerr << "Error Code:  " << testwrite << endl;
+                sysofreq.logErr.Write(string(err.what()));
             }
         }
 
@@ -344,7 +395,9 @@ int main(int argc, char *argv[])
         calcOutput(sysofreq.listOutput(i), Writer);
     }
 
-//    return a.exec();
+    sysofreq.logStd.Write("\n\n\n");
+    sysofreq.logStd.Write("=================================================================================");
+    sysofreq.logStd.Write("oFreq completed successfully.");
     return 0;
 }
 
@@ -373,7 +426,7 @@ void buildMatBody(int bod, bool useCoeff)
         listMatBody[bod].listForceActive_user().push_back(matForceActive());
         listMatBody[bod].listForceActive_user(i).listCoefficient() = MyModel->getMatForceActive_user(i);
         //Print out active force matrix.  For Debugging.
-        listMatBody[bod].listForceActive_user(i).listCoefficient().print("Active Force: " + i);
+        //listMatBody[bod].listForceActive_user(i).listCoefficient().print("Active Force: " + i);
 
         //Create force ID.
         listMatBody[bod].listForceActive_user(i).setId(i);
@@ -520,6 +573,8 @@ void buildMatBody(int bod, bool useCoeff)
 void calcOutput(OutputsBody &OutputIn, FileWriter &WriterIn)
 {
     int filetest;      //Checks whether filewriting was sucessful.
+    string msg;         //String message to write to standard output.
+    ostringstream convert;      //Converter from integers to string data type.
 
     //Setup the FileWriter with the OutputsBody object.
     WriterIn.refOutputsBody() = OutputIn;
@@ -527,6 +582,17 @@ void calcOutput(OutputsBody &OutputIn, FileWriter &WriterIn)
     //Iterate through each wave direction and calculate outputs.
     for (unsigned int j = 0; j < sysofreq.listWaveDirections().size(); j++)
     {
+        //Write output of current wave direction
+        msg = "Wave Direction:  ";
+        convert << (j+1);
+        msg += convert.str() + " of ";
+        convert.str("");
+        convert << sysofreq.listWaveDirections().size();
+        msg += convert.str();
+        convert.str("");
+        sysofreq.logStd.Write(msg);
+
+
         //Set current wave direction
         sysofreq.setCurWaveDirInd(j);
         OutputIn.setCurWaveDir(j);
@@ -537,13 +603,11 @@ void calcOutput(OutputsBody &OutputIn, FileWriter &WriterIn)
             filetest = WriterIn.writeGlobalMotion();
 
             if (filetest != 0)
-                throw filetest;
+                throw std::runtime_error("Error writing output to body motion file.");
         }
-        catch (int err)
+        catch(std::exception &err)
         {
-            filetest = err;
-            cerr << "Error writing output to Global Motion file." << endl;
-            cerr << "Error code:  " << filetest << endl << endl;
+            sysofreq.logErr.Write(string(err.what()));
         }
 
         try
@@ -552,13 +616,11 @@ void calcOutput(OutputsBody &OutputIn, FileWriter &WriterIn)
             filetest = WriterIn.writeGlobalVelocity();
 
             if (filetest != 0)
-                throw filetest;
+                throw std::runtime_error("Error writing output to body velocity file.");
         }
-        catch (int err)
+        catch(std::exception &err)
         {
-            filetest = err;
-            cerr << "Error writing output to Global Velocity file." << endl;
-            cerr << "Error code:  " << filetest << endl << endl;
+            sysofreq.logErr.Write(string(err.what()));
         }
 
         try
@@ -567,13 +629,11 @@ void calcOutput(OutputsBody &OutputIn, FileWriter &WriterIn)
             filetest = WriterIn.writeGlobalAcceleration();
 
             if (filetest != 0)
-                throw filetest;
+                throw std::runtime_error("Error writing output to body acceleration file.");
         }
-        catch (int err)
+        catch(std::exception &err)
         {
-            filetest = err;
-            cerr << "Error writing output to Global Acceleration file." << endl;
-            cerr << "Error code:  " << filetest << endl << endl;
+            sysofreq.logErr.Write(string(err.what()));
         }
 
         try
@@ -582,13 +642,11 @@ void calcOutput(OutputsBody &OutputIn, FileWriter &WriterIn)
             filetest = WriterIn.writeGlobalSolution();
 
             if (filetest != 0)
-                throw filetest;
+                throw std::runtime_error("Error writing output to the body solution file.");
         }
-        catch (int err)
+        catch(std::exception &err)
         {
-            filetest = err;
-            cerr << "Error writing output to Global Solution file." << endl;
-            cerr << "Error code:  " << filetest << endl << endl;
+            sysofreq.logErr.Write(string(err.what()));
         }
     }
 }
@@ -689,4 +747,87 @@ std::string getPath(string typePath)
 
     //Write output
     return output;
+}
+
+//######################################## writeMonitor Function ######################################################
+void writeMonitor(int dirIn, int freqIn, int iterIn)
+{
+    int total;          //Total number of iterations
+    double perc;        //Percentage complete of solving
+
+    //get total number of iterations
+    total = sysofreq.listWaveDirections().size() * sysofreq.listWaveFrequencies().size();
+
+    perc = double(iterIn) / double(total);
+
+    string msg;
+    ostringstream convert;
+    convert << iterIn;
+    msg = convert.str() + "       \t";
+    convert.str("");
+    convert << (dirIn + 1);
+    msg += convert.str() + "        \t";
+    convert.str("");
+    convert << (freqIn + 1);
+    msg += convert.str() + "        \t";
+    convert.str("");
+    convert << perc;
+    msg += convert.str();
+    convert.str("");
+    sysofreq.logMon.Write(msg);
+}
+
+//######################################## writeLogHeader Function ####################################################
+void writeLogHeader()
+{
+    #ifdef Q_OS_WIN
+        std::string SLASH = "\\";  /**< Directory separator in a string path., windows version**/
+    #elif defined Q_OS_LINUX
+        std::string SLASH = "/";   /**< Directory separator in a string path., linux version**/
+    #endif
+
+    std::string directory = getPath("var");
+    std::string HEADER_FILENAME = "openseaheader.txt";
+    std::string fileIn = directory + SLASH + HEADER_FILENAME;
+    std::string header;
+
+    //Writes the headers to each of the log files
+    ifstream header_fileInput(fileIn.c_str(), std::ios::in);
+
+    try
+    {
+        if (!header_fileInput)
+            throw std::ios_base::failure("Header file does not exist:  " + fileIn);
+
+        header_fileInput.seekg(0, std::ios::end);
+        header.resize(header_fileInput.tellg());
+        header_fileInput.seekg(0, std::ios::beg);
+        header_fileInput.read(&header[0], header.size());
+        //Close file
+        header_fileInput.close();
+    }
+    catch (exception &err)
+    {
+        sysofreq.logErr.Write(string(err.what()));
+    }
+
+    //Now that the header is read in, write it to each log file.
+    sysofreq.logStd.Write(header + "\n\n\n",-1);
+    sysofreq.logErr.Write(header + "\n\n\n",-1);
+    sysofreq.logMon.Write(header + "\n\n\n",-1);
+
+    //Write header information for monitor log
+    sysofreq.logMon.Write("Monitors");
+    sysofreq.logMon.Write("=================================================================================");
+    sysofreq.logMon.Write("Iteration \tWave      \tWave      \tPercent");
+    sysofreq.logMon.Write("          \tDirection \tFrequency \tComplete");
+    sysofreq.logMon.Write("=================================================================================");
+
+    //Write header information for error log
+    sysofreq.logErr.Write("Error Log",-1);
+    sysofreq.logErr.Write("=================================================================================",-1);
+
+    //Write header information for standard log
+    sysofreq.logStd.Write("System Status",-1);
+    sysofreq.logStd.Write("=================================================================================",-1);
 }
