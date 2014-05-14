@@ -44,6 +44,7 @@
 #include <iostream>
 #include <algorithm>
 #include <cstdlib>
+#include <sstream>
 #include <fstream>
 #include "objectgroup.h"
 #include "../global_objects/ioword.h"
@@ -329,6 +330,22 @@ private:
      * -1:  OBJECT_END detected.  Object count decreased.
      */
     int ObjectCheck(std::string &inString);   
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief This function processes a complex number, defined in coordinate notation.
+     *
+     * One method of defining a complex number is in coordinate notation:  (x,y).  x = real part, y = imaginary part.
+     * Later functions will convert this into an actual complex number.  For the time being, all we need to do is
+     * strip out the parentheses.
+     * @param inString String.  Variable passed by value.  The complex number definition, which should include
+     * parentheses at the beginning and end.  (Function is fault tolerant to situations where the user did not provide
+     * parantheses.)
+     * @return Returns a string variable.  Variable passed by value.  Returns the complex number as a string, with
+     * any parantheses stripped out.
+     */
+    std::string ComplexCoordStrip(std::string inString);
+
 };
 
 }   //Namespace osea

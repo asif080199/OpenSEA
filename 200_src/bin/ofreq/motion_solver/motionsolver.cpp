@@ -471,6 +471,7 @@ void MotionSolver::calculateOutputs()
     }
     catch (std::exception &err)
     {
+        logStd.Write("Errors found.  Please check the error log.");
         logErr.Write("Failed to solve the global motion matrix.  Matrix values printed below.\n" +
                      string("Error Message:  ") + string(err.what()) + "\n\n");
 
@@ -478,9 +479,19 @@ void MotionSolver::calculateOutputs()
         DebugMatrix("Global Reactive Matrix", globReactiveMat);
         DebugMatrix("Global Active Matrix", globActiveMat);
     }
+    catch(...)
+    {
+        logStd.Write("Errors found.  Please check the error log.");
+        logErr.Write("Failed to solve the global motion matrix.  Matrix values printed below.");
 
-    //Debug print out solution matrix
-    DebugMatrix("Global Solution Matrix", globSolnMat);
+        //Debug print out matrix values
+        DebugMatrix("Global Reactive Matrix", globReactiveMat);
+        DebugMatrix("Global Active Matrix", globActiveMat);
+        //Debug print out solution matrix
+        DebugMatrix("Global Solution Matrix", globSolnMat);
+    }
+
+
 
     //Split into vector of solutions, each represents per body
     for(unsigned int i = 0; i < plistBody.size(); i++)

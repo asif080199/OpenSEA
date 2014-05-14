@@ -728,21 +728,22 @@ int EquationofMotion::curbody()
     {
         //Check for error reported from parent model.
         if (pParentModel->getBody() == -1)
-            throw 1;
+            throw std::out_of_range(string("Equation of Motion:  ") + this->refName() +
+                                    string("\nEquation of motion does not current belong to a body.  No body assigned."));
 
         return pParentModel->getBody() + 1;
     }
-    catch(int err)
+    catch(std::exception &err)
     {
-        switch(err)
-        {
-        case 1:
-            //put in error handler later.
-            err = 0;
-        break;
-        default:
-            err = 0;
-        }
+        logStd.Write("Errors found.  Please check error log.");
+        logErr.Write(err.what());
+        exit(1);
+    }
+    catch(...)
+    {
+        logStd.Write("Errors found.  Please check error log.");
+        logErr.Write("Unknown error occurred.  Object:  Equation of Motion, Function:  curbody()");
+        exit(1);
     }
 }
 

@@ -51,6 +51,8 @@ string ioword::TAB_REF = "  ";
 string ioword::SPACE = " ";
 string ioword::EOL = "\n"; /**< newline. */
 string ioword::QUOTE = "\"";
+string ioword::LIST_EXPAND = "..."; /**< Mark to note expansion of a list */
+string ioword::COMPLEX_COORD = ","; /** < Mark to separate real from imaginary values in a complex number */
 
 //------------------------------------------Function Separator ----------------------------------------------------
 //General object names

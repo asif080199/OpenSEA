@@ -311,8 +311,15 @@ int FileReader::readFile(string path)
     }
     catch (std::exception &err)
     {
-        logErr.Write(string(err.what()));
-        logStd.Write(string(err.what()));
+        logErr.Write(string("Error Message:  ") + string(err.what()));
+        logStd.Write("Errors found.  Please check the error log.");
+        return 1;
+        exit(1);
+    }
+    catch(...)
+    {
+        logErr.Write("Unknown error occurred.  Object:  filreader, Function:  readFile()");
+        logStd.Write("Errors found.  Please check the error log.");
         return 1;
         exit(1);
     }

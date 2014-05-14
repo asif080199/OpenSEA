@@ -375,6 +375,12 @@ int main(int argc, char *argv[])
             catch(std::exception &err)
             {
                 sysofreq.logErr.Write(string(err.what()));
+                sysofreq.logStd.Write("Errors found.  Please check the error log for details.");
+            }
+            catch(...)
+            {
+                sysofreq.logErr.Write("Unknown error occurred.  Main program.");
+                sysofreq.logStd.Write("Errors found.  Please check the error log for details.");
             }
 
             //Write wave directions list
@@ -387,6 +393,12 @@ int main(int argc, char *argv[])
             catch(std::exception &err)
             {
                 sysofreq.logErr.Write(string(err.what()));
+                sysofreq.logStd.Write("Errors found.  Please check the error log for details.");
+            }
+            catch(...)
+            {
+                sysofreq.logErr.Write("Unknown error occurred.  Main program.");
+                sysofreq.logStd.Write("Errors found.  Please check the error log for details.");
             }
         }
 
@@ -608,6 +620,12 @@ void calcOutput(OutputsBody &OutputIn, FileWriter &WriterIn)
         catch(std::exception &err)
         {
             sysofreq.logErr.Write(string(err.what()));
+            sysofreq.logStd.Write("Errors found.  Please check the error log for details.");
+        }
+        catch(...)
+        {
+            sysofreq.logErr.Write("Unknown error occurred.  Main program.");
+            sysofreq.logStd.Write("Errors found.  Please check the error log for details.");
         }
 
         try
@@ -621,6 +639,12 @@ void calcOutput(OutputsBody &OutputIn, FileWriter &WriterIn)
         catch(std::exception &err)
         {
             sysofreq.logErr.Write(string(err.what()));
+            sysofreq.logStd.Write("Errors found.  Please check the error log for details.");
+        }
+        catch(...)
+        {
+            sysofreq.logErr.Write("Unknown error occurred.  Main program.");
+            sysofreq.logStd.Write("Errors found.  Please check the error log for details.");
         }
 
         try
@@ -634,6 +658,12 @@ void calcOutput(OutputsBody &OutputIn, FileWriter &WriterIn)
         catch(std::exception &err)
         {
             sysofreq.logErr.Write(string(err.what()));
+            sysofreq.logStd.Write("Errors found.  Please check the error log for details.");
+        }
+        catch(...)
+        {
+            sysofreq.logErr.Write("Unknown error occurred.  Main program.");
+            sysofreq.logStd.Write("Errors found.  Please check the error log for details.");
         }
 
         try
@@ -647,6 +677,12 @@ void calcOutput(OutputsBody &OutputIn, FileWriter &WriterIn)
         catch(std::exception &err)
         {
             sysofreq.logErr.Write(string(err.what()));
+            sysofreq.logStd.Write("Errors found.  Please check the error log for details.");
+        }
+        catch(...)
+        {
+            sysofreq.logErr.Write("Unknown error occurred.  Main program.");
+            sysofreq.logStd.Write("Errors found.  Please check the error log for details.");
         }
     }
 }
@@ -809,6 +845,12 @@ void writeLogHeader()
     catch (exception &err)
     {
         sysofreq.logErr.Write(string(err.what()));
+        sysofreq.logStd.Write("Errors found.  Please check the error log for details.");
+    }
+    catch(...)
+    {
+        sysofreq.logErr.Write("Unknown error occurred.  Main program.");
+        sysofreq.logStd.Write("Errors found.  Please check the error log for details.");
     }
 
     //Now that the header is read in, write it to each log file.

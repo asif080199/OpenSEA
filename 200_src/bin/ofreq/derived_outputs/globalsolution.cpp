@@ -144,7 +144,17 @@ Solution &GlobalSolution::getSolution(double freqIn)
     catch (std::exception &err)
     {
         //Write out error message.
-        logErr.Write(string(err.what()));
+        logErr.Write("Error:  " + string(err.what()));
+        logStd.Write("Error occurred.  Check the error log for details.");
+
+        //Stop program execution.
+        exit(1);
+    }
+    catch(...)
+    {
+        //Write out error message.
+        logErr.Write("Unknown error occurred.  Object:  Globalsolution, Function:  getSolution()");
+        logStd.Write("Error occurred.  Check the error log for details.");
 
         //Stop program execution.
         exit(1);

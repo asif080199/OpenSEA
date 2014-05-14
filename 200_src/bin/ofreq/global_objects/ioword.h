@@ -120,6 +120,11 @@ protected:
     static std::string SPACE; /**< Just a space " " */
     static std::string EOL; /**< newline. */
     static std::string QUOTE;    /**< Quotation symbol " */
+    static std::string LIST_EXPAND; /**< Mark to note expansion of a list */
+    /**
+     * Mark to separate real from imaginary values in a complex number, using coordinate system notation.
+     */
+    static std::string COMPLEX_COORD;
 
     //------------------------------------------Function Separator ----------------------------------------------------
     //General object names

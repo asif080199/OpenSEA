@@ -279,6 +279,13 @@ cx_mat &matForceReact::listDerivative(unsigned int index)
         //Return matrix of zeros, newly created.
         return pderiv[index];
     }
+    catch(...)
+    {
+        //Unknown error handler.
+        logStd.Write("Errors found.  Please check the error log.");
+        logErr.Write("Uknown error occurred.  Object:  matForceReact, Function:  listDerivative");
+        exit(1);
+    }
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------

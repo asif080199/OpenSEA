@@ -81,6 +81,13 @@ Equation &Derivative::listDataEquation(int indexIn)
         i = pEquationList.size() - 1;
         pEquationList[i].setDataIndex(indexIn);
     }
+    catch(...)
+    {
+        //Assume no data index found.  Create a new place in the vector for the data index.
+        pEquationList.push_back(Equation());
+        i = pEquationList.size() - 1;
+        pEquationList[i].setDataIndex(indexIn);
+    }
 
     //Write output
     return pEquationList[i];

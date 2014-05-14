@@ -90,6 +90,13 @@ double &Equation::listDataVariable(int DataIndex)
         plistDataIndex.push_back(DataIndex);
         i = pcoeffs.size() - 1;
     }
+    catch(...)
+    {
+        //Assume no match found and create a new place for one.
+        pcoeffs.push_back(0.0);
+        plistDataIndex.push_back(DataIndex);
+        i = pcoeffs.size() - 1;
+    }
 
     //Return the value
     return pcoeffs[i];

@@ -107,6 +107,13 @@ complexDouble &ForceActive::listDataEquation(int index)
         pDataIndex.push_back(index);
         i = pCoefficients.size() - 1;
     }
+    catch(...)
+    {
+        //If an error, assume that there was no match.  Create a new place in the vector.
+        pCoefficients.push_back(complex<double>(0,0));
+        pDataIndex.push_back(index);
+        i = pCoefficients.size() - 1;
+    }
 
     //Return coefficient.
     return pCoefficients[i];

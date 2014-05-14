@@ -78,6 +78,13 @@ void Dictionary::setObject(ObjectGroup input)
             logStd.Write("Errors Found.  Please check the error log.");
             exit(1);
         }
+        catch(...)
+        {
+            //Write out error message and stop execution.
+            logErr.Write("Unknown error occurred.  Ojbect:  ObjectGroup, Function:  setObject");
+            logStd.Write("Errors Found.  Please check the error log.");
+            exit(1);
+        }
     }
 
     //Next proceed through each of the sub classes defined for the ObjectGroup object.
@@ -93,6 +100,14 @@ void Dictionary::setObject(ObjectGroup input)
             logErr.Write("Error reading in object definition.\n" +
                          string("Object Name:  ") + string(input.listObject(i)->getClassName()) +
                          string("\nError Code:  ") + string(err.what()));
+            logStd.Write("Errors Found.  Please check the error log.");
+            exit(1);
+        }
+        catch(...)
+        {
+            //Write out error message and stop execution.
+            logErr.Write("Error reading in object definition.\n" +
+                         string("Object Name:  ") + string(input.listObject(i)->getClassName()));
             logStd.Write("Errors Found.  Please check the error log.");
             exit(1);
         }
@@ -133,97 +148,142 @@ complex<double> Dictionary::convertComplex(string input)
     const string IMAGINARY = "i";
     const string PLUS = "+";
     const string MINUS = "-";
+    const string COMMA = ",";
 
     //First check if defined by amplitude and angle
-    int indexSep;
-    indexSep = input.find(BRACKET);
-    if (indexSep == std::string::npos)
+    int indexPolar;
+    indexPolar = input.find(BRACKET);
+
+    //Next check if defined by comma.
+    int indexCoord;
+    indexCoord = input.find(COMMA);
+
+    //Next check if defined by rectangular notation.
+    int indImag;
+    indImag = input.find(IMAGINARY,1);
+
+    try
     {
-        //Not using bracket
-        int indPlus;
-        int indMinus;
-        int indImag;
 
-        //Get positions of plus, minus, and imaginary.
-        //Ignore the first character to avoid picking up any plus/minus indicators for real component.
-        indImag = input.find(IMAGINARY,1);
-        indPlus = input.find(PLUS,1);
-        indMinus = input.find(MINUS,1);
-
-        //Separate string by position of plus and minus signs.
-        if (indPlus == std::string::npos)
+        if (indexPolar != std::string::npos)
         {
-            //No plus involved.  Minus sign.
-            //Check if imaginary symbol is at middle or end of input.
-            if (indImag == input.length() - 1)
+            //using bracket.  Process as polar notation.
+            double amp;
+            double phase;
+
+            //Get amplitude
+            amp = atof(input.substr(0, indexPolar).c_str());
+            //Get phase
+            phase = atof(input.substr(indexPolar + 1).c_str());
+
+            //Convert to real and imaginary parts.
+            output.real(amp * cos(phase));
+            output.imag(amp * sin(phase));
+        }
+
+        else if (indexCoord != std::string::npos)
+        {
+            //Using comma.  Process as coordinate system notation.
+
+            //Process real part.
+            output.real(
+                        atof(input.substr(0,indexCoord).c_str())
+                        );
+
+            //Process imaginary part.
+            output.imag(
+                        atof(input.substr(indexCoord + 1).c_str())
+                        );
+        }
+
+        else if (indImag != std::string::npos)
+        {
+            //using rectangular notation
+            int indPlus;
+            int indMinus;
+
+
+            //Get positions of plus, minus, and imaginary.
+            //Ignore the first character to avoid picking up any plus/minus indicators for real component.
+            indPlus = input.find(PLUS,1);
+            indMinus = input.find(MINUS,1);
+
+            //Separate string by position of plus and minus signs.
+            if (indPlus == std::string::npos)
             {
-                //End of input
-                //Assign real part.
-                output.real(
-                            atof(input.substr(0, indMinus + 1).c_str())
-                            );
-                //Assign imaginary part
-                output.imag(
-                            -1.0 * atof(input.substr(indMinus + 1, indImag - indPlus).c_str())
-                            );
+                //No plus involved.  Minus sign.
+                //Check if imaginary symbol is at middle or end of input.
+                if (indImag == input.length() - 1)
+                {
+                    //End of input
+                    //Assign real part.
+                    output.real(
+                                atof(input.substr(0, indMinus + 1).c_str())
+                                );
+                    //Assign imaginary part
+                    output.imag(
+                                -1.0 * atof(input.substr(indMinus + 1, indImag - indPlus).c_str())
+                                );
+                }
+                else
+                {
+                    //Middle of input
+                    //Assign real part.
+                    output.real(
+                                atof(input.substr(0, indMinus).c_str())
+                                );
+                    //Assign imaginary part
+                    output.imag(
+                                -1.0 * atof(input.substr(indImag + 1, input.length() - 1 - indImag).c_str())
+                                );
+                }
             }
             else
             {
-                //Middle of input
-                //Assign real part.
-                output.real(
-                            atof(input.substr(0, indMinus).c_str())
-                            );
-                //Assign imaginary part
-                output.imag(
-                            -1.0 * atof(input.substr(indImag + 1, input.length() - 1 - indImag).c_str())
-                            );
+                //Plus sign used.
+                //Check if imaginary symbol is at middle or end of input.
+                if (indImag == input.length() - 1)
+                {
+                    //End of input.
+                    //Assign real part.
+                    output.real(
+                                atof(input.substr(0, indPlus).c_str())
+                                );
+                    //Assign imaginary part
+                    output.imag(
+                                atof(input.substr(indPlus + 1, indImag - indPlus).c_str())
+                                );
+                }
+                else
+                {
+                    //Middle of input.
+                    //Assign real part.
+                    output.real(
+                                atof(input.substr(0,indPlus).c_str())
+                                );
+                    //Assign imaginary part
+                    output.imag(
+                                atof(input.substr(indImag + 1, input.length() - 1 - indImag).c_str())
+                                );
+                }
             }
         }
+
         else
-        {
-            //Plus sign used.
-            //Check if imaginary symbol is at middle or end of input.
-            if (indImag == input.length() - 1)
-            {
-                //End of input.
-                //Assign real part.
-                output.real(
-                            atof(input.substr(0, indPlus).c_str())
-                            );
-                //Assign imaginary part
-                output.imag(
-                            atof(input.substr(indPlus + 1, indImag - indPlus).c_str())
-                            );
-            }
-            else
-            {
-                //Middle of input.
-                //Assign real part.
-                output.real(
-                            atof(input.substr(0,indPlus).c_str())
-                            );
-                //Assign imaginary part
-                output.imag(
-                            atof(input.substr(indImag + 1, input.length() - 1 - indImag).c_str())
-                            );
-            }
-        }
+            throw std::runtime_error(string("Complex variable format not recognized.  \n") +
+                                     string("Offending Entry:  ") + input);
     }
-    else
+    catch(std::exception &err)
     {
-        //using bracket.  Process as polar notation.
-        double amp;
-        double phase;
-
-        //Get amplitude
-        amp = atof(input.substr(0, indexSep).c_str());
-        //Get phase
-        phase = atof(input.substr(indexSep + 1).c_str());
-
-        //Convert to real and imaginary parts.
-        output.real(amp * cos(phase));
-        output.imag(amp * sin(phase));
+        logStd.Write("Error found.  Please check the error log.");
+        logErr.Write(string("Object:  Dictionary, Function:  convertComplex\n") + err.what());
+        exit(1);
+    }
+    catch(...)
+    {
+        logStd.Write("Error found.  Please check the error log.");
+        logErr.Write(string("Unknown error occurred.  Object:  Dictionary, Function:  convertComplex"));
+        exit(1);
     }
 
     //Return output

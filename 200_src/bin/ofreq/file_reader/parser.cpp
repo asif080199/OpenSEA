@@ -215,7 +215,7 @@ void Parser::ParseCommands(istream &infile, string curString, string prevString,
     {
         //Check for string enclosed in quotation marks.
         //-----------------------------------
-        if(curString.find(QUOTE) != std::string::npos) //the string will be enclosed in quotes.  Evaluates to 0 if equal.
+        if(curString.find(QUOTE) != std::string::npos) //the string will be enclosed in quotes.
         {
             int quoteCount = std::count(curString.begin(), curString.end(), QUOTE[0]);//the count of quotes in this string
 
@@ -289,88 +289,206 @@ void Parser::ParseCommands(istream &infile, string curString, string prevString,
             bracket_count -= 1;
         }
 
-        //Check if this is a list
+        //Check if this is a list or complex variable declaration.
         //-----------------------------------
         else if (curString.find(LIST_BEGIN) != std::string::npos)
         {
-            //Get next statement in list
-            infile >> curString;
-
-            //Filter out any comments
-            //curString = CommentFilter(curString, infile);
-
-            while(curString.find(LIST_END) == std::string::npos) //Evaluates to zero if equal
+            //First check if this is a complex variable.
+            if (curString.find(COMPLEX_COORD) != std::string::npos)
             {
+                //Complex number.  Process as a complex number coordinate.
+                vector<string> output;
+
                 //Filter out any comments
                 curString = CommentFilter(curString, infile);
-                if (curString.empty())
-                {
-                    infile >> curString;
-                    continue;
-                }
 
-                int index = curString.find(KEY_VAL_SEPARATOR);  //Find the separator mark.
-                int listindex;                         //Index of the value in the list of values.
-                string listval;                                 //Value in the list of values.
+                //Write resulting complex number (still just a string).
+                output.push_back(
+                            ComplexCoordStrip(curString)
+                            );
 
-                //Check if this is a direct list.
-                if (index == std::string::npos)
-                {
-                    //Direct list
-                    theList.push_back(curString);
-                }
-                else if(curString[0] != LIST_END[0])
-                {
-                    //Not direct list
-
-                    //split the string into index and value
-                    listindex = atoi(curString.substr(0, index + 1).c_str());
-                    listval = curString.substr(index + 1, curString.length() - 1 - index);
-
-                    //Remember, vector list starts counting at zero.
-                    //But user list starts counting at 1.
-
-                    if (listindex > theList.size())
-                    {
-                        //resize list vector
-                        theList.resize(listindex);
-                    }
-
-                    //Assign value
-                    theList[listindex - 1] = listval;
-                }
-
-                if (infile.eof())
-                {
-                    logStd.Write("Error!  Please see the error log for more details.");
-                    logErr.Write("Error:  Illegal input list format");
-                    break;
-                }
-
-                infile >> curString;    //Get the next character
-            }
-
-            if (keySet)
-            {
                 //Write the output to the key value.
                 if ((curKeySet > plistVal.size() - 1) || (plistVal.size() == 0))
                     plistVal.resize(curKeySet + 1);
-                plistVal[curKeySet] = theList;
+                plistVal[curKeySet] = output;
+
+                //Notify to advance to the next key
+                advanceKeySet = true;
             }
+
+            //List.  Process as a list format.
             else
             {
-                logStd.Write("Error!  Please see the error log for more details.");
-                logErr.Write("Error:  No key word found to match key value.");
+                bool list_expandable = false;      //Boolean to decide if an ellipsis was detected to denote a regular list.
+                                                   //The regular list signifies that oFreq should expand out the list.
+                vector<int> listspace(2);              //Array of values to use for expanding the list.
+
+                //Get next statement in list
+                infile >> curString;
+
+                while((curString.find(LIST_END) == std::string::npos) ||
+                      (curString.find(COMPLEX_COORD) != std::string::npos))
+                {
+                    //Filter out any comments
+                    curString = CommentFilter(curString, infile);
+                    if (curString.empty())
+                    {
+                        infile >> curString;
+                        continue;
+                    }
+
+                    int index = curString.find(KEY_VAL_SEPARATOR);  //Find the separator mark.
+                    int listindex;                         //Index of the value in the list of values.
+                    string listval;                                 //Value in the list of values.
+
+                    //Check if this is an expandable list.
+                    if (curString.compare(LIST_EXPAND) == 0)
+                    {
+                        //Yes, expandable list.
+                        list_expandable = true;
+
+                        //Note:  Expandable list currently does not work for complex variable definitions.
+
+                        //Record the last two values.  List will be expanded at the end.
+                        listspace[0] = theList.size() - 2;
+                        listspace[1] = theList.size() - 1;
+                    }
+                    //Check if this is a direct list.
+                    else if (index == std::string::npos)
+                    {
+                        //Direct list
+
+                        //Check for complex variable definition.
+                        if (curString.find(COMPLEX_COORD) != std::string::npos)
+                        {
+                            //Complex variable.  Strip parentheses and then add.
+                            theList.push_back(
+                                        ComplexCoordStrip(curString)
+                                        );
+                        }
+                        else
+                        {
+                            //Simple direct list.
+                            theList.push_back(curString);
+                        }
+                    }
+                    else if(curString[0] != LIST_END[0])
+                    {
+                        //Not direct list
+
+                        //split the string into index and value
+                        listindex = atoi(curString.substr(0, index + 1).c_str());
+                        listval = curString.substr(index + 1, curString.length() - 1 - index);
+
+                        //Remember, vector list starts counting at zero.
+                        //But user list starts counting at 1.
+
+                        if (listindex > theList.size())
+                        {
+                            //resize list vector
+                            theList.resize(listindex);
+                        }
+
+                        //Assign value
+                        //Check for complex variable definition.
+                        if (listval.find(COMPLEX_COORD) != std::string::npos)
+                        {
+                            //Complex variable.  Strip parentheses and then add.
+                            theList[listindex - 1] = ComplexCoordStrip(listval);
+                        }
+                        else
+                        {
+                            //Not a complex variable.
+                            theList[listindex - 1] = listval;
+                        }
+                    }
+
+                    if (infile.eof())
+                    {
+                        logStd.Write("Error!  Please see the error log for more details.");
+                        logErr.Write("Error:  Illegal input list format");
+                        break;
+                    }
+
+                    infile >> curString;    //Get the next character
+                }
+
+                //Expand out the list (if expansion was true)
+                if (list_expandable)
+                {
+                    double spacing;         //The spacing of entries in the list.
+                    double ending;          //The value of the last entry in the list.
+                    double starting;        //The starting value of the expansion.
+                    double current;         //The value of the current item to add to the list.
+                    ostringstream convert;     //Converts from variables to strings.
+
+                    try
+                    {
+                        //First get the spacing of entries in the list.
+                        spacing = atof(theList.at(listspace[1]).c_str()) - atof(theList.at(listspace[0]).c_str());
+
+                        //Next get the last value of the list.
+                        ending = atof(theList.at(theList.size() - 1).c_str());
+
+                        //Now resize the list to the starting value recorded for expansion.
+                        theList.resize(listspace[1] + 1);
+
+                        //Loop to expand out the list and add entries.
+                        starting = atof(theList.at(listspace[1]).c_str());
+                        current = starting + spacing;
+                        while ((current < ending) && (current > starting))
+                        {
+                            convert.str("");
+
+                            //Convert and add to the list.
+                            convert << current;
+                            theList.push_back(convert.str());
+
+                            //Advance to the next entry
+                            current += spacing;
+                        }
+                        //Add last entry in list.
+                        convert.str("");
+                        convert << ending;
+                        theList.push_back(convert.str());
+                    }
+                    catch(std::exception &err)
+                    {
+                        logStd.Write("Error!  Please see the error log for more details.");
+                        logErr.Write("Error:  problem expanding list.  Perhaps the list entries are not valid numbers.\n" +
+                                     string("Error Message:  ") + err.what());
+                    }
+                    catch(...)
+                    {
+                        logStd.Write("Error!  Please see the error log for more details.");
+                        logErr.Write("Error:  problem expanding list.  Perhaps the list entries are not valid numbers.");
+                    }
+                }
+
+                if (keySet)
+                {
+                    //Write the output to the key value.
+                    if ((curKeySet > plistVal.size() - 1) || (plistVal.size() == 0))
+                        plistVal.resize(curKeySet + 1);
+                    plistVal[curKeySet] = theList;
+                }
+                else
+                {
+                    logStd.Write("Error!  Please see the error log for more details.");
+                    logErr.Write("Error:  No key word found to match key value.");
+                }
+
+                theList.clear();
+
+                //Check if need to advance to the next key set.
+                //-----------------------------------
+                if (curString.find(END) != std::string::npos)
+                    advanceKeySet = true;
+                else
+                    advanceKeySet = false;
             }
 
-            theList.clear();
 
-            //Check if need to advance to the next key set.
-            //-----------------------------------
-            if (curString.find(END) != std::string::npos)
-                advanceKeySet = true;
-            else
-                advanceKeySet = false;
         }
 
         //Process as normal set of key words and values.
@@ -460,4 +578,23 @@ int Parser::ObjectCheck(std::string &inString)
         return -1;
     else
         return 0;
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+std::string Parser::ComplexCoordStrip(std::string inString)
+{
+    //Strip out parantheses from complex number, coordinate system notation.
+    std::size_t index;
+
+    //First strip out beginning brackets.
+    index = inString.find(LIST_BEGIN);
+    if (index != std::string::npos)
+        inString.erase(index,1);
+
+    //Next strip out ending brackets.
+    index = inString.rfind(LIST_END);
+    if (index != std::string::npos)
+        inString.erase(index,1);
+
+    return inString;
 }

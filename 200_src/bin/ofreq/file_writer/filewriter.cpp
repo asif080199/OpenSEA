@@ -143,7 +143,15 @@ bool FileWriter::clearFiles()
         {
             //Write out the error message.  Keep executing.  Failure to delete a file may not necessarily
             //be a problem.
-            logErr.Write(string(err.what()));
+            logErr.Write(string("Error Message:  ") + string(err.what()));
+            logStd.Write("Errors found.  Please check error log.");
+        }
+        catch(...)
+        {
+            //Write out the error message.  Keep executing.  Failure to delete a file may not necessarily
+            //be a problem.
+            logErr.Write("Unknown error occurred.  Object:  filewriter, Function:  clearFiles()");
+            logStd.Write("Errors found.  Please check error log.");
         }
     }
     return true; //all directories deleted successfully
@@ -225,7 +233,14 @@ void FileWriter::setHeader(string filePathIn)
     catch (std::exception &err)
     {
         //Write out error message
-        logErr.Write(string(err.what()));
+        logErr.Write(string("Error Message:  ") + string(err.what()));
+        logStd.Write("Errors found.  Please check error log.");
+    }
+    catch(...)
+    {
+        //Write out error message
+        logErr.Write("Uknown error occurred.  Ojbect:  filewriter(), Function:  setHeader()");
+        logStd.Write("Errors found.  Please check error log.");
     }
 }
 
@@ -285,6 +300,13 @@ int FileWriter::writeWaveDirection()
         logStd.Write("Errors occurred.  Please check the error log for details.");
         errVal = 1;
     }
+    catch(...)
+    {
+        //Write out error message
+        logErr.Write("Uknown error occurred.  Ojbect:  filewriter(), Function:  writeWaveDirection()");
+        logStd.Write("Errors found.  Please check error log.");
+        errVal = 1;
+    }
 
     return errVal;
 }
@@ -339,6 +361,13 @@ int FileWriter::writeFrequency()
         logStd.Write("Errors occurred.  Please check the error log for details.");
         errVal = 1;
     }
+    catch(...)
+    {
+        //Write out error message
+        logErr.Write("Uknown error occurred.  Ojbect:  filewriter(), Function:  writeFrequencies()");
+        logStd.Write("Errors found.  Please check error log.");
+        errVal = 1;
+    }
 
     return errVal;
 }
@@ -360,6 +389,7 @@ int FileWriter::writeGlobalMotion()
         outputAvail = true;
 
     //create directory.  Function will do nothing if directory already exists.
+    logStd.WriteScreen(string("Folder = ") + getCurWaveDir());
     createDir(getCurWaveDir());
 
     //create filename and file output stream.
@@ -457,6 +487,13 @@ int FileWriter::writeGlobalMotion()
                 logErr.Write("Unknown Error Occurred.  Object:  FileWriter, Function:  writeGlobalMotion()\n" +
                              string("Error Message:  ") + string(err.what()));
                 logStd.Write("Errors occurred.  Please check the error log for details.");
+                errVal = 1;
+            }
+            catch(...)
+            {
+                //Write out error message
+                logErr.Write("Uknown error occurred.  Ojbect:  filewriter(), Function:  writeGlobalMotion()");
+                logStd.Write("Errors found.  Please check error log.");
                 errVal = 1;
             }
 
@@ -586,6 +623,13 @@ int FileWriter::writeGlobalVelocity()
                 logErr.Write("Unknown Error Occurred.  Object:  FileWriter, Function:  writeGlobalVelocity()\n" +
                              string("Error Message:  ") + string(err.what()));
                 logStd.Write("Errors occurred.  Please check the error log for details.");
+                errVal = 1;
+            }
+            catch(...)
+            {
+                //Write out error message
+                logErr.Write("Uknown error occurred.  Ojbect:  filewriter(), Function:  writeGlobalVelocity()");
+                logStd.Write("Errors found.  Please check error log.");
                 errVal = 1;
             }
 
@@ -718,6 +762,13 @@ int FileWriter::writeGlobalAcceleration()
                 logStd.Write("Errors occurred.  Please check the error log for details.");
                 errVal = 1;
             }
+            catch(...)
+            {
+                //Write out error message
+                logErr.Write("Uknown error occurred.  Ojbect:  filewriter(), Function:  writeGlobalAcceleration()");
+                logStd.Write("Errors found.  Please check error log.");
+                errVal = 1;
+            }
 
             //End the output object
             output << TAB() << OBJECT_END << EOL;
@@ -848,6 +899,14 @@ int FileWriter::writeGlobalSolution()
                 logStd.Write("Errors occurred.  Please check the error log for details.");
                 errVal = 1;
             }
+            catch(...)
+            {
+                //Write out error message
+                logErr.Write("Uknown error occurred.  Ojbect:  filewriter(), Function:  writeGlobalSolution()");
+                logStd.Write("Errors found.  Please check error log.");
+                errVal = 1;
+            }
+
             //End the output object
             output << TAB() << OBJECT_END << EOL;
         }
@@ -869,7 +928,7 @@ int FileWriter::writeGlobalSolution()
 //------------------------------------------Function Separator --------------------------------------------------------
 int FileWriter::getCurWaveInd()
 {
-    return pOutput->getCurWaveDir();
+    return pOutput->getCurWaveInd();
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
