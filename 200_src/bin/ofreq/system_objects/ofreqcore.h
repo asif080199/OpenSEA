@@ -153,6 +153,9 @@ protected:
     //------------------------------------------Function Separator ----------------------------------------------------
     static std::string SLASH; /**< The directory level specifier.  Changes under windows or linux.*/
 
+    //------------------------------------------Function Separator ----------------------------------------------------
+    static double GRAVITY; /**< Acceleration due to gravity.  Normal earth gravity.*/
+
 //==========================================Section Separator =========================================================
 private:
 

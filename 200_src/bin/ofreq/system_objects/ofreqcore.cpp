@@ -42,6 +42,8 @@ Log oFreqCore::logStd;      /**< Standard log file declaration */
 Log oFreqCore::logErr;      /**< Error log file declaration. */
 Log oFreqCore::logMon;      /**< Monitor log file declaration */
 
+double oFreqCore::GRAVITY = 9.80665; /**< Acceleration due to gravity.  Normal earth gravity.*/
+
 //==========================================Section Separator =========================================================
 //Public Functions
 

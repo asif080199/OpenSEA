@@ -55,7 +55,9 @@ SOURCES += ofreq.cpp \
     system_objects/system.cpp \
     system_objects/log.cpp \
     system_objects/ofreqcore.cpp \
-    global_objects/ioword.cpp
+    global_objects/ioword.cpp \
+    wave_spectra/wavespec.cpp \
+    sea_models/seamodel.cpp
 
 HEADERS += \
     derived_outputs/outputsbody.h \
@@ -94,15 +96,19 @@ HEADERS += \
     system_objects/system.h \
     system_objects/log.h \
     system_objects/ofreqcore.h \
-    global_objects/ioword.h
+    global_objects/ioword.h \
+    wave_spectra/wavespec.h \
+    sea_models/seamodel.h
 
 # Include header files path for libraries
 INCLUDEPATH += \
     $$PWD/../../../lib \
-    $$PWD/../../../var
+    $$PWD/../../../var \
+    $$PWD/../../lib/alglib
 
 # force rebuild if the headers change
-DEPENDPATH += $${INCLUDEPATH}
+DEPENDPATH += $${INCLUDEPATH} \
+    $$PWD/../../lib/alglib
 
 OTHER_FILES += \
     ../../var/openseaheader.txt
@@ -122,4 +128,5 @@ unix {
     # Any files specific to linux go in these brackets.
     LIBS += -larmadillo -llapack -lblas #Add armadillo and associated support
     LIBS += -lboost_system -lboost_filesystem   # Add boost and boost filesystem
+    LIBS += -L$$PWD/../../../300_build/320_build_linux/lib/alglib/ -lalglib #AGLIB library for interpolation.
 }

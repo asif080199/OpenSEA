@@ -389,7 +389,6 @@ int FileWriter::writeGlobalMotion()
         outputAvail = true;
 
     //create directory.  Function will do nothing if directory already exists.
-    logStd.WriteScreen(string("Folder = ") + getCurWaveDir());
     createDir(getCurWaveDir());
 
     //create filename and file output stream.
