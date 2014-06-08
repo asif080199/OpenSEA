@@ -36,7 +36,7 @@
 //######################################### Class Separator ###########################################################
 #ifndef WAVESPEC_H
 #define WAVESPEC_H
-#include "../system_objects/ofreqcore.h"
+#include "wavespecbase.h"
 #include <vector>
 #include "interpolation.h"
 #include <stdlib.h>
@@ -69,10 +69,8 @@ namespace osea
  * wave energy.  The main use of a WaveSpec object is to ask for the wave spetral energy at a given wave frequency.
  * The WaveSpec class is the most basic definition.  In this class, the user provides tables of wave frequency and
  * wave energy.  The class then interpolates to return the wave energy at the requested frequency.
- *
- * Other classes inherit from the WaveSpec class.  This is just the most basic definition of the wave spectrum.
  */
-class WaveSpec : public osea::ofreq::oFreqCore
+class WaveSpec : public osea::WaveSpecBase
 {
 //==========================================Section Separator =========================================================
 public:
@@ -172,37 +170,7 @@ public:
      * @return Returns a double, passed by value.  Returns the spectral wave energy (m^2/(rad/s)) at the requested
      * wave frequency.
      */
-    virtual double getSpecEnergy(double freq);
-
-    //------------------------------------------Function Separator ----------------------------------------------------
-    /**
-     * @brief The name used to identify this specific wave spectra.
-     *
-     * Purely for user benefit.  Can be any string.
-     * @return Returns a string, passed by value.  String is the name of the wave spectra used to designate this
-     * specific object.
-     */
-    std::string getName();
-
-    //------------------------------------------Function Separator ----------------------------------------------------
-    /**
-     * @brief The name used to identify this specific wave spectra.
-     *
-     * Purely for user benefit.  Can be any string.
-     * @param nameIn String variable, passed by value.  String is the name of the wave spectra used to designate this
-     * specific object.
-     */
-    void setName(std::string nameIn);
-
-    //------------------------------------------Function Separator ----------------------------------------------------
-    /**
-     * @brief The name used to identify this specific wave spectra.
-     *
-     * Purely for user benefit.  Can be any string.
-     * @return Returns a string, passed by reference.  String is the name of the wave spectra used to designate this
-     * specific object.
-     */
-    std::string &refName();
+    double getSpecEnergy(double freq);
 
 
 //==========================================Section Separator =========================================================
@@ -243,13 +211,6 @@ protected:
      */
     bool SplineReady;
 
-    //------------------------------------------Function Separator ----------------------------------------------------
-    /**
-     * @brief The name used to identify this specific wave spectra.
-     *
-     * Purely for user benefit.  Can be any string.
-     */
-    std::string pName;
 
 //==========================================Section Separator =========================================================
 private:

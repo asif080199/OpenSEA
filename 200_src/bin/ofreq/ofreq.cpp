@@ -60,9 +60,14 @@
 #include <stdio.h>
 #include <QtGlobal>
 #ifdef Q_OS_WIN
+    //----------- Windows Inclusions ------------
     #include <direct.h>
     #define GetCurrentDir _getcwd
+
+    #include <shlwapi.h>
+    #pragma comment(lib, "shlwapi.lib")
 #elif defined Q_OS_LINUX
+    //----------- Linux Inclusions ------------
     #include <unistd.h>
     #define GetCurrentDir getcwd
 #endif
@@ -725,7 +730,7 @@ std::string getPath(string typePath)
     //First get executable path.  Includes dependancy code for both windows and linux.
     #ifdef Q_OS_WIN
     //----------------------------------- Windows Code ----------------------------------------------------------------
-    ssize_t len = GetModuleFileName(NULL, buff, sizeof(buff) - 1);
+    ssize_t len = GetModuleFileNameA(NULL, buff, sizeof(buff) - 1);
     std::string SLASH = "\\";
     #elif defined Q_OS_LINUX
     //------------------------------------ Linux Code -----------------------------------------------------------------
@@ -741,7 +746,8 @@ std::string getPath(string typePath)
     }
     else
     {
-        //Error handler later
+        sysofreq.logErr.Write(string("Function:  ofreq \n Error Message:  Could not find filepath for executable."));
+        sysofreq.logStd.Write("Errors found.  Please check the error log.");
     }
 
     //Strip off name of executable itself.

@@ -14,7 +14,7 @@
  *Aug 01 2013   Nicholas Barczak    Added comments to header file.
  *Aug 03 2013   Nicholas Barczak    Reactored file for shorter property names and put a few public variables as
  *                                  private.
- *May 7, 2014       Nicholas Barczak    Debugged and updated to Rev 1.0
+ *May 7, 2014   Nicholas Barczak    Debugged and updated to Rev 1.0
  *
 \*-------------------------------------------------------------------------------------------------------------------*/
 
@@ -48,7 +48,7 @@
 #include <vector>
 #include <QtGlobal>
 #ifdef Q_OS_WIN
-    #include "armadillo.h"  //References the armadillo library in lib folder.
+    #include "../../lib/armadillo.h"  //References the armadillo library in lib folder.
 #elif defined Q_OS_LINUX
     #include <armadillo>    //Armadillo library included with standard system libraries.
 #endif

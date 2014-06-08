@@ -4,7 +4,7 @@
 #
 #-------------------------------------------------
 
-QT       -= core gui
+QT       -= gui
 
 TARGET = alglib
 TEMPLATE = lib
@@ -50,4 +50,18 @@ unix:!symbian {
         target.path = /usr/lib
     }
     INSTALLS += target
+}
+
+
+win32 {
+    #Windows Includes
+    INCLUDEPATH += \
+        C:\Qt\Qt5.0.1.\mingw47_32\lib
+
+    CONFIG += staticlib
+
+    CONFIG += staticlib
+    CONFIG(debug|release) {
+        DEFINES += QT_NO_DEBUG_OUTPUT
+    }
 }

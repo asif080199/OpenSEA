@@ -46,10 +46,19 @@
 #include <typeinfo>
 #include <QtGlobal>
 #include <QDir>
+#include <QFile>
 #include <QString>
 #include "../derived_outputs/outputsbody.h"
-#include <boost/filesystem.hpp>
-#include <boost/lexical_cast.hpp>
+#ifdef Q_OS_WIN
+    //Windows location of boost library
+//    #include "boost/filesystem.hpp"
+//    #include "boost/lexical_cast.hpp"
+#elif defined Q_OS_LINUX
+    //Linux location of boost library
+//    #include <boost/filesystem.hpp>
+//    #include <boost/lexical_cast.hpp>
+#endif
+
 #include "../system_objects/ofreqcore.h"
 #include "../global_objects/ioword.h"
 
@@ -323,6 +332,14 @@ private:
      * from the OutputsBody object.
      */
     OutputsBody* pOutput;
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Recursively removes all files in a directory, and the directory itself.
+     * @param dirName QString, passed by reference.  The path to the directory that you want removed.
+     * @return Returns true if removal successful.  False if error encountered.
+     */
+    bool removeDir(const QString &dirName);
 
     //=================================== Variable Declarations =======================================================
 

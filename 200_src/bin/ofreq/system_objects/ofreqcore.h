@@ -156,6 +156,9 @@ protected:
     //------------------------------------------Function Separator ----------------------------------------------------
     static double GRAVITY; /**< Acceleration due to gravity.  Normal earth gravity.*/
 
+    //------------------------------------------Function Separator ----------------------------------------------------
+    static double PI;   /**< Mathematical constant pi.*/
+
 //==========================================Section Separator =========================================================
 private:
 

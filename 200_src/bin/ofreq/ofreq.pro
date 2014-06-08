@@ -57,7 +57,13 @@ SOURCES += ofreq.cpp \
     system_objects/ofreqcore.cpp \
     global_objects/ioword.cpp \
     wave_spectra/wavespec.cpp \
-    sea_models/seamodel.cpp
+    sea_models/seamodel.cpp \
+    wave_spectra/specpm.cpp \
+    wave_spectra/wavespecbase.cpp \
+    wave_spectra/specbretschneider.cpp \
+    wave_spectra/specjonswap.cpp \
+    sea_models/seamodel_singledirection.cpp \
+    sea_models/seamodel_dualdirection.cpp
 
 HEADERS += \
     derived_outputs/outputsbody.h \
@@ -98,35 +104,53 @@ HEADERS += \
     system_objects/ofreqcore.h \
     global_objects/ioword.h \
     wave_spectra/wavespec.h \
-    sea_models/seamodel.h
+    sea_models/seamodel.h \
+    wave_spectra/specpm.h \
+    wave_spectra/wavespecbase.h \
+    wave_spectra/specbretschneider.h \
+    wave_spectra/specjonswap.h \
+    sea_models/seamodel_singledirection.h \
+    sea_models/seamodel_dualdirection.h
 
 # Include header files path for libraries
 INCLUDEPATH += \
-    $$PWD/../../../lib \
-    $$PWD/../../../var \
-    $$PWD/../../lib/alglib
+    $$_PRO_FILE_PWD_/../../lib \
+    $$_PRO_FILE_PWD_/../../var \
+    $$_PRO_FILE_PWD_/../../lib/alglib \
+    #$$_PRO_FILE_PWD_/../../lib/boost
 
 # force rebuild if the headers change
 DEPENDPATH += $${INCLUDEPATH} \
-    $$PWD/../../lib/alglib
+    $$_PRO_FILE_PWD_/../../lib/alglib
 
-OTHER_FILES += \
-    ../../var/openseaheader.txt
 
 # Platform Specific files go in these scope brackets
 # ========================================================
 win32 {
     # Any files specific to windows go in these brackets.
     LIBS += \
-        $$PWD/../../../lib/armadillo.h \        #Add armadillo and associated support
-        $$PWD/../../../lib/blas_win32_MT.lib \
-        $$PWD/../../../lib/lapack_win32_MT.lib
-    LIBS += boost_system boost_filesystem   # Add boost and boost filesystem
+        $$_PRO_FILE_PWD_/../../lib/armadillo.h \        #Add armadillo and associated support
+        $$_PRO_FILE_PWD_/../../lib/blas_win32_MT.lib \
+        $$_PRO_FILE_PWD_/../../lib/lapack_win32_MT.lib
+    #LIBS += boost_system boost_filesystem   # Add boost and boost filesystem
+    CONFIG(debug) {
+        LIBS += -L$$_PRO_FILE_PWD_/../../../300_build/310_build_windows/lib/alglib/debug/ -lalglib
+        DESTDIR = $$_PRO_FILE_PWD_/../../../300_build/310_build_windows/bin/ofreq_debug
+    }
+
+    CONFIG(release) {
+        LIBS += -L$$_PRO_FILE_PWD_/../../../300_build/310_build_windows/lib/alglib/release/ -lalglib
+        DESTDIR = $$_PRO_FILE_PWD_/../../../300_build/310_build_windows/bin/ofreq_release
+    }
+
 }
 
 unix {
     # Any files specific to linux go in these brackets.
     LIBS += -larmadillo -llapack -lblas #Add armadillo and associated support
-    LIBS += -lboost_system -lboost_filesystem   # Add boost and boost filesystem
+    #LIBS += -lboost_system -lboost_filesystem   # Add boost and boost filesystem
     LIBS += -L$$PWD/../../../300_build/320_build_linux/lib/alglib/ -lalglib #AGLIB library for interpolation.
 }
+
+OTHER_FILES += \
+    ../../var/openseaheader.txt

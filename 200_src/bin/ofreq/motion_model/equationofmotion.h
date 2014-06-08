@@ -47,7 +47,7 @@
 #include <functional>
 #include "../system_objects/ofreqcore.h"
 #ifdef Q_OS_WIN
-    #include "armadillo.h"  //References the armadillo library in lib folder.
+    #include "../../lib/armadillo.h"  //References the armadillo library in lib folder.
 #elif defined Q_OS_LINUX
     #include <armadillo>    //Armadillo library included with standard system libraries.
 #endif

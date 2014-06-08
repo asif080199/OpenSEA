@@ -35,7 +35,7 @@ using namespace alglib;
 //Public Functions
 
 //------------------------------------------Function Separator --------------------------------------------------------
-WaveSpec::WaveSpec()
+WaveSpec::WaveSpec() : WaveSpecBase()
 {
     SplineReady = false;
 }
@@ -111,23 +111,6 @@ double WaveSpec::getSpecEnergy(double freq)
     }
 }
 
-//------------------------------------------Function Separator --------------------------------------------------------
-std::string WaveSpec::getName()
-{
-    return pName;
-}
-
-//------------------------------------------Function Separator --------------------------------------------------------
-void WaveSpec::setName(std::string nameIn)
-{
-    pName = nameIn;
-}
-
-//------------------------------------------Function Separator --------------------------------------------------------
-std::string &WaveSpec::refName()
-{
-    return pName;
-}
 
 //==========================================Section Separator =========================================================
 //Protected Functions

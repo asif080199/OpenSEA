@@ -1,0 +1,16 @@
+CREATE release\libalglib.a
+ADDMOD release\alglib.o
+ADDMOD release\fasttransforms.o
+ADDMOD release\diffequations.o
+ADDMOD release\dataanalysis.o
+ADDMOD release\ap.o
+ADDMOD release\alglibmisc.o
+ADDMOD release\alglibinternal.o
+ADDMOD release\statistics.o
+ADDMOD release\specialfunctions.o
+ADDMOD release\solvers.o
+ADDMOD release\optimization.o
+ADDMOD release\linalg.o
+ADDMOD release\interpolation.o
+ADDMOD release\integration.o
+SAVE

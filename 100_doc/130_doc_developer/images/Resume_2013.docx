@@ -1,0 +1,2751 @@
+<!DOCTYPE html>
+<!--[if IE 8]>
+<html xmlns="http://www.w3.org/1999/xhtml" class="ie8 wp-toolbar"  lang="en-US">
+<![endif]-->
+<!--[if !(IE 8) ]><!-->
+<html xmlns="http://www.w3.org/1999/xhtml" class="wp-toolbar" lang="en-US"><!--<![endif]--><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Edit Page ‹ Datawave Marine Science — WordPress</title>
+<script type="text/javascript">
+addLoadEvent = function(func){if(typeof jQuery!="undefined")jQuery(document).ready(func);else if(typeof wpOnload!='function'){wpOnload=func;}else{var oldonload=wpOnload;wpOnload=function(){oldonload();func();}}};
+var ajaxurl = '/wp-admin/admin-ajax.php',
+	pagenow = 'page',
+	typenow = 'page',
+	adminpage = 'post-php',
+	thousandsSeparator = ',',
+	decimalPoint = '.',
+	isRtl = 0;
+</script>
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<link rel="stylesheet" href="Resume_2013_files/load-styles.css" type="text/css" media="all">
+<style type="text/css">
+
+				#toplevel_page_jetpack .wp-menu-image:before {
+					font-family: 'Jetpack' !important;
+					content: '\e600';
+				}
+				#toplevel_page_jetpack .wp-menu-image {
+					background-repeat: no-repeat;
+				}
+				#menu-posts-feedback .wp-menu-image:before {
+					font-family: dashicons !important;
+					content: '\f175';
+				}
+				#adminmenu #menu-posts-feedback div.wp-menu-image {
+					background: none !important;
+					background-repeat: no-repeat;
+				}
+</style>
+<link rel="stylesheet" id="jetpack-subscriptions-css" href="Resume_2013_files/subscriptions.css" type="text/css" media="all">
+<link rel="stylesheet" id="open-sans-css" href="Resume_2013_files/css.css" type="text/css" media="all">
+<link rel="stylesheet" id="thickbox-css" href="Resume_2013_files/thickbox.css" type="text/css" media="all">
+<link rel="stylesheet" id="mediaelement-css" href="Resume_2013_files/mediaelementplayer.css" type="text/css" media="all">
+<link rel="stylesheet" id="wp-mediaelement-css" href="Resume_2013_files/wp-mediaelement.css" type="text/css" media="all">
+<link rel="stylesheet" id="imgareaselect-css" href="Resume_2013_files/imgareaselect.css" type="text/css" media="all">
+<!--[if lte IE 7]>
+<link rel='stylesheet' id='ie-css'  href='http://dmsonline.us/wp-admin/css/ie.min.css?ver=3.9.1' type='text/css' media='all' />
+<![endif]-->
+<link rel="stylesheet" id="itsec_notice_css-css" href="Resume_2013_files/itsec_notice.css" type="text/css" media="all">
+<link rel="stylesheet" id="wppf_styles-css" href="Resume_2013_files/style.css" type="text/css" media="all">
+<link rel="stylesheet" id="metabox-tabs-css" href="Resume_2013_files/metabox-tabs.css" type="text/css" media="all">
+<link rel="stylesheet" id="metabox-fresh-css" href="Resume_2013_files/metabox-fresh.css" type="text/css" media="all">
+<link rel="stylesheet" id="AtD_style-css" href="Resume_2013_files/atd.css" type="text/css" media="screen">
+<link rel="stylesheet" id="grunion-menu-alter-css" href="Resume_2013_files/menu-alter.css" type="text/css" media="all">
+<link rel="stylesheet" id="ithemes-icon-font-css" href="Resume_2013_files/icon-fonts.css" type="text/css" media="all">
+<link rel="stylesheet" id="akismet.css-css" href="Resume_2013_files/akismet.css" type="text/css" media="all">
+<link rel="stylesheet" id="jetpack-icons-css" href="Resume_2013_files/jetpack-icons.css" type="text/css" media="all">
+        <script type="text/javascript">
+            function w3tc_popupadmin_bar(url) {
+                return window.open(url, '', 'width=800,height=600,status=no,toolbar=no,menubar=no,scrollbars=yes');
+            }
+        </script>
+            <script type="text/javascript">
+/* <![CDATA[ */
+var WordfenceAdminVars = {"ajaxURL":"http:\/\/dmsonline.us\/wp-admin\/admin-ajax.php","firstNonce":"6950c80922","siteBaseURL":"http:\/\/dmsonline.us\/","debugOn":"0","actUpdateInterval":"2000","tourClosed":"1","cacheType":"","liveTrafficEnabled":"1"};
+/* ]]> */
+</script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var itsec_file_change_warning = {"nonce":"ebd6b91b52","url":"http:\/\/dmsonline.us\/wp-admin\/admin.php?page=toplevel_page_itsec_logs"};
+/* ]]> */
+</script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var strong_password_error_text = {"text":"Sorry, but you must enter a strong password."};
+/* ]]> */
+</script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var AtD_l10n_r0ar = {"menu_title_spelling":"Spelling","menu_title_repeated_word":"Repeated Word","menu_title_no_suggestions":"No suggestions","menu_option_explain":"Explain...","menu_option_ignore_once":"Ignore suggestion","menu_option_ignore_always":"Ignore always","menu_option_ignore_all":"Ignore all","menu_option_edit_selection":"Edit Selection...","button_proofread":"proofread","button_edit_text":"edit text","button_proofread_tooltip":"Proofread Writing","message_no_errors_found":"No writing errors were found.","message_server_error":"There was a problem communicating with the Proofreading service. Try again in one minute.","message_server_error_short":"There was an error communicating with the proofreading service.","dialog_replace_selection":"Replace selection with:","dialog_confirm_post_publish":"The proofreader has suggestions for this post. Are you sure you want to publish it?\n\nPress OK to publish your post, or Cancel to view the suggestions and edit your post.","dialog_confirm_post_update":"The proofreader has suggestions for this post. Are you sure you want to update it?\n\nPress OK to update your post, or Cancel to view the suggestions and edit your post."};
+/* ]]> */
+</script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var WPAkismet = {"comment_author_url_nonce":"22861ab202","strings":{"Remove this URL":"Remove this URL","Removing...":"Removing...","URL removed":"URL removed","(undo)":"(undo)","Re-adding...":"Re-adding..."}};
+/* ]]> */
+</script>
+
+<script type="text/javascript">
+/* <![CDATA[ */
+var userSettings = {"url":"\/","uid":"3","time":"1401762388"};var quicktagsL10n = {"closeAllOpenTags":"Close all open tags","closeTags":"close tags","enterURL":"Enter the URL","enterImageURL":"Enter the URL of the image","enterImageDescription":"Enter a description of the image","fullscreen":"fullscreen","toggleFullscreen":"Toggle fullscreen mode","textdirection":"text direction","toggleTextdirection":"Toggle Editor Text Direction"};var _wpUtilSettings = {"ajax":{"url":"\/wp-admin\/admin-ajax.php"}};var _wpMediaModelsL10n = {"settings":{"ajaxurl":"\/wp-admin\/admin-ajax.php","post":{"id":0}}};var pluploadL10n = {"queue_limit_exceeded":"You have attempted to queue too many files.","file_exceeds_size_limit":"%s exceeds the maximum upload size for this site.","zero_byte_file":"This file is empty. Please try another.","invalid_filetype":"This file type is not allowed. Please try another.","not_an_image":"This file is not an image. Please try another.","image_memory_exceeded":"Memory exceeded. Please try another smaller file.","image_dimensions_exceeded":"This is larger than the maximum size. Please try another.","default_error":"An error occurred in the upload. Please try again later.","missing_upload_url":"There was a configuration error. Please contact the server administrator.","upload_limit_exceeded":"You may only upload 1 file.","http_error":"HTTP error.","upload_failed":"Upload failed.","big_upload_failed":"Please try uploading this file with the %1$sbrowser uploader%2$s.","big_upload_queued":"%s exceeds the maximum upload size for the multi-file uploader when used in your browser.","io_error":"IO error.","security_error":"Security error.","file_cancelled":"File canceled.","upload_stopped":"Upload stopped.","dismiss":"Dismiss","crunching":"Crunching\u2026","deleted":"moved to the trash.","error_uploading":"\u201c%s\u201d has failed to upload."};
+var _wpPluploadSettings = {"defaults":{"runtimes":"html5,flash,silverlight,html4","file_data_name":"async-upload","url":"\/wp-admin\/async-upload.php","flash_swf_url":"http:\/\/dmsonline.us\/wp-includes\/js\/plupload\/plupload.flash.swf","silverlight_xap_url":"http:\/\/dmsonline.us\/wp-includes\/js\/plupload\/plupload.silverlight.xap","filters":{"max_file_size":"10485760b"},"multipart_params":{"action":"upload-attachment","_wpnonce":"f255c7aaf6"}},"browser":{"mobile":false,"supported":true},"limitExceeded":false};var mejsL10n = {"language":"en-US","strings":{"Close":"Close","Fullscreen":"Fullscreen","Download File":"Download File","Download Video":"Download Video","Play\/Pause":"Play\/Pause","Mute Toggle":"Mute Toggle","None":"None","Turn off Fullscreen":"Turn off Fullscreen","Go Fullscreen":"Go Fullscreen","Unmute":"Unmute","Mute":"Mute","Captions\/Subtitles":"Captions\/Subtitles"}};
+var _wpmejsSettings = {"pluginPath":"\/wp-includes\/js\/mediaelement\/"};var _wpMediaViewsL10n = {"url":"URL","addMedia":"Add Media","search":"Search","select":"Select","cancel":"Cancel","update":"Update","replace":"Replace","remove":"Remove","back":"Back","selected":"%d selected","dragInfo":"Drag and drop to reorder images.","uploadFilesTitle":"Upload Files","uploadImagesTitle":"Upload Images","mediaLibraryTitle":"Media Library","insertMediaTitle":"Insert Media","createNewGallery":"Create a new gallery","createNewPlaylist":"Create a new playlist","createNewVideoPlaylist":"Create a new video playlist","returnToLibrary":"\u2190 Return to library","allMediaItems":"All media items","noItemsFound":"No items found.","insertIntoPost":"Insert into page","uploadedToThisPost":"Uploaded to this page","warnDelete":"You are about to permanently delete this item.\n  'Cancel' to stop, 'OK' to delete.","insertFromUrlTitle":"Insert from URL","setFeaturedImageTitle":"Set Featured Image","setFeaturedImage":"Set featured image","createGalleryTitle":"Create Gallery","editGalleryTitle":"Edit Gallery","cancelGalleryTitle":"\u2190 Cancel Gallery","insertGallery":"Insert gallery","updateGallery":"Update gallery","addToGallery":"Add to gallery","addToGalleryTitle":"Add to Gallery","reverseOrder":"Reverse order","imageDetailsTitle":"Image Details","imageReplaceTitle":"Replace Image","imageDetailsCancel":"Cancel Edit","editImage":"Edit Image","chooseImage":"Choose Image","selectAndCrop":"Select and Crop","skipCropping":"Skip Cropping","cropImage":"Crop Image","cropYourImage":"Crop your image","cropping":"Cropping\u2026","suggestedDimensions":"Suggested image dimensions:","cropError":"There has been an error cropping your image.","audioDetailsTitle":"Audio Details","audioReplaceTitle":"Replace Audio","audioAddSourceTitle":"Add Audio Source","audioDetailsCancel":"Cancel Edit","videoDetailsTitle":"Video Details","videoReplaceTitle":"Replace Video","videoAddSourceTitle":"Add Video Source","videoDetailsCancel":"Cancel Edit","videoSelectPosterImageTitle":"Select Poster Image","videoAddTrackTitle":"Add Subtitles","playlistDragInfo":"Drag and drop to reorder tracks.","createPlaylistTitle":"Create Audio Playlist","editPlaylistTitle":"Edit Audio Playlist","cancelPlaylistTitle":"\u2190 Cancel Audio Playlist","insertPlaylist":"Insert audio playlist","updatePlaylist":"Update audio playlist","addToPlaylist":"Add to audio playlist","addToPlaylistTitle":"Add to Audio Playlist","videoPlaylistDragInfo":"Drag and drop to reorder videos.","createVideoPlaylistTitle":"Create Video Playlist","editVideoPlaylistTitle":"Edit Video Playlist","cancelVideoPlaylistTitle":"\u2190 Cancel Video Playlist","insertVideoPlaylist":"Insert video playlist","updateVideoPlaylist":"Update video playlist","addToVideoPlaylist":"Add to video playlist","addToVideoPlaylistTitle":"Add to Video Playlist","settings":{"tabs":[],"tabUrl":"http:\/\/dmsonline.us\/wp-admin\/media-upload.php?chromeless=1","mimeTypes":{"image":"Images","audio":"Audio","video":"Video"},"captions":true,"nonce":{"sendToEditor":"c721d0603a"},"post":{"id":396,"nonce":"342bf5b4a6","featuredImageId":-1},"defaultProps":{"link":"file","align":"","size":""},"attachmentCounts":{"audio":0,"video":0},"embedExts":["mp3","ogg","wma","m4a","wav","mp4","m4v","webm","ogv","wmv","flv"],"embedMimes":{"mp3":"audio\/mpeg","ogg":"audio\/ogg","wma":"audio\/x-ms-wma","m4a":"audio\/mpeg","wav":"audio\/wav","mp4":"video\/mp4","m4v":"video\/mp4","webm":"video\/webm","ogv":"video\/ogg","wmv":"video\/x-ms-wmv","flv":"video\/x-flv"},"contentWidth":"800"}};/* ]]> */
+</script>
+<script type="text/javascript" src="Resume_2013_files/load-scripts.php"></script>
+<script type="text/javascript" src="Resume_2013_files/tourTip.js"></script>
+<script type="text/javascript" src="Resume_2013_files/gallery-settings.js"></script>
+<script type="text/javascript" src="Resume_2013_files/admin-file-change-warning.js"></script>
+<script type="text/javascript" src="Resume_2013_files/strong-passwords.js"></script>
+<script type="text/javascript" src="Resume_2013_files/scripts.js"></script>
+<script type="text/javascript" src="Resume_2013_files/atd.js"></script>
+<script type="text/javascript" src="Resume_2013_files/atd-nonvis-editor-plugin.js"></script>
+<script type="text/javascript" src="Resume_2013_files/jquery_002.js"></script>
+<script type="text/javascript" src="Resume_2013_files/admin-ajax.php"></script>
+<script type="text/javascript" src="Resume_2013_files/atd-autoproofread.js"></script>
+<script type="text/javascript" src="Resume_2013_files/akismet.js"></script>
+
+<script type="text/javascript">
+jQuery( function($) {
+	var wpasTitleCounter    = $( '#wpas-title-counter' ),
+	    wpasTwitterCheckbox = $( '.wpas-submit-twitter' ).size(),
+	    wpasTitle = $('#wpas-title').keyup( function() {
+		var length = wpasTitle.val().length;
+		wpasTitleCounter.text( length );
+		if ( wpasTwitterCheckbox && length > 140 ) {
+			wpasTitleCounter.addClass( 'wpas-twitter-length-limit' );
+		} else {
+			wpasTitleCounter.removeClass( 'wpas-twitter-length-limit' );
+		}
+	    } ),
+	    authClick = false;
+
+	$('#publicize-disconnected-form-show').click( function() {
+		$('#publicize-form').slideDown( 'fast' );
+		$(this).hide();
+	} );
+
+	$('#publicize-disconnected-form-hide').click( function() {
+		$('#publicize-form').slideUp( 'fast' );
+		$('#publicize-disconnected-form-show').show();
+	} );
+
+	$('#publicize-form-edit').click( function() {
+		$('#publicize-form').slideDown( 'fast', function() {
+			wpasTitle.focus();
+			if ( !wpasTitle.text() ) {
+				var url = $('#shortlink').size() ? $('#shortlink').val() : '';
+
+				var defaultMessage = $.trim( '' + $("#title").val() + ' ' + url + '' );
+
+				wpasTitle.append( defaultMessage.replace( /<[^>]+>/g,'') );
+
+				var selBeg = defaultMessage.indexOf( $("#title").val() );
+				if ( selBeg < 0 ) {
+					selBeg = 0;
+					selEnd = 0;
+				} else {
+					selEnd = selBeg + $("#title").val().length;
+				}
+
+				var domObj = wpasTitle.get(0);
+				if ( domObj.setSelectionRange ) {
+					domObj.setSelectionRange( selBeg, selEnd );
+				} else if ( domObj.createTextRange ) {
+					var r = domObj.createTextRange();
+					r.moveStart( 'character', selBeg );
+					r.moveEnd( 'character', selEnd );
+					r.select();
+				}
+			}
+			wpasTitle.keyup();
+		} );
+		$('#publicize-defaults').hide();
+		$(this).hide();
+		return false;
+	} );
+
+	$('#publicize-form-hide').click( function() {
+		var newList = $.map( $('#publicize-form').slideUp( 'fast' ).find( ':checked' ), function( el ) {
+			return $.trim( $(el).parent( 'label' ).text() );
+		} );
+		$('#publicize-defaults').html( '<strong>' + newList.join( '</strong>, <strong>' ) + '</strong>' ).show();
+		$('#publicize-form-edit').show();
+		return false;
+	} );
+
+	$('.authorize-link').click( function() {
+		if ( authClick ) {
+			return false;
+		}
+		authClick = true;
+		$(this).after( '<img src="images/loading.gif" class="alignleft" style="margin: 0 .5em" />' );
+		$.ajaxSetup( { async: false } );
+
+		if ( window.wp && window.wp.autosave ) {
+			window.wp.autosave.server.triggerSave();
+		} else {
+			autosave();
+		}
+
+		return true;
+	} );
+
+	$( '.pub-service' ).click( function() {
+		var service = $(this).data( 'service' ),
+		    fakebox = '<input id="wpas-submit-' + service + '" type="hidden" value="1" name="wpas[submit][' + service + ']" />';
+		$( '#add-publicize-check' ).append( fakebox );
+	} );
+
+	publicizeConnTestStart = function() {
+		$( '#pub-connection-tests' )
+			.removeClass( 'below-h2' )
+			.removeClass( 'error' )
+			.removeClass( 'publicize-token-refresh-message' )
+			.addClass( 'test-in-progress' )
+			.html( '' );
+		$.post( ajaxurl, { action: 'test_publicize_conns' }, publicizeConnTestComplete );
+	}
+
+	publicizeConnRefreshClick = function( event ) {
+		event.preventDefault();
+		var popupURL = event.currentTarget.href;
+		var popupTitle = event.currentTarget.title;
+		// open a popup window
+		// when it is closed, kick off the tests again
+		var popupWin = window.open( popupURL, popupTitle, '' );
+		var popupWinTimer= window.setInterval( function() {
+			if ( popupWin.closed !== false ) {
+				window.clearInterval( popupWinTimer );
+				publicizeConnTestStart();
+			}
+		}, 500 );
+	}
+
+	publicizeConnTestComplete = function( response ) {
+		var testsSelector = $( '#pub-connection-tests' );
+		testsSelector
+			.removeClass( 'test-in-progress' )
+			.removeClass( 'below-h2' )
+			.removeClass( 'error' )
+			.removeClass( 'publicize-token-refresh-message' )
+			.html( '' );
+
+		// If any of the tests failed, show some stuff
+		var somethingShownAlready = false;
+		$.each( response.data, function( index, testResult ) {
+			// find the li for this connection
+			if ( ! testResult.connectionTestPassed ) {
+				if ( ! somethingShownAlready ) {
+					testsSelector
+						.addClass( 'below-h2' )
+						.addClass( 'error' )
+						.addClass( 'publicize-token-refresh-message' )
+						.append( "<p>Before you hit Publish, please refresh the following connection(s) to make sure we can Publicize your post:</p>" );
+					somethingShownAlready = true;
+				}
+
+				if ( testResult.userCanRefresh ) {
+					testsSelector.append( '<p/>' );
+					$( '<a/>', {
+						'class'  : 'pub-refresh-button button',
+						'title'  : testResult.refreshText,
+						'href'   : testResult.refreshURL,
+						'text'   : testResult.refreshText,
+						'target' : '_refresh_' + testResult.serviceName
+					} )
+						.appendTo( testsSelector.children().last() )
+						.click( publicizeConnRefreshClick );
+				}
+			}
+		} );
+	}
+
+	$( document ).ready( function() {
+		// If we have the #pub-connection-tests div present, kick off the connection test
+		if ( $( '#pub-connection-tests' ).length ) {
+			publicizeConnTestStart();
+		}
+	} );
+
+} );
+</script>
+
+<style type="text/css">
+#publicize {
+	line-height: 1.5;
+}
+#publicize ul {
+	margin: 4px 0 4px 6px;
+}
+#publicize li {
+	margin: 0;
+}
+#publicize textarea {
+	margin: 4px 0 0;
+	width: 100%
+}
+#publicize ul.not-connected {
+	list-style: square;
+	padding-left: 1em;
+}
+.post-new-php .authorize-link, .post-php .authorize-link {
+	line-height: 1.5em;
+}
+.post-new-php .authorize-message, .post-php .authorize-message {
+	margin-bottom: 0;
+}
+#poststuff #publicize .updated p {
+	margin: .5em 0;
+}
+.wpas-twitter-length-limit {
+	color: red;
+}
+</style>    <style type="text/css" media="screen">
+        #toplevel_page_w3tc_dashboard .wp-menu-image {
+            background: url(http://dmsonline.us/wp-content/plugins/w3-total-cache/pub/img/w3tc-sprite.png) no-repeat 0 -32px !important;
+        }
+        #toplevel_page_w3tc_dashboard:hover .wp-menu-image,
+        #toplevel_page_w3tc_dashboard.wp-has-current-submenu .wp-menu-image {
+            background-position:0 0 !important;
+        }
+        #icon-edit.icon32-posts-casestudy {
+            background: url(http://dmsonline.us/wp-content/plugins/w3-total-cache/pub/img/w3tc-sprite.png) no-repeat;
+        }
+        /**
+        * HiDPI Displays
+        */
+        @media print,
+        (-o-min-device-pixel-ratio: 5/4),
+        (-webkit-min-device-pixel-ratio: 1.25),
+        (min-resolution: 120dpi) {
+            
+            #toplevel_page_w3tc_dashboard .wp-menu-image {
+                background-image: url(http://dmsonline.us/wp-content/plugins/w3-total-cache/pub/img/w3tc-sprite-retina.png) !important;
+                background-size: 30px 64px !important;
+            }
+            #toplevel_page_w3tc_dashboard:hover .wp-menu-image,
+            #toplevel_page_w3tc_dashboard.wp-has-current-submenu .wp-menu-image {
+                background-position:0 0 !important;
+            }
+            #icon-edit.icon32-posts-casestudy {
+                background-image: url(http://dmsonline.us/wp-content/plugins/w3-total-cache/pub/img/w3tc-sprite-retina.png) !important;
+                background-size: 30px 64px !important;
+            }
+        }
+    </style>
+
+    <script type="text/javascript">
+/* <![CDATA[ */
+	var wpNotesIsJetpackClient = true;
+/* ]]> */
+</script>
+<script type="text/javascript">var _wpColorScheme = {"icons":{"base":"#999","focus":"#2ea2cc","current":"#fff"}};</script>
+<style type="text/css" media="print">#wpadminbar { display:none; }</style>
+<style type="text/css"></style></head>
+<body class="wp-admin wp-core-ui js  jetpack-connected post-php auto-fold admin-bar post-type-page branch-3-9 version-3-9-1 admin-color-fresh locale-en-us customize-support sticky-menu svg">
+<script type="text/javascript">
+	document.body.className = document.body.className.replace('no-js','js');
+</script>
+
+	<script type="text/javascript">
+		(function() {
+			var request, b = document.body, c = 'className', cs = 'customize-support', rcs = new RegExp('(^|\\s+)(no-)?'+cs+'(\\s+|$)');
+
+			request = true;
+
+			b[c] = b[c].replace( rcs, ' ' );
+			b[c] += ( window.postMessage && request ? ' ' : ' no-' ) + cs;
+		}());
+	</script>
+	
+<div id="wpwrap">
+<a tabindex="1" href="#wpbody-content" class="screen-reader-shortcut">Skip to main content</a>
+
+<div id="adminmenuback"></div>
+<div id="adminmenuwrap">
+<ul id="adminmenu" role="navigation">
+
+
+	<li class="wp-first-item wp-has-submenu wp-not-current-submenu menu-top menu-top-first menu-icon-dashboard menu-top-first" id="menu-dashboard">
+	<a href="http://dmsonline.us/wp-admin/index.php" class="wp-first-item wp-has-submenu wp-not-current-submenu menu-top menu-top-first menu-icon-dashboard menu-top-first" aria-haspopup="true"><div class="wp-menu-arrow"><div></div></div><div class="wp-menu-image dashicons-before dashicons-dashboard"><br></div><div class="wp-menu-name">Dashboard</div></a>
+	<ul class="wp-submenu wp-submenu-wrap"><li class="wp-submenu-head">Dashboard</li><li class="wp-first-item"><a href="http://dmsonline.us/wp-admin/index.php" class="wp-first-item">Home</a></li><li><a href="http://dmsonline.us/wp-admin/update-core.php">Updates <span class="update-plugins count-7" title="5 Plugin Updates, 2 Theme Updates"><span class="update-count">7</span></span></a></li><li><a href="http://dmsonline.us/wp-admin/index.php?page=relevanssi/relevanssi.php">User searches</a></li></ul></li>
+	<li class="wp-has-submenu wp-not-current-submenu menu-top toplevel_page_jetpack menu-top-last" id="toplevel_page_jetpack"><a href="http://dmsonline.us/wp-admin/admin.php?page=jetpack" class="wp-has-submenu wp-not-current-submenu menu-top toplevel_page_jetpack menu-top-last" aria-haspopup="true"><div class="wp-menu-arrow"><div></div></div><div class="wp-menu-image dashicons-before"><br></div><div class="wp-menu-name">Jetpack</div></a>
+	<ul class="wp-submenu wp-submenu-wrap"><li class="wp-submenu-head">Jetpack</li><li class="wp-first-item"><a href="http://dmsonline.us/wp-admin/admin.php?page=jetpack" class="wp-first-item">Jetpack</a></li><li><a href="http://dmsonline.us/wp-admin/admin.php?page=omnisearch">Omnisearch</a></li><li><a href="http://dmsonline.us/wp-admin/admin.php?page=stats">Site Stats</a></li><li><a href="http://dmsonline.us/wp-admin/admin.php?page=akismet-key-config">Akismet</a></li></ul></li>
+	<li class="wp-not-current-submenu wp-menu-separator"><div class="separator"></div></li>
+	<li class="wp-has-submenu wp-not-current-submenu open-if-no-js menu-top menu-icon-post menu-top-first" id="menu-posts">
+	<a href="http://dmsonline.us/wp-admin/edit.php" class="wp-has-submenu wp-not-current-submenu open-if-no-js menu-top menu-icon-post menu-top-first" aria-haspopup="true"><div class="wp-menu-arrow"><div></div></div><div class="wp-menu-image dashicons-before dashicons-admin-post"><br></div><div class="wp-menu-name">Posts</div></a>
+	<ul class="wp-submenu wp-submenu-wrap"><li class="wp-submenu-head">Posts</li><li class="wp-first-item"><a href="http://dmsonline.us/wp-admin/edit.php" class="wp-first-item">All Posts</a></li><li><a href="http://dmsonline.us/wp-admin/post-new.php">Add New</a></li><li><a href="http://dmsonline.us/wp-admin/edit-tags.php?taxonomy=category">Categories</a></li><li><a href="http://dmsonline.us/wp-admin/edit-tags.php?taxonomy=post_tag">Tags</a></li></ul></li>
+	<li class="wp-has-submenu wp-not-current-submenu menu-top menu-icon-media" id="menu-media">
+	<a href="http://dmsonline.us/wp-admin/upload.php" class="wp-has-submenu wp-not-current-submenu menu-top menu-icon-media" aria-haspopup="true"><div class="wp-menu-arrow"><div></div></div><div class="wp-menu-image dashicons-before dashicons-admin-media"><br></div><div class="wp-menu-name">Media</div></a>
+	<ul class="wp-submenu wp-submenu-wrap"><li class="wp-submenu-head">Media</li><li class="wp-first-item"><a href="http://dmsonline.us/wp-admin/upload.php" class="wp-first-item">Library</a></li><li><a href="http://dmsonline.us/wp-admin/media-new.php">Add New</a></li></ul></li>
+	<li class="wp-has-submenu wp-has-current-submenu wp-menu-open menu-top menu-icon-page" id="menu-pages">
+	<a href="http://dmsonline.us/wp-admin/edit.php?post_type=page" class="wp-has-submenu wp-has-current-submenu wp-menu-open menu-top menu-icon-page"><div class="wp-menu-arrow"><div></div></div><div class="wp-menu-image dashicons-before dashicons-admin-page"><br></div><div class="wp-menu-name">Pages</div></a>
+	<ul class="wp-submenu wp-submenu-wrap"><li class="wp-submenu-head">Pages</li><li class="wp-first-item current"><a href="http://dmsonline.us/wp-admin/edit.php?post_type=page" class="wp-first-item current">All Pages</a></li><li><a href="http://dmsonline.us/wp-admin/post-new.php?post_type=page">Add New</a></li></ul></li>
+	<li class="wp-not-current-submenu menu-top menu-icon-comments" id="menu-comments">
+	<a href="http://dmsonline.us/wp-admin/edit-comments.php" class="wp-not-current-submenu menu-top menu-icon-comments"><div class="wp-menu-arrow"><div></div></div><div class="wp-menu-image dashicons-before dashicons-admin-comments"><br></div><div class="wp-menu-name">Comments <span class="awaiting-mod count-1"><span class="pending-count">1</span></span></div></a></li>
+	<li class="wp-not-current-submenu menu-top menu-icon-feedback menu-top-last" id="menu-posts-feedback">
+	<a href="http://dmsonline.us/wp-admin/edit.php?post_type=feedback" class="wp-not-current-submenu menu-top menu-icon-feedback menu-top-last"><div class="wp-menu-arrow"><div></div></div><div class="wp-menu-image dashicons-before"><img src="Resume_2013_files/grunion-menu.png" alt=""></div><div class="wp-menu-name">Feedback</div></a></li>
+	<li class="wp-not-current-submenu wp-menu-separator"><div class="separator"></div></li>
+	<li class="wp-has-submenu wp-not-current-submenu menu-top menu-icon-appearance menu-top-first" id="menu-appearance">
+	<a href="http://dmsonline.us/wp-admin/themes.php" class="wp-has-submenu wp-not-current-submenu menu-top menu-icon-appearance menu-top-first" aria-haspopup="true"><div class="wp-menu-arrow"><div></div></div><div class="wp-menu-image dashicons-before dashicons-admin-appearance"><br></div><div class="wp-menu-name">Appearance</div></a>
+	<ul class="wp-submenu wp-submenu-wrap"><li class="wp-submenu-head">Appearance</li><li class="wp-first-item"><a href="http://dmsonline.us/wp-admin/themes.php" class="wp-first-item">Themes</a></li><li><a href="http://dmsonline.us/wp-admin/customize.php">Customize</a></li><li><a href="http://dmsonline.us/wp-admin/widgets.php">Widgets</a></li><li><a href="http://dmsonline.us/wp-admin/nav-menus.php">Menus</a></li><li><a href="http://dmsonline.us/wp-admin/themes.php?page=mantra-page">Mantra Settings</a></li><li><a href="http://dmsonline.us/wp-admin/themes.php?page=editcss">Edit CSS</a></li><li><a href="http://dmsonline.us/wp-admin/themes.php?page=custom-header">Header</a></li><li><a href="http://dmsonline.us/wp-admin/themes.php?page=custom-background">Background</a></li><li><a href="http://dmsonline.us/wp-admin/theme-editor.php">Editor</a></li></ul></li>
+	<li class="wp-has-submenu wp-not-current-submenu menu-top menu-icon-plugins" id="menu-plugins">
+	<a href="http://dmsonline.us/wp-admin/plugins.php" class="wp-has-submenu wp-not-current-submenu menu-top menu-icon-plugins" aria-haspopup="true"><div class="wp-menu-arrow"><div></div></div><div class="wp-menu-image dashicons-before dashicons-admin-plugins"><br></div><div class="wp-menu-name">Plugins <span class="update-plugins count-5"><span class="plugin-count">5</span></span></div></a>
+	<ul class="wp-submenu wp-submenu-wrap"><li class="wp-submenu-head">Plugins <span class="update-plugins count-5"><span class="plugin-count">5</span></span></li><li class="wp-first-item"><a href="http://dmsonline.us/wp-admin/plugins.php" class="wp-first-item">Installed Plugins</a></li><li><a href="http://dmsonline.us/wp-admin/plugin-install.php">Add New</a></li><li><a href="http://dmsonline.us/wp-admin/plugin-editor.php">Editor</a></li></ul></li>
+	<li class="wp-has-submenu wp-not-current-submenu menu-top menu-icon-users" id="menu-users">
+	<a href="http://dmsonline.us/wp-admin/users.php" class="wp-has-submenu wp-not-current-submenu menu-top menu-icon-users" aria-haspopup="true"><div class="wp-menu-arrow"><div></div></div><div class="wp-menu-image dashicons-before dashicons-admin-users"><br></div><div class="wp-menu-name">Users</div></a>
+	<ul class="wp-submenu wp-submenu-wrap"><li class="wp-submenu-head">Users</li><li class="wp-first-item"><a href="http://dmsonline.us/wp-admin/users.php" class="wp-first-item">All Users</a></li><li><a href="http://dmsonline.us/wp-admin/user-new.php">Add New</a></li><li><a href="http://dmsonline.us/wp-admin/profile.php">Your Profile</a></li></ul></li>
+	<li class="wp-has-submenu wp-not-current-submenu menu-top menu-icon-tools" id="menu-tools">
+	<a href="http://dmsonline.us/wp-admin/tools.php" class="wp-has-submenu wp-not-current-submenu menu-top menu-icon-tools" aria-haspopup="true"><div class="wp-menu-arrow"><div></div></div><div class="wp-menu-image dashicons-before dashicons-admin-tools"><br></div><div class="wp-menu-name">Tools</div></a>
+	<ul class="wp-submenu wp-submenu-wrap"><li class="wp-submenu-head">Tools</li><li class="wp-first-item"><a href="http://dmsonline.us/wp-admin/tools.php" class="wp-first-item">Available Tools</a></li><li><a href="http://dmsonline.us/wp-admin/import.php">Import</a></li><li><a href="http://dmsonline.us/wp-admin/export.php">Export</a></li></ul></li>
+	<li class="wp-has-submenu wp-not-current-submenu menu-top menu-icon-settings menu-top-last" id="menu-settings">
+	<a href="http://dmsonline.us/wp-admin/options-general.php" class="wp-has-submenu wp-not-current-submenu menu-top menu-icon-settings menu-top-last" aria-haspopup="true"><div class="wp-menu-arrow"><div></div></div><div class="wp-menu-image dashicons-before dashicons-admin-settings"><br></div><div class="wp-menu-name">Settings</div></a>
+	<ul class="wp-submenu wp-submenu-wrap"><li class="wp-submenu-head">Settings</li><li class="wp-first-item"><a href="http://dmsonline.us/wp-admin/options-general.php" class="wp-first-item">General</a></li><li><a href="http://dmsonline.us/wp-admin/options-writing.php">Writing</a></li><li><a href="http://dmsonline.us/wp-admin/options-reading.php">Reading</a></li><li><a href="http://dmsonline.us/wp-admin/options-discussion.php">Discussion</a></li><li><a href="http://dmsonline.us/wp-admin/options-media.php">Media</a></li><li><a href="http://dmsonline.us/wp-admin/options-permalink.php">Permalinks</a></li><li><a href="http://dmsonline.us/wp-admin/options-general.php?page=hungryfeed/settings.php">HungryFEED</a></li><li><a href="http://dmsonline.us/wp-admin/options-general.php?page=relevanssi/relevanssi.php">Relevanssi</a></li><li><a href="http://dmsonline.us/wp-admin/options-general.php?page=wp-posts-filter">WP Posts Filter</a></li><li><a href="http://dmsonline.us/wp-admin/options-general.php?page=sharing">Sharing</a></li></ul></li>
+	<li class="wp-not-current-submenu wp-menu-separator"><div class="separator"></div></li>
+	<li class="wp-has-submenu wp-not-current-submenu menu-top toplevel_page_wpseo_dashboard menu-top-first" id="toplevel_page_wpseo_dashboard"><a href="http://dmsonline.us/wp-admin/admin.php?page=wpseo_dashboard" class="wp-has-submenu wp-not-current-submenu menu-top toplevel_page_wpseo_dashboard menu-top-first" aria-haspopup="true"><div class="wp-menu-arrow"><div></div></div><div class="wp-menu-image dashicons-before"><img src="Resume_2013_files/yoast-icon.png" alt=""></div><div class="wp-menu-name">SEO</div></a>
+	<ul class="wp-submenu wp-submenu-wrap"><li class="wp-submenu-head">SEO</li><li class="wp-first-item"><a href="http://dmsonline.us/wp-admin/admin.php?page=wpseo_dashboard" class="wp-first-item">Dashboard</a></li><li><a href="http://dmsonline.us/wp-admin/admin.php?page=wpseo_titles">Titles &amp; Metas</a></li><li><a href="http://dmsonline.us/wp-admin/admin.php?page=wpseo_social">Social</a></li><li><a href="http://dmsonline.us/wp-admin/admin.php?page=wpseo_xml">XML Sitemaps</a></li><li><a href="http://dmsonline.us/wp-admin/admin.php?page=wpseo_permalinks">Permalinks</a></li><li><a href="http://dmsonline.us/wp-admin/admin.php?page=wpseo_internal-links">Internal Links</a></li><li><a href="http://dmsonline.us/wp-admin/admin.php?page=wpseo_rss">RSS</a></li><li><a href="http://dmsonline.us/wp-admin/admin.php?page=wpseo_import">Import &amp; Export</a></li><li><a href="http://dmsonline.us/wp-admin/admin.php?page=wpseo_bulk-title-editor">Bulk Title Editor</a></li><li><a href="http://dmsonline.us/wp-admin/admin.php?page=wpseo_bulk-description-editor">Bulk Description Editor</a></li><li><a href="http://dmsonline.us/wp-admin/admin.php?page=wpseo_files">Edit Files</a></li><li><a href="http://dmsonline.us/wp-admin/admin.php?page=wpseo_licenses">Extensions</a></li></ul></li>
+	<li class="wp-has-submenu wp-not-current-submenu menu-top menu-icon-generic toplevel_page_itsec" id="toplevel_page_itsec"><a href="http://dmsonline.us/wp-admin/admin.php?page=itsec" class="wp-has-submenu wp-not-current-submenu menu-top menu-icon-generic toplevel_page_itsec" aria-haspopup="true"><div class="wp-menu-arrow"><div></div></div><div class="wp-menu-image dashicons-before dashicons-admin-generic"><br></div><div class="wp-menu-name">Security</div></a>
+	<ul class="wp-submenu wp-submenu-wrap"><li class="wp-submenu-head">Security</li><li class="wp-first-item"><a href="http://dmsonline.us/wp-admin/admin.php?page=itsec" class="wp-first-item">Dashboard</a></li><li><a href="http://dmsonline.us/wp-admin/admin.php?page=toplevel_page_itsec_settings">Settings</a></li><li><a href="http://dmsonline.us/wp-admin/admin.php?page=toplevel_page_itsec_advanced">Advanced</a></li><li><a href="http://dmsonline.us/wp-admin/admin.php?page=toplevel_page_itsec_backups">Backups</a></li><li><a href="http://dmsonline.us/wp-admin/admin.php?page=toplevel_page_itsec_logs">Logs</a></li><li><a href="http://dmsonline.us/wp-admin/admin.php?page=toplevel_page_itsec_help">Help</a></li></ul></li>
+	<li class="wp-has-submenu wp-not-current-submenu menu-top toplevel_page_w3tc_dashboard" id="toplevel_page_w3tc_dashboard"><a href="http://dmsonline.us/wp-admin/admin.php?page=w3tc_dashboard" class="wp-has-submenu wp-not-current-submenu menu-top toplevel_page_w3tc_dashboard" aria-haspopup="true"><div class="wp-menu-arrow"><div></div></div><div class="wp-menu-image dashicons-before"><br></div><div class="wp-menu-name">Performance</div></a>
+	<ul class="wp-submenu wp-submenu-wrap"><li class="wp-submenu-head">Performance</li><li class="wp-first-item"><a href="http://dmsonline.us/wp-admin/admin.php?page=w3tc_dashboard" class="wp-first-item">Dashboard</a></li><li><a href="http://dmsonline.us/wp-admin/admin.php?page=w3tc_general">General Settings</a></li><li><a href="http://dmsonline.us/wp-admin/admin.php?page=w3tc_pgcache">Page Cache</a></li><li><a href="http://dmsonline.us/wp-admin/admin.php?page=w3tc_minify">Minify</a></li><li><a href="http://dmsonline.us/wp-admin/admin.php?page=w3tc_dbcache">Database Cache</a></li><li><a href="http://dmsonline.us/wp-admin/admin.php?page=w3tc_objectcache">Object Cache</a></li><li><a href="http://dmsonline.us/wp-admin/admin.php?page=w3tc_browsercache">Browser Cache</a></li><li><a href="http://dmsonline.us/wp-admin/admin.php?page=w3tc_mobile">User Agent Groups</a></li><li><a href="http://dmsonline.us/wp-admin/admin.php?page=w3tc_referrer">Referrer Groups</a></li><li><a href="http://dmsonline.us/wp-admin/admin.php?page=w3tc_cdn"><acronym title="Content Delivery Network">CDN</acronym></a></li><li><a href="http://dmsonline.us/wp-admin/admin.php?page=w3tc_monitoring">Monitoring</a></li><li><a href="http://dmsonline.us/wp-admin/admin.php?page=w3tc_extensions">Extensions</a></li><li><a href="http://dmsonline.us/wp-admin/admin.php?page=w3tc_faq">FAQ</a></li><li><a href="http://dmsonline.us/wp-admin/admin.php?page=w3tc_support"><span style="color: red;">Support</span></a></li><li><a href="http://dmsonline.us/wp-admin/admin.php?page=w3tc_install">Install</a></li><li><a href="http://dmsonline.us/wp-admin/admin.php?page=w3tc_about">About</a></li></ul></li>
+	<li class="wp-has-submenu wp-not-current-submenu menu-top toplevel_page_Wordfence menu-top-last" id="toplevel_page_Wordfence"><a href="http://dmsonline.us/wp-admin/admin.php?page=Wordfence" class="wp-has-submenu wp-not-current-submenu menu-top toplevel_page_Wordfence menu-top-last" aria-haspopup="true"><div class="wp-menu-arrow"><div></div></div><div class="wp-menu-image dashicons-before"><img src="Resume_2013_files/wordfence-logo-16x16.png" alt=""></div><div class="wp-menu-name">Wordfence</div></a>
+	<ul class="wp-submenu wp-submenu-wrap"><li class="wp-submenu-head">Wordfence</li><li class="wp-first-item"><a href="http://dmsonline.us/wp-admin/admin.php?page=Wordfence" class="wp-first-item">Scan</a></li><li><a href="http://dmsonline.us/wp-admin/admin.php?page=WordfenceActivity">Live Traffic</a></li><li><a href="http://dmsonline.us/wp-admin/admin.php?page=WordfenceSitePerf">Performance Setup</a></li><li><a href="http://dmsonline.us/wp-admin/admin.php?page=WordfenceBlockedIPs">Blocked IPs</a></li><li><a href="http://dmsonline.us/wp-admin/admin.php?page=WordfenceTwoFactor">Cellphone Sign-in</a></li><li><a href="http://dmsonline.us/wp-admin/admin.php?page=WordfenceCountryBlocking">Country Blocking</a></li><li><a href="http://dmsonline.us/wp-admin/admin.php?page=WordfenceScanSchedule">Scan Schedule</a></li><li><a href="http://dmsonline.us/wp-admin/admin.php?page=WordfenceWhois">Whois Lookup</a></li><li><a href="http://dmsonline.us/wp-admin/admin.php?page=WordfenceRangeBlocking">Advanced Blocking</a></li><li><a href="http://dmsonline.us/wp-admin/admin.php?page=WordfenceSecOpt">Options</a></li></ul></li><li id="collapse-menu" class="hide-if-no-js"><div id="collapse-button"><div></div></div><span>Collapse menu</span></li></ul>
+</div>
+<div id="wpcontent">
+
+		<div id="wpadminbar" class="" role="navigation">
+			<a class="screen-reader-shortcut" href="#wp-toolbar" tabindex="1">Skip to toolbar</a>
+			<div class="quicklinks" id="wp-toolbar" role="navigation" aria-label="Top navigation toolbar." tabindex="0">
+				<ul id="wp-admin-bar-root-default" class="ab-top-menu">
+		<li id="wp-admin-bar-menu-toggle"><a aria-expanded="false" class="ab-item" href="#"><span class="ab-icon"></span><span class="screen-reader-text">Menu</span></a>		</li>
+		<li id="wp-admin-bar-wp-logo" class="menupop"><a class="ab-item" aria-haspopup="true" href="http://dmsonline.us/wp-admin/about.php" title="About WordPress"><span class="ab-icon"></span></a><div class="ab-sub-wrapper"><ul id="wp-admin-bar-wp-logo-default" class="ab-submenu">
+		<li id="wp-admin-bar-about"><a class="ab-item" href="http://dmsonline.us/wp-admin/about.php">About WordPress</a>		</li></ul><ul id="wp-admin-bar-wp-logo-external" class="ab-sub-secondary ab-submenu">
+		<li id="wp-admin-bar-wporg"><a class="ab-item" href="https://wordpress.org/">WordPress.org</a>		</li>
+		<li id="wp-admin-bar-documentation"><a class="ab-item" href="http://codex.wordpress.org/">Documentation</a>		</li>
+		<li id="wp-admin-bar-support-forums"><a class="ab-item" href="https://wordpress.org/support/">Support Forums</a>		</li>
+		<li id="wp-admin-bar-feedback"><a class="ab-item" href="https://wordpress.org/support/forum/requests-and-feedback">Feedback</a>		</li></ul></div>		</li>
+		<li id="wp-admin-bar-site-name" class="menupop"><a class="ab-item" aria-haspopup="true" href="http://dmsonline.us/">Datawave Marine Science</a><div class="ab-sub-wrapper"><ul id="wp-admin-bar-site-name-default" class="ab-submenu">
+		<li id="wp-admin-bar-view-site"><a class="ab-item" href="http://dmsonline.us/">Visit Site</a>		</li></ul></div>		</li>
+		<li id="wp-admin-bar-updates"><a class="ab-item" href="http://dmsonline.us/wp-admin/update-core.php" title="5 Plugin Updates, 2 Theme Updates"><span class="ab-icon"></span><span class="ab-label">7</span><span class="screen-reader-text">5 Plugin Updates, 2 Theme Updates</span></a>		</li>
+		<li id="wp-admin-bar-comments"><a class="ab-item" href="http://dmsonline.us/wp-admin/edit-comments.php" title="1 comment awaiting moderation"><span class="ab-icon"></span><span id="ab-awaiting-mod" class="ab-label awaiting-mod pending-count count-1">1</span></a>		</li>
+		<li id="wp-admin-bar-new-content" class="menupop"><a class="ab-item" aria-haspopup="true" href="http://dmsonline.us/wp-admin/post-new.php" title="Add New"><span class="ab-icon"></span><span class="ab-label">New</span></a><div class="ab-sub-wrapper"><ul id="wp-admin-bar-new-content-default" class="ab-submenu">
+		<li id="wp-admin-bar-new-post"><a class="ab-item" href="http://dmsonline.us/wp-admin/post-new.php">Post</a>		</li>
+		<li id="wp-admin-bar-new-media"><a class="ab-item" href="http://dmsonline.us/wp-admin/media-new.php">Media</a>		</li>
+		<li id="wp-admin-bar-new-page"><a class="ab-item" href="http://dmsonline.us/wp-admin/post-new.php?post_type=page">Page</a>		</li>
+		<li id="wp-admin-bar-new-user"><a class="ab-item" href="http://dmsonline.us/wp-admin/user-new.php">User</a>		</li></ul></div>		</li>
+		<li id="wp-admin-bar-view"><a class="ab-item" href="http://dmsonline.us/knowledge/vendors-library/">View Page</a>		</li>
+		<li id="wp-admin-bar-wpseo-menu" class="menupop"><a class="ab-item" aria-haspopup="true" href="http://dmsonline.us/wp-admin/post.php?post=396&amp;action=edit#wpseo_linkdex">SEO<div title="Bad" class="wpseo_score_img bad 22"></div></a><div class="ab-sub-wrapper"><ul id="wp-admin-bar-wpseo-menu-default" class="ab-submenu">
+		<li id="wp-admin-bar-wpseo-kwresearch" class="menupop"><div class="ab-item ab-empty-item" aria-haspopup="true">Keyword Research</div><div class="ab-sub-wrapper"><ul id="wp-admin-bar-wpseo-kwresearch-default" class="ab-submenu">
+		<li id="wp-admin-bar-wpseo-adwordsexternal"><a class="ab-item" href="http://adwords.google.com/keywordplanner" target="_blank">AdWords External</a>		</li>
+		<li id="wp-admin-bar-wpseo-googleinsights"><a class="ab-item" href="http://www.google.com/insights/search/#q=vendor&amp;cmpt=q" target="_blank">Google Insights</a>		</li>
+		<li id="wp-admin-bar-wpseo-wordtracker"><a class="ab-item" href="http://tools.seobook.com/keyword-tools/seobook/?keyword=vendor" target="_blank">SEO Book</a>		</li></ul></div>		</li>
+		<li id="wp-admin-bar-wpseo-settings" class="menupop"><a class="ab-item" aria-haspopup="true" href="http://dmsonline.us/wp-admin/admin.php?page=wpseo_titles">SEO Settings</a><div class="ab-sub-wrapper"><ul id="wp-admin-bar-wpseo-settings-default" class="ab-submenu">
+		<li id="wp-admin-bar-wpseo-titles"><a class="ab-item" href="http://dmsonline.us/wp-admin/admin.php?page=wpseo_titles">Titles &amp; Metas</a>		</li>
+		<li id="wp-admin-bar-wpseo-social"><a class="ab-item" href="http://dmsonline.us/wp-admin/admin.php?page=wpseo_social">Social</a>		</li>
+		<li id="wp-admin-bar-wpseo-xml"><a class="ab-item" href="http://dmsonline.us/wp-admin/admin.php?page=wpseo_xml">XML Sitemaps</a>		</li>
+		<li id="wp-admin-bar-wpseo-permalinks"><a class="ab-item" href="http://dmsonline.us/wp-admin/admin.php?page=wpseo_permalinks">Permalinks</a>		</li>
+		<li id="wp-admin-bar-wpseo-internal-links"><a class="ab-item" href="http://dmsonline.us/wp-admin/admin.php?page=wpseo_internal-links">Internal Links</a>		</li>
+		<li id="wp-admin-bar-wpseo-rss"><a class="ab-item" href="http://dmsonline.us/wp-admin/admin.php?page=wpseo_rss">RSS</a>		</li>
+		<li id="wp-admin-bar-wpseo-import"><a class="ab-item" href="http://dmsonline.us/wp-admin/admin.php?page=wpseo_import">Import &amp; Export</a>		</li>
+		<li id="wp-admin-bar-wpseo-files"><a class="ab-item" href="http://dmsonline.us/wp-admin/admin.php?page=wpseo_files">Edit Files</a>		</li>
+		<li id="wp-admin-bar-wpseo-licenses"><a class="ab-item" href="http://dmsonline.us/wp-admin/admin.php?page=wpseo_licenses">Extensions</a>		</li></ul></div>		</li></ul></div>		</li>
+		<li id="wp-admin-bar-itsec_admin_bar_menu" class="menupop"><a class="ab-item" aria-haspopup="true" href="http://dmsonline.us/wp-admin/admin.php?page=itsec">Security</a><div class="ab-sub-wrapper"><ul id="wp-admin-bar-itsec_admin_bar_menu-default" class="ab-submenu">
+		<li id="wp-admin-bar-itsec_admin_bar_dashboard"><a class="ab-item" href="http://dmsonline.us/wp-admin/admin.php?page=itsec">Dashboard</a>		</li>
+		<li id="wp-admin-bar-test_settings"><a class="ab-item" href="http://dmsonline.us/wp-admin/admin.php?page=toplevel_page_itsec_settings">Settings</a>		</li>
+		<li id="wp-admin-bar-test_advanced"><a class="ab-item" href="http://dmsonline.us/wp-admin/admin.php?page=toplevel_page_itsec_advanced">Advanced</a>		</li>
+		<li id="wp-admin-bar-test_backups"><a class="ab-item" href="http://dmsonline.us/wp-admin/admin.php?page=toplevel_page_itsec_backups">Backups</a>		</li>
+		<li id="wp-admin-bar-test_logs"><a class="ab-item" href="http://dmsonline.us/wp-admin/admin.php?page=toplevel_page_itsec_logs">Logs</a>		</li>
+		<li id="wp-admin-bar-test_help"><a class="ab-item" href="http://dmsonline.us/wp-admin/admin.php?page=toplevel_page_itsec_help">Help</a>		</li></ul></div>		</li>
+		<li id="wp-admin-bar-w3tc" class="menupop"><a class="ab-item" aria-haspopup="true" href="http://dmsonline.us/wp-admin/admin.php?page=w3tc_dashboard">Performance</a><div class="ab-sub-wrapper"><ul id="wp-admin-bar-w3tc-default" class="ab-submenu">
+		<li id="wp-admin-bar-w3tc-pgcache-purge-post"><a class="ab-item" href="http://dmsonline.us/wp-admin/admin.php?page=w3tc_dashboard&amp;w3tc_flush_pgcache_purge_post&amp;post_id=396&amp;_wpnonce=eb8618473e">Purge From Cache</a>		</li>
+		<li id="wp-admin-bar-w3tc-empty-caches"><a class="ab-item" href="http://dmsonline.us/wp-admin/admin.php?page=w3tc_dashboard&amp;w3tc_flush_all&amp;_wpnonce=eb8618473e">Empty All Caches</a>		</li>
+		<li id="wp-admin-bar-w3tc-modules" class="menupop"><div class="ab-item ab-empty-item" aria-haspopup="true">Empty Modules</div><div class="ab-sub-wrapper"><ul id="wp-admin-bar-w3tc-modules-default" class="ab-submenu">
+		<li id="wp-admin-bar-w3tc-flush-pgcache"><a class="ab-item" href="http://dmsonline.us/wp-admin/admin.php?page=w3tc_dashboard&amp;w3tc_flush_pgcache&amp;_wpnonce=eb8618473e">Empty Page Cache</a>		</li>
+		<li id="wp-admin-bar-w3tc-flush-dbcache"><a class="ab-item" href="http://dmsonline.us/wp-admin/admin.php?page=w3tc_dashboard&amp;w3tc_flush_dbcache&amp;_wpnonce=eb8618473e">Empty Database Cache</a>		</li>
+		<li id="wp-admin-bar-w3tc-flush-objectcache"><a class="ab-item" href="http://dmsonline.us/wp-admin/admin.php?page=w3tc_dashboard&amp;w3tc_flush_objectcache&amp;_wpnonce=eb8618473e">Empty Object Cache</a>		</li>
+		<li id="wp-admin-bar-w3tc-flush-varnish"><a class="ab-item" href="http://dmsonline.us/wp-admin/admin.php?page=w3tc_dashboard&amp;w3tc_flush_varnish&amp;_wpnonce=eb8618473e">Purge Varnish Cache</a>		</li></ul></div>		</li>
+		<li id="wp-admin-bar-w3tc-faq"><a class="ab-item" href="http://dmsonline.us/wp-admin/admin.php?page=w3tc_faq">FAQ</a>		</li>
+		<li id="wp-admin-bar-w3tc-support"><a class="ab-item" href="http://dmsonline.us/wp-admin/admin.php?page=w3tc_support"><span style="color: red; background: none;">Support</span></a>		</li></ul></div>		</li></ul><ul id="wp-admin-bar-top-secondary" class="ab-top-secondary ab-top-menu">
+		<li id="wp-admin-bar-search" class="admin-bar-search"><div class="ab-item ab-empty-item" tabindex="-1">
+		<form action="http://dmsonline.us/wp-admin/admin.php" method="get" class="" id="adminbarsearch">
+			<input name="page" value="omnisearch" type="hidden">
+			<input name="s" class="adminbar-input" id="adminbar-search" placeholder="Search Everything" type="search">
+							<input class="adminbar-button" value="Search" type="submit">
+					</form>
+
+		<style>
+				#adminbar-search::-webkit-input-placeholder,
+				#adminbar-search:-moz-placeholder,
+				#adminbar-search::-moz-placeholder,
+				#adminbar-search:-ms-input-placeholder {
+					text-shadow: none;
+				}
+			</style></div>		</li>
+		<li id="wp-admin-bar-my-account" class="menupop with-avatar"><a class="ab-item" aria-haspopup="true" href="http://dmsonline.us/wp-admin/profile.php" title="My Account">Howdy, Admin<img alt="" src="Resume_2013_files/f5566c97f28c9ccf1f00c45309fd3a2d_002.png" class="avatar avatar-26 photo" width="26" height="26"></a><div class="ab-sub-wrapper"><ul id="wp-admin-bar-user-actions" class="ab-submenu">
+		<li id="wp-admin-bar-user-info"><a class="ab-item" tabindex="-1" href="http://dmsonline.us/wp-admin/profile.php"><img alt="" src="Resume_2013_files/f5566c97f28c9ccf1f00c45309fd3a2d.png" class="avatar avatar-64 photo" width="64" height="64"><span class="display-name">Admin</span><span class="username">wpAdmin</span></a>		</li>
+		<li id="wp-admin-bar-edit-profile"><a class="ab-item" href="http://dmsonline.us/wp-admin/profile.php">Edit My Profile</a>		</li>
+		<li id="wp-admin-bar-logout"><a class="ab-item" href="http://dmsonline.us/control?action=logout&amp;_wpnonce=9ed9da6fd6">Log Out</a>		</li></ul></div>		</li>
+		<li id="wp-admin-bar-notes" class="menupop"><div class="ab-item ab-empty-item"><span id="wpnt-notes-unread-count" class="wpnt-loading wpn-read">
+					<span class="noticon noticon-notification"></span>
+					</span></div><div class="" id="wpnt-notes-panel" style="display:none" dir="ltr" lang="en_US"><iframe src="Resume_2013_files/a.html" style="" id="wpnt-notes-iframe" allowtransparency="true" frameborder="0" scrolling="no"></iframe></div>		</li></ul>			</div>
+						<a class="screen-reader-shortcut" href="http://dmsonline.us/control?action=logout&amp;_wpnonce=9ed9da6fd6">Log Out</a>
+					</div>
+
+		
+<div id="wpbody">
+
+<div style="overflow: hidden;" id="wpbody-content" aria-label="Main content" tabindex="0">
+		<div id="screen-meta" class="metabox-prefs">
+
+			<div id="contextual-help-wrap" class="hidden" tabindex="-1" aria-label="Contextual Help Tab">
+				<div id="contextual-help-back"></div>
+				<div id="contextual-help-columns">
+					<div class="contextual-help-tabs">
+						<ul>
+						
+							<li id="tab-link-about-pages" class="active">
+								<a href="#tab-panel-about-pages" aria-controls="tab-panel-about-pages">
+									About Pages								</a>
+							</li>
+						
+							<li id="tab-link-inserting-media">
+								<a href="#tab-panel-inserting-media" aria-controls="tab-panel-inserting-media">
+									Inserting Media								</a>
+							</li>
+						
+							<li id="tab-link-page-attributes">
+								<a href="#tab-panel-page-attributes" aria-controls="tab-panel-page-attributes">
+									Page Attributes								</a>
+							</li>
+												</ul>
+					</div>
+
+										<div class="contextual-help-sidebar">
+						<p><strong>For more information:</strong></p><p><a href="http://codex.wordpress.org/Pages_Add_New_Screen" target="_blank">Documentation on Adding New Pages</a></p><p><a href="http://codex.wordpress.org/Pages_Screen#Editing_Individual_Pages" target="_blank">Documentation on Editing Pages</a></p><p><a href="https://wordpress.org/support/" target="_blank">Support Forums</a></p>					</div>
+					
+					<div class="contextual-help-tabs-wrap">
+						
+							<div id="tab-panel-about-pages" class="help-tab-content active">
+								<p>Pages are similar to Posts in that they have a title, body 
+text, and associated metadata, but they are different in that they are 
+not part of the chronological blog stream, kind of like permanent posts.
+ Pages are not categorized or tagged, but can have a hierarchy. You can 
+nest Pages under other Pages by making one the “Parent” of the other, 
+creating a group of Pages.</p><p>Creating a Page is very similar to 
+creating a Post, and the screens can be customized in the same way using
+ drag and drop, the Screen Options tab, and expanding/collapsing boxes 
+as you choose. This screen also has the distraction-free writing space, 
+available in both the Visual and Text modes via the Fullscreen buttons. 
+The Page editor mostly works the same as the Post editor, but there are 
+some Page-specific features in the Page Attributes box:</p>							</div>
+						
+							<div id="tab-panel-inserting-media" class="help-tab-content">
+								<p>You can upload and insert media (images, audio, documents, 
+etc.) by clicking the Add Media button. You can select from the images 
+and files already uploaded to the Media Library, or upload new media to 
+add to your page or post. To create an image gallery, select the images 
+to add and click the “Create a new gallery” button.</p><p>You can also 
+embed media from many popular websites including Twitter, YouTube, 
+Flickr and others by pasting the media URL on its own line into the 
+content of your post/page. Please refer to the Codex to <a href="http://codex.wordpress.org/Embeds">learn more about embeds</a>.</p>							</div>
+						
+							<div id="tab-panel-page-attributes" class="help-tab-content">
+								<p><strong>Parent</strong> - You can arrange your pages in 
+hierarchies. For example, you could have an “About” page that has “Life 
+Story” and “My Dog” pages under it. There are no limits to how many 
+levels you can nest pages.</p><p><strong>Template</strong> - Some themes
+ have custom templates you can use for certain pages that might have 
+additional features or custom layouts. If so, you’ll see them in this 
+dropdown menu.</p><p><strong>Order</strong> - Pages are usually ordered 
+alphabetically, but you can choose your own order by entering a number 
+(1 for first, etc.) in this field.</p>							</div>
+											</div>
+				</div>
+			</div>
+				<div id="screen-options-wrap" class="hidden" tabindex="-1" aria-label="Screen Options Tab">
+		<form id="adv-settings" action="" method="post">
+					<h5>Show on screen</h5>
+					<div class="metabox-prefs">
+				<label for="sharing_meta-hide"><input class="hide-postbox-tog" name="sharing_meta-hide" id="sharing_meta-hide" value="sharing_meta" checked="checked" type="checkbox">Sharing</label>
+<label for="revisionsdiv-hide"><input class="hide-postbox-tog" name="revisionsdiv-hide" id="revisionsdiv-hide" value="revisionsdiv" type="checkbox">Revisions</label>
+<label for="postcustom-hide"><input class="hide-postbox-tog" name="postcustom-hide" id="postcustom-hide" value="postcustom" type="checkbox">Custom Fields</label>
+<label for="commentstatusdiv-hide"><input class="hide-postbox-tog" name="commentstatusdiv-hide" id="commentstatusdiv-hide" value="commentstatusdiv" checked="checked" type="checkbox">Discussion</label>
+<label for="commentsdiv-hide"><input class="hide-postbox-tog" name="commentsdiv-hide" id="commentsdiv-hide" value="commentsdiv" type="checkbox">Comments</label>
+<label for="slugdiv-hide"><input class="hide-postbox-tog" name="slugdiv-hide" id="slugdiv-hide" value="slugdiv" type="checkbox">Slug</label>
+<label for="authordiv-hide"><input class="hide-postbox-tog" name="authordiv-hide" id="authordiv-hide" value="authordiv" type="checkbox">Author</label>
+<label for="wpseo_meta-hide"><input class="hide-postbox-tog" name="wpseo_meta-hide" id="wpseo_meta-hide" value="wpseo_meta" checked="checked" type="checkbox">WordPress SEO by Yoast</label>
+<label for="pageparentdiv-hide"><input class="hide-postbox-tog" name="pageparentdiv-hide" id="pageparentdiv-hide" value="pageparentdiv" checked="checked" type="checkbox">Page Attributes</label>
+<label for="postimagediv-hide"><input class="hide-postbox-tog" name="postimagediv-hide" id="postimagediv-hide" value="postimagediv" checked="checked" type="checkbox">Featured Image</label>
+				<br class="clear">
+			</div>
+					<h5 class="screen-layout">Screen Layout</h5>
+		<div class="columns-prefs">Number of Columns:				<label class="columns-prefs-1">
+					<input name="screen_columns" value="1" type="radio">
+					1				</label>
+								<label class="columns-prefs-2">
+					<input name="screen_columns" value="2" checked="checked" type="radio">
+					2				</label>
+						</div>
+				<div><input id="screenoptionnonce" name="screenoptionnonce" value="4698a1efdf" type="hidden"></div>
+		</form>
+		</div>
+				</div>
+				<div id="screen-meta-links">
+					<div id="contextual-help-link-wrap" class="hide-if-no-js screen-meta-toggle">
+			<a href="#contextual-help-wrap" id="contextual-help-link" class="show-settings" aria-controls="contextual-help-wrap" aria-expanded="false">Help</a>
+			</div>
+					<div id="screen-options-link-wrap" class="hide-if-no-js screen-meta-toggle">
+			<a href="#screen-options-wrap" id="show-settings-link" class="show-settings" aria-controls="screen-options-wrap" aria-expanded="false">Screen Options</a>
+			</div>
+				</div>
+		
+<div class="wrap">
+<h2>Edit Page <a href="http://dmsonline.us/wp-admin/post-new.php?post_type=page" class="add-new-h2">Add New</a></h2><div class="updated" id="itsec_support_notice">
+						<span>It looks like you've been enjoying iThemes Security for at 
+least 30 days. Would you consider a small donation to help support 
+continued development of the plugin?</span><input class="itsec-notice-button" value="Support This Plugin" onclick="document.location.href='?itsec_donate=yes&amp;_wpnonce=fe624a8dfb';" type="button">  <input class="itsec-notice-button" value="Rate it 5★'s" onclick="document.location.href='?itsec_rate=yes&amp;_wpnonce=fe624a8dfb';" type="button">  <input class="itsec-notice-button" value="Tell Your Followers" onclick="document.location.href='?itsec_tweet=yes&amp;_wpnonce=fe624a8dfb';" type="button">  <input class="itsec-notice-hide" value="×" onclick="document.location.href='?itsec_no_nag=off&amp;_wpnonce=fe624a8dfb';" type="button">
+						</div>
+<div id="lost-connection-notice" class="error hidden below-h2">
+	<p><span class="spinner"></span> <strong>Connection lost.</strong> Saving has been disabled until you’re reconnected.	<span class="hide-if-no-sessionstorage">We’re backing up this post in your browser, just in case.</span>
+	</p>
+</div>
+<form name="post" action="post.php" method="post" id="post">
+<input id="_wpnonce" name="_wpnonce" value="342bf5b4a6" type="hidden"><input name="_wp_http_referer" value="/wp-admin/post.php?post=396&amp;action=edit" type="hidden"><input id="user-id" name="user_ID" value="3" type="hidden">
+<input id="hiddenaction" name="action" value="editpost" type="hidden">
+<input id="originalaction" name="originalaction" value="editpost" type="hidden">
+<input id="post_author" name="post_author" value="3" type="hidden">
+<input id="post_type" name="post_type" value="page" type="hidden">
+<input id="original_post_status" name="original_post_status" value="publish" type="hidden">
+<input id="referredby" name="referredby" value="http://dmsonline.us/wp-admin/edit.php?s=vendor&amp;post_status=all&amp;post_type=page&amp;action=-1&amp;m=0&amp;seo_filter&amp;paged=1&amp;action2=-1" type="hidden">
+<input id="active_post_lock" value="1401762545:3" type="hidden">
+<input name="_wp_original_http_referer" value="http://dmsonline.us/wp-admin/edit.php?s=vendor&amp;post_status=all&amp;post_type=page&amp;action=-1&amp;m=0&amp;seo_filter&amp;paged=1&amp;action2=-1" type="hidden"><input id="post_ID" name="post_ID" value="396" type="hidden"><input id="meta-box-order-nonce" name="meta-box-order-nonce" value="0abee5fa3c" type="hidden"><input id="closedpostboxesnonce" name="closedpostboxesnonce" value="98719afaea" type="hidden">
+
+<div id="poststuff">
+<div id="post-body" class="metabox-holder columns-2">
+<div id="post-body-content">
+
+<div id="titlediv">
+<div id="titlewrap">
+		<label class="screen-reader-text" id="title-prompt-text" for="title">Enter title here</label>
+	<input name="post_title" size="30" value="Vendor's Library" id="title" autocomplete="off" type="text">
+</div>
+<div class="inside">
+	<div id="edit-slug-box" class="hide-if-no-js">
+	<strong>Permalink:</strong>
+<span id="sample-permalink" tabindex="-1">http://dmsonline.us/knowledge/<span id="editable-post-name" title="Click to edit this part of the permalink">vendors-library</span>/</span>
+‎<span id="edit-slug-buttons"><a href="#post_name" class="edit-slug button button-small hide-if-no-js" onclick="editPermalink(396); return false;">Edit</a></span>
+<span id="editable-post-name-full">vendors-library</span>
+<span id="view-post-btn"><a href="http://dmsonline.us/knowledge/vendors-library/" class="button button-small">View Page</a></span>
+<input id="shortlink" value="http://wp.me/P3pMQV-6o" type="hidden"><a href="#" class="button button-small" onclick="prompt('URL:', jQuery('#shortlink').val()); return false;">Get Shortlink</a>	</div>
+</div>
+<input id="samplepermalinknonce" name="samplepermalinknonce" value="f9a1c9fd49" type="hidden"></div><!-- /titlediv -->
+<div id="postdivrich" class="postarea edit-form-section">
+
+<div id="wp-content-wrap" class="wp-core-ui wp-editor-wrap html-active has-dfw"><link rel="stylesheet" id="editor-buttons-css" href="Resume_2013_files/editor.css" type="text/css" media="all">
+<div id="wp-content-editor-tools" class="wp-editor-tools hide-if-no-js"><div id="wp-content-media-buttons" class="wp-media-buttons"><a href="#" id="insert-media-button" class="button insert-media add_media" data-editor="content" title="Add Media"><span class="wp-media-buttons-icon"></span> Add Media</a>
+	<a id="insert-jetpack-contact-form" class="button thickbox" title="Add Contact Form" data-editor="content" href="http://dmsonline.us/wp-admin/admin-ajax.php?post_id=396&amp;action=grunion_form_builder&amp;TB_iframe=true&amp;width=768&amp;id=add_form">
+		<span class="jetpack-contact-form-icon"></span> Add Contact Form	</a>
+
+	</div>
+<div class="wp-editor-tabs"><a id="content-html" class="wp-switch-editor switch-html" onclick="switchEditors.switchto(this);">Text</a>
+<a id="content-tmce" class="wp-switch-editor switch-tmce" onclick="switchEditors.switchto(this);">Visual</a>
+</div>
+</div>
+<div id="wp-content-editor-container" class="wp-editor-container"><div class="quicktags-toolbar" id="ed_toolbar"><input id="qt_content_strong" accesskey="b" class="ed_button button button-small" title="" value="b" type="button"><input id="qt_content_em" accesskey="i" class="ed_button button button-small" title="" value="i" type="button"><input id="qt_content_link" accesskey="a" class="ed_button button button-small" title="" value="link" type="button"><input id="qt_content_block" accesskey="q" class="ed_button button button-small" title="" value="b-quote" type="button"><input id="qt_content_del" accesskey="d" class="ed_button button button-small" title="" value="del" type="button"><input id="qt_content_ins" accesskey="s" class="ed_button button button-small" title="" value="ins" type="button"><input id="qt_content_img" accesskey="m" class="ed_button button button-small" title="" value="img" type="button"><input id="qt_content_ul" accesskey="u" class="ed_button button button-small" title="" value="ul" type="button"><input id="qt_content_ol" accesskey="o" class="ed_button button button-small" title="" value="ol" type="button"><input id="qt_content_li" accesskey="l" class="ed_button button button-small" title="" value="li" type="button"><input id="qt_content_code" accesskey="c" class="ed_button button button-small" title="" value="code" type="button"><input id="qt_content_more" accesskey="t" class="ed_button button button-small" title="" value="more" type="button"><input id="qt_content_close" class="ed_button button button-small" title="Close all open tags" value="close tags" type="button"><input id="qt_content_AtD" class="ed_button button button-small" title="" value="proofread" type="button"><button type="button" id="qt_content_fullscreen" accesskey="f" class="ed_button qt-fullscreen" title="Toggle fullscreen mode"></button></div><textarea class="wp-editor-area" style="height: 360px; resize: none;" autocomplete="off" cols="40" name="content" id="content">This
+ lists all the items under the vendor tag.&nbsp; If you use the search 
+bar on the left, be sure to include the following tag, or you will 
+return results for the whole knowledge library. &lt;span style="color: 
+#993300;"&gt;tag:&lt;/span&gt;&nbsp; [mantra-button-dark 
+url="#"]vendor[/mantra-button-dark]
+&lt;ul&gt;
+	&lt;li&gt;All vendor entries include the following:&nbsp; Website, 
+contact information, brief explanation of what the vendor 
+provides.&lt;/li&gt;
+	&lt;li&gt;People can also provide customer reviews on a 
+vendor.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;img class="alignright size-medium wp-image-397" 
+src="http://dmsonline.us/wp-content/uploads/2013/05/ARMOR_backissues-300x221.jpg"
+ alt="ARMOR_backissues" width="300" height="221" /&gt;
+
+&lt;hr /&gt;
+
+&lt;h1&gt;DMS Personal Vendor Library&lt;/h1&gt;
+The following vendors have personally contacted someone from DMS.  For a
+ more extensive list of vendors, see the website from &lt;a 
+href="http://www.workboat.com" 
+target="_blank"&gt;www.workboat.com&lt;/a&gt;
+[wppf]
+
+
+&lt;h1&gt;Workboat.com Vendor Database&lt;/h1&gt;
+&lt;a href="http://www.workboat.com" 
+target="_blank"&gt;www.workboat.com&lt;/a&gt; provides a much more 
+comprehensive vendor database, organized by category.  Definitely worth 
+browsing through.  &lt;a href="http://www.workboat.com" 
+target="_blank"&gt;Click here&lt;/a&gt; to open Workboat.com in a new 
+tab / window.
+
+[iframe src="http://www.workboat.com/directory.aspx" width="100%" 
+height="480" scrolling="yes"]
+
+&lt;hr /&gt;</textarea></div>
+<div class="uploader-editor">
+		<div class="uploader-editor-content">
+			<div class="uploader-editor-title">Drop files to upload</div>
+		</div>
+	</div></div>
+
+<table id="post-status-info"><tbody><tr>
+	<td id="wp-word-count">Word count: <span class="word-count">121</span></td>
+	<td class="autosave-info">
+	<span class="autosave-message">Draft saved at 7:28:51 pm.</span>
+<span id="last-edit">Last edited by Admin on April 29, 2014 at 6:49 pm</span>	</td>
+	<td id="content-resize-handle" class="hide-if-no-js"><br></td>
+</tr></tbody></table>
+
+</div>
+</div><!-- /post-body-content -->
+
+<div id="postbox-container-1" class="postbox-container">
+<div id="side-sortables" class="meta-box-sortables ui-sortable"><div id="submitdiv" class="postbox ">
+<div class="handlediv" title="Click to toggle"><br></div><h3 class="hndle"><span>Publish</span></h3>
+<div class="inside">
+<div class="submitbox" id="submitpost">
+
+<div id="minor-publishing">
+
+<div style="display:none;">
+<p class="submit"><input name="save" id="save" class="button disabled" value="Save" type="submit"></p></div>
+
+<div id="minor-publishing-actions">
+<div id="save-action">
+<span class="spinner"></span>
+</div>
+<div id="preview-action">
+<a class="preview button disabled" href="http://dmsonline.us/knowledge/vendors-library/" target="wp-preview-396" id="post-preview">Preview Changes</a>
+<input name="wp-preview" id="wp-preview" value="" type="hidden">
+</div>
+<div class="clear"></div>
+</div><!-- #minor-publishing-actions -->
+
+<div id="misc-publishing-actions">
+
+<div class="misc-pub-section misc-pub-post-status"><label for="post_status">Status:</label>
+<span id="post-status-display">Published</span>
+<a href="#post_status" class="edit-post-status hide-if-no-js"><span aria-hidden="true">Edit</span> <span class="screen-reader-text">Edit status</span></a>
+
+<div id="post-status-select" class="hide-if-js">
+<input name="hidden_post_status" id="hidden_post_status" value="publish" type="hidden">
+<select name="post_status" id="post_status">
+<option selected="selected" value="publish">Published</option>
+<option value="pending">Pending Review</option>
+<option value="draft">Draft</option>
+</select>
+ <a href="#post_status" class="save-post-status hide-if-no-js button">OK</a>
+ <a href="#post_status" class="cancel-post-status hide-if-no-js button-cancel">Cancel</a>
+</div>
+
+</div><!-- .misc-pub-section -->
+
+<div class="misc-pub-section misc-pub-visibility" id="visibility">
+Visibility: <span id="post-visibility-display">Public</span>
+<a href="#visibility" class="edit-visibility hide-if-no-js"><span aria-hidden="true">Edit</span> <span class="screen-reader-text">Edit visibility</span></a>
+
+<div id="post-visibility-select" class="hide-if-js">
+<input name="hidden_post_password" id="hidden-post-password" value="" type="hidden">
+<input name="hidden_post_visibility" id="hidden-post-visibility" value="public" type="hidden">
+<input name="visibility" id="visibility-radio-public" value="public" checked="checked" type="radio"> <label for="visibility-radio-public" class="selectit">Public</label><br>
+<input name="visibility" id="visibility-radio-password" value="password" type="radio"> <label for="visibility-radio-password" class="selectit">Password protected</label><br>
+<span id="password-span"><label for="post_password">Password:</label> <input name="post_password" id="post_password" maxlength="20" type="text"><br></span>
+<input name="visibility" id="visibility-radio-private" value="private" type="radio"> <label for="visibility-radio-private" class="selectit">Private</label><br>
+
+<p>
+ <a href="#visibility" class="save-post-visibility hide-if-no-js button">OK</a>
+ <a href="#visibility" class="cancel-post-visibility hide-if-no-js button-cancel">Cancel</a>
+</p>
+</div>
+
+</div><!-- .misc-pub-section -->
+
+<div class="misc-pub-section misc-pub-revisions">
+Revisions: <b>25</b>	<a class="hide-if-no-js" href="http://dmsonline.us/wp-admin/revision.php?revision=1151"><span aria-hidden="true">Browse</span> <span class="screen-reader-text">Browse revisions</span></a>
+</div>
+<div class="misc-pub-section curtime misc-pub-curtime">
+	<span id="timestamp">
+	Published on: <b>May 18, 2013 @ 16:03</b></span>
+	<a href="#edit_timestamp" class="edit-timestamp hide-if-no-js"><span aria-hidden="true">Edit</span> <span class="screen-reader-text">Edit date and time</span></a>
+	<div id="timestampdiv" class="hide-if-js"><div class="timestamp-wrap"><select id="mm" name="mm">
+			<option value="01">01-Jan</option>
+			<option value="02">02-Feb</option>
+			<option value="03">03-Mar</option>
+			<option value="04">04-Apr</option>
+			<option value="05" selected="selected">05-May</option>
+			<option value="06">06-Jun</option>
+			<option value="07">07-Jul</option>
+			<option value="08">08-Aug</option>
+			<option value="09">09-Sep</option>
+			<option value="10">10-Oct</option>
+			<option value="11">11-Nov</option>
+			<option value="12">12-Dec</option>
+</select> <input id="jj" name="jj" value="18" size="2" maxlength="2" autocomplete="off" type="text">, <input id="aa" name="aa" value="2013" size="4" maxlength="4" autocomplete="off" type="text"> @ <input id="hh" name="hh" value="16" size="2" maxlength="2" autocomplete="off" type="text"> : <input id="mn" name="mn" value="03" size="2" maxlength="2" autocomplete="off" type="text"></div><input id="ss" name="ss" value="18" type="hidden">
+
+<input id="hidden_mm" name="hidden_mm" value="05" type="hidden">
+<input id="cur_mm" name="cur_mm" value="06" type="hidden">
+<input id="hidden_jj" name="hidden_jj" value="18" type="hidden">
+<input id="cur_jj" name="cur_jj" value="02" type="hidden">
+<input id="hidden_aa" name="hidden_aa" value="2013" type="hidden">
+<input id="cur_aa" name="cur_aa" value="2014" type="hidden">
+<input id="hidden_hh" name="hidden_hh" value="16" type="hidden">
+<input id="cur_hh" name="cur_hh" value="19" type="hidden">
+<input id="hidden_mn" name="hidden_mn" value="03" type="hidden">
+<input id="cur_mn" name="cur_mn" value="26" type="hidden">
+
+<p>
+<a href="#edit_timestamp" class="save-timestamp hide-if-no-js button">OK</a>
+<a href="#edit_timestamp" class="cancel-timestamp hide-if-no-js button-cancel">Cancel</a>
+</p>
+</div>
+</div>
+<div class="misc-pub-section misc-yoast misc-pub-section-last">SEO: <div title="Bad" class="wpseo_score_img bad"></div> <a class="wpseo_tablink scroll" href="#wpseo_linkdex">Check</a></div></div>
+<div class="clear"></div>
+</div>
+
+<div id="major-publishing-actions">
+<div><a href="http://dmsonline.us/wp-admin/admin.php?page=w3tc_dashboard&amp;w3tc_flush_pgcache_purge_page&amp;post_id=396&amp;_wpnonce=eb8618473e">Purge from cache</a></div><div id="delete-action">
+<a class="submitdelete deletion disabled" href="http://dmsonline.us/wp-admin/post.php?post=396&amp;action=trash&amp;_wpnonce=eb96ed9ec7">Move to Trash</a></div>
+
+<div id="publishing-action">
+<span style="display: inline;" class="spinner"></span>
+		<input name="original_publish" id="original_publish" value="Update" type="hidden">
+		<input name="save" class="button button-primary button-large disabled" id="publish" accesskey="p" value="Update" type="submit">
+</div>
+<div class="clear"></div>
+</div>
+</div>
+
+</div>
+</div>
+<div id="pageparentdiv" class="postbox ">
+<div class="handlediv" title="Click to toggle"><br></div><h3 class="hndle"><span>Page Attributes</span></h3>
+<div class="inside">
+<p><strong>Parent</strong></p>
+<label class="screen-reader-text" for="parent_id">Parent</label>
+<select name="parent_id" id="parent_id">
+	<option value="">(no parent)</option>
+	<option class="level-0" value="189">About</option>
+	<option class="level-1" value="202">&nbsp;&nbsp;&nbsp;Engineering Through Science</option>
+	<option class="level-1" value="197">&nbsp;&nbsp;&nbsp;Legal</option>
+	<option class="level-1" value="1133">&nbsp;&nbsp;&nbsp;Contact Information</option>
+	<option class="level-1" value="423">&nbsp;&nbsp;&nbsp;Contribute</option>
+	<option class="level-0" value="18" selected="selected">Knowledge</option>
+	<option class="level-1" value="357">&nbsp;&nbsp;&nbsp;Business</option>
+	<option class="level-1" value="365">&nbsp;&nbsp;&nbsp;Computer</option>
+	<option class="level-1" value="371">&nbsp;&nbsp;&nbsp;Cost Library</option>
+	<option class="level-1" value="376">&nbsp;&nbsp;&nbsp;Internet</option>
+	<option class="level-1" value="381">&nbsp;&nbsp;&nbsp;Media</option>
+	<option class="level-1" value="384">&nbsp;&nbsp;&nbsp;Reference</option>
+	<option class="level-1" value="387">&nbsp;&nbsp;&nbsp;Ship's Library</option>
+	<option class="level-1" value="390">&nbsp;&nbsp;&nbsp;Templates</option>
+	<option class="level-1" value="393">&nbsp;&nbsp;&nbsp;Texts</option>
+	<option class="level-1" value="400">&nbsp;&nbsp;&nbsp;Weight Library</option>
+	<option class="level-0" value="13">Projects</option>
+	<option class="level-0" value="16">Services</option>
+	<option class="level-0" value="20">Tools</option>
+	<option class="level-1" value="60">&nbsp;&nbsp;&nbsp;Applications</option>
+	<option class="level-2" value="442">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;OpenSEA</option>
+	<option class="level-3" value="964">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Project News</option>
+	<option class="level-3" value="81">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;oHydro</option>
+	<option class="level-3" value="83">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;oFreq</option>
+	<option class="level-3" value="86">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;oTime</option>
+	<option class="level-3" value="88">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;oFourier</option>
+	<option class="level-3" value="90">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;oBatch</option>
+	<option class="level-3" value="92">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Contributors</option>
+	<option class="level-3" value="140">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Documentation</option>
+	<option class="level-3" value="143">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Download</option>
+	<option class="level-2" value="479">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;OpenWeight</option>
+	<option class="level-1" value="54">&nbsp;&nbsp;&nbsp;Macros</option>
+	<option class="level-1" value="58">&nbsp;&nbsp;&nbsp;Spreadsheets</option>
+	<option class="level-1" value="325">&nbsp;&nbsp;&nbsp;Physical Tools</option>
+</select>
+<p><strong>Template</strong></p>
+<label class="screen-reader-text" for="page_template">Page Template</label><select name="page_template" id="page_template">
+<option selected="selected" value="default">Default Template</option>
+
+	<option value="template-blog.php">Blog Template ( Posts Page)</option>
+	<option value="template-page-with-intro.php">Category page with intro</option>
+	<option value="template-onecolumn.php">One column, no sidebar</option>
+	<option value="template-threecolumns-left.php">Three Columns, Sidebars on the Left</option>
+	<option value="template-threecolumns-center.php">Three columns, Sidebars Left and Right</option>
+	<option value="template-threecolumns-right.php">Three columns, Sidebars on the Right</option>
+	<option value="template-twocolumns-right.php">Two Columns, Sidebar on the Right</option>
+	<option value="template-twocolumns-left.php">Two columns, Sidebar on the Left</option></select>
+<p><strong>Order</strong></p>
+<p><label class="screen-reader-text" for="menu_order">Order</label><input name="menu_order" size="4" id="menu_order" value="10" type="text"></p>
+<p>Need help? Use the Help tab in the upper right of your screen.</p>
+</div>
+</div>
+<div id="postimagediv" class="postbox ">
+<div class="handlediv" title="Click to toggle"><br></div><h3 class="hndle"><span>Featured Image</span></h3>
+<div class="inside">
+<p class="hide-if-no-js"><a title="Set featured image" href="http://dmsonline.us/wp-admin/media-upload.php?post_id=396&amp;type=image&amp;TB_iframe=1" id="set-post-thumbnail" class="thickbox">Set featured image</a></p></div>
+</div>
+</div></div>
+<div id="postbox-container-2" class="postbox-container">
+<div id="normal-sortables" class="meta-box-sortables ui-sortable"><div id="wpseo_meta" class="postbox ">
+<div class="handlediv" title="Click to toggle"><br></div><h3 class="hndle"><span>WordPress SEO by Yoast</span></h3>
+<div class="inside">
+			<div class="wpseo-metabox-tabs-div">
+			<ul style="display: block;" class="wpseo-metabox-tabs" id="wpseo-metabox-tabs">
+				<li class="general active">
+					<a class="wpseo_tablink" href="#wpseo_general">General</a></li>
+				<li id="linkdex" class="linkdex">
+					<a class="wpseo_tablink" href="#wpseo_linkdex">Page Analysis</a>
+				</li>
+									<li class="advanced">
+						<a class="wpseo_tablink" href="#wpseo_advanced">Advanced</a></li>
+								<li class="social"><a class="wpseo_tablink" href="#wpseo_social">Social</a></li>			</ul>
+						<div class="wpseotab general active">
+				<h4 style="display: none;" class="wpseo-heading">General</h4>
+				<table class="form-table">
+					
+				<tbody><tr>
+					<th scope="row">Snippet Preview</th>
+					<td><div id="wpseosnippet">
+				<a class="title" href="#">DMS - <strong>Vendor</strong>'s Knowledge Library</a><br><a href="#" style="font-size: 13px; color: #282; line-height: 15px;" class="url">dmsonline.us/knowledge/<strong>vendor</strong>s-library/</a><p class="desc" style="font-size: 13px; color: #000; line-height: 15px;"><span style="color: rgb(0, 0, 0);" class="content">A searchable index of <strong>vendor</strong>s with products for the marine industry. Organized by SWBS number. Includes customer reviews.</span></p></div>
+					</td>
+				</tr>
+				<tr>
+					<th scope="row"><label for="yoast_wpseo_focuskw">Focus Keyword:</label><img src="Resume_2013_files/question-mark.png" class="alignright yoast_help" id="focuskwhelp" alt="Pick the main keyword or keyphrase that this post/page is about.&lt;br/&gt;&lt;br/&gt;Read &lt;a href=&quot;https://yoast.com/focus-keyword/#utm_source=wordpress-seo-metabox&amp;utm_medium=inline-help&amp;utm_campaign=focus-keyword&quot;&gt;this post&lt;/a&gt; for more info."></th>
+					<td><span class="ui-helper-hidden-accessible" aria-live="polite" role="status"></span><input "="" id="yoast_wpseo_focuskw" name="yoast_wpseo_focuskw" value="vendor" class="large-text ui-autocomplete-input" type="text"><br><div><div id="focuskwresults"><p>Your focus keyword was found in:<br>Article Heading: <span class="good">Yes (1)</span><br>Page title: <span class="good">Yes (1)</span><br>Page URL: <span class="good">Yes (1)</span><br>Content: <span class="good">Yes (10)</span><br>Meta description: <span class="good">Yes (1)</span></p></div></div>
+					</td>
+				</tr>
+				<tr>
+					<th scope="row"><label for="yoast_wpseo_title">SEO Title:</label><img src="Resume_2013_files/question-mark.png" class="alignright yoast_help" id="titlehelp" alt="The SEO Title defaults to what is generated based on this sites title template for this posttype."></th>
+					<td><input placeholder="DMS - Vendor's Knowledge Library" "="" id="yoast_wpseo_title" name="yoast_wpseo_title" value="DMS - Vendor's Knowledge Library" class="large-text" type="text"><br><div>Title display in search engines is limited to 70 chars, <span id="yoast_wpseo_title-length"><span class="good">38</span></span> chars left.</div>
+					</td>
+				</tr>
+				<tr>
+					<th scope="row"><label for="yoast_wpseo_metadesc">Meta Description:</label><img src="Resume_2013_files/question-mark.png" class="alignright yoast_help" id="metadeschelp" alt="If the meta description is empty, the snippet preview above shows what is generated based on this sites meta description template."></th>
+					<td><textarea class="large-text metadesc" rows="2" id="yoast_wpseo_metadesc" name="yoast_wpseo_metadesc">A searchable index of vendors with products for the marine industry. Organized by SWBS number. Includes customer reviews.</textarea><div>The <code>meta</code> description will be limited to 156 chars, <span id="yoast_wpseo_metadesc-length"><span class="good">35</span></span> chars left. <div id="yoast_wpseo_metadesc_notice"></div></div>
+					</td>
+				</tr>				</tbody></table>
+			</div>
+					<div class="wpseotab linkdex">
+				<h4 style="display: none;" class="wpseo-heading">Page Analysis</h4>
+				<div class="wpseo_msg"><p>To update this page analysis, save as draft or update and check this tab again.</p></div><table class="form-table">
+					</table><table class="wpseoanalysis"><tbody><tr><td class="score"><div class="wpseo_score_img bad"></div></td><td>The keyword density is 7.55%, which is over the advised 4.5% maximum, the keyword was found 8 times.</td></tr><tr><td class="score"><div class="wpseo_score_img bad"></div></td><td>There
+ are 106 words contained in the body copy, this is below the 300 word 
+recommended minimum. Add more useful content on this topic for readers.</td></tr><tr><td class="score"><div class="wpseo_score_img poor"></div></td><td>The images on this page do not have alt tags containing your keyword / phrase.</td></tr><tr><td class="score"><div class="wpseo_score_img ok"></div></td><td>The copy scores 54.2 in the <a href="http://en.wikipedia.org/wiki/Flesch-Kincaid_readability_test#Flesch_Reading_Ease">Flesch Reading Ease</a> test, which is considered fairly difficult to read. Try to make shorter sentences to improve readability.</td></tr><tr><td class="score"><div class="wpseo_score_img ok"></div></td><td>The
+ page title contains 32 characters, which is less than the recommended 
+minimum of 40 characters. Use the space to add keyword variations or 
+create compelling call-to-action copy.</td></tr><tr><td class="score"><div class="wpseo_score_img ok"></div></td><td>The page title contains keyword / phrase, but it does not appear at the beginning; try and move it to the beginning.</td></tr><tr><td class="score"><div class="wpseo_score_img good"></div></td><td>The keyword / phrase appears in the URL for this page.</td></tr><tr><td class="score"><div class="wpseo_score_img good"></div></td><td>Keyword / keyphrase appears in 2 (out of 2) subheadings in the copy. While not a major ranking factor, this is beneficial.</td></tr><tr><td class="score"><div class="wpseo_score_img good"></div></td><td>This page has 1 outbound link(s).</td></tr><tr><td class="score"><div class="wpseo_score_img good"></div></td><td>You've never used this focus keyword before, very good.</td></tr><tr><td class="score"><div class="wpseo_score_img good"></div></td><td>In the specified meta description, consider: How does it compare to the competition? Could it be made more appealing?</td></tr><tr><td class="score"><div class="wpseo_score_img good"></div></td><td>The meta description contains the primary keyword / phrase.</td></tr><tr><td class="score"><div class="wpseo_score_img good"></div></td><td>The keyword appears in the first paragraph of the copy.</td></tr></tbody></table>				
+			</div>
+					<div class="wpseotab advanced">
+				<h4 style="display: none;" class="wpseo-heading">Advanced</h4>
+				<table class="form-table">
+					
+				<tbody><tr>
+					<th scope="row"><label for="yoast_wpseo_meta-robots-noindex">Meta Robots Index:</label></th>
+					<td><select name="yoast_wpseo_meta-robots-noindex" id="yoast_wpseo_meta-robots-noindex" class="yoast"><option selected="selected" value="0">Default for post type, currently: index</option><option value="2">index</option><option value="1">noindex</option></select>
+					</td>
+				</tr>
+				<tr>
+					<th scope="row">Meta Robots Follow</th>
+					<td><input checked="checked" id="yoast_wpseo_meta-robots-nofollow_0" name="yoast_wpseo_meta-robots-nofollow" value="0" type="radio"> <label for="yoast_wpseo_meta-robots-nofollow_0">Follow</label> <input id="yoast_wpseo_meta-robots-nofollow_1" name="yoast_wpseo_meta-robots-nofollow" value="1" type="radio"> <label for="yoast_wpseo_meta-robots-nofollow_1">Nofollow</label> 
+					</td>
+				</tr>
+				<tr>
+					<th scope="row"><label for="yoast_wpseo_meta-robots-adv">Meta Robots Advanced:</label></th>
+					<td><select multiple="multiple" size="6" style="height: 124px;" name="yoast_wpseo_meta-robots-adv[]" id="yoast_wpseo_meta-robots-adv" class="yoast"><option selected="selected" value="-">Site-wide default: None</option><option value="none">None</option><option value="noodp">NO ODP</option><option value="noydir">NO YDIR</option><option value="noarchive">No Archive</option><option value="nosnippet">No Snippet</option></select><div>Advanced <code>meta</code> robots settings for this page.</div>
+					</td>
+				</tr>
+				<tr>
+					<th scope="row"><label for="yoast_wpseo_sitemap-include">Include in Sitemap:</label></th>
+					<td><select name="yoast_wpseo_sitemap-include" id="yoast_wpseo_sitemap-include" class="yoast"><option selected="selected" value="-">Auto detect</option><option value="always">Always include</option><option value="never">Never include</option></select><div>Should this page be in the XML Sitemap at all times, regardless of Robots Meta settings?</div>
+					</td>
+				</tr>
+				<tr>
+					<th scope="row"><label for="yoast_wpseo_sitemap-prio">Sitemap Priority:</label></th>
+					<td><select name="yoast_wpseo_sitemap-prio" id="yoast_wpseo_sitemap-prio" class="yoast"><option selected="selected" value="-">Automatic prioritization</option><option value="1">1 - Highest priority</option><option value="0.9">0.9</option><option value="0.8">0.8 - Default for first tier pages</option><option value="0.7">0.7</option><option value="0.6">0.6 - Default for second tier pages and posts</option><option value="0.5">0.5 - Medium priority</option><option value="0.4">0.4</option><option value="0.3">0.3</option><option value="0.2">0.2</option><option value="0.1">0.1 - Lowest priority</option></select><div>The priority given to this page in the XML sitemap.</div>
+					</td>
+				</tr>
+				<tr>
+					<th scope="row"><label for="yoast_wpseo_sitemap-html-include">Include in HTML Sitemap:</label></th>
+					<td><select name="yoast_wpseo_sitemap-html-include" id="yoast_wpseo_sitemap-html-include" class="yoast"><option selected="selected" value="-">Auto detect</option><option value="always">Always include</option><option value="never">Never include</option></select><div>Should this page be in the HTML Sitemap at all times, regardless of Robots Meta settings?</div>
+					</td>
+				</tr>
+				<tr>
+					<th scope="row"><label for="yoast_wpseo_authorship">Authorship:</label></th>
+					<td><select name="yoast_wpseo_authorship" id="yoast_wpseo_authorship" class="yoast"><option selected="selected" value="-">Default for post type, currently: show</option><option value="always">Always show</option><option value="never">Never show</option></select><div>Show <code>rel="author"</code> on this page?</div>
+					</td>
+				</tr>
+				<tr>
+					<th scope="row"><label for="yoast_wpseo_canonical">Canonical URL:</label></th>
+					<td><input "="" id="yoast_wpseo_canonical" name="yoast_wpseo_canonical" class="large-text" type="text"><br><div>The canonical URL that this page should point to, leave empty to default to permalink. <a target="_blank" href="http://googlewebmastercentral.blogspot.com/2009/12/handling-legitimate-cross-domain.html">Cross domain canonical</a> supported too.</div>
+					</td>
+				</tr>
+				<tr>
+					<th scope="row"><label for="yoast_wpseo_redirect">301 Redirect:</label></th>
+					<td><input "="" id="yoast_wpseo_redirect" name="yoast_wpseo_redirect" class="large-text" type="text"><br><div>The URL that this page should redirect to.</div>
+					</td>
+				</tr>				</tbody></table>
+			</div>
+					<div class="wpseotab social">
+				<h4 style="display: none;" class="wpseo-heading">Social</h4>
+				<table class="form-table">
+					
+				<tbody><tr>
+					<th scope="row"><label for="yoast_wpseo_opengraph-description">Facebook Description:</label></th>
+					<td><textarea class="large-text" rows="3" id="yoast_wpseo_opengraph-description" name="yoast_wpseo_opengraph-description"></textarea><div>If
+ you don't want to use the meta description for sharing the post on 
+Facebook but want another description there, write it here.</div>
+					</td>
+				</tr>
+				<tr>
+					<th scope="row"><label for="yoast_wpseo_opengraph-image">Facebook Image:</label></th>
+					<td><input id="yoast_wpseo_opengraph-image" size="36" name="yoast_wpseo_opengraph-image" type="text"><input id="yoast_wpseo_opengraph-image_button" class="wpseo_image_upload_button button" value="Upload Image" type="button"><div>If you want to override the Facebook image for this post, upload / choose an image or add the URL here.</div>
+					</td>
+				</tr>
+				<tr>
+					<th scope="row"><label for="yoast_wpseo_google-plus-description">Google+ Description:</label></th>
+					<td><textarea class="large-text" rows="3" id="yoast_wpseo_google-plus-description" name="yoast_wpseo_google-plus-description"></textarea><div>If you don't want to use the meta description for sharing the post on Google+ but want another description there, write it here.</div>
+					</td>
+				</tr>				</tbody></table>
+			</div>
+		</div></div>
+</div>
+<div style="" id="revisionsdiv" class="postbox  hide-if-js">
+<div class="handlediv" title="Click to toggle"><br></div><h3 class="hndle"><span>Revisions</span></h3>
+<div class="inside">
+<div class="hide-if-js"><p>JavaScript must be enabled to use this feature.</p></div>
+<ul class="post-revisions hide-if-no-js">
+	<li><img alt="" src="Resume_2013_files/f5566c97f28c9ccf1f00c45309fd3a2d_003.png" class="avatar avatar-24 photo" width="24" height="24"> Admin, 1 month ago (<a href="http://dmsonline.us/wp-admin/revision.php?revision=1151">29 April, 2014 @ 18:49:37</a>)</li>
+	<li><img alt="" src="Resume_2013_files/f5566c97f28c9ccf1f00c45309fd3a2d_003.png" class="avatar avatar-24 photo" width="24" height="24"> Admin, 1 month ago (<a href="http://dmsonline.us/wp-admin/revision.php?revision=1150">29 April, 2014 @ 18:48:37</a>)</li>
+	<li><img alt="" src="Resume_2013_files/f5566c97f28c9ccf1f00c45309fd3a2d_003.png" class="avatar avatar-24 photo" width="24" height="24"> Admin, 1 month ago (<a href="http://dmsonline.us/wp-admin/revision.php?revision=1149">29 April, 2014 @ 18:47:36</a>)</li>
+	<li><img alt="" src="Resume_2013_files/f5566c97f28c9ccf1f00c45309fd3a2d_003.png" class="avatar avatar-24 photo" width="24" height="24"> Admin, 1 month ago (<a href="http://dmsonline.us/wp-admin/revision.php?revision=399">29 April, 2014 @ 18:47:21</a>) [Autosave]</li>
+	<li><img alt="" src="Resume_2013_files/f5566c97f28c9ccf1f00c45309fd3a2d_003.png" class="avatar avatar-24 photo" width="24" height="24"> Admin, 1 month ago (<a href="http://dmsonline.us/wp-admin/revision.php?revision=1148">29 April, 2014 @ 18:46:10</a>)</li>
+	<li><img alt="" src="Resume_2013_files/f5566c97f28c9ccf1f00c45309fd3a2d_003.png" class="avatar avatar-24 photo" width="24" height="24"> Admin, 1 month ago (<a href="http://dmsonline.us/wp-admin/revision.php?revision=1147">29 April, 2014 @ 18:44:00</a>)</li>
+	<li><img alt="" src="Resume_2013_files/f5566c97f28c9ccf1f00c45309fd3a2d_003.png" class="avatar avatar-24 photo" width="24" height="24"> Admin, 1 month ago (<a href="http://dmsonline.us/wp-admin/revision.php?revision=1146">29 April, 2014 @ 18:41:02</a>)</li>
+	<li><img alt="" src="Resume_2013_files/f5566c97f28c9ccf1f00c45309fd3a2d_003.png" class="avatar avatar-24 photo" width="24" height="24"> Admin, 1 month ago (<a href="http://dmsonline.us/wp-admin/revision.php?revision=1145">29 April, 2014 @ 18:32:49</a>)</li>
+	<li><img alt="" src="Resume_2013_files/f5566c97f28c9ccf1f00c45309fd3a2d_003.png" class="avatar avatar-24 photo" width="24" height="24"> Admin, 1 month ago (<a href="http://dmsonline.us/wp-admin/revision.php?revision=1144">29 April, 2014 @ 18:30:58</a>)</li>
+	<li><img alt="" src="Resume_2013_files/f5566c97f28c9ccf1f00c45309fd3a2d_003.png" class="avatar avatar-24 photo" width="24" height="24"> Admin, 1 month ago (<a href="http://dmsonline.us/wp-admin/revision.php?revision=1143">29 April, 2014 @ 18:23:54</a>)</li>
+	<li><img alt="" src="Resume_2013_files/f5566c97f28c9ccf1f00c45309fd3a2d_003.png" class="avatar avatar-24 photo" width="24" height="24"> Admin, 1 month ago (<a href="http://dmsonline.us/wp-admin/revision.php?revision=1142">29 April, 2014 @ 18:20:37</a>)</li>
+	<li><img alt="" src="Resume_2013_files/f5566c97f28c9ccf1f00c45309fd3a2d_003.png" class="avatar avatar-24 photo" width="24" height="24"> Admin, 1 month ago (<a href="http://dmsonline.us/wp-admin/revision.php?revision=1141">29 April, 2014 @ 18:19:33</a>)</li>
+	<li><img alt="" src="Resume_2013_files/f5566c97f28c9ccf1f00c45309fd3a2d_003.png" class="avatar avatar-24 photo" width="24" height="24"> Admin, 1 month ago (<a href="http://dmsonline.us/wp-admin/revision.php?revision=1140">29 April, 2014 @ 18:14:31</a>)</li>
+	<li><img alt="" src="Resume_2013_files/f5566c97f28c9ccf1f00c45309fd3a2d_003.png" class="avatar avatar-24 photo" width="24" height="24"> Admin, 1 month ago (<a href="http://dmsonline.us/wp-admin/revision.php?revision=1139">29 April, 2014 @ 17:54:19</a>)</li>
+	<li><img alt="" src="Resume_2013_files/f5566c97f28c9ccf1f00c45309fd3a2d_003.png" class="avatar avatar-24 photo" width="24" height="24"> Admin, 1 month ago (<a href="http://dmsonline.us/wp-admin/revision.php?revision=1131">27 April, 2014 @ 18:56:00</a>)</li>
+	<li><img alt="" src="Resume_2013_files/f5566c97f28c9ccf1f00c45309fd3a2d_003.png" class="avatar avatar-24 photo" width="24" height="24"> Admin, 6 months ago (<a href="http://dmsonline.us/wp-admin/revision.php?revision=1104">23 November, 2013 @ 10:20:41</a>)</li>
+	<li><img alt="" src="Resume_2013_files/f5566c97f28c9ccf1f00c45309fd3a2d_003.png" class="avatar avatar-24 photo" width="24" height="24"> Admin, 6 months ago (<a href="http://dmsonline.us/wp-admin/revision.php?revision=1103">23 November, 2013 @ 10:14:11</a>)</li>
+	<li><img alt="" src="Resume_2013_files/f5566c97f28c9ccf1f00c45309fd3a2d_003.png" class="avatar avatar-24 photo" width="24" height="24"> Admin, 6 months ago (<a href="http://dmsonline.us/wp-admin/revision.php?revision=1102">23 November, 2013 @ 10:12:15</a>)</li>
+	<li><img alt="" src="Resume_2013_files/f5566c97f28c9ccf1f00c45309fd3a2d_003.png" class="avatar avatar-24 photo" width="24" height="24"> Admin, 6 months ago (<a href="http://dmsonline.us/wp-admin/revision.php?revision=1101">23 November, 2013 @ 10:10:29</a>)</li>
+	<li><img alt="" src="Resume_2013_files/f5566c97f28c9ccf1f00c45309fd3a2d_003.png" class="avatar avatar-24 photo" width="24" height="24"> Admin, 6 months ago (<a href="http://dmsonline.us/wp-admin/revision.php?revision=1100">23 November, 2013 @ 10:10:12</a>)</li>
+	<li><img alt="" src="Resume_2013_files/f5566c97f28c9ccf1f00c45309fd3a2d_003.png" class="avatar avatar-24 photo" width="24" height="24"> Admin, 6 months ago (<a href="http://dmsonline.us/wp-admin/revision.php?revision=1099">23 November, 2013 @ 10:09:50</a>)</li>
+	<li><img alt="" src="Resume_2013_files/f5566c97f28c9ccf1f00c45309fd3a2d_003.png" class="avatar avatar-24 photo" width="24" height="24"> Admin, 6 months ago (<a href="http://dmsonline.us/wp-admin/revision.php?revision=1098">23 November, 2013 @ 10:09:22</a>)</li>
+	<li><img alt="" src="Resume_2013_files/f5566c97f28c9ccf1f00c45309fd3a2d_003.png" class="avatar avatar-24 photo" width="24" height="24"> Admin, 6 months ago (<a href="http://dmsonline.us/wp-admin/revision.php?revision=1097">23 November, 2013 @ 10:07:00</a>)</li>
+	<li><img alt="" src="Resume_2013_files/f5566c97f28c9ccf1f00c45309fd3a2d_003.png" class="avatar avatar-24 photo" width="24" height="24"> Admin, 6 months ago (<a href="http://dmsonline.us/wp-admin/revision.php?revision=1081">22 November, 2013 @ 11:32:50</a>)</li>
+	<li><img alt="" src="Resume_2013_files/f5566c97f28c9ccf1f00c45309fd3a2d_003.png" class="avatar avatar-24 photo" width="24" height="24"> Admin, 1 year ago (<a href="http://dmsonline.us/wp-admin/revision.php?revision=398">18 May, 2013 @ 16:03:00</a>)</li>
+</ul></div>
+</div>
+<div style="" id="postcustom" class="postbox  hide-if-js">
+<div class="handlediv" title="Click to toggle"><br></div><h3 class="hndle"><span>Custom Fields</span></h3>
+<div class="inside">
+<div id="postcustomstuff">
+<div id="ajax-response"></div>
+
+<table id="list-table" style="display: none;">
+	<thead>
+	<tr>
+		<th class="left">Name</th>
+		<th>Value</th>
+	</tr>
+	</thead>
+	<tbody id="the-list" data-wp-lists="list:meta">
+	<tr><td></td></tr>
+	</tbody>
+</table><p><strong>Add New Custom Field:</strong></p>
+<table id="newmeta">
+<thead>
+<tr>
+<th class="left"><label for="metakeyselect">Name</label></th>
+<th><label for="metavalue">Value</label></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td id="newmetaleft" class="left">
+<select id="metakeyselect" name="metakeyselect">
+<option selected="selected" value="#NONE#">— Select —</option>
+
+<option value="ajaxwpqsf-cpt">ajaxwpqsf-cpt</option>
+<option value="ajaxwpqsf-relbool">ajaxwpqsf-relbool</option>
+<option value="ajaxwpqsf-taxo">ajaxwpqsf-taxo</option>
+<option value="ajaxwpqsf-theme">ajaxwpqsf-theme</option>
+<option value="content_width">content_width</option>
+<option value="custom_css_add">custom_css_add</option>
+<option value="custom_css_preprocessor">custom_css_preprocessor</option>
+<option value="wpcr_enable">wpcr_enable</option>
+<option value="wpcr_product_brand">wpcr_product_brand</option>
+<option value="wps_page_subdomain">wps_page_subdomain</option></select>
+<input class="hide-if-js" id="metakeyinput" name="metakeyinput" type="text">
+<a href="#postcustomstuff" class="hide-if-no-js" onclick="jQuery('#metakeyinput, #metakeyselect, #enternew, #cancelnew').toggle();return false;">
+<span id="enternew">Enter new</span>
+<span id="cancelnew" class="hidden">Cancel</span></a>
+</td>
+<td><textarea id="metavalue" name="metavalue" rows="2" cols="25"></textarea></td>
+</tr>
+
+<tr><td colspan="2">
+<div class="submit">
+<input name="addmeta" id="newmeta-submit" class="button" value="Add Custom Field" data-wp-lists="add:the-list:newmeta" type="submit"></div>
+<input id="_ajax_nonce-add-meta" name="_ajax_nonce-add-meta" value="6d57dee703" type="hidden"></td></tr>
+</tbody>
+</table>
+</div>
+<p>Custom fields can be used to add extra metadata to a post that you can <a href="http://codex.wordpress.org/Using_Custom_Fields" target="_blank">use in your theme</a>.</p>
+</div>
+</div>
+<div id="commentstatusdiv" class="postbox ">
+<div class="handlediv" title="Click to toggle"><br></div><h3 class="hndle"><span>Discussion</span></h3>
+<div class="inside">
+<input name="advanced_view" value="1" type="hidden">
+<p class="meta-options">
+	<label for="comment_status" class="selectit"><input name="comment_status" id="comment_status" value="open" type="checkbox"> Allow comments.</label><br>
+	<label for="ping_status" class="selectit"><input name="ping_status" id="ping_status" value="open" checked="checked" type="checkbox"> Allow <a href="http://codex.wordpress.org/Introduction_to_Blogging#Managing_Comments" target="_blank">trackbacks and pingbacks</a> on this page.</label>
+	</p>
+</div>
+</div>
+<div style="" id="commentsdiv" class="postbox  hide-if-js">
+<div class="handlediv" title="Click to toggle"><br></div><h3 class="hndle"><span>Comments</span></h3>
+<div class="inside">
+<input id="add_comment_nonce" name="add_comment_nonce" value="60a217fa7d" type="hidden">	<p class="hide-if-no-js" id="add-new-comment"><a class="button" href="#commentstatusdiv" onclick="window.commentReply &amp;&amp; commentReply.addcomment(396);return false;">Add comment</a></p>
+	<input id="_ajax_fetch_list_nonce" name="_ajax_fetch_list_nonce" value="ec84fbaa2b" type="hidden"><input name="_wp_http_referer" value="/wp-admin/post.php?post=396&amp;action=edit" type="hidden"><table class="widefat fixed comments comments-box" style="display:none;">
+	<tbody id="the-comment-list" data-wp-lists="list:comment">
+			</tbody>
+</table>
+<p id="no-comments">No comments yet.</p><div class="hidden" id="trash-undo-holder">
+	<div class="trash-undo-inside">Comment by <strong></strong> moved to the trash. <span class="undo untrash"><a href="#">Undo</a></span></div>
+</div>
+<div class="hidden" id="spam-undo-holder">
+	<div class="spam-undo-inside">Comment by <strong></strong> marked as spam. <span class="undo unspam"><a href="#">Undo</a></span></div>
+</div>
+</div>
+</div>
+<div style="" id="slugdiv" class="postbox  hide-if-js">
+<div class="handlediv" title="Click to toggle"><br></div><h3 class="hndle"><span>Slug</span></h3>
+<div class="inside">
+<label class="screen-reader-text" for="post_name">Slug</label><input name="post_name" size="13" id="post_name" value="vendors-library" type="text">
+</div>
+</div>
+<div style="" id="authordiv" class="postbox  hide-if-js">
+<div class="handlediv" title="Click to toggle"><br></div><h3 class="hndle"><span>Author</span></h3>
+<div class="inside">
+<label class="screen-reader-text" for="post_author_override">Author</label>
+<select name="post_author_override" id="post_author_override" class="">
+	<option value="3" selected="selected">Admin</option>
+	<option value="2">Editor</option>
+	<option value="5">Nicholas Barczak</option>
+</select></div>
+</div>
+</div><div id="advanced-sortables" class="meta-box-sortables ui-sortable"><div id="sharing_meta" class="postbox ">
+<div class="handlediv" title="Click to toggle"><br></div><h3 class="hndle"><span>Sharing</span></h3>
+<div class="inside">
+
+	<p>
+		<label for="enable_post_sharing">
+			<input name="enable_post_sharing" id="enable_post_sharing" value="1" checked="checked" type="checkbox">
+			Show sharing buttons.		</label>
+		<input name="sharing_status_hidden" value="1" type="hidden">
+	</p>
+
+	</div>
+</div>
+</div></div>
+</div><!-- /post-body -->
+<br class="clear">
+</div><!-- /poststuff -->
+</form>
+</div>
+
+<form method="get" action="">
+<table style="display:none;"><tbody id="com-reply"><tr id="replyrow" style="display:none;"><td colspan="2" class="colspanchange">
+	<div id="replyhead" style="display:none;"><h5>Reply to Comment</h5></div>
+	<div id="addhead" style="display:none;"><h5>Add new Comment</h5></div>
+	<div id="edithead" style="display:none;">
+		<div class="inside">
+		<label for="author">Name</label>
+		<input name="newcomment_author" size="50" id="author" type="text">
+		</div>
+
+		<div class="inside">
+		<label for="author-email">E-mail</label>
+		<input name="newcomment_author_email" size="50" id="author-email" type="text">
+		</div>
+
+		<div class="inside">
+		<label for="author-url">URL</label>
+		<input id="author-url" name="newcomment_author_url" size="103" type="text">
+		</div>
+		<div style="clear:both;"></div>
+	</div>
+
+	<div id="replycontainer">
+	<div id="wp-replycontent-wrap" class="wp-core-ui wp-editor-wrap html-active"><div id="wp-replycontent-editor-container" class="wp-editor-container"><div class="quicktags-toolbar" id="qt_replycontent_toolbar"><input id="qt_replycontent_strong" accesskey="b" class="ed_button button button-small" title="" value="b" type="button"><input id="qt_replycontent_em" accesskey="i" class="ed_button button button-small" title="" value="i" type="button"><input id="qt_replycontent_link" accesskey="a" class="ed_button button button-small" title="" value="link" type="button"><input id="qt_replycontent_block" accesskey="q" class="ed_button button button-small" title="" value="b-quote" type="button"><input id="qt_replycontent_del" accesskey="d" class="ed_button button button-small" title="" value="del" type="button"><input id="qt_replycontent_ins" accesskey="s" class="ed_button button button-small" title="" value="ins" type="button"><input id="qt_replycontent_img" accesskey="m" class="ed_button button button-small" title="" value="img" type="button"><input id="qt_replycontent_ul" accesskey="u" class="ed_button button button-small" title="" value="ul" type="button"><input id="qt_replycontent_ol" accesskey="o" class="ed_button button button-small" title="" value="ol" type="button"><input id="qt_replycontent_li" accesskey="l" class="ed_button button button-small" title="" value="li" type="button"><input id="qt_replycontent_code" accesskey="c" class="ed_button button button-small" title="" value="code" type="button"><input id="qt_replycontent_close" class="ed_button button button-small" title="Close all open tags" value="close tags" type="button"><input id="qt_replycontent_AtD" class="ed_button button button-small" title="" value="proofread" type="button"></div><textarea class="wp-editor-area" rows="20" cols="40" name="replycontent" id="replycontent"></textarea></div>
+<div class="uploader-editor">
+		<div class="uploader-editor-content">
+			<div class="uploader-editor-title">Drop files to upload</div>
+		</div>
+	</div></div>
+
+	</div>
+
+	<p id="replysubmit" class="submit">
+	<a href="#comments-form" class="save button-primary alignright">
+	<span id="addbtn" style="display:none;">Add Comment</span>
+	<span id="savebtn" style="display:none;">Update Comment</span>
+	<span id="replybtn" style="display:none;">Submit Reply</span></a>
+	<a href="#comments-form" class="cancel button-secondary alignleft">Cancel</a>
+	<span class="waiting spinner"></span>
+	<span class="error" style="display:none;"></span>
+	<br class="clear">
+	</p>
+
+	<input name="user_ID" id="user_ID" value="3" type="hidden">
+	<input name="action" id="action" value="" type="hidden">
+	<input name="comment_ID" id="comment_ID" value="" type="hidden">
+	<input name="comment_post_ID" id="comment_post_ID" value="" type="hidden">
+	<input name="status" id="status" value="" type="hidden">
+	<input name="position" id="position" value="1" type="hidden">
+	<input name="checkbox" id="checkbox" value="0" type="hidden">
+	<input name="mode" id="mode" value="single" type="hidden">
+	<input id="_ajax_nonce-replyto-comment" name="_ajax_nonce-replyto-comment" value="f715ffb77c" type="hidden"><input id="_wp_unfiltered_html_comment" name="_wp_unfiltered_html_comment" value="148e4cdb64" type="hidden"></td></tr></tbody></table>
+</form>
+
+
+<div class="clear"></div></div><!-- wpbody-content -->
+<div class="clear"></div></div><!-- wpbody -->
+<div class="clear"></div></div><!-- wpcontent -->
+
+<div id="wpfooter">
+		<p id="footer-left" class="alignleft">
+		<span id="footer-thankyou">Thank you for creating with <a href="https://wordpress.org/">WordPress</a>.</span>	</p>
+	<p id="footer-upgrade" class="alignright">
+		Version 3.9.1	</p>
+	<div class="clear"></div>
+</div>
+	<div id="post-lock-dialog" class="notification-dialog-wrap hidden">
+	<div class="notification-dialog-background"></div>
+	<div class="notification-dialog">
+			<div class="post-taken-over">
+			<div class="post-locked-avatar"></div>
+			<p class="wp-tab-first" tabindex="0">
+			<span class="currently-editing"></span><br>
+			<span class="locked-saving hidden"><img src="Resume_2013_files/wpspin_light-2x.gif" width="16" height="16"> Saving revision...</span>
+			<span class="locked-saved hidden">Your latest changes were saved as a revision.</span>
+			</p>
+						<p><a class="button button-primary wp-tab-last" href="http://dmsonline.us/wp-admin/edit.php?post_type=page">All Pages</a></p>
+		</div>
+			</div>
+	</div>
+		<script type="text/html" id="tmpl-media-frame">
+		<div class="media-frame-menu"></div>
+		<div class="media-frame-title"></div>
+		<div class="media-frame-router"></div>
+		<div class="media-frame-content"></div>
+		<div class="media-frame-toolbar"></div>
+		<div class="media-frame-uploader"></div>
+	</script>
+
+	<script type="text/html" id="tmpl-media-modal">
+		<div class="media-modal wp-core-ui">
+			<a class="media-modal-close" href="#" title="Close"><span class="media-modal-icon"></span></a>
+			<div class="media-modal-content"></div>
+		</div>
+		<div class="media-modal-backdrop"></div>
+	</script>
+
+	<script type="text/html" id="tmpl-uploader-window">
+		<div class="uploader-window-content">
+			<h3>Drop files to upload</h3>
+		</div>
+	</script>
+
+	<script type="text/html" id="tmpl-uploader-editor">
+		<div class="uploader-editor-content">
+			<div class="uploader-editor-title">Drop files to upload</div>
+		</div>
+	</script>
+
+	<script type="text/html" id="tmpl-uploader-inline">
+		<# var messageClass = data.message ? 'has-upload-message' : 'no-upload-message'; #>
+		<div class="uploader-inline-content {{ messageClass }}">
+		<# if ( data.message ) { #>
+			<h3 class="upload-message">{{ data.message }}</h3>
+		<# } #>
+					<div class="upload-ui">
+				<h3 class="upload-instructions drop-instructions">Drop files anywhere to upload</h3>
+				<a href="#" class="browser button button-hero">Select Files</a>
+			</div>
+
+			<div class="upload-inline-status"></div>
+
+			<div class="post-upload-ui">
+				
+				<p class="max-upload-size">Maximum upload file size: 10MB.</p>
+
+				<# if ( data.suggestedWidth && data.suggestedHeight ) { #>
+					<p class="suggested-dimensions">
+						Suggested image dimensions: {{data.suggestedWidth}} &times; {{data.suggestedHeight}}
+					</p>
+				<# } #>
+
+							</div>
+				</div>
+	</script>
+
+	<script type="text/html" id="tmpl-uploader-status">
+		<h3>Uploading</h3>
+		<a class="upload-dismiss-errors" href="#">Dismiss Errors</a>
+
+		<div class="media-progress-bar"><div></div></div>
+		<div class="upload-details">
+			<span class="upload-count">
+				<span class="upload-index"></span> / <span class="upload-total"></span>
+			</span>
+			<span class="upload-detail-separator">&ndash;</span>
+			<span class="upload-filename"></span>
+		</div>
+		<div class="upload-errors"></div>
+	</script>
+
+	<script type="text/html" id="tmpl-uploader-status-error">
+		<span class="upload-error-label">Error</span>
+		<span class="upload-error-filename">{{{ data.filename }}}</span>
+		<span class="upload-error-message">{{ data.message }}</span>
+	</script>
+
+	<script type="text/html" id="tmpl-attachment">
+		<div class="attachment-preview type-{{ data.type }} subtype-{{ data.subtype }} {{ data.orientation }}">
+			<# if ( data.uploading ) { #>
+				<div class="media-progress-bar"><div></div></div>
+			<# } else if ( 'image' === data.type ) { #>
+				<div class="thumbnail">
+					<div class="centered">
+						<img src="{{ data.size.url }}" draggable="false" />
+					</div>
+				</div>
+			<# } else { #>
+				<img src="{{ data.icon }}" class="icon" draggable="false" />
+				<div class="filename">
+					<div>{{ data.filename }}</div>
+				</div>
+			<# } #>
+
+			<# if ( data.buttons.close ) { #>
+				<a class="close media-modal-icon" href="#" title="Remove"></a>
+			<# } #>
+
+			<# if ( data.buttons.check ) { #>
+				<a class="check" href="#" title="Deselect"><div class="media-modal-icon"></div></a>
+			<# } #>
+		</div>
+		<#
+		var maybeReadOnly = data.can.save || data.allowLocalEdits ? '' : 'readonly';
+		if ( data.describe ) { #>
+			<# if ( 'image' === data.type ) { #>
+				<input type="text" value="{{ data.caption }}" class="describe" data-setting="caption"
+					placeholder="Caption this image&hellip;" {{ maybeReadOnly }} />
+			<# } else { #>
+				<input type="text" value="{{ data.title }}" class="describe" data-setting="title"
+					<# if ( 'video' === data.type ) { #>
+						placeholder="Describe this video&hellip;"
+					<# } else if ( 'audio' === data.type ) { #>
+						placeholder="Describe this audio file&hellip;"
+					<# } else { #>
+						placeholder="Describe this media file&hellip;"
+					<# } #> {{ maybeReadOnly }} />
+			<# } #>
+		<# } #>
+	</script>
+
+	<script type="text/html" id="tmpl-attachment-details">
+		<h3>
+			Attachment Details
+			<span class="settings-save-status">
+				<span class="spinner"></span>
+				<span class="saved">Saved.</span>
+			</span>
+		</h3>
+		<div class="attachment-info">
+			<div class="thumbnail">
+				<# if ( data.uploading ) { #>
+					<div class="media-progress-bar"><div></div></div>
+				<# } else if ( 'image' === data.type ) { #>
+					<img src="{{ data.size.url }}" draggable="false" />
+				<# } else { #>
+					<img src="{{ data.icon }}" class="icon" draggable="false" />
+				<# } #>
+			</div>
+			<div class="details">
+				<div class="filename">{{ data.filename }}</div>
+				<div class="uploaded">{{ data.dateFormatted }}</div>
+
+				<# if ( 'image' === data.type && ! data.uploading ) { #>
+					<# if ( data.width && data.height ) { #>
+						<div class="dimensions">{{ data.width }} &times; {{ data.height }}</div>
+					<# } #>
+
+					<# if ( data.can.save ) { #>
+						<a class="edit-attachment" href="{{ data.editLink }}&amp;image-editor" target="_blank">Edit Image</a>
+						<a class="refresh-attachment" href="#">Refresh</a>
+					<# } #>
+				<# } #>
+
+				<# if ( data.fileLength ) { #>
+					<div class="file-length">Length: {{ data.fileLength }}</div>
+				<# } #>
+
+				<# if ( ! data.uploading && data.can.remove ) { #>
+											<a class="delete-attachment" href="#">Delete Permanently</a>
+									<# } #>
+
+				<div class="compat-meta">
+					<# if ( data.compat && data.compat.meta ) { #>
+						{{{ data.compat.meta }}}
+					<# } #>
+				</div>
+			</div>
+		</div>
+
+		<# var maybeReadOnly = data.can.save || data.allowLocalEdits ? '' : 'readonly'; #>
+			<label class="setting" data-setting="title">
+				<span>Title</span>
+				<input type="text" value="{{ data.title }}" {{ maybeReadOnly }} />
+			</label>
+			<label class="setting" data-setting="caption">
+				<span>Caption</span>
+				<textarea {{ maybeReadOnly }}>{{ data.caption }}</textarea>
+			</label>
+		<# if ( 'image' === data.type ) { #>
+			<label class="setting" data-setting="alt">
+				<span>Alt Text</span>
+				<input type="text" value="{{ data.alt }}" {{ maybeReadOnly }} />
+			</label>
+		<# } #>
+			<label class="setting" data-setting="description">
+				<span>Description</span>
+				<textarea {{ maybeReadOnly }}>{{ data.description }}</textarea>
+			</label>
+	</script>
+
+	<script type="text/html" id="tmpl-media-selection">
+		<div class="selection-info">
+			<span class="count"></span>
+			<# if ( data.editable ) { #>
+				<a class="edit-selection" href="#">Edit</a>
+			<# } #>
+			<# if ( data.clearable ) { #>
+				<a class="clear-selection" href="#">Clear</a>
+			<# } #>
+		</div>
+		<div class="selection-view"></div>
+	</script>
+
+	<script type="text/html" id="tmpl-attachment-display-settings">
+		<h3>Attachment Display Settings</h3>
+
+		<# if ( 'image' === data.type ) { #>
+			<label class="setting">
+				<span>Alignment</span>
+				<select class="alignment"
+					data-setting="align"
+					<# if ( data.userSettings ) { #>
+						data-user-setting="align"
+					<# } #>>
+
+					<option value="left">
+						Left					</option>
+					<option value="center">
+						Center					</option>
+					<option value="right">
+						Right					</option>
+					<option value="none" selected>
+						None					</option>
+				</select>
+			</label>
+		<# } #>
+
+		<div class="setting">
+			<label>
+				<# if ( data.model.canEmbed ) { #>
+					<span>Embed or Link</span>
+				<# } else { #>
+					<span>Link To</span>
+				<# } #>
+
+				<select class="link-to"
+					data-setting="link"
+					<# if ( data.userSettings && ! data.model.canEmbed ) { #>
+						data-user-setting="urlbutton"
+					<# } #>>
+
+				<# if ( data.model.canEmbed ) { #>
+					<option value="embed" selected>
+						Embed Media Player					</option>
+					<option value="file">
+				<# } else { #>
+					<option value="file" selected>
+				<# } #>
+					<# if ( data.model.canEmbed ) { #>
+						Link to Media File					<# } else { #>
+						Media File					<# } #>
+					</option>
+					<option value="post">
+					<# if ( data.model.canEmbed ) { #>
+						Link to Attachment Page					<# } else { #>
+						Attachment Page					<# } #>
+					</option>
+				<# if ( 'image' === data.type ) { #>
+					<option value="custom">
+						Custom URL					</option>
+					<option value="none">
+						None					</option>
+				<# } #>
+				</select>
+			</label>
+			<input type="text" class="link-to-custom" data-setting="linkUrl" />
+		</div>
+
+		<# if ( 'undefined' !== typeof data.sizes ) { #>
+			<label class="setting">
+				<span>Size</span>
+				<select class="size" name="size"
+					data-setting="size"
+					<# if ( data.userSettings ) { #>
+						data-user-setting="imgsize"
+					<# } #>>
+											<#
+						var size = data.sizes['thumbnail'];
+						if ( size ) { #>
+							<option value="thumbnail" >
+								Thumbnail &ndash; {{ size.width }} &times; {{ size.height }}
+							</option>
+						<# } #>
+											<#
+						var size = data.sizes['medium'];
+						if ( size ) { #>
+							<option value="medium" >
+								Medium &ndash; {{ size.width }} &times; {{ size.height }}
+							</option>
+						<# } #>
+											<#
+						var size = data.sizes['large'];
+						if ( size ) { #>
+							<option value="large" >
+								Large &ndash; {{ size.width }} &times; {{ size.height }}
+							</option>
+						<# } #>
+											<#
+						var size = data.sizes['full'];
+						if ( size ) { #>
+							<option value="full"  selected='selected'>
+								Full Size &ndash; {{ size.width }} &times; {{ size.height }}
+							</option>
+						<# } #>
+									</select>
+			</label>
+		<# } #>
+	</script>
+
+	<script type="text/html" id="tmpl-gallery-settings">
+		<h3>Gallery Settings</h3>
+
+		<label class="setting">
+			<span>Link To</span>
+			<select class="link-to"
+				data-setting="link"
+				<# if ( data.userSettings ) { #>
+					data-user-setting="urlbutton"
+				<# } #>>
+
+				<option value="post" selected>
+					Attachment Page				</option>
+				<option value="file">
+					Media File				</option>
+				<option value="none">
+					None				</option>
+			</select>
+		</label>
+
+		<label class="setting">
+			<span>Columns</span>
+			<select class="columns" name="columns"
+				data-setting="columns">
+									<option value="1" >
+						1					</option>
+									<option value="2" >
+						2					</option>
+									<option value="3"  selected='selected'>
+						3					</option>
+									<option value="4" >
+						4					</option>
+									<option value="5" >
+						5					</option>
+									<option value="6" >
+						6					</option>
+									<option value="7" >
+						7					</option>
+									<option value="8" >
+						8					</option>
+									<option value="9" >
+						9					</option>
+							</select>
+		</label>
+
+		<label class="setting">
+			<span>Random Order</span>
+			<input type="checkbox" data-setting="_orderbyRandom" />
+		</label>
+	</script>
+
+	<script type="text/html" id="tmpl-playlist-settings">
+		<h3>Playlist Settings</h3>
+
+		<# var emptyModel = _.isEmpty( data.model ),
+			isVideo = 'video' === data.controller.get('library').props.get('type'); #>
+
+		<label class="setting">
+			<input type="checkbox" data-setting="tracklist" <# if ( emptyModel ) { #>
+				checked="checked"
+			<# } #> />
+			<# if ( isVideo ) { #>
+			<span>Show Video List</span>
+			<# } else { #>
+			<span>Show Tracklist</span>
+			<# } #>
+		</label>
+
+		<# if ( ! isVideo ) { #>
+		<label class="setting">
+			<input type="checkbox" data-setting="artists" <# if ( emptyModel ) { #>
+				checked="checked"
+			<# } #> />
+			<span>Show Artist Name in Tracklist</span>
+		</label>
+		<# } #>
+
+		<label class="setting">
+			<input type="checkbox" data-setting="images" <# if ( emptyModel ) { #>
+				checked="checked"
+			<# } #> />
+			<span>Show Images</span>
+		</label>
+	</script>
+
+	<script type="text/html" id="tmpl-embed-link-settings">
+		<label class="setting">
+			<span>Title</span>
+			<input type="text" class="alignment" data-setting="title" />
+		</label>
+	</script>
+
+	<script type="text/html" id="tmpl-embed-image-settings">
+		<div class="thumbnail">
+			<img src="{{ data.model.url }}" draggable="false" />
+		</div>
+
+					<label class="setting caption">
+				<span>Caption</span>
+				<textarea data-setting="caption" />
+			</label>
+		
+		<label class="setting alt-text">
+			<span>Alt Text</span>
+			<input type="text" data-setting="alt" />
+		</label>
+
+		<div class="setting align">
+			<span>Align</span>
+			<div class="button-group button-large" data-setting="align">
+				<button class="button" value="left">
+					Left				</button>
+				<button class="button" value="center">
+					Center				</button>
+				<button class="button" value="right">
+					Right				</button>
+				<button class="button active" value="none">
+					None				</button>
+			</div>
+		</div>
+
+		<div class="setting link-to">
+			<span>Link To</span>
+			<div class="button-group button-large" data-setting="link">
+				<button class="button" value="file">
+					Image URL				</button>
+				<button class="button" value="custom">
+					Custom URL				</button>
+				<button class="button active" value="none">
+					None				</button>
+			</div>
+			<input type="text" class="link-to-custom" data-setting="linkUrl" />
+		</div>
+	</script>
+
+	<script type="text/html" id="tmpl-attachments-css">
+		<style type="text/css" id="{{ data.id }}-css">
+			#{{ data.id }} {
+				padding: 0 {{ data.gutter }}px;
+			}
+
+			#{{ data.id }} .attachment {
+				margin: {{ data.gutter }}px;
+				width: {{ data.edge }}px;
+			}
+
+			#{{ data.id }} .attachment-preview,
+			#{{ data.id }} .attachment-preview .thumbnail {
+				width: {{ data.edge }}px;
+				height: {{ data.edge }}px;
+			}
+
+			#{{ data.id }} .portrait .thumbnail img {
+				max-width: {{ data.edge }}px;
+				height: auto;
+			}
+
+			#{{ data.id }} .landscape .thumbnail img {
+				width: auto;
+				max-height: {{ data.edge }}px;
+			}
+		</style>
+	</script>
+
+	<script type="text/html" id="tmpl-image-details">
+		<div class="media-embed">
+			<div class="embed-media-settings">
+				<div class="column-image">
+					<div class="image">
+						<img src="{{ data.model.url }}" draggable="false" />
+
+						<# if ( data.attachment && window.imageEdit ) { #>
+							<div class="actions">
+								<input type="button" class="edit-attachment button" value="Edit Original" />
+								<input type="button" class="replace-attachment button" value="Replace" />
+							</div>
+						<# } #>
+					</div>
+				</div>
+				<div class="column-settings">
+											<label class="setting caption">
+							<span>Caption</span>
+							<textarea data-setting="caption">{{ data.model.caption }}</textarea>
+						</label>
+					
+					<label class="setting alt-text">
+						<span>Alternative Text</span>
+						<input type="text" data-setting="alt" value="{{ data.model.alt }}" />
+					</label>
+
+					<h3>Display Settings</h3>
+					<div class="setting align">
+						<span>Align</span>
+						<div class="button-group button-large" data-setting="align">
+							<button class="button" value="left">
+								Left							</button>
+							<button class="button" value="center">
+								Center							</button>
+							<button class="button" value="right">
+								Right							</button>
+							<button class="button active" value="none">
+								None							</button>
+						</div>
+					</div>
+
+					<# if ( data.attachment ) { #>
+						<# if ( 'undefined' !== typeof data.attachment.sizes ) { #>
+							<label class="setting size">
+								<span>Size</span>
+								<select class="size" name="size"
+									data-setting="size"
+									<# if ( data.userSettings ) { #>
+										data-user-setting="imgsize"
+									<# } #>>
+																			<#
+										var size = data.sizes['thumbnail'];
+										if ( size ) { #>
+											<option value="thumbnail">
+												Thumbnail &ndash; {{ size.width }} &times; {{ size.height }}
+											</option>
+										<# } #>
+																			<#
+										var size = data.sizes['medium'];
+										if ( size ) { #>
+											<option value="medium">
+												Medium &ndash; {{ size.width }} &times; {{ size.height }}
+											</option>
+										<# } #>
+																			<#
+										var size = data.sizes['large'];
+										if ( size ) { #>
+											<option value="large">
+												Large &ndash; {{ size.width }} &times; {{ size.height }}
+											</option>
+										<# } #>
+																			<#
+										var size = data.sizes['full'];
+										if ( size ) { #>
+											<option value="full">
+												Full Size &ndash; {{ size.width }} &times; {{ size.height }}
+											</option>
+										<# } #>
+																		<option value="custom">
+										Custom Size									</option>
+								</select>
+							</label>
+						<# } #>
+							<div class="custom-size<# if ( data.model.size !== 'custom' ) { #> hidden<# } #>">
+								<label><span>Width <small>(px)</small></span> <input data-setting="customWidth" type="number" step="1" value="{{ data.model.customWidth }}" /></label><span class="sep">&times;</span><label><span>Height <small>(px)</small></span><input data-setting="customHeight" type="number" step="1" value="{{ data.model.customHeight }}" /></label>
+							</div>
+					<# } #>
+
+					<div class="setting link-to">
+						<span>Link To</span>
+						<select data-setting="link">
+						<# if ( data.attachment ) { #>
+							<option value="file">
+								Media File							</option>
+							<option value="post">
+								Attachment Page							</option>
+						<# } else { #>
+							<option value="file">
+								Image URL							</option>
+						<# } #>
+							<option value="custom">
+								Custom URL							</option>
+							<option value="none">
+								None							</option>
+						</select>
+						<input type="text" class="link-to-custom" data-setting="linkUrl" />
+					</div>
+					<div class="advanced-section">
+						<h3><a class="advanced-toggle" href="#">Advanced Options</a></h3>
+						<div class="advanced-settings hidden">
+							<div class="advanced-image">
+								<label class="setting title-text">
+									<span>Image Title Attribute</span>
+									<input type="text" data-setting="title" value="{{ data.model.title }}" />
+								</label>
+								<label class="setting extra-classes">
+									<span>Image CSS Class</span>
+									<input type="text" data-setting="extraClasses" value="{{ data.model.extraClasses }}" />
+								</label>
+							</div>
+							<div class="advanced-link">
+								<div class="setting link-target">
+									<label><input type="checkbox" data-setting="linkTargetBlank" value="_blank" <# if ( data.model.linkTargetBlank ) { #>checked="checked"<# } #>>Open link in a new window/tab</label>
+								</div>
+								<label class="setting link-rel">
+									<span>Link Rel</span>
+									<input type="text" data-setting="linkRel" value="{{ data.model.linkClassName }}" />
+								</label>
+								<label class="setting link-class-name">
+									<span>Link CSS Class</span>
+									<input type="text" data-setting="linkClassName" value="{{ data.model.linkClassName }}" />
+								</label>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</script>
+
+	<script type="text/html" id="tmpl-image-editor">
+		<div id="media-head-{{ data.id }}"></div>
+		<div id="image-editor-{{ data.id }}"></div>
+	</script>
+
+	<script type="text/html" id="tmpl-audio-details">
+		<# var ext, html5types = {
+			mp3: wp.media.view.settings.embedMimes.mp3,
+			ogg: wp.media.view.settings.embedMimes.ogg
+		}; #>
+
+				<div class="media-embed media-embed-details">
+			<div class="embed-media-settings embed-audio-settings">
+				<audio style="visibility: hidden"
+	controls
+	class="wp-audio-shortcode"
+	width="{{ _.isUndefined( data.model.width ) ? 400 : data.model.width }}"
+	preload="{{ _.isUndefined( data.model.preload ) ? 'none' : data.model.preload }}"
+	<#
+	if ( ! _.isUndefined( data.model.autoplay ) && data.model.autoplay ) {
+		#> autoplay<#
+	}
+	if ( ! _.isUndefined( data.model.loop ) && data.model.loop ) {
+		#> loop<#
+	}
+	#>
+>
+	<# if ( ! _.isEmpty( data.model.src ) ) { #>
+	<source src="{{ data.model.src }}" type="{{ wp.media.view.settings.embedMimes[ data.model.src.split('.').pop() ] }}" />
+	<# } #>
+
+	<# if ( ! _.isEmpty( data.model.mp3 ) ) { #>
+	<source src="{{ data.model.mp3 }}" type="{{ wp.media.view.settings.embedMimes[ 'mp3' ] }}" />
+	<# } #>
+	<# if ( ! _.isEmpty( data.model.ogg ) ) { #>
+	<source src="{{ data.model.ogg }}" type="{{ wp.media.view.settings.embedMimes[ 'ogg' ] }}" />
+	<# } #>
+	<# if ( ! _.isEmpty( data.model.wma ) ) { #>
+	<source src="{{ data.model.wma }}" type="{{ wp.media.view.settings.embedMimes[ 'wma' ] }}" />
+	<# } #>
+	<# if ( ! _.isEmpty( data.model.m4a ) ) { #>
+	<source src="{{ data.model.m4a }}" type="{{ wp.media.view.settings.embedMimes[ 'm4a' ] }}" />
+	<# } #>
+	<# if ( ! _.isEmpty( data.model.wav ) ) { #>
+	<source src="{{ data.model.wav }}" type="{{ wp.media.view.settings.embedMimes[ 'wav' ] }}" />
+	<# } #>
+	</audio>
+
+				<# if ( ! _.isEmpty( data.model.src ) ) {
+					ext = data.model.src.split('.').pop();
+					if ( html5types[ ext ] ) {
+						delete html5types[ ext ];
+					}
+				#>
+				<label class="setting">
+					<span>SRC</span>
+					<input type="text" disabled="disabled" data-setting="src" value="{{ data.model.src }}" />
+					<a class="remove-setting">Remove</a>
+				</label>
+				<# } #>
+				<# if ( ! _.isEmpty( data.model.mp3 ) ) {
+					if ( ! _.isUndefined( html5types.mp3 ) ) {
+						delete html5types.mp3;
+					}
+				#>
+				<label class="setting">
+					<span>MP3</span>
+					<input type="text" disabled="disabled" data-setting="mp3" value="{{ data.model.mp3 }}" />
+					<a class="remove-setting">Remove</a>
+				</label>
+				<# } #>
+				<# if ( ! _.isEmpty( data.model.ogg ) ) {
+					if ( ! _.isUndefined( html5types.ogg ) ) {
+						delete html5types.ogg;
+					}
+				#>
+				<label class="setting">
+					<span>OGG</span>
+					<input type="text" disabled="disabled" data-setting="ogg" value="{{ data.model.ogg }}" />
+					<a class="remove-setting">Remove</a>
+				</label>
+				<# } #>
+				<# if ( ! _.isEmpty( data.model.wma ) ) {
+					if ( ! _.isUndefined( html5types.wma ) ) {
+						delete html5types.wma;
+					}
+				#>
+				<label class="setting">
+					<span>WMA</span>
+					<input type="text" disabled="disabled" data-setting="wma" value="{{ data.model.wma }}" />
+					<a class="remove-setting">Remove</a>
+				</label>
+				<# } #>
+				<# if ( ! _.isEmpty( data.model.m4a ) ) {
+					if ( ! _.isUndefined( html5types.m4a ) ) {
+						delete html5types.m4a;
+					}
+				#>
+				<label class="setting">
+					<span>M4A</span>
+					<input type="text" disabled="disabled" data-setting="m4a" value="{{ data.model.m4a }}" />
+					<a class="remove-setting">Remove</a>
+				</label>
+				<# } #>
+				<# if ( ! _.isEmpty( data.model.wav ) ) {
+					if ( ! _.isUndefined( html5types.wav ) ) {
+						delete html5types.wav;
+					}
+				#>
+				<label class="setting">
+					<span>WAV</span>
+					<input type="text" disabled="disabled" data-setting="wav" value="{{ data.model.wav }}" />
+					<a class="remove-setting">Remove</a>
+				</label>
+				<# } #>
+				
+				<# if ( ! _.isEmpty( html5types ) ) { #>
+				<div class="setting">
+					<span>Add alternate sources for maximum HTML5 playback:</span>
+					<div class="button-large">
+					<# _.each( html5types, function (mime, type) { #>
+					<button class="button add-media-source" data-mime="{{ mime }}">{{ type }}</button>
+					<# } ) #>
+					</div>
+				</div>
+				<# } #>
+
+				<div class="setting preload">
+					<span>Preload</span>
+					<div class="button-group button-large" data-setting="preload">
+						<button class="button" value="auto">Auto</button>
+						<button class="button" value="metadata">Metadata</button>
+						<button class="button active" value="none">None</button>
+					</div>
+				</div>
+
+				<label class="setting checkbox-setting">
+					<input type="checkbox" data-setting="autoplay" />
+					<span>Autoplay</span>
+				</label>
+
+				<label class="setting checkbox-setting">
+					<input type="checkbox" data-setting="loop" />
+					<span>Loop</span>
+				</label>
+			</div>
+		</div>
+	</script>
+
+	<script type="text/html" id="tmpl-video-details">
+		<# var ext, html5types = {
+			mp4: wp.media.view.settings.embedMimes.mp4,
+			ogv: wp.media.view.settings.embedMimes.ogv,
+			webm: wp.media.view.settings.embedMimes.webm
+		}; #>
+
+				<div class="media-embed media-embed-details">
+			<div class="embed-media-settings embed-video-settings">
+				<div class="wp-video-holder">
+				<#
+				var isYouTube = ! _.isEmpty( data.model.src ) && data.model.src.match(/youtube|youtu\.be/);
+					w = ! data.model.width || data.model.width > 640 ? 640 : data.model.width,
+					h = ! data.model.height ? 360 : data.model.height;
+
+				if ( data.model.width && w !== data.model.width ) {
+					h = Math.ceil( ( h * w ) / data.model.width );
+				}
+				#>
+
+				<#  var w, h, settings = wp.media.view.settings,
+		isYouTube = ! _.isEmpty( data.model.src ) && data.model.src.match(/youtube|youtu\.be/);
+
+	if ( settings.contentWidth && data.model.width >= settings.contentWidth ) {
+		w = settings.contentWidth;
+	} else {
+		w = data.model.width;
+	}
+
+	if ( w !== data.model.width ) {
+		h = Math.ceil( ( h * w ) / data.model.width );
+	} else {
+		h = data.model.height;
+	}
+#>
+<div style="max-width: 100%; width: {{ w }}px">
+<video controls
+	class="wp-video-shortcode{{ isYouTube ? ' youtube-video' : '' }}"
+	width="{{ w }}"
+	height="{{ h }}"
+	<#
+		if ( ! _.isUndefined( data.model.poster ) && data.model.poster ) {
+			#> poster="{{ data.model.poster }}"<#
+		} #>
+		preload="{{ _.isUndefined( data.model.preload ) ? 'metadata' : data.model.preload }}"<#
+	 if ( ! _.isUndefined( data.model.autoplay ) && data.model.autoplay ) {
+		#> autoplay<#
+	}
+	 if ( ! _.isUndefined( data.model.loop ) && data.model.loop ) {
+		#> loop<#
+	}
+	#>
+>
+	<# if ( ! _.isEmpty( data.model.src ) ) {
+		if ( isYouTube ) { #>
+		<source src="{{ data.model.src }}" type="video/youtube" />
+		<# } else { #>
+		<source src="{{ data.model.src }}" type="{{ settings.embedMimes[ data.model.src.split('.').pop() ] }}" />
+		<# }
+	} #>
+
+	<# if ( data.model.mp4 ) { #>
+	<source src="{{ data.model.mp4 }}" type="{{ settings.embedMimes[ 'mp4' ] }}" />
+	<# } #>
+	<# if ( data.model.m4v ) { #>
+	<source src="{{ data.model.m4v }}" type="{{ settings.embedMimes[ 'm4v' ] }}" />
+	<# } #>
+	<# if ( data.model.webm ) { #>
+	<source src="{{ data.model.webm }}" type="{{ settings.embedMimes[ 'webm' ] }}" />
+	<# } #>
+	<# if ( data.model.ogv ) { #>
+	<source src="{{ data.model.ogv }}" type="{{ settings.embedMimes[ 'ogv' ] }}" />
+	<# } #>
+	<# if ( data.model.wmv ) { #>
+	<source src="{{ data.model.wmv }}" type="{{ settings.embedMimes[ 'wmv' ] }}" />
+	<# } #>
+	<# if ( data.model.flv ) { #>
+	<source src="{{ data.model.flv }}" type="{{ settings.embedMimes[ 'flv' ] }}" />
+	<# } #>
+		{{{ data.model.content }}}
+</video>
+</div>
+
+				<# if ( ! _.isEmpty( data.model.src ) ) {
+					ext = data.model.src.split('.').pop();
+					if ( html5types[ ext ] ) {
+						delete html5types[ ext ];
+					}
+				#>
+				<label class="setting">
+					<span>SRC</span>
+					<input type="text" disabled="disabled" data-setting="src" value="{{ data.model.src }}" />
+					<a class="remove-setting">Remove</a>
+				</label>
+				<# } #>
+				<# if ( ! _.isEmpty( data.model.mp4 ) ) {
+					if ( ! _.isUndefined( html5types.mp4 ) ) {
+						delete html5types.mp4;
+					}
+				#>
+				<label class="setting">
+					<span>MP4</span>
+					<input type="text" disabled="disabled" data-setting="mp4" value="{{ data.model.mp4 }}" />
+					<a class="remove-setting">Remove</a>
+				</label>
+				<# } #>
+				<# if ( ! _.isEmpty( data.model.m4v ) ) {
+					if ( ! _.isUndefined( html5types.m4v ) ) {
+						delete html5types.m4v;
+					}
+				#>
+				<label class="setting">
+					<span>M4V</span>
+					<input type="text" disabled="disabled" data-setting="m4v" value="{{ data.model.m4v }}" />
+					<a class="remove-setting">Remove</a>
+				</label>
+				<# } #>
+				<# if ( ! _.isEmpty( data.model.webm ) ) {
+					if ( ! _.isUndefined( html5types.webm ) ) {
+						delete html5types.webm;
+					}
+				#>
+				<label class="setting">
+					<span>WEBM</span>
+					<input type="text" disabled="disabled" data-setting="webm" value="{{ data.model.webm }}" />
+					<a class="remove-setting">Remove</a>
+				</label>
+				<# } #>
+				<# if ( ! _.isEmpty( data.model.ogv ) ) {
+					if ( ! _.isUndefined( html5types.ogv ) ) {
+						delete html5types.ogv;
+					}
+				#>
+				<label class="setting">
+					<span>OGV</span>
+					<input type="text" disabled="disabled" data-setting="ogv" value="{{ data.model.ogv }}" />
+					<a class="remove-setting">Remove</a>
+				</label>
+				<# } #>
+				<# if ( ! _.isEmpty( data.model.wmv ) ) {
+					if ( ! _.isUndefined( html5types.wmv ) ) {
+						delete html5types.wmv;
+					}
+				#>
+				<label class="setting">
+					<span>WMV</span>
+					<input type="text" disabled="disabled" data-setting="wmv" value="{{ data.model.wmv }}" />
+					<a class="remove-setting">Remove</a>
+				</label>
+				<# } #>
+				<# if ( ! _.isEmpty( data.model.flv ) ) {
+					if ( ! _.isUndefined( html5types.flv ) ) {
+						delete html5types.flv;
+					}
+				#>
+				<label class="setting">
+					<span>FLV</span>
+					<input type="text" disabled="disabled" data-setting="flv" value="{{ data.model.flv }}" />
+					<a class="remove-setting">Remove</a>
+				</label>
+				<# } #>
+								</div>
+
+				<# if ( ! _.isEmpty( html5types ) ) { #>
+				<div class="setting">
+					<span>Add alternate sources for maximum HTML5 playback:</span>
+					<div class="button-large">
+					<# _.each( html5types, function (mime, type) { #>
+					<button class="button add-media-source" data-mime="{{ mime }}">{{ type }}</button>
+					<# } ) #>
+					</div>
+				</div>
+				<# } #>
+
+				<# if ( ! _.isEmpty( data.model.poster ) ) { #>
+				<label class="setting">
+					<span>Poster Image</span>
+					<input type="text" disabled="disabled" data-setting="poster" value="{{ data.model.poster }}" />
+					<a class="remove-setting">Remove</a>
+				</label>
+				<# } #>
+				<div class="setting preload">
+					<span>Preload</span>
+					<div class="button-group button-large" data-setting="preload">
+						<button class="button" value="auto">Auto</button>
+						<button class="button" value="metadata">Metadata</button>
+						<button class="button active" value="none">None</button>
+					</div>
+				</div>
+
+				<label class="setting checkbox-setting">
+					<input type="checkbox" data-setting="autoplay" />
+					<span>Autoplay</span>
+				</label>
+
+				<label class="setting checkbox-setting">
+					<input type="checkbox" data-setting="loop" />
+					<span>Loop</span>
+				</label>
+
+				<label class="setting" data-setting="content">
+					<span>Tracks (subtitles, captions, descriptions, chapters, or metadata)</span>
+					<#
+					var content = '';
+					if ( ! _.isEmpty( data.model.content ) ) {
+						var tracks = jQuery( data.model.content ).filter( 'track' );
+						_.each( tracks.toArray(), function (track) {
+							content += track.outerHTML; #>
+						<p>
+							<input class="content-track" type="text" value="{{ track.outerHTML }}" />
+							<a class="remove-setting remove-track">Remove</a>
+						</p>
+						<# } ); #>
+					<# } else { #>
+					<em>There are no associated subtitles.</em>
+					<# } #>
+					<textarea class="hidden content-setting">{{ content }}</textarea>
+				</label>
+			</div>
+		</div>
+	</script>
+
+	<script type="text/html" id="tmpl-editor-gallery">
+		<div class="toolbar">
+			<div class="dashicons dashicons-edit edit"></div><div class="dashicons dashicons-no-alt remove"></div>
+		</div>
+		<# if ( data.attachments ) { #>
+			<div class="gallery gallery-columns-{{ data.columns }}">
+				<# _.each( data.attachments, function( attachment, index ) { #>
+					<dl class="gallery-item">
+						<dt class="gallery-icon">
+							<# if ( attachment.thumbnail ) { #>
+								<img src="{{ attachment.thumbnail.url }}" width="{{ attachment.thumbnail.width }}" height="{{ attachment.thumbnail.height }}" />
+							<# } else { #>
+								<img src="{{ attachment.url }}" />
+							<# } #>
+						</dt>
+						<dd class="wp-caption-text gallery-caption">
+							{{ attachment.caption }}
+						</dd>
+					</dl>
+					<# if ( index % data.columns === data.columns - 1 ) { #>
+						<br style="clear: both;">
+					<# } #>
+				<# } ); #>
+			</div>
+		<# } else { #>
+			<div class="wpview-error">
+				<div class="dashicons dashicons-format-gallery"></div><p>No items found.</p>
+			</div>
+		<# } #>
+	</script>
+
+	<script type="text/html" id="tmpl-editor-audio">
+		<div class="toolbar">
+			<div class="dashicons dashicons-edit edit"></div>
+			<div class="dashicons dashicons-no-alt remove"></div>
+		</div>
+		<audio style="visibility: hidden"
+	controls
+	class="wp-audio-shortcode"
+	width="{{ _.isUndefined( data.model.width ) ? 400 : data.model.width }}"
+	preload="{{ _.isUndefined( data.model.preload ) ? 'none' : data.model.preload }}"
+	<#
+	if ( ! _.isUndefined( data.model.autoplay ) && data.model.autoplay ) {
+		#> autoplay<#
+	}
+	if ( ! _.isUndefined( data.model.loop ) && data.model.loop ) {
+		#> loop<#
+	}
+	#>
+>
+	<# if ( ! _.isEmpty( data.model.src ) ) { #>
+	<source src="{{ data.model.src }}" type="{{ wp.media.view.settings.embedMimes[ data.model.src.split('.').pop() ] }}" />
+	<# } #>
+
+	<# if ( ! _.isEmpty( data.model.mp3 ) ) { #>
+	<source src="{{ data.model.mp3 }}" type="{{ wp.media.view.settings.embedMimes[ 'mp3' ] }}" />
+	<# } #>
+	<# if ( ! _.isEmpty( data.model.ogg ) ) { #>
+	<source src="{{ data.model.ogg }}" type="{{ wp.media.view.settings.embedMimes[ 'ogg' ] }}" />
+	<# } #>
+	<# if ( ! _.isEmpty( data.model.wma ) ) { #>
+	<source src="{{ data.model.wma }}" type="{{ wp.media.view.settings.embedMimes[ 'wma' ] }}" />
+	<# } #>
+	<# if ( ! _.isEmpty( data.model.m4a ) ) { #>
+	<source src="{{ data.model.m4a }}" type="{{ wp.media.view.settings.embedMimes[ 'm4a' ] }}" />
+	<# } #>
+	<# if ( ! _.isEmpty( data.model.wav ) ) { #>
+	<source src="{{ data.model.wav }}" type="{{ wp.media.view.settings.embedMimes[ 'wav' ] }}" />
+	<# } #>
+	</audio>
+		<div class="wpview-overlay"></div>
+	</script>
+
+	<script type="text/html" id="tmpl-editor-video">
+		<div class="toolbar">
+			<div class="dashicons dashicons-edit edit"></div>
+			<div class="dashicons dashicons-no-alt remove"></div>
+		</div>
+		<#  var w, h, settings = wp.media.view.settings,
+		isYouTube = ! _.isEmpty( data.model.src ) && data.model.src.match(/youtube|youtu\.be/);
+
+	if ( settings.contentWidth && data.model.width >= settings.contentWidth ) {
+		w = settings.contentWidth;
+	} else {
+		w = data.model.width;
+	}
+
+	if ( w !== data.model.width ) {
+		h = Math.ceil( ( h * w ) / data.model.width );
+	} else {
+		h = data.model.height;
+	}
+#>
+<div style="max-width: 100%; width: {{ w }}px">
+<video controls
+	class="wp-video-shortcode{{ isYouTube ? ' youtube-video' : '' }}"
+	width="{{ w }}"
+	height="{{ h }}"
+	<#
+		if ( ! _.isUndefined( data.model.poster ) && data.model.poster ) {
+			#> poster="{{ data.model.poster }}"<#
+		} #>
+		preload="{{ _.isUndefined( data.model.preload ) ? 'metadata' : data.model.preload }}"<#
+	 if ( ! _.isUndefined( data.model.autoplay ) && data.model.autoplay ) {
+		#> autoplay<#
+	}
+	 if ( ! _.isUndefined( data.model.loop ) && data.model.loop ) {
+		#> loop<#
+	}
+	#>
+>
+	<# if ( ! _.isEmpty( data.model.src ) ) {
+		if ( isYouTube ) { #>
+		<source src="{{ data.model.src }}" type="video/youtube" />
+		<# } else { #>
+		<source src="{{ data.model.src }}" type="{{ settings.embedMimes[ data.model.src.split('.').pop() ] }}" />
+		<# }
+	} #>
+
+	<# if ( data.model.mp4 ) { #>
+	<source src="{{ data.model.mp4 }}" type="{{ settings.embedMimes[ 'mp4' ] }}" />
+	<# } #>
+	<# if ( data.model.m4v ) { #>
+	<source src="{{ data.model.m4v }}" type="{{ settings.embedMimes[ 'm4v' ] }}" />
+	<# } #>
+	<# if ( data.model.webm ) { #>
+	<source src="{{ data.model.webm }}" type="{{ settings.embedMimes[ 'webm' ] }}" />
+	<# } #>
+	<# if ( data.model.ogv ) { #>
+	<source src="{{ data.model.ogv }}" type="{{ settings.embedMimes[ 'ogv' ] }}" />
+	<# } #>
+	<# if ( data.model.wmv ) { #>
+	<source src="{{ data.model.wmv }}" type="{{ settings.embedMimes[ 'wmv' ] }}" />
+	<# } #>
+	<# if ( data.model.flv ) { #>
+	<source src="{{ data.model.flv }}" type="{{ settings.embedMimes[ 'flv' ] }}" />
+	<# } #>
+		{{{ data.model.content }}}
+</video>
+</div>
+		<div class="wpview-overlay"></div>
+	</script>
+
+	<script type="text/html" id="tmpl-wp-playlist-current-item">
+	<# if ( data.image ) { #>
+	<img src="{{ data.thumb.src }}"/>
+	<# } #>
+	<div class="wp-playlist-caption">
+		<span class="wp-playlist-item-meta wp-playlist-item-title">&#8220;{{ data.title }}&#8221;</span>
+		<# if ( data.meta.album ) { #><span class="wp-playlist-item-meta wp-playlist-item-album">{{ data.meta.album }}</span><# } #>
+		<# if ( data.meta.artist ) { #><span class="wp-playlist-item-meta wp-playlist-item-artist">{{ data.meta.artist }}</span><# } #>
+	</div>
+</script>
+<script type="text/html" id="tmpl-wp-playlist-item">
+	<div class="wp-playlist-item">
+		<a class="wp-playlist-caption" href="{{ data.src }}">
+			{{ data.index ? ( data.index + '. ' ) : '' }}
+			<# if ( data.caption ) { #>
+				{{ data.caption }}
+			<# } else { #>
+				<span class="wp-playlist-item-title">&#8220;{{{ data.title }}}&#8221;</span>
+				<# if ( data.artists && data.meta.artist ) { #>
+				<span class="wp-playlist-item-artist"> &mdash; {{ data.meta.artist }}</span>
+				<# } #>
+			<# } #>
+		</a>
+		<# if ( data.meta.length_formatted ) { #>
+		<div class="wp-playlist-item-length">{{ data.meta.length_formatted }}</div>
+		<# } #>
+	</div>
+</script>
+
+	<script type="text/html" id="tmpl-editor-playlist">
+		<div class="toolbar">
+			<div class="dashicons dashicons-edit edit"></div>
+			<div class="dashicons dashicons-no-alt remove"></div>
+		</div>
+		<# if ( data.tracks ) { #>
+			<div class="wp-playlist wp-{{ data.type }}-playlist wp-playlist-{{ data.style }}">
+				<# if ( 'audio' === data.type ){ #>
+				<div class="wp-playlist-current-item"></div>
+				<# } #>
+				<{{ data.type }} controls="controls" preload="none" <#
+					if ( data.width ) { #> width="{{ data.width }}"<# }
+					#><# if ( data.height ) { #> height="{{ data.height }}"<# } #>></{{ data.type }}>
+				<div class="wp-playlist-next"></div>
+				<div class="wp-playlist-prev"></div>
+			</div>
+			<div class="wpview-overlay"></div>
+		<# } else { #>
+			<div class="wpview-error">
+				<div class="dashicons dashicons-video-alt3"></div><p>No items found.</p>
+			</div>
+		<# } #>
+	</script>
+
+	<script type="text/html" id="tmpl-crop-content">
+		<img class="crop-image" src="{{ data.url }}">
+		<div class="upload-errors"></div>
+	</script>
+
+			<script type="text/html" id="tmpl-jetpack-gallery-settings">
+			<label class="setting">
+				<span>Type</span>
+				<select class="type" name="type" data-setting="type">
+											<option value="default"  selected='selected'>Thumbnail Grid</option>
+											<option value="slideshow" >Slideshow</option>
+									</select>
+			</label>
+		</script>
+			<div id="local-storage-notice" class="hidden">
+	<p class="local-restore">
+		The backup of this post in your browser is different from the version below.		<a class="restore-backup" href="#">Restore the backup.</a>
+	</p>
+	<p class="undo-restore hidden">
+		Post restored successfully.		<a class="undo-restore-backup" href="#">Undo.</a>
+	</p>
+	</div>
+	<script type="text/javascript">list_args = {"class":"WP_Post_Comments_List_Table","screen":{"id":"page","base":"post"}};</script>
+<script type="text/javascript">list_args = {"class":"WP_Post_Comments_List_Table","screen":{"id":"page","base":"post"}};</script>
+	<div id="wp-auth-check-wrap" class="hidden">
+	<div id="wp-auth-check-bg"></div>
+	<div id="wp-auth-check">
+	<div class="wp-auth-check-close" tabindex="0" title="Close"></div>
+			<div id="wp-auth-check-form" data-src="http://dmsonline.us/control?interim-login=1"></div>
+			<div class="wp-auth-fallback">
+		<p><b class="wp-auth-fallback-expired" tabindex="0">Session expired</b></p>
+		<p><a href="http://dmsonline.us/control" target="_blank">Please log in again.</a>
+		The login page will open in a new window. After logging in you can close it and return to this page.</p>
+	</div>
+	</div>
+	</div>
+	<link rel="stylesheet" id="wpcom-notes-admin-bar-css" href="Resume_2013_files/admin-bar-v2.css" type="text/css" media="all">
+<link rel="stylesheet" id="noticons-css" href="Resume_2013_files/noticons.css" type="text/css" media="all">
+<script type="text/javascript">
+/* <![CDATA[ */
+var wpseoMetaboxL10n = {"field_prefix":"yoast_wpseo_","keyword_header":"Your focus keyword was found in:","article_header_text":"Article Heading: ","page_title_text":"Page title: ","page_url_text":"Page URL: ","content_text":"Content: ","meta_description_text":"Meta description: ","choose_image":"Use Image","wpseo_meta_desc_length":"156","wpseo_title_template":"%%title%% - Datawave Marine Science","wpseo_metadesc_template":"","wpseo_permalink_template":"http:\/\/dmsonline.us\/knowledge\/%postname%\/","wpseo_keyword_suggest_nonce":"94fb91567f"};
+/* ]]> */
+</script>
+
+<script type="text/javascript">
+/* <![CDATA[ */
+var wpAjax = {"noPerm":"You do not have permission to do that.","broken":"An unidentified error has occurred."};var commonL10n = {"warnDelete":"You are about to permanently delete the selected items.\n  'Cancel' to stop, 'OK' to delete."};var wpPointerL10n = {"dismiss":"Dismiss"};var autosaveL10n = {"autosaveInterval":"60","blog_id":"1"};var adminCommentsL10n = {"hotkeys_highlight_first":"","hotkeys_highlight_last":"","replyApprove":"Approve and Reply","reply":"Reply"};var heartbeatSettings = {"nonce":"cce43258d8"};var postL10n = {"ok":"OK","cancel":"Cancel","publishOn":"Publish on:","publishOnFuture":"Schedule for:","publishOnPast":"Published on:","dateFormat":"%1$s %2$s, %3$s @ %4$s : %5$s","showcomm":"Show more comments","endcomm":"No more comments found.","publish":"Publish","schedule":"Schedule","update":"Update","savePending":"Save as Pending","saveDraft":"Save Draft","private":"Private","public":"Public","publicSticky":"Public, Sticky","password":"Password Protected","privatelyPublished":"Privately Published","published":"Published","comma":",","saveAlert":"The changes you made will be lost if you navigate away from this page.","savingText":"Saving Draft\u2026"};var thickboxL10n = {"next":"Next >","prev":"< Prev","image":"Image","of":"of","close":"Close","noiframes":"This feature requires inline frames. You have iframes disabled or your browser does not support them.","loadingAnimation":"http:\/\/dmsonline.us\/wp-includes\/js\/thickbox\/loadingAnimation.gif"};var imageEditL10n = {"error":"Could not load the preview image. Please reload the page and try again."};var authcheckL10n = {"beforeunload":"Your session has expired. You can log in again from this page or go to the login page.","interval":"180"};var wordCountL10n = {"type":"w"};var wpLinkL10n = {"title":"Insert\/edit link","update":"Update","save":"Add Link","noTitle":"(no title)","noMatchesFound":"No matches found."};/* ]]> */
+</script>
+<script type="text/javascript" src="Resume_2013_files/load-scripts_002.php"></script>
+<script type="text/javascript" src="Resume_2013_files/wp-seo-admin-global.js"></script>
+<script type="text/javascript" src="Resume_2013_files/jquery.js"></script>
+<script type="text/javascript" src="Resume_2013_files/wp-seo-metabox.js"></script>
+<script type="text/javascript" src="Resume_2013_files/devicepx-jetpack.js"></script>
+<script type="text/javascript" src="Resume_2013_files/mustache.js"></script>
+<script type="text/javascript" src="Resume_2013_files/spin.js"></script>
+<script type="text/javascript" src="Resume_2013_files/jquery_003.js"></script>
+<script type="text/javascript" src="Resume_2013_files/notes-common-v2.js"></script>
+<script type="text/javascript" src="Resume_2013_files/admin-bar-v2.js"></script>
+
+		<script type="text/javascript">
+		tinyMCEPreInit = {
+			baseURL: "http://dmsonline.us/wp-includes/js/tinymce",
+			suffix: ".min",
+			dragDropUpload: true,			mceInit: {'content':{theme:"modern",skin:"lightgray",language:"en",formats:{
+						alignleft: [
+							{selector: 'p,h1,h2,h3,h4,h5,h6,td,th,div,ul,ol,li', styles: {textAlign:'left'}},
+							{selector: 'img,table,dl.wp-caption', classes: 'alignleft'}
+						],
+						aligncenter: [
+							{selector: 'p,h1,h2,h3,h4,h5,h6,td,th,div,ul,ol,li', styles: {textAlign:'center'}},
+							{selector: 'img,table,dl.wp-caption', classes: 'aligncenter'}
+						],
+						alignright: [
+							{selector: 'p,h1,h2,h3,h4,h5,h6,td,th,div,ul,ol,li', styles: {textAlign:'right'}},
+							{selector: 'img,table,dl.wp-caption', classes: 'alignright'}
+						],
+						strikethrough: {inline: 'del'}
+					},relative_urls:false,remove_script_host:false,convert_urls:false,browser_spellcheck:true,fix_list_elements:true,entities:"38,amp,60,lt,62,gt",entity_encoding:"raw",keep_styles:false,paste_webkit_styles:"font-weight font-style color",preview_styles:"font-family font-size font-weight font-style text-decoration text-transform",wpeditimage_disable_captions:false,wpeditimage_html5_captions:false,plugins:"charmap,hr,media,paste,tabfocus,textcolor,fullscreen,wordpress,wpeditimage,wpgallery,wplink,wpdialogs,wpview,wpfullscreen",external_plugins:{"hungryfeed":"http:\/\/dmsonline.us\/wp-content\/plugins\/hungryfeed\/scripts\/editor_plugin.js","AtD":"http:\/\/dmsonline.us\/wp-content\/plugins\/jetpack\/modules\/after-the-deadline\/tinymce\/plugin.js?v=20120221","mantrashortcodes":"http:\/\/dmsonline.us\/wp-content\/themes\/mantra\/js\/mce-shortcodes.js"},content_css:"http://dmsonline.us/wp-includes/css/dashicons.min.css?ver=3.9.1,http://dmsonline.us/wp-includes/js/mediaelement/mediaelementplayer.min.css?ver=3.9.1,http://dmsonline.us/wp-includes/js/mediaelement/wp-mediaelement.css?ver=3.9.1,http://dmsonline.us/wp-includes/js/tinymce/skins/wordpress/wp-content.css?ver=3.9.1,http://dmsonline.us/wp-content/themes/mantra/editor-style.css,http://dmsonline.us/wp-admin/admin-ajax.php/?action=dynamic_styles",selector:"#content",resize:false,menubar:false,wpautop:true,indent:false,toolbar1:"bold,italic,strikethrough,bullist,numlist,blockquote,hr,alignleft,aligncenter,alignright,link,unlink,wp_more,spellchecker,wp_fullscreen,wp_adv,hungryfeedButton",toolbar2:"formatselect,underline,alignjustify,forecolor,pastetext,removeformat,charmap,outdent,indent,undo,redo,wp_help,separator,button-light,button-dark,button-color,separator,pullquote,separator,multi-column",toolbar3:"",toolbar4:"",tabfocus_elements:"insert-media-button,save-post",body_class:"content post-type-page post-status-publish",add_unload_trigger:false,atd_rpc_url:"http://dmsonline.us/wp-admin/admin-ajax.php?action=proxy_atd&url=",atd_ignore_rpc_url:"http://dmsonline.us/wp-admin/admin-ajax.php?action=atd_ignore&phrase=",atd_rpc_id:"WPORG-4e930ed36dffbe689c928946ca6cb8cb",atd_theme:"wordpress",atd_ignore_enable:"true",atd_strip_on_get:"true",atd_ignore_strings:[""],atd_show_types:"",gecko_spellcheck:"false"}},
+			qtInit: {'content':{id:"content",buttons:"strong,em,link,block,del,ins,img,ul,ol,li,code,more,close,fullscreen"},'replycontent':{id:"replycontent",buttons:"strong,em,link,block,del,ins,img,ul,ol,li,code,close"}},
+			ref: {plugins:"charmap,hr,media,paste,tabfocus,textcolor,fullscreen,wordpress,wpeditimage,wpgallery,wplink,wpdialogs,wpview,wpfullscreen",theme:"modern",language:"en"},
+			load_ext: function(url,lang){var sl=tinymce.ScriptLoader;sl.markDone(url+'/langs/'+lang+'.js');sl.markDone(url+'/langs/'+lang+'_dlg.js');}
+		};
+		</script>
+		<script type="text/javascript" src="Resume_2013_files/tinymce.js"></script>
+<script type="text/javascript" src="Resume_2013_files/plugin.js"></script>
+<script type="text/javascript">
+tinymce.addI18n( 'en', {"New document":"New document","Formats":"Formats","Headings":"Headings","Heading 1":"Heading 1","Heading 2":"Heading 2","Heading 3":"Heading 3","Heading 4":"Heading 4","Heading 5":"Heading 5","Heading 6":"Heading 6","Blocks":"Blocks","Paragraph":"Paragraph","Blockquote":"Blockquote","Div":"Div","Pre":"Pre","Address":"Address","Inline":"Inline","Underline":"Underline","Strikethrough":"Strikethrough","Subscript":"Subscript","Superscript":"Superscript","Clear formatting":"Clear formatting","Bold":"Bold","Italic":"Italic","Code":"Code","Source code":"Source code","Font Family":"Font Family","Font Sizes":"Font Sizes","Align center":"Align center","Align right":"Align right","Align left":"Align left","Justify":"Justify","Increase indent":"Increase indent","Decrease indent":"Decrease indent","Cut":"Cut","Copy":"Copy","Paste":"Paste","Select all":"Select all","Undo":"Undo","Redo":"Redo","Ok":"OK","Cancel":"Cancel","Close":"Close","Visual aids":"Visual aids","Bullet list":"Bulleted list","Numbered list":"Numbered list","Square":"Square","Default":"Default","Circle":"Circle","Disc":"Disc","Lower Greek":"Lower Greek","Lower Alpha":"Lower Alpha","Upper Alpha":"Upper Alpha","Upper Roman":"Upper Roman","Lower Roman":"Lower Roman","Name":"Name","Anchor":"Anchor","Anchors":"Anchors","Document properties":"Document properties","Robots":"Robots","Title":"Title","Keywords":"Keywords","Encoding":"Encoding","Description":"Description","Author":"Author","Insert\/edit image":"Insert\/edit image","General":"General","Advanced":"Advanced","Source":"Source","Border":"Border","Constrain proportions":"Constrain proportions","Vertical space":"Vertical space","Image description":"Image description","Style":"Style","Dimensions":"Dimensions","Insert image":"Insert image","Insert date\/time":"Insert date\/time","Insert\/edit video":"Insert\/edit video","Poster":"Poster","Alternative source":"Alternative source","Paste your embed code below:":"Paste your embed code below:","Insert video":"Insert video","Embed":"Embed","Special character":"Special character","Right to left":"Right to left","Left to right":"Left to right","Emoticons":"Emoticons","Nonbreaking space":"Nonbreaking space","Page break":"Page break","Paste as text":"Paste as text","Preview":"Preview","Print":"Print","Save":"Save","Fullscreen":"Fullscreen","Horizontal line":"Horizontal line","Horizontal space":"Horizontal space","Restore last draft":"Restore last draft","Insert\/edit link":"Insert\/edit link","Remove link":"Remove link","Could not find the specified string.":"Could not find the specified string.","Replace":"Replace","Next":"Next","Prev":"Prev","Whole words":"Whole words","Find and replace":"Find and replace","Replace with":"Replace with","Find":"Find","Replace all":"Replace all","Match case":"Match case","Spellcheck":"Check Spelling","Finish":"Finish","Ignore all":"Ignore all","Ignore":"Ignore","Insert table":"Insert table","Delete table":"Delete table","Table properties":"Table properties","Row properties":"Table row properties","Cell properties":"Table cell properties","Row":"Row","Rows":"Rows","Column":"Column","Cols":"Cols","Cell":"Cell","Header cell":"Header cell","Header":"Header","Body":"Body","Footer":"Footer","Insert row before":"Insert row before","Insert row after":"Insert row after","Insert column before":"Insert column before","Insert column after":"Insert column after","Paste row before":"Paste table row before","Paste row after":"Paste table row after","Delete row":"Delete row","Delete column":"Delete column","Cut row":"Cut table row","Copy row":"Copy table row","Merge cells":"Merge table cells","Split cell":"Split table cell","Height":"Height","Width":"Width","Caption":"Caption","Alignment":"Alignment","Left":"Left","Center":"Center","Right":"Right","None":"None","Row group":"Row group","Column group":"Column group","Row type":"Row type","Cell type":"Cell type","Cell padding":"Cell padding","Cell spacing":"Cell spacing","Scope":"Scope","Insert template":"Insert template","Templates":"Templates","Background color":"Background color","Text color":"Text color","Show blocks":"Show blocks","Show invisible characters":"Show invisible characters","Words: {0}":"Words: {0}","Paste is now in plain text mode. Contents will now be pasted as plain text until you toggle this option off.":"Paste is now in plain text mode. Contents will now be pasted as plain text until you toggle this option off.\n\nIf you\u2019re looking to paste rich content from Microsoft Word, try turning this option off. The editor will clean up text pasted from Word automatically.","Rich Text Area. Press ALT-F9 for menu. Press ALT-F10 for toolbar. Press ALT-0 for help":"Rich Text Area. Press ALT-F9 for menu. Press ALT-F10 for toolbar. Press ALT-0 for help","You have unsaved changes are you sure you want to navigate away?":"The changes you made will be lost if you navigate away from this page.","Your browser doesn't support direct access to the clipboard. Please use the Ctrl+X\/C\/V keyboard shortcuts instead.":"Your browser does not support direct access to the clipboard. Please use the Ctrl+X\/C\/V keyboard shortcuts instead.","Insert":"Insert","File":"File","Edit":"Edit","Tools":"Tools","View":"View","Table":"Table","Format":"Format","Keyboard Shortcuts":"Keyboard Shortcuts","Toolbar Toggle":"Toolbar Toggle","Insert Read More tag":"Insert Read More tag","Distraction Free Writing":"Distraction Free Writing"});
+tinymce.ScriptLoader.markDone( 'http://dmsonline.us/wp-includes/js/tinymce/langs/en.js' );
+</script>
+<script type="text/javascript" src="Resume_2013_files/wp-langs-en.js"></script>
+		<script type="text/javascript">
+		
+tinyMCE.addI18n("en.hungryfeed",{
+	title: 'HungryFEED Inline RSS',
+	longname: 'HungryFEED Inline RSS',
+	add: 'Add HungryFEED RSS'
+});
+
+tinyMCEPreInit.load_ext("http://dmsonline.us/wp-content/plugins/hungryfeed/scripts", "en");
+tinymce.PluginManager.load("hungryfeed", "http://dmsonline.us/wp-content/plugins/hungryfeed/scripts/editor_plugin.js");
+tinyMCEPreInit.load_ext("http://dmsonline.us/wp-content/plugins/jetpack/modules/after-the-deadline/tinymce", "en");
+tinymce.PluginManager.load("AtD", "http://dmsonline.us/wp-content/plugins/jetpack/modules/after-the-deadline/tinymce/plugin.js?v=20120221");
+tinyMCEPreInit.load_ext("http://dmsonline.us/wp-content/themes/mantra/js", "en");
+tinymce.PluginManager.load("mantrashortcodes", "http://dmsonline.us/wp-content/themes/mantra/js/mce-shortcodes.js");
+
+
+		( function() {
+			var init, edId, qtId, firstInit, wrapper;
+
+			if ( typeof tinymce !== 'undefined' ) {
+				for ( edId in tinyMCEPreInit.mceInit ) {
+					if ( firstInit ) {
+						init = tinyMCEPreInit.mceInit[edId] = tinymce.extend( {}, firstInit, tinyMCEPreInit.mceInit[edId] );
+					} else {
+						init = firstInit = tinyMCEPreInit.mceInit[edId];
+					}
+
+					wrapper = tinymce.DOM.select( '#wp-' + edId + '-wrap' )[0];
+
+					if ( ( tinymce.DOM.hasClass( wrapper, 'tmce-active' ) || ! tinyMCEPreInit.qtInit.hasOwnProperty( edId ) ) &&
+						! init.wp_skip_init ) {
+
+						try {
+							tinymce.init( init );
+
+							if ( ! window.wpActiveEditor ) {
+								window.wpActiveEditor = edId;
+							}
+						} catch(e){}
+					}
+				}
+			}
+
+			if ( typeof quicktags !== 'undefined' ) {
+				for ( qtId in tinyMCEPreInit.qtInit ) {
+					try {
+						quicktags( tinyMCEPreInit.qtInit[qtId] );
+
+						if ( ! window.wpActiveEditor ) {
+							window.wpActiveEditor = qtId;
+						}
+					} catch(e){};
+				}
+			}
+
+			if ( typeof jQuery !== 'undefined' ) {
+				jQuery('.wp-editor-wrap').on( 'click.wp-editor', function() {
+					if ( this.id ) {
+						window.wpActiveEditor = this.id.slice( 3, -5 );
+					}
+				});
+			} else {
+				for ( qtId in tinyMCEPreInit.qtInit ) {
+					document.getElementById( 'wp-' + qtId + '-wrap' ).onclick = function() {
+						window.wpActiveEditor = this.id.slice( 3, -5 );
+					}
+				}
+			}
+		}());
+		</script>
+				<div id="wp-link-backdrop" style="display: none"></div>
+		<div id="wp-link-wrap" class="wp-core-ui search-panel-visible" style="display: none">
+		<form id="wp-link" tabindex="-1">
+		<input id="_ajax_linking_nonce" name="_ajax_linking_nonce" value="22e93bb40e" type="hidden">		<div id="link-modal-title">
+			Insert/edit link			<div id="wp-link-close" tabindex="0"></div>
+	 	</div>
+		<div id="link-selector">
+			<div id="link-options">
+				<p class="howto">Enter the destination URL</p>
+				<div>
+					<label><span>URL</span><input id="url-field" name="href" type="text"></label>
+				</div>
+				<div>
+					<label><span>Title</span><input id="link-title-field" name="linktitle" type="text"></label>
+				</div>
+				<div class="link-target">
+					<label><span>&nbsp;</span><input id="link-target-checkbox" type="checkbox"> Open link in a new window/tab</label>
+				</div>
+			</div>
+			<p class="howto" id="wp-link-search-toggle">Or link to existing content</p>
+			<div id="search-panel">
+				<div class="link-search-wrapper">
+					<label>
+						<span class="search-label">Search</span>
+						<input id="search-field" class="link-search-field" autocomplete="off" type="search">
+						<span class="spinner"></span>
+					</label>
+				</div>
+				<div id="search-results" class="query-results">
+					<ul></ul>
+					<div class="river-waiting">
+						<span class="spinner"></span>
+					</div>
+				</div>
+				<div id="most-recent-results" class="query-results">
+					<div class="query-notice"><em>No search term specified. Showing recent items.</em></div>
+					<ul></ul>
+					<div class="river-waiting">
+						<span class="spinner"></span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="submitbox">
+			<div id="wp-link-update">
+				<input value="Add Link" class="button button-primary" id="wp-link-submit" name="wp-link-submit" type="submit">
+			</div>
+			<div id="wp-link-cancel">
+				<a class="submitdelete deletion" href="#">Cancel</a>
+			</div>
+		</div>
+		</form>
+		</div>
+				<div id="wp-fullscreen-body" class="wp-core-ui" data-theme-width="822" data-dfw-width="822">
+		<div id="fullscreen-topbar">
+			<div id="wp-fullscreen-toolbar">
+			<div id="wp-fullscreen-close"><a href="#" onclick="wp.editor.fullscreen.off();return false;">Exit fullscreen</a></div>
+			<div id="wp-fullscreen-central-toolbar" style="width:822px;">
+
+			<div id="wp-fullscreen-mode-bar">
+				<div id="wp-fullscreen-modes" class="button-group">
+					<a class="button wp-fullscreen-mode-tinymce" href="#" onclick="wp.editor.fullscreen.switchmode( 'tinymce' ); return false;">Visual</a>
+					<a class="button wp-fullscreen-mode-html" href="#" onclick="wp.editor.fullscreen.switchmode( 'html' ); return false;">Text</a>
+				</div>
+			</div>
+
+			<div id="wp-fullscreen-button-bar"><div id="wp-fullscreen-buttons" class="mce-toolbar">
+		
+			<div class="mce-widget mce-btn">
+			<button type="button" aria-label="Bold (Ctrl + B)" title="Bold (Ctrl + B)" id="wp_fs_bold">
+				<i class="mce-ico mce-i-bold"></i>
+			</button>
+			</div>
+			
+			<div class="mce-widget mce-btn">
+			<button type="button" aria-label="Italic (Ctrl + I)" title="Italic (Ctrl + I)" id="wp_fs_italic">
+				<i class="mce-ico mce-i-italic"></i>
+			</button>
+			</div>
+			
+			<div class="mce-widget mce-btn">
+			<button type="button" aria-label="Unordered list (Alt + Shift + U)" title="Unordered list (Alt + Shift + U)" id="wp_fs_bullist">
+				<i class="mce-ico mce-i-bullist"></i>
+			</button>
+			</div>
+			
+			<div class="mce-widget mce-btn">
+			<button type="button" aria-label="Ordered list (Alt + Shift + O)" title="Ordered list (Alt + Shift + O)" id="wp_fs_numlist">
+				<i class="mce-ico mce-i-numlist"></i>
+			</button>
+			</div>
+			
+			<div class="mce-widget mce-btn">
+			<button type="button" aria-label="Blockquote (Alt + Shift + Q)" title="Blockquote (Alt + Shift + Q)" id="wp_fs_blockquote">
+				<i class="mce-ico mce-i-blockquote"></i>
+			</button>
+			</div>
+			
+			<div class="mce-widget mce-btn wp-fullscreen-both">
+			<button type="button" aria-label="Media library (Alt + Shift + M)" title="Media library (Alt + Shift + M)" id="wp_fs_wp-media-library">
+				<i class="mce-ico mce-i-wp-media-library"></i>
+			</button>
+			</div>
+			
+			<div class="mce-widget mce-btn wp-fullscreen-both">
+			<button type="button" aria-label="Insert/edit link (Alt + Shift + A)" title="Insert/edit link (Alt + Shift + A)" id="wp_fs_link">
+				<i class="mce-ico mce-i-link"></i>
+			</button>
+			</div>
+			
+			<div class="mce-widget mce-btn">
+			<button type="button" aria-label="Unlink (Alt + Shift + S)" title="Unlink (Alt + Shift + S)" id="wp_fs_unlink">
+				<i class="mce-ico mce-i-unlink"></i>
+			</button>
+			</div>
+			
+			<div class="mce-widget mce-btn">
+			<button type="button" aria-label="Help (Alt + Shift + H)" title="Help (Alt + Shift + H)" id="wp_fs_help">
+				<i class="mce-ico mce-i-help"></i>
+			</button>
+			</div>
+			
+			<div class="mce-widget mce-btn">
+			<button type="button" aria-label="Proofread Writing" title="Proofread Writing" onclick="tinyMCE.execCommand('mceWritingImprovementTool');" id="wp_fs_spellchecker">
+				<i class="mce-ico mce-i-spellchecker"></i>
+			</button>
+			</div>
+			
+		</div></div>
+
+		<div id="wp-fullscreen-save">
+			<input class="button button-primary right" value="Update" onclick="wp.editor.fullscreen.save();" type="button">
+			<span class="wp-fullscreen-saved-message">Updated.</span>
+			<span class="wp-fullscreen-error-message">Save failed.</span>
+			<span class="spinner"></span>
+		</div>
+
+		</div>
+		</div>
+	</div>
+	<div id="wp-fullscreen-statusbar">
+		<div id="wp-fullscreen-status">
+			<div id="wp-fullscreen-count">Word count: <span class="word-count">121</span></div>
+			<div id="wp-fullscreen-tagline">Just write.</div>
+		</div>
+	</div>
+	<div class="uploader-editor">
+		<div class="uploader-editor-content">
+			<div class="uploader-editor-title">Drop files to upload</div>
+		</div>
+	</div></div>
+
+	<div class="fullscreen-overlay" id="fullscreen-overlay"></div>
+	<div class="fullscreen-overlay fullscreen-fader fade-300" id="fullscreen-fader"></div>
+	
+<div class="clear"></div></div><!-- wpwrap -->
+<script type="text/javascript">if(typeof wpOnload=='function')wpOnload();</script>
+
+
+<ul style="display: none;" tabindex="0" id="ui-id-1" class="ui-autocomplete ui-front ui-menu ui-widget ui-widget-content ui-corner-all"></ul></body></html>

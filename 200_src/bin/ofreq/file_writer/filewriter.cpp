@@ -27,7 +27,7 @@
 #include "filewriter.h"
 
 using namespace std;
-using namespace boost::filesystem; //for using boost file system
+//using namespace boost::filesystem; //for using boost file system
 using namespace osea::ofreq;
 
 //==========================================Section Separator =========================================================
@@ -115,28 +115,55 @@ bool FileWriter::clearFiles()
     string numToDelete = "0";
     string curDirectoryPath = NAME_DIR + numToDelete; //start at directory "d0"
     bool test;      //Test results of deleting contents of directory.
+    QFile file;
+    QString filename;
+
 
     //Remove the direcions & frequencies file outputs if they exist
-    if(exists(projectDirectory + SLASH + FILE_DIRECTIONS))
-        remove(projectDirectory + SLASH + FILE_DIRECTIONS);
+    filename.append(projectDirectory.c_str());
+    filename.append(SLASH.c_str());
+    filename.append(FILE_DIRECTIONS.c_str());
+    file.setFileName(filename);
+    if(file.exists())
+        file.remove();
 
-    if(exists(projectDirectory + SLASH + FILE_FREQUENCIES))
-        remove(projectDirectory + SLASH + FILE_FREQUENCIES);
+    filename.clear();
+    filename.append(projectDirectory.c_str());
+    filename.append(SLASH.c_str());
+    filename.append(FILE_FREQUENCIES.c_str());
+    file.setFileName(filename);
+    if(file.exists())
+        file.remove();
 
-    while(exists(projectDirectory + SLASH + curDirectoryPath)) //check if current directory exists
-    {
+    filename.clear();
+    filename.append(projectDirectory.c_str());
+    filename.append(SLASH.c_str());
+    filename.append(curDirectoryPath.c_str());
+    QDir dir(filename);
+
+    while(dir.exists()) //check if current directory exists
+    {       
+        //Set filename
+        filename.clear();
+        filename.append(projectDirectory.c_str());
+        filename.append(SLASH.c_str());
+        filename.append(curDirectoryPath.c_str());
+
         try {
             //Remove files
-            test = remove_all(projectDirectory + SLASH + curDirectoryPath);
+            test = removeDir(filename);
 
             if (!test)
                 throw std::runtime_error("Failed to delete all files.  Problem directory:  " + curDirectoryPath +
                                      "\n\tPerhaps not all files have write permissions?");
 
             //Increment to the next directory
-            int numToDeleteHelper = boost::lexical_cast<int>(numToDelete);
+            int numToDeleteHelper = atoi(numToDelete.c_str());
             ++numToDeleteHelper;
-            numToDelete = boost::lexical_cast<string>(numToDeleteHelper);
+            ostringstream convert;
+            convert << numToDeleteHelper;
+            numToDelete = convert.str();
+            convert.str("");        //Clear converter
             curDirectoryPath = NAME_DIR + numToDelete;
         }
         catch (std::exception &err)
@@ -181,6 +208,8 @@ bool FileWriter::fileExists(string filename)
     //Checks if file exists.
     string wavePath;    //Directory of current wave path.
     ostringstream convert;      //Converts number to string.
+    QString Qfilename;
+    QFile file;
 
     convert << getCurWaveInd();
 
@@ -188,8 +217,11 @@ bool FileWriter::fileExists(string filename)
 
     wavePath = wavePath + SLASH + filename;
 
+    Qfilename.append(wavePath.c_str());
+    file.setFileName(Qfilename);
+
     //Test if exists
-    if (exists(wavePath))
+    if (file.exists())
         return true;
     else
         return false;
@@ -262,9 +294,12 @@ int FileWriter::writeWaveDirection()
     //Get filename
     writeFilename = projectDirectory + SLASH + FILE_DIRECTIONS;
 
+    QString filename(writeFilename.c_str());
+    QFile file(filename);
+
     try
     {
-        if (!exists(writeFilename))
+        if (!file.exists())
         {
             //File does not exist.  Create file.
             //Open file
@@ -323,9 +358,12 @@ int FileWriter::writeFrequency()
     //Get filename
     writeFilename = projectDirectory + SLASH + FILE_FREQUENCIES;
 
+    QString filename(writeFilename.c_str());
+    QFile file(filename);
+
     try
     {
-        if (!exists(writeFilename))
+        if (!file.exists())
         {
             //File does not exist.  Create.
             //Open file
@@ -395,8 +433,11 @@ int FileWriter::writeGlobalMotion()
     writeFilename = projectDirectory + SLASH + getCurWaveDir() + FILE_GLOBAL_MOTION;
     ofstream output;
 
+    QString filename(writeFilename.c_str());
+    QFile file(filename);
+
     //Check if file already exists.
-    if (exists(writeFilename))
+    if (file.exists())
     {
         //Already exists.  Just open the file.
         //Open file
@@ -534,8 +575,11 @@ int FileWriter::writeGlobalVelocity()
     writeFilename = projectDirectory + SLASH + getCurWaveDir() + FILE_GLOBAL_VELOCITY;
     ofstream output;
 
+    QString filename(writeFilename.c_str());
+    QFile file(filename);
+
     //Check if file already exists.
-    if (exists(writeFilename))
+    if (file.exists())
     {
         //Already exists.  Just open the file.
         //Open file
@@ -671,8 +715,11 @@ int FileWriter::writeGlobalAcceleration()
     writeFilename = projectDirectory + SLASH + getCurWaveDir() + FILE_GLOBAL_ACCELERATION;
     ofstream output;
 
+    QString filename(writeFilename.c_str());
+    QFile file(filename);
+
     //Check if file already exists.
-    if (exists(writeFilename))
+    if (file.exists())
     {
         //Already exists.  Just open the file.
         //Open file
@@ -808,8 +855,11 @@ int FileWriter::writeGlobalSolution()
     writeFilename = projectDirectory + SLASH + getCurWaveDir() + FILE_GLOBAL_SOLUTION;
     ofstream output;
 
+    QString filename(writeFilename.c_str());
+    QFile file(filename);
+
     //Check if file already exists.
-    if (exists(writeFilename))
+    if (file.exists())
     {
         //Already exists.  Just open the file.
         //Open file
@@ -975,4 +1025,28 @@ std::string FileWriter::TAB(int num)
 
     //Write output
     return output;
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+bool FileWriter::removeDir(const QString &dirName)
+{
+    bool result = true;
+    QDir dir(dirName);
+
+    if (dir.exists(dirName)) {
+        Q_FOREACH(QFileInfo info, dir.entryInfoList(QDir::NoDotAndDotDot | QDir::System | QDir::Hidden  | QDir::AllDirs | QDir::Files, QDir::DirsFirst)) {
+            if (info.isDir()) {
+                result = removeDir(info.absoluteFilePath());
+            }
+            else {
+                result = QFile::remove(info.absoluteFilePath());
+            }
+
+            if (!result) {
+                return result;
+            }
+        }
+        result = dir.rmdir(dirName);
+    }
+    return result;
 }
