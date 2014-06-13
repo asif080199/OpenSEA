@@ -75,14 +75,14 @@ void Dictionary::setObject(ObjectGroup input)
         {
             //Write out error message and stop execution.
             logErr.Write(string(err.what()));
-            logStd.Write("Errors Found.  Please check the error log.");
+            logStd.Notify();
             exit(1);
         }
         catch(...)
         {
             //Write out error message and stop execution.
             logErr.Write("Unknown error occurred.  Ojbect:  ObjectGroup, Function:  setObject");
-            logStd.Write("Errors Found.  Please check the error log.");
+            logStd.Notify();
             exit(1);
         }
     }
@@ -100,7 +100,7 @@ void Dictionary::setObject(ObjectGroup input)
             logErr.Write("Error reading in object definition.\n" +
                          string("Object Name:  ") + string(input.listObject(i)->getClassName()) +
                          string("\nError Code:  ") + string(err.what()));
-            logStd.Write("Errors Found.  Please check the error log.");
+            logStd.Notify();
             exit(1);
         }
         catch(...)
@@ -108,7 +108,7 @@ void Dictionary::setObject(ObjectGroup input)
             //Write out error message and stop execution.
             logErr.Write("Error reading in object definition.\n" +
                          string("Object Name:  ") + string(input.listObject(i)->getClassName()));
-            logStd.Write("Errors Found.  Please check the error log.");
+            logStd.Notify();
             exit(1);
         }
     }
@@ -275,13 +275,13 @@ complex<double> Dictionary::convertComplex(string input)
     }
     catch(std::exception &err)
     {
-        logStd.Write("Error found.  Please check the error log.");
+        logStd.Notify();
         logErr.Write(string("Object:  Dictionary, Function:  convertComplex\n") + err.what());
         exit(1);
     }
     catch(...)
     {
-        logStd.Write("Error found.  Please check the error log.");
+        logStd.Notify();
         logErr.Write(string("Unknown error occurred.  Object:  Dictionary, Function:  convertComplex"));
         exit(1);
     }

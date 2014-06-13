@@ -61,13 +61,13 @@ double &SeaModel::listWaveDir(int index)
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-std::vector<osea::WaveSpec*> &SeaModel::listWaveSpec()
+std::vector<osea::WaveSpecBase*> &SeaModel::listWaveSpec()
 {
     return plistWaveSpec;
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-osea::WaveSpec* &SeaModel::listWaveSpec(int index)
+osea::WaveSpecBase* &SeaModel::listWaveSpec(int index)
 {
     return plistWaveSpec.at(index);
 }
@@ -106,7 +106,7 @@ void SeaModel::addWaveDir(double dirIn)
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-void SeaModel::addWaveSpec(osea::WaveSpec* specIn)
+void SeaModel::addWaveSpec(WaveSpecBase *specIn)
 {
     plistWaveSpec.push_back(specIn);
 
@@ -309,12 +309,12 @@ double SeaModel::getWaveAmp(double dirIn, int freqIndex)
     }
     catch(std::exception &err)
     {
-        logStd.Write("Errors found.  Please check the error log for details.");
+        logStd.Notify();
         logErr.Write(string("Object:  SeaModel, Function:  getWaveAmp()\nError Message:  ") + err.what());
     }
     catch(...)
     {
-        logStd.Write("Errors found.  Please check the error log for details.");
+        logStd.Notify();
         logErr.Write("Unknown error occurred.  Object:  SeaModel, Function:  getWaveAmp()");
     }
 }
@@ -336,7 +336,7 @@ void SeaModel::SortWaveDir()
         int n = plistWaveDir.size() - 1;   //The size of the the list to sort.
         bool swapped = true;               //Boolean to track if any variables swapped.
         double swapDir;                    //Temporary variable to hold swapping of wave directions.
-        osea::WaveSpec *swapSpec;           //Temporary variable to hold swapping of wave spectra.
+        osea::WaveSpecBase *swapSpec;           //Temporary variable to hold swapping of wave spectra.
         double swapScale;                   //Temporary variable to hold swapping of wave scaling terms.
 
         while (swapped)
@@ -469,12 +469,12 @@ double SeaModel::getFreqStep(int index)
     }
     catch(std::exception &err)
     {
-        logStd.Write("Errors found.  Please check the error log for details.");
+        logStd.Notify();
         logErr.Write(string("Object:  SeaModel, Function:  getFreqStep()\nError Message:  ") + err.what());
     }
     catch (...)
     {
-        logStd.Write("Errors found.  Please check the error log for details.");
+        logStd.Notify();
         logErr.Write("Uknown Error:  Object:  SeaModel, Function:  getFreqStep()");
     }
 }

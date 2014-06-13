@@ -244,6 +244,19 @@ public:
      */
     std::ofstream outFile;
 
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Notifies that errors were found in the run.
+     *
+     * Function meant mostly for the standard log.  Simply writes a default message to notify the user that
+     * errors were found in the run, and the user should check the error log for more details.  You can also override
+     * the action message with your own input.
+     * @param input String, passed by value.  An override for the standard notification message.
+     * Default Behavior:  "Errors found.  Please check the error log for details."
+     * Override Behavior:  "Errors found.  " + input.
+     */
+    void Notify(std::string input = "");
+
 //==========================================Section Separator =========================================================
 protected:
 

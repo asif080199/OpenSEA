@@ -46,6 +46,13 @@ WaveSpecBase::~WaveSpecBase()
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
+double WaveSpecBase::getSpecEnergy(double freq)
+{
+    //Create a basic definition of the function to keep the compiler happy.
+    return 0;
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
 std::string WaveSpecBase::getName()
 {
     return pName;

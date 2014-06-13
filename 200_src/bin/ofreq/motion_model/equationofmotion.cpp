@@ -735,13 +735,13 @@ int EquationofMotion::curbody()
     }
     catch(std::exception &err)
     {
-        logStd.Write("Errors found.  Please check error log.");
+        logStd.Notify();
         logErr.Write(err.what());
         exit(1);
     }
     catch(...)
     {
-        logStd.Write("Errors found.  Please check error log.");
+        logStd.Notify();
         logErr.Write("Unknown error occurred.  Object:  Equation of Motion, Function:  curbody()");
         exit(1);
     }

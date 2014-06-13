@@ -53,6 +53,7 @@
 #include "./file_reader/dictforces.h"
 #include "./file_reader/dictbodies.h"
 #include "./file_reader/filereader.h"
+#include "./file_reader/dictseaenv.h"
 #include "./system_objects/ofreqcore.h"
 #include <string>
 #include <iostream>
@@ -380,12 +381,12 @@ int main(int argc, char *argv[])
             catch(std::exception &err)
             {
                 sysofreq.logErr.Write(string(err.what()));
-                sysofreq.logStd.Write("Errors found.  Please check the error log for details.");
+                sysofreq.logStd.Notify();
             }
             catch(...)
             {
                 sysofreq.logErr.Write("Unknown error occurred.  Main program.");
-                sysofreq.logStd.Write("Errors found.  Please check the error log for details.");
+                sysofreq.logStd.Notify();
             }
 
             //Write wave directions list
@@ -398,12 +399,12 @@ int main(int argc, char *argv[])
             catch(std::exception &err)
             {
                 sysofreq.logErr.Write(string(err.what()));
-                sysofreq.logStd.Write("Errors found.  Please check the error log for details.");
+                sysofreq.logStd.Notify();
             }
             catch(...)
             {
                 sysofreq.logErr.Write("Unknown error occurred.  Main program.");
-                sysofreq.logStd.Write("Errors found.  Please check the error log for details.");
+                sysofreq.logStd.Notify();
             }
         }
 
@@ -625,12 +626,12 @@ void calcOutput(OutputsBody &OutputIn, FileWriter &WriterIn)
         catch(std::exception &err)
         {
             sysofreq.logErr.Write(string(err.what()));
-            sysofreq.logStd.Write("Errors found.  Please check the error log for details.");
+            sysofreq.logStd.Notify();
         }
         catch(...)
         {
             sysofreq.logErr.Write("Unknown error occurred.  Main program.");
-            sysofreq.logStd.Write("Errors found.  Please check the error log for details.");
+            sysofreq.logStd.Notify();
         }
 
         try
@@ -644,12 +645,12 @@ void calcOutput(OutputsBody &OutputIn, FileWriter &WriterIn)
         catch(std::exception &err)
         {
             sysofreq.logErr.Write(string(err.what()));
-            sysofreq.logStd.Write("Errors found.  Please check the error log for details.");
+            sysofreq.logStd.Notify();
         }
         catch(...)
         {
             sysofreq.logErr.Write("Unknown error occurred.  Main program.");
-            sysofreq.logStd.Write("Errors found.  Please check the error log for details.");
+            sysofreq.logStd.Notify();
         }
 
         try
@@ -663,12 +664,12 @@ void calcOutput(OutputsBody &OutputIn, FileWriter &WriterIn)
         catch(std::exception &err)
         {
             sysofreq.logErr.Write(string(err.what()));
-            sysofreq.logStd.Write("Errors found.  Please check the error log for details.");
+            sysofreq.logStd.Notify();
         }
         catch(...)
         {
             sysofreq.logErr.Write("Unknown error occurred.  Main program.");
-            sysofreq.logStd.Write("Errors found.  Please check the error log for details.");
+            sysofreq.logStd.Notify();
         }
 
         try
@@ -682,12 +683,12 @@ void calcOutput(OutputsBody &OutputIn, FileWriter &WriterIn)
         catch(std::exception &err)
         {
             sysofreq.logErr.Write(string(err.what()));
-            sysofreq.logStd.Write("Errors found.  Please check the error log for details.");
+            sysofreq.logStd.Notify();
         }
         catch(...)
         {
             sysofreq.logErr.Write("Unknown error occurred.  Main program.");
-            sysofreq.logStd.Write("Errors found.  Please check the error log for details.");
+            sysofreq.logStd.Notify();
         }
     }
 }
@@ -701,24 +702,35 @@ void ReadFiles(string runPath)
     dictBodies dictBod;                 //Create dictionary object for bodies.in
     dictForces dictForce;               //Create dictionary object for forces.in
     dictControl dictCont;               //Create dictionary object for control.in
+    dictSeaEnv dictSea;                 //Create dictionary object for seaenv.in
 
     //Create pointer to System object for each of the filereader objects
     fileIn.setSystem( &sysofreq);
     dictBod.setSystem( &sysofreq);
     dictForce.setSystem( &sysofreq);
     dictCont.setSystem( &sysofreq);
+    dictSea.setSystem( &sysofreq);
 
     //Set path for file reading
     fileIn.setPath(runPath);
 
     //Read input files
     //Sequence of file reading is important.
+    //Read control file.
     fileIn.setDictionary(dictCont);
     fileIn.readControl();       //Must be first.
+    //Read sea environment file.
+    fileIn.setDictionary(dictSea);
+    fileIn.readSeaEnv();
+    //Read user forces
     fileIn.setDictionary(dictForce);
     fileIn.readForces();        //Must come before reading Bodies
+    //Read Bodies
     fileIn.setDictionary(dictBod);
     fileIn.readBodies();        //Must come after reading forces.
+
+    //At the end, force system to check one last time for the active sea model.
+    sysofreq.SearchActiveSeaModel();
 }
 
 //######################################## ReadFiles Function #########################################################
@@ -851,12 +863,12 @@ void writeLogHeader()
     catch (exception &err)
     {
         sysofreq.logErr.Write(string(err.what()));
-        sysofreq.logStd.Write("Errors found.  Please check the error log for details.");
+        sysofreq.logStd.Notify();
     }
     catch(...)
     {
         sysofreq.logErr.Write("Unknown error occurred.  Main program.");
-        sysofreq.logStd.Write("Errors found.  Please check the error log for details.");
+        sysofreq.logStd.Notify();
     }
 
     //Now that the header is read in, write it to each log file.

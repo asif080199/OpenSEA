@@ -85,7 +85,7 @@ public:
      * Returns the spectral energy in units of m^2/(rad/s).  Returns value for the frequency requested.  This is a
      * pure virtual function.  The exact method of calculation for wave spectral energy depends on the child class.
      */
-    virtual double getSpecEnergy(double freq) = 0;
+    virtual double getSpecEnergy(double freq);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**

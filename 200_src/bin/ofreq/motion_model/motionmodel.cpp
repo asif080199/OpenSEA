@@ -1429,12 +1429,12 @@ void MotionModel::useForceMass(unsigned int eqn, unsigned int var)
     {
         logErr.Write("Object:  MotionModel, Function:  useForceMass()\n" +
                      string("Error Message:  ") + string(err.what()));
-        logStd.Write("Errors occurred.  Please check the error log for details.");
+        logStd.Notify();
     }
     catch(...)
     {
         logErr.Write("Unknown error occurred.  Object:  MotionModel, Function:  useForceMass()");
-        logStd.Write("Errors occurred.  Please check the error log for details.");
+        logStd.Notify();
     }
 }
 
@@ -1819,7 +1819,7 @@ int &MotionModel::listDataIndex(unsigned int index)
     {
         logErr.Write("Object:  MotionModel, Function:  listDataIndex()\n" +
                      string("Error Message:  ") + string(err.what()));
-        logStd.Write("Errors occurred.  Please check the error log for details.");
+        logStd.Notify();
     }
 }
 

@@ -224,14 +224,14 @@ void Body::setMass(double newMass)
         logErr.Write("Error occurred.  Object:  Body, Function:  setMass()\n" +
                      string("Operation:  set mass for X-axis translation\n") +
                      string("Error Message:  ") + string(err.what()));
-        logStd.Write("Errors occurred.  Please check error log for details.");
+        logStd.Notify();
     }
     catch(...)
     {
         //Error handler.
         logErr.Write("Error occurred.  Object:  Body, Function:  setMass()\n" +
                      string("Operation:  set mass for X-axis translation"));
-        logStd.Write("Errors occurred.  Please check error log for details.");
+        logStd.Notify();
     }
 
     try
@@ -246,14 +246,14 @@ void Body::setMass(double newMass)
         logErr.Write("Error occurred.  Object:  Body, Function:  setMass()\n" +
                      string("Operation:  set mass for Y-axis translation\n") +
                      string("Error Message:  ") + string(err.what()));
-        logStd.Write("Errors occurred.  Please check error log for details.");
+        logStd.Notify();
     }
     catch(...)
     {
         //Error handler.
         logErr.Write("Error occurred.  Object:  Body, Function:  setMass()\n" +
                      string("Operation:  set mass for Y-axis translation"));
-        logStd.Write("Errors occurred.  Please check error log for details.");
+        logStd.Notify();
     }
 
     try
@@ -268,14 +268,14 @@ void Body::setMass(double newMass)
         logErr.Write("Error occurred.  Object:  Body, Function:  setMass()\n" +
                      string("Operation:  set mass for Z-axis translation\n") +
                      string("Error Message:  ") + string(err.what()));
-        logStd.Write("Errors occurred.  Please check error log for details.");
+        logStd.Notify();
     }
     catch(...)
     {
         //Error handler.
         logErr.Write("Error occurred.  Object:  Body, Function:  setMass()\n" +
                      string("Operation:  set mass for Z-axis translation"));
-        logStd.Write("Errors occurred.  Please check error log for details.");
+        logStd.Notify();
     }
 
     //Calculate mass coupling.
@@ -315,7 +315,7 @@ double Body::getMass()
                 logErr.Write("Error occurred.  Object:  Body, Function:  getMass()\n" +
                              string("Operation:  find index for mass matrix\n") +
                              string("Error Message:  ") + string(err.what()));
-                logStd.Write("Errors occurred.  Please check error log for details.");
+                logStd.Notify();
                 return 0;
             }
             catch(...)
@@ -323,7 +323,7 @@ double Body::getMass()
                 //Error handler.
                 logErr.Write("Error occurred.  Object:  Body, Function:  getMass()\n" +
                              string("Operation:  find index for mass matrix"));
-                logStd.Write("Errors occurred.  Please check error log for details.");
+                logStd.Notify();
                 return 0;
             }
         }
@@ -351,13 +351,13 @@ void Body::setMomIxx(double newXX)
         //Error handler.
         logErr.Write("Error occurred.  Object:  Body, Function:  setMomIxx()\n" +
                      string("Error Message:  ") + string(err.what()));
-        logStd.Write("Errors occurred.  Please check error log for details.");
+        logStd.Notify();
     }
     catch(...)
     {
         //Error handler.
         logErr.Write("Error occurred.  Object:  Body, Function:  setMomIxx()");
-        logStd.Write("Errors occurred.  Please check error log for details.");
+        logStd.Notify();
     }
 }
 
@@ -381,14 +381,14 @@ double Body::getMomIxx()
         //Error handler.
         logErr.Write("Error occurred.  Object:  Body, Function:  getMomIxx()\n" +
                      string("Error Message:  ") + string(err.what()));
-        logStd.Write("Errors occurred.  Please check error log for details.");
+        logStd.Notify();
         return 0;
     }
     catch(...)
     {
         //Error handler.
         logErr.Write("Error occurred.  Object:  Body, Function:  getMomIxx()");
-        logStd.Write("Errors occurred.  Please check error log for details.");
+        logStd.Notify();
         return 0;
     }
 }
@@ -413,13 +413,13 @@ void Body::setMomIyy(double newYY)
         //Error handler.
         logErr.Write("Error occurred.  Object:  Body, Function:  setMomIyy()\n" +
                      string("Error Message:  ") + string(err.what()));
-        logStd.Write("Errors occurred.  Please check error log for details.");
+        logStd.Notify();
     }
     catch(...)
     {
         //Error handler.
         logErr.Write("Error occurred.  Object:  Body, Function:  setMomIyy()");
-        logStd.Write("Errors occurred.  Please check error log for details.");
+        logStd.Notify();
     }
 }
 
@@ -443,14 +443,14 @@ double Body::getMomIyy()
         //Error handler.
         logErr.Write("Error occurred.  Object:  Body, Function:  getMomIyy()\n" +
                      string("Error Message:  ") + string(err.what()));
-        logStd.Write("Errors occurred.  Please check error log for details.");
+        logStd.Notify();
         return 0;
     }
     catch(...)
     {
         //Error handler.
         logErr.Write("Error occurred.  Object:  Body, Function:  getMomIyy()");
-        logStd.Write("Errors occurred.  Please check error log for details.");
+        logStd.Notify();
         return 0;
     }
 }
@@ -475,13 +475,13 @@ void Body::setMomIzz(double newZZ)
         //Error handler.
         logErr.Write("Error occurred.  Object:  Body, Function:  setMomIzz()\n" +
                      string("Error Message:  ") + string(err.what()));
-        logStd.Write("Errors occurred.  Please check error log for details.");
+        logStd.Notify();
     }
     catch(...)
     {
         //Error handler.
         logErr.Write("Error occurred.  Object:  Body, Function:  setMomIzz()");
-        logStd.Write("Errors occurred.  Please check error log for details.");
+        logStd.Notify();
     }
 }
 
@@ -505,14 +505,14 @@ double Body::getMomIzz()
         //Error handler.
         logErr.Write("Error occurred.  Object:  Body, Function:  getMomIzz()\n" +
                      string("Error Message:  ") + string(err.what()));
-        logStd.Write("Errors occurred.  Please check error log for details.");
+        logStd.Notify();
         return 0;
     }
     catch(...)
     {
         //Error handler.
         logErr.Write("Error occurred.  Object:  Body, Function:  getMomIzz()");
-        logStd.Write("Errors occurred.  Please check error log for details.");
+        logStd.Notify();
         return 0;
     }
 }
@@ -538,13 +538,13 @@ void Body::setMomIxy(double newXY)
         //Error handler.
         logErr.Write("Error occurred.  Object:  Body, Function:  setMomIxy()\n" +
                      string("Error Message:  ") + string(err.what()));
-        logStd.Write("Errors occurred.  Please check error log for details.");
+        logStd.Notify();
     }
     catch(...)
     {
         //Error handler.
         logErr.Write("Error occurred.  Object:  Body, Function:  setMomIxy()");
-        logStd.Write("Errors occurred.  Please check error log for details.");
+        logStd.Notify();
     }
 }
 
@@ -569,14 +569,14 @@ double Body::getMomIxy()
         //Error handler.
         logErr.Write("Error occurred.  Object:  Body, Function:  getMomIxy()\n" +
                      string("Error Message:  ") + string(err.what()));
-        logStd.Write("Errors occurred.  Please check error log for details.");
+        logStd.Notify();
         return 0;
     }
     catch(...)
     {
         //Error handler.
         logErr.Write("Error occurred.  Object:  Body, Function:  getMomIxy()");
-        logStd.Write("Errors occurred.  Please check error log for details.");
+        logStd.Notify();
         return 0;
     }
 }
@@ -602,13 +602,13 @@ void Body::setMomIxz(double newXZ)
         //Error handler.
         logErr.Write("Error occurred.  Object:  Body, Function:  setMomIxz()\n" +
                      string("Error Message:  ") + string(err.what()));
-        logStd.Write("Errors occurred.  Please check error log for details.");
+        logStd.Notify();
     }
     catch(...)
     {
         //Error handler.
         logErr.Write("Error occurred.  Object:  Body, Function:  setMomIxz()");
-        logStd.Write("Errors occurred.  Please check error log for details.");
+        logStd.Notify();
     }
 }
 
@@ -633,14 +633,14 @@ double Body::getMomIxz()
         //Error handler.
         logErr.Write("Error occurred.  Object:  Body, Function:  gettMomIxz()\n" +
                      string("Error Message:  ") + string(err.what()));
-        logStd.Write("Errors occurred.  Please check error log for details.");
+        logStd.Notify();
         return 0;
     }
     catch(...)
     {
         //Error handler.
         logErr.Write("Error occurred.  Object:  Body, Function:  getMomIxz()");
-        logStd.Write("Errors occurred.  Please check error log for details.");
+        logStd.Notify();
         return 0;
     }
 }
@@ -666,13 +666,13 @@ void Body::setMomIyz(double newYZ)
         //Error handler.
         logErr.Write("Error occurred.  Object:  Body, Function:  setMomIyz()\n" +
                      string("Error Message:  ") + string(err.what()));
-        logStd.Write("Errors occurred.  Please check error log for details.");
+        logStd.Notify();
     }
     catch(...)
     {
         //Error handler.
         logErr.Write("Error occurred.  Object:  Body, Function:  setMomIyz()");
-        logStd.Write("Errors occurred.  Please check error log for details.");
+        logStd.Notify();
     }
 }
 
@@ -697,14 +697,14 @@ double Body::getMomIyz()
         //Error handler.
         logErr.Write("Error occurred.  Object:  Body, Function:  getMomIyz()\n" +
                      string("Error Message:  ") + string(err.what()));
-        logStd.Write("Errors occurred.  Please check error log for details.");
+        logStd.Notify();
         return 0;
     }
     catch(...)
     {
         //Error handler.
         logErr.Write("Error occurred.  Object:  Body, Function:  getMomIyz()");
-        logStd.Write("Errors occurred.  Please check error log for details.");
+        logStd.Notify();
         return 0;
     }
 }

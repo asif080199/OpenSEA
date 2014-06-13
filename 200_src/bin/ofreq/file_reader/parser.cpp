@@ -405,7 +405,7 @@ void Parser::ParseCommands(istream &infile, string curString, string prevString,
 
                     if (infile.eof())
                     {
-                        logStd.Write("Error!  Please see the error log for more details.");
+                        logStd.Notify();
                         logErr.Write("Error:  Illegal input list format");
                         break;
                     }
@@ -454,13 +454,13 @@ void Parser::ParseCommands(istream &infile, string curString, string prevString,
                     }
                     catch(std::exception &err)
                     {
-                        logStd.Write("Error!  Please see the error log for more details.");
+                        logStd.Notify();
                         logErr.Write("Error:  problem expanding list.  Perhaps the list entries are not valid numbers.\n" +
                                      string("Error Message:  ") + err.what());
                     }
                     catch(...)
                     {
-                        logStd.Write("Error!  Please see the error log for more details.");
+                        logStd.Notify();
                         logErr.Write("Error:  problem expanding list.  Perhaps the list entries are not valid numbers.");
                     }
                 }
@@ -474,7 +474,7 @@ void Parser::ParseCommands(istream &infile, string curString, string prevString,
                 }
                 else
                 {
-                    logStd.Write("Error!  Please see the error log for more details.");
+                    logStd.Notify();
                     logErr.Write("Error:  No key word found to match key value.");
                 }
 

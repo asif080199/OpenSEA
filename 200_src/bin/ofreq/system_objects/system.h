@@ -51,6 +51,18 @@
 #include "../derived_outputs/outputsbody.h"
 #include "../system_objects/ofreqcore.h"
 
+//Sea Models to Include
+#include "../sea_models/seamodel.h"
+#include "../sea_models/seamodel_dualdirection.h"
+#include "../sea_models/seamodel_singledirection.h"
+
+//Wave Spectra to Include
+#include "../wave_spectra/specbretschneider.h"
+#include "../wave_spectra/specjonswap.h"
+#include "../wave_spectra/specpm.h"
+#include "../wave_spectra/wavespec.h"
+#include "../wave_spectra/wavespecbase.h"
+
 //Motion Models to include
 #include "./motion_model/motionmodel.h"
 #include "./motion_model/model6dof.h"
@@ -137,13 +149,6 @@ public:
 	 * @param vecIn The list of wave directions.
 	 */
 	void setWaveDirections(std::vector<double>);
-
-    //------------------------------------------Function Separator ----------------------------------------------------
-	/**
-	 * Sets the spread model.
-	 * @param spreadIn The spread model.
-	 */
-	void setSpreadModel(std::string);
 
     //------------------------------------------Function Separator ----------------------------------------------------
 	/**
@@ -346,6 +351,146 @@ public:
      */
     ForceCross &listForceCross_user(unsigned int forceIndex);
 
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief The list of sea models.
+     *
+     * Returns the full vector of sea models listed in the system.
+     *
+     * @return Returns a reference to the vector of sea models.  Returned vector is passed by reference.  Vector
+     * of sea model objects can contain multiple class types, all inheritted from the SeaModel class.
+     */
+    std::vector<SeaModel *> &listSeaModel();
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Returns a pointer to a specific object in the list of Sea Models.
+     *
+     * Returned SeaModel object is specified by the index entered.  Index corresponds to the vector index.
+     * @param index Integer, passed by value.  The index of the object you wish returned from the list of SeaModel
+     * objects.  Numbering begins from 0.
+     * @return Returns a pointer to the SeaModel object specified by the index.  Returned objects can be multiple
+     * different class types, all inherited from the SeaModel class.
+     */
+    osea::SeaModel* listSeaModelPt(int index);
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Returns a reference to a specific object in the list of Sea Models.
+     *
+     * Returned SeaModel object is specified by the index entered.  Index corresponds to the vector index.
+     * @param index Integer, passed by value.  The index of the object you wish returned from the list of SeaModel
+     * objects.  Numbering begins from 0.
+     * @return Returns a reference to the SeaModel object specified by the index.  Returned objects can be multiple
+     * different class types, all inherited from the SeaModel class.
+     */
+    osea::SeaModel &listSeaModel(int index);
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Returns a pointer to a specific object in the list of Sea Models.
+     *
+     * Returned SeaModel object is specified by the Name entered.  Name corresponds to the SeaModel object with the
+     * matching name.
+     * @param NameIn String, passed by value.  The name of the corresponding SeaModel with the matching name.  Used
+     * to select the SeaModel from the list of SeaModel objects.
+     * @return Returns a pointer to the SeaModel object specified by the Name.  Returned objects can be multiple
+     * different class types, all inherited from the SeaModel class.
+     */
+    osea::SeaModel* listSeaModelPt(std::string NameIn);
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Returns a reference to a specific object in the list of Sea Models.
+     *
+     * Returned SeaModel object is specified by the Name entered.  Name corresponds to the SeaModel object with the
+     * matching name.
+     * @param NameIn String, passed by value.  The name of the corresponding SeaModel with the matching name.  Used
+     * to select the SeaModel from the list of SeaModel objects.
+     * @return Returns a reference to the SeaModel object specified by the Name.  Returned objects can be multiple
+     * different class types, all inherited from the SeaModel class.
+     */
+    osea::SeaModel &listSeaModel(std::string NameIn);
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief The list of wave spectra.
+     *
+     * Returns the full vector of wave spectra listed in the system.
+     *
+     * @return Returns a reference to the vector of wave spectra.  Returned vector is passed by reference.  Vector
+     * of wave spectra objects can contain multiple class types, but all class types are inherrited from the
+     * WaveSpecBase class.
+     */
+    std::vector<WaveSpecBase *> &listWaveSpec();
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Returns a pointer to a specific object in the list of wave spectra.
+     *
+     * Returned WaveSpectraBase model is specified by the index entered.  The index corresponds to the vector index.
+     * @param index Integer, passed by value.  The index of the object you wish returned from the list of wave spectra.
+     * @return Returns a pointer to the WaveSpecBase object specified by the index.  Returned objects can be
+     * multiple different class types, all inherited from the WaveSpecBase class.
+     */
+    osea::WaveSpecBase* listWaveSpecPt(int index);
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Returns a reference to a specific object in the list of wave spectra.
+     *
+     * Returned WaveSpectraBase model is specified by the index entered.  The index corresponds to the vector index.
+     * @param index Integer, passed by value.  The index of the object you wish returned from the list of wave spectra.
+     * @return Returns a reference to the WaveSpecBase object specified by the index.  Returned objects can be
+     * multiple different class types, all inherited from the WaveSpecBase class.
+     */
+    osea::WaveSpecBase &listWaveSpec(int index);
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Returns a pointer to a specific object in the list of wave spectra.
+     *
+     * Returned WaveSpectraBase model is specified by the name entered.  The name corresponds to the object with the
+     * matching name in the list.
+     * @param NameIn String, passed by value.  The name of the corresponding WaveSpecBase object with the matching
+     * name.  Used to select the WaveSpecBase object from the list of WaveSpecBase objects.
+     * @return Returns a pointer to the WaveSpecBase object specified by the name.  Returned objects can be
+     * multiple different class types, all inherited from the WaveSpecBase class.
+     */
+    osea::WaveSpecBase* listWaveSpecPt(std::string NameIn);
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Returns a reference to a specific object in the list of wave spectra.
+     *
+     * Returned WaveSpectraBase model is specified by the name entered.  The name corresponds to the object with the
+     * matching name in the list.
+     * @param NameIn String, passed by value.  The name of the corresponding WaveSpecBase object with the matching
+     * name.  Used to select the WaveSpecBase object from the list of WaveSpecBase objects.
+     * @return Returns a reference to the WaveSpecBase object specified by the name.  Returned objects can be
+     * multiple different class types, all inherited from the WaveSpecBase class.
+     */
+    osea::WaveSpecBase &listWaveSpec(std::string NameIn);
+
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Sets the active SeaModel that gets used for the current run of oFreq.  If the model with the matching
+     * name does not currently exist in the list of sea models, then the name is stored and assigned later.
+     * @param NameIn The name which corresponds to the SeaModel object with the matching name.
+     */
+    void setActiveSeaModel(std::string NameIn);
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Reference to the active sea model used for the current run of oFreq.
+     *
+     * Returns an error if the SeaModel is not found yet.
+     * @return Returns a SeaModel object, passed by reference.  Returned object can be one of multiple class types,
+     * all class types inheritted from the SeaModel class.
+     */
+    osea::SeaModel &refActiveSeaModel();
+
 //==========================================Section Separator =========================================================
 public slots:
     //------------------------------------------Function Separator ----------------------------------------------------
@@ -493,6 +638,53 @@ public slots:
      */
     ofreq::MotionModel &listModel(std::string modelName);
 
+    //-----------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Adds a sea model to the list of sea models.
+     *
+     * Adds any SeaModel object to the list of sea models.  This can be an object of class SeaModel, or any class that
+     * inherits from SeaModel.
+     * @param modelIn SeaModel object, or any class that inherits from SeaModel.  Object passed by value.
+     */
+    void addSeaModel(osea::SeaModel modelIn);
+    void addSeaModel(osea::SeaModel_DualDirection modelIn);
+    void addSeaModel(osea::SeaModel_SingleDirection modelIn);
+
+    //-----------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Adds a new blank entry in the list of SeaModel.  Item added is always a SeaModel object.
+     */
+    void addSeaModel();
+
+    //-----------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Adds a wave spectrum object to the list of wave spectrums.
+     *
+     * Added object can be of the class WaveSpecBase, or any class that inherits from WaveSpecBase.
+     * @param specIn WaveSpecBase object, or any class that inherits from WaveSpecBase.  Object passed by value.
+     */
+    void addWaveSpec(osea::WaveSpecBase specIn);
+    void addWaveSpec(osea::WaveSpec specIn);
+    void addWaveSpec(osea::SpecBretschneider specIn);
+    void addWaveSpec(osea::SpecJONSWAP specIn);
+    void addWaveSpec(osea::SpecPM specIn);
+
+    //-----------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Adds a new blank entry in the list of wave spectrum objects.  Item added is always an object of class
+     * WaveSpec.
+     */
+    void addWaveSpec();
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Searches for the active sea model.
+     *
+     * Search based on the list of current SeaModels.  Model names are matched against the variable pActSeaModelName.
+     * Results are stored in the variable pSeaModelIndex.
+     */
+    void SearchActiveSeaModel();
+
 //==========================================Section Separator =========================================================
 signals:
     /**
@@ -608,12 +800,46 @@ private:
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
+     * @brief The list of sea models to use.  Each sea model contains the full definition for a sea state.  This
+     * includes reference to applicable wave spectra.  The lists of wave spectra are contained under the system object.
+     * Each sea model just references the wave spectra.
+     *
+     * There are multiple different classes of sea models, but all classes inherit from the SeaModel base class.
+     * Vector must use a list of pointer objects to allow correct polymorphism to overload any functions of derived
+     * classes.
+     */
+    std::vector<osea::SeaModel *> plistSeaModel;
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief The list of wave spectra defined in the run.
+     *
+     * There are multiple different classes of wave spectra, but all classes inherit from the WaveSpecBase class.
+     * Vector must use a list of pointer objects to allow correct polymorphism to overload any functions of derived
+     * classes.
+     */
+    std::vector<osea::WaveSpecBase *> plistWaveSpec;
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
      * @brief Defines all motion models.
      *
      * Adds all defined motion models to the list of available motion models.  Each
      * class of motion model has only one object defined in the list.
      */
     void DefineModels();
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief The name of the active SeaModel object used in the current run of oFreq.
+     */
+    std::string pActSeaModelName;
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief The index of the SeaModel object which is the active object in the current run of oFreq.
+     */
+    int pSeaModelIndex;
 };
 
 }   //Namespace ofreq

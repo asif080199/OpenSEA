@@ -130,7 +130,7 @@ osea::ofreq::SolutionSet &OutputsBody::listSolutionSet(int index)
         //Write error message
         logErr.Write("Unknown error occurred.  Object:  OutputsBody, Function:  listSolutionSet()\n" +
                      std::string("Error Message:  ") + std::string(string(err.what())));
-        logStd.Write("Error occurred.  Check the error log for details.");
+        logStd.Notify();
 
         //Stop program execution
         exit(1);
@@ -139,7 +139,7 @@ osea::ofreq::SolutionSet &OutputsBody::listSolutionSet(int index)
     {
         //Write error message
         logErr.Write("Unknown error occurred.  Object:  OutputsBody, Function:  listSolutionSet()");
-        logStd.Write("Error occurred.  Check the error log for details.");
+        logStd.Notify();
 
         //Stop program execution
         exit(1);
@@ -356,12 +356,12 @@ int OutputsBody::calcGlobalMotion(unsigned int index)
             {
                 //Write error message
                 logErr.Write(string(err.what()));
-                logStd.Write("Error occurred.  Check the error log for details.");
+                logStd.Notify();
             }
             catch(...)
             {
                 logErr.Write("Unknown error occurred.  Object:  OutputsBody, Function:  calcGlobalMotion()");
-                logStd.Write("Error occurred.  Check the error log for details.");
+                logStd.Notify();
             }
         }
     }
@@ -434,12 +434,12 @@ int OutputsBody::calcGlobalVelocity(unsigned int index)
             {
                 //Write error message
                 logErr.Write(string(err.what()));
-                logStd.Write("Error occurred.  Check the error log for details.");
+                logStd.Notify();
             }
             catch(...)
             {
                 logErr.Write("Unknown error occurred.  Object:  OutputsBody, Function:  calcGlobalVelocity()");
-                logStd.Write("Error occurred.  Check the error log for details.");
+                logStd.Notify();
             }
         }
     }
@@ -512,12 +512,12 @@ int OutputsBody::calcGlobalAcceleration(unsigned int index)
             {
                 //Write error message
                 logErr.Write(string(err.what()));
-                logStd.Write("Error occurred.  Check the error log for details.");
+                logStd.Notify();
             }
             catch(...)
             {
                 logErr.Write("Unknown error occurred.  Object:  OutputsBody, Function:  calcGlobalAcceleration()");
-                logStd.Write("Error occurred.  Check the error log for details.");
+                logStd.Notify();
             }
         }
     }
@@ -588,12 +588,12 @@ int OutputsBody::calcGlobalSolution(unsigned int index)
             {
                 //Write error message
                 logErr.Write(string(err.what()));
-                logStd.Write("Error occurred.  Check the error log for details.");
+                logStd.Notify();
             }
             catch(...)
             {
                 logErr.Write("Unknown error occurred.  Object:  OutputsBody, Function:  calcGlobalSolution()");
-                logStd.Write("Error occurred.  Check the error log for details.");
+                logStd.Notify();
             }
         }
     }

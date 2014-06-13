@@ -145,7 +145,7 @@ Solution &GlobalSolution::getSolution(double freqIn)
     {
         //Write out error message.
         logErr.Write("Error:  " + string(err.what()));
-        logStd.Write("Error occurred.  Check the error log for details.");
+        logStd.Notify();
 
         //Stop program execution.
         exit(1);
@@ -154,7 +154,7 @@ Solution &GlobalSolution::getSolution(double freqIn)
     {
         //Write out error message.
         logErr.Write("Unknown error occurred.  Object:  Globalsolution, Function:  getSolution()");
-        logStd.Write("Error occurred.  Check the error log for details.");
+        logStd.Notify();
 
         //Stop program execution.
         exit(1);

@@ -136,7 +136,7 @@ public:
      * stored external to the SeaModel.  The list of wave spectra is only a list of pointers locating the wave spectra.
      * @return Returns a vector of pointers to WaveSpec objects.  Returned vector is passed by reference.
      */
-    std::vector<osea::WaveSpec*> &listWaveSpec();
+    std::vector<osea::WaveSpecBase*> &listWaveSpec();
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -147,7 +147,7 @@ public:
      * @param index Integer, variable passed by value.  Specifies the index of the specific WaveSpec object you want.
      * @return Returns a pointer to a WaveSpec object.  Returned pointer is passed by reference.
      */
-    osea::WaveSpec* &listWaveSpec(int index);
+    osea::WaveSpecBase* &listWaveSpec(int index);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -229,7 +229,7 @@ public:
      * into sequential order before using them for calculations.
      * @param specIn Pointer to a WaveSpec object, variable passed by value.
      */
-    void addWaveSpec(osea::WaveSpec* specIn);
+    void addWaveSpec(osea::WaveSpecBase* specIn);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -371,7 +371,7 @@ protected:
      * reference the same WaveSpec object, so don't delete a WaveSpec object just because the SeaModel is done using
      * it.
      */
-    std::vector<osea::WaveSpec*> plistWaveSpec;
+    std::vector<osea::WaveSpecBase*> plistWaveSpec;
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**

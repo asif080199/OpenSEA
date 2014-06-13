@@ -95,7 +95,7 @@ double SpecPM::getSpecEnergy(double freq)
     catch(...)
     {
         //Catches any unknown errors.
-        logStd.Write("Error occurred.  Please check the error log for details.");
+        logStd.Notify();
         logErr.Write("Object:  SpecPM, Function:  getSpecEnergy():  Unknown error occurred.");
     }
 }

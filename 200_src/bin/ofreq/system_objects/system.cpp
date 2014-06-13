@@ -27,6 +27,7 @@
 #include "system.h"
 
 using namespace std;
+using namespace osea;
 using namespace osea::ofreq;
 
 //==========================================Section Separator =========================================================
@@ -43,6 +44,9 @@ System::System() : pWaveDirections(), pWaveFrequencies()
 {   
     //Create the list of motion models
     DefineModels();
+
+    //Set starting value for SeaModel index.
+    pSeaModelIndex = -1;
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
@@ -54,6 +58,20 @@ System::~System()
         delete plistModels[i];
     }
     plistModels.clear();
+
+    //Delete the list of wave spectra.
+    for (unsigned int i = 0; i < plistWaveSpec.size(); i++)
+    {
+        delete plistWaveSpec[i];
+    }
+    plistWaveSpec.clear();
+
+    //Delete the list of sea models.
+    for (unsigned int i = 0; i < plistSeaModel.size(); i++)
+    {
+        delete plistSeaModel[i];
+    }
+    plistSeaModel.clear();
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
@@ -98,12 +116,6 @@ void System::setWaveFrequencies(vector<double> vecIn)
 void System::setWaveDirections(vector<double> vecIn)
 {
     pWaveDirections = vecIn;
-}
-
-//------------------------------------------Function Separator --------------------------------------------------------
-void System::setSpreadModel(string spreadIn)
-{
-
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
@@ -355,6 +367,138 @@ ForceCross &System::listForceCross_user(unsigned int forceIndex)
     return plistForceCross_user[forceIndex];
 }
 
+//------------------------------------------Function Separator --------------------------------------------------------
+std::vector<osea::SeaModel *> &System::listSeaModel()
+{
+    return plistSeaModel;
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+osea::SeaModel* System::listSeaModelPt(int index)
+{
+    return plistSeaModel.at(index);
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+osea::SeaModel &System::listSeaModel(int index)
+{
+    return *(listSeaModelPt(index));
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+osea::SeaModel* System::listSeaModelPt(std::string NameIn)
+{
+    //Search through and find the right one.
+    int i = 0;
+    try
+    {
+        //Check that the list contains entries.
+        if (plistSeaModel.size() == 0)
+        {
+            std::string msg;
+            msg = "No sea models defined.";
+            throw std::runtime_error(msg);
+        }
+        for (i = 0; i < plistSeaModel.size(); i++ )
+        {
+            if(plistSeaModel.at(i)->getName() == NameIn)
+                break;
+        }
+
+        return plistSeaModel.at(i);
+    }
+    catch(std::exception &err)
+    {
+        logStd.Notify();
+        logErr.Write(string("Object:  System, Function:  listSeaModel() \n") + err.what());
+    }
+    catch(...)
+    {
+        logStd.Notify();
+        logErr.Write(string("Object:  System, Function:  listSeaModel() \n Unknown error."));
+    }
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+osea::SeaModel &System::listSeaModel(std::string NameIn)
+{
+    return *(listSeaModelPt(NameIn));
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+std::vector<osea::WaveSpecBase *> &System::listWaveSpec()
+{
+    return plistWaveSpec;
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+osea::WaveSpecBase* System::listWaveSpecPt(int index)
+{
+    return plistWaveSpec.at(index);
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+osea::WaveSpecBase &System::listWaveSpec(int index)
+{
+    return *(listWaveSpecPt(index));
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+osea::WaveSpecBase* System::listWaveSpecPt(std::string NameIn)
+{
+    int i = 0;
+    try
+    {
+        if (plistWaveSpec.size() == 0)
+        {
+            std::string msg;
+            msg = "No wave spectra defined.";
+            throw std::runtime_error(msg);
+        }
+
+        for (i = 0; i < plistWaveSpec.size(); i++)
+        {
+            if (plistWaveSpec.at(i)->getName() == NameIn)
+                break;
+        }
+
+        return plistWaveSpec.at(i);
+    }
+    catch(std::exception &err)
+    {
+        logStd.Notify();
+        logErr.Write(string("Object:  System, Function:  listWaveSpec() \n") + err.what());
+    }
+    catch(...)
+    {
+        logStd.Notify();
+        logErr.Write(string("Object:  System, Function:  listSeaModel() \n Unknown error."));
+    }
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+osea::WaveSpecBase &System::listWaveSpec(std::string NameIn)
+{
+    return *(listWaveSpecPt(NameIn));
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+void System::setActiveSeaModel(std::string NameIn)
+{
+    pActSeaModelName = NameIn;
+
+    //Match the active sea model
+    SearchActiveSeaModel();
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+osea::SeaModel &System::refActiveSeaModel()
+{
+    return *(plistSeaModel.at(pSeaModelIndex));
+}
+
+
+
 //==========================================Section Separator =========================================================
 //Public Slots
 
@@ -500,6 +644,153 @@ MotionModel &System::listModel(std::string modelName)
     }
 }
 
+//------------------------------------------Function Separator --------------------------------------------------------
+void System::addSeaModel(osea::SeaModel modelIn)
+{
+    //Create new sea model and assign it to the heap.
+    osea::SeaModel* newModel = new osea::SeaModel(modelIn);
+
+    plistSeaModel.push_back(newModel);
+
+    //Search for matching active sea models.
+    SearchActiveSeaModel();
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+void System::addSeaModel(osea::SeaModel_DualDirection modelIn)
+{
+    //Create new sea model and assign it to the heap.
+    osea::SeaModel_DualDirection* newModel = new osea::SeaModel_DualDirection(modelIn);
+
+    plistSeaModel.push_back(newModel);
+
+    //Search for matching active sea models.
+    SearchActiveSeaModel();
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+void System::addSeaModel(osea::SeaModel_SingleDirection modelIn)
+{
+    //Create new sea model and assign it to the heap.
+    osea::SeaModel_SingleDirection* newModel = new osea::SeaModel_SingleDirection(modelIn);
+
+    plistSeaModel.push_back(newModel);
+
+    //Search for matching active sea models.
+    SearchActiveSeaModel();
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+void System::addSeaModel()
+{
+    //Create new sea model and assign it to the heap.
+    osea::SeaModel* newModel = new osea::SeaModel();
+
+    plistSeaModel.push_back(newModel);
+
+    //Search for matching active sea models.
+    SearchActiveSeaModel();
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+void System::addWaveSpec(osea::WaveSpecBase specIn)
+{
+    //Create new wave spectra base and assign it to the heap.
+    osea::WaveSpecBase* newSpec = new osea::WaveSpecBase(specIn);
+
+    plistWaveSpec.push_back(newSpec);
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+void System::addWaveSpec(osea::WaveSpec specIn)
+{
+    //Create new wave spectra base and assign it to the heap.
+    osea::WaveSpec* newSpec = new osea::WaveSpec(specIn);
+
+    plistWaveSpec.push_back(newSpec);
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+void System::addWaveSpec(osea::SpecBretschneider specIn)
+{
+    //Create new wave spectra base and assign it to the heap.
+    osea::SpecBretschneider* newSpec = new osea::SpecBretschneider(specIn);
+
+    plistWaveSpec.push_back(newSpec);
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+void System::addWaveSpec(osea::SpecJONSWAP specIn)
+{
+    //Create new wave spectra base and assign it to the heap.
+    osea::SpecJONSWAP* newSpec = new osea::SpecJONSWAP(specIn);
+
+    plistWaveSpec.push_back(newSpec);
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+void System::addWaveSpec(osea::SpecPM specIn)
+{
+    //Create new wave spectra base and assign it to the heap.
+    osea::SpecPM* newSpec = new osea::SpecPM(specIn);
+
+    plistWaveSpec.push_back(newSpec);
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+void System::addWaveSpec()
+{
+    //Create new wave spectra and assign it to the heap.
+    osea::WaveSpec* newSpec = new osea::WaveSpec();
+
+    plistWaveSpec.push_back(newSpec);
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+void System::SearchActiveSeaModel()
+{
+    bool foundit = false;       //Boolean to determine if found a match.
+
+    try
+    {
+//        if (plistSeaModel.size() == 0)
+//        {
+//            std::string msg;
+//            msg = "No sea models defined.";
+//            throw std::runtime_error(msg);
+//        }
+        if (plistSeaModel.size() != 0)
+        {
+            int i;
+            for (i = 0; i < plistSeaModel.size(); i++ )
+            {
+                if (plistSeaModel.at(i)->getName() == pActSeaModelName)
+                {
+                    foundit = true;
+                    break;
+                }
+            }
+
+            //Write out the result, if a match was found.
+            if (foundit)
+                pSeaModelIndex = i;
+            else
+                pSeaModelIndex = -1;
+        }
+    }
+    catch(std::exception &err)
+    {
+        logStd.Notify();
+        logErr.Write(string("Object:  System, Function:  SearchActiveSeaModel() \n") + err.what());
+    }
+    catch(...)
+    {
+        logStd.Notify();
+        logErr.Write(string("Object:  System, Function:  SearchActiveSeaModel() \n Unknown error."));
+    }
+
+}
+
 //==========================================Section Separator =========================================================
 //Signals
 
@@ -517,3 +808,5 @@ void System::DefineModels()
 
     plistModels.push_back(new Model6DOF());
 }
+
+

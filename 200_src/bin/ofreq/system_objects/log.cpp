@@ -213,6 +213,22 @@ void Log::setDefaultTimeStamp(bool timein)
         defaultTimestamp = -1;
 }
 
+//------------------------------------------Function Separator --------------------------------------------------------
+void Log::Notify(std::string input)
+{
+    string msg;
+    string def = "Please check the error log for details.";
+    string notify = "Errors found.  ";
+
+    if (input == "")
+        msg = notify + def;
+    else
+        msg = notify + input;
+
+    //Write the notify message.
+    Write(msg);
+}
+
 //==========================================Section Separator =========================================================
 //Protected Funcitons
 

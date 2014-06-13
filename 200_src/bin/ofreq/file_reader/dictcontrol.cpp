@@ -41,7 +41,7 @@ string dictControl::KEY_SYSTEM = "system"; /**< Keyword for system object.*/
 string dictControl::KEY_ANALYSIS = "analysis"; /**< Keyword for analysis specification */
 string dictControl::KEY_FREQUENCY = "frequency"; /**< Keyword for frequency specification */
 string dictControl::KEY_DIRECTION = "direction"; /**< Keyword for direction list specification. */
-string dictControl::KEY_WAVEMODEL = "wavemodel"; /**< Keyword for wave model specification. */
+string dictControl::KEY_WAVEMODEL = "seamodel"; /**< Keyword for wave model specification. */
 
 //==========================================Section Separator =========================================================
 //Public Functions
@@ -114,8 +114,8 @@ int dictControl::defineKey(string keyIn, vector<string> valIn)
 
     else if (keyIn == KEY_WAVEMODEL)
     {
-        //Set the wave spread model
-        //Implement later
+        //Set the sea model
+        ptSystem->setActiveSeaModel(valIn[0]);
 
         //return success
         return 0;

@@ -10,7 +10,7 @@
  *---------------------------------------------------------------------------------------------------------------------
  *Date              Author				Description
  *---------------------------------------------------------------------------------------------------------------------
- *Mar 09 2013       Nicholas Barczak		Initially Created
+ *Mar 09 2013       Nicholas Barczak	Initially Created
  *May 7, 2014       Nicholas Barczak    Debugged and updated to Rev 1.0
  *
 \*-------------------------------------------------------------------------------------------------------------------*/
@@ -221,7 +221,7 @@ private:
     static std::string OBJECT_MODEL; /**< Object designator for model of ForceCross object. */
 
     //------------------------------------------Function Separator ----------------------------------------------------
-    //Keyword name staticants
+    //Keyword name constants
     static std::string KEY_NAME; /**< Key for body name */
     static std::string KEY_HYDROBODY; /**< Key for hydrobody name. */
     static std::string KEY_MASS; /**< Key for mass of body */

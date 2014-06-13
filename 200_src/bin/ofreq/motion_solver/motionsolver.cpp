@@ -471,7 +471,7 @@ void MotionSolver::calculateOutputs()
     }
     catch (std::exception &err)
     {
-        logStd.Write("Errors found.  Please check the error log.");
+        logStd.Notify();
         logErr.Write("Failed to solve the global motion matrix.  Matrix values printed below.\n" +
                      string("Error Message:  ") + string(err.what()) + "\n\n");
 
@@ -481,7 +481,7 @@ void MotionSolver::calculateOutputs()
     }
     catch(...)
     {
-        logStd.Write("Errors found.  Please check the error log.");
+        logStd.Notify();
         logErr.Write("Failed to solve the global motion matrix.  Matrix values printed below.");
 
         //Debug print out matrix values

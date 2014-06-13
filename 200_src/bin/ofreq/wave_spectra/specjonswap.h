@@ -73,7 +73,6 @@ public:
      * @brief The default constructor.  Sets the default value for the bandwidth parameter.
      */
     SpecJONSWAP();
-
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
      * @brief The default destructor.  Nothing happens here.

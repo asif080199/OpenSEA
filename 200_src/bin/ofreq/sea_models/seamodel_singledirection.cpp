@@ -107,12 +107,12 @@ double SeaModel_SingleDirection::getWaveAmp(double dirIn, int freqIndex)
     }
     catch(std::exception &err)
     {
-        logStd.Write("Errors found.  Please check the error log for details.");
+        logStd.Notify();
         logErr.Write(string("Object:  SeaModel_SingleDirection, Function:  getWaveAmp()\nError Message:  ") + err.what());
     }
     catch(...)
     {
-        logStd.Write("Errors found.  Please check the error log for details.");
+        logStd.Notify();
         logErr.Write("Unknown error occurred.  Object:  SeaModel_SingleDirection, Function:  getWaveAmp()");
     }
 }

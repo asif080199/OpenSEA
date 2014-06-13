@@ -63,7 +63,8 @@ SOURCES += ofreq.cpp \
     wave_spectra/specbretschneider.cpp \
     wave_spectra/specjonswap.cpp \
     sea_models/seamodel_singledirection.cpp \
-    sea_models/seamodel_dualdirection.cpp
+    sea_models/seamodel_dualdirection.cpp \
+    file_reader/dictseaenv.cpp
 
 HEADERS += \
     derived_outputs/outputsbody.h \
@@ -110,7 +111,8 @@ HEADERS += \
     wave_spectra/specbretschneider.h \
     wave_spectra/specjonswap.h \
     sea_models/seamodel_singledirection.h \
-    sea_models/seamodel_dualdirection.h
+    sea_models/seamodel_dualdirection.h \
+    file_reader/dictseaenv.h
 
 # Include header files path for libraries
 INCLUDEPATH += \
