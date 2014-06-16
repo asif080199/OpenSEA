@@ -23,7 +23,7 @@ static const uint qt_meta_data_osea__ofreq__System[] = {
        6,       // revision
        0,       // classname
        0,    0, // classinfo
-      27,   14, // methods
+      29,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -52,14 +52,16 @@ static const uint qt_meta_data_osea__ofreq__System[] = {
      405,  397,   20,   20, 0x0a,
      433,  397,   20,   20, 0x0a,
      475,  397,   20,   20, 0x0a,
-     519,   20,   20,   20, 0x0a,
-     540,  533,   20,   20, 0x0a,
-     572,  533,   20,   20, 0x0a,
-     600,  533,   20,   20, 0x0a,
-     637,  533,   20,   20, 0x0a,
-     668,  533,   20,   20, 0x0a,
-     694,   20,   20,   20, 0x0a,
-     708,   20,   20,   20, 0x0a,
+     519,  397,   20,   20, 0x0a,
+     557,  397,   20,   20, 0x0a,
+     593,   20,   20,   20, 0x0a,
+     614,  607,   20,   20, 0x0a,
+     646,  607,   20,   20, 0x0a,
+     674,  607,   20,   20, 0x0a,
+     711,  607,   20,   20, 0x0a,
+     742,  607,   20,   20, 0x0a,
+     768,   20,   20,   20, 0x0a,
+     782,   20,   20,   20, 0x0a,
 
        0        // eod
 };
@@ -80,6 +82,8 @@ static const char qt_meta_stringdata_osea__ofreq__System[] = {
     "modelIn\0addSeaModel(osea::SeaModel)\0"
     "addSeaModel(osea::SeaModel_DualDirection)\0"
     "addSeaModel(osea::SeaModel_SingleDirection)\0"
+    "addSeaModel(osea::SeaModel_LongCrest)\0"
+    "addSeaModel(osea::SeaModel_Uniform)\0"
     "addSeaModel()\0specIn\0"
     "addWaveSpec(osea::WaveSpecBase)\0"
     "addWaveSpec(osea::WaveSpec)\0"
@@ -114,14 +118,16 @@ void osea::ofreq::System::qt_static_metacall(QObject *_o, QMetaObject::Call _c, 
         case 16: _t->addSeaModel((*reinterpret_cast< osea::SeaModel(*)>(_a[1]))); break;
         case 17: _t->addSeaModel((*reinterpret_cast< osea::SeaModel_DualDirection(*)>(_a[1]))); break;
         case 18: _t->addSeaModel((*reinterpret_cast< osea::SeaModel_SingleDirection(*)>(_a[1]))); break;
-        case 19: _t->addSeaModel(); break;
-        case 20: _t->addWaveSpec((*reinterpret_cast< osea::WaveSpecBase(*)>(_a[1]))); break;
-        case 21: _t->addWaveSpec((*reinterpret_cast< osea::WaveSpec(*)>(_a[1]))); break;
-        case 22: _t->addWaveSpec((*reinterpret_cast< osea::SpecBretschneider(*)>(_a[1]))); break;
-        case 23: _t->addWaveSpec((*reinterpret_cast< osea::SpecJONSWAP(*)>(_a[1]))); break;
-        case 24: _t->addWaveSpec((*reinterpret_cast< osea::SpecPM(*)>(_a[1]))); break;
-        case 25: _t->addWaveSpec(); break;
-        case 26: _t->SearchActiveSeaModel(); break;
+        case 19: _t->addSeaModel((*reinterpret_cast< osea::SeaModel_LongCrest(*)>(_a[1]))); break;
+        case 20: _t->addSeaModel((*reinterpret_cast< osea::SeaModel_Uniform(*)>(_a[1]))); break;
+        case 21: _t->addSeaModel(); break;
+        case 22: _t->addWaveSpec((*reinterpret_cast< osea::WaveSpecBase(*)>(_a[1]))); break;
+        case 23: _t->addWaveSpec((*reinterpret_cast< osea::WaveSpec(*)>(_a[1]))); break;
+        case 24: _t->addWaveSpec((*reinterpret_cast< osea::SpecBretschneider(*)>(_a[1]))); break;
+        case 25: _t->addWaveSpec((*reinterpret_cast< osea::SpecJONSWAP(*)>(_a[1]))); break;
+        case 26: _t->addWaveSpec((*reinterpret_cast< osea::SpecPM(*)>(_a[1]))); break;
+        case 27: _t->addWaveSpec(); break;
+        case 28: _t->SearchActiveSeaModel(); break;
         default: ;
         }
     }
@@ -161,9 +167,9 @@ int osea::ofreq::System::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 27)
+        if (_id < 29)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 27;
+        _id -= 29;
     }
     return _id;
 }

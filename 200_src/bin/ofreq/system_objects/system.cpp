@@ -681,6 +681,30 @@ void System::addSeaModel(osea::SeaModel_SingleDirection modelIn)
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
+void System::addSeaModel(osea::SeaModel_LongCrest modelIn)
+{
+    //Create new sea model and assign it to the heap.
+    osea::SeaModel_LongCrest* newModel = new osea::SeaModel_LongCrest(modelIn);
+
+    plistSeaModel.push_back(newModel);
+
+    //Search for matching active sea models.
+    SearchActiveSeaModel();
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+void System::addSeaModel(osea::SeaModel_Uniform modelIn)
+{
+    //Create new sea model and assign it to the heap.
+    osea::SeaModel_Uniform* newModel = new osea::SeaModel_Uniform(modelIn);
+
+    plistSeaModel.push_back(newModel);
+
+    //Search for matching active sea models.
+    SearchActiveSeaModel();
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
 void System::addSeaModel()
 {
     //Create new sea model and assign it to the heap.

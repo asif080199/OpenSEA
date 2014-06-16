@@ -50,6 +50,8 @@
 #include "../sea_models/seamodel.h"
 #include "../sea_models/seamodel_dualdirection.h"
 #include "../sea_models/seamodel_singledirection.h"
+#include "../sea_models/seamodel_longcrest.h"
+#include "../sea_models/seamodel_uniform.h"
 
 //######################################### Class Separator ###########################################################
 //Namespace declarations
@@ -215,6 +217,7 @@ private:
     static std::string KEY_1D; /**< Class designation for a single direction sea model. */
     static std::string KEY_2D; /**< Class designation for a dual direction sea model. */
     static std::string KEY_LONG; /**< Class designation for a long crested wave sea model. */
+    static std::string KEY_UNIFORM; /**< Class designatino for a uniform wave sea model. */
 
     static std::string KEY_CLASS;   /**< Keyword to specify class type for sea model or wave spectrum. */
     static std::string KEY_NAME;    /**< Keyword to specify the user name designation for sea model or wave spectrum. */

@@ -55,6 +55,8 @@
 #include "../sea_models/seamodel.h"
 #include "../sea_models/seamodel_dualdirection.h"
 #include "../sea_models/seamodel_singledirection.h"
+#include "../sea_models/seamodel_longcrest.h"
+#include "../sea_models/seamodel_uniform.h"
 
 //Wave Spectra to Include
 #include "../wave_spectra/specbretschneider.h"
@@ -649,6 +651,8 @@ public slots:
     void addSeaModel(osea::SeaModel modelIn);
     void addSeaModel(osea::SeaModel_DualDirection modelIn);
     void addSeaModel(osea::SeaModel_SingleDirection modelIn);
+    void addSeaModel(osea::SeaModel_LongCrest modelIn);
+    void addSeaModel(osea::SeaModel_Uniform modelIn);
 
     //-----------------------------------------Function Separator ----------------------------------------------------
     /**

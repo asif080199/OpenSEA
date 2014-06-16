@@ -50,6 +50,7 @@ string dictSeaEnv::KEY_PM = "pm"; /**< Class designation for Pierson Moskowitz t
 string dictSeaEnv::KEY_1D = "single_direction"; /**< Class designation for a single direction sea model. */
 string dictSeaEnv::KEY_2D = "dual_direction"; /**< Class designation for a dual direction sea model. */
 string dictSeaEnv::KEY_LONG = "long_crested"; /**< Class designation for a long crested wave sea model. */
+string dictSeaEnv::KEY_UNIFORM = "uniform"; /**< Class designatino for a uniform wave sea model. */
 
 string dictSeaEnv::KEY_CLASS = "class";   /**< Keyword to specify class type for sea model or wave spectrum. */
 string dictSeaEnv::KEY_NAME = "name";    /**< Keyword to specify the user name designation for sea model or wave spectrum. */
@@ -796,10 +797,23 @@ int dictSeaEnv::buildClass(std::string nameIn)
     else if (nameIn == KEY_LONG)
     {
         //Specification of a long crested wave sea model.
+        ptSystem->addSeaModel(osea::SeaModel_LongCrest());
 
-        /**
-         * \todo Fill in this section later.
-         */
+        //Set the specific class type
+        pSubClassType = nameIn;
+
+        //Get the index
+        pObjIndex = ptSystem->listSeaModel().size() - 1;
+
+        //Notify the properly set class.
+        pClassSet = true;
+        return 0;
+    }
+
+    else if (nameIn == KEY_UNIFORM)
+    {
+        //Specification of a uniform sea model.
+        ptSystem->addSeaModel(osea::SeaModel_Uniform());
 
         //Set the specific class type
         pSubClassType = nameIn;
