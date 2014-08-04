@@ -192,6 +192,48 @@ matForceReact matForceReact::operator-(matForceReact& forceOther)
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
+matForceReact matForceReact::operator*(double scalar)
+{
+    //Matrix multiplication with scalar
+    matForceReact output;
+
+    //Test for zero size
+    if ( !(pderiv.size() == 0) )
+    {
+        //Get max size of matrices
+        int maxSize = pderiv[0].n_rows;
+
+        //Resize output matrix.
+        output.pderiv.resize(this->pderiv.size());
+
+        //Iterate through each derivative of matrix
+        for (int i = 0; i < pderiv.size(); i++)
+        {
+            //Create matrix of zeros
+            output.pderiv[i].zeros(maxSize, maxSize);
+
+            //Multiply for each element
+            for (int j = 0; j < pderiv[i].n_rows; j++)
+            {
+                for (int k = 0; k < pderiv[i].n_cols; k++)
+                {
+                    output.pderiv[i].at(j, k) = this->pderiv[i].at(j,k) * scalar;
+                }
+            }
+        }
+    }
+
+    //Write output
+    return output;
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+matForceReact matForceReact::operator/(double scalar)
+{
+    return this->operator *(1 / scalar);
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
 int matForceReact::getMaxOrder()
 {
     if (pderiv.size() == 0)

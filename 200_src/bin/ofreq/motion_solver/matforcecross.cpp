@@ -31,6 +31,12 @@ using namespace arma;
 using namespace std;
 using namespace osea::ofreq;
 
+//==========================================Section Separator =========================================================
+//Static initialization
+
+//==========================================Section Separator =========================================================
+//Public Functions
+
 //------------------------------------------Function Separator --------------------------------------------------------
 matForceCross::matForceCross()
 {
@@ -227,6 +233,52 @@ matForceCross matForceCross::operator-(matForceCross& forceOther)
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
+matForceCross matForceCross::operator*(double scalar)
+{
+    //Matrix multiplication with scalar
+    matForceCross output;
+
+    //Test for zero size
+    if ( !(pderiv.size() == 0) )
+    {
+        //Get max size of matrices
+        int maxSize = pderiv[0].n_rows;
+
+        //Resize output matrix.
+        output.pderiv.resize(this->pderiv.size());
+
+        //Iterate through each derivative of matrix
+        for (int i = 0; i < pderiv.size(); i++)
+        {
+            //Create matrix of zeros
+            output.pderiv[i].zeros(maxSize, maxSize);
+
+            //Multiply for each element
+            for (int j = 0; j < pderiv[i].n_rows; j++)
+            {
+                for (int k = 0; k < pderiv[i].n_cols; k++)
+                {
+                    output.pderiv[i].at(j, k) = this->pderiv[i].at(j,k) * scalar;
+                }
+            }
+        }
+    }
+
+    //Set the linked body parameter
+    output.plinkbody = this->plinkbody;
+    output.plinkid = this->plinkid;
+
+    //Write output
+    return output;
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+matForceCross matForceCross::operator/(double scalar)
+{
+    return this->operator *(1 / scalar);
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
 void matForceCross::setLinkedBody(matBody &BodIn)
 {
     plinkbody = &BodIn;
@@ -264,3 +316,22 @@ vector<int> matForceCross::getMatDims()
 
     return output;
 }
+
+//------------------------------------------Function Separator --------------------------------------------------------
+void matForceCross::setLinkedName(std::string nameIn)
+{
+    plinkbodyName = nameIn;
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+std::string matForceCross::getLinkedName()
+{
+    return plinkbodyName;
+}
+
+//==========================================Section Separator =========================================================
+//Protected Functions
+
+
+//==========================================Section Separator =========================================================
+//Private Functions

@@ -136,6 +136,28 @@ public:
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
+     * @brief Scalar multiplication with the ForceReact array.
+     *
+     * multiplied to each individual element in the array.
+     * @param scalar Double.  Variable passed by value.  The scalar that should be multiplied to each element in the
+     * array
+     * @return Returns a matForceReact object.  Variable passed by value.
+     */
+    virtual matForceReact operator*(double scalar);
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Scalar division with the ForceReact array.
+     *
+     * Divided to each individual element in the array.
+     * @param scalar Double.  Variable passed by value.  The scalar that should be divided to each element in the
+     * array
+     * @return Returns a matForceReact object.  Variable passed by value.
+     */
+    virtual matForceReact operator/(double scalar);
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
      * @brief The maximum order of the derivatives.
      *
      * The maximum order of the derivatives (Integer).  Also the total size of the vector containing the derivatives.

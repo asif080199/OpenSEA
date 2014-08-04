@@ -66,7 +66,10 @@ SOURCES += ofreq.cpp \
     sea_models/seamodel_dualdirection.cpp \
     file_reader/dictseaenv.cpp \
     sea_models/seamodel_longcrest.cpp \
-    sea_models/seamodel_uniform.cpp
+    sea_models/seamodel_uniform.cpp \
+    hydro_data/hydrodata.cpp \
+    global_objects/mathinterp.cpp \
+    hydro_data/syshydro.cpp
 
 HEADERS += \
     derived_outputs/outputsbody.h \
@@ -116,14 +119,16 @@ HEADERS += \
     sea_models/seamodel_dualdirection.h \
     file_reader/dictseaenv.h \
     sea_models/seamodel_longcrest.h \
-    sea_models/seamodel_uniform.h
+    sea_models/seamodel_uniform.h \
+    hydro_data/hydrodata.h \
+    global_objects/mathinterp.h \
+    hydro_data/syshydro.h
 
 # Include header files path for libraries
 INCLUDEPATH += \
     $$_PRO_FILE_PWD_/../../lib \
     $$_PRO_FILE_PWD_/../../var \
     $$_PRO_FILE_PWD_/../../lib/alglib \
-    #$$_PRO_FILE_PWD_/../../lib/boost
 
 # force rebuild if the headers change
 DEPENDPATH += $${INCLUDEPATH} \
@@ -141,12 +146,12 @@ win32 {
     #LIBS += boost_system boost_filesystem   # Add boost and boost filesystem
     CONFIG(debug) {
         LIBS += -L$$_PRO_FILE_PWD_/../../../300_build/310_build_windows/lib/alglib/debug/ -lalglib
-        DESTDIR = $$_PRO_FILE_PWD_/../../../300_build/310_build_windows/bin/ofreq_debug
+        DESTDIR = $$_PRO_FILE_PWD_/../../../300_build/310_build_windows/bin/ofreq
     }
 
     CONFIG(release) {
         LIBS += -L$$_PRO_FILE_PWD_/../../../300_build/310_build_windows/lib/alglib/release/ -lalglib
-        DESTDIR = $$_PRO_FILE_PWD_/../../../300_build/310_build_windows/bin/ofreq_release
+        DESTDIR = $$_PRO_FILE_PWD_/../../../300_build/310_build_windows/bin/ofreq
     }
 
 }

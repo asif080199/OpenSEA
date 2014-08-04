@@ -101,6 +101,28 @@ public:
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
+     * @brief Scalar multiplication with the forceActive array.
+     *
+     * multiplied to each individual element in the array.
+     * @param scalar Double.  Variable passed by value.  The scalar that should be multiplied to each element in the
+     * array
+     * @return Returns a matForceActive object.  Variable passed by value.
+     */
+    matForceActive operator*(double scalar);
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Scalar division with the forceActive array.
+     *
+     * Divided to each individual element in the array.
+     * @param scalar Double.  Variable passed by value.  The scalar that should be divided to each element in the
+     * array
+     * @return Returns a matForceActive object.  Variable passed by value.
+     */
+    matForceActive operator/(double scalar);
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
      * @brief Returns the coefficients matrix.
      *
      * Returns the coefficients matrix.

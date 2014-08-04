@@ -11,7 +11,8 @@
  *Date          Author				Description
  *---------------------------------------------------------------------------------------------------------------------
  *Aug 01 2013   Nicholas Barczak    Initially created
- *May 7, 2014       Nicholas Barczak    Debugged and updated to Rev 1.0
+ *May 7, 2014   Nicholas Barczak    Debugged and updated to Rev 1.0
+ *Aug 02 2014   Nicholas Barczak    Added feature for hydrobody name.  ONLY used in the hydro_data section of program.
  *
 \*-------------------------------------------------------------------------------------------------------------------*/
 
@@ -149,6 +150,28 @@ public:
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
+     * @brief Scalar multiplication with the ForceCross array.
+     *
+     * multiplied to each individual element in the array.
+     * @param scalar Double.  Variable passed by value.  The scalar that should be multiplied to each element in the
+     * array
+     * @return Returns a matForceCross object.  Variable passed by value.
+     */
+    matForceCross operator*(double scalar);
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Scalar division with the ForceCross array.
+     *
+     * Divided to each individual element in the array.
+     * @param scalar Double.  Variable passed by value.  The scalar that should be divided to each element in the
+     * array
+     * @return Returns a matForceCross object.  Variable passed by value.
+     */
+    matForceCross operator/(double scalar);
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
      * Set linked body for cross body object.
      * @param BodIn pointer to the matBody object that this linked force relates to.
      */
@@ -194,13 +217,59 @@ public:
      */
     std::vector<int> getMatDims();
 
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Sets the name of the linked body.
+     *
+     * The name of the linked body is the name of the hydrobody.  This property is only used in the hydro_data
+     * section of the program. When actually used in the motion solver, the linked body name should never be used.
+     * THe only reason it is included is because it was far simpler to add a single property instead of creating a
+     * whole new class.
+     * @param nameIn String, variable passed by value.  The name of the hydrobody that is associated with this cross
+     * body force.
+     */
+    void setLinkedName(std::string nameIn);
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Gets the name of the linked body.
+     *
+     * The name of the linked body is the name of the hydrobody.  This property is only used in the hydro_data
+     * section of the program. When actually used in the motion solver, the linked body name should never be used.
+     * THe only reason it is included is because it was far simpler to add a single property instead of creating a
+     * whole new class.
+     * @return String, variable passed by value.  The name of the hydrobody that is associated with this cross
+     * body force.
+     */
+    std::string getLinkedName();
+
 //==========================================Section Separator =========================================================
 protected:
 
 //==========================================Section Separator =========================================================
 private:
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Pointer to the linked body.
+     */
     matBody* plinkbody;
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief ID number of the linked body.
+     */
     int plinkid;
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief The name of the linked body.
+     *
+     * The name of the linked body is the name of the hydrobody.  This property is only used in the hydro_data
+     * section of the program. When actually used in the motion solver, the linked body name should never be used.
+     * THe only reason it is included is because it was far simpler to add a single property instead of creating a
+     * whole new class.
+     */
+    std::string plinkbodyName;
 
 };
 
