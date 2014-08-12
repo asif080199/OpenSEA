@@ -38,6 +38,7 @@
 //######################################### Class Separator ###########################################################
 #ifndef SYSHYDRO_H
 #define SYSHYDRO_H
+#include <math.h>
 #include "../global_objects/mathinterp.h"
 #include "hydrodata.h"
 #include "../global_objects/forceactive.h"
@@ -155,19 +156,34 @@ public:
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
-     * @brief Gets the forceActive object associated the requested environmental data.
+     * @brief Calculates the final set of hydrodata.
      *
-     * Retrieves a single forceActive object based on specification of the following parameters:  wave direction
-     * (wave direction set seperately), wave amplitude, and wave frequency.  All interpolation and wave scaling
-     * is triggered through this function.
+     * Calculates the final set of hydrodata, after all interpolations for wave frequency, wave direction, and
+     * scaling for wave amplitude.  The hydroData is stored as a private variable.  Individual data objects can be
+     * retrieved with the functions getForceActive(), getForceReact(), and getForceCross().
      * @param waveAmp Double, passed by value.  The specific wave amplitude that you want the data for.  Data will
      * be scaled up to match the given wave amplitude.
      * @param waveFreq Double, passed by value.  The specific wave frequency that you want the data for.  Data will
      * be interpolated for the given wave frequency.
+     * @sa sysHydro::setWaveDirection()
+     * @sa sysHydro::getForceActive()
+     * @sa sysHydro::getForceReact()
+     * @sa sysHydro::getForceCross()
+     */
+    void calcHydroData(double waveAmp, double waveFreq);
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Gets the forceActive object associated the requested environmental data.
+     *
+     * Retrieves a single forceActive object based on specification of the following parameters:  wave direction
+     * (wave direction set seperately), wave amplitude, and wave frequency.  All interpolation and wave scaling
+     * is triggered through the function calcHydroData.
      * @return Returns a forceActive object, specific to the environmental conditions you specified.
      * @sa sysHydro::setWaveDirection()
+     * @sa sysHydro::calcHydroData()
      */
-    ofreq::ForceActive getForceActive(double waveAmp, double waveFreq);
+    ofreq::ForceActive getForceActive();
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -175,13 +191,10 @@ public:
      *
      * Retrieves a single forceReact object based on specification of the following parameters:  wave direction
      * (wave direction set seperately), wave amplitude, and wave frequency.  All interpolation and wave scaling
-     * is triggered through this function.
-     * @param waveAmp Double, passed by value.  The specific wave amplitude that you want the data for.  Data will
-     * be scaled up to match the given wave amplitude.
-     * @param waveFreq Double, passed by value.  The specific wave frequency that you want the data for.  Data will
-     * be interpolated for the given wave frequency.
+     * is triggered through the function calcHydroData.
      * @return Returns a forceReact object, specific to the environmental conditions you specified.
      * @sa sysHydro::setWaveDirection()
+     * @sa sysHydro::calcHydroData()
      */
     ofreq::ForceReact getForceReact(double waveAmp, double waveFreq);
 
@@ -191,17 +204,14 @@ public:
      *
      * Retrieves a single forceCross object based on specification of the following parameters:  wave direction
      * (wave direction set seperately), wave amplitude, and wave frequency.  All interpolation and wave scaling
-     * is triggered through this function.
-     * @param waveAmp Double, passed by value.  The specific wave amplitude that you want the data for.  Data will
-     * be scaled up to match the given wave amplitude.
-     * @param waveFreq Double, passed by value.  The specific wave frequency that you want the data for.  Data will
-     * be interpolated for the given wave frequency.
+     * is triggered through the function calcHydroData.
      * @param linkedBodName String, passed by value.  The name of the linked body that you want to retrieve the
      * forceCross object for.
      * @return Returns a forceCross object, specific to the environmental conditions you specified.
      * @sa sysHydro::setWaveDirection()
+     * @sa sysHydro::calcHydroData()
      */
-    ofreq::ForceCross getForceCross(double waveAmp, double waveFreq, std::string linkedBodName);
+    ofreq::ForceCross getForceCross(std::string linkedBodName);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -301,9 +311,78 @@ private:
      * perform linear scaling.  This is the classic assumption for wave scaling, but rather crude.  If it has two
      * sets of hydroData to use, it will perform non-linear scaling based on fitting of a power function to the
      * two sets of hydroData.
+     * @param ampIn Double, variable passed by value.  The wave amplitude that you desire.  Everything will be scaled
+     * to match this wave amplitude.
+     * @param amp1 Double, variable passed by value.  The wave amplitude of the first data set.  Corresponds to the value
+     * supplied in Data 1.
+     * @param Data1 Double, variable passed by value.  The data magnitude of the first data set.
+     * @param amp2 Double, variable passed by value.  The wave amplitude of the second data set.  Corresponds to the value
+     * supplied in Data 2.
+     * @param Data2 Double, variable passed by value.  The data magnitude of the second data set.
+     * @return Returns a double, variable passed by value.  The output from wave scaling of the data sets for the
+     * desired wave amplitude output.
      */
-    template<class T>
-    T waveScale(double ampIn, T* Data1, T* Data2 = NULL);
+    double waveScale(double ampIn, double amp1, double Data1, double amp2 = 0, double Data2 = 0);
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Variable for the maximum distance allowed between wave directions for the data to still be valid.
+     */
+    const double DISTMAX;
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Finds the index of the two sets of hydrodata objects that most closely match the given amplitude.
+     *
+     * Searches through the wave subset.  Checks the wave amplitude for each item in the list.  And returns the
+     * two amplitudes that are closest to the given amplitude.
+     * @param ampIn Double, passed by value.  The amplitude that we are trying to match.
+     * @return Returns a vector of integers, passed by value.  Integers are the index of the two closest wave amplitude
+     * data sets.  Index pertains to the list of subset hydrodata.  If only one object is present, the returned
+     * vector will have a size of one.  If more than one object is present, the returned vector will have a size
+     * of two.
+     */
+    std::vector<int> findMatchAmplitude(double ampIn);
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief The final set of hydrodata, after all interpolation for wave frequency, wave direction, and scaling
+     * for wave amplitude.
+     */
+    hydroData pHydroFinal;
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Interpolates between two hydroData objects for wave direction.
+     *
+     * Uses the wave direction set by setWaveDir() function.  Two sets of hydrodata are supplied, by reference.
+     * The data are then interpolated.
+     * When interpolating between crossbody objects, both hydroData sets must have the exact same crossbody objects.
+     * They both must be referenced by the same hydrobody names.
+     * @param Data1 Hydrodata object, passed by reference.  The first hydrodata set that you want to use for
+     * interpolation.
+     * @param Data2 Hydrodata object, passed by reference.  The second hydrodata set that you want to use for
+     * interpolation.
+     * @return Returns a hydrodata object, interpolated for wave direction.  All forces are interpolated as well.
+     */
+    ofreq::hydroData interpWaveDir(ofreq::hydroData &Data1, ofreq::hydroData &Data2);
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Performs the wave scaling for an entire hydrodata set.
+     *
+     * The scaling can take one of two approaches.  If it only has one set of hydroData to use, it will
+     * perform linear scaling.  This is the classic assumption for wave scaling, but rather crude.  If it has two
+     * sets of hydroData to use, it will perform non-linear scaling based on fitting of a power function to the
+     * two sets of hydroData.
+     * @param ampIn Double, passed by value.  The amplitude that everything should get scaled to.
+     * @param Data1 Hydrodata object, passed by reference.  The first hydrodata set that you want to use for wave
+     * scaling.
+     * @param Data2 [Optional] Hydrodata object, passed by reference.  The second hydrodata set that you want to use
+     * for wave scaling.
+     * @return
+     */
+    ofreq::hydroData ScaleHydroData(double ampIn, ofreq::hydroData &Data1, ofreq::hydroData &Data2 = NULL);
 
 };
 

@@ -38,6 +38,7 @@
 //######################################### Class Separator ###########################################################
 #ifndef HYDRODATA_H
 #define HYDRODATA_H
+#include <math.h>
 #include "../global_objects/mathinterp.h"
 #include "../motion_solver/matforceactive.h"
 #include "../motion_solver/matforcecross.h"
@@ -373,6 +374,34 @@ public:
      * requested wave frequency and requested hydrobody index.
      */
     ofreq::matForceCross getDataCross(double freqIn, std::string hydroName);
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief This function interpolates the entire set of hydrodata for a specified wave frequency.
+     *
+     * The DataActive, DataReact, and DataCross are all interpolated for the given wave frequency.  A set of
+     * hydroData is produced.  This hydrodata set will have a single entry for the wave frequency.  And a single
+     * corresponding entry for DataActive, DataReact, and DataCross.  All informational data is copied over.
+     * @param freqIn Double, passed by value.  The frequency that you want data interpolated for.  Wave frequency
+     * measured in units of radians per second (rad/s).
+     * @return Returns a hydroData object, passed by value.  This is the resulting hydrodata set, interpolated for
+     * the frequency requested.
+     */
+    ofreq::hydroData interpHydroData(double freqIn);
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Sets the name of the hydrobody associated with this hydrodata set.
+     * @param nameIn String, passed by value.  The name that you want associated with this hydrodata set.
+     */
+    void setHydroBodyName(std::string nameIn);
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Gets the name of the hydrobody associated with this hydrodata set.
+     * @return Returns string, passed by value.  The name of the hydrobody associated with this hydrodata set.
+     */
+    std::string getHydroBodyName();
 
 
 //==========================================Section Separator =========================================================

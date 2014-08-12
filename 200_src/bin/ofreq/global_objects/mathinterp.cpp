@@ -123,7 +123,7 @@ vector<int> mathInterp::FindMatch(double valSearch, vector<double> &listVal)
     for (int i = 0; i < listVal.size(); i++)
     {
         //Calculate distance
-        dist[0] = abs(valSearch - listVal[i]);
+        dist[0] = fabs(valSearch - listVal[i]);
 
         //Check if distance is smaller
         if (dist[0] < dist[1])
@@ -141,7 +141,7 @@ vector<int> mathInterp::FindMatch(double valSearch, vector<double> &listVal)
     for (int i = 0; i < listVal.size(); i++)
     {
         //Calculate distance
-        dist[0] = abs(valSearch - listVal[i]);
+        dist[0] = fabs(valSearch - listVal[i]);
 
         //Check if distance is smaller and not the other index.
         if ((dist[0] < dist[1]) &&

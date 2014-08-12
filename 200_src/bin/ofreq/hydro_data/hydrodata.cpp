@@ -234,7 +234,7 @@ matForceCross hydroData::getDataCross(double freqIn, int hydroInd)
     for (int i = 0; i < plistWaveFreq.size(); i++)
     {
         //Calculate distance
-        dist[0] = abs(freqIn - plistWaveFreq[i]);
+        dist[0] = fabs(freqIn - plistWaveFreq[i]);
 
         //Check if distance is smaller
         //And make sure that vector is large enough for specified index.
@@ -254,7 +254,7 @@ matForceCross hydroData::getDataCross(double freqIn, int hydroInd)
     for (int i = 0; i < plistWaveFreq.size(); i++)
     {
         //Calculate distance
-        dist[0] = abs(freqIn - plistWaveFreq[i]);
+        dist[0] = fabs(freqIn - plistWaveFreq[i]);
 
         //Check if distance is smaller and not the other index.
         //Also be sure that vector is large enough for the specified index.
@@ -293,7 +293,7 @@ matForceCross hydroData::getDataCross(double freqIn, std::string hydroName)
         for (int j = 0; j < plistDataCross[i].size(); j++)
         {
             //Calculate distance
-            dist[0] = abs(freqIn - plistWaveFreq[i]);
+            dist[0] = fabs(freqIn - plistWaveFreq[i]);
 
             //Check if distance is smaller
             //And require that frequency contains a hydrobody with the matching name.
@@ -316,7 +316,7 @@ matForceCross hydroData::getDataCross(double freqIn, std::string hydroName)
         for (int j = 0; j < plistDataCross[i].size(); j++)
         {
             //Calculate distance
-            dist[0] = abs(freqIn - plistWaveFreq[i]);
+            dist[0] = fabs(freqIn - plistWaveFreq[i]);
 
             //Check if distance is smaller and not the other index.
             //And require that frequency contains a hydrobody with the matching name.
@@ -351,6 +351,52 @@ matForceCross hydroData::getDataCross(double freqIn, std::string hydroName)
             plistDataCross[index[0]][hydroInd[0]],
             plistDataCross[index[1]][hydroInd[1]]
             );
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+hydroData hydroData::interpHydroData(double freqIn)
+{
+    //Create output object.
+    hydroData output;
+
+    //Reproduce the constants.
+    output.pWaveAmp = this->pWaveAmp;
+    output.pWaveDir = this->pWaveDir;
+    output.pHydroBodyName = this->pHydroBodyName;
+
+    //Add the single wave frequency to the output data list.
+    output.addWaveFreq(freqIn);
+
+    //Interpolate for the active force, and add to the list.
+    output.addDataActive(
+                this->getDataActive(freqIn));
+
+    //Interpolate for the reactive force, and add to the list.
+    output.addDataReact(
+                this->getDataReact(freqIn));
+
+    //Iterate through each item in the data cross.  Interpolate and add to the list.
+    for (int i = 0; i < plistDataCross.at(0).size(); i++)
+    {
+        output.addDataCross(
+                    this->getDataCross(freqIn, i),
+                    0);
+    }
+
+    //Return output.
+    return output;
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+void hydroData::setHydroBodyName(std::string nameIn)
+{
+    pHydroBodyName = nameIn;
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+string hydroData::getHydroBodyName()
+{
+    return pHydroBodyName;
 }
 
 
