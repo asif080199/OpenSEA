@@ -143,15 +143,21 @@ void hydroData::addDataCross(matForceCross forceIn, int freqInd)
     if (freqInd == -1)
     {
         //No frequency index specified.  Add a new index.
-        plistDataCross.push_back(
-                    vector<matForceCross>(forceIn)
-                    );
+        std::vector<matForceCross> temp;
+        temp.push_back(forceIn);
+        plistDataCross.push_back(temp);
     }
     else
     {
         //Frequency index specified.  Add a new hydrobody.
         plistDataCross.at(freqInd).push_back(forceIn);
     }
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+void hydroData::addDataCross(int freqInd = -1)
+{
+    addDataCross(matForceCross(), freqInd);
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
@@ -170,6 +176,13 @@ double &hydroData::listWaveFreq(int index)
 void hydroData::addWaveFreq(double freqIn)
 {
     plistWaveFreq.push_back(freqIn);
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+void hydroData::addWaveFreq(std::vector<double> freqIn)
+{
+    for (unsigned int i = 0; i < freqIn.size(); i++)
+        this->addWaveFreq(freqIn[i]);
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
@@ -269,11 +282,11 @@ matForceCross hydroData::getDataCross(double freqIn, int hydroInd)
 
     //Perform interpolation
     return iPolate(freqIn,
-            plistWaveFreq[index[0]],
-            plistWaveFreq[index[1]],
-            plistDataCross[index[0]][hydroInd],
-            plistDataCross[index[1]][hydroInd]
-            );
+            plistWaveFreq[output[0]],
+            plistWaveFreq[output[1]],
+            plistDataCross[output[0]][hydroInd],
+            plistDataCross[output[1]][hydroInd])
+            ;
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
@@ -346,10 +359,10 @@ matForceCross hydroData::getDataCross(double freqIn, std::string hydroName)
 
     //Perform interpolation
     return iPolate(freqIn,
-            plistWaveFreq[index[0]],
-            plistWaveFreq[index[1]],
-            plistDataCross[index[0]][hydroInd[0]],
-            plistDataCross[index[1]][hydroInd[1]]
+            plistWaveFreq[output[0]],
+            plistWaveFreq[output[1]],
+            plistDataCross[output[0]][hydroInd[0]],
+            plistDataCross[output[1]][hydroInd[1]]
             );
 }
 
@@ -399,6 +412,29 @@ string hydroData::getHydroBodyName()
     return pHydroBodyName;
 }
 
+//------------------------------------------Function Separator --------------------------------------------------------
+void hydroData::setDepth(double depthIn)
+{
+    pDepth = depthIn;
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+double hydroData::getDepth()
+{
+    return pDepth;
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+void hydroData::setDensity(double densityIn)
+{
+    pDensity = densityIn;
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+double getDensity()
+{
+    return pDensity;
+}
 
 //==========================================Section Separator =========================================================
 //Protected Functions

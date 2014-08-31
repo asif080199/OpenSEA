@@ -1,0 +1,146 @@
+\hypertarget{classosea_1_1dict_hydro_env}{\section{osea\-:\-:dict\-Hydro\-Env Class Reference}
+\label{classosea_1_1dict_hydro_env}\index{osea\-::dict\-Hydro\-Env@{osea\-::dict\-Hydro\-Env}}
+}
+
+
+{\ttfamily \#include $<$dicthydroenv.\-h$>$}
+
+
+
+Inheritance diagram for osea\-:\-:dict\-Hydro\-Env\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=286pt]{classosea_1_1dict_hydro_env__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classosea_1_1dict_hydro_env_a8f275d3b296465202ac2b9163a377be7}{dict\-Hydro\-Env} ()
+\item 
+\hyperlink{classosea_1_1dict_hydro_env_aa464c5e3cfe3b7d1475e720b99fd7860}{dict\-Hydro\-Env} (\hyperlink{classosea_1_1_hydro_reader}{osea\-::\-Hydro\-Reader} $\ast$parent)
+\begin{DoxyCompactList}\small\item\em Constructor that also passes pointer to the owning file reader. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{classosea_1_1dict_hydro_env_a7bcfdbe56cf1f41e3c1b669abc3ec2c7}{define\-Key} (std\-::string key\-In, std\-::vector$<$ std\-::string $>$ val\-In)
+\begin{DoxyCompactList}\small\item\em Function that defines how to interpret the key values. Contains a list of key names and corresponding actions to take for interpretting each key value. \end{DoxyCompactList}\item 
+int \hyperlink{classosea_1_1dict_hydro_env_aaebcb97fee9e23b8f62a8c1de210338a}{define\-Class} (std\-::string name\-In)
+\begin{DoxyCompactList}\small\item\em Function that defines how to interpret the class name. Class name implies declaration of a new object of the class named by the class name. This is a separate set of definitions to handle class declarations. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Prototype class declaration for constructor.
+
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classosea_1_1_dictionary}{Dictionary} 
+
+\hyperlink{classosea_1_1_file_reader}{File\-Reader} 
+\end{DoxySeeAlso}
+
+
+Definition at line 76 of file dicthydroenv.\-h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classosea_1_1dict_hydro_env_a8f275d3b296465202ac2b9163a377be7}{\index{osea\-::dict\-Hydro\-Env@{osea\-::dict\-Hydro\-Env}!dict\-Hydro\-Env@{dict\-Hydro\-Env}}
+\index{dict\-Hydro\-Env@{dict\-Hydro\-Env}!osea::dictHydroEnv@{osea\-::dict\-Hydro\-Env}}
+\subsubsection[{dict\-Hydro\-Env}]{\setlength{\rightskip}{0pt plus 5cm}dict\-Hydro\-Env\-::dict\-Hydro\-Env (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1dict_hydro_env_a8f275d3b296465202ac2b9163a377be7}
+
+
+Definition at line 50 of file dicthydroenv.\-cpp.
+
+\hypertarget{classosea_1_1dict_hydro_env_aa464c5e3cfe3b7d1475e720b99fd7860}{\index{osea\-::dict\-Hydro\-Env@{osea\-::dict\-Hydro\-Env}!dict\-Hydro\-Env@{dict\-Hydro\-Env}}
+\index{dict\-Hydro\-Env@{dict\-Hydro\-Env}!osea::dictHydroEnv@{osea\-::dict\-Hydro\-Env}}
+\subsubsection[{dict\-Hydro\-Env}]{\setlength{\rightskip}{0pt plus 5cm}dict\-Hydro\-Env\-::dict\-Hydro\-Env (
+\begin{DoxyParamCaption}
+\item[{{\bf osea\-::\-Hydro\-Reader} $\ast$}]{parent}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1dict_hydro_env_aa464c5e3cfe3b7d1475e720b99fd7860}
+
+
+Constructor that also passes pointer to the owning file reader. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parent} & Pointer to \hyperlink{classosea_1_1_hydro_reader}{Hydro\-Reader} object, pointer passed by value. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 55 of file dicthydroenv.\-cpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classosea_1_1dict_hydro_env_aaebcb97fee9e23b8f62a8c1de210338a}{\index{osea\-::dict\-Hydro\-Env@{osea\-::dict\-Hydro\-Env}!define\-Class@{define\-Class}}
+\index{define\-Class@{define\-Class}!osea::dictHydroEnv@{osea\-::dict\-Hydro\-Env}}
+\subsubsection[{define\-Class}]{\setlength{\rightskip}{0pt plus 5cm}int dict\-Hydro\-Env\-::define\-Class (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{name\-In}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{classosea_1_1dict_hydro_env_aaebcb97fee9e23b8f62a8c1de210338a}
+
+
+Function that defines how to interpret the class name. Class name implies declaration of a new object of the class named by the class name. This is a separate set of definitions to handle class declarations. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name\-In} & std\-::string, variable passed by value. The name of the class name. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns status of assigning key. Returned value is an integer, passed by value. See list of return codes below\-: 0\-: Key definition found. Success. 1\-: No key found. / General error message. 2\-: Key is invalid within current active object. 99\-: Function virtual definition only. Not currently defined. 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classosea_1_1_dictionary_a42843f64aa966b8c686d9e3750cbdb4b}{osea\-::\-Dictionary}.
+
+
+
+Definition at line 138 of file dicthydroenv.\-cpp.
+
+\hypertarget{classosea_1_1dict_hydro_env_a7bcfdbe56cf1f41e3c1b669abc3ec2c7}{\index{osea\-::dict\-Hydro\-Env@{osea\-::dict\-Hydro\-Env}!define\-Key@{define\-Key}}
+\index{define\-Key@{define\-Key}!osea::dictHydroEnv@{osea\-::dict\-Hydro\-Env}}
+\subsubsection[{define\-Key}]{\setlength{\rightskip}{0pt plus 5cm}int dict\-Hydro\-Env\-::define\-Key (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{key\-In, }
+\item[{std\-::vector$<$ std\-::string $>$}]{val\-In}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{classosea_1_1dict_hydro_env_a7bcfdbe56cf1f41e3c1b669abc3ec2c7}
+
+
+Function that defines how to interpret the key values. Contains a list of key names and corresponding actions to take for interpretting each key value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key\-In} & std\-::string containing the key name. Variable passed by value. \\
+\hline
+{\em val\-In} & Vector of strings containing the key values. Variable passed by value. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns status of assigning key. Returned value is an integer, passed by value. See list of return codes below\-: 0\-: Key definition found. Success. 1\-: No key found. / General error message. 2\-: Key is invalid within current active object. 99\-: Function virtual definition only. Not currently defined. 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classosea_1_1_dictionary_ae96470181c8b1762204493fa45e96d7c}{osea\-::\-Dictionary}.
+
+
+
+Definition at line 72 of file dicthydroenv.\-cpp.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/home/\-Ship\-\_\-\-Design/\-Projects/\-D\-M\-S1305 Open\-S\-E\-A/master/200\-\_\-src/bin/ofreq/hydro\-\_\-reader/\hyperlink{dicthydroenv_8h}{dicthydroenv.\-h}\item 
+/home/\-Ship\-\_\-\-Design/\-Projects/\-D\-M\-S1305 Open\-S\-E\-A/master/200\-\_\-src/bin/ofreq/hydro\-\_\-reader/\hyperlink{dicthydroenv_8cpp}{dicthydroenv.\-cpp}\end{DoxyCompactItemize}

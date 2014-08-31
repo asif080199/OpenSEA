@@ -1,0 +1,171 @@
+\hypertarget{classosea_1_1ofreq_1_1dict_sea_env}{\section{osea\-:\-:ofreq\-:\-:dict\-Sea\-Env Class Reference}
+\label{classosea_1_1ofreq_1_1dict_sea_env}\index{osea\-::ofreq\-::dict\-Sea\-Env@{osea\-::ofreq\-::dict\-Sea\-Env}}
+}
+
+
+The \hyperlink{classosea_1_1ofreq_1_1dict_sea_env}{dict\-Sea\-Env} class defines keyword value pairs associated with the Sea\-Env.\-in input file.  
+
+
+
+
+{\ttfamily \#include $<$dictseaenv.\-h$>$}
+
+
+
+Inheritance diagram for osea\-:\-:ofreq\-:\-:dict\-Sea\-Env\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=286pt]{classosea_1_1ofreq_1_1dict_sea_env__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classosea_1_1ofreq_1_1dict_sea_env_aa5e273c720bff861acf9dece4376b801}{dict\-Sea\-Env} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. Nothing happens here. \end{DoxyCompactList}\item 
+\hyperlink{classosea_1_1ofreq_1_1dict_sea_env_ad2a5dec9edc67afbb52dba2e257c06e9}{$\sim$dict\-Sea\-Env} ()
+\begin{DoxyCompactList}\small\item\em Default destructor. Nothing happens here. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{classosea_1_1ofreq_1_1dict_sea_env_a40ff29cc136e2920e6af22e0f49e6147}{define\-Key} (std\-::string key\-In, std\-::vector$<$ std\-::string $>$ val\-In)
+\begin{DoxyCompactList}\small\item\em Function that defines how to interpret the key values. Contains a list of key names and corresponding actions to take for interpretting each key value. \end{DoxyCompactList}\item 
+int \hyperlink{classosea_1_1ofreq_1_1dict_sea_env_af2a7f74d940c39e3b60bca8748198dfb}{define\-Class} (std\-::string name\-In)
+\begin{DoxyCompactList}\small\item\em Function that defines how to interpret the class name. Class name implies declaration of a new object of the class named by the class name. This is a separate set of definitions to handle class declarations. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+The \hyperlink{classosea_1_1ofreq_1_1dict_sea_env}{dict\-Sea\-Env} class defines keyword value pairs associated with the Sea\-Env.\-in input file. 
+
+Just as a normal dictionary defines the meaning of words, the \hyperlink{classosea_1_1ofreq_1_1dict_sea_env}{dict\-Sea\-Env} class works in the same way. The \hyperlink{classosea_1_1ofreq_1_1dict_sea_env}{dict\-Sea\-Env} class takes individual pairs of keywords and values. It has a definition for each of these keywords. The definition is whatever actions are necessary to process the value of key-\/pair and apply it to the program. This may include variable type conversions. It will also use slots and signals to retrieve pointers to any appropriate objects that the \hyperlink{classosea_1_1ofreq_1_1dict_bodies}{dict\-Bodies} object needs to interact with. It will use the properties of those objects to apply the values it finds in the key-\/value pair.
+
+Any objects created in the \hyperlink{classosea_1_1ofreq_1_1dict_sea_env}{dict\-Sea\-Env} class can be safely deleted once all file reading is done. 
+
+Definition at line 103 of file dictseaenv.\-h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classosea_1_1ofreq_1_1dict_sea_env_aa5e273c720bff861acf9dece4376b801}{\index{osea\-::ofreq\-::dict\-Sea\-Env@{osea\-::ofreq\-::dict\-Sea\-Env}!dict\-Sea\-Env@{dict\-Sea\-Env}}
+\index{dict\-Sea\-Env@{dict\-Sea\-Env}!osea::ofreq::dictSeaEnv@{osea\-::ofreq\-::dict\-Sea\-Env}}
+\subsubsection[{dict\-Sea\-Env}]{\setlength{\rightskip}{0pt plus 5cm}dict\-Sea\-Env\-::dict\-Sea\-Env (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1dict_sea_env_aa5e273c720bff861acf9dece4376b801}
+
+
+Default constructor. Nothing happens here. 
+
+
+
+Definition at line 75 of file dictseaenv.\-cpp.
+
+\hypertarget{classosea_1_1ofreq_1_1dict_sea_env_ad2a5dec9edc67afbb52dba2e257c06e9}{\index{osea\-::ofreq\-::dict\-Sea\-Env@{osea\-::ofreq\-::dict\-Sea\-Env}!$\sim$dict\-Sea\-Env@{$\sim$dict\-Sea\-Env}}
+\index{$\sim$dict\-Sea\-Env@{$\sim$dict\-Sea\-Env}!osea::ofreq::dictSeaEnv@{osea\-::ofreq\-::dict\-Sea\-Env}}
+\subsubsection[{$\sim$dict\-Sea\-Env}]{\setlength{\rightskip}{0pt plus 5cm}dict\-Sea\-Env\-::$\sim$dict\-Sea\-Env (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1dict_sea_env_ad2a5dec9edc67afbb52dba2e257c06e9}
+
+
+Default destructor. Nothing happens here. 
+
+
+
+Definition at line 83 of file dictseaenv.\-cpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classosea_1_1ofreq_1_1dict_sea_env_af2a7f74d940c39e3b60bca8748198dfb}{\index{osea\-::ofreq\-::dict\-Sea\-Env@{osea\-::ofreq\-::dict\-Sea\-Env}!define\-Class@{define\-Class}}
+\index{define\-Class@{define\-Class}!osea::ofreq::dictSeaEnv@{osea\-::ofreq\-::dict\-Sea\-Env}}
+\subsubsection[{define\-Class}]{\setlength{\rightskip}{0pt plus 5cm}int dict\-Sea\-Env\-::define\-Class (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{name\-In}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{classosea_1_1ofreq_1_1dict_sea_env_af2a7f74d940c39e3b60bca8748198dfb}
+
+
+Function that defines how to interpret the class name. Class name implies declaration of a new object of the class named by the class name. This is a separate set of definitions to handle class declarations. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name\-In} & std\-::string, variable passed by value. The name of the class name. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns status of assigning key. Returned value is an integer, passed by value. See list of return codes below\-: 0\-: Key definition found. Success. 1\-: No key found. / General error message. 2\-: Key is invalid within current active object. 99\-: Function virtual definition only. Not currently defined. 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classosea_1_1_dictionary_a42843f64aa966b8c686d9e3750cbdb4b}{osea\-::\-Dictionary}.
+
+
+
+Definition at line 624 of file dictseaenv.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classosea_1_1ofreq_1_1dict_sea_env_af2a7f74d940c39e3b60bca8748198dfb_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classosea_1_1ofreq_1_1dict_sea_env_a40ff29cc136e2920e6af22e0f49e6147}{\index{osea\-::ofreq\-::dict\-Sea\-Env@{osea\-::ofreq\-::dict\-Sea\-Env}!define\-Key@{define\-Key}}
+\index{define\-Key@{define\-Key}!osea::ofreq::dictSeaEnv@{osea\-::ofreq\-::dict\-Sea\-Env}}
+\subsubsection[{define\-Key}]{\setlength{\rightskip}{0pt plus 5cm}int dict\-Sea\-Env\-::define\-Key (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{key\-In, }
+\item[{std\-::vector$<$ std\-::string $>$}]{val\-In}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{classosea_1_1ofreq_1_1dict_sea_env_a40ff29cc136e2920e6af22e0f49e6147}
+
+
+Function that defines how to interpret the key values. Contains a list of key names and corresponding actions to take for interpretting each key value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key\-In} & std\-::string containing the key name. Variable passed by value. \\
+\hline
+{\em val\-In} & Vector of strings containing the key values. Variable passed by value. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns status of assigning key. Returned value is an integer, passed by value. See list of return codes below\-: 0\-: Key definition found. Success. 1\-: No key found. / General error message. 2\-: Key is invalid within current active object. 99\-: Function virtual definition only. Not currently defined. 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classosea_1_1_dictionary_ae96470181c8b1762204493fa45e96d7c}{osea\-::\-Dictionary}.
+
+
+
+Definition at line 100 of file dictseaenv.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classosea_1_1ofreq_1_1dict_sea_env_a40ff29cc136e2920e6af22e0f49e6147_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/home/\-Ship\-\_\-\-Design/\-Projects/\-D\-M\-S1305 Open\-S\-E\-A/master/200\-\_\-src/bin/ofreq/file\-\_\-reader/\hyperlink{dictseaenv_8h}{dictseaenv.\-h}\item 
+/home/\-Ship\-\_\-\-Design/\-Projects/\-D\-M\-S1305 Open\-S\-E\-A/master/200\-\_\-src/bin/ofreq/file\-\_\-reader/\hyperlink{dictseaenv_8cpp}{dictseaenv.\-cpp}\end{DoxyCompactItemize}

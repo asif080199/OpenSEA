@@ -1,4 +1,7 @@
 <map id="osea::ofreq::OutputDerived" name="osea::ofreq::OutputDerived">
-<area shape="rect" id="node5" href="$classosea_1_1ofreq_1_1_global_solution.html" title="{osea::ofreq::GlobalSolution\n|# orderDerivative\l|+ GlobalSolution()\l+ GlobalSolution()\l+ ~GlobalSolution()\l+ setDerivative()\l+ getDerivative()\l+ calcOutput()\l# getSolution()\l}" alt="" coords="5,603,215,781"/>
-<area shape="rect" id="node2" href="$classosea_1_1ofreq_1_1o_freq_core.html" title="The core oFreq class. All oFreq classes inherit from this class." alt="" coords="18,6,203,215"/>
+<area shape="rect" id="node5" href="$classosea_1_1ofreq_1_1_global_solution.html" title="{osea::ofreq::GlobalSolution\n|# orderDerivative\l|+ GlobalSolution()\l+ GlobalSolution()\l+ ~GlobalSolution()\l+ setDerivative()\l+ getDerivative()\l+ calcOutput()\l# getSolution()\l}" alt="" coords="249,571,444,749"/>
+<area shape="rect" id="node2" href="$classosea_1_1ofreq_1_1o_freq_core.html" title="The core oFreq class. All oFreq classes inherit from this class. " alt="" coords="260,6,433,183"/>
+<area shape="rect" id="node7" href="$classosea_1_1ofreq_1_1_global_acceleration.html" title="{osea::ofreq::GlobalAcceleration\n||+ GlobalAcceleration()\l+ GlobalAcceleration()\l+ ~GlobalAcceleration()\l+ setDerivative()\l}" alt="" coords="5,798,228,927"/>
+<area shape="rect" id="node9" href="$classosea_1_1ofreq_1_1_global_motion.html" title="{osea::ofreq::GlobalMotion\n||+ GlobalMotion()\l+ GlobalMotion()\l+ ~GlobalMotion()\l+ setDerivative()\l}" alt="" coords="253,798,440,927"/>
+<area shape="rect" id="node11" href="$classosea_1_1ofreq_1_1_global_velocity.html" title="{osea::ofreq::GlobalVelocity\n||+ GlobalVelocity()\l+ GlobalVelocity()\l+ ~GlobalVelocity()\l+ setDerivative()\l}" alt="" coords="465,798,657,927"/>
 </map>

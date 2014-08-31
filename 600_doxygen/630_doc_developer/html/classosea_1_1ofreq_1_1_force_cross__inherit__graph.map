@@ -1,3 +1,4 @@
 <map id="osea::ofreq::ForceCross" name="osea::ofreq::ForceCross">
-<area shape="rect" id="node2" href="$classosea_1_1ofreq_1_1_force_react.html" title="{osea::ofreq::ForceReact\n|# pDerivative\l# currentDerivative\l# currentEquation\l|+ ForceReact()\l+ ~ForceReact()\l+ setCurDerivative()\l+ setCurEquationNum()\l+ listDerivative()\l+ getDerivative()\l+ listDerivative()\l+ addDerivative()\l+ addDerivative()\l+ getMaxOrd()\l}" alt="" coords="5,6,197,263"/>
+<area shape="rect" id="node2" href="$classosea_1_1ofreq_1_1_force_react.html" title="{osea::ofreq::ForceReact\n|# pDerivative\l# currentDerivative\l# currentEquation\l|+ ForceReact()\l+ ~ForceReact()\l+ setCurDerivative()\l+ setCurEquationNum()\l+ listDerivative()\l+ getDerivative()\l+ listDerivative()\l+ addDerivative()\l+ addDerivative()\l+ getMaxOrd()\l}" alt="" coords="6,249,185,506"/>
+<area shape="rect" id="node4" href="$classosea_1_1ofreq_1_1_force.html" title="{osea::ofreq::Force\n|# forceName\l# pSysIndex\l|+ Force()\l+ Force()\l+ ~Force()\l+ setForceName()\l+ getForceName()\l+ setSystemIndex()\l+ getSystemIndex()\l}" alt="" coords="21,6,169,199"/>
 </map>

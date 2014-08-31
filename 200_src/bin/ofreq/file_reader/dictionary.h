@@ -73,6 +73,7 @@ namespace osea
 //######################################### Class Separator ###########################################################
 //Prototype class declarations
 //class System;       /** < Prototype class declaration of System object.  Allows reference to system object.*/
+class FileReader;   /**< Prototype class declaration of FileReader.  Allows reference to parent object.*/
 
 
 //######################################### Class Separator ###########################################################
@@ -92,7 +93,17 @@ public:
     explicit Dictionary(QObject *parent);
 
     //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Default constructor.
+     */
     Dictionary();
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Constructor that also passes pointer to the owning file reader.
+     * @param parent Pointer to FileReader object, pointer passed by value.
+     */
+    Dictionary(osea::FileReader *parent);
 
 //==========================================Section Separator =========================================================
 signals:
@@ -168,6 +179,11 @@ protected:
 
 //==========================================Section Separator =========================================================
 private:
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Pointer to the parent FileReader object.  Sometimes useful if you need to use the parent object.
+     */
+    osea::FileReader *pParent;
 
 };
 

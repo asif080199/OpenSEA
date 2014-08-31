@@ -1,3 +1,4 @@
 <map id="osea::FileReader" name="osea::FileReader">
-<area shape="rect" id="node4" href="$classosea_1_1ofreq_1_1o_freq_core.html" title="The core oFreq class. All oFreq classes inherit from this class." alt="" coords="110,6,295,215"/>
+<area shape="rect" id="node7" href="$classosea_1_1_hydro_reader.html" title="{osea::HydroReader\n||+ HydroReader()\l+ readHydroSys()\l# readEnvironment()\l# readDirections()\l# readFrequencies()\l# readForceExcite()\l# readHydroMass()\l# readHydroDamp()\l# readHydroStiff()\l# readCrossMass()\l# readCrossDamp()\l# readCrossStiff()\l# findHydroManager()\l# findHydroDataAmp()\l}" alt="" coords="35,683,201,973"/>
+<area shape="rect" id="node4" href="$classosea_1_1ofreq_1_1o_freq_core.html" title="The core oFreq class. All oFreq classes inherit from this class. " alt="" coords="107,6,280,183"/>
 </map>

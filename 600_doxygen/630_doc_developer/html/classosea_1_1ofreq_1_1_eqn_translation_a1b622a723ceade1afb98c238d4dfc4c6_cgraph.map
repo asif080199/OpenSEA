@@ -1,6 +1,6 @@
 <map id="osea::ofreq::EqnTranslation::Func8" name="osea::ofreq::EqnTranslation::Func8">
-<area shape="rect" id="node3" href="$classosea_1_1ofreq_1_1_equationof_motion.html#ad4ba6707460a9db7f8103157af0cae65" title="The mathematical Kronecker delta function." alt="" coords="286,5,519,49"/>
-<area shape="rect" id="node5" href="$classosea_1_1ofreq_1_1_equationof_motion.html#a2fd7f9778dced5bba0d362841cf182a7" title="Returns the index integer for the current body used by the motion model that created this equation of..." alt="" coords="286,73,519,117"/>
-<area shape="rect" id="node7" href="$classosea_1_1ofreq_1_1_equationof_motion.html#ac87fe1d5112f5b42f9afd5f1c3b9002c" title="Retuns the index integer for the body in the list of bodies." alt="" coords="286,141,519,185"/>
-<area shape="rect" id="node9" href="$classosea_1_1ofreq_1_1_equationof_motion.html#a5907d782ee639d5ec24515ed21050851" title="Sums across a variable." alt="" coords="267,209,538,237"/>
+<area shape="rect" id="node3" href="$classosea_1_1ofreq_1_1_equationof_motion.html#ad4ba6707460a9db7f8103157af0cae65" title="The mathematical Kronecker delta function. " alt="" coords="273,5,487,49"/>
+<area shape="rect" id="node5" href="$classosea_1_1ofreq_1_1_equationof_motion.html#a2fd7f9778dced5bba0d362841cf182a7" title="Returns the index integer for the current body used by the motion model that created this equation of..." alt="" coords="273,73,487,117"/>
+<area shape="rect" id="node7" href="$classosea_1_1ofreq_1_1_equationof_motion.html#ac87fe1d5112f5b42f9afd5f1c3b9002c" title="Retuns the index integer for the body in the list of bodies. " alt="" coords="273,141,487,185"/>
+<area shape="rect" id="node9" href="$classosea_1_1ofreq_1_1_equationof_motion.html#a5907d782ee639d5ec24515ed21050851" title="Sums across a variable. " alt="" coords="253,209,507,237"/>
 </map>

@@ -7,11 +7,12 @@
 
 
 
-Inheritance diagram for osea\-:\-:ofreq\-:\-:mat\-Force\-Active\-:\nopagebreak
+Inheritance diagram for osea\-:\-:ofreq\-:\-:mat\-Force\-Active\-:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=244pt]{classosea_1_1ofreq_1_1mat_force_active__inherit__graph}
+\includegraphics[width=234pt]{classosea_1_1ofreq_1_1mat_force_active__inherit__graph}
 \end{center}
 \end{figure}
 \subsection*{Public Member Functions}
@@ -25,6 +26,10 @@ Inheritance diagram for osea\-:\-:ofreq\-:\-:mat\-Force\-Active\-:\nopagebreak
 \item 
 \hyperlink{classosea_1_1ofreq_1_1mat_force_active}{mat\-Force\-Active} \hyperlink{classosea_1_1ofreq_1_1mat_force_active_a150bda87debf622dacb439e8e983fa3c}{operator-\/} (\hyperlink{classosea_1_1ofreq_1_1mat_force_active}{mat\-Force\-Active} \&force\-Other)
 \item 
+\hyperlink{classosea_1_1ofreq_1_1mat_force_active}{mat\-Force\-Active} \hyperlink{classosea_1_1ofreq_1_1mat_force_active_acdd9b4cf6b8c39a4bb973dd880939b3b}{operator$\ast$} (double scalar)
+\begin{DoxyCompactList}\small\item\em Scalar multiplication with the force\-Active array. \end{DoxyCompactList}\item 
+\hyperlink{classosea_1_1ofreq_1_1mat_force_active}{mat\-Force\-Active} \hyperlink{classosea_1_1ofreq_1_1mat_force_active_ae61e3aa510585e1faa12595aa345c2c5}{operator/} (double scalar)
+\begin{DoxyCompactList}\small\item\em Scalar division with the force\-Active array. \end{DoxyCompactList}\item 
 arma\-::cx\-\_\-mat \& \hyperlink{classosea_1_1ofreq_1_1mat_force_active_ab2cb4bbd11161f8c2944675815dea81c}{list\-Coefficient} ()
 \begin{DoxyCompactList}\small\item\em Returns the coefficients matrix. \end{DoxyCompactList}\item 
 void \hyperlink{classosea_1_1ofreq_1_1mat_force_active_a2784051c78388741bf1cf66d18df0b2c}{set\-Id} (int num)
@@ -39,7 +44,7 @@ int \hyperlink{classosea_1_1ofreq_1_1mat_force_active_aa17a21eb9a9ea9e1a36fae4db
 \subsection{Detailed Description}
 This class holds all data for an active force matrix. 
 
-Definition at line 85 of file matforceactive.\-h.
+Definition at line 86 of file matforceactive.\-h.
 
 
 
@@ -85,7 +90,7 @@ Returns the force id number, integer data type.
 \end{DoxyReturn}
 
 
-Definition at line 140 of file matforceactive.\-cpp.
+Definition at line 168 of file matforceactive.\-cpp.
 
 \hypertarget{classosea_1_1ofreq_1_1mat_force_active_aa17a21eb9a9ea9e1a36fae4dbc2b09bf}{\index{osea\-::ofreq\-::mat\-Force\-Active@{osea\-::ofreq\-::mat\-Force\-Active}!get\-Mat\-Size@{get\-Mat\-Size}}
 \index{get\-Mat\-Size@{get\-Mat\-Size}!osea::ofreq::matForceActive@{osea\-::ofreq\-::mat\-Force\-Active}}
@@ -103,7 +108,7 @@ Returns the size of the matrix in each order of derivative.
 \end{DoxyReturn}
 
 
-Definition at line 146 of file matforceactive.\-cpp.
+Definition at line 174 of file matforceactive.\-cpp.
 
 \hypertarget{classosea_1_1ofreq_1_1mat_force_active_ab2cb4bbd11161f8c2944675815dea81c}{\index{osea\-::ofreq\-::mat\-Force\-Active@{osea\-::ofreq\-::mat\-Force\-Active}!list\-Coefficient@{list\-Coefficient}}
 \index{list\-Coefficient@{list\-Coefficient}!osea::ofreq::matForceActive@{osea\-::ofreq\-::mat\-Force\-Active}}
@@ -118,6 +123,29 @@ Returns the coefficients matrix.
 
 Returns the coefficients matrix. \begin{DoxyReturn}{Returns}
 Returns the coefficients matrix. 
+\end{DoxyReturn}
+
+
+Definition at line 156 of file matforceactive.\-cpp.
+
+\hypertarget{classosea_1_1ofreq_1_1mat_force_active_acdd9b4cf6b8c39a4bb973dd880939b3b}{\index{osea\-::ofreq\-::mat\-Force\-Active@{osea\-::ofreq\-::mat\-Force\-Active}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!osea::ofreq::matForceActive@{osea\-::ofreq\-::mat\-Force\-Active}}
+\subsubsection[{operator$\ast$}]{\setlength{\rightskip}{0pt plus 5cm}{\bf mat\-Force\-Active} mat\-Force\-Active\-::operator$\ast$ (
+\begin{DoxyParamCaption}
+\item[{double}]{scalar}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1mat_force_active_acdd9b4cf6b8c39a4bb973dd880939b3b}
+
+
+Scalar multiplication with the force\-Active array. 
+
+multiplied to each individual element in the array. 
+\begin{DoxyParams}{Parameters}
+{\em scalar} & Double. Variable passed by value. The scalar that should be multiplied to each element in the array \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns a \hyperlink{classosea_1_1ofreq_1_1mat_force_active}{mat\-Force\-Active} object. Variable passed by value. 
 \end{DoxyReturn}
 
 
@@ -136,7 +164,8 @@ Definition at line 44 of file matforceactive.\-cpp.
 
 
 
-Here is the call graph for this function\-:\nopagebreak
+Here is the call graph for this function\-:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -158,7 +187,8 @@ Definition at line 86 of file matforceactive.\-cpp.
 
 
 
-Here is the call graph for this function\-:\nopagebreak
+Here is the call graph for this function\-:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -166,6 +196,29 @@ Here is the call graph for this function\-:\nopagebreak
 \end{center}
 \end{figure}
 
+
+\hypertarget{classosea_1_1ofreq_1_1mat_force_active_ae61e3aa510585e1faa12595aa345c2c5}{\index{osea\-::ofreq\-::mat\-Force\-Active@{osea\-::ofreq\-::mat\-Force\-Active}!operator/@{operator/}}
+\index{operator/@{operator/}!osea::ofreq::matForceActive@{osea\-::ofreq\-::mat\-Force\-Active}}
+\subsubsection[{operator/}]{\setlength{\rightskip}{0pt plus 5cm}{\bf mat\-Force\-Active} mat\-Force\-Active\-::operator/ (
+\begin{DoxyParamCaption}
+\item[{double}]{scalar}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1mat_force_active_ae61e3aa510585e1faa12595aa345c2c5}
+
+
+Scalar division with the force\-Active array. 
+
+Divided to each individual element in the array. 
+\begin{DoxyParams}{Parameters}
+{\em scalar} & Double. Variable passed by value. The scalar that should be divided to each element in the array \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns a \hyperlink{classosea_1_1ofreq_1_1mat_force_active}{mat\-Force\-Active} object. Variable passed by value. 
+\end{DoxyReturn}
+
+
+Definition at line 150 of file matforceactive.\-cpp.
 
 \hypertarget{classosea_1_1ofreq_1_1mat_force_active_a2784051c78388741bf1cf66d18df0b2c}{\index{osea\-::ofreq\-::mat\-Force\-Active@{osea\-::ofreq\-::mat\-Force\-Active}!set\-Id@{set\-Id}}
 \index{set\-Id@{set\-Id}!osea::ofreq::matForceActive@{osea\-::ofreq\-::mat\-Force\-Active}}
@@ -185,7 +238,7 @@ This is similar to the name parameter in other force objects. It is an identifie
 \end{DoxyParams}
 
 
-Definition at line 134 of file matforceactive.\-cpp.
+Definition at line 162 of file matforceactive.\-cpp.
 
 
 

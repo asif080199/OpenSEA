@@ -52,64 +52,6 @@ mathInterp::~mathInterp()
 //Protected Functions
 
 //------------------------------------------Function Separator --------------------------------------------------------
-T mathInterp::iePolate(double x, double x1, double x2, T y1, T y2)
-{
-    //Calculate ratio
-    try {
-        //Check for division by zero
-        if (x2 == x1)
-            throw std::overflow_error("Divide by zero");
-
-        double p = (x - x1) / (x2 - x1);
-
-        //Calculate output and write out
-        return p * (y2 - y1) + y1;
-    }
-    catch(std::overflow_error err)
-    {
-        logStd.Notify();
-        logErr.Write(string("function:  iePolate") + err.what());
-    }
-}
-
-//------------------------------------------Function Separator --------------------------------------------------------
-T mathInterp::iPolate(double x, double x1, double x2, T y1, T y2)
-{
-    //Calculate ratio
-    try {
-        //Check for division by zero
-        if (x2 == x1)
-            throw std::overflow_error("Divide by zero");
-
-        double p = (x - x1) / (x2 - x1);
-
-        //Check for a few cases
-        if (p < 0.0)
-        {
-            //Under lower bound.  Return y1
-            return y1;
-        }
-        else if(p > 1.0)
-        {
-            //Over upper bound.  Return y2
-            return y2;
-        }
-        else
-        {
-            //Somewhere in the middle, as it should be.  Perform interpolation.
-
-            //Calculate output and write out
-            return p * (y2 - y1) + y1;
-        }
-    }
-    catch(std::overflow_error err)
-    {
-        logStd.Notify();
-        logErr.Write(string("function:  iePolate") + err.what());
-    }
-}
-
-//------------------------------------------Function Separator --------------------------------------------------------
 vector<int> mathInterp::FindMatch(double valSearch, vector<double> &listVal)
 {
     double dist[2];         //The distance between the search term and terms considered.

@@ -1,0 +1,5 @@
+<map id="osea::FileReader::readFile" name="osea::FileReader::readFile">
+<area shape="rect" id="node3" href="$classosea_1_1_parser.html#a819455e27dc19323cdfd2f9354e11ec2" title="Parses the input files into a vector of key&#45;value pairs. " alt="" coords="261,5,414,33"/>
+<area shape="rect" id="node5" href="$classosea_1_1_parser.html#a93885957453b4b7e346ee1b2b79d05f8" title="Provides direct access to the vector of ObjectGroup objects processed by the Parser object..." alt="" coords="250,57,425,85"/>
+<area shape="rect" id="node7" href="$classosea_1_1_parser.html#ab8e77da06e72ede97238d28bad4a9ae6" title="Gets the ObjectGroup object. " alt="" coords="249,109,426,137"/>
+</map>

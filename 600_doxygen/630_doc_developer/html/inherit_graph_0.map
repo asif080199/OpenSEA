@@ -1,37 +1,64 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$classosea_1_1ofreq_1_1o_freq_core.html" title="The core oFreq class. All oFreq classes inherit from this class." alt="" coords="6,551,191,579"/>
-<area shape="rect" id="node3" href="$classosea_1_1_dictionary.html" title="osea::Dictionary" alt="" coords="291,57,423,85"/>
-<area shape="rect" id="node11" href="$classosea_1_1_file_reader.html" title="osea::FileReader" alt="" coords="288,109,427,137"/>
-<area shape="rect" id="node13" href="$classosea_1_1_object_group.html" title="The ObjectGroup class contains groupings of object definitions captured from an input file..." alt="" coords="280,681,435,709"/>
-<area shape="rect" id="node15" href="$classosea_1_1ofreq_1_1_body.html" title="osea::ofreq::Body" alt="" coords="285,733,430,761"/>
-<area shape="rect" id="node17" href="$classosea_1_1ofreq_1_1_derivative.html" title="osea::ofreq::Derivative" alt="" coords="268,785,447,813"/>
-<area shape="rect" id="node19" href="$classosea_1_1ofreq_1_1_equation.html" title="osea::ofreq::Equation" alt="" coords="272,837,443,865"/>
-<area shape="rect" id="node21" href="$classosea_1_1ofreq_1_1_equationof_motion.html" title="osea::ofreq::EquationofMotion" alt="" coords="241,889,474,917"/>
-<area shape="rect" id="node27" href="$classosea_1_1ofreq_1_1_file_writer.html" title="osea::ofreq::FileWriter" alt="" coords="269,941,445,969"/>
-<area shape="rect" id="node29" href="$classosea_1_1ofreq_1_1_force.html" title="osea::ofreq::Force" alt="" coords="282,993,433,1021"/>
-<area shape="rect" id="node37" href="$classosea_1_1ofreq_1_1mat_body.html" title="osea::ofreq::matBody" alt="" coords="272,1045,443,1073"/>
-<area shape="rect" id="node39" href="$classosea_1_1ofreq_1_1mat_force_active.html" title="osea::ofreq::matForceActive" alt="" coords="248,213,467,241"/>
-<area shape="rect" id="node41" href="$classosea_1_1ofreq_1_1mat_force_react.html" title="osea::ofreq::matForceReact" alt="" coords="249,265,466,293"/>
-<area shape="rect" id="node45" href="$classosea_1_1ofreq_1_1_motion_model.html" title="osea::ofreq::MotionModel" alt="" coords="258,317,457,345"/>
-<area shape="rect" id="node49" href="$classosea_1_1ofreq_1_1_motion_solver.html" title="osea::ofreq::MotionSolver" alt="" coords="257,369,457,397"/>
-<area shape="rect" id="node51" href="$classosea_1_1ofreq_1_1_output_derived.html" title="osea::ofreq::OutputDerived" alt="" coords="251,421,463,449"/>
-<area shape="rect" id="node61" href="$classosea_1_1ofreq_1_1_outputs_body.html" title="osea::ofreq::OutputsBody" alt="" coords="256,473,459,501"/>
-<area shape="rect" id="node63" href="$classosea_1_1ofreq_1_1_solution.html" title="osea::ofreq::Solution" alt="" coords="274,525,441,553"/>
-<area shape="rect" id="node65" href="$classosea_1_1ofreq_1_1_solution_set.html" title="osea::ofreq::SolutionSet" alt="" coords="262,577,453,605"/>
-<area shape="rect" id="node67" href="$classosea_1_1ofreq_1_1_system.html" title="osea::ofreq::System" alt="" coords="277,161,438,189"/>
-<area shape="rect" id="node69" href="$classosea_1_1_parser.html" title="The Parser class takes an input segment of strings and segments that segment. It strips out comments..." alt="" coords="303,629,412,657"/>
-<area shape="rect" id="node5" href="$classosea_1_1ofreq_1_1dict_bodies.html" title="osea::ofreq::dictBodies" alt="" coords="539,5,723,33"/>
-<area shape="rect" id="node7" href="$classosea_1_1ofreq_1_1dict_control.html" title="osea::ofreq::dictControl" alt="" coords="537,57,724,85"/>
-<area shape="rect" id="node9" href="$classosea_1_1ofreq_1_1dict_forces.html" title="osea::ofreq::dictForces" alt="" coords="539,109,723,137"/>
-<area shape="rect" id="node23" href="$classosea_1_1ofreq_1_1_eqn_rotation.html" title="The EqnRotation class." alt="" coords="532,902,729,930"/>
-<area shape="rect" id="node25" href="$classosea_1_1ofreq_1_1_eqn_translation.html" title="The EqnTranslation class." alt="" coords="524,850,737,878"/>
-<area shape="rect" id="node31" href="$classosea_1_1ofreq_1_1_force_active.html" title="osea::ofreq::ForceActive" alt="" coords="534,1031,727,1059"/>
-<area shape="rect" id="node33" href="$classosea_1_1ofreq_1_1_force_react.html" title="osea::ofreq::ForceReact" alt="" coords="535,979,727,1007"/>
-<area shape="rect" id="node35" href="$classosea_1_1ofreq_1_1_force_cross.html" title="osea::ofreq::ForceCross" alt="" coords="811,979,1002,1007"/>
-<area shape="rect" id="node43" href="$classosea_1_1ofreq_1_1mat_force_cross.html" title="osea::ofreq::matForceCross" alt="" coords="523,265,739,293"/>
-<area shape="rect" id="node47" href="$classosea_1_1ofreq_1_1_model6_d_o_f.html" title="The motion model for standard six&#45;degree of freedom rigid&#45;body dynamics problems." alt="" coords="535,317,727,345"/>
-<area shape="rect" id="node53" href="$classosea_1_1ofreq_1_1_global_solution.html" title="osea::ofreq::GlobalSolution" alt="" coords="525,421,736,449"/>
-<area shape="rect" id="node55" href="$classosea_1_1ofreq_1_1_global_acceleration.html" title="osea::ofreq::GlobalAcceleration" alt="" coords="787,369,1027,397"/>
-<area shape="rect" id="node57" href="$classosea_1_1ofreq_1_1_global_motion.html" title="osea::ofreq::GlobalMotion" alt="" coords="806,421,1007,449"/>
-<area shape="rect" id="node59" href="$classosea_1_1ofreq_1_1_global_velocity.html" title="osea::ofreq::GlobalVelocity" alt="" coords="802,473,1011,501"/>
+<area shape="rect" id="node1" href="$classosea_1_1ofreq_1_1o_freq_core.html" title="The core oFreq class. All oFreq classes inherit from this class. " alt="" coords="5,1149,179,1177"/>
+<area shape="rect" id="node3" href="$classosea_1_1_dictionary.html" title="osea::Dictionary" alt="" coords="271,369,398,397"/>
+<area shape="rect" id="node35" href="$classosea_1_1_file_reader.html" title="osea::FileReader" alt="" coords="268,654,401,682"/>
+<area shape="rect" id="node39" href="$classosea_1_1_object_group.html" title="The ObjectGroup class contains groupings of object definitions captured from an input file..." alt="" coords="262,1226,407,1254"/>
+<area shape="rect" id="node41" href="$classosea_1_1ofreq_1_1_body.html" title="osea::ofreq::Body" alt="" coords="267,1278,403,1306"/>
+<area shape="rect" id="node43" href="$classosea_1_1ofreq_1_1_derivative.html" title="osea::ofreq::Derivative" alt="" coords="251,1330,418,1358"/>
+<area shape="rect" id="node45" href="$classosea_1_1ofreq_1_1_equation.html" title="osea::ofreq::Equation" alt="" coords="255,1382,415,1410"/>
+<area shape="rect" id="node47" href="$classosea_1_1ofreq_1_1_equationof_motion.html" title="osea::ofreq::EquationofMotion" alt="" coords="227,1434,442,1462"/>
+<area shape="rect" id="node53" href="$classosea_1_1ofreq_1_1_force.html" title="osea::ofreq::Force" alt="" coords="264,1486,405,1514"/>
+<area shape="rect" id="node61" href="$classosea_1_1ofreq_1_1ioword.html" title="The list of common symbols and words used to parse input and output files in oFreq. " alt="" coords="261,1538,408,1566"/>
+<area shape="rect" id="node67" href="$classosea_1_1ofreq_1_1mat_body.html" title="osea::ofreq::matBody" alt="" coords="254,1590,415,1618"/>
+<area shape="rect" id="node69" href="$classosea_1_1ofreq_1_1mat_force_active.html" title="osea::ofreq::matForceActive" alt="" coords="232,1642,437,1670"/>
+<area shape="rect" id="node71" href="$classosea_1_1ofreq_1_1mat_force_react.html" title="osea::ofreq::matForceReact" alt="" coords="232,1694,437,1722"/>
+<area shape="rect" id="node75" href="$classosea_1_1ofreq_1_1math_interp.html" title="The mathInterp class contains all math functions used for interpolation and extrapolation of data..." alt="" coords="249,758,421,786"/>
+<area shape="rect" id="node81" href="$classosea_1_1ofreq_1_1_motion_model.html" title="osea::ofreq::MotionModel" alt="" coords="243,810,426,838"/>
+<area shape="rect" id="node85" href="$classosea_1_1ofreq_1_1_motion_solver.html" title="osea::ofreq::MotionSolver" alt="" coords="241,862,428,890"/>
+<area shape="rect" id="node87" href="$classosea_1_1ofreq_1_1_output_derived.html" title="osea::ofreq::OutputDerived" alt="" coords="236,914,433,942"/>
+<area shape="rect" id="node97" href="$classosea_1_1ofreq_1_1_outputs_body.html" title="osea::ofreq::OutputsBody" alt="" coords="241,966,429,994"/>
+<area shape="rect" id="node99" href="$classosea_1_1ofreq_1_1_solution.html" title="osea::ofreq::Solution" alt="" coords="257,1018,412,1046"/>
+<area shape="rect" id="node101" href="$classosea_1_1ofreq_1_1_solution_set.html" title="osea::ofreq::SolutionSet" alt="" coords="246,1070,423,1098"/>
+<area shape="rect" id="node103" href="$classosea_1_1ofreq_1_1_system.html" title="osea::ofreq::System" alt="" coords="258,706,411,734"/>
+<area shape="rect" id="node105" href="$classosea_1_1_sea_model.html" title="The SeaModel class creates the model for a full sea environment. " alt="" coords="271,1122,398,1150"/>
+<area shape="rect" id="node115" href="$classosea_1_1_wave_spec_base.html" title="The base class for wave spectra. Contains only the most basic function definitions and properties..." alt="" coords="251,1174,418,1202"/>
+<area shape="rect" id="node5" href="$classosea_1_1dict_cross_damp.html" title="osea::dictCrossDamp" alt="" coords="524,421,689,449"/>
+<area shape="rect" id="node7" href="$classosea_1_1dict_cross_mass.html" title="osea::dictCrossMass" alt="" coords="527,473,687,501"/>
+<area shape="rect" id="node9" href="$classosea_1_1dict_cross_stiff.html" title="osea::dictCrossStiff" alt="" coords="531,525,682,553"/>
+<area shape="rect" id="node11" href="$classosea_1_1dict_force_excite.html" title="osea::dictForceExcite" alt="" coords="525,577,688,605"/>
+<area shape="rect" id="node13" href="$classosea_1_1dict_hydro_direction.html" title="osea::dictHydroDirection" alt="" coords="516,629,697,657"/>
+<area shape="rect" id="node15" href="$classosea_1_1dict_hydro_env.html" title="osea::dictHydroEnv" alt="" coords="533,5,681,33"/>
+<area shape="rect" id="node17" href="$classosea_1_1dict_hydro_frequency.html" title="osea::dictHydroFrequency" alt="" coords="511,57,703,85"/>
+<area shape="rect" id="node19" href="$classosea_1_1dicthydro_react.html" title="osea::dicthydroReact" alt="" coords="527,109,687,137"/>
+<area shape="rect" id="node25" href="$classosea_1_1dict_hydro_stiff.html" title="osea::dictHydroStiff" alt="" coords="533,161,681,189"/>
+<area shape="rect" id="node27" href="$classosea_1_1ofreq_1_1dict_bodies.html" title="osea::ofreq::dictBodies" alt="" coords="521,213,692,241"/>
+<area shape="rect" id="node29" href="$classosea_1_1ofreq_1_1dict_control.html" title="osea::ofreq::dictControl" alt="" coords="520,265,693,293"/>
+<area shape="rect" id="node31" href="$classosea_1_1ofreq_1_1dict_forces.html" title="osea::ofreq::dictForces" alt="" coords="521,317,693,345"/>
+<area shape="rect" id="node33" href="$classosea_1_1ofreq_1_1dict_sea_env.html" title="The dictSeaEnv class defines keyword value pairs associated with the SeaEnv.in input file..." alt="" coords="518,369,695,397"/>
+<area shape="rect" id="node21" href="$classosea_1_1dict_hydro_damp.html" title="osea::dictHydroDamp" alt="" coords="801,83,964,111"/>
+<area shape="rect" id="node23" href="$classosea_1_1dict_hydro_mass.html" title="osea::dictHydroMass" alt="" coords="803,135,962,163"/>
+<area shape="rect" id="node37" href="$classosea_1_1_hydro_reader.html" title="osea::HydroReader" alt="" coords="533,681,681,709"/>
+<area shape="rect" id="node49" href="$classosea_1_1ofreq_1_1_eqn_rotation.html" title="The EqnRotation class. " alt="" coords="515,1434,698,1462"/>
+<area shape="rect" id="node51" href="$classosea_1_1ofreq_1_1_eqn_translation.html" title="The EqnTranslation class. " alt="" coords="507,1382,707,1410"/>
+<area shape="rect" id="node55" href="$classosea_1_1ofreq_1_1_force_active.html" title="osea::ofreq::ForceActive" alt="" coords="517,1538,697,1566"/>
+<area shape="rect" id="node57" href="$classosea_1_1ofreq_1_1_force_react.html" title="osea::ofreq::ForceReact" alt="" coords="517,1486,697,1514"/>
+<area shape="rect" id="node59" href="$classosea_1_1ofreq_1_1_force_cross.html" title="osea::ofreq::ForceCross" alt="" coords="792,1486,973,1514"/>
+<area shape="rect" id="node63" href="$classosea_1_1ofreq_1_1_file_writer.html" title="osea::ofreq::FileWriter" alt="" coords="523,1642,690,1670"/>
+<area shape="rect" id="node65" href="$classosea_1_1_parser.html" title="The Parser class takes an input segment of strings and segments that segment. It strips out comments..." alt="" coords="553,1590,660,1618"/>
+<area shape="rect" id="node73" href="$classosea_1_1ofreq_1_1mat_force_cross.html" title="osea::ofreq::matForceCross" alt="" coords="503,1694,710,1722"/>
+<area shape="rect" id="node77" href="$classosea_1_1ofreq_1_1hydro_data.html" title="The hydroData class is the basic definition for a set of hydrodynamic data. " alt="" coords="521,733,692,761"/>
+<area shape="rect" id="node79" href="$classosea_1_1ofreq_1_1_hydro_manager.html" title="The HydroManager class contains the complete set of hydrodynamic data associated with a single body..." alt="" coords="508,785,705,813"/>
+<area shape="rect" id="node83" href="$classosea_1_1ofreq_1_1_model6_d_o_f.html" title="The motion model for standard six&#45;degree of freedom rigid&#45;body dynamics problems. ..." alt="" coords="516,837,697,865"/>
+<area shape="rect" id="node89" href="$classosea_1_1ofreq_1_1_global_solution.html" title="osea::ofreq::GlobalSolution" alt="" coords="509,914,705,942"/>
+<area shape="rect" id="node91" href="$classosea_1_1ofreq_1_1_global_acceleration.html" title="osea::ofreq::GlobalAcceleration" alt="" coords="771,862,995,890"/>
+<area shape="rect" id="node93" href="$classosea_1_1ofreq_1_1_global_motion.html" title="osea::ofreq::GlobalMotion" alt="" coords="789,914,976,942"/>
+<area shape="rect" id="node95" href="$classosea_1_1ofreq_1_1_global_velocity.html" title="osea::ofreq::GlobalVelocity" alt="" coords="786,966,979,994"/>
+<area shape="rect" id="node107" href="$classosea_1_1_sea_model___dual_direction.html" title="The SeaModel_DuealDirection class creates the model for a full sea environment, two directions..." alt="" coords="495,1122,718,1150"/>
+<area shape="rect" id="node109" href="$classosea_1_1_sea_model___long_crest.html" title="The SeaModel_LongCrest class creates a single wave spectra that acts in only one direction. " alt="" coords="505,966,708,994"/>
+<area shape="rect" id="node111" href="$classosea_1_1_sea_model___single_direction.html" title="The SeaModel_SingleDirection class creates the model for a full sea environment. " alt="" coords="491,1018,723,1046"/>
+<area shape="rect" id="node113" href="$classosea_1_1_sea_model___uniform.html" title="The SeaModel_Uniform class creates the model for a full sea environment, independent of direction..." alt="" coords="514,1070,699,1098"/>
+<area shape="rect" id="node117" href="$classosea_1_1_spec_bretschneider.html" title="The SpecBretschneider class. This defines a Bretschneider wave spectrum. Also called an ITTC wave spe..." alt="" coords="513,1330,700,1358"/>
+<area shape="rect" id="node119" href="$classosea_1_1_spec_j_o_n_s_w_a_p.html" title="The SpecJONSWAP class. This defines the JONSWAP wave spectrum. This spectrum offers two options: You ..." alt="" coords="523,1174,691,1202"/>
+<area shape="rect" id="node121" href="$classosea_1_1_spec_p_m.html" title="The Pierson&#45;Moskowitz Spectrum. " alt="" coords="548,1226,665,1254"/>
+<area shape="rect" id="node123" href="$classosea_1_1_wave_spec.html" title="The WaveSpec class defines wave spectrums. " alt="" coords="540,1278,673,1306"/>
 </map>

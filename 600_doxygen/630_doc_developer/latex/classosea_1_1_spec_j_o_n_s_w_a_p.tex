@@ -1,0 +1,282 @@
+\hypertarget{classosea_1_1_spec_j_o_n_s_w_a_p}{\section{osea\-:\-:Spec\-J\-O\-N\-S\-W\-A\-P Class Reference}
+\label{classosea_1_1_spec_j_o_n_s_w_a_p}\index{osea\-::\-Spec\-J\-O\-N\-S\-W\-A\-P@{osea\-::\-Spec\-J\-O\-N\-S\-W\-A\-P}}
+}
+
+
+The \hyperlink{classosea_1_1_spec_j_o_n_s_w_a_p}{Spec\-J\-O\-N\-S\-W\-A\-P} class. This defines the J\-O\-N\-S\-W\-A\-P wave spectrum. This spectrum offers two options\-: You can define the bandwidth parameter (gamma) yourself. Or, if left undefined, the bandwidth parameter will default to the value specified by the I\-T\-T\-C.  
+
+
+
+
+{\ttfamily \#include $<$specjonswap.\-h$>$}
+
+
+
+Inheritance diagram for osea\-:\-:Spec\-J\-O\-N\-S\-W\-A\-P\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classosea_1_1_spec_j_o_n_s_w_a_p__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classosea_1_1_spec_j_o_n_s_w_a_p_a99377683e8e56937854827ad60cca51e}{Spec\-J\-O\-N\-S\-W\-A\-P} ()
+\begin{DoxyCompactList}\small\item\em The default constructor. Sets the default value for the bandwidth parameter. \end{DoxyCompactList}\item 
+\hyperlink{classosea_1_1_spec_j_o_n_s_w_a_p_a705385fa566b6448caf5c91d72a75c9e}{$\sim$\-Spec\-J\-O\-N\-S\-W\-A\-P} ()
+\begin{DoxyCompactList}\small\item\em The default destructor. Nothing happens here. \end{DoxyCompactList}\item 
+double \hyperlink{classosea_1_1_spec_j_o_n_s_w_a_p_ad1203c9fe82001079da750d4fb6be231}{get\-Spec\-Energy} (double freq)
+\begin{DoxyCompactList}\small\item\em Gets the spectral energy for the frequency requested. \end{DoxyCompactList}\item 
+void \hyperlink{classosea_1_1_spec_j_o_n_s_w_a_p_a47b9d089b9ec8c3fafee7c6300b164a0}{set\-Sig\-Wave\-Height} (double height\-In)
+\begin{DoxyCompactList}\small\item\em Sets the significant wave height. \end{DoxyCompactList}\item 
+double \hyperlink{classosea_1_1_spec_j_o_n_s_w_a_p_aee59dd71b3a66a45c85238ec7f144267}{get\-Sig\-Wave\-Height} ()
+\begin{DoxyCompactList}\small\item\em Gets the significant wave height. \end{DoxyCompactList}\item 
+void \hyperlink{classosea_1_1_spec_j_o_n_s_w_a_p_a2335041f594251f3412fbe66f4b43a8c}{set\-T\-Mean} (double val\-In)
+\begin{DoxyCompactList}\small\item\em Sets the mean period for the wave spectrum, based on an input mean wave period. \end{DoxyCompactList}\item 
+double \hyperlink{classosea_1_1_spec_j_o_n_s_w_a_p_ab481fb8ccf7974875f1b4a364dfc3c43}{get\-T\-Mean} ()
+\begin{DoxyCompactList}\small\item\em Gets the mean period for the wave spectrum. \end{DoxyCompactList}\item 
+void \hyperlink{classosea_1_1_spec_j_o_n_s_w_a_p_a36d7511b90c37df7f64cf62552356acc}{set\-T\-Peak} (double val\-In)
+\begin{DoxyCompactList}\small\item\em Sets the mean period of the wave spectrum, based on an input peak period. \end{DoxyCompactList}\item 
+void \hyperlink{classosea_1_1_spec_j_o_n_s_w_a_p_a03915a7373f8f3cb9a6e54c528256415}{set\-T\-Zero} (double val\-In)
+\begin{DoxyCompactList}\small\item\em Sets the mean period of the wave spectrum, based on an input zero crossing period. \end{DoxyCompactList}\item 
+void \hyperlink{classosea_1_1_spec_j_o_n_s_w_a_p_ae14ee73289a7026e96b390b709a17717}{set\-Spec\-Band\-Param} (double val\-In)
+\begin{DoxyCompactList}\small\item\em Sets the spectrum bandwidth parameter. \end{DoxyCompactList}\item 
+double \hyperlink{classosea_1_1_spec_j_o_n_s_w_a_p_a7191f0e7af02d8f246a35771fec0d462}{get\-Spec\-Band\-Param} ()
+\begin{DoxyCompactList}\small\item\em Gets the spectrum bandwidth parameter. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+The \hyperlink{classosea_1_1_spec_j_o_n_s_w_a_p}{Spec\-J\-O\-N\-S\-W\-A\-P} class. This defines the J\-O\-N\-S\-W\-A\-P wave spectrum. This spectrum offers two options\-: You can define the bandwidth parameter (gamma) yourself. Or, if left undefined, the bandwidth parameter will default to the value specified by the I\-T\-T\-C. 
+
+Definition at line 66 of file specjonswap.\-h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classosea_1_1_spec_j_o_n_s_w_a_p_a99377683e8e56937854827ad60cca51e}{\index{osea\-::\-Spec\-J\-O\-N\-S\-W\-A\-P@{osea\-::\-Spec\-J\-O\-N\-S\-W\-A\-P}!Spec\-J\-O\-N\-S\-W\-A\-P@{Spec\-J\-O\-N\-S\-W\-A\-P}}
+\index{Spec\-J\-O\-N\-S\-W\-A\-P@{Spec\-J\-O\-N\-S\-W\-A\-P}!osea::SpecJONSWAP@{osea\-::\-Spec\-J\-O\-N\-S\-W\-A\-P}}
+\subsubsection[{Spec\-J\-O\-N\-S\-W\-A\-P}]{\setlength{\rightskip}{0pt plus 5cm}Spec\-J\-O\-N\-S\-W\-A\-P\-::\-Spec\-J\-O\-N\-S\-W\-A\-P (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1_spec_j_o_n_s_w_a_p_a99377683e8e56937854827ad60cca51e}
+
+
+The default constructor. Sets the default value for the bandwidth parameter. 
+
+
+
+Definition at line 48 of file specjonswap.\-cpp.
+
+\hypertarget{classosea_1_1_spec_j_o_n_s_w_a_p_a705385fa566b6448caf5c91d72a75c9e}{\index{osea\-::\-Spec\-J\-O\-N\-S\-W\-A\-P@{osea\-::\-Spec\-J\-O\-N\-S\-W\-A\-P}!$\sim$\-Spec\-J\-O\-N\-S\-W\-A\-P@{$\sim$\-Spec\-J\-O\-N\-S\-W\-A\-P}}
+\index{$\sim$\-Spec\-J\-O\-N\-S\-W\-A\-P@{$\sim$\-Spec\-J\-O\-N\-S\-W\-A\-P}!osea::SpecJONSWAP@{osea\-::\-Spec\-J\-O\-N\-S\-W\-A\-P}}
+\subsubsection[{$\sim$\-Spec\-J\-O\-N\-S\-W\-A\-P}]{\setlength{\rightskip}{0pt plus 5cm}Spec\-J\-O\-N\-S\-W\-A\-P\-::$\sim$\-Spec\-J\-O\-N\-S\-W\-A\-P (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1_spec_j_o_n_s_w_a_p_a705385fa566b6448caf5c91d72a75c9e}
+
+
+The default destructor. Nothing happens here. 
+
+
+
+Definition at line 55 of file specjonswap.\-cpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classosea_1_1_spec_j_o_n_s_w_a_p_aee59dd71b3a66a45c85238ec7f144267}{\index{osea\-::\-Spec\-J\-O\-N\-S\-W\-A\-P@{osea\-::\-Spec\-J\-O\-N\-S\-W\-A\-P}!get\-Sig\-Wave\-Height@{get\-Sig\-Wave\-Height}}
+\index{get\-Sig\-Wave\-Height@{get\-Sig\-Wave\-Height}!osea::SpecJONSWAP@{osea\-::\-Spec\-J\-O\-N\-S\-W\-A\-P}}
+\subsubsection[{get\-Sig\-Wave\-Height}]{\setlength{\rightskip}{0pt plus 5cm}double Spec\-J\-O\-N\-S\-W\-A\-P\-::get\-Sig\-Wave\-Height (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1_spec_j_o_n_s_w_a_p_aee59dd71b3a66a45c85238ec7f144267}
+
+
+Gets the significant wave height. 
+
+\begin{DoxyReturn}{Returns}
+Double, passed by value. The signficant wave height, in units of m. 
+\end{DoxyReturn}
+
+
+Definition at line 103 of file specjonswap.\-cpp.
+
+\hypertarget{classosea_1_1_spec_j_o_n_s_w_a_p_a7191f0e7af02d8f246a35771fec0d462}{\index{osea\-::\-Spec\-J\-O\-N\-S\-W\-A\-P@{osea\-::\-Spec\-J\-O\-N\-S\-W\-A\-P}!get\-Spec\-Band\-Param@{get\-Spec\-Band\-Param}}
+\index{get\-Spec\-Band\-Param@{get\-Spec\-Band\-Param}!osea::SpecJONSWAP@{osea\-::\-Spec\-J\-O\-N\-S\-W\-A\-P}}
+\subsubsection[{get\-Spec\-Band\-Param}]{\setlength{\rightskip}{0pt plus 5cm}double Spec\-J\-O\-N\-S\-W\-A\-P\-::get\-Spec\-Band\-Param (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1_spec_j_o_n_s_w_a_p_a7191f0e7af02d8f246a35771fec0d462}
+
+
+Gets the spectrum bandwidth parameter. 
+
+The spectrum bandwidth parameter determines how focused the energy will be in the J\-O\-N\-S\-W\-A\-P spectrum. A value of 1.\-0 is a widely distributed energy spectrum. Values of 3.\-3 -\/ 6.\-0 are relatively concentrated, producing a very peaky spectrum. Value is also typically called gamma.
+
+\begin{DoxyReturn}{Returns}
+Double, variable passed by value. The spectrum bandwidth parameter. 
+\end{DoxyReturn}
+
+
+Definition at line 141 of file specjonswap.\-cpp.
+
+\hypertarget{classosea_1_1_spec_j_o_n_s_w_a_p_ad1203c9fe82001079da750d4fb6be231}{\index{osea\-::\-Spec\-J\-O\-N\-S\-W\-A\-P@{osea\-::\-Spec\-J\-O\-N\-S\-W\-A\-P}!get\-Spec\-Energy@{get\-Spec\-Energy}}
+\index{get\-Spec\-Energy@{get\-Spec\-Energy}!osea::SpecJONSWAP@{osea\-::\-Spec\-J\-O\-N\-S\-W\-A\-P}}
+\subsubsection[{get\-Spec\-Energy}]{\setlength{\rightskip}{0pt plus 5cm}double Spec\-J\-O\-N\-S\-W\-A\-P\-::get\-Spec\-Energy (
+\begin{DoxyParamCaption}
+\item[{double}]{freq}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classosea_1_1_spec_j_o_n_s_w_a_p_ad1203c9fe82001079da750d4fb6be231}
+
+
+Gets the spectral energy for the frequency requested. 
+
+Returns the spectral energy in units of m$^\wedge$2/(rad/s). Returns value for the frequency requested. Calculates spectral energy based on the Bretschneider spectrum. 
+\begin{DoxyParams}{Parameters}
+{\em freq} & Double, passed by value. The wave frequency that you want the spectral energy for, specified in units of rad/s. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns a double, passed by value. Returned variable is the wave spectral energy for the requested wave frequency, in units of m$^\wedge$2/(rad/s). 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classosea_1_1_wave_spec_base_ab058570554fed4ad517e355f994bef62}{osea\-::\-Wave\-Spec\-Base}.
+
+
+
+Definition at line 61 of file specjonswap.\-cpp.
+
+\hypertarget{classosea_1_1_spec_j_o_n_s_w_a_p_ab481fb8ccf7974875f1b4a364dfc3c43}{\index{osea\-::\-Spec\-J\-O\-N\-S\-W\-A\-P@{osea\-::\-Spec\-J\-O\-N\-S\-W\-A\-P}!get\-T\-Mean@{get\-T\-Mean}}
+\index{get\-T\-Mean@{get\-T\-Mean}!osea::SpecJONSWAP@{osea\-::\-Spec\-J\-O\-N\-S\-W\-A\-P}}
+\subsubsection[{get\-T\-Mean}]{\setlength{\rightskip}{0pt plus 5cm}double Spec\-J\-O\-N\-S\-W\-A\-P\-::get\-T\-Mean (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1_spec_j_o_n_s_w_a_p_ab481fb8ccf7974875f1b4a364dfc3c43}
+
+
+Gets the mean period for the wave spectrum. 
+
+\begin{DoxyReturn}{Returns}
+Double, variable passed by value. The mean period for the wave spectrum, in units of s. 
+\end{DoxyReturn}
+
+
+Definition at line 115 of file specjonswap.\-cpp.
+
+\hypertarget{classosea_1_1_spec_j_o_n_s_w_a_p_a47b9d089b9ec8c3fafee7c6300b164a0}{\index{osea\-::\-Spec\-J\-O\-N\-S\-W\-A\-P@{osea\-::\-Spec\-J\-O\-N\-S\-W\-A\-P}!set\-Sig\-Wave\-Height@{set\-Sig\-Wave\-Height}}
+\index{set\-Sig\-Wave\-Height@{set\-Sig\-Wave\-Height}!osea::SpecJONSWAP@{osea\-::\-Spec\-J\-O\-N\-S\-W\-A\-P}}
+\subsubsection[{set\-Sig\-Wave\-Height}]{\setlength{\rightskip}{0pt plus 5cm}void Spec\-J\-O\-N\-S\-W\-A\-P\-::set\-Sig\-Wave\-Height (
+\begin{DoxyParamCaption}
+\item[{double}]{height\-In}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1_spec_j_o_n_s_w_a_p_a47b9d089b9ec8c3fafee7c6300b164a0}
+
+
+Sets the significant wave height. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em height\-In} & Double, passed by value. The significant wave height to set. In units of m. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 97 of file specjonswap.\-cpp.
+
+\hypertarget{classosea_1_1_spec_j_o_n_s_w_a_p_ae14ee73289a7026e96b390b709a17717}{\index{osea\-::\-Spec\-J\-O\-N\-S\-W\-A\-P@{osea\-::\-Spec\-J\-O\-N\-S\-W\-A\-P}!set\-Spec\-Band\-Param@{set\-Spec\-Band\-Param}}
+\index{set\-Spec\-Band\-Param@{set\-Spec\-Band\-Param}!osea::SpecJONSWAP@{osea\-::\-Spec\-J\-O\-N\-S\-W\-A\-P}}
+\subsubsection[{set\-Spec\-Band\-Param}]{\setlength{\rightskip}{0pt plus 5cm}void Spec\-J\-O\-N\-S\-W\-A\-P\-::set\-Spec\-Band\-Param (
+\begin{DoxyParamCaption}
+\item[{double}]{val\-In}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1_spec_j_o_n_s_w_a_p_ae14ee73289a7026e96b390b709a17717}
+
+
+Sets the spectrum bandwidth parameter. 
+
+The spectrum bandwidth parameter determines how focused the energy will be in the J\-O\-N\-S\-W\-A\-P spectrum. A value of 1.\-0 is a widely distributed energy spectrum. Values of 3.\-3 -\/ 6.\-0 are relatively concentrated, producing a very peaky spectrum. Value is also typically called gamma.
+
+
+\begin{DoxyParams}{Parameters}
+{\em val\-In} & Double, variable passed by value. The spectrum bandwidth parameter. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 135 of file specjonswap.\-cpp.
+
+\hypertarget{classosea_1_1_spec_j_o_n_s_w_a_p_a2335041f594251f3412fbe66f4b43a8c}{\index{osea\-::\-Spec\-J\-O\-N\-S\-W\-A\-P@{osea\-::\-Spec\-J\-O\-N\-S\-W\-A\-P}!set\-T\-Mean@{set\-T\-Mean}}
+\index{set\-T\-Mean@{set\-T\-Mean}!osea::SpecJONSWAP@{osea\-::\-Spec\-J\-O\-N\-S\-W\-A\-P}}
+\subsubsection[{set\-T\-Mean}]{\setlength{\rightskip}{0pt plus 5cm}void Spec\-J\-O\-N\-S\-W\-A\-P\-::set\-T\-Mean (
+\begin{DoxyParamCaption}
+\item[{double}]{val\-In}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1_spec_j_o_n_s_w_a_p_a2335041f594251f3412fbe66f4b43a8c}
+
+
+Sets the mean period for the wave spectrum, based on an input mean wave period. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em val\-In} & Double, variable passed by value. The mean period for the wave spectrum, in units of s. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 109 of file specjonswap.\-cpp.
+
+\hypertarget{classosea_1_1_spec_j_o_n_s_w_a_p_a36d7511b90c37df7f64cf62552356acc}{\index{osea\-::\-Spec\-J\-O\-N\-S\-W\-A\-P@{osea\-::\-Spec\-J\-O\-N\-S\-W\-A\-P}!set\-T\-Peak@{set\-T\-Peak}}
+\index{set\-T\-Peak@{set\-T\-Peak}!osea::SpecJONSWAP@{osea\-::\-Spec\-J\-O\-N\-S\-W\-A\-P}}
+\subsubsection[{set\-T\-Peak}]{\setlength{\rightskip}{0pt plus 5cm}void Spec\-J\-O\-N\-S\-W\-A\-P\-::set\-T\-Peak (
+\begin{DoxyParamCaption}
+\item[{double}]{val\-In}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1_spec_j_o_n_s_w_a_p_a36d7511b90c37df7f64cf62552356acc}
+
+
+Sets the mean period of the wave spectrum, based on an input peak period. 
+
+The function converts peak wave period to mean wave period. It then stores the converted mean wave period. 
+\begin{DoxyParams}{Parameters}
+{\em val\-In} & The peak wave period that you want to use as input. Double, variable passed by value. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 121 of file specjonswap.\-cpp.
+
+\hypertarget{classosea_1_1_spec_j_o_n_s_w_a_p_a03915a7373f8f3cb9a6e54c528256415}{\index{osea\-::\-Spec\-J\-O\-N\-S\-W\-A\-P@{osea\-::\-Spec\-J\-O\-N\-S\-W\-A\-P}!set\-T\-Zero@{set\-T\-Zero}}
+\index{set\-T\-Zero@{set\-T\-Zero}!osea::SpecJONSWAP@{osea\-::\-Spec\-J\-O\-N\-S\-W\-A\-P}}
+\subsubsection[{set\-T\-Zero}]{\setlength{\rightskip}{0pt plus 5cm}void Spec\-J\-O\-N\-S\-W\-A\-P\-::set\-T\-Zero (
+\begin{DoxyParamCaption}
+\item[{double}]{val\-In}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1_spec_j_o_n_s_w_a_p_a03915a7373f8f3cb9a6e54c528256415}
+
+
+Sets the mean period of the wave spectrum, based on an input zero crossing period. 
+
+The function converts zero crossing wave period to mean wave period. It then stores the converted mean wave period. 
+\begin{DoxyParams}{Parameters}
+{\em val\-In} & The zero crossing wave period that you want to use as input. Double, variable passed by value. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 128 of file specjonswap.\-cpp.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/home/\-Ship\-\_\-\-Design/\-Projects/\-D\-M\-S1305 Open\-S\-E\-A/master/200\-\_\-src/bin/ofreq/wave\-\_\-spectra/\hyperlink{specjonswap_8h}{specjonswap.\-h}\item 
+/home/\-Ship\-\_\-\-Design/\-Projects/\-D\-M\-S1305 Open\-S\-E\-A/master/200\-\_\-src/bin/ofreq/wave\-\_\-spectra/\hyperlink{specjonswap_8cpp}{specjonswap.\-cpp}\end{DoxyCompactItemize}

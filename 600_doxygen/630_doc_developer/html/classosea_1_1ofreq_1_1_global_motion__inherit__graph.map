@@ -1,3 +1,4 @@
 <map id="osea::ofreq::GlobalMotion" name="osea::ofreq::GlobalMotion">
-<area shape="rect" id="node2" href="$classosea_1_1ofreq_1_1_global_solution.html" title="{osea::ofreq::GlobalSolution\n|# orderDerivative\l|+ GlobalSolution()\l+ GlobalSolution()\l+ ~GlobalSolution()\l+ setDerivative()\l+ getDerivative()\l+ calcOutput()\l# getSolution()\l}" alt="" coords="4,6,213,183"/>
+<area shape="rect" id="node2" href="$classosea_1_1ofreq_1_1_global_solution.html" title="{osea::ofreq::GlobalSolution\n|# orderDerivative\l|+ GlobalSolution()\l+ GlobalSolution()\l+ ~GlobalSolution()\l+ setDerivative()\l+ getDerivative()\l+ calcOutput()\l# getSolution()\l}" alt="" coords="6,345,201,522"/>
+<area shape="rect" id="node4" href="$classosea_1_1ofreq_1_1_output_derived.html" title="{osea::ofreq::OutputDerived\n|# pName\l# pClassName\l# pParentBody\l|+ OutputDerived()\l+ OutputDerived()\l+ ~OutputDerived()\l+ setOutputBody()\l+ getName()\l+ getClassName()\l+ setName()\l+ getCurWaveInd()\l+ calcOutput()\l+ listBody()\land 9 more...\l# addResult()\l}" alt="" coords="5,6,203,295"/>
 </map>

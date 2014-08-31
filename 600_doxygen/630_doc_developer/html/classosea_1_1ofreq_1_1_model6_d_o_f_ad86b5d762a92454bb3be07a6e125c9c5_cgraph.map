@@ -1,3 +1,9 @@
 <map id="osea::ofreq::Model6DOF::Model6DOF" name="osea::ofreq::Model6DOF::Model6DOF">
-<area shape="rect" id="node3" href="$classosea_1_1ofreq_1_1_model6_d_o_f.html#a0048de3d40838c93e2130ebb5130f3a1" title="The function used to define the equation of motion objects." alt="" coords="245,5,437,49"/>
+<area shape="rect" id="node3" href="$classosea_1_1ofreq_1_1_model6_d_o_f.html#a0048de3d40838c93e2130ebb5130f3a1" title="The function used to define the equation of motion objects. " alt="" coords="235,175,416,219"/>
+<area shape="rect" id="node5" href="$classosea_1_1ofreq_1_1_equationof_motion.html#a5a8674f3d8715973fa0affc162ae677c" title="Sets the index for the equation of motion. " alt="" coords="465,5,679,49"/>
+<area shape="rect" id="node7" href="$classosea_1_1ofreq_1_1_equationof_motion.html#a1dba2d5b5a3d8c156c010ccb39c3bbe0" title="The name for the equation object. " alt="" coords="465,73,679,117"/>
+<area shape="rect" id="node9" href="$classosea_1_1ofreq_1_1_equationof_motion.html#a307e0f8ada534f1fb17c06073101f8ab" title="The description for the equation object. " alt="" coords="465,141,679,185"/>
+<area shape="rect" id="node11" href="$classosea_1_1ofreq_1_1_motion_model.html#a73489d88c07b26109bbb9bdd0a576b30" title="This adds an equation of motion to the motion model. " alt="" coords="481,209,663,253"/>
+<area shape="rect" id="node13" href="$classosea_1_1ofreq_1_1_motion_model.html#a42d989727028c18c59ba04f958bc7b74" title="Name for the motion model. " alt="" coords="481,277,663,321"/>
+<area shape="rect" id="node15" href="$classosea_1_1ofreq_1_1_motion_model.html#a5097540bb98ad753594d41890e6ef30d" title="Description for the motion model. " alt="" coords="481,345,663,389"/>
 </map>

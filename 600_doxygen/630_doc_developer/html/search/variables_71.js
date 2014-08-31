@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['qt',['Qt',['../header__comment_8dox.html#aaf4b58f4fc589b70c6caa8077c032905',1,'header_comment.dox']]]
+  ['quote',['QUOTE',['../classosea_1_1ofreq_1_1ioword.html#a36a08500affa80665623032db7ca1eff',1,'osea::ofreq::ioword']]]
 ];

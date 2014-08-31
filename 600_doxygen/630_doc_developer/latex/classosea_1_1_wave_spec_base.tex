@@ -1,0 +1,181 @@
+\hypertarget{classosea_1_1_wave_spec_base}{\section{osea\-:\-:Wave\-Spec\-Base Class Reference}
+\label{classosea_1_1_wave_spec_base}\index{osea\-::\-Wave\-Spec\-Base@{osea\-::\-Wave\-Spec\-Base}}
+}
+
+
+The base class for wave spectra. Contains only the most basic function definitions and properties.  
+
+
+
+
+{\ttfamily \#include $<$wavespecbase.\-h$>$}
+
+
+
+Inheritance diagram for osea\-:\-:Wave\-Spec\-Base\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classosea_1_1_wave_spec_base__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classosea_1_1_wave_spec_base_a2696d8ab7ff4b6f4c2c522f0fd17d378}{Wave\-Spec\-Base} ()
+\begin{DoxyCompactList}\small\item\em The default constructor. Nothing happens here. \end{DoxyCompactList}\item 
+virtual \hyperlink{classosea_1_1_wave_spec_base_a96ae21bd0d1d6563d741cad248d59906}{$\sim$\-Wave\-Spec\-Base} ()
+\begin{DoxyCompactList}\small\item\em The default destructor. Nothing happens here. \end{DoxyCompactList}\item 
+virtual double \hyperlink{classosea_1_1_wave_spec_base_ab058570554fed4ad517e355f994bef62}{get\-Spec\-Energy} (double freq)
+\begin{DoxyCompactList}\small\item\em Gets the spectral energy for the frequency requested. \end{DoxyCompactList}\item 
+std\-::string \hyperlink{classosea_1_1_wave_spec_base_a4a83c895dbd969ad4a70d609b35df0f9}{get\-Name} ()
+\begin{DoxyCompactList}\small\item\em The name used to identify this specific wave spectra. \end{DoxyCompactList}\item 
+void \hyperlink{classosea_1_1_wave_spec_base_abe33fefbd3debdb3772ab64e1af34ffb}{set\-Name} (std\-::string name\-In)
+\begin{DoxyCompactList}\small\item\em The name used to identify this specific wave spectra. \end{DoxyCompactList}\item 
+std\-::string \& \hyperlink{classosea_1_1_wave_spec_base_a9210b20185e774ab8f293d647b93698a}{ref\-Name} ()
+\begin{DoxyCompactList}\small\item\em The name used to identify this specific wave spectra. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\-::string \hyperlink{classosea_1_1_wave_spec_base_a01023e9c640418ea656cb7b52ed4b9ed}{p\-Name}
+\begin{DoxyCompactList}\small\item\em The name used to identify this specific wave spectra. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+The base class for wave spectra. Contains only the most basic function definitions and properties. 
+
+Definition at line 65 of file wavespecbase.\-h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classosea_1_1_wave_spec_base_a2696d8ab7ff4b6f4c2c522f0fd17d378}{\index{osea\-::\-Wave\-Spec\-Base@{osea\-::\-Wave\-Spec\-Base}!Wave\-Spec\-Base@{Wave\-Spec\-Base}}
+\index{Wave\-Spec\-Base@{Wave\-Spec\-Base}!osea::WaveSpecBase@{osea\-::\-Wave\-Spec\-Base}}
+\subsubsection[{Wave\-Spec\-Base}]{\setlength{\rightskip}{0pt plus 5cm}Wave\-Spec\-Base\-::\-Wave\-Spec\-Base (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1_wave_spec_base_a2696d8ab7ff4b6f4c2c522f0fd17d378}
+
+
+The default constructor. Nothing happens here. 
+
+
+
+Definition at line 37 of file wavespecbase.\-cpp.
+
+\hypertarget{classosea_1_1_wave_spec_base_a96ae21bd0d1d6563d741cad248d59906}{\index{osea\-::\-Wave\-Spec\-Base@{osea\-::\-Wave\-Spec\-Base}!$\sim$\-Wave\-Spec\-Base@{$\sim$\-Wave\-Spec\-Base}}
+\index{$\sim$\-Wave\-Spec\-Base@{$\sim$\-Wave\-Spec\-Base}!osea::WaveSpecBase@{osea\-::\-Wave\-Spec\-Base}}
+\subsubsection[{$\sim$\-Wave\-Spec\-Base}]{\setlength{\rightskip}{0pt plus 5cm}Wave\-Spec\-Base\-::$\sim$\-Wave\-Spec\-Base (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classosea_1_1_wave_spec_base_a96ae21bd0d1d6563d741cad248d59906}
+
+
+The default destructor. Nothing happens here. 
+
+
+
+Definition at line 43 of file wavespecbase.\-cpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classosea_1_1_wave_spec_base_a4a83c895dbd969ad4a70d609b35df0f9}{\index{osea\-::\-Wave\-Spec\-Base@{osea\-::\-Wave\-Spec\-Base}!get\-Name@{get\-Name}}
+\index{get\-Name@{get\-Name}!osea::WaveSpecBase@{osea\-::\-Wave\-Spec\-Base}}
+\subsubsection[{get\-Name}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string Wave\-Spec\-Base\-::get\-Name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1_wave_spec_base_a4a83c895dbd969ad4a70d609b35df0f9}
+
+
+The name used to identify this specific wave spectra. 
+
+Purely for user benefit. Can be any string. \begin{DoxyReturn}{Returns}
+Returns a string, passed by value. String is the name of the wave spectra used to designate this specific object. 
+\end{DoxyReturn}
+
+
+Definition at line 56 of file wavespecbase.\-cpp.
+
+\hypertarget{classosea_1_1_wave_spec_base_ab058570554fed4ad517e355f994bef62}{\index{osea\-::\-Wave\-Spec\-Base@{osea\-::\-Wave\-Spec\-Base}!get\-Spec\-Energy@{get\-Spec\-Energy}}
+\index{get\-Spec\-Energy@{get\-Spec\-Energy}!osea::WaveSpecBase@{osea\-::\-Wave\-Spec\-Base}}
+\subsubsection[{get\-Spec\-Energy}]{\setlength{\rightskip}{0pt plus 5cm}double Wave\-Spec\-Base\-::get\-Spec\-Energy (
+\begin{DoxyParamCaption}
+\item[{double}]{freq}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classosea_1_1_wave_spec_base_ab058570554fed4ad517e355f994bef62}
+
+
+Gets the spectral energy for the frequency requested. 
+
+Returns the spectral energy in units of m$^\wedge$2/(rad/s). Returns value for the frequency requested. This is a pure virtual function. The exact method of calculation for wave spectral energy depends on the child class. 
+
+Reimplemented in \hyperlink{classosea_1_1_wave_spec_a2fcca343c95ac41cc282e825f2c33cb5}{osea\-::\-Wave\-Spec}, \hyperlink{classosea_1_1_spec_p_m_a209ebd698f3761ff2e870203f31218a6}{osea\-::\-Spec\-P\-M}, \hyperlink{classosea_1_1_spec_bretschneider_ac8c105b8dab8eade862f4bb391dfc9f3}{osea\-::\-Spec\-Bretschneider}, and \hyperlink{classosea_1_1_spec_j_o_n_s_w_a_p_ad1203c9fe82001079da750d4fb6be231}{osea\-::\-Spec\-J\-O\-N\-S\-W\-A\-P}.
+
+
+
+Definition at line 49 of file wavespecbase.\-cpp.
+
+\hypertarget{classosea_1_1_wave_spec_base_a9210b20185e774ab8f293d647b93698a}{\index{osea\-::\-Wave\-Spec\-Base@{osea\-::\-Wave\-Spec\-Base}!ref\-Name@{ref\-Name}}
+\index{ref\-Name@{ref\-Name}!osea::WaveSpecBase@{osea\-::\-Wave\-Spec\-Base}}
+\subsubsection[{ref\-Name}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string \& Wave\-Spec\-Base\-::ref\-Name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1_wave_spec_base_a9210b20185e774ab8f293d647b93698a}
+
+
+The name used to identify this specific wave spectra. 
+
+Purely for user benefit. Can be any string. \begin{DoxyReturn}{Returns}
+Returns a string, passed by reference. String is the name of the wave spectra used to designate this specific object. 
+\end{DoxyReturn}
+
+
+Definition at line 68 of file wavespecbase.\-cpp.
+
+\hypertarget{classosea_1_1_wave_spec_base_abe33fefbd3debdb3772ab64e1af34ffb}{\index{osea\-::\-Wave\-Spec\-Base@{osea\-::\-Wave\-Spec\-Base}!set\-Name@{set\-Name}}
+\index{set\-Name@{set\-Name}!osea::WaveSpecBase@{osea\-::\-Wave\-Spec\-Base}}
+\subsubsection[{set\-Name}]{\setlength{\rightskip}{0pt plus 5cm}void Wave\-Spec\-Base\-::set\-Name (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{name\-In}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1_wave_spec_base_abe33fefbd3debdb3772ab64e1af34ffb}
+
+
+The name used to identify this specific wave spectra. 
+
+Purely for user benefit. Can be any string. 
+\begin{DoxyParams}{Parameters}
+{\em name\-In} & String variable, passed by value. String is the name of the wave spectra used to designate this specific object. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 62 of file wavespecbase.\-cpp.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classosea_1_1_wave_spec_base_a01023e9c640418ea656cb7b52ed4b9ed}{\index{osea\-::\-Wave\-Spec\-Base@{osea\-::\-Wave\-Spec\-Base}!p\-Name@{p\-Name}}
+\index{p\-Name@{p\-Name}!osea::WaveSpecBase@{osea\-::\-Wave\-Spec\-Base}}
+\subsubsection[{p\-Name}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string osea\-::\-Wave\-Spec\-Base\-::p\-Name\hspace{0.3cm}{\ttfamily [protected]}}}\label{classosea_1_1_wave_spec_base_a01023e9c640418ea656cb7b52ed4b9ed}
+
+
+The name used to identify this specific wave spectra. 
+
+Purely for user benefit. Can be any string. 
+
+Definition at line 128 of file wavespecbase.\-h.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/home/\-Ship\-\_\-\-Design/\-Projects/\-D\-M\-S1305 Open\-S\-E\-A/master/200\-\_\-src/bin/ofreq/wave\-\_\-spectra/\hyperlink{wavespecbase_8h}{wavespecbase.\-h}\item 
+/home/\-Ship\-\_\-\-Design/\-Projects/\-D\-M\-S1305 Open\-S\-E\-A/master/200\-\_\-src/bin/ofreq/wave\-\_\-spectra/\hyperlink{wavespecbase_8cpp}{wavespecbase.\-cpp}\end{DoxyCompactItemize}

@@ -1,0 +1,208 @@
+\hypertarget{classosea_1_1_spec_p_m}{\section{osea\-:\-:Spec\-P\-M Class Reference}
+\label{classosea_1_1_spec_p_m}\index{osea\-::\-Spec\-P\-M@{osea\-::\-Spec\-P\-M}}
+}
+
+
+The Pierson-\/\-Moskowitz Spectrum.  
+
+
+
+
+{\ttfamily \#include $<$specpm.\-h$>$}
+
+
+
+Inheritance diagram for osea\-:\-:Spec\-P\-M\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=210pt]{classosea_1_1_spec_p_m__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classosea_1_1_spec_p_m_a682697b1a1e44629805e0e3a124e0326}{Spec\-P\-M} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. Nothing happens here. \end{DoxyCompactList}\item 
+\hyperlink{classosea_1_1_spec_p_m_ad92a92475d4405dbcae526ff88b760db}{$\sim$\-Spec\-P\-M} ()
+\begin{DoxyCompactList}\small\item\em Default destructor. Nothing happens here. \end{DoxyCompactList}\item 
+double \hyperlink{classosea_1_1_spec_p_m_a209ebd698f3761ff2e870203f31218a6}{get\-Spec\-Energy} (double freq)
+\begin{DoxyCompactList}\small\item\em Gets the spectral energy for the frequency requested. \end{DoxyCompactList}\item 
+void \hyperlink{classosea_1_1_spec_p_m_ad0be8d372c6a91f654535b8725f664aa}{set\-Wind\-Speed} (double speed\-In)
+\begin{DoxyCompactList}\small\item\em Sets the wind speed for the Pierson-\/\-Moskowitz spectrum. \end{DoxyCompactList}\item 
+double \hyperlink{classosea_1_1_spec_p_m_a90436918258243f82a783a9255753bc3}{get\-Wind\-Speed} ()
+\begin{DoxyCompactList}\small\item\em Gets the wind speed. \end{DoxyCompactList}\item 
+void \hyperlink{classosea_1_1_spec_p_m_a14b4c9972323e2157dbe811a1c9581df}{set\-Sig\-Wave\-Height} (double height\-In)
+\begin{DoxyCompactList}\small\item\em Sets the significant wave height. \end{DoxyCompactList}\item 
+double \hyperlink{classosea_1_1_spec_p_m_a7041a1ba0ae840eadfc34dedd2bcb551}{get\-Sig\-Wave\-Height} ()
+\begin{DoxyCompactList}\small\item\em Gets the significant wave height. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+The Pierson-\/\-Moskowitz Spectrum. 
+
+This is a wave spectrum based on the Pierson-\/\-Moskowitz formula. It is a one parameter spectrum, and depends on wind speed. The spectrum uses the characteristic wind speed. This spectrum assumes a wind speed measured at a height of 10 m above mean sea level. The original wave spectra calculated by Pierson and Moskowitz used wind measurements at a height of 19.\-5 m above mean sea level. The input wind speed was adjusted to account for this difference. 
+
+Definition at line 70 of file specpm.\-h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classosea_1_1_spec_p_m_a682697b1a1e44629805e0e3a124e0326}{\index{osea\-::\-Spec\-P\-M@{osea\-::\-Spec\-P\-M}!Spec\-P\-M@{Spec\-P\-M}}
+\index{Spec\-P\-M@{Spec\-P\-M}!osea::SpecPM@{osea\-::\-Spec\-P\-M}}
+\subsubsection[{Spec\-P\-M}]{\setlength{\rightskip}{0pt plus 5cm}Spec\-P\-M\-::\-Spec\-P\-M (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1_spec_p_m_a682697b1a1e44629805e0e3a124e0326}
+
+
+Default constructor. Nothing happens here. 
+
+
+
+Definition at line 44 of file specpm.\-cpp.
+
+\hypertarget{classosea_1_1_spec_p_m_ad92a92475d4405dbcae526ff88b760db}{\index{osea\-::\-Spec\-P\-M@{osea\-::\-Spec\-P\-M}!$\sim$\-Spec\-P\-M@{$\sim$\-Spec\-P\-M}}
+\index{$\sim$\-Spec\-P\-M@{$\sim$\-Spec\-P\-M}!osea::SpecPM@{osea\-::\-Spec\-P\-M}}
+\subsubsection[{$\sim$\-Spec\-P\-M}]{\setlength{\rightskip}{0pt plus 5cm}Spec\-P\-M\-::$\sim$\-Spec\-P\-M (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1_spec_p_m_ad92a92475d4405dbcae526ff88b760db}
+
+
+Default destructor. Nothing happens here. 
+
+
+
+Definition at line 52 of file specpm.\-cpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classosea_1_1_spec_p_m_a7041a1ba0ae840eadfc34dedd2bcb551}{\index{osea\-::\-Spec\-P\-M@{osea\-::\-Spec\-P\-M}!get\-Sig\-Wave\-Height@{get\-Sig\-Wave\-Height}}
+\index{get\-Sig\-Wave\-Height@{get\-Sig\-Wave\-Height}!osea::SpecPM@{osea\-::\-Spec\-P\-M}}
+\subsubsection[{get\-Sig\-Wave\-Height}]{\setlength{\rightskip}{0pt plus 5cm}double Spec\-P\-M\-::get\-Sig\-Wave\-Height (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1_spec_p_m_a7041a1ba0ae840eadfc34dedd2bcb551}
+
+
+Gets the significant wave height. 
+
+\begin{DoxyReturn}{Returns}
+Double, passed by value. The signficant wave height, in units of m. 
+\end{DoxyReturn}
+
+
+Definition at line 125 of file specpm.\-cpp.
+
+\hypertarget{classosea_1_1_spec_p_m_a209ebd698f3761ff2e870203f31218a6}{\index{osea\-::\-Spec\-P\-M@{osea\-::\-Spec\-P\-M}!get\-Spec\-Energy@{get\-Spec\-Energy}}
+\index{get\-Spec\-Energy@{get\-Spec\-Energy}!osea::SpecPM@{osea\-::\-Spec\-P\-M}}
+\subsubsection[{get\-Spec\-Energy}]{\setlength{\rightskip}{0pt plus 5cm}double Spec\-P\-M\-::get\-Spec\-Energy (
+\begin{DoxyParamCaption}
+\item[{double}]{freq}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classosea_1_1_spec_p_m_a209ebd698f3761ff2e870203f31218a6}
+
+
+Gets the spectral energy for the frequency requested. 
+
+Returns the spectral energy in units of m$^\wedge$2/(rad/s). Returns value for the frequency requested. Calculates spectral energy based on the Pierson-\/\-Moskowitz spectrum. 
+\begin{DoxyParams}{Parameters}
+{\em freq} & Double, passed by value. The wave frequency that you want the spectral energy for, specified in units of rad/s. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns a double, passed by value. Returned variable is the wave spectral energy for the requested wave frequency, in units of m$^\wedge$2/(rad/s). 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classosea_1_1_wave_spec_base_ab058570554fed4ad517e355f994bef62}{osea\-::\-Wave\-Spec\-Base}.
+
+
+
+Definition at line 58 of file specpm.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classosea_1_1_spec_p_m_a209ebd698f3761ff2e870203f31218a6_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classosea_1_1_spec_p_m_a90436918258243f82a783a9255753bc3}{\index{osea\-::\-Spec\-P\-M@{osea\-::\-Spec\-P\-M}!get\-Wind\-Speed@{get\-Wind\-Speed}}
+\index{get\-Wind\-Speed@{get\-Wind\-Speed}!osea::SpecPM@{osea\-::\-Spec\-P\-M}}
+\subsubsection[{get\-Wind\-Speed}]{\setlength{\rightskip}{0pt plus 5cm}double Spec\-P\-M\-::get\-Wind\-Speed (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1_spec_p_m_a90436918258243f82a783a9255753bc3}
+
+
+Gets the wind speed. 
+
+Gets the wind speed at a height of 10.\-0 m above mean sea level. \begin{DoxyReturn}{Returns}
+Returns a double, passed by value. Returned variable is the wind speed, set at a height of 10.\-0 m above mean sea level. 
+\end{DoxyReturn}
+
+
+Definition at line 111 of file specpm.\-cpp.
+
+\hypertarget{classosea_1_1_spec_p_m_a14b4c9972323e2157dbe811a1c9581df}{\index{osea\-::\-Spec\-P\-M@{osea\-::\-Spec\-P\-M}!set\-Sig\-Wave\-Height@{set\-Sig\-Wave\-Height}}
+\index{set\-Sig\-Wave\-Height@{set\-Sig\-Wave\-Height}!osea::SpecPM@{osea\-::\-Spec\-P\-M}}
+\subsubsection[{set\-Sig\-Wave\-Height}]{\setlength{\rightskip}{0pt plus 5cm}void Spec\-P\-M\-::set\-Sig\-Wave\-Height (
+\begin{DoxyParamCaption}
+\item[{double}]{height\-In}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1_spec_p_m_a14b4c9972323e2157dbe811a1c9581df}
+
+
+Sets the significant wave height. 
+
+Bases the Pierson-\/\-Moskowitz spectrum on signficant wave height.
+
+
+\begin{DoxyParams}{Parameters}
+{\em height\-In} & Double, passed by value. The significant wave height to set. In units of m. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 117 of file specpm.\-cpp.
+
+\hypertarget{classosea_1_1_spec_p_m_ad0be8d372c6a91f654535b8725f664aa}{\index{osea\-::\-Spec\-P\-M@{osea\-::\-Spec\-P\-M}!set\-Wind\-Speed@{set\-Wind\-Speed}}
+\index{set\-Wind\-Speed@{set\-Wind\-Speed}!osea::SpecPM@{osea\-::\-Spec\-P\-M}}
+\subsubsection[{set\-Wind\-Speed}]{\setlength{\rightskip}{0pt plus 5cm}void Spec\-P\-M\-::set\-Wind\-Speed (
+\begin{DoxyParamCaption}
+\item[{double}]{speed\-In}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1_spec_p_m_ad0be8d372c6a91f654535b8725f664aa}
+
+
+Sets the wind speed for the Pierson-\/\-Moskowitz spectrum. 
+
+Wind speed is assumed set at a height of 10.\-0 m. The function automatically corrects wind speed to the function value of wind speed at 19.\-5 m height. 
+\begin{DoxyParams}{Parameters}
+{\em speed\-In} & Double, passed by value. The wind speed, in units of m/s. Set at a height of 10.\-0 m above mean sea level. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 104 of file specpm.\-cpp.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/home/\-Ship\-\_\-\-Design/\-Projects/\-D\-M\-S1305 Open\-S\-E\-A/master/200\-\_\-src/bin/ofreq/wave\-\_\-spectra/\hyperlink{specpm_8h}{specpm.\-h}\item 
+/home/\-Ship\-\_\-\-Design/\-Projects/\-D\-M\-S1305 Open\-S\-E\-A/master/200\-\_\-src/bin/ofreq/wave\-\_\-spectra/\hyperlink{specpm_8cpp}{specpm.\-cpp}\end{DoxyCompactItemize}

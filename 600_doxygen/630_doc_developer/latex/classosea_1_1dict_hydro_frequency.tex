@@ -1,0 +1,146 @@
+\hypertarget{classosea_1_1dict_hydro_frequency}{\section{osea\-:\-:dict\-Hydro\-Frequency Class Reference}
+\label{classosea_1_1dict_hydro_frequency}\index{osea\-::dict\-Hydro\-Frequency@{osea\-::dict\-Hydro\-Frequency}}
+}
+
+
+{\ttfamily \#include $<$dicthydrofrequency.\-h$>$}
+
+
+
+Inheritance diagram for osea\-:\-:dict\-Hydro\-Frequency\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=286pt]{classosea_1_1dict_hydro_frequency__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classosea_1_1dict_hydro_frequency_a333ac5b1a37e7d93840b5551af0b6987}{dict\-Hydro\-Frequency} ()
+\item 
+\hyperlink{classosea_1_1dict_hydro_frequency_a12a0cb7639c7589011ef78782a268885}{dict\-Hydro\-Frequency} (\hyperlink{classosea_1_1_hydro_reader}{osea\-::\-Hydro\-Reader} $\ast$parent)
+\begin{DoxyCompactList}\small\item\em Constructor that also passes pointer to the owning file reader. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{classosea_1_1dict_hydro_frequency_a920a759ca7d6f576740e6c7de08e750d}{define\-Key} (std\-::string key\-In, std\-::vector$<$ std\-::string $>$ val\-In)
+\begin{DoxyCompactList}\small\item\em Function that defines how to interpret the key values. Contains a list of key names and corresponding actions to take for interpretting each key value. \end{DoxyCompactList}\item 
+int \hyperlink{classosea_1_1dict_hydro_frequency_a6c0cf6d39a09012b5806f620551e8885}{define\-Class} (std\-::string name\-In)
+\begin{DoxyCompactList}\small\item\em Function that defines how to interpret the class name. Class name implies declaration of a new object of the class named by the class name. This is a separate set of definitions to handle class declarations. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Prototype class declaration for constructor.
+
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classosea_1_1_dictionary}{Dictionary} 
+
+\hyperlink{classosea_1_1_file_reader}{File\-Reader} 
+\end{DoxySeeAlso}
+
+
+Definition at line 76 of file dicthydrofrequency.\-h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classosea_1_1dict_hydro_frequency_a333ac5b1a37e7d93840b5551af0b6987}{\index{osea\-::dict\-Hydro\-Frequency@{osea\-::dict\-Hydro\-Frequency}!dict\-Hydro\-Frequency@{dict\-Hydro\-Frequency}}
+\index{dict\-Hydro\-Frequency@{dict\-Hydro\-Frequency}!osea::dictHydroFrequency@{osea\-::dict\-Hydro\-Frequency}}
+\subsubsection[{dict\-Hydro\-Frequency}]{\setlength{\rightskip}{0pt plus 5cm}dict\-Hydro\-Frequency\-::dict\-Hydro\-Frequency (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1dict_hydro_frequency_a333ac5b1a37e7d93840b5551af0b6987}
+
+
+Definition at line 48 of file dicthydrofrequency.\-cpp.
+
+\hypertarget{classosea_1_1dict_hydro_frequency_a12a0cb7639c7589011ef78782a268885}{\index{osea\-::dict\-Hydro\-Frequency@{osea\-::dict\-Hydro\-Frequency}!dict\-Hydro\-Frequency@{dict\-Hydro\-Frequency}}
+\index{dict\-Hydro\-Frequency@{dict\-Hydro\-Frequency}!osea::dictHydroFrequency@{osea\-::dict\-Hydro\-Frequency}}
+\subsubsection[{dict\-Hydro\-Frequency}]{\setlength{\rightskip}{0pt plus 5cm}dict\-Hydro\-Frequency\-::dict\-Hydro\-Frequency (
+\begin{DoxyParamCaption}
+\item[{{\bf osea\-::\-Hydro\-Reader} $\ast$}]{parent}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1dict_hydro_frequency_a12a0cb7639c7589011ef78782a268885}
+
+
+Constructor that also passes pointer to the owning file reader. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parent} & Pointer to \hyperlink{classosea_1_1_hydro_reader}{Hydro\-Reader} object, pointer passed by value. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 53 of file dicthydrofrequency.\-cpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classosea_1_1dict_hydro_frequency_a6c0cf6d39a09012b5806f620551e8885}{\index{osea\-::dict\-Hydro\-Frequency@{osea\-::dict\-Hydro\-Frequency}!define\-Class@{define\-Class}}
+\index{define\-Class@{define\-Class}!osea::dictHydroFrequency@{osea\-::dict\-Hydro\-Frequency}}
+\subsubsection[{define\-Class}]{\setlength{\rightskip}{0pt plus 5cm}int dict\-Hydro\-Frequency\-::define\-Class (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{name\-In}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{classosea_1_1dict_hydro_frequency_a6c0cf6d39a09012b5806f620551e8885}
+
+
+Function that defines how to interpret the class name. Class name implies declaration of a new object of the class named by the class name. This is a separate set of definitions to handle class declarations. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name\-In} & std\-::string, variable passed by value. The name of the class name. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns status of assigning key. Returned value is an integer, passed by value. See list of return codes below\-: 0\-: Key definition found. Success. 1\-: No key found. / General error message. 2\-: Key is invalid within current active object. 99\-: Function virtual definition only. Not currently defined. 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classosea_1_1_dictionary_a42843f64aa966b8c686d9e3750cbdb4b}{osea\-::\-Dictionary}.
+
+
+
+Definition at line 99 of file dicthydrofrequency.\-cpp.
+
+\hypertarget{classosea_1_1dict_hydro_frequency_a920a759ca7d6f576740e6c7de08e750d}{\index{osea\-::dict\-Hydro\-Frequency@{osea\-::dict\-Hydro\-Frequency}!define\-Key@{define\-Key}}
+\index{define\-Key@{define\-Key}!osea::dictHydroFrequency@{osea\-::dict\-Hydro\-Frequency}}
+\subsubsection[{define\-Key}]{\setlength{\rightskip}{0pt plus 5cm}int dict\-Hydro\-Frequency\-::define\-Key (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{key\-In, }
+\item[{std\-::vector$<$ std\-::string $>$}]{val\-In}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{classosea_1_1dict_hydro_frequency_a920a759ca7d6f576740e6c7de08e750d}
+
+
+Function that defines how to interpret the key values. Contains a list of key names and corresponding actions to take for interpretting each key value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key\-In} & std\-::string containing the key name. Variable passed by value. \\
+\hline
+{\em val\-In} & Vector of strings containing the key values. Variable passed by value. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns status of assigning key. Returned value is an integer, passed by value. See list of return codes below\-: 0\-: Key definition found. Success. 1\-: No key found. / General error message. 2\-: Key is invalid within current active object. 99\-: Function virtual definition only. Not currently defined. 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classosea_1_1_dictionary_ae96470181c8b1762204493fa45e96d7c}{osea\-::\-Dictionary}.
+
+
+
+Definition at line 70 of file dicthydrofrequency.\-cpp.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/home/\-Ship\-\_\-\-Design/\-Projects/\-D\-M\-S1305 Open\-S\-E\-A/master/200\-\_\-src/bin/ofreq/hydro\-\_\-reader/\hyperlink{dicthydrofrequency_8h}{dicthydrofrequency.\-h}\item 
+/home/\-Ship\-\_\-\-Design/\-Projects/\-D\-M\-S1305 Open\-S\-E\-A/master/200\-\_\-src/bin/ofreq/hydro\-\_\-reader/\hyperlink{dicthydrofrequency_8cpp}{dicthydrofrequency.\-cpp}\end{DoxyCompactItemize}

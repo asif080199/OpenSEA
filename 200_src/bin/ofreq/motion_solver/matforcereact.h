@@ -143,7 +143,7 @@ public:
      * array
      * @return Returns a matForceReact object.  Variable passed by value.
      */
-    virtual matForceReact operator*(double scalar);
+    matForceReact operator*(double scalar);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -154,7 +154,7 @@ public:
      * array
      * @return Returns a matForceReact object.  Variable passed by value.
      */
-    virtual matForceReact operator/(double scalar);
+    matForceReact operator/(double scalar);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**

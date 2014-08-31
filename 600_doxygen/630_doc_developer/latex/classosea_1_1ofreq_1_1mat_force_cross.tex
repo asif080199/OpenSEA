@@ -7,11 +7,12 @@
 
 
 
-Inheritance diagram for osea\-:\-:ofreq\-:\-:mat\-Force\-Cross\-:\nopagebreak
+Inheritance diagram for osea\-:\-:ofreq\-:\-:mat\-Force\-Cross\-:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=242pt]{classosea_1_1ofreq_1_1mat_force_cross__inherit__graph}
+\includegraphics[height=550pt]{classosea_1_1ofreq_1_1mat_force_cross__inherit__graph}
 \end{center}
 \end{figure}
 \subsection*{Public Member Functions}
@@ -27,6 +28,10 @@ Inheritance diagram for osea\-:\-:ofreq\-:\-:mat\-Force\-Cross\-:\nopagebreak
 \begin{DoxyCompactList}\small\item\em Operator overload to add two \hyperlink{classosea_1_1ofreq_1_1mat_force_cross}{mat\-Force\-Cross} objects together. \end{DoxyCompactList}\item 
 \hyperlink{classosea_1_1ofreq_1_1mat_force_cross}{mat\-Force\-Cross} \hyperlink{classosea_1_1ofreq_1_1mat_force_cross_af22b49c1536dc753f99b34a3eba1c8e7}{operator-\/} (\hyperlink{classosea_1_1ofreq_1_1mat_force_cross}{mat\-Force\-Cross} \&force\-Other)
 \begin{DoxyCompactList}\small\item\em Operator overload to subtract two \hyperlink{classosea_1_1ofreq_1_1mat_force_cross}{mat\-Force\-Cross} objects together. \end{DoxyCompactList}\item 
+\hyperlink{classosea_1_1ofreq_1_1mat_force_cross}{mat\-Force\-Cross} \hyperlink{classosea_1_1ofreq_1_1mat_force_cross_a411f77659b011eb6a90270463ffab7f1}{operator$\ast$} (double scalar)
+\begin{DoxyCompactList}\small\item\em Scalar multiplication with the \hyperlink{classosea_1_1ofreq_1_1_force_cross}{Force\-Cross} array. \end{DoxyCompactList}\item 
+\hyperlink{classosea_1_1ofreq_1_1mat_force_cross}{mat\-Force\-Cross} \hyperlink{classosea_1_1ofreq_1_1mat_force_cross_a82b093a301d902c402fe3fe6a2b5b1e9}{operator/} (double scalar)
+\begin{DoxyCompactList}\small\item\em Scalar division with the \hyperlink{classosea_1_1ofreq_1_1_force_cross}{Force\-Cross} array. \end{DoxyCompactList}\item 
 void \hyperlink{classosea_1_1ofreq_1_1mat_force_cross_a546ca085994682e1e8160ce3014ffaae}{set\-Linked\-Body} (\hyperlink{classosea_1_1ofreq_1_1mat_body}{mat\-Body} \&Bod\-In)
 \item 
 \hyperlink{classosea_1_1ofreq_1_1mat_body}{mat\-Body} $\ast$ \hyperlink{classosea_1_1ofreq_1_1mat_force_cross_a240be184a1a56ac5541ea0acfbcb9ec5}{get\-Linked\-Body} ()
@@ -36,14 +41,18 @@ void \hyperlink{classosea_1_1ofreq_1_1mat_force_cross_a285c83c27df6413f90665480d
 int \hyperlink{classosea_1_1ofreq_1_1mat_force_cross_a613dfb7f1c2d351df3f0e3ab1efc5bfa}{get\-Linked\-Id} ()
 \begin{DoxyCompactList}\small\item\em Gets the id of the linked body. \end{DoxyCompactList}\item 
 std\-::vector$<$ int $>$ \hyperlink{classosea_1_1ofreq_1_1mat_force_cross_ae842c91c8c3de5c273b2931577e793b4}{get\-Mat\-Dims} ()
-\begin{DoxyCompactList}\small\item\em Returns the size of the matrix in each order of derivative. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Returns the size of the matrix in each order of derivative. \end{DoxyCompactList}\item 
+void \hyperlink{classosea_1_1ofreq_1_1mat_force_cross_a49db04de2e54db7ac3ea43492f45d211}{set\-Linked\-Name} (std\-::string name\-In)
+\begin{DoxyCompactList}\small\item\em Sets the name of the linked body. \end{DoxyCompactList}\item 
+std\-::string \hyperlink{classosea_1_1ofreq_1_1mat_force_cross_a0afd0f7989ba392c2d5fb8631a6f7def}{get\-Linked\-Name} ()
+\begin{DoxyCompactList}\small\item\em Gets the name of the linked body. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Additional Inherited Members}
 
 
 \subsection{Detailed Description}
-$\ast$\-This class defines the cross body force matrix. It is an extension of the reactive force matrix class. The main $\ast$difference is that this class includes an additional property for the connected body. 
+This class defines the cross body force matrix. It is an extension of the reactive force matrix class. The main difference is that this class includes an additional property for the connected body. 
 
-Definition at line 93 of file matforcecross.\-h.
+Definition at line 95 of file matforcecross.\-h.
 
 
 
@@ -57,7 +66,7 @@ Definition at line 93 of file matforcecross.\-h.
 )}}\label{classosea_1_1ofreq_1_1mat_force_cross_a8ceccb692bece20135f104f2f78dcf20}
 The default constructor 
 
-Definition at line 35 of file matforcecross.\-cpp.
+Definition at line 41 of file matforcecross.\-cpp.
 
 \hypertarget{classosea_1_1ofreq_1_1mat_force_cross_a7887135f4a9ee649d161ca5ca649675f}{\index{osea\-::ofreq\-::mat\-Force\-Cross@{osea\-::ofreq\-::mat\-Force\-Cross}!mat\-Force\-Cross@{mat\-Force\-Cross}}
 \index{mat\-Force\-Cross@{mat\-Force\-Cross}!osea::ofreq::matForceCross@{osea\-::ofreq\-::mat\-Force\-Cross}}
@@ -84,7 +93,7 @@ The constructor. Takes a vector of complex matrices and stores them as derivativ
 )}}\label{classosea_1_1ofreq_1_1mat_force_cross_a2eb0a76db0d4f994287d8368699bb036}
 The default destructor. Nothing happens here. 
 
-Definition at line 55 of file matforcecross.\-cpp.
+Definition at line 61 of file matforcecross.\-cpp.
 
 
 
@@ -101,7 +110,7 @@ Returns a pointer to the \hyperlink{classosea_1_1ofreq_1_1mat_body}{mat\-Body} o
 \end{DoxyReturn}
 
 
-Definition at line 239 of file matforcecross.\-cpp.
+Definition at line 291 of file matforcecross.\-cpp.
 
 \hypertarget{classosea_1_1ofreq_1_1mat_force_cross_a613dfb7f1c2d351df3f0e3ab1efc5bfa}{\index{osea\-::ofreq\-::mat\-Force\-Cross@{osea\-::ofreq\-::mat\-Force\-Cross}!get\-Linked\-Id@{get\-Linked\-Id}}
 \index{get\-Linked\-Id@{get\-Linked\-Id}!osea::ofreq::matForceCross@{osea\-::ofreq\-::mat\-Force\-Cross}}
@@ -119,7 +128,25 @@ Integer value which is the body's id. This is normally the index of the body wit
 \end{DoxyReturn}
 
 
-Definition at line 251 of file matforcecross.\-cpp.
+Definition at line 303 of file matforcecross.\-cpp.
+
+\hypertarget{classosea_1_1ofreq_1_1mat_force_cross_a0afd0f7989ba392c2d5fb8631a6f7def}{\index{osea\-::ofreq\-::mat\-Force\-Cross@{osea\-::ofreq\-::mat\-Force\-Cross}!get\-Linked\-Name@{get\-Linked\-Name}}
+\index{get\-Linked\-Name@{get\-Linked\-Name}!osea::ofreq::matForceCross@{osea\-::ofreq\-::mat\-Force\-Cross}}
+\subsubsection[{get\-Linked\-Name}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string mat\-Force\-Cross\-::get\-Linked\-Name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1mat_force_cross_a0afd0f7989ba392c2d5fb8631a6f7def}
+
+
+Gets the name of the linked body. 
+
+The name of the linked body is the name of the hydrobody. This property is only used in the hydro\-\_\-data section of the program. When actually used in the motion solver, the linked body name should never be used. T\-He only reason it is included is because it was far simpler to add a single property instead of creating a whole new class. \begin{DoxyReturn}{Returns}
+String, variable passed by value. The name of the hydrobody that is associated with this cross body force. 
+\end{DoxyReturn}
+
+
+Definition at line 327 of file matforcecross.\-cpp.
 
 \hypertarget{classosea_1_1ofreq_1_1mat_force_cross_ae842c91c8c3de5c273b2931577e793b4}{\index{osea\-::ofreq\-::mat\-Force\-Cross@{osea\-::ofreq\-::mat\-Force\-Cross}!get\-Mat\-Dims@{get\-Mat\-Dims}}
 \index{get\-Mat\-Dims@{get\-Mat\-Dims}!osea::ofreq::matForceCross@{osea\-::ofreq\-::mat\-Force\-Cross}}
@@ -137,7 +164,30 @@ Returns a vector of two integers specifying size of matrix. First output is numb
 \end{DoxyReturn}
 
 
-Definition at line 257 of file matforcecross.\-cpp.
+Definition at line 309 of file matforcecross.\-cpp.
+
+\hypertarget{classosea_1_1ofreq_1_1mat_force_cross_a411f77659b011eb6a90270463ffab7f1}{\index{osea\-::ofreq\-::mat\-Force\-Cross@{osea\-::ofreq\-::mat\-Force\-Cross}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!osea::ofreq::matForceCross@{osea\-::ofreq\-::mat\-Force\-Cross}}
+\subsubsection[{operator$\ast$}]{\setlength{\rightskip}{0pt plus 5cm}{\bf mat\-Force\-Cross} mat\-Force\-Cross\-::operator$\ast$ (
+\begin{DoxyParamCaption}
+\item[{double}]{scalar}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1mat_force_cross_a411f77659b011eb6a90270463ffab7f1}
+
+
+Scalar multiplication with the \hyperlink{classosea_1_1ofreq_1_1_force_cross}{Force\-Cross} array. 
+
+multiplied to each individual element in the array. 
+\begin{DoxyParams}{Parameters}
+{\em scalar} & Double. Variable passed by value. The scalar that should be multiplied to each element in the array \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns a \hyperlink{classosea_1_1ofreq_1_1mat_force_cross}{mat\-Force\-Cross} object. Variable passed by value. 
+\end{DoxyReturn}
+
+
+Definition at line 236 of file matforcecross.\-cpp.
 
 \hypertarget{classosea_1_1ofreq_1_1mat_force_cross_a9cb8a17edf38bebb728ff47261175614}{\index{osea\-::ofreq\-::mat\-Force\-Cross@{osea\-::ofreq\-::mat\-Force\-Cross}!operator+@{operator+}}
 \index{operator+@{operator+}!osea::ofreq::matForceCross@{osea\-::ofreq\-::mat\-Force\-Cross}}
@@ -160,11 +210,12 @@ Returns an object of type \hyperlink{classosea_1_1ofreq_1_1mat_force_cross}{mat\
 \end{DoxyReturn}
 
 
-Definition at line 60 of file matforcecross.\-cpp.
+Definition at line 66 of file matforcecross.\-cpp.
 
 
 
-Here is the call graph for this function\-:\nopagebreak
+Here is the call graph for this function\-:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -194,11 +245,12 @@ Returns an object of type \hyperlink{classosea_1_1ofreq_1_1mat_force_cross}{mat\
 \end{DoxyReturn}
 
 
-Definition at line 145 of file matforcecross.\-cpp.
+Definition at line 151 of file matforcecross.\-cpp.
 
 
 
-Here is the call graph for this function\-:\nopagebreak
+Here is the call graph for this function\-:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -206,6 +258,29 @@ Here is the call graph for this function\-:\nopagebreak
 \end{center}
 \end{figure}
 
+
+\hypertarget{classosea_1_1ofreq_1_1mat_force_cross_a82b093a301d902c402fe3fe6a2b5b1e9}{\index{osea\-::ofreq\-::mat\-Force\-Cross@{osea\-::ofreq\-::mat\-Force\-Cross}!operator/@{operator/}}
+\index{operator/@{operator/}!osea::ofreq::matForceCross@{osea\-::ofreq\-::mat\-Force\-Cross}}
+\subsubsection[{operator/}]{\setlength{\rightskip}{0pt plus 5cm}{\bf mat\-Force\-Cross} mat\-Force\-Cross\-::operator/ (
+\begin{DoxyParamCaption}
+\item[{double}]{scalar}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1mat_force_cross_a82b093a301d902c402fe3fe6a2b5b1e9}
+
+
+Scalar division with the \hyperlink{classosea_1_1ofreq_1_1_force_cross}{Force\-Cross} array. 
+
+Divided to each individual element in the array. 
+\begin{DoxyParams}{Parameters}
+{\em scalar} & Double. Variable passed by value. The scalar that should be divided to each element in the array \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns a \hyperlink{classosea_1_1ofreq_1_1mat_force_cross}{mat\-Force\-Cross} object. Variable passed by value. 
+\end{DoxyReturn}
+
+
+Definition at line 276 of file matforcecross.\-cpp.
 
 \hypertarget{classosea_1_1ofreq_1_1mat_force_cross_a546ca085994682e1e8160ce3014ffaae}{\index{osea\-::ofreq\-::mat\-Force\-Cross@{osea\-::ofreq\-::mat\-Force\-Cross}!set\-Linked\-Body@{set\-Linked\-Body}}
 \index{set\-Linked\-Body@{set\-Linked\-Body}!osea::ofreq::matForceCross@{osea\-::ofreq\-::mat\-Force\-Cross}}
@@ -221,11 +296,12 @@ Set linked body for cross body object.
 \end{DoxyParams}
 
 
-Definition at line 230 of file matforcecross.\-cpp.
+Definition at line 282 of file matforcecross.\-cpp.
 
 
 
-Here is the call graph for this function\-:\nopagebreak
+Here is the call graph for this function\-:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -252,7 +328,27 @@ Sets the id of the linked body. The id is like the body's name. This is normally
 \end{DoxyParams}
 
 
-Definition at line 245 of file matforcecross.\-cpp.
+Definition at line 297 of file matforcecross.\-cpp.
+
+\hypertarget{classosea_1_1ofreq_1_1mat_force_cross_a49db04de2e54db7ac3ea43492f45d211}{\index{osea\-::ofreq\-::mat\-Force\-Cross@{osea\-::ofreq\-::mat\-Force\-Cross}!set\-Linked\-Name@{set\-Linked\-Name}}
+\index{set\-Linked\-Name@{set\-Linked\-Name}!osea::ofreq::matForceCross@{osea\-::ofreq\-::mat\-Force\-Cross}}
+\subsubsection[{set\-Linked\-Name}]{\setlength{\rightskip}{0pt plus 5cm}void mat\-Force\-Cross\-::set\-Linked\-Name (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{name\-In}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1mat_force_cross_a49db04de2e54db7ac3ea43492f45d211}
+
+
+Sets the name of the linked body. 
+
+The name of the linked body is the name of the hydrobody. This property is only used in the hydro\-\_\-data section of the program. When actually used in the motion solver, the linked body name should never be used. T\-He only reason it is included is because it was far simpler to add a single property instead of creating a whole new class. 
+\begin{DoxyParams}{Parameters}
+{\em name\-In} & String, variable passed by value. The name of the hydrobody that is associated with this cross body force. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 321 of file matforcecross.\-cpp.
 
 
 

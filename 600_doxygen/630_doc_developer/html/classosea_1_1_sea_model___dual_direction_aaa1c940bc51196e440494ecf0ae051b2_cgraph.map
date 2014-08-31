@@ -1,0 +1,6 @@
+<map id="osea::SeaModel_DualDirection::getWaveAmp" name="osea::SeaModel_DualDirection::getWaveAmp">
+<area shape="rect" id="node3" href="$classosea_1_1_sea_model___dual_direction.html#a3a922f077ff724845bd58f4f40a455d1" title="Gets the wave energy from the sea model for the wave direction and wave frequency specified..." alt="" coords="278,5,501,49"/>
+<area shape="rect" id="node5" href="$classosea_1_1_sea_model.html#a5a45cf7c70d0cca9454eab69acee2d25" title="Calculates the frequency step in the list of wave frequencies. " alt="" coords="282,73,497,101"/>
+<area shape="rect" id="node7" href="$classosea_1_1ofreq_1_1_log.html#a92e010cb4dd557a49099d61082175524" title="Notifies that errors were found in the run. " alt="" coords="304,125,475,153"/>
+<area shape="rect" id="node9" href="$classosea_1_1ofreq_1_1_log.html#a12976c7499decb341c11e3450e257693" title="Writes output in general. " alt="" coords="304,177,475,205"/>
+</map>

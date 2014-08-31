@@ -1,0 +1,306 @@
+\hypertarget{classosea_1_1ofreq_1_1_log}{\section{osea\-:\-:ofreq\-:\-:Log Class Reference}
+\label{classosea_1_1ofreq_1_1_log}\index{osea\-::ofreq\-::\-Log@{osea\-::ofreq\-::\-Log}}
+}
+
+
+The \hyperlink{classosea_1_1ofreq_1_1_log}{Log} class is used to create output logs.  
+
+
+
+
+{\ttfamily \#include $<$log.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classosea_1_1ofreq_1_1_log_af6071a60aa52b6c1b511f99b4bc1b8fe}{Log} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. Sets the default value for the output file. \end{DoxyCompactList}\item 
+\hyperlink{classosea_1_1ofreq_1_1_log_a0fbfda88fbee5027c89f6eb121059360}{$\sim$\-Log} ()
+\begin{DoxyCompactList}\small\item\em Default destructor. Closes the output log file. \end{DoxyCompactList}\item 
+void \hyperlink{classosea_1_1ofreq_1_1_log_a12976c7499decb341c11e3450e257693}{Write} (std\-::string msg, int timestamp=0, std\-::string output=\char`\"{}Default\char`\"{})
+\begin{DoxyCompactList}\small\item\em Writes output in general. \end{DoxyCompactList}\item 
+void \hyperlink{classosea_1_1ofreq_1_1_log_ae4776c638b695d57732ff14ce8fdfc3f}{Write\-Log} (std\-::string msg, int timestamp=0)
+\begin{DoxyCompactList}\small\item\em Writes output only to the log file. \end{DoxyCompactList}\item 
+void \hyperlink{classosea_1_1ofreq_1_1_log_a34662fd2658b0da10aeb031e493b557d}{Write\-Screen} (std\-::string msg, int timestamp=0)
+\begin{DoxyCompactList}\small\item\em Writes output to only the screen. \end{DoxyCompactList}\item 
+void \hyperlink{classosea_1_1ofreq_1_1_log_a6188953224e6abd070881c145a62b2ca}{set\-Log\-File} (std\-::string path\-In)
+\begin{DoxyCompactList}\small\item\em Sets the location of the log file. \end{DoxyCompactList}\item 
+void \hyperlink{classosea_1_1ofreq_1_1_log_a95530d8058c85ce321dd65e7e1157345}{delete\-Log} (std\-::string path\-In=\char`\"{}\char`\"{})
+\begin{DoxyCompactList}\small\item\em Deletes the log file. \end{DoxyCompactList}\item 
+void \hyperlink{classosea_1_1ofreq_1_1_log_a3c682950caf0eae674517c3001080fd6}{cls} ()
+\begin{DoxyCompactList}\small\item\em Prints out many carriage returns to make it appear as if the screen were cleared. \end{DoxyCompactList}\item 
+void \hyperlink{classosea_1_1ofreq_1_1_log_ab9b2e0aaf8e9ea9541d8353952efc9e4}{set\-Default\-Output} (std\-::string output)
+\begin{DoxyCompactList}\small\item\em Sets the default output destination for the log file. \end{DoxyCompactList}\item 
+void \hyperlink{classosea_1_1ofreq_1_1_log_a0254e4603561ac0d83df53afa290d4b2}{set\-Default\-Time\-Stamp} (bool timein)
+\begin{DoxyCompactList}\small\item\em Determines the default value of the timestamp to use. \end{DoxyCompactList}\item 
+void \hyperlink{classosea_1_1ofreq_1_1_log_a92e010cb4dd557a49099d61082175524}{Notify} (std\-::string input=\char`\"{}\char`\"{})
+\begin{DoxyCompactList}\small\item\em Notifies that errors were found in the run. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\-::ofstream \hyperlink{classosea_1_1ofreq_1_1_log_a1d01f650789c18476389cba175b0b702}{out\-File}
+\begin{DoxyCompactList}\small\item\em The actual output file that the log writes to. Simple A\-S\-C\-I\-I text file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The \hyperlink{classosea_1_1ofreq_1_1_log}{Log} class is used to create output logs. 
+
+The \hyperlink{classosea_1_1ofreq_1_1_log}{Log} class creates output logs. You can use this class to write outputs to a log file, to the screen, or to both. You also have the options to set output format. You can write output with an actual date and time assigned, or with just a direct message. 
+
+Definition at line 97 of file log.\-h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classosea_1_1ofreq_1_1_log_af6071a60aa52b6c1b511f99b4bc1b8fe}{\index{osea\-::ofreq\-::\-Log@{osea\-::ofreq\-::\-Log}!Log@{Log}}
+\index{Log@{Log}!osea::ofreq::Log@{osea\-::ofreq\-::\-Log}}
+\subsubsection[{Log}]{\setlength{\rightskip}{0pt plus 5cm}Log\-::\-Log (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_log_af6071a60aa52b6c1b511f99b4bc1b8fe}
+
+
+Default constructor. Sets the default value for the output file. 
+
+
+
+Definition at line 45 of file log.\-cpp.
+
+\hypertarget{classosea_1_1ofreq_1_1_log_a0fbfda88fbee5027c89f6eb121059360}{\index{osea\-::ofreq\-::\-Log@{osea\-::ofreq\-::\-Log}!$\sim$\-Log@{$\sim$\-Log}}
+\index{$\sim$\-Log@{$\sim$\-Log}!osea::ofreq::Log@{osea\-::ofreq\-::\-Log}}
+\subsubsection[{$\sim$\-Log}]{\setlength{\rightskip}{0pt plus 5cm}Log\-::$\sim$\-Log (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_log_a0fbfda88fbee5027c89f6eb121059360}
+
+
+Default destructor. Closes the output log file. 
+
+
+
+Definition at line 52 of file log.\-cpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classosea_1_1ofreq_1_1_log_a3c682950caf0eae674517c3001080fd6}{\index{osea\-::ofreq\-::\-Log@{osea\-::ofreq\-::\-Log}!cls@{cls}}
+\index{cls@{cls}!osea::ofreq::Log@{osea\-::ofreq\-::\-Log}}
+\subsubsection[{cls}]{\setlength{\rightskip}{0pt plus 5cm}void Log\-::cls (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_log_a3c682950caf0eae674517c3001080fd6}
+
+
+Prints out many carriage returns to make it appear as if the screen were cleared. 
+
+There are some system functions that allow you to clear the screen. However, these were not implemented because the system commands change for each O\-S and some forum postings from other programmers indicates that the system() object, which is used to clear the screen, poses a security vulnerability. It's possible that different system admins will lock down this function in some way and cause problems with o\-Freq functionality.
+
+Instead, stick with what is guaranteed to work. 
+
+Definition at line 195 of file log.\-cpp.
+
+\hypertarget{classosea_1_1ofreq_1_1_log_a95530d8058c85ce321dd65e7e1157345}{\index{osea\-::ofreq\-::\-Log@{osea\-::ofreq\-::\-Log}!delete\-Log@{delete\-Log}}
+\index{delete\-Log@{delete\-Log}!osea::ofreq::Log@{osea\-::ofreq\-::\-Log}}
+\subsubsection[{delete\-Log}]{\setlength{\rightskip}{0pt plus 5cm}void Log\-::delete\-Log (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{path\-In = {\ttfamily \char`\"{}\char`\"{}}}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_log_a95530d8058c85ce321dd65e7e1157345}
+
+
+Deletes the log file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path\-In} & String variable. Variable passed by value. Provides the full path of the log file, ending with the file name. The function will find the file name at the end. It will then create the the file and open it for writing. Or if the file already exists, it will open the file and start appending to it. Directory path is specified as an absolute path, or specified relative to the current program executable file.\\
+\hline
+\end{DoxyParams}
+Default input uses the current log file path, assuming the log file was defined. 
+
+Definition at line 179 of file log.\-cpp.
+
+\hypertarget{classosea_1_1ofreq_1_1_log_a92e010cb4dd557a49099d61082175524}{\index{osea\-::ofreq\-::\-Log@{osea\-::ofreq\-::\-Log}!Notify@{Notify}}
+\index{Notify@{Notify}!osea::ofreq::Log@{osea\-::ofreq\-::\-Log}}
+\subsubsection[{Notify}]{\setlength{\rightskip}{0pt plus 5cm}void Log\-::\-Notify (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{input = {\ttfamily \char`\"{}\char`\"{}}}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_log_a92e010cb4dd557a49099d61082175524}
+
+
+Notifies that errors were found in the run. 
+
+Function meant mostly for the standard log. Simply writes a default message to notify the user that errors were found in the run, and the user should check the error log for more details. You can also override the action message with your own input. 
+\begin{DoxyParams}{Parameters}
+{\em input} & String, passed by value. An override for the standard notification message. Default Behavior\-: \char`\"{}\-Errors found.  Please check the error log for details.\char`\"{} Override Behavior\-: \char`\"{}\-Errors found.  \char`\"{} + input. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 217 of file log.\-cpp.
+
+\hypertarget{classosea_1_1ofreq_1_1_log_ab9b2e0aaf8e9ea9541d8353952efc9e4}{\index{osea\-::ofreq\-::\-Log@{osea\-::ofreq\-::\-Log}!set\-Default\-Output@{set\-Default\-Output}}
+\index{set\-Default\-Output@{set\-Default\-Output}!osea::ofreq::Log@{osea\-::ofreq\-::\-Log}}
+\subsubsection[{set\-Default\-Output}]{\setlength{\rightskip}{0pt plus 5cm}void Log\-::set\-Default\-Output (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{output}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_log_ab9b2e0aaf8e9ea9541d8353952efc9e4}
+
+
+Sets the default output destination for the log file. 
+
+Options for output types\-: \hyperlink{classosea_1_1ofreq_1_1_log}{Log}, File, log, file = Write only to the output file. Screen, Message, screen, message = Write only to the screen. Both, Dual, All, both, dual, all = Write the message to both the screen and the log file. 
+\begin{DoxyParams}{Parameters}
+{\em output} & Standard string variable. Variable passed by value. Specifies the default output destination. Must be one of the key words listed above. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 202 of file log.\-cpp.
+
+\hypertarget{classosea_1_1ofreq_1_1_log_a0254e4603561ac0d83df53afa290d4b2}{\index{osea\-::ofreq\-::\-Log@{osea\-::ofreq\-::\-Log}!set\-Default\-Time\-Stamp@{set\-Default\-Time\-Stamp}}
+\index{set\-Default\-Time\-Stamp@{set\-Default\-Time\-Stamp}!osea::ofreq::Log@{osea\-::ofreq\-::\-Log}}
+\subsubsection[{set\-Default\-Time\-Stamp}]{\setlength{\rightskip}{0pt plus 5cm}void Log\-::set\-Default\-Time\-Stamp (
+\begin{DoxyParamCaption}
+\item[{bool}]{timein}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_log_a0254e4603561ac0d83df53afa290d4b2}
+
+
+Determines the default value of the timestamp to use. 
+
+a timestamp can be added to every log entry. This sets the default value to use for the log timestamp.
+
+Options\-: 1\-: Use timestamp (true). -\/1\-: Do not use timestamp (false). 
+\begin{DoxyParams}{Parameters}
+{\em timein} & Boolean. Variable passed by value. Determines if the default value should be to use the timestamp or not. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 208 of file log.\-cpp.
+
+\hypertarget{classosea_1_1ofreq_1_1_log_a6188953224e6abd070881c145a62b2ca}{\index{osea\-::ofreq\-::\-Log@{osea\-::ofreq\-::\-Log}!set\-Log\-File@{set\-Log\-File}}
+\index{set\-Log\-File@{set\-Log\-File}!osea::ofreq::Log@{osea\-::ofreq\-::\-Log}}
+\subsubsection[{set\-Log\-File}]{\setlength{\rightskip}{0pt plus 5cm}void Log\-::set\-Log\-File (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{path\-In}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_log_a6188953224e6abd070881c145a62b2ca}
+
+
+Sets the location of the log file. 
+
+Sets the location of the log file. Provide the full path of the log file, ending with the file name. The function will find the file name at the end. It will then create the the file and open it for writing. Or if the file already exists, it will open the file and start appending to it. 
+\begin{DoxyParams}{Parameters}
+{\em path\-In} & String variable. Variable passed by value. Provides the full path of the log file, ending with the file name. The function will find the file name at the end. It will then create the the file and open it for writing. Or if the file already exists, it will open the file and start appending to it. Directory path is specified as an absolute path, or specified relative to the current program executable file. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 167 of file log.\-cpp.
+
+\hypertarget{classosea_1_1ofreq_1_1_log_a12976c7499decb341c11e3450e257693}{\index{osea\-::ofreq\-::\-Log@{osea\-::ofreq\-::\-Log}!Write@{Write}}
+\index{Write@{Write}!osea::ofreq::Log@{osea\-::ofreq\-::\-Log}}
+\subsubsection[{Write}]{\setlength{\rightskip}{0pt plus 5cm}void Log\-::\-Write (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{msg, }
+\item[{int}]{timestamp = {\ttfamily 0}, }
+\item[{std\-::string}]{output = {\ttfamily \char`\"{}Default\char`\"{}}}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_log_a12976c7499decb341c11e3450e257693}
+
+
+Writes output in general. 
+
+Writes general output. The options of output destination are specified by parameters. Default values are also included. 
+\begin{DoxyParams}{Parameters}
+{\em msg} & The message that you want to write as output. A carriage return is automatically appended to the end of the message. Standard string variable. Variable passed by value. \\
+\hline
+{\em timestamp} & Defines whether a time stamp should be included at the beginning of the message. Default value is to include a timestamp. Integer variable. Default value is to include a timestamp. Default value can be changed.\\
+\hline
+\end{DoxyParams}
+Options for input are\-: 1\-: Use timestamp (true). -\/1\-: Do not use timestamp (false). 
+\begin{DoxyParams}{Parameters}
+{\em output} & String variable. Sets the destination for the output of the message. Default value is to write to both the log file and the screen.\\
+\hline
+\end{DoxyParams}
+Options for output types\-: \hyperlink{classosea_1_1ofreq_1_1_log}{Log}, File, log, file = Write only to the output file. Screen, Message, screen, message = Write only to the screen. Both, Dual, All, both, dual, all = Write the message to both the screen and the log file. \begin{DoxySeeAlso}{See Also}
+\hyperlink{classosea_1_1ofreq_1_1_log_ab9b2e0aaf8e9ea9541d8353952efc9e4}{Log\-::set\-Default\-Output()} 
+
+\hyperlink{classosea_1_1ofreq_1_1_log_a0254e4603561ac0d83df53afa290d4b2}{Log\-::set\-Default\-Time\-Stamp()} 
+\end{DoxySeeAlso}
+
+
+Definition at line 58 of file log.\-cpp.
+
+\hypertarget{classosea_1_1ofreq_1_1_log_ae4776c638b695d57732ff14ce8fdfc3f}{\index{osea\-::ofreq\-::\-Log@{osea\-::ofreq\-::\-Log}!Write\-Log@{Write\-Log}}
+\index{Write\-Log@{Write\-Log}!osea::ofreq::Log@{osea\-::ofreq\-::\-Log}}
+\subsubsection[{Write\-Log}]{\setlength{\rightskip}{0pt plus 5cm}void Log\-::\-Write\-Log (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{msg, }
+\item[{int}]{timestamp = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_log_ae4776c638b695d57732ff14ce8fdfc3f}
+
+
+Writes output only to the log file. 
+
+Writes output only to the log file. 
+\begin{DoxyParams}{Parameters}
+{\em msg} & The message that you want to write as output. A carriage return is automatically appended to the end of the message. Standard string variable. Variable passed by value. \\
+\hline
+{\em timestamp} & Defines whether a time stamp should be included at the beginning of the message. Default value is to include a timestamp. Integer variable. Default value is to include a timestamp. Default value can be changed.\\
+\hline
+\end{DoxyParams}
+Options for input are\-: 1\-: Use timestamp (true). -\/1\-: Do not use timestamp (false). 
+
+Definition at line 153 of file log.\-cpp.
+
+\hypertarget{classosea_1_1ofreq_1_1_log_a34662fd2658b0da10aeb031e493b557d}{\index{osea\-::ofreq\-::\-Log@{osea\-::ofreq\-::\-Log}!Write\-Screen@{Write\-Screen}}
+\index{Write\-Screen@{Write\-Screen}!osea::ofreq::Log@{osea\-::ofreq\-::\-Log}}
+\subsubsection[{Write\-Screen}]{\setlength{\rightskip}{0pt plus 5cm}void Log\-::\-Write\-Screen (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{msg, }
+\item[{int}]{timestamp = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_log_a34662fd2658b0da10aeb031e493b557d}
+
+
+Writes output to only the screen. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em msg} & The message that you want to write as output. A carriage return is automatically appended to the end of the message. Standard string variable. Variable passed by value. \\
+\hline
+{\em timestamp} & Defines whether a time stamp should be included at the beginning of the message. Default value is to include a timestamp. Integer variable. Default value is to include a timestamp. Default value can be changed.\\
+\hline
+\end{DoxyParams}
+Options for input are\-: 1\-: Use timestamp (true). -\/1\-: Do not use timestamp (false). 
+
+Definition at line 160 of file log.\-cpp.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classosea_1_1ofreq_1_1_log_a1d01f650789c18476389cba175b0b702}{\index{osea\-::ofreq\-::\-Log@{osea\-::ofreq\-::\-Log}!out\-File@{out\-File}}
+\index{out\-File@{out\-File}!osea::ofreq::Log@{osea\-::ofreq\-::\-Log}}
+\subsubsection[{out\-File}]{\setlength{\rightskip}{0pt plus 5cm}std\-::ofstream osea\-::ofreq\-::\-Log\-::out\-File}}\label{classosea_1_1ofreq_1_1_log_a1d01f650789c18476389cba175b0b702}
+
+
+The actual output file that the log writes to. Simple A\-S\-C\-I\-I text file. 
+
+
+
+Definition at line 246 of file log.\-h.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/home/\-Ship\-\_\-\-Design/\-Projects/\-D\-M\-S1305 Open\-S\-E\-A/master/200\-\_\-src/bin/ofreq/system\-\_\-objects/\hyperlink{log_8h}{log.\-h}\item 
+/home/\-Ship\-\_\-\-Design/\-Projects/\-D\-M\-S1305 Open\-S\-E\-A/master/200\-\_\-src/bin/ofreq/system\-\_\-objects/\hyperlink{log_8cpp}{log.\-cpp}\end{DoxyCompactItemize}

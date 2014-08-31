@@ -1,0 +1,6 @@
+<map id="osea::ofreq::hydroData::interpHydroData" name="osea::ofreq::hydroData::interpHydroData">
+<area shape="rect" id="node3" href="$classosea_1_1ofreq_1_1hydro_data.html#aa5c5240f433a6943096d83d7bbcb4c7a" title="Adds an entry to the list of wave frequencies. " alt="" coords="224,5,395,49"/>
+<area shape="rect" id="node5" href="$classosea_1_1ofreq_1_1hydro_data.html#aa5a9412a59f440ec55d95f57de913187" title="Adds a single entry ot the list of Active force data objects. " alt="" coords="224,73,395,117"/>
+<area shape="rect" id="node7" href="$classosea_1_1ofreq_1_1hydro_data.html#a0fc3dd79620d5be383075cd29f35f760" title="Adds a single entry ot the list of reactive force data objects. " alt="" coords="224,141,395,185"/>
+<area shape="rect" id="node9" href="$classosea_1_1ofreq_1_1hydro_data.html#a50efd747da5dfc1e0975db8ea97e8278" title="Adds a single entry to the list of crossbody forces. " alt="" coords="224,209,395,253"/>
+</map>

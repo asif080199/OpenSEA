@@ -1,0 +1,138 @@
+\hypertarget{classosea_1_1dict_cross_mass}{\section{osea\-:\-:dict\-Cross\-Mass Class Reference}
+\label{classosea_1_1dict_cross_mass}\index{osea\-::dict\-Cross\-Mass@{osea\-::dict\-Cross\-Mass}}
+}
+
+
+{\ttfamily \#include $<$dictcrossmass.\-h$>$}
+
+
+
+Inheritance diagram for osea\-:\-:dict\-Cross\-Mass\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=286pt]{classosea_1_1dict_cross_mass__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classosea_1_1dict_cross_mass_ac123895457f878888a8124dc08e73ccf}{dict\-Cross\-Mass} ()
+\item 
+\hyperlink{classosea_1_1dict_cross_mass_ad70edd3e516e29761403eb5fbe1e143d}{dict\-Cross\-Mass} (\hyperlink{classosea_1_1_hydro_reader}{osea\-::\-Hydro\-Reader} $\ast$parent)
+\begin{DoxyCompactList}\small\item\em Constructor that also passes pointer to the owning file reader. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{classosea_1_1dict_cross_mass_afd69c5e51d96d6cb649e06fb247ae833}{define\-Key} (std\-::string key\-In, std\-::vector$<$ std\-::string $>$ val\-In)
+\begin{DoxyCompactList}\small\item\em Function that defines how to interpret the key values. Contains a list of key names and corresponding actions to take for interpretting each key value. \end{DoxyCompactList}\item 
+int \hyperlink{classosea_1_1dict_cross_mass_a0de7b6960c51d5ea40fdbafdf6237a7a}{define\-Class} (std\-::string name\-In)
+\begin{DoxyCompactList}\small\item\em Function that defines how to interpret the class name. Class name implies declaration of a new object of the class named by the class name. This is a separate set of definitions to handle class declarations. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Prototype class declaration for constructor.
+
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classosea_1_1_dictionary}{Dictionary} 
+
+\hyperlink{classosea_1_1_file_reader}{File\-Reader} 
+\end{DoxySeeAlso}
+
+
+Definition at line 76 of file dictcrossmass.\-h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classosea_1_1dict_cross_mass_ac123895457f878888a8124dc08e73ccf}{\index{osea\-::dict\-Cross\-Mass@{osea\-::dict\-Cross\-Mass}!dict\-Cross\-Mass@{dict\-Cross\-Mass}}
+\index{dict\-Cross\-Mass@{dict\-Cross\-Mass}!osea::dictCrossMass@{osea\-::dict\-Cross\-Mass}}
+\subsubsection[{dict\-Cross\-Mass}]{\setlength{\rightskip}{0pt plus 5cm}dict\-Cross\-Mass\-::dict\-Cross\-Mass (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1dict_cross_mass_ac123895457f878888a8124dc08e73ccf}
+
+
+Definition at line 47 of file dictcrossmass.\-cpp.
+
+\hypertarget{classosea_1_1dict_cross_mass_ad70edd3e516e29761403eb5fbe1e143d}{\index{osea\-::dict\-Cross\-Mass@{osea\-::dict\-Cross\-Mass}!dict\-Cross\-Mass@{dict\-Cross\-Mass}}
+\index{dict\-Cross\-Mass@{dict\-Cross\-Mass}!osea::dictCrossMass@{osea\-::dict\-Cross\-Mass}}
+\subsubsection[{dict\-Cross\-Mass}]{\setlength{\rightskip}{0pt plus 5cm}dict\-Cross\-Mass\-::dict\-Cross\-Mass (
+\begin{DoxyParamCaption}
+\item[{{\bf osea\-::\-Hydro\-Reader} $\ast$}]{parent}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1dict_cross_mass_ad70edd3e516e29761403eb5fbe1e143d}
+
+
+Constructor that also passes pointer to the owning file reader. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parent} & Pointer to \hyperlink{classosea_1_1_hydro_reader}{Hydro\-Reader} object, pointer passed by value. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 52 of file dictcrossmass.\-cpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classosea_1_1dict_cross_mass_a0de7b6960c51d5ea40fdbafdf6237a7a}{\index{osea\-::dict\-Cross\-Mass@{osea\-::dict\-Cross\-Mass}!define\-Class@{define\-Class}}
+\index{define\-Class@{define\-Class}!osea::dictCrossMass@{osea\-::dict\-Cross\-Mass}}
+\subsubsection[{define\-Class}]{\setlength{\rightskip}{0pt plus 5cm}int osea\-::dict\-Cross\-Mass\-::define\-Class (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{name\-In}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{classosea_1_1dict_cross_mass_a0de7b6960c51d5ea40fdbafdf6237a7a}
+
+
+Function that defines how to interpret the class name. Class name implies declaration of a new object of the class named by the class name. This is a separate set of definitions to handle class declarations. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name\-In} & std\-::string, variable passed by value. The name of the class name. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns status of assigning key. Returned value is an integer, passed by value. See list of return codes below\-: 0\-: Key definition found. Success. 1\-: No key found. / General error message. 2\-: Key is invalid within current active object. 99\-: Function virtual definition only. Not currently defined. 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classosea_1_1_dictionary_a42843f64aa966b8c686d9e3750cbdb4b}{osea\-::\-Dictionary}.
+
+\hypertarget{classosea_1_1dict_cross_mass_afd69c5e51d96d6cb649e06fb247ae833}{\index{osea\-::dict\-Cross\-Mass@{osea\-::dict\-Cross\-Mass}!define\-Key@{define\-Key}}
+\index{define\-Key@{define\-Key}!osea::dictCrossMass@{osea\-::dict\-Cross\-Mass}}
+\subsubsection[{define\-Key}]{\setlength{\rightskip}{0pt plus 5cm}int osea\-::dict\-Cross\-Mass\-::define\-Key (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{key\-In, }
+\item[{std\-::vector$<$ std\-::string $>$}]{val\-In}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{classosea_1_1dict_cross_mass_afd69c5e51d96d6cb649e06fb247ae833}
+
+
+Function that defines how to interpret the key values. Contains a list of key names and corresponding actions to take for interpretting each key value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key\-In} & std\-::string containing the key name. Variable passed by value. \\
+\hline
+{\em val\-In} & Vector of strings containing the key values. Variable passed by value. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns status of assigning key. Returned value is an integer, passed by value. See list of return codes below\-: 0\-: Key definition found. Success. 1\-: No key found. / General error message. 2\-: Key is invalid within current active object. 99\-: Function virtual definition only. Not currently defined. 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classosea_1_1_dictionary_ae96470181c8b1762204493fa45e96d7c}{osea\-::\-Dictionary}.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/home/\-Ship\-\_\-\-Design/\-Projects/\-D\-M\-S1305 Open\-S\-E\-A/master/200\-\_\-src/bin/ofreq/hydro\-\_\-reader/\hyperlink{dictcrossmass_8h}{dictcrossmass.\-h}\item 
+/home/\-Ship\-\_\-\-Design/\-Projects/\-D\-M\-S1305 Open\-S\-E\-A/master/200\-\_\-src/bin/ofreq/hydro\-\_\-reader/\hyperlink{dictcrossmass_8cpp}{dictcrossmass.\-cpp}\end{DoxyCompactItemize}

@@ -1,0 +1,146 @@
+\hypertarget{classosea_1_1dict_hydro_direction}{\section{osea\-:\-:dict\-Hydro\-Direction Class Reference}
+\label{classosea_1_1dict_hydro_direction}\index{osea\-::dict\-Hydro\-Direction@{osea\-::dict\-Hydro\-Direction}}
+}
+
+
+{\ttfamily \#include $<$dicthydrodirection.\-h$>$}
+
+
+
+Inheritance diagram for osea\-:\-:dict\-Hydro\-Direction\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=286pt]{classosea_1_1dict_hydro_direction__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classosea_1_1dict_hydro_direction_a4c4a831002dc530dfb4146b272075916}{dict\-Hydro\-Direction} ()
+\item 
+\hyperlink{classosea_1_1dict_hydro_direction_a97754a258412a9e90dc58228cb5d2947}{dict\-Hydro\-Direction} (\hyperlink{classosea_1_1_hydro_reader}{osea\-::\-Hydro\-Reader} $\ast$parent)
+\begin{DoxyCompactList}\small\item\em Constructor that also passes pointer to the owning file reader. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{classosea_1_1dict_hydro_direction_a7a9a906f8d1f453bf9bc41326141f07f}{define\-Key} (std\-::string key\-In, std\-::vector$<$ std\-::string $>$ val\-In)
+\begin{DoxyCompactList}\small\item\em Function that defines how to interpret the key values. Contains a list of key names and corresponding actions to take for interpretting each key value. \end{DoxyCompactList}\item 
+int \hyperlink{classosea_1_1dict_hydro_direction_a2df9310178b67dce0a040f024f107f91}{define\-Class} (std\-::string name\-In)
+\begin{DoxyCompactList}\small\item\em Function that defines how to interpret the class name. Class name implies declaration of a new object of the class named by the class name. This is a separate set of definitions to handle class declarations. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Prototype class declaration for constructor.
+
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classosea_1_1_dictionary}{Dictionary} 
+
+\hyperlink{classosea_1_1_file_reader}{File\-Reader} 
+\end{DoxySeeAlso}
+
+
+Definition at line 76 of file dicthydrodirection.\-h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classosea_1_1dict_hydro_direction_a4c4a831002dc530dfb4146b272075916}{\index{osea\-::dict\-Hydro\-Direction@{osea\-::dict\-Hydro\-Direction}!dict\-Hydro\-Direction@{dict\-Hydro\-Direction}}
+\index{dict\-Hydro\-Direction@{dict\-Hydro\-Direction}!osea::dictHydroDirection@{osea\-::dict\-Hydro\-Direction}}
+\subsubsection[{dict\-Hydro\-Direction}]{\setlength{\rightskip}{0pt plus 5cm}dict\-Hydro\-Direction\-::dict\-Hydro\-Direction (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1dict_hydro_direction_a4c4a831002dc530dfb4146b272075916}
+
+
+Definition at line 47 of file dicthydrodirection.\-cpp.
+
+\hypertarget{classosea_1_1dict_hydro_direction_a97754a258412a9e90dc58228cb5d2947}{\index{osea\-::dict\-Hydro\-Direction@{osea\-::dict\-Hydro\-Direction}!dict\-Hydro\-Direction@{dict\-Hydro\-Direction}}
+\index{dict\-Hydro\-Direction@{dict\-Hydro\-Direction}!osea::dictHydroDirection@{osea\-::dict\-Hydro\-Direction}}
+\subsubsection[{dict\-Hydro\-Direction}]{\setlength{\rightskip}{0pt plus 5cm}dict\-Hydro\-Direction\-::dict\-Hydro\-Direction (
+\begin{DoxyParamCaption}
+\item[{{\bf osea\-::\-Hydro\-Reader} $\ast$}]{parent}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1dict_hydro_direction_a97754a258412a9e90dc58228cb5d2947}
+
+
+Constructor that also passes pointer to the owning file reader. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parent} & Pointer to \hyperlink{classosea_1_1_hydro_reader}{Hydro\-Reader} object, pointer passed by value. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 52 of file dicthydrodirection.\-cpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classosea_1_1dict_hydro_direction_a2df9310178b67dce0a040f024f107f91}{\index{osea\-::dict\-Hydro\-Direction@{osea\-::dict\-Hydro\-Direction}!define\-Class@{define\-Class}}
+\index{define\-Class@{define\-Class}!osea::dictHydroDirection@{osea\-::dict\-Hydro\-Direction}}
+\subsubsection[{define\-Class}]{\setlength{\rightskip}{0pt plus 5cm}int dict\-Hydro\-Direction\-::define\-Class (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{name\-In}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{classosea_1_1dict_hydro_direction_a2df9310178b67dce0a040f024f107f91}
+
+
+Function that defines how to interpret the class name. Class name implies declaration of a new object of the class named by the class name. This is a separate set of definitions to handle class declarations. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name\-In} & std\-::string, variable passed by value. The name of the class name. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns status of assigning key. Returned value is an integer, passed by value. See list of return codes below\-: 0\-: Key definition found. Success. 1\-: No key found. / General error message. 2\-: Key is invalid within current active object. 99\-: Function virtual definition only. Not currently defined. 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classosea_1_1_dictionary_a42843f64aa966b8c686d9e3750cbdb4b}{osea\-::\-Dictionary}.
+
+
+
+Definition at line 99 of file dicthydrodirection.\-cpp.
+
+\hypertarget{classosea_1_1dict_hydro_direction_a7a9a906f8d1f453bf9bc41326141f07f}{\index{osea\-::dict\-Hydro\-Direction@{osea\-::dict\-Hydro\-Direction}!define\-Key@{define\-Key}}
+\index{define\-Key@{define\-Key}!osea::dictHydroDirection@{osea\-::dict\-Hydro\-Direction}}
+\subsubsection[{define\-Key}]{\setlength{\rightskip}{0pt plus 5cm}int dict\-Hydro\-Direction\-::define\-Key (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{key\-In, }
+\item[{std\-::vector$<$ std\-::string $>$}]{val\-In}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{classosea_1_1dict_hydro_direction_a7a9a906f8d1f453bf9bc41326141f07f}
+
+
+Function that defines how to interpret the key values. Contains a list of key names and corresponding actions to take for interpretting each key value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key\-In} & std\-::string containing the key name. Variable passed by value. \\
+\hline
+{\em val\-In} & Vector of strings containing the key values. Variable passed by value. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns status of assigning key. Returned value is an integer, passed by value. See list of return codes below\-: 0\-: Key definition found. Success. 1\-: No key found. / General error message. 2\-: Key is invalid within current active object. 99\-: Function virtual definition only. Not currently defined. 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classosea_1_1_dictionary_ae96470181c8b1762204493fa45e96d7c}{osea\-::\-Dictionary}.
+
+
+
+Definition at line 70 of file dicthydrodirection.\-cpp.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/home/\-Ship\-\_\-\-Design/\-Projects/\-D\-M\-S1305 Open\-S\-E\-A/master/200\-\_\-src/bin/ofreq/hydro\-\_\-reader/\hyperlink{dicthydrodirection_8h}{dicthydrodirection.\-h}\item 
+/home/\-Ship\-\_\-\-Design/\-Projects/\-D\-M\-S1305 Open\-S\-E\-A/master/200\-\_\-src/bin/ofreq/hydro\-\_\-reader/\hyperlink{dicthydrodirection_8cpp}{dicthydrodirection.\-cpp}\end{DoxyCompactItemize}

@@ -25,6 +25,7 @@
 \*-------------------------------------------------------------------------------------------------------------------*/
 
 #include "dictionary.h"
+#include "filereader.h"
 
 using namespace std;
 using namespace osea;
@@ -42,6 +43,13 @@ Dictionary::Dictionary(QObject *parent) :
 Dictionary::Dictionary()
 {
 
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+Dictionary::Dictionary(osea::FileReader *parent)
+{
+    //set pointer object
+    pParent = parent;
 }
 
 //==========================================Section Separator =========================================================

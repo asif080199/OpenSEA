@@ -73,24 +73,24 @@ Within each folder, there are several input files. \begin{DoxyVerb}root folder/
 \hypertarget{directory_structure_system1}{}\subsubsection{System Folder}\label{directory_structure_system1}
 The system folder controls the operation of the program. This goes beyond input and output data to specify exactly what type of analysis o\-Freq should conduct. Some of the basic inputs that get used by everything are also inside this folder.
 
-\subsubsection*{Control.\-in \{\#control.\-in\}}
+\subsubsection*{Control.\-in}
 
 The filename is \char`\"{}control.\-in\char`\"{}, and o\-Freq expects that exact filename. Currently, this is the only file under the system folder. It controls the operation of the program.\hypertarget{directory_structure_constant1}{}\subsubsection{Constant Folder}\label{directory_structure_constant1}
 The constant folder contains all the input files. These specify the physics details for the analysis.
 
-\subsubsection*{Bodies.\-in \{\#bodies.\-in\}}
+\subsubsection*{Bodies.\-in}
 
 The filename is \char`\"{}bodies.\-in\char`\"{}, and o\-Freq expects that exact filename. This file combines many of the other elements and defines the body objects used in the analysis. The definition of a body object may include assignment of several other objects, which are defined in separate files. The body object is the central information storage concept. Many different elements are organized under this.
 
-\subsubsection*{Data.\-in \{\#data.\-in\}}
+\subsubsection*{Data.\-in}
 
 The filename is \char`\"{}data.\-in\char`\"{}, and o\-Freq expects that exact filename. This file specifies the location of any hydrodyanmic data that gets included in the analysis.
 
-\subsubsection*{Forces.\-in \{\#forces.\-in\}}
+\subsubsection*{Forces.\-in}
 
 The filename is \char`\"{}forces.\-in\char`\"{}, and o\-Freq expects that exact filename. This file defines the multiple force objects that can be used in the analysis. Definition of a force object does not require its use in the analysis. This file only contains the definition. The force objects are actually initialized and assigned in the bodies.\-in file. This separation allows the user to build a library of common forces and only use the forces they require.
 
-\subsubsection*{Seaenv.\-in \{\#seaenv.\-in\}}
+\subsubsection*{Seaenv.\-in}
 
 The filename is \char`\"{}seaenv.\-in\char`\"{}, and o\-Freq expects that exact filename. This file defines multiple sea envronments that can be used in the analysis. Definition of a sea environment does not require its use in the analysis. This file only contains the definitions. The invidual environments are selected within the \char`\"{}control.\-in\char`\"{} file. T\-His separation allows the user to build a library of common sea environment definitions and only use the definition they require.\hypertarget{directory_structure_outputs_structure1}{}\subsection{Structure of Outputs}\label{directory_structure_outputs_structure1}
 On running an analysis, o\-Freq will generate multiple output files and organize the files into multiple folders. o\-Freq always generates all output files, regardless if they are needed for the analysis. The intent is that o\-Freq always supplies the most complete set of information. Any post processing programs can filter the selection of data from that output. The following example shows a typical layout of the directory structure. \begin{DoxyVerb}root folder/

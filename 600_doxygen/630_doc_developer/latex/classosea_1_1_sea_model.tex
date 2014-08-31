@@ -1,0 +1,679 @@
+\hypertarget{classosea_1_1_sea_model}{\section{osea\-:\-:Sea\-Model Class Reference}
+\label{classosea_1_1_sea_model}\index{osea\-::\-Sea\-Model@{osea\-::\-Sea\-Model}}
+}
+
+
+The \hyperlink{classosea_1_1_sea_model}{Sea\-Model} class creates the model for a full sea environment.  
+
+
+
+
+{\ttfamily \#include $<$seamodel.\-h$>$}
+
+
+
+Inheritance diagram for osea\-:\-:Sea\-Model\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classosea_1_1_sea_model__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classosea_1_1_sea_model_a39eab0ab2e207a2efc3695b4c6d31832}{Sea\-Model} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+virtual \hyperlink{classosea_1_1_sea_model_a45bd26ccfb489ea75d972b8696f99d7b}{$\sim$\-Sea\-Model} ()
+\begin{DoxyCompactList}\small\item\em Default destructor. Nothing happens here. \end{DoxyCompactList}\item 
+std\-::vector$<$ double $>$ \& \hyperlink{classosea_1_1_sea_model_ae316b21bbd31b946b250e80b97fe0ccd}{list\-Wave\-Dir} ()
+\begin{DoxyCompactList}\small\item\em The list of wave directions. \end{DoxyCompactList}\item 
+double \& \hyperlink{classosea_1_1_sea_model_aa22f61bc0a138899966edd3b3f3c9701}{list\-Wave\-Dir} (int index)
+\begin{DoxyCompactList}\small\item\em A specific entry in the list of wave directions. \end{DoxyCompactList}\item 
+std\-::vector\\*
+$<$ \hyperlink{classosea_1_1_wave_spec_base}{osea\-::\-Wave\-Spec\-Base} $\ast$ $>$ \& \hyperlink{classosea_1_1_sea_model_a5779eb123781d9507b68607e956e6365}{list\-Wave\-Spec} ()
+\begin{DoxyCompactList}\small\item\em The list of wave spectra. \end{DoxyCompactList}\item 
+\hyperlink{classosea_1_1_wave_spec_base}{osea\-::\-Wave\-Spec\-Base} $\ast$\& \hyperlink{classosea_1_1_sea_model_a937a3bc65846328b5cfd158976b93f0a}{list\-Wave\-Spec} (int index)
+\begin{DoxyCompactList}\small\item\em A specific entry in the list of wave spectra. \end{DoxyCompactList}\item 
+std\-::vector$<$ double $>$ \& \hyperlink{classosea_1_1_sea_model_a5cb7dcbd8259134941de0b89dc0828e1}{list\-Wave\-Freq} ()
+\begin{DoxyCompactList}\small\item\em The list of wave frequencies. \end{DoxyCompactList}\item 
+double \& \hyperlink{classosea_1_1_sea_model_a5fbef3c5e1999a892d22a3c55f08cc06}{list\-Wave\-Freq} (int index)
+\begin{DoxyCompactList}\small\item\em A single entry from the list of wave frequencies. \end{DoxyCompactList}\item 
+std\-::vector$<$ double $>$ \& \hyperlink{classosea_1_1_sea_model_abce3f79ca26d193d561e7899f7511d39}{list\-Wave\-Scale} ()
+\begin{DoxyCompactList}\small\item\em The list of wave scaling multipliers. \end{DoxyCompactList}\item 
+double \& \hyperlink{classosea_1_1_sea_model_a92a246a023cfb0912e4016c0f071f91d}{list\-Wave\-Scale} (int index)
+\begin{DoxyCompactList}\small\item\em A single entry from the list of wave scaling multipliers. \end{DoxyCompactList}\item 
+void \hyperlink{classosea_1_1_sea_model_a78ebf3cff1f3f9f48108fc8e1706885c}{add\-Wave\-Dir} (double dir\-In)
+\begin{DoxyCompactList}\small\item\em Adds a wave direction to the list of wave directions. \end{DoxyCompactList}\item 
+void \hyperlink{classosea_1_1_sea_model_a52fc967aee53497c852898fae9b20b66}{add\-Wave\-Spec} (\hyperlink{classosea_1_1_wave_spec_base}{osea\-::\-Wave\-Spec\-Base} $\ast$spec\-In)
+\begin{DoxyCompactList}\small\item\em Add a new \hyperlink{classosea_1_1_wave_spec}{Wave\-Spec} object to the list of wave spectrum objects. \end{DoxyCompactList}\item 
+void \hyperlink{classosea_1_1_sea_model_af6729ff183dcb4222a92a29184232c26}{add\-Wave\-Freq} (double freq\-In)
+\begin{DoxyCompactList}\small\item\em Adds a new wave frequency to the list of wave frequencies. \end{DoxyCompactList}\item 
+void \hyperlink{classosea_1_1_sea_model_afb962419b075fb460ce38d7fe3463bc5}{add\-Wave\-Scale} (double scale\-In)
+\begin{DoxyCompactList}\small\item\em Adds a new wave scaling multiplier to the list of scale multipliers. \end{DoxyCompactList}\item 
+std\-::string \hyperlink{classosea_1_1_sea_model_a5a8408636c26e765fd85d080cb8cd7f9}{get\-Name} ()
+\begin{DoxyCompactList}\small\item\em The name used to identify this specific Sea Model. \end{DoxyCompactList}\item 
+void \hyperlink{classosea_1_1_sea_model_a539f1d817d847f0e377ddd2d636eeaa3}{set\-Name} (std\-::string name\-In)
+\begin{DoxyCompactList}\small\item\em The name used to identify this specific Sea Model. \end{DoxyCompactList}\item 
+std\-::string \& \hyperlink{classosea_1_1_sea_model_a5787d020db9852b79e73d8e0a38c824d}{ref\-Name} ()
+\begin{DoxyCompactList}\small\item\em The name used to identify this specific Sea Model. \end{DoxyCompactList}\item 
+virtual double \hyperlink{classosea_1_1_sea_model_acea132fcb4f8d447b41725ecfd0a6e1b}{get\-Wave\-Energy} (double dir\-In, int freq\-Index)
+\begin{DoxyCompactList}\small\item\em Gets the wave energy from the sea model for the wave direction and wave frequency specified. \end{DoxyCompactList}\item 
+virtual double \hyperlink{classosea_1_1_sea_model_abd444caa08206c2f3b2002e614f0b2fc}{get\-Wave\-Energy} (double dir\-In, double freq\-In)
+\begin{DoxyCompactList}\small\item\em Gets the wave energy from the sea model for the wave direction and wave frequency specified. \end{DoxyCompactList}\item 
+virtual double \hyperlink{classosea_1_1_sea_model_ab1315af8b1038a3a7458de2990c8f79d}{get\-Wave\-Amp} (double dir\-In, int freq\-Index)
+\begin{DoxyCompactList}\small\item\em Gets the wave amplitude from the sea model for the wave direction and wave frequency specified. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classosea_1_1_sea_model_a55e5cded1bc85a5392e0b7a3e9dd4062}{Sort\-Wave\-Dir} ()
+\begin{DoxyCompactList}\small\item\em Sorts the list of wave directions and puts them in sequential, ascending order. \end{DoxyCompactList}\item 
+void \hyperlink{classosea_1_1_sea_model_a08c6a13c0ce58f5b404829f699f8f30e}{Sort\-Wave\-Freq} ()
+\begin{DoxyCompactList}\small\item\em Sorts the list of wave frequencies and puts them in sequential, ascending order. \end{DoxyCompactList}\item 
+double \hyperlink{classosea_1_1_sea_model_a5a45cf7c70d0cca9454eab69acee2d25}{get\-Freq\-Step} (int index)
+\begin{DoxyCompactList}\small\item\em Calculates the frequency step in the list of wave frequencies. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\-::vector$<$ double $>$ \hyperlink{classosea_1_1_sea_model_a9dbf5842fe27aec73fe1694c837ed052}{plist\-Wave\-Freq}
+\item 
+std\-::vector$<$ double $>$ \hyperlink{classosea_1_1_sea_model_a3b700efb2278fad77b925f1ac39e65d5}{plist\-Wave\-Dir}
+\begin{DoxyCompactList}\small\item\em The list of wave directions. \end{DoxyCompactList}\item 
+std\-::vector$<$ \hyperlink{classosea_1_1_wave_spec_base}{osea\-::\-Wave\-Spec\-Base} $\ast$ $>$ \hyperlink{classosea_1_1_sea_model_a6ff2ff29955714965406a26a5f2e09b1}{plist\-Wave\-Spec}
+\begin{DoxyCompactList}\small\item\em The list of wave spectra. \end{DoxyCompactList}\item 
+std\-::vector$<$ double $>$ \hyperlink{classosea_1_1_sea_model_a8c099ee28555ea1ac4795a05598b6027}{plist\-Wave\-Scale}
+\begin{DoxyCompactList}\small\item\em The list of scalar multiples to apply to the wave spectra. \end{DoxyCompactList}\item 
+bool \hyperlink{classosea_1_1_sea_model_a55ba1a3f8d242b4c5c78a5613101dd6f}{Sorted\-Freq}
+\begin{DoxyCompactList}\small\item\em Tracks if the list of wave frequencies was correctly sorted. \end{DoxyCompactList}\item 
+bool \hyperlink{classosea_1_1_sea_model_a199be0a4bceaefdd36e30fcf7e4fe9f1}{Sorted\-Dir}
+\begin{DoxyCompactList}\small\item\em Tracks if the list of wave directions was correctly sorted. \end{DoxyCompactList}\item 
+std\-::string \hyperlink{classosea_1_1_sea_model_aea011a6daaf78caf7d008d7fd795432a}{p\-Name}
+\begin{DoxyCompactList}\small\item\em The name used to identify this specific sea model. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+The \hyperlink{classosea_1_1_sea_model}{Sea\-Model} class creates the model for a full sea environment. 
+
+At the most basic definition, the \hyperlink{classosea_1_1_sea_model}{Sea\-Model} is a collection of \hyperlink{classosea_1_1_wave_spec}{Wave\-Spec} objects, each object associated with a specific wave direction. The \hyperlink{classosea_1_1_sea_model}{Sea\-Model} produces two primary results\-:
+\begin{DoxyEnumerate}
+\item Wave energy at a specified wave direction and wave frequency.
+\item Wave amplitude at a specified wave direction and wave frequency.
+\end{DoxyEnumerate}
+
+For each requested result, the \hyperlink{classosea_1_1_sea_model}{Sea\-Model} interpolates between the defined spectra for each wave direction to get a resulting wave energy at the specified wave direction. The wave direction does not need to match the list of directions supplied with the \hyperlink{classosea_1_1_wave_spec}{Wave\-Spec} objects. That is the flexibility of the \hyperlink{classosea_1_1_sea_model}{Sea\-Model}. You provide it with a data set, and it provides results for any given point within that data set.
+
+The \hyperlink{classosea_1_1_sea_model}{Sea\-Model} does have one important limitation\-: You must supply it a full list of wave frequencies before requesting wave amplitude. This is because the calculations for wave amplitude depend on the spacing of the wave frequencies, and those frequencies may not be regularly spaced. Individual \hyperlink{classosea_1_1_wave_spec}{Wave\-Spec} objects have their own frequency data sets. And the \hyperlink{classosea_1_1_sea_model}{Sea\-Model} has no way to correlate between those frequency lists. That is why the \hyperlink{classosea_1_1_sea_model}{Sea\-Model} must have its own governing set of wave frequencies. When you specify a wave frequency and direction to get wave amplitude, you can only select from one of the governing frequencies defined in the list. This is necessary to ensure the programming is mathematically correct.
+
+The list of wave frequencies does not need to be sorted. The \hyperlink{classosea_1_1_sea_model}{Sea\-Model} will automatically sort after the list gets defined. Same for the wave directions. 
+
+Definition at line 89 of file seamodel.\-h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classosea_1_1_sea_model_a39eab0ab2e207a2efc3695b4c6d31832}{\index{osea\-::\-Sea\-Model@{osea\-::\-Sea\-Model}!Sea\-Model@{Sea\-Model}}
+\index{Sea\-Model@{Sea\-Model}!osea::SeaModel@{osea\-::\-Sea\-Model}}
+\subsubsection[{Sea\-Model}]{\setlength{\rightskip}{0pt plus 5cm}Sea\-Model\-::\-Sea\-Model (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1_sea_model_a39eab0ab2e207a2efc3695b4c6d31832}
+
+
+Default constructor. 
+
+Sets sorting lists to false. (Triggers the class to resort the lists before they get used.) 
+
+Definition at line 38 of file seamodel.\-cpp.
+
+\hypertarget{classosea_1_1_sea_model_a45bd26ccfb489ea75d972b8696f99d7b}{\index{osea\-::\-Sea\-Model@{osea\-::\-Sea\-Model}!$\sim$\-Sea\-Model@{$\sim$\-Sea\-Model}}
+\index{$\sim$\-Sea\-Model@{$\sim$\-Sea\-Model}!osea::SeaModel@{osea\-::\-Sea\-Model}}
+\subsubsection[{$\sim$\-Sea\-Model}]{\setlength{\rightskip}{0pt plus 5cm}Sea\-Model\-::$\sim$\-Sea\-Model (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classosea_1_1_sea_model_a45bd26ccfb489ea75d972b8696f99d7b}
+
+
+Default destructor. Nothing happens here. 
+
+
+
+Definition at line 46 of file seamodel.\-cpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classosea_1_1_sea_model_a78ebf3cff1f3f9f48108fc8e1706885c}{\index{osea\-::\-Sea\-Model@{osea\-::\-Sea\-Model}!add\-Wave\-Dir@{add\-Wave\-Dir}}
+\index{add\-Wave\-Dir@{add\-Wave\-Dir}!osea::SeaModel@{osea\-::\-Sea\-Model}}
+\subsubsection[{add\-Wave\-Dir}]{\setlength{\rightskip}{0pt plus 5cm}void Sea\-Model\-::add\-Wave\-Dir (
+\begin{DoxyParamCaption}
+\item[{double}]{dir\-In}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1_sea_model_a78ebf3cff1f3f9f48108fc8e1706885c}
+
+
+Adds a wave direction to the list of wave directions. 
+
+Wave directions are defined in units of radians, using the global coordinate system. A direction of 0 rad points to True North. Wave directions proceed counter-\/clockwise (from North to West).
+
+The wave directions do not need to be added sequentially. T\-He class automatically sorts the list of wave directions before it uses the data. 
+\begin{DoxyParams}{Parameters}
+{\em dir\-In} & Double, variable passed by value. The wave direction to add to the list of wave directions. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 100 of file seamodel.\-cpp.
+
+\hypertarget{classosea_1_1_sea_model_af6729ff183dcb4222a92a29184232c26}{\index{osea\-::\-Sea\-Model@{osea\-::\-Sea\-Model}!add\-Wave\-Freq@{add\-Wave\-Freq}}
+\index{add\-Wave\-Freq@{add\-Wave\-Freq}!osea::SeaModel@{osea\-::\-Sea\-Model}}
+\subsubsection[{add\-Wave\-Freq}]{\setlength{\rightskip}{0pt plus 5cm}void Sea\-Model\-::add\-Wave\-Freq (
+\begin{DoxyParamCaption}
+\item[{double}]{freq\-In}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1_sea_model_af6729ff183dcb4222a92a29184232c26}
+
+
+Adds a new wave frequency to the list of wave frequencies. 
+
+The list of wave frequencies that are used by the sea model to request wave energy or wave amplitude at a specific wave direction and frequency. This list of frequencies is independent of the frequency list contained in the system object. For everything conceivable situation, the two lists will be identical. However, if, for some strange reason, you need to have a separate list of wave frequencies for the \hyperlink{classosea_1_1_sea_model}{Sea\-Model}, that is possible.
+
+You do not need to add entries in sequential order. The class automatically sorts the entries into sequential order before using them for calculations. 
+\begin{DoxyParams}{Parameters}
+{\em freq\-In} & Double, variable passed by value. T\-He frequency that you want to add to the list of wave frequencies. Units of radians per second (rad/s). \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 125 of file seamodel.\-cpp.
+
+\hypertarget{classosea_1_1_sea_model_afb962419b075fb460ce38d7fe3463bc5}{\index{osea\-::\-Sea\-Model@{osea\-::\-Sea\-Model}!add\-Wave\-Scale@{add\-Wave\-Scale}}
+\index{add\-Wave\-Scale@{add\-Wave\-Scale}!osea::SeaModel@{osea\-::\-Sea\-Model}}
+\subsubsection[{add\-Wave\-Scale}]{\setlength{\rightskip}{0pt plus 5cm}void Sea\-Model\-::add\-Wave\-Scale (
+\begin{DoxyParamCaption}
+\item[{double}]{scale\-In}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1_sea_model_afb962419b075fb460ce38d7fe3463bc5}
+
+
+Adds a new wave scaling multiplier to the list of scale multipliers. 
+
+Each \hyperlink{classosea_1_1_wave_spec}{Wave\-Spec} object has a wave scaling multiplier associated with it. Those multipliers are stored in this list. The multipliers are a quick way to take a single direction wave spectrum and distribute across multiple wave directions.
+
+You do not need to add entries in sequential order. The class automatically sorts the entries into sequential order before using them for calculations. 
+\begin{DoxyParams}{Parameters}
+{\em scale\-In} & Double, variable passed by value. The wave scale mutliplier that you want to add to the list of multipliers. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 134 of file seamodel.\-cpp.
+
+\hypertarget{classosea_1_1_sea_model_a52fc967aee53497c852898fae9b20b66}{\index{osea\-::\-Sea\-Model@{osea\-::\-Sea\-Model}!add\-Wave\-Spec@{add\-Wave\-Spec}}
+\index{add\-Wave\-Spec@{add\-Wave\-Spec}!osea::SeaModel@{osea\-::\-Sea\-Model}}
+\subsubsection[{add\-Wave\-Spec}]{\setlength{\rightskip}{0pt plus 5cm}void Sea\-Model\-::add\-Wave\-Spec (
+\begin{DoxyParamCaption}
+\item[{{\bf osea\-::\-Wave\-Spec\-Base} $\ast$}]{spec\-In}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1_sea_model_a52fc967aee53497c852898fae9b20b66}
+
+
+Add a new \hyperlink{classosea_1_1_wave_spec}{Wave\-Spec} object to the list of wave spectrum objects. 
+
+Each \hyperlink{classosea_1_1_wave_spec}{Wave\-Spec} object represents a wave spectra defined for a specific direction. The \hyperlink{classosea_1_1_wave_spec}{Wave\-Spec} objects are stored external to the \hyperlink{classosea_1_1_sea_model}{Sea\-Model}. The list of wave spectra is only a list of pointers locating the wave spectra. The \hyperlink{classosea_1_1_wave_spec}{Wave\-Spec} object added corresponds to the matching wave direction and wave scale terms at the same index in their lists. You do not need to add entries in sequential order. The class automatically sorts the entries into sequential order before using them for calculations. 
+\begin{DoxyParams}{Parameters}
+{\em spec\-In} & Pointer to a \hyperlink{classosea_1_1_wave_spec}{Wave\-Spec} object, variable passed by value. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 109 of file seamodel.\-cpp.
+
+\hypertarget{classosea_1_1_sea_model_a5a45cf7c70d0cca9454eab69acee2d25}{\index{osea\-::\-Sea\-Model@{osea\-::\-Sea\-Model}!get\-Freq\-Step@{get\-Freq\-Step}}
+\index{get\-Freq\-Step@{get\-Freq\-Step}!osea::SeaModel@{osea\-::\-Sea\-Model}}
+\subsubsection[{get\-Freq\-Step}]{\setlength{\rightskip}{0pt plus 5cm}double Sea\-Model\-::get\-Freq\-Step (
+\begin{DoxyParamCaption}
+\item[{int}]{index}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classosea_1_1_sea_model_a5a45cf7c70d0cca9454eab69acee2d25}
+
+
+Calculates the frequency step in the list of wave frequencies. 
+
+The frequency step is the spacing between wave frequencies. This calculation is critical for calculating wave amplitude. 
+\begin{DoxyParams}{Parameters}
+{\em index} & Integer. Variable passed by value. The index is used to specify the wave frequency that you want. This is selected from the list of wave frequencies. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns double, variable passed by value. Returned variable is the frequency step for the requested wave frequency. 
+\end{DoxyReturn}
+
+
+Definition at line 427 of file seamodel.\-cpp.
+
+\hypertarget{classosea_1_1_sea_model_a5a8408636c26e765fd85d080cb8cd7f9}{\index{osea\-::\-Sea\-Model@{osea\-::\-Sea\-Model}!get\-Name@{get\-Name}}
+\index{get\-Name@{get\-Name}!osea::SeaModel@{osea\-::\-Sea\-Model}}
+\subsubsection[{get\-Name}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string Sea\-Model\-::get\-Name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1_sea_model_a5a8408636c26e765fd85d080cb8cd7f9}
+
+
+The name used to identify this specific Sea Model. 
+
+Purely for user benefit. Can be any string. \begin{DoxyReturn}{Returns}
+Returns a string, passed by value. String is the name of the Sea Model used to designate this specific object. 
+\end{DoxyReturn}
+
+
+Definition at line 153 of file seamodel.\-cpp.
+
+\hypertarget{classosea_1_1_sea_model_ab1315af8b1038a3a7458de2990c8f79d}{\index{osea\-::\-Sea\-Model@{osea\-::\-Sea\-Model}!get\-Wave\-Amp@{get\-Wave\-Amp}}
+\index{get\-Wave\-Amp@{get\-Wave\-Amp}!osea::SeaModel@{osea\-::\-Sea\-Model}}
+\subsubsection[{get\-Wave\-Amp}]{\setlength{\rightskip}{0pt plus 5cm}double Sea\-Model\-::get\-Wave\-Amp (
+\begin{DoxyParamCaption}
+\item[{double}]{dir\-In, }
+\item[{int}]{freq\-Index}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classosea_1_1_sea_model_ab1315af8b1038a3a7458de2990c8f79d}
+
+
+Gets the wave amplitude from the sea model for the wave direction and wave frequency specified. 
+
+For each requested result, the \hyperlink{classosea_1_1_sea_model}{Sea\-Model} interpolates between the defined spectra for each wave direction to get a resulting wave energy at the specified wave direction. The wave direction does not need to match the list of directions supplied with the \hyperlink{classosea_1_1_wave_spec}{Wave\-Spec} objects. That is the flexibility of the \hyperlink{classosea_1_1_sea_model}{Sea\-Model}. You provide it with a data set, and it provides results for any given point within that data set. 
+\begin{DoxyParams}{Parameters}
+{\em dir\-In} & Double, variable passed by value. The wave direction for the requested result. Direction measured in units of radians, in the global coordinate system. True North represents a direction of zero. Positive angles are measured counter-\/clockwise (North to West). \\
+\hline
+{\em freq\-Index} & The index of the frequency you want to use in the list of wave frequencies. T\-He list of wave frequencies must be defined before calling this function. You use the index to specify the requested frequency. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns a double, variable passed by value. Variable is the wave amplitude (in units of m) at the frqeuency and wave direction specified. 
+\end{DoxyReturn}
+
+
+Reimplemented in \hyperlink{classosea_1_1_sea_model___dual_direction_aaa1c940bc51196e440494ecf0ae051b2}{osea\-::\-Sea\-Model\-\_\-\-Dual\-Direction}, \hyperlink{classosea_1_1_sea_model___uniform_a896518443a9328812737ee94d020d2f0}{osea\-::\-Sea\-Model\-\_\-\-Uniform}, \hyperlink{classosea_1_1_sea_model___long_crest_af29f51ef0ab3edde6c944c0afe13bb51}{osea\-::\-Sea\-Model\-\_\-\-Long\-Crest}, and \hyperlink{classosea_1_1_sea_model___single_direction_a05bd44e475075521623820407f09e16e}{osea\-::\-Sea\-Model\-\_\-\-Single\-Direction}.
+
+
+
+Definition at line 281 of file seamodel.\-cpp.
+
+\hypertarget{classosea_1_1_sea_model_acea132fcb4f8d447b41725ecfd0a6e1b}{\index{osea\-::\-Sea\-Model@{osea\-::\-Sea\-Model}!get\-Wave\-Energy@{get\-Wave\-Energy}}
+\index{get\-Wave\-Energy@{get\-Wave\-Energy}!osea::SeaModel@{osea\-::\-Sea\-Model}}
+\subsubsection[{get\-Wave\-Energy}]{\setlength{\rightskip}{0pt plus 5cm}double Sea\-Model\-::get\-Wave\-Energy (
+\begin{DoxyParamCaption}
+\item[{double}]{dir\-In, }
+\item[{int}]{freq\-Index}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classosea_1_1_sea_model_acea132fcb4f8d447b41725ecfd0a6e1b}
+
+
+Gets the wave energy from the sea model for the wave direction and wave frequency specified. 
+
+For each requested result, the \hyperlink{classosea_1_1_sea_model}{Sea\-Model} interpolates between the defined spectra for each wave direction to get a resulting wave energy at the specified wave direction. The wave direction does not need to match the list of directions supplied with the \hyperlink{classosea_1_1_wave_spec}{Wave\-Spec} objects. That is the flexibility of the \hyperlink{classosea_1_1_sea_model}{Sea\-Model}. You provide it with a data set, and it provides results for any given point within that data set. 
+\begin{DoxyParams}{Parameters}
+{\em dir\-In} & Double, variable passed by value. The wave direction for the requested result. Direction measured in units of radians, in the global coordinate system. True North represents a direction of zero. Positive angles are measured counter-\/clockwise (North to West). \\
+\hline
+{\em freq\-Index} & The index of the frequency you want to use in the list of wave frequencies. T\-He list of wave frequencies must be defined before calling this function. You use the index to specify the requested frequency. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns a double, variable passed by value. Variable is the wave energy (in units of m$^\wedge$2/(rad/s)) at the frequency and wave direction specified. 
+\end{DoxyReturn}
+
+
+Reimplemented in \hyperlink{classosea_1_1_sea_model___dual_direction_a3a922f077ff724845bd58f4f40a455d1}{osea\-::\-Sea\-Model\-\_\-\-Dual\-Direction}, \hyperlink{classosea_1_1_sea_model___uniform_aedd2e3bd519a79c6f05027dcadb6259d}{osea\-::\-Sea\-Model\-\_\-\-Uniform}, \hyperlink{classosea_1_1_sea_model___long_crest_a269bb4cf5966b2b88195c2cb57b750bc}{osea\-::\-Sea\-Model\-\_\-\-Long\-Crest}, and \hyperlink{classosea_1_1_sea_model___single_direction_af4d5b777a837ba6714f89c818a65f983}{osea\-::\-Sea\-Model\-\_\-\-Single\-Direction}.
+
+
+
+Definition at line 171 of file seamodel.\-cpp.
+
+\hypertarget{classosea_1_1_sea_model_abd444caa08206c2f3b2002e614f0b2fc}{\index{osea\-::\-Sea\-Model@{osea\-::\-Sea\-Model}!get\-Wave\-Energy@{get\-Wave\-Energy}}
+\index{get\-Wave\-Energy@{get\-Wave\-Energy}!osea::SeaModel@{osea\-::\-Sea\-Model}}
+\subsubsection[{get\-Wave\-Energy}]{\setlength{\rightskip}{0pt plus 5cm}double Sea\-Model\-::get\-Wave\-Energy (
+\begin{DoxyParamCaption}
+\item[{double}]{dir\-In, }
+\item[{double}]{freq\-In}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classosea_1_1_sea_model_abd444caa08206c2f3b2002e614f0b2fc}
+
+
+Gets the wave energy from the sea model for the wave direction and wave frequency specified. 
+
+For each requested result, the \hyperlink{classosea_1_1_sea_model}{Sea\-Model} interpolates between the defined spectra for each wave direction to get a resulting wave energy at the specified wave direction. The wave direction does not need to match the list of directions supplied with the \hyperlink{classosea_1_1_wave_spec}{Wave\-Spec} objects. That is the flexibility of the \hyperlink{classosea_1_1_sea_model}{Sea\-Model}. You provide it with a data set, and it provides results for any given point within that data set. 
+\begin{DoxyParams}{Parameters}
+{\em dir\-In} & Double, variable passed by value. The wave direction for the requested result. Direction measured in units of radians, in the global coordinate system. True North represents a direction of zero. Positive angles are measured counter-\/clockwise (North to West). \\
+\hline
+{\em freq\-In} & Double, variable passed by value. The wave frequency desired. Can be any wave frequency. This stipulation only works for requesting wave energy. If you want a wave amplitude, you must use the method of specifying frequency by the index. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns a double, variable passed by value. Variable is the wave energy (in units of m$^\wedge$2/(rad/s)) at the frequency and wave direction specified. 
+\end{DoxyReturn}
+
+
+Reimplemented in \hyperlink{classosea_1_1_sea_model___dual_direction_a3fdec50d9c1e58f35c3191b5b66f3845}{osea\-::\-Sea\-Model\-\_\-\-Dual\-Direction}, \hyperlink{classosea_1_1_sea_model___uniform_af8db8287e12f25665405bc3fcf93c01e}{osea\-::\-Sea\-Model\-\_\-\-Uniform}, \hyperlink{classosea_1_1_sea_model___long_crest_a293fc13033349b9182c6dda3ce8cfe1f}{osea\-::\-Sea\-Model\-\_\-\-Long\-Crest}, and \hyperlink{classosea_1_1_sea_model___single_direction_ad3fd0108026c7faf7dd341e44744766c}{osea\-::\-Sea\-Model\-\_\-\-Single\-Direction}.
+
+
+
+Definition at line 181 of file seamodel.\-cpp.
+
+\hypertarget{classosea_1_1_sea_model_ae316b21bbd31b946b250e80b97fe0ccd}{\index{osea\-::\-Sea\-Model@{osea\-::\-Sea\-Model}!list\-Wave\-Dir@{list\-Wave\-Dir}}
+\index{list\-Wave\-Dir@{list\-Wave\-Dir}!osea::SeaModel@{osea\-::\-Sea\-Model}}
+\subsubsection[{list\-Wave\-Dir}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<$ double $>$ \& Sea\-Model\-::list\-Wave\-Dir (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1_sea_model_ae316b21bbd31b946b250e80b97fe0ccd}
+
+
+The list of wave directions. 
+
+Wave directions are defined in units of radians, using the global coordinate system. A direction of 0 rad points to True North. Wave directions proceed counter-\/clockwise (from North to West). \begin{DoxyReturn}{Returns}
+Returns a vector of doubles. Returned variable passed by reference. Returns a list of wave directions Each wave direction corresponds to a specific wave spectrum. 
+\end{DoxyReturn}
+
+
+Definition at line 52 of file seamodel.\-cpp.
+
+\hypertarget{classosea_1_1_sea_model_aa22f61bc0a138899966edd3b3f3c9701}{\index{osea\-::\-Sea\-Model@{osea\-::\-Sea\-Model}!list\-Wave\-Dir@{list\-Wave\-Dir}}
+\index{list\-Wave\-Dir@{list\-Wave\-Dir}!osea::SeaModel@{osea\-::\-Sea\-Model}}
+\subsubsection[{list\-Wave\-Dir}]{\setlength{\rightskip}{0pt plus 5cm}double \& Sea\-Model\-::list\-Wave\-Dir (
+\begin{DoxyParamCaption}
+\item[{int}]{index}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1_sea_model_aa22f61bc0a138899966edd3b3f3c9701}
+
+
+A specific entry in the list of wave directions. 
+
+Wave directions are defined in units of radians, using the global coordinate system. A direction of 0 rad points to True North. Wave directions proceed counter-\/clockwise (from North to West). 
+\begin{DoxyParams}{Parameters}
+{\em index} & Integer, variable passed by value. The index of the specific frequency requested in the list of wave directions. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns a double, variable passed by reference. T\-His is a specific wave direction in the list of wave directions. 
+\end{DoxyReturn}
+
+
+Definition at line 58 of file seamodel.\-cpp.
+
+\hypertarget{classosea_1_1_sea_model_a5cb7dcbd8259134941de0b89dc0828e1}{\index{osea\-::\-Sea\-Model@{osea\-::\-Sea\-Model}!list\-Wave\-Freq@{list\-Wave\-Freq}}
+\index{list\-Wave\-Freq@{list\-Wave\-Freq}!osea::SeaModel@{osea\-::\-Sea\-Model}}
+\subsubsection[{list\-Wave\-Freq}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<$ double $>$ \& Sea\-Model\-::list\-Wave\-Freq (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1_sea_model_a5cb7dcbd8259134941de0b89dc0828e1}
+
+
+The list of wave frequencies. 
+
+The list of wave frequencies that are used by the sea model to request wave energy or wave amplitude at a specific wave direction and frequency. This list of frequencies is independent of the frequency list contained in the system object. For everything conceivable situation, the two lists will be identical. However, if, for some strange reason, you need to have a separate list of wave frequencies for the \hyperlink{classosea_1_1_sea_model}{Sea\-Model}, that is possible. \begin{DoxyReturn}{Returns}
+Returns a vector of doubles, variable passed by reference. Vector is the list of wave frequencies used by the \hyperlink{classosea_1_1_sea_model}{Sea\-Model}. Frequencies are measured in radians per second (rad/s). 
+\end{DoxyReturn}
+
+
+Definition at line 76 of file seamodel.\-cpp.
+
+\hypertarget{classosea_1_1_sea_model_a5fbef3c5e1999a892d22a3c55f08cc06}{\index{osea\-::\-Sea\-Model@{osea\-::\-Sea\-Model}!list\-Wave\-Freq@{list\-Wave\-Freq}}
+\index{list\-Wave\-Freq@{list\-Wave\-Freq}!osea::SeaModel@{osea\-::\-Sea\-Model}}
+\subsubsection[{list\-Wave\-Freq}]{\setlength{\rightskip}{0pt plus 5cm}double \& Sea\-Model\-::list\-Wave\-Freq (
+\begin{DoxyParamCaption}
+\item[{int}]{index}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1_sea_model_a5fbef3c5e1999a892d22a3c55f08cc06}
+
+
+A single entry from the list of wave frequencies. 
+
+The list of wave frequencies that are used by the sea model to request wave energy or wave amplitude at a specific wave direction and frequency. This list of frequencies is independent of the frequency list contained in the system object. For everything conceivable situation, the two lists will be identical. However, if, for some strange reason, you need to have a separate list of wave frequencies for the \hyperlink{classosea_1_1_sea_model}{Sea\-Model}, that is possible. 
+\begin{DoxyParams}{Parameters}
+{\em index} & Integer. Variable passed by value. The index of the frequency you want to retrieve from the list of wave frequencies. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns a double, variable passed by reference. Variable is the wave frequency at the requested index. Frequency measured in units of radians per second (rad/s). 
+\end{DoxyReturn}
+
+
+Definition at line 82 of file seamodel.\-cpp.
+
+\hypertarget{classosea_1_1_sea_model_abce3f79ca26d193d561e7899f7511d39}{\index{osea\-::\-Sea\-Model@{osea\-::\-Sea\-Model}!list\-Wave\-Scale@{list\-Wave\-Scale}}
+\index{list\-Wave\-Scale@{list\-Wave\-Scale}!osea::SeaModel@{osea\-::\-Sea\-Model}}
+\subsubsection[{list\-Wave\-Scale}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<$ double $>$ \& Sea\-Model\-::list\-Wave\-Scale (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1_sea_model_abce3f79ca26d193d561e7899f7511d39}
+
+
+The list of wave scaling multipliers. 
+
+Each \hyperlink{classosea_1_1_wave_spec}{Wave\-Spec} object has a wave scaling multiplier associated with it. Those multipliers are stored in this list. The multipliers are a quick way to take a single direction wave spectrum and distribute across multiple wave directions. \begin{DoxyReturn}{Returns}
+Returns a vector of doubles, variable passed by reference. Returned variable is the list of wave scaling multipliers. 
+\end{DoxyReturn}
+
+
+Definition at line 88 of file seamodel.\-cpp.
+
+\hypertarget{classosea_1_1_sea_model_a92a246a023cfb0912e4016c0f071f91d}{\index{osea\-::\-Sea\-Model@{osea\-::\-Sea\-Model}!list\-Wave\-Scale@{list\-Wave\-Scale}}
+\index{list\-Wave\-Scale@{list\-Wave\-Scale}!osea::SeaModel@{osea\-::\-Sea\-Model}}
+\subsubsection[{list\-Wave\-Scale}]{\setlength{\rightskip}{0pt plus 5cm}double \& Sea\-Model\-::list\-Wave\-Scale (
+\begin{DoxyParamCaption}
+\item[{int}]{index}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1_sea_model_a92a246a023cfb0912e4016c0f071f91d}
+
+
+A single entry from the list of wave scaling multipliers. 
+
+Each \hyperlink{classosea_1_1_wave_spec}{Wave\-Spec} object has a wave scaling multiplier associated with it. Those multipliers are stored in this list. The multipliers are a quick way to take a single direction wave spectrum and distribute across multiple wave directions. 
+\begin{DoxyParams}{Parameters}
+{\em index} & Integer, variable passed by value. The index of the wave scaling multiplier that you want to retrieve from the vector of multipliers. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns a double, variable passed by reference. Returned variable is a value for a wave scaling multiplier at the index specified. 
+\end{DoxyReturn}
+
+
+Definition at line 94 of file seamodel.\-cpp.
+
+\hypertarget{classosea_1_1_sea_model_a5779eb123781d9507b68607e956e6365}{\index{osea\-::\-Sea\-Model@{osea\-::\-Sea\-Model}!list\-Wave\-Spec@{list\-Wave\-Spec}}
+\index{list\-Wave\-Spec@{list\-Wave\-Spec}!osea::SeaModel@{osea\-::\-Sea\-Model}}
+\subsubsection[{list\-Wave\-Spec}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<$ {\bf osea\-::\-Wave\-Spec\-Base} $\ast$ $>$ \& Sea\-Model\-::list\-Wave\-Spec (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1_sea_model_a5779eb123781d9507b68607e956e6365}
+
+
+The list of wave spectra. 
+
+Each \hyperlink{classosea_1_1_wave_spec}{Wave\-Spec} object represents a wave spectra defined for a specific direction. The \hyperlink{classosea_1_1_wave_spec}{Wave\-Spec} objects are stored external to the \hyperlink{classosea_1_1_sea_model}{Sea\-Model}. The list of wave spectra is only a list of pointers locating the wave spectra. \begin{DoxyReturn}{Returns}
+Returns a vector of pointers to \hyperlink{classosea_1_1_wave_spec}{Wave\-Spec} objects. Returned vector is passed by reference. 
+\end{DoxyReturn}
+
+
+Definition at line 64 of file seamodel.\-cpp.
+
+\hypertarget{classosea_1_1_sea_model_a937a3bc65846328b5cfd158976b93f0a}{\index{osea\-::\-Sea\-Model@{osea\-::\-Sea\-Model}!list\-Wave\-Spec@{list\-Wave\-Spec}}
+\index{list\-Wave\-Spec@{list\-Wave\-Spec}!osea::SeaModel@{osea\-::\-Sea\-Model}}
+\subsubsection[{list\-Wave\-Spec}]{\setlength{\rightskip}{0pt plus 5cm}{\bf osea\-::\-Wave\-Spec\-Base} $\ast$\& Sea\-Model\-::list\-Wave\-Spec (
+\begin{DoxyParamCaption}
+\item[{int}]{index}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1_sea_model_a937a3bc65846328b5cfd158976b93f0a}
+
+
+A specific entry in the list of wave spectra. 
+
+Each \hyperlink{classosea_1_1_wave_spec}{Wave\-Spec} object represents a wave spectra defined for a specific direction. The \hyperlink{classosea_1_1_wave_spec}{Wave\-Spec} objects are stored external to the \hyperlink{classosea_1_1_sea_model}{Sea\-Model}. The list of wave spectra is only a list of pointers locating the wave spectra. 
+\begin{DoxyParams}{Parameters}
+{\em index} & Integer, variable passed by value. Specifies the index of the specific \hyperlink{classosea_1_1_wave_spec}{Wave\-Spec} object you want. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns a pointer to a \hyperlink{classosea_1_1_wave_spec}{Wave\-Spec} object. Returned pointer is passed by reference. 
+\end{DoxyReturn}
+
+
+Definition at line 70 of file seamodel.\-cpp.
+
+\hypertarget{classosea_1_1_sea_model_a5787d020db9852b79e73d8e0a38c824d}{\index{osea\-::\-Sea\-Model@{osea\-::\-Sea\-Model}!ref\-Name@{ref\-Name}}
+\index{ref\-Name@{ref\-Name}!osea::SeaModel@{osea\-::\-Sea\-Model}}
+\subsubsection[{ref\-Name}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string \& Sea\-Model\-::ref\-Name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1_sea_model_a5787d020db9852b79e73d8e0a38c824d}
+
+
+The name used to identify this specific Sea Model. 
+
+Purely for user benefit. Can be any string. \begin{DoxyReturn}{Returns}
+Returns a string, passed by reference. String is the name of the Sea Model used to designate this specific object. 
+\end{DoxyReturn}
+
+
+Definition at line 165 of file seamodel.\-cpp.
+
+\hypertarget{classosea_1_1_sea_model_a539f1d817d847f0e377ddd2d636eeaa3}{\index{osea\-::\-Sea\-Model@{osea\-::\-Sea\-Model}!set\-Name@{set\-Name}}
+\index{set\-Name@{set\-Name}!osea::SeaModel@{osea\-::\-Sea\-Model}}
+\subsubsection[{set\-Name}]{\setlength{\rightskip}{0pt plus 5cm}void Sea\-Model\-::set\-Name (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{name\-In}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1_sea_model_a539f1d817d847f0e377ddd2d636eeaa3}
+
+
+The name used to identify this specific Sea Model. 
+
+Purely for user benefit. Can be any string. 
+\begin{DoxyParams}{Parameters}
+{\em name\-In} & String variable, passed by value. String is the name of the Sea Model used to designate this specific object. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 159 of file seamodel.\-cpp.
+
+\hypertarget{classosea_1_1_sea_model_a55e5cded1bc85a5392e0b7a3e9dd4062}{\index{osea\-::\-Sea\-Model@{osea\-::\-Sea\-Model}!Sort\-Wave\-Dir@{Sort\-Wave\-Dir}}
+\index{Sort\-Wave\-Dir@{Sort\-Wave\-Dir}!osea::SeaModel@{osea\-::\-Sea\-Model}}
+\subsubsection[{Sort\-Wave\-Dir}]{\setlength{\rightskip}{0pt plus 5cm}void Sea\-Model\-::\-Sort\-Wave\-Dir (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classosea_1_1_sea_model_a55e5cded1bc85a5392e0b7a3e9dd4062}
+
+
+Sorts the list of wave directions and puts them in sequential, ascending order. 
+
+This also sorts the list of wave spectra to ensure the correct wave directions still correspond to the same wave spectra. 
+
+Definition at line 327 of file seamodel.\-cpp.
+
+\hypertarget{classosea_1_1_sea_model_a08c6a13c0ce58f5b404829f699f8f30e}{\index{osea\-::\-Sea\-Model@{osea\-::\-Sea\-Model}!Sort\-Wave\-Freq@{Sort\-Wave\-Freq}}
+\index{Sort\-Wave\-Freq@{Sort\-Wave\-Freq}!osea::SeaModel@{osea\-::\-Sea\-Model}}
+\subsubsection[{Sort\-Wave\-Freq}]{\setlength{\rightskip}{0pt plus 5cm}void Sea\-Model\-::\-Sort\-Wave\-Freq (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classosea_1_1_sea_model_a08c6a13c0ce58f5b404829f699f8f30e}
+
+
+Sorts the list of wave frequencies and puts them in sequential, ascending order. 
+
+This sorting must be done before you request a wave amplitude. 
+
+Definition at line 383 of file seamodel.\-cpp.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classosea_1_1_sea_model_a3b700efb2278fad77b925f1ac39e65d5}{\index{osea\-::\-Sea\-Model@{osea\-::\-Sea\-Model}!plist\-Wave\-Dir@{plist\-Wave\-Dir}}
+\index{plist\-Wave\-Dir@{plist\-Wave\-Dir}!osea::SeaModel@{osea\-::\-Sea\-Model}}
+\subsubsection[{plist\-Wave\-Dir}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<$double$>$ osea\-::\-Sea\-Model\-::plist\-Wave\-Dir\hspace{0.3cm}{\ttfamily [protected]}}}\label{classosea_1_1_sea_model_a3b700efb2278fad77b925f1ac39e65d5}
+
+
+The list of wave directions. 
+
+Wave directions are defined in units of radians, using the global coordinate system. A direction of 0 rad points to True North. Wave directions proceed counter-\/clockwise (from North to West). 
+
+Definition at line 363 of file seamodel.\-h.
+
+\hypertarget{classosea_1_1_sea_model_a9dbf5842fe27aec73fe1694c837ed052}{\index{osea\-::\-Sea\-Model@{osea\-::\-Sea\-Model}!plist\-Wave\-Freq@{plist\-Wave\-Freq}}
+\index{plist\-Wave\-Freq@{plist\-Wave\-Freq}!osea::SeaModel@{osea\-::\-Sea\-Model}}
+\subsubsection[{plist\-Wave\-Freq}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<$double$>$ osea\-::\-Sea\-Model\-::plist\-Wave\-Freq\hspace{0.3cm}{\ttfamily [protected]}}}\label{classosea_1_1_sea_model_a9dbf5842fe27aec73fe1694c837ed052}
+The list of wave frequencies. 
+
+Definition at line 354 of file seamodel.\-h.
+
+\hypertarget{classosea_1_1_sea_model_a8c099ee28555ea1ac4795a05598b6027}{\index{osea\-::\-Sea\-Model@{osea\-::\-Sea\-Model}!plist\-Wave\-Scale@{plist\-Wave\-Scale}}
+\index{plist\-Wave\-Scale@{plist\-Wave\-Scale}!osea::SeaModel@{osea\-::\-Sea\-Model}}
+\subsubsection[{plist\-Wave\-Scale}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<$double$>$ osea\-::\-Sea\-Model\-::plist\-Wave\-Scale\hspace{0.3cm}{\ttfamily [protected]}}}\label{classosea_1_1_sea_model_a8c099ee28555ea1ac4795a05598b6027}
+
+
+The list of scalar multiples to apply to the wave spectra. 
+
+Each wave spectra is multipled by a scalar multiple. This can be an easy way of adjusting wave spectra for different wave directions. Each wave spectra must have a corresponding wave scale entry. The default value is to have a wave scale value of 1.\-0, which does not affect the wave spectra. 
+
+Definition at line 384 of file seamodel.\-h.
+
+\hypertarget{classosea_1_1_sea_model_a6ff2ff29955714965406a26a5f2e09b1}{\index{osea\-::\-Sea\-Model@{osea\-::\-Sea\-Model}!plist\-Wave\-Spec@{plist\-Wave\-Spec}}
+\index{plist\-Wave\-Spec@{plist\-Wave\-Spec}!osea::SeaModel@{osea\-::\-Sea\-Model}}
+\subsubsection[{plist\-Wave\-Spec}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<${\bf osea\-::\-Wave\-Spec\-Base}$\ast$$>$ osea\-::\-Sea\-Model\-::plist\-Wave\-Spec\hspace{0.3cm}{\ttfamily [protected]}}}\label{classosea_1_1_sea_model_a6ff2ff29955714965406a26a5f2e09b1}
+
+
+The list of wave spectra. 
+
+Each \hyperlink{classosea_1_1_wave_spec}{Wave\-Spec} object in the corresponds to the wave direction for the same index in the p\-Wave\-Dir list. Each entyr in the \hyperlink{classosea_1_1_wave_spec}{Wave\-Spec} list is a pointer to a \hyperlink{classosea_1_1_wave_spec}{Wave\-Spec} object. Be warned that multiple \hyperlink{classosea_1_1_sea_model}{Sea\-Model} objects may reference the same \hyperlink{classosea_1_1_wave_spec}{Wave\-Spec} object, so don't delete a \hyperlink{classosea_1_1_wave_spec}{Wave\-Spec} object just because the \hyperlink{classosea_1_1_sea_model}{Sea\-Model} is done using it. 
+
+Definition at line 374 of file seamodel.\-h.
+
+\hypertarget{classosea_1_1_sea_model_aea011a6daaf78caf7d008d7fd795432a}{\index{osea\-::\-Sea\-Model@{osea\-::\-Sea\-Model}!p\-Name@{p\-Name}}
+\index{p\-Name@{p\-Name}!osea::SeaModel@{osea\-::\-Sea\-Model}}
+\subsubsection[{p\-Name}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string osea\-::\-Sea\-Model\-::p\-Name\hspace{0.3cm}{\ttfamily [protected]}}}\label{classosea_1_1_sea_model_aea011a6daaf78caf7d008d7fd795432a}
+
+
+The name used to identify this specific sea model. 
+
+Purely for user benefit. Can be any string. 
+
+Definition at line 404 of file seamodel.\-h.
+
+\hypertarget{classosea_1_1_sea_model_a199be0a4bceaefdd36e30fcf7e4fe9f1}{\index{osea\-::\-Sea\-Model@{osea\-::\-Sea\-Model}!Sorted\-Dir@{Sorted\-Dir}}
+\index{Sorted\-Dir@{Sorted\-Dir}!osea::SeaModel@{osea\-::\-Sea\-Model}}
+\subsubsection[{Sorted\-Dir}]{\setlength{\rightskip}{0pt plus 5cm}bool osea\-::\-Sea\-Model\-::\-Sorted\-Dir\hspace{0.3cm}{\ttfamily [protected]}}}\label{classosea_1_1_sea_model_a199be0a4bceaefdd36e30fcf7e4fe9f1}
+
+
+Tracks if the list of wave directions was correctly sorted. 
+
+
+
+Definition at line 396 of file seamodel.\-h.
+
+\hypertarget{classosea_1_1_sea_model_a55ba1a3f8d242b4c5c78a5613101dd6f}{\index{osea\-::\-Sea\-Model@{osea\-::\-Sea\-Model}!Sorted\-Freq@{Sorted\-Freq}}
+\index{Sorted\-Freq@{Sorted\-Freq}!osea::SeaModel@{osea\-::\-Sea\-Model}}
+\subsubsection[{Sorted\-Freq}]{\setlength{\rightskip}{0pt plus 5cm}bool osea\-::\-Sea\-Model\-::\-Sorted\-Freq\hspace{0.3cm}{\ttfamily [protected]}}}\label{classosea_1_1_sea_model_a55ba1a3f8d242b4c5c78a5613101dd6f}
+
+
+Tracks if the list of wave frequencies was correctly sorted. 
+
+
+
+Definition at line 390 of file seamodel.\-h.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/home/\-Ship\-\_\-\-Design/\-Projects/\-D\-M\-S1305 Open\-S\-E\-A/master/200\-\_\-src/bin/ofreq/sea\-\_\-models/\hyperlink{seamodel_8h}{seamodel.\-h}\item 
+/home/\-Ship\-\_\-\-Design/\-Projects/\-D\-M\-S1305 Open\-S\-E\-A/master/200\-\_\-src/bin/ofreq/sea\-\_\-models/\hyperlink{seamodel_8cpp}{seamodel.\-cpp}\end{DoxyCompactItemize}

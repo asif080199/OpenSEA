@@ -125,10 +125,16 @@ matForceActive matForceActive::operator-(matForceActive &forceOther)
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-matForceActive matForceActive::operator*(double scalar)
+matForceActive matForceActive::operator *(double scalar)
 {
     //Multiply matrix with scalar
-    matForceActive output(this->pCoeff.n_rows, 1);
+    matForceActive output;
+
+    output.pCoeff.
+            zeros(
+                this->pCoeff.n_rows
+                ,1
+                );
 
     //Multiply to each element
     for (int i = 0; i < this->pCoeff.n_rows; i++)
@@ -150,6 +156,11 @@ matForceActive matForceActive::operator/(double scalar)
 cx_mat &matForceActive::listCoefficient()
 {
     return pCoeff;
+}
+
+void matForceActive::setCoefficient(cx_mat input)
+{
+    pCoeff = input;
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------

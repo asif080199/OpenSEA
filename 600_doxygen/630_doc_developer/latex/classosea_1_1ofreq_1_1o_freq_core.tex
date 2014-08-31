@@ -12,7 +12,8 @@ The core o\-Freq class. All o\-Freq classes inherit from this class.
 
 
 
-Inheritance diagram for osea\-:\-:ofreq\-:\-:o\-Freq\-Core\-:\nopagebreak
+Inheritance diagram for osea\-:\-:ofreq\-:\-:o\-Freq\-Core\-:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -26,36 +27,44 @@ Inheritance diagram for osea\-:\-:ofreq\-:\-:o\-Freq\-Core\-:\nopagebreak
 \item 
 virtual \hyperlink{classosea_1_1ofreq_1_1o_freq_core_aea5887547dbd17fc2d4f1a99fe217918}{$\sim$o\-Freq\-Core} ()
 \end{DoxyCompactItemize}
-\subsection*{Protected Member Functions}
+\subsection*{Static Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
-void \hyperlink{classosea_1_1ofreq_1_1o_freq_core_ab47d54b0a8efd12d5124334f823800b9}{set\-Out\-Log} (std\-::string dir\-In)
-\begin{DoxyCompactList}\small\item\em Opens the output log file and prepares it for writing. \end{DoxyCompactList}\item 
-void \hyperlink{classosea_1_1ofreq_1_1o_freq_core_a12d276a8989bf96fdba79654a516bb14}{set\-Err\-Log} (std\-::string dir\-In)
-\begin{DoxyCompactList}\small\item\em Opens the error log file and prepares it for writing. \end{DoxyCompactList}\item 
-void \hyperlink{classosea_1_1ofreq_1_1o_freq_core_a1b85faf81110e491b5245f2cbc2ac23b}{write\-Log} (std\-::string mes\-In)
-\begin{DoxyCompactList}\small\item\em Writes output of a log message to the log file. Adds in a date and time stamp to the log. \end{DoxyCompactList}\item 
-void \hyperlink{classosea_1_1ofreq_1_1o_freq_core_a4671f6ce9f5eb62b1a587a1118934dee}{write\-Error} (std\-::string mes\-In)
-\begin{DoxyCompactList}\small\item\em Writes output of an error message to the error file. Adds in a date, time, and class name to the log. \end{DoxyCompactList}\end{DoxyCompactItemize}
+static \hyperlink{classosea_1_1ofreq_1_1_log}{ofreq\-::\-Log} \hyperlink{classosea_1_1ofreq_1_1o_freq_core_a58bc30d906c3092933a8fa71fc43081f}{log\-Std}
+\begin{DoxyCompactList}\small\item\em The output log for all standard messages. \end{DoxyCompactList}\item 
+static \hyperlink{classosea_1_1ofreq_1_1_log}{ofreq\-::\-Log} \hyperlink{classosea_1_1ofreq_1_1o_freq_core_ace3212e130c495113fc339135da117b5}{log\-Err}
+\begin{DoxyCompactList}\small\item\em The output log for all error messages. \end{DoxyCompactList}\item 
+static \hyperlink{classosea_1_1ofreq_1_1_log}{ofreq\-::\-Log} \hyperlink{classosea_1_1ofreq_1_1o_freq_core_a3432825cd5d03858fca93c85a055f0d4}{log\-Mon}
+\begin{DoxyCompactList}\small\item\em The output log for monitor variables. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Static Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
-static std\-::ofstream \hyperlink{classosea_1_1ofreq_1_1o_freq_core_a85b3e812b6d78c064ba375d5101bb053}{Out\-Log}
-\begin{DoxyCompactList}\small\item\em The log file for an o\-Freq run. Records normal actions for the program. Informs user of regular program developments. Through inheritence of the \hyperlink{classosea_1_1ofreq_1_1o_freq_core}{o\-Freq\-Core} class, this object is available to every object in the o\-Freq application. Also provided with a second name of seaout. \end{DoxyCompactList}\item 
-static std\-::ofstream \& \hyperlink{classosea_1_1ofreq_1_1o_freq_core_ad1092650d598d7f30e7c0fb3dbdfd392}{seaout} = \hyperlink{classosea_1_1ofreq_1_1o_freq_core_a85b3e812b6d78c064ba375d5101bb053}{Out\-Log}
+static std\-::string \hyperlink{classosea_1_1ofreq_1_1o_freq_core_ad7a03236bc96443ec94efa89e86db816}{S\-L\-A\-S\-H}
 \item 
-static std\-::ofstream \hyperlink{classosea_1_1ofreq_1_1o_freq_core_a5e31044ee80fa436289e569c8080b21e}{Err\-Log}
-\begin{DoxyCompactList}\small\item\em The error log file for an o\-Freq run. Records any errors or warnings for the program. Informs user of errors and warnings and where they occurred. Through inheritence of the \hyperlink{classosea_1_1ofreq_1_1o_freq_core}{o\-Freq\-Core} class, this object is available for every object in the o\-Freq application. Also provided with a second name of seaerr. \end{DoxyCompactList}\item 
-static std\-::ofstream \& \hyperlink{classosea_1_1ofreq_1_1o_freq_core_aec5a7ac06574b9c5f80ac3c149c09fda}{seaerr} = \hyperlink{classosea_1_1ofreq_1_1o_freq_core_a5e31044ee80fa436289e569c8080b21e}{Err\-Log}
+static double \hyperlink{classosea_1_1ofreq_1_1o_freq_core_ab742e33230346e648843db715e5f7f9e}{G\-R\-A\-V\-I\-T\-Y} = 9.\-80665
+\item 
+static double \hyperlink{classosea_1_1ofreq_1_1o_freq_core_a4322d17b5d6a31ae1118aba876b46c88}{P\-I} = 3.\-14159265359
 \end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
 The core o\-Freq class. All o\-Freq classes inherit from this class. 
 
-Core o\-Freq class. All o\-Freq classes inherit from this class. Includes definition for anything fundamental and common to the entire program. Major items are any code used for application debugging. Also includes some objects to give everything access to log and error files for the program. 
+Core o\-Freq class. All o\-Freq classes inherit from this class. Includes definition for anything fundamental and common to the entire program. Major items are any code used for application debugging. Also includes some objects to give everything access to log and error files for the program.
 
-Definition at line 91 of file ofreqcore.\-h.
+The core class also includes access to the Qt debugging options. In addition to the normal log files, this allows you to write debugging messages that will only appear in the application output window of the developer environment. Helpful to developer specific notes. In general, we want to write things out to the user error log. This enables the user to also troubleshoot the problem. But if you ever want to write specific debug messages for developers only, here are four functions enabled that write to the developer console only.
+\begin{DoxyItemize}
+\item q\-Debug() is used for writing custom debug output.
+\item q\-Warning() is used to report warnings and recoverable errors in your application.
+\item q\-Critical() is used for writing critical error mesages and reporting system errors.
+\item q\-Fatal() is used for writing fatal error messages shortly before exiting.
+\end{DoxyItemize}
+
+These functions work as stream operators. You can read more about them on the website\-:
+
+\href{http://qt-project.org/doc/qt-4.8/debug.html#warning-and-debugging-messages}{\tt http\-://qt-\/project.\-org/doc/qt-\/4.\-8/debug.\-html\#warning-\/and-\/debugging-\/messages} 
+
+Definition at line 106 of file ofreqcore.\-h.
 
 
 
@@ -84,129 +93,70 @@ Definition at line 58 of file ofreqcore.\-cpp.
 
 
 
-\subsection{Member Function Documentation}
-\hypertarget{classosea_1_1ofreq_1_1o_freq_core_a12d276a8989bf96fdba79654a516bb14}{\index{osea\-::ofreq\-::o\-Freq\-Core@{osea\-::ofreq\-::o\-Freq\-Core}!set\-Err\-Log@{set\-Err\-Log}}
-\index{set\-Err\-Log@{set\-Err\-Log}!osea::ofreq::oFreqCore@{osea\-::ofreq\-::o\-Freq\-Core}}
-\subsubsection[{set\-Err\-Log}]{\setlength{\rightskip}{0pt plus 5cm}void o\-Freq\-Core\-::set\-Err\-Log (
-\begin{DoxyParamCaption}
-\item[{std\-::string}]{dir\-In}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classosea_1_1ofreq_1_1o_freq_core_a12d276a8989bf96fdba79654a516bb14}
-
-
-Opens the error log file and prepares it for writing. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em dir\-In} & std\-::string parameter. Designates the directory path to use for writing the error file. \\
-\hline
-\end{DoxyParams}
-
-
-Definition at line 91 of file ofreqcore.\-cpp.
-
-\hypertarget{classosea_1_1ofreq_1_1o_freq_core_ab47d54b0a8efd12d5124334f823800b9}{\index{osea\-::ofreq\-::o\-Freq\-Core@{osea\-::ofreq\-::o\-Freq\-Core}!set\-Out\-Log@{set\-Out\-Log}}
-\index{set\-Out\-Log@{set\-Out\-Log}!osea::ofreq::oFreqCore@{osea\-::ofreq\-::o\-Freq\-Core}}
-\subsubsection[{set\-Out\-Log}]{\setlength{\rightskip}{0pt plus 5cm}void o\-Freq\-Core\-::set\-Out\-Log (
-\begin{DoxyParamCaption}
-\item[{std\-::string}]{dir\-In}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classosea_1_1ofreq_1_1o_freq_core_ab47d54b0a8efd12d5124334f823800b9}
-
-
-Opens the output log file and prepares it for writing. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em dir\-In} & std\-::string parameter. Designates the directory path to use for writing the log file. \\
-\hline
-\end{DoxyParams}
-
-
-Definition at line 75 of file ofreqcore.\-cpp.
-
-\hypertarget{classosea_1_1ofreq_1_1o_freq_core_a4671f6ce9f5eb62b1a587a1118934dee}{\index{osea\-::ofreq\-::o\-Freq\-Core@{osea\-::ofreq\-::o\-Freq\-Core}!write\-Error@{write\-Error}}
-\index{write\-Error@{write\-Error}!osea::ofreq::oFreqCore@{osea\-::ofreq\-::o\-Freq\-Core}}
-\subsubsection[{write\-Error}]{\setlength{\rightskip}{0pt plus 5cm}void o\-Freq\-Core\-::write\-Error (
-\begin{DoxyParamCaption}
-\item[{std\-::string}]{mes\-In}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classosea_1_1ofreq_1_1o_freq_core_a4671f6ce9f5eb62b1a587a1118934dee}
-
-
-Writes output of an error message to the error file. Adds in a date, time, and class name to the log. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em mes\-In} & std\-::string variable. The message to write to the log file. \\
-\hline
-\end{DoxyParams}
-
-
-Definition at line 121 of file ofreqcore.\-cpp.
-
-\hypertarget{classosea_1_1ofreq_1_1o_freq_core_a1b85faf81110e491b5245f2cbc2ac23b}{\index{osea\-::ofreq\-::o\-Freq\-Core@{osea\-::ofreq\-::o\-Freq\-Core}!write\-Log@{write\-Log}}
-\index{write\-Log@{write\-Log}!osea::ofreq::oFreqCore@{osea\-::ofreq\-::o\-Freq\-Core}}
-\subsubsection[{write\-Log}]{\setlength{\rightskip}{0pt plus 5cm}void o\-Freq\-Core\-::write\-Log (
-\begin{DoxyParamCaption}
-\item[{std\-::string}]{mes\-In}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classosea_1_1ofreq_1_1o_freq_core_a1b85faf81110e491b5245f2cbc2ac23b}
-
-
-Writes output of a log message to the log file. Adds in a date and time stamp to the log. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em mes\-In} & std\-::string variable. The message to write to the log file. \\
-\hline
-\end{DoxyParams}
-
-
-Definition at line 107 of file ofreqcore.\-cpp.
-
-
-
 \subsection{Member Data Documentation}
-\hypertarget{classosea_1_1ofreq_1_1o_freq_core_a5e31044ee80fa436289e569c8080b21e}{\index{osea\-::ofreq\-::o\-Freq\-Core@{osea\-::ofreq\-::o\-Freq\-Core}!Err\-Log@{Err\-Log}}
-\index{Err\-Log@{Err\-Log}!osea::ofreq::oFreqCore@{osea\-::ofreq\-::o\-Freq\-Core}}
-\subsubsection[{Err\-Log}]{\setlength{\rightskip}{0pt plus 5cm}std\-::ofstream o\-Freq\-Core\-::\-Err\-Log\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}}\label{classosea_1_1ofreq_1_1o_freq_core_a5e31044ee80fa436289e569c8080b21e}
+\hypertarget{classosea_1_1ofreq_1_1o_freq_core_ab742e33230346e648843db715e5f7f9e}{\index{osea\-::ofreq\-::o\-Freq\-Core@{osea\-::ofreq\-::o\-Freq\-Core}!G\-R\-A\-V\-I\-T\-Y@{G\-R\-A\-V\-I\-T\-Y}}
+\index{G\-R\-A\-V\-I\-T\-Y@{G\-R\-A\-V\-I\-T\-Y}!osea::ofreq::oFreqCore@{osea\-::ofreq\-::o\-Freq\-Core}}
+\subsubsection[{G\-R\-A\-V\-I\-T\-Y}]{\setlength{\rightskip}{0pt plus 5cm}double o\-Freq\-Core\-::\-G\-R\-A\-V\-I\-T\-Y = 9.\-80665\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}}\label{classosea_1_1ofreq_1_1o_freq_core_ab742e33230346e648843db715e5f7f9e}
+Acceleration due to gravity. Normal earth gravity. 
+
+Definition at line 157 of file ofreqcore.\-h.
+
+\hypertarget{classosea_1_1ofreq_1_1o_freq_core_ace3212e130c495113fc339135da117b5}{\index{osea\-::ofreq\-::o\-Freq\-Core@{osea\-::ofreq\-::o\-Freq\-Core}!log\-Err@{log\-Err}}
+\index{log\-Err@{log\-Err}!osea::ofreq::oFreqCore@{osea\-::ofreq\-::o\-Freq\-Core}}
+\subsubsection[{log\-Err}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Log} o\-Freq\-Core\-::log\-Err\hspace{0.3cm}{\ttfamily [static]}}}\label{classosea_1_1ofreq_1_1o_freq_core_ace3212e130c495113fc339135da117b5}
 
 
-The error log file for an o\-Freq run. Records any errors or warnings for the program. Informs user of errors and warnings and where they occurred. Through inheritence of the \hyperlink{classosea_1_1ofreq_1_1o_freq_core}{o\-Freq\-Core} class, this object is available for every object in the o\-Freq application. Also provided with a second name of seaerr. 
+The output log for all error messages. 
+
+Writes only to a log file. All messages are time stamped.
+
+Error log file declaration. 
+
+Definition at line 135 of file ofreqcore.\-h.
+
+\hypertarget{classosea_1_1ofreq_1_1o_freq_core_a3432825cd5d03858fca93c85a055f0d4}{\index{osea\-::ofreq\-::o\-Freq\-Core@{osea\-::ofreq\-::o\-Freq\-Core}!log\-Mon@{log\-Mon}}
+\index{log\-Mon@{log\-Mon}!osea::ofreq::oFreqCore@{osea\-::ofreq\-::o\-Freq\-Core}}
+\subsubsection[{log\-Mon}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Log} o\-Freq\-Core\-::log\-Mon\hspace{0.3cm}{\ttfamily [static]}}}\label{classosea_1_1ofreq_1_1o_freq_core_a3432825cd5d03858fca93c85a055f0d4}
 
 
+The output log for monitor variables. 
 
-Definition at line 132 of file ofreqcore.\-h.
+This log file is for any output that another program might use to monitor the program progress in real time.
 
-\hypertarget{classosea_1_1ofreq_1_1o_freq_core_a85b3e812b6d78c064ba375d5101bb053}{\index{osea\-::ofreq\-::o\-Freq\-Core@{osea\-::ofreq\-::o\-Freq\-Core}!Out\-Log@{Out\-Log}}
-\index{Out\-Log@{Out\-Log}!osea::ofreq::oFreqCore@{osea\-::ofreq\-::o\-Freq\-Core}}
-\subsubsection[{Out\-Log}]{\setlength{\rightskip}{0pt plus 5cm}std\-::ofstream o\-Freq\-Core\-::\-Out\-Log\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}}\label{classosea_1_1ofreq_1_1o_freq_core_a85b3e812b6d78c064ba375d5101bb053}
+Monitor log file declaration 
 
+Definition at line 142 of file ofreqcore.\-h.
 
-The log file for an o\-Freq run. Records normal actions for the program. Informs user of regular program developments. Through inheritence of the \hyperlink{classosea_1_1ofreq_1_1o_freq_core}{o\-Freq\-Core} class, this object is available to every object in the o\-Freq application. Also provided with a second name of seaout. 
-
-
-
-Definition at line 123 of file ofreqcore.\-h.
-
-\hypertarget{classosea_1_1ofreq_1_1o_freq_core_aec5a7ac06574b9c5f80ac3c149c09fda}{\index{osea\-::ofreq\-::o\-Freq\-Core@{osea\-::ofreq\-::o\-Freq\-Core}!seaerr@{seaerr}}
-\index{seaerr@{seaerr}!osea::ofreq::oFreqCore@{osea\-::ofreq\-::o\-Freq\-Core}}
-\subsubsection[{seaerr}]{\setlength{\rightskip}{0pt plus 5cm}std\-::ofstream \& o\-Freq\-Core\-::seaerr = {\bf Err\-Log}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}}\label{classosea_1_1ofreq_1_1o_freq_core_aec5a7ac06574b9c5f80ac3c149c09fda}
+\hypertarget{classosea_1_1ofreq_1_1o_freq_core_a58bc30d906c3092933a8fa71fc43081f}{\index{osea\-::ofreq\-::o\-Freq\-Core@{osea\-::ofreq\-::o\-Freq\-Core}!log\-Std@{log\-Std}}
+\index{log\-Std@{log\-Std}!osea::ofreq::oFreqCore@{osea\-::ofreq\-::o\-Freq\-Core}}
+\subsubsection[{log\-Std}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Log} o\-Freq\-Core\-::log\-Std\hspace{0.3cm}{\ttfamily [static]}}}\label{classosea_1_1ofreq_1_1o_freq_core_a58bc30d906c3092933a8fa71fc43081f}
 
 
-Definition at line 133 of file ofreqcore.\-h.
+The output log for all standard messages. 
 
-\hypertarget{classosea_1_1ofreq_1_1o_freq_core_ad1092650d598d7f30e7c0fb3dbdfd392}{\index{osea\-::ofreq\-::o\-Freq\-Core@{osea\-::ofreq\-::o\-Freq\-Core}!seaout@{seaout}}
-\index{seaout@{seaout}!osea::ofreq::oFreqCore@{osea\-::ofreq\-::o\-Freq\-Core}}
-\subsubsection[{seaout}]{\setlength{\rightskip}{0pt plus 5cm}std\-::ofstream \& o\-Freq\-Core\-::seaout = {\bf Out\-Log}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}}\label{classosea_1_1ofreq_1_1o_freq_core_ad1092650d598d7f30e7c0fb3dbdfd392}
+Writes to both a log file and to the screen. All messages are time stamped.
 
+Standard log file declaration 
 
-Definition at line 124 of file ofreqcore.\-h.
+Definition at line 128 of file ofreqcore.\-h.
+
+\hypertarget{classosea_1_1ofreq_1_1o_freq_core_a4322d17b5d6a31ae1118aba876b46c88}{\index{osea\-::ofreq\-::o\-Freq\-Core@{osea\-::ofreq\-::o\-Freq\-Core}!P\-I@{P\-I}}
+\index{P\-I@{P\-I}!osea::ofreq::oFreqCore@{osea\-::ofreq\-::o\-Freq\-Core}}
+\subsubsection[{P\-I}]{\setlength{\rightskip}{0pt plus 5cm}double o\-Freq\-Core\-::\-P\-I = 3.\-14159265359\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}}\label{classosea_1_1ofreq_1_1o_freq_core_a4322d17b5d6a31ae1118aba876b46c88}
+Mathematical constant pi. 
+
+Definition at line 160 of file ofreqcore.\-h.
+
+\hypertarget{classosea_1_1ofreq_1_1o_freq_core_ad7a03236bc96443ec94efa89e86db816}{\index{osea\-::ofreq\-::o\-Freq\-Core@{osea\-::ofreq\-::o\-Freq\-Core}!S\-L\-A\-S\-H@{S\-L\-A\-S\-H}}
+\index{S\-L\-A\-S\-H@{S\-L\-A\-S\-H}!osea::ofreq::oFreqCore@{osea\-::ofreq\-::o\-Freq\-Core}}
+\subsubsection[{S\-L\-A\-S\-H}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string osea\-::ofreq\-::o\-Freq\-Core\-::\-S\-L\-A\-S\-H\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}}\label{classosea_1_1ofreq_1_1o_freq_core_ad7a03236bc96443ec94efa89e86db816}
+The directory level specifier. Changes under windows or linux. 
+
+Definition at line 154 of file ofreqcore.\-h.
 
 
 
 The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
 \item 
-/home/\-Ship\-\_\-\-Design/\-Projects/\-D\-M\-S1305 Open\-S\-E\-A/master/200\-\_\-src/bin/ofreq/global\-\_\-objects/\hyperlink{ofreqcore_8h}{ofreqcore.\-h}\item 
-/home/\-Ship\-\_\-\-Design/\-Projects/\-D\-M\-S1305 Open\-S\-E\-A/master/200\-\_\-src/bin/ofreq/global\-\_\-objects/\hyperlink{ofreqcore_8cpp}{ofreqcore.\-cpp}\end{DoxyCompactItemize}
+/home/\-Ship\-\_\-\-Design/\-Projects/\-D\-M\-S1305 Open\-S\-E\-A/master/200\-\_\-src/bin/ofreq/system\-\_\-objects/\hyperlink{ofreqcore_8h}{ofreqcore.\-h}\item 
+/home/\-Ship\-\_\-\-Design/\-Projects/\-D\-M\-S1305 Open\-S\-E\-A/master/200\-\_\-src/bin/ofreq/system\-\_\-objects/\hyperlink{ofreqcore_8cpp}{ofreqcore.\-cpp}\end{DoxyCompactItemize}

@@ -229,13 +229,6 @@ void FileReader::setDictionary(osea::Dictionary &dictIn)
 //Public Slots
 
 //------------------------------------------Function Separator --------------------------------------------------------
-int FileReader::readHydroFile(string path)
-{
-    //Read hydrodynamic input file
-    return readFile(path);
-}
-
-//------------------------------------------Function Separator --------------------------------------------------------
 void FileReader::setSystem(ofreq::System* ptInput)
 {
     ptSystem = ptInput;
@@ -249,9 +242,6 @@ void FileReader::sendOutput(int index)
 {
     ptDict->setObject(plistObjects[index]);
 }
-
-//==========================================Section Separator =========================================================
-//Private Functions
 
 //------------------------------------------Function Separator --------------------------------------------------------
 int FileReader::readFile(string path)
@@ -342,3 +332,6 @@ int FileReader::readFile(string path)
 void FileReader::initClass()
 {
 }
+
+//==========================================Section Separator =========================================================
+//Private Functions

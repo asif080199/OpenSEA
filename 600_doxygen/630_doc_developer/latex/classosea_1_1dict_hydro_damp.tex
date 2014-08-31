@@ -1,0 +1,85 @@
+\hypertarget{classosea_1_1dict_hydro_damp}{\section{osea\-:\-:dict\-Hydro\-Damp Class Reference}
+\label{classosea_1_1dict_hydro_damp}\index{osea\-::dict\-Hydro\-Damp@{osea\-::dict\-Hydro\-Damp}}
+}
+
+
+{\ttfamily \#include $<$dicthydrodamp.\-h$>$}
+
+
+
+Inheritance diagram for osea\-:\-:dict\-Hydro\-Damp\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classosea_1_1dict_hydro_damp__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classosea_1_1dict_hydro_damp_a74cbde0166500326f809477bc9d97f09}{dict\-Hydro\-Damp} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\hyperlink{classosea_1_1dict_hydro_damp_a5cd7af50227647babb1052155dab4620}{dict\-Hydro\-Damp} (\hyperlink{classosea_1_1_hydro_reader}{osea\-::\-Hydro\-Reader} $\ast$parent)
+\begin{DoxyCompactList}\small\item\em Constructor that also passes pointer to the owning file reader. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+The \hyperlink{classosea_1_1dict_hydro_damp}{dict\-Hydro\-Damp} class interprets the input file hydrodamp.\-out
+
+The hydrodamp.\-out input file is a set of reactive forces, associted with a first order derivative. All of these input files have exactly the same format. They are just associated with a different order of derivative. A single static variable changes for each of the children classes. Everything else remains the same. The dict\-Hydro\-React class contains all the function definitions for how to interpret the input files.
+
+The only thing added in this class is the order of derivative associated with the input file. This is set through a single static variable. O\-R\-D = 1 for this class.
+
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classosea_1_1_dictionary}{Dictionary} 
+
+\hyperlink{classosea_1_1_file_reader}{File\-Reader} 
+
+\hyperlink{classosea_1_1_hydro_reader}{Hydro\-Reader} 
+\end{DoxySeeAlso}
+
+
+Definition at line 85 of file dicthydrodamp.\-h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classosea_1_1dict_hydro_damp_a74cbde0166500326f809477bc9d97f09}{\index{osea\-::dict\-Hydro\-Damp@{osea\-::dict\-Hydro\-Damp}!dict\-Hydro\-Damp@{dict\-Hydro\-Damp}}
+\index{dict\-Hydro\-Damp@{dict\-Hydro\-Damp}!osea::dictHydroDamp@{osea\-::dict\-Hydro\-Damp}}
+\subsubsection[{dict\-Hydro\-Damp}]{\setlength{\rightskip}{0pt plus 5cm}dict\-Hydro\-Damp\-::dict\-Hydro\-Damp (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1dict_hydro_damp_a74cbde0166500326f809477bc9d97f09}
+
+
+Default constructor. 
+
+
+
+Definition at line 48 of file dicthydrodamp.\-cpp.
+
+\hypertarget{classosea_1_1dict_hydro_damp_a5cd7af50227647babb1052155dab4620}{\index{osea\-::dict\-Hydro\-Damp@{osea\-::dict\-Hydro\-Damp}!dict\-Hydro\-Damp@{dict\-Hydro\-Damp}}
+\index{dict\-Hydro\-Damp@{dict\-Hydro\-Damp}!osea::dictHydroDamp@{osea\-::dict\-Hydro\-Damp}}
+\subsubsection[{dict\-Hydro\-Damp}]{\setlength{\rightskip}{0pt plus 5cm}osea\-::dict\-Hydro\-Damp\-::dict\-Hydro\-Damp (
+\begin{DoxyParamCaption}
+\item[{{\bf osea\-::\-Hydro\-Reader} $\ast$}]{parent}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1dict_hydro_damp_a5cd7af50227647babb1052155dab4620}
+
+
+Constructor that also passes pointer to the owning file reader. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parent} & Pointer to \hyperlink{classosea_1_1_hydro_reader}{Hydro\-Reader} object, pointer passed by value. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/home/\-Ship\-\_\-\-Design/\-Projects/\-D\-M\-S1305 Open\-S\-E\-A/master/200\-\_\-src/bin/ofreq/hydro\-\_\-reader/\hyperlink{dicthydrodamp_8h}{dicthydrodamp.\-h}\item 
+/home/\-Ship\-\_\-\-Design/\-Projects/\-D\-M\-S1305 Open\-S\-E\-A/master/200\-\_\-src/bin/ofreq/hydro\-\_\-reader/\hyperlink{dicthydrodamp_8cpp}{dicthydrodamp.\-cpp}\end{DoxyCompactItemize}

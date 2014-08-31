@@ -16,6 +16,10 @@ var dir_4fb1ce080a64fa4d19addbde6401c63f =
     [ "dictionary.h", "dictionary_8h.html", [
       [ "Dictionary", "classosea_1_1_dictionary.html", "classosea_1_1_dictionary" ]
     ] ],
+    [ "dictseaenv.cpp", "dictseaenv_8cpp.html", null ],
+    [ "dictseaenv.h", "dictseaenv_8h.html", [
+      [ "dictSeaEnv", "classosea_1_1ofreq_1_1dict_sea_env.html", "classosea_1_1ofreq_1_1dict_sea_env" ]
+    ] ],
     [ "filereader.cpp", "filereader_8cpp.html", null ],
     [ "filereader.h", "filereader_8h.html", [
       [ "FileReader", "classosea_1_1_file_reader.html", "classosea_1_1_file_reader" ]

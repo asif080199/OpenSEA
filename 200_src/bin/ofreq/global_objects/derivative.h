@@ -144,11 +144,11 @@ public:
      *
      * New equation object is created automatically within this function.  Function merely takes the list of input
      * coefficients and creates all equation objects necessary from that.
-     * @param EqnDataIn Integer.  The data index of the equation object.  If no input is provided, the function
-     * assumes the data index to be the index of the equation's current place in the vector.
      * @param listCoeffsIn Vector of doubles.  The list of coefficients.  Each coefficient corresponds to a single
      * variable.  List of coefficients is organized by _data index_.  The coefficient's position in the list
      * is it's data index.
+     * @param EqnDataIn Integer.  The data index of the equation object.  If no input is provided, the function
+     * assumes the data index to be the index of the equation's current place in the vector.
      */
     void addModelEquation(std::vector<double> listCoeffsIn, int EqnDataIn = -1);
 

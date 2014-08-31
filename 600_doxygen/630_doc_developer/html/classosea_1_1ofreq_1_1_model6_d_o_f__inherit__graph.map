@@ -1,3 +1,4 @@
 <map id="osea::ofreq::Model6DOF" name="osea::ofreq::Model6DOF">
-<area shape="rect" id="node2" href="$classosea_1_1ofreq_1_1_motion_model.html" title="{osea::ofreq::MotionModel\n||+ MotionModel()\l+ MotionModel()\l+ ~MotionModel()\l+ setlistBody()\l+ setBody()\l+ getBody()\l+ CoefficientOnly()\l+ getActiveOnly()\l+ listCompCrossBod_hydro()\l+ listCompCrossBod_hydro()\land 60 more...\l# DefineEquations()\l}" alt="" coords="5,6,224,263"/>
+<area shape="rect" id="node2" href="$classosea_1_1ofreq_1_1_motion_model.html" title="{osea::ofreq::MotionModel\n||+ MotionModel()\l+ MotionModel()\l+ ~MotionModel()\l+ setlistBody()\l+ setBody()\l+ getBody()\l+ CoefficientOnly()\l+ getActiveOnly()\l+ listCompCrossBod_hydro()\l+ listCompCrossBod_hydro()\land 60 more...\l# DefineEquations()\l}" alt="" coords="5,233,219,490"/>
+<area shape="rect" id="node4" href="$classosea_1_1ofreq_1_1o_freq_core.html" title="The core oFreq class. All oFreq classes inherit from this class. " alt="" coords="25,6,199,183"/>
 </map>

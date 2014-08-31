@@ -1,0 +1,213 @@
+\hypertarget{classosea_1_1_sea_model___uniform}{\section{osea\-:\-:Sea\-Model\-\_\-\-Uniform Class Reference}
+\label{classosea_1_1_sea_model___uniform}\index{osea\-::\-Sea\-Model\-\_\-\-Uniform@{osea\-::\-Sea\-Model\-\_\-\-Uniform}}
+}
+
+
+The \hyperlink{classosea_1_1_sea_model___uniform}{Sea\-Model\-\_\-\-Uniform} class creates the model for a full sea environment, independent of direction.  
+
+
+
+
+{\ttfamily \#include $<$seamodel\-\_\-uniform.\-h$>$}
+
+
+
+Inheritance diagram for osea\-:\-:Sea\-Model\-\_\-\-Uniform\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classosea_1_1_sea_model___uniform__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classosea_1_1_sea_model___uniform_a4f97340193390d1f815d1aff94b83f94}{Sea\-Model\-\_\-\-Uniform} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. Inherits from \hyperlink{classosea_1_1_sea_model}{Sea\-Model} class. \end{DoxyCompactList}\item 
+\hyperlink{classosea_1_1_sea_model___uniform_a419b48ecdac425cfe182768f7aed9ff6}{$\sim$\-Sea\-Model\-\_\-\-Uniform} ()
+\begin{DoxyCompactList}\small\item\em Default destructor. Nothing happens here. \end{DoxyCompactList}\item 
+double \hyperlink{classosea_1_1_sea_model___uniform_aedd2e3bd519a79c6f05027dcadb6259d}{get\-Wave\-Energy} (double dir\-In, int freq\-Index)
+\begin{DoxyCompactList}\small\item\em Gets the wave energy from the sea model for the wave direction and wave frequency specified. \end{DoxyCompactList}\item 
+double \hyperlink{classosea_1_1_sea_model___uniform_af8db8287e12f25665405bc3fcf93c01e}{get\-Wave\-Energy} (double dir\-In, double freq\-In)
+\begin{DoxyCompactList}\small\item\em Gets the wave energy from the sea model for the wave direction and wave frequency specified. \end{DoxyCompactList}\item 
+double \hyperlink{classosea_1_1_sea_model___uniform_a896518443a9328812737ee94d020d2f0}{get\-Wave\-Amp} (double dir\-In, int freq\-Index)
+\begin{DoxyCompactList}\small\item\em Gets the wave amplitude from the sea model for the wave direction and wave frequency specified. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+The \hyperlink{classosea_1_1_sea_model___uniform}{Sea\-Model\-\_\-\-Uniform} class creates the model for a full sea environment, independent of direction. 
+
+This \hyperlink{classosea_1_1_sea_model}{Sea\-Model} implements a single wave spectrum, independent of wave direction. It will output the same wave amplitude, regardless of wave direction input. A wave direction is still required for input, but the \hyperlink{classosea_1_1_sea_model}{Sea\-Model} does not use the variable. This \hyperlink{classosea_1_1_sea_model}{Sea\-Model} is useful for comparing Body performance at different angles, independent of wave energy in each wave direction. Or any case where the user wants a simplified \hyperlink{classosea_1_1_sea_model}{Sea\-Model} that is just one set of waves.
+
+The \hyperlink{classosea_1_1_sea_model}{Sea\-Model} produces two primary results\-:
+\begin{DoxyEnumerate}
+\item Wave energy at a specified wave direction and wave frequency.
+\item Wave amplitude at a specified wave direction and wave frequency.
+\end{DoxyEnumerate}
+
+You can also define a wave scaling parameter for the wave spectrum. This may be necessary if you want to scale the results somehow.
+
+The \hyperlink{classosea_1_1_sea_model}{Sea\-Model} does have one important limitation\-: You must supply it a full list of wave frequencies before requesting wave amplitude. This is because the calculations for wave amplitude depend on the spacing of the wave frequencies, and those frequencies may not be regularly spaced. Individual \hyperlink{classosea_1_1_wave_spec}{Wave\-Spec} objects have their own frequency data sets. And the \hyperlink{classosea_1_1_sea_model}{Sea\-Model} has no way to correlate between those frequency lists. That is why the \hyperlink{classosea_1_1_sea_model}{Sea\-Model} must have its own governing set of wave frequencies. When you specify a wave frequency and direction to get wave amplitude, you can only select from one of the governing frequencies defined in the list. This is necessary to ensure the programming is mathematically correct.
+
+The list of wave frequencies does not need to be sorted. The \hyperlink{classosea_1_1_sea_model}{Sea\-Model} will automatically sort after the list gets defined. Same for the wave directions. 
+
+Definition at line 90 of file seamodel\-\_\-uniform.\-h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classosea_1_1_sea_model___uniform_a4f97340193390d1f815d1aff94b83f94}{\index{osea\-::\-Sea\-Model\-\_\-\-Uniform@{osea\-::\-Sea\-Model\-\_\-\-Uniform}!Sea\-Model\-\_\-\-Uniform@{Sea\-Model\-\_\-\-Uniform}}
+\index{Sea\-Model\-\_\-\-Uniform@{Sea\-Model\-\_\-\-Uniform}!osea::SeaModel_Uniform@{osea\-::\-Sea\-Model\-\_\-\-Uniform}}
+\subsubsection[{Sea\-Model\-\_\-\-Uniform}]{\setlength{\rightskip}{0pt plus 5cm}Sea\-Model\-\_\-\-Uniform\-::\-Sea\-Model\-\_\-\-Uniform (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1_sea_model___uniform_a4f97340193390d1f815d1aff94b83f94}
+
+
+Default constructor. Inherits from \hyperlink{classosea_1_1_sea_model}{Sea\-Model} class. 
+
+
+
+Definition at line 38 of file seamodel\-\_\-uniform.\-cpp.
+
+\hypertarget{classosea_1_1_sea_model___uniform_a419b48ecdac425cfe182768f7aed9ff6}{\index{osea\-::\-Sea\-Model\-\_\-\-Uniform@{osea\-::\-Sea\-Model\-\_\-\-Uniform}!$\sim$\-Sea\-Model\-\_\-\-Uniform@{$\sim$\-Sea\-Model\-\_\-\-Uniform}}
+\index{$\sim$\-Sea\-Model\-\_\-\-Uniform@{$\sim$\-Sea\-Model\-\_\-\-Uniform}!osea::SeaModel_Uniform@{osea\-::\-Sea\-Model\-\_\-\-Uniform}}
+\subsubsection[{$\sim$\-Sea\-Model\-\_\-\-Uniform}]{\setlength{\rightskip}{0pt plus 5cm}Sea\-Model\-\_\-\-Uniform\-::$\sim$\-Sea\-Model\-\_\-\-Uniform (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1_sea_model___uniform_a419b48ecdac425cfe182768f7aed9ff6}
+
+
+Default destructor. Nothing happens here. 
+
+
+
+Definition at line 44 of file seamodel\-\_\-uniform.\-cpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classosea_1_1_sea_model___uniform_a896518443a9328812737ee94d020d2f0}{\index{osea\-::\-Sea\-Model\-\_\-\-Uniform@{osea\-::\-Sea\-Model\-\_\-\-Uniform}!get\-Wave\-Amp@{get\-Wave\-Amp}}
+\index{get\-Wave\-Amp@{get\-Wave\-Amp}!osea::SeaModel_Uniform@{osea\-::\-Sea\-Model\-\_\-\-Uniform}}
+\subsubsection[{get\-Wave\-Amp}]{\setlength{\rightskip}{0pt plus 5cm}double Sea\-Model\-\_\-\-Uniform\-::get\-Wave\-Amp (
+\begin{DoxyParamCaption}
+\item[{double}]{dir\-In, }
+\item[{int}]{freq\-Index}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classosea_1_1_sea_model___uniform_a896518443a9328812737ee94d020d2f0}
+
+
+Gets the wave amplitude from the sea model for the wave direction and wave frequency specified. 
+
+For each requested result, the \hyperlink{classosea_1_1_sea_model}{Sea\-Model} interpolates between the defined spectra for each wave direction to get a resulting wave energy at the specified wave direction. The wave direction does not need to match the list of directions supplied with the \hyperlink{classosea_1_1_wave_spec}{Wave\-Spec} objects. That is the flexibility of the \hyperlink{classosea_1_1_sea_model}{Sea\-Model}. You provide it with a data set, and it provides results for any given point within that data set. 
+\begin{DoxyParams}{Parameters}
+{\em dir\-In} & Double, variable passed by value. The wave direction for the requested result. Direction measured in units of radians, in the global coordinate system. True North represents a direction of zero. Positive angles are measured counter-\/clockwise (North to West). \\
+\hline
+{\em freq\-Index} & The index of the frequency you want to use in the list of wave frequencies. T\-He list of wave frequencies must be defined before calling this function. You use the index to specify the requested frequency. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns a double, variable passed by value. Variable is the wave amplitude (in units of m) at the frqeuency and wave direction specified. 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classosea_1_1_sea_model_ab1315af8b1038a3a7458de2990c8f79d}{osea\-::\-Sea\-Model}.
+
+
+
+Definition at line 67 of file seamodel\-\_\-uniform.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classosea_1_1_sea_model___uniform_a896518443a9328812737ee94d020d2f0_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classosea_1_1_sea_model___uniform_aedd2e3bd519a79c6f05027dcadb6259d}{\index{osea\-::\-Sea\-Model\-\_\-\-Uniform@{osea\-::\-Sea\-Model\-\_\-\-Uniform}!get\-Wave\-Energy@{get\-Wave\-Energy}}
+\index{get\-Wave\-Energy@{get\-Wave\-Energy}!osea::SeaModel_Uniform@{osea\-::\-Sea\-Model\-\_\-\-Uniform}}
+\subsubsection[{get\-Wave\-Energy}]{\setlength{\rightskip}{0pt plus 5cm}double Sea\-Model\-\_\-\-Uniform\-::get\-Wave\-Energy (
+\begin{DoxyParamCaption}
+\item[{double}]{dir\-In, }
+\item[{int}]{freq\-Index}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classosea_1_1_sea_model___uniform_aedd2e3bd519a79c6f05027dcadb6259d}
+
+
+Gets the wave energy from the sea model for the wave direction and wave frequency specified. 
+
+For each requested result, the \hyperlink{classosea_1_1_sea_model}{Sea\-Model} interpolates between the defined spectra for each wave direction to get a resulting wave energy at the specified wave direction. The wave direction does not need to match the list of directions supplied with the \hyperlink{classosea_1_1_wave_spec}{Wave\-Spec} objects. That is the flexibility of the \hyperlink{classosea_1_1_sea_model}{Sea\-Model}. You provide it with a data set, and it provides results for any given point within that data set. 
+\begin{DoxyParams}{Parameters}
+{\em dir\-In} & Double, variable passed by value. The wave direction for the requested result. Direction measured in units of radians, in the global coordinate system. True North represents a direction of zero. Positive angles are measured counter-\/clockwise (North to West). \\
+\hline
+{\em freq\-Index} & The index of the frequency you want to use in the list of wave frequencies. T\-He list of wave frequencies must be defined before calling this function. You use the index to specify the requested frequency. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns a double, variable passed by value. Variable is the wave energy (in units of m$^\wedge$2/(rad/s)) at the frequency and wave direction specified. 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classosea_1_1_sea_model_acea132fcb4f8d447b41725ecfd0a6e1b}{osea\-::\-Sea\-Model}.
+
+
+
+Definition at line 50 of file seamodel\-\_\-uniform.\-cpp.
+
+\hypertarget{classosea_1_1_sea_model___uniform_af8db8287e12f25665405bc3fcf93c01e}{\index{osea\-::\-Sea\-Model\-\_\-\-Uniform@{osea\-::\-Sea\-Model\-\_\-\-Uniform}!get\-Wave\-Energy@{get\-Wave\-Energy}}
+\index{get\-Wave\-Energy@{get\-Wave\-Energy}!osea::SeaModel_Uniform@{osea\-::\-Sea\-Model\-\_\-\-Uniform}}
+\subsubsection[{get\-Wave\-Energy}]{\setlength{\rightskip}{0pt plus 5cm}double Sea\-Model\-\_\-\-Uniform\-::get\-Wave\-Energy (
+\begin{DoxyParamCaption}
+\item[{double}]{dir\-In, }
+\item[{double}]{freq\-In}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classosea_1_1_sea_model___uniform_af8db8287e12f25665405bc3fcf93c01e}
+
+
+Gets the wave energy from the sea model for the wave direction and wave frequency specified. 
+
+For each requested result, the \hyperlink{classosea_1_1_sea_model}{Sea\-Model} interpolates between the defined spectra for each wave direction to get a resulting wave energy at the specified wave direction. The wave direction does not need to match the list of directions supplied with the \hyperlink{classosea_1_1_wave_spec}{Wave\-Spec} objects. That is the flexibility of the \hyperlink{classosea_1_1_sea_model}{Sea\-Model}. You provide it with a data set, and it provides results for any given point within that data set. 
+\begin{DoxyParams}{Parameters}
+{\em dir\-In} & Double, variable passed by value. The wave direction for the requested result. Direction measured in units of radians, in the global coordinate system. True North represents a direction of zero. Positive angles are measured counter-\/clockwise (North to West). \\
+\hline
+{\em freq\-In} & Double, variable passed by value. The wave frequency desired. Can be any wave frequency. This stipulation only works for requesting wave energy. If you want a wave amplitude, you must use the method of specifying frequency by the index. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns a double, variable passed by value. Variable is the wave energy (in units of m$^\wedge$2/(rad/s)) at the frequency and wave direction specified. 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classosea_1_1_sea_model_abd444caa08206c2f3b2002e614f0b2fc}{osea\-::\-Sea\-Model}.
+
+
+
+Definition at line 60 of file seamodel\-\_\-uniform.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classosea_1_1_sea_model___uniform_af8db8287e12f25665405bc3fcf93c01e_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/home/\-Ship\-\_\-\-Design/\-Projects/\-D\-M\-S1305 Open\-S\-E\-A/master/200\-\_\-src/bin/ofreq/sea\-\_\-models/\hyperlink{seamodel__uniform_8h}{seamodel\-\_\-uniform.\-h}\item 
+/home/\-Ship\-\_\-\-Design/\-Projects/\-D\-M\-S1305 Open\-S\-E\-A/master/200\-\_\-src/bin/ofreq/sea\-\_\-models/\hyperlink{seamodel__uniform_8cpp}{seamodel\-\_\-uniform.\-cpp}\end{DoxyCompactItemize}

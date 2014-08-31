@@ -1,0 +1,7 @@
+<map id="osea::WaveSpecBase" name="osea::WaveSpecBase">
+<area shape="rect" id="node5" href="$classosea_1_1_spec_bretschneider.html" title="The SpecBretschneider class. This defines a Bretschneider wave spectrum. Also called an ITTC wave spe..." alt="" coords="5,475,192,685"/>
+<area shape="rect" id="node7" href="$classosea_1_1_spec_j_o_n_s_w_a_p.html" title="The SpecJONSWAP class. This defines the JONSWAP wave spectrum. This spectrum offers two options: You ..." alt="" coords="217,459,393,701"/>
+<area shape="rect" id="node9" href="$classosea_1_1_spec_p_m.html" title="The Pierson&#45;Moskowitz Spectrum. " alt="" coords="418,491,581,669"/>
+<area shape="rect" id="node11" href="$classosea_1_1_wave_spec.html" title="The WaveSpec class defines wave spectrums. " alt="" coords="606,443,753,717"/>
+<area shape="rect" id="node2" href="$classosea_1_1ofreq_1_1o_freq_core.html" title="The core oFreq class. All oFreq classes inherit from this class. " alt="" coords="316,6,489,183"/>
+</map>

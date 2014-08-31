@@ -26,18 +26,18 @@ var dir_1a4a0bf6542c0aa4874ddc560ac8afec =
     [ "forcereact.h", "forcereact_8h.html", [
       [ "ForceReact", "classosea_1_1ofreq_1_1_force_react.html", "classosea_1_1ofreq_1_1_force_react" ]
     ] ],
-    [ "ofreqcore.cpp", "ofreqcore_8cpp.html", null ],
-    [ "ofreqcore.h", "ofreqcore_8h.html", [
-      [ "oFreqCore", "classosea_1_1ofreq_1_1o_freq_core.html", "classosea_1_1ofreq_1_1o_freq_core" ]
+    [ "ioword.cpp", "ioword_8cpp.html", null ],
+    [ "ioword.h", "ioword_8h.html", [
+      [ "ioword", "classosea_1_1ofreq_1_1ioword.html", "classosea_1_1ofreq_1_1ioword" ]
+    ] ],
+    [ "mathinterp.cpp", "mathinterp_8cpp.html", null ],
+    [ "mathinterp.h", "mathinterp_8h.html", [
+      [ "mathInterp", "classosea_1_1ofreq_1_1math_interp.html", "classosea_1_1ofreq_1_1math_interp" ]
     ] ],
     [ "solution.cpp", "solution_8cpp.html", null ],
     [ "solution.h", "solution_8h.html", [
       [ "Solution", "classosea_1_1ofreq_1_1_solution.html", "classosea_1_1ofreq_1_1_solution" ]
     ] ],
     [ "solutionset.cpp", "solutionset_8cpp.html", null ],
-    [ "solutionset.h", "solutionset_8h.html", "solutionset_8h" ],
-    [ "system.cpp", "system_8cpp.html", null ],
-    [ "system.h", "system_8h.html", [
-      [ "System", "classosea_1_1ofreq_1_1_system.html", "classosea_1_1ofreq_1_1_system" ]
-    ] ]
+    [ "solutionset.h", "solutionset_8h.html", "solutionset_8h" ]
 ];

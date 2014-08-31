@@ -1,0 +1,253 @@
+\hypertarget{classosea_1_1dicthydro_react}{\section{osea\-:\-:dicthydro\-React Class Reference}
+\label{classosea_1_1dicthydro_react}\index{osea\-::dicthydro\-React@{osea\-::dicthydro\-React}}
+}
+
+
+{\ttfamily \#include $<$dicthydroreact.\-h$>$}
+
+
+
+Inheritance diagram for osea\-:\-:dicthydro\-React\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classosea_1_1dicthydro_react__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classosea_1_1dicthydro_react_abb985a75071c4a8f4b100466b124469c}{dicthydro\-React} ()
+\item 
+\hyperlink{classosea_1_1dicthydro_react_a6767b52a2bd2ed4998bb5441cdc4a2fb}{dicthydro\-React} (\hyperlink{classosea_1_1dicthydro_react}{osea\-::dicthydro\-React} $\ast$parent)
+\begin{DoxyCompactList}\small\item\em Constructor that also passes pointer to the owning file reader. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{classosea_1_1dicthydro_react_a68cb7322d30a115ef4e4a2b4048837bb}{define\-Key} (std\-::string key\-In, std\-::vector$<$ std\-::string $>$ val\-In)
+\begin{DoxyCompactList}\small\item\em Function that defines how to interpret the key values. Contains a list of key names and corresponding actions to take for interpretting each key value. \end{DoxyCompactList}\item 
+int \hyperlink{classosea_1_1dicthydro_react_a3f5b17abba0605ac618e95ce53c5df7e}{define\-Class} (std\-::string name\-In)
+\begin{DoxyCompactList}\small\item\em Function that defines how to interpret the class name. Class name implies declaration of a new object of the class named by the class name. This is a separate set of definitions to handle class declarations. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classosea_1_1_hydro_reader}{osea\-::\-Hydro\-Reader} $\ast$ \hyperlink{classosea_1_1dicthydro_react_a0f644ee04c3e63d39761165a12cfef21}{p\-Parent}
+\begin{DoxyCompactList}\small\item\em Pointer to the parent \hyperlink{classosea_1_1_hydro_reader}{Hydro\-Reader} object. Sometimes useful if you need to use the parent object. \end{DoxyCompactList}\item 
+\hyperlink{classosea_1_1ofreq_1_1hydro_data}{ofreq\-::hydro\-Data} $\ast$ \hyperlink{classosea_1_1dicthydro_react_a1adaabcc5bbbbd37a0a8fdd2812f5bd6}{p\-Hydro\-Bod}
+\item 
+bool \hyperlink{classosea_1_1dicthydro_react_a66a8bc48d4406b143b7050e2086b6cbb}{p\-Bod\-On}
+\item 
+int \hyperlink{classosea_1_1dicthydro_react_aba130db9eb0cd8aa4203bb2a58fb4932}{p\-Freq\-Ind}
+\end{DoxyCompactItemize}
+\subsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static int \hyperlink{classosea_1_1dicthydro_react_a4fbb539436f3d6ab7d8e4d354db291ad}{O\-R\-D} = 0
+\item 
+static std\-::string \hyperlink{classosea_1_1dicthydro_react_a29b13546ba418a88b771796696433955}{O\-B\-J\-E\-C\-T\-\_\-\-B\-O\-D\-Y} = \char`\"{}body\char`\"{}
+\item 
+static std\-::string \hyperlink{classosea_1_1dicthydro_react_aadf52b76941055136df1d8c74aa67077}{O\-B\-J\-E\-C\-T\-\_\-\-D\-A\-T\-A} = \char`\"{}data\char`\"{}
+\item 
+static std\-::string \hyperlink{classosea_1_1dicthydro_react_a489f3104a318cd418c2646f63d3b0f97}{K\-E\-Y\-\_\-\-N\-A\-M\-E} = \char`\"{}name\char`\"{}
+\item 
+static std\-::string \hyperlink{classosea_1_1dicthydro_react_a281e3ae225b1959152f22979c12a60a5}{K\-E\-Y\-\_\-\-F\-R\-E\-Q\-U\-E\-N\-C\-Y} = \char`\"{}frequency\char`\"{}
+\item 
+static std\-::string \hyperlink{classosea_1_1dicthydro_react_acee862a95117a816d7fd3c634f935a85}{K\-E\-Y\-\_\-\-V\-A\-L\-U\-E} = \char`\"{}value\char`\"{}
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Prototype class declaration for pointer to hydro\-Data object. The dict\-Hydro\-React class is a template class for the dictionaries that read reactive forces.
+
+All of these input files have exactly the same format. They are just associated with a different order of derivative. A single static variable changes for each of the children classes. Everything else remains the same.
+
+The dict\-Hydro\-React class is itself derived from the \hyperlink{classosea_1_1_dictionary}{Dictionary} class. The \hyperlink{classosea_1_1_dictionary}{Dictionary} class defines most of the behavior. The only thing added to this class is the behavior for how to handle the individual keywords specific to this input file. In the case of the dict\-Hydro\-React class, the same keywords are used in all related input files, hence why a generic class can be used with inheritence. The following input files are processed with this class. 1.) hydrodamp.\-out 2.) hydromass.\-out 3.) hydrostiffness.\-out \begin{DoxySeeAlso}{See Also}
+\hyperlink{classosea_1_1_dictionary}{Dictionary} 
+
+\hyperlink{classosea_1_1_file_reader}{File\-Reader} 
+
+\hyperlink{classosea_1_1_hydro_reader}{Hydro\-Reader} 
+\end{DoxySeeAlso}
+
+
+Definition at line 98 of file dicthydroreact.\-h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classosea_1_1dicthydro_react_abb985a75071c4a8f4b100466b124469c}{\index{osea\-::dicthydro\-React@{osea\-::dicthydro\-React}!dicthydro\-React@{dicthydro\-React}}
+\index{dicthydro\-React@{dicthydro\-React}!osea::dicthydroReact@{osea\-::dicthydro\-React}}
+\subsubsection[{dicthydro\-React}]{\setlength{\rightskip}{0pt plus 5cm}dicthydro\-React\-::dicthydro\-React (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1dicthydro_react_abb985a75071c4a8f4b100466b124469c}
+
+
+Definition at line 53 of file dicthydroreact.\-cpp.
+
+\hypertarget{classosea_1_1dicthydro_react_a6767b52a2bd2ed4998bb5441cdc4a2fb}{\index{osea\-::dicthydro\-React@{osea\-::dicthydro\-React}!dicthydro\-React@{dicthydro\-React}}
+\index{dicthydro\-React@{dicthydro\-React}!osea::dicthydroReact@{osea\-::dicthydro\-React}}
+\subsubsection[{dicthydro\-React}]{\setlength{\rightskip}{0pt plus 5cm}dicthydro\-React\-::dicthydro\-React (
+\begin{DoxyParamCaption}
+\item[{{\bf osea\-::dicthydro\-React} $\ast$}]{parent}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1dicthydro_react_a6767b52a2bd2ed4998bb5441cdc4a2fb}
+
+
+Constructor that also passes pointer to the owning file reader. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parent} & Pointer to \hyperlink{classosea_1_1_hydro_reader}{Hydro\-Reader} object, pointer passed by value. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 60 of file dicthydroreact.\-cpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classosea_1_1dicthydro_react_a3f5b17abba0605ac618e95ce53c5df7e}{\index{osea\-::dicthydro\-React@{osea\-::dicthydro\-React}!define\-Class@{define\-Class}}
+\index{define\-Class@{define\-Class}!osea::dicthydroReact@{osea\-::dicthydro\-React}}
+\subsubsection[{define\-Class}]{\setlength{\rightskip}{0pt plus 5cm}int dicthydro\-React\-::define\-Class (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{name\-In}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{classosea_1_1dicthydro_react_a3f5b17abba0605ac618e95ce53c5df7e}
+
+
+Function that defines how to interpret the class name. Class name implies declaration of a new object of the class named by the class name. This is a separate set of definitions to handle class declarations. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name\-In} & std\-::string, variable passed by value. The name of the class name. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns status of assigning key. Returned value is an integer, passed by value. See list of return codes below\-: 0\-: Key definition found. Success. 1\-: No key found. / General error message. 2\-: Key is invalid within current active object. 99\-: Function virtual definition only. Not currently defined. 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classosea_1_1_dictionary_a42843f64aa966b8c686d9e3750cbdb4b}{osea\-::\-Dictionary}.
+
+
+
+Definition at line 203 of file dicthydroreact.\-cpp.
+
+\hypertarget{classosea_1_1dicthydro_react_a68cb7322d30a115ef4e4a2b4048837bb}{\index{osea\-::dicthydro\-React@{osea\-::dicthydro\-React}!define\-Key@{define\-Key}}
+\index{define\-Key@{define\-Key}!osea::dicthydroReact@{osea\-::dicthydro\-React}}
+\subsubsection[{define\-Key}]{\setlength{\rightskip}{0pt plus 5cm}int dicthydro\-React\-::define\-Key (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{key\-In, }
+\item[{std\-::vector$<$ std\-::string $>$}]{val\-In}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{classosea_1_1dicthydro_react_a68cb7322d30a115ef4e4a2b4048837bb}
+
+
+Function that defines how to interpret the key values. Contains a list of key names and corresponding actions to take for interpretting each key value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key\-In} & std\-::string containing the key name. Variable passed by value. \\
+\hline
+{\em val\-In} & Vector of strings containing the key values. Variable passed by value. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns status of assigning key. Returned value is an integer, passed by value. See list of return codes below\-: 0\-: Key definition found. Success. 1\-: No key found. / General error message. 2\-: Key is invalid within current active object. 99\-: Function virtual definition only. Not currently defined. 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classosea_1_1_dictionary_ae96470181c8b1762204493fa45e96d7c}{osea\-::\-Dictionary}.
+
+
+
+Definition at line 79 of file dicthydroreact.\-cpp.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classosea_1_1dicthydro_react_a281e3ae225b1959152f22979c12a60a5}{\index{osea\-::dicthydro\-React@{osea\-::dicthydro\-React}!K\-E\-Y\-\_\-\-F\-R\-E\-Q\-U\-E\-N\-C\-Y@{K\-E\-Y\-\_\-\-F\-R\-E\-Q\-U\-E\-N\-C\-Y}}
+\index{K\-E\-Y\-\_\-\-F\-R\-E\-Q\-U\-E\-N\-C\-Y@{K\-E\-Y\-\_\-\-F\-R\-E\-Q\-U\-E\-N\-C\-Y}!osea::dicthydroReact@{osea\-::dicthydro\-React}}
+\subsubsection[{K\-E\-Y\-\_\-\-F\-R\-E\-Q\-U\-E\-N\-C\-Y}]{\setlength{\rightskip}{0pt plus 5cm}string dicthydro\-React\-::\-K\-E\-Y\-\_\-\-F\-R\-E\-Q\-U\-E\-N\-C\-Y = \char`\"{}frequency\char`\"{}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}}\label{classosea_1_1dicthydro_react_a281e3ae225b1959152f22979c12a60a5}
+Keyword for frequency. 
+
+Definition at line 177 of file dicthydroreact.\-h.
+
+\hypertarget{classosea_1_1dicthydro_react_a489f3104a318cd418c2646f63d3b0f97}{\index{osea\-::dicthydro\-React@{osea\-::dicthydro\-React}!K\-E\-Y\-\_\-\-N\-A\-M\-E@{K\-E\-Y\-\_\-\-N\-A\-M\-E}}
+\index{K\-E\-Y\-\_\-\-N\-A\-M\-E@{K\-E\-Y\-\_\-\-N\-A\-M\-E}!osea::dicthydroReact@{osea\-::dicthydro\-React}}
+\subsubsection[{K\-E\-Y\-\_\-\-N\-A\-M\-E}]{\setlength{\rightskip}{0pt plus 5cm}string dicthydro\-React\-::\-K\-E\-Y\-\_\-\-N\-A\-M\-E = \char`\"{}name\char`\"{}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}}\label{classosea_1_1dicthydro_react_a489f3104a318cd418c2646f63d3b0f97}
+Keyword for body name 
+
+Definition at line 176 of file dicthydroreact.\-h.
+
+\hypertarget{classosea_1_1dicthydro_react_acee862a95117a816d7fd3c634f935a85}{\index{osea\-::dicthydro\-React@{osea\-::dicthydro\-React}!K\-E\-Y\-\_\-\-V\-A\-L\-U\-E@{K\-E\-Y\-\_\-\-V\-A\-L\-U\-E}}
+\index{K\-E\-Y\-\_\-\-V\-A\-L\-U\-E@{K\-E\-Y\-\_\-\-V\-A\-L\-U\-E}!osea::dicthydroReact@{osea\-::dicthydro\-React}}
+\subsubsection[{K\-E\-Y\-\_\-\-V\-A\-L\-U\-E}]{\setlength{\rightskip}{0pt plus 5cm}string dicthydro\-React\-::\-K\-E\-Y\-\_\-\-V\-A\-L\-U\-E = \char`\"{}value\char`\"{}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}}\label{classosea_1_1dicthydro_react_acee862a95117a816d7fd3c634f935a85}
+Keyword for matrix of coefficients. 
+
+Definition at line 178 of file dicthydroreact.\-h.
+
+\hypertarget{classosea_1_1dicthydro_react_a29b13546ba418a88b771796696433955}{\index{osea\-::dicthydro\-React@{osea\-::dicthydro\-React}!O\-B\-J\-E\-C\-T\-\_\-\-B\-O\-D\-Y@{O\-B\-J\-E\-C\-T\-\_\-\-B\-O\-D\-Y}}
+\index{O\-B\-J\-E\-C\-T\-\_\-\-B\-O\-D\-Y@{O\-B\-J\-E\-C\-T\-\_\-\-B\-O\-D\-Y}!osea::dicthydroReact@{osea\-::dicthydro\-React}}
+\subsubsection[{O\-B\-J\-E\-C\-T\-\_\-\-B\-O\-D\-Y}]{\setlength{\rightskip}{0pt plus 5cm}string dicthydro\-React\-::\-O\-B\-J\-E\-C\-T\-\_\-\-B\-O\-D\-Y = \char`\"{}body\char`\"{}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}}\label{classosea_1_1dicthydro_react_a29b13546ba418a88b771796696433955}
+Body object designator. 
+
+Definition at line 171 of file dicthydroreact.\-h.
+
+\hypertarget{classosea_1_1dicthydro_react_aadf52b76941055136df1d8c74aa67077}{\index{osea\-::dicthydro\-React@{osea\-::dicthydro\-React}!O\-B\-J\-E\-C\-T\-\_\-\-D\-A\-T\-A@{O\-B\-J\-E\-C\-T\-\_\-\-D\-A\-T\-A}}
+\index{O\-B\-J\-E\-C\-T\-\_\-\-D\-A\-T\-A@{O\-B\-J\-E\-C\-T\-\_\-\-D\-A\-T\-A}!osea::dicthydroReact@{osea\-::dicthydro\-React}}
+\subsubsection[{O\-B\-J\-E\-C\-T\-\_\-\-D\-A\-T\-A}]{\setlength{\rightskip}{0pt plus 5cm}string dicthydro\-React\-::\-O\-B\-J\-E\-C\-T\-\_\-\-D\-A\-T\-A = \char`\"{}data\char`\"{}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}}\label{classosea_1_1dicthydro_react_aadf52b76941055136df1d8c74aa67077}
+Datat object designator. 
+
+Definition at line 172 of file dicthydroreact.\-h.
+
+\hypertarget{classosea_1_1dicthydro_react_a4fbb539436f3d6ab7d8e4d354db291ad}{\index{osea\-::dicthydro\-React@{osea\-::dicthydro\-React}!O\-R\-D@{O\-R\-D}}
+\index{O\-R\-D@{O\-R\-D}!osea::dicthydroReact@{osea\-::dicthydro\-React}}
+\subsubsection[{O\-R\-D}]{\setlength{\rightskip}{0pt plus 5cm}int dicthydro\-React\-::\-O\-R\-D = 0\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}}\label{classosea_1_1dicthydro_react_a4fbb539436f3d6ab7d8e4d354db291ad}
+The order of derivative that is associated with all data from this file. 
+
+Definition at line 164 of file dicthydroreact.\-h.
+
+\hypertarget{classosea_1_1dicthydro_react_a66a8bc48d4406b143b7050e2086b6cbb}{\index{osea\-::dicthydro\-React@{osea\-::dicthydro\-React}!p\-Bod\-On@{p\-Bod\-On}}
+\index{p\-Bod\-On@{p\-Bod\-On}!osea::dicthydroReact@{osea\-::dicthydro\-React}}
+\subsubsection[{p\-Bod\-On}]{\setlength{\rightskip}{0pt plus 5cm}bool osea\-::dicthydro\-React\-::p\-Bod\-On\hspace{0.3cm}{\ttfamily [protected]}}}\label{classosea_1_1dicthydro_react_a66a8bc48d4406b143b7050e2086b6cbb}
+Tracks whether a body object was declared for filling in data associated with that body. 
+
+Definition at line 161 of file dicthydroreact.\-h.
+
+\hypertarget{classosea_1_1dicthydro_react_aba130db9eb0cd8aa4203bb2a58fb4932}{\index{osea\-::dicthydro\-React@{osea\-::dicthydro\-React}!p\-Freq\-Ind@{p\-Freq\-Ind}}
+\index{p\-Freq\-Ind@{p\-Freq\-Ind}!osea::dicthydroReact@{osea\-::dicthydro\-React}}
+\subsubsection[{p\-Freq\-Ind}]{\setlength{\rightskip}{0pt plus 5cm}int osea\-::dicthydro\-React\-::p\-Freq\-Ind\hspace{0.3cm}{\ttfamily [protected]}}}\label{classosea_1_1dicthydro_react_aba130db9eb0cd8aa4203bb2a58fb4932}
+The index of the frequency associated with the current set of data. 
+
+Definition at line 167 of file dicthydroreact.\-h.
+
+\hypertarget{classosea_1_1dicthydro_react_a1adaabcc5bbbbd37a0a8fdd2812f5bd6}{\index{osea\-::dicthydro\-React@{osea\-::dicthydro\-React}!p\-Hydro\-Bod@{p\-Hydro\-Bod}}
+\index{p\-Hydro\-Bod@{p\-Hydro\-Bod}!osea::dicthydroReact@{osea\-::dicthydro\-React}}
+\subsubsection[{p\-Hydro\-Bod}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ofreq\-::hydro\-Data}$\ast$ osea\-::dicthydro\-React\-::p\-Hydro\-Bod\hspace{0.3cm}{\ttfamily [protected]}}}\label{classosea_1_1dicthydro_react_a1adaabcc5bbbbd37a0a8fdd2812f5bd6}
+
+
+Definition at line 158 of file dicthydroreact.\-h.
+
+\hypertarget{classosea_1_1dicthydro_react_a0f644ee04c3e63d39761165a12cfef21}{\index{osea\-::dicthydro\-React@{osea\-::dicthydro\-React}!p\-Parent@{p\-Parent}}
+\index{p\-Parent@{p\-Parent}!osea::dicthydroReact@{osea\-::dicthydro\-React}}
+\subsubsection[{p\-Parent}]{\setlength{\rightskip}{0pt plus 5cm}{\bf osea\-::\-Hydro\-Reader}$\ast$ osea\-::dicthydro\-React\-::p\-Parent\hspace{0.3cm}{\ttfamily [protected]}}}\label{classosea_1_1dicthydro_react_a0f644ee04c3e63d39761165a12cfef21}
+
+
+Pointer to the parent \hyperlink{classosea_1_1_hydro_reader}{Hydro\-Reader} object. Sometimes useful if you need to use the parent object. 
+
+
+
+Definition at line 155 of file dicthydroreact.\-h.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/home/\-Ship\-\_\-\-Design/\-Projects/\-D\-M\-S1305 Open\-S\-E\-A/master/200\-\_\-src/bin/ofreq/hydro\-\_\-reader/\hyperlink{dicthydroreact_8h}{dicthydroreact.\-h}\item 
+/home/\-Ship\-\_\-\-Design/\-Projects/\-D\-M\-S1305 Open\-S\-E\-A/master/200\-\_\-src/bin/ofreq/hydro\-\_\-reader/\hyperlink{dicthydroreact_8cpp}{dicthydroreact.\-cpp}\end{DoxyCompactItemize}

@@ -1,0 +1,5 @@
+<map id="osea::ofreq::mathInterp" name="osea::ofreq::mathInterp">
+<area shape="rect" id="node5" href="$classosea_1_1ofreq_1_1hydro_data.html" title="The hydroData class is the basic definition for a set of hydrodynamic data. " alt="" coords="5,427,176,669"/>
+<area shape="rect" id="node7" href="$classosea_1_1ofreq_1_1_hydro_manager.html" title="The HydroManager class contains the complete set of hydrodynamic data associated with a single body..." alt="" coords="200,427,397,669"/>
+<area shape="rect" id="node2" href="$classosea_1_1ofreq_1_1o_freq_core.html" title="The core oFreq class. All oFreq classes inherit from this class. " alt="" coords="108,6,281,183"/>
+</map>

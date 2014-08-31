@@ -1,0 +1,763 @@
+\hypertarget{classosea_1_1ofreq_1_1hydro_data}{\section{osea\-:\-:ofreq\-:\-:hydro\-Data Class Reference}
+\label{classosea_1_1ofreq_1_1hydro_data}\index{osea\-::ofreq\-::hydro\-Data@{osea\-::ofreq\-::hydro\-Data}}
+}
+
+
+The \hyperlink{classosea_1_1ofreq_1_1hydro_data}{hydro\-Data} class is the basic definition for a set of hydrodynamic data.  
+
+
+
+
+{\ttfamily \#include $<$hydrodata.\-h$>$}
+
+
+
+Inheritance diagram for osea\-:\-:ofreq\-:\-:hydro\-Data\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classosea_1_1ofreq_1_1hydro_data__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classosea_1_1ofreq_1_1hydro_data_ab5168addb3599feb46d4a792ea406681}{hydro\-Data} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. Nothing happens here. \end{DoxyCompactList}\item 
+\hyperlink{classosea_1_1ofreq_1_1hydro_data_a3714a7ac79e71906a362b24d4aee9a3c}{$\sim$hydro\-Data} ()
+\begin{DoxyCompactList}\small\item\em Default destructor. Nothing happens here. \end{DoxyCompactList}\item 
+void \hyperlink{classosea_1_1ofreq_1_1hydro_data_ae78455bf7bc4f2eaa6b1609d206c4e2d}{set\-Wave\-Amp} (double amp\-In)
+\begin{DoxyCompactList}\small\item\em Sets the wave amplitude associated with this set of hydrodata. \end{DoxyCompactList}\item 
+double \hyperlink{classosea_1_1ofreq_1_1hydro_data_abf0e887d717ece50b5415b911240785d}{get\-Wave\-Amp} ()
+\begin{DoxyCompactList}\small\item\em Gets the wave amplitude associated with this set of hydrodata. \end{DoxyCompactList}\item 
+void \hyperlink{classosea_1_1ofreq_1_1hydro_data_a8146a7d0d494e50f0463150589758afa}{set\-Wave\-Dir} (double dir\-In)
+\begin{DoxyCompactList}\small\item\em Sets the wave direction associated with this set of hydrodata. \end{DoxyCompactList}\item 
+double \hyperlink{classosea_1_1ofreq_1_1hydro_data_a1ba2ac3924aac32d18092b596f9f61c9}{get\-Wave\-Dir} ()
+\begin{DoxyCompactList}\small\item\em Gets the wave direction associated with this set of hydrodata. \end{DoxyCompactList}\item 
+std\-::vector\\*
+$<$ \hyperlink{classosea_1_1ofreq_1_1mat_force_react}{ofreq\-::mat\-Force\-React} $>$ \& \hyperlink{classosea_1_1ofreq_1_1hydro_data_a8c1b66da5621a45f88fe65e4fc2e848e}{list\-Data\-React} ()
+\begin{DoxyCompactList}\small\item\em The list of reactive force data. \end{DoxyCompactList}\item 
+\hyperlink{classosea_1_1ofreq_1_1mat_force_react}{ofreq\-::mat\-Force\-React} \& \hyperlink{classosea_1_1ofreq_1_1hydro_data_a25218fa0280509bd46d55ca0e53db350}{list\-Data\-React} (int index)
+\begin{DoxyCompactList}\small\item\em A single entry in the list of reactive force data. \end{DoxyCompactList}\item 
+void \hyperlink{classosea_1_1ofreq_1_1hydro_data_a0fc3dd79620d5be383075cd29f35f760}{add\-Data\-React} (\hyperlink{classosea_1_1ofreq_1_1mat_force_react}{ofreq\-::mat\-Force\-React} force\-In=\hyperlink{classosea_1_1ofreq_1_1mat_force_react}{ofreq\-::mat\-Force\-React}())
+\begin{DoxyCompactList}\small\item\em Adds a single entry ot the list of reactive force data objects. \end{DoxyCompactList}\item 
+std\-::vector\\*
+$<$ \hyperlink{classosea_1_1ofreq_1_1mat_force_active}{ofreq\-::mat\-Force\-Active} $>$ \& \hyperlink{classosea_1_1ofreq_1_1hydro_data_ac92ec2a314b592d91ea8437d3cb5c211}{list\-Data\-Active} ()
+\begin{DoxyCompactList}\small\item\em The list of Active force data. \end{DoxyCompactList}\item 
+\hyperlink{classosea_1_1ofreq_1_1mat_force_active}{ofreq\-::mat\-Force\-Active} \& \hyperlink{classosea_1_1ofreq_1_1hydro_data_ae7a9a88e6aaf386d1f04669ef2039ab2}{list\-Data\-Active} (int index)
+\begin{DoxyCompactList}\small\item\em A single entry in the list of Active force data. \end{DoxyCompactList}\item 
+void \hyperlink{classosea_1_1ofreq_1_1hydro_data_aa5a9412a59f440ec55d95f57de913187}{add\-Data\-Active} (\hyperlink{classosea_1_1ofreq_1_1mat_force_active}{ofreq\-::mat\-Force\-Active} force\-In=\hyperlink{classosea_1_1ofreq_1_1mat_force_active}{ofreq\-::mat\-Force\-Active}())
+\begin{DoxyCompactList}\small\item\em Adds a single entry ot the list of Active force data objects. \end{DoxyCompactList}\item 
+std\-::vector$<$ std\-::vector\\*
+$<$ \hyperlink{classosea_1_1ofreq_1_1mat_force_cross}{ofreq\-::mat\-Force\-Cross} $>$ $>$ \& \hyperlink{classosea_1_1ofreq_1_1hydro_data_a2543a86d437288af8d1fbd17e63ba4f6}{list\-Data\-Cross} ()
+\begin{DoxyCompactList}\small\item\em The list of crossbody force data. \end{DoxyCompactList}\item 
+\hyperlink{classosea_1_1ofreq_1_1mat_force_cross}{ofreq\-::mat\-Force\-Cross} \& \hyperlink{classosea_1_1ofreq_1_1hydro_data_a6a0e897110b962e5642a6b5bfeb5b1be}{list\-Data\-Cross} (int freq\-Ind, int bod\-Index)
+\begin{DoxyCompactList}\small\item\em A single entry in the list of crossbody force data. \end{DoxyCompactList}\item 
+\hyperlink{classosea_1_1ofreq_1_1mat_force_cross}{ofreq\-::mat\-Force\-Cross} \& \hyperlink{classosea_1_1ofreq_1_1hydro_data_af4f50c85bbe169038a5d79844347d71f}{list\-Data\-Cross} (int freq\-Ind, std\-::string body\-Name)
+\begin{DoxyCompactList}\small\item\em A single entry in the list of crossbody force data. \end{DoxyCompactList}\item 
+void \hyperlink{classosea_1_1ofreq_1_1hydro_data_a50efd747da5dfc1e0975db8ea97e8278}{add\-Data\-Cross} (\hyperlink{classosea_1_1ofreq_1_1mat_force_cross}{ofreq\-::mat\-Force\-Cross} force\-In=\hyperlink{classosea_1_1ofreq_1_1mat_force_cross}{ofreq\-::mat\-Force\-Cross}(), int freq\-Ind=-\/1)
+\begin{DoxyCompactList}\small\item\em Adds a single entry to the list of crossbody forces. \end{DoxyCompactList}\item 
+std\-::vector$<$ double $>$ \& \hyperlink{classosea_1_1ofreq_1_1hydro_data_a4373065f995b1b305929e085d2b2218d}{list\-Wave\-Freq} ()
+\begin{DoxyCompactList}\small\item\em The list of wave frequencies. \end{DoxyCompactList}\item 
+double \& \hyperlink{classosea_1_1ofreq_1_1hydro_data_a4ee2d19375355d9191f7a15b2598c7da}{list\-Wave\-Freq} (int index)
+\begin{DoxyCompactList}\small\item\em A single entry in the list of wave frequencies. \end{DoxyCompactList}\item 
+void \hyperlink{classosea_1_1ofreq_1_1hydro_data_aa5c5240f433a6943096d83d7bbcb4c7a}{add\-Wave\-Freq} (double freq\-In)
+\begin{DoxyCompactList}\small\item\em Adds an entry to the list of wave frequencies. \end{DoxyCompactList}\item 
+void \hyperlink{classosea_1_1ofreq_1_1hydro_data_ab30be32cc563247fed30c876fa5f136d}{add\-Wave\-Freq} (std\-::vector$<$ double $>$ freq\-In)
+\begin{DoxyCompactList}\small\item\em Adds a whole vector of frequencies to the list of wave frequencies. \end{DoxyCompactList}\item 
+\hyperlink{classosea_1_1ofreq_1_1mat_force_react}{ofreq\-::mat\-Force\-React} \hyperlink{classosea_1_1ofreq_1_1hydro_data_a2ebaaf494549e170e7a4c3899fe1cf17}{get\-Data\-React} (double freq\-In)
+\begin{DoxyCompactList}\small\item\em Interpolates through all entries of Data\-React forces and returns the data at the specified frequency. \end{DoxyCompactList}\item 
+\hyperlink{classosea_1_1ofreq_1_1mat_force_active}{ofreq\-::mat\-Force\-Active} \hyperlink{classosea_1_1ofreq_1_1hydro_data_a5950689d2b672d50919f3e85e632b1c4}{get\-Data\-Active} (double freq\-In)
+\begin{DoxyCompactList}\small\item\em Interpolates through all entries of Data\-Active forces and returns the data at the specified frequency. \end{DoxyCompactList}\item 
+\hyperlink{classosea_1_1ofreq_1_1mat_force_cross}{ofreq\-::mat\-Force\-Cross} \hyperlink{classosea_1_1ofreq_1_1hydro_data_a76e2c149d5d7125ce214d560491697f0}{get\-Data\-Cross} (double freq\-In, int hydro\-Ind)
+\begin{DoxyCompactList}\small\item\em Interpolates through all entries of Data\-Cross forces and returns the data at the specified frequency. \end{DoxyCompactList}\item 
+\hyperlink{classosea_1_1ofreq_1_1mat_force_cross}{ofreq\-::mat\-Force\-Cross} \hyperlink{classosea_1_1ofreq_1_1hydro_data_a3d5957ba04d7757eccf8ed6d000db74e}{get\-Data\-Cross} (double freq\-In, std\-::string hydro\-Name)
+\begin{DoxyCompactList}\small\item\em Interpolates through all entries of Data\-Cross forces and returns the data at the specified frequency. \end{DoxyCompactList}\item 
+\hyperlink{classosea_1_1ofreq_1_1hydro_data}{ofreq\-::hydro\-Data} \hyperlink{classosea_1_1ofreq_1_1hydro_data_a3bc82090ad80f7830ec396283ca71ab9}{interp\-Hydro\-Data} (double freq\-In)
+\begin{DoxyCompactList}\small\item\em This function interpolates the entire set of hydrodata for a specified wave frequency. \end{DoxyCompactList}\item 
+void \hyperlink{classosea_1_1ofreq_1_1hydro_data_aa1c4974a084743be77818856bebe48c8}{set\-Hydro\-Body\-Name} (std\-::string name\-In)
+\begin{DoxyCompactList}\small\item\em Sets the name of the hydrobody associated with this hydrodata set. \end{DoxyCompactList}\item 
+std\-::string \hyperlink{classosea_1_1ofreq_1_1hydro_data_abc0e62a5fd8f2c38ef6b6cbd27b4ef02}{get\-Hydro\-Body\-Name} ()
+\begin{DoxyCompactList}\small\item\em Gets the name of the hydrobody associated with this hydrodata set. \end{DoxyCompactList}\item 
+void \hyperlink{classosea_1_1ofreq_1_1hydro_data_a915529d0176e1201e72c1b2666d32b12}{set\-Depth} (double depth\-In)
+\begin{DoxyCompactList}\small\item\em Sets the water depth associated with this hydro data set. \end{DoxyCompactList}\item 
+double \hyperlink{classosea_1_1ofreq_1_1hydro_data_acd88cb104d1b7555836fafd48ab23b6d}{get\-Depth} ()
+\begin{DoxyCompactList}\small\item\em Gets the water depth associated with this hydro data set. \end{DoxyCompactList}\item 
+void \hyperlink{classosea_1_1ofreq_1_1hydro_data_af424ccf2c3d7519c5644130d686114bc}{set\-Density} (double density\-In)
+\begin{DoxyCompactList}\small\item\em Sets the water density associated with this hydro data set. \end{DoxyCompactList}\item 
+double \hyperlink{classosea_1_1ofreq_1_1hydro_data_a3dc47c3b8baa68398d8c84dcf40ca7a5}{get\-Density} ()
+\begin{DoxyCompactList}\small\item\em Sets the water density associated with this hydro data set. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+The \hyperlink{classosea_1_1ofreq_1_1hydro_data}{hydro\-Data} class is the basic definition for a set of hydrodynamic data. 
+
+A single \hyperlink{classosea_1_1ofreq_1_1hydro_data}{hydro\-Data} object contains all Reactive, Active, and Crossbody forces for a single body, at a single wave direction, for a single wave amplitude. All wave frequencies are included in the \hyperlink{classosea_1_1ofreq_1_1hydro_data}{hydro\-Data} object. \hyperlink{classosea_1_1ofreq_1_1_force}{Force} data is provided for each wave frequency. The \hyperlink{classosea_1_1ofreq_1_1hydro_data}{hydro\-Data} object also contains properties to specify the exact environmental conditions for the given data set (wave amplitude, wave direction, and hydrobody name).
+
+The \hyperlink{classosea_1_1ofreq_1_1hydro_data}{hydro\-Data} object can report out force data for any specified wave frequency. It will perform linear interpolation within the given data set to produce a result. It will not extend outside the data set defined. 
+
+Definition at line 89 of file hydrodata.\-h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classosea_1_1ofreq_1_1hydro_data_ab5168addb3599feb46d4a792ea406681}{\index{osea\-::ofreq\-::hydro\-Data@{osea\-::ofreq\-::hydro\-Data}!hydro\-Data@{hydro\-Data}}
+\index{hydro\-Data@{hydro\-Data}!osea::ofreq::hydroData@{osea\-::ofreq\-::hydro\-Data}}
+\subsubsection[{hydro\-Data}]{\setlength{\rightskip}{0pt plus 5cm}hydro\-Data\-::hydro\-Data (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1hydro_data_ab5168addb3599feb46d4a792ea406681}
+
+
+Default constructor. Nothing happens here. 
+
+
+
+Definition at line 39 of file hydrodata.\-cpp.
+
+\hypertarget{classosea_1_1ofreq_1_1hydro_data_a3714a7ac79e71906a362b24d4aee9a3c}{\index{osea\-::ofreq\-::hydro\-Data@{osea\-::ofreq\-::hydro\-Data}!$\sim$hydro\-Data@{$\sim$hydro\-Data}}
+\index{$\sim$hydro\-Data@{$\sim$hydro\-Data}!osea::ofreq::hydroData@{osea\-::ofreq\-::hydro\-Data}}
+\subsubsection[{$\sim$hydro\-Data}]{\setlength{\rightskip}{0pt plus 5cm}hydro\-Data\-::$\sim$hydro\-Data (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1hydro_data_a3714a7ac79e71906a362b24d4aee9a3c}
+
+
+Default destructor. Nothing happens here. 
+
+
+
+Definition at line 44 of file hydrodata.\-cpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classosea_1_1ofreq_1_1hydro_data_aa5a9412a59f440ec55d95f57de913187}{\index{osea\-::ofreq\-::hydro\-Data@{osea\-::ofreq\-::hydro\-Data}!add\-Data\-Active@{add\-Data\-Active}}
+\index{add\-Data\-Active@{add\-Data\-Active}!osea::ofreq::hydroData@{osea\-::ofreq\-::hydro\-Data}}
+\subsubsection[{add\-Data\-Active}]{\setlength{\rightskip}{0pt plus 5cm}void hydro\-Data\-::add\-Data\-Active (
+\begin{DoxyParamCaption}
+\item[{{\bf ofreq\-::mat\-Force\-Active}}]{force\-In = {\ttfamily {\bf ofreq\-::mat\-Force\-Active}()}}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1hydro_data_aa5a9412a59f440ec55d95f57de913187}
+
+
+Adds a single entry ot the list of Active force data objects. 
+
+Each entry in the list corresponds to a specific wave frequency. 
+\begin{DoxyParams}{Parameters}
+{\em force\-In} & \hyperlink{classosea_1_1ofreq_1_1mat_force_active}{mat\-Force\-Active} object, passed by value. The entry that you wish to add to the list of Data\-Active objects. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 104 of file hydrodata.\-cpp.
+
+\hypertarget{classosea_1_1ofreq_1_1hydro_data_a50efd747da5dfc1e0975db8ea97e8278}{\index{osea\-::ofreq\-::hydro\-Data@{osea\-::ofreq\-::hydro\-Data}!add\-Data\-Cross@{add\-Data\-Cross}}
+\index{add\-Data\-Cross@{add\-Data\-Cross}!osea::ofreq::hydroData@{osea\-::ofreq\-::hydro\-Data}}
+\subsubsection[{add\-Data\-Cross}]{\setlength{\rightskip}{0pt plus 5cm}void hydro\-Data\-::add\-Data\-Cross (
+\begin{DoxyParamCaption}
+\item[{{\bf ofreq\-::mat\-Force\-Cross}}]{force\-In = {\ttfamily {\bf ofreq\-::mat\-Force\-Cross}()}, }
+\item[{int}]{freq\-Ind = {\ttfamily -\/1}}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1hydro_data_a50efd747da5dfc1e0975db8ea97e8278}
+
+
+Adds a single entry to the list of crossbody forces. 
+
+Each entry in the list corresponds to a single wave frequency and hydrobody name. 
+\begin{DoxyParams}{Parameters}
+{\em force\-In} & \hyperlink{classosea_1_1ofreq_1_1mat_force_cross}{mat\-Force\-Cross} object, passed by value. The entry you wish to add to the list of crossbody force dat. If no input supplied, the default is to create an empty \hyperlink{classosea_1_1ofreq_1_1mat_force_cross}{mat\-Force\-Cross} object. \\
+\hline
+{\em freq\-Ind} & Integer, passed by value. The index of the frequency entry that you would like to add the entry add. Remember that there are two indices. If the frequency index is specified, that frequency index is located, and a new hydrobody entry is added at that frequency index. If no frequency index is specified, the new entry will be added as a new frequency index. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 141 of file hydrodata.\-cpp.
+
+\hypertarget{classosea_1_1ofreq_1_1hydro_data_a0fc3dd79620d5be383075cd29f35f760}{\index{osea\-::ofreq\-::hydro\-Data@{osea\-::ofreq\-::hydro\-Data}!add\-Data\-React@{add\-Data\-React}}
+\index{add\-Data\-React@{add\-Data\-React}!osea::ofreq::hydroData@{osea\-::ofreq\-::hydro\-Data}}
+\subsubsection[{add\-Data\-React}]{\setlength{\rightskip}{0pt plus 5cm}void hydro\-Data\-::add\-Data\-React (
+\begin{DoxyParamCaption}
+\item[{{\bf ofreq\-::mat\-Force\-React}}]{force\-In = {\ttfamily {\bf ofreq\-::mat\-Force\-React}()}}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1hydro_data_a0fc3dd79620d5be383075cd29f35f760}
+
+
+Adds a single entry ot the list of reactive force data objects. 
+
+Each entry in the list corresponds to a specific wave frequency. 
+\begin{DoxyParams}{Parameters}
+{\em force\-In} & \hyperlink{classosea_1_1ofreq_1_1mat_force_react}{mat\-Force\-React} object, passed by value. The entry that you wish to add to the list of Data\-React objects. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 86 of file hydrodata.\-cpp.
+
+\hypertarget{classosea_1_1ofreq_1_1hydro_data_aa5c5240f433a6943096d83d7bbcb4c7a}{\index{osea\-::ofreq\-::hydro\-Data@{osea\-::ofreq\-::hydro\-Data}!add\-Wave\-Freq@{add\-Wave\-Freq}}
+\index{add\-Wave\-Freq@{add\-Wave\-Freq}!osea::ofreq::hydroData@{osea\-::ofreq\-::hydro\-Data}}
+\subsubsection[{add\-Wave\-Freq}]{\setlength{\rightskip}{0pt plus 5cm}void hydro\-Data\-::add\-Wave\-Freq (
+\begin{DoxyParamCaption}
+\item[{double}]{freq\-In}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1hydro_data_aa5c5240f433a6943096d83d7bbcb4c7a}
+
+
+Adds an entry to the list of wave frequencies. 
+
+Each entry in the list of wave frequencies corresponds to the matching entry in the list of data\-Cross, data\-React, and data\-Active objects. Wave frequencies are measured in units of radians per second (rad/s). 
+\begin{DoxyParams}{Parameters}
+{\em freq\-In} & Double, passed by value. The value of the wave frequency that you want added to the list of wave frequencies. Wave frequencies are measured in units of radians per second (rad/s). \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 170 of file hydrodata.\-cpp.
+
+\hypertarget{classosea_1_1ofreq_1_1hydro_data_ab30be32cc563247fed30c876fa5f136d}{\index{osea\-::ofreq\-::hydro\-Data@{osea\-::ofreq\-::hydro\-Data}!add\-Wave\-Freq@{add\-Wave\-Freq}}
+\index{add\-Wave\-Freq@{add\-Wave\-Freq}!osea::ofreq::hydroData@{osea\-::ofreq\-::hydro\-Data}}
+\subsubsection[{add\-Wave\-Freq}]{\setlength{\rightskip}{0pt plus 5cm}void hydro\-Data\-::add\-Wave\-Freq (
+\begin{DoxyParamCaption}
+\item[{std\-::vector$<$ double $>$}]{freq\-In}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1hydro_data_ab30be32cc563247fed30c876fa5f136d}
+
+
+Adds a whole vector of frequencies to the list of wave frequencies. 
+
+Each entry in the list of wave frequencies corresponds to the matching entry in the list of data\-Cross, data\-React, and data\-Active objects. Wave frequencies are measured in units of radians per second (rad/s). 
+\begin{DoxyParams}{Parameters}
+{\em freq\-In} & Vector of doubles, passed by value. Each entry is the value of the wave frequency that you want added to the list of wave frequencies. Wave frequencies are measured in units of radians per second (rad/s). \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 176 of file hydrodata.\-cpp.
+
+\hypertarget{classosea_1_1ofreq_1_1hydro_data_a5950689d2b672d50919f3e85e632b1c4}{\index{osea\-::ofreq\-::hydro\-Data@{osea\-::ofreq\-::hydro\-Data}!get\-Data\-Active@{get\-Data\-Active}}
+\index{get\-Data\-Active@{get\-Data\-Active}!osea::ofreq::hydroData@{osea\-::ofreq\-::hydro\-Data}}
+\subsubsection[{get\-Data\-Active}]{\setlength{\rightskip}{0pt plus 5cm}{\bf mat\-Force\-Active} hydro\-Data\-::get\-Data\-Active (
+\begin{DoxyParamCaption}
+\item[{double}]{freq\-In}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1hydro_data_a5950689d2b672d50919f3e85e632b1c4}
+
+
+Interpolates through all entries of Data\-Active forces and returns the data at the specified frequency. 
+
+The function searches through all entries in the list\-Data\-Active of forces. It finds the two entries that are closest to the specified frequency. It then performs linear interpolation to obtain the resulting data set at the requested frequency. This is interpolation only, if a frequency is requested that extends beyond the data set, it will only return the result for the closest matching frequency. 
+\begin{DoxyParams}{Parameters}
+{\em freq\-In} & Double, passed by value. The frequency that you want data interpolated for. Wave frequency measured in units of radians per second (rad/s). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns a \hyperlink{classosea_1_1ofreq_1_1mat_force_react}{mat\-Force\-React} object, passed by value. This is the result of the interpolation at the requested wave frequency. 
+\end{DoxyReturn}
+
+
+Definition at line 207 of file hydrodata.\-cpp.
+
+\hypertarget{classosea_1_1ofreq_1_1hydro_data_a76e2c149d5d7125ce214d560491697f0}{\index{osea\-::ofreq\-::hydro\-Data@{osea\-::ofreq\-::hydro\-Data}!get\-Data\-Cross@{get\-Data\-Cross}}
+\index{get\-Data\-Cross@{get\-Data\-Cross}!osea::ofreq::hydroData@{osea\-::ofreq\-::hydro\-Data}}
+\subsubsection[{get\-Data\-Cross}]{\setlength{\rightskip}{0pt plus 5cm}{\bf mat\-Force\-Cross} hydro\-Data\-::get\-Data\-Cross (
+\begin{DoxyParamCaption}
+\item[{double}]{freq\-In, }
+\item[{int}]{hydro\-Ind}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1hydro_data_a76e2c149d5d7125ce214d560491697f0}
+
+
+Interpolates through all entries of Data\-Cross forces and returns the data at the specified frequency. 
+
+The function searches through all entries in the list\-Data\-Cross of forces. It finds the two entries that are closest to the specified frequency. It then performs linear interpolation to obtain the resulting data set at the requested frequency. This is interpolation only, if a frequency is requested that extends beyond the data set, it will only return the result for the closest matching frequency.
+
+Because the Data\-Cross objects also have multiple entries for each hydrobody, you must also specify the index of the hydrobody you desire. 
+\begin{DoxyParams}{Parameters}
+{\em freq\-In} & Double, passed by value. The frequency that you want data interpolated for. Wave frequency measured in units of radians per second (rad/s). \\
+\hline
+{\em hydro\-Ind} & Integer, passed by value. The index of the hydrobody that you want data interpolated for. The same hydrobody index will be used on both entries that are used in the interpolation. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns a \hyperlink{classosea_1_1ofreq_1_1mat_force_cross}{mat\-Force\-Cross} object, passed by value. This is the result of the interpolation at the requested wave frequency and requested hydrobody index. 
+\end{DoxyReturn}
+
+
+Definition at line 231 of file hydrodata.\-cpp.
+
+\hypertarget{classosea_1_1ofreq_1_1hydro_data_a3d5957ba04d7757eccf8ed6d000db74e}{\index{osea\-::ofreq\-::hydro\-Data@{osea\-::ofreq\-::hydro\-Data}!get\-Data\-Cross@{get\-Data\-Cross}}
+\index{get\-Data\-Cross@{get\-Data\-Cross}!osea::ofreq::hydroData@{osea\-::ofreq\-::hydro\-Data}}
+\subsubsection[{get\-Data\-Cross}]{\setlength{\rightskip}{0pt plus 5cm}{\bf mat\-Force\-Cross} hydro\-Data\-::get\-Data\-Cross (
+\begin{DoxyParamCaption}
+\item[{double}]{freq\-In, }
+\item[{std\-::string}]{hydro\-Name}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1hydro_data_a3d5957ba04d7757eccf8ed6d000db74e}
+
+
+Interpolates through all entries of Data\-Cross forces and returns the data at the specified frequency. 
+
+The function searches through all entries in the list\-Data\-Cross of forces. It finds the two entries that are closest to the specified frequency. It then performs linear interpolation to obtain the resulting data set at the requested frequency. This is interpolation only, if a frequency is requested that extends beyond the data set, it will only return the result for the closest matching frequency.
+
+Because the Data\-Cross objects also have multiple entries for each hydrobody, you must also specify the name of the hydrobody you desire. 
+\begin{DoxyParams}{Parameters}
+{\em freq\-In} & Double, passed by value. The frequency that you want data interpolated for. Wave frequency measured in units of radians per second (rad/s). \\
+\hline
+{\em hydro\-Name} & String, passed by value. The name of the hydrobody that you want data interpolated for. The same hydrobody name will be used on both entries that are used in the interpolation. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns a \hyperlink{classosea_1_1ofreq_1_1mat_force_cross}{mat\-Force\-Cross} object, passed by value. This is the result of the interpolation at the requested wave frequency and requested hydrobody index. 
+\end{DoxyReturn}
+
+
+Definition at line 287 of file hydrodata.\-cpp.
+
+\hypertarget{classosea_1_1ofreq_1_1hydro_data_a2ebaaf494549e170e7a4c3899fe1cf17}{\index{osea\-::ofreq\-::hydro\-Data@{osea\-::ofreq\-::hydro\-Data}!get\-Data\-React@{get\-Data\-React}}
+\index{get\-Data\-React@{get\-Data\-React}!osea::ofreq::hydroData@{osea\-::ofreq\-::hydro\-Data}}
+\subsubsection[{get\-Data\-React}]{\setlength{\rightskip}{0pt plus 5cm}{\bf mat\-Force\-React} hydro\-Data\-::get\-Data\-React (
+\begin{DoxyParamCaption}
+\item[{double}]{freq\-In}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1hydro_data_a2ebaaf494549e170e7a4c3899fe1cf17}
+
+
+Interpolates through all entries of Data\-React forces and returns the data at the specified frequency. 
+
+The function searches through all entries in the list\-Data\-React of forces. It finds the two entries that are closest to the specified frequency. It then performs linear interpolation to obtain the resulting data set at the requested frequency. This is interpolation only, if a frequency is requested that extends beyond the data set, it will only return the result for the closest matching frequency. 
+\begin{DoxyParams}{Parameters}
+{\em freq\-In} & Double, passed by value. The frequency that you want data interpolated for. Wave frequency measured in units of radians per second (rad/s). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns a \hyperlink{classosea_1_1ofreq_1_1mat_force_react}{mat\-Force\-React} object, passed by value. This is the result of the interpolation at the requested wave frequency. 
+\end{DoxyReturn}
+
+
+Definition at line 183 of file hydrodata.\-cpp.
+
+\hypertarget{classosea_1_1ofreq_1_1hydro_data_a3dc47c3b8baa68398d8c84dcf40ca7a5}{\index{osea\-::ofreq\-::hydro\-Data@{osea\-::ofreq\-::hydro\-Data}!get\-Density@{get\-Density}}
+\index{get\-Density@{get\-Density}!osea::ofreq::hydroData@{osea\-::ofreq\-::hydro\-Data}}
+\subsubsection[{get\-Density}]{\setlength{\rightskip}{0pt plus 5cm}double osea\-::ofreq\-::hydro\-Data\-::get\-Density (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1hydro_data_a3dc47c3b8baa68398d8c84dcf40ca7a5}
+
+
+Sets the water density associated with this hydro data set. 
+
+\begin{DoxyReturn}{Returns}
+Double, variable passed by value. The water density, measured in units of kg/m$^\wedge$3. 
+\end{DoxyReturn}
+\hypertarget{classosea_1_1ofreq_1_1hydro_data_acd88cb104d1b7555836fafd48ab23b6d}{\index{osea\-::ofreq\-::hydro\-Data@{osea\-::ofreq\-::hydro\-Data}!get\-Depth@{get\-Depth}}
+\index{get\-Depth@{get\-Depth}!osea::ofreq::hydroData@{osea\-::ofreq\-::hydro\-Data}}
+\subsubsection[{get\-Depth}]{\setlength{\rightskip}{0pt plus 5cm}double hydro\-Data\-::get\-Depth (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1hydro_data_acd88cb104d1b7555836fafd48ab23b6d}
+
+
+Gets the water depth associated with this hydro data set. 
+
+\begin{DoxyReturn}{Returns}
+Double, variable passed by value. The water depth, measured in meters. 
+\end{DoxyReturn}
+
+
+Definition at line 416 of file hydrodata.\-cpp.
+
+\hypertarget{classosea_1_1ofreq_1_1hydro_data_abc0e62a5fd8f2c38ef6b6cbd27b4ef02}{\index{osea\-::ofreq\-::hydro\-Data@{osea\-::ofreq\-::hydro\-Data}!get\-Hydro\-Body\-Name@{get\-Hydro\-Body\-Name}}
+\index{get\-Hydro\-Body\-Name@{get\-Hydro\-Body\-Name}!osea::ofreq::hydroData@{osea\-::ofreq\-::hydro\-Data}}
+\subsubsection[{get\-Hydro\-Body\-Name}]{\setlength{\rightskip}{0pt plus 5cm}string hydro\-Data\-::get\-Hydro\-Body\-Name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1hydro_data_abc0e62a5fd8f2c38ef6b6cbd27b4ef02}
+
+
+Gets the name of the hydrobody associated with this hydrodata set. 
+
+\begin{DoxyReturn}{Returns}
+Returns string, passed by value. The name of the hydrobody associated with this hydrodata set. 
+\end{DoxyReturn}
+
+
+Definition at line 404 of file hydrodata.\-cpp.
+
+\hypertarget{classosea_1_1ofreq_1_1hydro_data_abf0e887d717ece50b5415b911240785d}{\index{osea\-::ofreq\-::hydro\-Data@{osea\-::ofreq\-::hydro\-Data}!get\-Wave\-Amp@{get\-Wave\-Amp}}
+\index{get\-Wave\-Amp@{get\-Wave\-Amp}!osea::ofreq::hydroData@{osea\-::ofreq\-::hydro\-Data}}
+\subsubsection[{get\-Wave\-Amp}]{\setlength{\rightskip}{0pt plus 5cm}double hydro\-Data\-::get\-Wave\-Amp (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1hydro_data_abf0e887d717ece50b5415b911240785d}
+
+
+Gets the wave amplitude associated with this set of hydrodata. 
+
+Every set of hydrodata has a specific set of environmental conditions that were used to generate that data. The wave amplitude is one of those environmental conditions. \begin{DoxyReturn}{Returns}
+Double, variable passed by value. The wave amplitude used for this set of hydrodata. Amplitude measured in units of meters (m). 
+\end{DoxyReturn}
+
+
+Definition at line 56 of file hydrodata.\-cpp.
+
+\hypertarget{classosea_1_1ofreq_1_1hydro_data_a1ba2ac3924aac32d18092b596f9f61c9}{\index{osea\-::ofreq\-::hydro\-Data@{osea\-::ofreq\-::hydro\-Data}!get\-Wave\-Dir@{get\-Wave\-Dir}}
+\index{get\-Wave\-Dir@{get\-Wave\-Dir}!osea::ofreq::hydroData@{osea\-::ofreq\-::hydro\-Data}}
+\subsubsection[{get\-Wave\-Dir}]{\setlength{\rightskip}{0pt plus 5cm}double hydro\-Data\-::get\-Wave\-Dir (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1hydro_data_a1ba2ac3924aac32d18092b596f9f61c9}
+
+
+Gets the wave direction associated with this set of hydrodata. 
+
+Every set of hydrodata has a specific set of environmental conditions that were used to generate that data. The wave direction is one of those environmental conditions. \begin{DoxyReturn}{Returns}
+Double, variable passed by value. The wave direction. This is the direction of wave travle, measured relative to the body forward motion. Direction measured in units of radians (rad). Direction measured in body coordinate system. A direction of zero deg corresponds to travel along the body positive X-\/axis. Direction rotates in counter-\/clockwise direction. 
+\end{DoxyReturn}
+
+
+Definition at line 68 of file hydrodata.\-cpp.
+
+\hypertarget{classosea_1_1ofreq_1_1hydro_data_a3bc82090ad80f7830ec396283ca71ab9}{\index{osea\-::ofreq\-::hydro\-Data@{osea\-::ofreq\-::hydro\-Data}!interp\-Hydro\-Data@{interp\-Hydro\-Data}}
+\index{interp\-Hydro\-Data@{interp\-Hydro\-Data}!osea::ofreq::hydroData@{osea\-::ofreq\-::hydro\-Data}}
+\subsubsection[{interp\-Hydro\-Data}]{\setlength{\rightskip}{0pt plus 5cm}{\bf hydro\-Data} hydro\-Data\-::interp\-Hydro\-Data (
+\begin{DoxyParamCaption}
+\item[{double}]{freq\-In}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1hydro_data_a3bc82090ad80f7830ec396283ca71ab9}
+
+
+This function interpolates the entire set of hydrodata for a specified wave frequency. 
+
+The Data\-Active, Data\-React, and Data\-Cross are all interpolated for the given wave frequency. A set of \hyperlink{classosea_1_1ofreq_1_1hydro_data}{hydro\-Data} is produced. This hydrodata set will have a single entry for the wave frequency. And a single corresponding entry for Data\-Active, Data\-React, and Data\-Cross. All informational data is copied over. 
+\begin{DoxyParams}{Parameters}
+{\em freq\-In} & Double, passed by value. The frequency that you want data interpolated for. Wave frequency measured in units of radians per second (rad/s). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns a \hyperlink{classosea_1_1ofreq_1_1hydro_data}{hydro\-Data} object, passed by value. This is the resulting hydrodata set, interpolated for the frequency requested. 
+\end{DoxyReturn}
+
+
+Definition at line 364 of file hydrodata.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classosea_1_1ofreq_1_1hydro_data_a3bc82090ad80f7830ec396283ca71ab9_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classosea_1_1ofreq_1_1hydro_data_ac92ec2a314b592d91ea8437d3cb5c211}{\index{osea\-::ofreq\-::hydro\-Data@{osea\-::ofreq\-::hydro\-Data}!list\-Data\-Active@{list\-Data\-Active}}
+\index{list\-Data\-Active@{list\-Data\-Active}!osea::ofreq::hydroData@{osea\-::ofreq\-::hydro\-Data}}
+\subsubsection[{list\-Data\-Active}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<$ {\bf mat\-Force\-Active} $>$ \& hydro\-Data\-::list\-Data\-Active (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1hydro_data_ac92ec2a314b592d91ea8437d3cb5c211}
+
+
+The list of Active force data. 
+
+This returns a reference to the list of active data forces. Each entry in the list corresponds to a specific wave frequency. \begin{DoxyReturn}{Returns}
+Returns a vector of \hyperlink{classosea_1_1ofreq_1_1mat_force_active}{mat\-Force\-Active} objects, passed by reference. This is the list of data objects associated with each frequency in the data set. 
+\end{DoxyReturn}
+
+
+Definition at line 92 of file hydrodata.\-cpp.
+
+\hypertarget{classosea_1_1ofreq_1_1hydro_data_ae7a9a88e6aaf386d1f04669ef2039ab2}{\index{osea\-::ofreq\-::hydro\-Data@{osea\-::ofreq\-::hydro\-Data}!list\-Data\-Active@{list\-Data\-Active}}
+\index{list\-Data\-Active@{list\-Data\-Active}!osea::ofreq::hydroData@{osea\-::ofreq\-::hydro\-Data}}
+\subsubsection[{list\-Data\-Active}]{\setlength{\rightskip}{0pt plus 5cm}{\bf mat\-Force\-Active} \& hydro\-Data\-::list\-Data\-Active (
+\begin{DoxyParamCaption}
+\item[{int}]{index}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1hydro_data_ae7a9a88e6aaf386d1f04669ef2039ab2}
+
+
+A single entry in the list of Active force data. 
+
+This returns a reference to one entry in the list of Active data forces. Each entry in the list corresponds to a specific wave frequency. The index specifies which entry you want from the list. 
+\begin{DoxyParams}{Parameters}
+{\em index} & Integer, passed by value. The index for the specific entry that you want in the list. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns a single entry in the vector of \hyperlink{classosea_1_1ofreq_1_1mat_force_active}{mat\-Force\-Active} objects, passed by reference. This is the list of data objects associated with each frequency in the data set. 
+\end{DoxyReturn}
+
+
+Definition at line 98 of file hydrodata.\-cpp.
+
+\hypertarget{classosea_1_1ofreq_1_1hydro_data_a2543a86d437288af8d1fbd17e63ba4f6}{\index{osea\-::ofreq\-::hydro\-Data@{osea\-::ofreq\-::hydro\-Data}!list\-Data\-Cross@{list\-Data\-Cross}}
+\index{list\-Data\-Cross@{list\-Data\-Cross}!osea::ofreq::hydroData@{osea\-::ofreq\-::hydro\-Data}}
+\subsubsection[{list\-Data\-Cross}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<$ std\-::vector$<$ {\bf mat\-Force\-Cross} $>$ $>$ \& hydro\-Data\-::list\-Data\-Cross (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1hydro_data_a2543a86d437288af8d1fbd17e63ba4f6}
+
+
+The list of crossbody force data. 
+
+This returns a reference to the list of crossbody data forces. Each entry in the outer list corresponds to a specific wave frequency. Each entry in the inner list corresponds to a specific hydrobody that the crossbody force depends on. This is the body whose motions generate the forces for the crossbody force. \begin{DoxyReturn}{Returns}
+Returns a vector of \hyperlink{classosea_1_1ofreq_1_1mat_force_cross}{mat\-Force\-Cross} objects, passed by reference. This is the list of data objects associated with each frequency in the data set and each hydrobody in the data set. 
+\end{DoxyReturn}
+
+
+Definition at line 110 of file hydrodata.\-cpp.
+
+\hypertarget{classosea_1_1ofreq_1_1hydro_data_a6a0e897110b962e5642a6b5bfeb5b1be}{\index{osea\-::ofreq\-::hydro\-Data@{osea\-::ofreq\-::hydro\-Data}!list\-Data\-Cross@{list\-Data\-Cross}}
+\index{list\-Data\-Cross@{list\-Data\-Cross}!osea::ofreq::hydroData@{osea\-::ofreq\-::hydro\-Data}}
+\subsubsection[{list\-Data\-Cross}]{\setlength{\rightskip}{0pt plus 5cm}{\bf mat\-Force\-Cross} \& hydro\-Data\-::list\-Data\-Cross (
+\begin{DoxyParamCaption}
+\item[{int}]{freq\-Ind, }
+\item[{int}]{bod\-Index}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1hydro_data_a6a0e897110b962e5642a6b5bfeb5b1be}
+
+
+A single entry in the list of crossbody force data. 
+
+This returns a reference to one entry in the list of crossbody data forces. Each entry in the list corresponds to a specific wave frequency. The index specifies which entry you want from the list. 
+\begin{DoxyParams}{Parameters}
+{\em freq\-Ind} & Integer, passed by value. The index for the specific entry of frequency that you want in the list. \\
+\hline
+{\em bod\-Index} & Integer, passed by value. The index for the specific entry of hydrobody index that you want in the list. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns a single entry in the vector of \hyperlink{classosea_1_1ofreq_1_1mat_force_cross}{mat\-Force\-Cross} objects, passed by reference. This is the list of data objects associated with each frequency in the data set and each hydrobody in the data set. 
+\end{DoxyReturn}
+
+
+Definition at line 116 of file hydrodata.\-cpp.
+
+\hypertarget{classosea_1_1ofreq_1_1hydro_data_af4f50c85bbe169038a5d79844347d71f}{\index{osea\-::ofreq\-::hydro\-Data@{osea\-::ofreq\-::hydro\-Data}!list\-Data\-Cross@{list\-Data\-Cross}}
+\index{list\-Data\-Cross@{list\-Data\-Cross}!osea::ofreq::hydroData@{osea\-::ofreq\-::hydro\-Data}}
+\subsubsection[{list\-Data\-Cross}]{\setlength{\rightskip}{0pt plus 5cm}{\bf mat\-Force\-Cross} \& hydro\-Data\-::list\-Data\-Cross (
+\begin{DoxyParamCaption}
+\item[{int}]{freq\-Ind, }
+\item[{std\-::string}]{body\-Name}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1hydro_data_af4f50c85bbe169038a5d79844347d71f}
+
+
+A single entry in the list of crossbody force data. 
+
+This returns a reference to one entry in the list of crossbody data forces. Each entry in the list corresponds to a specific wave frequency. The index specifies which entry you want from the list. 
+\begin{DoxyParams}{Parameters}
+{\em freq\-Ind} & Integer, passed by value. The index for the specific entry of frequency that you want in the list. \\
+\hline
+{\em body\-Name} & String, passed by value. The name for the specific entry of hydrobody index that you want in the list. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns a single entry in the vector of \hyperlink{classosea_1_1ofreq_1_1mat_force_cross}{mat\-Force\-Cross} objects, passed by reference. This is the list of data objects associated with each frequency in the data set and each hydrobody in the data set. 
+\end{DoxyReturn}
+
+
+Definition at line 122 of file hydrodata.\-cpp.
+
+\hypertarget{classosea_1_1ofreq_1_1hydro_data_a8c1b66da5621a45f88fe65e4fc2e848e}{\index{osea\-::ofreq\-::hydro\-Data@{osea\-::ofreq\-::hydro\-Data}!list\-Data\-React@{list\-Data\-React}}
+\index{list\-Data\-React@{list\-Data\-React}!osea::ofreq::hydroData@{osea\-::ofreq\-::hydro\-Data}}
+\subsubsection[{list\-Data\-React}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<$ {\bf mat\-Force\-React} $>$ \& hydro\-Data\-::list\-Data\-React (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1hydro_data_a8c1b66da5621a45f88fe65e4fc2e848e}
+
+
+The list of reactive force data. 
+
+This returns a reference to the list of reactive data forces. Each entry in the list corresponds to a specific wave frequency. \begin{DoxyReturn}{Returns}
+Returns a vector of \hyperlink{classosea_1_1ofreq_1_1mat_force_react}{mat\-Force\-React} objects, passed by reference. This is the list of data objects associated with each frequency in the data set. 
+\end{DoxyReturn}
+
+
+Definition at line 74 of file hydrodata.\-cpp.
+
+\hypertarget{classosea_1_1ofreq_1_1hydro_data_a25218fa0280509bd46d55ca0e53db350}{\index{osea\-::ofreq\-::hydro\-Data@{osea\-::ofreq\-::hydro\-Data}!list\-Data\-React@{list\-Data\-React}}
+\index{list\-Data\-React@{list\-Data\-React}!osea::ofreq::hydroData@{osea\-::ofreq\-::hydro\-Data}}
+\subsubsection[{list\-Data\-React}]{\setlength{\rightskip}{0pt plus 5cm}{\bf mat\-Force\-React} \& hydro\-Data\-::list\-Data\-React (
+\begin{DoxyParamCaption}
+\item[{int}]{index}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1hydro_data_a25218fa0280509bd46d55ca0e53db350}
+
+
+A single entry in the list of reactive force data. 
+
+This returns a reference to one entry in the list of reactive data forces. Each entry in the list corresponds to a specific wave frequency. The index specifies which entry you want from the list. 
+\begin{DoxyParams}{Parameters}
+{\em index} & Integer, passed by value. The index for the specific entry that you want in the list. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns a single entry in the vector of \hyperlink{classosea_1_1ofreq_1_1mat_force_react}{mat\-Force\-React} objects, passed by reference. This is the list of data objects associated with each frequency in the data set. 
+\end{DoxyReturn}
+
+
+Definition at line 80 of file hydrodata.\-cpp.
+
+\hypertarget{classosea_1_1ofreq_1_1hydro_data_a4373065f995b1b305929e085d2b2218d}{\index{osea\-::ofreq\-::hydro\-Data@{osea\-::ofreq\-::hydro\-Data}!list\-Wave\-Freq@{list\-Wave\-Freq}}
+\index{list\-Wave\-Freq@{list\-Wave\-Freq}!osea::ofreq::hydroData@{osea\-::ofreq\-::hydro\-Data}}
+\subsubsection[{list\-Wave\-Freq}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<$ double $>$ \& hydro\-Data\-::list\-Wave\-Freq (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1hydro_data_a4373065f995b1b305929e085d2b2218d}
+
+
+The list of wave frequencies. 
+
+Each entry in the list of wave frequencies corresponds to the matching entry in the list of data\-Cross, data\-React, and data\-Active objects. Wave frequencies are measured in units of radians per second (rad/s). \begin{DoxyReturn}{Returns}
+Returns a vector of doubles, passed by reference. References the list of wave frequencies. 
+\end{DoxyReturn}
+
+
+Definition at line 158 of file hydrodata.\-cpp.
+
+\hypertarget{classosea_1_1ofreq_1_1hydro_data_a4ee2d19375355d9191f7a15b2598c7da}{\index{osea\-::ofreq\-::hydro\-Data@{osea\-::ofreq\-::hydro\-Data}!list\-Wave\-Freq@{list\-Wave\-Freq}}
+\index{list\-Wave\-Freq@{list\-Wave\-Freq}!osea::ofreq::hydroData@{osea\-::ofreq\-::hydro\-Data}}
+\subsubsection[{list\-Wave\-Freq}]{\setlength{\rightskip}{0pt plus 5cm}double \& hydro\-Data\-::list\-Wave\-Freq (
+\begin{DoxyParamCaption}
+\item[{int}]{index}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1hydro_data_a4ee2d19375355d9191f7a15b2598c7da}
+
+
+A single entry in the list of wave frequencies. 
+
+Each entry in the list of wave frequencies corresponds to the matching entry in the list of data\-Cross, data\-React, and data\-Active objects. Wave frequencies are measured in units of radians per second (rad/s). 
+\begin{DoxyParams}{Parameters}
+{\em index} & Integer, passed by value. The index of the specific entry that you want from the list. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns a double, passed by reference. References a single entry in the list of wave frequencies. 
+\end{DoxyReturn}
+
+
+Definition at line 164 of file hydrodata.\-cpp.
+
+\hypertarget{classosea_1_1ofreq_1_1hydro_data_af424ccf2c3d7519c5644130d686114bc}{\index{osea\-::ofreq\-::hydro\-Data@{osea\-::ofreq\-::hydro\-Data}!set\-Density@{set\-Density}}
+\index{set\-Density@{set\-Density}!osea::ofreq::hydroData@{osea\-::ofreq\-::hydro\-Data}}
+\subsubsection[{set\-Density}]{\setlength{\rightskip}{0pt plus 5cm}void hydro\-Data\-::set\-Density (
+\begin{DoxyParamCaption}
+\item[{double}]{density\-In}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1hydro_data_af424ccf2c3d7519c5644130d686114bc}
+
+
+Sets the water density associated with this hydro data set. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em density\-In} & Double, variable passed by value. The water density, measured in units of kg/m$^\wedge$3. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 422 of file hydrodata.\-cpp.
+
+\hypertarget{classosea_1_1ofreq_1_1hydro_data_a915529d0176e1201e72c1b2666d32b12}{\index{osea\-::ofreq\-::hydro\-Data@{osea\-::ofreq\-::hydro\-Data}!set\-Depth@{set\-Depth}}
+\index{set\-Depth@{set\-Depth}!osea::ofreq::hydroData@{osea\-::ofreq\-::hydro\-Data}}
+\subsubsection[{set\-Depth}]{\setlength{\rightskip}{0pt plus 5cm}void hydro\-Data\-::set\-Depth (
+\begin{DoxyParamCaption}
+\item[{double}]{depth\-In}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1hydro_data_a915529d0176e1201e72c1b2666d32b12}
+
+
+Sets the water depth associated with this hydro data set. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em depth\-In} & Double, variable passed by value. The water depth, measured in meters. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 410 of file hydrodata.\-cpp.
+
+\hypertarget{classosea_1_1ofreq_1_1hydro_data_aa1c4974a084743be77818856bebe48c8}{\index{osea\-::ofreq\-::hydro\-Data@{osea\-::ofreq\-::hydro\-Data}!set\-Hydro\-Body\-Name@{set\-Hydro\-Body\-Name}}
+\index{set\-Hydro\-Body\-Name@{set\-Hydro\-Body\-Name}!osea::ofreq::hydroData@{osea\-::ofreq\-::hydro\-Data}}
+\subsubsection[{set\-Hydro\-Body\-Name}]{\setlength{\rightskip}{0pt plus 5cm}void hydro\-Data\-::set\-Hydro\-Body\-Name (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{name\-In}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1hydro_data_aa1c4974a084743be77818856bebe48c8}
+
+
+Sets the name of the hydrobody associated with this hydrodata set. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name\-In} & String, passed by value. The name that you want associated with this hydrodata set. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 398 of file hydrodata.\-cpp.
+
+\hypertarget{classosea_1_1ofreq_1_1hydro_data_ae78455bf7bc4f2eaa6b1609d206c4e2d}{\index{osea\-::ofreq\-::hydro\-Data@{osea\-::ofreq\-::hydro\-Data}!set\-Wave\-Amp@{set\-Wave\-Amp}}
+\index{set\-Wave\-Amp@{set\-Wave\-Amp}!osea::ofreq::hydroData@{osea\-::ofreq\-::hydro\-Data}}
+\subsubsection[{set\-Wave\-Amp}]{\setlength{\rightskip}{0pt plus 5cm}void hydro\-Data\-::set\-Wave\-Amp (
+\begin{DoxyParamCaption}
+\item[{double}]{amp\-In}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1hydro_data_ae78455bf7bc4f2eaa6b1609d206c4e2d}
+
+
+Sets the wave amplitude associated with this set of hydrodata. 
+
+Every set of hydrodata has a specific set of environmental conditions that were used to generate that data. The wave amplitude is one of those environmental conditions. 
+\begin{DoxyParams}{Parameters}
+{\em amp\-In} & Double, variable passed by value. The wave amplitude used for this set of hydrodata. Amplitude measured in units of meters (m). \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 50 of file hydrodata.\-cpp.
+
+\hypertarget{classosea_1_1ofreq_1_1hydro_data_a8146a7d0d494e50f0463150589758afa}{\index{osea\-::ofreq\-::hydro\-Data@{osea\-::ofreq\-::hydro\-Data}!set\-Wave\-Dir@{set\-Wave\-Dir}}
+\index{set\-Wave\-Dir@{set\-Wave\-Dir}!osea::ofreq::hydroData@{osea\-::ofreq\-::hydro\-Data}}
+\subsubsection[{set\-Wave\-Dir}]{\setlength{\rightskip}{0pt plus 5cm}void hydro\-Data\-::set\-Wave\-Dir (
+\begin{DoxyParamCaption}
+\item[{double}]{dir\-In}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1hydro_data_a8146a7d0d494e50f0463150589758afa}
+
+
+Sets the wave direction associated with this set of hydrodata. 
+
+Every set of hydrodata has a specific set of environmental conditions that were used to generate that data. The wave direction is one of those environmental conditions. 
+\begin{DoxyParams}{Parameters}
+{\em dir\-In} & Double, variable passed by value. The wave direction. This is the direction of wave travle, measured relative to the body forward motion. Direction measured in units of radians (rad). Direction measured in body coordinate system. A direction of zero deg corresponds to travel along the body positive X-\/axis. Direction rotates in counter-\/clockwise direction. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 62 of file hydrodata.\-cpp.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/home/\-Ship\-\_\-\-Design/\-Projects/\-D\-M\-S1305 Open\-S\-E\-A/master/200\-\_\-src/bin/ofreq/hydro\-\_\-data/\hyperlink{hydrodata_8h}{hydrodata.\-h}\item 
+/home/\-Ship\-\_\-\-Design/\-Projects/\-D\-M\-S1305 Open\-S\-E\-A/master/200\-\_\-src/bin/ofreq/hydro\-\_\-data/\hyperlink{hydrodata_8cpp}{hydrodata.\-cpp}\end{DoxyCompactItemize}

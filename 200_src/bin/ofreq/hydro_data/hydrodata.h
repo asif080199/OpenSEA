@@ -275,6 +275,18 @@ public:
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
+     * @brief Adds a single entry to the list of crossbody forces.
+     *
+     * Each entry in the list corresponds to a single wave frequency and hydrobody name.
+     * @param freqInd Integer, passed by value.  The index of the frequency entry that you would like to add the
+     * entry add.  Remember that there are two indices.  If the frequency index is specified, that frequency index
+     * is located, and a new hydrobody entry is added at that frequency index.  If no frequency index is specified,
+     * the new entry will be added as a new frequency index.
+     */
+    void addDataCross(int freqInd = -1);
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
      * @brief The list of wave frequencies.
      *
      * Each entry in the list of wave frequencies corresponds to the matching entry in the list of dataCross,
@@ -304,6 +316,17 @@ public:
      * wave frequencies.  Wave frequencies are measured in units of radians per second (rad/s).
      */
     void addWaveFreq(double freqIn);
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Adds a whole vector of frequencies to the list of wave frequencies.
+     *
+     * Each entry in the list of wave frequencies corresponds to the matching entry in the list of dataCross,
+     * dataReact, and dataActive objects.  Wave frequencies are measured in units of radians per second (rad/s).
+     * @param freqIn Vector of doubles, passed by value.  Each entry is the value of the wave frequency that you want
+     * added to the list of wave frequencies.  Wave frequencies are measured in units of radians per second (rad/s).
+     */
+    void addWaveFreq(std::vector<double> freqIn);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -403,6 +426,34 @@ public:
      */
     std::string getHydroBodyName();
 
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Sets the water depth associated with this hydro data set.
+     * @param depthIn Double, variable passed by value.  The water depth, measured in meters.
+     */
+    void setDepth(double depthIn);
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Gets the water depth associated with this hydro data set.
+     * @return Double, variable passed by value.  The water depth, measured in meters.
+     */
+    double getDepth();
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Sets the water density associated with this hydro data set.
+     * @param densityIn Double, variable passed by value.  The water density, measured in units of kg/m^3.
+     */
+    void setDensity(double densityIn);
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Sets the water density associated with this hydro data set.
+     * @return Double, variable passed by value.  The water density, measured in units of kg/m^3.
+     */
+    double getDensity();
+
 
 //==========================================Section Separator =========================================================
 protected:
@@ -470,6 +521,21 @@ private:
      * and plistDataCross.
      */
     std::vector<double> plistWaveFreq;
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief The depth of water associated with this set of hydrodata.
+     *
+     * Some results may change depending on deep water or shallow water.  So the water depth is recorded.
+     */
+    double pDepth;
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Density of the water associated with this set of hydrodata.  Some calculated results may change,
+     * depending on the water density.  Hence why it was recorded.
+     */
+    double pDensity;
 };
 
 }   //Namespace ofreq

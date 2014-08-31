@@ -22,6 +22,8 @@ class \hyperlink{classosea_1_1ofreq_1_1dict_control}{dict\-Control}
 \item 
 class \hyperlink{classosea_1_1ofreq_1_1dict_forces}{dict\-Forces}
 \item 
+class \hyperlink{classosea_1_1ofreq_1_1dict_sea_env}{dict\-Sea\-Env}
+\begin{DoxyCompactList}\small\item\em The \hyperlink{classosea_1_1ofreq_1_1dict_sea_env}{dict\-Sea\-Env} class defines keyword value pairs associated with the Sea\-Env.\-in input file. \end{DoxyCompactList}\item 
 class \hyperlink{classosea_1_1ofreq_1_1_file_writer}{File\-Writer}
 \item 
 class \hyperlink{classosea_1_1ofreq_1_1_body}{Body}
@@ -38,14 +40,18 @@ class \hyperlink{classosea_1_1ofreq_1_1_force_cross}{Force\-Cross}
 \item 
 class \hyperlink{classosea_1_1ofreq_1_1_force_react}{Force\-React}
 \item 
-class \hyperlink{classosea_1_1ofreq_1_1o_freq_core}{o\-Freq\-Core}
-\begin{DoxyCompactList}\small\item\em The core o\-Freq class. All o\-Freq classes inherit from this class. \end{DoxyCompactList}\item 
+class \hyperlink{classosea_1_1ofreq_1_1ioword}{ioword}
+\begin{DoxyCompactList}\small\item\em The list of common symbols and words used to parse input and output files in o\-Freq. \end{DoxyCompactList}\item 
+class \hyperlink{classosea_1_1ofreq_1_1math_interp}{math\-Interp}
+\begin{DoxyCompactList}\small\item\em The \hyperlink{classosea_1_1ofreq_1_1math_interp}{math\-Interp} class contains all math functions used for interpolation and extrapolation of data. \end{DoxyCompactList}\item 
 class \hyperlink{classosea_1_1ofreq_1_1_solution}{Solution}
 \item 
 class \hyperlink{classosea_1_1ofreq_1_1_solution_set}{Solution\-Set}
 \item 
-class \hyperlink{classosea_1_1ofreq_1_1_system}{System}
-\item 
+class \hyperlink{classosea_1_1ofreq_1_1hydro_data}{hydro\-Data}
+\begin{DoxyCompactList}\small\item\em The \hyperlink{classosea_1_1ofreq_1_1hydro_data}{hydro\-Data} class is the basic definition for a set of hydrodynamic data. \end{DoxyCompactList}\item 
+class \hyperlink{classosea_1_1ofreq_1_1_hydro_manager}{Hydro\-Manager}
+\begin{DoxyCompactList}\small\item\em The \hyperlink{classosea_1_1ofreq_1_1_hydro_manager}{Hydro\-Manager} class contains the complete set of hydrodynamic data associated with a single body. \end{DoxyCompactList}\item 
 class \hyperlink{classosea_1_1ofreq_1_1_eqn_rotation}{Eqn\-Rotation}
 \begin{DoxyCompactList}\small\item\em The \hyperlink{classosea_1_1ofreq_1_1_eqn_rotation}{Eqn\-Rotation} class. \end{DoxyCompactList}\item 
 class \hyperlink{classosea_1_1ofreq_1_1_eqn_translation}{Eqn\-Translation}
@@ -65,6 +71,12 @@ class \hyperlink{classosea_1_1ofreq_1_1mat_force_cross}{mat\-Force\-Cross}
 class \hyperlink{classosea_1_1ofreq_1_1mat_force_react}{mat\-Force\-React}
 \item 
 class \hyperlink{classosea_1_1ofreq_1_1_motion_solver}{Motion\-Solver}
+\item 
+class \hyperlink{classosea_1_1ofreq_1_1_log}{Log}
+\begin{DoxyCompactList}\small\item\em The \hyperlink{classosea_1_1ofreq_1_1_log}{Log} class is used to create output logs. \end{DoxyCompactList}\item 
+class \hyperlink{classosea_1_1ofreq_1_1o_freq_core}{o\-Freq\-Core}
+\begin{DoxyCompactList}\small\item\em The core o\-Freq class. All o\-Freq classes inherit from this class. \end{DoxyCompactList}\item 
+class \hyperlink{classosea_1_1ofreq_1_1_system}{System}
 \end{DoxyCompactItemize}
 \subsection*{Typedefs}
 \begin{DoxyCompactItemize}
@@ -92,7 +104,7 @@ The namespace of all code specifically associated with ofreq.
 \subsubsection[{complex\-Double}]{\setlength{\rightskip}{0pt plus 5cm}typedef std\-::complex$<$ double $>$ {\bf osea\-::ofreq\-::complex\-Double}}}\label{namespaceosea_1_1ofreq_a40cad4695a41123a7ae6ab0b6e8b1664}
 Simple typedef for complex\-Double represents std\-::complex$<$double$>$ 
 
-Definition at line 82 of file globalsolution.\-h.
+Definition at line 83 of file globalsolution.\-h.
 
 \hypertarget{namespaceosea_1_1ofreq_a42bf1d8bbba99693142c4184486ad3e0}{\index{osea\-::ofreq@{osea\-::ofreq}!cx\-\_\-vector@{cx\-\_\-vector}}
 \index{cx\-\_\-vector@{cx\-\_\-vector}!osea::ofreq@{osea\-::ofreq}}
@@ -103,14 +115,14 @@ Type definition for a vector of complex numbers. Used to return the calculated o
 
 
 
-Definition at line 93 of file outputsbody.\-h.
+Definition at line 94 of file outputsbody.\-h.
 
 \hypertarget{namespaceosea_1_1ofreq_a951464fca478bccfc9e5295910e5eec3}{\index{osea\-::ofreq@{osea\-::ofreq}!pt\-Soln@{pt\-Soln}}
 \index{pt\-Soln@{pt\-Soln}!osea::ofreq@{osea\-::ofreq}}
 \subsubsection[{pt\-Soln}]{\setlength{\rightskip}{0pt plus 5cm}typedef std\-::vector$<${\bf Solution}$\ast$$>$ {\bf osea\-::ofreq\-::pt\-Soln}}}\label{namespaceosea_1_1ofreq_a951464fca478bccfc9e5295910e5eec3}
 Type definition for a vector of pointers to \hyperlink{classosea_1_1ofreq_1_1_solution}{Solution} object. 
 
-Definition at line 82 of file solutionset.\-h.
+Definition at line 83 of file solutionset.\-h.
 
 
 

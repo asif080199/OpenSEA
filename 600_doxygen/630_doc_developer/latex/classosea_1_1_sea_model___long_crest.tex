@@ -1,0 +1,213 @@
+\hypertarget{classosea_1_1_sea_model___long_crest}{\section{osea\-:\-:Sea\-Model\-\_\-\-Long\-Crest Class Reference}
+\label{classosea_1_1_sea_model___long_crest}\index{osea\-::\-Sea\-Model\-\_\-\-Long\-Crest@{osea\-::\-Sea\-Model\-\_\-\-Long\-Crest}}
+}
+
+
+The \hyperlink{classosea_1_1_sea_model___long_crest}{Sea\-Model\-\_\-\-Long\-Crest} class creates a single wave spectra that acts in only one direction.  
+
+
+
+
+{\ttfamily \#include $<$seamodel\-\_\-longcrest.\-h$>$}
+
+
+
+Inheritance diagram for osea\-:\-:Sea\-Model\-\_\-\-Long\-Crest\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classosea_1_1_sea_model___long_crest__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classosea_1_1_sea_model___long_crest_a0fd446078a88eeda060780cc80e169e4}{Sea\-Model\-\_\-\-Long\-Crest} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. Inherits from \hyperlink{classosea_1_1_sea_model}{Sea\-Model} class. \end{DoxyCompactList}\item 
+\hyperlink{classosea_1_1_sea_model___long_crest_aa27f39a9e6db096e8e84dd08b1c77cdf}{$\sim$\-Sea\-Model\-\_\-\-Long\-Crest} ()
+\begin{DoxyCompactList}\small\item\em Default destructor. Nothing happens here. \end{DoxyCompactList}\item 
+double \hyperlink{classosea_1_1_sea_model___long_crest_a269bb4cf5966b2b88195c2cb57b750bc}{get\-Wave\-Energy} (double dir\-In, int freq\-Index)
+\begin{DoxyCompactList}\small\item\em Gets the wave energy from the sea model for the wave direction and wave frequency specified. \end{DoxyCompactList}\item 
+double \hyperlink{classosea_1_1_sea_model___long_crest_a293fc13033349b9182c6dda3ce8cfe1f}{get\-Wave\-Energy} (double dir\-In, double freq\-In)
+\begin{DoxyCompactList}\small\item\em Gets the wave energy from the sea model for the wave direction and wave frequency specified. \end{DoxyCompactList}\item 
+double \hyperlink{classosea_1_1_sea_model___long_crest_af29f51ef0ab3edde6c944c0afe13bb51}{get\-Wave\-Amp} (double dir\-In, int freq\-Index)
+\begin{DoxyCompactList}\small\item\em Gets the wave amplitude from the sea model for the wave direction and wave frequency specified. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+The \hyperlink{classosea_1_1_sea_model___long_crest}{Sea\-Model\-\_\-\-Long\-Crest} class creates a single wave spectra that acts in only one direction. 
+
+This \hyperlink{classosea_1_1_sea_model}{Sea\-Model} implements long crested waves. Long crested waves are a wave spectrum that only acts in one direction. There are no waves in any other direction. This \hyperlink{classosea_1_1_sea_model}{Sea\-Model} is useful for evaluating bodies in an idealized setting.
+
+The \hyperlink{classosea_1_1_sea_model}{Sea\-Model} produces two primary results\-:
+\begin{DoxyEnumerate}
+\item Wave energy at a specified wave direction and wave frequency.
+\item Wave amplitude at a specified wave direction and wave frequency.
+\end{DoxyEnumerate}
+
+You can also define a wave scaling parameter for the wave spectrum. This may be necessary if you want to scale the results somehow.
+
+The \hyperlink{classosea_1_1_sea_model}{Sea\-Model} does have one important limitation\-: You must supply it a full list of wave frequencies before requesting wave amplitude. This is because the calculations for wave amplitude depend on the spacing of the wave frequencies, and those frequencies may not be regularly spaced. Individual \hyperlink{classosea_1_1_wave_spec}{Wave\-Spec} objects have their own frequency data sets. And the \hyperlink{classosea_1_1_sea_model}{Sea\-Model} has no way to correlate between those frequency lists. That is why the \hyperlink{classosea_1_1_sea_model}{Sea\-Model} must have its own governing set of wave frequencies. When you specify a wave frequency and direction to get wave amplitude, you can only select from one of the governing frequencies defined in the list. This is necessary to ensure the programming is mathematically correct.
+
+The list of wave frequencies does not need to be sorted. The \hyperlink{classosea_1_1_sea_model}{Sea\-Model} will automatically sort after the list gets defined. Same for the wave directions. 
+
+Definition at line 88 of file seamodel\-\_\-longcrest.\-h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classosea_1_1_sea_model___long_crest_a0fd446078a88eeda060780cc80e169e4}{\index{osea\-::\-Sea\-Model\-\_\-\-Long\-Crest@{osea\-::\-Sea\-Model\-\_\-\-Long\-Crest}!Sea\-Model\-\_\-\-Long\-Crest@{Sea\-Model\-\_\-\-Long\-Crest}}
+\index{Sea\-Model\-\_\-\-Long\-Crest@{Sea\-Model\-\_\-\-Long\-Crest}!osea::SeaModel_LongCrest@{osea\-::\-Sea\-Model\-\_\-\-Long\-Crest}}
+\subsubsection[{Sea\-Model\-\_\-\-Long\-Crest}]{\setlength{\rightskip}{0pt plus 5cm}Sea\-Model\-\_\-\-Long\-Crest\-::\-Sea\-Model\-\_\-\-Long\-Crest (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1_sea_model___long_crest_a0fd446078a88eeda060780cc80e169e4}
+
+
+Default constructor. Inherits from \hyperlink{classosea_1_1_sea_model}{Sea\-Model} class. 
+
+
+
+Definition at line 38 of file seamodel\-\_\-longcrest.\-cpp.
+
+\hypertarget{classosea_1_1_sea_model___long_crest_aa27f39a9e6db096e8e84dd08b1c77cdf}{\index{osea\-::\-Sea\-Model\-\_\-\-Long\-Crest@{osea\-::\-Sea\-Model\-\_\-\-Long\-Crest}!$\sim$\-Sea\-Model\-\_\-\-Long\-Crest@{$\sim$\-Sea\-Model\-\_\-\-Long\-Crest}}
+\index{$\sim$\-Sea\-Model\-\_\-\-Long\-Crest@{$\sim$\-Sea\-Model\-\_\-\-Long\-Crest}!osea::SeaModel_LongCrest@{osea\-::\-Sea\-Model\-\_\-\-Long\-Crest}}
+\subsubsection[{$\sim$\-Sea\-Model\-\_\-\-Long\-Crest}]{\setlength{\rightskip}{0pt plus 5cm}Sea\-Model\-\_\-\-Long\-Crest\-::$\sim$\-Sea\-Model\-\_\-\-Long\-Crest (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1_sea_model___long_crest_aa27f39a9e6db096e8e84dd08b1c77cdf}
+
+
+Default destructor. Nothing happens here. 
+
+
+
+Definition at line 44 of file seamodel\-\_\-longcrest.\-cpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classosea_1_1_sea_model___long_crest_af29f51ef0ab3edde6c944c0afe13bb51}{\index{osea\-::\-Sea\-Model\-\_\-\-Long\-Crest@{osea\-::\-Sea\-Model\-\_\-\-Long\-Crest}!get\-Wave\-Amp@{get\-Wave\-Amp}}
+\index{get\-Wave\-Amp@{get\-Wave\-Amp}!osea::SeaModel_LongCrest@{osea\-::\-Sea\-Model\-\_\-\-Long\-Crest}}
+\subsubsection[{get\-Wave\-Amp}]{\setlength{\rightskip}{0pt plus 5cm}double Sea\-Model\-\_\-\-Long\-Crest\-::get\-Wave\-Amp (
+\begin{DoxyParamCaption}
+\item[{double}]{dir\-In, }
+\item[{int}]{freq\-Index}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classosea_1_1_sea_model___long_crest_af29f51ef0ab3edde6c944c0afe13bb51}
+
+
+Gets the wave amplitude from the sea model for the wave direction and wave frequency specified. 
+
+For each requested result, the \hyperlink{classosea_1_1_sea_model}{Sea\-Model} interpolates between the defined spectra for each wave direction to get a resulting wave energy at the specified wave direction. The wave direction does not need to match the list of directions supplied with the \hyperlink{classosea_1_1_wave_spec}{Wave\-Spec} objects. That is the flexibility of the \hyperlink{classosea_1_1_sea_model}{Sea\-Model}. You provide it with a data set, and it provides results for any given point within that data set. 
+\begin{DoxyParams}{Parameters}
+{\em dir\-In} & Double, variable passed by value. The wave direction for the requested result. Direction measured in units of radians, in the global coordinate system. True North represents a direction of zero. Positive angles are measured counter-\/clockwise (North to West). \\
+\hline
+{\em freq\-Index} & The index of the frequency you want to use in the list of wave frequencies. T\-He list of wave frequencies must be defined before calling this function. You use the index to specify the requested frequency. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns a double, variable passed by value. Variable is the wave amplitude (in units of m) at the frqeuency and wave direction specified. 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classosea_1_1_sea_model_ab1315af8b1038a3a7458de2990c8f79d}{osea\-::\-Sea\-Model}.
+
+
+
+Definition at line 84 of file seamodel\-\_\-longcrest.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classosea_1_1_sea_model___long_crest_af29f51ef0ab3edde6c944c0afe13bb51_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classosea_1_1_sea_model___long_crest_a269bb4cf5966b2b88195c2cb57b750bc}{\index{osea\-::\-Sea\-Model\-\_\-\-Long\-Crest@{osea\-::\-Sea\-Model\-\_\-\-Long\-Crest}!get\-Wave\-Energy@{get\-Wave\-Energy}}
+\index{get\-Wave\-Energy@{get\-Wave\-Energy}!osea::SeaModel_LongCrest@{osea\-::\-Sea\-Model\-\_\-\-Long\-Crest}}
+\subsubsection[{get\-Wave\-Energy}]{\setlength{\rightskip}{0pt plus 5cm}double Sea\-Model\-\_\-\-Long\-Crest\-::get\-Wave\-Energy (
+\begin{DoxyParamCaption}
+\item[{double}]{dir\-In, }
+\item[{int}]{freq\-Index}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classosea_1_1_sea_model___long_crest_a269bb4cf5966b2b88195c2cb57b750bc}
+
+
+Gets the wave energy from the sea model for the wave direction and wave frequency specified. 
+
+For each requested result, the \hyperlink{classosea_1_1_sea_model}{Sea\-Model} interpolates between the defined spectra for each wave direction to get a resulting wave energy at the specified wave direction. The wave direction does not need to match the list of directions supplied with the \hyperlink{classosea_1_1_wave_spec}{Wave\-Spec} objects. That is the flexibility of the \hyperlink{classosea_1_1_sea_model}{Sea\-Model}. You provide it with a data set, and it provides results for any given point within that data set. 
+\begin{DoxyParams}{Parameters}
+{\em dir\-In} & Double, variable passed by value. The wave direction for the requested result. Direction measured in units of radians, in the global coordinate system. True North represents a direction of zero. Positive angles are measured counter-\/clockwise (North to West). \\
+\hline
+{\em freq\-Index} & The index of the frequency you want to use in the list of wave frequencies. T\-He list of wave frequencies must be defined before calling this function. You use the index to specify the requested frequency. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns a double, variable passed by value. Variable is the wave energy (in units of m$^\wedge$2/(rad/s)) at the frequency and wave direction specified. 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classosea_1_1_sea_model_acea132fcb4f8d447b41725ecfd0a6e1b}{osea\-::\-Sea\-Model}.
+
+
+
+Definition at line 50 of file seamodel\-\_\-longcrest.\-cpp.
+
+\hypertarget{classosea_1_1_sea_model___long_crest_a293fc13033349b9182c6dda3ce8cfe1f}{\index{osea\-::\-Sea\-Model\-\_\-\-Long\-Crest@{osea\-::\-Sea\-Model\-\_\-\-Long\-Crest}!get\-Wave\-Energy@{get\-Wave\-Energy}}
+\index{get\-Wave\-Energy@{get\-Wave\-Energy}!osea::SeaModel_LongCrest@{osea\-::\-Sea\-Model\-\_\-\-Long\-Crest}}
+\subsubsection[{get\-Wave\-Energy}]{\setlength{\rightskip}{0pt plus 5cm}double Sea\-Model\-\_\-\-Long\-Crest\-::get\-Wave\-Energy (
+\begin{DoxyParamCaption}
+\item[{double}]{dir\-In, }
+\item[{double}]{freq\-In}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classosea_1_1_sea_model___long_crest_a293fc13033349b9182c6dda3ce8cfe1f}
+
+
+Gets the wave energy from the sea model for the wave direction and wave frequency specified. 
+
+For each requested result, the \hyperlink{classosea_1_1_sea_model}{Sea\-Model} interpolates between the defined spectra for each wave direction to get a resulting wave energy at the specified wave direction. The wave direction does not need to match the list of directions supplied with the \hyperlink{classosea_1_1_wave_spec}{Wave\-Spec} objects. That is the flexibility of the \hyperlink{classosea_1_1_sea_model}{Sea\-Model}. You provide it with a data set, and it provides results for any given point within that data set. 
+\begin{DoxyParams}{Parameters}
+{\em dir\-In} & Double, variable passed by value. The wave direction for the requested result. Direction measured in units of radians, in the global coordinate system. True North represents a direction of zero. Positive angles are measured counter-\/clockwise (North to West). \\
+\hline
+{\em freq\-In} & Double, variable passed by value. The wave frequency desired. Can be any wave frequency. This stipulation only works for requesting wave energy. If you want a wave amplitude, you must use the method of specifying frequency by the index. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns a double, variable passed by value. Variable is the wave energy (in units of m$^\wedge$2/(rad/s)) at the frequency and wave direction specified. 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classosea_1_1_sea_model_abd444caa08206c2f3b2002e614f0b2fc}{osea\-::\-Sea\-Model}.
+
+
+
+Definition at line 61 of file seamodel\-\_\-longcrest.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classosea_1_1_sea_model___long_crest_a293fc13033349b9182c6dda3ce8cfe1f_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/home/\-Ship\-\_\-\-Design/\-Projects/\-D\-M\-S1305 Open\-S\-E\-A/master/200\-\_\-src/bin/ofreq/sea\-\_\-models/\hyperlink{seamodel__longcrest_8h}{seamodel\-\_\-longcrest.\-h}\item 
+/home/\-Ship\-\_\-\-Design/\-Projects/\-D\-M\-S1305 Open\-S\-E\-A/master/200\-\_\-src/bin/ofreq/sea\-\_\-models/\hyperlink{seamodel__longcrest_8cpp}{seamodel\-\_\-longcrest.\-cpp}\end{DoxyCompactItemize}

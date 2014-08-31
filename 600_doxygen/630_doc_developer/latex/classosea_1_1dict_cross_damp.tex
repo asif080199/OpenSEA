@@ -1,0 +1,138 @@
+\hypertarget{classosea_1_1dict_cross_damp}{\section{osea\-:\-:dict\-Cross\-Damp Class Reference}
+\label{classosea_1_1dict_cross_damp}\index{osea\-::dict\-Cross\-Damp@{osea\-::dict\-Cross\-Damp}}
+}
+
+
+{\ttfamily \#include $<$dictcrossdamp.\-h$>$}
+
+
+
+Inheritance diagram for osea\-:\-:dict\-Cross\-Damp\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=286pt]{classosea_1_1dict_cross_damp__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classosea_1_1dict_cross_damp_aa010d78024ccc77384a2865ea0103a57}{dict\-Cross\-Damp} ()
+\item 
+\hyperlink{classosea_1_1dict_cross_damp_a0e60bc37db145f98079dc4342a62fa2f}{dict\-Cross\-Damp} (\hyperlink{classosea_1_1_hydro_reader}{osea\-::\-Hydro\-Reader} $\ast$parent)
+\begin{DoxyCompactList}\small\item\em Constructor that also passes pointer to the owning file reader. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{classosea_1_1dict_cross_damp_a904e8a922f02b5d7122860a325ac739d}{define\-Key} (std\-::string key\-In, std\-::vector$<$ std\-::string $>$ val\-In)
+\begin{DoxyCompactList}\small\item\em Function that defines how to interpret the key values. Contains a list of key names and corresponding actions to take for interpretting each key value. \end{DoxyCompactList}\item 
+int \hyperlink{classosea_1_1dict_cross_damp_a7009adaf4e8191a51b8001afef77d001}{define\-Class} (std\-::string name\-In)
+\begin{DoxyCompactList}\small\item\em Function that defines how to interpret the class name. Class name implies declaration of a new object of the class named by the class name. This is a separate set of definitions to handle class declarations. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Prototype class declaration for constructor.
+
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classosea_1_1_dictionary}{Dictionary} 
+
+\hyperlink{classosea_1_1_file_reader}{File\-Reader} 
+\end{DoxySeeAlso}
+
+
+Definition at line 76 of file dictcrossdamp.\-h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classosea_1_1dict_cross_damp_aa010d78024ccc77384a2865ea0103a57}{\index{osea\-::dict\-Cross\-Damp@{osea\-::dict\-Cross\-Damp}!dict\-Cross\-Damp@{dict\-Cross\-Damp}}
+\index{dict\-Cross\-Damp@{dict\-Cross\-Damp}!osea::dictCrossDamp@{osea\-::dict\-Cross\-Damp}}
+\subsubsection[{dict\-Cross\-Damp}]{\setlength{\rightskip}{0pt plus 5cm}dict\-Cross\-Damp\-::dict\-Cross\-Damp (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1dict_cross_damp_aa010d78024ccc77384a2865ea0103a57}
+
+
+Definition at line 47 of file dictcrossdamp.\-cpp.
+
+\hypertarget{classosea_1_1dict_cross_damp_a0e60bc37db145f98079dc4342a62fa2f}{\index{osea\-::dict\-Cross\-Damp@{osea\-::dict\-Cross\-Damp}!dict\-Cross\-Damp@{dict\-Cross\-Damp}}
+\index{dict\-Cross\-Damp@{dict\-Cross\-Damp}!osea::dictCrossDamp@{osea\-::dict\-Cross\-Damp}}
+\subsubsection[{dict\-Cross\-Damp}]{\setlength{\rightskip}{0pt plus 5cm}dict\-Cross\-Damp\-::dict\-Cross\-Damp (
+\begin{DoxyParamCaption}
+\item[{{\bf osea\-::\-Hydro\-Reader} $\ast$}]{parent}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1dict_cross_damp_a0e60bc37db145f98079dc4342a62fa2f}
+
+
+Constructor that also passes pointer to the owning file reader. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parent} & Pointer to \hyperlink{classosea_1_1_hydro_reader}{Hydro\-Reader} object, pointer passed by value. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 52 of file dictcrossdamp.\-cpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classosea_1_1dict_cross_damp_a7009adaf4e8191a51b8001afef77d001}{\index{osea\-::dict\-Cross\-Damp@{osea\-::dict\-Cross\-Damp}!define\-Class@{define\-Class}}
+\index{define\-Class@{define\-Class}!osea::dictCrossDamp@{osea\-::dict\-Cross\-Damp}}
+\subsubsection[{define\-Class}]{\setlength{\rightskip}{0pt plus 5cm}int osea\-::dict\-Cross\-Damp\-::define\-Class (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{name\-In}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{classosea_1_1dict_cross_damp_a7009adaf4e8191a51b8001afef77d001}
+
+
+Function that defines how to interpret the class name. Class name implies declaration of a new object of the class named by the class name. This is a separate set of definitions to handle class declarations. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name\-In} & std\-::string, variable passed by value. The name of the class name. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns status of assigning key. Returned value is an integer, passed by value. See list of return codes below\-: 0\-: Key definition found. Success. 1\-: No key found. / General error message. 2\-: Key is invalid within current active object. 99\-: Function virtual definition only. Not currently defined. 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classosea_1_1_dictionary_a42843f64aa966b8c686d9e3750cbdb4b}{osea\-::\-Dictionary}.
+
+\hypertarget{classosea_1_1dict_cross_damp_a904e8a922f02b5d7122860a325ac739d}{\index{osea\-::dict\-Cross\-Damp@{osea\-::dict\-Cross\-Damp}!define\-Key@{define\-Key}}
+\index{define\-Key@{define\-Key}!osea::dictCrossDamp@{osea\-::dict\-Cross\-Damp}}
+\subsubsection[{define\-Key}]{\setlength{\rightskip}{0pt plus 5cm}int osea\-::dict\-Cross\-Damp\-::define\-Key (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{key\-In, }
+\item[{std\-::vector$<$ std\-::string $>$}]{val\-In}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}}\label{classosea_1_1dict_cross_damp_a904e8a922f02b5d7122860a325ac739d}
+
+
+Function that defines how to interpret the key values. Contains a list of key names and corresponding actions to take for interpretting each key value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key\-In} & std\-::string containing the key name. Variable passed by value. \\
+\hline
+{\em val\-In} & Vector of strings containing the key values. Variable passed by value. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns status of assigning key. Returned value is an integer, passed by value. See list of return codes below\-: 0\-: Key definition found. Success. 1\-: No key found. / General error message. 2\-: Key is invalid within current active object. 99\-: Function virtual definition only. Not currently defined. 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classosea_1_1_dictionary_ae96470181c8b1762204493fa45e96d7c}{osea\-::\-Dictionary}.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/home/\-Ship\-\_\-\-Design/\-Projects/\-D\-M\-S1305 Open\-S\-E\-A/master/200\-\_\-src/bin/ofreq/hydro\-\_\-reader/\hyperlink{dictcrossdamp_8h}{dictcrossdamp.\-h}\item 
+/home/\-Ship\-\_\-\-Design/\-Projects/\-D\-M\-S1305 Open\-S\-E\-A/master/200\-\_\-src/bin/ofreq/hydro\-\_\-reader/\hyperlink{dictcrossdamp_8cpp}{dictcrossdamp.\-cpp}\end{DoxyCompactItemize}

@@ -1,6 +1,18 @@
 <map id="osea::Dictionary" name="osea::Dictionary">
-<area shape="rect" id="node7" href="$classosea_1_1ofreq_1_1dict_bodies.html" title="{osea::ofreq::dictBodies\n||+ dictBodies()\l# defineKey()\l# defineClass()\l}" alt="" coords="5,491,189,605"/>
-<area shape="rect" id="node9" href="$classosea_1_1ofreq_1_1dict_control.html" title="{osea::ofreq::dictControl\n||+ dictControl()\l# defineKey()\l# defineClass()\l}" alt="" coords="213,491,400,605"/>
-<area shape="rect" id="node11" href="$classosea_1_1ofreq_1_1dict_forces.html" title="{osea::ofreq::dictForces\n||+ dictForces()\l# defineKey()\l# defineClass()\l}" alt="" coords="424,491,608,605"/>
-<area shape="rect" id="node4" href="$classosea_1_1ofreq_1_1o_freq_core.html" title="The core oFreq class. All oFreq classes inherit from this class." alt="" coords="293,6,477,215"/>
+<area shape="rect" id="node7" href="$classosea_1_1dict_cross_damp.html" title="{osea::dictCrossDamp\n||+ dictCrossDamp()\l+ dictCrossDamp()\l# defineKey()\l# defineClass()\l}" alt="" coords="5,547,169,677"/>
+<area shape="rect" id="node9" href="$classosea_1_1dict_cross_mass.html" title="{osea::dictCrossMass\n||+ dictCrossMass()\l+ dictCrossMass()\l# defineKey()\l# defineClass()\l}" alt="" coords="195,547,353,677"/>
+<area shape="rect" id="node11" href="$classosea_1_1dict_cross_stiff.html" title="{osea::dictCrossStiff\n||+ dictCrossStiff()\l+ dictCrossStiff()\l# defineKey()\l# defineClass()\l}" alt="" coords="379,547,529,677"/>
+<area shape="rect" id="node13" href="$classosea_1_1dict_force_excite.html" title="{osea::dictForceExcite\n||+ dictForceExcite()\l+ dictForceExcite()\l# defineKey()\l# defineClass()\l}" alt="" coords="555,547,717,677"/>
+<area shape="rect" id="node15" href="$classosea_1_1dict_hydro_direction.html" title="{osea::dictHydroDirection\n||+ dictHydroDirection()\l+ dictHydroDirection()\l# defineKey()\l# defineClass()\l}" alt="" coords="741,547,923,677"/>
+<area shape="rect" id="node17" href="$classosea_1_1dict_hydro_env.html" title="{osea::dictHydroEnv\n||+ dictHydroEnv()\l+ dictHydroEnv()\l# defineKey()\l# defineClass()\l}" alt="" coords="947,547,1095,677"/>
+<area shape="rect" id="node19" href="$classosea_1_1dict_hydro_frequency.html" title="{osea::dictHydroFrequency\n||+ dictHydroFrequency()\l+ dictHydroFrequency()\l# defineKey()\l# defineClass()\l}" alt="" coords="1120,547,1312,677"/>
+<area shape="rect" id="node21" href="$classosea_1_1dicthydro_react.html" title="{osea::dicthydroReact\n|# pParent\l# pHydroBod\l# pBodOn\l# pFreqInd\l# ORD\l# OBJECT_BODY\l# OBJECT_DATA\l# KEY_NAME\l# KEY_FREQUENCY\l# KEY_VALUE\l|+ dicthydroReact()\l+ dicthydroReact()\l# defineKey()\l# defineClass()\l}" alt="" coords="1336,475,1499,749"/>
+<area shape="rect" id="node27" href="$classosea_1_1dict_hydro_stiff.html" title="{osea::dictHydroStiff\n||+ dictHydroStiff()\l+ dictHydroStiff()\l# defineKey()\l# defineClass()\l}" alt="" coords="1523,547,1671,677"/>
+<area shape="rect" id="node29" href="$classosea_1_1ofreq_1_1dict_bodies.html" title="{osea::ofreq::dictBodies\n||+ dictBodies()\l# defineKey()\l# defineClass()\l}" alt="" coords="1696,555,1867,669"/>
+<area shape="rect" id="node31" href="$classosea_1_1ofreq_1_1dict_control.html" title="{osea::ofreq::dictControl\n||+ dictControl()\l# defineKey()\l# defineClass()\l}" alt="" coords="1891,555,2064,669"/>
+<area shape="rect" id="node33" href="$classosea_1_1ofreq_1_1dict_forces.html" title="{osea::ofreq::dictForces\n||+ dictForces()\l# defineKey()\l# defineClass()\l}" alt="" coords="2089,555,2260,669"/>
+<area shape="rect" id="node35" href="$classosea_1_1ofreq_1_1dict_sea_env.html" title="The dictSeaEnv class defines keyword value pairs associated with the SeaEnv.in input file..." alt="" coords="2285,547,2461,677"/>
+<area shape="rect" id="node4" href="$classosea_1_1ofreq_1_1o_freq_core.html" title="The core oFreq class. All oFreq classes inherit from this class. " alt="" coords="1204,6,1377,183"/>
+<area shape="rect" id="node23" href="$classosea_1_1dict_hydro_damp.html" title="{osea::dictHydroDamp\n||+ dictHydroDamp()\l+ dictHydroDamp()\l}" alt="" coords="1244,798,1407,895"/>
+<area shape="rect" id="node25" href="$classosea_1_1dict_hydro_mass.html" title="{osea::dictHydroMass\n||+ dictHydroMass()\l+ dictHydroMass()\l}" alt="" coords="1431,798,1589,895"/>
 </map>

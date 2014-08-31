@@ -40,6 +40,9 @@
 #define MATHINTERP_H
 #include <vector>
 #include "../system_objects/ofreqcore.h"
+#include "../motion_solver/matforceactive.h"
+#include "../motion_solver/matforcecross.h"
+#include "../motion_solver/matforcereact.h"
 
 //######################################### Class Separator ###########################################################
 //Namespace declarations
@@ -118,8 +121,29 @@ protected:
      * following operations:  (+, -, *)
      * @return Returned type is the template type.  Variable is passed by value.
      */
+    //template <class T>
+    //T iePolate(double x, double x1, double x2, T y1, T y2);
     template <class T>
-    T iePolate(double x, double x1, double x2, T y1, T y2);
+    T iePolate(double x, double x1, double x2, T y1, T y2)
+    {
+        //Calculate ratio
+        try {
+            //Check for division by zero
+            if (x2 == x1)
+                throw std::overflow_error("Divide by zero");
+
+            double p = (x - x1) / (x2 - x1);
+
+            //Calculate output and write out
+            return (y2 - y1) * p + y1;
+        }
+        catch(std::overflow_error err)
+        {
+            logStd.Notify();
+            logErr.Write(std::string("function:  iePolate") + err.what());
+        }
+    }
+
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -143,8 +167,47 @@ protected:
      * following operations:  (+, -, *)
      * @return Returned type is the template type.  Variable is passed by value.
      */
+    //template <class T>
+    //T iPolate(double x, double x1, double x2, T y1, T y2);
     template <class T>
-    T iPolate(double x, double x1, double x2, T y1, T y2);
+    T iPolate(double x, double x1, double x2, T y1, T y2)
+    {
+        //Calculate ratio
+        try {
+            //Check for division by zero
+            if (x2 == x1)
+                throw std::overflow_error("Divide by zero");
+
+            double p = (x - x1) / (x2 - x1);
+
+            //Check for a few cases
+            if (p < 0.0)
+            {
+                //Under lower bound.  Return y1
+                return y1;
+            }
+            else if(p > 1.0)
+            {
+                //Over upper bound.  Return y2
+                return y2;
+            }
+            else
+            {
+                //Somewhere in the middle, as it should be.  Perform interpolation.
+
+                //Calculate output and write out
+                return (y2 - y1) * p + y1;
+            }
+        }
+        catch(std::overflow_error err)
+        {
+            std::string output;
+            output = "Function:  iePolate";
+
+            logStd.Notify();
+            logErr.Write(output + err.what());
+        }
+    }
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -155,7 +218,7 @@ protected:
      *      FindMatch[0] = The closest match
      *      FindMatch[1] = The second closest match
      */
-    vector<int> FindMatch(double valSearch, vector<double> &listVal);
+    std::vector<int> FindMatch(double valSearch, std::vector<double> &listVal);
 
 //==========================================Section Separator =========================================================
 private:
@@ -166,5 +229,7 @@ private:
 }   //Namespace ofreq
 
 }   //Namespace osea
+
+//#include "mathinterp.tcc"
 
 #endif // MATHINTERP_H

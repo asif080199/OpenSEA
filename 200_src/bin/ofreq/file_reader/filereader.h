@@ -89,8 +89,7 @@ class Dictionary;
  * value pairs.
  * The file reader interprets a limited number of those keywords to recognize new object declarations.  It creates
  * the new objects.  It then parses the information in that object into a series
- * of keyword-value pairs.  Each pair is sent to a Dictionary object that interprets the information.  Information is
- * sent using Qt Slots and Signals.
+ * of keyword-value pairs.  Each pair is sent to a Dictionary object that interprets the information.
  *
  * To use this class, the following sequence must be followed.
  * 1.)  Create FileReader object.
@@ -187,15 +186,6 @@ public:
 public slots:
         //------------------------------------------Function Separator ----------------------------------------------------
         /**
-         * @brief Reads hydrodynamic input files.
-         * @param path The full path to the hydrodynamic input file to read.
-         * @return Returns integer to report success or failure of file parsing.  Returns 0 for success.
-         * Returns 1 for file does not exist.
-         */
-        int readHydroFile(std::string path);
-
-        //------------------------------------------Function Separator ----------------------------------------------------
-        /**
          * @brief Sets the system object for the dictionary to reference.
          * @param ptSystem Pointer to the System object.  Variable passed by value.
          */
@@ -262,14 +252,12 @@ protected:
      */
     void sendOutput(int index);
 
-//==========================================Section Separator =========================================================
-private:
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
      * @brief The filepath to the directory that contains the input files.  Always the path to the root directory
      * of the project.  This will be the folder which then contains the other "system" and "constant" folders.
      */
-    std::string pPath;   
+    std::string pPath;
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -312,9 +300,24 @@ private:
 
     //------------------------------------------Function Separator ----------------------------------------------------
     // Directory Names
+    static std::string SLASH; /**< Directory separator in a std::string path. */
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    // Class Name Designators
+    static std::string OBJ_SEAFILE; /**< The std::string designation for a sea file object. */
+
+    // Key Value Pair Designators
+    // ---------------------------------
+    static std::string KEY_FORMAT;  /**< The key designator for a format value in the seafile object. */
+    static std::string KEY_VERSION; /**< The key designator for a version value in the seafile object. */
+
+//==========================================Section Separator =========================================================
+private:
+    //------------------------------------------Function Separator ----------------------------------------------------
+    // Directory Names
     static std::string SYS; /**< The system directory name */
     static std::string CONST; /**< The const directory name */
-    static std::string SLASH; /**< Directory separator in a std::string path. */
+
 
     //------------------------------------------Function Separator ----------------------------------------------------
     // Input File Names
@@ -326,17 +329,11 @@ private:
 
     //------------------------------------------Function Separator ----------------------------------------------------
     // Class Name Designators
-    static std::string OBJ_SEAFILE; /**< The std::string designation for a sea file object. */
     static std::string OBJ_SYSTEM; /**< The std::string designation for a system object. */
     static std::string OBJ_HYDROFILE; /**< The std::string designation for a hydrofile object. */
     static std::string OBJ_FORCE_ACTIVE; /**< The std::string designation for an active force object. */
     static std::string OBJ_FORCE_REACT; /**< The std::string designation for a reactive force object. */
     static std::string OBJ_FORCE_CROSS; /**< The std::string designation for a cross-body force object.*/
-
-    // Key Value Pair Designators
-    // ---------------------------------
-    static std::string KEY_FORMAT;  /**< The key designator for a format value in the seafile object. */
-    static std::string KEY_VERSION; /**< The key designator for a version value in the seafile object. */
 };
 
 }   // End of namespace osea

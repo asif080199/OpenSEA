@@ -7,7 +7,8 @@
 
 
 
-Inheritance diagram for osea\-:\-:Dictionary\-:\nopagebreak
+Inheritance diagram for osea\-:\-:Dictionary\-:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -27,7 +28,9 @@ virtual void \hyperlink{classosea_1_1_dictionary_a4f5b4ce990794a633ff8b69b8c021b
 \hyperlink{classosea_1_1_dictionary_a6ff9dd5005c8796e0cc13a8bc4cb2288}{Dictionary} (Q\-Object $\ast$parent)
 \item 
 \hyperlink{classosea_1_1_dictionary_aee8d612bc9d323c38faba045ba384b8b}{Dictionary} ()
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\hyperlink{classosea_1_1_dictionary_a46d15e6c36d3297217500d5c220ac982}{Dictionary} (\hyperlink{classosea_1_1_file_reader}{osea\-::\-File\-Reader} $\ast$parent)
+\begin{DoxyCompactList}\small\item\em Constructor that also passes pointer to the owning file reader. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -46,12 +49,12 @@ std\-::complex$<$ double $>$ \hyperlink{classosea_1_1_dictionary_ac714952a7fcf99
 
 
 \subsection{Detailed Description}
-This is a virtual class definition, inheritted by each file\-Dictionary object. Contains the basic functions for how to recursively progress through the definitions for an \hyperlink{classosea_1_1_object_group}{Object\-Group} object that is fed in. \begin{DoxySeeAlso}{See Also}
+Prototype class declaration of \hyperlink{classosea_1_1_file_reader}{File\-Reader}. Allows reference to parent object. This is a virtual class definition, inheritted by each file\-Dictionary object. Contains the basic functions for how to recursively progress through the definitions for an \hyperlink{classosea_1_1_object_group}{Object\-Group} object that is fed in. \begin{DoxySeeAlso}{See Also}
 \hyperlink{classosea_1_1_object_group}{Object\-Group} 
 \end{DoxySeeAlso}
 
 
-Definition at line 84 of file dictionary.\-h.
+Definition at line 86 of file dictionary.\-h.
 
 
 
@@ -65,7 +68,7 @@ Definition at line 84 of file dictionary.\-h.
 )\hspace{0.3cm}{\ttfamily [explicit]}}}\label{classosea_1_1_dictionary_a6ff9dd5005c8796e0cc13a8bc4cb2288}
 
 
-Definition at line 36 of file dictionary.\-cpp.
+Definition at line 37 of file dictionary.\-cpp.
 
 \hypertarget{classosea_1_1_dictionary_aee8d612bc9d323c38faba045ba384b8b}{\index{osea\-::\-Dictionary@{osea\-::\-Dictionary}!Dictionary@{Dictionary}}
 \index{Dictionary@{Dictionary}!osea::Dictionary@{osea\-::\-Dictionary}}
@@ -76,7 +79,31 @@ Definition at line 36 of file dictionary.\-cpp.
 )}}\label{classosea_1_1_dictionary_aee8d612bc9d323c38faba045ba384b8b}
 
 
-Definition at line 42 of file dictionary.\-cpp.
+Default constructor. 
+
+
+
+Definition at line 43 of file dictionary.\-cpp.
+
+\hypertarget{classosea_1_1_dictionary_a46d15e6c36d3297217500d5c220ac982}{\index{osea\-::\-Dictionary@{osea\-::\-Dictionary}!Dictionary@{Dictionary}}
+\index{Dictionary@{Dictionary}!osea::Dictionary@{osea\-::\-Dictionary}}
+\subsubsection[{Dictionary}]{\setlength{\rightskip}{0pt plus 5cm}Dictionary\-::\-Dictionary (
+\begin{DoxyParamCaption}
+\item[{{\bf osea\-::\-File\-Reader} $\ast$}]{parent}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1_dictionary_a46d15e6c36d3297217500d5c220ac982}
+
+
+Constructor that also passes pointer to the owning file reader. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parent} & Pointer to \hyperlink{classosea_1_1_file_reader}{File\-Reader} object, pointer passed by value. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 49 of file dictionary.\-cpp.
 
 
 
@@ -102,7 +129,19 @@ Returns a std\-::complex$<$double$>$ object. Variable passed by value.
 \end{DoxyReturn}
 
 
-Definition at line 105 of file dictionary.\-cpp.
+Definition at line 151 of file dictionary.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classosea_1_1_dictionary_ac714952a7fcf99ab69de015c606322ad_cgraph}
+\end{center}
+\end{figure}
+
 
 \hypertarget{classosea_1_1_dictionary_a42843f64aa966b8c686d9e3750cbdb4b}{\index{osea\-::\-Dictionary@{osea\-::\-Dictionary}!define\-Class@{define\-Class}}
 \index{define\-Class@{define\-Class}!osea::Dictionary@{osea\-::\-Dictionary}}
@@ -125,11 +164,11 @@ Returns status of assigning key. Returned value is an integer, passed by value. 
 \end{DoxyReturn}
 
 
-Reimplemented in \hyperlink{classosea_1_1ofreq_1_1dict_bodies_a3c00a8e8b6d24304cef35bcc50e7699b}{osea\-::ofreq\-::dict\-Bodies}, \hyperlink{classosea_1_1ofreq_1_1dict_forces_a4e1fd8cea0c9c689daf6eed864073485}{osea\-::ofreq\-::dict\-Forces}, and \hyperlink{classosea_1_1ofreq_1_1dict_control_a8c9cbaf3a2d4601dca4ad74667594a9e}{osea\-::ofreq\-::dict\-Control}.
+Reimplemented in \hyperlink{classosea_1_1ofreq_1_1dict_sea_env_af2a7f74d940c39e3b60bca8748198dfb}{osea\-::ofreq\-::dict\-Sea\-Env}, \hyperlink{classosea_1_1dicthydro_react_a3f5b17abba0605ac618e95ce53c5df7e}{osea\-::dicthydro\-React}, \hyperlink{classosea_1_1ofreq_1_1dict_bodies_a3c00a8e8b6d24304cef35bcc50e7699b}{osea\-::ofreq\-::dict\-Bodies}, \hyperlink{classosea_1_1ofreq_1_1dict_forces_a4e1fd8cea0c9c689daf6eed864073485}{osea\-::ofreq\-::dict\-Forces}, \hyperlink{classosea_1_1ofreq_1_1dict_control_a8c9cbaf3a2d4601dca4ad74667594a9e}{osea\-::ofreq\-::dict\-Control}, \hyperlink{classosea_1_1dict_cross_mass_a0de7b6960c51d5ea40fdbafdf6237a7a}{osea\-::dict\-Cross\-Mass}, \hyperlink{classosea_1_1dict_cross_damp_a7009adaf4e8191a51b8001afef77d001}{osea\-::dict\-Cross\-Damp}, \hyperlink{classosea_1_1dict_cross_stiff_aa18b99fc24d83d531ba473035b790c1b}{osea\-::dict\-Cross\-Stiff}, \hyperlink{classosea_1_1dict_force_excite_a5f7b2b90224ccabef47c2c1598e238ca}{osea\-::dict\-Force\-Excite}, \hyperlink{classosea_1_1dict_hydro_direction_a2df9310178b67dce0a040f024f107f91}{osea\-::dict\-Hydro\-Direction}, \hyperlink{classosea_1_1dict_hydro_env_aaebcb97fee9e23b8f62a8c1de210338a}{osea\-::dict\-Hydro\-Env}, \hyperlink{classosea_1_1dict_hydro_frequency_a6c0cf6d39a09012b5806f620551e8885}{osea\-::dict\-Hydro\-Frequency}, and \hyperlink{classosea_1_1dict_hydro_stiff_a6d9ff49c8fcc8cbd81d0722e5195af6b}{osea\-::dict\-Hydro\-Stiff}.
 
 
 
-Definition at line 97 of file dictionary.\-cpp.
+Definition at line 143 of file dictionary.\-cpp.
 
 \hypertarget{classosea_1_1_dictionary_ae96470181c8b1762204493fa45e96d7c}{\index{osea\-::\-Dictionary@{osea\-::\-Dictionary}!define\-Key@{define\-Key}}
 \index{define\-Key@{define\-Key}!osea::Dictionary@{osea\-::\-Dictionary}}
@@ -155,11 +194,11 @@ Returns status of assigning key. Returned value is an integer, passed by value. 
 \end{DoxyReturn}
 
 
-Reimplemented in \hyperlink{classosea_1_1ofreq_1_1dict_bodies_aff461cb5ceda5eee1a12da69aca94e1e}{osea\-::ofreq\-::dict\-Bodies}, \hyperlink{classosea_1_1ofreq_1_1dict_forces_ad2aef64f85e81b8b070ae732d757237e}{osea\-::ofreq\-::dict\-Forces}, and \hyperlink{classosea_1_1ofreq_1_1dict_control_a048421f7c1bc9b8a023a159c59407bb9}{osea\-::ofreq\-::dict\-Control}.
+Reimplemented in \hyperlink{classosea_1_1ofreq_1_1dict_sea_env_a40ff29cc136e2920e6af22e0f49e6147}{osea\-::ofreq\-::dict\-Sea\-Env}, \hyperlink{classosea_1_1dicthydro_react_a68cb7322d30a115ef4e4a2b4048837bb}{osea\-::dicthydro\-React}, \hyperlink{classosea_1_1ofreq_1_1dict_bodies_aff461cb5ceda5eee1a12da69aca94e1e}{osea\-::ofreq\-::dict\-Bodies}, \hyperlink{classosea_1_1ofreq_1_1dict_forces_ad2aef64f85e81b8b070ae732d757237e}{osea\-::ofreq\-::dict\-Forces}, \hyperlink{classosea_1_1ofreq_1_1dict_control_a048421f7c1bc9b8a023a159c59407bb9}{osea\-::ofreq\-::dict\-Control}, \hyperlink{classosea_1_1dict_cross_mass_afd69c5e51d96d6cb649e06fb247ae833}{osea\-::dict\-Cross\-Mass}, \hyperlink{classosea_1_1dict_cross_damp_a904e8a922f02b5d7122860a325ac739d}{osea\-::dict\-Cross\-Damp}, \hyperlink{classosea_1_1dict_cross_stiff_a02d47d0e4a6f3bc4370d8d020414ba88}{osea\-::dict\-Cross\-Stiff}, \hyperlink{classosea_1_1dict_force_excite_a271db50f8e1f80514d19d84ef66308ed}{osea\-::dict\-Force\-Excite}, \hyperlink{classosea_1_1dict_hydro_direction_a7a9a906f8d1f453bf9bc41326141f07f}{osea\-::dict\-Hydro\-Direction}, \hyperlink{classosea_1_1dict_hydro_env_a7bcfdbe56cf1f41e3c1b669abc3ec2c7}{osea\-::dict\-Hydro\-Env}, \hyperlink{classosea_1_1dict_hydro_frequency_a920a759ca7d6f576740e6c7de08e750d}{osea\-::dict\-Hydro\-Frequency}, and \hyperlink{classosea_1_1dict_hydro_stiff_a5753996351c5de5b30cd3208bbefa5c5}{osea\-::dict\-Hydro\-Stiff}.
 
 
 
-Definition at line 89 of file dictionary.\-cpp.
+Definition at line 135 of file dictionary.\-cpp.
 
 \hypertarget{classosea_1_1_dictionary_a900221a385d133644aedcadbae90c2be}{\index{osea\-::\-Dictionary@{osea\-::\-Dictionary}!set\-Object@{set\-Object}}
 \index{set\-Object@{set\-Object}!osea::Dictionary@{osea\-::\-Dictionary}}
@@ -179,11 +218,12 @@ Public signal for the \hyperlink{classosea_1_1_object_group}{Object\-Group} obje
 \end{DoxyParams}
 
 
-Definition at line 54 of file dictionary.\-cpp.
+Definition at line 62 of file dictionary.\-cpp.
 
 
 
-Here is the call graph for this function\-:\nopagebreak
+Here is the call graph for this function\-:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -210,7 +250,7 @@ Sets the system object for the dictionary to reference.
 \end{DoxyParams}
 
 
-Definition at line 80 of file dictionary.\-cpp.
+Definition at line 126 of file dictionary.\-cpp.
 
 
 
@@ -224,7 +264,7 @@ Pointer to the System object. Used to reference any important variables in the S
 
 
 
-Definition at line 166 of file dictionary.\-h.
+Definition at line 178 of file dictionary.\-h.
 
 
 

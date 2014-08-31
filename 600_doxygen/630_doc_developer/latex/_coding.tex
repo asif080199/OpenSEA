@@ -51,4 +51,49 @@ You can also specify whole individual files to be included or excluded depending
 
 If you have bigger “implementation details” you can separate things in different cpp files one for each platform i.\-e. \-: mycoolwidget.\-cpp $<$-\/ common implementation mycoolwidget\-\_\-win.\-cpp $<$-\/ windows specific stuff mycoolwidget\-\_\-unix.\-cpp $<$-\/ linux/os x stuff if both can use the same code etc…
 
+Then in your pro file, use scopes to build the correct set of files. If you need your own defines for a platform theres the D\-E\-F\-I\-N\-E\-S variable \hypertarget{HeaderComment}{}\section{Header Comment Standard}\label{HeaderComment}
+/$\ast$-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/---$\ast$-\/ C++ -\/$\ast$-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/---$\ast$\textbackslash{} $|$ O pen $|$ Open\-Sea\-: The Open Source Seakeeping Suite $|$ $|$ S eakeeping $|$ Web\-: www.\-opensea.\-dmsonline.\-us $|$ $|$ E valuation $|$ $|$ $|$ A nalysis $|$ $|$ $\ast$-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/--- \hypertarget{CPP_Comments}{}\section{C\-P\-P File Comment Standard}\label{CPP_Comments}
+\section*{Format of Coding for .C\-P\-P Files}
+
+\section*{Commenting of Files}
+
+\section*{Required Text for Every .C\-P\-P File}
+
+Place the following text at the top of every cpp file. This is a legal protection to ensure we don't get a lawsuit. Otherwise, comment styles are completely free within the file. Please comment heavily to explain your code. \hypertarget{ObjectParadigm}{}\section{Object Naming Paradigm}\label{ObjectParadigm}
+Please use the following object paradigm when naming any new methods in o\-Freq.
+
+1.) Methods are described as action, followed by subject, all as one word. Example\-: get\-Object 2.) The action verb is not capitalized. The subject is capitalized. If the subject is made of multiple words, write it all as one word, capitalizing each word.
+
+3.) Use the following conventions for verbs on objects\-: get\-: Retrieve something from the object. Retrieved variable passed by value. ref\-: Retrieve something from the object. Retrieved variable passed by reference. set\-: Change some information into the object. Inserted variable passed by value. add\-: Insert some new information into the object. Usually associated with a vector. list\-: Access a vector from the object. list(index)\-: Access a specific item in the vector from the object. \hypertarget{Qt_Platform_Code}{}\section{Qt Platform Specific Code}\label{Qt_Platform_Code}
+We have one set of source code, which compiles differently, depending on which platform gets selected. Bear this in mind when you write new source code. There are two methods in Qt to change source code at compile time, depending on platform.
+
+\section*{Little Pieces of Code}
+
+You can specify compiler options which depend on Qt system variables.
+
+For little pieces of code you can simply use the following construct.
+
+\begin{quotation}
+\#if defined(\-Q\-\_\-\-O\-S\-\_\-\-W\-I\-N32) \#elif defined(\-Q\-\_\-\-O\-S\-\_\-\-M\-A\-C\-X) \#elif etc... \#endif
+
+\end{quotation}
+
+
+The variables you need are as follows (I included other O\-S's just for completeness, but we only use linux and windows\-:
+
+
+\begin{DoxyEnumerate}
+\item Q\-\_\-\-O\-S\-\_\-\-W\-I\-N32\-: Any Windows O\-S. Q\-\_\-\-O\-S\-\_\-\-L\-I\-N\-U\-X\-: Any linuux O\-S. Q\-\_\-\-O\-S\-\_\-\-U\-N\-I\-X\-: Unix O\-S. Q\-\_\-\-O\-S\-\_\-\-M\-A\-X\-: Mac O\-S.
+\end{DoxyEnumerate}
+
+All these macros are included as part of the $<$\-Qt\-Global$>$ header file.
+
+\href{http://qt-project.org/doc/qt-5.0/qtcore/qtglobal.html}{\tt http\-://qt-\/project.\-org/doc/qt-\/5.\-0/qtcore/qtglobal.\-html}
+
+\section*{Whole files}
+
+You can also specify whole individual files to be included or excluded depending on which build is selected.
+
+If you have bigger “implementation details” you can separate things in different cpp files one for each platform i.\-e. \-: mycoolwidget.\-cpp $<$-\/ common implementation mycoolwidget\-\_\-win.\-cpp $<$-\/ windows specific stuff mycoolwidget\-\_\-unix.\-cpp $<$-\/ linux/os x stuff if both can use the same code etc…
+
 Then in your pro file, use scopes to build the correct set of files. If you need your own defines for a platform theres the D\-E\-F\-I\-N\-E\-S variable 

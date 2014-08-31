@@ -50,6 +50,7 @@
 #include "../global_objects/body.h"
 #include "../derived_outputs/outputsbody.h"
 #include "../system_objects/ofreqcore.h"
+#include "../hydro_data/hydromanager.h"
 
 //Sea Models to Include
 #include "../sea_models/seamodel.h"
@@ -689,6 +690,54 @@ public slots:
      */
     void SearchActiveSeaModel();
 
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Returns the vector of hydro systems.
+     *
+     * Provides a reference to the list of hydrosystems.
+     * @return Returns a vector of HydroManager objects.  Returned vector is passed by reference.
+     */
+    std::vector<ofreq::HydroManager> &listHydroManager();
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Returns the a single item from the vector of hydro systems.
+     *
+     * Provides a reference to a single entry in the list of hydro systems.
+     * @param index Integer, passed by value.  The index of the entry that you wish to access.
+     * @return Returns a HydroManager object.  Returned object is passed by reference.
+     */
+    ofreq::HydroManager &listHydroManager(int index);
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Returns the a single item from the vector of hydro systems.
+     *
+     * Provides a reference to a single entry in the list of hydro systems.
+     * @param bodNameIn String, passed by value.  The of the hydrobody associated with the hydrosystem that you
+     * want to access.
+     * @return Returns a HydroManager object.  Returned object is passed by reference.
+     */
+    ofreq::HydroManager &listHydroManager(std::string bodNameIn);
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Adds a new HydroManager object to the list of HydroManager objects.
+     *
+     * New object is defined by the HydroIn object passed to the function.
+     * @param HydroIn HydroManager object, variable passed by value.  The HydroManager object that you want to add to the
+     * list of hydro objects.
+     */
+    void addHydroManager(ofreq::HydroManager HydroIn);
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Adds a new HydroManager object to the list of HydroManager objects.
+     *
+     * A completely new object is created and added to the list.
+     */
+    void addHydroManager();
+
 //==========================================Section Separator =========================================================
 signals:
     /**
@@ -844,6 +893,9 @@ private:
      * @brief The index of the SeaModel object which is the active object in the current run of oFreq.
      */
     int pSeaModelIndex;
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    std::vector<ofreq::HydroManager> plistHydroManager;
 };
 
 }   //Namespace ofreq

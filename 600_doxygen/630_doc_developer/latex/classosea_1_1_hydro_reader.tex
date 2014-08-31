@@ -1,0 +1,496 @@
+\hypertarget{classosea_1_1_hydro_reader}{\section{osea\-:\-:Hydro\-Reader Class Reference}
+\label{classosea_1_1_hydro_reader}\index{osea\-::\-Hydro\-Reader@{osea\-::\-Hydro\-Reader}}
+}
+
+
+{\ttfamily \#include $<$hydroreader.\-h$>$}
+
+
+
+Inheritance diagram for osea\-:\-:Hydro\-Reader\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classosea_1_1_hydro_reader__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classosea_1_1_hydro_reader_ad7332fa73196b5914fd2e160ef5d851a}{Hydro\-Reader} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+int \hyperlink{classosea_1_1_hydro_reader_a14cf9364f06b10c03edb1032a6e02827}{read\-Hydro\-Sys} ()
+\begin{DoxyCompactList}\small\item\em Tells the \hyperlink{classosea_1_1_hydro_reader}{Hydro\-Reader} to progress through reading each of the files in the hydrosystem. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{classosea_1_1_hydro_reader_a5e90fd06958dfa68e7c14cbb1c18e80f}{read\-Environment} ()
+\begin{DoxyCompactList}\small\item\em Reads the environment data file in the hydro system. \end{DoxyCompactList}\item 
+int \hyperlink{classosea_1_1_hydro_reader_ad815ec7a5440f418f1b502f47bd3ea56}{read\-Directions} ()
+\begin{DoxyCompactList}\small\item\em Reads the directions data file in the hydro system. \end{DoxyCompactList}\item 
+int \hyperlink{classosea_1_1_hydro_reader_aac8c48a81488177fcecd0420f733cd0c}{read\-Frequencies} ()
+\begin{DoxyCompactList}\small\item\em Reads the frequences data file in the hydro system. \end{DoxyCompactList}\item 
+int \hyperlink{classosea_1_1_hydro_reader_a611dd7aafea404cf63da1735463fd308}{read\-Force\-Excite} (int index)
+\begin{DoxyCompactList}\small\item\em Reads the excitation force data file in the hydro system. \end{DoxyCompactList}\item 
+int \hyperlink{classosea_1_1_hydro_reader_aa7968e70e304d20d05df8e615e8518cb}{read\-Hydro\-Mass} (int index)
+\begin{DoxyCompactList}\small\item\em Reads the hydrodynamic mass data file in the hydro system. \end{DoxyCompactList}\item 
+int \hyperlink{classosea_1_1_hydro_reader_a5283219e60f95610a6619b6735c0d0cb}{read\-Hydro\-Damp} (int index)
+\begin{DoxyCompactList}\small\item\em Reads the hydrodynamic damping data file in the hydro system. \end{DoxyCompactList}\item 
+int \hyperlink{classosea_1_1_hydro_reader_aa0166091098cac0b9b561e343bcba643}{read\-Hydro\-Stiff} (int index)
+\begin{DoxyCompactList}\small\item\em Reads the hydrodynamic stiffness data file in the hydro system. \end{DoxyCompactList}\item 
+int \hyperlink{classosea_1_1_hydro_reader_ab7abea48d4b6598ea120bf2da2a6ceae}{read\-Cross\-Mass} (int index)
+\begin{DoxyCompactList}\small\item\em Reads the crossbody mass data file in the hydro system. \end{DoxyCompactList}\item 
+int \hyperlink{classosea_1_1_hydro_reader_a1daa6fd5fd43a0ef9c307843659b7ef2}{read\-Cross\-Damp} (int index)
+\begin{DoxyCompactList}\small\item\em Reads the crossbody damping data file in the hydro system. \end{DoxyCompactList}\item 
+int \hyperlink{classosea_1_1_hydro_reader_aa78393216be977d4cf1dcef10ba5ab69}{read\-Cross\-Stiff} (int index)
+\begin{DoxyCompactList}\small\item\em Reads the crossbody stiffness data file in the hydro system. \end{DoxyCompactList}\item 
+int \hyperlink{classosea_1_1_hydro_reader_a22588f0b67c4eb9ddf919afd4f50dd68}{find\-Hydro\-Manager} (std\-::string Body\-Name)
+\begin{DoxyCompactList}\small\item\em Searches through the list of Hydro\-Manager objects and returns index of the manager with matching name. \end{DoxyCompactList}\item 
+int \hyperlink{classosea_1_1_hydro_reader_af6820a74d0b4181d76f69b67bfd3916e}{find\-Hydro\-Data\-Amp} (int Body\-Ind, double wave\-Amp\-In)
+\begin{DoxyCompactList}\small\item\em Searches through the list of Hydro\-Data objects and returns index of the object with matching wave amp. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\hyperlink{classosea_1_1_hydro_reader}{Hydro\-Reader} is an extension of the class \hyperlink{classosea_1_1_file_reader}{File\-Reader}. \hyperlink{classosea_1_1_file_reader}{File\-Reader} simply reads the text file and parses it into keword value pairs. \hyperlink{classosea_1_1_file_reader}{File\-Reader} reads in the input files. It then passes those input files to the \hyperlink{classosea_1_1_parser}{Parser} object. \hyperlink{classosea_1_1_parser}{Parser} then segments the file in a series of object groupings with a vector list of keyword value pairs. The file reader interprets a limited number of those keywords to recognize new object declarations. It creates the new objects. It then parses the information in that object into a series of keyword-\/value pairs. Each pair is sent to a \hyperlink{classosea_1_1_dictionary}{Dictionary} object that interprets the information.
+
+The \hyperlink{classosea_1_1_hydro_reader}{Hydro\-Reader} extension contains the subset of dictionaries specific to the interpretation of hydrodynamic data. It also contains additional procedures to look into subfolder. \hyperlink{classosea_1_1_hydro_reader}{Hydro\-Reader} interprets each subfolder as a wave direction, based on keywords and key-\/value pairs.
+
+To use this class, the following sequence must be followed. 1.) Create \hyperlink{classosea_1_1_hydro_reader}{Hydro\-Reader} object. 2.) Create \hyperlink{classosea_1_1_dictionary}{Dictionary} objects for each file type you will read. 3.) Satisfy any follow on dependencies for \hyperlink{classosea_1_1_dictionary}{Dictionary} objects. 4.) Feed in the target path to the \hyperlink{classosea_1_1_hydro_reader}{Hydro\-Reader} object (path of the directory containing all files). 5.) Trigger a read of the hydro system. The \hyperlink{classosea_1_1_hydro_reader}{Hydro\-Reader} will work through each file in the directory for the hydro system. Any folders not part of the standard hydro system will be ignored. 
+
+Definition at line 102 of file hydroreader.\-h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classosea_1_1_hydro_reader_ad7332fa73196b5914fd2e160ef5d851a}{\index{osea\-::\-Hydro\-Reader@{osea\-::\-Hydro\-Reader}!Hydro\-Reader@{Hydro\-Reader}}
+\index{Hydro\-Reader@{Hydro\-Reader}!osea::HydroReader@{osea\-::\-Hydro\-Reader}}
+\subsubsection[{Hydro\-Reader}]{\setlength{\rightskip}{0pt plus 5cm}Hydro\-Reader\-::\-Hydro\-Reader (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1_hydro_reader_ad7332fa73196b5914fd2e160ef5d851a}
+
+
+Default constructor. 
+
+
+
+Definition at line 73 of file hydroreader.\-cpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classosea_1_1_hydro_reader_af6820a74d0b4181d76f69b67bfd3916e}{\index{osea\-::\-Hydro\-Reader@{osea\-::\-Hydro\-Reader}!find\-Hydro\-Data\-Amp@{find\-Hydro\-Data\-Amp}}
+\index{find\-Hydro\-Data\-Amp@{find\-Hydro\-Data\-Amp}!osea::HydroReader@{osea\-::\-Hydro\-Reader}}
+\subsubsection[{find\-Hydro\-Data\-Amp}]{\setlength{\rightskip}{0pt plus 5cm}int Hydro\-Reader\-::find\-Hydro\-Data\-Amp (
+\begin{DoxyParamCaption}
+\item[{int}]{Body\-Ind, }
+\item[{double}]{wave\-Amp\-In}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classosea_1_1_hydro_reader_af6820a74d0b4181d76f69b67bfd3916e}
+
+
+Searches through the list of Hydro\-Data objects and returns index of the object with matching wave amp. 
+
+You supply the index of the Hydro\-Manager that you want to search through, and the wave amplitude. The function then searches through the listof existing Hydro\-Data objects stored in that Hydro\-Manager. It finds the index of the object which matches your input.
+
+If no Hydro\-Data object exists with matching criteria, it returns -\/1. 
+\begin{DoxyParams}{Parameters}
+{\em Body\-Ind} & Integer, variable passed by value. The index of the Hydro\-Manager that you want to search through. \\
+\hline
+{\em wave\-Amp\-In} & Double, variable passed by value. The wave amplitude that you want to find the matching Hydro\-Data objects for. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns an integer, variable passed by value. The index of the Hydro\-Data objects you are trying to match. If no Hydro\-Data object exists, it returns -\/1. 
+\end{DoxyReturn}
+
+
+Definition at line 482 of file hydroreader.\-cpp.
+
+\hypertarget{classosea_1_1_hydro_reader_a22588f0b67c4eb9ddf919afd4f50dd68}{\index{osea\-::\-Hydro\-Reader@{osea\-::\-Hydro\-Reader}!find\-Hydro\-Manager@{find\-Hydro\-Manager}}
+\index{find\-Hydro\-Manager@{find\-Hydro\-Manager}!osea::HydroReader@{osea\-::\-Hydro\-Reader}}
+\subsubsection[{find\-Hydro\-Manager}]{\setlength{\rightskip}{0pt plus 5cm}int Hydro\-Reader\-::find\-Hydro\-Manager (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{Body\-Name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classosea_1_1_hydro_reader_a22588f0b67c4eb9ddf919afd4f50dd68}
+
+
+Searches through the list of Hydro\-Manager objects and returns index of the manager with matching name. 
+
+You supply the name of a hydrobody associated with a Hydro\-Manager object. The function then searches through the list of existing Hydro\-Manager objects stored in the system. It finds the index of the object which matches your input.
+
+If no Hydro\-Manager exists, it returns -\/1. 
+\begin{DoxyParams}{Parameters}
+{\em Body\-Name} & String, variable passed by value. The name of the hydrobody associated with the Hydro\-Manager you are trying to find. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns an integer, variable passed by value. The index of the Hydro\-Manager object you are trying to find. If no Hydro\-Manager exists, it returns -\/1. 
+\end{DoxyReturn}
+
+
+Definition at line 460 of file hydroreader.\-cpp.
+
+\hypertarget{classosea_1_1_hydro_reader_a1daa6fd5fd43a0ef9c307843659b7ef2}{\index{osea\-::\-Hydro\-Reader@{osea\-::\-Hydro\-Reader}!read\-Cross\-Damp@{read\-Cross\-Damp}}
+\index{read\-Cross\-Damp@{read\-Cross\-Damp}!osea::HydroReader@{osea\-::\-Hydro\-Reader}}
+\subsubsection[{read\-Cross\-Damp}]{\setlength{\rightskip}{0pt plus 5cm}int Hydro\-Reader\-::read\-Cross\-Damp (
+\begin{DoxyParamCaption}
+\item[{int}]{index}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classosea_1_1_hydro_reader_a1daa6fd5fd43a0ef9c307843659b7ef2}
+
+
+Reads the crossbody damping data file in the hydro system. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & Integer, variable passed by value. The index of the wave direction that you should pull files from. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns an integer, variable passed by value. Returns 0 for success. All others are error codes. 
+\end{DoxyReturn}
+
+
+Definition at line 402 of file hydroreader.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classosea_1_1_hydro_reader_a1daa6fd5fd43a0ef9c307843659b7ef2_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classosea_1_1_hydro_reader_ab7abea48d4b6598ea120bf2da2a6ceae}{\index{osea\-::\-Hydro\-Reader@{osea\-::\-Hydro\-Reader}!read\-Cross\-Mass@{read\-Cross\-Mass}}
+\index{read\-Cross\-Mass@{read\-Cross\-Mass}!osea::HydroReader@{osea\-::\-Hydro\-Reader}}
+\subsubsection[{read\-Cross\-Mass}]{\setlength{\rightskip}{0pt plus 5cm}int Hydro\-Reader\-::read\-Cross\-Mass (
+\begin{DoxyParamCaption}
+\item[{int}]{index}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classosea_1_1_hydro_reader_ab7abea48d4b6598ea120bf2da2a6ceae}
+
+
+Reads the crossbody mass data file in the hydro system. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & Integer, variable passed by value. The index of the wave direction that you should pull files from. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns an integer, variable passed by value. Returns 0 for success. All others are error codes. 
+\end{DoxyReturn}
+
+
+Definition at line 373 of file hydroreader.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classosea_1_1_hydro_reader_ab7abea48d4b6598ea120bf2da2a6ceae_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classosea_1_1_hydro_reader_aa78393216be977d4cf1dcef10ba5ab69}{\index{osea\-::\-Hydro\-Reader@{osea\-::\-Hydro\-Reader}!read\-Cross\-Stiff@{read\-Cross\-Stiff}}
+\index{read\-Cross\-Stiff@{read\-Cross\-Stiff}!osea::HydroReader@{osea\-::\-Hydro\-Reader}}
+\subsubsection[{read\-Cross\-Stiff}]{\setlength{\rightskip}{0pt plus 5cm}int Hydro\-Reader\-::read\-Cross\-Stiff (
+\begin{DoxyParamCaption}
+\item[{int}]{index}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classosea_1_1_hydro_reader_aa78393216be977d4cf1dcef10ba5ab69}
+
+
+Reads the crossbody stiffness data file in the hydro system. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & Integer, variable passed by value. The index of the wave direction that you should pull files from. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns an integer, variable passed by value. Returns 0 for success. All others are error codes. 
+\end{DoxyReturn}
+
+
+Definition at line 431 of file hydroreader.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classosea_1_1_hydro_reader_aa78393216be977d4cf1dcef10ba5ab69_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classosea_1_1_hydro_reader_ad815ec7a5440f418f1b502f47bd3ea56}{\index{osea\-::\-Hydro\-Reader@{osea\-::\-Hydro\-Reader}!read\-Directions@{read\-Directions}}
+\index{read\-Directions@{read\-Directions}!osea::HydroReader@{osea\-::\-Hydro\-Reader}}
+\subsubsection[{read\-Directions}]{\setlength{\rightskip}{0pt plus 5cm}int Hydro\-Reader\-::read\-Directions (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classosea_1_1_hydro_reader_ad815ec7a5440f418f1b502f47bd3ea56}
+
+
+Reads the directions data file in the hydro system. 
+
+\begin{DoxyReturn}{Returns}
+Returns an integer, variable passed by value. Returns 0 for success. All others are error codes. 
+\end{DoxyReturn}
+
+
+Definition at line 199 of file hydroreader.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classosea_1_1_hydro_reader_ad815ec7a5440f418f1b502f47bd3ea56_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classosea_1_1_hydro_reader_a5e90fd06958dfa68e7c14cbb1c18e80f}{\index{osea\-::\-Hydro\-Reader@{osea\-::\-Hydro\-Reader}!read\-Environment@{read\-Environment}}
+\index{read\-Environment@{read\-Environment}!osea::HydroReader@{osea\-::\-Hydro\-Reader}}
+\subsubsection[{read\-Environment}]{\setlength{\rightskip}{0pt plus 5cm}int Hydro\-Reader\-::read\-Environment (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classosea_1_1_hydro_reader_a5e90fd06958dfa68e7c14cbb1c18e80f}
+
+
+Reads the environment data file in the hydro system. 
+
+\begin{DoxyReturn}{Returns}
+Returns an integer, variable passed by value. Returns 0 for success. All others are error codes. 
+\end{DoxyReturn}
+
+
+Definition at line 170 of file hydroreader.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classosea_1_1_hydro_reader_a5e90fd06958dfa68e7c14cbb1c18e80f_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classosea_1_1_hydro_reader_a611dd7aafea404cf63da1735463fd308}{\index{osea\-::\-Hydro\-Reader@{osea\-::\-Hydro\-Reader}!read\-Force\-Excite@{read\-Force\-Excite}}
+\index{read\-Force\-Excite@{read\-Force\-Excite}!osea::HydroReader@{osea\-::\-Hydro\-Reader}}
+\subsubsection[{read\-Force\-Excite}]{\setlength{\rightskip}{0pt plus 5cm}int Hydro\-Reader\-::read\-Force\-Excite (
+\begin{DoxyParamCaption}
+\item[{int}]{index}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classosea_1_1_hydro_reader_a611dd7aafea404cf63da1735463fd308}
+
+
+Reads the excitation force data file in the hydro system. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & Integer, variable passed by value. The index of the wave direction that you should pull files from. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns an integer, variable passed by value. Returns 0 for success. All others are error codes. 
+\end{DoxyReturn}
+
+
+Definition at line 257 of file hydroreader.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classosea_1_1_hydro_reader_a611dd7aafea404cf63da1735463fd308_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classosea_1_1_hydro_reader_aac8c48a81488177fcecd0420f733cd0c}{\index{osea\-::\-Hydro\-Reader@{osea\-::\-Hydro\-Reader}!read\-Frequencies@{read\-Frequencies}}
+\index{read\-Frequencies@{read\-Frequencies}!osea::HydroReader@{osea\-::\-Hydro\-Reader}}
+\subsubsection[{read\-Frequencies}]{\setlength{\rightskip}{0pt plus 5cm}int Hydro\-Reader\-::read\-Frequencies (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classosea_1_1_hydro_reader_aac8c48a81488177fcecd0420f733cd0c}
+
+
+Reads the frequences data file in the hydro system. 
+
+\begin{DoxyReturn}{Returns}
+Returns an integer, variable passed by value. Returns 0 for success. All others are error codes. 
+\end{DoxyReturn}
+
+
+Definition at line 228 of file hydroreader.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classosea_1_1_hydro_reader_aac8c48a81488177fcecd0420f733cd0c_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classosea_1_1_hydro_reader_a5283219e60f95610a6619b6735c0d0cb}{\index{osea\-::\-Hydro\-Reader@{osea\-::\-Hydro\-Reader}!read\-Hydro\-Damp@{read\-Hydro\-Damp}}
+\index{read\-Hydro\-Damp@{read\-Hydro\-Damp}!osea::HydroReader@{osea\-::\-Hydro\-Reader}}
+\subsubsection[{read\-Hydro\-Damp}]{\setlength{\rightskip}{0pt plus 5cm}int Hydro\-Reader\-::read\-Hydro\-Damp (
+\begin{DoxyParamCaption}
+\item[{int}]{index}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classosea_1_1_hydro_reader_a5283219e60f95610a6619b6735c0d0cb}
+
+
+Reads the hydrodynamic damping data file in the hydro system. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & Integer, variable passed by value. The index of the wave direction that you should pull files from. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns an integer, variable passed by value. Returns 0 for success. All others are error codes. 
+\end{DoxyReturn}
+
+
+Definition at line 315 of file hydroreader.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classosea_1_1_hydro_reader_a5283219e60f95610a6619b6735c0d0cb_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classosea_1_1_hydro_reader_aa7968e70e304d20d05df8e615e8518cb}{\index{osea\-::\-Hydro\-Reader@{osea\-::\-Hydro\-Reader}!read\-Hydro\-Mass@{read\-Hydro\-Mass}}
+\index{read\-Hydro\-Mass@{read\-Hydro\-Mass}!osea::HydroReader@{osea\-::\-Hydro\-Reader}}
+\subsubsection[{read\-Hydro\-Mass}]{\setlength{\rightskip}{0pt plus 5cm}int Hydro\-Reader\-::read\-Hydro\-Mass (
+\begin{DoxyParamCaption}
+\item[{int}]{index}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classosea_1_1_hydro_reader_aa7968e70e304d20d05df8e615e8518cb}
+
+
+Reads the hydrodynamic mass data file in the hydro system. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & Integer, variable passed by value. The index of the wave direction that you should pull files from. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns an integer, variable passed by value. Returns 0 for success. All others are error codes. 
+\end{DoxyReturn}
+
+
+Definition at line 286 of file hydroreader.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classosea_1_1_hydro_reader_aa7968e70e304d20d05df8e615e8518cb_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classosea_1_1_hydro_reader_aa0166091098cac0b9b561e343bcba643}{\index{osea\-::\-Hydro\-Reader@{osea\-::\-Hydro\-Reader}!read\-Hydro\-Stiff@{read\-Hydro\-Stiff}}
+\index{read\-Hydro\-Stiff@{read\-Hydro\-Stiff}!osea::HydroReader@{osea\-::\-Hydro\-Reader}}
+\subsubsection[{read\-Hydro\-Stiff}]{\setlength{\rightskip}{0pt plus 5cm}int Hydro\-Reader\-::read\-Hydro\-Stiff (
+\begin{DoxyParamCaption}
+\item[{int}]{index}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classosea_1_1_hydro_reader_aa0166091098cac0b9b561e343bcba643}
+
+
+Reads the hydrodynamic stiffness data file in the hydro system. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & Integer, variable passed by value. The index of the wave direction that you should pull files from. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns an integer, variable passed by value. Returns 0 for success. All others are error codes. 
+\end{DoxyReturn}
+
+
+Definition at line 344 of file hydroreader.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classosea_1_1_hydro_reader_aa0166091098cac0b9b561e343bcba643_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classosea_1_1_hydro_reader_a14cf9364f06b10c03edb1032a6e02827}{\index{osea\-::\-Hydro\-Reader@{osea\-::\-Hydro\-Reader}!read\-Hydro\-Sys@{read\-Hydro\-Sys}}
+\index{read\-Hydro\-Sys@{read\-Hydro\-Sys}!osea::HydroReader@{osea\-::\-Hydro\-Reader}}
+\subsubsection[{read\-Hydro\-Sys}]{\setlength{\rightskip}{0pt plus 5cm}int Hydro\-Reader\-::read\-Hydro\-Sys (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1_hydro_reader_a14cf9364f06b10c03edb1032a6e02827}
+
+
+Tells the \hyperlink{classosea_1_1_hydro_reader}{Hydro\-Reader} to progress through reading each of the files in the hydrosystem. 
+
+\begin{DoxyReturn}{Returns}
+Returns an integer. Returns 0 for success. All others are error codes. 
+\end{DoxyReturn}
+
+
+Definition at line 78 of file hydroreader.\-cpp.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/home/\-Ship\-\_\-\-Design/\-Projects/\-D\-M\-S1305 Open\-S\-E\-A/master/200\-\_\-src/bin/ofreq/hydro\-\_\-reader/\hyperlink{hydroreader_8h}{hydroreader.\-h}\item 
+/home/\-Ship\-\_\-\-Design/\-Projects/\-D\-M\-S1305 Open\-S\-E\-A/master/200\-\_\-src/bin/ofreq/hydro\-\_\-reader/\hyperlink{hydroreader_8cpp}{hydroreader.\-cpp}\end{DoxyCompactItemize}

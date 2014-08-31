@@ -1,0 +1,459 @@
+\hypertarget{classosea_1_1ofreq_1_1_hydro_manager}{\section{osea\-:\-:ofreq\-:\-:Hydro\-Manager Class Reference}
+\label{classosea_1_1ofreq_1_1_hydro_manager}\index{osea\-::ofreq\-::\-Hydro\-Manager@{osea\-::ofreq\-::\-Hydro\-Manager}}
+}
+
+
+The \hyperlink{classosea_1_1ofreq_1_1_hydro_manager}{Hydro\-Manager} class contains the complete set of hydrodynamic data associated with a single body.  
+
+
+
+
+{\ttfamily \#include $<$hydromanager.\-h$>$}
+
+
+
+Inheritance diagram for osea\-:\-:ofreq\-:\-:Hydro\-Manager\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classosea_1_1ofreq_1_1_hydro_manager__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classosea_1_1ofreq_1_1_hydro_manager_a159d6955deafd0147275ade126440605}{Hydro\-Manager} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. Nothing happens here. \end{DoxyCompactList}\item 
+\hyperlink{classosea_1_1ofreq_1_1_hydro_manager_a995c5a32ecf0e654154fc66722f97b3b}{$\sim$\-Hydro\-Manager} ()
+\begin{DoxyCompactList}\small\item\em Default destructor. Nothing happens here. \end{DoxyCompactList}\item 
+std\-::vector$<$ std\-::vector\\*
+$<$ \hyperlink{classosea_1_1ofreq_1_1hydro_data}{ofreq\-::hydro\-Data} $>$ $>$ \& \hyperlink{classosea_1_1ofreq_1_1_hydro_manager_a5fdd485c0d320c7e779cc490e3201f73}{list\-Hydro\-Data} ()
+\begin{DoxyCompactList}\small\item\em Returns a full list of the \hyperlink{classosea_1_1ofreq_1_1hydro_data}{hydro\-Data} available for this body. \end{DoxyCompactList}\item 
+\hyperlink{classosea_1_1ofreq_1_1hydro_data}{ofreq\-::hydro\-Data} \& \hyperlink{classosea_1_1ofreq_1_1_hydro_manager_a90358d92489be46f7102f577ec6f1a39}{list\-Hydro\-Data} (int amp\-Ind, int dir\-Ind)
+\begin{DoxyCompactList}\small\item\em Returns a single item in the list of \hyperlink{classosea_1_1ofreq_1_1hydro_data}{hydro\-Data} available. \end{DoxyCompactList}\item 
+void \hyperlink{classosea_1_1ofreq_1_1_hydro_manager_aebe5158a3b0e8d709183fc8d569c877a}{add\-Hydro\-Data} (int amp\-Ind=-\/1, \hyperlink{classosea_1_1ofreq_1_1hydro_data}{ofreq\-::hydro\-Data} data\-In=\hyperlink{classosea_1_1ofreq_1_1hydro_data}{hydro\-Data}())
+\begin{DoxyCompactList}\small\item\em Adds a \hyperlink{classosea_1_1ofreq_1_1hydro_data}{hydro\-Data} object to the set of available data. \end{DoxyCompactList}\item 
+void \hyperlink{classosea_1_1ofreq_1_1_hydro_manager_a72f2a82ece47a66bdcaaf7934140d322}{add\-Hydro\-Data} (\hyperlink{classosea_1_1ofreq_1_1hydro_data}{ofreq\-::hydro\-Data} data\-In=\hyperlink{classosea_1_1ofreq_1_1hydro_data}{hydro\-Data}())
+\begin{DoxyCompactList}\small\item\em Adds a \hyperlink{classosea_1_1ofreq_1_1hydro_data}{hydro\-Data} object to the set of available data. \end{DoxyCompactList}\item 
+std\-::string \hyperlink{classosea_1_1ofreq_1_1_hydro_manager_acd5feac035ac13f9f150a7339cfacde7}{get\-Hydro\-Body\-Name} ()
+\begin{DoxyCompactList}\small\item\em Gets the name of the hydrobody associated with this data set. \end{DoxyCompactList}\item 
+void \hyperlink{classosea_1_1ofreq_1_1_hydro_manager_a9c8b57356992e0426014f6e4765aab5a}{set\-Hydro\-Body\-Name} (std\-::string name\-In)
+\begin{DoxyCompactList}\small\item\em Sets the name of the hydrobody associated with this data set. \end{DoxyCompactList}\item 
+void \hyperlink{classosea_1_1ofreq_1_1_hydro_manager_af0af755869433126a4190d3b4eb0aed7}{calc\-Hydro\-Data} (double wave\-Amp, double wave\-Freq)
+\begin{DoxyCompactList}\small\item\em Calculates the final set of hydrodata. \end{DoxyCompactList}\item 
+\hyperlink{classosea_1_1ofreq_1_1_force_active}{ofreq\-::\-Force\-Active} \hyperlink{classosea_1_1ofreq_1_1_hydro_manager_a29a5ee371b8a0a7107ec28df533850b9}{get\-Force\-Active} ()
+\begin{DoxyCompactList}\small\item\em Gets the force\-Active object associated the requested environmental data. \end{DoxyCompactList}\item 
+\hyperlink{classosea_1_1ofreq_1_1_force_react}{ofreq\-::\-Force\-React} \hyperlink{classosea_1_1ofreq_1_1_hydro_manager_a72f1dbf1f13e0efc7926e41850127da9}{get\-Force\-React} ()
+\begin{DoxyCompactList}\small\item\em Gets the force\-React object associated the requested environmental data. \end{DoxyCompactList}\item 
+\hyperlink{classosea_1_1ofreq_1_1_force_cross}{ofreq\-::\-Force\-Cross} \hyperlink{classosea_1_1ofreq_1_1_hydro_manager_a0c2cf13137035da045963fee200704e6}{get\-Force\-Cross} (std\-::string linked\-Bod\-Name)
+\begin{DoxyCompactList}\small\item\em Gets the force\-Cross object associated the requested environmental data. \end{DoxyCompactList}\item 
+void \hyperlink{classosea_1_1ofreq_1_1_hydro_manager_ae47c456833341ca95559eb7dd510f608}{set\-Wave\-Dir} (double dir\-In)
+\begin{DoxyCompactList}\small\item\em Sets the wave direction for the current set of analysis. \end{DoxyCompactList}\item 
+double \hyperlink{classosea_1_1ofreq_1_1_hydro_manager_a6bf3e81ee1d8d100301bfd4415e5b3a1}{get\-Wave\-Dir} ()
+\begin{DoxyCompactList}\small\item\em Gets the wave direction for the current set of analysis. \end{DoxyCompactList}\item 
+void \hyperlink{classosea_1_1ofreq_1_1_hydro_manager_aacd111b5be95018f7624f664fb599946}{set\-Gravity} (std\-::vector$<$ double $>$ grav\-In)
+\begin{DoxyCompactList}\small\item\em Defines the gravity defined for this hydromanager set. \end{DoxyCompactList}\item 
+std\-::vector$<$ double $>$ \hyperlink{classosea_1_1ofreq_1_1_hydro_manager_ad24395469371489c07901d7779b635f3}{get\-Gravity} ()
+\begin{DoxyCompactList}\small\item\em Gets the gravity defined for this hydromanager set. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+The \hyperlink{classosea_1_1ofreq_1_1_hydro_manager}{Hydro\-Manager} class contains the complete set of hydrodynamic data associated with a single body. 
+
+The most important aspect are all the variations possible for hydrodynamic data. The data can vary with wave frequency, wave direction, and wave amplitude. The \hyperlink{classosea_1_1ofreq_1_1_hydro_manager}{Hydro\-Manager} has methods for interpolating amongst all that data to create a single output for a requested set of conditions (some combination of wave frequency, wave direction, and wave amplitude.)
+
+Note that interpolation for wave direction does have a limitation\-: it will only permit interpolation with wave directions that are within 0.\-785 rad (45 deg) of the available data. This is due to the physics limitations. Any data more than 45 deg away from the desired direction really is not relevant. 
+
+Definition at line 96 of file hydromanager.\-h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classosea_1_1ofreq_1_1_hydro_manager_a159d6955deafd0147275ade126440605}{\index{osea\-::ofreq\-::\-Hydro\-Manager@{osea\-::ofreq\-::\-Hydro\-Manager}!Hydro\-Manager@{Hydro\-Manager}}
+\index{Hydro\-Manager@{Hydro\-Manager}!osea::ofreq::HydroManager@{osea\-::ofreq\-::\-Hydro\-Manager}}
+\subsubsection[{Hydro\-Manager}]{\setlength{\rightskip}{0pt plus 5cm}Hydro\-Manager\-::\-Hydro\-Manager (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_hydro_manager_a159d6955deafd0147275ade126440605}
+
+
+Default constructor. Nothing happens here. 
+
+
+
+Definition at line 41 of file hydromanager.\-cpp.
+
+\hypertarget{classosea_1_1ofreq_1_1_hydro_manager_a995c5a32ecf0e654154fc66722f97b3b}{\index{osea\-::ofreq\-::\-Hydro\-Manager@{osea\-::ofreq\-::\-Hydro\-Manager}!$\sim$\-Hydro\-Manager@{$\sim$\-Hydro\-Manager}}
+\index{$\sim$\-Hydro\-Manager@{$\sim$\-Hydro\-Manager}!osea::ofreq::HydroManager@{osea\-::ofreq\-::\-Hydro\-Manager}}
+\subsubsection[{$\sim$\-Hydro\-Manager}]{\setlength{\rightskip}{0pt plus 5cm}Hydro\-Manager\-::$\sim$\-Hydro\-Manager (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_hydro_manager_a995c5a32ecf0e654154fc66722f97b3b}
+
+
+Default destructor. Nothing happens here. 
+
+
+
+Definition at line 47 of file hydromanager.\-cpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classosea_1_1ofreq_1_1_hydro_manager_aebe5158a3b0e8d709183fc8d569c877a}{\index{osea\-::ofreq\-::\-Hydro\-Manager@{osea\-::ofreq\-::\-Hydro\-Manager}!add\-Hydro\-Data@{add\-Hydro\-Data}}
+\index{add\-Hydro\-Data@{add\-Hydro\-Data}!osea::ofreq::HydroManager@{osea\-::ofreq\-::\-Hydro\-Manager}}
+\subsubsection[{add\-Hydro\-Data}]{\setlength{\rightskip}{0pt plus 5cm}void Hydro\-Manager\-::add\-Hydro\-Data (
+\begin{DoxyParamCaption}
+\item[{int}]{amp\-Ind = {\ttfamily -\/1}, }
+\item[{{\bf ofreq\-::hydro\-Data}}]{data\-In = {\ttfamily {\bf hydro\-Data}()}}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_hydro_manager_aebe5158a3b0e8d709183fc8d569c877a}
+
+
+Adds a \hyperlink{classosea_1_1ofreq_1_1hydro_data}{hydro\-Data} object to the set of available data. 
+
+If an amplitude index is specified, the \hyperlink{classosea_1_1ofreq_1_1hydro_data}{hydro\-Data} object will be added as a new wave direction for the given amplitude index. If no amplitude index is specified, a whole new entry for amplitude index will be created. 
+\begin{DoxyParams}{Parameters}
+{\em amp\-Ind} & Integer, passed by value. The index of the outer loop where you want to store the \hyperlink{classosea_1_1ofreq_1_1hydro_data}{hydro\-Data}. \\
+\hline
+{\em data\-In} & \hyperlink{classosea_1_1ofreq_1_1hydro_data}{hydro\-Data} object, passed by value. The \hyperlink{classosea_1_1ofreq_1_1hydro_data}{hydro\-Data} object that you want to add to the list of available data for this system. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 65 of file hydromanager.\-cpp.
+
+\hypertarget{classosea_1_1ofreq_1_1_hydro_manager_a72f2a82ece47a66bdcaaf7934140d322}{\index{osea\-::ofreq\-::\-Hydro\-Manager@{osea\-::ofreq\-::\-Hydro\-Manager}!add\-Hydro\-Data@{add\-Hydro\-Data}}
+\index{add\-Hydro\-Data@{add\-Hydro\-Data}!osea::ofreq::HydroManager@{osea\-::ofreq\-::\-Hydro\-Manager}}
+\subsubsection[{add\-Hydro\-Data}]{\setlength{\rightskip}{0pt plus 5cm}void Hydro\-Manager\-::add\-Hydro\-Data (
+\begin{DoxyParamCaption}
+\item[{{\bf ofreq\-::hydro\-Data}}]{data\-In = {\ttfamily {\bf hydro\-Data}()}}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_hydro_manager_a72f2a82ece47a66bdcaaf7934140d322}
+
+
+Adds a \hyperlink{classosea_1_1ofreq_1_1hydro_data}{hydro\-Data} object to the set of available data. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data\-In} & \hyperlink{classosea_1_1ofreq_1_1hydro_data}{hydro\-Data} object, passed by value. The \hyperlink{classosea_1_1ofreq_1_1hydro_data}{hydro\-Data} object that you want to add to the list of available data for this system. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 83 of file hydromanager.\-cpp.
+
+\hypertarget{classosea_1_1ofreq_1_1_hydro_manager_af0af755869433126a4190d3b4eb0aed7}{\index{osea\-::ofreq\-::\-Hydro\-Manager@{osea\-::ofreq\-::\-Hydro\-Manager}!calc\-Hydro\-Data@{calc\-Hydro\-Data}}
+\index{calc\-Hydro\-Data@{calc\-Hydro\-Data}!osea::ofreq::HydroManager@{osea\-::ofreq\-::\-Hydro\-Manager}}
+\subsubsection[{calc\-Hydro\-Data}]{\setlength{\rightskip}{0pt plus 5cm}void Hydro\-Manager\-::calc\-Hydro\-Data (
+\begin{DoxyParamCaption}
+\item[{double}]{wave\-Amp, }
+\item[{double}]{wave\-Freq}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_hydro_manager_af0af755869433126a4190d3b4eb0aed7}
+
+
+Calculates the final set of hydrodata. 
+
+Calculates the final set of hydrodata, after all interpolations for wave frequency, wave direction, and scaling for wave amplitude. The \hyperlink{classosea_1_1ofreq_1_1hydro_data}{hydro\-Data} is stored as a private variable. Individual data objects can be retrieved with the functions \hyperlink{classosea_1_1ofreq_1_1_hydro_manager_a29a5ee371b8a0a7107ec28df533850b9}{get\-Force\-Active()}, \hyperlink{classosea_1_1ofreq_1_1_hydro_manager_a72f1dbf1f13e0efc7926e41850127da9}{get\-Force\-React()}, and \hyperlink{classosea_1_1ofreq_1_1_hydro_manager_a0c2cf13137035da045963fee200704e6}{get\-Force\-Cross()}. 
+\begin{DoxyParams}{Parameters}
+{\em wave\-Amp} & Double, passed by value. The specific wave amplitude that you want the data for. Data will be scaled up to match the given wave amplitude. \\
+\hline
+{\em wave\-Freq} & Double, passed by value. The specific wave frequency that you want the data for. Data will be interpolated for the given wave frequency. \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See Also}
+Hydro\-Manager\-::set\-Wave\-Direction() 
+
+\hyperlink{classosea_1_1ofreq_1_1_hydro_manager_a29a5ee371b8a0a7107ec28df533850b9}{Hydro\-Manager\-::get\-Force\-Active()} 
+
+\hyperlink{classosea_1_1ofreq_1_1_hydro_manager_a72f1dbf1f13e0efc7926e41850127da9}{Hydro\-Manager\-::get\-Force\-React()} 
+
+\hyperlink{classosea_1_1ofreq_1_1_hydro_manager_a0c2cf13137035da045963fee200704e6}{Hydro\-Manager\-::get\-Force\-Cross()} 
+\end{DoxySeeAlso}
+
+
+Definition at line 101 of file hydromanager.\-cpp.
+
+\hypertarget{classosea_1_1ofreq_1_1_hydro_manager_a29a5ee371b8a0a7107ec28df533850b9}{\index{osea\-::ofreq\-::\-Hydro\-Manager@{osea\-::ofreq\-::\-Hydro\-Manager}!get\-Force\-Active@{get\-Force\-Active}}
+\index{get\-Force\-Active@{get\-Force\-Active}!osea::ofreq::HydroManager@{osea\-::ofreq\-::\-Hydro\-Manager}}
+\subsubsection[{get\-Force\-Active}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Force\-Active} Hydro\-Manager\-::get\-Force\-Active (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_hydro_manager_a29a5ee371b8a0a7107ec28df533850b9}
+
+
+Gets the force\-Active object associated the requested environmental data. 
+
+Retrieves a single force\-Active object based on specification of the following parameters\-: wave direction (wave direction set seperately), wave amplitude, and wave frequency. All interpolation and wave scaling is triggered through the function calc\-Hydro\-Data. \begin{DoxyReturn}{Returns}
+Returns a force\-Active object, specific to the environmental conditions you specified. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See Also}
+Hydro\-Manager\-::set\-Wave\-Direction() 
+
+\hyperlink{classosea_1_1ofreq_1_1_hydro_manager_af0af755869433126a4190d3b4eb0aed7}{Hydro\-Manager\-::calc\-Hydro\-Data()} 
+\end{DoxySeeAlso}
+
+
+Definition at line 235 of file hydromanager.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classosea_1_1ofreq_1_1_hydro_manager_a29a5ee371b8a0a7107ec28df533850b9_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classosea_1_1ofreq_1_1_hydro_manager_a0c2cf13137035da045963fee200704e6}{\index{osea\-::ofreq\-::\-Hydro\-Manager@{osea\-::ofreq\-::\-Hydro\-Manager}!get\-Force\-Cross@{get\-Force\-Cross}}
+\index{get\-Force\-Cross@{get\-Force\-Cross}!osea::ofreq::HydroManager@{osea\-::ofreq\-::\-Hydro\-Manager}}
+\subsubsection[{get\-Force\-Cross}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Force\-Cross} Hydro\-Manager\-::get\-Force\-Cross (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{linked\-Bod\-Name}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_hydro_manager_a0c2cf13137035da045963fee200704e6}
+
+
+Gets the force\-Cross object associated the requested environmental data. 
+
+Retrieves a single force\-Cross object based on specification of the following parameters\-: wave direction (wave direction set seperately), wave amplitude, and wave frequency. All interpolation and wave scaling is triggered through the function calc\-Hydro\-Data. 
+\begin{DoxyParams}{Parameters}
+{\em linked\-Bod\-Name} & String, passed by value. The name of the linked body that you want to retrieve the force\-Cross object for. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns a force\-Cross object, specific to the environmental conditions you specified. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See Also}
+Hydro\-Manager\-::set\-Wave\-Direction() 
+
+\hyperlink{classosea_1_1ofreq_1_1_hydro_manager_af0af755869433126a4190d3b4eb0aed7}{Hydro\-Manager\-::calc\-Hydro\-Data()} 
+\end{DoxySeeAlso}
+
+
+Definition at line 296 of file hydromanager.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classosea_1_1ofreq_1_1_hydro_manager_a0c2cf13137035da045963fee200704e6_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classosea_1_1ofreq_1_1_hydro_manager_a72f1dbf1f13e0efc7926e41850127da9}{\index{osea\-::ofreq\-::\-Hydro\-Manager@{osea\-::ofreq\-::\-Hydro\-Manager}!get\-Force\-React@{get\-Force\-React}}
+\index{get\-Force\-React@{get\-Force\-React}!osea::ofreq::HydroManager@{osea\-::ofreq\-::\-Hydro\-Manager}}
+\subsubsection[{get\-Force\-React}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Force\-React} Hydro\-Manager\-::get\-Force\-React (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_hydro_manager_a72f1dbf1f13e0efc7926e41850127da9}
+
+
+Gets the force\-React object associated the requested environmental data. 
+
+Retrieves a single force\-React object based on specification of the following parameters\-: wave direction (wave direction set seperately), wave amplitude, and wave frequency. All interpolation and wave scaling is triggered through the function calc\-Hydro\-Data. \begin{DoxyReturn}{Returns}
+Returns a force\-React object, specific to the environmental conditions you specified. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See Also}
+Hydro\-Manager\-::set\-Wave\-Direction() 
+
+\hyperlink{classosea_1_1ofreq_1_1_hydro_manager_af0af755869433126a4190d3b4eb0aed7}{Hydro\-Manager\-::calc\-Hydro\-Data()} 
+\end{DoxySeeAlso}
+
+
+Definition at line 255 of file hydromanager.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classosea_1_1ofreq_1_1_hydro_manager_a72f1dbf1f13e0efc7926e41850127da9_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classosea_1_1ofreq_1_1_hydro_manager_ad24395469371489c07901d7779b635f3}{\index{osea\-::ofreq\-::\-Hydro\-Manager@{osea\-::ofreq\-::\-Hydro\-Manager}!get\-Gravity@{get\-Gravity}}
+\index{get\-Gravity@{get\-Gravity}!osea::ofreq::HydroManager@{osea\-::ofreq\-::\-Hydro\-Manager}}
+\subsubsection[{get\-Gravity}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<$ double $>$ Hydro\-Manager\-::get\-Gravity (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_hydro_manager_ad24395469371489c07901d7779b635f3}
+
+
+Gets the gravity defined for this hydromanager set. 
+
+The gravity definition is a vector quantity to allow the possibility that gravity might change, depending on the definition of the coordinate system. It may seem odd, but ofreq is about the concept of flexiblity. And you never know. Some scientistic might want to research wave dynamics on Jupiter. So gravity was made flexible. \begin{DoxyReturn}{Returns}
+Vector, passed by value. The definition for gravity associated with this hydromanager. 
+\end{DoxyReturn}
+
+
+Definition at line 358 of file hydromanager.\-cpp.
+
+\hypertarget{classosea_1_1ofreq_1_1_hydro_manager_acd5feac035ac13f9f150a7339cfacde7}{\index{osea\-::ofreq\-::\-Hydro\-Manager@{osea\-::ofreq\-::\-Hydro\-Manager}!get\-Hydro\-Body\-Name@{get\-Hydro\-Body\-Name}}
+\index{get\-Hydro\-Body\-Name@{get\-Hydro\-Body\-Name}!osea::ofreq::HydroManager@{osea\-::ofreq\-::\-Hydro\-Manager}}
+\subsubsection[{get\-Hydro\-Body\-Name}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string Hydro\-Manager\-::get\-Hydro\-Body\-Name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_hydro_manager_acd5feac035ac13f9f150a7339cfacde7}
+
+
+Gets the name of the hydrobody associated with this data set. 
+
+\begin{DoxyReturn}{Returns}
+Returns a string, passed by value. The name of the hydrobody associated with this data set. 
+\end{DoxyReturn}
+
+
+Definition at line 89 of file hydromanager.\-cpp.
+
+\hypertarget{classosea_1_1ofreq_1_1_hydro_manager_a6bf3e81ee1d8d100301bfd4415e5b3a1}{\index{osea\-::ofreq\-::\-Hydro\-Manager@{osea\-::ofreq\-::\-Hydro\-Manager}!get\-Wave\-Dir@{get\-Wave\-Dir}}
+\index{get\-Wave\-Dir@{get\-Wave\-Dir}!osea::ofreq::HydroManager@{osea\-::ofreq\-::\-Hydro\-Manager}}
+\subsubsection[{get\-Wave\-Dir}]{\setlength{\rightskip}{0pt plus 5cm}double Hydro\-Manager\-::get\-Wave\-Dir (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_hydro_manager_a6bf3e81ee1d8d100301bfd4415e5b3a1}
+
+
+Gets the wave direction for the current set of analysis. 
+
+\hyperlink{classosea_1_1ofreq_1_1hydro_data}{hydro\-Data} gets retrieved for a specific set of environmental conditions. One of those conditions is the wave direction. This gets set separately from any other conditions because for each wave direction, there are usually several variations of wave amplitude and wave frequency. 
+\begin{DoxyParams}{Parameters}
+{\em dir\-In} & Double, passed by value. The wave direction for the current analysis. The wave direction is defined in the body coordinate system, in units of radians (rad). Zero rad corresponds to a direction pointing along the X-\/axis of the body. The angle rotates counter-\/clockwise. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 346 of file hydromanager.\-cpp.
+
+\hypertarget{classosea_1_1ofreq_1_1_hydro_manager_a5fdd485c0d320c7e779cc490e3201f73}{\index{osea\-::ofreq\-::\-Hydro\-Manager@{osea\-::ofreq\-::\-Hydro\-Manager}!list\-Hydro\-Data@{list\-Hydro\-Data}}
+\index{list\-Hydro\-Data@{list\-Hydro\-Data}!osea::ofreq::HydroManager@{osea\-::ofreq\-::\-Hydro\-Manager}}
+\subsubsection[{list\-Hydro\-Data}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<$ std\-::vector$<$ {\bf hydro\-Data} $>$ $>$ \& Hydro\-Manager\-::list\-Hydro\-Data (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_hydro_manager_a5fdd485c0d320c7e779cc490e3201f73}
+
+
+Returns a full list of the \hyperlink{classosea_1_1ofreq_1_1hydro_data}{hydro\-Data} available for this body. 
+
+List is organized by two indices. Outer index (rows) = Wave Amplitude Inner index (columns) = Wave Direction
+
+Each individual \hyperlink{classosea_1_1ofreq_1_1hydro_data}{hydro\-Data} object also contains data, organized by wave frequency. \begin{DoxyReturn}{Returns}
+Returns a vector of vectors or \hyperlink{classosea_1_1ofreq_1_1hydro_data}{hydro\-Data} objects, all passed by reference. 
+\end{DoxyReturn}
+
+
+Definition at line 53 of file hydromanager.\-cpp.
+
+\hypertarget{classosea_1_1ofreq_1_1_hydro_manager_a90358d92489be46f7102f577ec6f1a39}{\index{osea\-::ofreq\-::\-Hydro\-Manager@{osea\-::ofreq\-::\-Hydro\-Manager}!list\-Hydro\-Data@{list\-Hydro\-Data}}
+\index{list\-Hydro\-Data@{list\-Hydro\-Data}!osea::ofreq::HydroManager@{osea\-::ofreq\-::\-Hydro\-Manager}}
+\subsubsection[{list\-Hydro\-Data}]{\setlength{\rightskip}{0pt plus 5cm}{\bf hydro\-Data} \& Hydro\-Manager\-::list\-Hydro\-Data (
+\begin{DoxyParamCaption}
+\item[{int}]{amp\-Ind, }
+\item[{int}]{dir\-Ind}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_hydro_manager_a90358d92489be46f7102f577ec6f1a39}
+
+
+Returns a single item in the list of \hyperlink{classosea_1_1ofreq_1_1hydro_data}{hydro\-Data} available. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em amp\-Ind} & Integer, passed by value. The index of the wave amplitude that you want to retrieve. \\
+\hline
+{\em dir\-Ind} & Integer, passed by value. The index of the wave direction you want to retrieve. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns a \hyperlink{classosea_1_1ofreq_1_1hydro_data}{hydro\-Data} object, passed by reference 
+\end{DoxyReturn}
+
+
+Definition at line 59 of file hydromanager.\-cpp.
+
+\hypertarget{classosea_1_1ofreq_1_1_hydro_manager_aacd111b5be95018f7624f664fb599946}{\index{osea\-::ofreq\-::\-Hydro\-Manager@{osea\-::ofreq\-::\-Hydro\-Manager}!set\-Gravity@{set\-Gravity}}
+\index{set\-Gravity@{set\-Gravity}!osea::ofreq::HydroManager@{osea\-::ofreq\-::\-Hydro\-Manager}}
+\subsubsection[{set\-Gravity}]{\setlength{\rightskip}{0pt plus 5cm}void Hydro\-Manager\-::set\-Gravity (
+\begin{DoxyParamCaption}
+\item[{std\-::vector$<$ double $>$}]{grav\-In}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_hydro_manager_aacd111b5be95018f7624f664fb599946}
+
+
+Defines the gravity defined for this hydromanager set. 
+
+The gravity definition is a vector quantity to allow the possibility that gravity might change, depending on the definition of the coordinate system. It may seem odd, but ofreq is about the concept of flexiblity. And you never know. Some scientistic might want to research wave dynamics on Jupiter. So gravity was made flexible. 
+\begin{DoxyParams}{Parameters}
+{\em grav\-In} & Vector, passed by value. The definition for gravity associated with this hydromanager. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 352 of file hydromanager.\-cpp.
+
+\hypertarget{classosea_1_1ofreq_1_1_hydro_manager_a9c8b57356992e0426014f6e4765aab5a}{\index{osea\-::ofreq\-::\-Hydro\-Manager@{osea\-::ofreq\-::\-Hydro\-Manager}!set\-Hydro\-Body\-Name@{set\-Hydro\-Body\-Name}}
+\index{set\-Hydro\-Body\-Name@{set\-Hydro\-Body\-Name}!osea::ofreq::HydroManager@{osea\-::ofreq\-::\-Hydro\-Manager}}
+\subsubsection[{set\-Hydro\-Body\-Name}]{\setlength{\rightskip}{0pt plus 5cm}void Hydro\-Manager\-::set\-Hydro\-Body\-Name (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{name\-In}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_hydro_manager_a9c8b57356992e0426014f6e4765aab5a}
+
+
+Sets the name of the hydrobody associated with this data set. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name\-In} & String, passed by value. The name of the hydrobody associated with this data set. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 95 of file hydromanager.\-cpp.
+
+\hypertarget{classosea_1_1ofreq_1_1_hydro_manager_ae47c456833341ca95559eb7dd510f608}{\index{osea\-::ofreq\-::\-Hydro\-Manager@{osea\-::ofreq\-::\-Hydro\-Manager}!set\-Wave\-Dir@{set\-Wave\-Dir}}
+\index{set\-Wave\-Dir@{set\-Wave\-Dir}!osea::ofreq::HydroManager@{osea\-::ofreq\-::\-Hydro\-Manager}}
+\subsubsection[{set\-Wave\-Dir}]{\setlength{\rightskip}{0pt plus 5cm}void Hydro\-Manager\-::set\-Wave\-Dir (
+\begin{DoxyParamCaption}
+\item[{double}]{dir\-In}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_hydro_manager_ae47c456833341ca95559eb7dd510f608}
+
+
+Sets the wave direction for the current set of analysis. 
+
+\hyperlink{classosea_1_1ofreq_1_1hydro_data}{hydro\-Data} gets retrieved for a specific set of environmental conditions. One of those conditions is the wave direction. This gets set separately from any other conditions because for each wave direction, there are usually several variations of wave amplitude and wave frequency. 
+\begin{DoxyParams}{Parameters}
+{\em dir\-In} & Double, passed by value. The wave direction for the current analysis. The wave direction is defined in the body coordinate system, in units of radians (rad). Zero rad corresponds to a direction pointing along the X-\/axis of the body. The angle rotates counter-\/clockwise. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 337 of file hydromanager.\-cpp.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/home/\-Ship\-\_\-\-Design/\-Projects/\-D\-M\-S1305 Open\-S\-E\-A/master/200\-\_\-src/bin/ofreq/hydro\-\_\-data/\hyperlink{hydromanager_8h}{hydromanager.\-h}\item 
+/home/\-Ship\-\_\-\-Design/\-Projects/\-D\-M\-S1305 Open\-S\-E\-A/master/200\-\_\-src/bin/ofreq/hydro\-\_\-data/\hyperlink{hydromanager_8cpp}{hydromanager.\-cpp}\end{DoxyCompactItemize}

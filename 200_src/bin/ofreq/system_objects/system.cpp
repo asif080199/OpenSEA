@@ -815,6 +815,65 @@ void System::SearchActiveSeaModel()
 
 }
 
+//------------------------------------------Function Separator --------------------------------------------------------
+std::vector<ofreq::HydroManager> &System::listHydroManager()
+{
+    return plistHydroManager;
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+ofreq::HydroManager &System::listHydroManager(int index)
+{
+    return plistHydroManager[index];
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+ofreq::HydroManager &System::listHydroManager(std::string bodNameIn)
+{
+    bool matchFound;        //Checks if a match is found for the body name.
+    unsigned int i;
+
+    //Search through list of bodiex.
+    for (i = 0; i < plistHydroManager.size(); i++)
+    {
+        if (bodNameIn.compare(plistHydroManager[i].getHydroBodyName()) == 0)
+        {
+            matchFound = true;
+            break;
+        }
+    }
+
+    try {
+        if (!matchFound)
+            throw std::runtime_error("Hydrobody name not found.");
+
+        return plistHydroManager[i];
+    }
+    catch(std::exception &err)
+    {
+        logStd.Notify();
+        logErr.Write(string("Object:  System, Function:  listHydroManager()  \n") + err.what());
+    }
+    catch(...)
+    {
+        logStd.Notify();
+        logErr.Write(string("Object:  System, Function:  listHydroManager() \n Unknown error."));
+    }
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+void System::addHydroManager(ofreq::HydroManager HydroIn)
+{
+    plistHydroManager.push_back(HydroIn);
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+void System::addHydroManager()
+{
+    plistHydroManager.push_back(ofreq::HydroManager());
+}
+
+
 //==========================================Section Separator =========================================================
 //Signals
 

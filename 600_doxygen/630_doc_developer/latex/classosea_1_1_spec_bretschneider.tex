@@ -1,0 +1,236 @@
+\hypertarget{classosea_1_1_spec_bretschneider}{\section{osea\-:\-:Spec\-Bretschneider Class Reference}
+\label{classosea_1_1_spec_bretschneider}\index{osea\-::\-Spec\-Bretschneider@{osea\-::\-Spec\-Bretschneider}}
+}
+
+
+The \hyperlink{classosea_1_1_spec_bretschneider}{Spec\-Bretschneider} class. This defines a Bretschneider wave spectrum. Also called an I\-T\-T\-C wave spectrum. Assumes fully developed sea. The user defines two parameters\-: Significant wave height and mean period. The class allows definition of the mean period through one of three options\-: mean period, zero cross period, or peak period.  
+
+
+
+
+{\ttfamily \#include $<$specbretschneider.\-h$>$}
+
+
+
+Inheritance diagram for osea\-:\-:Spec\-Bretschneider\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classosea_1_1_spec_bretschneider__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classosea_1_1_spec_bretschneider_a6361773bb2883b20b0b9d48a281b47f9}{Spec\-Bretschneider} ()
+\begin{DoxyCompactList}\small\item\em The default constructor. Nothing happens here. \end{DoxyCompactList}\item 
+\hyperlink{classosea_1_1_spec_bretschneider_af574bc671ce50fb0d753551baffda77d}{$\sim$\-Spec\-Bretschneider} ()
+\begin{DoxyCompactList}\small\item\em The default destructor. Nothing happens here. \end{DoxyCompactList}\item 
+double \hyperlink{classosea_1_1_spec_bretschneider_ac8c105b8dab8eade862f4bb391dfc9f3}{get\-Spec\-Energy} (double freq)
+\begin{DoxyCompactList}\small\item\em Gets the spectral energy for the frequency requested. \end{DoxyCompactList}\item 
+void \hyperlink{classosea_1_1_spec_bretschneider_a387f42bbe729d409e8d5c07cdeee1a61}{set\-Sig\-Wave\-Height} (double height\-In)
+\begin{DoxyCompactList}\small\item\em Sets the significant wave height. \end{DoxyCompactList}\item 
+double \hyperlink{classosea_1_1_spec_bretschneider_a28fbea216061b8bca0798f674e69d0b9}{get\-Sig\-Wave\-Height} ()
+\begin{DoxyCompactList}\small\item\em Gets the significant wave height. \end{DoxyCompactList}\item 
+void \hyperlink{classosea_1_1_spec_bretschneider_afef8605abff743725c43ab30de5ed628}{set\-T\-Mean} (double val\-In)
+\begin{DoxyCompactList}\small\item\em Sets the mean period for the wave spectrum, based on an input mean wave period. \end{DoxyCompactList}\item 
+double \hyperlink{classosea_1_1_spec_bretschneider_a14174331cd9418e608c581119886977d}{get\-T\-Mean} ()
+\begin{DoxyCompactList}\small\item\em Gets the mean period for the wave spectrum. \end{DoxyCompactList}\item 
+void \hyperlink{classosea_1_1_spec_bretschneider_afbdfcfd1faee05cabcf18acb5879a501}{set\-T\-Peak} (double val\-In)
+\begin{DoxyCompactList}\small\item\em Sets the mean period of the wave spectrum, based on an input peak period. \end{DoxyCompactList}\item 
+void \hyperlink{classosea_1_1_spec_bretschneider_adb3c826a0e708197172593c33db7ddd5}{set\-T\-Zero} (double val\-In)
+\begin{DoxyCompactList}\small\item\em Sets the mean period of the wave spectrum, based on an input zero crossing period. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+The \hyperlink{classosea_1_1_spec_bretschneider}{Spec\-Bretschneider} class. This defines a Bretschneider wave spectrum. Also called an I\-T\-T\-C wave spectrum. Assumes fully developed sea. The user defines two parameters\-: Significant wave height and mean period. The class allows definition of the mean period through one of three options\-: mean period, zero cross period, or peak period. 
+
+Definition at line 67 of file specbretschneider.\-h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classosea_1_1_spec_bretschneider_a6361773bb2883b20b0b9d48a281b47f9}{\index{osea\-::\-Spec\-Bretschneider@{osea\-::\-Spec\-Bretschneider}!Spec\-Bretschneider@{Spec\-Bretschneider}}
+\index{Spec\-Bretschneider@{Spec\-Bretschneider}!osea::SpecBretschneider@{osea\-::\-Spec\-Bretschneider}}
+\subsubsection[{Spec\-Bretschneider}]{\setlength{\rightskip}{0pt plus 5cm}Spec\-Bretschneider\-::\-Spec\-Bretschneider (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1_spec_bretschneider_a6361773bb2883b20b0b9d48a281b47f9}
+
+
+The default constructor. Nothing happens here. 
+
+
+
+Definition at line 44 of file specbretschneider.\-cpp.
+
+\hypertarget{classosea_1_1_spec_bretschneider_af574bc671ce50fb0d753551baffda77d}{\index{osea\-::\-Spec\-Bretschneider@{osea\-::\-Spec\-Bretschneider}!$\sim$\-Spec\-Bretschneider@{$\sim$\-Spec\-Bretschneider}}
+\index{$\sim$\-Spec\-Bretschneider@{$\sim$\-Spec\-Bretschneider}!osea::SpecBretschneider@{osea\-::\-Spec\-Bretschneider}}
+\subsubsection[{$\sim$\-Spec\-Bretschneider}]{\setlength{\rightskip}{0pt plus 5cm}Spec\-Bretschneider\-::$\sim$\-Spec\-Bretschneider (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1_spec_bretschneider_af574bc671ce50fb0d753551baffda77d}
+
+
+The default destructor. Nothing happens here. 
+
+
+
+Definition at line 50 of file specbretschneider.\-cpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classosea_1_1_spec_bretschneider_a28fbea216061b8bca0798f674e69d0b9}{\index{osea\-::\-Spec\-Bretschneider@{osea\-::\-Spec\-Bretschneider}!get\-Sig\-Wave\-Height@{get\-Sig\-Wave\-Height}}
+\index{get\-Sig\-Wave\-Height@{get\-Sig\-Wave\-Height}!osea::SpecBretschneider@{osea\-::\-Spec\-Bretschneider}}
+\subsubsection[{get\-Sig\-Wave\-Height}]{\setlength{\rightskip}{0pt plus 5cm}double Spec\-Bretschneider\-::get\-Sig\-Wave\-Height (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1_spec_bretschneider_a28fbea216061b8bca0798f674e69d0b9}
+
+
+Gets the significant wave height. 
+
+\begin{DoxyReturn}{Returns}
+Double, passed by value. The signficant wave height, in units of m. 
+\end{DoxyReturn}
+
+
+Definition at line 79 of file specbretschneider.\-cpp.
+
+\hypertarget{classosea_1_1_spec_bretschneider_ac8c105b8dab8eade862f4bb391dfc9f3}{\index{osea\-::\-Spec\-Bretschneider@{osea\-::\-Spec\-Bretschneider}!get\-Spec\-Energy@{get\-Spec\-Energy}}
+\index{get\-Spec\-Energy@{get\-Spec\-Energy}!osea::SpecBretschneider@{osea\-::\-Spec\-Bretschneider}}
+\subsubsection[{get\-Spec\-Energy}]{\setlength{\rightskip}{0pt plus 5cm}double Spec\-Bretschneider\-::get\-Spec\-Energy (
+\begin{DoxyParamCaption}
+\item[{double}]{freq}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classosea_1_1_spec_bretschneider_ac8c105b8dab8eade862f4bb391dfc9f3}
+
+
+Gets the spectral energy for the frequency requested. 
+
+Returns the spectral energy in units of m$^\wedge$2/(rad/s). Returns value for the frequency requested. Calculates spectral energy based on the Bretschneider spectrum. 
+\begin{DoxyParams}{Parameters}
+{\em freq} & Double, passed by value. The wave frequency that you want the spectral energy for, specified in units of rad/s. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns a double, passed by value. Returned variable is the wave spectral energy for the requested wave frequency, in units of m$^\wedge$2/(rad/s). 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classosea_1_1_wave_spec_base_ab058570554fed4ad517e355f994bef62}{osea\-::\-Wave\-Spec\-Base}.
+
+
+
+Definition at line 56 of file specbretschneider.\-cpp.
+
+\hypertarget{classosea_1_1_spec_bretschneider_a14174331cd9418e608c581119886977d}{\index{osea\-::\-Spec\-Bretschneider@{osea\-::\-Spec\-Bretschneider}!get\-T\-Mean@{get\-T\-Mean}}
+\index{get\-T\-Mean@{get\-T\-Mean}!osea::SpecBretschneider@{osea\-::\-Spec\-Bretschneider}}
+\subsubsection[{get\-T\-Mean}]{\setlength{\rightskip}{0pt plus 5cm}double Spec\-Bretschneider\-::get\-T\-Mean (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1_spec_bretschneider_a14174331cd9418e608c581119886977d}
+
+
+Gets the mean period for the wave spectrum. 
+
+\begin{DoxyReturn}{Returns}
+Double, variable passed by value. The mean period for the wave spectrum, in units of s. 
+\end{DoxyReturn}
+
+
+Definition at line 91 of file specbretschneider.\-cpp.
+
+\hypertarget{classosea_1_1_spec_bretschneider_a387f42bbe729d409e8d5c07cdeee1a61}{\index{osea\-::\-Spec\-Bretschneider@{osea\-::\-Spec\-Bretschneider}!set\-Sig\-Wave\-Height@{set\-Sig\-Wave\-Height}}
+\index{set\-Sig\-Wave\-Height@{set\-Sig\-Wave\-Height}!osea::SpecBretschneider@{osea\-::\-Spec\-Bretschneider}}
+\subsubsection[{set\-Sig\-Wave\-Height}]{\setlength{\rightskip}{0pt plus 5cm}void Spec\-Bretschneider\-::set\-Sig\-Wave\-Height (
+\begin{DoxyParamCaption}
+\item[{double}]{height\-In}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1_spec_bretschneider_a387f42bbe729d409e8d5c07cdeee1a61}
+
+
+Sets the significant wave height. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em height\-In} & Double, passed by value. The significant wave height to set. In units of m. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 73 of file specbretschneider.\-cpp.
+
+\hypertarget{classosea_1_1_spec_bretschneider_afef8605abff743725c43ab30de5ed628}{\index{osea\-::\-Spec\-Bretschneider@{osea\-::\-Spec\-Bretschneider}!set\-T\-Mean@{set\-T\-Mean}}
+\index{set\-T\-Mean@{set\-T\-Mean}!osea::SpecBretschneider@{osea\-::\-Spec\-Bretschneider}}
+\subsubsection[{set\-T\-Mean}]{\setlength{\rightskip}{0pt plus 5cm}void Spec\-Bretschneider\-::set\-T\-Mean (
+\begin{DoxyParamCaption}
+\item[{double}]{val\-In}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1_spec_bretschneider_afef8605abff743725c43ab30de5ed628}
+
+
+Sets the mean period for the wave spectrum, based on an input mean wave period. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em val\-In} & Double, variable passed by value. The mean period for the wave spectrum, in units of s. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 85 of file specbretschneider.\-cpp.
+
+\hypertarget{classosea_1_1_spec_bretschneider_afbdfcfd1faee05cabcf18acb5879a501}{\index{osea\-::\-Spec\-Bretschneider@{osea\-::\-Spec\-Bretschneider}!set\-T\-Peak@{set\-T\-Peak}}
+\index{set\-T\-Peak@{set\-T\-Peak}!osea::SpecBretschneider@{osea\-::\-Spec\-Bretschneider}}
+\subsubsection[{set\-T\-Peak}]{\setlength{\rightskip}{0pt plus 5cm}void Spec\-Bretschneider\-::set\-T\-Peak (
+\begin{DoxyParamCaption}
+\item[{double}]{val\-In}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1_spec_bretschneider_afbdfcfd1faee05cabcf18acb5879a501}
+
+
+Sets the mean period of the wave spectrum, based on an input peak period. 
+
+The function converts peak wave period to mean wave period. It then stores the converted mean wave period. 
+\begin{DoxyParams}{Parameters}
+{\em val\-In} & The peak wave period that you want to use as input. Double, variable passed by value. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 97 of file specbretschneider.\-cpp.
+
+\hypertarget{classosea_1_1_spec_bretschneider_adb3c826a0e708197172593c33db7ddd5}{\index{osea\-::\-Spec\-Bretschneider@{osea\-::\-Spec\-Bretschneider}!set\-T\-Zero@{set\-T\-Zero}}
+\index{set\-T\-Zero@{set\-T\-Zero}!osea::SpecBretschneider@{osea\-::\-Spec\-Bretschneider}}
+\subsubsection[{set\-T\-Zero}]{\setlength{\rightskip}{0pt plus 5cm}void Spec\-Bretschneider\-::set\-T\-Zero (
+\begin{DoxyParamCaption}
+\item[{double}]{val\-In}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1_spec_bretschneider_adb3c826a0e708197172593c33db7ddd5}
+
+
+Sets the mean period of the wave spectrum, based on an input zero crossing period. 
+
+The function converts zero crossing wave period to mean wave period. It then stores the converted mean wave period. 
+\begin{DoxyParams}{Parameters}
+{\em val\-In} & The zero crossing wave period that you want to use as input. Double, variable passed by value. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 104 of file specbretschneider.\-cpp.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/home/\-Ship\-\_\-\-Design/\-Projects/\-D\-M\-S1305 Open\-S\-E\-A/master/200\-\_\-src/bin/ofreq/wave\-\_\-spectra/\hyperlink{specbretschneider_8h}{specbretschneider.\-h}\item 
+/home/\-Ship\-\_\-\-Design/\-Projects/\-D\-M\-S1305 Open\-S\-E\-A/master/200\-\_\-src/bin/ofreq/wave\-\_\-spectra/\hyperlink{specbretschneider_8cpp}{specbretschneider.\-cpp}\end{DoxyCompactItemize}

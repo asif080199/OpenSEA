@@ -1,0 +1,4 @@
+<map id="osea::dictHydroDamp" name="osea::dictHydroDamp">
+<area shape="rect" id="node2" href="$classosea_1_1dicthydro_react.html" title="{osea::dicthydroReact\n|# pParent\l# pHydroBod\l# pBodOn\l# pFreqInd\l# ORD\l# OBJECT_BODY\l# OBJECT_DATA\l# KEY_NAME\l# KEY_FREQUENCY\l# KEY_VALUE\l|+ dicthydroReact()\l+ dicthydroReact()\l# defineKey()\l# defineClass()\l}" alt="" coords="5,249,168,522"/>
+<area shape="rect" id="node4" href="$classosea_1_1_dictionary.html" title="{osea::Dictionary\n|# ptSystem\l|+ Dictionary()\l+ Dictionary()\l+ Dictionary()\l+ setObject()\l+ setSystem()\l# defineKey()\l# defineClass()\l# convertComplex()\l}" alt="" coords="11,6,161,199"/>
+</map>

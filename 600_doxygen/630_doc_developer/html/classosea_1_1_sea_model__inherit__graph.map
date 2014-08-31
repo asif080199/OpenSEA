@@ -1,0 +1,7 @@
+<map id="osea::SeaModel" name="osea::SeaModel">
+<area shape="rect" id="node5" href="$classosea_1_1_sea_model___dual_direction.html" title="The SeaModel_DuealDirection class creates the model for a full sea environment, two directions..." alt="" coords="5,667,227,813"/>
+<area shape="rect" id="node7" href="$classosea_1_1_sea_model___long_crest.html" title="The SeaModel_LongCrest class creates a single wave spectra that acts in only one direction. " alt="" coords="252,667,455,813"/>
+<area shape="rect" id="node9" href="$classosea_1_1_sea_model___single_direction.html" title="The SeaModel_SingleDirection class creates the model for a full sea environment. " alt="" coords="479,667,711,813"/>
+<area shape="rect" id="node11" href="$classosea_1_1_sea_model___uniform.html" title="The SeaModel_Uniform class creates the model for a full sea environment, independent of direction..." alt="" coords="735,667,920,813"/>
+<area shape="rect" id="node2" href="$classosea_1_1ofreq_1_1o_freq_core.html" title="The core oFreq class. All oFreq classes inherit from this class. " alt="" coords="387,6,560,183"/>
+</map>

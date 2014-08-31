@@ -7,7 +7,8 @@
 
 
 
-Inheritance diagram for osea\-:\-:ofreq\-:\-:System\-:\nopagebreak
+Inheritance diagram for osea\-:\-:ofreq\-:\-:System\-:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -46,7 +47,44 @@ std\-::vector$<$ \hyperlink{classosea_1_1ofreq_1_1_motion_model}{Motion\-Model} 
 \hyperlink{classosea_1_1ofreq_1_1_motion_model}{ofreq\-::\-Motion\-Model} \& \hyperlink{classosea_1_1ofreq_1_1_system_abe2ad405661178362ba0cef96a345002}{list\-Model} (unsigned int index)
 \begin{DoxyCompactList}\small\item\em Provides access to one item in the list of motion models. \end{DoxyCompactList}\item 
 \hyperlink{classosea_1_1ofreq_1_1_motion_model}{ofreq\-::\-Motion\-Model} \& \hyperlink{classosea_1_1ofreq_1_1_system_a65f7eaf3ac522f1dfb60d3f9a47d99ca}{list\-Model} (std\-::string model\-Name)
-\begin{DoxyCompactList}\small\item\em Provides access to one item in the list of motion models. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Provides access to one item in the list of motion models. \end{DoxyCompactList}\item 
+void \hyperlink{classosea_1_1ofreq_1_1_system_a96925f84df2a320ab753fa336c6dcec4}{add\-Sea\-Model} (\hyperlink{classosea_1_1_sea_model}{osea\-::\-Sea\-Model} model\-In)
+\begin{DoxyCompactList}\small\item\em Adds a sea model to the list of sea models. \end{DoxyCompactList}\item 
+void \hyperlink{classosea_1_1ofreq_1_1_system_a006e2c27e1c83a6681b5be43d27dafcc}{add\-Sea\-Model} (\hyperlink{classosea_1_1_sea_model___dual_direction}{osea\-::\-Sea\-Model\-\_\-\-Dual\-Direction} model\-In)
+\item 
+void \hyperlink{classosea_1_1ofreq_1_1_system_ae1faf08d5089ff3a93d0d6c7ae278e9b}{add\-Sea\-Model} (\hyperlink{classosea_1_1_sea_model___single_direction}{osea\-::\-Sea\-Model\-\_\-\-Single\-Direction} model\-In)
+\item 
+void \hyperlink{classosea_1_1ofreq_1_1_system_a1ed51b1f50866ddb72958a7bdfc7aa00}{add\-Sea\-Model} (\hyperlink{classosea_1_1_sea_model___long_crest}{osea\-::\-Sea\-Model\-\_\-\-Long\-Crest} model\-In)
+\item 
+void \hyperlink{classosea_1_1ofreq_1_1_system_a7f16f39333258c11e1d04ddb6713eb5a}{add\-Sea\-Model} (\hyperlink{classosea_1_1_sea_model___uniform}{osea\-::\-Sea\-Model\-\_\-\-Uniform} model\-In)
+\item 
+void \hyperlink{classosea_1_1ofreq_1_1_system_ac7e1366e40bc98c3198427d8cbe20470}{add\-Sea\-Model} ()
+\begin{DoxyCompactList}\small\item\em Adds a new blank entry in the list of \hyperlink{classosea_1_1_sea_model}{Sea\-Model}. Item added is always a \hyperlink{classosea_1_1_sea_model}{Sea\-Model} object. \end{DoxyCompactList}\item 
+void \hyperlink{classosea_1_1ofreq_1_1_system_af3935d7cabec21ec783958eff45ccac0}{add\-Wave\-Spec} (\hyperlink{classosea_1_1_wave_spec_base}{osea\-::\-Wave\-Spec\-Base} spec\-In)
+\begin{DoxyCompactList}\small\item\em Adds a wave spectrum object to the list of wave spectrums. \end{DoxyCompactList}\item 
+void \hyperlink{classosea_1_1ofreq_1_1_system_af0588f7d97a9655bdb8b63678ef1221e}{add\-Wave\-Spec} (\hyperlink{classosea_1_1_wave_spec}{osea\-::\-Wave\-Spec} spec\-In)
+\item 
+void \hyperlink{classosea_1_1ofreq_1_1_system_ab06d4748db31d3e3870aa772a6ae9a64}{add\-Wave\-Spec} (\hyperlink{classosea_1_1_spec_bretschneider}{osea\-::\-Spec\-Bretschneider} spec\-In)
+\item 
+void \hyperlink{classosea_1_1ofreq_1_1_system_af21d13c02036924ca85105e83fc53b73}{add\-Wave\-Spec} (\hyperlink{classosea_1_1_spec_j_o_n_s_w_a_p}{osea\-::\-Spec\-J\-O\-N\-S\-W\-A\-P} spec\-In)
+\item 
+void \hyperlink{classosea_1_1ofreq_1_1_system_adfef98a402da2c1ef56d7cb7a50b2461}{add\-Wave\-Spec} (\hyperlink{classosea_1_1_spec_p_m}{osea\-::\-Spec\-P\-M} spec\-In)
+\item 
+void \hyperlink{classosea_1_1ofreq_1_1_system_a7e134e538c03e599906a393fca749b08}{add\-Wave\-Spec} ()
+\begin{DoxyCompactList}\small\item\em Adds a new blank entry in the list of wave spectrum objects. Item added is always an object of class \hyperlink{classosea_1_1_wave_spec}{Wave\-Spec}. \end{DoxyCompactList}\item 
+void \hyperlink{classosea_1_1ofreq_1_1_system_aa6491aee03c8ecb67dea910f1c753bf5}{Search\-Active\-Sea\-Model} ()
+\begin{DoxyCompactList}\small\item\em Searches for the active sea model. \end{DoxyCompactList}\item 
+std\-::vector\\*
+$<$ \hyperlink{classosea_1_1ofreq_1_1_hydro_manager}{ofreq\-::\-Hydro\-Manager} $>$ \& \hyperlink{classosea_1_1ofreq_1_1_system_ac7d874084878cc52c017d1ec22d6ee2c}{list\-Hydro\-Manager} ()
+\begin{DoxyCompactList}\small\item\em Returns the vector of hydro systems. \end{DoxyCompactList}\item 
+\hyperlink{classosea_1_1ofreq_1_1_hydro_manager}{ofreq\-::\-Hydro\-Manager} \& \hyperlink{classosea_1_1ofreq_1_1_system_a04a47bdb383b302b7442cf1d0f6f831d}{list\-Hydro\-Manager} (int index)
+\begin{DoxyCompactList}\small\item\em Returns the a single item from the vector of hydro systems. \end{DoxyCompactList}\item 
+\hyperlink{classosea_1_1ofreq_1_1_hydro_manager}{ofreq\-::\-Hydro\-Manager} \& \hyperlink{classosea_1_1ofreq_1_1_system_ab3048e1b5ec6b5a6bd3b7aedd6cb256d}{list\-Hydro\-Manager} (std\-::string bod\-Name\-In)
+\begin{DoxyCompactList}\small\item\em Returns the a single item from the vector of hydro systems. \end{DoxyCompactList}\item 
+void \hyperlink{classosea_1_1ofreq_1_1_system_a17e435b7ecbb11045e6e38d82933f0f7}{add\-Hydro\-Manager} (\hyperlink{classosea_1_1ofreq_1_1_hydro_manager}{ofreq\-::\-Hydro\-Manager} Hydro\-In)
+\begin{DoxyCompactList}\small\item\em Adds a new \hyperlink{classosea_1_1ofreq_1_1_hydro_manager}{Hydro\-Manager} object to the list of \hyperlink{classosea_1_1ofreq_1_1_hydro_manager}{Hydro\-Manager} objects. \end{DoxyCompactList}\item 
+void \hyperlink{classosea_1_1ofreq_1_1_system_a5a41d0d8cbbc9d4fc5bc0a0ffebf279f}{add\-Hydro\-Manager} ()
+\begin{DoxyCompactList}\small\item\em Adds a new \hyperlink{classosea_1_1ofreq_1_1_hydro_manager}{Hydro\-Manager} object to the list of \hyperlink{classosea_1_1ofreq_1_1_hydro_manager}{Hydro\-Manager} objects. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Signals}
 \begin{DoxyCompactItemize}
 \item 
@@ -59,11 +97,11 @@ void \hyperlink{classosea_1_1ofreq_1_1_system_a0889e1e19fe1c0c52fd385e759e5ecc7}
 \item 
 virtual \hyperlink{classosea_1_1ofreq_1_1_system_a3be70bb338e3f062f821173fd15680d0}{$\sim$\-System} ()
 \item 
+void \hyperlink{classosea_1_1ofreq_1_1_system_abc29578672ec470d6c2e916164e129f4}{set\-Log\-Files} (std\-::string path\-In, bool append=false)
+\begin{DoxyCompactList}\small\item\em Creates the log files and prepares them to record a new o\-Freq session. \end{DoxyCompactList}\item 
 void \hyperlink{classosea_1_1ofreq_1_1_system_ac044fdc41aa436151bea0c81c8f70bc1}{set\-Wave\-Frequencies} (std\-::vector$<$ double $>$)
 \item 
 void \hyperlink{classosea_1_1ofreq_1_1_system_a246decc05b383e47fba6d42318cf64ef}{set\-Wave\-Directions} (std\-::vector$<$ double $>$)
-\item 
-void \hyperlink{classosea_1_1ofreq_1_1_system_abeb34bbe60c3f1490352695839b513f5}{set\-Spread\-Model} (std\-::string)
 \item 
 std\-::vector$<$ double $>$ \hyperlink{classosea_1_1ofreq_1_1_system_a18b18022b6468a41dfdbfc49c881b933}{get\-Wave\-Frequencies} ()
 \item 
@@ -112,14 +150,38 @@ std\-::vector$<$ \hyperlink{classosea_1_1ofreq_1_1_force_react}{Force\-React} $>
 std\-::vector$<$ \hyperlink{classosea_1_1ofreq_1_1_force_cross}{Force\-Cross} $>$ \& \hyperlink{classosea_1_1ofreq_1_1_system_aae7cb5596f9d3a44f0bc6fe58b58410a}{list\-Force\-Cross\-\_\-user} ()
 \begin{DoxyCompactList}\small\item\em Exposes the vector of force\-Cross\-\_\-user objects. Provides direct access to the vector. \end{DoxyCompactList}\item 
 \hyperlink{classosea_1_1ofreq_1_1_force_cross}{Force\-Cross} \& \hyperlink{classosea_1_1ofreq_1_1_system_adcde247d6fe68ee68a65f1a5f2dc8e13}{list\-Force\-Cross\-\_\-user} (unsigned int force\-Index)
-\begin{DoxyCompactList}\small\item\em Returns reference to the force\-Cross\-\_\-user object referenced by the index specified in the input. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Returns reference to the force\-Cross\-\_\-user object referenced by the index specified in the input. \end{DoxyCompactList}\item 
+std\-::vector$<$ \hyperlink{classosea_1_1_sea_model}{Sea\-Model} $\ast$ $>$ \& \hyperlink{classosea_1_1ofreq_1_1_system_a3ae6a8a84f6635bacd1a8c811cd709c6}{list\-Sea\-Model} ()
+\begin{DoxyCompactList}\small\item\em The list of sea models. \end{DoxyCompactList}\item 
+\hyperlink{classosea_1_1_sea_model}{osea\-::\-Sea\-Model} $\ast$ \hyperlink{classosea_1_1ofreq_1_1_system_ad29994c5b256abcae06eec70da100086}{list\-Sea\-Model\-Pt} (int index)
+\begin{DoxyCompactList}\small\item\em Returns a pointer to a specific object in the list of Sea Models. \end{DoxyCompactList}\item 
+\hyperlink{classosea_1_1_sea_model}{osea\-::\-Sea\-Model} \& \hyperlink{classosea_1_1ofreq_1_1_system_a7d1d8292a2de26fd7f741e8370da0507}{list\-Sea\-Model} (int index)
+\begin{DoxyCompactList}\small\item\em Returns a reference to a specific object in the list of Sea Models. \end{DoxyCompactList}\item 
+\hyperlink{classosea_1_1_sea_model}{osea\-::\-Sea\-Model} $\ast$ \hyperlink{classosea_1_1ofreq_1_1_system_a7a8d5ef39643f96b8808d3e82073535b}{list\-Sea\-Model\-Pt} (std\-::string Name\-In)
+\begin{DoxyCompactList}\small\item\em Returns a pointer to a specific object in the list of Sea Models. \end{DoxyCompactList}\item 
+\hyperlink{classosea_1_1_sea_model}{osea\-::\-Sea\-Model} \& \hyperlink{classosea_1_1ofreq_1_1_system_a793b3a7bf58831606964fc290be2e778}{list\-Sea\-Model} (std\-::string Name\-In)
+\begin{DoxyCompactList}\small\item\em Returns a reference to a specific object in the list of Sea Models. \end{DoxyCompactList}\item 
+std\-::vector$<$ \hyperlink{classosea_1_1_wave_spec_base}{Wave\-Spec\-Base} $\ast$ $>$ \& \hyperlink{classosea_1_1ofreq_1_1_system_a16f3bda6ea1b6f0d9644ad4a551996a2}{list\-Wave\-Spec} ()
+\begin{DoxyCompactList}\small\item\em The list of wave spectra. \end{DoxyCompactList}\item 
+\hyperlink{classosea_1_1_wave_spec_base}{osea\-::\-Wave\-Spec\-Base} $\ast$ \hyperlink{classosea_1_1ofreq_1_1_system_a98b580fc4f9ab6cb0a57cd0968b1b1b4}{list\-Wave\-Spec\-Pt} (int index)
+\begin{DoxyCompactList}\small\item\em Returns a pointer to a specific object in the list of wave spectra. \end{DoxyCompactList}\item 
+\hyperlink{classosea_1_1_wave_spec_base}{osea\-::\-Wave\-Spec\-Base} \& \hyperlink{classosea_1_1ofreq_1_1_system_a3b4f1f07971a0080a91882ccda00d80e}{list\-Wave\-Spec} (int index)
+\begin{DoxyCompactList}\small\item\em Returns a reference to a specific object in the list of wave spectra. \end{DoxyCompactList}\item 
+\hyperlink{classosea_1_1_wave_spec_base}{osea\-::\-Wave\-Spec\-Base} $\ast$ \hyperlink{classosea_1_1ofreq_1_1_system_a69ff714ce0499574382106e57e1c37fb}{list\-Wave\-Spec\-Pt} (std\-::string Name\-In)
+\begin{DoxyCompactList}\small\item\em Returns a pointer to a specific object in the list of wave spectra. \end{DoxyCompactList}\item 
+\hyperlink{classosea_1_1_wave_spec_base}{osea\-::\-Wave\-Spec\-Base} \& \hyperlink{classosea_1_1ofreq_1_1_system_a6632d95e9c6e0080ca862e493284225f}{list\-Wave\-Spec} (std\-::string Name\-In)
+\begin{DoxyCompactList}\small\item\em Returns a reference to a specific object in the list of wave spectra. \end{DoxyCompactList}\item 
+void \hyperlink{classosea_1_1ofreq_1_1_system_ac5f72e0953e4bec43eee1ac2ad88be72}{set\-Active\-Sea\-Model} (std\-::string Name\-In)
+\begin{DoxyCompactList}\small\item\em Sets the active \hyperlink{classosea_1_1_sea_model}{Sea\-Model} that gets used for the current run of o\-Freq. If the model with the matching name does not currently exist in the list of sea models, then the name is stored and assigned later. \end{DoxyCompactList}\item 
+\hyperlink{classosea_1_1_sea_model}{osea\-::\-Sea\-Model} \& \hyperlink{classosea_1_1ofreq_1_1_system_afbbf0c020566cc024fffb01ee3674c50}{ref\-Active\-Sea\-Model} ()
+\begin{DoxyCompactList}\small\item\em Reference to the active sea model used for the current run of o\-Freq. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Additional Inherited Members}
 
 
 \subsection{Detailed Description}
 This class holds data for the system object. The system object controls the overall behavior of the program. It also decides which analysis type to run\-: motion or resonant frequency. The system object controls the current wave environment settings. 
 
-Definition at line 98 of file system.\-h.
+Definition at line 114 of file system.\-h.
 
 
 
@@ -133,7 +195,7 @@ Definition at line 98 of file system.\-h.
 )}}\label{classosea_1_1ofreq_1_1_system_ae317936c9bcf1374d61745572e0f2f8a}
 The default constructor. 
 
-Definition at line 42 of file system.\-cpp.
+Definition at line 43 of file system.\-cpp.
 
 \hypertarget{classosea_1_1ofreq_1_1_system_a3be70bb338e3f062f821173fd15680d0}{\index{osea\-::ofreq\-::\-System@{osea\-::ofreq\-::\-System}!$\sim$\-System@{$\sim$\-System}}
 \index{$\sim$\-System@{$\sim$\-System}!osea::ofreq::System@{osea\-::ofreq\-::\-System}}
@@ -144,7 +206,7 @@ Definition at line 42 of file system.\-cpp.
 )\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classosea_1_1ofreq_1_1_system_a3be70bb338e3f062f821173fd15680d0}
 The default destructor, clears any dynamic memory. 
 
-Definition at line 49 of file system.\-cpp.
+Definition at line 53 of file system.\-cpp.
 
 
 
@@ -170,18 +232,7 @@ Adds another \hyperlink{classosea_1_1ofreq_1_1_body}{Body} object to the list of
 \end{DoxySeeAlso}
 
 
-Definition at line 336 of file system.\-cpp.
-
-
-
-Here is the call graph for this function\-:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{classosea_1_1ofreq_1_1_system_a0e146c46e245b3222a77fbcf93901630_cgraph}
-\end{center}
-\end{figure}
-
+Definition at line 512 of file system.\-cpp.
 
 \hypertarget{classosea_1_1ofreq_1_1_system_a31949bbe2fceb1df4ba99f9c9c9465cd}{\index{osea\-::ofreq\-::\-System@{osea\-::ofreq\-::\-System}!add\-Body@{add\-Body}}
 \index{add\-Body@{add\-Body}!osea::ofreq::System@{osea\-::ofreq\-::\-System}}
@@ -199,18 +250,7 @@ Adds another \hyperlink{classosea_1_1ofreq_1_1_body}{Body} object to the list of
 \end{DoxySeeAlso}
 
 
-Definition at line 345 of file system.\-cpp.
-
-
-
-Here is the call graph for this function\-:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{classosea_1_1ofreq_1_1_system_a31949bbe2fceb1df4ba99f9c9c9465cd_cgraph}
-\end{center}
-\end{figure}
-
+Definition at line 521 of file system.\-cpp.
 
 \hypertarget{classosea_1_1ofreq_1_1_system_a66aaf1fda6d136711c53b0196fd2a50f}{\index{osea\-::ofreq\-::\-System@{osea\-::ofreq\-::\-System}!add\-Force\-Active\-\_\-user@{add\-Force\-Active\-\_\-user}}
 \index{add\-Force\-Active\-\_\-user@{add\-Force\-Active\-\_\-user}!osea::ofreq::System@{osea\-::ofreq\-::\-System}}
@@ -233,7 +273,7 @@ Adds another \hyperlink{classosea_1_1ofreq_1_1_force_active}{Force\-Active} obje
 \end{DoxySeeAlso}
 
 
-Definition at line 366 of file system.\-cpp.
+Definition at line 542 of file system.\-cpp.
 
 \hypertarget{classosea_1_1ofreq_1_1_system_ad6cb91afdaca6870cafda01933fa85ea}{\index{osea\-::ofreq\-::\-System@{osea\-::ofreq\-::\-System}!add\-Force\-Active\-\_\-user@{add\-Force\-Active\-\_\-user}}
 \index{add\-Force\-Active\-\_\-user@{add\-Force\-Active\-\_\-user}!osea::ofreq::System@{osea\-::ofreq\-::\-System}}
@@ -251,7 +291,7 @@ Adds another \hyperlink{classosea_1_1ofreq_1_1_force_active}{Force\-Active} Obje
 \end{DoxySeeAlso}
 
 
-Definition at line 372 of file system.\-cpp.
+Definition at line 548 of file system.\-cpp.
 
 \hypertarget{classosea_1_1ofreq_1_1_system_afa58e77f961286c082e18193aeb14fc7}{\index{osea\-::ofreq\-::\-System@{osea\-::ofreq\-::\-System}!add\-Force\-Cross\-\_\-user@{add\-Force\-Cross\-\_\-user}}
 \index{add\-Force\-Cross\-\_\-user@{add\-Force\-Cross\-\_\-user}!osea::ofreq::System@{osea\-::ofreq\-::\-System}}
@@ -274,7 +314,7 @@ Adds another \hyperlink{classosea_1_1ofreq_1_1_force_cross}{Force\-Cross} object
 \end{DoxySeeAlso}
 
 
-Definition at line 390 of file system.\-cpp.
+Definition at line 566 of file system.\-cpp.
 
 \hypertarget{classosea_1_1ofreq_1_1_system_abc3ad01f3fb22863565a8643202347f4}{\index{osea\-::ofreq\-::\-System@{osea\-::ofreq\-::\-System}!add\-Force\-Cross\-\_\-user@{add\-Force\-Cross\-\_\-user}}
 \index{add\-Force\-Cross\-\_\-user@{add\-Force\-Cross\-\_\-user}!osea::ofreq::System@{osea\-::ofreq\-::\-System}}
@@ -292,7 +332,7 @@ Adds another \hyperlink{classosea_1_1ofreq_1_1_force_cross}{Force\-Cross} Object
 \end{DoxySeeAlso}
 
 
-Definition at line 396 of file system.\-cpp.
+Definition at line 572 of file system.\-cpp.
 
 \hypertarget{classosea_1_1ofreq_1_1_system_aa51930622fa8340b03e6905b23358982}{\index{osea\-::ofreq\-::\-System@{osea\-::ofreq\-::\-System}!add\-Force\-React\-\_\-user@{add\-Force\-React\-\_\-user}}
 \index{add\-Force\-React\-\_\-user@{add\-Force\-React\-\_\-user}!osea::ofreq::System@{osea\-::ofreq\-::\-System}}
@@ -315,7 +355,7 @@ Adds another \hyperlink{classosea_1_1ofreq_1_1_force_react}{Force\-React} object
 \end{DoxySeeAlso}
 
 
-Definition at line 378 of file system.\-cpp.
+Definition at line 554 of file system.\-cpp.
 
 \hypertarget{classosea_1_1ofreq_1_1_system_aef2d7a3af23839f8c104058f2e4e11e2}{\index{osea\-::ofreq\-::\-System@{osea\-::ofreq\-::\-System}!add\-Force\-React\-\_\-user@{add\-Force\-React\-\_\-user}}
 \index{add\-Force\-React\-\_\-user@{add\-Force\-React\-\_\-user}!osea::ofreq::System@{osea\-::ofreq\-::\-System}}
@@ -333,7 +373,42 @@ Adds another \hyperlink{classosea_1_1ofreq_1_1_force_react}{Force\-React} Object
 \end{DoxySeeAlso}
 
 
-Definition at line 384 of file system.\-cpp.
+Definition at line 560 of file system.\-cpp.
+
+\hypertarget{classosea_1_1ofreq_1_1_system_a17e435b7ecbb11045e6e38d82933f0f7}{\index{osea\-::ofreq\-::\-System@{osea\-::ofreq\-::\-System}!add\-Hydro\-Manager@{add\-Hydro\-Manager}}
+\index{add\-Hydro\-Manager@{add\-Hydro\-Manager}!osea::ofreq::System@{osea\-::ofreq\-::\-System}}
+\subsubsection[{add\-Hydro\-Manager}]{\setlength{\rightskip}{0pt plus 5cm}void System\-::add\-Hydro\-Manager (
+\begin{DoxyParamCaption}
+\item[{{\bf ofreq\-::\-Hydro\-Manager}}]{Hydro\-In}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{classosea_1_1ofreq_1_1_system_a17e435b7ecbb11045e6e38d82933f0f7}
+
+
+Adds a new \hyperlink{classosea_1_1ofreq_1_1_hydro_manager}{Hydro\-Manager} object to the list of \hyperlink{classosea_1_1ofreq_1_1_hydro_manager}{Hydro\-Manager} objects. 
+
+New object is defined by the Hydro\-In object passed to the function. 
+\begin{DoxyParams}{Parameters}
+{\em Hydro\-In} & \hyperlink{classosea_1_1ofreq_1_1_hydro_manager}{Hydro\-Manager} object, variable passed by value. The \hyperlink{classosea_1_1ofreq_1_1_hydro_manager}{Hydro\-Manager} object that you want to add to the list of hydro objects. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 865 of file system.\-cpp.
+
+\hypertarget{classosea_1_1ofreq_1_1_system_a5a41d0d8cbbc9d4fc5bc0a0ffebf279f}{\index{osea\-::ofreq\-::\-System@{osea\-::ofreq\-::\-System}!add\-Hydro\-Manager@{add\-Hydro\-Manager}}
+\index{add\-Hydro\-Manager@{add\-Hydro\-Manager}!osea::ofreq::System@{osea\-::ofreq\-::\-System}}
+\subsubsection[{add\-Hydro\-Manager}]{\setlength{\rightskip}{0pt plus 5cm}void System\-::add\-Hydro\-Manager (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{classosea_1_1ofreq_1_1_system_a5a41d0d8cbbc9d4fc5bc0a0ffebf279f}
+
+
+Adds a new \hyperlink{classosea_1_1ofreq_1_1_hydro_manager}{Hydro\-Manager} object to the list of \hyperlink{classosea_1_1ofreq_1_1_hydro_manager}{Hydro\-Manager} objects. 
+
+A completely new object is created and added to the list. 
+
+Definition at line 871 of file system.\-cpp.
 
 \hypertarget{classosea_1_1ofreq_1_1_system_a439bada214bf663084c15939a1793e02}{\index{osea\-::ofreq\-::\-System@{osea\-::ofreq\-::\-System}!add\-Output@{add\-Output}}
 \index{add\-Output@{add\-Output}!osea::ofreq::System@{osea\-::ofreq\-::\-System}}
@@ -356,7 +431,7 @@ Adds another \hyperlink{classosea_1_1ofreq_1_1_outputs_body}{Outputs\-Body} obje
 \end{DoxySeeAlso}
 
 
-Definition at line 354 of file system.\-cpp.
+Definition at line 530 of file system.\-cpp.
 
 \hypertarget{classosea_1_1ofreq_1_1_system_a4f84d2819d8a095818cb08bc84fa92f9}{\index{osea\-::ofreq\-::\-System@{osea\-::ofreq\-::\-System}!add\-Output@{add\-Output}}
 \index{add\-Output@{add\-Output}!osea::ofreq::System@{osea\-::ofreq\-::\-System}}
@@ -374,7 +449,237 @@ Adds another \hyperlink{classosea_1_1ofreq_1_1_outputs_body}{Outputs\-Body} obje
 \end{DoxySeeAlso}
 
 
-Definition at line 360 of file system.\-cpp.
+Definition at line 536 of file system.\-cpp.
+
+\hypertarget{classosea_1_1ofreq_1_1_system_a96925f84df2a320ab753fa336c6dcec4}{\index{osea\-::ofreq\-::\-System@{osea\-::ofreq\-::\-System}!add\-Sea\-Model@{add\-Sea\-Model}}
+\index{add\-Sea\-Model@{add\-Sea\-Model}!osea::ofreq::System@{osea\-::ofreq\-::\-System}}
+\subsubsection[{add\-Sea\-Model}]{\setlength{\rightskip}{0pt plus 5cm}void System\-::add\-Sea\-Model (
+\begin{DoxyParamCaption}
+\item[{{\bf osea\-::\-Sea\-Model}}]{model\-In}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{classosea_1_1ofreq_1_1_system_a96925f84df2a320ab753fa336c6dcec4}
+
+
+Adds a sea model to the list of sea models. 
+
+Adds any \hyperlink{classosea_1_1_sea_model}{Sea\-Model} object to the list of sea models. This can be an object of class \hyperlink{classosea_1_1_sea_model}{Sea\-Model}, or any class that inherits from \hyperlink{classosea_1_1_sea_model}{Sea\-Model}. 
+\begin{DoxyParams}{Parameters}
+{\em model\-In} & \hyperlink{classosea_1_1_sea_model}{Sea\-Model} object, or any class that inherits from \hyperlink{classosea_1_1_sea_model}{Sea\-Model}. Object passed by value. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 648 of file system.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classosea_1_1ofreq_1_1_system_a96925f84df2a320ab753fa336c6dcec4_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classosea_1_1ofreq_1_1_system_a006e2c27e1c83a6681b5be43d27dafcc}{\index{osea\-::ofreq\-::\-System@{osea\-::ofreq\-::\-System}!add\-Sea\-Model@{add\-Sea\-Model}}
+\index{add\-Sea\-Model@{add\-Sea\-Model}!osea::ofreq::System@{osea\-::ofreq\-::\-System}}
+\subsubsection[{add\-Sea\-Model}]{\setlength{\rightskip}{0pt plus 5cm}void System\-::add\-Sea\-Model (
+\begin{DoxyParamCaption}
+\item[{{\bf osea\-::\-Sea\-Model\-\_\-\-Dual\-Direction}}]{model\-In}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{classosea_1_1ofreq_1_1_system_a006e2c27e1c83a6681b5be43d27dafcc}
+
+
+Definition at line 660 of file system.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classosea_1_1ofreq_1_1_system_a006e2c27e1c83a6681b5be43d27dafcc_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classosea_1_1ofreq_1_1_system_ae1faf08d5089ff3a93d0d6c7ae278e9b}{\index{osea\-::ofreq\-::\-System@{osea\-::ofreq\-::\-System}!add\-Sea\-Model@{add\-Sea\-Model}}
+\index{add\-Sea\-Model@{add\-Sea\-Model}!osea::ofreq::System@{osea\-::ofreq\-::\-System}}
+\subsubsection[{add\-Sea\-Model}]{\setlength{\rightskip}{0pt plus 5cm}void System\-::add\-Sea\-Model (
+\begin{DoxyParamCaption}
+\item[{{\bf osea\-::\-Sea\-Model\-\_\-\-Single\-Direction}}]{model\-In}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{classosea_1_1ofreq_1_1_system_ae1faf08d5089ff3a93d0d6c7ae278e9b}
+
+
+Definition at line 672 of file system.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classosea_1_1ofreq_1_1_system_ae1faf08d5089ff3a93d0d6c7ae278e9b_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classosea_1_1ofreq_1_1_system_a1ed51b1f50866ddb72958a7bdfc7aa00}{\index{osea\-::ofreq\-::\-System@{osea\-::ofreq\-::\-System}!add\-Sea\-Model@{add\-Sea\-Model}}
+\index{add\-Sea\-Model@{add\-Sea\-Model}!osea::ofreq::System@{osea\-::ofreq\-::\-System}}
+\subsubsection[{add\-Sea\-Model}]{\setlength{\rightskip}{0pt plus 5cm}void System\-::add\-Sea\-Model (
+\begin{DoxyParamCaption}
+\item[{{\bf osea\-::\-Sea\-Model\-\_\-\-Long\-Crest}}]{model\-In}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{classosea_1_1ofreq_1_1_system_a1ed51b1f50866ddb72958a7bdfc7aa00}
+
+
+Definition at line 684 of file system.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classosea_1_1ofreq_1_1_system_a1ed51b1f50866ddb72958a7bdfc7aa00_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classosea_1_1ofreq_1_1_system_a7f16f39333258c11e1d04ddb6713eb5a}{\index{osea\-::ofreq\-::\-System@{osea\-::ofreq\-::\-System}!add\-Sea\-Model@{add\-Sea\-Model}}
+\index{add\-Sea\-Model@{add\-Sea\-Model}!osea::ofreq::System@{osea\-::ofreq\-::\-System}}
+\subsubsection[{add\-Sea\-Model}]{\setlength{\rightskip}{0pt plus 5cm}void System\-::add\-Sea\-Model (
+\begin{DoxyParamCaption}
+\item[{{\bf osea\-::\-Sea\-Model\-\_\-\-Uniform}}]{model\-In}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{classosea_1_1ofreq_1_1_system_a7f16f39333258c11e1d04ddb6713eb5a}
+
+
+Definition at line 696 of file system.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classosea_1_1ofreq_1_1_system_a7f16f39333258c11e1d04ddb6713eb5a_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classosea_1_1ofreq_1_1_system_ac7e1366e40bc98c3198427d8cbe20470}{\index{osea\-::ofreq\-::\-System@{osea\-::ofreq\-::\-System}!add\-Sea\-Model@{add\-Sea\-Model}}
+\index{add\-Sea\-Model@{add\-Sea\-Model}!osea::ofreq::System@{osea\-::ofreq\-::\-System}}
+\subsubsection[{add\-Sea\-Model}]{\setlength{\rightskip}{0pt plus 5cm}void System\-::add\-Sea\-Model (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{classosea_1_1ofreq_1_1_system_ac7e1366e40bc98c3198427d8cbe20470}
+
+
+Adds a new blank entry in the list of \hyperlink{classosea_1_1_sea_model}{Sea\-Model}. Item added is always a \hyperlink{classosea_1_1_sea_model}{Sea\-Model} object. 
+
+
+
+Definition at line 708 of file system.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classosea_1_1ofreq_1_1_system_ac7e1366e40bc98c3198427d8cbe20470_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classosea_1_1ofreq_1_1_system_af3935d7cabec21ec783958eff45ccac0}{\index{osea\-::ofreq\-::\-System@{osea\-::ofreq\-::\-System}!add\-Wave\-Spec@{add\-Wave\-Spec}}
+\index{add\-Wave\-Spec@{add\-Wave\-Spec}!osea::ofreq::System@{osea\-::ofreq\-::\-System}}
+\subsubsection[{add\-Wave\-Spec}]{\setlength{\rightskip}{0pt plus 5cm}void System\-::add\-Wave\-Spec (
+\begin{DoxyParamCaption}
+\item[{{\bf osea\-::\-Wave\-Spec\-Base}}]{spec\-In}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{classosea_1_1ofreq_1_1_system_af3935d7cabec21ec783958eff45ccac0}
+
+
+Adds a wave spectrum object to the list of wave spectrums. 
+
+Added object can be of the class \hyperlink{classosea_1_1_wave_spec_base}{Wave\-Spec\-Base}, or any class that inherits from \hyperlink{classosea_1_1_wave_spec_base}{Wave\-Spec\-Base}. 
+\begin{DoxyParams}{Parameters}
+{\em spec\-In} & \hyperlink{classosea_1_1_wave_spec_base}{Wave\-Spec\-Base} object, or any class that inherits from \hyperlink{classosea_1_1_wave_spec_base}{Wave\-Spec\-Base}. Object passed by value. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 720 of file system.\-cpp.
+
+\hypertarget{classosea_1_1ofreq_1_1_system_af0588f7d97a9655bdb8b63678ef1221e}{\index{osea\-::ofreq\-::\-System@{osea\-::ofreq\-::\-System}!add\-Wave\-Spec@{add\-Wave\-Spec}}
+\index{add\-Wave\-Spec@{add\-Wave\-Spec}!osea::ofreq::System@{osea\-::ofreq\-::\-System}}
+\subsubsection[{add\-Wave\-Spec}]{\setlength{\rightskip}{0pt plus 5cm}void System\-::add\-Wave\-Spec (
+\begin{DoxyParamCaption}
+\item[{{\bf osea\-::\-Wave\-Spec}}]{spec\-In}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{classosea_1_1ofreq_1_1_system_af0588f7d97a9655bdb8b63678ef1221e}
+
+
+Definition at line 729 of file system.\-cpp.
+
+\hypertarget{classosea_1_1ofreq_1_1_system_ab06d4748db31d3e3870aa772a6ae9a64}{\index{osea\-::ofreq\-::\-System@{osea\-::ofreq\-::\-System}!add\-Wave\-Spec@{add\-Wave\-Spec}}
+\index{add\-Wave\-Spec@{add\-Wave\-Spec}!osea::ofreq::System@{osea\-::ofreq\-::\-System}}
+\subsubsection[{add\-Wave\-Spec}]{\setlength{\rightskip}{0pt plus 5cm}void System\-::add\-Wave\-Spec (
+\begin{DoxyParamCaption}
+\item[{{\bf osea\-::\-Spec\-Bretschneider}}]{spec\-In}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{classosea_1_1ofreq_1_1_system_ab06d4748db31d3e3870aa772a6ae9a64}
+
+
+Definition at line 738 of file system.\-cpp.
+
+\hypertarget{classosea_1_1ofreq_1_1_system_af21d13c02036924ca85105e83fc53b73}{\index{osea\-::ofreq\-::\-System@{osea\-::ofreq\-::\-System}!add\-Wave\-Spec@{add\-Wave\-Spec}}
+\index{add\-Wave\-Spec@{add\-Wave\-Spec}!osea::ofreq::System@{osea\-::ofreq\-::\-System}}
+\subsubsection[{add\-Wave\-Spec}]{\setlength{\rightskip}{0pt plus 5cm}void System\-::add\-Wave\-Spec (
+\begin{DoxyParamCaption}
+\item[{{\bf osea\-::\-Spec\-J\-O\-N\-S\-W\-A\-P}}]{spec\-In}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{classosea_1_1ofreq_1_1_system_af21d13c02036924ca85105e83fc53b73}
+
+
+Definition at line 747 of file system.\-cpp.
+
+\hypertarget{classosea_1_1ofreq_1_1_system_adfef98a402da2c1ef56d7cb7a50b2461}{\index{osea\-::ofreq\-::\-System@{osea\-::ofreq\-::\-System}!add\-Wave\-Spec@{add\-Wave\-Spec}}
+\index{add\-Wave\-Spec@{add\-Wave\-Spec}!osea::ofreq::System@{osea\-::ofreq\-::\-System}}
+\subsubsection[{add\-Wave\-Spec}]{\setlength{\rightskip}{0pt plus 5cm}void System\-::add\-Wave\-Spec (
+\begin{DoxyParamCaption}
+\item[{{\bf osea\-::\-Spec\-P\-M}}]{spec\-In}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{classosea_1_1ofreq_1_1_system_adfef98a402da2c1ef56d7cb7a50b2461}
+
+
+Definition at line 756 of file system.\-cpp.
+
+\hypertarget{classosea_1_1ofreq_1_1_system_a7e134e538c03e599906a393fca749b08}{\index{osea\-::ofreq\-::\-System@{osea\-::ofreq\-::\-System}!add\-Wave\-Spec@{add\-Wave\-Spec}}
+\index{add\-Wave\-Spec@{add\-Wave\-Spec}!osea::ofreq::System@{osea\-::ofreq\-::\-System}}
+\subsubsection[{add\-Wave\-Spec}]{\setlength{\rightskip}{0pt plus 5cm}void System\-::add\-Wave\-Spec (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{classosea_1_1ofreq_1_1_system_a7e134e538c03e599906a393fca749b08}
+
+
+Adds a new blank entry in the list of wave spectrum objects. Item added is always an object of class \hyperlink{classosea_1_1_wave_spec}{Wave\-Spec}. 
+
+
+
+Definition at line 765 of file system.\-cpp.
 
 \hypertarget{classosea_1_1ofreq_1_1_system_ac2c9763916fdfe6a7858c0efa87504c2}{\index{osea\-::ofreq\-::\-System@{osea\-::ofreq\-::\-System}!clear\-Force@{clear\-Force}}
 \index{clear\-Force@{clear\-Force}!osea::ofreq::System@{osea\-::ofreq\-::\-System}}
@@ -394,7 +699,7 @@ Clears the vector of force objects for the specified force type. This is useful 
 \end{DoxyParams}
 
 
-Definition at line 162 of file system.\-cpp.
+Definition at line 206 of file system.\-cpp.
 
 \hypertarget{classosea_1_1ofreq_1_1_system_ac4dec1ad6e8745d87f18dfb91bbd8f6b}{\index{osea\-::ofreq\-::\-System@{osea\-::ofreq\-::\-System}!get\-Cur\-Freq@{get\-Cur\-Freq}}
 \index{get\-Cur\-Freq@{get\-Cur\-Freq}!osea::ofreq::System@{osea\-::ofreq\-::\-System}}
@@ -412,7 +717,7 @@ Double. Returns the current wave frequency. Actual value of the wave frequency. 
 \end{DoxyReturn}
 
 
-Definition at line 132 of file system.\-cpp.
+Definition at line 176 of file system.\-cpp.
 
 \hypertarget{classosea_1_1ofreq_1_1_system_ae348a554ad912c084343e96c3a7b8647}{\index{osea\-::ofreq\-::\-System@{osea\-::ofreq\-::\-System}!get\-Cur\-Freq\-Ind@{get\-Cur\-Freq\-Ind}}
 \index{get\-Cur\-Freq\-Ind@{get\-Cur\-Freq\-Ind}!osea::ofreq::System@{osea\-::ofreq\-::\-System}}
@@ -430,7 +735,7 @@ Integer. Returns the current wave frequency index. Variable passed by value.
 \end{DoxyReturn}
 
 
-Definition at line 120 of file system.\-cpp.
+Definition at line 164 of file system.\-cpp.
 
 \hypertarget{classosea_1_1ofreq_1_1_system_aea8c3cb08e84051a4325c06c5a7185fa}{\index{osea\-::ofreq\-::\-System@{osea\-::ofreq\-::\-System}!get\-Cur\-Wave\-Dir@{get\-Cur\-Wave\-Dir}}
 \index{get\-Cur\-Wave\-Dir@{get\-Cur\-Wave\-Dir}!osea::ofreq::System@{osea\-::ofreq\-::\-System}}
@@ -448,7 +753,7 @@ Double. Returns the current wave direction. Actual value of wave direction angle
 \end{DoxyReturn}
 
 
-Definition at line 126 of file system.\-cpp.
+Definition at line 170 of file system.\-cpp.
 
 \hypertarget{classosea_1_1ofreq_1_1_system_aff94e0e384f1c55cccfa0f0238e445b8}{\index{osea\-::ofreq\-::\-System@{osea\-::ofreq\-::\-System}!get\-Cur\-Wave\-Dir\-Ind@{get\-Cur\-Wave\-Dir\-Ind}}
 \index{get\-Cur\-Wave\-Dir\-Ind@{get\-Cur\-Wave\-Dir\-Ind}!osea::ofreq::System@{osea\-::ofreq\-::\-System}}
@@ -466,7 +771,7 @@ Integer. Returns the current wave direction index. Variable passed by value.
 \end{DoxyReturn}
 
 
-Definition at line 114 of file system.\-cpp.
+Definition at line 158 of file system.\-cpp.
 
 \hypertarget{classosea_1_1ofreq_1_1_system_a8e1d633a4b604223236e4cc4de35bd70}{\index{osea\-::ofreq\-::\-System@{osea\-::ofreq\-::\-System}!get\-Wave\-Directions@{get\-Wave\-Directions}}
 \index{get\-Wave\-Directions@{get\-Wave\-Directions}!osea::ofreq::System@{osea\-::ofreq\-::\-System}}
@@ -480,7 +785,7 @@ The list of wave directions.
 \end{DoxyReturn}
 
 
-Definition at line 90 of file system.\-cpp.
+Definition at line 134 of file system.\-cpp.
 
 \hypertarget{classosea_1_1ofreq_1_1_system_a18b18022b6468a41dfdbfc49c881b933}{\index{osea\-::ofreq\-::\-System@{osea\-::ofreq\-::\-System}!get\-Wave\-Frequencies@{get\-Wave\-Frequencies}}
 \index{get\-Wave\-Frequencies@{get\-Wave\-Frequencies}!osea::ofreq::System@{osea\-::ofreq\-::\-System}}
@@ -494,7 +799,7 @@ The list of wave frequencies.
 \end{DoxyReturn}
 
 
-Definition at line 78 of file system.\-cpp.
+Definition at line 122 of file system.\-cpp.
 
 \hypertarget{classosea_1_1ofreq_1_1_system_a280d384672341228d20181ea390118b9}{\index{osea\-::ofreq\-::\-System@{osea\-::ofreq\-::\-System}!link\-Bodies@{link\-Bodies}}
 \index{link\-Bodies@{link\-Bodies}!osea::ofreq::System@{osea\-::ofreq\-::\-System}}
@@ -519,7 +824,7 @@ This converts the cross-\/body force links from simple identification by name in
 \end{DoxySeeAlso}
 
 
-Definition at line 402 of file system.\-cpp.
+Definition at line 578 of file system.\-cpp.
 
 
 
@@ -551,7 +856,7 @@ Returns a vector of \hyperlink{classosea_1_1ofreq_1_1_body}{Body} objects. Retur
 \end{DoxySeeAlso}
 
 
-Definition at line 138 of file system.\-cpp.
+Definition at line 182 of file system.\-cpp.
 
 \hypertarget{classosea_1_1ofreq_1_1_system_af91978b3309a287948fc55773c4193e5}{\index{osea\-::ofreq\-::\-System@{osea\-::ofreq\-::\-System}!list\-Body@{list\-Body}}
 \index{list\-Body@{list\-Body}!osea::ofreq::System@{osea\-::ofreq\-::\-System}}
@@ -574,7 +879,7 @@ Returns a \hyperlink{classosea_1_1ofreq_1_1_body}{Body} object. Returned variabl
 \end{DoxyReturn}
 
 
-Definition at line 144 of file system.\-cpp.
+Definition at line 188 of file system.\-cpp.
 
 \hypertarget{classosea_1_1ofreq_1_1_system_ac50ce91b4ad00fd7748c316ba5fe70a6}{\index{osea\-::ofreq\-::\-System@{osea\-::ofreq\-::\-System}!list\-Force\-Active\-\_\-user@{list\-Force\-Active\-\_\-user}}
 \index{list\-Force\-Active\-\_\-user@{list\-Force\-Active\-\_\-user}!osea::ofreq::System@{osea\-::ofreq\-::\-System}}
@@ -592,7 +897,7 @@ Returns a reference to the vector of force\-Active\-\_\-user objects. Variable p
 \end{DoxyReturn}
 
 
-Definition at line 216 of file system.\-cpp.
+Definition at line 260 of file system.\-cpp.
 
 \hypertarget{classosea_1_1ofreq_1_1_system_a6166a2799a6b6419f5a91d90c98851a5}{\index{osea\-::ofreq\-::\-System@{osea\-::ofreq\-::\-System}!list\-Force\-Active\-\_\-user@{list\-Force\-Active\-\_\-user}}
 \index{list\-Force\-Active\-\_\-user@{list\-Force\-Active\-\_\-user}!osea::ofreq::System@{osea\-::ofreq\-::\-System}}
@@ -615,7 +920,7 @@ Returns a reference to the Force\-Active\-\_\-user object. Variable passed by re
 \end{DoxyReturn}
 
 
-Definition at line 223 of file system.\-cpp.
+Definition at line 267 of file system.\-cpp.
 
 \hypertarget{classosea_1_1ofreq_1_1_system_aae7cb5596f9d3a44f0bc6fe58b58410a}{\index{osea\-::ofreq\-::\-System@{osea\-::ofreq\-::\-System}!list\-Force\-Cross\-\_\-user@{list\-Force\-Cross\-\_\-user}}
 \index{list\-Force\-Cross\-\_\-user@{list\-Force\-Cross\-\_\-user}!osea::ofreq::System@{osea\-::ofreq\-::\-System}}
@@ -633,7 +938,7 @@ Returns a reference to the vector of force\-Cross\-\_\-user objects. Variable pa
 \end{DoxyReturn}
 
 
-Definition at line 308 of file system.\-cpp.
+Definition at line 352 of file system.\-cpp.
 
 \hypertarget{classosea_1_1ofreq_1_1_system_adcde247d6fe68ee68a65f1a5f2dc8e13}{\index{osea\-::ofreq\-::\-System@{osea\-::ofreq\-::\-System}!list\-Force\-Cross\-\_\-user@{list\-Force\-Cross\-\_\-user}}
 \index{list\-Force\-Cross\-\_\-user@{list\-Force\-Cross\-\_\-user}!osea::ofreq::System@{osea\-::ofreq\-::\-System}}
@@ -656,7 +961,7 @@ Returns a reference to the Force\-Cross\-\_\-user object. Variable passed by ref
 \end{DoxyReturn}
 
 
-Definition at line 314 of file system.\-cpp.
+Definition at line 358 of file system.\-cpp.
 
 \hypertarget{classosea_1_1ofreq_1_1_system_a5f567e325139744bc80fd1653b50b0e3}{\index{osea\-::ofreq\-::\-System@{osea\-::ofreq\-::\-System}!list\-Force\-React\-\_\-user@{list\-Force\-React\-\_\-user}}
 \index{list\-Force\-React\-\_\-user@{list\-Force\-React\-\_\-user}!osea::ofreq::System@{osea\-::ofreq\-::\-System}}
@@ -674,7 +979,7 @@ Returns a reference to the vector of force\-React\-\_\-user objects. Variable pa
 \end{DoxyReturn}
 
 
-Definition at line 263 of file system.\-cpp.
+Definition at line 307 of file system.\-cpp.
 
 \hypertarget{classosea_1_1ofreq_1_1_system_a863fea51fba8362e69486bdfdf632ccb}{\index{osea\-::ofreq\-::\-System@{osea\-::ofreq\-::\-System}!list\-Force\-React\-\_\-user@{list\-Force\-React\-\_\-user}}
 \index{list\-Force\-React\-\_\-user@{list\-Force\-React\-\_\-user}!osea::ofreq::System@{osea\-::ofreq\-::\-System}}
@@ -697,7 +1002,83 @@ Returns a reference to the Force\-React\-\_\-user object. Variable passed by ref
 \end{DoxyReturn}
 
 
-Definition at line 269 of file system.\-cpp.
+Definition at line 313 of file system.\-cpp.
+
+\hypertarget{classosea_1_1ofreq_1_1_system_ac7d874084878cc52c017d1ec22d6ee2c}{\index{osea\-::ofreq\-::\-System@{osea\-::ofreq\-::\-System}!list\-Hydro\-Manager@{list\-Hydro\-Manager}}
+\index{list\-Hydro\-Manager@{list\-Hydro\-Manager}!osea::ofreq::System@{osea\-::ofreq\-::\-System}}
+\subsubsection[{list\-Hydro\-Manager}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<$ {\bf ofreq\-::\-Hydro\-Manager} $>$ \& System\-::list\-Hydro\-Manager (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{classosea_1_1ofreq_1_1_system_ac7d874084878cc52c017d1ec22d6ee2c}
+
+
+Returns the vector of hydro systems. 
+
+Provides a reference to the list of hydrosystems. \begin{DoxyReturn}{Returns}
+Returns a vector of \hyperlink{classosea_1_1ofreq_1_1_hydro_manager}{Hydro\-Manager} objects. Returned vector is passed by reference. 
+\end{DoxyReturn}
+
+
+Definition at line 819 of file system.\-cpp.
+
+\hypertarget{classosea_1_1ofreq_1_1_system_a04a47bdb383b302b7442cf1d0f6f831d}{\index{osea\-::ofreq\-::\-System@{osea\-::ofreq\-::\-System}!list\-Hydro\-Manager@{list\-Hydro\-Manager}}
+\index{list\-Hydro\-Manager@{list\-Hydro\-Manager}!osea::ofreq::System@{osea\-::ofreq\-::\-System}}
+\subsubsection[{list\-Hydro\-Manager}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ofreq\-::\-Hydro\-Manager} \& System\-::list\-Hydro\-Manager (
+\begin{DoxyParamCaption}
+\item[{int}]{index}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{classosea_1_1ofreq_1_1_system_a04a47bdb383b302b7442cf1d0f6f831d}
+
+
+Returns the a single item from the vector of hydro systems. 
+
+Provides a reference to a single entry in the list of hydro systems. 
+\begin{DoxyParams}{Parameters}
+{\em index} & Integer, passed by value. The index of the entry that you wish to access. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns a \hyperlink{classosea_1_1ofreq_1_1_hydro_manager}{Hydro\-Manager} object. Returned object is passed by reference. 
+\end{DoxyReturn}
+
+
+Definition at line 825 of file system.\-cpp.
+
+\hypertarget{classosea_1_1ofreq_1_1_system_ab3048e1b5ec6b5a6bd3b7aedd6cb256d}{\index{osea\-::ofreq\-::\-System@{osea\-::ofreq\-::\-System}!list\-Hydro\-Manager@{list\-Hydro\-Manager}}
+\index{list\-Hydro\-Manager@{list\-Hydro\-Manager}!osea::ofreq::System@{osea\-::ofreq\-::\-System}}
+\subsubsection[{list\-Hydro\-Manager}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ofreq\-::\-Hydro\-Manager} \& System\-::list\-Hydro\-Manager (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{bod\-Name\-In}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{classosea_1_1ofreq_1_1_system_ab3048e1b5ec6b5a6bd3b7aedd6cb256d}
+
+
+Returns the a single item from the vector of hydro systems. 
+
+Provides a reference to a single entry in the list of hydro systems. 
+\begin{DoxyParams}{Parameters}
+{\em bod\-Name\-In} & String, passed by value. The of the hydrobody associated with the hydrosystem that you want to access. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns a \hyperlink{classosea_1_1ofreq_1_1_hydro_manager}{Hydro\-Manager} object. Returned object is passed by reference. 
+\end{DoxyReturn}
+
+
+Definition at line 831 of file system.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classosea_1_1ofreq_1_1_system_ab3048e1b5ec6b5a6bd3b7aedd6cb256d_cgraph}
+\end{center}
+\end{figure}
+
 
 \hypertarget{classosea_1_1ofreq_1_1_system_a3a22c0f957f515c951f1cbb32c36b70e}{\index{osea\-::ofreq\-::\-System@{osea\-::ofreq\-::\-System}!list\-Model@{list\-Model}}
 \index{list\-Model@{list\-Model}!osea::ofreq::System@{osea\-::ofreq\-::\-System}}
@@ -718,7 +1099,7 @@ Returns a vector of objects of different types. Each object is derived from the 
 \end{DoxyReturn}
 
 
-Definition at line 446 of file system.\-cpp.
+Definition at line 622 of file system.\-cpp.
 
 \hypertarget{classosea_1_1ofreq_1_1_system_abe2ad405661178362ba0cef96a345002}{\index{osea\-::ofreq\-::\-System@{osea\-::ofreq\-::\-System}!list\-Model@{list\-Model}}
 \index{list\-Model@{list\-Model}!osea::ofreq::System@{osea\-::ofreq\-::\-System}}
@@ -741,7 +1122,7 @@ Returns an object of a class derived from the \hyperlink{classosea_1_1ofreq_1_1_
 \end{DoxyReturn}
 
 
-Definition at line 452 of file system.\-cpp.
+Definition at line 628 of file system.\-cpp.
 
 \hypertarget{classosea_1_1ofreq_1_1_system_a65f7eaf3ac522f1dfb60d3f9a47d99ca}{\index{osea\-::ofreq\-::\-System@{osea\-::ofreq\-::\-System}!list\-Model@{list\-Model}}
 \index{list\-Model@{list\-Model}!osea::ofreq::System@{osea\-::ofreq\-::\-System}}
@@ -764,7 +1145,7 @@ Returns an object of a class derived from the \hyperlink{classosea_1_1ofreq_1_1_
 \end{DoxyReturn}
 
 
-Definition at line 458 of file system.\-cpp.
+Definition at line 634 of file system.\-cpp.
 
 \hypertarget{classosea_1_1ofreq_1_1_system_ad2c5c4c5be9ed1b30651a267df67c466}{\index{osea\-::ofreq\-::\-System@{osea\-::ofreq\-::\-System}!list\-Output@{list\-Output}}
 \index{list\-Output@{list\-Output}!osea::ofreq::System@{osea\-::ofreq\-::\-System}}
@@ -785,7 +1166,7 @@ Returns a vector of \hyperlink{classosea_1_1ofreq_1_1_outputs_body}{Outputs\-Bod
 \end{DoxySeeAlso}
 
 
-Definition at line 150 of file system.\-cpp.
+Definition at line 194 of file system.\-cpp.
 
 \hypertarget{classosea_1_1ofreq_1_1_system_a25b21c2fe11293ecf46ee3f9371afe21}{\index{osea\-::ofreq\-::\-System@{osea\-::ofreq\-::\-System}!list\-Output@{list\-Output}}
 \index{list\-Output@{list\-Output}!osea::ofreq::System@{osea\-::ofreq\-::\-System}}
@@ -808,7 +1189,155 @@ Returns an \hyperlink{classosea_1_1ofreq_1_1_outputs_body}{Outputs\-Body} object
 \end{DoxyReturn}
 
 
-Definition at line 156 of file system.\-cpp.
+Definition at line 200 of file system.\-cpp.
+
+\hypertarget{classosea_1_1ofreq_1_1_system_a3ae6a8a84f6635bacd1a8c811cd709c6}{\index{osea\-::ofreq\-::\-System@{osea\-::ofreq\-::\-System}!list\-Sea\-Model@{list\-Sea\-Model}}
+\index{list\-Sea\-Model@{list\-Sea\-Model}!osea::ofreq::System@{osea\-::ofreq\-::\-System}}
+\subsubsection[{list\-Sea\-Model}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<$ {\bf osea\-::\-Sea\-Model} $\ast$ $>$ \& System\-::list\-Sea\-Model (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_system_a3ae6a8a84f6635bacd1a8c811cd709c6}
+
+
+The list of sea models. 
+
+Returns the full vector of sea models listed in the system.
+
+\begin{DoxyReturn}{Returns}
+Returns a reference to the vector of sea models. Returned vector is passed by reference. Vector of sea model objects can contain multiple class types, all inheritted from the \hyperlink{classosea_1_1_sea_model}{Sea\-Model} class. 
+\end{DoxyReturn}
+
+
+Definition at line 371 of file system.\-cpp.
+
+\hypertarget{classosea_1_1ofreq_1_1_system_a7d1d8292a2de26fd7f741e8370da0507}{\index{osea\-::ofreq\-::\-System@{osea\-::ofreq\-::\-System}!list\-Sea\-Model@{list\-Sea\-Model}}
+\index{list\-Sea\-Model@{list\-Sea\-Model}!osea::ofreq::System@{osea\-::ofreq\-::\-System}}
+\subsubsection[{list\-Sea\-Model}]{\setlength{\rightskip}{0pt plus 5cm}{\bf osea\-::\-Sea\-Model} \& System\-::list\-Sea\-Model (
+\begin{DoxyParamCaption}
+\item[{int}]{index}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_system_a7d1d8292a2de26fd7f741e8370da0507}
+
+
+Returns a reference to a specific object in the list of Sea Models. 
+
+Returned \hyperlink{classosea_1_1_sea_model}{Sea\-Model} object is specified by the index entered. Index corresponds to the vector index. 
+\begin{DoxyParams}{Parameters}
+{\em index} & Integer, passed by value. The index of the object you wish returned from the list of \hyperlink{classosea_1_1_sea_model}{Sea\-Model} objects. Numbering begins from 0. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns a reference to the \hyperlink{classosea_1_1_sea_model}{Sea\-Model} object specified by the index. Returned objects can be multiple different class types, all inherited from the \hyperlink{classosea_1_1_sea_model}{Sea\-Model} class. 
+\end{DoxyReturn}
+
+
+Definition at line 383 of file system.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=348pt]{classosea_1_1ofreq_1_1_system_a7d1d8292a2de26fd7f741e8370da0507_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classosea_1_1ofreq_1_1_system_a793b3a7bf58831606964fc290be2e778}{\index{osea\-::ofreq\-::\-System@{osea\-::ofreq\-::\-System}!list\-Sea\-Model@{list\-Sea\-Model}}
+\index{list\-Sea\-Model@{list\-Sea\-Model}!osea::ofreq::System@{osea\-::ofreq\-::\-System}}
+\subsubsection[{list\-Sea\-Model}]{\setlength{\rightskip}{0pt plus 5cm}{\bf osea\-::\-Sea\-Model} \& System\-::list\-Sea\-Model (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{Name\-In}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_system_a793b3a7bf58831606964fc290be2e778}
+
+
+Returns a reference to a specific object in the list of Sea Models. 
+
+Returned \hyperlink{classosea_1_1_sea_model}{Sea\-Model} object is specified by the Name entered. Name corresponds to the \hyperlink{classosea_1_1_sea_model}{Sea\-Model} object with the matching name. 
+\begin{DoxyParams}{Parameters}
+{\em Name\-In} & String, passed by value. The name of the corresponding \hyperlink{classosea_1_1_sea_model}{Sea\-Model} with the matching name. Used to select the \hyperlink{classosea_1_1_sea_model}{Sea\-Model} from the list of \hyperlink{classosea_1_1_sea_model}{Sea\-Model} objects. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns a reference to the \hyperlink{classosea_1_1_sea_model}{Sea\-Model} object specified by the Name. Returned objects can be multiple different class types, all inherited from the \hyperlink{classosea_1_1_sea_model}{Sea\-Model} class. 
+\end{DoxyReturn}
+
+
+Definition at line 423 of file system.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=348pt]{classosea_1_1ofreq_1_1_system_a793b3a7bf58831606964fc290be2e778_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classosea_1_1ofreq_1_1_system_ad29994c5b256abcae06eec70da100086}{\index{osea\-::ofreq\-::\-System@{osea\-::ofreq\-::\-System}!list\-Sea\-Model\-Pt@{list\-Sea\-Model\-Pt}}
+\index{list\-Sea\-Model\-Pt@{list\-Sea\-Model\-Pt}!osea::ofreq::System@{osea\-::ofreq\-::\-System}}
+\subsubsection[{list\-Sea\-Model\-Pt}]{\setlength{\rightskip}{0pt plus 5cm}{\bf osea\-::\-Sea\-Model} $\ast$ System\-::list\-Sea\-Model\-Pt (
+\begin{DoxyParamCaption}
+\item[{int}]{index}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_system_ad29994c5b256abcae06eec70da100086}
+
+
+Returns a pointer to a specific object in the list of Sea Models. 
+
+Returned \hyperlink{classosea_1_1_sea_model}{Sea\-Model} object is specified by the index entered. Index corresponds to the vector index. 
+\begin{DoxyParams}{Parameters}
+{\em index} & Integer, passed by value. The index of the object you wish returned from the list of \hyperlink{classosea_1_1_sea_model}{Sea\-Model} objects. Numbering begins from 0. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns a pointer to the \hyperlink{classosea_1_1_sea_model}{Sea\-Model} object specified by the index. Returned objects can be multiple different class types, all inherited from the \hyperlink{classosea_1_1_sea_model}{Sea\-Model} class. 
+\end{DoxyReturn}
+
+
+Definition at line 377 of file system.\-cpp.
+
+\hypertarget{classosea_1_1ofreq_1_1_system_a7a8d5ef39643f96b8808d3e82073535b}{\index{osea\-::ofreq\-::\-System@{osea\-::ofreq\-::\-System}!list\-Sea\-Model\-Pt@{list\-Sea\-Model\-Pt}}
+\index{list\-Sea\-Model\-Pt@{list\-Sea\-Model\-Pt}!osea::ofreq::System@{osea\-::ofreq\-::\-System}}
+\subsubsection[{list\-Sea\-Model\-Pt}]{\setlength{\rightskip}{0pt plus 5cm}{\bf osea\-::\-Sea\-Model} $\ast$ System\-::list\-Sea\-Model\-Pt (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{Name\-In}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_system_a7a8d5ef39643f96b8808d3e82073535b}
+
+
+Returns a pointer to a specific object in the list of Sea Models. 
+
+Returned \hyperlink{classosea_1_1_sea_model}{Sea\-Model} object is specified by the Name entered. Name corresponds to the \hyperlink{classosea_1_1_sea_model}{Sea\-Model} object with the matching name. 
+\begin{DoxyParams}{Parameters}
+{\em Name\-In} & String, passed by value. The name of the corresponding \hyperlink{classosea_1_1_sea_model}{Sea\-Model} with the matching name. Used to select the \hyperlink{classosea_1_1_sea_model}{Sea\-Model} from the list of \hyperlink{classosea_1_1_sea_model}{Sea\-Model} objects. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns a pointer to the \hyperlink{classosea_1_1_sea_model}{Sea\-Model} object specified by the Name. Returned objects can be multiple different class types, all inherited from the \hyperlink{classosea_1_1_sea_model}{Sea\-Model} class. 
+\end{DoxyReturn}
+
+
+Definition at line 389 of file system.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classosea_1_1ofreq_1_1_system_a7a8d5ef39643f96b8808d3e82073535b_cgraph}
+\end{center}
+\end{figure}
+
 
 \hypertarget{classosea_1_1ofreq_1_1_system_a18cbe26b239cf4ee83210ac6679f773f}{\index{osea\-::ofreq\-::\-System@{osea\-::ofreq\-::\-System}!list\-Wave\-Directions@{list\-Wave\-Directions}}
 \index{list\-Wave\-Directions@{list\-Wave\-Directions}!osea::ofreq::System@{osea\-::ofreq\-::\-System}}
@@ -826,7 +1355,7 @@ Pointer to the list of wave directions Variable passed by reference.
 \end{DoxyReturn}
 
 
-Definition at line 96 of file system.\-cpp.
+Definition at line 140 of file system.\-cpp.
 
 \hypertarget{classosea_1_1ofreq_1_1_system_a02a78c7751da784608be2dc2afbb4022}{\index{osea\-::ofreq\-::\-System@{osea\-::ofreq\-::\-System}!list\-Wave\-Frequencies@{list\-Wave\-Frequencies}}
 \index{list\-Wave\-Frequencies@{list\-Wave\-Frequencies}!osea::ofreq::System@{osea\-::ofreq\-::\-System}}
@@ -844,7 +1373,173 @@ Pointer to the list of wave frequencies. Variable passed by reference.
 \end{DoxyReturn}
 
 
-Definition at line 84 of file system.\-cpp.
+Definition at line 128 of file system.\-cpp.
+
+\hypertarget{classosea_1_1ofreq_1_1_system_a16f3bda6ea1b6f0d9644ad4a551996a2}{\index{osea\-::ofreq\-::\-System@{osea\-::ofreq\-::\-System}!list\-Wave\-Spec@{list\-Wave\-Spec}}
+\index{list\-Wave\-Spec@{list\-Wave\-Spec}!osea::ofreq::System@{osea\-::ofreq\-::\-System}}
+\subsubsection[{list\-Wave\-Spec}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<$ {\bf osea\-::\-Wave\-Spec\-Base} $\ast$ $>$ \& System\-::list\-Wave\-Spec (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_system_a16f3bda6ea1b6f0d9644ad4a551996a2}
+
+
+The list of wave spectra. 
+
+Returns the full vector of wave spectra listed in the system.
+
+\begin{DoxyReturn}{Returns}
+Returns a reference to the vector of wave spectra. Returned vector is passed by reference. Vector of wave spectra objects can contain multiple class types, but all class types are inherrited from the \hyperlink{classosea_1_1_wave_spec_base}{Wave\-Spec\-Base} class. 
+\end{DoxyReturn}
+
+
+Definition at line 429 of file system.\-cpp.
+
+\hypertarget{classosea_1_1ofreq_1_1_system_a3b4f1f07971a0080a91882ccda00d80e}{\index{osea\-::ofreq\-::\-System@{osea\-::ofreq\-::\-System}!list\-Wave\-Spec@{list\-Wave\-Spec}}
+\index{list\-Wave\-Spec@{list\-Wave\-Spec}!osea::ofreq::System@{osea\-::ofreq\-::\-System}}
+\subsubsection[{list\-Wave\-Spec}]{\setlength{\rightskip}{0pt plus 5cm}{\bf osea\-::\-Wave\-Spec\-Base} \& System\-::list\-Wave\-Spec (
+\begin{DoxyParamCaption}
+\item[{int}]{index}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_system_a3b4f1f07971a0080a91882ccda00d80e}
+
+
+Returns a reference to a specific object in the list of wave spectra. 
+
+Returned Wave\-Spectra\-Base model is specified by the index entered. The index corresponds to the vector index. 
+\begin{DoxyParams}{Parameters}
+{\em index} & Integer, passed by value. The index of the object you wish returned from the list of wave spectra. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns a reference to the \hyperlink{classosea_1_1_wave_spec_base}{Wave\-Spec\-Base} object specified by the index. Returned objects can be multiple different class types, all inherited from the \hyperlink{classosea_1_1_wave_spec_base}{Wave\-Spec\-Base} class. 
+\end{DoxyReturn}
+
+
+Definition at line 441 of file system.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=348pt]{classosea_1_1ofreq_1_1_system_a3b4f1f07971a0080a91882ccda00d80e_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classosea_1_1ofreq_1_1_system_a6632d95e9c6e0080ca862e493284225f}{\index{osea\-::ofreq\-::\-System@{osea\-::ofreq\-::\-System}!list\-Wave\-Spec@{list\-Wave\-Spec}}
+\index{list\-Wave\-Spec@{list\-Wave\-Spec}!osea::ofreq::System@{osea\-::ofreq\-::\-System}}
+\subsubsection[{list\-Wave\-Spec}]{\setlength{\rightskip}{0pt plus 5cm}{\bf osea\-::\-Wave\-Spec\-Base} \& System\-::list\-Wave\-Spec (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{Name\-In}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_system_a6632d95e9c6e0080ca862e493284225f}
+
+
+Returns a reference to a specific object in the list of wave spectra. 
+
+Returned Wave\-Spectra\-Base model is specified by the name entered. The name corresponds to the object with the matching name in the list. 
+\begin{DoxyParams}{Parameters}
+{\em Name\-In} & String, passed by value. The name of the corresponding \hyperlink{classosea_1_1_wave_spec_base}{Wave\-Spec\-Base} object with the matching name. Used to select the \hyperlink{classosea_1_1_wave_spec_base}{Wave\-Spec\-Base} object from the list of \hyperlink{classosea_1_1_wave_spec_base}{Wave\-Spec\-Base} objects. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns a reference to the \hyperlink{classosea_1_1_wave_spec_base}{Wave\-Spec\-Base} object specified by the name. Returned objects can be multiple different class types, all inherited from the \hyperlink{classosea_1_1_wave_spec_base}{Wave\-Spec\-Base} class. 
+\end{DoxyReturn}
+
+
+Definition at line 480 of file system.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=348pt]{classosea_1_1ofreq_1_1_system_a6632d95e9c6e0080ca862e493284225f_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classosea_1_1ofreq_1_1_system_a98b580fc4f9ab6cb0a57cd0968b1b1b4}{\index{osea\-::ofreq\-::\-System@{osea\-::ofreq\-::\-System}!list\-Wave\-Spec\-Pt@{list\-Wave\-Spec\-Pt}}
+\index{list\-Wave\-Spec\-Pt@{list\-Wave\-Spec\-Pt}!osea::ofreq::System@{osea\-::ofreq\-::\-System}}
+\subsubsection[{list\-Wave\-Spec\-Pt}]{\setlength{\rightskip}{0pt plus 5cm}{\bf osea\-::\-Wave\-Spec\-Base} $\ast$ System\-::list\-Wave\-Spec\-Pt (
+\begin{DoxyParamCaption}
+\item[{int}]{index}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_system_a98b580fc4f9ab6cb0a57cd0968b1b1b4}
+
+
+Returns a pointer to a specific object in the list of wave spectra. 
+
+Returned Wave\-Spectra\-Base model is specified by the index entered. The index corresponds to the vector index. 
+\begin{DoxyParams}{Parameters}
+{\em index} & Integer, passed by value. The index of the object you wish returned from the list of wave spectra. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns a pointer to the \hyperlink{classosea_1_1_wave_spec_base}{Wave\-Spec\-Base} object specified by the index. Returned objects can be multiple different class types, all inherited from the \hyperlink{classosea_1_1_wave_spec_base}{Wave\-Spec\-Base} class. 
+\end{DoxyReturn}
+
+
+Definition at line 435 of file system.\-cpp.
+
+\hypertarget{classosea_1_1ofreq_1_1_system_a69ff714ce0499574382106e57e1c37fb}{\index{osea\-::ofreq\-::\-System@{osea\-::ofreq\-::\-System}!list\-Wave\-Spec\-Pt@{list\-Wave\-Spec\-Pt}}
+\index{list\-Wave\-Spec\-Pt@{list\-Wave\-Spec\-Pt}!osea::ofreq::System@{osea\-::ofreq\-::\-System}}
+\subsubsection[{list\-Wave\-Spec\-Pt}]{\setlength{\rightskip}{0pt plus 5cm}{\bf osea\-::\-Wave\-Spec\-Base} $\ast$ System\-::list\-Wave\-Spec\-Pt (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{Name\-In}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_system_a69ff714ce0499574382106e57e1c37fb}
+
+
+Returns a pointer to a specific object in the list of wave spectra. 
+
+Returned Wave\-Spectra\-Base model is specified by the name entered. The name corresponds to the object with the matching name in the list. 
+\begin{DoxyParams}{Parameters}
+{\em Name\-In} & String, passed by value. The name of the corresponding \hyperlink{classosea_1_1_wave_spec_base}{Wave\-Spec\-Base} object with the matching name. Used to select the \hyperlink{classosea_1_1_wave_spec_base}{Wave\-Spec\-Base} object from the list of \hyperlink{classosea_1_1_wave_spec_base}{Wave\-Spec\-Base} objects. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns a pointer to the \hyperlink{classosea_1_1_wave_spec_base}{Wave\-Spec\-Base} object specified by the name. Returned objects can be multiple different class types, all inherited from the \hyperlink{classosea_1_1_wave_spec_base}{Wave\-Spec\-Base} class. 
+\end{DoxyReturn}
+
+
+Definition at line 447 of file system.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classosea_1_1ofreq_1_1_system_a69ff714ce0499574382106e57e1c37fb_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classosea_1_1ofreq_1_1_system_afbbf0c020566cc024fffb01ee3674c50}{\index{osea\-::ofreq\-::\-System@{osea\-::ofreq\-::\-System}!ref\-Active\-Sea\-Model@{ref\-Active\-Sea\-Model}}
+\index{ref\-Active\-Sea\-Model@{ref\-Active\-Sea\-Model}!osea::ofreq::System@{osea\-::ofreq\-::\-System}}
+\subsubsection[{ref\-Active\-Sea\-Model}]{\setlength{\rightskip}{0pt plus 5cm}{\bf osea\-::\-Sea\-Model} \& System\-::ref\-Active\-Sea\-Model (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_system_afbbf0c020566cc024fffb01ee3674c50}
+
+
+Reference to the active sea model used for the current run of o\-Freq. 
+
+Returns an error if the \hyperlink{classosea_1_1_sea_model}{Sea\-Model} is not found yet. \begin{DoxyReturn}{Returns}
+Returns a \hyperlink{classosea_1_1_sea_model}{Sea\-Model} object, passed by reference. Returned object can be one of multiple class types, all class types inheritted from the \hyperlink{classosea_1_1_sea_model}{Sea\-Model} class. 
+\end{DoxyReturn}
+
+
+Definition at line 495 of file system.\-cpp.
 
 \hypertarget{classosea_1_1ofreq_1_1_system_a0889e1e19fe1c0c52fd385e759e5ecc7}{\index{osea\-::ofreq\-::\-System@{osea\-::ofreq\-::\-System}!Reference\-System@{Reference\-System}}
 \index{Reference\-System@{Reference\-System}!osea::ofreq::System@{osea\-::ofreq\-::\-System}}
@@ -883,7 +1578,7 @@ Returns a pointer to the force\-Active\-\_\-user object as requested. Pointer pa
 \end{DoxyReturn}
 
 
-Definition at line 190 of file system.\-cpp.
+Definition at line 234 of file system.\-cpp.
 
 \hypertarget{classosea_1_1ofreq_1_1_system_a22c14580904007e564bfba6ab0d052c4}{\index{osea\-::ofreq\-::\-System@{osea\-::ofreq\-::\-System}!ref\-Force\-Cross\-\_\-user@{ref\-Force\-Cross\-\_\-user}}
 \index{ref\-Force\-Cross\-\_\-user@{ref\-Force\-Cross\-\_\-user}!osea::ofreq::System@{osea\-::ofreq\-::\-System}}
@@ -906,7 +1601,7 @@ Returns a pointer to the force\-Cross\-\_\-user object as requested. Pointer pas
 \end{DoxyReturn}
 
 
-Definition at line 282 of file system.\-cpp.
+Definition at line 326 of file system.\-cpp.
 
 \hypertarget{classosea_1_1ofreq_1_1_system_ac48c0f72ebfc7399e9c8d9d95bb9876c}{\index{osea\-::ofreq\-::\-System@{osea\-::ofreq\-::\-System}!ref\-Force\-React\-\_\-user@{ref\-Force\-React\-\_\-user}}
 \index{ref\-Force\-React\-\_\-user@{ref\-Force\-React\-\_\-user}!osea::ofreq::System@{osea\-::ofreq\-::\-System}}
@@ -929,7 +1624,66 @@ Returns a pointer to the force\-React\-\_\-user object as requested. Pointer pas
 \end{DoxyReturn}
 
 
-Definition at line 237 of file system.\-cpp.
+Definition at line 281 of file system.\-cpp.
+
+\hypertarget{classosea_1_1ofreq_1_1_system_aa6491aee03c8ecb67dea910f1c753bf5}{\index{osea\-::ofreq\-::\-System@{osea\-::ofreq\-::\-System}!Search\-Active\-Sea\-Model@{Search\-Active\-Sea\-Model}}
+\index{Search\-Active\-Sea\-Model@{Search\-Active\-Sea\-Model}!osea::ofreq::System@{osea\-::ofreq\-::\-System}}
+\subsubsection[{Search\-Active\-Sea\-Model}]{\setlength{\rightskip}{0pt plus 5cm}void System\-::\-Search\-Active\-Sea\-Model (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [slot]}}}\label{classosea_1_1ofreq_1_1_system_aa6491aee03c8ecb67dea910f1c753bf5}
+
+
+Searches for the active sea model. 
+
+Search based on the list of current Sea\-Models. Model names are matched against the variable p\-Act\-Sea\-Model\-Name. Results are stored in the variable p\-Sea\-Model\-Index. 
+
+Definition at line 774 of file system.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classosea_1_1ofreq_1_1_system_aa6491aee03c8ecb67dea910f1c753bf5_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classosea_1_1ofreq_1_1_system_ac5f72e0953e4bec43eee1ac2ad88be72}{\index{osea\-::ofreq\-::\-System@{osea\-::ofreq\-::\-System}!set\-Active\-Sea\-Model@{set\-Active\-Sea\-Model}}
+\index{set\-Active\-Sea\-Model@{set\-Active\-Sea\-Model}!osea::ofreq::System@{osea\-::ofreq\-::\-System}}
+\subsubsection[{set\-Active\-Sea\-Model}]{\setlength{\rightskip}{0pt plus 5cm}void System\-::set\-Active\-Sea\-Model (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{Name\-In}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1_system_ac5f72e0953e4bec43eee1ac2ad88be72}
+
+
+Sets the active \hyperlink{classosea_1_1_sea_model}{Sea\-Model} that gets used for the current run of o\-Freq. If the model with the matching name does not currently exist in the list of sea models, then the name is stored and assigned later. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Name\-In} & The name which corresponds to the \hyperlink{classosea_1_1_sea_model}{Sea\-Model} object with the matching name. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 486 of file system.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classosea_1_1ofreq_1_1_system_ac5f72e0953e4bec43eee1ac2ad88be72_cgraph}
+\end{center}
+\end{figure}
+
 
 \hypertarget{classosea_1_1ofreq_1_1_system_a76c67d09ec93cb654c6fd49d00e12485}{\index{osea\-::ofreq\-::\-System@{osea\-::ofreq\-::\-System}!set\-Analysis\-Type@{set\-Analysis\-Type}}
 \index{set\-Analysis\-Type@{set\-Analysis\-Type}!osea::ofreq::System@{osea\-::ofreq\-::\-System}}
@@ -945,7 +1699,7 @@ Sets the analysis ype.
 \end{DoxyParams}
 
 
-Definition at line 330 of file system.\-cpp.
+Definition at line 506 of file system.\-cpp.
 
 \hypertarget{classosea_1_1ofreq_1_1_system_a76c849ddc8e6d9cc628f4208df2ea950}{\index{osea\-::ofreq\-::\-System@{osea\-::ofreq\-::\-System}!set\-Cur\-Freq\-Ind@{set\-Cur\-Freq\-Ind}}
 \index{set\-Cur\-Freq\-Ind@{set\-Cur\-Freq\-Ind}!osea::ofreq::System@{osea\-::ofreq\-::\-System}}
@@ -965,7 +1719,7 @@ Sets the current frequency index.
 \end{DoxyParams}
 
 
-Definition at line 108 of file system.\-cpp.
+Definition at line 152 of file system.\-cpp.
 
 \hypertarget{classosea_1_1ofreq_1_1_system_a1bdee1bedde63db2d813fda1036f8299}{\index{osea\-::ofreq\-::\-System@{osea\-::ofreq\-::\-System}!set\-Cur\-Wave\-Dir\-Ind@{set\-Cur\-Wave\-Dir\-Ind}}
 \index{set\-Cur\-Wave\-Dir\-Ind@{set\-Cur\-Wave\-Dir\-Ind}!osea::ofreq::System@{osea\-::ofreq\-::\-System}}
@@ -985,23 +1739,42 @@ Sets the current wave index.
 \end{DoxyParams}
 
 
-Definition at line 102 of file system.\-cpp.
+Definition at line 146 of file system.\-cpp.
 
-\hypertarget{classosea_1_1ofreq_1_1_system_abeb34bbe60c3f1490352695839b513f5}{\index{osea\-::ofreq\-::\-System@{osea\-::ofreq\-::\-System}!set\-Spread\-Model@{set\-Spread\-Model}}
-\index{set\-Spread\-Model@{set\-Spread\-Model}!osea::ofreq::System@{osea\-::ofreq\-::\-System}}
-\subsubsection[{set\-Spread\-Model}]{\setlength{\rightskip}{0pt plus 5cm}void System\-::set\-Spread\-Model (
+\hypertarget{classosea_1_1ofreq_1_1_system_abc29578672ec470d6c2e916164e129f4}{\index{osea\-::ofreq\-::\-System@{osea\-::ofreq\-::\-System}!set\-Log\-Files@{set\-Log\-Files}}
+\index{set\-Log\-Files@{set\-Log\-Files}!osea::ofreq::System@{osea\-::ofreq\-::\-System}}
+\subsubsection[{set\-Log\-Files}]{\setlength{\rightskip}{0pt plus 5cm}void System\-::set\-Log\-Files (
 \begin{DoxyParamCaption}
-\item[{std\-::string}]{}
+\item[{std\-::string}]{path\-In, }
+\item[{bool}]{append = {\ttfamily false}}
 \end{DoxyParamCaption}
-)}}\label{classosea_1_1ofreq_1_1_system_abeb34bbe60c3f1490352695839b513f5}
-Sets the spread model. 
+)}}\label{classosea_1_1ofreq_1_1_system_abc29578672ec470d6c2e916164e129f4}
+
+
+Creates the log files and prepares them to record a new o\-Freq session. 
+
+Three log files are prepared\-: standard.\-log; error.\-log; and monitor.\-log. standard.\-log\-: Normal output. Output written to both the screen and the output log. error.\-log\-: Errors output. With a successful run of o\-Freq, this file should be empty. monitor.\-log\-: Monitors output file. This provides variables that another program can use to display progress of an o\-Freq run. 
 \begin{DoxyParams}{Parameters}
-{\em spread\-In} & The spread model. \\
+{\em path\-In} & The root directory of where the output files should be stored. String variable. Variable passed by value. \\
+\hline
+{\em append} & Boolean variable. Desribes if the output files should be appended to, or overwritten. default is to overwrite for each new session. \\
 \hline
 \end{DoxyParams}
 
 
-Definition at line 72 of file system.\-cpp.
+Definition at line 78 of file system.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classosea_1_1ofreq_1_1_system_abc29578672ec470d6c2e916164e129f4_cgraph}
+\end{center}
+\end{figure}
+
 
 \hypertarget{classosea_1_1ofreq_1_1_system_a246decc05b383e47fba6d42318cf64ef}{\index{osea\-::ofreq\-::\-System@{osea\-::ofreq\-::\-System}!set\-Wave\-Directions@{set\-Wave\-Directions}}
 \index{set\-Wave\-Directions@{set\-Wave\-Directions}!osea::ofreq::System@{osea\-::ofreq\-::\-System}}
@@ -1017,7 +1790,7 @@ Sets the wave directions.
 \end{DoxyParams}
 
 
-Definition at line 66 of file system.\-cpp.
+Definition at line 116 of file system.\-cpp.
 
 \hypertarget{classosea_1_1ofreq_1_1_system_ac044fdc41aa436151bea0c81c8f70bc1}{\index{osea\-::ofreq\-::\-System@{osea\-::ofreq\-::\-System}!set\-Wave\-Frequencies@{set\-Wave\-Frequencies}}
 \index{set\-Wave\-Frequencies@{set\-Wave\-Frequencies}!osea::ofreq::System@{osea\-::ofreq\-::\-System}}
@@ -1033,11 +1806,11 @@ Sets the wave frequencies.
 \end{DoxyParams}
 
 
-Definition at line 60 of file system.\-cpp.
+Definition at line 110 of file system.\-cpp.
 
 
 
 The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
 \item 
-/home/\-Ship\-\_\-\-Design/\-Projects/\-D\-M\-S1305 Open\-S\-E\-A/master/200\-\_\-src/bin/ofreq/global\-\_\-objects/\hyperlink{system_8h}{system.\-h}\item 
-/home/\-Ship\-\_\-\-Design/\-Projects/\-D\-M\-S1305 Open\-S\-E\-A/master/200\-\_\-src/bin/ofreq/global\-\_\-objects/\hyperlink{system_8cpp}{system.\-cpp}\end{DoxyCompactItemize}
+/home/\-Ship\-\_\-\-Design/\-Projects/\-D\-M\-S1305 Open\-S\-E\-A/master/200\-\_\-src/bin/ofreq/system\-\_\-objects/\hyperlink{system_8h}{system.\-h}\item 
+/home/\-Ship\-\_\-\-Design/\-Projects/\-D\-M\-S1305 Open\-S\-E\-A/master/200\-\_\-src/bin/ofreq/system\-\_\-objects/\hyperlink{system_8cpp}{system.\-cpp}\end{DoxyCompactItemize}

@@ -7,18 +7,17 @@
 
 
 
-Inheritance diagram for osea\-:\-:File\-Reader\-:\nopagebreak
+Inheritance diagram for osea\-:\-:File\-Reader\-:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=297pt]{classosea_1_1_file_reader__inherit__graph}
+\includegraphics[height=550pt]{classosea_1_1_file_reader__inherit__graph}
 \end{center}
 \end{figure}
 \subsection*{Public Slots}
 \begin{DoxyCompactItemize}
 \item 
-int \hyperlink{classosea_1_1_file_reader_aafe1acb27e25c2774c04c21a808748a4}{read\-Hydro\-File} (std\-::string path)
-\begin{DoxyCompactList}\small\item\em Reads hydrodynamic input files. \end{DoxyCompactList}\item 
 void \hyperlink{classosea_1_1_file_reader_a54b42892f8c4de66ad1f7bfd1e8e0a27}{set\-System} (\hyperlink{classosea_1_1ofreq_1_1_system}{ofreq\-::\-System} $\ast$pt\-Input)
 \begin{DoxyCompactList}\small\item\em Sets the system object for the dictionary to reference. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Signals}
@@ -61,12 +60,38 @@ void \hyperlink{classosea_1_1_file_reader_a3cbdb7eab632abafcfd055aa92f47b73}{set
 \begin{DoxyCompactItemize}
 \item 
 void \hyperlink{classosea_1_1_file_reader_aa57b483154b47ad0126d97debb53c638}{send\-Output} (int index)
-\begin{DoxyCompactList}\small\item\em Sends the results of parsing the input file onto the dictionary object. Use for processing the input file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Sends the results of parsing the input file onto the dictionary object. Use for processing the input file. \end{DoxyCompactList}\item 
+int \hyperlink{classosea_1_1_file_reader_a32a9d75323fff2c692583d59b6709c63}{read\-File} (std\-::string path)
+\begin{DoxyCompactList}\small\item\em General function for reading and parsing an input file. Opens the file with the specified path, parses that file, and stores the parsed file in plist\-Objects. \end{DoxyCompactList}\item 
+void \hyperlink{classosea_1_1_file_reader_ae59b36eb68173f83f9a57f3a17ab8d52}{init\-Class} ()
+\begin{DoxyCompactList}\small\item\em private function to initialize variables and perform other functions common to all constructors. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\-::string \hyperlink{classosea_1_1_file_reader_adbc50f785e7fbbcbcf79af0f3bee49de}{p\-Path}
+\begin{DoxyCompactList}\small\item\em The filepath to the directory that contains the input files. Always the path to the root directory of the project. This will be the folder which then contains the other \char`\"{}system\char`\"{} and \char`\"{}constant\char`\"{} folders. \end{DoxyCompactList}\item 
+std\-::vector$<$ \hyperlink{classosea_1_1_object_group}{Object\-Group} $>$ \hyperlink{classosea_1_1_file_reader_a1b16c3fe97f09ef7bb15bd56b3831bf9}{plist\-Objects}
+\begin{DoxyCompactList}\small\item\em The list of \hyperlink{classosea_1_1_object_group}{Object\-Group} objects retrieved from parsing the file. This variable gets reused each time a new file is parsed. \end{DoxyCompactList}\item 
+\hyperlink{classosea_1_1_dictionary}{osea\-::\-Dictionary} $\ast$ \hyperlink{classosea_1_1_file_reader_a0a741388f68dbb79e3e57797e90f42f4}{pt\-Dict}
+\begin{DoxyCompactList}\small\item\em Pointer to a dictionary object used to process the \hyperlink{classosea_1_1_object_group}{Object\-Group}'s recorded. Used to send the Object group objects to the \hyperlink{classosea_1_1_dictionary}{Dictionary} object for reading. \end{DoxyCompactList}\item 
+\hyperlink{classosea_1_1ofreq_1_1_system}{ofreq\-::\-System} $\ast$ \hyperlink{classosea_1_1_file_reader_ae584ddecd770e251978141a152d434ac}{pt\-System}
+\begin{DoxyCompactList}\small\item\em Pointer to the System object. Used to reference any important variables in the System object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static std\-::string \hyperlink{classosea_1_1_file_reader_ab4afa39ca9cd0b871feb788f9d865893}{S\-L\-A\-S\-H}
+\item 
+static std\-::string \hyperlink{classosea_1_1_file_reader_aaed6f9acbda3d7b4d9a58a5995fcc3ae}{O\-B\-J\-\_\-\-S\-E\-A\-F\-I\-L\-E} = \char`\"{}seafile\char`\"{}
+\item 
+static std\-::string \hyperlink{classosea_1_1_file_reader_ae4705b931b9b7b691019cc2edfef5907}{K\-E\-Y\-\_\-\-F\-O\-R\-M\-A\-T} = \char`\"{}format\char`\"{}
+\item 
+static std\-::string \hyperlink{classosea_1_1_file_reader_a81c228678c776f9094f24b4cea522e04}{K\-E\-Y\-\_\-\-V\-E\-R\-S\-I\-O\-N} = \char`\"{}version\char`\"{}
+\end{DoxyCompactItemize}
 \subsection*{Additional Inherited Members}
 
 
 \subsection{Detailed Description}
-\hyperlink{classosea_1_1_file_reader}{File\-Reader} is the next generation of superseded class\-: Read\-Input\-File. \hyperlink{classosea_1_1_file_reader}{File\-Reader} simply reads the text file and parses it into keword value pairs. \hyperlink{classosea_1_1_file_reader}{File\-Reader} reads in the input files. It then passes those input files to the \hyperlink{classosea_1_1_parser}{Parser} object. \hyperlink{classosea_1_1_parser}{Parser} then segments the file in a series of object groupings with a vector list of keyword value pairs. The file reader interprets a limited number of those keywords to recognize new object declarations. It creates the new objects. It then parses the information in that object into a series of keyword-\/value pairs. Each pair is sent to a \hyperlink{classosea_1_1_dictionary}{Dictionary} object that interprets the information. Information is sent using Qt Slots and Signals.
+\hyperlink{classosea_1_1_file_reader}{File\-Reader} is the next generation of superseded class\-: Read\-Input\-File. \hyperlink{classosea_1_1_file_reader}{File\-Reader} simply reads the text file and parses it into keword value pairs. \hyperlink{classosea_1_1_file_reader}{File\-Reader} reads in the input files. It then passes those input files to the \hyperlink{classosea_1_1_parser}{Parser} object. \hyperlink{classosea_1_1_parser}{Parser} then segments the file in a series of object groupings with a vector list of keyword value pairs. The file reader interprets a limited number of those keywords to recognize new object declarations. It creates the new objects. It then parses the information in that object into a series of keyword-\/value pairs. Each pair is sent to a \hyperlink{classosea_1_1_dictionary}{Dictionary} object that interprets the information.
 
 To use this class, the following sequence must be followed. 1.) Create \hyperlink{classosea_1_1_file_reader}{File\-Reader} object. 2.) Create \hyperlink{classosea_1_1_dictionary}{Dictionary} objects for each file type you will read. 3.) Satisfy any follow on dependencies for \hyperlink{classosea_1_1_dictionary}{Dictionary} objects. 4.) Qt Connect \hyperlink{classosea_1_1_file_reader}{File\-Reader} to \hyperlink{classosea_1_1_dictionary}{Dictionary} objects. 5.) Qt Connect \hyperlink{classosea_1_1_file_reader}{File\-Reader} to System object. 6.) Feed in the target path to the \hyperlink{classosea_1_1_file_reader}{File\-Reader} object. 7.) Read each file type in turn. The \hyperlink{classosea_1_1_file_reader}{File\-Reader} object will automatically find the file with the correct filename, read it, parse it, and send the resulting keyword-\/value pairs to the appropriate \hyperlink{classosea_1_1_dictionary}{Dictionary} object. 
 
@@ -120,6 +145,21 @@ Definition at line 84 of file filereader.\-cpp.
 
 
 \subsection{Member Function Documentation}
+\hypertarget{classosea_1_1_file_reader_ae59b36eb68173f83f9a57f3a17ab8d52}{\index{osea\-::\-File\-Reader@{osea\-::\-File\-Reader}!init\-Class@{init\-Class}}
+\index{init\-Class@{init\-Class}!osea::FileReader@{osea\-::\-File\-Reader}}
+\subsubsection[{init\-Class}]{\setlength{\rightskip}{0pt plus 5cm}void File\-Reader\-::init\-Class (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classosea_1_1_file_reader_ae59b36eb68173f83f9a57f3a17ab8d52}
+
+
+private function to initialize variables and perform other functions common to all constructors. 
+
+
+
+Definition at line 332 of file filereader.\-cpp.
+
 \hypertarget{classosea_1_1_file_reader_a79f10f1fd00fac75e83152980e34a6ea}{\index{osea\-::\-File\-Reader@{osea\-::\-File\-Reader}!output\-Bodies\-File@{output\-Bodies\-File}}
 \index{output\-Bodies\-File@{output\-Bodies\-File}!osea::FileReader@{osea\-::\-File\-Reader}}
 \subsubsection[{output\-Bodies\-File}]{\setlength{\rightskip}{0pt plus 5cm}void osea\-::\-File\-Reader\-::output\-Bodies\-File (
@@ -247,7 +287,7 @@ Returns integer to report success or failure of file parsing. Returns 0 for succ
 \end{DoxyReturn}
 
 
-Definition at line 124 of file filereader.\-cpp.
+Definition at line 126 of file filereader.\-cpp.
 
 \hypertarget{classosea_1_1_file_reader_a967cab6ec0822fd8bcf392873a8a82b1}{\index{osea\-::\-File\-Reader@{osea\-::\-File\-Reader}!read\-Control@{read\-Control}}
 \index{read\-Control@{read\-Control}!osea::FileReader@{osea\-::\-File\-Reader}}
@@ -283,7 +323,42 @@ Returns integer to report success or failure of file parsing. Returns 0 for succ
 \end{DoxyReturn}
 
 
-Definition at line 190 of file filereader.\-cpp.
+Definition at line 198 of file filereader.\-cpp.
+
+\hypertarget{classosea_1_1_file_reader_a32a9d75323fff2c692583d59b6709c63}{\index{osea\-::\-File\-Reader@{osea\-::\-File\-Reader}!read\-File@{read\-File}}
+\index{read\-File@{read\-File}!osea::FileReader@{osea\-::\-File\-Reader}}
+\subsubsection[{read\-File}]{\setlength{\rightskip}{0pt plus 5cm}int File\-Reader\-::read\-File (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{path}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classosea_1_1_file_reader_a32a9d75323fff2c692583d59b6709c63}
+
+
+General function for reading and parsing an input file. Opens the file with the specified path, parses that file, and stores the parsed file in plist\-Objects. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & The path to the file that should be read. Must be specified as an absolute path, or relative to the directory that ofreq is executed from. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns integer to report success or failure of file reading. Returns 0 for success. Returns 1 for file does not exist. 
+\end{DoxyReturn}
+
+
+Definition at line 247 of file filereader.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classosea_1_1_file_reader_a32a9d75323fff2c692583d59b6709c63_cgraph}
+\end{center}
+\end{figure}
+
 
 \hypertarget{classosea_1_1_file_reader_ab78d2f631eb8e64b0a68d25eeca80be5}{\index{osea\-::\-File\-Reader@{osea\-::\-File\-Reader}!read\-Forces@{read\-Forces}}
 \index{read\-Forces@{read\-Forces}!osea::FileReader@{osea\-::\-File\-Reader}}
@@ -301,30 +376,7 @@ Returns integer to report success or failure of file parsing. Returns 0 for succ
 \end{DoxyReturn}
 
 
-Definition at line 150 of file filereader.\-cpp.
-
-\hypertarget{classosea_1_1_file_reader_aafe1acb27e25c2774c04c21a808748a4}{\index{osea\-::\-File\-Reader@{osea\-::\-File\-Reader}!read\-Hydro\-File@{read\-Hydro\-File}}
-\index{read\-Hydro\-File@{read\-Hydro\-File}!osea::FileReader@{osea\-::\-File\-Reader}}
-\subsubsection[{read\-Hydro\-File}]{\setlength{\rightskip}{0pt plus 5cm}int File\-Reader\-::read\-Hydro\-File (
-\begin{DoxyParamCaption}
-\item[{std\-::string}]{path}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [slot]}}}\label{classosea_1_1_file_reader_aafe1acb27e25c2774c04c21a808748a4}
-
-
-Reads hydrodynamic input files. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em path} & The full path to the hydrodynamic input file to read. \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-Returns integer to report success or failure of file parsing. Returns 0 for success. Returns 1 for file does not exist. 
-\end{DoxyReturn}
-
-
-Definition at line 222 of file filereader.\-cpp.
+Definition at line 154 of file filereader.\-cpp.
 
 \hypertarget{classosea_1_1_file_reader_a1f8a6bd4b5c53f80cc94d64d6dd1f2da}{\index{osea\-::\-File\-Reader@{osea\-::\-File\-Reader}!read\-Sea\-Env@{read\-Sea\-Env}}
 \index{read\-Sea\-Env@{read\-Sea\-Env}!osea::FileReader@{osea\-::\-File\-Reader}}
@@ -342,7 +394,7 @@ Returns integer to report success or failure of file parsing. Returns 0 for succ
 \end{DoxyReturn}
 
 
-Definition at line 170 of file filereader.\-cpp.
+Definition at line 176 of file filereader.\-cpp.
 
 \hypertarget{classosea_1_1_file_reader_aa57b483154b47ad0126d97debb53c638}{\index{osea\-::\-File\-Reader@{osea\-::\-File\-Reader}!send\-Output@{send\-Output}}
 \index{send\-Output@{send\-Output}!osea::FileReader@{osea\-::\-File\-Reader}}
@@ -362,7 +414,7 @@ Sends the results of parsing the input file onto the dictionary object. Use for 
 \end{DoxyParams}
 
 
-Definition at line 238 of file filereader.\-cpp.
+Definition at line 241 of file filereader.\-cpp.
 
 \hypertarget{classosea_1_1_file_reader_a3cbdb7eab632abafcfd055aa92f47b73}{\index{osea\-::\-File\-Reader@{osea\-::\-File\-Reader}!set\-Dictionary@{set\-Dictionary}}
 \index{set\-Dictionary@{set\-Dictionary}!osea::FileReader@{osea\-::\-File\-Reader}}
@@ -382,7 +434,7 @@ Sets the dictionary object to be used for processing any data read from the inpu
 \end{DoxyParams}
 
 
-Definition at line 210 of file filereader.\-cpp.
+Definition at line 220 of file filereader.\-cpp.
 
 \hypertarget{classosea_1_1_file_reader_a0b12de2af52dc0cdfae5ab337bf494dc}{\index{osea\-::\-File\-Reader@{osea\-::\-File\-Reader}!set\-Path@{set\-Path}}
 \index{set\-Path@{set\-Path}!osea::FileReader@{osea\-::\-File\-Reader}}
@@ -422,7 +474,89 @@ Sets the system object for the dictionary to reference.
 \end{DoxyParams}
 
 
-Definition at line 229 of file filereader.\-cpp.
+Definition at line 232 of file filereader.\-cpp.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classosea_1_1_file_reader_ae4705b931b9b7b691019cc2edfef5907}{\index{osea\-::\-File\-Reader@{osea\-::\-File\-Reader}!K\-E\-Y\-\_\-\-F\-O\-R\-M\-A\-T@{K\-E\-Y\-\_\-\-F\-O\-R\-M\-A\-T}}
+\index{K\-E\-Y\-\_\-\-F\-O\-R\-M\-A\-T@{K\-E\-Y\-\_\-\-F\-O\-R\-M\-A\-T}!osea::FileReader@{osea\-::\-File\-Reader}}
+\subsubsection[{K\-E\-Y\-\_\-\-F\-O\-R\-M\-A\-T}]{\setlength{\rightskip}{0pt plus 5cm}string File\-Reader\-::\-K\-E\-Y\-\_\-\-F\-O\-R\-M\-A\-T = \char`\"{}format\char`\"{}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}}\label{classosea_1_1_file_reader_ae4705b931b9b7b691019cc2edfef5907}
+The key designator for a format value in the seafile object. 
+
+Definition at line 311 of file filereader.\-h.
+
+\hypertarget{classosea_1_1_file_reader_a81c228678c776f9094f24b4cea522e04}{\index{osea\-::\-File\-Reader@{osea\-::\-File\-Reader}!K\-E\-Y\-\_\-\-V\-E\-R\-S\-I\-O\-N@{K\-E\-Y\-\_\-\-V\-E\-R\-S\-I\-O\-N}}
+\index{K\-E\-Y\-\_\-\-V\-E\-R\-S\-I\-O\-N@{K\-E\-Y\-\_\-\-V\-E\-R\-S\-I\-O\-N}!osea::FileReader@{osea\-::\-File\-Reader}}
+\subsubsection[{K\-E\-Y\-\_\-\-V\-E\-R\-S\-I\-O\-N}]{\setlength{\rightskip}{0pt plus 5cm}string File\-Reader\-::\-K\-E\-Y\-\_\-\-V\-E\-R\-S\-I\-O\-N = \char`\"{}version\char`\"{}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}}\label{classosea_1_1_file_reader_a81c228678c776f9094f24b4cea522e04}
+The key designator for a version value in the seafile object. 
+
+Definition at line 312 of file filereader.\-h.
+
+\hypertarget{classosea_1_1_file_reader_aaed6f9acbda3d7b4d9a58a5995fcc3ae}{\index{osea\-::\-File\-Reader@{osea\-::\-File\-Reader}!O\-B\-J\-\_\-\-S\-E\-A\-F\-I\-L\-E@{O\-B\-J\-\_\-\-S\-E\-A\-F\-I\-L\-E}}
+\index{O\-B\-J\-\_\-\-S\-E\-A\-F\-I\-L\-E@{O\-B\-J\-\_\-\-S\-E\-A\-F\-I\-L\-E}!osea::FileReader@{osea\-::\-File\-Reader}}
+\subsubsection[{O\-B\-J\-\_\-\-S\-E\-A\-F\-I\-L\-E}]{\setlength{\rightskip}{0pt plus 5cm}string File\-Reader\-::\-O\-B\-J\-\_\-\-S\-E\-A\-F\-I\-L\-E = \char`\"{}seafile\char`\"{}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}}\label{classosea_1_1_file_reader_aaed6f9acbda3d7b4d9a58a5995fcc3ae}
+The std\-::string designation for a sea file object.
+
+The string designation for a sea file object. 
+
+Definition at line 307 of file filereader.\-h.
+
+\hypertarget{classosea_1_1_file_reader_a1b16c3fe97f09ef7bb15bd56b3831bf9}{\index{osea\-::\-File\-Reader@{osea\-::\-File\-Reader}!plist\-Objects@{plist\-Objects}}
+\index{plist\-Objects@{plist\-Objects}!osea::FileReader@{osea\-::\-File\-Reader}}
+\subsubsection[{plist\-Objects}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<${\bf Object\-Group}$>$ osea\-::\-File\-Reader\-::plist\-Objects\hspace{0.3cm}{\ttfamily [protected]}}}\label{classosea_1_1_file_reader_a1b16c3fe97f09ef7bb15bd56b3831bf9}
+
+
+The list of \hyperlink{classosea_1_1_object_group}{Object\-Group} objects retrieved from parsing the file. This variable gets reused each time a new file is parsed. 
+
+
+
+Definition at line 267 of file filereader.\-h.
+
+\hypertarget{classosea_1_1_file_reader_adbc50f785e7fbbcbcf79af0f3bee49de}{\index{osea\-::\-File\-Reader@{osea\-::\-File\-Reader}!p\-Path@{p\-Path}}
+\index{p\-Path@{p\-Path}!osea::FileReader@{osea\-::\-File\-Reader}}
+\subsubsection[{p\-Path}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string osea\-::\-File\-Reader\-::p\-Path\hspace{0.3cm}{\ttfamily [protected]}}}\label{classosea_1_1_file_reader_adbc50f785e7fbbcbcf79af0f3bee49de}
+
+
+The filepath to the directory that contains the input files. Always the path to the root directory of the project. This will be the folder which then contains the other \char`\"{}system\char`\"{} and \char`\"{}constant\char`\"{} folders. 
+
+
+
+Definition at line 260 of file filereader.\-h.
+
+\hypertarget{classosea_1_1_file_reader_a0a741388f68dbb79e3e57797e90f42f4}{\index{osea\-::\-File\-Reader@{osea\-::\-File\-Reader}!pt\-Dict@{pt\-Dict}}
+\index{pt\-Dict@{pt\-Dict}!osea::FileReader@{osea\-::\-File\-Reader}}
+\subsubsection[{pt\-Dict}]{\setlength{\rightskip}{0pt plus 5cm}{\bf osea\-::\-Dictionary}$\ast$ osea\-::\-File\-Reader\-::pt\-Dict\hspace{0.3cm}{\ttfamily [protected]}}}\label{classosea_1_1_file_reader_a0a741388f68dbb79e3e57797e90f42f4}
+
+
+Pointer to a dictionary object used to process the \hyperlink{classosea_1_1_object_group}{Object\-Group}'s recorded. Used to send the Object group objects to the \hyperlink{classosea_1_1_dictionary}{Dictionary} object for reading. 
+
+\begin{DoxySeeAlso}{See Also}
+\hyperlink{classosea_1_1_object_group}{Object\-Group} 
+
+\hyperlink{classosea_1_1_dictionary}{Dictionary} 
+\end{DoxySeeAlso}
+
+
+Definition at line 287 of file filereader.\-h.
+
+\hypertarget{classosea_1_1_file_reader_ae584ddecd770e251978141a152d434ac}{\index{osea\-::\-File\-Reader@{osea\-::\-File\-Reader}!pt\-System@{pt\-System}}
+\index{pt\-System@{pt\-System}!osea::FileReader@{osea\-::\-File\-Reader}}
+\subsubsection[{pt\-System}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ofreq\-::\-System}$\ast$ osea\-::\-File\-Reader\-::pt\-System\hspace{0.3cm}{\ttfamily [protected]}}}\label{classosea_1_1_file_reader_ae584ddecd770e251978141a152d434ac}
+
+
+Pointer to the System object. Used to reference any important variables in the System object. 
+
+
+
+Definition at line 293 of file filereader.\-h.
+
+\hypertarget{classosea_1_1_file_reader_ab4afa39ca9cd0b871feb788f9d865893}{\index{osea\-::\-File\-Reader@{osea\-::\-File\-Reader}!S\-L\-A\-S\-H@{S\-L\-A\-S\-H}}
+\index{S\-L\-A\-S\-H@{S\-L\-A\-S\-H}!osea::FileReader@{osea\-::\-File\-Reader}}
+\subsubsection[{S\-L\-A\-S\-H}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string osea\-::\-File\-Reader\-::\-S\-L\-A\-S\-H\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}}\label{classosea_1_1_file_reader_ab4afa39ca9cd0b871feb788f9d865893}
+Directory separator in a std\-::string path. 
+
+Definition at line 303 of file filereader.\-h.
 
 
 

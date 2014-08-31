@@ -1,0 +1,210 @@
+\hypertarget{classosea_1_1ofreq_1_1math_interp}{\section{osea\-:\-:ofreq\-:\-:math\-Interp Class Reference}
+\label{classosea_1_1ofreq_1_1math_interp}\index{osea\-::ofreq\-::math\-Interp@{osea\-::ofreq\-::math\-Interp}}
+}
+
+
+The \hyperlink{classosea_1_1ofreq_1_1math_interp}{math\-Interp} class contains all math functions used for interpolation and extrapolation of data.  
+
+
+
+
+{\ttfamily \#include $<$mathinterp.\-h$>$}
+
+
+
+Inheritance diagram for osea\-:\-:ofreq\-:\-:math\-Interp\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classosea_1_1ofreq_1_1math_interp__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classosea_1_1ofreq_1_1math_interp_af18d4ccbcaa49aa454e3b8806f5723b7}{math\-Interp} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. Nothing happens here. \end{DoxyCompactList}\item 
+\hyperlink{classosea_1_1ofreq_1_1math_interp_a153d547357553accd5aa3cce44e5e46f}{$\sim$math\-Interp} ()
+\begin{DoxyCompactList}\small\item\em Default destructor. Nothing happens here. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$class T $>$ }\\T \hyperlink{classosea_1_1ofreq_1_1math_interp_a967df417677afc033e40e59e6924373c}{ie\-Polate} (double x, double x1, double x2, T y1, T y2)
+\begin{DoxyCompactList}\small\item\em A linear interpolation function. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class T $>$ }\\T \hyperlink{classosea_1_1ofreq_1_1math_interp_a48d4f60771f130dd5a0e84aa31f98936}{i\-Polate} (double x, double x1, double x2, T y1, T y2)
+\begin{DoxyCompactList}\small\item\em A linear interpolation function. \end{DoxyCompactList}\item 
+std\-::vector$<$ int $>$ \hyperlink{classosea_1_1ofreq_1_1math_interp_aeea83b19522f9529d9dc93ec0197682b}{Find\-Match} (double val\-Search, std\-::vector$<$ double $>$ \&list\-Val)
+\begin{DoxyCompactList}\small\item\em Finds the indices of the two items that are closest to the specified search term. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+The \hyperlink{classosea_1_1ofreq_1_1math_interp}{math\-Interp} class contains all math functions used for interpolation and extrapolation of data. 
+
+The class is designed to be used for internal functions in other classes. Many of the functions are designed as generic templates to allow large compatibility with other object types. 
+
+Definition at line 84 of file mathinterp.\-h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classosea_1_1ofreq_1_1math_interp_af18d4ccbcaa49aa454e3b8806f5723b7}{\index{osea\-::ofreq\-::math\-Interp@{osea\-::ofreq\-::math\-Interp}!math\-Interp@{math\-Interp}}
+\index{math\-Interp@{math\-Interp}!osea::ofreq::mathInterp@{osea\-::ofreq\-::math\-Interp}}
+\subsubsection[{math\-Interp}]{\setlength{\rightskip}{0pt plus 5cm}math\-Interp\-::math\-Interp (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1math_interp_af18d4ccbcaa49aa454e3b8806f5723b7}
+
+
+Default constructor. Nothing happens here. 
+
+
+
+Definition at line 40 of file mathinterp.\-cpp.
+
+\hypertarget{classosea_1_1ofreq_1_1math_interp_a153d547357553accd5aa3cce44e5e46f}{\index{osea\-::ofreq\-::math\-Interp@{osea\-::ofreq\-::math\-Interp}!$\sim$math\-Interp@{$\sim$math\-Interp}}
+\index{$\sim$math\-Interp@{$\sim$math\-Interp}!osea::ofreq::mathInterp@{osea\-::ofreq\-::math\-Interp}}
+\subsubsection[{$\sim$math\-Interp}]{\setlength{\rightskip}{0pt plus 5cm}math\-Interp\-::$\sim$math\-Interp (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1ofreq_1_1math_interp_a153d547357553accd5aa3cce44e5e46f}
+
+
+Default destructor. Nothing happens here. 
+
+
+
+Definition at line 45 of file mathinterp.\-cpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classosea_1_1ofreq_1_1math_interp_aeea83b19522f9529d9dc93ec0197682b}{\index{osea\-::ofreq\-::math\-Interp@{osea\-::ofreq\-::math\-Interp}!Find\-Match@{Find\-Match}}
+\index{Find\-Match@{Find\-Match}!osea::ofreq::mathInterp@{osea\-::ofreq\-::math\-Interp}}
+\subsubsection[{Find\-Match}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ int $>$ math\-Interp\-::\-Find\-Match (
+\begin{DoxyParamCaption}
+\item[{double}]{val\-Search, }
+\item[{std\-::vector$<$ double $>$ \&}]{list\-Val}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classosea_1_1ofreq_1_1math_interp_aeea83b19522f9529d9dc93ec0197682b}
+
+
+Finds the indices of the two items that are closest to the specified search term. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em val\-Search} & Double, passed by value. The value that you are trying to find the closest match to. \\
+\hline
+{\em list\-Val} & Vector of doubles, passed by reference. The list of possible values to search through. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns a vector of only two entries. These are the indices of the two closest matches. Find\-Match\mbox{[}0\mbox{]} = The closest match Find\-Match\mbox{[}1\mbox{]} = The second closest match 
+\end{DoxyReturn}
+
+
+Definition at line 55 of file mathinterp.\-cpp.
+
+\hypertarget{classosea_1_1ofreq_1_1math_interp_a967df417677afc033e40e59e6924373c}{\index{osea\-::ofreq\-::math\-Interp@{osea\-::ofreq\-::math\-Interp}!ie\-Polate@{ie\-Polate}}
+\index{ie\-Polate@{ie\-Polate}!osea::ofreq::mathInterp@{osea\-::ofreq\-::math\-Interp}}
+\subsubsection[{ie\-Polate}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ T osea\-::ofreq\-::math\-Interp\-::ie\-Polate (
+\begin{DoxyParamCaption}
+\item[{double}]{x, }
+\item[{double}]{x1, }
+\item[{double}]{x2, }
+\item[{T}]{y1, }
+\item[{T}]{y2}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}}\label{classosea_1_1ofreq_1_1math_interp_a967df417677afc033e40e59e6924373c}
+
+
+A linear interpolation function. 
+
+This function will perform linear interpolation or extrapolation, based on two data points. It is a template function and can take almost any data type. The independent variables (the x variables) in the function must be double data type, but the dependent variables (the y variables) can be almost any data types, assuming the data type supports certain operators. 
+\begin{DoxyParams}{Parameters}
+{\em x} & Double, variable passed by value. This is the x value for the output that you want. The result of the interpolation will be based on this x value. \\
+\hline
+{\em x1} & Double, variable passed by value. This is the first x value for the data that you have. \\
+\hline
+{\em x2} & Double, variable passed by value. This is the second x value for the data that you have. \\
+\hline
+{\em y1} & Template variable, passed by value. This is the first y value for the data that you have. This y value corresponds to the x1 value given earlier. The object type passed to this parameter must support the following operations\-: (+, -\/, $\ast$) \\
+\hline
+{\em y2} & Template variable, passed by value. This is the second y value for the data that you have. This y value corresponds to the x2 value given earlier. The object type passed to this parameter must support the following operations\-: (+, -\/, $\ast$) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returned type is the template type. Variable is passed by value. 
+\end{DoxyReturn}
+
+
+Definition at line 127 of file mathinterp.\-h.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classosea_1_1ofreq_1_1math_interp_a967df417677afc033e40e59e6924373c_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classosea_1_1ofreq_1_1math_interp_a48d4f60771f130dd5a0e84aa31f98936}{\index{osea\-::ofreq\-::math\-Interp@{osea\-::ofreq\-::math\-Interp}!i\-Polate@{i\-Polate}}
+\index{i\-Polate@{i\-Polate}!osea::ofreq::mathInterp@{osea\-::ofreq\-::math\-Interp}}
+\subsubsection[{i\-Polate}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ T osea\-::ofreq\-::math\-Interp\-::i\-Polate (
+\begin{DoxyParamCaption}
+\item[{double}]{x, }
+\item[{double}]{x1, }
+\item[{double}]{x2, }
+\item[{T}]{y1, }
+\item[{T}]{y2}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}}\label{classosea_1_1ofreq_1_1math_interp_a48d4f60771f130dd5a0e84aa31f98936}
+
+
+A linear interpolation function. 
+
+This function will perform linear interpolation, based on two data points. It will only interpolate within the data points. If the requested value is outside the data points, it will return the nearest bound to the requested value. T\-His is a template function and can take almost any data type. The independent variables (the x variables) in the function must be double data type, but the dependent variables (the y variables) can be almost any data types, assuming the data type supports certain operators. 
+\begin{DoxyParams}{Parameters}
+{\em x} & Double, variable passed by value. This is the x value for the output that you want. The result of the interpolation will be based on this x value. \\
+\hline
+{\em x1} & Double, variable passed by value. This is the first x value for the data that you have. \\
+\hline
+{\em x2} & Double, variable passed by value. This is the second x value for the data that you have. \\
+\hline
+{\em y1} & Template variable, passed by value. This is the first y value for the data that you have. This y value corresponds to the x1 value given earlier. The object type passed to this parameter must support the following operations\-: (+, -\/, $\ast$) \\
+\hline
+{\em y2} & Template variable, passed by value. This is the second y value for the data that you have. This y value corresponds to the x2 value given earlier. The object type passed to this parameter must support the following operations\-: (+, -\/, $\ast$) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returned type is the template type. Variable is passed by value. 
+\end{DoxyReturn}
+
+
+Definition at line 173 of file mathinterp.\-h.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classosea_1_1ofreq_1_1math_interp_a48d4f60771f130dd5a0e84aa31f98936_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/home/\-Ship\-\_\-\-Design/\-Projects/\-D\-M\-S1305 Open\-S\-E\-A/master/200\-\_\-src/bin/ofreq/global\-\_\-objects/\hyperlink{mathinterp_8h}{mathinterp.\-h}\item 
+/home/\-Ship\-\_\-\-Design/\-Projects/\-D\-M\-S1305 Open\-S\-E\-A/master/200\-\_\-src/bin/ofreq/global\-\_\-objects/\hyperlink{mathinterp_8cpp}{mathinterp.\-cpp}\end{DoxyCompactItemize}

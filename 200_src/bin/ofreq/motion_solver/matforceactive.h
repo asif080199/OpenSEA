@@ -108,7 +108,7 @@ public:
      * array
      * @return Returns a matForceActive object.  Variable passed by value.
      */
-    matForceActive operator*(double scalar);
+    matForceActive operator *(double scalar);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -129,6 +129,17 @@ public:
      * @return Returns the coefficients matrix.
      */
     arma::cx_mat &listCoefficient();
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Sets all the coefficients for the matrix in one go.
+     *
+     * Takes an armadillo cx_mat object as input and records all those values as the matrix of coefficients.
+     * @param input Armadillo cx_mat object, variable passed by value.  The matrix of coefficients  for the Active
+     * force object.  Matrix should be Nx1.  (Unlimited number of rows, but only one column.)  Do not use an
+     * armadillo column matrix.  Follow-on functions expect a full 2D matrix that just happens to have one column.
+     */
+    void setCoefficient(arma::cx_mat input);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**

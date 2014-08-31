@@ -7,11 +7,12 @@
 
 
 
-Inheritance diagram for osea\-:\-:ofreq\-:\-:Motion\-Solver\-:\nopagebreak
+Inheritance diagram for osea\-:\-:ofreq\-:\-:Motion\-Solver\-:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=228pt]{classosea_1_1ofreq_1_1_motion_solver__inherit__graph}
+\includegraphics[width=220pt]{classosea_1_1ofreq_1_1_motion_solver__inherit__graph}
 \end{center}
 \end{figure}
 \subsection*{Public Member Functions}
@@ -49,7 +50,7 @@ arma\-::cx\-\_\-mat \& \hyperlink{classosea_1_1ofreq_1_1_motion_solver_a20a5c24b
 \subsection{Detailed Description}
 This class holds data for the motion solver and performs calculations on all of the data to get the solution matrix. The motion solver performs a series of operations. 1.) Sum each force object for all forces within a set. 2.) Sum each force object for all the derivatives defined within each force. Applied frequency dependence. 3.) Sum user reactive forces, hydro reactive forces, and body mass into a single object for each body. 4.) Sum user cross-\/body forces, hydro cross-\/body forces into a single object for each body. 5.) Sum user active forces and hydro active forces into a single object for each body. 6.) Assemble reactive forces and cross-\/body forces into a single global response matrix. (\mbox{[}A\mbox{]}) 7.) Assemble active forces into a single global active force matrix. (\mbox{[}F\mbox{]}) 8.) Solve the linear system system of equations formed by the equation \mbox{[}A\mbox{]} $\ast$ \mbox{[}x\mbox{]} = \mbox{[}F\mbox{]} 9.) Redistribute the solution back to each body object. 
 
-Definition at line 97 of file motionsolver.\-h.
+Definition at line 98 of file motionsolver.\-h.
 
 
 
@@ -150,7 +151,7 @@ Returns the full vector of complex matrices. Each element in the vector is a sol
 \end{DoxyReturn}
 
 
-Definition at line 493 of file motionsolver.\-cpp.
+Definition at line 505 of file motionsolver.\-cpp.
 
 \hypertarget{classosea_1_1ofreq_1_1_motion_solver_a20a5c24bd163adb5654eceee6030f898}{\index{osea\-::ofreq\-::\-Motion\-Solver@{osea\-::ofreq\-::\-Motion\-Solver}!list\-Solution@{list\-Solution}}
 \index{list\-Solution@{list\-Solution}!osea::ofreq::MotionSolver@{osea\-::ofreq\-::\-Motion\-Solver}}
@@ -176,7 +177,7 @@ Returns a matrix of complex doubles. This matrix contains the solution of motion
 \end{DoxySeeAlso}
 
 
-Definition at line 499 of file motionsolver.\-cpp.
+Definition at line 511 of file motionsolver.\-cpp.
 
 \hypertarget{classosea_1_1ofreq_1_1_motion_solver_a5deee421d26ef9729e0a870fd48b4403}{\index{osea\-::ofreq\-::\-Motion\-Solver@{osea\-::ofreq\-::\-Motion\-Solver}!set\-Wave\-Freq@{set\-Wave\-Freq}}
 \index{set\-Wave\-Freq@{set\-Wave\-Freq}!osea::ofreq::MotionSolver@{osea\-::ofreq\-::\-Motion\-Solver}}
@@ -223,7 +224,8 @@ Definition at line 128 of file motionsolver.\-cpp.
 
 
 
-Here is the call graph for this function\-:\nopagebreak
+Here is the call graph for this function\-:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -280,7 +282,8 @@ Definition at line 164 of file motionsolver.\-cpp.
 
 
 
-Here is the call graph for this function\-:\nopagebreak
+Here is the call graph for this function\-:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode

@@ -115,10 +115,6 @@ a. First create the help project configuration file (.qhp).
 b. Then execute the following command (linux operating system) to compile the compressed help file. doc.\-qhp is the name of the configuration file and output.\-qch is the name of the output Qt compressed help file. \begin{DoxyVerb}qhelpgenerator doc.qhp -o output.qch
 \end{DoxyVerb}
 
-\end{DoxyEnumerate}
-
-
-\begin{DoxyEnumerate}
 \item Repeat this process for each manual. You should have three separate .qhp files when done.
 \item Next create the final combined help collection file.
 
@@ -139,7 +135,7 @@ See the sub sections below for details on what to enter for each configuration f
 
 \begin{TabularC}{2}
 \hline
-\rowcolor{lightgray}\PBS\centering {\bf File Type }&{\bf Commentary }\\\cline{1-2}
+\rowcolor{lightgray}\PBS\centering {\bf File Type }&{\bf Commentary  }\\\cline{1-2}
 \PBS\centering .qch file &{\itshape Q} t {\itshape C} ompressed {\itshape H} elp files. H\-T\-M\-L documents are written in (including attached images and other information) to the S\-Q\-Lite3 database. Create qhelpgenerator command. \\\cline{1-2}
 \PBS\centering .qhp file &{\itshape Q} t {\itshape H} elp {\itshape P} roject file. Configuration file that controls the generation of the qch file. Also controls the list of H\-T\-M\-L files to include. \\\cline{1-2}
 \end{TabularC}
@@ -151,7 +147,7 @@ See the sub sections below for details on what to enter for each configuration f
 
 \begin{TabularC}{2}
 \hline
-\rowcolor{lightgray}\PBS\centering {\bf File Type }&{\bf Commentary }\\\cline{1-2}
+\rowcolor{lightgray}\PBS\centering {\bf File Type }&{\bf Commentary  }\\\cline{1-2}
 \PBS\centering .qhc file &{\itshape Q} t {\itshape H} elp {\itshape C} ollection files. S\-Q\-Lite3 files are compiled into a database. Qhc includes file management and appearance of the help browser. Create qcollectiongenerator command. \\\cline{1-2}
 \PBS\centering .qhcp file &{\itshape Q} t {\itshape H} elp {\itshape C} ollection \-\_\-\-P\-\_\-roject file. Configuration file that controls the generation of the qhc file. Specifies which .qch files to include. Here, Qt\-Assistant You can also customize some parts of the screen. \\\cline{1-2}
 \end{TabularC}
@@ -211,7 +207,7 @@ The two digit number is a reference to the program being documented. T\-His numb
 
 \begin{TabularC}{5}
 \hline
-\rowcolor{lightgray}{\bf }&\PBS\centering {\bf Theory Manual }&\PBS\centering {\bf Developer Manual }&\PBS\centering {\bf User Manual }&\PBS\centering {\bf Common Manual }\\\cline{1-5}
+\rowcolor{lightgray}{\bf }&\PBS\centering {\bf Theory Manual }&\PBS\centering {\bf Developer Manual }&\PBS\centering {\bf User Manual }&\PBS\centering {\bf Common Manual  }\\\cline{1-5}
 G\-U\-I &\PBS\centering T01 &\PBS\centering D01 &\PBS\centering U01 &\PBS\centering C01 \\\cline{1-5}
 o\-Batch &\PBS\centering T02 &\PBS\centering D02 &\PBS\centering U02 &\PBS\centering C02 \\\cline{1-5}
 o\-Fourier &\PBS\centering T03 &\PBS\centering D03 &\PBS\centering U03 &\PBS\centering C03 \\\cline{1-5}
@@ -234,14 +230,12 @@ Then each document would have the following number\-:
 
 \begin{TabularC}{2}
 \hline
-\rowcolor{lightgray}{\bf Document }&{\bf Number }\\\cline{1-2}
+\rowcolor{lightgray}{\bf Document }&{\bf Number  }\\\cline{1-2}
 Ralph &T01-\/0001 \\\cline{1-2}
 James &T01-\/0001.\-0100 \\\cline{1-2}
 John &T01-\/0001.\-0100.\-0020 \\\cline{1-2}
 George &T01-\/0001.\-0100.\-0020.\-1000 \\\cline{1-2}
 \end{TabularC}
-
-
 Notice that at the top level, the identifier number only had four digits. Each sub-\/level increases the nubmer of digits assigned to the document number. Also notice that each level used a different numbering sytem. Sequential numbers do not need to be consecutive. You can skip numbers to leave room for other documents added later. You can use your own numbering system for each individual level. There are only the following rules for the numbering system.
 
 
@@ -341,7 +335,7 @@ So, in general, there are four files interacting with the help system, two used 
 
 \begin{TabularC}{3}
 \hline
-\rowcolor{lightgray}{\bf Name }&{\bf Extension }&{\bf Brief Description }\\\cline{1-3}
+\rowcolor{lightgray}{\bf Name }&{\bf Extension }&{\bf Brief Description  }\\\cline{1-3}
 Qt Help Project &.qhp &The input file for the help generator consisting of the table of contents, indices and references to the actual documentation files ($\ast$.html); it also defines a unique namespace for the documentation. \\\cline{1-3}
 Qt Compressed Help &.qch &The output file of the help generator. This binary file contains all information specified in the help project file along with all compressed documentation files. \\\cline{1-3}
 Qt Help Collection Project &.qhcp &The input file for the help collection generator. It contains references to compressed help files which should be included in the collection; it also may contain other information for customizing Qt Assistant. \\\cline{1-3}
@@ -431,7 +425,7 @@ The help collection file ($\ast$.qhc) used by Qt Assistant is created when runni
 
 \begin{TabularC}{2}
 \hline
-\rowcolor{lightgray}{\bf Tag }&{\bf Brief Description }\\\cline{1-2}
+\rowcolor{lightgray}{\bf Tag }&{\bf Brief Description  }\\\cline{1-2}
 $<$title$>$ &This property is used to specify a window title for Qt Assistant. \\\cline{1-2}
 $<$home\-Page$>$ &This tag specifies which page should be display when pressing the home button in Qt Assistant's main user interface. \\\cline{1-2}
 $<$start\-Page$>$ &This tag specifies which page Qt Assistant should initially display when the help collection is used. \\\cline{1-2}
@@ -476,7 +470,7 @@ The following commands can be used to control Qt Assistant\-:
 
 \begin{TabularC}{2}
 \hline
-\rowcolor{lightgray}{\bf Command }&{\bf Brief Description }\\\cline{1-2}
+\rowcolor{lightgray}{\bf Command }&{\bf Brief Description  }\\\cline{1-2}
 show $<$\-Widget$>$ &Shows the dock widget specified by $<$\-Widget$>$. If the widget is already shown and this command is sent again, the widget will be activated, meaning that it will be raised and given the input focus. Possible values for $<$\-Widget$>$ are \char`\"{}contents\char`\"{}, \char`\"{}index\char`\"{}, \char`\"{}bookmarks\char`\"{} or \char`\"{}search\char`\"{}. \\\cline{1-2}
 hide $<$\-Widget$>$ &Hides the dock widget specified by $<$\-Widget$>$. Possible values for $<$\-Widget$>$ are \char`\"{}contents\char`\"{}, \char`\"{}index\char`\"{}, \char`\"{}bookmarks\char`\"{} and \char`\"{}search\char`\"{}. \\\cline{1-2}
 set\-Source $<$\-Url$>$ &Displays the given $<$\-Url$>$. The U\-R\-L can be absolute or relative to the currently displayed page. If the U\-R\-L is absolute, it has to be a valid Qt help system U\-R\-L; i.\-e., starting with \char`\"{}qthelp\-://\char`\"{}. \\\cline{1-2}
@@ -488,8 +482,6 @@ expand\-Toc $<$\-Depth$>$ &Expands the table of contents tree to the given depth
 register $<$help file$>$=\char`\"{}\char`\"{}$>$ &Adds the given Qt compressed help file to the collection. \\\cline{1-2}
 unregister $<$help file$>$=\char`\"{}\char`\"{}$>$ &Removes the given Qt compressed help file from the collection. \\\cline{1-2}
 \end{TabularC}
-
-
 If you want to send several commands within a short period of time, it is recommended that you write only a single line to the stdin of the process instead of one line for every command. The commands have to be separated by a semicolon, as shown in the following example\-:
 
 Q\-Byte\-Array ba; ba.\-append(\char`\"{}hide bookmarks;\char`\"{}); ba.\-append(\char`\"{}hide index;\char`\"{}); ba.\-append(\char`\"{}set\-Source qthelp\-://com.\-mycompany.\-1\-\_\-0\-\_\-0/doc/index.\-html\textbackslash{}n\char`\"{}); process-\/$>$write(ba);\hypertarget{assistant_assitant_compat}{}\subsection{Compatibility with Old Formats}\label{assistant_assitant_compat}

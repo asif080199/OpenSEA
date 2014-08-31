@@ -69,7 +69,20 @@ SOURCES += ofreq.cpp \
     sea_models/seamodel_uniform.cpp \
     hydro_data/hydrodata.cpp \
     global_objects/mathinterp.cpp \
-    hydro_data/syshydro.cpp
+    hydro_reader/hydroreader.cpp \
+    hydro_data/hydromanager.cpp \
+    hydro_reader/dicthydrodirection.cpp \
+    hydro_reader/dicthydroenv.cpp \
+    hydro_reader/dicthydrofrequency.cpp \
+    hydro_reader/dictcrossdamp.cpp \
+    hydro_reader/dictcrossmass.cpp \
+    hydro_reader/dictcrossstiff.cpp \
+    hydro_reader/dictforceexcite.cpp \
+    hydro_reader/dicthydrodamp.cpp \
+    hydro_reader/dicthydromass.cpp \
+    hydro_reader/dicthydrostiff.cpp \
+    hydro_reader/dicthydroreact.cpp \
+    hydro_reader/dictcrossreact.cpp
 
 HEADERS += \
     derived_outputs/outputsbody.h \
@@ -122,7 +135,20 @@ HEADERS += \
     sea_models/seamodel_uniform.h \
     hydro_data/hydrodata.h \
     global_objects/mathinterp.h \
-    hydro_data/syshydro.h
+    hydro_reader/hydroreader.h \
+    hydro_data/hydromanager.h \
+    hydro_reader/dicthydrodirection.h \
+    hydro_reader/dicthydroenv.h \
+    hydro_reader/dicthydrofrequency.h \
+    hydro_reader/dictcrossdamp.h \
+    hydro_reader/dictcrossmass.h \
+    hydro_reader/dictcrossstiff.h \
+    hydro_reader/dictforceexcite.h \
+    hydro_reader/dicthydrodamp.h \
+    hydro_reader/dicthydromass.h \
+    hydro_reader/dicthydrostiff.h \
+    hydro_reader/dicthydroreact.h \
+    hydro_reader/dictcrossreact.h
 
 # Include header files path for libraries
 INCLUDEPATH += \

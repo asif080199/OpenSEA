@@ -1,0 +1,335 @@
+\hypertarget{classosea_1_1_wave_spec}{\section{osea\-:\-:Wave\-Spec Class Reference}
+\label{classosea_1_1_wave_spec}\index{osea\-::\-Wave\-Spec@{osea\-::\-Wave\-Spec}}
+}
+
+
+The \hyperlink{classosea_1_1_wave_spec}{Wave\-Spec} class defines wave spectrums.  
+
+
+
+
+{\ttfamily \#include $<$wavespec.\-h$>$}
+
+
+
+Inheritance diagram for osea\-:\-:Wave\-Spec\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classosea_1_1_wave_spec__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classosea_1_1_wave_spec_a7f9958350d3773ecd4838c0f83aab69d}{Wave\-Spec} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. Nothing happens here. \end{DoxyCompactList}\item 
+virtual \hyperlink{classosea_1_1_wave_spec_aaa9c70d5cb4a507e549f4932d9d8f360}{$\sim$\-Wave\-Spec} ()
+\begin{DoxyCompactList}\small\item\em Default destructor. Nothing happens here. \end{DoxyCompactList}\item 
+std\-::vector$<$ double $>$ \& \hyperlink{classosea_1_1_wave_spec_a8123faa0a659c171b1937def14565eb6}{list\-Wave\-Freq} ()
+\begin{DoxyCompactList}\small\item\em Returns the list of wave frequencies. \end{DoxyCompactList}\item 
+double \& \hyperlink{classosea_1_1_wave_spec_a0f627b180f8c8ab1b2d76bbcf7e4a02a}{list\-Wave\-Freq} (int index)
+\begin{DoxyCompactList}\small\item\em Returns a single wave frequency at the requested index. \end{DoxyCompactList}\item 
+void \hyperlink{classosea_1_1_wave_spec_a6ea11c5e3af85e0f9a9101a498a35ddd}{set\-Wave\-Freq} (std\-::vector$<$ double $>$ freq\-In)
+\begin{DoxyCompactList}\small\item\em Sets the list of wave frequencies. (rad/s) \end{DoxyCompactList}\item 
+std\-::vector$<$ double $>$ \& \hyperlink{classosea_1_1_wave_spec_a7ea9137186ee791072384642db81916a}{list\-Wave\-Energy} ()
+\begin{DoxyCompactList}\small\item\em Returns the list of wave energy. \end{DoxyCompactList}\item 
+double \& \hyperlink{classosea_1_1_wave_spec_af18c2204cdcd74856f686fda8c6f2b3f}{list\-Wave\-Energy} (int index)
+\begin{DoxyCompactList}\small\item\em Returns a single wave frequency at the requested index. \end{DoxyCompactList}\item 
+void \hyperlink{classosea_1_1_wave_spec_a0ce0af01b4afa934b1ce4fa10ea892d6}{set\-Wave\-Energy} (std\-::vector$<$ double $>$ energy\-In)
+\begin{DoxyCompactList}\small\item\em Sets the list of wave energy. (rad/s) \end{DoxyCompactList}\item 
+double \hyperlink{classosea_1_1_wave_spec_a2fcca343c95ac41cc282e825f2c33cb5}{get\-Spec\-Energy} (double freq)
+\begin{DoxyCompactList}\small\item\em Gets the spectral energy for the frequency requested. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classosea_1_1_wave_spec_ac76583847ab29ca9e8855c3236a66d17}{Construct\-Spline} (double freq\-In)
+\begin{DoxyCompactList}\small\item\em Constructs the interpolation spline, based on how many data points are available. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\-::vector$<$ double $>$ \hyperlink{classosea_1_1_wave_spec_ab45dc3ff2434f811c9ac8be1db97e9ac}{p\-Wave\-Freq}
+\item 
+std\-::vector$<$ double $>$ \hyperlink{classosea_1_1_wave_spec_a9f53c79c4ca381d594f28d1e6356fc16}{p\-Wave\-Energy}
+\begin{DoxyCompactList}\small\item\em The list of wave spectral energy. \end{DoxyCompactList}\item 
+alglib\-::spline1dinterpolant \hyperlink{classosea_1_1_wave_spec_a5124faef0eb272c5ccbb9ced6a54fc12}{p\-Spec\-Curve}
+\begin{DoxyCompactList}\small\item\em The mathematical spline constructed for interpolation of the wave spectrum data. \end{DoxyCompactList}\item 
+bool \hyperlink{classosea_1_1_wave_spec_a9e268505ee26a9c2b61f13976c52ff93}{Spline\-Ready}
+\begin{DoxyCompactList}\small\item\em Boolean to track if the spline function was constructed. Initially set to false. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+The \hyperlink{classosea_1_1_wave_spec}{Wave\-Spec} class defines wave spectrums. 
+
+Wave spectrums are essentially mathematical functions that define a relationship between wave frequency, and wave energy. The main use of a \hyperlink{classosea_1_1_wave_spec}{Wave\-Spec} object is to ask for the wave spetral energy at a given wave frequency. The \hyperlink{classosea_1_1_wave_spec}{Wave\-Spec} class is the most basic definition. In this class, the user provides tables of wave frequency and wave energy. The class then interpolates to return the wave energy at the requested frequency. 
+
+Definition at line 73 of file wavespec.\-h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classosea_1_1_wave_spec_a7f9958350d3773ecd4838c0f83aab69d}{\index{osea\-::\-Wave\-Spec@{osea\-::\-Wave\-Spec}!Wave\-Spec@{Wave\-Spec}}
+\index{Wave\-Spec@{Wave\-Spec}!osea::WaveSpec@{osea\-::\-Wave\-Spec}}
+\subsubsection[{Wave\-Spec}]{\setlength{\rightskip}{0pt plus 5cm}Wave\-Spec\-::\-Wave\-Spec (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1_wave_spec_a7f9958350d3773ecd4838c0f83aab69d}
+
+
+Default constructor. Nothing happens here. 
+
+
+
+Definition at line 38 of file wavespec.\-cpp.
+
+\hypertarget{classosea_1_1_wave_spec_aaa9c70d5cb4a507e549f4932d9d8f360}{\index{osea\-::\-Wave\-Spec@{osea\-::\-Wave\-Spec}!$\sim$\-Wave\-Spec@{$\sim$\-Wave\-Spec}}
+\index{$\sim$\-Wave\-Spec@{$\sim$\-Wave\-Spec}!osea::WaveSpec@{osea\-::\-Wave\-Spec}}
+\subsubsection[{$\sim$\-Wave\-Spec}]{\setlength{\rightskip}{0pt plus 5cm}Wave\-Spec\-::$\sim$\-Wave\-Spec (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classosea_1_1_wave_spec_aaa9c70d5cb4a507e549f4932d9d8f360}
+
+
+Default destructor. Nothing happens here. 
+
+
+
+Definition at line 44 of file wavespec.\-cpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classosea_1_1_wave_spec_ac76583847ab29ca9e8855c3236a66d17}{\index{osea\-::\-Wave\-Spec@{osea\-::\-Wave\-Spec}!Construct\-Spline@{Construct\-Spline}}
+\index{Construct\-Spline@{Construct\-Spline}!osea::WaveSpec@{osea\-::\-Wave\-Spec}}
+\subsubsection[{Construct\-Spline}]{\setlength{\rightskip}{0pt plus 5cm}void Wave\-Spec\-::\-Construct\-Spline (
+\begin{DoxyParamCaption}
+\item[{double}]{freq\-In}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classosea_1_1_wave_spec_ac76583847ab29ca9e8855c3236a66d17}
+
+
+Constructs the interpolation spline, based on how many data points are available. 
+
+The function uses the index to determine if there are enough data points on either side of the requested frequency. This does assume that the wave frequency list is sequentially ordered. Technically, the spline interpolation functions do not need this to construct the spline, but o\-Freq needs this to ensure enough data points exist. 
+\begin{DoxyParams}{Parameters}
+{\em freq\-In} & double. Specifies the wave frequency requested. The class uses this to determine which spline interpolation function it can use. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 119 of file wavespec.\-cpp.
+
+\hypertarget{classosea_1_1_wave_spec_a2fcca343c95ac41cc282e825f2c33cb5}{\index{osea\-::\-Wave\-Spec@{osea\-::\-Wave\-Spec}!get\-Spec\-Energy@{get\-Spec\-Energy}}
+\index{get\-Spec\-Energy@{get\-Spec\-Energy}!osea::WaveSpec@{osea\-::\-Wave\-Spec}}
+\subsubsection[{get\-Spec\-Energy}]{\setlength{\rightskip}{0pt plus 5cm}double Wave\-Spec\-::get\-Spec\-Energy (
+\begin{DoxyParamCaption}
+\item[{double}]{freq}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classosea_1_1_wave_spec_a2fcca343c95ac41cc282e825f2c33cb5}
+
+
+Gets the spectral energy for the frequency requested. 
+
+Returns the spectral energy in units of m$^\wedge$2/(rad/s). Returns value for the frequency requested. The requested frequency does not need to match any of the frequencies included in the input data. The function automatically interpolates for the frequency requested. The function will chose from a variety of interpolation methods, depending on how many data points are available. The following lists the decision matrix for interpolation methods. 1 data point\-: Always return that data point. 2 data points\-: Linear interpolation. 3 data points\-: Cubic spline interpolation. 5+ data points\-: Akima spline. 
+\begin{DoxyParams}{Parameters}
+{\em freq} & Double. Variable passed by value. The wave frequency that you want to retrieve the spectral energy for. Frequency should be global wave frequency, in units of rad/s. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns a double, passed by value. Returns the spectral wave energy (m$^\wedge$2/(rad/s)) at the requested wave frequency. 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classosea_1_1_wave_spec_base_ab058570554fed4ad517e355f994bef62}{osea\-::\-Wave\-Spec\-Base}.
+
+
+
+Definition at line 90 of file wavespec.\-cpp.
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classosea_1_1_wave_spec_a2fcca343c95ac41cc282e825f2c33cb5_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classosea_1_1_wave_spec_a7ea9137186ee791072384642db81916a}{\index{osea\-::\-Wave\-Spec@{osea\-::\-Wave\-Spec}!list\-Wave\-Energy@{list\-Wave\-Energy}}
+\index{list\-Wave\-Energy@{list\-Wave\-Energy}!osea::WaveSpec@{osea\-::\-Wave\-Spec}}
+\subsubsection[{list\-Wave\-Energy}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<$ double $>$ \& Wave\-Spec\-::list\-Wave\-Energy (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1_wave_spec_a7ea9137186ee791072384642db81916a}
+
+
+Returns the list of wave energy. 
+
+Returned variable is passed by reference. The wave energy are the global wave energy. (rad/s) \begin{DoxyReturn}{Returns}
+Returns a vector of doubles. These are the wave energy that the spectrum is based on. Returned variable is passed by reference. 
+\end{DoxyReturn}
+
+
+Definition at line 70 of file wavespec.\-cpp.
+
+\hypertarget{classosea_1_1_wave_spec_af18c2204cdcd74856f686fda8c6f2b3f}{\index{osea\-::\-Wave\-Spec@{osea\-::\-Wave\-Spec}!list\-Wave\-Energy@{list\-Wave\-Energy}}
+\index{list\-Wave\-Energy@{list\-Wave\-Energy}!osea::WaveSpec@{osea\-::\-Wave\-Spec}}
+\subsubsection[{list\-Wave\-Energy}]{\setlength{\rightskip}{0pt plus 5cm}double \& Wave\-Spec\-::list\-Wave\-Energy (
+\begin{DoxyParamCaption}
+\item[{int}]{index}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1_wave_spec_af18c2204cdcd74856f686fda8c6f2b3f}
+
+
+Returns a single wave frequency at the requested index. 
+
+Returned variable is passed by reference. Returns the wave frequency from the vector. Returns variable at specified index. 
+\begin{DoxyParams}{Parameters}
+{\em index} & Integer. Variable passed by value. The index from the vector of wave energy that should be returned. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns the wave frequency from the vector, the single entry requested by index. Returned variable is a double, passed by reference. 
+\end{DoxyReturn}
+
+
+Definition at line 76 of file wavespec.\-cpp.
+
+\hypertarget{classosea_1_1_wave_spec_a8123faa0a659c171b1937def14565eb6}{\index{osea\-::\-Wave\-Spec@{osea\-::\-Wave\-Spec}!list\-Wave\-Freq@{list\-Wave\-Freq}}
+\index{list\-Wave\-Freq@{list\-Wave\-Freq}!osea::WaveSpec@{osea\-::\-Wave\-Spec}}
+\subsubsection[{list\-Wave\-Freq}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<$ double $>$ \& Wave\-Spec\-::list\-Wave\-Freq (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1_wave_spec_a8123faa0a659c171b1937def14565eb6}
+
+
+Returns the list of wave frequencies. 
+
+Returned variable is passed by reference. The wave frequencies are the global wave frequencies. (rad/s) \begin{DoxyReturn}{Returns}
+Returns a vector of doubles. These are the wave frequencies that the spectrum is based on. Returned variable is passed by reference. 
+\end{DoxyReturn}
+
+
+Definition at line 50 of file wavespec.\-cpp.
+
+\hypertarget{classosea_1_1_wave_spec_a0f627b180f8c8ab1b2d76bbcf7e4a02a}{\index{osea\-::\-Wave\-Spec@{osea\-::\-Wave\-Spec}!list\-Wave\-Freq@{list\-Wave\-Freq}}
+\index{list\-Wave\-Freq@{list\-Wave\-Freq}!osea::WaveSpec@{osea\-::\-Wave\-Spec}}
+\subsubsection[{list\-Wave\-Freq}]{\setlength{\rightskip}{0pt plus 5cm}double \& Wave\-Spec\-::list\-Wave\-Freq (
+\begin{DoxyParamCaption}
+\item[{int}]{index}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1_wave_spec_a0f627b180f8c8ab1b2d76bbcf7e4a02a}
+
+
+Returns a single wave frequency at the requested index. 
+
+Returned variable is passed by reference. Returns the wave frequency from the vector. Returns variable at specified index. 
+\begin{DoxyParams}{Parameters}
+{\em index} & Integer. Variable passed by value. The index from the vector of wave frequencies that should be returned. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns the wave frequency from the vector, the single entry requested by index. Returned variable is a double, passed by reference. 
+\end{DoxyReturn}
+
+
+Definition at line 56 of file wavespec.\-cpp.
+
+\hypertarget{classosea_1_1_wave_spec_a0ce0af01b4afa934b1ce4fa10ea892d6}{\index{osea\-::\-Wave\-Spec@{osea\-::\-Wave\-Spec}!set\-Wave\-Energy@{set\-Wave\-Energy}}
+\index{set\-Wave\-Energy@{set\-Wave\-Energy}!osea::WaveSpec@{osea\-::\-Wave\-Spec}}
+\subsubsection[{set\-Wave\-Energy}]{\setlength{\rightskip}{0pt plus 5cm}void Wave\-Spec\-::set\-Wave\-Energy (
+\begin{DoxyParamCaption}
+\item[{std\-::vector$<$ double $>$}]{energy\-In}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1_wave_spec_a0ce0af01b4afa934b1ce4fa10ea892d6}
+
+
+Sets the list of wave energy. (rad/s) 
+
+Sets the list of wave energy (rad/s). wave energy are based on global wave frequency. Frequencies are set by passing the entire vector at once. 
+\begin{DoxyParams}{Parameters}
+{\em energy\-In} & Vector of doubles. Variable passed by value. The vector of wave energy. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 82 of file wavespec.\-cpp.
+
+\hypertarget{classosea_1_1_wave_spec_a6ea11c5e3af85e0f9a9101a498a35ddd}{\index{osea\-::\-Wave\-Spec@{osea\-::\-Wave\-Spec}!set\-Wave\-Freq@{set\-Wave\-Freq}}
+\index{set\-Wave\-Freq@{set\-Wave\-Freq}!osea::WaveSpec@{osea\-::\-Wave\-Spec}}
+\subsubsection[{set\-Wave\-Freq}]{\setlength{\rightskip}{0pt plus 5cm}void Wave\-Spec\-::set\-Wave\-Freq (
+\begin{DoxyParamCaption}
+\item[{std\-::vector$<$ double $>$}]{freq\-In}
+\end{DoxyParamCaption}
+)}}\label{classosea_1_1_wave_spec_a6ea11c5e3af85e0f9a9101a498a35ddd}
+
+
+Sets the list of wave frequencies. (rad/s) 
+
+Sets the list of wave frequencies (rad/s). Wave frequencies are based on global wave frequency. Frequencies are set by passing the entire vector at once. 
+\begin{DoxyParams}{Parameters}
+{\em freq\-In} & Vector of doubles. Variable passed by value. The vector of wave frequencies. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 62 of file wavespec.\-cpp.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classosea_1_1_wave_spec_a5124faef0eb272c5ccbb9ced6a54fc12}{\index{osea\-::\-Wave\-Spec@{osea\-::\-Wave\-Spec}!p\-Spec\-Curve@{p\-Spec\-Curve}}
+\index{p\-Spec\-Curve@{p\-Spec\-Curve}!osea::WaveSpec@{osea\-::\-Wave\-Spec}}
+\subsubsection[{p\-Spec\-Curve}]{\setlength{\rightskip}{0pt plus 5cm}alglib\-::spline1dinterpolant osea\-::\-Wave\-Spec\-::p\-Spec\-Curve\hspace{0.3cm}{\ttfamily [protected]}}}\label{classosea_1_1_wave_spec_a5124faef0eb272c5ccbb9ced6a54fc12}
+
+
+The mathematical spline constructed for interpolation of the wave spectrum data. 
+
+
+
+Definition at line 193 of file wavespec.\-h.
+
+\hypertarget{classosea_1_1_wave_spec_a9f53c79c4ca381d594f28d1e6356fc16}{\index{osea\-::\-Wave\-Spec@{osea\-::\-Wave\-Spec}!p\-Wave\-Energy@{p\-Wave\-Energy}}
+\index{p\-Wave\-Energy@{p\-Wave\-Energy}!osea::WaveSpec@{osea\-::\-Wave\-Spec}}
+\subsubsection[{p\-Wave\-Energy}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<$double$>$ osea\-::\-Wave\-Spec\-::p\-Wave\-Energy\hspace{0.3cm}{\ttfamily [protected]}}}\label{classosea_1_1_wave_spec_a9f53c79c4ca381d594f28d1e6356fc16}
+
+
+The list of wave spectral energy. 
+
+Corresponds to the list of wave frequencies. 
+
+Definition at line 187 of file wavespec.\-h.
+
+\hypertarget{classosea_1_1_wave_spec_ab45dc3ff2434f811c9ac8be1db97e9ac}{\index{osea\-::\-Wave\-Spec@{osea\-::\-Wave\-Spec}!p\-Wave\-Freq@{p\-Wave\-Freq}}
+\index{p\-Wave\-Freq@{p\-Wave\-Freq}!osea::WaveSpec@{osea\-::\-Wave\-Spec}}
+\subsubsection[{p\-Wave\-Freq}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<$double$>$ osea\-::\-Wave\-Spec\-::p\-Wave\-Freq\hspace{0.3cm}{\ttfamily [protected]}}}\label{classosea_1_1_wave_spec_ab45dc3ff2434f811c9ac8be1db97e9ac}
+The list of wave frequencies. 
+
+Definition at line 179 of file wavespec.\-h.
+
+\hypertarget{classosea_1_1_wave_spec_a9e268505ee26a9c2b61f13976c52ff93}{\index{osea\-::\-Wave\-Spec@{osea\-::\-Wave\-Spec}!Spline\-Ready@{Spline\-Ready}}
+\index{Spline\-Ready@{Spline\-Ready}!osea::WaveSpec@{osea\-::\-Wave\-Spec}}
+\subsubsection[{Spline\-Ready}]{\setlength{\rightskip}{0pt plus 5cm}bool osea\-::\-Wave\-Spec\-::\-Spline\-Ready\hspace{0.3cm}{\ttfamily [protected]}}}\label{classosea_1_1_wave_spec_a9e268505ee26a9c2b61f13976c52ff93}
+
+
+Boolean to track if the spline function was constructed. Initially set to false. 
+
+
+
+Definition at line 212 of file wavespec.\-h.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/home/\-Ship\-\_\-\-Design/\-Projects/\-D\-M\-S1305 Open\-S\-E\-A/master/200\-\_\-src/bin/ofreq/wave\-\_\-spectra/\hyperlink{wavespec_8h}{wavespec.\-h}\item 
+/home/\-Ship\-\_\-\-Design/\-Projects/\-D\-M\-S1305 Open\-S\-E\-A/master/200\-\_\-src/bin/ofreq/wave\-\_\-spectra/\hyperlink{wavespec_8cpp}{wavespec.\-cpp}\end{DoxyCompactItemize}

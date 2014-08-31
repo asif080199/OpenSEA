@@ -9,6 +9,7 @@ var namespaceosea_1_1ofreq =
     [ "dictBodies", "classosea_1_1ofreq_1_1dict_bodies.html", "classosea_1_1ofreq_1_1dict_bodies" ],
     [ "dictControl", "classosea_1_1ofreq_1_1dict_control.html", "classosea_1_1ofreq_1_1dict_control" ],
     [ "dictForces", "classosea_1_1ofreq_1_1dict_forces.html", "classosea_1_1ofreq_1_1dict_forces" ],
+    [ "dictSeaEnv", "classosea_1_1ofreq_1_1dict_sea_env.html", "classosea_1_1ofreq_1_1dict_sea_env" ],
     [ "FileWriter", "classosea_1_1ofreq_1_1_file_writer.html", "classosea_1_1ofreq_1_1_file_writer" ],
     [ "Body", "classosea_1_1ofreq_1_1_body.html", "classosea_1_1ofreq_1_1_body" ],
     [ "Derivative", "classosea_1_1ofreq_1_1_derivative.html", "classosea_1_1ofreq_1_1_derivative" ],
@@ -17,10 +18,12 @@ var namespaceosea_1_1ofreq =
     [ "ForceActive", "classosea_1_1ofreq_1_1_force_active.html", "classosea_1_1ofreq_1_1_force_active" ],
     [ "ForceCross", "classosea_1_1ofreq_1_1_force_cross.html", "classosea_1_1ofreq_1_1_force_cross" ],
     [ "ForceReact", "classosea_1_1ofreq_1_1_force_react.html", "classosea_1_1ofreq_1_1_force_react" ],
-    [ "oFreqCore", "classosea_1_1ofreq_1_1o_freq_core.html", "classosea_1_1ofreq_1_1o_freq_core" ],
+    [ "ioword", "classosea_1_1ofreq_1_1ioword.html", "classosea_1_1ofreq_1_1ioword" ],
+    [ "mathInterp", "classosea_1_1ofreq_1_1math_interp.html", "classosea_1_1ofreq_1_1math_interp" ],
     [ "Solution", "classosea_1_1ofreq_1_1_solution.html", "classosea_1_1ofreq_1_1_solution" ],
     [ "SolutionSet", "classosea_1_1ofreq_1_1_solution_set.html", "classosea_1_1ofreq_1_1_solution_set" ],
-    [ "System", "classosea_1_1ofreq_1_1_system.html", "classosea_1_1ofreq_1_1_system" ],
+    [ "hydroData", "classosea_1_1ofreq_1_1hydro_data.html", "classosea_1_1ofreq_1_1hydro_data" ],
+    [ "HydroManager", "classosea_1_1ofreq_1_1_hydro_manager.html", "classosea_1_1ofreq_1_1_hydro_manager" ],
     [ "EqnRotation", "classosea_1_1ofreq_1_1_eqn_rotation.html", "classosea_1_1ofreq_1_1_eqn_rotation" ],
     [ "EqnTranslation", "classosea_1_1ofreq_1_1_eqn_translation.html", "classosea_1_1ofreq_1_1_eqn_translation" ],
     [ "EquationofMotion", "classosea_1_1ofreq_1_1_equationof_motion.html", "classosea_1_1ofreq_1_1_equationof_motion" ],
@@ -30,5 +33,8 @@ var namespaceosea_1_1ofreq =
     [ "matForceActive", "classosea_1_1ofreq_1_1mat_force_active.html", "classosea_1_1ofreq_1_1mat_force_active" ],
     [ "matForceCross", "classosea_1_1ofreq_1_1mat_force_cross.html", "classosea_1_1ofreq_1_1mat_force_cross" ],
     [ "matForceReact", "classosea_1_1ofreq_1_1mat_force_react.html", "classosea_1_1ofreq_1_1mat_force_react" ],
-    [ "MotionSolver", "classosea_1_1ofreq_1_1_motion_solver.html", "classosea_1_1ofreq_1_1_motion_solver" ]
+    [ "MotionSolver", "classosea_1_1ofreq_1_1_motion_solver.html", "classosea_1_1ofreq_1_1_motion_solver" ],
+    [ "Log", "classosea_1_1ofreq_1_1_log.html", "classosea_1_1ofreq_1_1_log" ],
+    [ "oFreqCore", "classosea_1_1ofreq_1_1o_freq_core.html", "classosea_1_1ofreq_1_1o_freq_core" ],
+    [ "System", "classosea_1_1ofreq_1_1_system.html", "classosea_1_1ofreq_1_1_system" ]
 ];

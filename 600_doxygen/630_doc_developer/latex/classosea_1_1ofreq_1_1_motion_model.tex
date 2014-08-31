@@ -7,7 +7,8 @@
 
 
 
-Inheritance diagram for osea\-:\-:ofreq\-:\-:Motion\-Model\-:\nopagebreak
+Inheritance diagram for osea\-:\-:ofreq\-:\-:Motion\-Model\-:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -18,7 +19,7 @@ Inheritance diagram for osea\-:\-:ofreq\-:\-:Motion\-Model\-:\nopagebreak
 \begin{DoxyCompactItemize}
 \item 
 \hyperlink{classosea_1_1ofreq_1_1_motion_model_a5a5e4bba0f6ca24e1fdd316458f4f824}{Motion\-Model} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
 \hyperlink{classosea_1_1ofreq_1_1_motion_model_aace42c5711b5486181e986add9a72b8f}{Motion\-Model} (std\-::vector$<$ \hyperlink{classosea_1_1ofreq_1_1_body}{Body} $>$ \&list\-Bod\-In)
 \begin{DoxyCompactList}\small\item\em Constructor. This is the preferred constructor as it supplies the body data. \end{DoxyCompactList}\item 
 virtual \hyperlink{classosea_1_1ofreq_1_1_motion_model_ac48a359c77d9efe39d4ec8c9e862a1cd}{$\sim$\-Motion\-Model} ()
@@ -162,13 +163,12 @@ void \hyperlink{classosea_1_1ofreq_1_1_motion_model_a73489d88c07b26109bbb9bdd0a5
 \item 
 virtual void \hyperlink{classosea_1_1ofreq_1_1_motion_model_a001b525e45be6f6c8f9088dacbb161c6}{Define\-Equations} ()
 \begin{DoxyCompactList}\small\item\em The function used to define the equation of motion objects. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\subsection*{Additional Inherited Members}
 
 
 \subsection{Detailed Description}
 This class provides the functionality to translate between input coefficients in the body class and the force coefficients in the \hyperlink{classosea_1_1ofreq_1_1mat_body}{mat\-Body} class. Most important, it acts as an interface for advanced users to enter their own equations of motion. This was devised to create a very generic interface that could allow any sort of definition for equations. The use of functions for the class should use the following sequence. 1.) Create class\-: constructor 2.) Set body data (if not already done in constructor)\-: set\-List\-Bodies 3.) Set the current body working with\-: set\-Body 4.) Set the current wave frequency working with\-: set\-Freq 5.) Set whether calculating coefficients or values (default\-: Values)\-: calc\-Coefficient 6.) Reset the forces you wish to use. 7.) Set the new list of forces you wish to use.\-: use\-Force\-Act\-\_\-usr use\-Force\-Act\-\_\-hydro use\-Force\-React\-\_\-usr use\-Force\-React\-\_\-hydro use\-Force\-Cross\-\_\-usr use\-Force\-Cross\-\_\-hydro use\-Force\-Mass 7.) Evaluate the motion model to produce a single complex value result. 
 
-Definition at line 106 of file motionmodel.\-h.
+Definition at line 107 of file motionmodel.\-h.
 
 
 
@@ -180,6 +180,10 @@ Definition at line 106 of file motionmodel.\-h.
 {}
 \end{DoxyParamCaption}
 )}}\label{classosea_1_1ofreq_1_1_motion_model_a5a5e4bba0f6ca24e1fdd316458f4f824}
+
+
+Default constructor. 
+
 Default constructor. 
 
 Definition at line 37 of file motionmodel.\-cpp.
@@ -235,7 +239,7 @@ Adds the equation of motion on to the end of the vector of equation of motions. 
 \end{DoxySeeAlso}
 
 
-Definition at line 2075 of file motionmodel.\-cpp.
+Definition at line 1940 of file motionmodel.\-cpp.
 
 \hypertarget{classosea_1_1ofreq_1_1_motion_model_af4d34bfa133e77f1527cee1aa36b02f4}{\index{osea\-::ofreq\-::\-Motion\-Model@{osea\-::ofreq\-::\-Motion\-Model}!Coefficient\-Only@{Coefficient\-Only}}
 \index{Coefficient\-Only@{Coefficient\-Only}!osea::ofreq::MotionModel@{osea\-::ofreq\-::\-Motion\-Model}}
@@ -281,7 +285,7 @@ Reimplemented in \hyperlink{classosea_1_1ofreq_1_1_model6_d_o_f_a0048de3d40838c9
 
 
 
-Definition at line 2087 of file motionmodel.\-cpp.
+Definition at line 1952 of file motionmodel.\-cpp.
 
 \hypertarget{classosea_1_1ofreq_1_1_motion_model_a331d96a45df8ca0911fc4610705c3a30}{\index{osea\-::ofreq\-::\-Motion\-Model@{osea\-::ofreq\-::\-Motion\-Model}!Evaluate@{Evaluate}}
 \index{Evaluate@{Evaluate}!osea::ofreq::MotionModel@{osea\-::ofreq\-::\-Motion\-Model}}
@@ -304,7 +308,7 @@ Returns a complex number representing the force under the currently set conditio
 \end{DoxyReturn}
 
 
-Definition at line 1903 of file motionmodel.\-cpp.
+Definition at line 1778 of file motionmodel.\-cpp.
 
 \hypertarget{classosea_1_1ofreq_1_1_motion_model_afc54a14912e56315505ef5dbec28bd39}{\index{osea\-::ofreq\-::\-Motion\-Model@{osea\-::ofreq\-::\-Motion\-Model}!get\-Active\-Only@{get\-Active\-Only}}
 \index{get\-Active\-Only@{get\-Active\-Only}!osea::ofreq::MotionModel@{osea\-::ofreq\-::\-Motion\-Model}}
@@ -358,7 +362,7 @@ Returns a vector containing all the equation indices currently in use.
 \end{DoxyReturn}
 
 
-Definition at line 1962 of file motionmodel.\-cpp.
+Definition at line 1827 of file motionmodel.\-cpp.
 
 \hypertarget{classosea_1_1ofreq_1_1_motion_model_a8594356137407b25d03927a68a422dc9}{\index{osea\-::ofreq\-::\-Motion\-Model@{osea\-::ofreq\-::\-Motion\-Model}!get\-Description@{get\-Description}}
 \index{get\-Description@{get\-Description}!osea::ofreq::MotionModel@{osea\-::ofreq\-::\-Motion\-Model}}
@@ -376,7 +380,7 @@ std\-::string. The description for the motion model. Variable passed by value.
 \end{DoxyReturn}
 
 
-Definition at line 2017 of file motionmodel.\-cpp.
+Definition at line 1882 of file motionmodel.\-cpp.
 
 \hypertarget{classosea_1_1ofreq_1_1_motion_model_a3461ede3739b468b6bab3a05f94093cc}{\index{osea\-::ofreq\-::\-Motion\-Model@{osea\-::ofreq\-::\-Motion\-Model}!get\-Freq@{get\-Freq}}
 \index{get\-Freq@{get\-Freq}!osea::ofreq::MotionModel@{osea\-::ofreq\-::\-Motion\-Model}}
@@ -417,7 +421,7 @@ Returns a complex matrix that contains the results of the entire evaluation. Ret
 \end{DoxyReturn}
 
 
-Definition at line 1654 of file motionmodel.\-cpp.
+Definition at line 1529 of file motionmodel.\-cpp.
 
 \hypertarget{classosea_1_1ofreq_1_1_motion_model_af9d30b6afa16093429fab496d18c5d00}{\index{osea\-::ofreq\-::\-Motion\-Model@{osea\-::ofreq\-::\-Motion\-Model}!get\-Mat\-Force\-Active\-\_\-user@{get\-Mat\-Force\-Active\-\_\-user}}
 \index{get\-Mat\-Force\-Active\-\_\-user@{get\-Mat\-Force\-Active\-\_\-user}!osea::ofreq::MotionModel@{osea\-::ofreq\-::\-Motion\-Model}}
@@ -440,7 +444,7 @@ Returns a complex matrix that contains the results of the entire evaluation. Ret
 \end{DoxyReturn}
 
 
-Definition at line 1623 of file motionmodel.\-cpp.
+Definition at line 1498 of file motionmodel.\-cpp.
 
 \hypertarget{classosea_1_1ofreq_1_1_motion_model_a7d661c296c3fe5c97322a62cceabb5d4}{\index{osea\-::ofreq\-::\-Motion\-Model@{osea\-::ofreq\-::\-Motion\-Model}!get\-Mat\-Force\-Cross\-\_\-hydro@{get\-Mat\-Force\-Cross\-\_\-hydro}}
 \index{get\-Mat\-Force\-Cross\-\_\-hydro@{get\-Mat\-Force\-Cross\-\_\-hydro}!osea::ofreq::MotionModel@{osea\-::ofreq\-::\-Motion\-Model}}
@@ -466,7 +470,7 @@ Returns a complex matrix that contains the results of the entire evaluation. Sav
 \end{DoxyReturn}
 
 
-Definition at line 1817 of file motionmodel.\-cpp.
+Definition at line 1692 of file motionmodel.\-cpp.
 
 \hypertarget{classosea_1_1ofreq_1_1_motion_model_addbd875f2fc266823f645fc7f2d207e8}{\index{osea\-::ofreq\-::\-Motion\-Model@{osea\-::ofreq\-::\-Motion\-Model}!get\-Mat\-Force\-Cross\-\_\-user@{get\-Mat\-Force\-Cross\-\_\-user}}
 \index{get\-Mat\-Force\-Cross\-\_\-user@{get\-Mat\-Force\-Cross\-\_\-user}!osea::ofreq::MotionModel@{osea\-::ofreq\-::\-Motion\-Model}}
@@ -492,7 +496,7 @@ Returns a complex matrix that contains the results of the entire evaluation. Sav
 \end{DoxyReturn}
 
 
-Definition at line 1774 of file motionmodel.\-cpp.
+Definition at line 1649 of file motionmodel.\-cpp.
 
 \hypertarget{classosea_1_1ofreq_1_1_motion_model_a7215db9f6f0c3e79f4559a4b9eadbcfc}{\index{osea\-::ofreq\-::\-Motion\-Model@{osea\-::ofreq\-::\-Motion\-Model}!get\-Mat\-Force\-Mass@{get\-Mat\-Force\-Mass}}
 \index{get\-Mat\-Force\-Mass@{get\-Mat\-Force\-Mass}!osea::ofreq::MotionModel@{osea\-::ofreq\-::\-Motion\-Model}}
@@ -510,7 +514,7 @@ Returns a complex matrix that contains the results of the entire evaluation. Sav
 \end{DoxyReturn}
 
 
-Definition at line 1860 of file motionmodel.\-cpp.
+Definition at line 1735 of file motionmodel.\-cpp.
 
 \hypertarget{classosea_1_1ofreq_1_1_motion_model_af239389973af6d198a21ee0c07db19c6}{\index{osea\-::ofreq\-::\-Motion\-Model@{osea\-::ofreq\-::\-Motion\-Model}!get\-Mat\-Force\-React\-\_\-hydro@{get\-Mat\-Force\-React\-\_\-hydro}}
 \index{get\-Mat\-Force\-React\-\_\-hydro@{get\-Mat\-Force\-React\-\_\-hydro}!osea::ofreq::MotionModel@{osea\-::ofreq\-::\-Motion\-Model}}
@@ -536,7 +540,7 @@ Returns a complex matrix that contains the results of the entire evaluation. Sav
 \end{DoxyReturn}
 
 
-Definition at line 1731 of file motionmodel.\-cpp.
+Definition at line 1606 of file motionmodel.\-cpp.
 
 \hypertarget{classosea_1_1ofreq_1_1_motion_model_a44e885c0255e74d82664c785499138f0}{\index{osea\-::ofreq\-::\-Motion\-Model@{osea\-::ofreq\-::\-Motion\-Model}!get\-Mat\-Force\-React\-\_\-user@{get\-Mat\-Force\-React\-\_\-user}}
 \index{get\-Mat\-Force\-React\-\_\-user@{get\-Mat\-Force\-React\-\_\-user}!osea::ofreq::MotionModel@{osea\-::ofreq\-::\-Motion\-Model}}
@@ -562,7 +566,7 @@ Returns a complex matrix that contains the results of the entire evaluation. Sav
 \end{DoxyReturn}
 
 
-Definition at line 1685 of file motionmodel.\-cpp.
+Definition at line 1560 of file motionmodel.\-cpp.
 
 \hypertarget{classosea_1_1ofreq_1_1_motion_model_af9fd1e58735b7f47bc5d5257bdca9139}{\index{osea\-::ofreq\-::\-Motion\-Model@{osea\-::ofreq\-::\-Motion\-Model}!get\-Name@{get\-Name}}
 \index{get\-Name@{get\-Name}!osea::ofreq::MotionModel@{osea\-::ofreq\-::\-Motion\-Model}}
@@ -580,7 +584,7 @@ The name to set for the motion model. std\-::string variable. Variable passed by
 \end{DoxyReturn}
 
 
-Definition at line 2005 of file motionmodel.\-cpp.
+Definition at line 1870 of file motionmodel.\-cpp.
 
 \hypertarget{classosea_1_1ofreq_1_1_motion_model_a67ad0e6b993a20af61170cdebe8f418f}{\index{osea\-::ofreq\-::\-Motion\-Model@{osea\-::ofreq\-::\-Motion\-Model}!list\-Body@{list\-Body}}
 \index{list\-Body@{list\-Body}!osea::ofreq::MotionModel@{osea\-::ofreq\-::\-Motion\-Model}}
@@ -601,7 +605,7 @@ Reference to vector of \hyperlink{classosea_1_1ofreq_1_1_body}{Body} objects. Va
 \end{DoxySeeAlso}
 
 
-Definition at line 2023 of file motionmodel.\-cpp.
+Definition at line 1888 of file motionmodel.\-cpp.
 
 \hypertarget{classosea_1_1ofreq_1_1_motion_model_a3c08da3c6cb3e959b53f2cf6f614d3c0}{\index{osea\-::ofreq\-::\-Motion\-Model@{osea\-::ofreq\-::\-Motion\-Model}!list\-Body@{list\-Body}}
 \index{list\-Body@{list\-Body}!osea::ofreq::MotionModel@{osea\-::ofreq\-::\-Motion\-Model}}
@@ -627,7 +631,7 @@ Returns reference to the \hyperlink{classosea_1_1ofreq_1_1_body}{Body} object sp
 \end{DoxySeeAlso}
 
 
-Definition at line 2029 of file motionmodel.\-cpp.
+Definition at line 1894 of file motionmodel.\-cpp.
 
 \hypertarget{classosea_1_1ofreq_1_1_motion_model_ac4169ab37ab7d69f5030a0d67cb3dc86}{\index{osea\-::ofreq\-::\-Motion\-Model@{osea\-::ofreq\-::\-Motion\-Model}!list\-Comp\-Cross\-Bod\-\_\-hydro@{list\-Comp\-Cross\-Bod\-\_\-hydro}}
 \index{list\-Comp\-Cross\-Bod\-\_\-hydro@{list\-Comp\-Cross\-Bod\-\_\-hydro}!osea::ofreq::MotionModel@{osea\-::ofreq\-::\-Motion\-Model}}
@@ -730,7 +734,7 @@ Bodyy
 \end{DoxySeeAlso}
 
 
-Definition at line 2035 of file motionmodel.\-cpp.
+Definition at line 1900 of file motionmodel.\-cpp.
 
 \hypertarget{classosea_1_1ofreq_1_1_motion_model_a1d7e2b929c15789259aaf732efd7f752}{\index{osea\-::ofreq\-::\-Motion\-Model@{osea\-::ofreq\-::\-Motion\-Model}!list\-Data@{list\-Data}}
 \index{list\-Data@{list\-Data}!osea::ofreq::MotionModel@{osea\-::ofreq\-::\-Motion\-Model}}
@@ -756,7 +760,7 @@ Returns reference to the \hyperlink{classosea_1_1ofreq_1_1_body}{Body} object sp
 \end{DoxySeeAlso}
 
 
-Definition at line 2041 of file motionmodel.\-cpp.
+Definition at line 1906 of file motionmodel.\-cpp.
 
 \hypertarget{classosea_1_1ofreq_1_1_motion_model_a644171d63e9dba6a0b1ec57be33653f7}{\index{osea\-::ofreq\-::\-Motion\-Model@{osea\-::ofreq\-::\-Motion\-Model}!list\-Data\-Equation@{list\-Data\-Equation}}
 \index{list\-Data\-Equation@{list\-Data\-Equation}!osea::ofreq::MotionModel@{osea\-::ofreq\-::\-Motion\-Model}}
@@ -779,7 +783,7 @@ Reference to the vector of \hyperlink{classosea_1_1ofreq_1_1_equationof_motion}{
 \end{DoxySeeAlso}
 
 
-Definition at line 2059 of file motionmodel.\-cpp.
+Definition at line 1924 of file motionmodel.\-cpp.
 
 \hypertarget{classosea_1_1ofreq_1_1_motion_model_a485a85942201e939102865f8923d9a51}{\index{osea\-::ofreq\-::\-Motion\-Model@{osea\-::ofreq\-::\-Motion\-Model}!list\-Data\-Equation@{list\-Data\-Equation}}
 \index{list\-Data\-Equation@{list\-Data\-Equation}!osea::ofreq::MotionModel@{osea\-::ofreq\-::\-Motion\-Model}}
@@ -802,7 +806,7 @@ Returns reference to the \hyperlink{classosea_1_1ofreq_1_1_equationof_motion}{Eq
 \end{DoxyReturn}
 
 
-Definition at line 2065 of file motionmodel.\-cpp.
+Definition at line 1930 of file motionmodel.\-cpp.
 
 \hypertarget{classosea_1_1ofreq_1_1_motion_model_af9e72eac109b2d1bff50bb8759f113c3}{\index{osea\-::ofreq\-::\-Motion\-Model@{osea\-::ofreq\-::\-Motion\-Model}!list\-Data\-Index@{list\-Data\-Index}}
 \index{list\-Data\-Index@{list\-Data\-Index}!osea::ofreq::MotionModel@{osea\-::ofreq\-::\-Motion\-Model}}
@@ -820,7 +824,7 @@ Returns a vector containing all the equation indices currently in use. Returned 
 \end{DoxyReturn}
 
 
-Definition at line 1920 of file motionmodel.\-cpp.
+Definition at line 1795 of file motionmodel.\-cpp.
 
 \hypertarget{classosea_1_1ofreq_1_1_motion_model_ab9c11dbb141ed78daa137d562b4409a7}{\index{osea\-::ofreq\-::\-Motion\-Model@{osea\-::ofreq\-::\-Motion\-Model}!list\-Data\-Index@{list\-Data\-Index}}
 \index{list\-Data\-Index@{list\-Data\-Index}!osea::ofreq::MotionModel@{osea\-::ofreq\-::\-Motion\-Model}}
@@ -843,7 +847,7 @@ Returns an integer variable. Variable passed by value. The returned variable is 
 \end{DoxyReturn}
 
 
-Definition at line 1927 of file motionmodel.\-cpp.
+Definition at line 1802 of file motionmodel.\-cpp.
 
 \hypertarget{classosea_1_1ofreq_1_1_motion_model_a998756fbf76a5c65773f5eae7bf9a3e1}{\index{osea\-::ofreq\-::\-Motion\-Model@{osea\-::ofreq\-::\-Motion\-Model}!list\-Equation@{list\-Equation}}
 \index{list\-Equation@{list\-Equation}!osea::ofreq::MotionModel@{osea\-::ofreq\-::\-Motion\-Model}}
@@ -864,7 +868,7 @@ Reference to the vector of \hyperlink{classosea_1_1ofreq_1_1_equationof_motion}{
 \end{DoxySeeAlso}
 
 
-Definition at line 2047 of file motionmodel.\-cpp.
+Definition at line 1912 of file motionmodel.\-cpp.
 
 \hypertarget{classosea_1_1ofreq_1_1_motion_model_a444cd6e6ca1aea0822545b732118aeb9}{\index{osea\-::ofreq\-::\-Motion\-Model@{osea\-::ofreq\-::\-Motion\-Model}!list\-Equation@{list\-Equation}}
 \index{list\-Equation@{list\-Equation}!osea::ofreq::MotionModel@{osea\-::ofreq\-::\-Motion\-Model}}
@@ -887,7 +891,7 @@ Returns reference to the \hyperlink{classosea_1_1ofreq_1_1_equationof_motion}{Eq
 \end{DoxyReturn}
 
 
-Definition at line 2053 of file motionmodel.\-cpp.
+Definition at line 1918 of file motionmodel.\-cpp.
 
 \hypertarget{classosea_1_1ofreq_1_1_motion_model_a81ed21162a09ffce06043f3a7fb4213d}{\index{osea\-::ofreq\-::\-Motion\-Model@{osea\-::ofreq\-::\-Motion\-Model}!Max\-Data\-Index@{Max\-Data\-Index}}
 \index{Max\-Data\-Index@{Max\-Data\-Index}!osea::ofreq::MotionModel@{osea\-::ofreq\-::\-Motion\-Model}}
@@ -905,7 +909,7 @@ Returns integer number representing the maximum number of the data index found f
 \end{DoxyReturn}
 
 
-Definition at line 1977 of file motionmodel.\-cpp.
+Definition at line 1842 of file motionmodel.\-cpp.
 
 \hypertarget{classosea_1_1ofreq_1_1_motion_model_a0a228c24a524e2a1c6636d3121a842be}{\index{osea\-::ofreq\-::\-Motion\-Model@{osea\-::ofreq\-::\-Motion\-Model}!num\-Equations@{num\-Equations}}
 \index{num\-Equations@{num\-Equations}!osea::ofreq::MotionModel@{osea\-::ofreq\-::\-Motion\-Model}}
@@ -923,7 +927,7 @@ Returns the number of equations used in the motion model.
 \end{DoxyReturn}
 
 
-Definition at line 1913 of file motionmodel.\-cpp.
+Definition at line 1788 of file motionmodel.\-cpp.
 
 \hypertarget{classosea_1_1ofreq_1_1_motion_model_a27842d2b76ab078534c0626601da446b}{\index{osea\-::ofreq\-::\-Motion\-Model@{osea\-::ofreq\-::\-Motion\-Model}!Reset@{Reset}}
 \index{Reset@{Reset}!osea::ofreq::MotionModel@{osea\-::ofreq\-::\-Motion\-Model}}
@@ -978,7 +982,7 @@ Description for the motion model. Used by the user to provide a more extensive d
 \end{DoxyParams}
 
 
-Definition at line 2011 of file motionmodel.\-cpp.
+Definition at line 1876 of file motionmodel.\-cpp.
 
 \hypertarget{classosea_1_1ofreq_1_1_motion_model_a18e880b4a0b1a1d1c385bc3be3524440}{\index{osea\-::ofreq\-::\-Motion\-Model@{osea\-::ofreq\-::\-Motion\-Model}!set\-Freq@{set\-Freq}}
 \index{set\-Freq@{set\-Freq}!osea::ofreq::MotionModel@{osea\-::ofreq\-::\-Motion\-Model}}
@@ -1038,7 +1042,7 @@ Name for the motion model. Used by the user to identify the motion model.
 \end{DoxyParams}
 
 
-Definition at line 1999 of file motionmodel.\-cpp.
+Definition at line 1864 of file motionmodel.\-cpp.
 
 \hypertarget{classosea_1_1ofreq_1_1_motion_model_a4d3e0590135e1a9f7ce954406f99ff44}{\index{osea\-::ofreq\-::\-Motion\-Model@{osea\-::ofreq\-::\-Motion\-Model}!use\-Force\-Active\-\_\-hydro@{use\-Force\-Active\-\_\-hydro}}
 \index{use\-Force\-Active\-\_\-hydro@{use\-Force\-Active\-\_\-hydro}!osea::ofreq::MotionModel@{osea\-::ofreq\-::\-Motion\-Model}}
@@ -1065,7 +1069,8 @@ Definition at line 333 of file motionmodel.\-cpp.
 
 
 
-Here is the call graph for this function\-:\nopagebreak
+Here is the call graph for this function\-:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -1096,7 +1101,8 @@ Definition at line 385 of file motionmodel.\-cpp.
 
 
 
-Here is the call graph for this function\-:\nopagebreak
+Here is the call graph for this function\-:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -1150,7 +1156,8 @@ Definition at line 205 of file motionmodel.\-cpp.
 
 
 
-Here is the call graph for this function\-:\nopagebreak
+Here is the call graph for this function\-:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -1181,7 +1188,8 @@ Definition at line 257 of file motionmodel.\-cpp.
 
 
 
-Here is the call graph for this function\-:\nopagebreak
+Here is the call graph for this function\-:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -1237,11 +1245,12 @@ Passes information to the object to use input coefficients from the entry specif
 \end{DoxyParams}
 
 
-Definition at line 1270 of file motionmodel.\-cpp.
+Definition at line 1182 of file motionmodel.\-cpp.
 
 
 
-Here is the call graph for this function\-:\nopagebreak
+Here is the call graph for this function\-:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -1274,11 +1283,12 @@ Passes information to the object to use input coefficients from the entry specif
 \end{DoxyParams}
 
 
-Definition at line 1385 of file motionmodel.\-cpp.
+Definition at line 1272 of file motionmodel.\-cpp.
 
 
 
-Here is the call graph for this function\-:\nopagebreak
+Here is the call graph for this function\-:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -1308,11 +1318,12 @@ Passes information to the object to use input coefficients from the entry specif
 \end{DoxyParams}
 
 
-Definition at line 1435 of file motionmodel.\-cpp.
+Definition at line 1312 of file motionmodel.\-cpp.
 
 
 
-Here is the call graph for this function\-:\nopagebreak
+Here is the call graph for this function\-:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -1339,7 +1350,7 @@ Passes information to the object to use input coefficients from the entry specif
 \end{DoxyParams}
 
 
-Definition at line 1474 of file motionmodel.\-cpp.
+Definition at line 1351 of file motionmodel.\-cpp.
 
 \hypertarget{classosea_1_1ofreq_1_1_motion_model_a9eec7ca7d497eaff8ae8c4dff24ec5da}{\index{osea\-::ofreq\-::\-Motion\-Model@{osea\-::ofreq\-::\-Motion\-Model}!use\-Force\-Cross\-\_\-hydro@{use\-Force\-Cross\-\_\-hydro}}
 \index{use\-Force\-Cross\-\_\-hydro@{use\-Force\-Cross\-\_\-hydro}!osea::ofreq::MotionModel@{osea\-::ofreq\-::\-Motion\-Model}}
@@ -1354,7 +1365,7 @@ Passes information to the object to use input coefficients from the entry specif
 
 Passes information to the object to use input coefficients from the entry specified. Limits inputs to only the force object type specified by the method. Calls to use\-Force methods are cumulative. Sucessive calls to different entries in the same force sequence will add their coefficients to the sets for evaluation. Can be combined with other use\-Force methods. Multiple calls to the same use\-Force method with the same index coordinates are not cumulative. An input coefficient can either be on or off, not multiple instances of the exact same coefficient. This method uses all coefficients for all variables and all equations within all derivatives within all forces available. 
 
-Definition at line 1505 of file motionmodel.\-cpp.
+Definition at line 1382 of file motionmodel.\-cpp.
 
 \hypertarget{classosea_1_1ofreq_1_1_motion_model_a1159117995080d2b62e50fceaeb29778}{\index{osea\-::ofreq\-::\-Motion\-Model@{osea\-::ofreq\-::\-Motion\-Model}!use\-Force\-Cross\-\_\-user@{use\-Force\-Cross\-\_\-user}}
 \index{use\-Force\-Cross\-\_\-user@{use\-Force\-Cross\-\_\-user}!osea::ofreq::MotionModel@{osea\-::ofreq\-::\-Motion\-Model}}
@@ -1383,11 +1394,12 @@ Passes information to the object to use input coefficients from the entry specif
 \end{DoxyParams}
 
 
-Definition at line 1019 of file motionmodel.\-cpp.
+Definition at line 931 of file motionmodel.\-cpp.
 
 
 
-Here is the call graph for this function\-:\nopagebreak
+Here is the call graph for this function\-:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -1420,11 +1432,12 @@ Passes information to the object to use input coefficients from the entry specif
 \end{DoxyParams}
 
 
-Definition at line 1136 of file motionmodel.\-cpp.
+Definition at line 1048 of file motionmodel.\-cpp.
 
 
 
-Here is the call graph for this function\-:\nopagebreak
+Here is the call graph for this function\-:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -1454,11 +1467,12 @@ Passes information to the object to use input coefficients from the entry specif
 \end{DoxyParams}
 
 
-Definition at line 1186 of file motionmodel.\-cpp.
+Definition at line 1098 of file motionmodel.\-cpp.
 
 
 
-Here is the call graph for this function\-:\nopagebreak
+Here is the call graph for this function\-:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -1485,7 +1499,7 @@ Passes information to the object to use input coefficients from the entry specif
 \end{DoxyParams}
 
 
-Definition at line 1225 of file motionmodel.\-cpp.
+Definition at line 1137 of file motionmodel.\-cpp.
 
 \hypertarget{classosea_1_1ofreq_1_1_motion_model_a9858717cea37d004dd02a5906225d765}{\index{osea\-::ofreq\-::\-Motion\-Model@{osea\-::ofreq\-::\-Motion\-Model}!use\-Force\-Cross\-\_\-user@{use\-Force\-Cross\-\_\-user}}
 \index{use\-Force\-Cross\-\_\-user@{use\-Force\-Cross\-\_\-user}!osea::ofreq::MotionModel@{osea\-::ofreq\-::\-Motion\-Model}}
@@ -1500,7 +1514,7 @@ Passes information to the object to use input coefficients from the entry specif
 
 Passes information to the object to use input coefficients from the entry specified. Limits inputs to only the force object type specified by the method. Calls to use\-Force methods are cumulative. Sucessive calls to different entries in the same force sequence will add their coefficients to the sets for evaluation. Can be combined with other use\-Force methods. Multiple calls to the same use\-Force method with the same index coordinates are not cumulative. An input coefficient can either be on or off, not multiple instances of the exact same coefficient. This method uses all coefficients for all variables and all equations within all derivatives within all forces available. 
 
-Definition at line 1256 of file motionmodel.\-cpp.
+Definition at line 1168 of file motionmodel.\-cpp.
 
 \hypertarget{classosea_1_1ofreq_1_1_motion_model_aecaf9f0261355cff2acf602acd728644}{\index{osea\-::ofreq\-::\-Motion\-Model@{osea\-::ofreq\-::\-Motion\-Model}!use\-Force\-Mass@{use\-Force\-Mass}}
 \index{use\-Force\-Mass@{use\-Force\-Mass}!osea::ofreq::MotionModel@{osea\-::ofreq\-::\-Motion\-Model}}
@@ -1523,7 +1537,7 @@ Passes information to the object to use input coefficients from the entry specif
 \end{DoxyParams}
 
 
-Definition at line 1519 of file motionmodel.\-cpp.
+Definition at line 1396 of file motionmodel.\-cpp.
 
 \hypertarget{classosea_1_1ofreq_1_1_motion_model_a5c3368c9b82042765c2b542cfa78c200}{\index{osea\-::ofreq\-::\-Motion\-Model@{osea\-::ofreq\-::\-Motion\-Model}!use\-Force\-Mass@{use\-Force\-Mass}}
 \index{use\-Force\-Mass@{use\-Force\-Mass}!osea::ofreq::MotionModel@{osea\-::ofreq\-::\-Motion\-Model}}
@@ -1543,7 +1557,7 @@ Passes information to the object to use input coefficients from the entry specif
 \end{DoxyParams}
 
 
-Definition at line 1567 of file motionmodel.\-cpp.
+Definition at line 1442 of file motionmodel.\-cpp.
 
 \hypertarget{classosea_1_1ofreq_1_1_motion_model_a1478e13916cc181bbedca771b6c83695}{\index{osea\-::ofreq\-::\-Motion\-Model@{osea\-::ofreq\-::\-Motion\-Model}!use\-Force\-Mass@{use\-Force\-Mass}}
 \index{use\-Force\-Mass@{use\-Force\-Mass}!osea::ofreq::MotionModel@{osea\-::ofreq\-::\-Motion\-Model}}
@@ -1558,7 +1572,7 @@ Passes information to the object to use input coefficients from the entry specif
 
 Passes information to the object to use input coefficients from the entry specified. Limits inputs to only the force object type specified by the method. Calls to use\-Force methods are cumulative. Sucessive calls to different entries in the same force sequence will add their coefficients to the sets for evaluation. Can be combined with other use\-Force methods. Multiple calls to the same use\-Force method with the same index coordinates are not cumulative. An input coefficient can either be on or off, not multiple instances of the exact same coefficient. This implementation will copy over all variables for all equations. 
 
-Definition at line 1606 of file motionmodel.\-cpp.
+Definition at line 1481 of file motionmodel.\-cpp.
 
 \hypertarget{classosea_1_1ofreq_1_1_motion_model_ae3d2c7527ea2daddc6a85b6e02febb45}{\index{osea\-::ofreq\-::\-Motion\-Model@{osea\-::ofreq\-::\-Motion\-Model}!use\-Force\-React\-\_\-hydro@{use\-Force\-React\-\_\-hydro}}
 \index{use\-Force\-React\-\_\-hydro@{use\-Force\-React\-\_\-hydro}!osea::ofreq::MotionModel@{osea\-::ofreq\-::\-Motion\-Model}}
@@ -1587,11 +1601,12 @@ Passes information to the object to use input coefficients from the entry specif
 \end{DoxyParams}
 
 
-Definition at line 732 of file motionmodel.\-cpp.
+Definition at line 704 of file motionmodel.\-cpp.
 
 
 
-Here is the call graph for this function\-:\nopagebreak
+Here is the call graph for this function\-:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -1624,11 +1639,12 @@ Passes information to the object to use input coefficients from the entry specif
 \end{DoxyParams}
 
 
-Definition at line 830 of file motionmodel.\-cpp.
+Definition at line 773 of file motionmodel.\-cpp.
 
 
 
-Here is the call graph for this function\-:\nopagebreak
+Here is the call graph for this function\-:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -1658,11 +1674,12 @@ Passes information to the object to use input coefficients from the entry specif
 \end{DoxyParams}
 
 
-Definition at line 935 of file motionmodel.\-cpp.
+Definition at line 847 of file motionmodel.\-cpp.
 
 
 
-Here is the call graph for this function\-:\nopagebreak
+Here is the call graph for this function\-:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -1689,7 +1706,7 @@ Passes information to the object to use input coefficients from the entry specif
 \end{DoxyParams}
 
 
-Definition at line 974 of file motionmodel.\-cpp.
+Definition at line 886 of file motionmodel.\-cpp.
 
 \hypertarget{classosea_1_1ofreq_1_1_motion_model_a081dd7c11656da25fafa08f994685e48}{\index{osea\-::ofreq\-::\-Motion\-Model@{osea\-::ofreq\-::\-Motion\-Model}!use\-Force\-React\-\_\-hydro@{use\-Force\-React\-\_\-hydro}}
 \index{use\-Force\-React\-\_\-hydro@{use\-Force\-React\-\_\-hydro}!osea::ofreq::MotionModel@{osea\-::ofreq\-::\-Motion\-Model}}
@@ -1704,7 +1721,7 @@ Passes information to the object to use input coefficients from the entry specif
 
 Passes information to the object to use input coefficients from the entry specified. Limits inputs to only the force object type specified by the method. Calls to use\-Force methods are cumulative. Sucessive calls to different entries in the same force sequence will add their coefficients to the sets for evaluation. Can be combined with other use\-Force methods. Multiple calls to the same use\-Force method with the same index coordinates are not cumulative. An input coefficient can either be on or off, not multiple instances of the exact same coefficient. This method uses all coefficients for all variables and all equations within all derivatives within all forces available. 
 
-Definition at line 1005 of file motionmodel.\-cpp.
+Definition at line 917 of file motionmodel.\-cpp.
 
 \hypertarget{classosea_1_1ofreq_1_1_motion_model_a7db1d1ebebe216d17efd7b38f2e9deec}{\index{osea\-::ofreq\-::\-Motion\-Model@{osea\-::ofreq\-::\-Motion\-Model}!use\-Force\-React\-\_\-user@{use\-Force\-React\-\_\-user}}
 \index{use\-Force\-React\-\_\-user@{use\-Force\-React\-\_\-user}!osea::ofreq::MotionModel@{osea\-::ofreq\-::\-Motion\-Model}}
@@ -1737,7 +1754,8 @@ Definition at line 459 of file motionmodel.\-cpp.
 
 
 
-Here is the call graph for this function\-:\nopagebreak
+Here is the call graph for this function\-:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -1770,11 +1788,12 @@ Passes information to the object to use input coefficients from the entry specif
 \end{DoxyParams}
 
 
-Definition at line 555 of file motionmodel.\-cpp.
+Definition at line 527 of file motionmodel.\-cpp.
 
 
 
-Here is the call graph for this function\-:\nopagebreak
+Here is the call graph for this function\-:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -1804,11 +1823,12 @@ Passes information to the object to use input coefficients from the entry specif
 \end{DoxyParams}
 
 
-Definition at line 648 of file motionmodel.\-cpp.
+Definition at line 620 of file motionmodel.\-cpp.
 
 
 
-Here is the call graph for this function\-:\nopagebreak
+Here is the call graph for this function\-:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -1835,7 +1855,7 @@ Passes information to the object to use input coefficients from the entry specif
 \end{DoxyParams}
 
 
-Definition at line 687 of file motionmodel.\-cpp.
+Definition at line 659 of file motionmodel.\-cpp.
 
 \hypertarget{classosea_1_1ofreq_1_1_motion_model_a6d362d62468bacc57f5be5efe27deb4a}{\index{osea\-::ofreq\-::\-Motion\-Model@{osea\-::ofreq\-::\-Motion\-Model}!use\-Force\-React\-\_\-user@{use\-Force\-React\-\_\-user}}
 \index{use\-Force\-React\-\_\-user@{use\-Force\-React\-\_\-user}!osea::ofreq::MotionModel@{osea\-::ofreq\-::\-Motion\-Model}}
@@ -1850,7 +1870,7 @@ Passes information to the object to use input coefficients from the entry specif
 
 Passes information to the object to use input coefficients from the entry specified. Limits inputs to only the force object type specified by the method. Calls to use\-Force methods are cumulative. Sucessive calls to different entries in the same force sequence will add their coefficients to the sets for evaluation. Can be combined with other use\-Force methods. Multiple calls to the same use\-Force method with the same index coordinates are not cumulative. An input coefficient can either be on or off, not multiple instances of the exact same coefficient. This method uses all coefficients for all variables and all equations within all derivatives within all forces available. 
 
-Definition at line 718 of file motionmodel.\-cpp.
+Definition at line 690 of file motionmodel.\-cpp.
 
 
 
