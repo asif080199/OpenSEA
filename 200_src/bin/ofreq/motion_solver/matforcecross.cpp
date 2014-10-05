@@ -258,7 +258,7 @@ matForceCross matForceCross::operator*(double scalar)
             {
                 for (int k = 0; k < pderiv[i].n_cols; k++)
                 {
-                    output.pderiv[i].at(j, k) = this->pderiv[i].at(j,k) * scalar;
+                    output.pderiv[i].at(j,k) = this->pderiv[i].at(j,k) * scalar;
                 }
             }
         }
@@ -266,6 +266,7 @@ matForceCross matForceCross::operator*(double scalar)
 
     //Set the linked body parameter
     output.plinkbody = this->plinkbody;
+    output.plinkbodyName = this->plinkbodyName;
     output.plinkid = this->plinkid;
 
     //Write output

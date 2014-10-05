@@ -250,6 +250,23 @@ public:
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
+     * @brief Adds a list of wave frequencies in bulk.
+     *
+     * The list of wave frequencies that are used by the sea model to request wave energy or wave amplitude at a
+     * specific wave direction and frequency.  This list of frequencies is independent of the frequency list contained
+     * in the system object.  For everything conceivable situation, the two lists will be identical.  However, if,
+     * for some strange reason, you need to have a separate list of wave frequencies for the SeaModel, that is
+     * possible.
+     *
+     *  You do not need to add entries in sequential order.  The class automatically sorts the entries into sequential
+     * order before using them for calculations.
+     * @param freqIn vector<double>, variable passed by value.  THe list of frequencies that you want to add to the
+     * list of wave frequencies.  Units of radians per second (rad/s).
+     */
+    void addWaveFreq(std::vector<double> freqIn);
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
      * @brief Adds a new wave scaling multiplier to the list of scale multipliers.
      *
      * Each WaveSpec object has a wave scaling multiplier associated with it.  Those multipliers are stored in this

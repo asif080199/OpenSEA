@@ -34,7 +34,7 @@ using namespace osea;
 
 //------------------------------------------Function Separator ----------------------------------------------------
 //Class Name constants
-
+string dictHydroDirection::OBJECT_DIRECTION = "direction";    /**< Object name for wave directions object. */
 
 //------------------------------------------Function Separator ----------------------------------------------------
 //Keyword name static constants
@@ -98,11 +98,22 @@ int dictHydroDirection::defineKey(std::string keyIn, std::vector<std::string> va
 //------------------------------------------Function Separator --------------------------------------------------------
 int dictHydroDirection::defineClass(std::string nameIn)
 {
-    //No class definitions within this file.
-    //throw an error
-    logStd.Notify();
-    logErr.Write("File:  directions.out \n No objects are currently supported for this input file.");
-    return 1;
+    //Wave directions object.
+    //-----------------------------------------------
+    if (nameIn == OBJECT_DIRECTION)
+    {
+        //No action necessary.
+        return 0;
+    }
+
+    //-----------------------------------------------
+    else
+    {
+        //throw an error
+        logStd.Notify();
+        logErr.Write("File:  directions.out \n No objects are currently supported for this input file.");
+        return 1;
+    }
 }
 
 //==========================================Section Separator =========================================================

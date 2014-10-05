@@ -63,6 +63,7 @@ string FileReader::OBJ_FORCE_CROSS = "force_crossbody"; /**< The string designat
 // Key Value Pair Designators
 string FileReader::KEY_FORMAT = "format";  /**< The key designator for a format value in the seafile object. */
 string FileReader::KEY_VERSION = "version"; /**< The key designator for a version value in the seafile object. */
+string FileReader::KEY_OBJECT = "object";  /**< The key designator for a object value in the seafile object. */
 
 //==========================================Section Separator =========================================================
 //Public Functions
@@ -89,12 +90,72 @@ FileReader::~FileReader()
 //------------------------------------------Function Separator --------------------------------------------------------
 void FileReader::setPath(string input)
 {
+    //Reset all files and internal references.  Setting a new path is the equivalent of starting a new system.
+    plistObjects.clear();
+
     //check if input has a slash at the end.
     //All functions assume no slash at the end.
     if (input[input.length() - 1] == SLASH[0])
     {
         //End slash found.  Remove it.
         input.erase(input.length() - 1, 1);
+    }
+
+    try
+    {
+        //Next check for a leading relative reference. (. or ..)
+        //The system object must be set before reading the path.
+
+        if (input.find(DDOT) != std::string::npos)
+        {
+            //Replace relative reference with absolute path.
+            //First remove the dots.
+            std::string::size_type iter = input.find(DDOT);
+            input.erase(iter, iter + DDOT.length() + 1);
+
+            //Check if the system object was not set.
+            if (!ptSystem)
+                throw std::runtime_error("Pointer to system object not set.");
+
+            std::string workingDir = ptSystem->getPath();
+
+            //Find position of last slash mark.
+            iter = workingDir.find_last_of(SLASH);
+
+            //Erase up to and including that slash mark.
+            workingDir.erase(iter, std::string::npos);
+
+            //Add the workingDir string onto the input.
+            input = workingDir + SLASH + input;
+        }
+        else if (input.find(DOT) != std::string::npos)
+        {
+            //Replace relative reference with absolute path.
+            //First remove the dots.
+            std::string::size_type iter = input.find(DDOT);
+            input.erase(iter, iter + DDOT.length() + 1);
+
+            //Check if the system object was not set.
+            if (!ptSystem)
+                throw std::runtime_error("Pointer to system object not set.");
+
+            std::string workingDir = ptSystem->getPath();
+
+            //Add the workingDir string into the input.
+            input = workingDir + SLASH + input;
+        }
+    }
+    catch(const std::exception &err)
+    {
+        logStd.Notify();
+        logErr.Write(string(ID) + string(">>  ") + err.what());
+        
+    }
+    catch(...)
+    {
+        logStd.Notify();
+        logErr.Notify(string("Object:  FileReader, Function:  setPath()"));
+        
     }
 
     pPath = input;
@@ -222,6 +283,19 @@ void FileReader::setDictionary(osea::Dictionary &dictIn)
     ptDict = &dictIn;
 }
 
+//------------------------------------------Function Separator --------------------------------------------------------
+vector<string> &FileReader::listDataFiles()
+{
+    return plistDataFiles;
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+string &FileReader::listDataFiles(int index)
+{
+    return plistDataFiles.at(index);
+}
+
+
 //==========================================Section Separator =========================================================
 //Signals
 
@@ -264,6 +338,7 @@ int FileReader::readFile(string path)
         //variables to record seafile parameters.
         string version;     //version of the sea file.
         string format;      //format of the sea file.
+        string object;      //Name of the sea file object.
         int sea_index = 0;  //Index of where the sea file object is located.
 
         //Get results
@@ -285,6 +360,11 @@ int FileReader::readFile(string path)
                         //Response if the key is the format designator.
                         format = myParse.listObject(sea_index).getVal(j).at(0);
                     }
+                    else if (myParse.listObject(sea_index).getKey(j) == KEY_OBJECT)
+                    {
+                        //Response if the key is the object designator.
+                        object = myParse.listObject(sea_index).getVal(j).at(0);
+                    }
                 }
             }
             else
@@ -298,20 +378,41 @@ int FileReader::readFile(string path)
                 plistObjects.at(i - 1).setFormat(format);       //Assumes the sea_index is 0
             }
         }
+
+        //Check for any key sets contained in the parser that are not part of an object.
+        if (myParse.listKey().size() != 0)
+        {
+            /*If any keysets were found, create a dummy object and add them all under one dummy object.
+             *The dummy object will have the same name as the object name declared in the seafile object.
+             */
+
+            //Create a new object to add to the list.
+            plistObjects.push_back(ObjectGroup());
+            plistObjects.back().setClassName(object);   //Set object name
+            plistObjects.back().setVersion(version);    //Set version
+            plistObjects.back().setFormat(format);      //Set the format
+
+            //Add the key sets.
+            for (unsigned int j = 0; j < myParse.listKey().size(); j++)
+            {
+                plistObjects.back().addKeySet(myParse.listKey(j), myParse.listVal(j));
+            }
+        }
     }
     catch (std::exception &err)
     {
         logErr.Write(string("Error Message:  ") + string(err.what()));
         logStd.Notify();
         return 1;
-        exit(1);
+        
+
     }
     catch(...)
     {
-        logErr.Write("Unknown error occurred.  Object:  filreader, Function:  readFile()");
+        logErr.Write(string(ID) + string(">>  Unknown error occurred."));
         logStd.Notify();
         return 1;
-        exit(1);
+        
     }
 
     //Close file

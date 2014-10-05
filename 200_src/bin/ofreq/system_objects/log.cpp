@@ -166,29 +166,62 @@ void Log::WriteScreen(std::string msg, int timestamp)
 //------------------------------------------Function Separator --------------------------------------------------------
 void Log::setLogFile(std::string pathIn)
 {
-    //Parse the log file
-    parsePath(pathIn);
+    try
+    {
+        //Parse the log file
+        parsePath(pathIn);
 
-    //Open file
-    outFile.close();
-    outFile.open(fileDir + SLASH + fileName,std::ofstream::app);
-    //File automatically appends to end of any existing files.
+        //Open file
+        outFile.close();
+        outFile.open(fileDir + SLASH + fileName, std::ofstream::app);
+        //File automatically appends to end of any existing files.
+
+        //Check if the file failed to open successfully.
+        if (!outFile.is_open())
+            throw std::runtime_error(fileName + string(":  Failed to open file successfully."));
+    }
+    catch(const std::exception &err)
+    {
+        std::cout << err.what() << endl;
+        cout << fileDir << SLASH << fileName << endl;
+    }
+    catch(...)
+    {
+        throw std::runtime_error(__FUNCTION__);
+    }
+
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
 void Log::deleteLog(std::string pathIn)
 {
-    //Parse the log file, if specified
-    if (pathIn != "")
-        parsePath(pathIn);
+    try
+    {
+        //Parse the log file, if specified
+        if (pathIn != "")
+            parsePath(pathIn);
 
-    //Get the Qstring for filename
-    QString filename = QString::fromStdString(fileDir + SLASH + fileName);
-    QFile file(filename);
+        //Get the Qstring for filename
+        QString filename = QString::fromStdString(fileDir + SLASH + fileName);
+        QFile file(filename);
 
-    //Check if the file exists.  If so, delete it.
-    if (file.exists())
-        file.remove();
+        //Check if the file exists.  If so, delete it.
+        if (file.exists())
+            file.remove();
+
+        //Check if the file still exists.
+        if (file.exists())
+            throw std::runtime_error("Failed to delete log file.");
+    }
+    catch(const std::exception &err)
+    {
+        std::cout << string("Error:  ") << string(__FUNCTION__) << string(">>  ") << err.what() << endl;
+    }
+    catch(...)
+    {
+        throw std::runtime_error(__FUNCTION__);
+    }
+
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
@@ -217,17 +250,42 @@ void Log::setDefaultTimeStamp(bool timein)
 void Log::Notify(std::string input)
 {
     string msg;
-    string def = "Please check the error log for details.";
-    string notify = "Errors found.  ";
+    string def = "Errors found.  Please check the error log for details.";
 
     if (input == "")
-        msg = notify + def;
+        msg = def;
     else
-        msg = notify + input;
+        msg = input;
 
     //Write the notify message.
     Write(msg);
 }
+
+//------------------------------------------Function Separator --------------------------------------------------------
+//void Log::Notify(int msgId)
+//{
+//    switch(msgId)
+//    {
+//    case 0:
+//        this->Notify("Errors found.  Please check the error log for details.");
+//        break;
+//    case 1:
+//        this->Notify("Unknown error occurred.");
+//        break;
+
+//    default:
+//        this->Notify(0);
+//        break;
+//    }
+//}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+//std::string Log::funcID()
+//{
+//    //return string(ID) + string(":  ");
+//    return string("Log::funcID:  ");
+//}
+
 
 //==========================================Section Separator =========================================================
 //Protected Funcitons
@@ -242,7 +300,7 @@ void Log::parsePath(std::string pathIn)
     //Parse the path to pull out the file name.
 
     //Get position of last diretory separator.
-    std::size_t pos = pathIn.rfind(SLASH);
+    std::size_t pos = pathIn.find_last_of(SLASH);
 
     //Parse out directory
     if (pos == std::string::npos)
@@ -252,7 +310,7 @@ void Log::parsePath(std::string pathIn)
     }
     else
     {
-        fileDir = pathIn.substr(0,pos - 1);
+        fileDir = pathIn.substr(0,pos);
     }
 
     //Parse out filename

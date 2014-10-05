@@ -167,7 +167,7 @@ protected:
     std::string pLinkName; /**< The name of the linked body associated with the current data set. */
 
     //------------------------------------------Function Separator ----------------------------------------------------
-    static int ORD; /**< The order of derivative that is associated with all data from this file. */
+    int ORD; /**< The order of derivative that is associated with all data from this file. */
 
     //------------------------------------------Function Separator ----------------------------------------------------
     int pFreqInd; /**< The index of the frequency associated with the current set of data. */

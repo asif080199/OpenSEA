@@ -125,7 +125,7 @@ osea::ofreq::SolutionSet &OutputsBody::listSolutionSet(int index)
     {
         return plistSolution->at(index);
     }
-    catch(std::exception &err)
+    catch(const std::exception &err)
     {
         //Write error message
         logErr.Write("Unknown error occurred.  Object:  OutputsBody, Function:  listSolutionSet()\n" +
@@ -138,7 +138,7 @@ osea::ofreq::SolutionSet &OutputsBody::listSolutionSet(int index)
     catch(...)
     {
         //Write error message
-        logErr.Write("Unknown error occurred.  Object:  OutputsBody, Function:  listSolutionSet()");
+        logErr.Write(string(ID) + string(">>  Unknown error occurred."));
         logStd.Notify();
 
         //Stop program execution
@@ -360,7 +360,7 @@ int OutputsBody::calcGlobalMotion(unsigned int index)
             }
             catch(...)
             {
-                logErr.Write("Unknown error occurred.  Object:  OutputsBody, Function:  calcGlobalMotion()");
+                logErr.Write(string(ID) + string(">>  Unknown error occurred."));
                 logStd.Notify();
             }
         }
@@ -516,7 +516,7 @@ int OutputsBody::calcGlobalAcceleration(unsigned int index)
             }
             catch(...)
             {
-                logErr.Write("Unknown error occurred.  Object:  OutputsBody, Function:  calcGlobalAcceleration()");
+                logErr.Write(string(ID) + string(">>  Unknown error occurred."));
                 logStd.Notify();
             }
         }
@@ -592,7 +592,7 @@ int OutputsBody::calcGlobalSolution(unsigned int index)
             }
             catch(...)
             {
-                logErr.Write("Unknown error occurred.  Object:  OutputsBody, Function:  calcGlobalSolution()");
+                logErr.Write(string(ID) + string(">>  Unknown error occurred."));
                 logStd.Notify();
             }
         }

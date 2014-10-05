@@ -45,6 +45,9 @@ Log oFreqCore::logMon;      /**< Monitor log file declaration */
 double oFreqCore::GRAVITY = 9.80665; /**< Acceleration due to gravity.  Normal earth gravity.*/
 double oFreqCore::PI = 3.14159265359;   /**< Mathematical constant pi.*/
 
+string oFreqCore::DOT = "."; /**< Relative reference to same directory */
+string oFreqCore::DDOT = ".."; /**< Relative reference to a directory one up*/
+
 //==========================================Section Separator =========================================================
 //Public Functions
 

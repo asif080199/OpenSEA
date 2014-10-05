@@ -1,8 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'system.h'
 **
-** Created:
-**      by: The Qt Meta Object Compiler version 63 (Qt 4.8.4)
+** Created by: The Qt Meta Object Compiler version 63 (Qt 4.8.5)
 **
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
@@ -11,7 +10,7 @@
 #if !defined(Q_MOC_OUTPUT_REVISION)
 #error "The header file 'system.h' doesn't include <QObject>."
 #elif Q_MOC_OUTPUT_REVISION != 63
-#error "This file was generated using the moc from 4.8.4. It"
+#error "This file was generated using the moc from 4.8.5. It"
 #error "cannot be used with the include files from this version of Qt."
 #error "(The moc has changed too much.)"
 #endif
@@ -23,7 +22,7 @@ static const uint qt_meta_data_osea__ofreq__System[] = {
        6,       // revision
        0,       // classname
        0,    0, // classinfo
-      29,   14, // methods
+      35,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -62,6 +61,12 @@ static const uint qt_meta_data_osea__ofreq__System[] = {
      742,  607,   20,   20, 0x0a,
      768,   20,   20,   20, 0x0a,
      782,   20,   20,   20, 0x0a,
+     805,   20,   20,   20, 0x0a,
+     824,  342,   20,   20, 0x0a,
+     856,  846,   20,   20, 0x0a,
+     894,  886,   20,   20, 0x0a,
+     931,   20,   20,   20, 0x0a,
+     949,   20,   20,   20, 0x0a,
 
        0        // eod
 };
@@ -90,7 +95,11 @@ static const char qt_meta_stringdata_osea__ofreq__System[] = {
     "addWaveSpec(osea::SpecBretschneider)\0"
     "addWaveSpec(osea::SpecJONSWAP)\0"
     "addWaveSpec(osea::SpecPM)\0addWaveSpec()\0"
-    "SearchActiveSeaModel()\0"
+    "SearchActiveSeaModel()\0listHydroManager()\0"
+    "listHydroManager(int)\0bodNameIn\0"
+    "listHydroManager(std::string)\0HydroIn\0"
+    "addHydroManager(ofreq::HydroManager)\0"
+    "addHydroManager()\0updateHydroForce()\0"
 };
 
 void osea::ofreq::System::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
@@ -128,6 +137,12 @@ void osea::ofreq::System::qt_static_metacall(QObject *_o, QMetaObject::Call _c, 
         case 26: _t->addWaveSpec((*reinterpret_cast< osea::SpecPM(*)>(_a[1]))); break;
         case 27: _t->addWaveSpec(); break;
         case 28: _t->SearchActiveSeaModel(); break;
+        case 29: _t->listHydroManager(); break;
+        case 30: _t->listHydroManager((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 31: _t->listHydroManager((*reinterpret_cast< std::string(*)>(_a[1]))); break;
+        case 32: _t->addHydroManager((*reinterpret_cast< ofreq::HydroManager(*)>(_a[1]))); break;
+        case 33: _t->addHydroManager(); break;
+        case 34: _t->updateHydroForce(); break;
         default: ;
         }
     }
@@ -167,9 +182,9 @@ int osea::ofreq::System::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 29)
+        if (_id < 35)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 29;
+        _id -= 35;
     }
     return _id;
 }

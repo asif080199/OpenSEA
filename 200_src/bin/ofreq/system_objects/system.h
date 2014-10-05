@@ -125,6 +125,22 @@ public:
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
+     * @brief Sets the path to the working directory that contains the configuration files for the current oFreq run.
+     * @param pathIn String, variable passed by value.  The path to the current oFreq working directory.  The path
+     * must by by absolute reference.  Full file path must be included.
+     */
+    void setPath(std::string pathIn);
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Gets the path to the working directory for the current oFreq run.
+     * @return String, variable passed by value.  The path to the current oFreq working directory for the current run.
+     * Path is returned as an absolute reference.
+     */
+    std::string getPath();
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
      * @brief Creates the log files and prepares them to record a new oFreq session.
      *
      * Three log files are prepared:  standard.log; error.log; and monitor.log.
@@ -265,8 +281,7 @@ public:
     /**
      * @brief Clears the vector of force objects for the specified force type.
      * This is useful to free system memory.  Force type is specified by a std::string
-     * input.  If no std::string input is supplied, all force objects are cleared from the system object.  All force objects
-     * should already be copied to their respective Body objects before issuing this function.
+     * input.  If no std::string input is supplied, all force objects are cleared from the system object.
      * @param forceClass std::string input designating which force object type to clear.  Valid values are:
      * ForceActive:  Clears the ForceActive class of objects.
      * ForceReact:   Clears the ForceReact class of objects.
@@ -482,7 +497,7 @@ public:
      * name does not currently exist in the list of sea models, then the name is stored and assigned later.
      * @param NameIn The name which corresponds to the SeaModel object with the matching name.
      */
-    void setActiveSeaModel(std::string NameIn);
+    void setActiveSeaModel(std::string NameIn = "");
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -598,7 +613,6 @@ public slots:
      * @param bodID An integer variable that describes the base body which the function should process all links for.
      * parameter passed by value.
      * @sa Body::listNamedLink_user()
-     * @sa Body::listNamedLink_hydro();
      *
      */
     void linkBodies(int bodID);
@@ -737,6 +751,18 @@ public slots:
      * A completely new object is created and added to the list.
      */
     void addHydroManager();
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Updated the hydrodynamic forces for the latest wave frequency and wave direction.
+     *
+     * The hydrodynamic forces are contained within the HydroManager list, one HydroManager for each body object.
+     * The update forces the HydroManager to reinterpolate all coefficients for the current frequency and direction,
+     * as taken from this system object.  It also triggers the current active sea model to update for the latest
+     * wave amplitude.  This is the one command that handles everything for updating things on the hydrodynamic end.
+     * After this is done, you have a nice set of hydrodynamic forces copied into each Body object.
+     */
+    void updateHydroForce();
 
 //==========================================Section Separator =========================================================
 signals:
@@ -896,6 +922,13 @@ private:
 
     //------------------------------------------Function Separator ----------------------------------------------------
     std::vector<ofreq::HydroManager> plistHydroManager;
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief The path to the current working directory for the current oFreq run.  This is the root directory that
+     * contains all the oFreq data.  Path given by absolute reference.
+     */
+    std::string pWorkingPath;
 };
 
 }   //Namespace ofreq

@@ -131,6 +131,19 @@ void SeaModel::addWaveFreq(double freqIn)
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
+void SeaModel::addWaveFreq(std::vector<double> freqIn)
+{
+    //Reset the sorted variable
+    SortedFreq = false;
+
+    //Clear the list of wave frequencies.
+    plistWaveFreq.clear();
+
+    //Add the list of wave frequencies
+    plistWaveFreq = freqIn;
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
 void SeaModel::addWaveScale(double scaleIn)
 {
     //Reset sorted variable.
@@ -307,7 +320,7 @@ double SeaModel::getWaveAmp(double dirIn, int freqIndex)
         //Calculate wave amplitude
         return sqrt(2 * WaveEnergy * stepsize);
     }
-    catch(std::exception &err)
+    catch(const std::exception &err)
     {
         logStd.Notify();
         logErr.Write(string("Object:  SeaModel, Function:  getWaveAmp()\nError Message:  ") + err.what());
@@ -315,7 +328,7 @@ double SeaModel::getWaveAmp(double dirIn, int freqIndex)
     catch(...)
     {
         logStd.Notify();
-        logErr.Write("Unknown error occurred.  Object:  SeaModel, Function:  getWaveAmp()");
+        logErr.Write(string(ID) + string(">>  Unknown error occurred."));
     }
 }
 
@@ -467,7 +480,7 @@ double SeaModel::getFreqStep(int index)
             throw std::runtime_error("Frequency step requires a minimum of two frequencies definitions to calculate.");
         }
     }
-    catch(std::exception &err)
+    catch(const std::exception &err)
     {
         logStd.Notify();
         logErr.Write(string("Object:  SeaModel, Function:  getFreqStep()\nError Message:  ") + err.what());

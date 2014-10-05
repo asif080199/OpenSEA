@@ -153,7 +153,7 @@ Solution &GlobalSolution::getSolution(double freqIn)
     catch(...)
     {
         //Write out error message.
-        logErr.Write("Unknown error occurred.  Object:  Globalsolution, Function:  getSolution()");
+        logErr.Write(string(ID) + string(">>  Unknown error occurred."));
         logStd.Notify();
 
         //Stop program execution.

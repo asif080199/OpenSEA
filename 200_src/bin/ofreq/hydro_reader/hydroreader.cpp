@@ -77,80 +77,104 @@ HydroReader::HydroReader()
 //------------------------------------------Function Separator --------------------------------------------------------
 int HydroReader::readHydroSys()
 {
-    //First read the top level files
-    //Read environment file
-    readEnvironment();
+    //Start by clearing out all previous files.
+    plistObjects.clear();
+    plistTempHydro.clear();
+    plistWaveDir.clear();
+    plistWaveFreq.clear();
 
-    //Read directions file
-    readDirections();
+    try {
+        //Write output to user.
+        logStd.Write(string("    ") + pPath + string(". . . "));
 
-    //Read frequencies file
-    readFrequencies();
+        //First read the top level files
+        //Read environment file
+        readEnvironment();
 
-    //Next Iterate through each of the wave directions and read those files.
-    for (WaveInd = 0; i < plistWaveDir.size(); WaveInd++)
-    {
-        //Read the hydro mass file
-        readHydroMass(i);
+        //Read directions file
+        readDirections();
 
-        //Read the hydro damping file
-        readHydroDamp(i);
+        //Read frequencies file
+        readFrequencies();
 
-        //Read the hydro stiffness file
-        readHydroStiff(i);
-
-        //Read the cross mass file
-        readCrossMass(i);
-
-        //Read the cross damping file
-        readCrossDamp(i);
-
-        //Read the cross stiffness file
-        readCrossStiff(i);
-
-        //Done reading in data.  Transfer the data from temporary holding to final values.
-        //Each hydrodata object is its own hydrobody.
-        for (unsigned int j = 0; j < plistTempHydro.size(); j++)
+        //Next Iterate through each of the wave directions and read those files.
+        for (WaveInd = 0; WaveInd < plistWaveDir.size(); WaveInd++)
         {
-            //Find index of the hydrobody
-            int bod = findHydroManager(plistTempHydro[j].getHydroBodyName());
+            //Read the hydro mass file
+            readHydroMass(WaveInd);
 
-            if (bod < 0)
+            //Read the hydro damping file
+            readHydroDamp(WaveInd);
+
+            //Read the hydro stiffness file
+            readHydroStiff(WaveInd);
+
+            //Read the cross mass file
+            readCrossMass(WaveInd);
+
+            //Read the cross damping file
+            readCrossDamp(WaveInd);
+
+            //Read the cross stiffness file
+            readCrossStiff(WaveInd);
+
+            //Read the active forces file
+            readForceExcite(WaveInd);
+
+            //Done reading in data.  Transfer the data from temporary holding to final values.
+            //Each hydrodata object is its own hydrobody.
+            for (unsigned int j = 0; j < plistTempHydro.size(); j++)
             {
-                //No hydrobody found.  Create a new one.
-                ptSystem->addHydroManager();
-                bod = ptSystem->listHydroManager().size();
+                //Find index of the hydrobody
+                int bod = findHydroManager(plistTempHydro[j].getHydroBodyName());
 
-                //Set the body name.
-                ptSystem->listHydroManager(bod).setHydroBodyName(
-                            plistTempHydro[j].getHydroBodyName());
+                if (bod < 0)
+                {
+                    //No hydrobody found.  Create a new one.
+                    ptSystem->addHydroManager();
+                    bod = ptSystem->listHydroManager().size() - 1;
 
-                //Set gravity for the body.
-                ptSystem->listHydroManager(bod).setGravity(pGravity);
+                    //Set the body name.
+                    ptSystem->listHydroManager(bod).setHydroBodyName(
+                                plistTempHydro[j].getHydroBodyName());
+
+                    //Set gravity for the body.
+                    ptSystem->listHydroManager(bod).setGravity(pGravity);
+                }
+
+                //Find the index of the hydrodata set that matches the wave amplitude.
+                int amp = findHydroDataAmp(bod,
+                                           plistTempHydro[j].getWaveAmp());
+
+                if (amp < 0)
+                {
+                    //No hydrodata set with that wave amplitude was found.  Add the data set as a new one.
+                    ptSystem->listHydroManager(bod).addHydroData(
+                                plistTempHydro[j]);
+                }
+                else
+                {
+                    //Hydrodata set was found.  Add a new direction to that part of the list.
+                    ptSystem->listHydroManager(bod).addHydroData(
+                                amp,
+                                plistTempHydro[j]);
+                }
             }
 
-            //Find the index of the hydrodata set that matches the wave amplitude.
-            int amp = findHydroDataAmp(bod,
-                                       plistTempHydro[j].getWaveAmp());
-
-            if (amp < 0)
-            {
-                //No hydrodata set with that wave amplitude was found.  Add the data set as a new one.
-                ptSystem->listHydroManager(bod).addHydroData(
-                            plistTempHydro[j]);
-            }
-            else
-            {
-                //Hydrodata set was found.  Add a new direction to that part of the list.
-                ptSystem->listHydroManager(bod).addHydroData(
-                            amp,
-                            plistTempHydro[j]);
-            }
+            //Clear the list of hydrodata
+            plistTempHydro.clear();
         }
 
-        //Clear the list of hydrodata
-        plistTempHydro.clear();
+        //Write output to user.
+        logStd.Write("    . . . done.");
     }
+    catch(...)
+    {
+        logStd.Notify();
+        logErr.Write(string(ID) + string(">>  Unknown error occurred."));
+        
+    }
+
 }
 
 
@@ -169,291 +193,396 @@ int HydroReader::readHydroSys()
 //------------------------------------------Function Separator --------------------------------------------------------
 int HydroReader::readEnvironment()
 {
-    //Create dictionary object
-    osea::dictHydroEnv dictEnv(this);
+    try
+    {
+        //Create dictionary object
+        osea::dictHydroEnv dictEnv(this);
 
-    //Create pointer to system object.
-    dictEnv.setSystem(this->ptSystem);
+        //Create pointer to system object.
+        dictEnv.setSystem(this->ptSystem);
 
-    //Set the dictionary for the filereader.
-    this->setDictionary(dictEnv);
+        //Set the dictionary for the filereader.
+        this->setDictionary(dictEnv);
 
-    //Set the filename
-    std::string filename;
-    filename = pPath + SLASH + ENVIRONMENT;
+        //Set the filename
+        std::string filename;
+        filename = pPath + SLASH + ENVIRONMENT;
 
-    //Clear the list of objects.
-    plistObjects.clear();
+        //Clear the list of objects.
+        plistObjects.clear();
 
-    //Read the file
-    int out = readFile(filename);
+        //Read the file
+        int out = readFile(filename);
 
-    //clear the dictionary setting
-    this->setDictionary(NULL);
+        //clear the dictionary setting
+        this->ptDict = NULL;
 
-    //Write output
-    return out;
+        //Write output
+        return out;
+    }
+    catch(...)
+    {
+        logStd.Notify();
+        logErr.Notify("Function:  readEnvironment()");
+        
+    }
+
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
 int HydroReader::readDirections()
 {
-    //Create dictinary object
-    osea::dictHydroDirection dictDir(this);
+    try
+    {
+        //Create dictinary object
+        osea::dictHydroDirection dictDir(this);
 
-    //Create pointer to the system object.
-    dictDir.setSystem(this->ptSystem);
+        //Create pointer to the system object.
+        dictDir.setSystem(this->ptSystem);
 
-    //Set the dictionary for the filereader
-    this->setDictionary(dictDir);
+        //Set the dictionary for the filereader
+        this->setDictionary(dictDir);
 
-    //Set the filename
-    std::string filename;
-    filename = pPath + SLASH + DIRECTIONS;
+        //Set the filename
+        std::string filename;
+        filename = pPath + SLASH + DIRECTIONS;
 
-    //Clear the list of objects
-    plistObjects.clear();
+        //Clear the list of objects
+        plistObjects.clear();
 
-    //Read the file
-    int out = readFile(filename);
+        //Read the file
+        int out = readFile(filename);
 
-    //Clear the dictionary setting
-    this->setDictionary(NULL);
+        //clear the dictionary setting
+        this->ptDict = NULL;
 
-    //Write output
-    return out;
+        //Write output
+        return out;
+    }
+    catch(...)
+    {
+        logStd.Notify();
+        logErr.Notify("Function:  readDirections()");
+        
+    }
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
 int HydroReader::readFrequencies()
 {
-    //Create dictionary object
-    osea::dictHydroFrequency dictFreq(this);
+    try
+    {
+        //Create dictionary object
+        osea::dictHydroFrequency dictFreq(this);
 
-    //Create pointer to the system object.
-    dictFreq.setSystem(this->ptSystem);
+        //Create pointer to the system object.
+        dictFreq.setSystem(this->ptSystem);
 
-    //Set the dictionary for the filereader
-    this->setDictionary(dictFreq);
+        //Set the dictionary for the filereader
+        this->setDictionary(dictFreq);
 
-    //Set the filename
-    std::string filename;
-    filename = pPath + SLASH + FREQUENCIES;
+        //Set the filename
+        std::string filename;
+        filename = pPath + SLASH + FREQUENCIES;
 
-    //Clear the list of objects
-    plistObjects.clear();
+        //Clear the list of objects
+        plistObjects.clear();
 
-    //Read the file
-    int out = readFile(filename);
+        //Read the file
+        int out = readFile(filename);
 
-    //Clear the dictionary setting
-    this->setDictionary(NULL);
+        //clear the dictionary setting
+        this->ptDict = NULL;
 
-    //Write output
-    return out;
+        //Write output
+        return out;
+    }
+    catch(...)
+    {
+        logStd.Notify();
+        logErr.Notify("Function:  readFrequencies()");
+        
+    }
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
 int HydroReader::readForceExcite(int index)
 {
-    //Create dictionary object
-    osea::dictForceExcite dictForce(this);
+    try
+    {
+        //Create dictionary object
+        osea::dictForceExcite dictForce(this);
 
-    //Create pointer to the system object.
-    dictForce.setSystem(this->ptSystem);
+        //Create pointer to the system object.
+        dictForce.setSystem(this->ptSystem);
 
-    //Set the dictionary for the filereader
-    this->setDictionary(dictForce);
+        //Set the dictionary for the filereader
+        this->setDictionary(dictForce);
 
-    //Set the filename
-    std::string filename;
-    filename = pPath + SLASH + DIR + string(index) + SLASH + FORCEEXCITE;
+        //Set the filename
+        std::string filename;
+        ostringstream convert;
+        convert << index + 1;   //Convert to switch to human counting system (start 1).
+        filename = pPath + SLASH + DIR + convert.str() + SLASH + FORCEEXCITE;
 
-    //Clear the list of objects
-    plistObjects.clear();
+        //Clear the list of objects
+        plistObjects.clear();
 
-    //Read the file
-    int out = readFile(filename);
+        //Read the file
+        int out = readFile(filename);
 
-    //Clear the dictionary setting
-    this->setDictionary(NULL);
+        //clear the dictionary setting
+        this->ptDict = NULL;
 
-    //Write output
-    return out;
+        //Write output
+        return out;
+    }
+    catch(...)
+    {
+        logStd.Notify();
+        logErr.Notify("Function:  readForceExcite()");
+        
+    }
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
 int HydroReader::readHydroMass(int index)
 {
-    //Create dictionary object
-    osea::dictHydroMass dictMass(this);
+    try
+    {
+        //Create dictionary object
+        osea::dictHydroMass dictMass(this);
 
-    //Create pointer to the system object.
-    dictMass.setSystem(this->ptSystem);
+        //Create pointer to the system object.
+        dictMass.setSystem(this->ptSystem);
 
-    //Set the dictionary for the filereader
-    this->setDictionary(dictMass);
+        //Set the dictionary for the filereader
+        this->setDictionary(dictMass);
 
-    //Set the filename
-    std::string filename;
-    filename = pPath + SLASH + DIR + string(index) + SLASH + HYDROMASS;
+        //Set the filename
+        std::string filename;
+        ostringstream convert;
+        convert << index + 1;   //Convert to switch to human counting system (start 1).
+        filename = pPath + SLASH + DIR + convert.str() + SLASH + HYDROMASS;
 
-    //Clear the list of objects
-    plistObjects.clear();
+        //Clear the list of objects
+        plistObjects.clear();
 
-    //Read the file
-    int out = readFile(filename);
+        //Read the file
+        int out = readFile(filename);
 
-    //Clear the dictionary setting
-    this->setDictionary(NULL);
+        //clear the dictionary setting
+        this->ptDict = NULL;
 
-    //Write output
-    return out;
+        //Write output
+        return out;
+    }
+    catch(...)
+    {
+        logStd.Notify();
+        logErr.Notify("Function:  readHydroMass()");
+        
+    }
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
 int HydroReader::readHydroDamp(int index)
 {
-    //Create dictionary object
-    osea::dictHydroDamp dictDamp(this);
+    try
+    {
+        //Create dictionary object
+        osea::dictHydroDamp dictDamp(this);
 
-    //Create pointer to the system object.
-    dictDamp.setSystem(this->ptSystem);
+        //Create pointer to the system object.
+        dictDamp.setSystem(this->ptSystem);
 
-    //Set the dictionary for the filereader
-    this->setDictionary(dictDamp);
+        //Set the dictionary for the filereader
+        this->setDictionary(dictDamp);
 
-    //Set the filename
-    std::string filename;
-    filename = pPath + SLASH + DIR + string(index) + SLASH + HYDRODAMP;
+        //Set the filename
+        std::string filename;
+        ostringstream convert;
+        convert << index + 1;   //Convert to switch to human counting system (start 1).
+        filename = pPath + SLASH + DIR + convert.str() + SLASH + HYDRODAMP;
 
-    //Clear the list of objects
-    plistObjects.clear();
+        //Clear the list of objects
+        plistObjects.clear();
 
-    //Read the file
-    int out = readFile(filename);
+        //Read the file
+        int out = readFile(filename);
 
-    //Clear the dictionary setting
-    this->setDictionary(NULL);
+        //clear the dictionary setting
+        this->ptDict = NULL;
 
-    //Write output
-    return out;
+        //Write output
+        return out;
+    }
+    catch(...)
+    {
+        logStd.Notify();
+        logErr.Notify("Function:  readHydroDamp()");
+        
+    }
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
 int HydroReader::readHydroStiff(int index)
 {
-    //Create dictionary object
-    osea::dictHydroStiff dictStiff(this);
+    try
+    {
+        //Create dictionary object
+        osea::dictHydroStiff dictStiff(this);
 
-    //Create pointer to the system object.
-    dictStiff.setSystem(this->ptSystem);
+        //Create pointer to the system object.
+        dictStiff.setSystem(this->ptSystem);
 
-    //Set the dictionary for the filereader
-    this->setDictionary(dictStiff);
+        //Set the dictionary for the filereader
+        this->setDictionary(dictStiff);
 
-    //Set the filename
-    std::string filename;
-    filename = pPath + SLASH + DIR + string(index) + SLASH + HYDROSTIFF;
+        //Set the filename
+        std::string filename;
+        ostringstream convert;
+        convert << index + 1;   //Convert to switch to human counting system (start 1).
+        filename = pPath + SLASH + DIR + convert.str() + SLASH + HYDROSTIFF;
 
-    //Clear the list of objects
-    plistObjects.clear();
+        //Clear the list of objects
+        plistObjects.clear();
 
-    //Read the file
-    int out = readFile(filename);
+        //Read the file
+        int out = readFile(filename);
 
-    //Clear the dictionary setting
-    this->setDictionary(NULL);
+        //clear the dictionary setting
+        this->ptDict = NULL;
 
-    //Write output
-    return out;
+        //Write output
+        return out;
+    }
+    catch(...)
+    {
+        logStd.Notify();
+        logErr.Notify("Function:  readHydroStiff()");
+        
+    }
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
 int HydroReader::readCrossMass(int index)
 {
-    //Create dictionary object
-    osea::dictCrossMass dictCMass(this);
+    try
+    {
+        //Create dictionary object
+        osea::dictCrossMass dictCMass(this);
 
-    //Create pointer to the system object.
-    dictCMass.setSystem(this->ptSystem);
+        //Create pointer to the system object.
+        dictCMass.setSystem(this->ptSystem);
 
-    //Set the dictionary for the filereader
-    this->setDictionary(dictCMass);
+        //Set the dictionary for the filereader
+        this->setDictionary(dictCMass);
 
-    //Set the filename
-    std::string filename;
-    filename = pPath + SLASH + DIR + string(index) + SLASH + CROSSMASS;
+        //Set the filename
+        std::string filename;
+        ostringstream convert;
+        convert << index + 1;   //Convert to switch to human counting system (start 1).
+        filename = pPath + SLASH + DIR + convert.str() + SLASH + CROSSMASS;
 
-    //Clear the list of objects
-    plistObjects.clear();
+        //Clear the list of objects
+        plistObjects.clear();
 
-    //Read the file
-    int out = readFile(filename);
+        //Read the file
+        int out = readFile(filename);
 
-    //Clear the dictionary setting
-    this->setDictionary(NULL);
+        //clear the dictionary setting
+        this->ptDict = NULL;
 
-    //Write output
-    return out;
+        //Write output
+        return out;
+    }
+    catch(...)
+    {
+        logStd.Notify();
+        logErr.Notify("Function:  readCrossMass()");
+        
+    }
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
 int HydroReader::readCrossDamp(int index)
 {
-    //Create dictionary object
-    osea::dictCrossDamp dictCDamp(this);
+    try
+    {
+        //Create dictionary object
+        osea::dictCrossDamp dictCDamp(this);
 
-    //Create pointer to the system object.
-    dictCDamp.setSystem(this->ptSystem);
+        //Create pointer to the system object.
+        dictCDamp.setSystem(this->ptSystem);
 
-    //Set the dictionary for the filereader
-    this->setDictionary(dictCDamp);
+        //Set the dictionary for the filereader
+        this->setDictionary(dictCDamp);
 
-    //Set the filename
-    std::string filename;
-    filename = pPath + SLASH + DIR + string(index) + SLASH + CROSSDAMP;
+        //Set the filename
+        std::string filename;
+        ostringstream convert;
+        convert << index + 1;   //Convert to switch to human counting system (start 1).
+        filename = pPath + SLASH + DIR + convert.str() + SLASH + CROSSDAMP;
 
-    //Clear the list of objects
-    plistObjects.clear();
+        //Clear the list of objects
+        plistObjects.clear();
 
-    //Read the file
-    int out = readFile(filename);
+        //Read the file
+        int out = readFile(filename);
 
-    //Clear the dictionary setting
-    this->setDictionary(NULL);
+        //clear the dictionary setting
+        this->ptDict = NULL;
 
-    //Write output
-    return out;
+        //Write output
+        return out;
+    }
+    catch(...)
+    {
+        logStd.Notify();
+        logErr.Notify("Function:  readCrossDamp()");
+        
+    }
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
 int HydroReader::readCrossStiff(int index)
 {
-    //Create dictionary object
-    osea::dictCrossStiff dictCStiff(this);
+    try
+    {
+        //Create dictionary object
+        osea::dictCrossStiff dictCStiff(this);
 
-    //Create pointer to the system object.
-    dictCStiff.setSystem(this->ptSystem);
+        //Create pointer to the system object.
+        dictCStiff.setSystem(this->ptSystem);
 
-    //Set the dictionary for the filereader
-    this->setDictionary(dictCStiff);
+        //Set the dictionary for the filereader
+        this->setDictionary(dictCStiff);
 
-    //Set the filename
-    std::string filename;
-    filename = pPath + SLASH + DIR + string(index) + SLASH + CROSSSTIFFNESS;
+        //Set the filename
+        std::string filename;
+        ostringstream convert;
+        convert << index + 1;   //Convert to switch to human counting system (start 1).
+        filename = pPath + SLASH + DIR + convert.str() + SLASH + CROSSSTIFFNESS;
 
-    //Clear the list of objects
-    plistObjects.clear();
+        //Clear the list of objects
+        plistObjects.clear();
 
-    //Read the file
-    int out = readFile(filename);
+        //Read the file
+        int out = readFile(filename);
 
-    //Clear the dictionary setting
-    this->setDictionary(NULL);
+        //clear the dictionary setting
+        this->ptDict = NULL;
 
-    //Write output
-    return out;
+        //Write output
+        return out;
+    }
+    catch(...)
+    {
+        logStd.Notify();
+        logErr.Notify("Function:  readCrossStiff()");
+        
+    }
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
@@ -485,12 +614,20 @@ int HydroReader::findHydroDataAmp(int BodyInd, double waveAmpIn)
     unsigned int i;
 
     //Search through the list of HydroData objects.
-    for (i = 0; i< ptSystem->listHydroManager(BodyInd).listHydroData().size(); i++)
+    if (ptSystem->listHydroManager(BodyInd).listHydroData().size() == 0)
     {
-        if (ptSystem->listHydroManager(BodyInd).listHydroData(i,0).getWaveAmp() == waveAmpIn)
+        //No hydro data set yet.
+        return -1;
+    }
+    else
+    {
+        for (i = 0; i< ptSystem->listHydroManager(BodyInd).listHydroData().size(); i++)
         {
-            found = true;
-            break;
+            if (ptSystem->listHydroManager(BodyInd).listHydroData(i,0).getWaveAmp() == waveAmpIn)
+            {
+                found = true;
+                break;
+            }
         }
     }
 

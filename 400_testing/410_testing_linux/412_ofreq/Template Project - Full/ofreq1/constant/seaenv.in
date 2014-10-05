@@ -23,43 +23,101 @@ seafile
   with wave directions. At least one wave spectrum must be defined */
 
 //Define wave spectrums.  You may define multiple spectrums
-wave_custom {
+wave_spec {
+  //First item must always be the spectrum class.
+  class "custom";
+  
   //Any name you want.  Used to refer to the spectrum
-  name "wavespec1";
+  name "SpecCustom1";
   
   //Frequencies used to define the spectrum [rad/s].  Not required
   //to be the same frequencies which govern the oFreq run.
-  frequencies (
+  frequency (
   0.010
-  3.050
+  0.020
+  ...
+  0.200
   );
 
   //Spectrum ordinates of wave energy [m^2 s/rad].  Ordinates correlate
   //to wave frequencies just entered.
-  waveenergy (
+  wave_energy (
   0.800
-  1.500
+  0.900
+  ...
+  2.700
   );
 }
 
-wave_custom {
-  //Any name you want.  Used to refer to the spectrum
-  name "wavespec2";
+//Define second wave spectrum:  Bretschneider
+wave_spec {
+  class "bretschneider";
   
-  //Frequencies used to define the spectrum [rad/s].  Not required
-  //to be the same frequencies which govern the oFreq run.
-  frequencies (
-  0.060
-  2.500
-  );
+  name "Bretschneider 1";
+  
+  h_sig 6.0;
 
-  //Spectrum ordinates of wave energy [m^2 s/rad].  Ordinates correlate
-  //to wave frequencies just entered.
-  waveenergy (
-  10.00
-  5.00
-  );
+  t_mean 3.0;
 }
+
+//Define second wave spectrum:  ITTC
+wave_spec {
+  class "ittc";
+  name "Bretschneider 2-Tp";
+  
+  h_sig 6.0;
+  t_peak 2.0;
+}
+
+wave_spec {
+  class "bretschneider";
+  name "Bretschneider 3-Tz";
+  
+  h_sig 6.0;
+  t_zero 5.0;
+}
+
+//Define JONSWAP wave spectra.
+wave_spec {
+  class "jonswap";
+  name "JONSWAP 1 - Default Gamma";
+  
+  h_sig 6.0;
+  t_mean 3.0;
+}
+
+wave_spec {
+  class "jonswap";
+  name "JONSWAP 2";
+  
+  h_sig 6.0;
+  t_mean 3.0;
+  bandwidth_param 5.0;
+}
+
+wave_spec {
+  class "jonswap";
+  name "JONSWAP 3 - custom gamma 2";
+  
+  h_sig 6.0;
+  t_zero 4.0;
+  gamma 1.5;
+}
+
+//Define Pierson Moskowitz wave spectra.
+wave_spec {
+  class "pm";
+  name "Pierson Moskowitz 1-NoWind";
+  
+  h_sig 6.0;
+}
+
+wave_spec {
+  class "pm";
+  name "Pierson Moskowitz 2 - Wind";
+  
+  wind 24;
+} 
 
 // ************************************************************************* //
 
@@ -69,51 +127,106 @@ wave_custom {
 /* Definition of sea models.  At least one sea model must be
    defined */
 
-sea_custom {
-  //Any name you want.  Used to refer to the sea model
-  name "seamodel1";
+sea_model {
+  class "custom";
+  name "Custom Model 1";
 
-  spreadpoint {
+  wave_def {
     //Angle = angle of wave travel direction [rad] with 0 = True North
-    angle 0.000;
+    direction 0.000;
     //Spectrum = name of one of the previously defined wave spectrums
-    spectrum "wavespec1";
+    spectrum "Bretschneider 1";
     //Scale = Scale factor applied to the wave spectrum
     scale 1.00;
-    
-  spreadpoint {
-    angle 1.571;
-    spectrum "wavespec1";
-    scale 0.50;
-
-  spreadpoint {
-    angle 3.142;
-    spectrum "wavespec1";
-    scale 1.00;
-}
-
-sea_custom {
-  //Any name you want.  Used to refer to the sea model
-  name "seamodel2";
-
-  spreadpoint {
+  }
+  
+  wave_def {
     //Angle = angle of wave travel direction [rad] with 0 = True North
-    angle 0.000;
+    direction 0.7854;
     //Spectrum = name of one of the previously defined wave spectrums
-    spectrum "wavespec1";
+    spectrum "Bretschneider 1";
     //Scale = Scale factor applied to the wave spectrum
-    scale 1.00;
-    
-  spreadpoint {
-    angle 1.571;
-    spectrum "wavespec2";
+    scale 0.7071;
+  }
+  
+  wave_def {
+    //Angle = angle of wave travel direction [rad] with 0 = True North
+    direction 1.5708;
+    //Spectrum = name of one of the previously defined wave spectrums
+    spectrum "Bretschneider 1";
+    //Scale = Scale factor applied to the wave spectrum
+    scale 0.10;
+  }
+  
+  wave_def {
+    //Angle = angle of wave travel direction [rad] with 0 = True North
+    direction 2.356;
+    //Spectrum = name of one of the previously defined wave spectrums
+    spectrum "JONSWAP 2";
+    //Scale = Scale factor applied to the wave spectrum
+    scale 0.25;
+  }
+  
+  wave_def {
+    //Angle = angle of wave travel direction [rad] with 0 = True North
+    direction 2.618;
+    //Spectrum = name of one of the previously defined wave spectrums
+    spectrum "JONSWAP 2";
+    //Scale = Scale factor applied to the wave spectrum
     scale 0.50;
-
-  spreadpoint {
-    angle 3.142;
-    spectrum "wavespec1";
-    scale 2.00;
+  }  
+  
+    wave_def {
+    //Angle = angle of wave travel direction [rad] with 0 = True North
+    direction 3.142;
+    //Spectrum = name of one of the previously defined wave spectrums
+    spectrum "JONSWAP 2";
+    //Scale = Scale factor applied to the wave spectrum
+    scale 1.0;
+  }
+}
+ 
+//Single direction sea models 
+sea_model {
+  class "single_direction";
+  name "Single direction 1";
+  
+  wave_def {
+    direction 0.2618;
+    spectrum "JONSWAP 2";
+  }
 }
 
+sea_model {
+  class "single_direction";
+  name "Single direction 2";
+  
+  wave_def {
+    direction 3.1415;
+    spectrum "JONSWAP 2";
+    scale 0.10;
+  }
+}
+
+//Dual direction sea models
+sea_model {
+  class "dual_direction";
+  name "dual direction 1";
+  
+  wave_def {
+    direction 3.1415;
+    spectrum "JONSWAP 2";
+    scale 0.50;
+  }
+  
+  wave_def {
+    direction 1.5708;
+    spectrum "JONSWAP 2";
+    scale 1.0;
+  }
+}
+
+  
+    
 
 // ************************************************************************* //

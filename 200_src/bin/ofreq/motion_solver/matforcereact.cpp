@@ -325,7 +325,7 @@ cx_mat &matForceReact::listDerivative(unsigned int index)
     {
         //Unknown error handler.
         logStd.Notify();
-        logErr.Write("Uknown error occurred.  Object:  matForceReact, Function:  listDerivative");
+        logErr.Write(string(ID) + string(">>  Unknown error occurred."));
         exit(1);
     }
 }

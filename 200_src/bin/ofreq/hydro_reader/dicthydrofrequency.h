@@ -136,7 +136,7 @@ private:
 
     //------------------------------------------Function Separator ----------------------------------------------------
     //Class Name constants
-
+    static std::string OBJECT_FREQUENCY;    /**< Object name for frequency list designation. */
 
     //------------------------------------------Function Separator ----------------------------------------------------
     //Keyword name constants

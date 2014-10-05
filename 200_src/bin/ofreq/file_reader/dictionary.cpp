@@ -79,7 +79,7 @@ void Dictionary::setObject(ObjectGroup input)
                                          string("Key:  ") + string(input.getKey(i)) + string("\nValue:  ") +
                                          string(input.getVal(i)[0]));
         }
-        catch(std::exception &err)
+        catch(const std::exception &err)
         {
             //Write out error message and stop execution.
             logErr.Write(string(err.what()));
@@ -89,7 +89,7 @@ void Dictionary::setObject(ObjectGroup input)
         catch(...)
         {
             //Write out error message and stop execution.
-            logErr.Write("Unknown error occurred.  Ojbect:  ObjectGroup, Function:  setObject");
+            logErr.Write(string(ID) + string(">>  Unknown error occurred."));
             logStd.Notify();
             exit(1);
         }
@@ -102,7 +102,7 @@ void Dictionary::setObject(ObjectGroup input)
         try {
             setObject(*(input.listObject(i)));
         }
-        catch(std::exception &err)
+        catch(const std::exception &err)
         {
             //Write out error message and stop execution.
             logErr.Write("Error reading in object definition.\n" +
@@ -278,19 +278,19 @@ complex<double> Dictionary::convertComplex(string input)
         }
 
         else
-            throw std::runtime_error(string("Complex variable format not recognized.  \n") +
+            throw std::runtime_error(string("Complex variable format not recognized.  ") +
                                      string("Offending Entry:  ") + input);
     }
-    catch(std::exception &err)
+    catch(const std::exception &err)
     {
         logStd.Notify();
-        logErr.Write(string("Object:  Dictionary, Function:  convertComplex\n") + err.what());
+        logErr.Write(string(ID) + string(">>  ") + err.what());
         exit(1);
     }
     catch(...)
     {
         logStd.Notify();
-        logErr.Write(string("Unknown error occurred.  Object:  Dictionary, Function:  convertComplex"));
+        logErr.Write(string(ID) + string(">>  Unknown error occurred."));
         exit(1);
     }
 

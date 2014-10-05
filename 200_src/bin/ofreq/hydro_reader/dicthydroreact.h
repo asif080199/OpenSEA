@@ -95,20 +95,20 @@ class ofreq::hydroData; /**< Prototype class declaration for pointer to hydroDat
  * @sa FileReader
  * @sa HydroReader
  */
-class dicthydroReact : public Dictionary
+class dictHydroReact : public Dictionary
 {
     Q_OBJECT
 //==========================================Section Separator =========================================================
 public:
     //------------------------------------------Function Separator ----------------------------------------------------
-    dicthydroReact();
+    dictHydroReact();
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
      * @brief Constructor that also passes pointer to the owning file reader.
      * @param parent Pointer to HydroReader object, pointer passed by value.
      */
-    dicthydroReact(osea::HydroReader *parent);
+    dictHydroReact(osea::HydroReader *parent);
 
 //==========================================Section Separator =========================================================
 signals:
@@ -161,7 +161,7 @@ protected:
     bool pBodOn;  /**< Tracks whether a body object was declared for filling in data associated with that body. */
 
     //------------------------------------------Function Separator ----------------------------------------------------
-    static int ORD; /**< The order of derivative that is associated with all data from this file. */
+    int ORD; /**< The order of derivative that is associated with all data from this file. */
 
     //------------------------------------------Function Separator ----------------------------------------------------
     int pFreqInd; /**< The index of the frequency associated with the current set of data. */

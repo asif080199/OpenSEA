@@ -76,7 +76,7 @@ int dictHydroEnv::defineKey(std::string keyIn, std::vector<std::string> valIn)
     if (keyIn == KEY_DEPTH)
     {
         //convert value
-        double out = atof(valIn[0]);
+        double out = atof(valIn[0].c_str());
 
         //Write to hydroreader
         pParent->pDepth = out;
@@ -89,7 +89,7 @@ int dictHydroEnv::defineKey(std::string keyIn, std::vector<std::string> valIn)
     if (keyIn == KEY_DENSITY)
     {
         //Convert value
-        double out = atof(valIn[0]);
+        double out = atof(valIn[0].c_str());
 
         //Write to hydroreader
         pParent->pDensity = out;
@@ -104,7 +104,7 @@ int dictHydroEnv::defineKey(std::string keyIn, std::vector<std::string> valIn)
         for (unsigned int i = 0; i < valIn.size(); i++)
         {
             //Convert value
-            double out = atof(valIn[i]);
+            double out = atof(valIn[i].c_str());
 
             //Write to hydroreader
             pParent->pGravity.push_back(out);
@@ -118,7 +118,7 @@ int dictHydroEnv::defineKey(std::string keyIn, std::vector<std::string> valIn)
     if (keyIn == KEY_AMP)
     {
         //Convert value
-        double out = atof(valIn[0]);
+        double out = atof(valIn[0].c_str());
 
         //Write to hydroreader
         pParent->pWaveAmp = out;

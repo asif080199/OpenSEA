@@ -182,6 +182,31 @@ public:
      */
     void setDictionary(osea::Dictionary &dictIn);
 
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief lists the data files for the HydroReader to process.
+     *
+     * One of the user inputs is the set of hydrodynamic data files.  oFreq can use more than one set.  The data.in
+     * input file supplied a list of file paths.  The list gets created when the FileReader reads the data.in
+     * input file.  This function provides access to the list.
+     * @return Vector of strings, variable passed by reference.  The list of paths to the hydro systems to import.
+     * The path should be to the root file of the hydro system.
+     */
+    std::vector<std::string> &listDataFiles();
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief lists the data files for the HydroReader to process.
+     *
+     * One of the user inputs is the set of hydrodynamic data files.  oFreq can use more than one set.  The data.in
+     * input file supplied a list of file paths.  The list gets created when the FileReader reads the data.in
+     * input file.  This function provides access to the list.
+     * @param index Integer, variable passed by value.  The index of the entry that you want to access from the list.
+     * @return String, variable passed by reference.  A single entry from the list of paths to the hydro systems to
+     * import.  The path should be to the root file of the hydro system.
+     */
+    std::string &listDataFiles(int index);
+
 //==========================================Section Separator =========================================================
 public slots:
         //------------------------------------------Function Separator ----------------------------------------------------
@@ -241,6 +266,7 @@ signals:
      */
     void outputSeaEnvFile(ObjectGroup output);
 
+
 //==========================================Section Separator =========================================================
 protected:
     //------------------------------------------Function Separator ----------------------------------------------------
@@ -284,13 +310,13 @@ protected:
      * @sa ObjectGroup
      * @sa Dictionary
      */
-    osea::Dictionary* ptDict;
+    osea::Dictionary* ptDict = NULL;
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
      * @brief Pointer to the System object.  Used to reference any important variables in the System object.
      */
-    ofreq::System* ptSystem;
+    ofreq::System* ptSystem = NULL;
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -310,14 +336,17 @@ protected:
     // ---------------------------------
     static std::string KEY_FORMAT;  /**< The key designator for a format value in the seafile object. */
     static std::string KEY_VERSION; /**< The key designator for a version value in the seafile object. */
+    static std::string KEY_OBJECT;  /**< The key designator for a object value in the seafile object. */
 
 //==========================================Section Separator =========================================================
 private:
     //------------------------------------------Function Separator ----------------------------------------------------
+    std::vector<std::string> plistDataFiles; /**< The list of hydro data files that the hydro reader can process. */
+
+    //------------------------------------------Function Separator ----------------------------------------------------
     // Directory Names
     static std::string SYS; /**< The system directory name */
     static std::string CONST; /**< The const directory name */
-
 
     //------------------------------------------Function Separator ----------------------------------------------------
     // Input File Names

@@ -50,11 +50,8 @@
 #include <QString>
 #include <QFile>
 #include <exception>
-#ifdef Q_OS_WIN
-    //Any windows specific inclusions go in here.
-#elif defined Q_OS_LINUX
-    //Any linux specific inclusions go in here.
-#endif
+
+
 
 //######################################### Class Separator ###########################################################
 //Namespace declarations
@@ -254,12 +251,39 @@ public:
      * the action message with your own input.
      * @param input String, passed by value.  An override for the standard notification message.
      * Default Behavior:  "Errors found.  Please check the error log for details."
-     * Override Behavior:  "Errors found.  " + input.
+     * Override Behavior:  input.
      */
     void Notify(std::string input = "");
 
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Prints one of several pre-programmed standard notification messages.
+     *
+     * This expands on the Notify function which was meant mostly for the standard log.  This function allows you to
+     * select from several pre-selected notification messages.  Intended for scenarios when an unknown error occurred
+     * and you can not use the exception classes for the notification message.  Using a single notification message
+     * helps ensure consistency of program appearance and improves user confidence in the program.
+     * @param msgId Integer, variable passed by value.  The following messages are pre-programmed.
+     * 0:       "Errors found.  Please check the error log for details."
+     * 1:       "Unknown error occurred."
+     *
+     */
+//    void Notify(int msgId);
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Returns the ID properties for the class and function.
+     *
+     * Returns a string which identified the class name and function name of the calling function.  This can be
+     * added onto error statements to properly identify the origin of the error.
+     * @return Returns string, variable passed by value.  Returned string identifies class name and object name of the
+     * function which produced the error.
+     */
+//    std::string funcID();
+
 //==========================================Section Separator =========================================================
 protected:
+
 
 
 //==========================================Section Separator =========================================================

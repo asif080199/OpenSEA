@@ -98,6 +98,41 @@ vector<int> mathInterp::FindMatch(double valSearch, vector<double> &listVal)
     return output;
 }
 
+//------------------------------------------Function Separator --------------------------------------------------------
+double mathInterp::checkAngle(double angIn)
+{
+    try
+    {
+        //Check if direction is less than zero.
+        if (angIn < 0)
+        {
+            angIn += 2*PI;
+        }
+
+        if (angIn > 2*PI)
+        {
+            angIn -= 2*PI;
+        }
+
+        //Check if that solved the problem.
+        if ((angIn > 2*PI)
+                || (angIn < 0))
+            throw std::runtime_error("Specified wave direction outside of valid range from 0 to 6.2832 rad.  Perhaps you have the wrong units?");
+    }
+    catch(const std::exception &err)
+    {
+        logStd.Notify();
+        logErr.Write(string(ID) + string(">>  ") + err.what());
+        exit(1);
+    }
+    catch(...)
+    {
+        logStd.Notify();
+        logErr.Write(string(ID) + string(">>  Unknown error occurred."));
+        exit(1);
+    }
+}
+
 
 //==========================================Section Separator =========================================================
 //Private Functions

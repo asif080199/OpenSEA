@@ -136,7 +136,7 @@ private:
 
     //------------------------------------------Function Separator ----------------------------------------------------
     //Class Name constants
-
+    static std::string OBJECT_DIRECTION;    /**< Object name for wave directions object. */
 
     //------------------------------------------Function Separator ----------------------------------------------------
     //Keyword name constants

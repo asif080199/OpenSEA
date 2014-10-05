@@ -82,7 +82,7 @@ namespace osea
  * @sa FileReader
  * @sa HydroReader
  */
-class dictHydroDamp : public dicthydroReact
+class dictHydroDamp : public dictHydroReact
 {
     Q_OBJECT
 //==========================================Section Separator =========================================================

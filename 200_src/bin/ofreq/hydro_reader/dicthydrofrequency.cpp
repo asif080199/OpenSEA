@@ -34,7 +34,7 @@ using namespace osea;
 
 //------------------------------------------Function Separator ----------------------------------------------------
 //Class Name constants
-
+string dictHydroFrequency::OBJECT_FREQUENCY = "frequency";    /**< Object name for frequency list designation. */
 
 //------------------------------------------Function Separator ----------------------------------------------------
 //Keyword name static constants
@@ -98,7 +98,15 @@ int dictHydroFrequency::defineKey(std::string keyIn, std::vector<std::string> va
 //------------------------------------------Function Separator --------------------------------------------------------
 int dictHydroFrequency::defineClass(std::string nameIn)
 {
-    //No class definitions within this file.
+    //Object for frequency designation
+    //----------------------------------------------
+    if (nameIn == OBJECT_FREQUENCY)
+    {
+        //No action required
+        return 0;
+    }
+
+    //----------------------------------------------
     //throw an error
     logStd.Notify();
     logErr.Write("File:  frequencies.out \n No objects are currently supported for this input file.");

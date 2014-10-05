@@ -347,34 +347,10 @@ void MotionModel::useForceActive_hydro(unsigned int force, unsigned int eqn)
 
         for (unsigned int i = 0; i < plistData[curBody].listForceActive_hydro().size(); i++)
         {
-            if (plistData[curBody].listForceActive_hydro().at(i) == NULL)
-            {
-                ForceActive* temp = new ForceActive();
-                plistData[curBody].listForceActive_hydro().at(i) = temp;
-            }
+            if (plistData[curBody].listForceActive_hydro(i) == NULL)
+                plistData[curBody].listForceActive_hydro().push_back(ForceActive());
         }
     }
-
-//    //Check if the designed body has enough equations in the force for the specified number.
-//    if (plistData[curBody].listForceActive_hydro(force)->listDataEquation().size() < eqn + 1)
-//    {
-//        //Add enough equations.
-//        plistData[curBody].listForceActive_hydro(force)->listDataEquation().resize(eqn + 1);
-//    }
-
-//    //Set the active force, hydro.
-//    complex<double> input;
-
-//    //Get the input value.
-//    if (eqn < plistBody->at(curBody).listForceActive_hydro(force)->listDataEquation().size())
-//    {
-//        input = plistBody->at(curBody).listForceActive_hydro(force)->listDataEquation(eqn);
-//    }
-//    else
-//        input = complex<double>(0,0);
-
-//    //Write the input value.
-//    plistData[curBody].listForceActive_hydro(force)->listDataEquation(eqn) = input;
 
     //Get the input value and write it to the new value in the listData.
     plistData[curBody].listForceActive_hydro(force)->listDataEquation(eqn) =
@@ -402,11 +378,8 @@ void MotionModel::useForceActive_hydro(unsigned int force)
 
         for (unsigned int i = 0; i < plistData[curBody].listForceActive_hydro().size(); i++)
         {
-            if (plistData[curBody].listForceActive_hydro().at(i) == NULL)
-            {
-                ForceActive* temp = new ForceActive();
-                plistData[curBody].listForceActive_hydro().at(i) = temp;
-            }
+            if (plistData[curBody].listForceActive_hydro(i) == NULL)
+                plistData[curBody].listForceActive_hydro().push_back(ForceActive());
         }
     }
 
@@ -722,10 +695,7 @@ void MotionModel::useForceReact_hydro(unsigned int force, unsigned int ord, unsi
         for (unsigned int i = 0; i < plistData[curBody].listForceReact_hydro().size(); i++)
         {
             if (plistData[curBody].listForceReact_hydro(i) == NULL)
-            {
-                ForceReact* temp = new ForceReact();
-                plistData[curBody].listForceReact_hydro().at(i) = temp;
-            }
+                plistData[curBody].listForceReact_hydro().push_back(ForceReact());
         }
     }
 
@@ -787,11 +757,8 @@ void MotionModel::useForceReact_hydro(unsigned int force, unsigned int ord, unsi
 
         for (unsigned int i = 0; i < plistData[curBody].listForceReact_hydro().size(); i++)
         {
-            if (plistData[curBody].listForceReact_hydro().at(i) == NULL)
-            {
-                ForceReact* temp = new ForceReact();
-                plistData[curBody].listForceReact_hydro().at(i) = temp;
-            }
+            if (plistData[curBody].listForceReact_hydro(i) == NULL)
+                plistData[curBody].listForceReact_hydro().push_back(ForceReact());
         }
     }
 
@@ -854,11 +821,8 @@ void MotionModel::useForceReact_hydro(unsigned int force, unsigned int ord)
 
         for (unsigned int i = 0; i < plistData[curBody].listForceReact_hydro().size(); i++)
         {
-            if (plistData[curBody].listForceReact_hydro().at(i) == NULL)
-            {
-                ForceReact* temp = new ForceReact();
-                plistData[curBody].listForceReact_hydro().at(i) = temp;
-            }
+            if (plistData[curBody].listForceReact_hydro(i) == NULL)
+                plistData[curBody].listForceReact_hydro().push_back(ForceReact());
         }
     }
 
@@ -893,11 +857,8 @@ void MotionModel::useForceReact_hydro(unsigned int force)
 
         for (unsigned int i = 0; i < plistData[curBody].listForceReact_hydro().size(); i++)
         {
-            if (plistData[curBody].listForceReact_hydro().at(i) == NULL)
-            {
-                ForceReact* temp = new ForceReact();
-                plistData[curBody].listForceReact_hydro().at(i) = temp;
-            }
+            if (plistData[curBody].listForceReact_hydro(i) == NULL)
+                plistData[curBody].listForceReact_hydro().push_back(ForceReact());
         }
     }
 
@@ -1196,11 +1157,8 @@ void MotionModel::useForceCross_hydro(unsigned int force, unsigned int ord, unsi
 
         for (unsigned int i = 0; i < plistData[curBody].listForceCross_hydro().size(); i++)
         {
-            if (plistData[curBody].listForceCross_hydro().at(i) == NULL)
-            {
-                ForceCross* temp = new ForceCross();
-                plistData[curBody].listForceCross_hydro().at(i) = temp;
-            }
+            if (plistData[curBody].listForceCross_hydro(i) == NULL)
+                plistData[curBody].listForceCross_hydro().push_back(ForceCross());
         }
     }
 
@@ -1279,11 +1237,8 @@ void MotionModel::useForceCross_hydro(unsigned int force, unsigned int ord, unsi
 
         for (unsigned int i = 0; i < plistData[curBody].listForceCross_hydro().size(); i++)
         {
-            if (plistData[curBody].listForceCross_hydro().at(i) == NULL)
-            {
-                ForceCross* temp = new ForceCross();
-                plistData[curBody].listForceCross_hydro().at(i) = temp;
-            }
+            if (plistData[curBody].listForceCross_hydro(i) == NULL)
+                plistData[curBody].listForceCross_hydro().push_back(ForceCross());
         }
     }
 
@@ -1319,11 +1274,8 @@ void MotionModel::useForceCross_hydro(unsigned int force, unsigned int ord)
 
         for (unsigned int i = 0; i < plistData[curBody].listForceCross_hydro().size(); i++)
         {
-            if (plistData[curBody].listForceCross_hydro().at(i) == NULL)
-            {
-                ForceCross* temp = new ForceCross();
-                plistData[curBody].listForceCross_hydro().at(i) = temp;
-            }
+            if (plistData[curBody].listForceCross_hydro(i) == NULL)
+                plistData[curBody].listForceCross_hydro().push_back(ForceCross());
         }
     }
 
@@ -1358,11 +1310,8 @@ void MotionModel::useForceCross_hydro(unsigned int force)
 
         for (unsigned int i = 0; i < plistData[curBody].listForceCross_hydro().size(); i++)
         {
-            if (plistData[curBody].listForceCross_hydro().at(i) == NULL)
-            {
-                ForceCross* temp = new ForceCross();
-                plistData[curBody].listForceCross_hydro().at(i) = temp;
-            }
+            if (plistData[curBody].listForceCross_hydro(i) == NULL)
+                plistData[curBody].listForceCross_hydro().push_back(ForceCross());
         }
     }
 
@@ -1433,7 +1382,7 @@ void MotionModel::useForceMass(unsigned int eqn, unsigned int var)
     }
     catch(...)
     {
-        logErr.Write("Unknown error occurred.  Object:  MotionModel, Function:  useForceMass()");
+        logErr.Write(string(ID) + string(">>  Unknown error occurred."));
         logStd.Notify();
     }
 }

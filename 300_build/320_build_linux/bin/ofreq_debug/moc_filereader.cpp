@@ -1,8 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'filereader.h'
 **
-** Created:
-**      by: The Qt Meta Object Compiler version 63 (Qt 4.8.4)
+** Created by: The Qt Meta Object Compiler version 63 (Qt 4.8.5)
 **
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
@@ -11,7 +10,7 @@
 #if !defined(Q_MOC_OUTPUT_REVISION)
 #error "The header file 'filereader.h' doesn't include <QObject>."
 #elif Q_MOC_OUTPUT_REVISION != 63
-#error "This file was generated using the moc from 4.8.4. It"
+#error "This file was generated using the moc from 4.8.5. It"
 #error "cannot be used with the include files from this version of Qt."
 #error "(The moc has changed too much.)"
 #endif
@@ -23,7 +22,7 @@ static const uint qt_meta_data_osea__FileReader[] = {
        6,       // revision
        0,       // classname
        0,    0, // classinfo
-       7,   14, // methods
+       6,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -38,8 +37,7 @@ static const uint qt_meta_data_osea__FileReader[] = {
      144,   18,   17,   17, 0x05,
 
  // slots: signature, parameters, type, tag, flags
-     183,  178,  174,   17, 0x0a,
-     218,  210,   17,   17, 0x0a,
+     182,  174,   17,   17, 0x0a,
 
        0        // eod
 };
@@ -50,8 +48,7 @@ static const char qt_meta_stringdata_osea__FileReader[] = {
     "outputBodiesFile(ObjectGroup)\0"
     "outputDataFile(ObjectGroup)\0"
     "outputForcesFile(ObjectGroup)\0"
-    "outputSeaEnvFile(ObjectGroup)\0int\0"
-    "path\0readHydroFile(std::string)\0ptInput\0"
+    "outputSeaEnvFile(ObjectGroup)\0ptInput\0"
     "setSystem(ofreq::System*)\0"
 };
 
@@ -66,9 +63,7 @@ void osea::FileReader::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int
         case 2: _t->outputDataFile((*reinterpret_cast< ObjectGroup(*)>(_a[1]))); break;
         case 3: _t->outputForcesFile((*reinterpret_cast< ObjectGroup(*)>(_a[1]))); break;
         case 4: _t->outputSeaEnvFile((*reinterpret_cast< ObjectGroup(*)>(_a[1]))); break;
-        case 5: { int _r = _t->readHydroFile((*reinterpret_cast< std::string(*)>(_a[1])));
-            if (_a[0]) *reinterpret_cast< int*>(_a[0]) = _r; }  break;
-        case 6: _t->setSystem((*reinterpret_cast< ofreq::System*(*)>(_a[1]))); break;
+        case 5: _t->setSystem((*reinterpret_cast< ofreq::System*(*)>(_a[1]))); break;
         default: ;
         }
     }
@@ -108,9 +103,9 @@ int osea::FileReader::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 7)
+        if (_id < 6)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 7;
+        _id -= 6;
     }
     return _id;
 }

@@ -218,7 +218,7 @@ void Body::setMass(double newMass)
         index = findIndex(Tx);
         pMassMat(index, index) = newMass;
     }
-    catch(std::exception &err)
+    catch(const std::exception &err)
     {
         //Error handler.
         logErr.Write("Error occurred.  Object:  Body, Function:  setMass()\n" +
@@ -240,7 +240,7 @@ void Body::setMass(double newMass)
         index = findIndex(1);
         pMassMat(index, index) = newMass;
     }
-    catch(std::exception &err)
+    catch(const std::exception &err)
     {
         //Error handler.
         logErr.Write("Error occurred.  Object:  Body, Function:  setMass()\n" +
@@ -262,7 +262,7 @@ void Body::setMass(double newMass)
         index = findIndex(Tz);
         pMassMat(index, index) = newMass;
     }
-    catch(std::exception &err)
+    catch(const std::exception &err)
     {
         //Error handler.
         logErr.Write("Error occurred.  Object:  Body, Function:  setMass()\n" +
@@ -309,7 +309,7 @@ double Body::getMass()
                 //Check the next index
                 index = findIndex(Tz);   //Check for Z-axis translation.
             }
-            catch(std::exception &err)
+            catch(const std::exception &err)
             {
                 //Error handler.
                 logErr.Write("Error occurred.  Object:  Body, Function:  getMass()\n" +
@@ -346,7 +346,7 @@ void Body::setMomIxx(double newXX)
         index = findIndex(Rx);
         pMassMat(index, index) = newXX;
     }
-    catch(std::exception &err)
+    catch(const std::exception &err)
     {
         //Error handler.
         logErr.Write("Error occurred.  Object:  Body, Function:  setMomIxx()\n" +
@@ -376,7 +376,7 @@ double Body::getMomIxx()
 
         return pMassMat(index, index);
     }
-    catch(std::exception &err)
+    catch(const std::exception &err)
     {
         //Error handler.
         logErr.Write("Error occurred.  Object:  Body, Function:  getMomIxx()\n" +
@@ -408,7 +408,7 @@ void Body::setMomIyy(double newYY)
 
         pMassMat(index, index) = newYY;
     }
-    catch(std::exception &err)
+    catch(const std::exception &err)
     {
         //Error handler.
         logErr.Write("Error occurred.  Object:  Body, Function:  setMomIyy()\n" +
@@ -438,7 +438,7 @@ double Body::getMomIyy()
 
         return pMassMat(index, index);
     }
-    catch(std::exception &err)
+    catch(const std::exception &err)
     {
         //Error handler.
         logErr.Write("Error occurred.  Object:  Body, Function:  getMomIyy()\n" +
@@ -470,7 +470,7 @@ void Body::setMomIzz(double newZZ)
 
         pMassMat(index, index) = newZZ;
     }
-    catch(std::exception &err)
+    catch(const std::exception &err)
     {
         //Error handler.
         logErr.Write("Error occurred.  Object:  Body, Function:  setMomIzz()\n" +
@@ -500,7 +500,7 @@ double Body::getMomIzz()
 
         return pMassMat(index, index);
     }
-    catch(std::exception &err)
+    catch(const std::exception &err)
     {
         //Error handler.
         logErr.Write("Error occurred.  Object:  Body, Function:  getMomIzz()\n" +
@@ -533,7 +533,7 @@ void Body::setMomIxy(double newXY)
 
         pMassMat(index1, index2) = newXY;
     }
-    catch(std::exception &err)
+    catch(const std::exception &err)
     {
         //Error handler.
         logErr.Write("Error occurred.  Object:  Body, Function:  setMomIxy()\n" +
@@ -564,7 +564,7 @@ double Body::getMomIxy()
 
         return pMassMat(index1, index2);
     }
-    catch(std::exception &err)
+    catch(const std::exception &err)
     {
         //Error handler.
         logErr.Write("Error occurred.  Object:  Body, Function:  getMomIxy()\n" +
@@ -597,7 +597,7 @@ void Body::setMomIxz(double newXZ)
 
         pMassMat(index1, index2) = newXZ;
     }
-    catch(std::exception &err)
+    catch(const std::exception &err)
     {
         //Error handler.
         logErr.Write("Error occurred.  Object:  Body, Function:  setMomIxz()\n" +
@@ -628,7 +628,7 @@ double Body::getMomIxz()
 
         return pMassMat(index1, index2);
     }
-    catch(std::exception &err)
+    catch(const std::exception &err)
     {
         //Error handler.
         logErr.Write("Error occurred.  Object:  Body, Function:  gettMomIxz()\n" +
@@ -661,7 +661,7 @@ void Body::setMomIyz(double newYZ)
 
         pMassMat(index1, index2) = newYZ;
     }
-    catch(std::exception &err)
+    catch(const std::exception &err)
     {
         //Error handler.
         logErr.Write("Error occurred.  Object:  Body, Function:  setMomIyz()\n" +
@@ -692,7 +692,7 @@ double Body::getMomIyz()
 
         return pMassMat(index1, index2);
     }
-    catch(std::exception &err)
+    catch(const std::exception &err)
     {
         //Error handler.
         logErr.Write("Error occurred.  Object:  Body, Function:  getMomIyz()\n" +
@@ -948,7 +948,7 @@ ForceActive* Body::listForceActive_user(int forceIn)
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-vector<ForceActive *> &Body::listForceActive_hydro()
+std::vector<ForceActive> &Body::listForceActive_hydro()
 {   
     return plistForceActive_hydro;
 }
@@ -970,7 +970,7 @@ ForceActive *Body::listForceActive_hydro(int forceIn)
         forceIn = plistForceActive_hydro.size() - 1;
     }
 
-    return plistForceActive_hydro[forceIn];
+    return &(plistForceActive_hydro[forceIn]);
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
@@ -980,7 +980,7 @@ vector<ForceReact *> &Body::listForceReact_user()
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-ForceReact* Body::listForceReact_user(int forceIn)
+ForceReact *Body::listForceReact_user(int forceIn)
 {
     //Resize if the vector is too small.
     if ((forceIn > plistForceReact_usr.size() - 1) || (plistForceReact_usr.size() == 0))
@@ -1016,11 +1016,11 @@ ForceReact *Body::listForceReact_hydro(int forceIn)
         forceIn = plistForceReact_hydro.size() - 1;
     }
 
-    return plistForceReact_hydro[forceIn];
+    return &(plistForceReact_hydro[forceIn]);
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-vector<ForceReact *> &Body::listForceReact_hydro()
+std::vector<ForceReact> &Body::listForceReact_hydro()
 {
     return plistForceReact_hydro;
 }
@@ -1052,13 +1052,13 @@ ForceCross* Body::listForceCross_user(int forceIn)
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-vector<ForceCross* > &Body::listForceCross_hydro()
+vector<ForceCross > &Body::listForceCross_hydro()
 {
     return plistForceCross_hydro;
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-ForceCross* Body::listForceCross_hydro(int forceIn)
+ForceCross *Body::listForceCross_hydro(int forceIn)
 {
     //Resize if the vector is too small.
     if ((forceIn > plistForceCross_hydro.size() - 1) || (plistForceCross_hydro.size() == 0) || (forceIn < 0))
@@ -1074,7 +1074,7 @@ ForceCross* Body::listForceCross_hydro(int forceIn)
         forceIn = plistForceCross_hydro.size() - 1;
     }
 
-    return plistForceCross_hydro[forceIn];
+    return &(plistForceCross_hydro[forceIn]);
 }
 
 
@@ -1121,24 +1121,6 @@ string &Body::listNamedLink_user(unsigned int varIn)
     }
 
     return plistNamedLink_usr[varIn];
-}
-
-//------------------------------------------Function Separator --------------------------------------------------------
-vector<string> &Body::listNamedLink_hydro()
-{
-    return plistNamedLink_hydro;
-}
-
-//------------------------------------------Function Separator --------------------------------------------------------
-string &Body::listNamedLink_hydro(unsigned int varIn)
-{
-    //Check if need to resize the vector
-    if ((varIn > plistLinkedBody_hydro.size() - 1) || (plistLinkedBody_hydro.size() == 0))
-    {
-        plistLinkedBody_hydro.resize(varIn + 1);
-    }
-
-    return plistNamedLink_hydro[varIn];
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------

@@ -33,8 +33,6 @@ using namespace arma;
 //==========================================Section Separator =========================================================
 //Static Initialization
 
-int dictHydroMass::ORD = 2; /**< The order of derivative that is associated with all data from this file. */
-
 //------------------------------------------Function Separator ----------------------------------------------------
 //Class Name constants
 
@@ -51,6 +49,7 @@ dictHydroMass::dictHydroMass()
 {
     pBodOn = false;
     pHydroBod = NULL;
+    ORD = 2;
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
@@ -59,6 +58,7 @@ dictHydroMass::dictHydroMass(osea::HydroReader *parent)
     pBodOn = false;
     pHydroBod = NULL;
     pParent = parent;
+    ORD = 2;
 }
 
 //==========================================Section Separator =========================================================

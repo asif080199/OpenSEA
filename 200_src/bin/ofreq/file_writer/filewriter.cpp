@@ -177,7 +177,7 @@ bool FileWriter::clearFiles()
         {
             //Write out the error message.  Keep executing.  Failure to delete a file may not necessarily
             //be a problem.
-            logErr.Write("Unknown error occurred.  Object:  filewriter, Function:  clearFiles()");
+            logErr.Write(string(ID) + string(">>  Unknown error occurred."));
             logStd.Notify();
         }
     }
@@ -328,7 +328,7 @@ int FileWriter::writeWaveDirection()
             output.close();
         }
     }
-    catch(std::exception &err)
+    catch(const std::exception &err)
     {
         logErr.Write("Unknown Error Occurred.  Object:  FileWriter, Function:  writeWaveDirection()\n" +
                      string("Error Message:  ") + string(string(err.what())));
@@ -338,7 +338,7 @@ int FileWriter::writeWaveDirection()
     catch(...)
     {
         //Write out error message
-        logErr.Write("Uknown error occurred.  Ojbect:  filewriter(), Function:  writeWaveDirection()");
+        logErr.Write(string(ID) + string(">>  Unknown error occurred."));
         logStd.Notify();
         errVal = 1;
     }
@@ -392,7 +392,7 @@ int FileWriter::writeFrequency()
             output.close();
         }
     }
-    catch(std::exception &err)
+    catch(const std::exception &err)
     {
         logErr.Write("Unknown Error Occurred.  Object:  FileWriter, Function:  writeFrequency()\n" +
                      string("Error Message:  ") + string(err.what()));
@@ -522,7 +522,7 @@ int FileWriter::writeGlobalMotion()
                     output << TAB(2) << OBJECT_END << endl;
                 }
             }
-            catch(std::exception &err)
+            catch(const std::exception &err)
             {
                 logErr.Write("Unknown Error Occurred.  Object:  FileWriter, Function:  writeGlobalMotion()\n" +
                              string("Error Message:  ") + string(err.what()));
@@ -532,7 +532,7 @@ int FileWriter::writeGlobalMotion()
             catch(...)
             {
                 //Write out error message
-                logErr.Write("Uknown error occurred.  Ojbect:  filewriter(), Function:  writeGlobalMotion()");
+                logErr.Write(string(ID) + string(">>  Unknown error occurred."));
                 logStd.Notify();
                 errVal = 1;
             }
@@ -661,12 +661,13 @@ int FileWriter::writeGlobalVelocity()
                     output << TAB(2) << OBJECT_END << endl;
                 }
             }
-            catch(std::exception &err)
+            catch(const std::exception &err)
             {
                 logErr.Write("Unknown Error Occurred.  Object:  FileWriter, Function:  writeGlobalVelocity()\n" +
                              string("Error Message:  ") + string(err.what()));
                 logStd.Notify();
                 errVal = 1;
+                
             }
             catch(...)
             {
@@ -674,6 +675,7 @@ int FileWriter::writeGlobalVelocity()
                 logErr.Write("Uknown error occurred.  Ojbect:  filewriter(), Function:  writeGlobalVelocity()");
                 logStd.Notify();
                 errVal = 1;
+                
             }
 
             //End the output object
@@ -801,7 +803,7 @@ int FileWriter::writeGlobalAcceleration()
                     output << TAB(2) << OBJECT_END << endl;
                 }
             }
-            catch(std::exception &err)
+            catch(const std::exception &err)
             {
                 logErr.Write("Unknown Error Occurred.  Object:  FileWriter, Function:  writeGlobalAcceleration()\n" +
                              string("Error Message:  ") + string(err.what()));
@@ -811,7 +813,7 @@ int FileWriter::writeGlobalAcceleration()
             catch(...)
             {
                 //Write out error message
-                logErr.Write("Uknown error occurred.  Ojbect:  filewriter(), Function:  writeGlobalAcceleration()");
+                logErr.Write(string(ID) + string(">>  Unknown error occurred."));
                 logStd.Notify();
                 errVal = 1;
             }
@@ -941,7 +943,7 @@ int FileWriter::writeGlobalSolution()
                     output << TAB(2) << OBJECT_END << endl;
                 }
             }
-            catch(std::exception &err)
+            catch(const std::exception &err)
             {
                 logErr.Write("Unknown Error Occurred.  Object:  FileWriter, Function:  writeGlobalSolution()\n" +
                              string("Error Message:  ") + string(err.what()));
@@ -951,7 +953,7 @@ int FileWriter::writeGlobalSolution()
             catch(...)
             {
                 //Write out error message
-                logErr.Write("Uknown error occurred.  Ojbect:  filewriter(), Function:  writeGlobalSolution()");
+                logErr.Write(string(ID) + string(">>  Unknown error occurred."));
                 logStd.Notify();
                 errVal = 1;
             }
@@ -985,7 +987,7 @@ string FileWriter::getCurWaveDir()
 {
     ostringstream convert;      //Converts number to string.
 
-    convert << getCurWaveInd();
+    convert << getCurWaveInd() + 1;
 
     return NAME_DIR + convert.str() + SLASH;
 }

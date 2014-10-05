@@ -33,8 +33,6 @@ using namespace arma;
 //==========================================Section Separator =========================================================
 //Static Initialization
 
-int dictCrossDamp::ORD = 0; /**< The order of derivative that is associated with all data from this file. */
-
 //------------------------------------------Function Separator ----------------------------------------------------
 //Class Name constants
 
@@ -52,6 +50,7 @@ dictCrossStiff::dictCrossStiff()
     pBodOn = false;
     pLinkOn = false;
     pHydroBod = NULL;
+    ORD = 0;
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
@@ -61,6 +60,7 @@ dictCrossStiff::dictCrossStiff(osea::HydroReader *parent)
     pBodOn = false;
     pLinkOn = false;
     pHydroBod = NULL;
+    ORD = 0;
 }
 
 //==========================================Section Separator =========================================================

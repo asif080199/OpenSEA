@@ -82,7 +82,8 @@ SOURCES += ofreq.cpp \
     hydro_reader/dicthydromass.cpp \
     hydro_reader/dicthydrostiff.cpp \
     hydro_reader/dicthydroreact.cpp \
-    hydro_reader/dictcrossreact.cpp
+    hydro_reader/dictcrossreact.cpp \
+    file_reader/dictdata.cpp
 
 HEADERS += \
     derived_outputs/outputsbody.h \
@@ -148,7 +149,8 @@ HEADERS += \
     hydro_reader/dicthydromass.h \
     hydro_reader/dicthydrostiff.h \
     hydro_reader/dicthydroreact.h \
-    hydro_reader/dictcrossreact.h
+    hydro_reader/dictcrossreact.h \
+    file_reader/dictdata.h
 
 # Include header files path for libraries
 INCLUDEPATH += \

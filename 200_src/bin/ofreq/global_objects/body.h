@@ -540,22 +540,21 @@ public:
     /**
      * @brief The list of active hydrodynamic forces.
      *
-     * The list of active hydrodynamic forces.  A vector of pointers directing to the active hydrodynamic forces.
-     * Warning that these forces may be linked to other bodies as well and should not be changed.
-     * @return A vector of pointes to various hydrodynamic active forces.
+     * The list of active hydrodynamic forces.  A vector of the active hydrodynamic forces.
+     * @return A vector of ForceActive objects, variable passed by referece.  The ForceActive objects are specific to the
+     * hydrodynamic forces.
      */
-    std::vector<ForceActive* > &listForceActive_hydro();
+    std::vector<ForceActive> &listForceActive_hydro();
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
      * @brief A single active hydrodynamic force.
      *
      * A single active hydrodynamic force.  A pointer directing to the active hydrodynamic force.
-     * Warning that these forces may be linked to other bodies as well and should not be changed.
      * @param forceIn Integer.  Index of the ForceActive object requested.
-     * @return A single pointer to the user active forces requested by parameter forceIn.  Pointer passed by value.
+     * @return A single pointer to a ForceActive object, pointer passed by value, requested by parameter forceIn.
      */
-    ForceActive* listForceActive_hydro(int forceIn);
+    ForceActive *listForceActive_hydro(int forceIn);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -582,22 +581,23 @@ public:
     /**
      * @brief The list of reactive hydrodynamic forces.
      *
-     * The list of reactive hydrodynamic forces.  A vector of pointers directing to the reactive hydrodynamic
-     * forces.  Warning that these forces may be linked to other bodies as well and should not be changed.
-     * @return A vector of pointers to various hydrodynamic reactive forces.
+     * The list of reactive hydrodynamic forces.  A vector references directing to the reactive hydrodynamic
+     * forces.
+     * @return A vector of ForceReact objects, representing various hydrodynamic reactive forces.  Vector passed by
+     * reference.
      */
-    std::vector<ForceReact* > &listForceReact_hydro();
+    std::vector<ForceReact > &listForceReact_hydro();
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
      * @brief A single reactive hydrodynamic force.
      *
-     * A single reactive hydrodynamic force.  A pointer directing to the reactive hydrodynamic force.
-     * Warning that these forces may be linked to other bodies as well and should not be changed.
+     * A single pointer to a reactive hydrodynamic force.  A pointer directing to the reactive hydrodynamic force.
      * @param forceIn Integer.  Index of the ForceReact object requested.
-     * @return A single pointer to the user reactive forces requested by parameter forceIn.  Pointer passed by value.
+     * @return A pointer to a ForceReact object, pointer passed by value.  The specific forc requested by
+     * parameter forceIn.
      */
-    ForceReact* listForceReact_hydro(int forceIn);
+    ForceReact *listForceReact_hydro(int forceIn);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -627,25 +627,24 @@ public:
     /**
      * @brief The list of hydrodynamic cross-body forces.
      *
-     * The list of hydrodynamic cross-body forces.  A vector of pointers directing to the hydrodynamic cross-body
-     * forces.  Warning that these forces may be linked to other bodies as well and should not be changed.  There is
-     * another vector: the listLinkedBody_usr.  That determines which body each cross-body force links to.  The indices
-     * of the two lists should match.  So that when a force gets added at index 5 in the listForceCross_hydro, it should
-     * have a matching entry at index 5 in the listLinkedBody_hydro.
-     * @return A list of pointers to various hydrodynamic cross-body forces.
+     * The list of hydrodynamic cross-body forces.  A vector of ForceCross objects directing to the hydrodynamic
+     * crossbody forces.  There is another vector: the listLinkedBody_usr.  That determines which body each cross-body
+     * force links to.  The indices of the two lists should match.  So that when a force gets added at index 5 in the
+     * listForceCross_hydro, it should have a matching entry at index 5 in the listLinkedBody_hydro.
+     * @return A vector of ForceCross objects, variable passed by reference.
      */
-    std::vector<ForceCross* > &listForceCross_hydro();
+    std::vector<ForceCross > &listForceCross_hydro();
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
      * @brief A single cross-body hydrodynamic force.
      *
      * A single cross-body hydrodynamic force.  A pointer directing to the cross-body hydrodynamic force.
-     * Warning that these forces may be linked to other bodies as well and should not be changed.
      * @param forceIn Integer.  Index of the ForceCross object requested.
-     * @return A single pointer to the user cross-body forces requested by parameter forceIn.  Pointer passed by value.
+     * @return A single pointer to the hydro cross-body forces requested by parameter forceIn. Variable passed
+     * by value.
      */
-    ForceCross* listForceCross_hydro(int forceIn);
+    ForceCross *listForceCross_hydro(int forceIn);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -677,7 +676,7 @@ public:
      * @brief The list of linked bodies for hydrodynamic cross-body forces.
      *
      * The list of linked bodies for hydrodynamic cross-body forces.  This is a list of pointers to the other bodies.
-     * This corresponds with the vector listForceCross_usr.  The indices of the two vectors should match.  The indices
+     * This corresponds with the vector listForceCross_hydro.  The indices of the two vectors should match.  The indices
      * of the two lists should match.  So that when a force gets added at index 5 in the listForceCross_hydro, it should
      * have a matching entry at index 5 in the listLinkedBody_hydro.
      * @return A list of pointers to various linked bodies for hydro cross-body forces.
@@ -729,39 +728,6 @@ public:
      * @sa System
      */
     std::string &listNamedLink_user(unsigned int varIn);
-
-    //------------------------------------------Function Separator ----------------------------------------------------
-    /**
-     * @brief The list of names of linked bodies for hydro cross-body forces.  This is a list of names of other bodies
-     * that a cross-body force references.  This corresponds to the vector listForceCross_hydro.  The indices of the two
-     * vectors should match.  So that when a force gets added at index 5 in the listForceCross_hydro, it should have a
-     * matching entry at index 5 in listNamedLink_hydro.  The list of names only is a temporary list used during the
-     * input stage of bodies.  This is required because the linked body may name a body which is not yet read from
-     * the input file.  Thus, the body is not currently defined.  Once all Bodies are defined, the System object calls
-     * a function to read through each name in the list and assign corresponding pointers in the listLinkedBody_hydro.
-     * @return Returns the list of named bodies linked to the Cross-Body forces.  Returned object is a vector of
-     * std::string objects.  Returned variable passed by reference.
-     * @sa listLinkedBody_hydro()
-     * @sa System
-     */
-    std::vector<std::string> &listNamedLink_hydro();
-
-    //------------------------------------------Function Separator ----------------------------------------------------
-    /**
-     * @brief The list of names of linked bodies for hydro cross-body forces.  This is a list of names of other bodies
-     * that a cross-body force references.  This corresponds to the vector listForceCross_hydro.  The indices of the two
-     * vectors should match.  So that when a force gets added at index 5 in the listForceCross_hydro, it should have a
-     * matching entry at index 5 in listNamedLink_hydro.  The list of names only is a temporary list used during the
-     * input stage of bodies.  This is required because the linked body may name a body which is not yet read from
-     * the input file.  Thus, the body is not currently defined.  Once all Bodies are defined, the System object calls
-     * a function to read through each name in the list and assign corresponding pointers in the listLinkedBody_hydro.
-     * @param varIn Integer input specifying exactly which item in the list to return.
-     * @return Returns the named body linked to the Cross-Body forces.  Returned object is a std::string object.
-     * Returned variable passed by reference.
-     * @sa listLinkedBody_hydro()
-     * @sa System
-     */
-    std::string &listNamedLink_hydro(unsigned int varIn);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -819,7 +785,7 @@ private:
      * The list of active hydrodynamic forces.  A vector of pointers directing to the active hydrodynamic forces.
      * Warning that these forces may be linked to other bodies as well and should not be changed.
      */
-    std::vector<ForceActive*> plistForceActive_hydro;
+    std::vector<ForceActive> plistForceActive_hydro;
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -837,7 +803,7 @@ private:
      * The list of reactive hydrodynamic forces.  A vector of pointers directing to the reactive hydrodynamic
      * forces.  Warning that these forces may be linked to other bodies as well and should not be changed.
      */
-    std::vector<ForceReact*> plistForceReact_hydro;
+    std::vector<ForceReact> plistForceReact_hydro;
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -861,7 +827,7 @@ private:
      * of the two lists should match.  So that when a force gets added at index 5 in the listForceCross_hydro, it should
      * have a matching entry at index 5 in the listLinkedBody_hydro.
      */
-    std::vector<ForceCross*> plistForceCross_hydro;
+    std::vector<ForceCross> plistForceCross_hydro;
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -898,20 +864,6 @@ private:
      * @sa System
      */
     std::vector<std::string> plistNamedLink_usr;
-
-    //------------------------------------------Function Separator ----------------------------------------------------
-    /**
-     * @brief The list of names of linked bodies for hydro cross-body forces.  This is a list of names of other bodies
-     * that a cross-body force references.  This corresponds to the vector listForceCross_hydro.  The indices of the two
-     * vectors should match.  So that when a force gets added at index 5 in the listForceCross_hydro, it should have a
-     * matching entry at index 5 in listNamedLink_hydro.  The list of names only is a temporary list used during the
-     * input stage of bodies.  This is required because the linked body may name a body which is not yet read from
-     * the input file.  Thus, the body is not currently defined.  Once all Bodies are defined, the System object calls
-     * a function to read through each name in the list and assign corresponding pointers in the listLinkedBody_hydro.
-     * @sa listLinkedBody_hydro()
-     * @sa System
-     */
-    std::vector<std::string> plistNamedLink_hydro;
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**

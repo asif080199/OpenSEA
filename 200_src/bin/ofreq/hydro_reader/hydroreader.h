@@ -103,6 +103,21 @@ class HydroReader : public FileReader
 {
     Q_OBJECT
 //==========================================Section Separator =========================================================
+//Friend Classes
+    friend class dictCrossDamp;
+    friend class dictCrossMass;
+    friend class dictCrossReact;
+    friend class dictCrossStiff;
+    friend class dictForceExcite;
+    friend class dictHydroDamp;
+    friend class dictHydroDirection;
+    friend class dictHydroEnv;
+    friend class dictHydroFrequency;
+    friend class dictHydroMass;
+    friend class dictHydroReact;
+    friend class dictHydroStiff;
+
+//==========================================Section Separator =========================================================
 public:
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -304,6 +319,13 @@ private:
     std::vector<double> plistWaveDir;
 
     //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief The list of temporary HydroData objects.
+     *
+     * The organization of the input files means that it is easier to temporarily store the hydroData in this class
+     * whiile reading from each of the input files. Each dict file adds to the objects defined in plistTempHydro.
+     * Once all the dict files finish defining the objects, they are transferred to the main system object.
+     */
     std::vector<ofreq::hydroData> plistTempHydro;
 
     //------------------------------------------Function Separator ----------------------------------------------------

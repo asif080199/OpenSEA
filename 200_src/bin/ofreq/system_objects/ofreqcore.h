@@ -39,11 +39,19 @@
 #ifndef OFREQCORE_H
 #define OFREQCORE_H
 
+#include <QObject>
 #ifdef Q_OS_WIN
     //Any windows specific inclusions go in here.
+    #ifndef ID
+        #define ID __FUNCSIG__
+    #endif
 #elif defined Q_OS_LINUX
     //Any linux specific inclusions go in here.
+    #ifndef ID
+        #define ID __PRETTY_FUNCTION__
+    #endif
 #endif
+
 #include <QDebug>   //Include for access to debugging objects.
 #include <string>
 #include <typeinfo>
@@ -158,6 +166,12 @@ protected:
 
     //------------------------------------------Function Separator ----------------------------------------------------
     static double PI;   /**< Mathematical constant pi.*/
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    static std::string DOT; /**< Relative reference to same directory */
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    static std::string DDOT; /**< Relative reference to a directory one up*/
 
 //==========================================Section Separator =========================================================
 private:

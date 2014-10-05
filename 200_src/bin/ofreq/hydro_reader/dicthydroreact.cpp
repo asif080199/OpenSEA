@@ -33,35 +33,35 @@ using namespace arma;
 //==========================================Section Separator =========================================================
 //Static Initialization
 
-int dicthydroReact::ORD = 0; /**< The order of derivative that is associated with all data from this file. */
-
 //------------------------------------------Function Separator ----------------------------------------------------
 //Class Name constants
-string dicthydroReact::OBJECT_BODY = "body"; /**< Body object designator. */
-string dicthydroReact::OBJECT_DATA = "data"; /**< Datat object designator. */
+string dictHydroReact::OBJECT_BODY = "body"; /**< Body object designator. */
+string dictHydroReact::OBJECT_DATA = "data"; /**< Datat object designator. */
 
 //------------------------------------------Function Separator ----------------------------------------------------
 //Keyword name constants
-string dicthydroReact::KEY_NAME = "name"; /**< Keyword for body name */
-string dicthydroReact::KEY_FREQUENCY = "frequency"; /**< Keyword for frequency. */
-string dicthydroReact::KEY_VALUE = "value"; /**< Keyword for matrix of coefficients. */
+string dictHydroReact::KEY_NAME = "name"; /**< Keyword for body name */
+string dictHydroReact::KEY_FREQUENCY = "frequency"; /**< Keyword for frequency. */
+string dictHydroReact::KEY_VALUE = "value"; /**< Keyword for matrix of coefficients. */
 
 //==========================================Section Separator =========================================================
 //Public Functions
 
 //------------------------------------------Function Separator --------------------------------------------------------
-dicthydroReact::dicthydroReact()
+dictHydroReact::dictHydroReact()
 {
     pBodOn = false;
     pHydroBod = NULL;
+    ORD = 0;
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-dicthydroReact::dicthydroReact(osea::dicthydroReact *parent)
+dictHydroReact::dictHydroReact(osea::HydroReader *parent)
 {
     pParent = parent;
     pBodOn = false;
     pHydroBod = NULL;
+    ORD = 0;
 }
 
 //==========================================Section Separator =========================================================
@@ -76,7 +76,7 @@ dicthydroReact::dicthydroReact(osea::dicthydroReact *parent)
 //Protected Functions
 
 //------------------------------------------Function Separator --------------------------------------------------------
-int dicthydroReact::defineKey(std::string keyIn, std::vector<std::string> valIn)
+int dictHydroReact::defineKey(std::string keyIn, std::vector<std::string> valIn)
 {
     //Key for hydrobody name
     //-----------------------------------------------
@@ -86,8 +86,28 @@ int dicthydroReact::defineKey(std::string keyIn, std::vector<std::string> valIn)
         try
         {
             if (!pBodOn)
-                throw std::runtime_error(string("Hydrodynamic input file.  Body:  ") + valIn[0]
-                    + string("\n No body object declared before body data was supplied."));
+            {
+                if (ORD == 0)
+                {
+                    //Hydrostiffness input file.
+                    throw std::runtime_error(string("hydrostiffness.out file.  Body:  ") + valIn[0]
+                        + string("\n No body object declared before body data was supplied."));
+                }
+                else if (ORD == 1)
+                {
+                    //Hydrodamping input file.
+                    throw std::runtime_error(string("hydrodamp.out file.  Body:  ") + valIn[0]
+                        + string("\n No body object declared before body data was supplied."));
+                }
+                else if (ORD == 2)
+                {
+                    //Hydromass input file.
+                    throw std::runtime_error(string("hydromass.out file.  Body:  ") + valIn[0]
+                        + string("\n No body object declared before body data was supplied."));
+                }
+
+            }
+
 
             //Reset the body signafier for the next body.
             pBodOn = false;
@@ -112,7 +132,7 @@ int dicthydroReact::defineKey(std::string keyIn, std::vector<std::string> valIn)
         catch(...)
         {
             logStd.Notify();
-            logErr.Write(string("Hydrodynamic input file.  Unknown error occurred."));
+            logErr.Write(string(ID) + string(">>  Unknown error occurred."));
             return 99;
         }
     }
@@ -191,7 +211,7 @@ int dicthydroReact::defineKey(std::string keyIn, std::vector<std::string> valIn)
         catch(...)
         {
             logStd.Notify();
-            logErr.Write(string("Hydrodynamic input file.  Unknown error occurred."));
+            logErr.Write(string(ID) + string(">>  Unknown error occurred."));
             return 99;
         }
 
@@ -207,7 +227,7 @@ int dicthydroReact::defineKey(std::string keyIn, std::vector<std::string> valIn)
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-int dicthydroReact::defineClass(std::string nameIn)
+int dictHydroReact::defineClass(std::string nameIn)
 {
     //Body class Name
     //-----------------------------------------------

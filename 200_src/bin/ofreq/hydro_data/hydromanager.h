@@ -41,9 +41,15 @@
 #include <math.h>
 #include "../global_objects/mathinterp.h"
 #include "hydrodata.h"
+#ifndef FORCEACTIVE_H
 #include "../global_objects/forceactive.h"
+#endif
+#ifndef FORCECROSS_H
 #include "../global_objects/forcecross.h"
+#endif
+#ifndef FORCEREACT_H
 #include "../global_objects/forcereact.h"
+#endif
 #ifdef Q_OS_WIN
     #include "../../lib/armadillo.h"  //References the armadillo library in lib folder.
 #elif defined Q_OS_LINUX
@@ -596,6 +602,20 @@ private:
      * never know.  Some scientistic might want to research wave dynamics on Jupiter.  So gravity was made flexible.
      */
     std::vector<double> pGravity;
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Checks the list of wave directions to see if any 0 rad entries should be copied to 2*pi entries.
+     *
+     * First, check through the list of hydrodata, each amplitude.  We want to know if there is a wave direction
+     * that is set at 0 rad or 2*pi rad, without its matching counter-part.  This is important because the
+     * interpolation functions are based on absolute distance.  They don't understand the math concepts that the
+     * directions reset after 2*pi rad.
+     *
+     * The methods of testing in this process assume that anything within 4% of 0 rad should be copied. (effectively
+     * within 2 deg of 0).
+     */
+    void checkDirList();
 };
 
 }   //Namespace ofreq

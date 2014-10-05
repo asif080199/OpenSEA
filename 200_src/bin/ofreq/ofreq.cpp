@@ -54,6 +54,8 @@
 #include "./file_reader/dictbodies.h"
 #include "./file_reader/filereader.h"
 #include "./file_reader/dictseaenv.h"
+#include "./file_reader/dictdata.h"
+#include "./hydro_reader/hydroreader.h"
 #include "./system_objects/ofreqcore.h"
 #include <string>
 #include <iostream>
@@ -189,7 +191,6 @@ void writeLogHeader();
 #elif defined Q_OS_LINUX
     const string seperator = "/";   /**< Directory separator in a string path., linux version**/
 #endif
-string oFreq_Directory = "";
 
 //########################################### Main Function ###########################################################
 /**
@@ -211,10 +212,15 @@ string oFreq_Directory = "";
 
 int main(int argc, char *argv[])
 {
+    //Main Input Section
+    //=================================================================================================================
 	//if command line arg supplied, use that directory
 	//or assume the current working directory
+
     if (argc == 2)
-		oFreq_Directory = argv[1];
+    {
+        sysofreq.setPath(argv[1]);
+    }
     else if (argc == 1)
     {
         //Get current working directory
@@ -224,367 +230,414 @@ int main(int argc, char *argv[])
             //Return error
         }
         //Set the path to the current working directory
-        oFreq_Directory = cCurrentPath;
+        sysofreq.setPath(cCurrentPath);
     }
 
     //Setup the output log files
     //---------------------------------------------------------------------------
-    sysofreq.setLogFiles(oFreq_Directory);
+    sysofreq.setLogFiles(sysofreq.getPath());
 
     //Clear the screen and create an introductory header
     //---------------------------------------------------------------------------
     sysofreq.logStd.cls();
     writeLogHeader();
 
-
-    //Clear out any previous output files
-    //---------------------------------------------------------------------------
-    //Setup filewriter for outputs
-    FileWriter WriterTemp;
-    WriterTemp.setProjectDir(oFreq_Directory);
-    //Clean up existing outputs
-    WriterTemp.clearFiles();
-
-    //Read input files and interpret data.
-    //---------------------------------------------------------------------------
-    sysofreq.logStd.Write("Reading input files");
-    sysofreq.logStd.Write("=================================================================================");
-    ReadFiles(oFreq_Directory);
-    sysofreq.logStd.Write("\n\n\n");
-
-    //Start creating main objects
-    //---------------------------------------------------------------------------
-    //Resize matrix bodies vector.
-    listMatBody.resize(sysofreq.listBody().size());
-    //Resize the solution object.
-    for (unsigned int i = 0; i < sysofreq.listBody().size(); i++)
-    {
-        listSolutions.push_back(SolutionSet(sysofreq.listWaveDirections().size(),
-                                             sysofreq.listWaveFrequencies().size()));
-    }
-
-    //Iterate through each wave direction and wave frequency to solve
-    //---------------------------------------------------------------------------
-    //Create an iterator to track the loops.
-    int itertrack = 0;
-
-    sysofreq.logStd.Write("Solving equations");
-    sysofreq.logStd.Write("=================================================================================");
-
-    for(unsigned int i = 0; i < sysofreq.listWaveDirections().size(); i++)
-	{
-        //Set the current wave direction
-        sysofreq.setCurWaveDirInd(i);
-
-        for(unsigned int j = 0; j < sysofreq.listWaveFrequencies().size(); j++)
-		{
-            //Set the current wave frequency
-            sysofreq.setCurFreqInd(j);
-
-            //Build the matrix bodies
-            //---------------------------------------------------------------------------
-            //Build operation stuck inside the wave iteration loop because the forces may change with
-            //wave direction.  Also inside the wave frequency loop because the forces may change
-            //with wave frequency.
-            bool coeffonly = true;              //Boolean to tell the motion model to only use coefficients.
-            //Iterate through each body and build.
-            for (unsigned int i2 = 0; i2 < sysofreq.listBody().size(); i2++)
-            {
-                //Build the body.
-                //Will automatically use the correct bodies.
-                buildMatBody(i2, coeffonly);
-            }
-
-            //Create motion solver and feed in the body data.
-            MotionSolver theMotionSolver(listMatBody);
-            //Set the current wave frequency
-            theMotionSolver.setWaveFreq(sysofreq.getCurFreq());
-            //Solve the system of equations.
-            theMotionSolver.calculateOutputs();
-
-            //assign each solution per frequency to a body
-            for(unsigned int k = 0; k < sysofreq.listBody().size(); k++)
-			{
-                Solution soln;
-                //soln.refBody() = sysofreq.listBody(k);
-                soln.setBody(&sysofreq.listBody(k));
-                soln.setSolnMat(theMotionSolver.listSolution(k));
-                listSolutions[k].setSolnMat(i, j, soln);
-			}
-
-            //Update the iterator
-            itertrack += 1;
-
-            //Update the monitor log
-            writeMonitor(i,j,itertrack);
-
-            //Write output to standard log
-            string msg;
-            ostringstream convert;
-            msg = "Wave Direction:  ";
-            convert << (i+1);
-            msg += convert.str() + " of ";
-            convert.str("");
-            convert << sysofreq.listWaveDirections().size();
-            msg += convert.str();
-            convert.str("");
-            msg += "\t\tFrequency:  ";
-            convert << (j+1);
-            msg += convert.str() + " of ";
-            convert.str("");
-            convert << sysofreq.listWaveFrequencies().size();
-            msg += convert.str();
-            sysofreq.logStd.Write(msg);
-            convert.str("");
-		}
-    }
-
-    sysofreq.logStd.Write("\n\n\n");
-    sysofreq.logStd.Write("Calculating Outputs");
-    sysofreq.logStd.Write("=================================================================================");
-
-    //Write outputs
-    //---------------------------------------------------------------------------
-    //Iterate through each body output.  Setup the output and calculate outputs.
-    //Resize list of outputs
-    if (sysofreq.listOutput().size() != sysofreq.listBody().size())
-        sysofreq.listOutput().resize(sysofreq.listBody().size());
-
-    for (unsigned int i = 0; i < sysofreq.listOutput().size(); i++)
-    {
-        //Setup variables for each OutputBody object.
-        sysofreq.listOutput(i).setListBody(sysofreq.listBody());
-        sysofreq.listOutput(i).setSolutionSet(listSolutions);
-        sysofreq.listOutput(i).setListFreq(sysofreq.listWaveFrequencies());
-        sysofreq.listOutput(i).setListWaveDir(sysofreq.listWaveDirections());
-        sysofreq.listOutput(i).setCurBody(i);
-
+    try {
+        //Clear out any previous output files
+        //---------------------------------------------------------------------------
         //Setup filewriter for outputs
-        FileWriter Writer(oFreq_Directory, sysofreq.listOutput(i));
+        FileWriter WriterTemp;
+        WriterTemp.setProjectDir(sysofreq.getPath());
+        //Clean up existing outputs
+        WriterTemp.clearFiles();
 
-        //Set location of header file
-        std::string directory = getPath("var");
-        Writer.setHeader(directory);
+        //Read input files and interpret data.
+        //---------------------------------------------------------------------------
+        sysofreq.logStd.Write("Reading input files");
+        sysofreq.logStd.Write("=================================================================================");
+        ReadFiles(sysofreq.getPath());
+        sysofreq.logStd.Write("\n\n\n");
 
-        int testwrite;     //test to see if file writing was sucessful.
+        //Set the active sea model
+        //---------------------------------------------------------------------------
+        sysofreq.setActiveSeaModel();
 
-        //Write frequency and wave direction list if this is the first iteration.
-        if (i == 0)
+
+
+
+
+    //Pre Processing Section
+    //=================================================================================================================
+
+        //Start creating main objects
+        //---------------------------------------------------------------------------
+        //Resize matrix bodies vector.
+        listMatBody.resize(sysofreq.listBody().size());
+        //Resize the solution object.
+        for (unsigned int i = 0; i < sysofreq.listBody().size(); i++)
         {
-            //Write frequency list
-            try
-            {
-                testwrite = Writer.writeFrequency();
-                if (testwrite != 0)
-                    throw std::runtime_error("Failed to write wave frequencies file.");
-            }
-            catch(std::exception &err)
-            {
-                sysofreq.logErr.Write(string(err.what()));
-                sysofreq.logStd.Notify();
-            }
-            catch(...)
-            {
-                sysofreq.logErr.Write("Unknown error occurred.  Main program.");
-                sysofreq.logStd.Notify();
-            }
+            listSolutions.push_back(SolutionSet(sysofreq.listWaveDirections().size(),
+                                                 sysofreq.listWaveFrequencies().size()));
+        }
 
-            //Write wave directions list
-            try
+        //Iterate through each wave direction and wave frequency to solve
+        //---------------------------------------------------------------------------
+        //Create an iterator to track the loops.
+        int itertrack = 0;
+
+        sysofreq.logStd.Write("Solving equations");
+        sysofreq.logStd.Write("=================================================================================");
+
+        for(unsigned int i = 0; i < sysofreq.listWaveDirections().size(); i++)
+        {
+            //Set the current wave direction
+            sysofreq.setCurWaveDirInd(i);
+
+            for(unsigned int j = 0; j < sysofreq.listWaveFrequencies().size(); j++)
             {
-                testwrite = Writer.writeWaveDirection();
-                if (testwrite != 0)
-                    throw std::runtime_error("Error writing wave directions outputs.");
-            }
-            catch(std::exception &err)
-            {
-                sysofreq.logErr.Write(string(err.what()));
-                sysofreq.logStd.Notify();
-            }
-            catch(...)
-            {
-                sysofreq.logErr.Write("Unknown error occurred.  Main program.");
-                sysofreq.logStd.Notify();
+                //Set the current wave frequency
+                sysofreq.setCurFreqInd(j);
+
+                //Update hydrodynamic forces
+                sysofreq.updateHydroForce();
+
+                //Build the matrix bodies
+                //---------------------------------------------------------------------------
+                //Build operation stuck inside the wave iteration loop because the forces may change with
+                //wave direction.  Also inside the wave frequency loop because the forces may change
+                //with wave frequency.
+                bool coeffonly = true;              //Boolean to tell the motion model to only use coefficients.
+                //Iterate through each body and build.
+                for (unsigned int i2 = 0; i2 < sysofreq.listBody().size(); i2++)
+                {
+                    //Build the body.
+                    //Will automatically use the correct bodies.
+                    buildMatBody(i2, coeffonly);
+                }
+
+
+
+
+    //Matrix Solution Section
+    //=================================================================================================================
+
+                //Create motion solver and feed in the body data.
+                MotionSolver theMotionSolver(listMatBody);
+                //Set the current wave frequency
+                theMotionSolver.setWaveFreq(sysofreq.getCurFreq());
+                //Solve the system of equations.
+                theMotionSolver.calculateOutputs();
+
+                //assign each solution per frequency to a body
+                for(unsigned int k = 0; k < sysofreq.listBody().size(); k++)
+                {
+                    Solution soln;
+                    //soln.refBody() = sysofreq.listBody(k);
+                    soln.setBody(&sysofreq.listBody(k));
+                    soln.setSolnMat(theMotionSolver.listSolution(k));
+                    listSolutions[k].setSolnMat(i, j, soln);
+                }
+
+                //Update the iterator
+                itertrack += 1;
+
+                //Update the monitor log
+                writeMonitor(i,j,itertrack);
+
+                //Write output to standard log
+                string msg;
+                ostringstream convert;
+                msg = "Wave Direction:  ";
+                convert << (i+1);
+                msg += convert.str() + " of ";
+                convert.str("");
+                convert << sysofreq.listWaveDirections().size();
+                msg += convert.str();
+                convert.str("");
+                msg += "\t\tFrequency:  ";
+                convert << (j+1);
+                msg += convert.str() + " of ";
+                convert.str("");
+                convert << sysofreq.listWaveFrequencies().size();
+                msg += convert.str();
+                sysofreq.logStd.Write(msg);
+                convert.str("");
             }
         }
 
-        //Calculate outputs and write to file
-        //Everything handled with the following function.
-        calcOutput(sysofreq.listOutput(i), Writer);
-    }
 
-    sysofreq.logStd.Write("\n\n\n");
-    sysofreq.logStd.Write("=================================================================================");
-    sysofreq.logStd.Write("oFreq completed successfully.");
-    return 0;
+
+
+    //Post Processing Section
+    //=================================================================================================================
+
+        sysofreq.logStd.Write("\n\n\n");
+        sysofreq.logStd.Write("Calculating Outputs");
+        sysofreq.logStd.Write("=================================================================================");
+
+        //Write outputs
+        //---------------------------------------------------------------------------
+        //Iterate through each body output.  Setup the output and calculate outputs.
+        //Resize list of outputs
+        if (sysofreq.listOutput().size() != sysofreq.listBody().size())
+            sysofreq.listOutput().resize(sysofreq.listBody().size());
+
+        for (unsigned int i = 0; i < sysofreq.listOutput().size(); i++)
+        {
+            //Setup variables for each OutputBody object.
+            sysofreq.listOutput(i).setListBody(sysofreq.listBody());
+            sysofreq.listOutput(i).setSolutionSet(listSolutions);
+            sysofreq.listOutput(i).setListFreq(sysofreq.listWaveFrequencies());
+            sysofreq.listOutput(i).setListWaveDir(sysofreq.listWaveDirections());
+            sysofreq.listOutput(i).setCurBody(i);
+
+            //Setup filewriter for outputs
+            FileWriter Writer(sysofreq.getPath(), sysofreq.listOutput(i));
+
+            //Set location of header file
+            std::string directory = getPath("var");
+            Writer.setHeader(directory);
+
+            int testwrite;     //test to see if file writing was sucessful.
+
+            //Write frequency and wave direction list if this is the first iteration.
+            if (i == 0)
+            {
+                //Write frequency list
+                try
+                {
+                    testwrite = Writer.writeFrequency();
+                    if (testwrite != 0)
+                        throw std::runtime_error("Failed to write wave frequencies file.");
+                }
+                catch(const std::exception &err)
+                {
+                    sysofreq.logErr.Write(string(err.what()));
+                    sysofreq.logStd.Notify();
+                }
+                catch(...)
+                {
+                    sysofreq.logErr.Write("Unknown error occurred.  Main program.");
+                    sysofreq.logStd.Notify();
+                }
+
+                //Write wave directions list
+                try
+                {
+                    testwrite = Writer.writeWaveDirection();
+                    if (testwrite != 0)
+                        throw std::runtime_error("Error writing wave directions outputs.");
+                }
+                catch(const std::exception &err)
+                {
+                    sysofreq.logErr.Write(string(err.what()));
+                    sysofreq.logStd.Notify();
+                }
+                catch(...)
+                {
+                    sysofreq.logErr.Write("Unknown error occurred.  Main program.");
+                    sysofreq.logStd.Notify();
+                }
+            }
+
+            //Calculate outputs and write to file
+            //Everything handled with the following function.
+            calcOutput(sysofreq.listOutput(i), Writer);
+        }
+
+        sysofreq.logStd.Write("\n\n\n");
+        sysofreq.logStd.Write("=================================================================================");
+        sysofreq.logStd.Write("oFreq completed successfully.");
+        return 0;
+    }
+    catch (std::runtime_error &err)
+    {
+        sysofreq.logErr.Write(string("Function:  main()\n") + err.what());
+        return 1;
+        exit(1);
+    }
+    catch (...)
+    {
+        return 1;
+        exit(1);
+    }
 }
 
 //####################################### buildMatBody Function #######################################################
 void buildMatBody(int bod, bool useCoeff)
 {
-    //First assign the basic properties for the matbody.
-    listMatBody[bod].setId(bod);
-    Body* MyBod;         //The current body that I am working with
-    MotionModel* MyModel; //The current motion model that I am working with
-
-    MyBod = &(sysofreq.listBody(bod));   //Get the current body to work with.
-    MyModel = &(MyBod->getMotionModel());  //Get the current motion model to work with.
-
-    //Now know the correct motion model to use.
-    //Create initial setup.
-    MyModel->setlistBody(sysofreq.listBody());   //Feed the list of bodies
-    MyModel->setBody(bod);       //Set which body to use as the current body
-    MyModel->CoefficientOnly() = useCoeff;  //Let it know to only calculate coefficients.
-    MyModel->Reset();   //Give it a reset just for good measure.
-
-    //Iterate through all the active forces, user
-    //------------------------------------------
-    for (unsigned int i = 0; i < MyBod->listForceActive_user().size(); i++)
+    try
     {
-        listMatBody[bod].listForceActive_user().push_back(matForceActive());
-        listMatBody[bod].listForceActive_user(i).listCoefficient() = MyModel->getMatForceActive_user(i);
-        //Print out active force matrix.  For Debugging.
-        //listMatBody[bod].listForceActive_user(i).listCoefficient().print("Active Force: " + i);
+        //First assign the basic properties for the matbody.
+        listMatBody[bod].setId(bod);
+        Body* MyBod;         //The current body that I am working with
+        MotionModel* MyModel; //The current motion model that I am working with
 
-        //Create force ID.
-        listMatBody[bod].listForceActive_user(i).setId(i);
-    }
+        MyBod = &(sysofreq.listBody(bod));   //Get the current body to work with.
+        MyModel = &(MyBod->getMotionModel());  //Get the current motion model to work with.
 
-    //Iterate through all the active forces, hydro
-    //------------------------------------------
-    for(unsigned int i = 0; i < MyBod->listForceActive_hydro().size(); i++)
-    {
-        listMatBody[bod].listForceActive_hydro().push_back(matForceActive());
-        listMatBody[bod].listForceActive_hydro(i).listCoefficient() = MyModel->getMatForceActive_hydro(i);
-        //Create force ID.
-        listMatBody[bod].listForceActive_hydro(i).setId(i);
-    }
+        //Now know the correct motion model to use.
+        //Create initial setup.
+        MyModel->setlistBody(sysofreq.listBody());   //Feed the list of bodies
+        MyModel->setBody(bod);       //Set which body to use as the current body
+        MyModel->CoefficientOnly() = useCoeff;  //Let it know to only calculate coefficients.
+        MyModel->Reset();   //Give it a reset just for good measure.
 
-    //Use this pointer for referencing the forces
-    matForceReact* ptForce;
-    ForceReact* ptReact;
-
-    //Iterate through all the reactive forces, user
-    //------------------------------------------
-    for (unsigned int i = 0; i < MyBod->listForceReact_user().size(); i++)
-    {
-        listMatBody[bod].listForceReact_user().push_back(matForceReact());
-        //Create pointer
-        ptForce = &listMatBody[bod].listForceReact_user(i);
-
-        //Assign id for force.
-        ptForce->setId(i);
-
-        ptReact = MyBod->listForceReact_user(i);
-
-        //Iterate through each derivative.
-        for (int j = 0; j <= ptReact->getMaxOrd(); j++)
+        //Iterate through all the active forces, user
+        //------------------------------------------
+        for (unsigned int i = 0; i < MyBod->listForceActive_user().size(); i++)
         {
-            //Assign matrices
-            ptForce->listDerivative().push_back(MyModel->getMatForceReact_user(i,j));
+            listMatBody[bod].listForceActive_user().push_back(matForceActive());
+            listMatBody[bod].listForceActive_user(i).listCoefficient() = MyModel->getMatForceActive_user(i);
+            //Print out active force matrix.  For Debugging.
+            //listMatBody[bod].listForceActive_user(i).listCoefficient().print("Active Force: " + i);
 
-//            //Print out Matrix.  For debugging.
-//            listMatBody[bod].listForceReact_user(0).listDerivative(0).print("Reactive Force:  ");
+            //Create force ID.
+            listMatBody[bod].listForceActive_user(i).setId(i);
         }
-    }
 
-    //Iterate through all the reactive forces, hydro
-    //------------------------------------------
-    for (unsigned int i = 0; i < MyBod->listForceReact_hydro().size(); i++)
-    {
-        listMatBody[bod].listForceReact_hydro().push_back(matForceReact());
-        //Create pointer
-        ptForce = & listMatBody[bod].listForceReact_hydro(i);
-
-        //Assign id for force.
-        ptForce->setId(i);
-
-        ptReact = MyBod->listForceReact_user(i);
-
-        //Iterate through each derivative.
-        for (int j = 0; j <= ptReact->getMaxOrd(); j++)
+        //Iterate through all the active forces, hydro
+        //------------------------------------------
+        for(unsigned int i = 0; i < MyBod->listForceActive_hydro().size(); i++)
         {
-            //Assign matrices
-            ptForce->listDerivative().push_back(MyModel->getMatForceReact_hydro(i,j));
+            listMatBody[bod].listForceActive_hydro().push_back(matForceActive());
+            listMatBody[bod].listForceActive_hydro(i).listCoefficient() = MyModel->getMatForceActive_hydro(i);
+            //Create force ID.
+            listMatBody[bod].listForceActive_hydro(i).setId(i);
         }
-    }
 
-    matForceCross* ptForce2;
-    ForceCross* ptCross;
+        //Use this pointer for referencing the forces
+        matForceReact* ptForce;
+        ForceReact* ptReact;
 
-    //Iterate through all the cross body forces, user
-    //------------------------------------------
-    for (unsigned int i = 0; i < MyBod->listForceCross_user().size(); i++)
-    {
-        listMatBody[bod].listForceCross_user().push_back(matForceCross());
-        //Create pointer
-        ptForce2 = &listMatBody[bod].listForceCross_user(i);
-
-        //Assign id for force.
-        ptForce2->setId(i);
-
-        //Assign cross body
-        for (unsigned int k = 0; k < sysofreq.listBody().size(); k++)
+        //Iterate through all the reactive forces, user
+        //------------------------------------------
+        for (unsigned int i = 0; i < MyBod->listForceReact_user().size(); i++)
         {
-            if (&sysofreq.listBody(k) == &(sysofreq.listBody(k).listCrossBody_user(bod)))
+            listMatBody[bod].listForceReact_user().push_back(matForceReact());
+            //Create pointer
+            ptForce = &listMatBody[bod].listForceReact_user(i);
+
+            //Assign id for force.
+            ptForce->setId(i);
+
+            ptReact = MyBod->listForceReact_user(i);
+
+            //Iterate through each derivative.
+            for (int j = 0; j <= ptReact->getMaxOrd(); j++)
             {
-                //Assign cross body
-                ptForce2->setLinkedBody(listMatBody[k]);
-                //Linked ID is automatically set.
-                break;
+                //Assign matrices
+                ptForce->listDerivative().push_back(MyModel->getMatForceReact_user(i,j));
+
+    //            //Print out Matrix.  For debugging.
+    //            listMatBody[bod].listForceReact_user(0).listDerivative(0).print("Reactive Force:  ");
             }
         }
 
-        //Assign pointer
-        ptCross = sysofreq.listBody(bod).listForceCross_user(i);
-
-        //Iterate through each derivative.
-        for (int j = 0; j <= ptCross->getMaxOrd(); j++)
+        //Iterate through all the reactive forces, hydro
+        //------------------------------------------
+        for (unsigned int i = 0; i < MyBod->listForceReact_hydro().size(); i++)
         {
-            //Assign matrices
-            ptForce2->listDerivative().push_back(MyModel->getMatForceCross_user(i,j));
-        }
-    }
+            listMatBody[bod].listForceReact_hydro().push_back(matForceReact());
+            //Create pointer
+            ptForce = & listMatBody[bod].listForceReact_hydro(i);
 
-    //Iterate through all the cross body forces, hydro
-    //------------------------------------------
-    for (unsigned int i = 0; i < MyBod->listForceCross_hydro().size(); i++)
-    {
-        listMatBody[bod].listForceCross_hydro().push_back(matForceCross());
-        //Create pointer
-        ptForce2 = &listMatBody[bod].listForceCross_hydro(i);
+            //Assign id for force.
+            ptForce->setId(i);
 
-        //Assign id for force.
-        ptForce2->setId(i);
+            ptReact = MyBod->listForceReact_user(i);
 
-        //Assign cross body
-        for (unsigned int k = 0; k < sysofreq.listBody().size(); k++)
-        {
-            if (&sysofreq.listBody(k) == &(sysofreq.listBody(k).listCrossBody_hydro(bod)))
+            //Iterate through each derivative.
+            for (int j = 0; j <= ptReact->getMaxOrd(); j++)
             {
-                //Assign cross body
-                ptForce2->setLinkedBody(listMatBody[k]);
-                //Linked Id is automatically set
-                break;
+                //Assign matrices
+                ptForce->listDerivative().push_back(MyModel->getMatForceReact_hydro(i,j));
             }
         }
 
-        //Assign pointer
-        ptCross = sysofreq.listBody(bod).listForceCross_user(i);
+        matForceCross* ptForce2;
+        ForceCross* ptCross;
 
-        //Iterate through each derivative.
-        for (int j = 0; j <= ptCross->getMaxOrd(); j++)
+        //Iterate through all the cross body forces, user
+        //------------------------------------------
+        for (unsigned int i = 0; i < MyBod->listForceCross_user().size(); i++)
         {
-            //Assign matrices
-            ptForce2->listDerivative().push_back(MyModel->getMatForceCross_hydro(i,j));
-        }
-    }
+            listMatBody[bod].listForceCross_user().push_back(matForceCross());
+            //Create pointer
+            ptForce2 = &listMatBody[bod].listForceCross_user(i);
 
-    //Get the mass matrix
-    //------------------------------------------
-    listMatBody[bod].refMass() = MyModel->getMatForceMass();
-    //print out mass matrix.  For debugging.
-    //listMatBody[bod].refMass().print("Mass:");
+            //Assign id for force.
+            ptForce2->setId(i);
+
+            //Assign cross body
+            for (unsigned int k = 0; k < sysofreq.listBody().size(); k++)
+            {
+                if (&sysofreq.listBody(k) == &(sysofreq.listBody(k).listCrossBody_user(bod)))
+                {
+                    //Assign cross body
+                    ptForce2->setLinkedBody(listMatBody[k]);
+                    //Linked ID is automatically set.
+                    break;
+                }
+            }
+
+            //Assign pointer
+            ptCross = sysofreq.listBody(bod).listForceCross_user(i);
+
+            //Iterate through each derivative.
+            for (int j = 0; j <= ptCross->getMaxOrd(); j++)
+            {
+                //Assign matrices
+                ptForce2->listDerivative().push_back(MyModel->getMatForceCross_user(i,j));
+            }
+        }
+
+        //Iterate through all the cross body forces, hydro
+        //------------------------------------------
+        for (unsigned int i = 0; i < MyBod->listForceCross_hydro().size(); i++)
+        {
+            listMatBody[bod].listForceCross_hydro().push_back(matForceCross());
+            //Create pointer
+            ptForce2 = &listMatBody[bod].listForceCross_hydro(i);
+
+            //Assign id for force.
+            ptForce2->setId(i);
+
+            //Assign cross body
+            for (unsigned int k = 0; k < sysofreq.listBody().size(); k++)
+            {
+                if (&sysofreq.listBody(k) == &(sysofreq.listBody(k).listCrossBody_hydro(bod)))
+                {
+                    //Assign cross body
+                    ptForce2->setLinkedBody(listMatBody[k]);
+                    //Linked Id is automatically set
+                    break;
+                }
+            }
+
+            //Assign pointer
+            ptCross = sysofreq.listBody(bod).listForceCross_user(i);
+
+            //Iterate through each derivative.
+            for (int j = 0; j <= ptCross->getMaxOrd(); j++)
+            {
+                //Assign matrices
+                ptForce2->listDerivative().push_back(MyModel->getMatForceCross_hydro(i,j));
+            }
+        }
+
+        //Get the mass matrix
+        //------------------------------------------
+        listMatBody[bod].refMass() = MyModel->getMatForceMass();
+        //print out mass matrix.  For debugging.
+        //listMatBody[bod].refMass().print("Mass:");
+    }
+    catch(...)
+    {
+        sysofreq.logStd.Notify();
+        sysofreq.logErr.Write("Error:  Function buildMatBody()");
+        
+    }
 }
 
 //######################################## CalcOutput Function ########################################################
@@ -623,15 +676,17 @@ void calcOutput(OutputsBody &OutputIn, FileWriter &WriterIn)
             if (filetest != 0)
                 throw std::runtime_error("Error writing output to body motion file.");
         }
-        catch(std::exception &err)
+        catch(const std::exception &err)
         {
             sysofreq.logErr.Write(string(err.what()));
             sysofreq.logStd.Notify();
+            
         }
         catch(...)
         {
             sysofreq.logErr.Write("Unknown error occurred.  Main program.");
             sysofreq.logStd.Notify();
+            
         }
 
         try
@@ -642,15 +697,17 @@ void calcOutput(OutputsBody &OutputIn, FileWriter &WriterIn)
             if (filetest != 0)
                 throw std::runtime_error("Error writing output to body velocity file.");
         }
-        catch(std::exception &err)
+        catch(const std::exception &err)
         {
             sysofreq.logErr.Write(string(err.what()));
             sysofreq.logStd.Notify();
+            
         }
         catch(...)
         {
             sysofreq.logErr.Write("Unknown error occurred.  Main program.");
             sysofreq.logStd.Notify();
+            
         }
 
         try
@@ -661,15 +718,17 @@ void calcOutput(OutputsBody &OutputIn, FileWriter &WriterIn)
             if (filetest != 0)
                 throw std::runtime_error("Error writing output to body acceleration file.");
         }
-        catch(std::exception &err)
+        catch(const std::exception &err)
         {
             sysofreq.logErr.Write(string(err.what()));
             sysofreq.logStd.Notify();
+            
         }
         catch(...)
         {
             sysofreq.logErr.Write("Unknown error occurred.  Main program.");
             sysofreq.logStd.Notify();
+            
         }
 
         try
@@ -680,15 +739,17 @@ void calcOutput(OutputsBody &OutputIn, FileWriter &WriterIn)
             if (filetest != 0)
                 throw std::runtime_error("Error writing output to the body solution file.");
         }
-        catch(std::exception &err)
+        catch(const std::exception &err)
         {
             sysofreq.logErr.Write(string(err.what()));
             sysofreq.logStd.Notify();
+            
         }
         catch(...)
         {
             sysofreq.logErr.Write("Unknown error occurred.  Main program.");
             sysofreq.logStd.Notify();
+            
         }
     }
 }
@@ -703,34 +764,67 @@ void ReadFiles(string runPath)
     dictForces dictForce;               //Create dictionary object for forces.in
     dictControl dictCont;               //Create dictionary object for control.in
     dictSeaEnv dictSea;                 //Create dictionary object for seaenv.in
+    dictData dictDat(&fileIn);           //Create dictionary object for data.in
 
-    //Create pointer to System object for each of the filereader objects
-    fileIn.setSystem( &sysofreq);
-    dictBod.setSystem( &sysofreq);
-    dictForce.setSystem( &sysofreq);
-    dictCont.setSystem( &sysofreq);
-    dictSea.setSystem( &sysofreq);
+    try {
+        //Create pointer to System object for each of the filereader objects
+        fileIn.setSystem( &sysofreq);
+        dictBod.setSystem( &sysofreq);
+        dictForce.setSystem( &sysofreq);
+        dictCont.setSystem( &sysofreq);
+        dictSea.setSystem( &sysofreq);
+        dictDat.setSystem( &sysofreq);
 
-    //Set path for file reading
-    fileIn.setPath(runPath);
+        //Set path for file reading
+        fileIn.setPath(runPath);
 
-    //Read input files
-    //Sequence of file reading is important.
-    //Read control file.
-    fileIn.setDictionary(dictCont);
-    fileIn.readControl();       //Must be first.
-    //Read sea environment file.
-    fileIn.setDictionary(dictSea);
-    fileIn.readSeaEnv();
-    //Read user forces
-    fileIn.setDictionary(dictForce);
-    fileIn.readForces();        //Must come before reading Bodies
-    //Read Bodies
-    fileIn.setDictionary(dictBod);
-    fileIn.readBodies();        //Must come after reading forces.
+        //Read input files
+        //Sequence of file reading is important.
+        //Read control file.
+        fileIn.setDictionary(dictCont);
+        fileIn.readControl();       //Must be first.
+        //Read sea environment file.
+        fileIn.setDictionary(dictSea);
+        fileIn.readSeaEnv();
+        //Read user forces
+        fileIn.setDictionary(dictForce);
+        fileIn.readForces();        //Must come before reading Bodies
+        //Read Bodies
+        fileIn.setDictionary(dictBod);
+        fileIn.readBodies();        //Must come after reading forces.
+        //Read hydrodynamic data
+        fileIn.setDictionary(dictDat);
+        fileIn.readData();
 
-    //At the end, force system to check one last time for the active sea model.
-    sysofreq.SearchActiveSeaModel();
+        //At the end, force system to check one last time for the active sea model.
+        sysofreq.SearchActiveSeaModel();
+
+        //Write output to screen.
+        sysofreq.logStd.Write("Hydrodynamic Input Files");
+        sysofreq.logStd.Write("-----------------------------");
+
+        //So far, input files only specified the location of the hydrodynamic data.  Now need to actually  read it.
+        HydroReader hydroIn;            //Create hydroreader.
+        hydroIn.setSystem( &sysofreq);
+
+        if (fileIn.listDataFiles().size() > 0)
+        {
+            for (unsigned int i = 0; i < fileIn.listDataFiles().size(); i++)
+            {
+                //Iterate through each of the items on the list of hydro files and read them.
+                hydroIn.setPath(fileIn.listDataFiles(i));           //Set the path to the hydro system.
+                hydroIn.readHydroSys();
+            }
+        }
+    }
+    catch(...)
+    {
+        sysofreq.logErr.Write("Unknown error occurred.  Main program.");
+        sysofreq.logStd.Notify();
+        
+    }
+
+
 }
 
 //######################################## ReadFiles Function #########################################################
@@ -864,11 +958,13 @@ void writeLogHeader()
     {
         sysofreq.logErr.Write(string(err.what()));
         sysofreq.logStd.Notify();
+        
     }
     catch(...)
     {
         sysofreq.logErr.Write("Unknown error occurred.  Main program.");
         sysofreq.logStd.Notify();
+        
     }
 
     //Now that the header is read in, write it to each log file.

@@ -35,8 +35,6 @@ using namespace arma;
 //==========================================Section Separator =========================================================
 //Static Initialization
 
-int dictCrossReact::ORD = 0; /**< The order of derivative that is associated with all data from this file. */
-
 //------------------------------------------Function Separator ----------------------------------------------------
 //Class Name constants
 string dictCrossReact::OBJECT_BODY = "body"; /**< Body object designator. */
@@ -58,15 +56,17 @@ dictCrossReact::dictCrossReact()
     pBodOn = false;
     pLinkOn = false;
     pHydroBod = NULL;
+    ORD = 0;
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-dictCrossReact::dictCrossReact(osea::dictCrossReact *parent)
+dictCrossReact::dictCrossReact(osea::HydroReader *parent)
 {
     pParent = parent;
     pBodOn = false;
     pLinkOn = false;
     pHydroBod = NULL;
+    ORD = 0;
 }
 
 //==========================================Section Separator =========================================================
@@ -91,8 +91,27 @@ int dictCrossReact::defineKey(std::string keyIn, std::vector<std::string> valIn)
         try
         {
             if (!pBodOn)
-                throw std::runtime_error(string("Hydrodynamic input file.  Body:  ") + valIn[0]
-                    + string("\n No body object declared before body data was supplied."));
+            {
+                if (ORD == 0)
+                {
+                    //Hydrostiffness input file.
+                    throw std::runtime_error(string("crossstiffness.out file.  Body:  ") + valIn[0]
+                        + string("\n No body object declared before body data was supplied."));
+                }
+                else if (ORD == 1)
+                {
+                    //Hydrodamping input file.
+                    throw std::runtime_error(string("crossdamp.out file.  Body:  ") + valIn[0]
+                        + string("\n No body object declared before body data was supplied."));
+                }
+                else if (ORD == 2)
+                {
+                    //Hydromass input file.
+                    throw std::runtime_error(string("crossmass.out file.  Body:  ") + valIn[0]
+                        + string("\n No body object declared before body data was supplied."));
+                }
+
+            }
 
             //Check if setting the name for the body or the linked body.
             if (pLinkOn)
@@ -102,9 +121,6 @@ int dictCrossReact::defineKey(std::string keyIn, std::vector<std::string> valIn)
             }
             else
             {
-                //Reset the body signifier for the next body.
-                pBodOn = false;
-
                 //Search for a hydroData object with that body name.
                 int temp = pParent->findHydroDataTemp(valIn[0]);
 
@@ -116,17 +132,17 @@ int dictCrossReact::defineKey(std::string keyIn, std::vector<std::string> valIn)
 
             return 0;
         }
-        catch(std::runtime_error &err)
+        catch(const std::exception &err)
         {
             //Throw an error.
             logStd.Notify();
-            logErr.Write(err.what());
+            logErr.Write(string(ID) + string (">>  ") + err.what());
             return 2;
         }
         catch(...)
         {
             logStd.Notify();
-            logErr.Write(string("Hydrodynamic input file.  Unknown error occurred."));
+            logErr.Write(string(ID) + string(">>  Unknown error occurred."));
             return 99;
         }
     }
@@ -241,7 +257,7 @@ int dictCrossReact::defineKey(std::string keyIn, std::vector<std::string> valIn)
         catch(...)
         {
             logStd.Notify();
-            logErr.Write(string("Hydrodynamic input file.  Unknown error occurred."));
+            logErr.Write(string(ID) + string(">>  Unknown error occurred."));
             return 99;
         }
 
@@ -265,6 +281,7 @@ int dictCrossReact::defineClass(std::string nameIn)
     {
         //Turn on the body object to signal that all data is contained.
         pBodOn = true;
+        pLinkOn = false;
         pHydroBod = NULL;
 
         return 0;

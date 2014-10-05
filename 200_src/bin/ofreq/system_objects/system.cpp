@@ -75,6 +75,26 @@ System::~System()
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
+void System::setPath(std::string pathIn)
+{
+    //check if pathIn has a slash at the end.
+    //All functions assume no slash at the end.
+    if (pathIn[pathIn.length() - 1] == SLASH[0])
+    {
+        //End slash found.  Remove it.
+        pathIn.erase(pathIn.length() - 1, 1);
+    }
+
+    pWorkingPath = pathIn;
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+std::string System::getPath()
+{
+    return pWorkingPath;
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
 void System::setLogFiles(std::string pathIn, bool append)
 {
     if (!append)
@@ -146,6 +166,12 @@ vector<double> &System::listWaveDirections()
 void System::setCurWaveDirInd(int input)
 {
     pCurWaveDir = input;
+
+//    //Build the subset of wave directions in the hydro managers.
+//    for (unsigned int i = 0; i < plistHydroManager.size(); i++)
+//    {
+//        plistHydroManager[i].setWaveDir(pWaveDirections[pCurWaveDir]);
+//    }
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
@@ -407,7 +433,7 @@ osea::SeaModel* System::listSeaModelPt(std::string NameIn)
 
         return plistSeaModel.at(i);
     }
-    catch(std::exception &err)
+    catch(const std::exception &err)
     {
         logStd.Notify();
         logErr.Write(string("Object:  System, Function:  listSeaModel() \n") + err.what());
@@ -415,7 +441,7 @@ osea::SeaModel* System::listSeaModelPt(std::string NameIn)
     catch(...)
     {
         logStd.Notify();
-        logErr.Write(string("Object:  System, Function:  listSeaModel() \n Unknown error."));
+        logErr.Write(string(ID) + string(">>  Unknown error occurred."));
     }
 }
 
@@ -464,7 +490,7 @@ osea::WaveSpecBase* System::listWaveSpecPt(std::string NameIn)
 
         return plistWaveSpec.at(i);
     }
-    catch(std::exception &err)
+    catch(const std::exception &err)
     {
         logStd.Notify();
         logErr.Write(string("Object:  System, Function:  listWaveSpec() \n") + err.what());
@@ -472,7 +498,7 @@ osea::WaveSpecBase* System::listWaveSpecPt(std::string NameIn)
     catch(...)
     {
         logStd.Notify();
-        logErr.Write(string("Object:  System, Function:  listSeaModel() \n Unknown error."));
+        logErr.Write(string(ID) + string(">>  Unknown error occurred."));
     }
 }
 
@@ -485,10 +511,22 @@ osea::WaveSpecBase &System::listWaveSpec(std::string NameIn)
 //------------------------------------------Function Separator --------------------------------------------------------
 void System::setActiveSeaModel(std::string NameIn)
 {
-    pActSeaModelName = NameIn;
+    //Set active sea model name.
+    if (NameIn != "")
+    {
+        pActSeaModelName = NameIn;
 
-    //Match the active sea model
-    SearchActiveSeaModel();
+        //Match the active sea model
+        SearchActiveSeaModel();
+    }
+    //If NameIn = "", the sea model was already set, and this just repeats to add in the wave frequencies.
+
+    //Set the list of wave frequencies for the active sea model.
+    if (pSeaModelIndex > 0)
+    {
+        //Sea Model index currently defined.
+        plistSeaModel[pSeaModelIndex]->addWaveFreq(pWaveFrequencies);
+    }
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
@@ -596,26 +634,6 @@ void System::linkBodies(int bodID)
     }
     //Clear the list of named links.  Don't need it anymore.
     plistBody[bodID].listNamedLink_user().clear();
-
-    //Iterate through all hydro linked bodies
-    for (unsigned int i = 0; i < plistBody[bodID].listNamedLink_hydro().size(); i++)
-    {
-        //Search for body with correct name
-        string name = plistBody[bodID].listNamedLink_hydro(i);   //Name of the body to search for.
-
-        for (unsigned int j = 0; j < listBody().size(); j++)
-        {
-            if (name == listBody(j).refBodyName())
-            {
-                //Assign the pointer for the body
-                plistBody[bodID].listCrossBody_hydro(i) = listBody(j);
-                //Quit the loop
-                break;
-            }
-        }
-    }
-    //Clear the list of named links.  Don't need it anymore.
-    plistBody[bodID].listNamedLink_hydro().clear();
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
@@ -777,12 +795,6 @@ void System::SearchActiveSeaModel()
 
     try
     {
-//        if (plistSeaModel.size() == 0)
-//        {
-//            std::string msg;
-//            msg = "No sea models defined.";
-//            throw std::runtime_error(msg);
-//        }
         if (plistSeaModel.size() != 0)
         {
             int i;
@@ -802,7 +814,7 @@ void System::SearchActiveSeaModel()
                 pSeaModelIndex = -1;
         }
     }
-    catch(std::exception &err)
+    catch(const std::exception &err)
     {
         logStd.Notify();
         logErr.Write(string("Object:  System, Function:  SearchActiveSeaModel() \n") + err.what());
@@ -810,7 +822,7 @@ void System::SearchActiveSeaModel()
     catch(...)
     {
         logStd.Notify();
-        logErr.Write(string("Object:  System, Function:  SearchActiveSeaModel() \n Unknown error."));
+        logErr.Write(string(ID) + string(">>  Unknown error occurred."));
     }
 
 }
@@ -849,7 +861,7 @@ ofreq::HydroManager &System::listHydroManager(std::string bodNameIn)
 
         return plistHydroManager[i];
     }
-    catch(std::exception &err)
+    catch(const std::exception &err)
     {
         logStd.Notify();
         logErr.Write(string("Object:  System, Function:  listHydroManager()  \n") + err.what());
@@ -857,7 +869,7 @@ ofreq::HydroManager &System::listHydroManager(std::string bodNameIn)
     catch(...)
     {
         logStd.Notify();
-        logErr.Write(string("Object:  System, Function:  listHydroManager() \n Unknown error."));
+        logErr.Write(string(ID) + string(">>  Unknown error occurred."));
     }
 }
 
@@ -871,6 +883,129 @@ void System::addHydroManager(ofreq::HydroManager HydroIn)
 void System::addHydroManager()
 {
     plistHydroManager.push_back(ofreq::HydroManager());
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+void System::updateHydroForce()
+{
+    //Start by creating a few helpful local variable.
+    try
+    {
+        double Freq = pWaveFrequencies.at(pCurWaveFreq);        //Get the current active wave frequency.
+        double Dir = pWaveDirections.at(pCurWaveDir);           //Get the current active wave direction.
+
+        //Check if there is a list of sea models.
+        if ((plistSeaModel.size() == 0)
+                || (pSeaModelIndex + 1 > plistSeaModel.size())
+                || (pSeaModelIndex < 0))
+        {
+            throw 1;        //First possible error situation.  Do nothing.
+        }
+        SeaModel *Sea = plistSeaModel.at(pSeaModelIndex);       //Get the current active sea model.
+
+        //Calculate the wave amplitude for this sea model.
+        double Amp = Sea->getWaveAmp(Dir, pCurWaveFreq);
+
+        //Check that there is a list of hydro managers.
+        if (plistHydroManager.size() == 0)
+            throw 2;        //Second possible error situation.  Do nothing.
+
+        //Feed the latest amplitude, wave direction, and wave frequencies to the HydroManagers.
+        for (unsigned int i = 0; i < plistHydroManager.size(); i++)
+        {
+            //Set the wave direction.
+            this->listHydroManager(i).setWaveDir(Dir);
+
+            //Calculate the interpolations for the current wave frequency and amplitude.
+            //This may take some time, depending on the size of the data set.  There are several
+            //levels of interpolation.
+            this->listHydroManager(i).calcHydroData(Amp, Freq);
+        }
+
+        //Now copy each of the forces out to the Body objects.
+        /*
+         *We must first update all the HydroManager objects before copying, because we cannot guarantee
+         * that the order the HydroManager objects are stored matches the order of the Body objects.
+         */
+        for (unsigned int i = 0; i < this->listBody().size(); i++)
+        {
+            //Add a pointer to the current body, just to save some typing effort.
+            Body *Bod = &(this->listBody(i));
+
+            //Find the HydroManager that matches the the current Body object.
+            HydroManager *Hydro;
+            try
+            {
+                Hydro = &(this->listHydroManager(
+                              this->listBody(i).getHydroBodName()));
+            }
+            catch(...)
+            {
+                /*
+                 *Assume no HydroManager matched the given HydroBody name.
+                 *We assume this is acceptable.  There are some user situations where the user may
+                 *want a single Body to have no hydrodynamic data.
+                 *In this case, we just skip it and move on to the next body.
+                 */
+                continue;
+            }
+
+            //Move forward having found the correct HydroManager.
+
+            //Copy over active forces.
+            Bod->listForceActive_hydro().clear();      //Clear any previous forces.
+            Bod->listForceActive_hydro().push_back(Hydro->getForceActive());    //Copy over
+
+            //Copy over Reactive forces
+            Bod->listForceReact_hydro().clear();        //Clear any previous forces.
+            Bod->listForceReact_hydro().push_back(Hydro->getForceReact());      //Copy over
+
+            //Copy over Crossbody forces
+            Bod->listForceCross_hydro().clear();        //Clear any previous forces.
+            for (unsigned int j = 0; j < this->listBody().size(); j++)
+            {
+                try
+                {
+                    //Copy over crossbody forces, searching by Body name.
+                    Bod->listForceCross_hydro().push_back(
+                                Hydro->getForceCross(
+                                    this->listBody(j).getHydroBodName()));
+
+                    //Create a link to the corresponding body.
+                    Bod->listCrossBody_hydro().push_back(
+                                &(this->listBody(j)));
+
+                }
+                catch(...)
+                {
+                    //No hydrodata found for that body.  That can happen sometimes.  Its ok.
+                    //The user may supply a Body that has no hydrodynamic force crosslink.
+                    //Continue to the next iteration of the loop.
+                    continue;
+                }
+            }
+        }
+    }
+    catch(int err)
+    {
+        //Normal errors that come from real possible situations.
+        switch(err)
+        {
+        case 1:
+            //Case for no sea models defined.  Do nothing.
+            break;
+        case 2:
+            //Case for no hydroManager objects defined.  Do nothing.
+            break;
+        }
+    }
+
+    catch(...)
+    {
+        //Throw an error.
+        logStd.Notify();
+        logErr.Write(string(ID) + string(">>  Unknown error occurred."));
+    }
 }
 
 

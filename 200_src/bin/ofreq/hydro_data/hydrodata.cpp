@@ -61,7 +61,7 @@ double hydroData::getWaveAmp()
 //------------------------------------------Function Separator --------------------------------------------------------
 void hydroData::setWaveDir(double dirIn)
 {
-    pWaveDir = dirIn;
+    pWaveDir = checkAngle(dirIn);
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
@@ -122,19 +122,37 @@ matForceCross &hydroData::listDataCross(int freqInd, int bodIndex)
 matForceCross &hydroData::listDataCross(int freqInd, std::string bodyName)
 {
     int bodIndex;
+    bool test = false;          //Test if a match was found for the body name.
 
-    //Find index of bodyname
-    for (int i = 0; i < plistDataCross.at(freqInd).size(); i++)
+    try
     {
-        if (plistDataCross.at(freqInd).at(i).getLinkedName() == bodyName)
+        //Find index of bodyname
+        for (int i = 0; i < plistDataCross.at(freqInd).size(); i++)
         {
-            bodIndex = i;
-            break;
+            if (plistDataCross.at(freqInd).at(i).getLinkedName() == bodyName)
+            {
+                bodIndex = i;
+                test = true;
+                break;
+            }
         }
-    }
 
-    //Return value.
-    return this->listDataCross(freqInd, bodIndex);
+        //Check if a match was not found.
+        if (!test)
+            throw std::invalid_argument("Bodyname specified does not match any body names in the list of crossbody forces.");
+
+        //Return value.
+        return plistDataCross.at(freqInd).at(bodIndex);
+    }
+    catch(const std::exception &err)
+    {
+        logStd.Notify();
+        logErr.Write(string(ID) + string(">>  ") + err.what());
+    }
+    catch(...)
+    {
+        //Do nothing and let it pass the error up.
+    }
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
@@ -155,7 +173,7 @@ void hydroData::addDataCross(matForceCross forceIn, int freqInd)
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-void hydroData::addDataCross(int freqInd = -1)
+void hydroData::addDataCross(int freqInd)
 {
     addDataCross(matForceCross(), freqInd);
 }
@@ -224,13 +242,21 @@ matForceActive hydroData::getDataActive(double freqIn)
         index[1] = swap;
     }
 
+    //Test to get value of p.
+    double freq1 = plistWaveFreq[index[0]];
+    double freq2 = plistWaveFreq[index[1]];
+    double p = (freqIn - freq1) / (freq2 - freq1);
+
+
     //Interpolate
-    return iPolate(freqIn,
+    matForceActive output = iPolate(freqIn,
             plistWaveFreq[index[0]],
             plistWaveFreq[index[1]],
             plistDataActive[index[0]],
             plistDataActive[index[1]]
             );
+
+    return output;
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
@@ -281,12 +307,13 @@ matForceCross hydroData::getDataCross(double freqIn, int hydroInd)
     }
 
     //Perform interpolation
-    return iPolate(freqIn,
+    matForceCross test = iPolate(freqIn,
             plistWaveFreq[output[0]],
             plistWaveFreq[output[1]],
             plistDataCross[output[0]][hydroInd],
-            plistDataCross[output[1]][hydroInd])
-            ;
+            plistDataCross[output[1]][hydroInd]);
+
+    return test;
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
@@ -369,35 +396,51 @@ matForceCross hydroData::getDataCross(double freqIn, std::string hydroName)
 //------------------------------------------Function Separator --------------------------------------------------------
 hydroData hydroData::interpHydroData(double freqIn)
 {
-    //Create output object.
-    hydroData output;
-
-    //Reproduce the constants.
-    output.pWaveAmp = this->pWaveAmp;
-    output.pWaveDir = this->pWaveDir;
-    output.pHydroBodyName = this->pHydroBodyName;
-
-    //Add the single wave frequency to the output data list.
-    output.addWaveFreq(freqIn);
-
-    //Interpolate for the active force, and add to the list.
-    output.addDataActive(
-                this->getDataActive(freqIn));
-
-    //Interpolate for the reactive force, and add to the list.
-    output.addDataReact(
-                this->getDataReact(freqIn));
-
-    //Iterate through each item in the data cross.  Interpolate and add to the list.
-    for (int i = 0; i < plistDataCross.at(0).size(); i++)
+    try
     {
-        output.addDataCross(
-                    this->getDataCross(freqIn, i),
-                    0);
-    }
+        //Create output object.
+        hydroData output;
 
-    //Return output.
-    return output;
+        //Reproduce the constants.
+        output.pWaveAmp = this->pWaveAmp;
+        output.pWaveDir = this->pWaveDir;
+        output.pHydroBodyName = this->pHydroBodyName;
+        output.pDensity = this->pDensity;
+        output.pDepth = this->pDepth;
+
+        //Add the single wave frequency to the output data list.
+        output.addWaveFreq(freqIn);
+
+        //Interpolate for the active force, and add to the list.
+        output.addDataActive(
+                    this->getDataActive(freqIn));
+
+        //Interpolate for the reactive force, and add to the list.
+        output.addDataReact(
+                    this->getDataReact(freqIn));
+
+        //Iterate through each item in the data cross.  Interpolate and add to the list.
+        for (int i = 0; i < plistDataCross.at(0).size(); i++)
+        {
+            output.addDataCross(
+                        this->getDataCross(freqIn, i)
+                        );
+        }
+
+        //Return output.
+        return output;
+    }
+    catch(const std::exception &err)
+    {
+        logStd.Notify();
+        logErr.Write(string(ID) + string(">>  ") + string(err.what()));
+    }
+    catch(...)
+    {
+        logStd.Notify();
+        logErr.Write(string(ID) + string(">>  Unknown error occurred."));
+        exit(1);
+    }
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
@@ -431,7 +474,7 @@ void hydroData::setDensity(double densityIn)
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-double getDensity()
+double hydroData::getDensity()
 {
     return pDensity;
 }

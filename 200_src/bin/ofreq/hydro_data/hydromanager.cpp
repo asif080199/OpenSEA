@@ -58,7 +58,21 @@ std::vector< std::vector< hydroData > > &HydroManager::listHydroData()
 //------------------------------------------Function Separator --------------------------------------------------------
 hydroData &HydroManager::listHydroData(int ampInd, int dirInd)
 {
-    return plistHydroData.at(ampInd).at(dirInd);
+    try
+    {
+        return plistHydroData.at(ampInd).at(dirInd);
+    }
+    catch(const std::exception &err)
+    {
+        logStd.Notify();
+        logErr.Write(err.what());
+    }
+    catch(...)
+    {
+        logStd.Notify();
+        logErr.Write(string(ID) + string(">>  Unknown error occurred."));
+    }
+
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
@@ -80,7 +94,7 @@ void HydroManager::addHydroData(int ampInd, ofreq::hydroData dataIn)
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-void HydroManager::addHydroData(ofreq::hydroData dataIn= hydroData())
+void HydroManager::addHydroData(ofreq::hydroData dataIn)
 {
     this->addHydroData(-1, dataIn);
 }
@@ -99,136 +113,152 @@ void HydroManager::setHydroBodyName(std::string nameIn)
 
 //------------------------------------------Function Separator --------------------------------------------------------
 void HydroManager::calcHydroData(double waveAmp, double waveFreq)
-{
-    //First get the indices of the two wave amplitudes that match the set amplitude.
-    vector<int> indWaveAmp = findMatchAmplitude(waveAmp);
-
-    //Create two vectors of hydrodata.  Interpolate each of the hydrodata.
-    vector<hydroData> DataAmp1;
-    vector<hydroData> DataAmp2;
-
-    //Interpolate for first vector.  The first entry is wave direction 1.  Second entry is wave direction two.
-    if (plistDirSubset.at(indWaveAmp[0]).size() < 2)
+{      
+    try
     {
-        //No two wave directions.  This will be quick. . .
-        //Just get the hydrodata for the one wave direction.
-        DataAmp1.push_back(
-                    plistDirSubset.at(indWaveAmp[0]).at(0)->interpHydroData(waveFreq)
-                );
-    }
-    else
-    {
-        //More than one wave direction.  Good.
-        //Interpolate for wave frequency on each wave direction.
-        for (int i = 0; i < plistDirSubset.at(indWaveAmp[0]).size(); i++)
-        {
-            //Get hydrodata, interpolated for wave frequency.
-            DataAmp1.push_back(
-                        plistDirSubset.at(indWaveAmp[0]).at(i)->interpHydroData(waveFreq)
-                    );
-        }
-    }
+        //Get the indices of the two wave amplitudes that match the set amplitude.
+        vector<int> indWaveAmp = findMatchAmplitude(waveAmp);
 
-    //Repeat the process.  But only if there is a second wave amplitude index declared.
-    if (indWaveAmp.size() > 1)
-    {
+        //Create two vectors of hydrodata.  Interpolate each of the hydrodata.
+        vector<hydroData> DataAmp1;
+        vector<hydroData> DataAmp2;
+
         //Interpolate for first vector.  The first entry is wave direction 1.  Second entry is wave direction two.
-        if (plistDirSubset.at(indWaveAmp[1]).size() < 2)
+        if (plistDirSubset.at(indWaveAmp[0]).size() < 2)
         {
             //No two wave directions.  This will be quick. . .
             //Just get the hydrodata for the one wave direction.
             DataAmp1.push_back(
-                        plistDirSubset.at(indWaveAmp[1]).at(0)->interpHydroData(waveFreq)
+                        plistDirSubset.at(indWaveAmp[0]).at(0)->interpHydroData(waveFreq)
                     );
         }
         else
         {
             //More than one wave direction.  Good.
             //Interpolate for wave frequency on each wave direction.
-            for (int i = 0; i < plistDirSubset.at(indWaveAmp[1]).size(); i++)
+            for (unsigned long i = 0; i < plistDirSubset.at(indWaveAmp[0]).size(); i++)
             {
                 //Get hydrodata, interpolated for wave frequency.
                 DataAmp1.push_back(
-                            plistDirSubset.at(indWaveAmp[1]).at(i)->interpHydroData(waveFreq)
+                            plistDirSubset.at(indWaveAmp[0]).at(i)->interpHydroData(waveFreq)
                         );
             }
         }
-    }
 
-    //Successfully interpolated all four data sets for wave frequency.  Now interpolate for wave direction.
-    if (DataAmp2.size() > 0)
+        //Repeat the process.  But only if there is a second wave amplitude index declared.
+        if (indWaveAmp.size() > 1)
+        {
+            //Interpolate for first vector.  The first entry is wave direction 1.  Second entry is wave direction two.
+            if (plistDirSubset.at(indWaveAmp[1]).size() < 2)
+            {
+                //No two wave directions.  This will be quick. . .
+                //Just get the hydrodata for the one wave direction.
+                DataAmp2.push_back(
+                            plistDirSubset.at(indWaveAmp[1]).at(0)->interpHydroData(waveFreq)
+                        );
+            }
+            else
+            {
+                //More than one wave direction.  Good.
+                //Interpolate for wave frequency on each wave direction.
+                for (int i = 0; i < plistDirSubset.at(indWaveAmp[1]).size(); i++)
+                {
+                    //Get hydrodata, interpolated for wave frequency.
+                    DataAmp2.push_back(
+                                plistDirSubset.at(indWaveAmp[1]).at(i)->interpHydroData(waveFreq)
+                            );
+                }
+            }
+        }
+
+        //Successfully interpolated all four data sets for wave frequency.  Now interpolate for wave direction.
+        if (!(DataAmp2.size() > 0))
+        {
+            //Only one wave amplitude defined.  Proceed with that.
+            hydroData DataDir1;
+
+            //First wave amplitude.
+            //Interpolate if there is more than one wave direction.
+            if (DataAmp1.size() > 1)
+            {
+                //Interpolate the given wave directions.
+                DataDir1 =
+                        interpWaveDir(
+                            DataAmp1[0],
+                            DataAmp1[1]);
+            }
+            else
+            {
+                DataDir1 = DataAmp1[0];
+            }
+
+            //Free up memory and clear the vector.
+            DataAmp1.clear();
+
+            //Now proceed to wave scaling.
+            //Write output.
+            pHydroFinal = ScaleHydroData(waveAmp, DataDir1);
+        }
+        else
+        {
+            //Two wave amplitudes.  Go forward with that.
+            hydroData DataDir1;
+            hydroData DataDir2;
+
+            //First wave amplitude.
+            //Interpolate if there is more than one wave direction.
+            if (DataAmp1.size() > 1)
+            {
+                //Interpolate the given wave directions.
+                DataDir1 =
+                        interpWaveDir(
+                            DataAmp1[0],
+                            DataAmp1[1]);
+            }
+            else
+            {
+                DataDir1 = DataAmp1[0];
+            }
+
+            //Free up memory and clear the vector.
+            DataAmp1.clear();
+
+            //Second wave amplitude.
+            //Interpolate if there is more than one wave direction.
+            if (DataAmp2.size() > 1)
+            {
+                //Interpolate the given wave directions.
+                DataDir2 =
+                        interpWaveDir(
+                            DataAmp2[0],
+                            DataAmp2[1]);
+            }
+            else
+            {
+                DataDir2 = DataAmp2[0];
+            }
+
+            //Free up memory and clear the vector.
+            DataAmp2.clear();
+
+            //Now proceed to wave scaling.
+            //Write output
+            pHydroFinal = ScaleHydroData(waveAmp, DataDir1, DataDir2);
+        }
+    }
+    catch(const std::exception &err)
     {
-        //Only one wave amplitude defined.  Proceed with that.
-        hydroData DataDir1;
-
-        //First wave amplitude.
-        //Interpolate if there is more than one wave direction.
-        if (DataAmp1.size() > 1)
-        {
-            //Interpolate the given wave directions.
-            DataDir1 =
-                    interpWaveDir(
-                        DataAmp1[0],
-                        DataAmp1[1]);
-        }
-        else
-        {
-            DataDir1 = DataAmp1[0];
-        }
-
-        //Free up memory and clear the vector.
-        DataAmp1.clear();
-
-        //Now proceed to wave scaling.
-        //Write output.
-        pHydroFinal = ScaleHydroData(waveAmp, DataDir1);
+        logStd.Notify();
+        logErr.Write(string(ID) + string(">>  ") + string(err.what()));
+        exit(1);
     }
-    else
+    catch(...)
     {
-        //Two wave amplitudes.  Go forward with that.
-        hydroData DataDir1;
-        hydroData DataDir2;
-
-        //First wave amplitude.
-        //Interpolate if there is more than one wave direction.
-        if (DataAmp1.size() > 1)
-        {
-            //Interpolate the given wave directions.
-            DataDir1 =
-                    interpWaveDir(
-                        DataAmp1[0],
-                        DataAmp1[1]);
-        }
-        else
-        {
-            DataDir1 = DataAmp1[0];
-        }
-
-        //Free up memory and clear the vector.
-        DataAmp1.clear();
-
-        //Second wave amplitude.
-        //Interpolate if there is more than one wave direction.
-        if (DataAmp2.size() > 1)
-        {
-            //Interpolate the given wave directions.
-            DataDir2 =
-                    interpWaveDir(
-                        DataAmp2[0],
-                        DataAmp2[1]);
-        }
-        else
-        {
-            DataDir2 = DataAmp2[0];
-        }
-
-        //Free up memory and clear the vector.
-        DataAmp2.clear();
-
-        //Now proceed to wave scaling.
-        //Write output
-        pHydroFinal = ScaleHydroData(waveAmp, DataDir1, DataDir2);
+        logStd.Notify();
+        logErr.Write(string(ID) + string(">>  Unknown error occurred."));
+        exit(1);
     }
+
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
@@ -258,7 +288,7 @@ ForceReact HydroManager::getForceReact()
     ForceReact output;
 
     //Iterate through each order of derivative.
-    for (int k = 0; k < pHydroFinal.listDataReact(0).getMaxOrder(); k++)
+    for (int k = 0; k <= pHydroFinal.listDataReact(0).getMaxOrder(); k++)
     {
         //Create new derivative object.
         Derivative tempDeriv;
@@ -295,11 +325,28 @@ ForceReact HydroManager::getForceReact()
 //------------------------------------------Function Separator --------------------------------------------------------
 ForceCross HydroManager::getForceCross(std::string linkedBodName)
 {
+    //Test if the specified body name exists.
+    bool test = false;      //Tests if a matching body name was found.
+    for (int i = 0; i < pHydroFinal.listDataCross().at(0).size(); i++)
+    {
+        if (pHydroFinal.listDataCross(0,i).getLinkedName() == linkedBodName)
+        {
+            test = true;
+            break;
+        }
+    }
+
+    //if no match was found, throw an error.
+    if (!test)
+        throw std::invalid_argument("Bodyname not found.");
+
+    //If body name was found, proceed to locating and returning it.
+
     //Create output
     ForceCross output;
 
     //Iterate through each order of derivative.
-    for (int k = 0; k < pHydroFinal.listDataCross(0,linkedBodName).getMaxOrder(); k++)
+    for (int k = 0; k <= pHydroFinal.listDataCross(0, linkedBodName).getMaxOrder(); k++)
     {
         //Create new derivative object.
         Derivative tempDeriv;
@@ -329,6 +376,9 @@ ForceCross HydroManager::getForceCross(std::string linkedBodName)
         output.addDerivative(tempDeriv, k);
     }
 
+    //Set the name for the linked body.
+    output.setForceName(linkedBodName);
+
     //Write output.
     return output;
 }
@@ -336,7 +386,10 @@ ForceCross HydroManager::getForceCross(std::string linkedBodName)
 //------------------------------------------Function Separator --------------------------------------------------------
 void HydroManager::setWaveDir(double dirIn)
 {
-    pWaveDir = dirIn;
+    pWaveDir = checkAngle(dirIn);
+
+    //Check the list for any need to duplicate.
+    this->checkDirList();
 
     //Build the wave subset
     this->buildWaveSubset();
@@ -388,19 +441,38 @@ void HydroManager::buildWaveSubset()
         index[0] = -1;
         index[1] = -1;
 
-        for (int j = 0; j < plistHydroData.at(i).size(); j++)
+        try
         {
-            //Calculate distance for first point.
-            dist[0] = fabs(pWaveDir - plistHydroData.at(i).at(j).getWaveDir());
-
-            //Check distance.
-            if ((dist[0] < dist[1]) &&
-                    (dist[0] < DISTMAX))
+            for (int j = 0; j < plistHydroData.at(i).size(); j++)
             {
-                dist[1] = dist[0];
-                index[0] = j;
+                //Calculate distance for first point.
+                dist[0] = fabs(pWaveDir - plistHydroData.at(i).at(j).getWaveDir());
+
+                //Check distance.
+                if ((dist[0] < dist[1]) &&
+                        (dist[0] < DISTMAX))
+                {
+                    dist[1] = dist[0];
+                    index[0] = j;
+                }
             }
+
+            //Check if none of the distances were within the allowed range.
+            if (dist[1] > DISTMAX)
+                throw std::runtime_error("No data sets were within the allowed distance from the specified wave direction.");
         }
+        catch(const std::exception &err)
+        {
+            logStd.Notify();
+            logErr.Write(string(ID) + string(">>  ") + string(err.what()));
+            break;
+        }
+        catch(...)
+        {
+            logStd.Notify();
+            logErr.Write(string(ID) + string(">>  Unknown error occurred."));
+        }
+
 
         //Check to see if there is any point in going forward.
         if (index[0] != -1)
@@ -529,7 +601,7 @@ matForceActive HydroManager::waveScale(double ampIn, double amp1, ofreq::matForc
             }
         }
     }
-    catch(std::exception &err)
+    catch(const std::exception &err)
     {
         logErr.Write(string(err.what()));
         logStd.Notify();
@@ -538,7 +610,7 @@ matForceActive HydroManager::waveScale(double ampIn, double amp1, ofreq::matForc
     {
         //Notify
         logStd.Notify();
-        logErr.Write("Error. Object:  HydroManager.  \nFunction:  waveScale(matForceActive) \nUnknown Error Occurred.");
+        logErr.Write(string(ID) + string(">>  Unknown error occurred."));
     }
 
     //Write output.
@@ -577,8 +649,11 @@ matForceActive HydroManager::waveScale(double ampIn, double amp1, ofreq::matForc
                                   );
             }
         }
+
+        //Write output.
+        return output;
     }
-    catch(std::exception &err)
+    catch(const std::exception &err)
     {
         logErr.Write(string(err.what()));
         logStd.Notify();
@@ -587,11 +662,8 @@ matForceActive HydroManager::waveScale(double ampIn, double amp1, ofreq::matForc
     {
         //Notify
         logStd.Notify();
-        logErr.Write("Error. Object:  HydroManager.  \nFunction:  waveScale(matForceActive) \nUnknown Error Occurred.");
+        logErr.Write(string(ID) + string(">>  Unknown error occurred."));
     }
-
-    //Write output.
-    return output;
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
@@ -624,8 +696,11 @@ matForceReact HydroManager::waveScale(double ampIn, double amp1, ofreq::matForce
             //Add matrix into object.
             output.listDerivative().push_back(result);
         }
+
+        //Write output.
+        return output;
     }
-    catch(std::exception &err)
+    catch(const std::exception &err)
     {
         logErr.Write(string("Error. Object:  HydroManager.  \nFunction:  waveScale(matForceReact) \n")
                      + string(err.what()));
@@ -635,11 +710,8 @@ matForceReact HydroManager::waveScale(double ampIn, double amp1, ofreq::matForce
     {
         //Notify
         logStd.Notify();
-        logErr.Write("Error. Object:  HydroManager.  \nFunction:  waveScale(matForceReact) \nUnknown Error Occurred.");
+        logErr.Write(string(ID) + string(">>  Unknown error occurred."));
     }
-
-    //Write output.
-    return output;
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
@@ -682,8 +754,11 @@ matForceReact HydroManager::waveScale(double ampIn, double amp1, ofreq::matForce
             //Add matrix into object.
             output.listDerivative().push_back(result);
         }
+
+        //Write output.
+        return output;
     }
-    catch(std::exception &err)
+    catch(const std::exception &err)
     {
         logErr.Write(string("Error. Object:  HydroManager.  \nFunction:  waveScale(matForceReact) \n")
                      + string(err.what()));
@@ -693,11 +768,8 @@ matForceReact HydroManager::waveScale(double ampIn, double amp1, ofreq::matForce
     {
         //Notify
         logStd.Notify();
-        logErr.Write("Error. Object:  HydroManager.  \nFunction:  waveScale(matForceReact) \nUnknown Error Occurred.");
+        logErr.Write(string(ID) + string(">>  Unknown error occurred."));
     }
-
-    //Write output.
-    return output;
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
@@ -734,8 +806,11 @@ matForceCross HydroManager::waveScale(double ampIn, double amp1, ofreq::matForce
             //Add matrix into object.
             output.listDerivative().push_back(result);
         }
+
+        //Write output.
+        return output;
     }
-    catch(std::exception &err)
+    catch(const std::exception &err)
     {
         logErr.Write(string("Error. Object:  HydroManager.  \nFunction:  waveScale(matForceCross) \n")
                      + string(err.what()));
@@ -745,11 +820,8 @@ matForceCross HydroManager::waveScale(double ampIn, double amp1, ofreq::matForce
     {
         //Notify
         logStd.Notify();
-        logErr.Write("Error. Object:  HydroManager.  \nFunction:  waveScale(matForceCross) \nUnknown Error Occurred.");
+        logErr.Write(string(ID) + string(">>  Unknown error occurred."));
     }
-
-    //Write output.
-    return output;
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
@@ -804,7 +876,7 @@ matForceCross HydroManager::waveScale(double ampIn, double amp1, ofreq::matForce
             output.listDerivative().push_back(result);
         }
     }
-    catch(std::exception &err)
+    catch(const std::exception &err)
     {
         logErr.Write(string("Error. Object:  HydroManager.  \nFunction:  waveScale(matForceCross) \n")
                      + string(err.what()));
@@ -814,7 +886,7 @@ matForceCross HydroManager::waveScale(double ampIn, double amp1, ofreq::matForce
     {
         //Notify
         logStd.Notify();
-        logErr.Write("Error. Object:  HydroManager.  \nFunction:  waveScale(matForceCross) \nUnknown Error Occurred.");
+        logErr.Write(string(ID) + string(">>  Unknown error occurred."));
     }
 
     //Write output.
@@ -886,131 +958,144 @@ hydroData HydroManager::interpWaveDir(ofreq::hydroData &Data1, ofreq::hydroData 
 {
     //Interpolates the two data sets for the wave direction defined within pWaveDir.
 
-    //Create output object
-    hydroData output;
-
-    //Set the wave amplitude.
-    output.setWaveAmp(
-                (Data1.getWaveAmp() + Data2.getWaveAmp()) / 2
-                );
-
-    //Set the hydrobody name.
-    output.setHydroBodyName(
-                Data1.getHydroBodyName());
-
-    //Set the wave direction to the interpolation result.
-    output.setWaveDir(
-                this->pWaveDir);
-
-    //Set the wave frequency.
-    output.addWaveFreq(
-                Data1.listWaveFreq(0));
-
-    //Interpolate the active force.
-    matForceActive interpActive =
-            iePolate(output.getWaveDir(),
-                     Data1.getWaveDir(),
-                     Data2.getWaveDir(),
-                     Data1.listDataActive(0),
-                     Data2.listDataActive(0)
-                     );
-    //Add to the output.
-    output.addDataActive(interpActive);
-
-    //Interpolate the reactive force.
-    matForceReact interpReact =
-            iePolate(output.getWaveDir(),
-                     Data1.getWaveDir(),
-                     Data2.getWaveDir(),
-                     Data1.listDataReact(0),
-                     Data2.listDataReact(0)
-                     );
-    //Add to the output.
-    output.addDataReact(interpReact);
-
-    for (int i = 0; i < Data1.listDataCross().at(0).size(); i++)
+    try
     {
-        //Get hydrobody name from first data set.
-        std::string Name = Data1.listDataCross().at(0).at(i).getLinkedName();
+        //Create output object
+        hydroData output;
 
-        //Interpolate the two hydrodata sets.
-        matForceCross interpCross =
-                iePolate(output.getWaveDir(),
+        //Set the wave amplitude.
+        output.setWaveAmp(
+                    (Data1.getWaveAmp() + Data2.getWaveAmp()) / 2
+                    );
+
+        //Set the hydrobody name.
+        output.setHydroBodyName(
+                    Data1.getHydroBodyName());
+
+        //Set the wave direction to the interpolation result.
+        output.setWaveDir(
+                    this->pWaveDir);
+
+        //Set the wave frequency.
+        output.addWaveFreq(
+                    Data1.listWaveFreq(0));
+
+        //Interpolate the active force and add to the output.
+        output.addDataActive(
+                    iePolate(output.getWaveDir(),
                          Data1.getWaveDir(),
                          Data2.getWaveDir(),
-                         Data1.listDataCross(0,Name),
-                         Data2.listDataCross(0,Name)
-                         );
+                         Data1.listDataActive(0),
+                         Data2.listDataActive(0)
+                         )
+                    );
 
-        //Set the name.
-        interpCross.setLinkedName(Name);
+        //Interpolate the reactive force and add to the output.
+        output.addDataReact(
+                    iePolate(output.getWaveDir(),
+                         Data1.getWaveDir(),
+                         Data2.getWaveDir(),
+                         Data1.listDataReact(0),
+                         Data2.listDataReact(0)
+                         )
+                    );
 
-        //Add the interpolated object to the hydrodata set.
-        output.addDataCross(interpCross,0);
+        for (int i = 0; i < Data1.listDataCross().at(0).size(); i++)
+        {
+            //Get hydrobody name from first data set.
+            std::string Name = Data1.listDataCross().at(0).at(i).getLinkedName();
+
+            //Interpolate the two hydrodata sets.
+            matForceCross interpCross =
+                    iePolate(output.getWaveDir(),
+                             Data1.getWaveDir(),
+                             Data2.getWaveDir(),
+                             Data1.listDataCross(0,Name),
+                             Data2.listDataCross(0,Name)
+                             );
+
+            //Set the name.
+            interpCross.setLinkedName(Name);
+
+            //Add the interpolated object to the hydrodata set.
+            output.addDataCross(interpCross);
+        }
+
+        //Write out the output.
+        return output;
     }
-
-    //Write out the output.
-    return output;
+    catch(const std::exception &err)
+    {
+        logStd.Notify();
+        logErr.Write(string(ID) + string(">>  ") + err.what());
+    }
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
 hydroData HydroManager::ScaleHydroData(double ampIn, ofreq::hydroData &Data1)
 {
     //Iterate through each object in the wave set and scale that object.
-
-    //Create output object.
-    hydroData output;
-
-    //Set the wave amplitude.
-    output.setWaveAmp(ampIn);
-
-    //Set the hydrobody name.
-    output.setHydroBodyName(
-                Data1.getHydroBodyName());
-
-    //Set the wave direction to the interpolation result.
-    output.setWaveDir(
-                this->pWaveDir);
-
-    //Set the wave frequency.
-    output.addWaveFreq(
-                Data1.listWaveFreq(0));
-
-    //Scale the active force object.
-    //Scale linearly.
-    output.addDataActive(
-                waveScale(
-                    ampIn,
-                    Data1.getWaveAmp(),
-                    Data1.listDataActive(0)
-                    )
-                );
-
-    //Scale the reactive force object.
-    //Scale linearly
-    output.addDataReact(
-                waveScale(
-                    ampIn,
-                    Data1.getWaveAmp(),
-                    Data1.listDataReact(0)
-                    )
-                );
-
-    //Scale the crossbody force objects.
-    for (int i = 0; i < Data1.listDataCross().at(0).size(); i++)
+    try
     {
-        //Linear scaling
-        output.addDataCross(
+        //Create output object.
+        hydroData output;
+
+        //Set the wave amplitude.
+        output.setWaveAmp(ampIn);
+
+        //Set the hydrobody name.
+        output.setHydroBodyName(
+                    Data1.getHydroBodyName());
+
+        //Set the wave direction to the interpolation result.
+        output.setWaveDir(
+                    this->pWaveDir);
+
+        //Set the wave frequency.
+        output.addWaveFreq(
+                    Data1.listWaveFreq(0));
+
+        //Scale the active force object.
+        //Scale linearly.
+        output.addDataActive(
                     waveScale(
                         ampIn,
                         Data1.getWaveAmp(),
-                        Data1.listDataCross(0,i)
-                        ),
-                    0);
-    }
+                        Data1.listDataActive(0)
+                        )
+                    );
 
-    //Write output
-    return output;
+        //Scale the reactive force object.
+        //Scale linearly
+        output.addDataReact(
+                    waveScale(
+                        ampIn,
+                        Data1.getWaveAmp(),
+                        Data1.listDataReact(0)
+                        )
+                    );
+
+        //Scale the crossbody force objects.
+        for (int i = 0; i < Data1.listDataCross().at(0).size(); i++)
+        {
+            //Linear scaling
+            output.addDataCross(
+                        waveScale(
+                            ampIn,
+                            Data1.getWaveAmp(),
+                            Data1.listDataCross(0,i)
+                            )
+                        );
+        }
+
+        //Write output
+        return output;
+    }
+    catch(const std::exception &err)
+    {
+        logStd.Notify();
+        logErr.Write(string(ID) + string(">>  ") + err.what());
+    }
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
@@ -1018,64 +1103,129 @@ hydroData HydroManager::ScaleHydroData(double ampIn, ofreq::hydroData &Data1, of
 {
     //Iterate through each object in the wave set and scale that object.
 
-    //Create output object.
-    hydroData output;
-
-    //Set the wave amplitude.
-    output.setWaveAmp(ampIn);
-
-    //Set the hydrobody name.
-    output.setHydroBodyName(
-                Data1.getHydroBodyName());
-
-    //Set the wave direction to the interpolation result.
-    output.setWaveDir(
-                this->pWaveDir);
-
-    //Set the wave frequency.
-    output.addWaveFreq(
-                Data1.listWaveFreq(0));
-
-    //Scale the active force object.
-    //Scale nonlinearly.
-    output.addDataActive(
-                waveScale(
-                    ampIn,
-                    Data1.getWaveAmp(),
-                    Data1.listDataActive(0),
-                    Data2.getWaveAmp(),
-                    Data2.listDataActive(0)
-                    )
-                );
-
-    //Scale the reactive force object.
-    //Scale nonlinearly
-    output.addDataReact(
-                waveScale(
-                    ampIn,
-                    Data1.getWaveAmp(),
-                    Data1.listDataReact(0),
-                    Data2.getWaveAmp(),
-                    Data2.listDataReact(0)
-                    )
-                );
-
-    //Scale the crossbody force objects.
-    for (int i = 0; i < Data1.listDataCross().at(0).size(); i++)
+    try
     {
-        //Nonlinear wave scaling
-        output.addDataCross(
+        //Create output object.
+        hydroData output;
+
+        //Set the wave amplitude.
+        output.setWaveAmp(ampIn);
+
+        //Set the hydrobody name.
+        output.setHydroBodyName(
+                    Data1.getHydroBodyName());
+
+        //Set the wave direction to the interpolation result.
+        output.setWaveDir(
+                    this->pWaveDir);
+
+        //Set the wave frequency.
+        output.addWaveFreq(
+                    Data1.listWaveFreq(0));
+
+        //Scale the active force object.
+        //Scale nonlinearly.
+        output.addDataActive(
                     waveScale(
                         ampIn,
                         Data1.getWaveAmp(),
-                        Data1.listDataCross(0,i),
+                        Data1.listDataActive(0),
                         Data2.getWaveAmp(),
-                        Data2.listDataCross(0,
-                                            Data1.listDataCross(0,i).getLinkedName())
-                        ),
-                    0);
-    }
+                        Data2.listDataActive(0)
+                        )
+                    );
 
-    //Write output
-    return output;
+        //Scale the reactive force object.
+        //Scale nonlinearly
+        output.addDataReact(
+                    waveScale(
+                        ampIn,
+                        Data1.getWaveAmp(),
+                        Data1.listDataReact(0),
+                        Data2.getWaveAmp(),
+                        Data2.listDataReact(0)
+                        )
+                    );
+
+        //Scale the crossbody force objects.
+        for (int i = 0; i < Data1.listDataCross().at(0).size(); i++)
+        {
+            //Nonlinear wave scaling
+            output.addDataCross(
+                        waveScale(
+                            ampIn,
+                            Data1.getWaveAmp(),
+                            Data1.listDataCross(0,i),
+                            Data2.getWaveAmp(),
+                            Data2.listDataCross(0,
+                                                Data1.listDataCross(0,i).getLinkedName())
+                            )
+                        );
+        }
+
+        //Write output
+        return output;
+    }
+    catch(const std::exception &err)
+    {
+        logStd.Notify();
+        logErr.Write(string(ID) + string(">>  ") + err.what());
+    }
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+void HydroManager::checkDirList()
+{
+    for (unsigned int i = 0; i < plistHydroData.size(); i++)
+    {
+        //Each loop is a different wave amplitude.  Check through all directions in each loop.
+        int entries = 0;        //The number of entries found at the zero rad area.
+        int original;           //THe index of the original function.
+
+        //Search through list of wave directions to see if a copy needs to be made.
+        for (unsigned int j = 0; j < plistHydroData.at(i).size(); j++)
+        {
+            if (entries == 0)
+            {
+                double test1[3];
+                test1[0] = cos(plistHydroData[i][j].getWaveDir());
+                test1[1] = sin(plistHydroData[i][j].getWaveDir());
+                //Searching for first entry.
+                if((cos(plistHydroData[i][j].getWaveDir()) > 0.99)
+                        && (sin(plistHydroData[i][j].getWaveDir()) < 0.04)
+                        && (sin(plistHydroData[i][j].getWaveDir()) >= 0.00))
+                {
+                    entries += 1;
+                    original = j;
+                }
+            }
+            else
+            {
+                //Searching for second entry.
+                //Add a conditional statement to ensure we don't count entries that are within a few
+                //degrees of the first entry.
+                if((plistHydroData[i][j].getWaveDir() > DISTMAX)
+                        && (cos(plistHydroData[i][j].getWaveDir()) > 0.99)
+                        && (sin(plistHydroData[i][j].getWaveDir()) < 0.04)
+                        && (sin(plistHydroData[i][j].getWaveDir()) >= 0.00))
+                    entries += 1;
+            }
+        }
+
+        //Search complete.
+        //If no entries found, do nothing.  This situation does not apply.
+        //If one entry found, copy data over.
+        //If more than one entry found, do nothing.
+        if (entries == 1)
+        {
+            //Copy over data.
+            plistHydroData[i].push_back(
+                        plistHydroData[i][original]);
+
+            //Change Wave Direction
+            double dirNew = (2 * PI) - plistHydroData[i][original].getWaveDir();
+            plistHydroData[i].back().setWaveDir(dirNew);
+        }
+
+    }
 }

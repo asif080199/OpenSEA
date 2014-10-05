@@ -117,7 +117,7 @@ double SeaModel_DualDirection::getWaveAmp(double dirIn, int freqIndex)
         //Calculate wave amplitude
         return sqrt(2 * WaveEnergy * stepsize);
     }
-    catch(std::exception &err)
+    catch(const std::exception &err)
     {
         logStd.Notify();
         logErr.Write(string("Object:  SeaModel_DualDirection, Function:  getWaveAmp()\nError Message:  ") + err.what());
@@ -125,6 +125,6 @@ double SeaModel_DualDirection::getWaveAmp(double dirIn, int freqIndex)
     catch(...)
     {
         logStd.Notify();
-        logErr.Write("Unknown error occurred.  Object:  SeaModel_DualDirection, Function:  getWaveAmp()");
+        logErr.Write(string(ID) + string(">>  Unknown error occurred."));
     }
 }

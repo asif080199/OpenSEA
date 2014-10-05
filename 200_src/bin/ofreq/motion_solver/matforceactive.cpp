@@ -68,14 +68,8 @@ matForceActive matForceActive::operator+(matForceActive &forceOther)
         else
             maxsize = forceOther.getMatSize();
 
-        //Resize matrix and initialize with zeros.
-        output.pCoeff.zeros(maxsize,1);
-
-        //Iterate through matrix and add the two together.
-        for (unsigned int i = 0; i < pCoeff.n_rows; i++)
-        {
-            output.pCoeff(i,1) = pCoeff(i,1) + forceOther.pCoeff(i,1);
-        }
+        //Perform math.
+        output.pCoeff = this->pCoeff + forceOther.pCoeff;
     }
 
     //Write output
@@ -110,14 +104,8 @@ matForceActive matForceActive::operator-(matForceActive &forceOther)
         else
             maxsize = forceOther.getMatSize();
 
-        //Resize matrix and initialize with zeros.
-        output.pCoeff.zeros(maxsize,1);
-
-        //Iterate through matrix and add the two together.
-        for (unsigned int i = 0; i < pCoeff.n_rows; i++)
-        {
-            output.pCoeff(i,1) = pCoeff(i,1) - forceOther.pCoeff(i,1);
-        }
+        //Perform math.
+        output.pCoeff = this->pCoeff - forceOther.pCoeff;
     }
 
     //Write output
@@ -139,7 +127,7 @@ matForceActive matForceActive::operator *(double scalar)
     //Multiply to each element
     for (int i = 0; i < this->pCoeff.n_rows; i++)
     {
-        output.pCoeff(i,1) = pCoeff(i,1) * scalar;
+        output.pCoeff.at(i,1) = pCoeff.at(i,1) * scalar;
     }
 
     //Write output

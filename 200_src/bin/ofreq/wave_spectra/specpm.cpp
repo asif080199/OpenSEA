@@ -96,7 +96,7 @@ double SpecPM::getSpecEnergy(double freq)
     {
         //Catches any unknown errors.
         logStd.Notify();
-        logErr.Write("Object:  SpecPM, Function:  getSpecEnergy():  Unknown error occurred.");
+        logErr.Write(std::string(ID) + std::string(">>  Unknown error occurred."));
     }
 }
 

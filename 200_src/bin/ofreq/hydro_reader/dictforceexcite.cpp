@@ -74,7 +74,7 @@ dictForceExcite::dictForceExcite(osea::HydroReader *parent)
 //Protected Functions
 
 //------------------------------------------Function Separator --------------------------------------------------------
-int dicthydroReact::defineKey(std::string keyIn, std::vector<std::string> valIn)
+int dictForceExcite::defineKey(std::string keyIn, std::vector<std::string> valIn)
 {
     //Key for hydrobody name
     //-----------------------------------------------
@@ -104,13 +104,13 @@ int dicthydroReact::defineKey(std::string keyIn, std::vector<std::string> valIn)
         {
             //Throw an error.
             logStd.Notify();
-            logErr.Write(err.what());
+            logErr.Write(string(ID) + string(">>  ") + err.what());
             return 2;
         }
         catch(...)
         {
             logStd.Notify();
-            logErr.Write(string("File:  forceexcite.out.  Unknown error occurred."));
+            logErr.Write(string(ID) + string(">>  Unknown error occurred."));
             return 99;
         }
     }
@@ -179,7 +179,7 @@ int dicthydroReact::defineKey(std::string keyIn, std::vector<std::string> valIn)
         catch(...)
         {
             logStd.Notify();
-            logErr.Write(string("File:  forceexcite.out.  Unknown error occurred."));
+            logErr.Write(string(ID) + string(">>  Unknown error occurred."));
             return 99;
         }
 
@@ -195,7 +195,7 @@ int dicthydroReact::defineKey(std::string keyIn, std::vector<std::string> valIn)
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-int dicthydroReact::defineClass(std::string nameIn)
+int dictForceExcite::defineClass(std::string nameIn)
 {
     //Body class Name
     //-----------------------------------------------

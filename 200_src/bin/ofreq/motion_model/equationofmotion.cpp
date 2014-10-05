@@ -733,7 +733,7 @@ int EquationofMotion::curbody()
 
         return pParentModel->getBody() + 1;
     }
-    catch(std::exception &err)
+    catch(const std::exception &err)
     {
         logStd.Notify();
         logErr.Write(err.what());
@@ -742,7 +742,7 @@ int EquationofMotion::curbody()
     catch(...)
     {
         logStd.Notify();
-        logErr.Write("Unknown error occurred.  Object:  Equation of Motion, Function:  curbody()");
+        logErr.Write(string(ID) + string(">>  Unknown error occurred."));
         exit(1);
     }
 }

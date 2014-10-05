@@ -109,6 +109,9 @@ protected:
      * function and can take almost any data type.  The independent variables (the x variables) in the function must
      * be double data type, but the dependent variables (the y variables) can be almost any data types, assuming
      * the data type supports certain operators.
+     *
+     * This function was defined within the header file because it is a template function.  For inheritence to work
+     * properly, it must be defined in the header file.
      * @param x Double, variable passed by value.  This is the x value for the output that you want.  The result of the
      * interpolation will be based on this x value.
      * @param x1 Double, variable passed by value.  This is the first x value for the data that you have.
@@ -135,12 +138,18 @@ protected:
             double p = (x - x1) / (x2 - x1);
 
             //Calculate output and write out
-            return (y2 - y1) * p + y1;
+            return ((y2 - y1) * p) + y1;
         }
         catch(std::overflow_error err)
         {
             logStd.Notify();
-            logErr.Write(std::string("function:  iePolate") + err.what());
+            logErr.Write(std::string(ID) + std::string(">>  ") + err.what());
+
+        }
+        catch(...)
+        {
+            logStd.Notify();
+            logErr.Write(std::string(ID) + std::string(">>  Unknown error occurred."));
         }
     }
 
@@ -155,6 +164,9 @@ protected:
      * function and can take almost any data type.  The independent variables (the x variables) in the function must
      * be double data type, but the dependent variables (the y variables) can be almost any data types, assuming
      * the data type supports certain operators.
+     *
+     * This function was defined within the header file because it is a template function.  For inheritence to work
+     * properly, it must be defined in the header file.
      * @param x Double, variable passed by value.  This is the x value for the output that you want.  The result of the
      * interpolation will be based on this x value.
      * @param x1 Double, variable passed by value.  This is the first x value for the data that you have.
@@ -181,7 +193,7 @@ protected:
             double p = (x - x1) / (x2 - x1);
 
             //Check for a few cases
-            if (p < 0.0)
+            if (p < -1.0)
             {
                 //Under lower bound.  Return y1
                 return y1;
@@ -196,16 +208,18 @@ protected:
                 //Somewhere in the middle, as it should be.  Perform interpolation.
 
                 //Calculate output and write out
-                return (y2 - y1) * p + y1;
+                return ((y2 - y1) * p) + y1;
             }
         }
         catch(std::overflow_error err)
         {
-            std::string output;
-            output = "Function:  iePolate";
-
             logStd.Notify();
-            logErr.Write(output + err.what());
+            logErr.Write(std::string(ID) + std::string(">>  ") + err.what());
+        }
+        catch(...)
+        {
+            logStd.Notify();
+            logErr.Write(std::string(ID) + std::string(">>  Unknown error occurred."));
         }
     }
 
@@ -220,6 +234,19 @@ protected:
      */
     std::vector<int> FindMatch(double valSearch, std::vector<double> &listVal);
 
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Checks an angle to ensure that it falls within the required range of 0 - 2*pi rad.
+     *
+     * If the angle is less than zero, 2pi rad will be added.  If the direction is over 2*pi rad, 2*pi rad
+     * will be subtracted.  If neither of those operations brings the value within the specified range, the
+     * function throws an error.
+     * @param angIn Double, variable passed by value.  The input, unchecked angle, in units of radians (rad).
+     * @return Returns a double, variable passed by value.  The output, checked angle, in units of radians.
+     */
+    double checkAngle(double angIn);
+
 //==========================================Section Separator =========================================================
 private:
 
@@ -229,7 +256,5 @@ private:
 }   //Namespace ofreq
 
 }   //Namespace osea
-
-//#include "mathinterp.tcc"
 
 #endif // MATHINTERP_H
