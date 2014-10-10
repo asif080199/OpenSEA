@@ -40,6 +40,9 @@ ForceActive::ForceActive(): Force()
 //------------------------------------------Function Separator --------------------------------------------------------
 ForceActive::~ForceActive()
 {
+    //Clear vector of coefficients.
+    pCoefficients.clear();
+    pDataIndex.clear();
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------

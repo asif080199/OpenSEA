@@ -526,6 +526,10 @@ void buildMatBody(int bod, bool useCoeff)
             //Iterate through each derivative.
             for (int j = 0; j <= ptReact->getMaxOrd(); j++)
             {
+                //Check for a zero entry.
+                if (ptReact->listDerivative().size() == 0)
+                    break;
+
                 //Assign matrices
                 ptForce->listDerivative().push_back(MyModel->getMatForceReact_user(i,j));
 
@@ -550,6 +554,10 @@ void buildMatBody(int bod, bool useCoeff)
             //Iterate through each derivative.
             for (int j = 0; j <= ptReact->getMaxOrd(); j++)
             {
+                //Check for a zero entry.
+                if (ptReact->listDerivative().size() == 0)
+                    break;
+
                 //Assign matrices
                 ptForce->listDerivative().push_back(MyModel->getMatForceReact_hydro(i,j));
             }
@@ -587,6 +595,10 @@ void buildMatBody(int bod, bool useCoeff)
             //Iterate through each derivative.
             for (int j = 0; j <= ptCross->getMaxOrd(); j++)
             {
+                //Check for a zero entry.
+                if (ptCross->listDerivative().size() == 0)
+                    break;
+
                 //Assign matrices
                 ptForce2->listDerivative().push_back(MyModel->getMatForceCross_user(i,j));
             }
@@ -621,6 +633,10 @@ void buildMatBody(int bod, bool useCoeff)
             //Iterate through each derivative.
             for (int j = 0; j <= ptCross->getMaxOrd(); j++)
             {
+                //Check for a zero entry.
+                if (ptCross->listDerivative().size() == 0)
+                    break;
+
                 //Assign matrices
                 ptForce2->listDerivative().push_back(MyModel->getMatForceCross_hydro(i,j));
             }

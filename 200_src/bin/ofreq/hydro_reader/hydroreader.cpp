@@ -461,7 +461,6 @@ int HydroReader::readHydroStiff(int index)
     {
         logStd.Notify();
         logErr.Notify("Function:  readHydroStiff()");
-        
     }
 }
 

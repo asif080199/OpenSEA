@@ -119,7 +119,6 @@ int dictHydroReact::defineKey(std::string keyIn, std::vector<std::string> valIn)
             pHydroBod = &(pParent->plistTempHydro[temp]);
 
             //Do not need to set the hydrobody name.  That gets handled by the findHydroDataTemp() function.
-
             return 0;
         }
         catch(std::runtime_error &err)
@@ -179,6 +178,8 @@ int dictHydroReact::defineKey(std::string keyIn, std::vector<std::string> valIn)
             //Create a matrix.
             cx_mat input(nRows, nRows);
 
+            int count = 0;
+
             //Add items to the matrix.
             for (int i = 0; i < nRows; i++)
             {
@@ -186,7 +187,9 @@ int dictHydroReact::defineKey(std::string keyIn, std::vector<std::string> valIn)
                 {
                     //Convert value
                     complex<double> out;
-                    out.real(atof(valIn[i+j].c_str()));
+                    out.real(atof(valIn[count].c_str()));
+
+                    count += 1;
 
                     //Add to matrix.
                     input(i,j) = out;

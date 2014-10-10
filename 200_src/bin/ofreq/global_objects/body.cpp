@@ -52,6 +52,41 @@ Body::Body()
 //------------------------------------------Function Separator --------------------------------------------------------
 Body::~Body()
 {
+    //Clear out all the pointers in the body object.
+
+    //Clear forceActive_user
+    for (unsigned int i = 0; i < plistForceActive_usr.size(); i++)
+        plistForceActive_usr[i] = NULL;
+
+    //Clear forceReact_user
+    for (unsigned int i = 0; i < plistForceReact_usr.size(); i++)
+        plistForceReact_usr[i] = NULL;
+
+    //Clear forceCross_user
+    for (unsigned int i = 0; i < plistForceCross_usr.size(); i++)
+    {
+        plistForceCross_usr[i] = NULL;
+        plistLinkedBody_usr[i] = NULL;
+    }
+
+    //Clear forceActive_hydro
+    for (unsigned int i = 0; i < plistForceActive_hydro.size(); i++)
+        plistForceActive_hydro[i] = NULL;
+
+    //Clear forceReact_hydro
+    for (unsigned int i = 0; i < plistForceReact_hydro.size(); i++)
+        plistForceReact_hydro[i] = NULL;
+
+    //Clear forceCross_hydro
+    for (unsigned int i = 0; i < plistForceCross_hydro.size(); i++)
+    {
+        plistForceCross_hydro[i] = NULL;
+        plistLinkedBody_hydro[i] = NULL;
+    }
+
+    //Clear linkedBodyList_hydro
+    for (unsigned int i = 0; i < plistLinkedBody_hydro.size(); i++)
+        plistLinkedBody_hydro[i] = NULL;
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
@@ -948,7 +983,7 @@ ForceActive* Body::listForceActive_user(int forceIn)
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-std::vector<ForceActive> &Body::listForceActive_hydro()
+std::vector<ForceActive*> &Body::listForceActive_hydro()
 {   
     return plistForceActive_hydro;
 }
@@ -970,7 +1005,7 @@ ForceActive *Body::listForceActive_hydro(int forceIn)
         forceIn = plistForceActive_hydro.size() - 1;
     }
 
-    return &(plistForceActive_hydro[forceIn]);
+    return plistForceActive_hydro[forceIn];
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
@@ -1016,11 +1051,11 @@ ForceReact *Body::listForceReact_hydro(int forceIn)
         forceIn = plistForceReact_hydro.size() - 1;
     }
 
-    return &(plistForceReact_hydro[forceIn]);
+    return plistForceReact_hydro[forceIn];
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-std::vector<ForceReact> &Body::listForceReact_hydro()
+std::vector<ForceReact *> &Body::listForceReact_hydro()
 {
     return plistForceReact_hydro;
 }
@@ -1052,7 +1087,7 @@ ForceCross* Body::listForceCross_user(int forceIn)
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-vector<ForceCross > &Body::listForceCross_hydro()
+std::vector<ForceCross *> &Body::listForceCross_hydro()
 {
     return plistForceCross_hydro;
 }
@@ -1074,7 +1109,7 @@ ForceCross *Body::listForceCross_hydro(int forceIn)
         forceIn = plistForceCross_hydro.size() - 1;
     }
 
-    return &(plistForceCross_hydro[forceIn]);
+    return plistForceCross_hydro[forceIn];
 }
 
 

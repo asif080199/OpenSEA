@@ -540,11 +540,11 @@ public:
     /**
      * @brief The list of active hydrodynamic forces.
      *
-     * The list of active hydrodynamic forces.  A vector of the active hydrodynamic forces.
+     * The list of active hydrodynamic forces.  A vector of pointers directing to the active hydrodynamic forces.
      * @return A vector of ForceActive objects, variable passed by referece.  The ForceActive objects are specific to the
      * hydrodynamic forces.
      */
-    std::vector<ForceActive> &listForceActive_hydro();
+    std::vector<ForceActive* > &listForceActive_hydro();
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -581,12 +581,12 @@ public:
     /**
      * @brief The list of reactive hydrodynamic forces.
      *
-     * The list of reactive hydrodynamic forces.  A vector references directing to the reactive hydrodynamic
+     * The list of reactive hydrodynamic forces.  A vector of pointers directing to the reactive hydrodynamic
      * forces.
      * @return A vector of ForceReact objects, representing various hydrodynamic reactive forces.  Vector passed by
      * reference.
      */
-    std::vector<ForceReact > &listForceReact_hydro();
+    std::vector<ForceReact* > &listForceReact_hydro();
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -627,13 +627,13 @@ public:
     /**
      * @brief The list of hydrodynamic cross-body forces.
      *
-     * The list of hydrodynamic cross-body forces.  A vector of ForceCross objects directing to the hydrodynamic
+     * The list of hydrodynamic cross-body forces.  A vector of pointers directing to the hydrodynamic
      * crossbody forces.  There is another vector: the listLinkedBody_usr.  That determines which body each cross-body
      * force links to.  The indices of the two lists should match.  So that when a force gets added at index 5 in the
      * listForceCross_hydro, it should have a matching entry at index 5 in the listLinkedBody_hydro.
      * @return A vector of ForceCross objects, variable passed by reference.
      */
-    std::vector<ForceCross > &listForceCross_hydro();
+    std::vector<ForceCross* > &listForceCross_hydro();
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -785,7 +785,7 @@ private:
      * The list of active hydrodynamic forces.  A vector of pointers directing to the active hydrodynamic forces.
      * Warning that these forces may be linked to other bodies as well and should not be changed.
      */
-    std::vector<ForceActive> plistForceActive_hydro;
+    std::vector<ForceActive*> plistForceActive_hydro;
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -803,7 +803,7 @@ private:
      * The list of reactive hydrodynamic forces.  A vector of pointers directing to the reactive hydrodynamic
      * forces.  Warning that these forces may be linked to other bodies as well and should not be changed.
      */
-    std::vector<ForceReact> plistForceReact_hydro;
+    std::vector<ForceReact*> plistForceReact_hydro;
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -827,7 +827,7 @@ private:
      * of the two lists should match.  So that when a force gets added at index 5 in the listForceCross_hydro, it should
      * have a matching entry at index 5 in the listLinkedBody_hydro.
      */
-    std::vector<ForceCross> plistForceCross_hydro;
+    std::vector<ForceCross*> plistForceCross_hydro;
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**

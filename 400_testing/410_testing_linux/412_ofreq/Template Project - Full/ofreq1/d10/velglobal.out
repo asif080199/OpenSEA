@@ -5,221 +5,221 @@ body {
     data {
       frequency 1;
       value (
-        -0.001+1.00001e-06i
-        3.33334e-07+0.000333334i
-        -0.00025+2.50001e-07i
-        -0.0002+2e-07i
-        1.66667e-07+0.000166667i
-        -0.000714286+7.14287e-07i
+        -nan+-nani
+        -nan+-nani
+        -nan+-nani
+        -nan+-nani
+        -nan+-nani
+        -nan+-nani
       );
     }
     data {
       frequency 2;
       value (
-        -0.169418+0.028804i
-        0.00918424+0.0552672i
-        -0.0410122+0.00673929i
-        -0.0321165+0.00516002i
-        0.00432206+0.0268305i
-        -0.115193+0.018591i
+        -nan+-nani
+        -nan+-nani
+        -nan+-nani
+        -nan+-nani
+        -nan+-nani
+        -nan+-nani
       );
     }
     data {
       frequency 3;
       value (
-        -0.404508+0.177226i
-        0.0481335+0.123855i
-        -0.0891415+0.0327906i
-        -0.0657656+0.0218126i
-        0.0185619+0.0553171i
-        -0.238663+0.0807596i
+        -nan+-nani
+        -nan+-nani
+        -nan+-nani
+        -nan+-nani
+        -nan+-nani
+        -nan+-nani
       );
     }
     data {
       frequency 4;
       value (
-        -0.559981+0.86173i
-        0.178545+0.202644i
-        -0.145667+0.105743i
-        -0.101861+0.0544014i
-        0.0476018+0.0863582i
-        -0.374645+0.211354i
+        -nan+-nani
+        -nan+-nani
+        -nan+-nani
+        -nan+-nani
+        -nan+-nani
+        -nan+-nani
       );
     }
     data {
       frequency 5;
       value (
-        0.630623+1.00288i
-        0.461075+0.0498969i
-        -0.135901+0.285067i
-        -0.13703+0.111542i
-        0.101419+0.115624i
-        -0.498426+0.46284i
+        -nan+-nani
+        -nan+-nani
+        -nan+-nani
+        -nan+-nani
+        -nan+-nani
+        -nan+-nani
       );
     }
     data {
       frequency 6;
       value (
-        0.661072+0.340447i
-        0.307352-0.268188i
-        0.123159+0.3644i
-        -0.156064+0.207365i
-        0.194771+0.121596i
-        -0.48135+0.903677i
+        -nan+-nani
+        -nan+-nani
+        -nan+-nani
+        -nan+-nani
+        -nan+-nani
+        -nan+-nani
       );
     }
     data {
       frequency 7;
       value (
-        0.508298+0.147548i
-        0.13231-0.257351i
-        0.233606+0.19547i
-        -0.114318+0.341449i
-        0.309029+0.0478417i
-        -0.0355744+1.35522i
+        -nan+-nani
+        -nan+-nani
+        -nan+-nani
+        -nan+-nani
+        -nan+-nani
+        -nan+-nani
       );
     }
     data {
       frequency 8;
       value (
-        6.57342e-09-7.2702e-09i
-        -2.4234e-09-2.19114e-09i
-        1.64335e-09-1.81755e-09i
-        1.31468e-09-1.45404e-09i
-        -1.2117e-09-1.09557e-09i
-        4.6953e-09-5.193e-09i
+        -nan+-nani
+        -nan+-nani
+        -nan+-nani
+        -nan+-nani
+        -nan+-nani
+        -nan+-nani
       );
     }
     data {
       frequency 9;
       value (
-        -9.40367e-20-7.43961e-20i
-        -2.47987e-20+3.13456e-20i
-        -2.35092e-20-1.8599e-20i
-        -1.88073e-20-1.48792e-20i
-        -1.23993e-20+1.56728e-20i
-        -6.7169e-20-5.31401e-20i
+        -nan+-nani
+        -nan+-nani
+        -nan+-nani
+        -nan+-nani
+        -nan+-nani
+        -nan+-nani
       );
     }
     data {
       frequency 10;
       value (
-        -1.26467e-29+1.79836e-29i
-        5.99452e-30+4.21556e-30i
-        -3.16167e-30+4.49589e-30i
-        -2.52933e-30+3.59671e-30i
-        2.99726e-30+2.10778e-30i
-        -9.03334e-30+1.28454e-29i
+        -nan+-nani
+        -nan+-nani
+        -nan+-nani
+        -nan+-nani
+        -nan+-nani
+        -nan+-nani
       );
     }
     data {
       frequency 11;
       value (
-        3.20463e-38+2.02953e-38i
-        6.7651e-39-1.06821e-38i
-        8.01157e-39+5.07382e-39i
-        6.40925e-39+4.05906e-39i
-        3.38255e-39-5.34104e-39i
-        2.28902e-38+1.44966e-38i
+        -nan+-nani
+        -nan+-nani
+        -nan+-nani
+        -nan+-nani
+        -nan+-nani
+        -nan+-nani
       );
     }
     data {
       frequency 12;
       value (
-        1.57846e-46-2.74179e-46i
-        -9.13931e-47-5.26155e-47i
-        3.94616e-47-6.85448e-47i
-        3.15693e-47-5.48358e-47i
-        -4.56965e-47-2.63077e-47i
-        1.12747e-46-1.95842e-46i
+        -nan+-nani
+        -nan+-nani
+        -nan+-nani
+        -nan+-nani
+        -nan+-nani
+        -nan+-nani
       );
     }
     data {
       frequency 13;
       value (
-        -9.47633e-54-5.0007e-54i
-        -1.6669e-54+3.15878e-54i
-        -2.36908e-54-1.25018e-54i
-        -1.89527e-54-1.00014e-54i
-        -8.3345e-55+1.57939e-54i
-        -6.76881e-54-3.57193e-54i
+        -nan+-nani
+        -nan+-nani
+        -nan+-nani
+        -nan+-nani
+        -nan+-nani
+        -nan+-nani
       );
     }
     data {
       frequency 14;
       value (
-        -5.11603e-61+1.05032e-60i
-        3.50107e-61+1.70534e-61i
-        -1.27901e-61+2.6258e-61i
-        -1.02321e-61+2.10064e-61i
-        1.75053e-61+8.52671e-62i
-        -3.6543e-61+7.50229e-61i
+        -nan+-nani
+        -nan+-nani
+        -nan+-nani
+        -nan+-nani
+        -nan+-nani
+        -nan+-nani
       );
     }
     data {
       frequency 15;
       value (
-        3.12157e-67+1.41183e-67i
-        4.70612e-68-1.04052e-67i
-        7.80392e-68+3.52959e-68i
-        6.24313e-68+2.82367e-68i
-        2.35306e-68-5.20261e-68i
-        2.22969e-67+1.00845e-67i
+        -nan+-nani
+        -nan+-nani
+        -nan+-nani
+        -nan+-nani
+        -nan+-nani
+        -nan+-nani
       );
     }
     data {
       frequency 16;
       value (
-        9.11619e-74-2.15962e-73i
-        -7.19875e-74-3.03873e-74i
-        2.27905e-74-5.39906e-74i
-        1.82324e-74-4.31925e-74i
-        -3.59937e-74-1.51936e-74i
-        6.51156e-74-1.54259e-73i
+        -nan+-nani
+        -nan+-nani
+        -nan+-nani
+        -nan+-nani
+        -nan+-nani
+        -nan+-nani
       );
     }
     data {
       frequency 17;
       value (
-        -3.35349e-79-1.32759e-79i
-        -4.4253e-80+1.11783e-79i
-        -8.38373e-80-3.31898e-80i
-        -6.70699e-80-2.65518e-80i
-        -2.21265e-80+5.58916e-80i
-        -2.39535e-79-9.48279e-80i
+        -nan+-nani
+        -nan+-nani
+        -nan+-nani
+        -nan+-nani
+        -nan+-nani
+        -nan+-nani
       );
     }
     data {
       frequency 18;
       value (
-        -3.38723e-85+9.09134e-85i
-        3.03045e-85+1.12908e-85i
-        -8.46809e-86+2.27283e-85i
-        -6.77447e-86+1.81827e-85i
-        1.51522e-85+5.64539e-86i
-        -2.41945e-85+6.49381e-85i
+        -nan+-nani
+        -nan+-nani
+        -nan+-nani
+        -nan+-nani
+        -nan+-nani
+        -nan+-nani
       );
     }
     data {
       frequency 19;
       value (
-        4.32571e-90+1.52207e-90i
-        5.07355e-91-1.4419e-90i
-        1.08143e-90+3.80516e-91i
-        8.65142e-91+3.04413e-91i
-        2.53678e-91-7.20952e-91i
-        3.08979e-90+1.08719e-90i
+        -nan+-nani
+        -nan+-nani
+        -nan+-nani
+        -nan+-nani
+        -nan+-nani
+        -nan+-nani
       );
     }
     data {
       frequency 20;
       value (
-        1.12946e-95-3.38838e-95i
-        -1.12946e-95-3.76486e-96i
-        2.82365e-96-8.47094e-96i
-        2.25892e-96-6.77675e-96i
-        -5.64729e-96-1.88243e-96i
-        8.06756e-96-2.42027e-95i
+        -nan+-nani
+        -nan+-nani
+        -nan+-nani
+        -nan+-nani
+        -nan+-nani
+        -nan+-nani
       );
     }
   }

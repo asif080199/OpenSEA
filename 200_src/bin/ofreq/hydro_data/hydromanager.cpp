@@ -116,6 +116,9 @@ void HydroManager::calcHydroData(double waveAmp, double waveFreq)
 {      
     try
     {
+        //Start by reseting the outputs.
+        ResetOutput();
+
         //Get the indices of the two wave amplitudes that match the set amplitude.
         vector<int> indWaveAmp = findMatchAmplitude(waveAmp);
 
@@ -262,30 +265,30 @@ void HydroManager::calcHydroData(double waveAmp, double waveFreq)
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-ForceActive HydroManager::getForceActive()
+ForceActive *HydroManager::getForceActive()
 {
     //Create the forceActive object from the interpolated set of hydrodata.
 
     //Create output
-    ForceActive output;
+    ptForceActive = new ForceActive();
 
     for (int i = 0; i < pHydroFinal.listDataActive(0).listCoefficient().n_rows; i++)
     {
         //Add the coefficient to the output.
-        output.addEquation(
+        ptForceActive->addEquation(
                     pHydroFinal.listDataActive(0).listCoefficient()(i,0),
                     i);
     }
 
     //Write output
-    return output;
+    return ptForceActive;
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-ForceReact HydroManager::getForceReact()
+ForceReact *HydroManager::getForceReact()
 {
-    //Create output
-    ForceReact output;
+    //Create ptForceReact
+    ptForceReact = new ForceReact();
 
     //Iterate through each order of derivative.
     for (int k = 0; k <= pHydroFinal.listDataReact(0).getMaxOrder(); k++)
@@ -315,15 +318,15 @@ ForceReact HydroManager::getForceReact()
         }
 
         //Add to the list.
-        output.addDerivative(tempDeriv, k);
+        ptForceReact->addDerivative(tempDeriv, k);
     }
 
-    //Write output.
-    return output;
+    //Write ptForceReact.
+    return ptForceReact;
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-ForceCross HydroManager::getForceCross(std::string linkedBodName)
+ForceCross *HydroManager::getForceCross(std::string linkedBodName)
 {
     //Test if the specified body name exists.
     bool test = false;      //Tests if a matching body name was found.
@@ -342,8 +345,8 @@ ForceCross HydroManager::getForceCross(std::string linkedBodName)
 
     //If body name was found, proceed to locating and returning it.
 
-    //Create output
-    ForceCross output;
+    //Create ptForceCross
+    ptForceCross = new ForceCross();
 
     //Iterate through each order of derivative.
     for (int k = 0; k <= pHydroFinal.listDataCross(0, linkedBodName).getMaxOrder(); k++)
@@ -373,20 +376,23 @@ ForceCross HydroManager::getForceCross(std::string linkedBodName)
         }
 
         //Add to the list.
-        output.addDerivative(tempDeriv, k);
+        ptForceCross->addDerivative(tempDeriv, k);
     }
 
     //Set the name for the linked body.
-    output.setForceName(linkedBodName);
+    ptForceCross->setForceName(linkedBodName);
 
-    //Write output.
-    return output;
+    //Write ptForceCross.
+    return ptForceCross;
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
 void HydroManager::setWaveDir(double dirIn)
 {
     pWaveDir = checkAngle(dirIn);
+
+    //Reset the outputs
+    ResetOutput();
 
     //Check the list for any need to duplicate.
     this->checkDirList();
@@ -1228,4 +1234,17 @@ void HydroManager::checkDirList()
         }
 
     }
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+void HydroManager::ResetOutput()
+{
+    //Delete the data on the heap.
+    delete ptForceActive;
+    delete ptForceReact;
+    delete ptForceCross;
+
+    ptForceActive = NULL;
+    ptForceReact = NULL;
+    ptForceCross = NULL;
 }
