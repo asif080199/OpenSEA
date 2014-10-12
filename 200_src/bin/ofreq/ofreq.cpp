@@ -549,7 +549,7 @@ void buildMatBody(int bod, bool useCoeff)
             //Assign id for force.
             ptForce->setId(i);
 
-            ptReact = MyBod->listForceReact_user(i);
+            ptReact = MyBod->listForceReact_hydro(i);
 
             //Iterate through each derivative.
             for (int j = 0; j <= ptReact->getMaxOrd(); j++)
@@ -628,7 +628,7 @@ void buildMatBody(int bod, bool useCoeff)
             }
 
             //Assign pointer
-            ptCross = sysofreq.listBody(bod).listForceCross_user(i);
+            ptCross = sysofreq.listBody(bod).listForceCross_hydro(i);
 
             //Iterate through each derivative.
             for (int j = 0; j <= ptCross->getMaxOrd(); j++)

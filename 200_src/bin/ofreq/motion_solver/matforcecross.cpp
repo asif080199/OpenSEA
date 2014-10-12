@@ -71,18 +71,12 @@ matForceCross matForceCross::operator+(matForceCross& forceOther)
     if (this->pderiv.size() == 0)
     {
         //Nothing defined for first object.
-        output = forceOther;
-
-        //linked body parameters did not match.  Return only this object.
-        return *this;
+        return forceOther;
     }
 
     else if (forceOther.pderiv.size() == 0)
     {
         //Nothing defined for the other object.
-        output = *this;
-
-        //linked body parameters did not match.  Return only this object.
         return *this;
     }
 
@@ -156,18 +150,12 @@ matForceCross matForceCross::operator-(matForceCross& forceOther)
     if (this->pderiv.size() == 0)
     {
         //Nothing defined for first object.
-        output = forceOther;
-
-        //linked body parameters did not match.  Return only this object.
-        return *this;
+        return forceOther;
     }
 
     else if (forceOther.pderiv.size() == 0)
     {
         //Nothing defined for the other object.
-        output = *this;
-
-        //linked body parameters did not match.  Return only this object.
         return *this;
     }
 

@@ -86,7 +86,10 @@ matForceReact *MotionSolver::sumReactSet(vector<matForceReact> listForces)
 //------------------------------------------Function Separator --------------------------------------------------------
 vector<matForceCross *> MotionSolver::sumCrossSet(vector<matForceCross> listForces)
 {
-    vector<matForceCross *> output;
+    vector<matForceCross *> output;     //The output from the function.
+    bool newLink;                     //Checks if that force with that linkID was already run and added to the list.
+    int LinkID;                         //The link ID for the new item to add to the list.
+
     //Check if the list of forces is empty
     if (listForces.size() == 0)
     {
@@ -97,29 +100,46 @@ vector<matForceCross *> MotionSolver::sumCrossSet(vector<matForceCross> listForc
 
     else
     {
-        //Create output object
-        output.resize(this->plistBody.size());
-
-        //Run through the list and set the link id to the index of the cell.
-        for (unsigned int i = 0; i < output.size(); i++)
+        for (unsigned int i = 0; i < listForces.size(); i++)
         {
-            output[i]->setLinkedId(i);
-        }
+            //Reset value of linkFound.
+            newLink = true;
 
-        //Go through the list.  For each entry in the list, also run through
-        //the full forces list and add all forces to each entry.
-        //The class for matForceCross automatically handles the filtering
-        //to ensure only the correct items are added together.
-        //(those with matching linkedid's).
-        for (unsigned int i = 0; i < output.size(); i++)
-        {
-            for (unsigned int j = 0; j < listForces.size(); j++)
+            LinkID = listForces.at(i).getLinkedId();
+
+            //Check if the force was already added to the list of outputs.
+            for (unsigned int j = 0; j < output.size(); j++)
             {
-                *output[i] = output[i]->operator+(listForces[j]);
+                //Check if link ID's match.
+                if (listForces.at(i).getLinkedId() ==
+                        output.at(j)->getLinkedId())
+                {
+                    newLink = false;
+                    break;
+                }
+            }
+
+            //If no link was found, add to the list of outputs.
+            if (newLink)
+            {
+                //Create a new output object and add to the list.
+                matForceCross *ptOutput = new matForceCross();
+
+                //Assign link id.
+                ptOutput->setLinkedId(LinkID);
+
+                //Iterate through all crossbody forces and add to the output.
+                for (unsigned int j = 0; j < listForces.size(); j++)
+                {
+                    *ptOutput = ptOutput->operator+(listForces[j]);
+                }
+
+                //Add to the output list.
+                output.push_back(ptOutput);
             }
         }
 
-        //Write output
+        //Write output.
         return output;
     }
 }
@@ -207,8 +227,11 @@ cx_mat *MotionSolver::sumDerivative(matForceReact *forceIn)
 vector<cx_mat *> MotionSolver::sumDerivative(std::vector<matForceCross *> forceIn)
 {
     vector<cx_mat *> output;
-    output.resize(forceIn.size());
 
+    //Resize output matrix.
+    output.resize(forceIn.size(), new cx_mat());
+
+    //Fill vector with new matrices.
     for (unsigned int i = 0; i < forceIn.size(); i++)
     {
         if (forceIn[i] == NULL)
