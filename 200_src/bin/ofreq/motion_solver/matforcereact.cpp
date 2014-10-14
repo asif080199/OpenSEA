@@ -50,7 +50,7 @@ matForceReact::matForceReact(vector<cx_mat> forceIn)
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-matForceReact matForceReact::operator+(matForceReact& forceOther)
+matForceReact matForceReact::operator+(matForceReact forceOther)
 {
     //define the output vector
     matForceReact output;
@@ -121,7 +121,7 @@ matForceReact matForceReact::operator+(matForceReact& forceOther)
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-matForceReact matForceReact::operator-(matForceReact& forceOther)
+matForceReact matForceReact::operator-(matForceReact forceOther)
 {
     //define the output vector
     matForceReact output;

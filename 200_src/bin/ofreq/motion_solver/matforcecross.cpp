@@ -63,7 +63,7 @@ matForceCross::~matForceCross()
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-matForceCross matForceCross::operator+(matForceCross& forceOther)
+matForceCross matForceCross::operator+(matForceCross forceOther)
 {
     //define the output vector
     matForceCross output;
@@ -142,7 +142,7 @@ matForceCross matForceCross::operator+(matForceCross& forceOther)
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-matForceCross matForceCross::operator-(matForceCross& forceOther)
+matForceCross matForceCross::operator-(matForceCross forceOther)
 {
     //define the output vector
     matForceCross output;
@@ -268,12 +268,12 @@ matForceCross matForceCross::operator/(double scalar)
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-void matForceCross::setLinkedBody(matBody &BodIn)
+void matForceCross::setLinkedBody(matBody *BodIn)
 {
-    plinkbody = &BodIn;
+    plinkbody = BodIn;
 
     //Also set the linkedId to the same thing.  Ensure the two are always in sync.
-    this->plinkid = BodIn.getId();
+    this->plinkid = BodIn->getId();
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------

@@ -130,7 +130,7 @@ public:
      * @return Returns an object of type matForceCross.  The new object will contain the same order of derivatives as
      * the highest derivative of the two added functions.
      */
-    matForceCross operator+(matForceCross& forceOther);
+    matForceCross operator+(matForceCross forceOther);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -146,7 +146,7 @@ public:
      * @return Returns an object of type matForceCross.  The new object will contain the same order of derivatives as
      * the highest derivative of the two subtracted functions.
      */
-    matForceCross operator-(matForceCross& forceOther);
+    matForceCross operator-(matForceCross forceOther);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -175,7 +175,7 @@ public:
      * Set linked body for cross body object.
      * @param BodIn pointer to the matBody object that this linked force relates to.
      */
-    void setLinkedBody( matBody &BodIn );
+    void setLinkedBody(matBody *BodIn );
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**

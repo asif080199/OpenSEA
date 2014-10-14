@@ -271,8 +271,6 @@ int main(int argc, char *argv[])
 
         //Start creating main objects
         //---------------------------------------------------------------------------
-        //Resize matrix bodies vector.
-        listMatBody.resize(sysofreq.listBody().size());
         //Resize the solution object.
         for (unsigned int i = 0; i < sysofreq.listBody().size(); i++)
         {
@@ -306,6 +304,13 @@ int main(int argc, char *argv[])
                 //Build operation stuck inside the wave iteration loop because the forces may change with
                 //wave direction.  Also inside the wave frequency loop because the forces may change
                 //with wave frequency.
+
+                //Clear the list of matrix bodies.
+                listMatBody.clear();
+
+                //Resize matrix bodies vector.
+                listMatBody.resize(sysofreq.listBody().size());
+
                 bool coeffonly = true;              //Boolean to tell the motion model to only use coefficients.
                 //Iterate through each body and build.
                 for (unsigned int i2 = 0; i2 < sysofreq.listBody().size(); i2++)
@@ -580,11 +585,12 @@ void buildMatBody(int bod, bool useCoeff)
             //Assign cross body
             for (unsigned int k = 0; k < sysofreq.listBody().size(); k++)
             {
-                if (&sysofreq.listBody(k) == &(sysofreq.listBody(k).listCrossBody_user(bod)))
+                if (&sysofreq.listBody(k) == &(MyBod->listCrossBody_user(i)))
                 {
                     //Assign cross body
-                    ptForce2->setLinkedBody(listMatBody[k]);
-                    //Linked ID is automatically set.
+                    ptForce2->setLinkedBody(&(listMatBody[k]));
+                    //Set linked body id.  This should be automatic, but the program produced unreliable results.
+                    ptForce2->setLinkedId(k);
                     break;
                 }
             }
@@ -597,7 +603,7 @@ void buildMatBody(int bod, bool useCoeff)
             {
                 //Check for a zero entry.
                 if (ptCross->listDerivative().size() == 0)
-                    break;
+                    continue;
 
                 //Assign matrices
                 ptForce2->listDerivative().push_back(MyModel->getMatForceCross_user(i,j));
@@ -618,11 +624,12 @@ void buildMatBody(int bod, bool useCoeff)
             //Assign cross body
             for (unsigned int k = 0; k < sysofreq.listBody().size(); k++)
             {
-                if (&sysofreq.listBody(k) == &(sysofreq.listBody(k).listCrossBody_hydro(bod)))
+                if (&sysofreq.listBody(k) == &(MyBod->listCrossBody_hydro(i)))
                 {
                     //Assign cross body
-                    ptForce2->setLinkedBody(listMatBody[k]);
-                    //Linked Id is automatically set
+                    ptForce2->setLinkedBody(&(listMatBody[k]));
+                    //Set linked body id.  This should be automatic, but the program produced unreliable results.
+                    ptForce2->setLinkedId(k);
                     break;
                 }
             }
@@ -635,7 +642,7 @@ void buildMatBody(int bod, bool useCoeff)
             {
                 //Check for a zero entry.
                 if (ptCross->listDerivative().size() == 0)
-                    break;
+                    continue;
 
                 //Assign matrices
                 ptForce2->listDerivative().push_back(MyModel->getMatForceCross_hydro(i,j));

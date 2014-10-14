@@ -118,7 +118,7 @@ public:
      * @return Returns an object of type matForceReact.  The new object will contain the same order of derivatives as
      * the highest derivative of the two added functions.
      */
-    virtual matForceReact operator+(matForceReact& forceOther);
+    virtual matForceReact operator+(matForceReact forceOther);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -132,7 +132,7 @@ public:
      * @return Returns an object of type matForceReact.  The new object will contain the same order of derivatives as
      * the highest derivative of the two subtracted functions.
      */
-    virtual matForceReact operator-(matForceReact& forceOther);
+    virtual matForceReact operator-(matForceReact forceOther);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**

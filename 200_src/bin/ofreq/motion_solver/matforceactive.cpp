@@ -41,7 +41,7 @@ matForceActive::~matForceActive()
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-matForceActive matForceActive::operator+(matForceActive &forceOther)
+matForceActive matForceActive::operator+(matForceActive forceOther)
 {
     //Add two force objects together.
     matForceActive output;
@@ -77,7 +77,7 @@ matForceActive matForceActive::operator+(matForceActive &forceOther)
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-matForceActive matForceActive::operator-(matForceActive &forceOther)
+matForceActive matForceActive::operator-(matForceActive forceOther)
 {
     //Add two force objects together.
     matForceActive output;

@@ -1,225 +1,225 @@
 body {
-  name "body1";
+  name "body2";
    {
   name "Global Acceleration";
     data {
       frequency 1;
       value (
-        -0+0i
-        -0+0i
-        -0+0i
-        -0+0i
-        -0+0i
-        -0+0i
+        -nan+-nani
+        -nan+-nani
+        -nan+-nani
+        -nan+-nani
+        -nan+-nani
+        -nan+-nani
       );
     }
     data {
       frequency 2;
       value (
-        -0+0i
-        -0+0i
-        -0+0i
-        -0+0i
-        -0+0i
-        -0+0i
+        -nan+-nani
+        -nan+-nani
+        -nan+-nani
+        -nan+-nani
+        -nan+-nani
+        -nan+-nani
       );
     }
     data {
       frequency 3;
       value (
-        -0+0i
-        -0+0i
-        -0+0i
-        -0+0i
-        -0+0i
-        -0+0i
+        -nan+-nani
+        -nan+-nani
+        -nan+-nani
+        -nan+-nani
+        -nan+-nani
+        -nan+-nani
       );
     }
     data {
       frequency 4;
       value (
-        -0+0i
-        -0+0i
-        -0+0i
-        -0+0i
-        -0+0i
-        -0+0i
+        -nan+-nani
+        -nan+-nani
+        -nan+-nani
+        -nan+-nani
+        -nan+-nani
+        -nan+-nani
       );
     }
     data {
       frequency 5;
       value (
-        -0+0i
-        -0+0i
-        -0+0i
-        -0+0i
-        -0+0i
-        -0+0i
+        -nan+-nani
+        -nan+-nani
+        -nan+-nani
+        -nan+-nani
+        -nan+-nani
+        -nan+-nani
       );
     }
     data {
       frequency 6;
       value (
-        -0+0i
-        -0+0i
-        -0+0i
-        -0+0i
-        -0+0i
-        -0+0i
+        -nan+-nani
+        -nan+-nani
+        -nan+-nani
+        -nan+-nani
+        -nan+-nani
+        -nan+-nani
       );
     }
     data {
       frequency 7;
       value (
-        -0+0i
-        -0+0i
-        -0+0i
-        -0+0i
-        -0+0i
-        -0+0i
+        -nan+-nani
+        -nan+-nani
+        -nan+-nani
+        -nan+-nani
+        -nan+-nani
+        -nan+-nani
       );
     }
     data {
       frequency 8;
       value (
-        -0+0i
-        -0+0i
-        -0+0i
-        -0+0i
-        -0+0i
-        -0+0i
+        -nan+-nani
+        -nan+-nani
+        -nan+-nani
+        -nan+-nani
+        -nan+-nani
+        -nan+-nani
       );
     }
     data {
       frequency 9;
       value (
-        -0+0i
-        -0+0i
-        -0+0i
-        -0+0i
-        -0+0i
-        -0+0i
+        -nan+-nani
+        -nan+-nani
+        -nan+-nani
+        -nan+-nani
+        -nan+-nani
+        -nan+-nani
       );
     }
     data {
       frequency 10;
       value (
-        -0+0i
-        -0+0i
-        -0+0i
-        -0+0i
-        -0+0i
-        -0+0i
+        -nan+-nani
+        -nan+-nani
+        -nan+-nani
+        -nan+-nani
+        -nan+-nani
+        -nan+-nani
       );
     }
     data {
       frequency 11;
       value (
-        -0+0i
-        -0+0i
-        -0+0i
-        -0+0i
-        -0+0i
-        -0+0i
+        -nan+-nani
+        -nan+-nani
+        -nan+-nani
+        -nan+-nani
+        -nan+-nani
+        -nan+-nani
       );
     }
     data {
       frequency 12;
       value (
-        -0+0i
-        -0+0i
-        -0+0i
-        -0+0i
-        -0+0i
-        -0+0i
+        -nan+-nani
+        -nan+-nani
+        -nan+-nani
+        -nan+-nani
+        -nan+-nani
+        -nan+-nani
       );
     }
     data {
       frequency 13;
       value (
-        -0+0i
-        -0+0i
-        -0+0i
-        -0+0i
-        -0+0i
-        -0+0i
+        -nan+-nani
+        -nan+-nani
+        -nan+-nani
+        -nan+-nani
+        -nan+-nani
+        -nan+-nani
       );
     }
     data {
       frequency 14;
       value (
-        -0+0i
-        -0+0i
-        -0+0i
-        -0+0i
-        -0+0i
-        -0+0i
+        -nan+-nani
+        -nan+-nani
+        -nan+-nani
+        -nan+-nani
+        -nan+-nani
+        -nan+-nani
       );
     }
     data {
       frequency 15;
       value (
-        -0+0i
-        -0+0i
-        -0+0i
-        -0+0i
-        -0+0i
-        -0+0i
+        -nan+-nani
+        -nan+-nani
+        -nan+-nani
+        -nan+-nani
+        -nan+-nani
+        -nan+-nani
       );
     }
     data {
       frequency 16;
       value (
-        -0+0i
-        -0+0i
-        -0+0i
-        -0+0i
-        -0+0i
-        -0+0i
+        -nan+-nani
+        -nan+-nani
+        -nan+-nani
+        -nan+-nani
+        -nan+-nani
+        -nan+-nani
       );
     }
     data {
       frequency 17;
       value (
-        -0+0i
-        -0+0i
-        -0+0i
-        -0+0i
-        -0+0i
-        -0+0i
+        -nan+-nani
+        -nan+-nani
+        -nan+-nani
+        -nan+-nani
+        -nan+-nani
+        -nan+-nani
       );
     }
     data {
       frequency 18;
       value (
-        -0+0i
-        -0+0i
-        -0+0i
-        -0+0i
-        -0+0i
-        -0+0i
+        -nan+-nani
+        -nan+-nani
+        -nan+-nani
+        -nan+-nani
+        -nan+-nani
+        -nan+-nani
       );
     }
     data {
       frequency 19;
       value (
-        -0+0i
-        -0+0i
-        -0+0i
-        -0+0i
-        -0+0i
-        -0+0i
+        -nan+-nani
+        -nan+-nani
+        -nan+-nani
+        -nan+-nani
+        -nan+-nani
+        -nan+-nani
       );
     }
     data {
       frequency 20;
       value (
-        -0+0i
-        -0+0i
-        -0+0i
-        -0+0i
-        -0+0i
-        -0+0i
+        -nan+-nani
+        -nan+-nani
+        -nan+-nani
+        -nan+-nani
+        -nan+-nani
+        -nan+-nani
       );
     }
   }

@@ -94,10 +94,24 @@ public:
     ~matForceActive(); /**< The default destructor, nothing happens here. */
 
     //------------------------------------------Function Separator ----------------------------------------------------
-    matForceActive operator+(matForceActive &forceOther);
+    /**
+     * @brief Operator overload to add two matForceActive objects together.
+     *
+     * Object entries are added on a coefficient basis.  Only coefficients of the same index are added together.
+     * @param forceOther The other matForceActive object that you wish to add.  Variable passed by value.
+     * @return The result of the addition operation.
+     */
+    matForceActive operator+(matForceActive forceOther);
 
     //------------------------------------------Function Separator ----------------------------------------------------
-    matForceActive operator-(matForceActive &forceOther);
+    /**
+     * @brief Operator overload to subtract two matForceActive objects together.
+     *
+     * Object entries are subtracted on a coefficient basis.  Only coefficients of the same index are subtracted.
+     * @param forceOther The other matForceActive object that you wish to subtract.  Variable passed by value.
+     * @return The result of the subtraction operation.
+     */
+    matForceActive operator-(matForceActive forceOther);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**

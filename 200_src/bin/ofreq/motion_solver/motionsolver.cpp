@@ -87,55 +87,49 @@ matForceReact *MotionSolver::sumReactSet(vector<matForceReact> listForces)
 vector<matForceCross *> MotionSolver::sumCrossSet(vector<matForceCross> listForces)
 {
     vector<matForceCross *> output;     //The output from the function.
-    bool newLink;                     //Checks if that force with that linkID was already run and added to the list.
-    int LinkID;                         //The link ID for the new item to add to the list.
+
+    //Resize output list.
+    output.resize(plistBody.size(), NULL);
 
     //Check if the list of forces is empty
     if (listForces.size() == 0)
     {
-        output.resize(1);
-        output[1] = NULL;
         return output;
     }
 
     else
     {
-        for (unsigned int i = 0; i < listForces.size(); i++)
+        //Each entry in the list matches a body id.  If no forces are found that match
+        //the body ID, leave that entry as NULL.
+
+        for (unsigned int j = 0; j < plistBody.size(); j++)
         {
-            //Reset value of linkFound.
-            newLink = true;
-
-            LinkID = listForces.at(i).getLinkedId();
-
-            //Check if the force was already added to the list of outputs.
-            for (unsigned int j = 0; j < output.size(); j++)
+            for (unsigned int i = 0; i < listForces.size(); i++)
             {
-                //Check if link ID's match.
-                if (listForces.at(i).getLinkedId() ==
-                        output.at(j)->getLinkedId())
+                //Check if body id matches.
+                if (listForces.at(i).getLinkedId() == plistBody[j].getId())
                 {
-                    newLink = false;
-                    break;
+                    matForceCross *ptOutput;
+
+                    //Create a new output force and add it in at that specific entry.
+                    if (output[j] == NULL)
+                    {
+                        ptOutput = new matForceCross();
+
+                        //Assign to the output.
+                        output[j] = ptOutput;
+
+                        //Assign link id.
+                        output[j]->setLinkedId(plistBody[j].getId());
+                    }
+                    else
+                    {
+                        ptOutput = output[j];
+                    }
+
+                    //Add the forces to the output.
+                    *ptOutput = *ptOutput + listForces[i];
                 }
-            }
-
-            //If no link was found, add to the list of outputs.
-            if (newLink)
-            {
-                //Create a new output object and add to the list.
-                matForceCross *ptOutput = new matForceCross();
-
-                //Assign link id.
-                ptOutput->setLinkedId(LinkID);
-
-                //Iterate through all crossbody forces and add to the output.
-                for (unsigned int j = 0; j < listForces.size(); j++)
-                {
-                    *ptOutput = ptOutput->operator+(listForces[j]);
-                }
-
-                //Add to the output list.
-                output.push_back(ptOutput);
             }
         }
 
@@ -229,17 +223,13 @@ vector<cx_mat *> MotionSolver::sumDerivative(std::vector<matForceCross *> forceI
     vector<cx_mat *> output;
 
     //Resize output matrix.
-    output.resize(forceIn.size(), new cx_mat());
+    output.resize(forceIn.size(), NULL);
 
     //Fill vector with new matrices.
     for (unsigned int i = 0; i < forceIn.size(); i++)
     {
-        if (forceIn[i] == NULL)
-        {
-            output[i] = NULL;
-        }
-
-        else
+        if ((forceIn[i] != NULL)
+                && (forceIn[i]->listDerivative().size() != 0))
         {
             //complex version of current wave frequency.
             complexDouble waveFreq(this->curWaveFrequency, 0.0);
@@ -249,7 +239,8 @@ vector<cx_mat *> MotionSolver::sumDerivative(std::vector<matForceCross *> forceI
             complexDouble scalarMult;
 
             //resize output matrix
-            output[i]->zeros(forceIn[i]->getMatSize(), forceIn[i]->getMatSize());
+            cx_mat *ptOutput = new cx_mat(forceIn[i]->getMatSize(), forceIn[i]->getMatSize());
+            output[i] = ptOutput;
 
             //Iterate through each derivative order and add them together.
             for (int j = 0 ; j <= forceIn[i]->getMaxOrder() ; j++)
@@ -394,6 +385,9 @@ void MotionSolver::calculateOutputs()
         //Add cross-body force objects
         for (unsigned int j = 0; j < plistBody.size(); j++)
         {
+            ostringstream convert;
+            convert << j;
+            logErr.Write(string("Body >> ") + convert.str());
             tempCross.push_back(
                         SumSingle(CrossList_usr[curSumBody][j], CrossList_hydro[curSumBody][j], j)
                         );
@@ -482,6 +476,10 @@ void MotionSolver::calculateOutputs()
             //Iterate through the cross-body forces listed for each body
             for(unsigned int j = 0; j < plistBody.size(); j++)
             {
+                //Skip if matching indices.
+                if (j == i)
+                    continue;
+
                 globReactiveMat.submat(matStart[i], matStart[j], matEnd[i], matEnd[j]) = CrossList[i][j];
             }
         }
@@ -584,10 +582,28 @@ cx_mat MotionSolver::SumSingle(cx_mat *Input1, cx_mat *Input2, int ForceType)
 
     //Add in inputs, depending on whether any of them are NULL values.
     if (Input1 != NULL)
-        output = output + *Input1;
+    {
+        if ((Input1->n_rows == output.n_rows)
+                && (Input1->n_cols == output.n_cols))
+        {
+            ostringstream convert;
+            convert << Input1->n_rows << "," << Input1->n_cols;
+            logErr.Write(string("User >> ") + convert.str());
+            output = output + *Input1;
+        }
+    }
 
     if (Input2 != NULL)
-        output = output + *Input2;
+    {
+        if ((Input2->n_rows == output.n_rows)
+                && (Input2->n_cols == output.n_cols))
+        {
+            ostringstream convert;
+            convert << Input2->n_rows << "," << Input2->n_cols;
+            logErr.Write(string("Hydro >> ") + convert.str());
+            output = output + *Input2;
+        }
+    }
 
     //Write output
     return output;
