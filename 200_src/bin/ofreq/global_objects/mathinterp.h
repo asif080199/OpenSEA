@@ -137,10 +137,15 @@ protected:
 
             double p = (x - x1) / (x2 - x1);
 
-            //Calculate output and write out
-            return ((y2 - y1) * p) + y1;
+            //Check for a few cases
+            if (p == 0.0)
+                return y1;
+            else if (p == 1.0)
+                return y2;
+            else
+                return (y2 - y1) * p + y1;
         }
-        catch(std::overflow_error err)
+        catch(const std::exception &err)
         {
             logStd.Notify();
             logErr.Write(std::string(ID) + std::string(">>  ") + err.what());
@@ -211,7 +216,7 @@ protected:
                 return ((y2 - y1) * p) + y1;
             }
         }
-        catch(std::overflow_error err)
+        catch(const std::exception &err)
         {
             logStd.Notify();
             logErr.Write(std::string(ID) + std::string(">>  ") + err.what());

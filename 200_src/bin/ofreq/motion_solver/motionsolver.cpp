@@ -385,9 +385,6 @@ void MotionSolver::calculateOutputs()
         //Add cross-body force objects
         for (unsigned int j = 0; j < plistBody.size(); j++)
         {
-            ostringstream convert;
-            convert << j;
-            logErr.Write(string("Body >> ") + convert.str());
             tempCross.push_back(
                         SumSingle(CrossList_usr[curSumBody][j], CrossList_hydro[curSumBody][j], j)
                         );
@@ -585,24 +582,14 @@ cx_mat MotionSolver::SumSingle(cx_mat *Input1, cx_mat *Input2, int ForceType)
     {
         if ((Input1->n_rows == output.n_rows)
                 && (Input1->n_cols == output.n_cols))
-        {
-            ostringstream convert;
-            convert << Input1->n_rows << "," << Input1->n_cols;
-            logErr.Write(string("User >> ") + convert.str());
             output = output + *Input1;
-        }
     }
 
     if (Input2 != NULL)
     {
         if ((Input2->n_rows == output.n_rows)
                 && (Input2->n_cols == output.n_cols))
-        {
-            ostringstream convert;
-            convert << Input2->n_rows << "," << Input2->n_cols;
-            logErr.Write(string("Hydro >> ") + convert.str());
             output = output + *Input2;
-        }
     }
 
     //Write output

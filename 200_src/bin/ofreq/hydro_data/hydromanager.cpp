@@ -119,6 +119,9 @@ void HydroManager::calcHydroData(double waveAmp, double waveFreq)
         //Start by reseting the outputs.
         ResetOutput();
 
+//        cx_mat test1;
+//        cx_mat test2;
+
         //Get the indices of the two wave amplitudes that match the set amplitude.
         vector<int> indWaveAmp = findMatchAmplitude(waveAmp);
 
@@ -173,6 +176,13 @@ void HydroManager::calcHydroData(double waveAmp, double waveFreq)
                 }
             }
         }
+
+        //Get matrix and write debug output.
+//        test1 = DataAmp1[0].listDataCross(0,0).getDerivative(0);
+//        test1.print(std::cout, "Interpolated Frequency, Dir1 = ");
+//        test2 = DataAmp2[0].listDataCross(0,0).getDerivative(0);
+//        test2.print(std::cout, "Interpolated Frequency, Dir2 = ");
+
 
         //Successfully interpolated all four data sets for wave frequency.  Now interpolate for wave direction.
         if (!(DataAmp2.size() > 0))
@@ -244,9 +254,17 @@ void HydroManager::calcHydroData(double waveAmp, double waveFreq)
             //Free up memory and clear the vector.
             DataAmp2.clear();
 
+            //Get matrices and write debug output.
+//            test1 = DataDir1.listDataCross(0,0).getDerivative(0);
+//            test1.print(std::cout, "Interpolated Direction, Dir1 = ");
+
             //Now proceed to wave scaling.
             //Write output
             pHydroFinal = ScaleHydroData(waveAmp, DataDir1, DataDir2);
+
+            //get matrices and write debug output.
+//            test1 = pHydroFinal.listDataCross(0,0).getDerivative(0);
+//            test1.print(std::cout, "Wave Scaled, Final = ");
         }
     }
     catch(const std::exception &err)
@@ -518,6 +536,8 @@ void HydroManager::buildWaveSubset()
 //------------------------------------------Function Separator --------------------------------------------------------
 double HydroManager::waveScale(double ampIn, double amp1, double Data1, double amp2, double Data2)
 {
+    double output;      //THe final output;
+
     //First check if Data2 was supplied.
     if ((amp2 == 0) &&
             (Data2 == 0))
@@ -529,7 +549,7 @@ double HydroManager::waveScale(double ampIn, double amp1, double Data1, double a
         A = ampIn / amp1;
 
         //Scale and write output
-        return A * Data1;
+        output =  A * Data1;
     }
     else
     {
@@ -544,8 +564,14 @@ double HydroManager::waveScale(double ampIn, double amp1, double Data1, double a
         A = Data1 / pow(amp1, n);
 
         //Scale and write output.
-        return A * pow(ampIn, n);
+        output = A * pow(ampIn, n);
     }
+
+    //Check for NAN value, otherwise return.
+    if (output == output)
+        return output;
+    else
+        return 0;
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------

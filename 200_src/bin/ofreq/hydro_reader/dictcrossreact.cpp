@@ -211,7 +211,7 @@ int dictCrossReact::defineKey(std::string keyIn, std::vector<std::string> valIn)
         {
             //First check if the frequency index was set.
             if (pFreqInd < 0)
-                throw std::runtime_error(string("Hydrodynamic input file.\n Frequency index was not declared before ")
+                throw std::runtime_error(string("crossbody input file.\n Frequency index was not declared before ")
                                          +string("entered data.  No frequency associated with this data."));
 
             /* The data is a matrix of values.  But it gets input as a sequential list.  However, there is a key
@@ -225,6 +225,8 @@ int dictCrossReact::defineKey(std::string keyIn, std::vector<std::string> valIn)
             //Create a matrix.
             cx_mat input(nRows, nRows);
 
+            int count = 0;
+
             //Add items to the matrix.
             for (int i = 0; i < nRows; i++)
             {
@@ -232,7 +234,9 @@ int dictCrossReact::defineKey(std::string keyIn, std::vector<std::string> valIn)
                 {
                     //Convert value
                     complex<double> out;
-                    out.real(atof(valIn[i+j].c_str()));
+                    out.real(atof(valIn[count].c_str()));
+
+                    count += 1;
 
                     //Add to matrix.
                     input(i,j) = out;
@@ -267,7 +271,7 @@ int dictCrossReact::defineKey(std::string keyIn, std::vector<std::string> valIn)
     else
     {
         logStd.Notify();
-        logErr.Write(string("Hydrodynamic input file \n Unknown key found.  Key:  ") + keyIn);
+        logErr.Write(string("Crossbody input file \n Unknown key found.  Key:  ") + keyIn);
         return 1;
     }
 }
