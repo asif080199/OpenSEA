@@ -515,14 +515,14 @@ void System::setActiveSeaModel(std::string NameIn)
     if (NameIn != "")
     {
         pActSeaModelName = NameIn;
-
-        //Match the active sea model
-        SearchActiveSeaModel();
     }
     //If NameIn = "", the sea model was already set, and this just repeats to add in the wave frequencies.
 
+    //Match the active sea model
+    SearchActiveSeaModel();
+
     //Set the list of wave frequencies for the active sea model.
-    if (pSeaModelIndex > 0)
+    if (pSeaModelIndex > -1)
     {
         //Sea Model index currently defined.
         plistSeaModel[pSeaModelIndex]->addWaveFreq(pWaveFrequencies);
@@ -800,7 +800,7 @@ void System::SearchActiveSeaModel()
             int i;
             for (i = 0; i < plistSeaModel.size(); i++ )
             {
-                if (plistSeaModel.at(i)->getName() == pActSeaModelName)
+                if (plistSeaModel.at(i)->getName().compare(pActSeaModelName) == 0)
                 {
                     foundit = true;
                     break;
@@ -811,7 +811,9 @@ void System::SearchActiveSeaModel()
             if (foundit)
                 pSeaModelIndex = i;
             else
+            {
                 pSeaModelIndex = -1;
+            }
         }
     }
     catch(const std::exception &err)

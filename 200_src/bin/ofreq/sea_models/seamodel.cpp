@@ -183,11 +183,19 @@ std::string &SeaModel::refName()
 //------------------------------------------Function Separator --------------------------------------------------------
 double SeaModel::getWaveEnergy(double dirIn, int freqIndex)
 {
-    //Get the wave frequency.
-    double freqIn = plistWaveFreq[freqIndex];
+    try
+    {
+        //Get the wave frequency.
+        double freqIn = plistWaveFreq.at(freqIndex);
 
-    //Calculate the result
-    return getWaveEnergy(dirIn, freqIn);
+        //Calculate the result
+        return getWaveEnergy(dirIn, freqIn);
+    }
+    catch (const std::exception &err)
+    {
+        logStd.Notify();
+        logErr.Write(string(ID) + string(">>  ") + err.what());
+    }
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------

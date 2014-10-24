@@ -85,6 +85,11 @@ matForceCross matForceCross::operator+(matForceCross forceOther)
         //Check that the lnkedbody parameter is the same for both objects.
         if (this->plinkid == forceOther.plinkid)
         {
+            //Set the linked body parameter
+            output.plinkbody = this->plinkbody;
+            output.plinkbodyName = this->plinkbodyName;
+            output.plinkid = this->plinkid;
+
              //find the max order of the derivatives.
             int maxOrdTwo;
             if (this->getMaxOrder() > forceOther.getMaxOrder())
@@ -164,6 +169,11 @@ matForceCross matForceCross::operator-(matForceCross forceOther)
         //Check that the lnkedbody parameter is the same for both objects.
         if (this->plinkid == forceOther.plinkid)
         {
+            //Set the linked body parameter
+            output.plinkbody = this->plinkbody;
+            output.plinkbodyName = this->plinkbodyName;
+            output.plinkid = this->plinkid;
+
              //find the max order of the derivatives.
             int maxOrdTwo;
             if (this->getMaxOrder() > forceOther.getMaxOrder())

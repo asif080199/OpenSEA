@@ -1352,6 +1352,9 @@ cx_mat MotionModel::getMatForceActive_hydro(int force)
         outputmat(i,0) = Evaluate(dataIndex);
     }
 
+    //debug output
+    //outputmat.print(logErr.outFile, "Output Hydro");
+
     //Write output
     return outputmat;
 }

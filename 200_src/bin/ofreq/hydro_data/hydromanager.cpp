@@ -373,7 +373,7 @@ ForceCross *HydroManager::getForceCross(std::string linkedBodName)
         Derivative tempDeriv;
 
         //Iterate through each equation.
-        for (int i = 0; i < pHydroFinal.listDataCross(0,linkedBodName).getMatSize(); i++)
+        for (int i = 0; i < pHydroFinal.listDataCross(0, linkedBodName).getMatSize(); i++)
         {
             //Create new vector of variables.
             vector<double> listCoeff;
@@ -457,78 +457,94 @@ void HydroManager::buildWaveSubset()
     for(int i = 0; i < plistHydroData.size(); i++)
     {
         //Outer loop.  Going through wave amplitudes.
-        double dist[2];         //The distance between wave directions.
 
-        dist[0] = 1E6;
-        dist[1] = 1E6;
-        int index[2];
-        index[0] = -1;
-        index[1] = -1;
-
-        try
+        //Check if the list of wave directions is only one direction.
+        //If so, apply that direction, regardless of distance from specified direction.
+        //The user clearly intented to use that one direction for all cases.
+        if (plistHydroData.at(i).size() == 1)
         {
-            for (int j = 0; j < plistHydroData.at(i).size(); j++)
-            {
-                //Calculate distance for first point.
-                dist[0] = fabs(pWaveDir - plistHydroData.at(i).at(j).getWaveDir());
+            //Case for only a single wave direction
+            //-----------------------------------
 
-                //Check distance.
-                if ((dist[0] < dist[1]) &&
-                        (dist[0] < DISTMAX))
-                {
-                    dist[1] = dist[0];
-                    index[0] = j;
-                }
-            }
-
-            //Check if none of the distances were within the allowed range.
-            if (dist[1] > DISTMAX)
-                throw std::runtime_error("No data sets were within the allowed distance from the specified wave direction.");
-        }
-        catch(const std::exception &err)
-        {
-            logStd.Notify();
-            logErr.Write(string(ID) + string(">>  ") + string(err.what()));
-            break;
-        }
-        catch(...)
-        {
-            logStd.Notify();
-            logErr.Write(string(ID) + string(">>  Unknown error occurred."));
-        }
-
-
-        //Check to see if there is any point in going forward.
-        if (index[0] != -1)
-        {
-            //Reset distance counters.
-            dist[0] = 1E6;
-            dist[1] = 1E6;
-
-            //Calculate the distance for the second point.
-            for (int j = 0; j < plistHydroData.at(i).size(); j++)
-            {
-                //Calculate distance for second point.
-                dist[0] = fabs(pWaveDir - plistHydroData.at(i).at(j).getWaveDir());
-
-                //Check distance.
-                if ((dist[0] < dist[1]) &&
-                        (dist[0] < DISTMAX) &&
-                        (j != index[0]))
-                {
-                    dist[1] = dist[0];
-                    index[1] = j;
-                }
-            }
-
-            //Now found index of the two closest points.  create them in the subset vector.
             //Create vector that will be added to the list of subsets.
             vector<ofreq::hydroData*> tempWaveDir;
-            tempWaveDir.push_back(&(plistHydroData.at(i).at(index[0])));
-            tempWaveDir.push_back(&(plistHydroData.at(i).at(index[1])));
+            tempWaveDir.push_back(&(plistHydroData.at(i).at(0)));
 
             //Add the vector to the total list of subsets.
             plistDirSubset.push_back(tempWaveDir);
+        }
+
+        else
+        {
+            //Case for multiple wave directions
+            //-----------------------------------
+            double dist[2];         //The distance between wave directions.
+
+            dist[0] = 1E6;
+            dist[1] = 1E6;
+            int index[2];
+            index[0] = -1;
+            index[1] = -1;
+
+            try
+            {
+                for (int j = 0; j < plistHydroData.at(i).size(); j++)
+                {
+                    //Calculate distance for first point.
+                    dist[0] = fabs(pWaveDir - plistHydroData.at(i).at(j).getWaveDir());
+
+                    //Check distance.
+                    if ((dist[0] < dist[1]) &&
+                            (dist[0] < DISTMAX))
+                    {
+                        dist[1] = dist[0];
+                        index[0] = j;
+                    }
+                }
+
+                //Check if none of the distances were within the allowed range.
+                if (dist[1] > DISTMAX)
+                    throw std::runtime_error("No data sets were within the allowed distance from the specified wave direction.");
+            }
+            catch(const std::exception &err)
+            {
+                logStd.Notify();
+                logErr.Write(string(ID) + string(">>  ") + string(err.what()));
+                break;
+            }
+
+            //Check to see if there is any point in going forward.
+            if (index[0] != -1)
+            {
+                //Reset distance counters.
+                dist[0] = 1E6;
+                dist[1] = 1E6;
+
+                //Calculate the distance for the second point.
+                for (int j = 0; j < plistHydroData.at(i).size(); j++)
+                {
+                    //Calculate distance for second point.
+                    dist[0] = fabs(pWaveDir - plistHydroData.at(i).at(j).getWaveDir());
+
+                    //Check distance.
+                    if ((dist[0] < dist[1]) &&
+                            (dist[0] < DISTMAX) &&
+                            (j != index[0]))
+                    {
+                        dist[1] = dist[0];
+                        index[1] = j;
+                    }
+                }
+
+                //Now found index of the two closest points.  create them in the subset vector.
+                //Create vector that will be added to the list of subsets.
+                vector<ofreq::hydroData*> tempWaveDir;
+                tempWaveDir.push_back(&(plistHydroData.at(i).at(index[0])));
+                tempWaveDir.push_back(&(plistHydroData.at(i).at(index[1])));
+
+                //Add the vector to the total list of subsets.
+                plistDirSubset.push_back(tempWaveDir);
+            }
         }
     }
 }
@@ -1213,6 +1229,14 @@ void HydroManager::checkDirList()
         //Each loop is a different wave amplitude.  Check through all directions in each loop.
         int entries = 0;        //The number of entries found at the zero rad area.
         int original;           //THe index of the original function.
+
+        //Check if the hydrolist is only one direction long.
+        //If only one direction entry, the user clearly has no intention of interpolating with it.
+        if (plistHydroData.at(i).size() == 1)
+        {
+            //If true, skip loop.
+            continue;
+        }
 
         //Search through list of wave directions to see if a copy needs to be made.
         for (unsigned int j = 0; j < plistHydroData.at(i).size(); j++)

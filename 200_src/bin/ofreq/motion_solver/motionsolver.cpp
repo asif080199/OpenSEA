@@ -131,7 +131,7 @@ vector<matForceCross *> MotionSolver::sumCrossSet(vector<matForceCross> listForc
                     *ptOutput = *ptOutput + listForces[i];
                 }
             }
-        }
+        }       
 
         //Write output.
         return output;
@@ -494,7 +494,6 @@ void MotionSolver::calculateOutputs()
                      string("Error Message:  ") + string(err.what()) + "\n\n");
 
         //Debug print out matrix values
-        DebugMatrix("Global Reactive Matrix", globReactiveMat);
         DebugMatrix("Global Active Matrix", globActiveMat);
     }
     catch(...)
@@ -508,8 +507,6 @@ void MotionSolver::calculateOutputs()
         //Debug print out solution matrix
         DebugMatrix("Global Solution Matrix", globSolnMat);
     }
-
-
 
     //Split into vector of solutions, each represents per body
     for(unsigned int i = 0; i < plistBody.size(); i++)

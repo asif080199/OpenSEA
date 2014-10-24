@@ -284,7 +284,7 @@ complex<double> EquationofMotion::ForceActive_hydro()
     //Returns the active force object for the currently defined indices.
     complex<double> output(0,0);         //Temporary value for variable.
     complex<double> reverse(-1,0);         //Reverses sign of active force variable.
-    int eqComp = eqn();                 //The equation index converted from human to computer index.
+    int eqComp = eqn() - 1;                 //The equation index converted from human to computer index.
     int curBodComp = curbody() - 1;         //The current body index, converted from human to computer index.
 
     //The coefficients in the active force matrix for hydrodynamics can only be one
@@ -350,9 +350,6 @@ complex<double> EquationofMotion::ForceActive_user()
                 try
                 {
                     //get value
-                    std::complex<double> test = pParentModel->listData(curBodComp).
-                                                listForceActive_user(force())->
-                                                listDataEquation(eqComp);
                     output +=
                             pParentModel->listData(curBodComp).
                             listForceActive_user(force())->

@@ -507,6 +507,9 @@ void buildMatBody(int bod, bool useCoeff)
         {
             listMatBody[bod].listForceActive_hydro().push_back(matForceActive());
             listMatBody[bod].listForceActive_hydro(i).listCoefficient() = MyModel->getMatForceActive_hydro(i);
+            //Print out active force matrix.  For Debugging.
+            //listMatBody[bod].listForceActive_hydro(i).listCoefficient().print("Active Force: " + i);
+
             //Create force ID.
             listMatBody[bod].listForceActive_hydro(i).setId(i);
         }
