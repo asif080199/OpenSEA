@@ -67,19 +67,19 @@ OutputsBody::~OutputsBody()
 
     //Delete Global Solution objects.
     for (unsigned int i = 0; i < plistGlobalSolution.size(); i++)
-        delete plistGlobalSolution[i];
+        delete plistGlobalSolution.at(i);
 
     //Delete Global Motion objects.
     for (unsigned int i = 0; i < plistGlobalMotion.size(); i++)
-        delete plistGlobalMotion[i];
+        delete plistGlobalMotion.at(i);
 
     //Delete Global Velocity objects.
     for (unsigned int i = 0; i < plistGlobalVelocity.size(); i++)
-        delete plistGlobalVelocity[i];
+        delete plistGlobalVelocity.at(i);
 
     //Delete GLobal Acceleration objects.
     for (unsigned int i = 0; i < plistGlobalAcceleration.size(); i++)
-        delete plistGlobalAcceleration[i];
+        delete plistGlobalAcceleration.at(i);
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
@@ -128,17 +128,7 @@ osea::ofreq::SolutionSet &OutputsBody::listSolutionSet(int index)
     catch(const std::exception &err)
     {
         //Write error message
-        logErr.Write("Unknown error occurred.  Object:  OutputsBody, Function:  listSolutionSet()\n" +
-                     std::string("Error Message:  ") + std::string(string(err.what())));
-        logStd.Notify();
-
-        //Stop program execution
-        exit(1);
-    }
-    catch(...)
-    {
-        //Write error message
-        logErr.Write(string(ID) + string(">>  Unknown error occurred."));
+        logErr.Write(ID + "Unknown error occurred." + std::string(err.what()));
         logStd.Notify();
 
         //Stop program execution
@@ -294,7 +284,7 @@ void OutputsBody::ClearResult()
     //Clear the array of result data.
     for (unsigned int i = 0; i < plistResult.size(); i++)
     {
-        delete plistResult[i];
+        delete plistResult.at(i);
     }
     plistResult.clear();
     plistResult.resize(0);
@@ -352,16 +342,14 @@ int OutputsBody::calcGlobalMotion(unsigned int index)
                 if (errVal != 0)
                     throw std::runtime_error("Failed to calculate derived output:  body motion.");
             }
-            catch (std::exception &err)
+            catch (const std::exception &err)
             {
                 //Write error message
-                logErr.Write(string(err.what()));
+                logErr.Write(ID + std::string(err.what()));
                 logStd.Notify();
-            }
-            catch(...)
-            {
-                logErr.Write(string(ID) + string(">>  Unknown error occurred."));
-                logStd.Notify();
+
+                //Stop program execution
+                exit(1);
             }
         }
     }
@@ -430,16 +418,14 @@ int OutputsBody::calcGlobalVelocity(unsigned int index)
                 if (errVal != 0)
                     throw std::runtime_error("Failed to calculate derived output:  body velocity.");
             }
-            catch (std::exception &err)
+            catch (const std::exception &err)
             {
                 //Write error message
-                logErr.Write(string(err.what()));
+                logErr.Write(ID + std::string(err.what()));
                 logStd.Notify();
-            }
-            catch(...)
-            {
-                logErr.Write("Unknown error occurred.  Object:  OutputsBody, Function:  calcGlobalVelocity()");
-                logStd.Notify();
+
+                //Stop program execution
+                exit(1);
             }
         }
     }
@@ -508,16 +494,14 @@ int OutputsBody::calcGlobalAcceleration(unsigned int index)
                 if (errVal != 0)
                     throw std::runtime_error("Failed to calculate derived output:  body acceleration.");
             }
-            catch (std::exception &err)
+            catch (const std::exception &err)
             {
                 //Write error message
-                logErr.Write(string(err.what()));
+                logErr.Write(ID + std::string(err.what()));
                 logStd.Notify();
-            }
-            catch(...)
-            {
-                logErr.Write(string(ID) + string(">>  Unknown error occurred."));
-                logStd.Notify();
+
+                //Stop program execution
+                exit(1);
             }
         }
     }
@@ -584,16 +568,14 @@ int OutputsBody::calcGlobalSolution(unsigned int index)
                 if (errVal != 0)
                     throw std::runtime_error("Failed to calculate derived output:  body derivative solution.");
             }
-            catch (std::exception &err)
+            catch (const std::exception &err)
             {
                 //Write error message
-                logErr.Write(string(err.what()));
+                logErr.Write(ID + std::string(err.what()));
                 logStd.Notify();
-            }
-            catch(...)
-            {
-                logErr.Write(string(ID) + string(">>  Unknown error occurred."));
-                logStd.Notify();
+
+                //Stop program execution
+                exit(1);
             }
         }
     }

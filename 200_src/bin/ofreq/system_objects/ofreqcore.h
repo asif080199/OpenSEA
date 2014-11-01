@@ -48,7 +48,7 @@
 #elif defined Q_OS_LINUX
     //Any linux specific inclusions go in here.
     #ifndef ID
-        #define ID __PRETTY_FUNCTION__
+        #define ID std::string(__PRETTY_FUNCTION__)+std::string(">>  ")
     #endif
 #endif
 

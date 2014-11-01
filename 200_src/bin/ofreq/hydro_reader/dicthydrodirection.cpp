@@ -77,7 +77,7 @@ int dictHydroDirection::defineKey(std::string keyIn, std::vector<std::string> va
         for (unsigned int i = 0; i < valIn.size(); i++)
         {
             //Convert output
-            double out = atof(valIn[i].c_str());
+            double out = atof(valIn.at(i).c_str());
 
             //Add to the list of wave directions
             pParent->plistWaveDir.push_back(out);

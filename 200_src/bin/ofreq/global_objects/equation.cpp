@@ -64,7 +64,7 @@ vector<double> &Equation::listCoefficient()
 //------------------------------------------Function Separator --------------------------------------------------------
 double &Equation::listCoefficient(unsigned int index)
 {
-    return pcoeffs[index];
+    return pcoeffs.at(index);
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
@@ -99,14 +99,14 @@ double &Equation::listDataVariable(int DataIndex)
     }
 
     //Return the value
-    return pcoeffs[i];
+    return pcoeffs.at(i);
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
 double Equation::getCoefficient(int number)
 {
     //Return the coefficient at the specified number.
-    return pcoeffs[number];
+    return pcoeffs.at(number);
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
@@ -119,7 +119,7 @@ void Equation::setCoefficient(int number, double coeffIn)
     }
 
     //Set the coefficient at the specified number
-    pcoeffs[number] = coeffIn;
+    pcoeffs.at(number) = coeffIn;
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
@@ -176,7 +176,7 @@ void Equation::addVariable(double CoeffIn, int VarDataIn)
 void Equation::initCoeff()
 {
     for(unsigned int i = 0 ; i < pcoeffs.size(); i++)
-        pcoeffs[i] = 0;
+        pcoeffs.at(i) = 0;
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
@@ -190,7 +190,7 @@ int Equation::findIndex(int DataIndexIn)
     for (unsigned int i = 0 ; i < plistDataIndex.size() ; i++)
     {
         //Check the data index of the object.
-        if (plistDataIndex[i] < 0)
+        if (plistDataIndex.at(i) < 0)
         {
             //No data index set.  Use the position in the list.
             check = i;
@@ -198,7 +198,7 @@ int Equation::findIndex(int DataIndexIn)
         else
         {
             //Data index is used.  Use the position in the list.
-            check = plistDataIndex[i];
+            check = plistDataIndex.at(i);
         }
 
         //Check for match

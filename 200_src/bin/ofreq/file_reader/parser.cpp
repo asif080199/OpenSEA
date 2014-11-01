@@ -100,11 +100,13 @@ void Parser::Parse(istream &infile, int bracket_count)
             infile >> curString; //curSring is the current string in the text file
         }
     }
-    catch(...)
+    catch(const std::exception &err)
     {
         logStd.Notify();
-        logErr.Notify("Function:  Parse()");
+        logErr.Notify(ID + std::string(err.what()));
         
+        //Stop program execution
+        exit(1);
     }
 }
 
@@ -123,7 +125,7 @@ vector<ObjectGroup> &Parser::listObject()
 //------------------------------------------Function Separator --------------------------------------------------------
 ObjectGroup &Parser::listObject(unsigned int index)
 {
-    return plistObject[index];
+    return plistObject.at(index);
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
@@ -135,7 +137,7 @@ vecKeyword& Parser::listKey()
 //------------------------------------------Function Separator --------------------------------------------------------
 string &Parser::listKey(int index)
 {
-    return plistKey[index];
+    return plistKey.at(index);
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
@@ -147,13 +149,13 @@ vecValue& Parser::listVal()
 //------------------------------------------Function Separator --------------------------------------------------------
 vector<string> &Parser::listVal(int index)
 {
-    return plistVal[index];
+    return plistVal.at(index);
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
 vector<ObjectGroup*> &Parser::refSubObject(int index1)
 {
-    return plistObject[index1].listObject();
+    return plistObject.at(index1).listObject();
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
@@ -228,7 +230,7 @@ void Parser::ParseCommands(istream &infile, string curString, string prevString,
             //-----------------------------------
             if(curString.find(QUOTE) != std::string::npos) //the string will be enclosed in quotes.
             {
-                int quoteCount = std::count(curString.begin(), curString.end(), QUOTE[0]);//the count of quotes in this string
+                int quoteCount = std::count(curString.begin(), curString.end(), QUOTE.at(0));//the count of quotes in this string
 
                 if(quoteCount == 1) //if only 1 then need to get the rest of string enclosed in end quote
                 {
@@ -268,7 +270,7 @@ void Parser::ParseCommands(istream &infile, string curString, string prevString,
                 //Create new object and store the name
                 plistObject.push_back(ObjectGroup());
                 curObject += 1;
-                plistObject[curObject].setClassName(prevString);
+                plistObject.at(curObject).setClassName(prevString);
 
                 //Initialize the subparser
                 subParse = new Parser();
@@ -279,13 +281,13 @@ void Parser::ParseCommands(istream &infile, string curString, string prevString,
                 //Get the keysets from the parsed object
                 for (unsigned int i = 0; i < subParse->listKey().size(); i++)
                 {
-                    plistObject[curObject].addKeySet(subParse->listKey(i), subParse->listVal(i));
+                    plistObject.at(curObject).addKeySet(subParse->listKey(i), subParse->listVal(i));
                 }
 
                 //Get the sub-objects from the parsed object
                 for (unsigned int i = 0; i < subParse->listObject().size(); i++)
                 {
-                    plistObject[curObject].addSubObject(subParse->listObject(i));
+                    plistObject.at(curObject).addSubObject(subParse->listObject(i));
                 }
 
                 //Delete the subparser
@@ -321,7 +323,7 @@ void Parser::ParseCommands(istream &infile, string curString, string prevString,
                     //Write the output to the key value.
                     if ((curKeySet > plistVal.size() - 1) || (plistVal.size() == 0))
                         plistVal.resize(curKeySet + 1);
-                    plistVal[curKeySet] = output;
+                    plistVal.at(curKeySet) = output;
 
                     //Notify to advance to the next key
                     advanceKeySet = true;
@@ -361,8 +363,8 @@ void Parser::ParseCommands(istream &infile, string curString, string prevString,
                             //Note:  Expandable list currently does not work for complex variable definitions.
 
                             //Record the last two values.  List will be expanded at the end.
-                            listspace[0] = theList.size() - 2;
-                            listspace[1] = theList.size() - 1;
+                            listspace.at(0) = theList.size() - 2;
+                            listspace.at(1) = theList.size() - 1;
                         }
                         //Check if this is a direct list.
                         else if (index == std::string::npos)
@@ -385,7 +387,7 @@ void Parser::ParseCommands(istream &infile, string curString, string prevString,
                                 //If so, strip out quotation marks.
                                 if(curString.find(QUOTE) != std::string::npos) //the string will be enclosed in quotes.
                                 {
-                                    int quoteCount = std::count(curString.begin(), curString.end(), QUOTE[0]);//the count of quotes in this string
+                                    int quoteCount = std::count(curString.begin(), curString.end(), QUOTE.at(0));//the count of quotes in this string
 
                                     if(quoteCount == 1) //if only 1 then need to get the rest of string enclosed in end quote
                                     {
@@ -411,7 +413,7 @@ void Parser::ParseCommands(istream &infile, string curString, string prevString,
                                 theList.push_back(curString);
                             }
                         }
-                        else if(curString[0] != LIST_END[0])
+                        else if(curString.at(0) != LIST_END.at(0))
                         {
                             //Not direct list
 
@@ -433,12 +435,12 @@ void Parser::ParseCommands(istream &infile, string curString, string prevString,
                             if (listval.find(COMPLEX_COORD) != std::string::npos)
                             {
                                 //Complex variable.  Strip parentheses and then add.
-                                theList[listindex - 1] = ComplexCoordStrip(listval);
+                                theList.at(listindex - 1) = ComplexCoordStrip(listval);
                             }
                             else
                             {
                                 //Not a complex variable.
-                                theList[listindex - 1] = listval;
+                                theList.at(listindex - 1) = listval;
                             }
                         }
 
@@ -464,16 +466,16 @@ void Parser::ParseCommands(istream &infile, string curString, string prevString,
                         try
                         {
                             //First get the spacing of entries in the list.
-                            spacing = atof(theList.at(listspace[1]).c_str()) - atof(theList.at(listspace[0]).c_str());
+                            spacing = atof(theList.at(listspace.at(1)).c_str()) - atof(theList.at(listspace.at(0)).c_str());
 
                             //Next get the last value of the list.
                             ending = atof(theList.at(theList.size() - 1).c_str());
 
                             //Now resize the list to the starting value recorded for expansion.
-                            theList.resize(listspace[1] + 1);
+                            theList.resize(listspace.at(1) + 1);
 
                             //Loop to expand out the list and add entries.
-                            starting = atof(theList.at(listspace[1]).c_str());
+                            starting = atof(theList.at(listspace.at(1)).c_str());
                             current = starting + spacing;
                             while ((current < ending) && (current > starting))
                             {
@@ -494,13 +496,11 @@ void Parser::ParseCommands(istream &infile, string curString, string prevString,
                         catch(const std::exception &err)
                         {
                             logStd.Notify();
-                            logErr.Write("Error:  problem expanding list.  Perhaps the list entries are not valid numbers.\n" +
+                            logErr.Write(ID + "Problem expanding list.  Perhaps the list entries are not valid numbers.\n" +
                                          string("Error Message:  ") + err.what());
-                        }
-                        catch(...)
-                        {
-                            logStd.Notify();
-                            logErr.Write("Error:  problem expanding list.  Perhaps the list entries are not valid numbers.");
+
+                            //Stop program execution
+                            exit(1);
                         }
                     }
 
@@ -509,7 +509,7 @@ void Parser::ParseCommands(istream &infile, string curString, string prevString,
                         //Write the output to the key value.
                         if ((curKeySet > plistVal.size() - 1) || (plistVal.size() == 0))
                             plistVal.resize(curKeySet + 1);
-                        plistVal[curKeySet] = theList;
+                        plistVal.at(curKeySet) = theList;
                     }
                     else
                     {
@@ -547,12 +547,12 @@ void Parser::ParseCommands(istream &infile, string curString, string prevString,
 
                         //create vector of input
                         vector<string> input(1);
-                        input[0] = curString;
+                        input.at(0) = curString;
 
                         //Add input to the list of values
                         if ((curKeySet > plistVal.size() - 1) || (plistVal.size() == 0))
                             plistVal.resize(curKeySet + 1);
-                        plistVal[curKeySet] = input;
+                        plistVal.at(curKeySet) = input;
                     }
 
                     else
@@ -561,7 +561,7 @@ void Parser::ParseCommands(istream &infile, string curString, string prevString,
                         //Check if list is big enough
                         if ((curKeySet > plistKey.size() - 1) || (plistKey.size() == 0))
                             plistKey.resize(curKeySet + 1);
-                        plistKey[curKeySet] = curString;
+                        plistKey.at(curKeySet) = curString;
 
                         //Switch boolean to indicate key word set.
                         keySet = true;
@@ -584,11 +584,13 @@ void Parser::ParseCommands(istream &infile, string curString, string prevString,
             }
         }
     }
-    catch(...)
+    catch(const std::exception &err)
     {
         logStd.Notify();
-        logErr.Notify("Function:  ParseCommands()");
-        
+        logErr.Notify(ID + std::string(err.what()));
+
+        //Stop program execution
+        exit(1);
     }
 }
 
@@ -598,7 +600,7 @@ int Parser::ObjectCheck(istream &infile)
     char junk;  //Junk variable to read off white spaces.
     char curChar = infile.peek();
 
-    while (curChar == SPACE[0] || curChar == EOL[0])
+    while (curChar == SPACE.at(0) || curChar == EOL.at(0))
     {
         //Eliminate junk variable.
         infile.read(&junk,1);
@@ -606,9 +608,9 @@ int Parser::ObjectCheck(istream &infile)
     }
 
     //Now read the extracted data to see if it contains an object declaration
-    if (curChar == OBJECT_BEGIN[0])
+    if (curChar == OBJECT_BEGIN.at(0))
         return 1;
-    else if (curChar == OBJECT_END[0])
+    else if (curChar == OBJECT_END.at(0))
         return -1;
     else
         return 0;

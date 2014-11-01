@@ -148,13 +148,8 @@ protected:
         catch(const std::exception &err)
         {
             logStd.Notify();
-            logErr.Write(std::string(ID) + std::string(">>  ") + err.what());
-
-        }
-        catch(...)
-        {
-            logStd.Notify();
-            logErr.Write(std::string(ID) + std::string(">>  Unknown error occurred."));
+            logErr.Write(ID + std::string(err.what()));
+            exit(1);
         }
     }
 
@@ -219,12 +214,8 @@ protected:
         catch(const std::exception &err)
         {
             logStd.Notify();
-            logErr.Write(std::string(ID) + std::string(">>  ") + err.what());
-        }
-        catch(...)
-        {
-            logStd.Notify();
-            logErr.Write(std::string(ID) + std::string(">>  Unknown error occurred."));
+            logErr.Write(ID + std::string(err.what()));
+            exit(1);
         }
     }
 

@@ -92,11 +92,18 @@ double SpecPM::getSpecEnergy(double freq)
         //Catches case of divide by zero.
         return 0;
     }
+    catch (const std::exception &err)
+    {
+        logStd.Notify();
+        logErr.Write(ID + std::string(err.what()));
+        exit(1);
+    }
     catch(...)
     {
         //Catches any unknown errors.
         logStd.Notify();
-        logErr.Write(std::string(ID) + std::string(">>  Unknown error occurred."));
+        logErr.Write(ID + std::string("Unknown error occurred."));
+        exit(1);
     }
 }
 

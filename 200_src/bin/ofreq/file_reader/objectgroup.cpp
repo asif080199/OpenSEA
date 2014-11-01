@@ -64,7 +64,7 @@ vecKeyword& ObjectGroup::listKey()
 //------------------------------------------Function Separator --------------------------------------------------------
 string &ObjectGroup::listKey(int index)
 {
-    return plistKey[index];
+    return plistKey.at(index);
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
@@ -76,7 +76,7 @@ vecValue& ObjectGroup::listVal()
 //------------------------------------------Function Separator --------------------------------------------------------
 vector<string> &ObjectGroup::listVal(int index)
 {
-    return plistVal[index];
+    return plistVal.at(index);
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
@@ -88,7 +88,7 @@ vector<ObjectGroup *> &ObjectGroup::listObject()
 //------------------------------------------Function Separator --------------------------------------------------------
 ObjectGroup* ObjectGroup::listObject(int index)
 {
-    return plistObject[index];
+    return plistObject.at(index);
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
@@ -110,7 +110,7 @@ void ObjectGroup::addKeySet(string key, string val)
 {
     //create vector of input
     vector<string> input(1);
-    input[1] = val;
+    input.at(1) = val;
 
     //Add to the list, using the full vector method
     this->addKeySet(key, input);
@@ -142,7 +142,7 @@ void ObjectGroup::addKeyWord(string word, int index)
 void ObjectGroup::addKeyVal(string val, int index)
 {
     vector<string> input(1);
-    input[0] = val;
+    input.at(0) = val;
 
     this->addKeyVal(input, index);
 }
@@ -165,13 +165,13 @@ void ObjectGroup::addKeyVal(vector<string> val, int index)
 //------------------------------------------Function Separator --------------------------------------------------------
 string ObjectGroup::getKey(int index)
 {
-    return plistKey[index];
+    return plistKey.at(index);
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
 vector<string> ObjectGroup::getVal(int index)
 {
-    return plistVal[index];
+    return plistVal.at(index);
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------

@@ -1,0 +1,6 @@
+This test performs a simple check of oFreqs ability to use hydrodynamic forces.  
+It is set to only incorporate oFreqs ability to interpolate frequencies.  
+Wave scaling is included in this test.
+
+A hydrodynamic database was created with simple values.  This makes it easy to
+recognize patterns in the code.

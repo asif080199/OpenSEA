@@ -126,7 +126,7 @@ int HydroReader::readHydroSys()
             for (unsigned int j = 0; j < plistTempHydro.size(); j++)
             {
                 //Find index of the hydrobody
-                int bod = findHydroManager(plistTempHydro[j].getHydroBodyName());
+                int bod = findHydroManager(plistTempHydro.at(j).getHydroBodyName());
 
                 if (bod < 0)
                 {
@@ -136,7 +136,7 @@ int HydroReader::readHydroSys()
 
                     //Set the body name.
                     ptSystem->listHydroManager(bod).setHydroBodyName(
-                                plistTempHydro[j].getHydroBodyName());
+                                plistTempHydro.at(j).getHydroBodyName());
 
                     //Set gravity for the body.
                     ptSystem->listHydroManager(bod).setGravity(pGravity);
@@ -144,20 +144,20 @@ int HydroReader::readHydroSys()
 
                 //Find the index of the hydrodata set that matches the wave amplitude.
                 int amp = findHydroDataAmp(bod,
-                                           plistTempHydro[j].getWaveAmp());
+                                           plistTempHydro.at(j).getWaveAmp());
 
                 if (amp < 0)
                 {
                     //No hydrodata set with that wave amplitude was found.  Add the data set as a new one.
                     ptSystem->listHydroManager(bod).addHydroData(
-                                plistTempHydro[j]);
+                                plistTempHydro.at(j));
                 }
                 else
                 {
                     //Hydrodata set was found.  Add a new direction to that part of the list.
                     ptSystem->listHydroManager(bod).addHydroData(
                                 amp,
-                                plistTempHydro[j]);
+                                plistTempHydro.at(j));
                 }
             }
 
@@ -168,13 +168,12 @@ int HydroReader::readHydroSys()
         //Write output to user.
         logStd.Write("    . . . done.");
     }
-    catch(...)
+    catch(const std::exception &err)
     {
         logStd.Notify();
-        logErr.Write(string(ID) + string(">>  Unknown error occurred."));
-        
+        logErr.Write(ID + std::string(err.what()));
+        exit(1);
     }
-
 }
 
 
@@ -220,13 +219,12 @@ int HydroReader::readEnvironment()
         //Write output
         return out;
     }
-    catch(...)
+    catch(const std::exception &err)
     {
         logStd.Notify();
-        logErr.Notify("Function:  readEnvironment()");
-        
+        logErr.Write(ID + std::string(err.what()));
+        exit(1);
     }
-
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
@@ -259,11 +257,11 @@ int HydroReader::readDirections()
         //Write output
         return out;
     }
-    catch(...)
+    catch(const std::exception &err)
     {
         logStd.Notify();
-        logErr.Notify("Function:  readDirections()");
-        
+        logErr.Write(ID + std::string(err.what()));
+        exit(1);
     }
 }
 
@@ -297,11 +295,11 @@ int HydroReader::readFrequencies()
         //Write output
         return out;
     }
-    catch(...)
+    catch(const std::exception &err)
     {
         logStd.Notify();
-        logErr.Notify("Function:  readFrequencies()");
-        
+        logErr.Write(ID + std::string(err.what()));
+        exit(1);
     }
 }
 
@@ -337,11 +335,11 @@ int HydroReader::readForceExcite(int index)
         //Write output
         return out;
     }
-    catch(...)
+    catch(const std::exception &err)
     {
         logStd.Notify();
-        logErr.Notify("Function:  readForceExcite()");
-        
+        logErr.Write(ID + std::string(err.what()));
+        exit(1);
     }
 }
 
@@ -377,11 +375,11 @@ int HydroReader::readHydroMass(int index)
         //Write output
         return out;
     }
-    catch(...)
+    catch(const std::exception &err)
     {
         logStd.Notify();
-        logErr.Notify("Function:  readHydroMass()");
-        
+        logErr.Write(ID + std::string(err.what()));
+        exit(1);
     }
 }
 
@@ -417,11 +415,11 @@ int HydroReader::readHydroDamp(int index)
         //Write output
         return out;
     }
-    catch(...)
+    catch(const std::exception &err)
     {
         logStd.Notify();
-        logErr.Notify("Function:  readHydroDamp()");
-        
+        logErr.Write(ID + std::string(err.what()));
+        exit(1);
     }
 }
 
@@ -457,10 +455,11 @@ int HydroReader::readHydroStiff(int index)
         //Write output
         return out;
     }
-    catch(...)
+    catch(const std::exception &err)
     {
         logStd.Notify();
-        logErr.Notify("Function:  readHydroStiff()");
+        logErr.Write(ID + std::string(err.what()));
+        exit(1);
     }
 }
 
@@ -496,11 +495,11 @@ int HydroReader::readCrossMass(int index)
         //Write output
         return out;
     }
-    catch(...)
+    catch(const std::exception &err)
     {
         logStd.Notify();
-        logErr.Notify("Function:  readCrossMass()");
-        
+        logErr.Write(ID + std::string(err.what()));
+        exit(1);
     }
 }
 
@@ -536,11 +535,11 @@ int HydroReader::readCrossDamp(int index)
         //Write output
         return out;
     }
-    catch(...)
+    catch(const std::exception &err)
     {
         logStd.Notify();
-        logErr.Notify("Function:  readCrossDamp()");
-        
+        logErr.Write(ID + std::string(err.what()));
+        exit(1);
     }
 }
 
@@ -576,11 +575,11 @@ int HydroReader::readCrossStiff(int index)
         //Write output
         return out;
     }
-    catch(...)
+    catch(const std::exception &err)
     {
         logStd.Notify();
-        logErr.Notify("Function:  readCrossStiff()");
-        
+        logErr.Write(ID + std::string(err.what()));
+        exit(1);
     }
 }
 
@@ -649,7 +648,7 @@ int HydroReader::findHydroDataTemp(std::string BodyName)
     //Search through the list of hydrodata objects.
     for (i = 0; i < plistTempHydro.size(); i++)
     {
-        if (plistTempHydro[i].getHydroBodyName().compare(BodyName) == 0)
+        if (plistTempHydro.at(i).getHydroBodyName().compare(BodyName) == 0)
         {
             found = true;
             break;
@@ -666,22 +665,22 @@ int HydroReader::findHydroDataTemp(std::string BodyName)
         i = plistTempHydro.size() - 1;
 
         //set wave amplitude.
-        plistTempHydro[i].setWaveAmp(pWaveAmp);
+        plistTempHydro.at(i).setWaveAmp(pWaveAmp);
 
         //Set wave direction
-        plistTempHydro[i].setWaveDir(plistWaveDir[WaveInd]);
+        plistTempHydro.at(i).setWaveDir(plistWaveDir.at(WaveInd));
 
         //Set the name of the hydrobody
-        plistTempHydro[i].setHydroBodyName(BodyName);
+        plistTempHydro.at(i).setHydroBodyName(BodyName);
 
         //Set the water depth
-        plistTempHydro[i].setDepth(pDepth);
+        plistTempHydro.at(i).setDepth(pDepth);
 
         //Set the water density
-        plistTempHydro[i].setDensity(pDensity);
+        plistTempHydro.at(i).setDensity(pDensity);
 
         //Set the list of wave frequencies.
-        plistTempHydro[i].addWaveFreq(plistWaveFreq);
+        plistTempHydro.at(i).addWaveFreq(plistWaveFreq);
 
         //Return index
         return i;

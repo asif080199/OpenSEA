@@ -95,7 +95,7 @@ void FileReader::setPath(string input)
 
     //check if input has a slash at the end.
     //All functions assume no slash at the end.
-    if (input[input.length() - 1] == SLASH[0])
+    if (input.at(input.length() - 1) == SLASH.at(0))
     {
         //End slash found.  Remove it.
         input.erase(input.length() - 1, 1);
@@ -148,14 +148,10 @@ void FileReader::setPath(string input)
     catch(const std::exception &err)
     {
         logStd.Notify();
-        logErr.Write(string(ID) + string(">>  ") + err.what());
-        
-    }
-    catch(...)
-    {
-        logStd.Notify();
-        logErr.Notify(string("Object:  FileReader, Function:  setPath()"));
-        
+        logErr.Write(ID + err.what());
+
+        //Stop program execution
+        exit(1);
     }
 
     pPath = input;
@@ -314,7 +310,7 @@ void FileReader::setSystem(ofreq::System* ptInput)
 //------------------------------------------Function Separator --------------------------------------------------------
 void FileReader::sendOutput(int index)
 {
-    ptDict->setObject(plistObjects[index]);
+    ptDict->setObject(plistObjects.at(index));
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
@@ -399,20 +395,14 @@ int FileReader::readFile(string path)
             }
         }
     }
-    catch (std::exception &err)
+    catch (const std::exception &err)
     {
-        logErr.Write(string("Error Message:  ") + string(err.what()));
+        logErr.Write(ID + std::string(err.what()));
         logStd.Notify();
         return 1;
-        
 
-    }
-    catch(...)
-    {
-        logErr.Write(string(ID) + string(">>  Unknown error occurred."));
-        logStd.Notify();
-        return 1;
-        
+        //Stop program execution
+        exit(1);
     }
 
     //Close file
@@ -421,7 +411,7 @@ int FileReader::readFile(string path)
     //Emit signal of objects that were read
     for (unsigned int i = 0; i < plistObjects.size(); i++)
     {
-        //emit outputSeaEnvFile(plistObjects[i]);
+        //emit outputSeaEnvFile(plistObjects.at(i));
         sendOutput(i);
     }
 

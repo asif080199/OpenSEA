@@ -50,7 +50,7 @@ SeaModel_LongCrest::~SeaModel_LongCrest()
 double SeaModel_LongCrest::getWaveEnergy(double dirIn, int freqIndex)
 {
     //Get the wave frequency.
-    double freqIn = plistWaveFreq[freqIndex];
+    double freqIn = plistWaveFreq.at(freqIndex);
 
     //Calculate the result
     return getWaveEnergy(dirIn, freqIn);
@@ -63,7 +63,7 @@ double SeaModel_LongCrest::getWaveEnergy(double dirIn, double freqIn)
     double SpecEnergy;      //Calculated wave spectrum energy.
 
     //Calculate the wave spectrum energy, if the direction is correct.
-    if (dirIn == plistWaveDir[0])
+    if (dirIn == plistWaveDir.at(0))
     {
         SpecEnergy = listWaveSpec(0)->getSpecEnergy(freqIn);
     }
@@ -100,7 +100,7 @@ double SeaModel_LongCrest::getWaveAmp(double dirIn, int freqIndex)
             msg = string("Interpolated wave energy was negative for the requested wave direction and") +
                   string("frequency.  Please check the sea model.\nWave Direction:  ");
                   std::to_string(dirIn) + string(" rad\n") + string("Wave Frequency:  ") +
-                  std::to_string(plistWaveFreq[freqIndex]) + string(" rad/s");
+                  std::to_string(plistWaveFreq.at(freqIndex)) + string(" rad/s");
 
             //Throw the error message.
             throw std::runtime_error(msg);
@@ -110,15 +110,11 @@ double SeaModel_LongCrest::getWaveAmp(double dirIn, int freqIndex)
         //Calculate wave amplitude
         return sqrt(2 * WaveEnergy * stepsize);
     }
-    catch(const std::exception &err)
+    catch (const std::exception &err)
     {
         logStd.Notify();
-        logErr.Write(string("Object:  SeaModel_LongCrest, Function:  getWaveAmp()\nError Message:  ") + err.what());
-    }
-    catch(...)
-    {
-        logStd.Notify();
-        logErr.Write(string(ID) + string(">>  Unknown error occurred."));
+        logErr.Write(ID + std::string(err.what()));
+        exit(1);
     }
 }
 

@@ -47,9 +47,9 @@ SolutionSet::~SolutionSet()
     //Delete all solution objects to clear memory
     for (unsigned int i = 0; i < plist.size(); i++)
     {
-        for (unsigned int j = 0; j < plist[i].size(); j++)
+        for (unsigned int j = 0; j < plist.at(i).size(); j++)
         {
-            delete plist[i][j];
+            delete plist.at(i).at(j);
         }
     }
 }
@@ -58,7 +58,7 @@ SolutionSet::~SolutionSet()
 Solution &SolutionSet::refSolution(int dir, int freq)
 {
     //Return reference to specified solution object.
-    return *(plist[dir][freq]);
+    return *(plist.at(dir).at(freq));
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
@@ -77,14 +77,14 @@ void SolutionSet::setSolnMat(int dir, int freq, Solution soln)
         this->resize(dir, freq);
 
     //Set the solution
-    plist[dir][freq] = newSoln;
+    plist.at(dir).at(freq) = newSoln;
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
 Solution SolutionSet::getSolution(int dir, int freq)
 {
     //Return the solution
-    return *(plist[dir][freq]);
+    return *(plist.at(dir).at(freq));
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
@@ -94,7 +94,7 @@ void SolutionSet::resize(int dir, int freq)
     plist.resize(dir);
     for (unsigned int i = 0; i < plist.size(); i++)
     {
-        plist[i].resize(freq);
+        plist.at(i).resize(freq);
     }
 }
 
@@ -103,8 +103,8 @@ vector<int> SolutionSet::size()
 {
     vector<int> output(2);
 
-    output[0] = plist.size();
-    output[1] = plist[0].size();
+    output.at(0) = plist.size();
+    output.at(1) = plist.at(0).size();
 
     return output;
 }
@@ -112,11 +112,11 @@ vector<int> SolutionSet::size()
 //------------------------------------------Function Separator --------------------------------------------------------
 int SolutionSet::n_dirs()
 {
-    return size()[0];
+    return size().at(0);
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
 int SolutionSet::n_freqs()
 {
-    return size()[1];
+    return size().at(1);
 }

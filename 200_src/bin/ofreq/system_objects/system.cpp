@@ -55,21 +55,21 @@ System::~System()
     //Delete the list of motion models
     for (unsigned int i = 0; i < plistModels.size(); i++)
     {
-        delete plistModels[i];
+        delete plistModels.at(i);
     }
     plistModels.clear();
 
     //Delete the list of wave spectra.
     for (unsigned int i = 0; i < plistWaveSpec.size(); i++)
     {
-        delete plistWaveSpec[i];
+        delete plistWaveSpec.at(i);
     }
     plistWaveSpec.clear();
 
     //Delete the list of sea models.
     for (unsigned int i = 0; i < plistSeaModel.size(); i++)
     {
-        delete plistSeaModel[i];
+        delete plistSeaModel.at(i);
     }
     plistSeaModel.clear();
 }
@@ -79,7 +79,7 @@ void System::setPath(std::string pathIn)
 {
     //check if pathIn has a slash at the end.
     //All functions assume no slash at the end.
-    if (pathIn[pathIn.length() - 1] == SLASH[0])
+    if (pathIn.at(pathIn.length() - 1) == SLASH.at(0))
     {
         //End slash found.  Remove it.
         pathIn.erase(pathIn.length() - 1, 1);
@@ -170,7 +170,7 @@ void System::setCurWaveDirInd(int input)
 //    //Build the subset of wave directions in the hydro managers.
 //    for (unsigned int i = 0; i < plistHydroManager.size(); i++)
 //    {
-//        plistHydroManager[i].setWaveDir(pWaveDirections[pCurWaveDir]);
+//        plistHydroManager.at(i).setWaveDir(pWaveDirections.at(pCurWaveDir));
 //    }
 }
 
@@ -195,13 +195,13 @@ int System::getCurFreqInd()
 //------------------------------------------Function Separator --------------------------------------------------------
 double System::getCurWaveDir()
 {
-    return pWaveDirections[pCurWaveDir];
+    return pWaveDirections.at(pCurWaveDir);
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
 double System::getCurFreq()
 {
-    return pWaveFrequencies[pCurWaveFreq];
+    return pWaveFrequencies.at(pCurWaveFreq);
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
@@ -264,7 +264,7 @@ ForceActive* System::refForceActive_user(string forceName)
     while (i <= plistForceActive_user.size() - 1)
     {
         //Check if forcename matches specified force.
-        if (plistForceActive_user[i].getForceName() == forceName)
+        if (plistForceActive_user.at(i).getForceName() == forceName)
             break;
 
         i += 1;
@@ -274,7 +274,7 @@ ForceActive* System::refForceActive_user(string forceName)
     if (i <= (plistForceActive_user.size() - 1))
     {
         //return specified object
-        return &(plistForceActive_user[i]);
+        return &(plistForceActive_user.at(i));
     }
     else
     {
@@ -296,11 +296,11 @@ ForceActive &System::listForceActive_user(unsigned int forceIndex)
     if ((forceIndex > plistForceActive_user.size() - 1) || (plistForceActive_user.size() == 0))
     {
         plistForceActive_user.resize(forceIndex + 1);
-        plistForceActive_user[forceIndex].setSystemIndex(forceIndex);
+        plistForceActive_user.at(forceIndex).setSystemIndex(forceIndex);
     }
 
     //Return object.
-    return plistForceActive_user[forceIndex];
+    return plistForceActive_user.at(forceIndex);
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
@@ -311,7 +311,7 @@ ForceReact *System::refForceReact_user(string forceName)
     while (i <= plistForceReact_user.size() - 1)
     {
         //Check if forcename matches specified force.
-        if (plistForceReact_user[i].getForceName() == forceName)
+        if (plistForceReact_user.at(i).getForceName() == forceName)
             break;
 
         i += 1;
@@ -321,7 +321,7 @@ ForceReact *System::refForceReact_user(string forceName)
     if (i <= (plistForceReact_user.size() - 1))
     {
         //return specified object
-        return &(plistForceReact_user[i]);
+        return &(plistForceReact_user.at(i));
     }
     else
     {
@@ -342,10 +342,10 @@ ForceReact &System::listForceReact_user(unsigned int forceIndex)
     if ((forceIndex > plistForceReact_user.size() - 1) || (plistForceReact_user.size() == 0))
     {
         plistForceReact_user.resize(forceIndex + 1);
-        plistForceReact_user[forceIndex].setSystemIndex(forceIndex);
+        plistForceReact_user.at(forceIndex).setSystemIndex(forceIndex);
     }
 
-    return plistForceReact_user[forceIndex];
+    return plistForceReact_user.at(forceIndex);
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
@@ -356,7 +356,7 @@ ForceCross* System::refForceCross_user(string forceName)
     while (i <= plistForceCross_user.size() - 1)
     {
         //Check if forcename matches specified force.
-        if (plistForceCross_user[i].getForceName() == forceName)
+        if (plistForceCross_user.at(i).getForceName() == forceName)
             break;
 
         i += 1;
@@ -366,7 +366,7 @@ ForceCross* System::refForceCross_user(string forceName)
     if (i <= (plistForceCross_user.size() - 1))
     {
         //return specified object
-        return &(plistForceCross_user[i]);
+        return &(plistForceCross_user.at(i));
     }
     else
     {
@@ -387,10 +387,10 @@ ForceCross &System::listForceCross_user(unsigned int forceIndex)
     if ((forceIndex > plistForceCross_user.size() - 1) || (plistForceCross_user.size() == 0))
     {
         plistForceCross_user.resize(forceIndex + 1);
-        plistForceCross_user[forceIndex].setSystemIndex(forceIndex);
+        plistForceCross_user.at(forceIndex).setSystemIndex(forceIndex);
     }
 
-    return plistForceCross_user[forceIndex];
+    return plistForceCross_user.at(forceIndex);
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
@@ -433,15 +433,11 @@ osea::SeaModel* System::listSeaModelPt(std::string NameIn)
 
         return plistSeaModel.at(i);
     }
-    catch(const std::exception &err)
+    catch (const std::exception &err)
     {
         logStd.Notify();
-        logErr.Write(string("Object:  System, Function:  listSeaModel() \n") + err.what());
-    }
-    catch(...)
-    {
-        logStd.Notify();
-        logErr.Write(string(ID) + string(">>  Unknown error occurred."));
+        logErr.Write(ID + std::string(err.what()));
+        exit(1);
     }
 }
 
@@ -490,15 +486,11 @@ osea::WaveSpecBase* System::listWaveSpecPt(std::string NameIn)
 
         return plistWaveSpec.at(i);
     }
-    catch(const std::exception &err)
+    catch (const std::exception &err)
     {
         logStd.Notify();
-        logErr.Write(string("Object:  System, Function:  listWaveSpec() \n") + err.what());
-    }
-    catch(...)
-    {
-        logStd.Notify();
-        logErr.Write(string(ID) + string(">>  Unknown error occurred."));
+        logErr.Write(ID + std::string(err.what()));
+        exit(1);
     }
 }
 
@@ -525,7 +517,7 @@ void System::setActiveSeaModel(std::string NameIn)
     if (pSeaModelIndex > -1)
     {
         //Sea Model index currently defined.
-        plistSeaModel[pSeaModelIndex]->addWaveFreq(pWaveFrequencies);
+        plistSeaModel.at(pSeaModelIndex)->addWaveFreq(pWaveFrequencies);
     }
 }
 
@@ -616,24 +608,24 @@ void System::addForceCross_user()
 void System::linkBodies(int bodID)
 {
     //Iterate through all user linked bodies
-    for (unsigned int i = 0; i < plistBody[bodID].listNamedLink_user().size(); i++)
+    for (unsigned int i = 0; i < plistBody.at(bodID).listNamedLink_user().size(); i++)
     {
         //Search for body with correct name
-        string name = plistBody[bodID].listNamedLink_user(i);   //Name of the body to search for.
+        string name = plistBody.at(bodID).listNamedLink_user(i);   //Name of the body to search for.
 
         for (unsigned int j = 0; j < listBody().size(); j++)
         {
             if (name == listBody(j).refBodyName())
             {
                 //Assign the pointer for the body
-                plistBody[bodID].listCrossBody_user(i) = listBody(j);
+                plistBody.at(bodID).listCrossBody_user(i) = listBody(j);
                 //Quit the loop
                 break;
             }
         }
     }
     //Clear the list of named links.  Don't need it anymore.
-    plistBody[bodID].listNamedLink_user().clear();
+    plistBody.at(bodID).listNamedLink_user().clear();
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
@@ -645,7 +637,7 @@ std::vector<MotionModel *> &System::listModel()
 //------------------------------------------Function Separator --------------------------------------------------------
 MotionModel &System::listModel(unsigned int index)
 {
-    return *(plistModels[index]);
+    return *(plistModels.at(index));
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
@@ -653,9 +645,9 @@ MotionModel &System::listModel(std::string modelName)
 {
     for (unsigned int i = 0; i < plistModels.size(); i++)
     {
-        if (modelName.compare(plistModels[i]->getName()) == 0)    //Equals zero when string are identical.
+        if (modelName.compare(plistModels.at(i)->getName()) == 0)    //Equals zero when string are identical.
         {
-            return *(plistModels[i]);
+            return *(plistModels.at(i));
             break;
         }
 
@@ -816,17 +808,12 @@ void System::SearchActiveSeaModel()
             }
         }
     }
-    catch(const std::exception &err)
+    catch (const std::exception &err)
     {
         logStd.Notify();
-        logErr.Write(string("Object:  System, Function:  SearchActiveSeaModel() \n") + err.what());
+        logErr.Write(ID + std::string(err.what()));
+        exit(1);
     }
-    catch(...)
-    {
-        logStd.Notify();
-        logErr.Write(string(ID) + string(">>  Unknown error occurred."));
-    }
-
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
@@ -838,7 +825,7 @@ std::vector<ofreq::HydroManager> &System::listHydroManager()
 //------------------------------------------Function Separator --------------------------------------------------------
 ofreq::HydroManager &System::listHydroManager(int index)
 {
-    return plistHydroManager[index];
+    return plistHydroManager.at(index);
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
@@ -850,7 +837,7 @@ ofreq::HydroManager &System::listHydroManager(std::string bodNameIn)
     //Search through list of bodiex.
     for (i = 0; i < plistHydroManager.size(); i++)
     {
-        if (bodNameIn.compare(plistHydroManager[i].getHydroBodyName()) == 0)
+        if (bodNameIn.compare(plistHydroManager.at(i).getHydroBodyName()) == 0)
         {
             matchFound = true;
             break;
@@ -861,17 +848,13 @@ ofreq::HydroManager &System::listHydroManager(std::string bodNameIn)
         if (!matchFound)
             throw std::runtime_error("Hydrobody name not found.");
 
-        return plistHydroManager[i];
+        return plistHydroManager.at(i);
     }
-    catch(const std::exception &err)
+    catch (const std::exception &err)
     {
         logStd.Notify();
-        logErr.Write(string("Object:  System, Function:  listHydroManager()  \n") + err.what());
-    }
-    catch(...)
-    {
-        logStd.Notify();
-        logErr.Write(string(ID) + string(">>  Unknown error occurred."));
+        logErr.Write(ID + std::string(err.what()));
+        exit(1);
     }
 }
 
@@ -1001,12 +984,18 @@ void System::updateHydroForce()
             break;
         }
     }
-
+    catch (const std::exception &err)
+    {
+        logStd.Notify();
+        logErr.Write(ID + std::string(err.what()));
+        exit(1);
+    }
     catch(...)
     {
         //Throw an error.
         logStd.Notify();
-        logErr.Write(string(ID) + string(">>  Unknown error occurred."));
+        logErr.Write(ID + std::string("Unknown error occurred."));
+        exit(1);
     }
 }
 

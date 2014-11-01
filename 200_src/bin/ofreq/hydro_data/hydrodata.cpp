@@ -147,7 +147,8 @@ matForceCross &hydroData::listDataCross(int freqInd, std::string bodyName)
     catch(const std::exception &err)
     {
         logStd.Notify();
-        logErr.Write(string(ID) + string(">>  ") + err.what());
+        logErr.Write(ID + std::string(err.what()));
+        exit(1);
     }
     catch(...)
     {
@@ -200,7 +201,7 @@ void hydroData::addWaveFreq(double freqIn)
 void hydroData::addWaveFreq(std::vector<double> freqIn)
 {
     for (unsigned int i = 0; i < freqIn.size(); i++)
-        this->addWaveFreq(freqIn[i]);
+        this->addWaveFreq(freqIn.at(i));
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
@@ -210,20 +211,20 @@ matForceReact hydroData::getDataReact(double freqIn)
     vector<int> index = FindMatch(freqIn, plistWaveFreq);
 
     //Make sure the two frequencies are in the correct order.
-    if (plistWaveFreq[index[1]] < plistWaveFreq[index[0]])
+    if (plistWaveFreq.at(index.at(1)) < plistWaveFreq.at(index.at(0)))
     {
         //Swap
-        int swap = index[0];
-        index[0] = index[1];
-        index[1] = swap;
+        int swap = index.at(0);
+        index.at(0) = index.at(1);
+        index.at(1) = swap;
     }
 
     //Interpolate
     return iPolate(freqIn,
-            plistWaveFreq[index[0]],
-            plistWaveFreq[index[1]],
-            plistDataReact[index[0]],
-            plistDataReact[index[1]]
+            plistWaveFreq.at(index.at(0)),
+            plistWaveFreq.at(index.at(1)),
+            plistDataReact.at(index.at(0)),
+            plistDataReact.at(index.at(1))
             );
 }
 
@@ -234,26 +235,26 @@ matForceActive hydroData::getDataActive(double freqIn)
     vector<int> index = FindMatch(freqIn, plistWaveFreq);
 
     //Make sure the two frequencies are in the correct order.
-    if (plistWaveFreq[index[1]] < plistWaveFreq[index[0]])
+    if (plistWaveFreq.at(index.at(1)) < plistWaveFreq.at(index.at(0)))
     {
         //Swap
-        int swap = index[0];
-        index[0] = index[1];
-        index[1] = swap;
+        int swap = index.at(0);
+        index.at(0) = index.at(1);
+        index.at(1) = swap;
     }
 
     //Test to get value of p.
-    double freq1 = plistWaveFreq[index[0]];
-    double freq2 = plistWaveFreq[index[1]];
+    double freq1 = plistWaveFreq.at(index.at(0));
+    double freq2 = plistWaveFreq.at(index.at(1));
     double p = (freqIn - freq1) / (freq2 - freq1);
 
 
     //Interpolate
     matForceActive output = iPolate(freqIn,
-            plistWaveFreq[index[0]],
-            plistWaveFreq[index[1]],
-            plistDataActive[index[0]],
-            plistDataActive[index[1]]
+            plistWaveFreq.at(index.at(0)),
+            plistWaveFreq.at(index.at(1)),
+            plistDataActive.at(index.at(0)),
+            plistDataActive.at(index.at(1))
             );
 
     return output;
@@ -273,15 +274,15 @@ matForceCross hydroData::getDataCross(double freqIn, int hydroInd)
     for (int i = 0; i < plistWaveFreq.size(); i++)
     {
         //Calculate distance
-        dist[0] = fabs(freqIn - plistWaveFreq[i]);
+        dist[0] = fabs(freqIn - plistWaveFreq.at(i));
 
         //Check if distance is smaller
         //And make sure that vector is large enough for specified index.
         if ((dist[0] < dist[1]) &&
-                (plistDataCross[i].size() >= hydroInd + 1))
+                (plistDataCross.at(i).size() >= hydroInd + 1))
         {
             dist[1] = dist[0];
-            output[0] = i;
+            output.at(0) = i;
         }
     }
 
@@ -293,25 +294,25 @@ matForceCross hydroData::getDataCross(double freqIn, int hydroInd)
     for (int i = 0; i < plistWaveFreq.size(); i++)
     {
         //Calculate distance
-        dist[0] = fabs(freqIn - plistWaveFreq[i]);
+        dist[0] = fabs(freqIn - plistWaveFreq.at(i));
 
         //Check if distance is smaller and not the other index.
         //Also be sure that vector is large enough for the specified index.
         if ((dist[0] < dist[1]) &&
-                (i != output[0]) &&
-                (plistDataCross[i].size() >= hydroInd + 1))
+                (i != output.at(0)) &&
+                (plistDataCross.at(i).size() >= hydroInd + 1))
         {
             dist[1] = dist[0];
-            output[1] = i;
+            output.at(1) = i;
         }
     }
 
     //Perform interpolation
     matForceCross test = iPolate(freqIn,
-            plistWaveFreq[output[0]],
-            plistWaveFreq[output[1]],
-            plistDataCross[output[0]][hydroInd],
-            plistDataCross[output[1]][hydroInd]);
+            plistWaveFreq.at(output.at(0)),
+            plistWaveFreq.at(output.at(1)),
+            plistDataCross.at(output.at(0)).at(hydroInd),
+            plistDataCross.at(output.at(1)).at(hydroInd));
 
     return test;
 }
@@ -330,18 +331,18 @@ matForceCross hydroData::getDataCross(double freqIn, std::string hydroName)
     //Include requirement that searched terms must match hydroName.
     for (int i = 0; i < plistWaveFreq.size(); i++)
     {
-        for (int j = 0; j < plistDataCross[i].size(); j++)
+        for (int j = 0; j < plistDataCross.at(i).size(); j++)
         {
             //Calculate distance
-            dist[0] = fabs(freqIn - plistWaveFreq[i]);
+            dist[0] = fabs(freqIn - plistWaveFreq.at(i));
 
             //Check if distance is smaller
             //And require that frequency contains a hydrobody with the matching name.
             if ((dist[0] < dist[1]) &&
-                    (plistDataCross[i][j].getLinkedName().compare(hydroName) == 0))
+                    (plistDataCross.at(i).at(j).getLinkedName().compare(hydroName) == 0))
             {
                 dist[1] = dist[0];
-                output[0] = i;
+                output.at(0) = i;
             }
         }
     }
@@ -353,19 +354,19 @@ matForceCross hydroData::getDataCross(double freqIn, std::string hydroName)
     //Iterate through and find the 2nd closest match
     for (int i = 0; i < plistWaveFreq.size(); i++)
     {
-        for (int j = 0; j < plistDataCross[i].size(); j++)
+        for (int j = 0; j < plistDataCross.at(i).size(); j++)
         {
             //Calculate distance
-            dist[0] = fabs(freqIn - plistWaveFreq[i]);
+            dist[0] = fabs(freqIn - plistWaveFreq.at(i));
 
             //Check if distance is smaller and not the other index.
             //And require that frequency contains a hydrobody with the matching name.
             if ((dist[0] < dist[1]) &&
-                    (i != output[0]) &&
-                    (plistDataCross[i][j].getLinkedName().compare(hydroName) == 0))
+                    (i != output.at(0)) &&
+                    (plistDataCross.at(i).at(j).getLinkedName().compare(hydroName) == 0))
             {
                 dist[1] = dist[0];
-                output[1] = i;
+                output.at(1) = i;
             }
         }
     }
@@ -374,9 +375,9 @@ matForceCross hydroData::getDataCross(double freqIn, std::string hydroName)
     int hydroInd[2];              //Index of hydrobody names
     for (int i = 0; i < 2; i++)
     {
-        for (int j = 0; j < plistDataCross[i].size(); j++)
+        for (int j = 0; j < plistDataCross.at(i).size(); j++)
         {
-            if (plistDataCross[i][j].getLinkedName().compare(hydroName) == 0)
+            if (plistDataCross.at(i).at(j).getLinkedName().compare(hydroName) == 0)
             {
                 hydroInd[i] = j;
                 break;
@@ -386,10 +387,10 @@ matForceCross hydroData::getDataCross(double freqIn, std::string hydroName)
 
     //Perform interpolation
     return iPolate(freqIn,
-            plistWaveFreq[output[0]],
-            plistWaveFreq[output[1]],
-            plistDataCross[output[0]][hydroInd[0]],
-            plistDataCross[output[1]][hydroInd[1]]
+            plistWaveFreq.at(output.at(0)),
+            plistWaveFreq.at(output.at(1)),
+                   plistDataCross.at(output.at(0)).at(hydroInd[0]),
+            plistDataCross.at(output.at(1)).at(hydroInd[1])
             );
 }
 
@@ -433,12 +434,7 @@ hydroData hydroData::interpHydroData(double freqIn)
     catch(const std::exception &err)
     {
         logStd.Notify();
-        logErr.Write(string(ID) + string(">>  ") + string(err.what()));
-    }
-    catch(...)
-    {
-        logStd.Notify();
-        logErr.Write(string(ID) + string(">>  Unknown error occurred."));
+        logErr.Write(ID + std::string(err.what()));
         exit(1);
     }
 }

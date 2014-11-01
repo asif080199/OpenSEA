@@ -41,9 +41,9 @@ wave_spec {
   //Spectrum ordinates of wave energy [m^2 s/rad].  Ordinates correlate
   //to wave frequencies just entered.
   wave_energy (
-  0.50
-  0.50
-  0.50
+  1.00
+  1.00
+  1.00
   );
 }
 

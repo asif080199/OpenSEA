@@ -68,7 +68,7 @@ Derivative ForceReact::getDerivative(unsigned int num)
         pDerivative.resize(num + 1);
     }
 
-    return pDerivative[num];
+    return pDerivative.at(num);
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
@@ -85,7 +85,7 @@ Derivative &ForceReact::listDerivative(unsigned int num)
         pDerivative.resize(num + 1);
     }
 
-    return pDerivative[num];
+    return pDerivative.at(num);
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
@@ -108,7 +108,7 @@ void ForceReact::addDerivative(Derivative derivIn, unsigned int ordIn)
     }
 
     //Add in the new derivative.  This will overwrite any pre-existing derivatives.
-    pDerivative[ordIn] = derivIn;
+    pDerivative.at(ordIn) = derivIn;
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------

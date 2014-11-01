@@ -60,7 +60,7 @@ Equation &Derivative::listEquation(unsigned int number)
     }
 
     //Return pointer to the specified equation.
-    return pEquationList[number];
+    return pEquationList.at(number);
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
@@ -79,18 +79,18 @@ Equation &Derivative::listDataEquation(int indexIn)
         //Assume no data index found.  Create a new place in the vector for the data index.
         pEquationList.push_back(Equation());
         i = pEquationList.size() - 1;
-        pEquationList[i].setDataIndex(indexIn);
+        pEquationList.at(i).setDataIndex(indexIn);
     }
     catch(...)
     {
         //Assume no data index found.  Create a new place in the vector for the data index.
         pEquationList.push_back(Equation());
         i = pEquationList.size() - 1;
-        pEquationList[i].setDataIndex(indexIn);
+        pEquationList.at(i).setDataIndex(indexIn);
     }
 
     //Write output
-    return pEquationList[i];
+    return pEquationList.at(i);
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
@@ -125,10 +125,10 @@ void Derivative::addModelEquation(std::vector<double> listCoeffsIn, int EqnDataI
     //Only add the object if it is non zero
     for (unsigned int i = 0; i < listCoeffsIn.size(); i++)
     {
-        if (listCoeffsIn[i] != 0.0)
+        if (listCoeffsIn.at(i) != 0.0)
         {
             //Add each coefficient to the list of coefficients for the equation object.
-            newEqn.addVariable(listCoeffsIn[i], i);
+            newEqn.addVariable(listCoeffsIn.at(i), i);
         }
     }
 
@@ -153,7 +153,7 @@ int Derivative::findIndex(int indexIn)
     for (unsigned int i = 0 ; i < pEquationList.size() ; i++)
     {
         //Check the data index of the object.
-        if (pEquationList[i].getDataIndex() < 0)
+        if (pEquationList.at(i).getDataIndex() < 0)
         {
             //No data index set.  Use the position in the list.
             check = i;
@@ -161,7 +161,7 @@ int Derivative::findIndex(int indexIn)
         else
         {
             //Data index is used.  Use the position in the list.
-            check = pEquationList[i].getDataIndex();
+            check = pEquationList.at(i).getDataIndex();
         }
 
         //Check for match

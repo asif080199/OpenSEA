@@ -84,7 +84,7 @@ void Log::Write(std::string msg, int timestamp, std::string output)
             //First write date and time.
             time_t rawtime;
             struct tm * timeinfo;
-            char buffer [21];
+            char buffer[21];
 
             time(&rawtime);
             timeinfo = localtime(&rawtime);
@@ -108,7 +108,7 @@ void Log::Write(std::string msg, int timestamp, std::string output)
             //First write date and time.
             time_t rawtime;
             struct tm * timeinfo;
-            char buffer [21];
+            char buffer[21];
 
             time(&rawtime);
             timeinfo = localtime(&rawtime);
@@ -134,7 +134,7 @@ void Log::Write(std::string msg, int timestamp, std::string output)
             //First write date and time.
             time_t rawtime;
             struct tm * timeinfo;
-            char buffer [21];
+            char buffer[21];
 
             time(&rawtime);
             timeinfo = localtime(&rawtime);
@@ -189,7 +189,6 @@ void Log::setLogFile(std::string pathIn)
     {
         throw std::runtime_error(__FUNCTION__);
     }
-
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
@@ -221,7 +220,6 @@ void Log::deleteLog(std::string pathIn)
     {
         throw std::runtime_error(__FUNCTION__);
     }
-
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
@@ -260,31 +258,6 @@ void Log::Notify(std::string input)
     //Write the notify message.
     Write(msg);
 }
-
-//------------------------------------------Function Separator --------------------------------------------------------
-//void Log::Notify(int msgId)
-//{
-//    switch(msgId)
-//    {
-//    case 0:
-//        this->Notify("Errors found.  Please check the error log for details.");
-//        break;
-//    case 1:
-//        this->Notify("Unknown error occurred.");
-//        break;
-
-//    default:
-//        this->Notify(0);
-//        break;
-//    }
-//}
-
-//------------------------------------------Function Separator --------------------------------------------------------
-//std::string Log::funcID()
-//{
-//    //return string(ID) + string(":  ");
-//    return string("Log::funcID:  ");
-//}
 
 
 //==========================================Section Separator =========================================================

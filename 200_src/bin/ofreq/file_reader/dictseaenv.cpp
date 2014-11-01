@@ -103,7 +103,7 @@ int dictSeaEnv::defineKey(string keyIn, vector<string> valIn)
     if (keyIn == KEY_CLASS)
     {
         //Define a class type.
-        return buildClass(valIn[0]);
+        return buildClass(valIn.at(0));
     }
     else
     {
@@ -119,13 +119,13 @@ int dictSeaEnv::defineKey(string keyIn, vector<string> valIn)
                 if (pClassType == OBJECT_SEA_MODEL)
                 {
                     //Sea model name
-                    ptSystem->listSeaModel(pObjIndex).setName(valIn[0]);
+                    ptSystem->listSeaModel(pObjIndex).setName(valIn.at(0));
                     return 0;
                 }
                 else if (pClassType == OBJECT_WAVE_SPEC)
                 {
                     //Wave spectra name
-                    ptSystem->listWaveSpec(pObjIndex).setName(valIn[0]);
+                    ptSystem->listWaveSpec(pObjIndex).setName(valIn.at(0));
                     return 0;
                 }
             }
@@ -139,7 +139,7 @@ int dictSeaEnv::defineKey(string keyIn, vector<string> valIn)
                     std::vector<double> waveFreq;       //List of wave frequencies.
                     for (int i = 0; i < valIn.size(); i++)
                     {
-                        waveFreq.push_back(atof(valIn[i].c_str()));
+                        waveFreq.push_back(atof(valIn.at(i).c_str()));
                     }
 
                     //Get the object.
@@ -166,7 +166,7 @@ int dictSeaEnv::defineKey(string keyIn, vector<string> valIn)
                     std::vector<double> waveEnerg;       //List of wave frequencies.
                     for (int i = 0; i < valIn.size(); i++)
                     {
-                        waveEnerg.push_back(atof(valIn[i].c_str()));
+                        waveEnerg.push_back(atof(valIn.at(i).c_str()));
                     }
 
                     //Get the object.
@@ -201,7 +201,7 @@ int dictSeaEnv::defineKey(string keyIn, vector<string> valIn)
                                                         (ptSystem->listWaveSpecPt(pObjIndex));
                         //Set the wave height
                         Spec->setSigWaveHeight(
-                                    atof(valIn[0].c_str()));
+                                    atof(valIn.at(0).c_str()));
                         return 0;
                     }
                     else if (pSubClassType == KEY_ITTC)
@@ -211,7 +211,7 @@ int dictSeaEnv::defineKey(string keyIn, vector<string> valIn)
                                                         (ptSystem->listWaveSpecPt(pObjIndex));
                         //Set the wave height
                         Spec->setSigWaveHeight(
-                                    atof(valIn[0].c_str()));
+                                    atof(valIn.at(0).c_str()));
                         return 0;
                     }
                     else if (pSubClassType == KEY_JONSWAP)
@@ -221,7 +221,7 @@ int dictSeaEnv::defineKey(string keyIn, vector<string> valIn)
                                                   (ptSystem->listWaveSpecPt(pObjIndex));
                         //Set the wave height
                         Spec->setSigWaveHeight(
-                                    atof(valIn[0].c_str()));
+                                    atof(valIn.at(0).c_str()));
                         return 0;
                     }
                     else if (pSubClassType == KEY_PM)
@@ -231,7 +231,7 @@ int dictSeaEnv::defineKey(string keyIn, vector<string> valIn)
                                              (ptSystem->listWaveSpecPt(pObjIndex));
                         //Set the wave height
                         Spec->setSigWaveHeight(
-                                    atof(valIn[0].c_str()));
+                                    atof(valIn.at(0).c_str()));
                         return 0;
                     }
                     else
@@ -269,7 +269,7 @@ int dictSeaEnv::defineKey(string keyIn, vector<string> valIn)
                                                         (ptSystem->listWaveSpecPt(pObjIndex));
                         //Set the wave height
                         Spec->setTMean(
-                                    atof(valIn[0].c_str()));
+                                    atof(valIn.at(0).c_str()));
                         return 0;
                     }
                     else if (pSubClassType == KEY_ITTC)
@@ -279,7 +279,7 @@ int dictSeaEnv::defineKey(string keyIn, vector<string> valIn)
                                                         (ptSystem->listWaveSpecPt(pObjIndex));
                         //Set the wave height
                         Spec->setTMean(
-                                    atof(valIn[0].c_str()));
+                                    atof(valIn.at(0).c_str()));
                         return 0;
                     }
                     else if (pSubClassType == KEY_JONSWAP)
@@ -289,7 +289,7 @@ int dictSeaEnv::defineKey(string keyIn, vector<string> valIn)
                                                   (ptSystem->listWaveSpecPt(pObjIndex));
                         //Set the wave height
                         Spec->setTMean(
-                                    atof(valIn[0].c_str()));
+                                    atof(valIn.at(0).c_str()));
                         return 0;
                     }
                     else
@@ -327,7 +327,7 @@ int dictSeaEnv::defineKey(string keyIn, vector<string> valIn)
                                                         (ptSystem->listWaveSpecPt(pObjIndex));
                         //Set the wave height
                         Spec->setTPeak(
-                                    atof(valIn[0].c_str()));
+                                    atof(valIn.at(0).c_str()));
                         return 0;
                     }
                     else if (pSubClassType == KEY_ITTC)
@@ -337,7 +337,7 @@ int dictSeaEnv::defineKey(string keyIn, vector<string> valIn)
                                                         (ptSystem->listWaveSpecPt(pObjIndex));
                         //Set the wave height
                         Spec->setTPeak(
-                                    atof(valIn[0].c_str()));
+                                    atof(valIn.at(0).c_str()));
                         return 0;
                     }
                     else if (pSubClassType == KEY_JONSWAP)
@@ -347,7 +347,7 @@ int dictSeaEnv::defineKey(string keyIn, vector<string> valIn)
                                                   (ptSystem->listWaveSpecPt(pObjIndex));
                         //Set the wave height
                         Spec->setTPeak(
-                                    atof(valIn[0].c_str()));
+                                    atof(valIn.at(0).c_str()));
                         return 0;
                     }
                     else
@@ -385,7 +385,7 @@ int dictSeaEnv::defineKey(string keyIn, vector<string> valIn)
                                                         (ptSystem->listWaveSpecPt(pObjIndex));
                         //Set the wave height
                         Spec->setTZero(
-                                    atof(valIn[0].c_str()));
+                                    atof(valIn.at(0).c_str()));
                         return 0;
                     }
                     else if (pSubClassType == KEY_ITTC)
@@ -395,7 +395,7 @@ int dictSeaEnv::defineKey(string keyIn, vector<string> valIn)
                                                         (ptSystem->listWaveSpecPt(pObjIndex));
                         //Set the wave height
                         Spec->setTZero(
-                                    atof(valIn[0].c_str()));
+                                    atof(valIn.at(0).c_str()));
                         return 0;
                     }
                     else if (pSubClassType == KEY_JONSWAP)
@@ -405,7 +405,7 @@ int dictSeaEnv::defineKey(string keyIn, vector<string> valIn)
                                                   (ptSystem->listWaveSpecPt(pObjIndex));
                         //Set the wave height
                         Spec->setTZero(
-                                    atof(valIn[0].c_str()));
+                                    atof(valIn.at(0).c_str()));
                         return 0;
                     }
                     else
@@ -440,7 +440,7 @@ int dictSeaEnv::defineKey(string keyIn, vector<string> valIn)
 
                     //Set the band parameter.
                     Spec->setSpecBandParam(
-                                atof(valIn[0].c_str()));
+                                atof(valIn.at(0).c_str()));
                     return 0;
                 }
                 else
@@ -466,7 +466,7 @@ int dictSeaEnv::defineKey(string keyIn, vector<string> valIn)
 
                     //Set the band parameter.
                     Spec->setSpecBandParam(
-                                    atof(valIn[0].c_str()));
+                                    atof(valIn.at(0).c_str()));
                     return 0;
                 }
                 else
@@ -492,7 +492,7 @@ int dictSeaEnv::defineKey(string keyIn, vector<string> valIn)
 
                     //Set the wind speed.
                     Spec->setWindSpeed(
-                                atof(valIn[0].c_str()));
+                                atof(valIn.at(0).c_str()));
                     return 0;
                 }
                 else
@@ -512,7 +512,7 @@ int dictSeaEnv::defineKey(string keyIn, vector<string> valIn)
                 if (pClassType == OBJECT_SEA_MODEL)
                 {
                     ptSystem->listSeaModel(pObjIndex).addWaveDir(
-                                atof(valIn[0].c_str()));
+                                atof(valIn.at(0).c_str()));
                     return 0;
                 }
                 else
@@ -534,7 +534,7 @@ int dictSeaEnv::defineKey(string keyIn, vector<string> valIn)
                     WaveSpecBase *ptSpec;       //Pointer to the wave spectrum.
 
                     //First get the pointer to the wave spectrum from the system.
-                    ptSpec = &(ptSystem->listWaveSpec(valIn[0]));
+                    ptSpec = &(ptSystem->listWaveSpec(valIn.at(0)));
 
                     //First check if list sizes match for the sea model.
                     if ((ptSystem->listSeaModel(pObjIndex).listWaveSpec().size() - 1 == pListIndex) &&
@@ -576,7 +576,7 @@ int dictSeaEnv::defineKey(string keyIn, vector<string> valIn)
                     {
                         //Sizes match.  Just change the last entry.
                         ptSystem->listSeaModel(pObjIndex).listWaveScale(pListIndex) =
-                                atof(valIn[0].c_str());
+                                atof(valIn.at(0).c_str());
                         //Reset the index
                         pListIndex = 0;
                     }
@@ -584,7 +584,7 @@ int dictSeaEnv::defineKey(string keyIn, vector<string> valIn)
                     {
                         //Add the wave scaling parameter to the list of wave scaling.
                         ptSystem->listSeaModel(pObjIndex).addWaveScale(
-                                    atof(valIn[0].c_str()));
+                                    atof(valIn.at(0).c_str()));
                         //Get the index of the last entry in the wave spectrum.
                         pListIndex = ptSystem->listSeaModel(pObjIndex).listWaveScale().size() - 1;
                     }

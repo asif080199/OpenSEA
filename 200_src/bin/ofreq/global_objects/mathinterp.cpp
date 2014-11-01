@@ -65,13 +65,13 @@ vector<int> mathInterp::FindMatch(double valSearch, vector<double> &listVal)
     for (int i = 0; i < listVal.size(); i++)
     {
         //Calculate distance
-        dist[0] = fabs(valSearch - listVal[i]);
+        dist[0] = fabs(valSearch - listVal.at(i));
 
         //Check if distance is smaller
         if (dist[0] < dist[1])
         {
             dist[1] = dist[0];
-            output[0] = i;
+            output.at(0) = i;
         }
     }
 
@@ -83,14 +83,14 @@ vector<int> mathInterp::FindMatch(double valSearch, vector<double> &listVal)
     for (int i = 0; i < listVal.size(); i++)
     {
         //Calculate distance
-        dist[0] = fabs(valSearch - listVal[i]);
+        dist[0] = fabs(valSearch - listVal.at(i));
 
         //Check if distance is smaller and not the other index.
         if ((dist[0] < dist[1]) &&
-                (i != output[0]))
+                (i != output.at(0)))
         {
             dist[1] = dist[0];
-            output[1] = i;
+            output.at(1) = i;
         }
     }
 
@@ -122,13 +122,7 @@ double mathInterp::checkAngle(double angIn)
     catch(const std::exception &err)
     {
         logStd.Notify();
-        logErr.Write(string(ID) + string(">>  ") + err.what());
-        exit(1);
-    }
-    catch(...)
-    {
-        logStd.Notify();
-        logErr.Write(string(ID) + string(">>  Unknown error occurred."));
+        logErr.Write(ID + std::string(err.what()));
         exit(1);
     }
 }

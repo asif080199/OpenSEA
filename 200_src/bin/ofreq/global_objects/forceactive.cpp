@@ -56,7 +56,7 @@ void ForceActive::setCoeff(complex<double> coeffIn, unsigned int index)
     }
 
     //Assign coefficient
-    pCoefficients[index] = coeffIn;
+    pCoefficients.at(index) = coeffIn;
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
@@ -85,7 +85,7 @@ vector<complexDouble> &ForceActive::listCoefficient()
 //------------------------------------------Function Separator --------------------------------------------------------
 complexDouble &ForceActive::listCoefficient(unsigned int index)
 {
-    return pCoefficients[index];
+    return pCoefficients.at(index);
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
@@ -119,14 +119,14 @@ complexDouble &ForceActive::listDataEquation(int index)
     }
 
     //Return coefficient.
-    return pCoefficients[i];
+    return pCoefficients.at(i);
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
 complexDouble ForceActive::getEquation(int number)
 {
     //Return the input coefficient for the equation specified.
-    return pCoefficients[number];
+    return pCoefficients.at(number);
 }
 
 //==========================================Section Separator =========================================================
@@ -147,7 +147,7 @@ int ForceActive::findIndex(int indexIn)
     for (unsigned int i = 0 ; i < pDataIndex.size() ; i++)
     {
         //Check the data index of the object.
-        if (pDataIndex[i] < 0)
+        if (pDataIndex.at(i) < 0)
         {
             //No data index set.  Use the position in the list.
             check = i;
@@ -155,7 +155,7 @@ int ForceActive::findIndex(int indexIn)
         else
         {
             //Data index is used.  Use the position in the list.
-            check = pDataIndex[i];
+            check = pDataIndex.at(i);
         }
 
         //Check for match

@@ -77,17 +77,17 @@ int dictForces::defineKey(string keyIn, vector<string> valIn)
         if (pForceType == 1)
         {
             //Active force type.
-            ptSystem->listForceActive_user(pForceIndex).setForceName(valIn[0]);
+            ptSystem->listForceActive_user(pForceIndex).setForceName(valIn.at(0));
         }
         else if (pForceType == 2)
         {
             //Reactive force type
-            ptSystem->listForceReact_user(pForceIndex).setForceName(valIn[0]);
+            ptSystem->listForceReact_user(pForceIndex).setForceName(valIn.at(0));
         }
         else if (pForceType == 3)
         {
             //Cross-body force type
-            ptSystem->listForceCross_user(pForceIndex).setForceName(valIn[0]);
+            ptSystem->listForceCross_user(pForceIndex).setForceName(valIn.at(0));
         }
         //Report success
         return 0;
@@ -101,7 +101,7 @@ int dictForces::defineKey(string keyIn, vector<string> valIn)
         {
             //convert data type and input.
             ptSystem->listForceActive_user(pForceIndex).setCoeff(
-                        convertComplex(valIn[0].c_str()),
+                        convertComplex(valIn.at(0).c_str()),
                     pEqn
                     );
             //Report success
@@ -117,7 +117,7 @@ int dictForces::defineKey(string keyIn, vector<string> valIn)
     else if (keyIn == KEY_NUMBER)
     {
         //Set the equation number
-        pEqn = atoi(valIn[0].c_str()) - 1;
+        pEqn = atoi(valIn.at(0).c_str()) - 1;
         //Report success
         return 0;
     }
@@ -125,7 +125,7 @@ int dictForces::defineKey(string keyIn, vector<string> valIn)
     else if (keyIn == KEY_ORDER)
     {
         //Set the derivative number
-        pOrd = atoi(valIn[0].c_str());
+        pOrd = atoi(valIn.at(0).c_str());
         //Report success
         return 0;
     }
@@ -136,7 +136,7 @@ int dictForces::defineKey(string keyIn, vector<string> valIn)
         vector<double> coeffIn;
         for (unsigned int i = 0; i < valIn.size(); i++)
         {
-            coeffIn.push_back(atof(valIn[i].c_str()));
+            coeffIn.push_back(atof(valIn.at(i).c_str()));
         }
         //Add the vector to the appropriate derivative and equation.
         if (pForceType == 2)
@@ -171,7 +171,7 @@ int dictForces::defineKey(string keyIn, vector<string> valIn)
         if (pForceType == 1)
         {
             //Convert value
-            int indexIn = atoi(valIn[0].c_str()) - 1;
+            int indexIn = atoi(valIn.at(0).c_str()) - 1;
 
             //Create a new equation entry in the list of equations stored in the forceActive object.
             //For the moment, just use a dummy value for the coefficient.

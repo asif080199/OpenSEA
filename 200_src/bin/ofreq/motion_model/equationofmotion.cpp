@@ -733,13 +733,7 @@ int EquationofMotion::curbody()
     catch(const std::exception &err)
     {
         logStd.Notify();
-        logErr.Write(err.what());
-        exit(1);
-    }
-    catch(...)
-    {
-        logStd.Notify();
-        logErr.Write(string(ID) + string(">>  Unknown error occurred."));
+        logErr.Write(ID + std::string(err.what()));
         exit(1);
     }
 }
@@ -764,17 +758,19 @@ std::complex<double> EquationofMotion::Sum(std::string FuncName, std::string ind
                 (from < 1))
         {
             //Get limit
-            from = 0;
+            //Default values use human number, starting from 1.
+            from = 1;
         }
 
         if (to == undefArg)
         {
             //Get limit
-            to = sizevar() - 1;
+            //Default values use human number, starting from 1.
+            to = sizevar();
         }
 
         //Sum for variable count.
-        for (pCurVar = from ; pCurVar <= to; pCurVar++)
+        for (pCurVar = from - 1 ; pCurVar <= to - 1; pCurVar++)
         {
             output = output + FunctionFind(FuncName);
         }

@@ -84,17 +84,17 @@ int dictForceExcite::defineKey(std::string keyIn, std::vector<std::string> valIn
         try
         {
             if (!pBodOn)
-                throw std::runtime_error(string("File:  forceexcite.out.  Body:  ") + valIn[0]
+                throw std::runtime_error(string("File:  forceexcite.out.  Body:  ") + valIn.at(0)
                     + string("\n No body object declared before body data was supplied."));
 
             //Reset the body signifier for the next body.
             pBodOn = false;
 
             //Search for a hydroData object with that body name.
-            int temp = pParent->findHydroDataTemp(valIn[0]);
+            int temp = pParent->findHydroDataTemp(valIn.at(0));
 
             //Setup a pointer to the hydroBody object, for convenience.
-            pHydroBod = &(pParent->plistTempHydro[temp]);
+            pHydroBod = &(pParent->plistTempHydro.at(temp));
 
             //Do not need to set the hydrobody name.  That gets handled by the findHydroDataTemp() function.
 
@@ -104,14 +104,9 @@ int dictForceExcite::defineKey(std::string keyIn, std::vector<std::string> valIn
         {
             //Throw an error.
             logStd.Notify();
-            logErr.Write(string(ID) + string(">>  ") + err.what());
+            logErr.Write(ID + std::string(err.what()));
             return 2;
-        }
-        catch(...)
-        {
-            logStd.Notify();
-            logErr.Write(string(ID) + string(">>  Unknown error occurred."));
-            return 99;
+            exit(1);
         }
     }
 
@@ -120,7 +115,7 @@ int dictForceExcite::defineKey(std::string keyIn, std::vector<std::string> valIn
     else if (keyIn == KEY_FREQUENCY)
     {
         //Convert value
-        int out = atoi(valIn[0].c_str());
+        int out = atoi(valIn.at(0).c_str());
 
         //Set frequency index.
         pFreqInd = out - 1;
@@ -155,7 +150,7 @@ int dictForceExcite::defineKey(std::string keyIn, std::vector<std::string> valIn
             for (int i = 0; i < nRows; i++)
             {
                 //Convert value
-                complex<double> out = convertComplex(valIn[i]);
+                complex<double> out = convertComplex(valIn.at(i));
 
                 //Add to matrix.
                 input(i,0) = out;
@@ -171,18 +166,11 @@ int dictForceExcite::defineKey(std::string keyIn, std::vector<std::string> valIn
         }
         catch (std::runtime_error &err)
         {
-            //Throw an error.
             logStd.Notify();
-            logErr.Write(err.what());
+            logErr.Write(ID + std::string(err.what()));
             return 2;
+            exit(1);
         }
-        catch(...)
-        {
-            logStd.Notify();
-            logErr.Write(string(ID) + string(">>  Unknown error occurred."));
-            return 99;
-        }
-
     }
 
     //-----------------------------------------------

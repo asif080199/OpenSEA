@@ -1,0 +1,4 @@
+This provides a general set of inputs and outputs to test oFreq.
+
+It should not be checked for accuracy of calculations.  This test is just used to ensure the program
+completes execution without errors.

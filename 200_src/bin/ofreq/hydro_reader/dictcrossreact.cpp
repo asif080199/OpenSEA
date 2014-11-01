@@ -95,19 +95,19 @@ int dictCrossReact::defineKey(std::string keyIn, std::vector<std::string> valIn)
                 if (ORD == 0)
                 {
                     //Hydrostiffness input file.
-                    throw std::runtime_error(string("crossstiffness.out file.  Body:  ") + valIn[0]
+                    throw std::runtime_error(string("crossstiffness.out file.  Body:  ") + valIn.at(0)
                         + string("\n No body object declared before body data was supplied."));
                 }
                 else if (ORD == 1)
                 {
                     //Hydrodamping input file.
-                    throw std::runtime_error(string("crossdamp.out file.  Body:  ") + valIn[0]
+                    throw std::runtime_error(string("crossdamp.out file.  Body:  ") + valIn.at(0)
                         + string("\n No body object declared before body data was supplied."));
                 }
                 else if (ORD == 2)
                 {
                     //Hydromass input file.
-                    throw std::runtime_error(string("crossmass.out file.  Body:  ") + valIn[0]
+                    throw std::runtime_error(string("crossmass.out file.  Body:  ") + valIn.at(0)
                         + string("\n No body object declared before body data was supplied."));
                 }
 
@@ -117,15 +117,15 @@ int dictCrossReact::defineKey(std::string keyIn, std::vector<std::string> valIn)
             if (pLinkOn)
             {
                 //Setting name for linked body.
-                pLinkName = valIn[0];
+                pLinkName = valIn.at(0);
             }
             else
             {
                 //Search for a hydroData object with that body name.
-                int temp = pParent->findHydroDataTemp(valIn[0]);
+                int temp = pParent->findHydroDataTemp(valIn.at(0));
 
                 //Setup a pointer to the hydroBody object, for convenience.
-                pHydroBod = &(pParent->plistTempHydro[temp]);
+                pHydroBod = &(pParent->plistTempHydro.at(temp));
 
                 //Do not need to set the hydrobody name.  That gets handled by the findHydroDataTemp() function.
             }
@@ -136,14 +136,9 @@ int dictCrossReact::defineKey(std::string keyIn, std::vector<std::string> valIn)
         {
             //Throw an error.
             logStd.Notify();
-            logErr.Write(string(ID) + string (">>  ") + err.what());
+            logErr.Write(ID + std::string(err.what()));
             return 2;
-        }
-        catch(...)
-        {
-            logStd.Notify();
-            logErr.Write(string(ID) + string(">>  Unknown error occurred."));
-            return 99;
+            exit(1);
         }
     }
 
@@ -152,7 +147,7 @@ int dictCrossReact::defineKey(std::string keyIn, std::vector<std::string> valIn)
     else if (keyIn == KEY_FREQUENCY)
     {
         //Convert value
-        int out = atoi(valIn[0].c_str());
+        int out = atoi(valIn.at(0).c_str());
 
         //Set frequency index.
         pFreqInd = out - 1;
@@ -166,12 +161,12 @@ int dictCrossReact::defineKey(std::string keyIn, std::vector<std::string> valIn)
         }
 
         //Make sure the list of linked bodies is at least one element in size.
-        if (pHydroBod->listDataCross()[pFreqInd].size() > 0)
+        if (pHydroBod->listDataCross().at(pFreqInd).size() > 0)
         {
             //Now search through the list of linked bodies to see if I can find the one with the matching name.
             bool Match = false;
 
-            for (unsigned int i = 0; i < pHydroBod->listDataCross()[pFreqInd].size(); i++)
+            for (unsigned int i = 0; i < pHydroBod->listDataCross().at(pFreqInd).size(); i++)
             {
                 if (pHydroBod->listDataCross(pFreqInd, i).getLinkedName() == pLinkName)
                 {
@@ -187,7 +182,7 @@ int dictCrossReact::defineKey(std::string keyIn, std::vector<std::string> valIn)
 
                 //Assign the hydrobody name.
                 pHydroBod->listDataCross(pFreqInd,
-                                         pHydroBod->listDataCross()[pFreqInd].size() - 1)
+                                         pHydroBod->listDataCross().at(pFreqInd).size() - 1)
                         .setLinkedName(pLinkName);
             }
         }
@@ -234,7 +229,7 @@ int dictCrossReact::defineKey(std::string keyIn, std::vector<std::string> valIn)
                 {
                     //Convert value
                     complex<double> out;
-                    out.real(atof(valIn[count].c_str()));
+                    out.real(atof(valIn.at(count).c_str()));
 
                     count += 1;
 
@@ -253,18 +248,11 @@ int dictCrossReact::defineKey(std::string keyIn, std::vector<std::string> valIn)
         }
         catch (std::runtime_error &err)
         {
-            //Throw an error.
             logStd.Notify();
-            logErr.Write(err.what());
+            logErr.Write(ID + std::string(err.what()));
             return 2;
+            exit(1);
         }
-        catch(...)
-        {
-            logStd.Notify();
-            logErr.Write(string(ID) + string(">>  Unknown error occurred."));
-            return 99;
-        }
-
     }
 
     //-----------------------------------------------

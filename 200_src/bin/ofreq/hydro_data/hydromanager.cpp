@@ -65,12 +65,8 @@ hydroData &HydroManager::listHydroData(int ampInd, int dirInd)
     catch(const std::exception &err)
     {
         logStd.Notify();
-        logErr.Write(err.what());
-    }
-    catch(...)
-    {
-        logStd.Notify();
-        logErr.Write(string(ID) + string(">>  Unknown error occurred."));
+        logErr.Write(ID + std::string(err.what()));
+        exit(1);
     }
 
 }
@@ -130,23 +126,23 @@ void HydroManager::calcHydroData(double waveAmp, double waveFreq)
         vector<hydroData> DataAmp2;
 
         //Interpolate for first vector.  The first entry is wave direction 1.  Second entry is wave direction two.
-        if (plistDirSubset.at(indWaveAmp[0]).size() < 2)
+        if (plistDirSubset.at(indWaveAmp.at(0)).size() < 2)
         {
             //No two wave directions.  This will be quick. . .
             //Just get the hydrodata for the one wave direction.
             DataAmp1.push_back(
-                        plistDirSubset.at(indWaveAmp[0]).at(0)->interpHydroData(waveFreq)
+                        plistDirSubset.at(indWaveAmp.at(0)).at(0)->interpHydroData(waveFreq)
                     );
         }
         else
         {
             //More than one wave direction.  Good.
             //Interpolate for wave frequency on each wave direction.
-            for (unsigned long i = 0; i < plistDirSubset.at(indWaveAmp[0]).size(); i++)
+            for (unsigned long i = 0; i < plistDirSubset.at(indWaveAmp.at(0)).size(); i++)
             {
                 //Get hydrodata, interpolated for wave frequency.
                 DataAmp1.push_back(
-                            plistDirSubset.at(indWaveAmp[0]).at(i)->interpHydroData(waveFreq)
+                            plistDirSubset.at(indWaveAmp.at(0)).at(i)->interpHydroData(waveFreq)
                         );
             }
         }
@@ -155,32 +151,32 @@ void HydroManager::calcHydroData(double waveAmp, double waveFreq)
         if (indWaveAmp.size() > 1)
         {
             //Interpolate for first vector.  The first entry is wave direction 1.  Second entry is wave direction two.
-            if (plistDirSubset.at(indWaveAmp[1]).size() < 2)
+            if (plistDirSubset.at(indWaveAmp.at(1)).size() < 2)
             {
                 //No two wave directions.  This will be quick. . .
                 //Just get the hydrodata for the one wave direction.
                 DataAmp2.push_back(
-                            plistDirSubset.at(indWaveAmp[1]).at(0)->interpHydroData(waveFreq)
+                            plistDirSubset.at(indWaveAmp.at(1)).at(0)->interpHydroData(waveFreq)
                         );
             }
             else
             {
                 //More than one wave direction.  Good.
                 //Interpolate for wave frequency on each wave direction.
-                for (int i = 0; i < plistDirSubset.at(indWaveAmp[1]).size(); i++)
+                for (int i = 0; i < plistDirSubset.at(indWaveAmp.at(1)).size(); i++)
                 {
                     //Get hydrodata, interpolated for wave frequency.
                     DataAmp2.push_back(
-                                plistDirSubset.at(indWaveAmp[1]).at(i)->interpHydroData(waveFreq)
+                                plistDirSubset.at(indWaveAmp.at(1)).at(i)->interpHydroData(waveFreq)
                             );
                 }
             }
         }
 
         //Get matrix and write debug output.
-//        test1 = DataAmp1[0].listDataCross(0,0).getDerivative(0);
+//        test1 = DataAmp1.at(0).listDataCross(0,0).getDerivative(0);
 //        test1.print(std::cout, "Interpolated Frequency, Dir1 = ");
-//        test2 = DataAmp2[0].listDataCross(0,0).getDerivative(0);
+//        test2 = DataAmp2.at(0).listDataCross(0,0).getDerivative(0);
 //        test2.print(std::cout, "Interpolated Frequency, Dir2 = ");
 
 
@@ -197,12 +193,12 @@ void HydroManager::calcHydroData(double waveAmp, double waveFreq)
                 //Interpolate the given wave directions.
                 DataDir1 =
                         interpWaveDir(
-                            DataAmp1[0],
-                            DataAmp1[1]);
+                            DataAmp1.at(0),
+                            DataAmp1.at(1));
             }
             else
             {
-                DataDir1 = DataAmp1[0];
+                DataDir1 = DataAmp1.at(0);
             }
 
             //Free up memory and clear the vector.
@@ -225,12 +221,12 @@ void HydroManager::calcHydroData(double waveAmp, double waveFreq)
                 //Interpolate the given wave directions.
                 DataDir1 =
                         interpWaveDir(
-                            DataAmp1[0],
-                            DataAmp1[1]);
+                            DataAmp1.at(0),
+                            DataAmp1.at(1));
             }
             else
             {
-                DataDir1 = DataAmp1[0];
+                DataDir1 = DataAmp1.at(0);
             }
 
             //Free up memory and clear the vector.
@@ -243,12 +239,12 @@ void HydroManager::calcHydroData(double waveAmp, double waveFreq)
                 //Interpolate the given wave directions.
                 DataDir2 =
                         interpWaveDir(
-                            DataAmp2[0],
-                            DataAmp2[1]);
+                            DataAmp2.at(0),
+                            DataAmp2.at(1));
             }
             else
             {
-                DataDir2 = DataAmp2[0];
+                DataDir2 = DataAmp2.at(0);
             }
 
             //Free up memory and clear the vector.
@@ -270,16 +266,9 @@ void HydroManager::calcHydroData(double waveAmp, double waveFreq)
     catch(const std::exception &err)
     {
         logStd.Notify();
-        logErr.Write(string(ID) + string(">>  ") + string(err.what()));
+        logErr.Write(ID + std::string(err.what()));
         exit(1);
     }
-    catch(...)
-    {
-        logStd.Notify();
-        logErr.Write(string(ID) + string(">>  Unknown error occurred."));
-        exit(1);
-    }
-
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
@@ -509,7 +498,7 @@ void HydroManager::buildWaveSubset()
             catch(const std::exception &err)
             {
                 logStd.Notify();
-                logErr.Write(string(ID) + string(">>  ") + string(err.what()));
+                logErr.Write(ID + std::string(err.what()));
                 break;
             }
 
@@ -651,14 +640,9 @@ matForceActive HydroManager::waveScale(double ampIn, double amp1, ofreq::matForc
     }
     catch(const std::exception &err)
     {
-        logErr.Write(string(err.what()));
         logStd.Notify();
-    }
-    catch (...)
-    {
-        //Notify
-        logStd.Notify();
-        logErr.Write(string(ID) + string(">>  Unknown error occurred."));
+        logErr.Write(ID + std::string(err.what()));
+        exit(1);
     }
 
     //Write output.
@@ -703,14 +687,9 @@ matForceActive HydroManager::waveScale(double ampIn, double amp1, ofreq::matForc
     }
     catch(const std::exception &err)
     {
-        logErr.Write(string(err.what()));
         logStd.Notify();
-    }
-    catch (...)
-    {
-        //Notify
-        logStd.Notify();
-        logErr.Write(string(ID) + string(">>  Unknown error occurred."));
+        logErr.Write(ID + std::string(err.what()));
+        exit(1);
     }
 }
 
@@ -750,15 +729,9 @@ matForceReact HydroManager::waveScale(double ampIn, double amp1, ofreq::matForce
     }
     catch(const std::exception &err)
     {
-        logErr.Write(string("Error. Object:  HydroManager.  \nFunction:  waveScale(matForceReact) \n")
-                     + string(err.what()));
         logStd.Notify();
-    }
-    catch (...)
-    {
-        //Notify
-        logStd.Notify();
-        logErr.Write(string(ID) + string(">>  Unknown error occurred."));
+        logErr.Write(ID + std::string(err.what()));
+        exit(1);
     }
 }
 
@@ -808,15 +781,9 @@ matForceReact HydroManager::waveScale(double ampIn, double amp1, ofreq::matForce
     }
     catch(const std::exception &err)
     {
-        logErr.Write(string("Error. Object:  HydroManager.  \nFunction:  waveScale(matForceReact) \n")
-                     + string(err.what()));
         logStd.Notify();
-    }
-    catch (...)
-    {
-        //Notify
-        logStd.Notify();
-        logErr.Write(string(ID) + string(">>  Unknown error occurred."));
+        logErr.Write(ID + std::string(err.what()));
+        exit(1);
     }
 }
 
@@ -860,15 +827,9 @@ matForceCross HydroManager::waveScale(double ampIn, double amp1, ofreq::matForce
     }
     catch(const std::exception &err)
     {
-        logErr.Write(string("Error. Object:  HydroManager.  \nFunction:  waveScale(matForceCross) \n")
-                     + string(err.what()));
         logStd.Notify();
-    }
-    catch (...)
-    {
-        //Notify
-        logStd.Notify();
-        logErr.Write(string(ID) + string(">>  Unknown error occurred."));
+        logErr.Write(ID + std::string(err.what()));
+        exit(1);
     }
 }
 
@@ -926,15 +887,9 @@ matForceCross HydroManager::waveScale(double ampIn, double amp1, ofreq::matForce
     }
     catch(const std::exception &err)
     {
-        logErr.Write(string("Error. Object:  HydroManager.  \nFunction:  waveScale(matForceCross) \n")
-                     + string(err.what()));
         logStd.Notify();
-    }
-    catch (...)
-    {
-        //Notify
-        logStd.Notify();
-        logErr.Write(string(ID) + string(">>  Unknown error occurred."));
+        logErr.Write(ID + std::string(err.what()));
+        exit(1);
     }
 
     //Write output.
@@ -972,7 +927,7 @@ vector<int> HydroManager::findMatchAmplitude(double ampIn)
             if (dist[0] < dist[1])
             {
                 dist[1] = dist[0];
-                output[0] = i;
+                output.at(0) = i;
             }
         }
 
@@ -989,10 +944,10 @@ vector<int> HydroManager::findMatchAmplitude(double ampIn)
             dist[0] = fabs(ampIn - plistDirSubset.at(i).at(0)->getWaveAmp());
 
             if (dist[0] < dist[1] &&
-                    (i != output[0]))
+                    (i != output.at(0)))
             {
                 dist[1] = dist[0];
-                output[1] = i;
+                output.at(1) = i;
             }
         }
 
@@ -1075,7 +1030,8 @@ hydroData HydroManager::interpWaveDir(ofreq::hydroData &Data1, ofreq::hydroData 
     catch(const std::exception &err)
     {
         logStd.Notify();
-        logErr.Write(string(ID) + string(">>  ") + err.what());
+        logErr.Write(ID + std::string(err.what()));
+        exit(1);
     }
 }
 
@@ -1142,7 +1098,8 @@ hydroData HydroManager::ScaleHydroData(double ampIn, ofreq::hydroData &Data1)
     catch(const std::exception &err)
     {
         logStd.Notify();
-        logErr.Write(string(ID) + string(">>  ") + err.what());
+        logErr.Write(ID + std::string(err.what()));
+        exit(1);
     }
 }
 
@@ -1217,7 +1174,8 @@ hydroData HydroManager::ScaleHydroData(double ampIn, ofreq::hydroData &Data1, of
     catch(const std::exception &err)
     {
         logStd.Notify();
-        logErr.Write(string(ID) + string(">>  ") + err.what());
+        logErr.Write(ID + std::string(err.what()));
+        exit(1);
     }
 }
 
@@ -1244,12 +1202,12 @@ void HydroManager::checkDirList()
             if (entries == 0)
             {
                 double test1[3];
-                test1[0] = cos(plistHydroData[i][j].getWaveDir());
-                test1[1] = sin(plistHydroData[i][j].getWaveDir());
+                test1[0] = cos(plistHydroData.at(i).at(j).getWaveDir());
+                test1[1] = sin(plistHydroData.at(i).at(j).getWaveDir());
                 //Searching for first entry.
-                if((cos(plistHydroData[i][j].getWaveDir()) > 0.99)
-                        && (sin(plistHydroData[i][j].getWaveDir()) < 0.04)
-                        && (sin(plistHydroData[i][j].getWaveDir()) >= 0.00))
+                if((cos(plistHydroData.at(i).at(j).getWaveDir()) > 0.99)
+                        && (sin(plistHydroData.at(i).at(j).getWaveDir()) < 0.04)
+                        && (sin(plistHydroData.at(i).at(j).getWaveDir()) >= 0.00))
                 {
                     entries += 1;
                     original = j;
@@ -1260,10 +1218,10 @@ void HydroManager::checkDirList()
                 //Searching for second entry.
                 //Add a conditional statement to ensure we don't count entries that are within a few
                 //degrees of the first entry.
-                if((plistHydroData[i][j].getWaveDir() > DISTMAX)
-                        && (cos(plistHydroData[i][j].getWaveDir()) > 0.99)
-                        && (sin(plistHydroData[i][j].getWaveDir()) < 0.04)
-                        && (sin(plistHydroData[i][j].getWaveDir()) >= 0.00))
+                if((plistHydroData.at(i).at(j).getWaveDir() > DISTMAX)
+                        && (cos(plistHydroData.at(i).at(j).getWaveDir()) > 0.99)
+                        && (sin(plistHydroData.at(i).at(j).getWaveDir()) < 0.04)
+                        && (sin(plistHydroData.at(i).at(j).getWaveDir()) >= 0.00))
                     entries += 1;
             }
         }
@@ -1275,12 +1233,12 @@ void HydroManager::checkDirList()
         if (entries == 1)
         {
             //Copy over data.
-            plistHydroData[i].push_back(
-                        plistHydroData[i][original]);
+            plistHydroData.at(i).push_back(
+                        plistHydroData.at(i).at(original));
 
             //Change Wave Direction
-            double dirNew = (2 * PI) - plistHydroData[i][original].getWaveDir();
-            plistHydroData[i].back().setWaveDir(dirNew);
+            double dirNew = (2 * PI) - plistHydroData.at(i).at(original).getWaveDir();
+            plistHydroData.at(i).back().setWaveDir(dirNew);
         }
 
     }

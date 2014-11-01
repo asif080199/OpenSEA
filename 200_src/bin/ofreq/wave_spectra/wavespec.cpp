@@ -93,7 +93,7 @@ double WaveSpec::getSpecEnergy(double freq)
     if (pWaveFreq.size() == 1)
     {
         //Only one data point.  Just return that.
-        return pWaveEnergy[0];
+        return pWaveEnergy.at(0);
     }
     else
     {
@@ -135,7 +135,7 @@ void WaveSpec::ConstructSpline(double freqIn)
     for (int i = 0; i < pWaveFreq.size(); i++)
     {
         //Iterate through and find the index of the frequency with the closest match.
-        dist[0] = abs(freqIn - pWaveFreq[i]);
+        dist[0] = abs(freqIn - pWaveFreq.at(i));
 
         if (dist[0] < dist[1])
         {

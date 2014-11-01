@@ -77,19 +77,12 @@ void Dictionary::setObject(ObjectGroup input)
             if (returnVal != 0)
                 throw std::runtime_error("Error reading in key and value pair.\n" +
                                          string("Key:  ") + string(input.getKey(i)) + string("\nValue:  ") +
-                                         string(input.getVal(i)[0]));
+                                         string(input.getVal(i).at(0)));
         }
         catch(const std::exception &err)
         {
             //Write out error message and stop execution.
-            logErr.Write(string(err.what()));
-            logStd.Notify();
-            exit(1);
-        }
-        catch(...)
-        {
-            //Write out error message and stop execution.
-            logErr.Write(string(ID) + string(">>  Unknown error occurred."));
+            logErr.Write(ID + std::string(err.what()));
             logStd.Notify();
             exit(1);
         }
@@ -105,17 +98,9 @@ void Dictionary::setObject(ObjectGroup input)
         catch(const std::exception &err)
         {
             //Write out error message and stop execution.
-            logErr.Write("Error reading in object definition.\n" +
+            logErr.Write(ID + "Error reading in object definition.\n" +
                          string("Object Name:  ") + string(input.listObject(i)->getClassName()) +
                          string("\nError Code:  ") + string(err.what()));
-            logStd.Notify();
-            exit(1);
-        }
-        catch(...)
-        {
-            //Write out error message and stop execution.
-            logErr.Write("Error reading in object definition.\n" +
-                         string("Object Name:  ") + string(input.listObject(i)->getClassName()));
             logStd.Notify();
             exit(1);
         }
@@ -284,13 +269,7 @@ complex<double> Dictionary::convertComplex(string input)
     catch(const std::exception &err)
     {
         logStd.Notify();
-        logErr.Write(string(ID) + string(">>  ") + err.what());
-        exit(1);
-    }
-    catch(...)
-    {
-        logStd.Notify();
-        logErr.Write(string(ID) + string(">>  Unknown error occurred."));
+        logErr.Write(ID + err.what());
         exit(1);
     }
 

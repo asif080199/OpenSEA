@@ -50,7 +50,7 @@ SeaModel_SingleDirection::~SeaModel_SingleDirection()
 double SeaModel_SingleDirection::getWaveEnergy(double dirIn, int freqIndex)
 {
     //Get the wave frequency.
-    double freqIn = plistWaveFreq[freqIndex];
+    double freqIn = plistWaveFreq.at(freqIndex);
 
     //Calculate the result
     return getWaveEnergy(dirIn, freqIn);
@@ -95,7 +95,7 @@ double SeaModel_SingleDirection::getWaveAmp(double dirIn, int freqIndex)
             msg = string("Interpolated wave energy was negative for the requested wave direction and") +
                   string("frequency.  Please check the sea model.\nWave Direction:  ");
                   std::to_string(dirIn) + string(" rad\n") + string("Wave Frequency:  ") +
-                  std::to_string(plistWaveFreq[freqIndex]) + string(" rad/s");
+                  std::to_string(plistWaveFreq.at(freqIndex)) + string(" rad/s");
 
             //Throw the error message.
             throw std::runtime_error(msg);
@@ -105,15 +105,11 @@ double SeaModel_SingleDirection::getWaveAmp(double dirIn, int freqIndex)
         //Calculate wave amplitude
         return sqrt(2 * WaveEnergy * stepsize);
     }
-    catch(const std::exception &err)
+    catch (const std::exception &err)
     {
         logStd.Notify();
-        logErr.Write(string("Object:  SeaModel_SingleDirection, Function:  getWaveAmp()\nError Message:  ") + err.what());
-    }
-    catch(...)
-    {
-        logStd.Notify();
-        logErr.Write(string(ID) + string(">>  Unknown error occurred."));
+        logErr.Write(ID + std::string(err.what()));
+        exit(1);
     }
 }
 

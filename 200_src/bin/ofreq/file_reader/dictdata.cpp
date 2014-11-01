@@ -86,11 +86,11 @@ int dictData::defineKey(std::string keyIn, std::vector<std::string> valIn)
             //Scan through each of the files listed in the vector.  Check for trailing slashes.
             for (unsigned int i = 0; i < valIn.size(); i++)
             {
-                int q = valIn[i].rfind(SLASH);
-                if (valIn[i].rfind(SLASH) == valIn[i].length() - 1)
+                int q = valIn.at(i).rfind(SLASH);
+                if (valIn.at(i).rfind(SLASH) == valIn.at(i).length() - 1)
                 {
                     //Remove trailing slash.
-                    valIn[i].pop_back();
+                    valIn.at(i).pop_back();
                 }
             }
 
@@ -105,15 +105,11 @@ int dictData::defineKey(std::string keyIn, std::vector<std::string> valIn)
         catch(const std::exception &err)
         {
             logStd.Notify();
-            logErr.Write(string(ID) + string(">>  ") + err.what());
+            logErr.Write(ID + err.what());
             return 99;
+
+            //Stop program execution.
             exit(1);
-        }
-        catch(...)
-        {
-            logStd.Notify();
-            logErr.Write(string("File:  data.in \n Unknown error occurred."));
-            return 99;
         }
     }
 

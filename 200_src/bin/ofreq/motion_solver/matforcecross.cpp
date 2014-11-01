@@ -53,7 +53,7 @@ matForceCross::matForceCross(vector<cx_mat> forceIn)
 {
     for (unsigned int i; i <= forceIn.size(); i++)
     {
-        this->pderiv.push_back(forceIn[i]);
+        this->pderiv.push_back(forceIn.at(i));
     }
 }
 
@@ -108,31 +108,31 @@ matForceCross matForceCross::operator+(matForceCross forceOther)
                 maxSizeTwo = forceOther.getMatSize();
 
             //Check that the maximum size is correct with the matrix size.
-            if (this->pderiv[0].n_rows > maxSizeTwo)
-                maxSizeTwo = this->pderiv[0].n_rows;
-            if (forceOther.pderiv[0].n_rows > maxSizeTwo)
-                maxSizeTwo = forceOther.pderiv[0].n_rows;
+            if (this->pderiv.at(0).n_rows > maxSizeTwo)
+                maxSizeTwo = this->pderiv.at(0).n_rows;
+            if (forceOther.pderiv.at(0).n_rows > maxSizeTwo)
+                maxSizeTwo = forceOther.pderiv.at(0).n_rows;
 
             //Resize Matrices, initialize with zeros.
             for (unsigned int i = 0; i <= maxOrdTwo; i++)
             {
-                output.pderiv[i].zeros(maxSizeTwo, maxSizeTwo);
+                output.pderiv.at(i).zeros(maxSizeTwo, maxSizeTwo);
 
                 //Check if either matrix does not have enough derivatives
                 if (this->pderiv.size() - 1 < i)
                 {
                     //This force object does not have enough derivatives.
-                    output.pderiv[i] = forceOther.pderiv[i];
+                    output.pderiv.at(i) = forceOther.pderiv.at(i);
                 }
                 else if (forceOther.pderiv.size() - 1 < i)
                 {
                     //Other force object does not have enough derivatives.
-                    output.pderiv[i] = this->pderiv[i];
+                    output.pderiv.at(i) = this->pderiv.at(i);
                 }
                 else
                 {
                     //Both have enough derivatives.  Add together.
-                    output.pderiv[i] = this->pderiv[i] + forceOther.pderiv[i];
+                    output.pderiv.at(i) = this->pderiv.at(i) + forceOther.pderiv.at(i);
                 }
             }
             //return output.
@@ -192,31 +192,31 @@ matForceCross matForceCross::operator-(matForceCross forceOther)
                 maxSizeTwo = forceOther.getMatSize();
 
             //Check that the maximum size is correct with the matrix size.
-            if (this->pderiv[0].n_rows > maxSizeTwo)
-                maxSizeTwo = this->pderiv[0].n_rows;
-            if (forceOther.pderiv[0].n_rows > maxSizeTwo)
-                maxSizeTwo = forceOther.pderiv[0].n_rows;
+            if (this->pderiv.at(0).n_rows > maxSizeTwo)
+                maxSizeTwo = this->pderiv.at(0).n_rows;
+            if (forceOther.pderiv.at(0).n_rows > maxSizeTwo)
+                maxSizeTwo = forceOther.pderiv.at(0).n_rows;
 
             //Resize Matrices, initialize with zeros.
             for (unsigned int i = 0; i <= maxOrdTwo; i++)
             {
-                output.pderiv[i].zeros(maxSizeTwo, maxSizeTwo);
+                output.pderiv.at(i).zeros(maxSizeTwo, maxSizeTwo);
 
                 //Check if either matrix does not have enough derivatives
                 if (this->pderiv.size() - 1 < i)
                 {
                     //This force object does not have enough derivatives.
-                    output.pderiv[i] = forceOther.pderiv[i];
+                    output.pderiv.at(i) = forceOther.pderiv.at(i);
                 }
                 else if (forceOther.pderiv.size() - 1 < i)
                 {
                     //Other force object does not have enough derivatives.
-                    output.pderiv[i] = this->pderiv[i];
+                    output.pderiv.at(i) = this->pderiv.at(i);
                 }
                 else
                 {
                     //Both have enough derivatives.  Add together.
-                    output.pderiv[i] = this->pderiv[i] - forceOther.pderiv[i];
+                    output.pderiv.at(i) = this->pderiv.at(i) - forceOther.pderiv.at(i);
                 }
             }
             //return output
@@ -240,7 +240,7 @@ matForceCross matForceCross::operator*(double scalar)
     if ( !(pderiv.size() == 0) )
     {
         //Get max size of matrices
-        int maxSize = pderiv[0].n_rows;
+        int maxSize = pderiv.at(0).n_rows;
 
         //Resize output matrix.
         output.pderiv.resize(this->pderiv.size());
@@ -249,14 +249,14 @@ matForceCross matForceCross::operator*(double scalar)
         for (int i = 0; i < pderiv.size(); i++)
         {
             //Create matrix of zeros
-            output.pderiv[i].zeros(maxSize, maxSize);
+            output.pderiv.at(i).zeros(maxSize, maxSize);
 
             //Multiply for each element
-            for (int j = 0; j < pderiv[i].n_rows; j++)
+            for (int j = 0; j < pderiv.at(i).n_rows; j++)
             {
-                for (int k = 0; k < pderiv[i].n_cols; k++)
+                for (int k = 0; k < pderiv.at(i).n_cols; k++)
                 {
-                    output.pderiv[i].at(j,k) = this->pderiv[i].at(j,k) * scalar;
+                    output.pderiv.at(i).at(j,k) = this->pderiv.at(i).at(j,k) * scalar;
                 }
             }
         }
@@ -310,8 +310,8 @@ vector<int> matForceCross::getMatDims()
     vector<int> output(2);
 
     //Get number of rows and number of columns
-    output[0] = pderiv[0].n_rows;
-    output[1] = pderiv[0].n_cols;
+    output.at(0) = pderiv.at(0).n_rows;
+    output.at(1) = pderiv.at(0).n_cols;
 
     return output;
 }

@@ -141,19 +141,10 @@ Solution &GlobalSolution::getSolution(double freqIn)
 
         return pParentBody->refCurSolution().refSolution(getCurWaveInd(), freqIndex);
     }
-    catch (std::exception &err)
+    catch (const std::exception &err)
     {
         //Write out error message.
-        logErr.Write("Error:  " + string(err.what()));
-        logStd.Notify();
-
-        //Stop program execution.
-        exit(1);
-    }
-    catch(...)
-    {
-        //Write out error message.
-        logErr.Write(string(ID) + string(">>  Unknown error occurred."));
+        logErr.Write(ID + std::string(err.what()));
         logStd.Notify();
 
         //Stop program execution.

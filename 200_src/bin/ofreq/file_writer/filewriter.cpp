@@ -27,7 +27,6 @@
 #include "filewriter.h"
 
 using namespace std;
-//using namespace boost::filesystem; //for using boost file system
 using namespace osea::ofreq;
 
 //==========================================Section Separator =========================================================
@@ -112,14 +111,14 @@ void FileWriter::setProjectDir(string dirIn)
 //------------------------------------------Function Separator --------------------------------------------------------
 bool FileWriter::clearFiles()
 {
-    string numToDelete = "0";
-    string curDirectoryPath = NAME_DIR + numToDelete; //start at directory "d0"
+    string numToDelete = "1";
+    string curDirectoryPath = NAME_DIR + numToDelete; //start at directory "d1"
     bool test;      //Test results of deleting contents of directory.
     QFile file;
     QString filename;
 
 
-    //Remove the direcions & frequencies file outputs if they exist
+    //Remove the directions & frequencies file outputs if they exist
     filename.append(projectDirectory.c_str());
     filename.append(SLASH.c_str());
     filename.append(FILE_DIRECTIONS.c_str());
@@ -166,18 +165,11 @@ bool FileWriter::clearFiles()
             convert.str("");        //Clear converter
             curDirectoryPath = NAME_DIR + numToDelete;
         }
-        catch (std::exception &err)
+        catch (const std::exception &err)
         {
             //Write out the error message.  Keep executing.  Failure to delete a file may not necessarily
             //be a problem.
-            logErr.Write(string("Error Message:  ") + string(err.what()));
-            logStd.Notify();
-        }
-        catch(...)
-        {
-            //Write out the error message.  Keep executing.  Failure to delete a file may not necessarily
-            //be a problem.
-            logErr.Write(string(ID) + string(">>  Unknown error occurred."));
+            logErr.Write(ID + std::string(err.what()));
             logStd.Notify();
         }
     }
@@ -258,21 +250,18 @@ void FileWriter::setHeader(string filePathIn)
         header_fileInput.seekg(0, std::ios::end);
         header.resize(header_fileInput.tellg());
         header_fileInput.seekg(0, std::ios::beg);
-        header_fileInput.read(&header[0], header.size());
+        header_fileInput.read(&header.at(0), header.size());
         //Close file
         header_fileInput.close();
     }
-    catch (std::exception &err)
+    catch (const std::exception &err)
     {
         //Write out error message
-        logErr.Write(string("Error Message:  ") + string(err.what()));
+        logErr.Write(ID + std::string(err.what()));
         logStd.Notify();
-    }
-    catch(...)
-    {
-        //Write out error message
-        logErr.Write("Uknown error occurred.  Ojbect:  filewriter(), Function:  setHeader()");
-        logStd.Notify();
+
+        //Stop program execution
+        exit(1);
     }
 }
 
@@ -315,6 +304,10 @@ int FileWriter::writeWaveDirection()
             //Add beginning of data
             output << KEY_DIRECTION + SPACE + LIST_BEGIN << endl;
 
+            //Set output details for file.
+            output.setf(ios::scientific);
+            output.precision(DIGIT);
+
             //Write outputs
             for(unsigned int i = 0; i < pOutput->listWaveDir().size(); i ++)
             {
@@ -330,17 +323,10 @@ int FileWriter::writeWaveDirection()
     }
     catch(const std::exception &err)
     {
-        logErr.Write("Unknown Error Occurred.  Object:  FileWriter, Function:  writeWaveDirection()\n" +
-                     string("Error Message:  ") + string(string(err.what())));
+        logErr.Write(ID + std::string(err.what()));
         logStd.Notify();
         errVal = 1;
-    }
-    catch(...)
-    {
-        //Write out error message
-        logErr.Write(string(ID) + string(">>  Unknown error occurred."));
-        logStd.Notify();
-        errVal = 1;
+        exit(1);
     }
 
     return errVal;
@@ -379,6 +365,10 @@ int FileWriter::writeFrequency()
             //Add beginning of data
             output << KEY_FREQUENCY + SPACE + LIST_BEGIN << endl;
 
+            //Set output details for file.
+            output.setf(ios::scientific);
+            output.precision(DIGIT);
+
             //Write outputs
             for(unsigned int i = 0; i < pOutput->listFreq().size(); i ++)
             {
@@ -394,17 +384,10 @@ int FileWriter::writeFrequency()
     }
     catch(const std::exception &err)
     {
-        logErr.Write("Unknown Error Occurred.  Object:  FileWriter, Function:  writeFrequency()\n" +
-                     string("Error Message:  ") + string(err.what()));
+        logErr.Write(ID + std::string(err.what()));
         logStd.Notify();
         errVal = 1;
-    }
-    catch(...)
-    {
-        //Write out error message
-        logErr.Write("Uknown error occurred.  Ojbect:  filewriter(), Function:  writeFrequencies()");
-        logStd.Notify();
-        errVal = 1;
+        exit(1);
     }
 
     return errVal;
@@ -441,7 +424,7 @@ int FileWriter::writeGlobalMotion()
     {
         //Already exists.  Just open the file.
         //Open file
-        output.open(writeFilename.c_str());
+        output.open(writeFilename.c_str(),ios_base::app);
     }
     else
     {
@@ -462,6 +445,10 @@ int FileWriter::writeGlobalMotion()
             output << BREAK_TOP;
         }
     }
+
+    //Set output details for file.
+    output.setf(ios::scientific);
+    output.precision(DIGIT);
 
     if (outputAvail)
     {
@@ -499,22 +486,25 @@ int FileWriter::writeGlobalMotion()
                     //Write out data for given frequency.
                     for (unsigned int k = 0; k < pOutput->listResult(j).n_rows; k++)
                     {
-                        //Set precision
-                        output.precision(DIGIT);
                         //Write output values for each solution object.
                         //Write the real part
-                        output << TAB(4) << std::setprecision(DIGIT) << pOutput->listResult(j)(k,0).real();
+                        output << TAB(4) << pOutput->listResult(j)(k,0).real();
+
+                        //Write separator mark
+                        output << ",";
 
                         //Write the imaginary part
-                        //Set precision
-                        if (pOutput->listResult(j)(k,0).imag() < 0.00)
-                            output << std::setprecision(DIGIT) << pOutput->listResult(j)(k,0).imag() << "i" << endl;
-                        else
-                        {
-                            output << "+";
-                            output << std::setprecision(DIGIT) << pOutput->listResult(j)(k,0).imag();
-                            output << "i" << endl;
-                        }
+                        output << pOutput->listResult(j)(k,0).imag() << endl;
+
+//                        //Write the imaginary part
+//                        if (pOutput->listResult(j)(k,0).imag() < 0.00)
+//                            output << pOutput->listResult(j)(k,0).imag() << "i" << endl;
+//                        else
+//                        {
+//                            output << "+";
+//                            output << pOutput->listResult(j)(k,0).imag();
+//                            output << "i" << endl;
+//                        }
                     }
                     //Close list
                     output << TAB(3) << LIST_END << END << endl;
@@ -524,17 +514,10 @@ int FileWriter::writeGlobalMotion()
             }
             catch(const std::exception &err)
             {
-                logErr.Write("Unknown Error Occurred.  Object:  FileWriter, Function:  writeGlobalMotion()\n" +
-                             string("Error Message:  ") + string(err.what()));
+                logErr.Write(ID + std::string(err.what()));
                 logStd.Notify();
                 errVal = 1;
-            }
-            catch(...)
-            {
-                //Write out error message
-                logErr.Write(string(ID) + string(">>  Unknown error occurred."));
-                logStd.Notify();
-                errVal = 1;
+                exit(1);
             }
 
             //End the output object
@@ -583,7 +566,7 @@ int FileWriter::writeGlobalVelocity()
     {
         //Already exists.  Just open the file.
         //Open file
-        output.open(writeFilename.c_str());
+        output.open(writeFilename.c_str(),ios_base::app);
     }
     else
     {
@@ -663,19 +646,10 @@ int FileWriter::writeGlobalVelocity()
             }
             catch(const std::exception &err)
             {
-                logErr.Write("Unknown Error Occurred.  Object:  FileWriter, Function:  writeGlobalVelocity()\n" +
-                             string("Error Message:  ") + string(err.what()));
+                logErr.Write(ID + std::string(err.what()));
                 logStd.Notify();
                 errVal = 1;
-                
-            }
-            catch(...)
-            {
-                //Write out error message
-                logErr.Write("Uknown error occurred.  Ojbect:  filewriter(), Function:  writeGlobalVelocity()");
-                logStd.Notify();
-                errVal = 1;
-                
+                exit(1);
             }
 
             //End the output object
@@ -725,7 +699,7 @@ int FileWriter::writeGlobalAcceleration()
     {
         //Already exists.  Just open the file.
         //Open file
-        output.open(writeFilename.c_str());
+        output.open(writeFilename.c_str(), ios_base::app);
     }
     else
     {
@@ -805,17 +779,10 @@ int FileWriter::writeGlobalAcceleration()
             }
             catch(const std::exception &err)
             {
-                logErr.Write("Unknown Error Occurred.  Object:  FileWriter, Function:  writeGlobalAcceleration()\n" +
-                             string("Error Message:  ") + string(err.what()));
+                logErr.Write(ID + std::string(err.what()));
                 logStd.Notify();
                 errVal = 1;
-            }
-            catch(...)
-            {
-                //Write out error message
-                logErr.Write(string(ID) + string(">>  Unknown error occurred."));
-                logStd.Notify();
-                errVal = 1;
+                exit(1);
             }
 
             //End the output object
@@ -865,7 +832,7 @@ int FileWriter::writeGlobalSolution()
     {
         //Already exists.  Just open the file.
         //Open file
-        output.open(writeFilename.c_str());
+        output.open(writeFilename.c_str(), ios_base::app);
     }
     else
     {
@@ -945,17 +912,10 @@ int FileWriter::writeGlobalSolution()
             }
             catch(const std::exception &err)
             {
-                logErr.Write("Unknown Error Occurred.  Object:  FileWriter, Function:  writeGlobalSolution()\n" +
-                             string("Error Message:  ") + string(err.what()));
+                logErr.Write(ID + std::string(err.what()));
                 logStd.Notify();
                 errVal = 1;
-            }
-            catch(...)
-            {
-                //Write out error message
-                logErr.Write(string(ID) + string(">>  Unknown error occurred."));
-                logStd.Notify();
-                errVal = 1;
+                exit(1);
             }
 
             //End the output object

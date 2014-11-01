@@ -340,7 +340,7 @@ int main(int argc, char *argv[])
                     //soln.refBody() = sysofreq.listBody(k);
                     soln.setBody(&sysofreq.listBody(k));
                     soln.setSolnMat(theMotionSolver.listSolution(k));
-                    listSolutions[k].setSolnMat(i, j, soln);
+                    listSolutions.at(k).setSolnMat(i, j, soln);
                 }
 
                 //Update the iterator
@@ -417,13 +417,9 @@ int main(int argc, char *argv[])
                 }
                 catch(const std::exception &err)
                 {
-                    sysofreq.logErr.Write(string(err.what()));
+                    sysofreq.logErr.Write(ID + std::string(err.what()));
                     sysofreq.logStd.Notify();
-                }
-                catch(...)
-                {
-                    sysofreq.logErr.Write("Unknown error occurred.  Main program.");
-                    sysofreq.logStd.Notify();
+                    exit(1);
                 }
 
                 //Write wave directions list
@@ -435,13 +431,9 @@ int main(int argc, char *argv[])
                 }
                 catch(const std::exception &err)
                 {
-                    sysofreq.logErr.Write(string(err.what()));
+                    sysofreq.logErr.Write(ID + std::string(err.what()));
                     sysofreq.logStd.Notify();
-                }
-                catch(...)
-                {
-                    sysofreq.logErr.Write("Unknown error occurred.  Main program.");
-                    sysofreq.logStd.Notify();
+                    exit(1);
                 }
             }
 
@@ -455,14 +447,10 @@ int main(int argc, char *argv[])
         sysofreq.logStd.Write("oFreq completed successfully.");
         return 0;
     }
-    catch (std::runtime_error &err)
+    catch(const std::exception &err)
     {
-        sysofreq.logErr.Write(string("Function:  main()\n") + err.what());
-        return 1;
-        exit(1);
-    }
-    catch (...)
-    {
+        sysofreq.logErr.Write(ID + std::string(err.what()));
+        sysofreq.logStd.Notify();
         return 1;
         exit(1);
     }
@@ -474,7 +462,7 @@ void buildMatBody(int bod, bool useCoeff)
     try
     {
         //First assign the basic properties for the matbody.
-        listMatBody[bod].setId(bod);
+        listMatBody.at(bod).setId(bod);
         Body* MyBod;         //The current body that I am working with
         MotionModel* MyModel; //The current motion model that I am working with
 
@@ -492,26 +480,26 @@ void buildMatBody(int bod, bool useCoeff)
         //------------------------------------------
         for (unsigned int i = 0; i < MyBod->listForceActive_user().size(); i++)
         {
-            listMatBody[bod].listForceActive_user().push_back(matForceActive());
-            listMatBody[bod].listForceActive_user(i).listCoefficient() = MyModel->getMatForceActive_user(i);
+            listMatBody.at(bod).listForceActive_user().push_back(matForceActive());
+            listMatBody.at(bod).listForceActive_user(i).listCoefficient() = MyModel->getMatForceActive_user(i);
             //Print out active force matrix.  For Debugging.
-            //listMatBody[bod].listForceActive_user(i).listCoefficient().print("Active Force: " + i);
+            //listMatBody.at(bod).listForceActive_user(i).listCoefficient().print("Active Force: " + i);
 
             //Create force ID.
-            listMatBody[bod].listForceActive_user(i).setId(i);
+            listMatBody.at(bod).listForceActive_user(i).setId(i);
         }
 
         //Iterate through all the active forces, hydro
         //------------------------------------------
         for(unsigned int i = 0; i < MyBod->listForceActive_hydro().size(); i++)
         {
-            listMatBody[bod].listForceActive_hydro().push_back(matForceActive());
-            listMatBody[bod].listForceActive_hydro(i).listCoefficient() = MyModel->getMatForceActive_hydro(i);
+            listMatBody.at(bod).listForceActive_hydro().push_back(matForceActive());
+            listMatBody.at(bod).listForceActive_hydro(i).listCoefficient() = MyModel->getMatForceActive_hydro(i);
             //Print out active force matrix.  For Debugging.
-            //listMatBody[bod].listForceActive_hydro(i).listCoefficient().print("Active Force: " + i);
+            //listMatBody.at(bod).listForceActive_hydro(i).listCoefficient().print("Active Force: " + i);
 
             //Create force ID.
-            listMatBody[bod].listForceActive_hydro(i).setId(i);
+            listMatBody.at(bod).listForceActive_hydro(i).setId(i);
         }
 
         //Use this pointer for referencing the forces
@@ -522,9 +510,9 @@ void buildMatBody(int bod, bool useCoeff)
         //------------------------------------------
         for (unsigned int i = 0; i < MyBod->listForceReact_user().size(); i++)
         {
-            listMatBody[bod].listForceReact_user().push_back(matForceReact());
+            listMatBody.at(bod).listForceReact_user().push_back(matForceReact());
             //Create pointer
-            ptForce = &listMatBody[bod].listForceReact_user(i);
+            ptForce = &listMatBody.at(bod).listForceReact_user(i);
 
             //Assign id for force.
             ptForce->setId(i);
@@ -542,7 +530,7 @@ void buildMatBody(int bod, bool useCoeff)
                 ptForce->listDerivative().push_back(MyModel->getMatForceReact_user(i,j));
 
     //            //Print out Matrix.  For debugging.
-    //            listMatBody[bod].listForceReact_user(0).listDerivative(0).print("Reactive Force:  ");
+    //            listMatBody.at(bod).listForceReact_user(0).listDerivative(0).print("Reactive Force:  ");
             }
         }
 
@@ -550,9 +538,9 @@ void buildMatBody(int bod, bool useCoeff)
         //------------------------------------------
         for (unsigned int i = 0; i < MyBod->listForceReact_hydro().size(); i++)
         {
-            listMatBody[bod].listForceReact_hydro().push_back(matForceReact());
+            listMatBody.at(bod).listForceReact_hydro().push_back(matForceReact());
             //Create pointer
-            ptForce = & listMatBody[bod].listForceReact_hydro(i);
+            ptForce = & listMatBody.at(bod).listForceReact_hydro(i);
 
             //Assign id for force.
             ptForce->setId(i);
@@ -578,9 +566,9 @@ void buildMatBody(int bod, bool useCoeff)
         //------------------------------------------
         for (unsigned int i = 0; i < MyBod->listForceCross_user().size(); i++)
         {
-            listMatBody[bod].listForceCross_user().push_back(matForceCross());
+            listMatBody.at(bod).listForceCross_user().push_back(matForceCross());
             //Create pointer
-            ptForce2 = &listMatBody[bod].listForceCross_user(i);
+            ptForce2 = &listMatBody.at(bod).listForceCross_user(i);
 
             //Assign id for force.
             ptForce2->setId(i);
@@ -591,7 +579,7 @@ void buildMatBody(int bod, bool useCoeff)
                 if (&sysofreq.listBody(k) == &(MyBod->listCrossBody_user(i)))
                 {
                     //Assign cross body
-                    ptForce2->setLinkedBody(&(listMatBody[k]));
+                    ptForce2->setLinkedBody(&(listMatBody.at(k)));
                     //Set linked body id.  This should be automatic, but the program produced unreliable results.
                     ptForce2->setLinkedId(k);
                     break;
@@ -617,9 +605,9 @@ void buildMatBody(int bod, bool useCoeff)
         //------------------------------------------
         for (unsigned int i = 0; i < MyBod->listForceCross_hydro().size(); i++)
         {
-            listMatBody[bod].listForceCross_hydro().push_back(matForceCross());
+            listMatBody.at(bod).listForceCross_hydro().push_back(matForceCross());
             //Create pointer
-            ptForce2 = &listMatBody[bod].listForceCross_hydro(i);
+            ptForce2 = &listMatBody.at(bod).listForceCross_hydro(i);
 
             //Assign id for force.
             ptForce2->setId(i);
@@ -630,7 +618,7 @@ void buildMatBody(int bod, bool useCoeff)
                 if (&sysofreq.listBody(k) == &(MyBod->listCrossBody_hydro(i)))
                 {
                     //Assign cross body
-                    ptForce2->setLinkedBody(&(listMatBody[k]));
+                    ptForce2->setLinkedBody(&(listMatBody.at(k)));
                     //Set linked body id.  This should be automatic, but the program produced unreliable results.
                     ptForce2->setLinkedId(k);
                     break;
@@ -654,15 +642,15 @@ void buildMatBody(int bod, bool useCoeff)
 
         //Get the mass matrix
         //------------------------------------------
-        listMatBody[bod].refMass() = MyModel->getMatForceMass();
+        listMatBody.at(bod).refMass() = MyModel->getMatForceMass();
         //print out mass matrix.  For debugging.
-        //listMatBody[bod].refMass().print("Mass:");
+        //listMatBody.at(bod).refMass().print("Mass:");
     }
-    catch(...)
+    catch(const std::exception &err)
     {
+        sysofreq.logErr.Write(ID + std::string(err.what()));
         sysofreq.logStd.Notify();
-        sysofreq.logErr.Write("Error:  Function buildMatBody()");
-        
+        exit(1);
     }
 }
 
@@ -704,15 +692,9 @@ void calcOutput(OutputsBody &OutputIn, FileWriter &WriterIn)
         }
         catch(const std::exception &err)
         {
-            sysofreq.logErr.Write(string(err.what()));
+            sysofreq.logErr.Write(ID + std::string(err.what()));
             sysofreq.logStd.Notify();
-            
-        }
-        catch(...)
-        {
-            sysofreq.logErr.Write("Unknown error occurred.  Main program.");
-            sysofreq.logStd.Notify();
-            
+            exit(1);
         }
 
         try
@@ -725,15 +707,9 @@ void calcOutput(OutputsBody &OutputIn, FileWriter &WriterIn)
         }
         catch(const std::exception &err)
         {
-            sysofreq.logErr.Write(string(err.what()));
+            sysofreq.logErr.Write(ID + std::string(err.what()));
             sysofreq.logStd.Notify();
-            
-        }
-        catch(...)
-        {
-            sysofreq.logErr.Write("Unknown error occurred.  Main program.");
-            sysofreq.logStd.Notify();
-            
+            exit(1);
         }
 
         try
@@ -746,15 +722,9 @@ void calcOutput(OutputsBody &OutputIn, FileWriter &WriterIn)
         }
         catch(const std::exception &err)
         {
-            sysofreq.logErr.Write(string(err.what()));
+            sysofreq.logErr.Write(ID + std::string(err.what()));
             sysofreq.logStd.Notify();
-            
-        }
-        catch(...)
-        {
-            sysofreq.logErr.Write("Unknown error occurred.  Main program.");
-            sysofreq.logStd.Notify();
-            
+            exit(1);
         }
 
         try
@@ -767,15 +737,9 @@ void calcOutput(OutputsBody &OutputIn, FileWriter &WriterIn)
         }
         catch(const std::exception &err)
         {
-            sysofreq.logErr.Write(string(err.what()));
+            sysofreq.logErr.Write(ID + std::string(err.what()));
             sysofreq.logStd.Notify();
-            
-        }
-        catch(...)
-        {
-            sysofreq.logErr.Write("Unknown error occurred.  Main program.");
-            sysofreq.logStd.Notify();
-            
+            exit(1);
         }
     }
 }
@@ -843,14 +807,12 @@ void ReadFiles(string runPath)
             }
         }
     }
-    catch(...)
+    catch(const std::exception &err)
     {
-        sysofreq.logErr.Write("Unknown error occurred.  Main program.");
+        sysofreq.logErr.Write(ID + std::string(err.what()));
         sysofreq.logStd.Notify();
-        
+        exit(1);
     }
-
-
 }
 
 //######################################## ReadFiles Function #########################################################
@@ -976,21 +938,15 @@ void writeLogHeader()
         header_fileInput.seekg(0, std::ios::end);
         header.resize(header_fileInput.tellg());
         header_fileInput.seekg(0, std::ios::beg);
-        header_fileInput.read(&header[0], header.size());
+        header_fileInput.read(&header.at(0), header.size());
         //Close file
         header_fileInput.close();
     }
-    catch (exception &err)
+    catch(const std::exception &err)
     {
-        sysofreq.logErr.Write(string(err.what()));
+        sysofreq.logErr.Write(ID + std::string(err.what()));
         sysofreq.logStd.Notify();
-        
-    }
-    catch(...)
-    {
-        sysofreq.logErr.Write("Unknown error occurred.  Main program.");
-        sysofreq.logStd.Notify();
-        
+        exit(1);
     }
 
     //Now that the header is read in, write it to each log file.

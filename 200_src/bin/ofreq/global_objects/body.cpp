@@ -56,37 +56,37 @@ Body::~Body()
 
     //Clear forceActive_user
     for (unsigned int i = 0; i < plistForceActive_usr.size(); i++)
-        plistForceActive_usr[i] = NULL;
+        plistForceActive_usr.at(i) = NULL;
 
     //Clear forceReact_user
     for (unsigned int i = 0; i < plistForceReact_usr.size(); i++)
-        plistForceReact_usr[i] = NULL;
+        plistForceReact_usr.at(i) = NULL;
 
     //Clear forceCross_user
     for (unsigned int i = 0; i < plistForceCross_usr.size(); i++)
     {
-        plistForceCross_usr[i] = NULL;
-        plistLinkedBody_usr[i] = NULL;
+        plistForceCross_usr.at(i) = NULL;
+        plistLinkedBody_usr.at(i) = NULL;
     }
 
     //Clear forceActive_hydro
     for (unsigned int i = 0; i < plistForceActive_hydro.size(); i++)
-        plistForceActive_hydro[i] = NULL;
+        plistForceActive_hydro.at(i) = NULL;
 
     //Clear forceReact_hydro
     for (unsigned int i = 0; i < plistForceReact_hydro.size(); i++)
-        plistForceReact_hydro[i] = NULL;
+        plistForceReact_hydro.at(i) = NULL;
 
     //Clear forceCross_hydro
     for (unsigned int i = 0; i < plistForceCross_hydro.size(); i++)
     {
-        plistForceCross_hydro[i] = NULL;
-        plistLinkedBody_hydro[i] = NULL;
+        plistForceCross_hydro.at(i) = NULL;
+        plistLinkedBody_hydro.at(i) = NULL;
     }
 
     //Clear linkedBodyList_hydro
     for (unsigned int i = 0; i < plistLinkedBody_hydro.size(); i++)
-        plistLinkedBody_hydro[i] = NULL;
+        plistLinkedBody_hydro.at(i) = NULL;
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
@@ -256,17 +256,10 @@ void Body::setMass(double newMass)
     catch(const std::exception &err)
     {
         //Error handler.
-        logErr.Write("Error occurred.  Object:  Body, Function:  setMass()\n" +
-                     string("Operation:  set mass for X-axis translation\n") +
+        logErr.Write(ID + std::string("Operation:  set mass for X-axis translation\n") +
                      string("Error Message:  ") + string(err.what()));
         logStd.Notify();
-    }
-    catch(...)
-    {
-        //Error handler.
-        logErr.Write("Error occurred.  Object:  Body, Function:  setMass()\n" +
-                     string("Operation:  set mass for X-axis translation"));
-        logStd.Notify();
+        exit(1);
     }
 
     try
@@ -278,17 +271,10 @@ void Body::setMass(double newMass)
     catch(const std::exception &err)
     {
         //Error handler.
-        logErr.Write("Error occurred.  Object:  Body, Function:  setMass()\n" +
-                     string("Operation:  set mass for Y-axis translation\n") +
+        logErr.Write(ID + std::string("Operation:  set mass for Y-axis translation\n") +
                      string("Error Message:  ") + string(err.what()));
         logStd.Notify();
-    }
-    catch(...)
-    {
-        //Error handler.
-        logErr.Write("Error occurred.  Object:  Body, Function:  setMass()\n" +
-                     string("Operation:  set mass for Y-axis translation"));
-        logStd.Notify();
+        exit(1);
     }
 
     try
@@ -300,17 +286,10 @@ void Body::setMass(double newMass)
     catch(const std::exception &err)
     {
         //Error handler.
-        logErr.Write("Error occurred.  Object:  Body, Function:  setMass()\n" +
-                     string("Operation:  set mass for Z-axis translation\n") +
+        logErr.Write(ID + std::string("Operation:  set mass for Z-axis translation\n") +
                      string("Error Message:  ") + string(err.what()));
         logStd.Notify();
-    }
-    catch(...)
-    {
-        //Error handler.
-        logErr.Write("Error occurred.  Object:  Body, Function:  setMass()\n" +
-                     string("Operation:  set mass for Z-axis translation"));
-        logStd.Notify();
+        exit(1);
     }
 
     //Calculate mass coupling.
@@ -347,19 +326,11 @@ double Body::getMass()
             catch(const std::exception &err)
             {
                 //Error handler.
-                logErr.Write("Error occurred.  Object:  Body, Function:  getMass()\n" +
-                             string("Operation:  find index for mass matrix\n") +
+                logErr.Write(ID + std::string("Operation:  find index for mass matrix\n") +
                              string("Error Message:  ") + string(err.what()));
                 logStd.Notify();
                 return 0;
-            }
-            catch(...)
-            {
-                //Error handler.
-                logErr.Write("Error occurred.  Object:  Body, Function:  getMass()\n" +
-                             string("Operation:  find index for mass matrix"));
-                logStd.Notify();
-                return 0;
+                exit(1);
             }
         }
     }
@@ -384,15 +355,9 @@ void Body::setMomIxx(double newXX)
     catch(const std::exception &err)
     {
         //Error handler.
-        logErr.Write("Error occurred.  Object:  Body, Function:  setMomIxx()\n" +
-                     string("Error Message:  ") + string(err.what()));
+        logErr.Write(ID + std::string(err.what()));
         logStd.Notify();
-    }
-    catch(...)
-    {
-        //Error handler.
-        logErr.Write("Error occurred.  Object:  Body, Function:  setMomIxx()");
-        logStd.Notify();
+        exit(1);
     }
 }
 
@@ -414,17 +379,10 @@ double Body::getMomIxx()
     catch(const std::exception &err)
     {
         //Error handler.
-        logErr.Write("Error occurred.  Object:  Body, Function:  getMomIxx()\n" +
-                     string("Error Message:  ") + string(err.what()));
+        logErr.Write(ID + std::string(err.what()));
         logStd.Notify();
         return 0;
-    }
-    catch(...)
-    {
-        //Error handler.
-        logErr.Write("Error occurred.  Object:  Body, Function:  getMomIxx()");
-        logStd.Notify();
-        return 0;
+        exit(1);
     }
 }
 
@@ -446,15 +404,9 @@ void Body::setMomIyy(double newYY)
     catch(const std::exception &err)
     {
         //Error handler.
-        logErr.Write("Error occurred.  Object:  Body, Function:  setMomIyy()\n" +
-                     string("Error Message:  ") + string(err.what()));
+        logErr.Write(ID + std::string(err.what()));
         logStd.Notify();
-    }
-    catch(...)
-    {
-        //Error handler.
-        logErr.Write("Error occurred.  Object:  Body, Function:  setMomIyy()");
-        logStd.Notify();
+        exit(1);
     }
 }
 
@@ -476,17 +428,10 @@ double Body::getMomIyy()
     catch(const std::exception &err)
     {
         //Error handler.
-        logErr.Write("Error occurred.  Object:  Body, Function:  getMomIyy()\n" +
-                     string("Error Message:  ") + string(err.what()));
+        logErr.Write(ID + std::string(err.what()));
         logStd.Notify();
         return 0;
-    }
-    catch(...)
-    {
-        //Error handler.
-        logErr.Write("Error occurred.  Object:  Body, Function:  getMomIyy()");
-        logStd.Notify();
-        return 0;
+        exit(1);
     }
 }
 
@@ -508,15 +453,9 @@ void Body::setMomIzz(double newZZ)
     catch(const std::exception &err)
     {
         //Error handler.
-        logErr.Write("Error occurred.  Object:  Body, Function:  setMomIzz()\n" +
-                     string("Error Message:  ") + string(err.what()));
+        logErr.Write(ID + std::string(err.what()));
         logStd.Notify();
-    }
-    catch(...)
-    {
-        //Error handler.
-        logErr.Write("Error occurred.  Object:  Body, Function:  setMomIzz()");
-        logStd.Notify();
+        exit(1);
     }
 }
 
@@ -538,17 +477,10 @@ double Body::getMomIzz()
     catch(const std::exception &err)
     {
         //Error handler.
-        logErr.Write("Error occurred.  Object:  Body, Function:  getMomIzz()\n" +
-                     string("Error Message:  ") + string(err.what()));
+        logErr.Write(ID + std::string(err.what()));
         logStd.Notify();
         return 0;
-    }
-    catch(...)
-    {
-        //Error handler.
-        logErr.Write("Error occurred.  Object:  Body, Function:  getMomIzz()");
-        logStd.Notify();
-        return 0;
+        exit(1);
     }
 }
 
@@ -571,15 +503,9 @@ void Body::setMomIxy(double newXY)
     catch(const std::exception &err)
     {
         //Error handler.
-        logErr.Write("Error occurred.  Object:  Body, Function:  setMomIxy()\n" +
-                     string("Error Message:  ") + string(err.what()));
+        logErr.Write(ID + std::string(err.what()));
         logStd.Notify();
-    }
-    catch(...)
-    {
-        //Error handler.
-        logErr.Write("Error occurred.  Object:  Body, Function:  setMomIxy()");
-        logStd.Notify();
+        exit(1);
     }
 }
 
@@ -602,17 +528,10 @@ double Body::getMomIxy()
     catch(const std::exception &err)
     {
         //Error handler.
-        logErr.Write("Error occurred.  Object:  Body, Function:  getMomIxy()\n" +
-                     string("Error Message:  ") + string(err.what()));
+        logErr.Write(ID + std::string(err.what()));
         logStd.Notify();
         return 0;
-    }
-    catch(...)
-    {
-        //Error handler.
-        logErr.Write("Error occurred.  Object:  Body, Function:  getMomIxy()");
-        logStd.Notify();
-        return 0;
+        exit(1);
     }
 }
 
@@ -635,15 +554,9 @@ void Body::setMomIxz(double newXZ)
     catch(const std::exception &err)
     {
         //Error handler.
-        logErr.Write("Error occurred.  Object:  Body, Function:  setMomIxz()\n" +
-                     string("Error Message:  ") + string(err.what()));
+        logErr.Write(ID + std::string(err.what()));
         logStd.Notify();
-    }
-    catch(...)
-    {
-        //Error handler.
-        logErr.Write("Error occurred.  Object:  Body, Function:  setMomIxz()");
-        logStd.Notify();
+        exit(1);
     }
 }
 
@@ -666,17 +579,10 @@ double Body::getMomIxz()
     catch(const std::exception &err)
     {
         //Error handler.
-        logErr.Write("Error occurred.  Object:  Body, Function:  gettMomIxz()\n" +
-                     string("Error Message:  ") + string(err.what()));
+        logErr.Write(ID + std::string(err.what()));
         logStd.Notify();
         return 0;
-    }
-    catch(...)
-    {
-        //Error handler.
-        logErr.Write("Error occurred.  Object:  Body, Function:  getMomIxz()");
-        logStd.Notify();
-        return 0;
+        exit(1);
     }
 }
 
@@ -699,15 +605,9 @@ void Body::setMomIyz(double newYZ)
     catch(const std::exception &err)
     {
         //Error handler.
-        logErr.Write("Error occurred.  Object:  Body, Function:  setMomIyz()\n" +
-                     string("Error Message:  ") + string(err.what()));
+        logErr.Write(ID + std::string(err.what()));
         logStd.Notify();
-    }
-    catch(...)
-    {
-        //Error handler.
-        logErr.Write("Error occurred.  Object:  Body, Function:  setMomIyz()");
-        logStd.Notify();
+        exit(1);
     }
 }
 
@@ -730,17 +630,10 @@ double Body::getMomIyz()
     catch(const std::exception &err)
     {
         //Error handler.
-        logErr.Write("Error occurred.  Object:  Body, Function:  getMomIyz()\n" +
-                     string("Error Message:  ") + string(err.what()));
+        logErr.Write(ID + std::string(err.what()));
         logStd.Notify();
         return 0;
-    }
-    catch(...)
-    {
-        //Error handler.
-        logErr.Write("Error occurred.  Object:  Body, Function:  getMomIyz()");
-        logStd.Notify();
-        return 0;
+        exit(1);
     }
 }
 
@@ -979,7 +872,7 @@ ForceActive* Body::listForceActive_user(int forceIn)
         forceIn = plistForceActive_usr.size() - 1;
     }
 
-    return plistForceActive_usr[forceIn];
+    return plistForceActive_usr.at(forceIn);
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
@@ -1005,7 +898,7 @@ ForceActive *Body::listForceActive_hydro(int forceIn)
         forceIn = plistForceActive_hydro.size() - 1;
     }
 
-    return plistForceActive_hydro[forceIn];
+    return plistForceActive_hydro.at(forceIn);
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
@@ -1031,7 +924,7 @@ ForceReact *Body::listForceReact_user(int forceIn)
         forceIn = plistForceReact_usr.size() - 1;
     }
 
-    return plistForceReact_usr[forceIn];
+    return plistForceReact_usr.at(forceIn);
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
@@ -1051,7 +944,7 @@ ForceReact *Body::listForceReact_hydro(int forceIn)
         forceIn = plistForceReact_hydro.size() - 1;
     }
 
-    return plistForceReact_hydro[forceIn];
+    return plistForceReact_hydro.at(forceIn);
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
@@ -1083,7 +976,7 @@ ForceCross* Body::listForceCross_user(int forceIn)
         forceIn = plistForceCross_usr.size() - 1;
     }
 
-    return plistForceCross_usr[forceIn];
+    return plistForceCross_usr.at(forceIn);
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
@@ -1109,7 +1002,7 @@ ForceCross *Body::listForceCross_hydro(int forceIn)
         forceIn = plistForceCross_hydro.size() - 1;
     }
 
-    return plistForceCross_hydro[forceIn];
+    return plistForceCross_hydro.at(forceIn);
 }
 
 
@@ -1125,7 +1018,7 @@ vector<Body *> &Body::listCrossBody_user()
 //------------------------------------------Function Separator --------------------------------------------------------
 Body &Body::listCrossBody_user(int index)
 {
-    return *(plistLinkedBody_usr[index]);
+    return *(plistLinkedBody_usr.at(index));
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
@@ -1137,7 +1030,7 @@ vector<Body *> &Body::listCrossBody_hydro()
 //------------------------------------------Function Separator --------------------------------------------------------
 Body &Body::listCrossBody_hydro(int index)
 {
-    return *(plistLinkedBody_hydro[index]);
+    return *(plistLinkedBody_hydro.at(index));
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
@@ -1155,7 +1048,7 @@ string &Body::listNamedLink_user(unsigned int varIn)
         plistLinkedBody_usr.resize(varIn + 1);
     }
 
-    return plistNamedLink_usr[varIn];
+    return plistNamedLink_usr.at(varIn);
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------

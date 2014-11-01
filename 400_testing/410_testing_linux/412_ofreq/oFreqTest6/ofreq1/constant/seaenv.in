@@ -1,0 +1,78 @@
+/*--------------------------------*- C++ -*------------------------------------*\
+| O pen         | OpenSea:  The Open Source Seakeeping Suite                    |
+| S eakeeping   | Version:  1.0                                                 |
+| E valuation   | Web:      www.opensea.dmsonline.us                            |
+| A nalysis     |                                                               |
+\*-----------------------------------------------------------------------------*/
+seafile
+{
+    version     1.0;
+    format      ascii;
+    object      dictionary;
+}
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+// Wave models define individual wave trains
+// Sea models define combinations of waves in multiple directions
+// ************************************************************************* //
+
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+/*Definition of the sea environment, including wave amplitude and variation
+  with wave directions. At least one wave spectrum must be defined */
+
+//Define wave spectrums.  You may define multiple spectrums
+wave_spec {
+  //First item must always be the spectrum class.
+  class "custom";
+  
+  //Any name you want.  Used to refer to the spectrum
+  name "SpecCustom1";
+  
+  //Frequencies used to define the spectrum [rad/s].  Not required
+  //to be the same frequencies which govern the oFreq run.
+  frequency (
+  1.000
+  2.000
+  3.000
+  );
+
+  //Spectrum ordinates of wave energy [m^2 s/rad].  Ordinates correlate
+  //to wave frequencies just entered.
+  wave_energy (
+  1.00
+  1.00
+  1.00
+  );
+}
+
+
+
+// ************************************************************************* //
+
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+/* Definition of sea models.  At least one sea model must be
+   defined */
+
+sea_model {
+  class "custom";
+  name "Custom Model 1";
+
+  wave_def {
+    //Angle = angle of wave travel direction [rad] with 0 = True North
+    direction 0.000;
+    //Spectrum = name of one of the previously defined wave spectrums
+    spectrum "SpecCustom1";
+    //Scale = Scale factor applied to the wave spectrum
+    scale 25.00;
+  }
+}  
+
+
+  
+    
+
+// ************************************************************************* //

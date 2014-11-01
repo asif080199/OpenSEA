@@ -194,7 +194,8 @@ double SeaModel::getWaveEnergy(double dirIn, int freqIndex)
     catch (const std::exception &err)
     {
         logStd.Notify();
-        logErr.Write(string(ID) + string(">>  ") + err.what());
+        logErr.Write(ID + std::string(err.what()));
+        exit(1);
     }
 }
 
@@ -231,7 +232,7 @@ double SeaModel::getWaveEnergy(double dirIn, double freqIn)
         for (int i = 0; i < plistWaveDir.size(); i++)
         {
             //Find the index closest to the requested wave direction.
-            dist[0] = abs(dirIn - plistWaveDir[i]);
+            dist[0] = abs(dirIn - plistWaveDir.at(i));
 
             //Check for the closest dist.
             if (dist[0] < dist[1])
@@ -242,8 +243,8 @@ double SeaModel::getWaveEnergy(double dirIn, double freqIn)
         }
 
         //Check for the second closest distance.  It must be the index either above or below the closest.
-        dist[0] = abs(dirIn - plistWaveDir[indexDir[0] - 1]);
-        dist[1] = abs(dirIn - plistWaveDir[indexDir[0] + 1]);
+        dist[0] = abs(dirIn - plistWaveDir.at(indexDir[0] - 1));
+        dist[1] = abs(dirIn - plistWaveDir.at(indexDir[0] + 1));
 
         if (dist[0] < dist[1])
             indexDir[1] = indexDir[0] - 1;
@@ -254,19 +255,19 @@ double SeaModel::getWaveEnergy(double dirIn, double freqIn)
         //Include the scaling multipliers.
         double WaveEnergy[2];
 
-        WaveEnergy[0] = plistWaveScale[indexDir[0]] * plistWaveSpec.at(indexDir[0])->getSpecEnergy(freqIn);
-        WaveEnergy[1] = plistWaveScale[indexDir[1]] * plistWaveSpec.at(indexDir[1])->getSpecEnergy(freqIn);
+        WaveEnergy[0] = plistWaveScale.at(indexDir[0]) * plistWaveSpec.at(indexDir[0])->getSpecEnergy(freqIn);
+        WaveEnergy[1] = plistWaveScale.at(indexDir[1]) * plistWaveSpec.at(indexDir[1])->getSpecEnergy(freqIn);
 
 
         //Interpolate between the results of the two wave spectra to get the result.
         //First check if the requested wave direction is exactly on top of either direction.
-        if (dirIn == plistWaveDir[indexDir[0]])
+        if (dirIn == plistWaveDir.at(indexDir[0]))
         {
             //Just return the result of the first wave direction.
             return WaveEnergy[0];
         }
 
-        else if (dirIn == plistWaveDir[indexDir[1]])
+        else if (dirIn == plistWaveDir.at(indexDir[1]))
         {
             //Just return the result of the second wave direction.
             return WaveEnergy[1];
@@ -280,10 +281,10 @@ double SeaModel::getWaveEnergy(double dirIn, double freqIn)
             double intercept;       //The y-intercept of the two results.
 
             //Get the slope
-            slope = (WaveEnergy[1] - WaveEnergy[0]) / (plistWaveDir[indexDir[0]] - plistWaveDir[indexDir[1]]);
+            slope = (WaveEnergy[1] - WaveEnergy[0]) / (plistWaveDir.at(indexDir[0]) - plistWaveDir.at(indexDir[1]));
 
             //Get the y-intercept.
-            intercept = WaveEnergy[0] - slope * plistWaveDir[indexDir[0]];
+            intercept = WaveEnergy[0] - slope * plistWaveDir.at(indexDir[0]);
 
             //Calculate the result.
             return slope * dirIn + intercept;
@@ -293,7 +294,7 @@ double SeaModel::getWaveEnergy(double dirIn, double freqIn)
     else
     {
         //Not greater than one.  Just return the value of wave spectra for that item.
-        return plistWaveScale[0] * plistWaveSpec.at(0)->getSpecEnergy(freqIn);
+        return plistWaveScale.at(0) * plistWaveSpec.at(0)->getSpecEnergy(freqIn);
     }
 }
 
@@ -318,7 +319,7 @@ double SeaModel::getWaveAmp(double dirIn, int freqIndex)
             msg = string("Interpolated wave energy was negative for the requested wave direction and") +
                   string("frequency.  Please check the sea model.\nWave Direction:  ");
                   std::to_string(dirIn) + string(" rad\n") + string("Wave Frequency:  ") +
-                  std::to_string(plistWaveFreq[freqIndex]) + string(" rad/s");
+                  std::to_string(plistWaveFreq.at(freqIndex)) + string(" rad/s");
 
             //Throw the error message.
             throw std::runtime_error(msg);
@@ -328,15 +329,11 @@ double SeaModel::getWaveAmp(double dirIn, int freqIndex)
         //Calculate wave amplitude
         return sqrt(2 * WaveEnergy * stepsize);
     }
-    catch(const std::exception &err)
+    catch (const std::exception &err)
     {
         logStd.Notify();
-        logErr.Write(string("Object:  SeaModel, Function:  getWaveAmp()\nError Message:  ") + err.what());
-    }
-    catch(...)
-    {
-        logStd.Notify();
-        logErr.Write(string(ID) + string(">>  Unknown error occurred."));
+        logErr.Write(ID + std::string(err.what()));
+        exit(1);
     }
 }
 
@@ -365,22 +362,22 @@ void SeaModel::SortWaveDir()
             swapped = false;            //Reset swap value
             for (int i = 0; i < n; i++)
             {
-                if (plistWaveDir[i] > plistWaveDir[i+1])
+                if (plistWaveDir.at(i) > plistWaveDir.at(i+1))
                 {
                     //Swap the wave directions
-                    swapDir = plistWaveDir[i];
-                    plistWaveDir[i] = plistWaveDir[i+1];
-                    plistWaveDir[i+1] = swapDir;
+                    swapDir = plistWaveDir.at(i);
+                    plistWaveDir.at(i) = plistWaveDir.at(i+1);
+                    plistWaveDir.at(i+1) = swapDir;
 
                     //Swap the wave spectra
-                    swapSpec = plistWaveSpec[i];
-                    plistWaveSpec[i] = plistWaveSpec[i+1];
-                    plistWaveSpec[i+1] = swapSpec;
+                    swapSpec = plistWaveSpec.at(i);
+                    plistWaveSpec.at(i) = plistWaveSpec.at(i+1);
+                    plistWaveSpec.at(i+1) = swapSpec;
 
                     //Swap the wave scaling terms
-                    swapScale = plistWaveScale[i];
-                    plistWaveScale[i] = plistWaveScale[i+1];
-                    plistWaveScale[i+1] = swapScale;
+                    swapScale = plistWaveScale.at(i);
+                    plistWaveScale.at(i) = plistWaveScale.at(i+1);
+                    plistWaveScale.at(i+1) = swapScale;
 
                     //Recognize that swapping happend
                     swapped = true;
@@ -418,12 +415,12 @@ void SeaModel::SortWaveFreq()
             swapped = false;            //Reset swap value
             for (int i = 0; i < n; i++)
             {
-                if (plistWaveFreq[i] > plistWaveFreq[i+1])
+                if (plistWaveFreq.at(i) > plistWaveFreq.at(i+1))
                 {
                     //Swap the elements
-                    swapFreq = plistWaveFreq[i];                //Temporary storage of larger variable.
-                    plistWaveFreq[i] = plistWaveFreq[i+1];      //Push the upper one down one index.
-                    plistWaveFreq[i+1] = swapFreq;              //Save temporary variable.
+                    swapFreq = plistWaveFreq.at(i);                //Temporary storage of larger variable.
+                    plistWaveFreq.at(i) = plistWaveFreq.at(i+1);      //Push the upper one down one index.
+                    plistWaveFreq.at(i+1) = swapFreq;              //Save temporary variable.
 
                     //Recognize that swapping happend
                     swapped = true;
@@ -455,7 +452,7 @@ double SeaModel::getFreqStep(int index)
         if (plistWaveFreq.size() == 2)
         {
             //only two entries.  Very simple calculation.
-            return (plistWaveFreq[1] - plistWaveFreq[0]) / 2;
+            return (plistWaveFreq.at(1) - plistWaveFreq.at(0)) / 2;
         }
 
         else if (plistWaveFreq.size() > 2)
@@ -465,20 +462,20 @@ double SeaModel::getFreqStep(int index)
             if (index == 0)
             {
                 //Case for beginning of list.
-                return (plistWaveFreq[1] - plistWaveFreq[0]) / 2;
+                return (plistWaveFreq.at(1) - plistWaveFreq.at(0)) / 2;
             }
 
             else if ((index > 0) &&
                      (index < plistWaveFreq.size() - 1))
             {
                 //Case for any frequency index in the middle of the list.
-                return (plistWaveFreq[index + 1] - plistWaveFreq[index - 1]) / 2;
+                return (plistWaveFreq.at(index + 1) - plistWaveFreq.at(index - 1)) / 2;
             }
 
             else if (index == (plistWaveFreq.size() - 1))
             {
                 //Case for frequency index at the end of the list.
-                return (plistWaveFreq[plistWaveFreq.size() - 1] - plistWaveFreq[plistWaveFreq.size() - 2]) / 2;
+                return (plistWaveFreq.at(plistWaveFreq.size() - 1) - plistWaveFreq.at(plistWaveFreq.size() - 2)) / 2;
             }
         }
 
@@ -488,15 +485,11 @@ double SeaModel::getFreqStep(int index)
             throw std::runtime_error("Frequency step requires a minimum of two frequencies definitions to calculate.");
         }
     }
-    catch(const std::exception &err)
+    catch (const std::exception &err)
     {
         logStd.Notify();
-        logErr.Write(string("Object:  SeaModel, Function:  getFreqStep()\nError Message:  ") + err.what());
-    }
-    catch (...)
-    {
-        logStd.Notify();
-        logErr.Write("Uknown Error:  Object:  SeaModel, Function:  getFreqStep()");
+        logErr.Write(ID + std::string(err.what()));
+        exit(1);
     }
 }
 

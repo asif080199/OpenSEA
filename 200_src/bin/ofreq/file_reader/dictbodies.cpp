@@ -85,7 +85,7 @@ int dictBodies::defineKey(string keyIn, vector<string> valIn)
     if (keyIn == KEY_NAME)
     {
         //Set body name
-        ptSystem->listBody(pBody).setBodyName(valIn[0]);
+        ptSystem->listBody(pBody).setBodyName(valIn.at(0));
         //Return success
         return 0;
     }
@@ -93,7 +93,7 @@ int dictBodies::defineKey(string keyIn, vector<string> valIn)
     else if (keyIn == KEY_HYDROBODY)
     {
         //Set hydrobody name
-        ptSystem->listBody(pBody).setHydroBodName(valIn[0]);
+        ptSystem->listBody(pBody).setHydroBodName(valIn.at(0));
         //Return success
         return 0;
     }
@@ -102,7 +102,7 @@ int dictBodies::defineKey(string keyIn, vector<string> valIn)
     {
         //Set the mass
         double var;
-        var = atof(valIn[0].c_str());
+        var = atof(valIn.at(0).c_str());
         ptSystem->listBody(pBody).setMass(var);
         //Update the mass definitions
         pMassProp[0] = true;
@@ -114,7 +114,7 @@ int dictBodies::defineKey(string keyIn, vector<string> valIn)
     {
         //Set IXX
         double var;
-        var = atof(valIn[0].c_str());
+        var = atof(valIn.at(0).c_str());
         ptSystem->listBody(pBody).setMomIxx(var);
         //Update the mass definitions
         pMassProp[1] = true;
@@ -126,7 +126,7 @@ int dictBodies::defineKey(string keyIn, vector<string> valIn)
     {
         //Set IYY
         double var;
-        var = atof(valIn[0].c_str());
+        var = atof(valIn.at(0).c_str());
         ptSystem->listBody(pBody).setMomIyy(var);
         //Update the mass definitions
         pMassProp[2] = true;
@@ -138,7 +138,7 @@ int dictBodies::defineKey(string keyIn, vector<string> valIn)
     {
         //Set IZZ
         double var;
-        var = atof(valIn[0].c_str());
+        var = atof(valIn.at(0).c_str());
         ptSystem->listBody(pBody).setMomIzz(var);
         //Update the mass definitions
         pMassProp[3] = true;
@@ -150,7 +150,7 @@ int dictBodies::defineKey(string keyIn, vector<string> valIn)
     {
         //Set IXY
         double var;
-        var = atof(valIn[0].c_str());
+        var = atof(valIn.at(0).c_str());
         ptSystem->listBody(pBody).setMomIxy(var);
         //Update the mass definitions
         pMassProp[4] = true;
@@ -162,7 +162,7 @@ int dictBodies::defineKey(string keyIn, vector<string> valIn)
     {
         //Set IXZ
         double var;
-        var = atof(valIn[0].c_str());
+        var = atof(valIn.at(0).c_str());
         ptSystem->listBody(pBody).setMomIxz(var);
         //Update the mass definitions
         pMassProp[5] = true;
@@ -174,7 +174,7 @@ int dictBodies::defineKey(string keyIn, vector<string> valIn)
     {
         //Set IYZ
         double var;
-        var = atof(valIn[0].c_str());
+        var = atof(valIn.at(0).c_str());
         ptSystem->listBody(pBody).setMomIxz(var);
         //Update the mass definitions
         pMassProp[6] = true;
@@ -186,7 +186,7 @@ int dictBodies::defineKey(string keyIn, vector<string> valIn)
     {
         //Set COGX
         double var;
-        var = atof(valIn[0].c_str());
+        var = atof(valIn.at(0).c_str());
         ptSystem->listBody(pBody).setCenX(var);
         //Update the COG definitions
         pCOG[0] = true;
@@ -198,7 +198,7 @@ int dictBodies::defineKey(string keyIn, vector<string> valIn)
     {
         //Set COGY
         double var;
-        var = atof(valIn[0].c_str());
+        var = atof(valIn.at(0).c_str());
         ptSystem->listBody(pBody).setCenY(var);
         //Update the COG definitions
         pCOG[1] = true;
@@ -210,7 +210,7 @@ int dictBodies::defineKey(string keyIn, vector<string> valIn)
     {
         //Set COGZ
         double var;
-        var = atof(valIn[0].c_str());
+        var = atof(valIn.at(0).c_str());
         ptSystem->listBody(pBody).setCenZ(var);
         //Update the COG definitions
         pCOG[2] = true;
@@ -222,7 +222,7 @@ int dictBodies::defineKey(string keyIn, vector<string> valIn)
     {
         //Set the heading for the body
         double var;
-        var = atof(valIn[0].c_str());
+        var = atof(valIn.at(0).c_str());
         ptSystem->listBody(pBody).setHeading(var);
         //Return success
         return 0;
@@ -232,7 +232,7 @@ int dictBodies::defineKey(string keyIn, vector<string> valIn)
     {
         //Set the motion model name for the body
         ptSystem->listBody(pBody).setMotionModel(
-                    ptSystem->listModel(valIn[0])
+                    ptSystem->listModel(valIn.at(0))
                 );
         //Return success
         return 0;
@@ -247,7 +247,7 @@ int dictBodies::defineKey(string keyIn, vector<string> valIn)
             ptSystem->
                     listBody(pBody).
                     listNamedLink_user(pForceBodyIndex)
-                    = valIn[0];
+                    = valIn.at(0);
 
             //Return success
             return 0;
@@ -269,7 +269,7 @@ int dictBodies::defineKey(string keyIn, vector<string> valIn)
             //Assign the pointer for the force object to this body object.
             //Force object located by name of the object.
             ptSystem->listBody(pBody).listForceActive_user().push_back(
-                        ptSystem->refForceActive_user(valIn[0])
+                        ptSystem->refForceActive_user(valIn.at(0))
                         );
 
             //Set the body index
@@ -284,7 +284,7 @@ int dictBodies::defineKey(string keyIn, vector<string> valIn)
             //Assign the pointer for the force object to this body object.
             //Force object located by the name of the object.
             ptSystem->listBody(pBody).listForceReact_user().push_back(
-                        ptSystem->refForceReact_user(valIn[0])
+                        ptSystem->refForceReact_user(valIn.at(0))
                         );
             //Set body index
             pForceBodyIndex = ptSystem->listBody(pBody).listForceReact_user().size() - 1;
@@ -300,7 +300,7 @@ int dictBodies::defineKey(string keyIn, vector<string> valIn)
             //Assign the pointer for the force object to this body object.
             //Force object located by the name of the object.
             ptSystem->listBody(pBody).listForceCross_user().push_back(
-                        ptSystem->refForceCross_user(valIn[0])
+                        ptSystem->refForceCross_user(valIn.at(0))
                         );
             //Set body index
             pForceBodyIndex = ptSystem->listBody(pBody).listForceCross_user().size() - 1;

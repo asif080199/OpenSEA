@@ -68,7 +68,7 @@ int dictControl::defineKey(string keyIn, vector<string> valIn)
     if (keyIn == KEY_ANALYSIS)
     {
         //Set the analysis type.
-        ptSystem->setAnalysisType(valIn[0]);
+        ptSystem->setAnalysisType(valIn.at(0));
 
         //return success
         return 0;
@@ -83,7 +83,7 @@ int dictControl::defineKey(string keyIn, vector<string> valIn)
         for (unsigned int i = 0; i < valIn.size(); i++)
         {
             //Convert value and add it to the list.
-            freqIn.push_back(atof(valIn[i].c_str()));
+            freqIn.push_back(atof(valIn.at(i).c_str()));
         }
 
         //Pass the information to the System object.
@@ -102,7 +102,7 @@ int dictControl::defineKey(string keyIn, vector<string> valIn)
         for (unsigned int i = 0; i < valIn.size(); i++)
         {
             //Convert the value and add it to the list.
-            dirIn.push_back(atof(valIn[i].c_str()));
+            dirIn.push_back(atof(valIn.at(i).c_str()));
         }
 
         //Pass the information to the System object.
@@ -115,7 +115,7 @@ int dictControl::defineKey(string keyIn, vector<string> valIn)
     else if (keyIn == KEY_WAVEMODEL)
     {
         //Set the sea model
-        ptSystem->setActiveSeaModel(valIn[0]);
+        ptSystem->setActiveSeaModel(valIn.at(0));
 
         //return success
         return 0;
