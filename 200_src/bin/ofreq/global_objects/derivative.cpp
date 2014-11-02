@@ -150,7 +150,7 @@ int Derivative::findIndex(int indexIn)
     bool test = false;  //Boolean to check if a match was found.
 
     //Finds the integer of the equation object by data index.
-    for (unsigned int i = 0 ; i < pEquationList.size() ; i++)
+    for (unsigned int i = 0; i < pEquationList.size(); i++)
     {
         //Check the data index of the object.
         if (pEquationList.at(i).getDataIndex() < 0)

@@ -261,7 +261,7 @@ void FileWriter::setHeader(string filePathIn)
         logStd.Notify();
 
         //Stop program execution
-        exit(1);
+       
     }
 }
 
@@ -278,7 +278,7 @@ int FileWriter::writeWaveDirection()
     string writeFilename;
     int errVal = 0;             //Output error code.  Default value set to no error.
 
-    logStd.Write("Wave directions");
+    logStd.Write("Wave directions",3);
 
     //Get filename
     writeFilename = projectDirectory + SLASH + FILE_DIRECTIONS;
@@ -323,10 +323,9 @@ int FileWriter::writeWaveDirection()
     }
     catch(const std::exception &err)
     {
-        logErr.Write(ID + std::string(err.what()));
-        logStd.Notify();
         errVal = 1;
-        exit(1);
+        logStd.Notify();
+        logErr.Write(ID + std::string(err.what()));
     }
 
     return errVal;
@@ -339,7 +338,7 @@ int FileWriter::writeFrequency()
     string writeFilename;
     int errVal = 0;             //Output error code.  Default value set to no error.
 
-    logStd.Write("Wave frequencies");
+    logStd.Write("Wave frequencies",3);
 
     //Get filename
     writeFilename = projectDirectory + SLASH + FILE_FREQUENCIES;
@@ -384,10 +383,9 @@ int FileWriter::writeFrequency()
     }
     catch(const std::exception &err)
     {
-        logErr.Write(ID + std::string(err.what()));
-        logStd.Notify();
         errVal = 1;
-        exit(1);
+        logStd.Notify();
+        logErr.Write(ID + std::string(err.what()));
     }
 
     return errVal;
@@ -401,7 +399,7 @@ int FileWriter::writeGlobalMotion()
     int errVal = 0;                 //Returned value for error codes from calculations.  Default set to no error.
     bool outputAvail = false;       //Boolean to track if any output objects are even available.
 
-    logStd.Write("\tBody motions");
+    logStd.Write("\tBody motions",3);
 
     //Check if output objects even exist.
     if (pOutput->listGlobalMotion().size() == 0)
@@ -514,10 +512,9 @@ int FileWriter::writeGlobalMotion()
             }
             catch(const std::exception &err)
             {
-                logErr.Write(ID + std::string(err.what()));
-                logStd.Notify();
                 errVal = 1;
-                exit(1);
+                logStd.Notify();
+                logErr.Write(ID + std::string(err.what()));
             }
 
             //End the output object
@@ -543,7 +540,7 @@ int FileWriter::writeGlobalVelocity()
     int errVal = 0;                 //Returned value for error codes from calculations.  Default set to no error.
     bool outputAvail = false;       //Boolean to track if any output objects are even available.
 
-    logStd.Write("\tBody velocities");
+    logStd.Write("\tBody velocities",3);
 
     //Check if output objects even exist.
     if (pOutput->listGlobalVelocity().size() == 0)
@@ -646,10 +643,9 @@ int FileWriter::writeGlobalVelocity()
             }
             catch(const std::exception &err)
             {
-                logErr.Write(ID + std::string(err.what()));
-                logStd.Notify();
                 errVal = 1;
-                exit(1);
+                logStd.Notify();
+                logErr.Write(ID + std::string(err.what()));
             }
 
             //End the output object
@@ -676,7 +672,7 @@ int FileWriter::writeGlobalAcceleration()
     bool outputAvail = false;       //Boolean to track if any output objects are even available.
 
     //Write output log
-    logStd.Write("\tBody accelerations");
+    logStd.Write("\tBody accelerations",3);
 
     //Check if output objects even exist.
     if (pOutput->listGlobalAcceleration().size() == 0)
@@ -779,10 +775,9 @@ int FileWriter::writeGlobalAcceleration()
             }
             catch(const std::exception &err)
             {
-                logErr.Write(ID + std::string(err.what()));
-                logStd.Notify();
                 errVal = 1;
-                exit(1);
+                logStd.Notify();
+                logErr.Write(ID + std::string(err.what()));
             }
 
             //End the output object
@@ -809,7 +804,7 @@ int FileWriter::writeGlobalSolution()
     bool outputAvail = false;       //Boolean to track if any output objects are even available.
 
     //Write output log
-    logStd.Write("\tBody derivative solution");
+    logStd.Write("\tBody derivative solution",3);
 
     //Check if output objects even exist.
     if (pOutput->listGlobalSolution().size() == 0)
@@ -912,10 +907,9 @@ int FileWriter::writeGlobalSolution()
             }
             catch(const std::exception &err)
             {
-                logErr.Write(ID + std::string(err.what()));
-                logStd.Notify();
                 errVal = 1;
-                exit(1);
+                logStd.Notify();
+                logErr.Write(ID + std::string(err.what()));
             }
 
             //End the output object

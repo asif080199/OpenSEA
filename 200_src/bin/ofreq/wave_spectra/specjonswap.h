@@ -183,19 +183,19 @@ private:
     /**
      * @brief The mean wave period used in calculating the Bretschneider spectrum.
      */
-    double pTMean;
+    double pTMean = 0;
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
      * @brief The significant wave height used in calculating the spectrum.
      */
-    double pHsig;
+    double pHsig = 0;
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
      * @brief The spectrum bandwidth parameter.  Default value is gamITTC.
      */
-    double pGamma;
+    double pGamma = 0;
 
 };
 

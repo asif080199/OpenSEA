@@ -109,7 +109,7 @@ double SeaModel_SingleDirection::getWaveAmp(double dirIn, int freqIndex)
     {
         logStd.Notify();
         logErr.Write(ID + std::string(err.what()));
-        exit(1);
+       
     }
 }
 

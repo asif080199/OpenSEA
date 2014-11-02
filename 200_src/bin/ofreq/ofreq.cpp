@@ -253,10 +253,10 @@ int main(int argc, char *argv[])
 
         //Read input files and interpret data.
         //---------------------------------------------------------------------------
-        sysofreq.logStd.Write("Reading input files");
-        sysofreq.logStd.Write("=================================================================================");
+        sysofreq.logStd.Write("Reading input files",3);
+        sysofreq.logStd.Write("=================================================================================",3);
         ReadFiles(sysofreq.getPath());
-        sysofreq.logStd.Write("\n\n\n");
+        sysofreq.logStd.Write("\n\n\n",3);
 
         //Set the active sea model
         //---------------------------------------------------------------------------
@@ -283,8 +283,8 @@ int main(int argc, char *argv[])
         //Create an iterator to track the loops.
         int itertrack = 0;
 
-        sysofreq.logStd.Write("Solving equations");
-        sysofreq.logStd.Write("=================================================================================");
+        sysofreq.logStd.Write("Solving equations",3);
+        sysofreq.logStd.Write("=================================================================================",3);
 
         for(unsigned int i = 0; i < sysofreq.listWaveDirections().size(); i++)
         {
@@ -365,7 +365,7 @@ int main(int argc, char *argv[])
                 convert.str("");
                 convert << sysofreq.listWaveFrequencies().size();
                 msg += convert.str();
-                sysofreq.logStd.Write(msg);
+                sysofreq.logStd.Write(msg,3);
                 convert.str("");
             }
         }
@@ -376,9 +376,9 @@ int main(int argc, char *argv[])
     //Post Processing Section
     //=================================================================================================================
 
-        sysofreq.logStd.Write("\n\n\n");
-        sysofreq.logStd.Write("Calculating Outputs");
-        sysofreq.logStd.Write("=================================================================================");
+        sysofreq.logStd.Write("\n\n\n",3);
+        sysofreq.logStd.Write("Calculating Outputs",3);
+        sysofreq.logStd.Write("=================================================================================",3);
 
         //Write outputs
         //---------------------------------------------------------------------------
@@ -417,9 +417,8 @@ int main(int argc, char *argv[])
                 }
                 catch(const std::exception &err)
                 {
-                    sysofreq.logErr.Write(ID + std::string(err.what()));
                     sysofreq.logStd.Notify();
-                    exit(1);
+                    sysofreq.logErr.Write(ID + std::string(err.what()));
                 }
 
                 //Write wave directions list
@@ -431,9 +430,8 @@ int main(int argc, char *argv[])
                 }
                 catch(const std::exception &err)
                 {
-                    sysofreq.logErr.Write(ID + std::string(err.what()));
                     sysofreq.logStd.Notify();
-                    exit(1);
+                    sysofreq.logErr.Write(ID + std::string(err.what()));
                 }
             }
 
@@ -442,17 +440,16 @@ int main(int argc, char *argv[])
             calcOutput(sysofreq.listOutput(i), Writer);
         }
 
-        sysofreq.logStd.Write("\n\n\n");
-        sysofreq.logStd.Write("=================================================================================");
-        sysofreq.logStd.Write("oFreq completed successfully.");
+        sysofreq.logStd.Write("\n\n\n",3);
+        sysofreq.logStd.Write("=================================================================================",3);
+        sysofreq.logStd.Write("oFreq completed successfully.",3);
         return 0;
     }
     catch(const std::exception &err)
     {
-        sysofreq.logErr.Write(ID + std::string(err.what()));
         sysofreq.logStd.Notify();
         return 1;
-        exit(1);
+        sysofreq.logErr.Write(ID + std::string(err.what()));
     }
 }
 
@@ -648,9 +645,8 @@ void buildMatBody(int bod, bool useCoeff)
     }
     catch(const std::exception &err)
     {
-        sysofreq.logErr.Write(ID + std::string(err.what()));
         sysofreq.logStd.Notify();
-        exit(1);
+        sysofreq.logErr.Write(ID + std::string(err.what()));
     }
 }
 
@@ -675,7 +671,7 @@ void calcOutput(OutputsBody &OutputIn, FileWriter &WriterIn)
         convert << sysofreq.listWaveDirections().size();
         msg += convert.str();
         convert.str("");
-        sysofreq.logStd.Write(msg);
+        sysofreq.logStd.Write(msg,3);
 
 
         //Set current wave direction
@@ -692,9 +688,8 @@ void calcOutput(OutputsBody &OutputIn, FileWriter &WriterIn)
         }
         catch(const std::exception &err)
         {
-            sysofreq.logErr.Write(ID + std::string(err.what()));
             sysofreq.logStd.Notify();
-            exit(1);
+            sysofreq.logErr.Write(ID + std::string(err.what()));
         }
 
         try
@@ -707,9 +702,8 @@ void calcOutput(OutputsBody &OutputIn, FileWriter &WriterIn)
         }
         catch(const std::exception &err)
         {
-            sysofreq.logErr.Write(ID + std::string(err.what()));
             sysofreq.logStd.Notify();
-            exit(1);
+            sysofreq.logErr.Write(ID + std::string(err.what()));
         }
 
         try
@@ -722,9 +716,8 @@ void calcOutput(OutputsBody &OutputIn, FileWriter &WriterIn)
         }
         catch(const std::exception &err)
         {
-            sysofreq.logErr.Write(ID + std::string(err.what()));
             sysofreq.logStd.Notify();
-            exit(1);
+            sysofreq.logErr.Write(ID + std::string(err.what()));
         }
 
         try
@@ -737,9 +730,8 @@ void calcOutput(OutputsBody &OutputIn, FileWriter &WriterIn)
         }
         catch(const std::exception &err)
         {
-            sysofreq.logErr.Write(ID + std::string(err.what()));
             sysofreq.logStd.Notify();
-            exit(1);
+            sysofreq.logErr.Write(ID + std::string(err.what()));
         }
     }
 }
@@ -790,8 +782,8 @@ void ReadFiles(string runPath)
         sysofreq.SearchActiveSeaModel();
 
         //Write output to screen.
-        sysofreq.logStd.Write("Hydrodynamic Input Files");
-        sysofreq.logStd.Write("-----------------------------");
+        sysofreq.logStd.Write("Hydrodynamic Input Files",3);
+        sysofreq.logStd.Write("-----------------------------",3);
 
         //So far, input files only specified the location of the hydrodynamic data.  Now need to actually  read it.
         HydroReader hydroIn;            //Create hydroreader.
@@ -809,9 +801,8 @@ void ReadFiles(string runPath)
     }
     catch(const std::exception &err)
     {
-        sysofreq.logErr.Write(ID + std::string(err.what()));
         sysofreq.logStd.Notify();
-        exit(1);
+        sysofreq.logErr.Write(ID + std::string(err.what()));
     }
 }
 
@@ -841,7 +832,7 @@ std::string getPath(string typePath)
     else
     {
         sysofreq.logErr.Write(string("Function:  ofreq \n Error Message:  Could not find filepath for executable."));
-        sysofreq.logStd.Write("Errors found.  Please check the error log.");
+        sysofreq.logStd.Write("Errors found.  Please check the error log.",3);
     }
 
     //Strip off name of executable itself.
@@ -890,6 +881,7 @@ void writeMonitor(int dirIn, int freqIn, int iterIn)
 {
     int total;          //Total number of iterations
     double perc;        //Percentage complete of solving
+    ofreq::oFreqCore convert;
 
     //get total number of iterations
     total = sysofreq.listWaveDirections().size() * sysofreq.listWaveFrequencies().size();
@@ -897,20 +889,11 @@ void writeMonitor(int dirIn, int freqIn, int iterIn)
     perc = double(iterIn) / double(total);
 
     string msg;
-    ostringstream convert;
-    convert << iterIn;
-    msg = convert.str() + "       \t";
-    convert.str("");
-    convert << (dirIn + 1);
-    msg += convert.str() + "        \t";
-    convert.str("");
-    convert << (freqIn + 1);
-    msg += convert.str() + "        \t";
-    convert.str("");
-    convert << perc;
-    msg += convert.str();
-    convert.str("");
-    sysofreq.logMon.Write(msg);
+    msg = convert.itoa(iterIn) + "       \t";
+    msg += convert.itoa(dirIn + 1) + "        \t";
+    msg += convert.itoa(freqIn + 1) + "        \t";
+    msg += convert.ftoa(perc);
+    sysofreq.logMon.Write(msg,3);
 }
 
 //######################################## writeLogHeader Function ####################################################
@@ -944,28 +927,27 @@ void writeLogHeader()
     }
     catch(const std::exception &err)
     {
-        sysofreq.logErr.Write(ID + std::string(err.what()));
         sysofreq.logStd.Notify();
-        exit(1);
+        sysofreq.logErr.Write(ID + std::string(err.what()));
     }
 
     //Now that the header is read in, write it to each log file.
-    sysofreq.logStd.Write(header + "\n\n\n",-1);
-    sysofreq.logErr.Write(header + "\n\n\n",-1);
-    sysofreq.logMon.Write(header + "\n\n\n",-1);
+    sysofreq.logStd.Write(header + "\n\n\n",3,-1);
+    sysofreq.logErr.Write(header + "\n\n\n",3,-1);
+    sysofreq.logMon.Write(header + "\n\n\n",3,-1);
 
     //Write header information for monitor log
-    sysofreq.logMon.Write("Monitors");
-    sysofreq.logMon.Write("=================================================================================");
-    sysofreq.logMon.Write("Iteration \tWave      \tWave      \tPercent");
-    sysofreq.logMon.Write("          \tDirection \tFrequency \tComplete");
-    sysofreq.logMon.Write("=================================================================================");
+    sysofreq.logMon.Write("Monitors",3);
+    sysofreq.logMon.Write("=================================================================================",3);
+    sysofreq.logMon.Write("Iteration \tWave      \tWave      \tPercent",3);
+    sysofreq.logMon.Write("          \tDirection \tFrequency \tComplete",3);
+    sysofreq.logMon.Write("=================================================================================",3);
 
     //Write header information for error log
-    sysofreq.logErr.Write("Error Log",-1);
-    sysofreq.logErr.Write("=================================================================================",-1);
+    sysofreq.logErr.Write("Error Log",3,-1);
+    sysofreq.logErr.Write("=================================================================================",3,-1);
 
     //Write header information for standard log
-    sysofreq.logStd.Write("System Status",-1);
-    sysofreq.logStd.Write("=================================================================================",-1);
+    sysofreq.logStd.Write("System Status",3,-1);
+    sysofreq.logStd.Write("=================================================================================",3,-1);
 }

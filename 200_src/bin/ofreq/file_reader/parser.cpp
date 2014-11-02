@@ -104,9 +104,6 @@ void Parser::Parse(istream &infile, int bracket_count)
     {
         logStd.Notify();
         logErr.Notify(ID + std::string(err.what()));
-        
-        //Stop program execution
-        exit(1);
     }
 }
 
@@ -498,9 +495,6 @@ void Parser::ParseCommands(istream &infile, string curString, string prevString,
                             logStd.Notify();
                             logErr.Write(ID + "Problem expanding list.  Perhaps the list entries are not valid numbers.\n" +
                                          string("Error Message:  ") + err.what());
-
-                            //Stop program execution
-                            exit(1);
                         }
                     }
 
@@ -587,10 +581,7 @@ void Parser::ParseCommands(istream &infile, string curString, string prevString,
     catch(const std::exception &err)
     {
         logStd.Notify();
-        logErr.Notify(ID + std::string(err.what()));
-
-        //Stop program execution
-        exit(1);
+        logErr.Write(ID + std::string(err.what()));
     }
 }
 

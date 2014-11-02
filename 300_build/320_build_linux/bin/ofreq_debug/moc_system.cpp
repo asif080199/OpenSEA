@@ -22,7 +22,7 @@ static const uint qt_meta_data_osea__ofreq__System[] = {
        6,       // revision
        0,       // classname
        0,    0, // classinfo
-      35,   14, // methods
+      36,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -34,39 +34,40 @@ static const uint qt_meta_data_osea__ofreq__System[] = {
 
  // slots: signature, parameters, type, tag, flags
       55,   20,   20,   20, 0x0a,
-      90,   84,   20,   20, 0x0a,
-     104,   20,   20,   20, 0x0a,
-     114,   84,   20,   20, 0x0a,
-     137,   20,   20,   20, 0x0a,
-     149,   84,   20,   20, 0x0a,
-     182,   20,   20,   20, 0x0a,
-     204,   84,   20,   20, 0x0a,
-     235,   20,   20,   20, 0x0a,
-     256,   84,   20,   20, 0x0a,
-     287,   20,   20,   20, 0x0a,
-     314,  308,   20,   20, 0x0a,
-     330,   20,   20,   20, 0x0a,
-     348,  342,   20,   20, 0x0a,
-     374,  364,   20,   20, 0x0a,
-     405,  397,   20,   20, 0x0a,
-     433,  397,   20,   20, 0x0a,
-     475,  397,   20,   20, 0x0a,
-     519,  397,   20,   20, 0x0a,
-     557,  397,   20,   20, 0x0a,
-     593,   20,   20,   20, 0x0a,
-     614,  607,   20,   20, 0x0a,
-     646,  607,   20,   20, 0x0a,
-     674,  607,   20,   20, 0x0a,
-     711,  607,   20,   20, 0x0a,
-     742,  607,   20,   20, 0x0a,
-     768,   20,   20,   20, 0x0a,
-     782,   20,   20,   20, 0x0a,
-     805,   20,   20,   20, 0x0a,
-     824,  342,   20,   20, 0x0a,
-     856,  846,   20,   20, 0x0a,
-     894,  886,   20,   20, 0x0a,
-     931,   20,   20,   20, 0x0a,
-     949,   20,   20,   20, 0x0a,
+      96,   20,   84,   20, 0x0a,
+     120,  114,   20,   20, 0x0a,
+     134,   20,   20,   20, 0x0a,
+     144,  114,   20,   20, 0x0a,
+     167,   20,   20,   20, 0x0a,
+     179,  114,   20,   20, 0x0a,
+     212,   20,   20,   20, 0x0a,
+     234,  114,   20,   20, 0x0a,
+     265,   20,   20,   20, 0x0a,
+     286,  114,   20,   20, 0x0a,
+     317,   20,   20,   20, 0x0a,
+     344,  338,   20,   20, 0x0a,
+     360,   20,   20,   20, 0x0a,
+     378,  372,   20,   20, 0x0a,
+     404,  394,   20,   20, 0x0a,
+     435,  427,   20,   20, 0x0a,
+     463,  427,   20,   20, 0x0a,
+     505,  427,   20,   20, 0x0a,
+     549,  427,   20,   20, 0x0a,
+     587,  427,   20,   20, 0x0a,
+     623,   20,   20,   20, 0x0a,
+     644,  637,   20,   20, 0x0a,
+     676,  637,   20,   20, 0x0a,
+     704,  637,   20,   20, 0x0a,
+     741,  637,   20,   20, 0x0a,
+     772,  637,   20,   20, 0x0a,
+     798,   20,   20,   20, 0x0a,
+     812,   20,   20,   20, 0x0a,
+     835,   20,   20,   20, 0x0a,
+     854,  372,   20,   20, 0x0a,
+     886,  876,   20,   20, 0x0a,
+     924,  916,   20,   20, 0x0a,
+     961,   20,   20,   20, 0x0a,
+     979,   20,   20,   20, 0x0a,
 
        0        // eod
 };
@@ -74,8 +75,9 @@ static const uint qt_meta_data_osea__ofreq__System[] = {
 static const char qt_meta_stringdata_osea__ofreq__System[] = {
     "osea::ofreq::System\0\0mySystem\0"
     "ReferenceSystem(System*)\0"
-    "setAnalysisType(std::string)\0input\0"
-    "addBody(Body)\0addBody()\0addOutput(OutputsBody)\0"
+    "setAnalysisType(std::string)\0std::string\0"
+    "getAnalysisType()\0input\0addBody(Body)\0"
+    "addBody()\0addOutput(OutputsBody)\0"
     "addOutput()\0addForceActive_user(ForceActive)\0"
     "addForceActive_user()\0"
     "addForceReact_user(ForceReact)\0"
@@ -110,39 +112,41 @@ void osea::ofreq::System::qt_static_metacall(QObject *_o, QMetaObject::Call _c, 
         switch (_id) {
         case 0: _t->ReferenceSystem((*reinterpret_cast< System*(*)>(_a[1]))); break;
         case 1: _t->setAnalysisType((*reinterpret_cast< std::string(*)>(_a[1]))); break;
-        case 2: _t->addBody((*reinterpret_cast< Body(*)>(_a[1]))); break;
-        case 3: _t->addBody(); break;
-        case 4: _t->addOutput((*reinterpret_cast< OutputsBody(*)>(_a[1]))); break;
-        case 5: _t->addOutput(); break;
-        case 6: _t->addForceActive_user((*reinterpret_cast< ForceActive(*)>(_a[1]))); break;
-        case 7: _t->addForceActive_user(); break;
-        case 8: _t->addForceReact_user((*reinterpret_cast< ForceReact(*)>(_a[1]))); break;
-        case 9: _t->addForceReact_user(); break;
-        case 10: _t->addForceCross_user((*reinterpret_cast< ForceCross(*)>(_a[1]))); break;
-        case 11: _t->addForceCross_user(); break;
-        case 12: _t->linkBodies((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 13: _t->listModel(); break;
-        case 14: _t->listModel((*reinterpret_cast< uint(*)>(_a[1]))); break;
-        case 15: _t->listModel((*reinterpret_cast< std::string(*)>(_a[1]))); break;
-        case 16: _t->addSeaModel((*reinterpret_cast< osea::SeaModel(*)>(_a[1]))); break;
-        case 17: _t->addSeaModel((*reinterpret_cast< osea::SeaModel_DualDirection(*)>(_a[1]))); break;
-        case 18: _t->addSeaModel((*reinterpret_cast< osea::SeaModel_SingleDirection(*)>(_a[1]))); break;
-        case 19: _t->addSeaModel((*reinterpret_cast< osea::SeaModel_LongCrest(*)>(_a[1]))); break;
-        case 20: _t->addSeaModel((*reinterpret_cast< osea::SeaModel_Uniform(*)>(_a[1]))); break;
-        case 21: _t->addSeaModel(); break;
-        case 22: _t->addWaveSpec((*reinterpret_cast< osea::WaveSpecBase(*)>(_a[1]))); break;
-        case 23: _t->addWaveSpec((*reinterpret_cast< osea::WaveSpec(*)>(_a[1]))); break;
-        case 24: _t->addWaveSpec((*reinterpret_cast< osea::SpecBretschneider(*)>(_a[1]))); break;
-        case 25: _t->addWaveSpec((*reinterpret_cast< osea::SpecJONSWAP(*)>(_a[1]))); break;
-        case 26: _t->addWaveSpec((*reinterpret_cast< osea::SpecPM(*)>(_a[1]))); break;
-        case 27: _t->addWaveSpec(); break;
-        case 28: _t->SearchActiveSeaModel(); break;
-        case 29: _t->listHydroManager(); break;
-        case 30: _t->listHydroManager((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 31: _t->listHydroManager((*reinterpret_cast< std::string(*)>(_a[1]))); break;
-        case 32: _t->addHydroManager((*reinterpret_cast< ofreq::HydroManager(*)>(_a[1]))); break;
-        case 33: _t->addHydroManager(); break;
-        case 34: _t->updateHydroForce(); break;
+        case 2: { std::string _r = _t->getAnalysisType();
+            if (_a[0]) *reinterpret_cast< std::string*>(_a[0]) = _r; }  break;
+        case 3: _t->addBody((*reinterpret_cast< Body(*)>(_a[1]))); break;
+        case 4: _t->addBody(); break;
+        case 5: _t->addOutput((*reinterpret_cast< OutputsBody(*)>(_a[1]))); break;
+        case 6: _t->addOutput(); break;
+        case 7: _t->addForceActive_user((*reinterpret_cast< ForceActive(*)>(_a[1]))); break;
+        case 8: _t->addForceActive_user(); break;
+        case 9: _t->addForceReact_user((*reinterpret_cast< ForceReact(*)>(_a[1]))); break;
+        case 10: _t->addForceReact_user(); break;
+        case 11: _t->addForceCross_user((*reinterpret_cast< ForceCross(*)>(_a[1]))); break;
+        case 12: _t->addForceCross_user(); break;
+        case 13: _t->linkBodies((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 14: _t->listModel(); break;
+        case 15: _t->listModel((*reinterpret_cast< uint(*)>(_a[1]))); break;
+        case 16: _t->listModel((*reinterpret_cast< std::string(*)>(_a[1]))); break;
+        case 17: _t->addSeaModel((*reinterpret_cast< osea::SeaModel(*)>(_a[1]))); break;
+        case 18: _t->addSeaModel((*reinterpret_cast< osea::SeaModel_DualDirection(*)>(_a[1]))); break;
+        case 19: _t->addSeaModel((*reinterpret_cast< osea::SeaModel_SingleDirection(*)>(_a[1]))); break;
+        case 20: _t->addSeaModel((*reinterpret_cast< osea::SeaModel_LongCrest(*)>(_a[1]))); break;
+        case 21: _t->addSeaModel((*reinterpret_cast< osea::SeaModel_Uniform(*)>(_a[1]))); break;
+        case 22: _t->addSeaModel(); break;
+        case 23: _t->addWaveSpec((*reinterpret_cast< osea::WaveSpecBase(*)>(_a[1]))); break;
+        case 24: _t->addWaveSpec((*reinterpret_cast< osea::WaveSpec(*)>(_a[1]))); break;
+        case 25: _t->addWaveSpec((*reinterpret_cast< osea::SpecBretschneider(*)>(_a[1]))); break;
+        case 26: _t->addWaveSpec((*reinterpret_cast< osea::SpecJONSWAP(*)>(_a[1]))); break;
+        case 27: _t->addWaveSpec((*reinterpret_cast< osea::SpecPM(*)>(_a[1]))); break;
+        case 28: _t->addWaveSpec(); break;
+        case 29: _t->SearchActiveSeaModel(); break;
+        case 30: _t->listHydroManager(); break;
+        case 31: _t->listHydroManager((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 32: _t->listHydroManager((*reinterpret_cast< std::string(*)>(_a[1]))); break;
+        case 33: _t->addHydroManager((*reinterpret_cast< ofreq::HydroManager(*)>(_a[1]))); break;
+        case 34: _t->addHydroManager(); break;
+        case 35: _t->updateHydroForce(); break;
         default: ;
         }
     }
@@ -182,9 +186,9 @@ int osea::ofreq::System::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 35)
+        if (_id < 36)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 35;
+        _id -= 36;
     }
     return _id;
 }

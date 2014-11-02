@@ -129,10 +129,7 @@ osea::ofreq::SolutionSet &OutputsBody::listSolutionSet(int index)
     {
         //Write error message
         logErr.Write(ID + "Unknown error occurred." + std::string(err.what()));
-        logStd.Notify();
-
-        //Stop program execution
-        exit(1);
+        logStd.Notify();   
     }
 }
 
@@ -349,7 +346,7 @@ int OutputsBody::calcGlobalMotion(unsigned int index)
                 logStd.Notify();
 
                 //Stop program execution
-                exit(1);
+               
             }
         }
     }
@@ -425,7 +422,7 @@ int OutputsBody::calcGlobalVelocity(unsigned int index)
                 logStd.Notify();
 
                 //Stop program execution
-                exit(1);
+               
             }
         }
     }
@@ -501,7 +498,7 @@ int OutputsBody::calcGlobalAcceleration(unsigned int index)
                 logStd.Notify();
 
                 //Stop program execution
-                exit(1);
+               
             }
         }
     }
@@ -575,7 +572,7 @@ int OutputsBody::calcGlobalSolution(unsigned int index)
                 logStd.Notify();
 
                 //Stop program execution
-                exit(1);
+               
             }
         }
     }

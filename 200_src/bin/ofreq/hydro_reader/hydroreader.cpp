@@ -85,7 +85,7 @@ int HydroReader::readHydroSys()
 
     try {
         //Write output to user.
-        logStd.Write(string("    ") + pPath + string(". . . "));
+        logStd.Write(string("    ") + pPath + string(". . . "),3);
 
         //First read the top level files
         //Read environment file
@@ -166,13 +166,12 @@ int HydroReader::readHydroSys()
         }
 
         //Write output to user.
-        logStd.Write("    . . . done.");
+        logStd.Write("    . . . done.",3);
     }
     catch(const std::exception &err)
     {
         logStd.Notify();
-        logErr.Write(ID + std::string(err.what()));
-        exit(1);
+        logErr.Write(ID + std::string(err.what()));   
     }
 }
 
@@ -222,8 +221,7 @@ int HydroReader::readEnvironment()
     catch(const std::exception &err)
     {
         logStd.Notify();
-        logErr.Write(ID + std::string(err.what()));
-        exit(1);
+        logErr.Write(ID + std::string(err.what()));   
     }
 }
 
@@ -260,8 +258,7 @@ int HydroReader::readDirections()
     catch(const std::exception &err)
     {
         logStd.Notify();
-        logErr.Write(ID + std::string(err.what()));
-        exit(1);
+        logErr.Write(ID + std::string(err.what()));   
     }
 }
 
@@ -298,8 +295,7 @@ int HydroReader::readFrequencies()
     catch(const std::exception &err)
     {
         logStd.Notify();
-        logErr.Write(ID + std::string(err.what()));
-        exit(1);
+        logErr.Write(ID + std::string(err.what()));   
     }
 }
 
@@ -338,8 +334,7 @@ int HydroReader::readForceExcite(int index)
     catch(const std::exception &err)
     {
         logStd.Notify();
-        logErr.Write(ID + std::string(err.what()));
-        exit(1);
+        logErr.Write(ID + std::string(err.what()));   
     }
 }
 
@@ -378,8 +373,7 @@ int HydroReader::readHydroMass(int index)
     catch(const std::exception &err)
     {
         logStd.Notify();
-        logErr.Write(ID + std::string(err.what()));
-        exit(1);
+        logErr.Write(ID + std::string(err.what()));   
     }
 }
 
@@ -419,7 +413,6 @@ int HydroReader::readHydroDamp(int index)
     {
         logStd.Notify();
         logErr.Write(ID + std::string(err.what()));
-        exit(1);
     }
 }
 
@@ -458,8 +451,7 @@ int HydroReader::readHydroStiff(int index)
     catch(const std::exception &err)
     {
         logStd.Notify();
-        logErr.Write(ID + std::string(err.what()));
-        exit(1);
+        logErr.Write(ID + std::string(err.what()));    
     }
 }
 
@@ -498,8 +490,7 @@ int HydroReader::readCrossMass(int index)
     catch(const std::exception &err)
     {
         logStd.Notify();
-        logErr.Write(ID + std::string(err.what()));
-        exit(1);
+        logErr.Write(ID + std::string(err.what()));   
     }
 }
 
@@ -538,8 +529,7 @@ int HydroReader::readCrossDamp(int index)
     catch(const std::exception &err)
     {
         logStd.Notify();
-        logErr.Write(ID + std::string(err.what()));
-        exit(1);
+        logErr.Write(ID + std::string(err.what()));   
     }
 }
 
@@ -578,8 +568,7 @@ int HydroReader::readCrossStiff(int index)
     catch(const std::exception &err)
     {
         logStd.Notify();
-        logErr.Write(ID + std::string(err.what()));
-        exit(1);
+        logErr.Write(ID + std::string(err.what()));     
     }
 }
 

@@ -55,10 +55,30 @@ Log::~Log()
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-void Log::Write(std::string msg, int timestamp, std::string output)
+void Log::Write(std::string msg, int severity, int timestamp, std::string output)
 {
     //Write output of file
-    std::string msgOut = "";
+    std::string msgOut = "";        //THe output message.
+    std::string prefix = "";        //THe prefix to put in front of output message.
+
+    //Decide which type of prefix to create.
+    switch (severity)
+    {
+    case 0:
+        prefix = "ERROR:  ";
+        break;
+    case 1:
+        prefix = "WARNING:  ";
+        break;
+    case 2:
+        prefix = "INFORMATION:  ";
+        break;
+    case 3:
+        prefix = "";
+        break;
+    default:
+        prefix = "";
+    }
 
     //Check if using default output
     if (output == "Default")
@@ -93,7 +113,7 @@ void Log::Write(std::string msg, int timestamp, std::string output)
         }
 
         //Write out the message and append carriage return
-        outFile << msg << endl;
+        outFile << prefix << msg << endl;
     }
     else if ((output == "Screen") ||
              (output == "screen") ||
@@ -117,7 +137,7 @@ void Log::Write(std::string msg, int timestamp, std::string output)
         }
 
         //Write out the message and append carriage return
-        std::cout << msg << endl;
+        std::cout << prefix << msg << endl;
     }
     else if ((output == "Both") ||
              (output == "both") ||
@@ -144,23 +164,27 @@ void Log::Write(std::string msg, int timestamp, std::string output)
         }
 
         //Write out the message and append carriage return
-        outFile << msg << endl;
-        std::cout << msg << endl;
+        outFile << prefix << msg << endl;
+        std::cout << prefix << msg << endl;
     }
+
+    //Finally cancel program execution, if required.
+    if (severity == 0)
+        exit(1);
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-void Log::WriteLog(std::string msg, int timestamp)
+void Log::WriteLog(std::string msg, int severity, int timestamp)
 {
     //Write to the log file only
-    Write(msg, timestamp, "Log");
+    Write(msg, severity, timestamp, "Log");
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-void Log::WriteScreen(std::string msg, int timestamp)
+void Log::WriteScreen(std::string msg, int severity, int timestamp)
 {
     //Write to the screen only
-    Write(msg, timestamp, "Screen");
+    Write(msg, severity, timestamp, "Screen");
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
@@ -256,7 +280,7 @@ void Log::Notify(std::string input)
         msg = input;
 
     //Write the notify message.
-    Write(msg);
+    Write(msg, 3);
 }
 
 

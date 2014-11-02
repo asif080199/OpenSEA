@@ -195,7 +195,7 @@ double SeaModel::getWaveEnergy(double dirIn, int freqIndex)
     {
         logStd.Notify();
         logErr.Write(ID + std::string(err.what()));
-        exit(1);
+       
     }
 }
 
@@ -333,7 +333,7 @@ double SeaModel::getWaveAmp(double dirIn, int freqIndex)
     {
         logStd.Notify();
         logErr.Write(ID + std::string(err.what()));
-        exit(1);
+       
     }
 }
 
@@ -489,7 +489,7 @@ double SeaModel::getFreqStep(int index)
     {
         logStd.Notify();
         logErr.Write(ID + std::string(err.what()));
-        exit(1);
+       
     }
 }
 

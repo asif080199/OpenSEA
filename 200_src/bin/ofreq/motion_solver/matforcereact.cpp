@@ -324,8 +324,7 @@ cx_mat &matForceReact::listDerivative(unsigned int index)
     catch(const std::exception &err)
     {
         logStd.Notify();
-        logErr.Write(ID + std::string(err.what()));
-        exit(1);
+        logErr.Write(ID + std::string(err.what()));   
     }
 }
 

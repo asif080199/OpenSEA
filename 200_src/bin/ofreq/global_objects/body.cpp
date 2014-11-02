@@ -256,10 +256,9 @@ void Body::setMass(double newMass)
     catch(const std::exception &err)
     {
         //Error handler.
-        logErr.Write(ID + std::string("Operation:  set mass for X-axis translation\n") +
-                     string("Error Message:  ") + string(err.what()));
         logStd.Notify();
-        exit(1);
+        logErr.Write(ID + std::string("Operation:  set mass for X-axis translation\n") +
+                     string("Error Message:  ") + string(err.what()));      
     }
 
     try
@@ -271,10 +270,9 @@ void Body::setMass(double newMass)
     catch(const std::exception &err)
     {
         //Error handler.
+        logStd.Notify();
         logErr.Write(ID + std::string("Operation:  set mass for Y-axis translation\n") +
                      string("Error Message:  ") + string(err.what()));
-        logStd.Notify();
-        exit(1);
     }
 
     try
@@ -286,10 +284,9 @@ void Body::setMass(double newMass)
     catch(const std::exception &err)
     {
         //Error handler.
+        logStd.Notify();
         logErr.Write(ID + std::string("Operation:  set mass for Z-axis translation\n") +
                      string("Error Message:  ") + string(err.what()));
-        logStd.Notify();
-        exit(1);
     }
 
     //Calculate mass coupling.
@@ -326,11 +323,10 @@ double Body::getMass()
             catch(const std::exception &err)
             {
                 //Error handler.
+                return 0;
+                logStd.Notify();
                 logErr.Write(ID + std::string("Operation:  find index for mass matrix\n") +
                              string("Error Message:  ") + string(err.what()));
-                logStd.Notify();
-                return 0;
-                exit(1);
             }
         }
     }
@@ -355,9 +351,8 @@ void Body::setMomIxx(double newXX)
     catch(const std::exception &err)
     {
         //Error handler.
-        logErr.Write(ID + std::string(err.what()));
         logStd.Notify();
-        exit(1);
+        logErr.Write(ID + std::string(err.what()));
     }
 }
 
@@ -379,10 +374,9 @@ double Body::getMomIxx()
     catch(const std::exception &err)
     {
         //Error handler.
-        logErr.Write(ID + std::string(err.what()));
         logStd.Notify();
         return 0;
-        exit(1);
+        logErr.Write(ID + std::string(err.what()));
     }
 }
 
@@ -404,9 +398,8 @@ void Body::setMomIyy(double newYY)
     catch(const std::exception &err)
     {
         //Error handler.
-        logErr.Write(ID + std::string(err.what()));
         logStd.Notify();
-        exit(1);
+        logErr.Write(ID + std::string(err.what()));
     }
 }
 
@@ -428,10 +421,9 @@ double Body::getMomIyy()
     catch(const std::exception &err)
     {
         //Error handler.
-        logErr.Write(ID + std::string(err.what()));
         logStd.Notify();
         return 0;
-        exit(1);
+        logErr.Write(ID + std::string(err.what()));
     }
 }
 
@@ -453,9 +445,8 @@ void Body::setMomIzz(double newZZ)
     catch(const std::exception &err)
     {
         //Error handler.
-        logErr.Write(ID + std::string(err.what()));
         logStd.Notify();
-        exit(1);
+        logErr.Write(ID + std::string(err.what()));
     }
 }
 
@@ -477,10 +468,9 @@ double Body::getMomIzz()
     catch(const std::exception &err)
     {
         //Error handler.
-        logErr.Write(ID + std::string(err.what()));
         logStd.Notify();
         return 0;
-        exit(1);
+        logErr.Write(ID + std::string(err.what()));
     }
 }
 
@@ -503,9 +493,8 @@ void Body::setMomIxy(double newXY)
     catch(const std::exception &err)
     {
         //Error handler.
-        logErr.Write(ID + std::string(err.what()));
         logStd.Notify();
-        exit(1);
+        logErr.Write(ID + std::string(err.what()));
     }
 }
 
@@ -528,10 +517,9 @@ double Body::getMomIxy()
     catch(const std::exception &err)
     {
         //Error handler.
-        logErr.Write(ID + std::string(err.what()));
         logStd.Notify();
         return 0;
-        exit(1);
+        logErr.Write(ID + std::string(err.what()));
     }
 }
 
@@ -554,9 +542,8 @@ void Body::setMomIxz(double newXZ)
     catch(const std::exception &err)
     {
         //Error handler.
-        logErr.Write(ID + std::string(err.what()));
         logStd.Notify();
-        exit(1);
+        logErr.Write(ID + std::string(err.what()));
     }
 }
 
@@ -579,10 +566,9 @@ double Body::getMomIxz()
     catch(const std::exception &err)
     {
         //Error handler.
-        logErr.Write(ID + std::string(err.what()));
         logStd.Notify();
         return 0;
-        exit(1);
+        logErr.Write(ID + std::string(err.what()));
     }
 }
 
@@ -605,9 +591,8 @@ void Body::setMomIyz(double newYZ)
     catch(const std::exception &err)
     {
         //Error handler.
-        logErr.Write(ID + std::string(err.what()));
         logStd.Notify();
-        exit(1);
+        logErr.Write(ID + std::string(err.what()));
     }
 }
 
@@ -630,10 +615,9 @@ double Body::getMomIyz()
     catch(const std::exception &err)
     {
         //Error handler.
-        logErr.Write(ID + std::string(err.what()));
         logStd.Notify();
         return 0;
-        exit(1);
+        logErr.Write(ID + std::string(err.what()));
     }
 }
 
@@ -1060,7 +1044,14 @@ void Body::setMotionModel(ofreq::MotionModel &modelIn)
 //------------------------------------------Function Separator --------------------------------------------------------
 MotionModel &Body::getMotionModel()
 {
-    return *motModel;
+    try
+    {
+        return *motModel;
+    }
+    catch(...)
+    {
+        throw std::bad_alloc();
+    }
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
@@ -1206,7 +1197,7 @@ int Body::findIndex(int DataIndexIn)
     bool test = false;  //Check if a match was found
 
     //Finds the integer of the equation object by data index.
-    for (unsigned int i = 0 ; i < motModel->listEquation().size(); i++)
+    for (unsigned int i = 0; i < motModel->listEquation().size(); i++)
     {
         //Check the data index of the object.
         if (motModel->listEquation(i).getDataIndex() < 0)

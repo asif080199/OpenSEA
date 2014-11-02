@@ -82,9 +82,8 @@ void Dictionary::setObject(ObjectGroup input)
         catch(const std::exception &err)
         {
             //Write out error message and stop execution.
-            logErr.Write(ID + std::string(err.what()));
             logStd.Notify();
-            exit(1);
+            logErr.Write(ID + std::string(err.what()));
         }
     }
 
@@ -98,11 +97,10 @@ void Dictionary::setObject(ObjectGroup input)
         catch(const std::exception &err)
         {
             //Write out error message and stop execution.
+            logStd.Notify();
             logErr.Write(ID + "Error reading in object definition.\n" +
                          string("Object Name:  ") + string(input.listObject(i)->getClassName()) +
-                         string("\nError Code:  ") + string(err.what()));
-            logStd.Notify();
-            exit(1);
+                         string("\nError Message:  ") + string(err.what()));
         }
     }
 }
@@ -269,8 +267,7 @@ complex<double> Dictionary::convertComplex(string input)
     catch(const std::exception &err)
     {
         logStd.Notify();
-        logErr.Write(ID + err.what());
-        exit(1);
+        logErr.Write(ID + err.what());   
     }
 
     //Return output

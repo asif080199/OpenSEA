@@ -344,8 +344,7 @@ complex<double> EquationofMotion::ForceActive_user()
         if (!(pParentModel->listData(curBodComp).listForceActive_user().empty()))
         {
             //Add up for all forces
-            for (pCurForce = 0; pCurForce < pParentModel->listData(curBodComp).listForceActive_user().size() ;
-                 pCurForce++)
+            for (pCurForce = 0; pCurForce < pParentModel->listData(curBodComp).listForceActive_user().size(); pCurForce++)
             {
                 try
                 {
@@ -387,7 +386,7 @@ complex<double> EquationofMotion::ForceReact_hydro(unsigned int ordIn, unsigned 
             (pParentModel->listData().size() != 0))
     {
         //Add up all force objects.
-        for (pCurForce = 0 ; pCurForce < pParentModel->listData(curBodComp).listForceReact_hydro().size() ; pCurForce++)
+        for (pCurForce = 0; pCurForce < pParentModel->listData(curBodComp).listForceReact_hydro().size(); pCurForce++)
         {
             //Out of bounds check for forces
             if ((force() <= pParentModel->listData(curBodComp).
@@ -444,7 +443,7 @@ complex<double> EquationofMotion::ForceReact_user(unsigned int ordIn, unsigned i
             (pParentModel->listData().size() != 0))
     {
         //Add up all force objects.
-        for (pCurForce = 0 ; pCurForce < pParentModel->listData(curBodComp).listForceReact_user().size() ; pCurForce++)
+        for (pCurForce = 0; pCurForce < pParentModel->listData(curBodComp).listForceReact_user().size(); pCurForce++)
         {
             //Out of bounds check for forces
             if ((force() <= pParentModel->listData(curBodComp).
@@ -503,9 +502,7 @@ complex<double> EquationofMotion::ForceCross_hydro(unsigned int bodIn, unsigned 
             (pParentModel->listData().size() != 0))
     {
         //Add up for all force objects.
-        for (pCurForce = 0 ; pCurForce < pParentModel->listData(curBodComp).
-             listForceCross_hydro().
-             size() ; pCurForce++)
+        for (pCurForce = 0; pCurForce < pParentModel->listData(curBodComp).listForceCross_hydro().size(); pCurForce++)
         {
             //Out of bounds check for forces
             if ((force() <= pParentModel->listData(curBodComp).
@@ -567,9 +564,7 @@ complex<double> EquationofMotion::ForceCross_user(unsigned int bodIn, unsigned i
             (pParentModel->listData().size() != 0))
     {
         //Add up for all force objects.
-        for (pCurForce = 0 ; pCurForce < pParentModel->listData(curBodComp).
-             listForceCross_user().
-             size() ; pCurForce++)
+        for (pCurForce = 0; pCurForce < pParentModel->listData(curBodComp).listForceCross_user().size(); pCurForce++)
         {
             //Out of bounds check for forces
             if ((force() <= pParentModel->listData(curBodComp).
@@ -733,8 +728,7 @@ int EquationofMotion::curbody()
     catch(const std::exception &err)
     {
         logStd.Notify();
-        logErr.Write(ID + std::string(err.what()));
-        exit(1);
+        logErr.Write(ID + std::string(err.what()));   
     }
 }
 
@@ -770,7 +764,7 @@ std::complex<double> EquationofMotion::Sum(std::string FuncName, std::string ind
         }
 
         //Sum for variable count.
-        for (pCurVar = from - 1 ; pCurVar <= to - 1; pCurVar++)
+        for (pCurVar = from - 1; pCurVar <= to - 1; pCurVar++)
         {
             output = output + FunctionFind(FuncName);
         }
@@ -800,7 +794,7 @@ std::complex<double> EquationofMotion::Sum(std::string FuncName, std::string ind
         }
 
         //Sum for order of refDerivative.
-        for (pCurOrd = from ; pCurOrd <= to; pCurOrd++)
+        for (pCurOrd = from; pCurOrd <= to; pCurOrd++)
         {
             output = output + FunctionFind(FuncName);
         }
@@ -833,7 +827,7 @@ std::complex<double> EquationofMotion::Sum(std::string FuncName, std::string ind
         }
 
         //Sum for bodies
-        for (pBod = from ; pBod <= to; pBod++)
+        for (pBod = from; pBod <= to; pBod++)
         {
             output = output + FunctionFind(FuncName);
         }
@@ -1715,7 +1709,7 @@ int EquationofMotion::findIndex(int indexIn)
     bool test = false;  //Boolean to check if a match was found.
 
     //Finds the integer of the equation object by data index.
-    for (unsigned int i = 0 ; i < pParentModel->listDataEquation().size(); i++)
+    for (unsigned int i = 0; i < pParentModel->listDataEquation().size(); i++)
     {
         //Check the data index of the object.
         if (pParentModel->listEquation(i).getDataIndex() < 0)

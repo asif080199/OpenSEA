@@ -437,7 +437,7 @@ osea::SeaModel* System::listSeaModelPt(std::string NameIn)
     {
         logStd.Notify();
         logErr.Write(ID + std::string(err.what()));
-        exit(1);
+
     }
 }
 
@@ -490,7 +490,7 @@ osea::WaveSpecBase* System::listWaveSpecPt(std::string NameIn)
     {
         logStd.Notify();
         logErr.Write(ID + std::string(err.what()));
-        exit(1);
+
     }
 }
 
@@ -536,6 +536,12 @@ osea::SeaModel &System::refActiveSeaModel()
 void System::setAnalysisType(string analysisTypeIn)
 {
     analysisType = analysisTypeIn;
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+string System::getAnalysisType()
+{
+    return analysisType;
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
@@ -812,7 +818,7 @@ void System::SearchActiveSeaModel()
     {
         logStd.Notify();
         logErr.Write(ID + std::string(err.what()));
-        exit(1);
+
     }
 }
 
@@ -854,7 +860,7 @@ ofreq::HydroManager &System::listHydroManager(std::string bodNameIn)
     {
         logStd.Notify();
         logErr.Write(ID + std::string(err.what()));
-        exit(1);
+
     }
 }
 
@@ -988,14 +994,12 @@ void System::updateHydroForce()
     {
         logStd.Notify();
         logErr.Write(ID + std::string(err.what()));
-        exit(1);
     }
     catch(...)
     {
         //Throw an error.
         logStd.Notify();
         logErr.Write(ID + std::string("Unknown error occurred."));
-        exit(1);
     }
 }
 

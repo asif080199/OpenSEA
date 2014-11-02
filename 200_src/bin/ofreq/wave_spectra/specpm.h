@@ -141,10 +141,10 @@ protected:
 //==========================================Section Separator =========================================================
 private:
     //------------------------------------------Function Separator ----------------------------------------------------
-    double pWindSpeed;  /**< The wind speed, at 10.0 m above sea level.  Units of m/s */
+    double pWindSpeed = 0;  /**< The wind speed, at 10.0 m above sea level.  Units of m/s */
 
     //------------------------------------------Function Separator ----------------------------------------------------
-    double pHsig;   /**< The significant wave height.  Can be used in place of wind speed. */
+    double pHsig = 0;   /**< The significant wave height.  Can be used in place of wind speed. */
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**

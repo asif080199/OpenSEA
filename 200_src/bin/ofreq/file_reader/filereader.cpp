@@ -147,11 +147,9 @@ void FileReader::setPath(string input)
     }
     catch(const std::exception &err)
     {
+        //Write error message and stop program execution.
         logStd.Notify();
-        logErr.Write(ID + err.what());
-
-        //Stop program execution
-        exit(1);
+        logErr.Write(ID + string(err.what()));
     }
 
     pPath = input;
@@ -161,7 +159,7 @@ void FileReader::setPath(string input)
 int FileReader::readControl()
 {
     //Read control input file
-    logStd.Write("Reading control input file . . .");
+    logStd.Write("Reading control input file . . .",3);
 
     //Set filename
     string filename;
@@ -173,17 +171,98 @@ int FileReader::readControl()
     //Read file
     int out = readFile(filename);
 
-    logStd.Write(". . . done.");
+    logStd.Write(". . . done.",3);
 
     //Write output
     return out;
+
+    bool Stop = false;       //Boolean to record if warning should require stopping program execution.
+
+    //Perform some sensibility checks to ensure program is sensible.
+    try
+    {
+        //Check that the analysis type was set.
+        //-------------------------------------
+        if (ptSystem->getAnalysisType() == "")
+        {
+            //no analysis type set.  Throw an error.
+            Stop = true;
+            throw std::runtime_error("No Analsysis type set.  You must use the ""analysis"" keyword, under the system object.");
+        }
+
+        //Check that the analysis type selected is one of the valid options.
+        //-------------------------------------
+        std::vector<std::string> typeOptions;
+        typeOptions.push_back("response");
+        typeOptions.push_back("resonant");
+        bool test = false;
+        for (unsigned int i = 0; i < typeOptions.size(); i++)
+        {
+             if (typeOptions.at(i).compare(ptSystem->getAnalysisType()) == 0)
+            {
+                 test = true;
+                 break;
+            }
+        }
+        if(!test)
+        {
+            Stop = false;
+            throw std::runtime_error("Set analysis type does not match list of possible types.");
+        }
+
+        //Check that there is at least one wave frequency defined.
+        //-------------------------------------
+        if (ptSystem->listWaveFrequencies().size() == 0)
+        {
+            Stop = true;
+            throw std::runtime_error("System must have at least one wave frequency defined.");
+        }
+
+        //Check that there are at least two wave frequencies
+        //Specific to hydrodynamic forces.
+        //-------------------------------------
+        if (ptSystem->listWaveFrequencies().size() < 2)
+        {
+            Stop = false;
+            throw std::runtime_error("Hydrodynamic forces will require at least two wave frequencies defined.  This is necessary to calculate the wave amplitude from the supplied wave spectrum.");
+        }
+
+        //Check that there is at least on wave direction defined.
+        //-------------------------------------
+        if (ptSystem->listWaveDirections().size() == 0)
+        {
+            Stop = true;
+            throw std::runtime_error("System must have at least one wave direction defined.");
+        }
+    }
+    catch(const std::exception &err)
+    {
+        std::string file = "control.in input file >> ";
+        if (Stop)
+        {
+            //Critical error encountered.  Must stop program.
+            logStd.Notify();
+            logErr.Write(file + string(err.what()));
+        }
+        else
+        {
+            /* Do not stop program execution.
+             * These sensibility checks are only considered warnings.
+             * They are not guaranteed to produce errors, but deviate from typical program
+             * behavior.
+             * If the user knows what they are doing, this may be fine.
+             */
+            logStd.Notify(std::string("Warnings encountered.  Check the error log for more details."));
+            logErr.Write(file + string(err.what()));
+        }
+    }
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
 int FileReader::readBodies()
 {
     //Read Bodies input file
-    logStd.Write("Reading bodies input file . . .");
+    logStd.Write("Reading bodies input file . . .",3);
 
     //Set filename
     string filename;
@@ -201,17 +280,158 @@ int FileReader::readBodies()
         ptSystem->linkBodies(i);
     }
 
-    logStd.Write(". . . done.");
+    logStd.Write(". . . done.",3);
 
     //write output
     return out;
+
+    bool Stop = false;       //Boolean to record if warning should require stopping program execution.
+
+    //Perform some sensibility checks to ensure program is sensible.
+    try
+    {
+        //Check that least one body is defined.
+        //-------------------------------------
+        if (ptSystem->listBody().size() == 0)
+        {
+            Stop = true;
+            throw std::runtime_error("At least one body must be defined.");
+        }
+
+        //Ensure that the body has a name.
+        //-------------------------------------
+        for (unsigned int i = 0; i < ptSystem->listBody().size(); i++)
+        {
+            if (ptSystem->listBody(i).getBodyName() == "")
+            {
+                Stop = true;
+                throw std::runtime_error("At least one body definition is missing a name.  All body definitions must have the ""name"" keyword assigned.");
+                break;
+            }
+        }
+
+        //Check that mass properties were set.
+        //-------------------------------------
+        for (unsigned int i = 0; i < ptSystem->listBody().size(); i++)
+        {
+            if (ptSystem->listBody(i).getMass() == 0)
+            {
+                Stop = false;
+                std::string msg = "No mass set on one of the bodies.  A default value of 0.0 kg was assigned.";
+                msg = msg + " Body:  " + ptSystem->listBody(i).getBodyName();
+                throw std::runtime_error(msg);
+                break;
+            }
+        }
+
+        //Check that center of gravity was set.
+        //-------------------------------------
+        for (unsigned int i = 0; i < ptSystem->listBody().size(); i++)
+        {
+            if ((ptSystem->listBody(i).getCenX() == 0)
+                    && (ptSystem->listBody(i).getCenY() == 0)
+                    && (ptSystem->listBody(i).getCenZ() == 0))
+            {
+                Stop = false;
+                std::string msg = "The center of gravity was set at 0,0,0 in body coordinate system.";
+                msg = msg + " Body:  " + ptSystem->listBody(i).getBodyName();
+                throw std::runtime_error(msg);
+                break;
+            }
+        }
+
+        //Check that the body has a motion model set.
+        //-------------------------------------
+        for (unsigned int i = 0; i < ptSystem->listBody().size(); i++)
+        {
+            if (!&(ptSystem->listBody(i).getMotionModel()))
+            {
+                Stop = true;
+                std::string msg = "No motion model set for one of the body definitions.";
+                msg = msg + " Body:  " + ptSystem->listBody(i).getBodyName();
+                throw std::runtime_error(msg);
+                break;
+            }
+        }
+
+        //Check that each crossbody force has a linked body specified.
+        //-------------------------------------
+        for (unsigned int i = 0; i < ptSystem->listBody().size(); i++)
+        {
+            //Assign body
+            ofreq::Body *myBod = &(ptSystem->listBody(i));
+
+            //Check that the two force sizes match.
+            if (myBod->listCrossBody_user().size() != myBod->listForceCross_user().size())
+            {
+                Stop = true;
+                std::string msg = "Number of linked bodies do not match number of crossbody forces defined.";
+                msg = msg + "  Body in question:  " + myBod->getBodyName();
+                throw std::runtime_error(msg);
+            }
+        }
+
+        //Check that each linked body also has a user crossbody force back to the original body.
+        //-------------------------------------
+        for (unsigned int i = 0; i < ptSystem->listBody().size(); i++)
+        {
+            ofreq::Body *myBod;
+            myBod = &(ptSystem->listBody(i));
+            for (unsigned int j = 0; j < myBod->listCrossBody_user().size(); j++)
+            {
+                //Check that the assigned crossbody link also has a matching link.
+                ofreq::Body *linkBod;
+                linkBod = &(myBod->listCrossBody_user(j));
+                //Search through linked body to see if it has a matching body.
+                bool match = false;
+                for (unsigned int k = 0; k < linkBod->listCrossBody_user().size(); k++)
+                {
+                    if (&(linkBod->listCrossBody_user(k)) == myBod)
+                    {
+                        match = true;
+                        break;
+                    }
+                }
+
+                //If no match found, throw a warning message.
+                if (!match)
+                {
+                    Stop = false;
+                    std::string msg = "No matching user crossbody force found for one of the bodies.  Did you intend to break Newton's third law of motion?";
+                    msg = msg + " Body:  " + ptSystem->listBody(i).getBodyName();
+                    throw std::runtime_error(msg);
+                }
+            }
+        }
+    }
+    catch(const std::exception &err)
+    {
+        std::string file = "bodies.in input file >> ";
+        if (Stop)
+        {
+            //Critical error encountered.  Must stop program.
+            logStd.Notify();
+            logErr.Write(file + string(err.what()));
+        }
+        else
+        {
+            /* Do not stop program execution.
+             * These sensibility checks are only considered warnings.
+             * They are not guaranteed to produce errors, but deviate from typical program
+             * behavior.
+             * If the user knows what they are doing, this may be fine.
+             */
+            logStd.Notify(std::string("Warnings encountered.  Check the error log for more details."));
+            logErr.Write(file + string(err.what()));
+        }
+    }
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
 int FileReader::readForces()
 {
     //Read forces input file
-    logStd.Write("Reading forces input file . . .");
+    logStd.Write("Reading forces input file . . .",3);
 
     //Set filename
     string filename;
@@ -223,17 +443,182 @@ int FileReader::readForces()
     //Read file
     int out = readFile(filename);
 
-    logStd.Write(". . . done.");
+    logStd.Write(". . . done.",3);
 
     //Write output
     return out;
+
+    bool Stop = false;       //Boolean to record if warning should require stopping program execution.
+
+    //Perform some sensibility checks to ensure program is sensible.
+    try
+    {
+        //Check that active forces have a name assigned.
+        //----------------------------------------------
+        for (unsigned int i = 0; i < ptSystem->listForceActive_user().size(); i++)
+        {
+            if (ptSystem->listForceActive_user(i).getForceName() == "")
+            {
+                Stop = true;
+                std::string msg = "No name assigned to one or more force_active objects.";
+                throw std::runtime_error(msg);
+            }
+        }
+
+        //Check that reactive forces have a name assigned.
+        //----------------------------------------------
+        for (unsigned int i = 0; i < ptSystem->listForceReact_user().size(); i++)
+        {
+            if (ptSystem->listForceReact_user(i).getForceName() == "")
+            {
+                Stop = true;
+                std::string msg = "No name assigned to one or more force_reactive objects.";
+                throw std::runtime_error(msg);
+            }
+        }
+
+        //Check that crossbody forces have a name assigned.
+        //----------------------------------------------
+        for (unsigned int i = 0; i < ptSystem->listForceCross_user().size(); i++)
+        {
+            if (ptSystem->listForceCross_user(i).getForceName() == "")
+            {
+                Stop = true;
+                std::string msg = "No name assigned to one or more force_crossbody objects.";
+                throw std::runtime_error(msg);
+            }
+        }
+
+        //Check that active forces have at least one equation coefficient defined.
+        //----------------------------------------------
+        for (unsigned int i = 0; i < ptSystem->listForceActive_user().size(); i++)
+        {
+            if (ptSystem->listForceActive_user(i).listDataEquation().size() == 0)
+            {
+                Stop = false;
+                std::string msg = "A force_active object has no equation coefficients defined.  ";
+                msg = msg + "Object name:  " + ptSystem->listForceActive_user(i).getForceName();
+                throw std::runtime_error(msg);
+            }
+        }
+
+        //Check that reactive forces have at least one equation coefficient defined.
+        //----------------------------------------------
+        for (unsigned int i = 0; i < ptSystem->listForceReact_user().size(); i++)
+        {
+            if (ptSystem->listForceReact_user(i).listDerivative().size() == 0)
+            {
+                Stop = false;
+                std::string msg = "A force_reactive object has no derivatives defined.  ";
+                msg = msg + "Object name:  " + ptSystem->listForceReact_user(i).getForceName();
+                throw std::runtime_error(msg);
+            }
+
+            //Check if derivative has any equations defined.
+            for (unsigned int j = 0; j < ptSystem->listForceReact_user(i).listDerivative().size(); j++)
+            {
+                if (ptSystem->listForceReact_user(i).listDerivative(j).listEquation().size() == 0)
+                {
+                    Stop = false;
+                    std::string msg = "A force_reactive object has no equations defined for a derivative.  ";
+                    msg = msg + "Object name:  " + ptSystem->listForceReact_user(i).getForceName();
+                    msg = msg + "  Derivative order:  " + itoa(j);
+                    throw std::runtime_error(msg);
+                }
+
+                //Assign derivative
+                ofreq::Derivative *myDeriv;
+                myDeriv = &(ptSystem->listForceReact_user(i).listDerivative(j));
+
+                //Check if equation has any coefficients assigned.
+                for (unsigned int k = 0; k < myDeriv->listEquation().size(); k++)
+                {
+                    if (myDeriv->listEquation(k).listCoefficient().size() == 0)
+                    {
+                        Stop = false;
+                        std::string msg = "A force_reactive object has no coefficients defined for an equation.  ";
+                        msg = msg + "Object name:  " + ptSystem->listForceReact_user(i).getForceName();
+                        msg = msg + "  Derivative order:  " + itoa(j);
+                        msg = msg + "  Equation number:  " + itoa(myDeriv->listDataEquation(k).getDataIndex());
+                        throw std::runtime_error(msg);
+                    }
+                }
+            }
+        }
+
+        //Check that crossbody forces have at least one equation coefficient defined.
+        //----------------------------------------------
+        for (unsigned int i = 0; i < ptSystem->listForceCross_user().size(); i++)
+        {
+            if (ptSystem->listForceCross_user(i).listDerivative().size() == 0)
+            {
+                Stop = false;
+                std::string msg = "A force_reactive object has no derivatives defined.  ";
+                msg = msg + "Object name:  " + ptSystem->listForceCross_user(i).getForceName();
+                throw std::runtime_error(msg);
+            }
+
+            //Check if derivative has any equations defined.
+            for (unsigned int j = 0; j < ptSystem->listForceCross_user(i).listDerivative().size(); j++)
+            {
+                if (ptSystem->listForceCross_user(i).listDerivative(j).listEquation().size() == 0)
+                {
+                    Stop = false;
+
+                    std::string msg = "A force_reactive object has no equations defined for a derivative.  ";
+                    msg = msg + "Object name:  " + ptSystem->listForceCross_user(i).getForceName();
+                    msg = msg + "  Derivative order:  " + itoa(j);
+                    throw std::runtime_error(msg);
+                }
+
+                //Assign derivative
+                ofreq::Derivative *myDeriv;
+                myDeriv = &(ptSystem->listForceCross_user(i).listDerivative(j));
+
+                //Check if equation has any coefficients assigned.
+                for (unsigned int k = 0; k < myDeriv->listEquation().size(); k++)
+                {
+                    if (myDeriv->listEquation(k).listCoefficient().size() == 0)
+                    {
+                        Stop = false;
+                        std::string msg = "A force_reactive object has no coefficients defined for an equation.  ";
+                        msg = msg + "Object name:  " + ptSystem->listForceCross_user(i).getForceName();
+                        msg = msg + "  Derivative order:  " + itoa(j);
+                        msg = msg + "  Equation number:  " + itoa(myDeriv->listEquation(k).getDataIndex());
+                        throw std::runtime_error(msg);
+                    }
+                }
+            }
+        }
+    }
+    catch(const std::exception &err)
+    {
+        std::string file = "forces.in input file >> ";
+        if (Stop)
+        {
+            //Critical error encountered.  Must stop program.
+            logStd.Notify();
+            logErr.Write(file + string(err.what()));
+        }
+        else
+        {
+            /* Do not stop program execution.
+             * These sensibility checks are only considered warnings.
+             * They are not guaranteed to produce errors, but deviate from typical program
+             * behavior.
+             * If the user knows what they are doing, this may be fine.
+             */
+            logStd.Notify(std::string("Warnings encountered.  Check the error log for more details."));
+            logErr.Write(file + string(err.what()));
+        }
+    }
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
 int FileReader::readSeaEnv()
 {
     //Read sea environment input file
-    logStd.Write("Reading seaenv input file . . .");
+    logStd.Write("Reading seaenv input file . . .",3);
 
     //Set filename
     string filename;
@@ -245,17 +630,162 @@ int FileReader::readSeaEnv()
     //Read file
     int out = readFile(filename);
 
-    logStd.Write(". . . done");
+    logStd.Write(". . . done",3);
 
     //Write output
     return out;
+
+    bool Stop = false;       //Boolean to record if warning should require stopping program execution.
+
+    //Perform some sensibility checks to ensure program is sensible.
+    try
+    {
+        //Check that all wave spectrums have a name defined.
+        //--------------------------------------------------
+        for (unsigned int i = 0; i < ptSystem->listWaveSpec().size(); i++)
+        {
+            if (ptSystem->listWaveSpec(i).getName() == "")
+            {
+                Stop = true;
+                throw std::runtime_error("One or more wave spectrums were defined without a name.");
+            }
+        }
+
+        //Check that all sea models have a name defined.
+        //--------------------------------------------------
+        for (unsigned int i = 0; i < ptSystem->listSeaModel().size(); i++)
+        {
+            if (ptSystem->listSeaModel(i).getName() == "")
+            {
+                Stop = true;
+                throw std::runtime_error("One or more sea models were defined without a name.");
+            }
+        }
+
+        //Check settings on individual wave spectrums.
+        //--------------------------------------------------
+        for (unsigned int i = 0; i < ptSystem->listWaveSpec().size(); i++)
+        {
+            //Assign wave spectrum to variable.
+            osea::WaveSpecBase *mySpec;
+            osea::SpecBretschneider *myBret;
+            osea::SpecJONSWAP *myJON;
+            osea::SpecPM *myPM;
+
+            //Check on items for Bretschneider wave spectra.
+            if (typeid(*(ptSystem->listWaveSpecPt(i))) == typeid(*myBret))
+            {
+                //Assign wave spectra.
+                myBret = static_cast<osea::SpecBretschneider *>(ptSystem->listWaveSpecPt(i));
+
+                //Check that the wave spectrum includes a significant wave height.
+                //-------------------------------------------
+                if (myBret->getSigWaveHeight() == 0)
+                {
+                    Stop = false;
+                    std::string msg = "Significant wave height not set on wave spectrum.";
+                    msg = msg + "  Spectrum name:  " + mySpec->getName();
+                    throw std::runtime_error(msg);
+                }
+
+                //Check that the wave spectrum includes a wave period defined.
+                //-------------------------------------------
+                if (myBret->getTMean() == 0)
+                {
+                    Stop = false;
+                    std::string msg = "Wave period not set on wave spectrum.";
+                    msg = msg + "  Spectrum name:  " + mySpec->getName();
+                    throw std::runtime_error(msg);
+                }
+            }
+
+            //Check on items for JONSWAP wave spectra.
+            if (typeid(*(ptSystem->listWaveSpecPt(i))) == typeid(*myJON))
+            {
+                //Assign wave spectra.
+                myJON = static_cast<osea::SpecJONSWAP *>(ptSystem->listWaveSpecPt(i));
+
+                //Check that the wave spectrum includes a significant wave height.
+                //-------------------------------------------
+                if (myJON->getSigWaveHeight() == 0)
+                {
+                    Stop = false;
+                    std::string msg = "Significant wave height not set on wave spectrum.";
+                    msg = msg + "  Spectrum name:  " + mySpec->getName();
+                    throw std::runtime_error(msg);
+                }
+
+                //Check that the wave spectrum includes a wave period defined.
+                //-------------------------------------------
+                if (myJON->getTMean() == 0)
+                {
+                    Stop = false;
+                    std::string msg = "Wave period not set on wave spectrum.";
+                    msg = msg + "  Spectrum name:  " + mySpec->getName();
+                    throw std::runtime_error(msg);
+                }
+            }
+
+            //Check on items for Pierson-Moskowitz spectra.
+            if (typeid(*(ptSystem->listWaveSpecPt(i))) == typeid(*myPM))
+            {
+                //Assign wave spectra
+                myPM = static_cast<osea::SpecPM *>(ptSystem->listWaveSpecPt(i));
+
+                //Check that it has at least a wind speed or wave height defined.
+                //-------------------------------------------
+                if ((myPM->getWindSpeed() == 0)
+                        && (myPM->getSigWaveHeight() == 0))
+                {
+                    Stop = false;
+                    std::string msg = "No significant wave height or wind speed defined for Pierson-Moskowitz spectra.";
+                    msg = msg + "  Spectrum name:  " + mySpec->getName();
+                    throw std::runtime_error(msg);
+                }
+            }
+        }
+
+        //Check that all sea models have at least one wave definition defined.
+        //-------------------------------------------
+        for (unsigned int i = 0; i < ptSystem->listSeaModel().size(); i++)
+        {
+            if (ptSystem->listSeaModel(i).listWaveSpec().size() == 0)
+            {
+                Stop = true;
+                std::string msg = "Sea model defined without any wave spectra included.";
+                msg = msg + "  Sea model name:  " + ptSystem->listSeaModel(i).getName();
+                throw std::runtime_error(msg);
+            }
+        }
+    }
+    catch(const std::exception &err)
+    {
+        std::string file = "seaenv.in input file >> ";
+        if (Stop)
+        {
+            //Critical error encountered.  Must stop program.
+            logStd.Notify();
+            logErr.Write(file + string(err.what()));
+        }
+        else
+        {
+            /* Do not stop program execution.
+             * These sensibility checks are only considered warnings.
+             * They are not guaranteed to produce errors, but deviate from typical program
+             * behavior.
+             * If the user knows what they are doing, this may be fine.
+             */
+            logStd.Notify(std::string("Warnings encountered.  Check the error log for more details."));
+            logErr.Write(file + string(err.what()));
+        }
+    }
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
 int FileReader::readData()
 {
     //Read data input file
-    logStd.Write("Reading data input file . . .");
+    logStd.Write("Reading data input file . . .",3);
 
     //Set filename
     string filename;
@@ -267,10 +797,46 @@ int FileReader::readData()
     //Read file
     int out = readFile(filename);
 
-    logStd.Write(". . . done.");
+    logStd.Write(". . . done.",3);
 
     //Write output
     return out;
+
+    bool Stop = false;       //Boolean to record if warning should require stopping program execution.
+
+    //Perform some sensibility checks to ensure program is sensible.
+    try
+    {
+        //Check if there were no hydrodynamic input files specified.
+        //----------------------------------------------------------
+        if (this->listDataFiles().size() == 0)
+        {
+            Stop = false;
+            throw std::runtime_error("No hydrodynamic files listed.");
+        }
+
+    }
+    catch(const std::exception &err)
+    {
+        std::string file = "data.in input file >> ";
+        if (Stop)
+        {
+            //Critical error encountered.  Must stop program.
+            logStd.Notify();
+            logErr.Write(file + string(err.what()));
+        }
+        else
+        {
+            /* Do not stop program execution.
+             * These sensibility checks are only considered warnings.
+             * They are not guaranteed to produce errors, but deviate from typical program
+             * behavior.
+             * If the user knows what they are doing, this may be fine.
+             */
+            logStd.Notify(std::string("Warnings encountered.  Check the error log for more details."));
+            logErr.Write(file + string(err.what()));
+        }
+    }
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------

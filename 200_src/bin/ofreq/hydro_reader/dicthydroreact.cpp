@@ -126,8 +126,7 @@ int dictHydroReact::defineKey(std::string keyIn, std::vector<std::string> valIn)
             //Throw an error.
             logStd.Notify();
             logErr.Write(ID + std::string(err.what()));
-            return 2;
-            exit(1);
+            return 2;   
         }
     }
 
@@ -204,7 +203,7 @@ int dictHydroReact::defineKey(std::string keyIn, std::vector<std::string> valIn)
             logStd.Notify();
             logErr.Write(ID + std::string(err.what()));
             return 2;
-            exit(1);
+           
         }
 
     }

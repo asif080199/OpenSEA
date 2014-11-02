@@ -115,6 +115,12 @@ public:
      * are also included.
      * @param msg The message that you want to write as output.  A carriage return is automatically appended to the
      * end of the message.  Standard string variable.  Variable passed by value.
+     * @param severity Defines how severe the error was and whether the program should exit.  All appends a prefix to
+     * every error message.  There are three levels of severity.
+     * 0:   Error:          Program execution stops.
+     * 1:   Warning:        Program execution continues.
+     * 2:   Information:    Program execution continues.
+     * 3:   ""              No prefix.  Program execution continues.
      * @param timestamp Defines whether a time stamp should be included at the beginning of the message.  Default
      * value is to include a timestamp.  Integer variable.  Default value is to include a timestamp.  Default value
      * can be changed.
@@ -132,7 +138,7 @@ public:
      * @sa Log::setDefaultOutput()
      * @sa Log::setDefaultTimeStamp()
      */
-    void Write(std::string msg, int timestamp = 0, std::string output = "Default");
+    void Write(std::string msg, int severity = 0, int timestamp = 0, std::string output = "Default");
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -141,6 +147,12 @@ public:
      * Writes output only to the log file.
      * @param msg The message that you want to write as output.  A carriage return is automatically appended to the
      * end of the message.  Standard string variable.  Variable passed by value.
+     * @param severity Defines how severe the error was and whether the program should exit.  All appends a prefix to
+     * every error message.  There are three levels of severity.
+     * 0:   Error:          Program execution stops.
+     * 1:   Warning:        Program execution continues.
+     * 2:   Information:    Program execution continues.
+     * 3:   ""              No prefix.  Program execution continues.
      * @param timestamp Defines whether a time stamp should be included at the beginning of the message.  Default
      * value is to include a timestamp.  Integer variable.  Default value is to include a timestamp.  Default value
      * can be changed.
@@ -149,13 +161,19 @@ public:
      * 1:   Use timestamp (true).
      * -1:  Do not use timestamp (false).
      */
-    void WriteLog(std::string msg, int timestamp = 0);
+    void WriteLog(std::string msg, int severity = 0, int timestamp = 0);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
      * @brief Writes output to only the screen.
      * @param msg The message that you want to write as output.  A carriage return is automatically appended to the
      * end of the message.  Standard string variable.  Variable passed by value.
+     * @param severity Defines how severe the error was and whether the program should exit.  All appends a prefix to
+     * every error message.  There are three levels of severity.
+     * 0:   Error:          Program execution stops.
+     * 1:   Warning:        Program execution continues.
+     * 2:   Information:    Program execution continues.
+     * 3:   ""              No prefix.  Program execution continues.
      * @param timestamp Defines whether a time stamp should be included at the beginning of the message.  Default
      * value is to include a timestamp.  Integer variable.  Default value is to include a timestamp.  Default value
      * can be changed.
@@ -164,7 +182,7 @@ public:
      * 1:   Use timestamp (true).
      * -1:  Do not use timestamp (false).
      */
-    void WriteScreen(std::string msg, int timestamp = 0);
+    void WriteScreen(std::string msg, int severity = 0, int timestamp = 0);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**

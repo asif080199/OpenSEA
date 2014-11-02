@@ -858,7 +858,7 @@ void MotionModel::useForceCross_user(unsigned int force, unsigned int ord, unsig
                 listDataEquation(eqn).getDataIndex();
 
     //Copy over the linked body reference.
-    for (unsigned int i = 0 ; i < plistBody->size() ; i++)
+    for (unsigned int i = 0; i < plistBody->size(); i++)
     {
         //Check if the cross body force matches.
         if (plistBody->at(i) == (plistBody->at(curBody).listCrossBody_user(force)))
@@ -1065,7 +1065,7 @@ void MotionModel::useForceCross_hydro(unsigned int force, unsigned int ord, unsi
                 listDataEquation(eqn).getDataIndex();
 
     //Copy over the linked body reference.
-    for (unsigned int i = 0 ; i < plistBody->size() ; i++)
+    for (unsigned int i = 0; i < plistBody->size(); i++)
     {
         //Check if the cross body force matches.
         if (plistBody->at(i) == plistBody->at(curBody).listCrossBody_hydro(force))
@@ -1228,8 +1228,7 @@ void MotionModel::useForceMass(unsigned int eqn, unsigned int var)
     catch(const std::exception &err)
     {
         logStd.Notify();
-        logErr.Write(ID + std::string(err.what()));
-        exit(1);
+        logErr.Write(ID + std::string(err.what()));   
     }
 }
 
@@ -1268,7 +1267,6 @@ void MotionModel::useForceMass(unsigned int eqn)
         {
             //Do nothing
         }
-
     }
 }
 
@@ -1618,7 +1616,6 @@ int &MotionModel::listDataIndex(unsigned int index)
     {
         logStd.Notify();
         logErr.Write(ID + std::string(err.what()));
-        exit(1);
     }
 }
 
@@ -1647,7 +1644,7 @@ int MotionModel::MaxDataIndex()
 
     //Search through the list to find the largest size.
     int maxSizeLocal = -1;
-    for (unsigned int i = 0; i < listIndex.size() ; i++)
+    for (unsigned int i = 0; i < listIndex.size(); i++)
     {
         if (maxSizeLocal < listIndex.at(i))
         {
@@ -1817,7 +1814,7 @@ int MotionModel::findIndex(int indexIn)
     int check;          //The integer to check against.
 
     //Finds the integer of the equation object by data index.
-    for (unsigned int i = 0 ; i < plistEquations.size() ; i++)
+    for (unsigned int i = 0; i < plistEquations.size(); i++)
     {
         //Check the data index of the object.
         if (plistEquations.at(i)->getDataIndex() < 0)

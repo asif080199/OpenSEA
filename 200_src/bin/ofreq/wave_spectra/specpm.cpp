@@ -95,15 +95,13 @@ double SpecPM::getSpecEnergy(double freq)
     catch (const std::exception &err)
     {
         logStd.Notify();
-        logErr.Write(ID + std::string(err.what()));
-        exit(1);
+        logErr.Write(ID + std::string(err.what()));   
     }
     catch(...)
     {
         //Catches any unknown errors.
         logStd.Notify();
         logErr.Write(ID + std::string("Unknown error occurred."));
-        exit(1);
     }
 }
 

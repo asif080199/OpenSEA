@@ -148,7 +148,6 @@ Solution &GlobalSolution::getSolution(double freqIn)
         logStd.Notify();
 
         //Stop program execution.
-        exit(1);
     }
 }
 

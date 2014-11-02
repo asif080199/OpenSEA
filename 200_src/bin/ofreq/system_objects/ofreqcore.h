@@ -57,6 +57,8 @@
 #include <typeinfo>
 #include <exception>
 #include <stdexcept>
+#include <sstream>
+#include <complex>
 #include "log.h"
 
 //######################################### Class Separator ###########################################################
@@ -148,6 +150,30 @@ public:
      * This log file is for any output that another program might use to monitor the program progress in real time.
      */
     static ofreq::Log logMon;
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Converts an integer into a string data type.
+     * @param input Integer input, passed by value.
+     * @return Returns same expression as a string data type.
+     */
+    std::string itoa(int input);
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Converts a double floating point number into a string data type.
+     * @param input Floating double input, passed by value.
+     * @return Returns same expression as a string data type.
+     */
+    std::string ftoa(double input);
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Converts a complex number into a string data type.
+     * @param input Complex number input data type, passed by value.
+     * @return Returns same expression as a string data type.
+     */
+    std::string ctoa(std::complex<double> input);
 
 //==========================================Section Separator =========================================================
 signals:

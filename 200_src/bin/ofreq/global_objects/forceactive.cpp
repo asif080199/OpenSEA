@@ -144,7 +144,7 @@ int ForceActive::findIndex(int indexIn)
     bool test = false;  //Boolean to check if a match was found.
 
     //Finds the integer of the equation object by data index.
-    for (unsigned int i = 0 ; i < pDataIndex.size() ; i++)
+    for (unsigned int i = 0; i < pDataIndex.size(); i++)
     {
         //Check the data index of the object.
         if (pDataIndex.at(i) < 0)

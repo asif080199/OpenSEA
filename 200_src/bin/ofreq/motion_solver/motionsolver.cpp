@@ -198,15 +198,15 @@ cx_mat *MotionSolver::sumDerivative(matForceReact *forceIn)
         output->zeros(forceIn->getMatSize(), forceIn->getMatSize());
 
         //Iterate through each derivative order and add them together.
-        for (int i = 0 ; i <= forceIn->getMaxOrder() ; i++)
+        for (int i = 0; i <= forceIn->getMaxOrder(); i++)
         {
             //Calculate scalar product.
             scalarMult = pow(waveFreq, i) * pow(imagI, i);
 
             //Multiply through to derivative terms and add to total.
-            for (unsigned int row = 0 ; row < forceIn->getDerivative(i).n_rows ; row++)
+            for (unsigned int row = 0; row < forceIn->getDerivative(i).n_rows; row++)
             {
-                for (unsigned int col = 0 ; col < forceIn->getDerivative(i).n_cols ; col++)
+                for (unsigned int col = 0; col < forceIn->getDerivative(i).n_cols; col++)
                 {
                     output->at(row,col) += scalarMult * forceIn->getDerivative(i).at(row,col);
                 }
@@ -243,15 +243,15 @@ vector<cx_mat *> MotionSolver::sumDerivative(std::vector<matForceCross *> forceI
             output.at(i) = ptOutput;
 
             //Iterate through each derivative order and add them together.
-            for (int j = 0 ; j <= forceIn.at(i)->getMaxOrder() ; j++)
+            for (int j = 0; j <= forceIn.at(i)->getMaxOrder(); j++)
             {
                 //Calculate scalar product.
                 scalarMult = pow(waveFreq, j) * pow(imagI, j);
 
                 //Multiply through to derivative terms and add to total.
-                for (unsigned int row = 0 ; row < forceIn.at(i)->getDerivative(j).n_rows ; row++)
+                for (unsigned int row = 0; row < forceIn.at(i)->getDerivative(j).n_rows; row++)
                 {
-                    for (unsigned int col = 0 ; col < forceIn.at(i)->getDerivative(j).n_cols ; col++)
+                    for (unsigned int col = 0; col < forceIn.at(i)->getDerivative(j).n_cols; col++)
                     {
                         output.at(i)->at(row,col) += scalarMult * forceIn.at(i)->getDerivative(j).at(row,col);
                     }
@@ -482,10 +482,6 @@ void MotionSolver::calculateOutputs()
         }
     }
 
-    //Write debug output
-    DebugMatrix("Global Reactive Matrix", globReactiveMat);
-    DebugMatrix("Global Active Matrix", globActiveMat);
-
     //Solve for Unknown Matrix (the X Matrix) --    A*X=B where X is the unknown
     try
     {
@@ -494,8 +490,8 @@ void MotionSolver::calculateOutputs()
     catch (const std::exception &err)
     {
         logStd.Notify();
-        logErr.Write(ID + std::string("Failed to solve the global motion matrix.  Matrix values printed below.\n") +
-                     string("Error Message:  ") + string(err.what()) + "\n\n");
+        logErr.Write(string("Error:  ") + ID + std::string("Failed to solve the global motion matrix.  Matrix values printed below.\n") +
+                     string("Error Message:  ") + string(err.what()) + "\n\n",3);
 
         //Debug print out matrix values
         DebugMatrix("Global Reactive Matrix", globReactiveMat);
@@ -591,7 +587,7 @@ cx_mat MotionSolver::SumSingle(cx_mat *Input1, cx_mat *Input2, int ForceType)
 void MotionSolver::DebugMatrix(std::string Name, cx_mat& input)
 {
     //Write output of name
-    logErr.Write(Name + " = ");
+    logErr.Write(Name + " = ",3);
 
     //Print out matrix.
     input.print(logErr.outFile);

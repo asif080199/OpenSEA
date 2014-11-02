@@ -65,8 +65,7 @@ hydroData &HydroManager::listHydroData(int ampInd, int dirInd)
     catch(const std::exception &err)
     {
         logStd.Notify();
-        logErr.Write(ID + std::string(err.what()));
-        exit(1);
+        logErr.Write(ID + std::string(err.what()));   
     }
 
 }
@@ -266,8 +265,7 @@ void HydroManager::calcHydroData(double waveAmp, double waveFreq)
     catch(const std::exception &err)
     {
         logStd.Notify();
-        logErr.Write(ID + std::string(err.what()));
-        exit(1);
+        logErr.Write(ID + std::string(err.what()));   
     }
 }
 
@@ -498,7 +496,7 @@ void HydroManager::buildWaveSubset()
             catch(const std::exception &err)
             {
                 logStd.Notify();
-                logErr.Write(ID + std::string(err.what()));
+                logErr.Write(ID + std::string(err.what()), 1);
                 break;
             }
 
@@ -641,8 +639,7 @@ matForceActive HydroManager::waveScale(double ampIn, double amp1, ofreq::matForc
     catch(const std::exception &err)
     {
         logStd.Notify();
-        logErr.Write(ID + std::string(err.what()));
-        exit(1);
+        logErr.Write(ID + std::string(err.what()));   
     }
 
     //Write output.
@@ -688,8 +685,7 @@ matForceActive HydroManager::waveScale(double ampIn, double amp1, ofreq::matForc
     catch(const std::exception &err)
     {
         logStd.Notify();
-        logErr.Write(ID + std::string(err.what()));
-        exit(1);
+        logErr.Write(ID + std::string(err.what()));   
     }
 }
 
@@ -730,8 +726,7 @@ matForceReact HydroManager::waveScale(double ampIn, double amp1, ofreq::matForce
     catch(const std::exception &err)
     {
         logStd.Notify();
-        logErr.Write(ID + std::string(err.what()));
-        exit(1);
+        logErr.Write(ID + std::string(err.what()));   
     }
 }
 
@@ -782,8 +777,7 @@ matForceReact HydroManager::waveScale(double ampIn, double amp1, ofreq::matForce
     catch(const std::exception &err)
     {
         logStd.Notify();
-        logErr.Write(ID + std::string(err.what()));
-        exit(1);
+        logErr.Write(ID + std::string(err.what()));       
     }
 }
 
@@ -828,8 +822,7 @@ matForceCross HydroManager::waveScale(double ampIn, double amp1, ofreq::matForce
     catch(const std::exception &err)
     {
         logStd.Notify();
-        logErr.Write(ID + std::string(err.what()));
-        exit(1);
+        logErr.Write(ID + std::string(err.what()));      
     }
 }
 
@@ -888,8 +881,7 @@ matForceCross HydroManager::waveScale(double ampIn, double amp1, ofreq::matForce
     catch(const std::exception &err)
     {
         logStd.Notify();
-        logErr.Write(ID + std::string(err.what()));
-        exit(1);
+        logErr.Write(ID + std::string(err.what()));   
     }
 
     //Write output.
@@ -1030,8 +1022,7 @@ hydroData HydroManager::interpWaveDir(ofreq::hydroData &Data1, ofreq::hydroData 
     catch(const std::exception &err)
     {
         logStd.Notify();
-        logErr.Write(ID + std::string(err.what()));
-        exit(1);
+        logErr.Write(ID + std::string(err.what()));   
     }
 }
 
@@ -1098,8 +1089,7 @@ hydroData HydroManager::ScaleHydroData(double ampIn, ofreq::hydroData &Data1)
     catch(const std::exception &err)
     {
         logStd.Notify();
-        logErr.Write(ID + std::string(err.what()));
-        exit(1);
+        logErr.Write(ID + std::string(err.what()));   
     }
 }
 
@@ -1174,8 +1164,7 @@ hydroData HydroManager::ScaleHydroData(double ampIn, ofreq::hydroData &Data1, of
     catch(const std::exception &err)
     {
         logStd.Notify();
-        logErr.Write(ID + std::string(err.what()));
-        exit(1);
+        logErr.Write(ID + std::string(err.what()));     
     }
 }
 

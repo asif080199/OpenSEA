@@ -881,7 +881,7 @@ private:
      *
      * The name for this body object.  An identifier that the user creates.  Also used to locate the body in a list.
      */
-    std::string pBodyName;
+    std::string pBodyName = "";
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**

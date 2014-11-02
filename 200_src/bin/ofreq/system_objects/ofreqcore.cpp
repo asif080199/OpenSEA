@@ -63,6 +63,32 @@ oFreqCore::~oFreqCore()
 
 }
 
+//------------------------------------------Function Separator --------------------------------------------------------
+string oFreqCore::itoa(int input)
+{
+    std::stringstream convert;
+    convert << input;
+    return convert.str();
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+string oFreqCore::ftoa(double input)
+{
+    std::stringstream convert;
+    convert << input;
+    return convert.str();
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+string oFreqCore::ctoa(std::complex<double> input)
+{
+    std::stringstream convert;
+    convert << "(";
+    convert << input.real() << "," << input.imag();
+    convert << ")";
+    return convert.str();
+}
+
 //==========================================Section Separator =========================================================
 //Public Slots
 

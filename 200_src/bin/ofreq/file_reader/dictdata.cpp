@@ -104,12 +104,9 @@ int dictData::defineKey(std::string keyIn, std::vector<std::string> valIn)
         }
         catch(const std::exception &err)
         {
+            return 99;
             logStd.Notify();
             logErr.Write(ID + err.what());
-            return 99;
-
-            //Stop program execution.
-            exit(1);
         }
     }
 

@@ -513,10 +513,19 @@ public:
 public slots:
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
-     * Sets the analysis ype.
+     * @brief Sets the analysis type.
      * @param analysisTypeIn The analysis type.
      */
     void setAnalysisType(std::string);
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Gets the analysis type.
+     *
+     * Current options are:  "response" or "resonant"
+     * @return Returns string variable, passed by value.  The current value of the analysis type.
+     */
+    std::string getAnalysisType();
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -779,7 +788,7 @@ protected:
 //==========================================Section Separator =========================================================
 private:
     //------------------------------------------Function Separator ----------------------------------------------------
-	std::string analysisType; /**< The analysis type. */
+    std::string analysisType = ""; /**< The analysis type. */
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**

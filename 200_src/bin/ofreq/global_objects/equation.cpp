@@ -175,7 +175,7 @@ void Equation::addVariable(double CoeffIn, int VarDataIn)
 //------------------------------------------Function Separator --------------------------------------------------------
 void Equation::initCoeff()
 {
-    for(unsigned int i = 0 ; i < pcoeffs.size(); i++)
+    for(unsigned int i = 0; i < pcoeffs.size(); i++)
         pcoeffs.at(i) = 0;
 }
 
@@ -187,7 +187,7 @@ int Equation::findIndex(int DataIndexIn)
     bool test = false;  //Boolean to tell if a match was found
 
     //Finds the integer of the equation object by data index.
-    for (unsigned int i = 0 ; i < plistDataIndex.size() ; i++)
+    for (unsigned int i = 0; i < plistDataIndex.size(); i++)
     {
         //Check the data index of the object.
         if (plistDataIndex.at(i) < 0)

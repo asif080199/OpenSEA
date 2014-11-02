@@ -147,8 +147,7 @@ matForceCross &hydroData::listDataCross(int freqInd, std::string bodyName)
     catch(const std::exception &err)
     {
         logStd.Notify();
-        logErr.Write(ID + std::string(err.what()));
-        exit(1);
+        logErr.Write(ID + std::string(err.what()));   
     }
     catch(...)
     {
@@ -434,8 +433,7 @@ hydroData hydroData::interpHydroData(double freqIn)
     catch(const std::exception &err)
     {
         logStd.Notify();
-        logErr.Write(ID + std::string(err.what()));
-        exit(1);
+        logErr.Write(ID + std::string(err.what()));   
     }
 }
 
