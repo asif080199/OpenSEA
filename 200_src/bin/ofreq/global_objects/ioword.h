@@ -128,12 +128,22 @@ protected:
     static std::string COMPLEX_COORD;
 
     //------------------------------------------Function Separator ----------------------------------------------------
+    // Directory Names
+    static std::string SLASH; /**< Directory separator in a std::string path. */
+
+    //------------------------------------------Function Separator ----------------------------------------------------
     //General object names
     static std::string OBJ_SEAFILE; /**< seafile object name*/
 
     //------------------------------------------Function Separator ----------------------------------------------------
-    //Key value separator symbol.
+    // Key Value Pair Designators
     static std::string KEY_VAL_SEPARATOR; /**< Key/Val pair seperator. */
+    static std::string KEY_FORMAT;  /**< The key designator for a format value in the seafile object. */
+    static std::string KEY_VERSION; /**< The key designator for a version value in the seafile object. */
+    static std::string KEY_OBJECT;  /**< The key designator for a object value in the seafile object. */
+    static std::string VAL_VERSION; /**< Value to denote current program version */
+    static std::string VAL_FORMAT; /**< Value to denote format of output */
+    static std::string VAL_SEAFILE; /**< Value to denote a seafile for output file */
 
     //------------------------------------------Function Separator ----------------------------------------------------
     //Number constants

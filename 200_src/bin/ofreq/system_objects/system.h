@@ -51,6 +51,7 @@
 #include "../derived_outputs/outputsbody.h"
 #include "../system_objects/ofreqcore.h"
 #include "../hydro_data/hydromanager.h"
+#include "../reports/reportmanager.h"
 
 //Sea Models to Include
 #include "../sea_models/seamodel.h"
@@ -184,6 +185,15 @@ public:
     std::vector<double> &listWaveFrequencies();
 
     //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Returns single requested value from the list of wave frequencies.
+     * @param indexIn Integer, passed by value.  The index of the requested wave frequency.
+     * @return Returns single entry from the list of wave frequencies, as specified by the indexIn parameter.
+     * Requested entry is a double, returned by reference.
+     */
+    double &listWaveFrequencies(int indexIn);
+
+    //------------------------------------------Function Separator ----------------------------------------------------
 	/**
 	 * Retrieve the list of wave directions.
 	 * @return The list of wave directions.
@@ -196,6 +206,15 @@ public:
      * @return Pointer to the list of wave directions  Variable passed by reference.
      */
     std::vector<double> &listWaveDirections();
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Returns single requested value from the list of wave directions.
+     * @param indexIn Integer, passed by value.  The index of the requested wave direction.
+     * @return Returns single entry from the list of wave directions, as specified by the indexIn parameter.  Requested
+     * entry is a double, returned by reference.
+     */
+    double &listWaveDirections(int indexIn);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -509,6 +528,28 @@ public:
      */
     osea::SeaModel &refActiveSeaModel();
 
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Provides direct access to the list of solution sets associated with this run of oFreq.
+     *
+     * Each entry in the list corresponds to a specific Body object.  The sequence of entries in the vector
+     * matches the sequence of Body objects.
+     * @return Returns a vector of SolutionSet objects, variable passed by reference.
+     */
+    std::vector<ofreq::SolutionSet> &listSolutionSet();
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Provides direct access to a single entry in the list of solution sets associated with this run of oFreq.
+     *
+     * Each entry in the list corresponds to a specific Body object.  The sequence of entries in the vector
+     * matches the sequence of Body objects.
+     * @param indexIn Integer, variable passed by value.  The index of the entry that you want to retrieve.
+     * @return Returns a solution set object, variable passed by reference.  Returns only the object that you
+     * requested with indexIn.
+     */
+    ofreq::SolutionSet &listSolutionSet(int indexIn);
+
 //==========================================Section Separator =========================================================
 public slots:
     //------------------------------------------Function Separator ----------------------------------------------------
@@ -773,6 +814,15 @@ public slots:
      */
     void updateHydroForce();
 
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Provides access to the report manager.
+     *
+     * The ReportManager controls all output Reports generated from the oFreq program.
+     * @return Returns a ReportManager, returned variable passed by reference.
+     */
+    ofreq::ReportManager &getReportManager();
+
 //==========================================Section Separator =========================================================
 signals:
     /**
@@ -938,6 +988,18 @@ private:
      * contains all the oFreq data.  Path given by absolute reference.
      */
     std::string pWorkingPath;
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief The report manager.  Controls all reports generated from oFreq.
+     */
+    ofreq::ReportManager pReportManager;
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief The list of solution sets.  Each entry is the set of solutions for one object.
+     */
+    std::vector< ofreq::SolutionSet > plistSolutions;
 };
 
 }   //Namespace ofreq

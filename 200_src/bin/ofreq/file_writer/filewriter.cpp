@@ -40,11 +40,6 @@ string FileWriter::HEADER_FILENAME = "openseaheader.txt";
 //Directory Specifications
 string FileWriter::NAME_DIR = "d"; /**< The starting character for the wave direction directory.**/
 string FileWriter::NAME_RES = "r"; /**< The starting character for the resonant frequency directory.**/
-#ifdef Q_OS_WIN
-    string FileWriter::SLASH = "\\";  /**< Directory separator in a string path., windows version**/
-#elif defined Q_OS_LINUX
-    string FileWriter::SLASH = "/";   /**< Directory separator in a string path., linux version**/
-#endif
 
 //------------------------------------------Function Separator ----------------------------------------------------
 //General File Content Marks
@@ -53,13 +48,8 @@ string FileWriter::KEY_DATA = "data";
 string FileWriter::KEY_VALUE = "value";
 string FileWriter::KEY_FREQUENCY = "frequency";
 string FileWriter::KEY_DIRECTION = "direction";
-string FileWriter::KEY_VERSION = "version";
-string FileWriter::KEY_FORMAT = "format";
-string FileWriter::KEY_OBJECT = "object";
 string FileWriter::KEY_BODY = "body";
-string FileWriter::VAL_VERSION = "1.0";
-string FileWriter::VAL_FORMAT = "ascii";
-string FileWriter::VAL_SEAFILE = "seafile";
+
 
 //==========================================Section Separator =========================================================
 //Filename Markers

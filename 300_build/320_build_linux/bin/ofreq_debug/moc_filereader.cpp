@@ -92,8 +92,8 @@ void *osea::FileReader::qt_metacast(const char *_clname)
     if (!_clname) return 0;
     if (!strcmp(_clname, qt_meta_stringdata_osea__FileReader))
         return static_cast<void*>(const_cast< FileReader*>(this));
-    if (!strcmp(_clname, "osea::ofreq::oFreqCore"))
-        return static_cast< osea::ofreq::oFreqCore*>(const_cast< FileReader*>(this));
+    if (!strcmp(_clname, "osea::ofreq::ioword"))
+        return static_cast< osea::ofreq::ioword*>(const_cast< FileReader*>(this));
     return QObject::qt_metacast(_clname);
 }
 

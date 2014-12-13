@@ -52,6 +52,7 @@
 #include "objectgroup.h"
 #include "../system_objects/system.h"
 #include "../system_objects/ofreqcore.h"
+#include "../global_objects/ioword.h"
 #include "dictionary.h"
 
 //######################################### Class Separator ###########################################################
@@ -102,7 +103,7 @@ class Dictionary;
  *      filename, read it, parse it, and send the resulting keyword-value pairs to the appropriate Dictionary object.
  */
 
-class FileReader : public QObject, public osea::ofreq::oFreqCore
+class FileReader : public QObject, public osea::ofreq::ioword
 {
     Q_OBJECT 
 //==========================================Section Separator =========================================================
@@ -323,20 +324,6 @@ protected:
      * @brief private function to initialize variables and perform other functions common to all constructors.
      */
     void initClass();
-
-    //------------------------------------------Function Separator ----------------------------------------------------
-    // Directory Names
-    static std::string SLASH; /**< Directory separator in a std::string path. */
-
-    //------------------------------------------Function Separator ----------------------------------------------------
-    // Class Name Designators
-    static std::string OBJ_SEAFILE; /**< The std::string designation for a sea file object. */
-
-    // Key Value Pair Designators
-    // ---------------------------------
-    static std::string KEY_FORMAT;  /**< The key designator for a format value in the seafile object. */
-    static std::string KEY_VERSION; /**< The key designator for a version value in the seafile object. */
-    static std::string KEY_OBJECT;  /**< The key designator for a object value in the seafile object. */
 
 //==========================================Section Separator =========================================================
 private:

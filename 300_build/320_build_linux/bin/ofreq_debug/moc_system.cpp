@@ -22,7 +22,7 @@ static const uint qt_meta_data_osea__ofreq__System[] = {
        6,       // revision
        0,       // classname
        0,    0, // classinfo
-      36,   14, // methods
+      37,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -68,6 +68,7 @@ static const uint qt_meta_data_osea__ofreq__System[] = {
      924,  916,   20,   20, 0x0a,
      961,   20,   20,   20, 0x0a,
      979,   20,   20,   20, 0x0a,
+     998,   20,   20,   20, 0x0a,
 
        0        // eod
 };
@@ -102,6 +103,7 @@ static const char qt_meta_stringdata_osea__ofreq__System[] = {
     "listHydroManager(std::string)\0HydroIn\0"
     "addHydroManager(ofreq::HydroManager)\0"
     "addHydroManager()\0updateHydroForce()\0"
+    "getReportManager()\0"
 };
 
 void osea::ofreq::System::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
@@ -147,6 +149,7 @@ void osea::ofreq::System::qt_static_metacall(QObject *_o, QMetaObject::Call _c, 
         case 33: _t->addHydroManager((*reinterpret_cast< ofreq::HydroManager(*)>(_a[1]))); break;
         case 34: _t->addHydroManager(); break;
         case 35: _t->updateHydroForce(); break;
+        case 36: _t->getReportManager(); break;
         default: ;
         }
     }
@@ -186,9 +189,9 @@ int osea::ofreq::System::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 36)
+        if (_id < 37)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 36;
+        _id -= 37;
     }
     return _id;
 }

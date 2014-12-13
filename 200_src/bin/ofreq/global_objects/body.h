@@ -490,15 +490,6 @@ public:
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
-     * @brief The same things as the refSolution() function, just under a different name.
-     * @return Reference to column matrix of complex numbers.  Value returned by reference.  Matrix size is not
-     * hard coded.  Number of rows in matrix must match number of equations for body property.
-     * @sa body::refSolution()
-     */
-    arma::cx_mat &refDataSolution();
-
-    //------------------------------------------Function Separator ----------------------------------------------------
-    /**
      * @brief Returns a single solution value, based on the variable requested.
      *
      * Variable is requested by the data index, not vector occurrence index.
@@ -506,7 +497,7 @@ public:
      * @return Returns a complex<double> variable.  This is the value of the solution object for the variable requested
      * Returned variable passed by reference.
      */
-    complexDouble &refDataSolution(int varIndexIn);
+    complexDouble &refSolution(int varIndexIn);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**

@@ -249,7 +249,7 @@ complex<double> EquationofMotion::Ddt(int var, int ord, int bodIn)
             out = out * pow(freq,ord) * pow(imagI, ord);
 
 //            out = out * pParentModel->listData(bodIn).getSolution().at(var,1);
-            out = out * pParentModel->listData(bodIn).refDataSolution(var);
+            out = out * pParentModel->listData(bodIn).refSolution(var);
         }
     }
     catch(...)

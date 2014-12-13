@@ -351,7 +351,6 @@ private:
     //Directory Specifications
     static std::string NAME_DIR; /**< The starting character for the wave direction directory.**/
     static std::string NAME_RES; /**< The starting character for the resonant frequency directory.**/
-    static std::string SLASH; /**< The directory separator in a std::string path.*/
 
     //------------------------------------------Function Separator ----------------------------------------------------
     //Key-Value Markers
@@ -360,13 +359,7 @@ private:
     static std::string KEY_VALUE; /**< Key to mark the values for an object */
     static std::string KEY_FREQUENCY; /**< Key to mark a frequency value */
     static std::string KEY_DIRECTION; /**< Key to mark a direction value */
-    static std::string KEY_VERSION; /**< Key to mark the version of the program */
-    static std::string KEY_FORMAT; /**< Key to mark the format of the output file */
-    static std::string KEY_OBJECT; /**< Key to mark the object of the output file */
     static std::string KEY_BODY; /**< Key to mark a body object */
-    static std::string VAL_VERSION; /**< Value to denote current program version */
-    static std::string VAL_FORMAT; /**< Value to denote format of output */
-    static std::string VAL_SEAFILE; /**< Value to denote a seafile for output file */
 
     //------------------------------------------Function Separator ----------------------------------------------------
     //Filename Markers

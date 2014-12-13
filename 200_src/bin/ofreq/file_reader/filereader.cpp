@@ -36,11 +36,6 @@ using namespace osea;
 // Directory Names
 string FileReader::SYS = "system"; /**< The system directory name */
 string FileReader::CONST = "constant"; /**< The constant directory name */
-#ifdef Q_OS_WIN
-    string FileReader::SLASH = "\\";  /**< Directory separator in a string path., windows version**/
-#elif defined Q_OS_LINUX
-    string FileReader::SLASH = "/";   /**< Directory separator in a string path., linux version**/
-#endif
 
 //------------------------------------------Function Separator ----------------------------------------------------
 // Input File Names
@@ -52,18 +47,11 @@ string FileReader::SEAENV = "seaenv.in"; /**< The filename for the sea environme
 
 //------------------------------------------Function Separator ----------------------------------------------------
 // Class Name Designators
-string FileReader::OBJ_SEAFILE = "seafile"; /**< The string designation for a sea file object. */
 string FileReader::OBJ_SYSTEM = "system"; /**< The string designation for a system object. */
 string FileReader::OBJ_HYDROFILE = "hydrofiles"; /**< The string designation for a hydrofile object. */
 string FileReader::OBJ_FORCE_ACTIVE = "force_active"; /**< The string designation for an active force object. */
 string FileReader::OBJ_FORCE_REACT = "force_reactive"; /**< The string designation for a reactive force object. */
 string FileReader::OBJ_FORCE_CROSS = "force_crossbody"; /**< The string designation for a cross-body force object.*/
-
-// ---------------------------------
-// Key Value Pair Designators
-string FileReader::KEY_FORMAT = "format";  /**< The key designator for a format value in the seafile object. */
-string FileReader::KEY_VERSION = "version"; /**< The key designator for a version value in the seafile object. */
-string FileReader::KEY_OBJECT = "object";  /**< The key designator for a object value in the seafile object. */
 
 //==========================================Section Separator =========================================================
 //Public Functions

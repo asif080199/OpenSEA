@@ -83,7 +83,16 @@ SOURCES += ofreq.cpp \
     hydro_reader/dicthydrostiff.cpp \
     hydro_reader/dicthydroreact.cpp \
     hydro_reader/dictcrossreact.cpp \
-    file_reader/dictdata.cpp
+    file_reader/dictdata.cpp \
+    reports/data.cpp \
+    reports/report.cpp \
+    reports/reportmanager.cpp \
+    reports/repdirections.cpp \
+    reports/repfrequencies.cpp \
+    reports/repglobsolution.cpp \
+    reports/repglobmotion.cpp \
+    reports/repglobvelocity.cpp \
+    reports/repglobacceleration.cpp
 
 HEADERS += \
     derived_outputs/outputsbody.h \
@@ -150,7 +159,16 @@ HEADERS += \
     hydro_reader/dicthydrostiff.h \
     hydro_reader/dicthydroreact.h \
     hydro_reader/dictcrossreact.h \
-    file_reader/dictdata.h
+    file_reader/dictdata.h \
+    reports/data.h \
+    reports/report.h \
+    reports/reportmanager.h \
+    reports/repdirections.h \
+    reports/repfrequencies.h \
+    reports/repglobsolution.h \
+    reports/repglobmotion.h \
+    reports/repglobvelocity.h \
+    reports/repglobacceleration.h
 
 # Include header files path for libraries
 INCLUDEPATH += \

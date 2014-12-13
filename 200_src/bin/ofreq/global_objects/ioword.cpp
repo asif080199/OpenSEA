@@ -55,12 +55,26 @@ string ioword::LIST_EXPAND = "..."; /**< Mark to note expansion of a list */
 string ioword::COMPLEX_COORD = ","; /** < Mark to separate real from imaginary values in a complex number */
 
 //------------------------------------------Function Separator ----------------------------------------------------
+// Directory Names
+#ifdef Q_OS_WIN
+    string ioword::SLASH = "\\";  /**< Directory separator in a string path., windows version**/
+#elif defined Q_OS_LINUX
+    string ioword::SLASH = "/";   /**< Directory separator in a string path., linux version**/
+#endif
+
+//------------------------------------------Function Separator ----------------------------------------------------
 //General object names
 string ioword::OBJ_SEAFILE = "seafile"; /**< seafile object name, used to ignore seafile block. */
 
 //------------------------------------------Function Separator ----------------------------------------------------
 //Key value separator symbol.
 string ioword::KEY_VAL_SEPARATOR= ":"; /**< Key/Val pair seperator. */
+string ioword::KEY_FORMAT = "format";  /**< The key designator for a format value in the seafile object. */
+string ioword::KEY_VERSION = "version"; /**< The key designator for a version value in the seafile object. */
+string ioword::KEY_OBJECT = "object";  /**< The key designator for a object value in the seafile object. */
+string ioword::VAL_VERSION = "1.0"; /**< Value to denote current program version. */
+string ioword::VAL_FORMAT = "ascii"; /**< Value to denote file formatting. */
+string ioword::VAL_SEAFILE = "seafile"; /**< Value to denote a seafile object. */
 
 //------------------------------------------Function Separator ----------------------------------------------------
 //Number constants

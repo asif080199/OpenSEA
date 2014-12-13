@@ -781,13 +781,7 @@ cx_mat &Body::refSolution()
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-cx_mat &Body::refDataSolution()
-{
-    return pSoln;
-}
-
-//------------------------------------------Function Separator --------------------------------------------------------
-std::complex<double> &Body::refDataSolution(int varIndexIn)
+std::complex<double> &Body::refSolution(int varIndexIn)
 {
     //Search through the data variables to find the index of the solution that matches the correct variable
     int i = findIndex(varIndexIn);

@@ -47,6 +47,9 @@ System::System() : pWaveDirections(), pWaveFrequencies()
 
     //Set starting value for SeaModel index.
     pSeaModelIndex = -1;
+
+    //Pass the system object to the report manager
+    pReportManager.setSystem(this);
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
@@ -151,6 +154,12 @@ vector<double> &System::listWaveFrequencies()
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
+double &System::listWaveFrequencies(int indexIn)
+{
+    return pWaveFrequencies.at(indexIn);
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
 vector<double> System::getWaveDirections()
 {
     return pWaveDirections;
@@ -160,6 +169,12 @@ vector<double> System::getWaveDirections()
 vector<double> &System::listWaveDirections()
 {
     return pWaveDirections;
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+double &System::listWaveDirections(int indexIn)
+{
+    return pWaveDirections.at(indexIn);
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
@@ -527,7 +542,17 @@ osea::SeaModel &System::refActiveSeaModel()
     return *(plistSeaModel.at(pSeaModelIndex));
 }
 
+//------------------------------------------Function Separator --------------------------------------------------------
+std::vector<ofreq::SolutionSet> &System::listSolutionSet()
+{
+    return plistSolutions;
+}
 
+//------------------------------------------Function Separator --------------------------------------------------------
+ofreq::SolutionSet &System::listSolutionSet(int indexIn)
+{
+    return plistSolutions.at(indexIn);
+}
 
 //==========================================Section Separator =========================================================
 //Public Slots
@@ -1001,6 +1026,12 @@ void System::updateHydroForce()
         logStd.Notify();
         logErr.Write(ID + std::string("Unknown error occurred."));
     }
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+ReportManager &System::getReportManager()
+{
+    return pReportManager;
 }
 
 
