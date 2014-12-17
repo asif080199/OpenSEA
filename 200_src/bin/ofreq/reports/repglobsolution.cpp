@@ -33,7 +33,6 @@ using namespace std;
 using namespace osea::ofreq;
 using namespace arma;
 
-
 //==========================================Section Separator =========================================================
 //Static variables
 string repGlobSolution::KEY_BODY = "body";    /**< Name of the body to associate with.*/
@@ -70,7 +69,7 @@ void repGlobSolution::calcReport(int freqInd)
     complexDouble wavefreq(0,0);   //Wave frequency.
 
     //Get number of rows for output matrix.
-    int nRow = ptBody->refSolution().n_rows;
+    int nRow = ptSystem->listSolutionSet(pBodIndex).refSolution(0,0).refSolnMat().n_rows;
 
     //Get current frequency
     wavefreq.real(
@@ -105,6 +104,18 @@ void repGlobSolution::calcReport(int freqInd)
     }
 }
 
+//------------------------------------------Function Separator --------------------------------------------------------
+string repGlobSolution::getClass()
+{
+    return "repGlobalSolution";
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+std::string repGlobSolution::getFileName()
+{
+    return "solglobal.out";
+}
+
 
 //==========================================Section Separator =========================================================
 //Protected Functions
@@ -133,9 +144,7 @@ void repGlobSolution::defineConst(int constIndex)
         else if (plistConst_Key.at(constIndex) == KEY_ORDER)
         {
             //Process order of derivative.
-            pOrd = atoi(plistConst_Val.at(constIndex)
-                        .listString(0)
-                        .data());
+            pOrd = plistConst_Val.at(constIndex).listValueInt(0);
         }
 
         else

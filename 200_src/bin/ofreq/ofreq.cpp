@@ -55,6 +55,7 @@
 #include "./file_reader/filereader.h"
 #include "./file_reader/dictseaenv.h"
 #include "./file_reader/dictdata.h"
+#include "./file_reader/dictoutputs.h"
 #include "./hydro_reader/hydroreader.h"
 #include "./system_objects/ofreqcore.h"
 #include <string>
@@ -89,9 +90,6 @@ using namespace std;
 
 //Create matrix bodies.
 vector<matBody> listMatBody;
-
-//List of solutions from the motion model.  Each solution object is the list of solutions for one body.
-vector<SolutionSet> listSolutions;
 
 //System object.  Used to control entire execution.
 System sysofreq;
@@ -243,14 +241,6 @@ int main(int argc, char *argv[])
     writeLogHeader();
 
     try {
-        //Clear out any previous output files
-        //---------------------------------------------------------------------------
-        //Setup filewriter for outputs
-        FileWriter WriterTemp;
-        WriterTemp.setProjectDir(sysofreq.getPath());
-        //Clean up existing outputs
-        WriterTemp.clearFiles();
-
         //Read input files and interpret data.
         //---------------------------------------------------------------------------
         sysofreq.logStd.Write("Reading input files",3);
@@ -261,6 +251,10 @@ int main(int argc, char *argv[])
         //Set the active sea model
         //---------------------------------------------------------------------------
         sysofreq.setActiveSeaModel();
+
+        //Clear out any previous output files
+        //---------------------------------------------------------------------------
+        sysofreq.refReportManager().clearFiles();
 
 
 
@@ -274,7 +268,7 @@ int main(int argc, char *argv[])
         //Resize the solution object.
         for (unsigned int i = 0; i < sysofreq.listBody().size(); i++)
         {
-            listSolutions.push_back(SolutionSet(sysofreq.listWaveDirections().size(),
+            sysofreq.listSolutionSet().push_back(SolutionSet(sysofreq.listWaveDirections().size(),
                                                  sysofreq.listWaveFrequencies().size()));
         }
 
@@ -340,7 +334,7 @@ int main(int argc, char *argv[])
                     //soln.refBody() = sysofreq.listBody(k);
                     soln.setBody(&sysofreq.listBody(k));
                     soln.setSolnMat(theMotionSolver.listSolution(k));
-                    listSolutions.at(k).setSolnMat(i, j, soln);
+                    sysofreq.listSolutionSet().at(k).setSolnMat(i, j, soln);
                 }
 
                 //Update the iterator
@@ -376,69 +370,16 @@ int main(int argc, char *argv[])
     //Post Processing Section
     //=================================================================================================================
 
-        sysofreq.logStd.Write("\n\n\n",3);
-        sysofreq.logStd.Write("Calculating Outputs",3);
-        sysofreq.logStd.Write("=================================================================================",3);
+        //Read in header file for output reports
+        sysofreq.refReportManager().setHeader(
+                    getPath("var")
+                    );
+
 
         //Write outputs
         //---------------------------------------------------------------------------
-        //Iterate through each body output.  Setup the output and calculate outputs.
-        //Resize list of outputs
-        if (sysofreq.listOutput().size() != sysofreq.listBody().size())
-            sysofreq.listOutput().resize(sysofreq.listBody().size());
-
-        for (unsigned int i = 0; i < sysofreq.listOutput().size(); i++)
-        {
-            //Setup variables for each OutputBody object.
-            sysofreq.listOutput(i).setListBody(sysofreq.listBody());
-            sysofreq.listOutput(i).setSolutionSet(listSolutions);
-            sysofreq.listOutput(i).setListFreq(sysofreq.listWaveFrequencies());
-            sysofreq.listOutput(i).setListWaveDir(sysofreq.listWaveDirections());
-            sysofreq.listOutput(i).setCurBody(i);
-
-            //Setup filewriter for outputs
-            FileWriter Writer(sysofreq.getPath(), sysofreq.listOutput(i));
-
-            //Set location of header file
-            std::string directory = getPath("var");
-            Writer.setHeader(directory);
-
-            int testwrite;     //test to see if file writing was sucessful.
-
-            //Write frequency and wave direction list if this is the first iteration.
-            if (i == 0)
-            {
-                //Write frequency list
-                try
-                {
-                    testwrite = Writer.writeFrequency();
-                    if (testwrite != 0)
-                        throw std::runtime_error("Failed to write wave frequencies file.");
-                }
-                catch(const std::exception &err)
-                {
-                    sysofreq.logStd.Notify();
-                    sysofreq.logErr.Write(ID + std::string(err.what()));
-                }
-
-                //Write wave directions list
-                try
-                {
-                    testwrite = Writer.writeWaveDirection();
-                    if (testwrite != 0)
-                        throw std::runtime_error("Error writing wave directions outputs.");
-                }
-                catch(const std::exception &err)
-                {
-                    sysofreq.logStd.Notify();
-                    sysofreq.logErr.Write(ID + std::string(err.what()));
-                }
-            }
-
-            //Calculate outputs and write to file
-            //Everything handled with the following function.
-            calcOutput(sysofreq.listOutput(i), Writer);
-        }
+        //Writes reports for all wave directions and all bodies.
+        sysofreq.refReportManager().writeReport();
 
         sysofreq.logStd.Write("\n\n\n",3);
         sysofreq.logStd.Write("=================================================================================",3);
@@ -650,92 +591,6 @@ void buildMatBody(int bod, bool useCoeff)
     }
 }
 
-//######################################## CalcOutput Function ########################################################
-void calcOutput(OutputsBody &OutputIn, FileWriter &WriterIn)
-{
-    int filetest;      //Checks whether filewriting was sucessful.
-    string msg;         //String message to write to standard output.
-    ostringstream convert;      //Converter from integers to string data type.
-
-    //Setup the FileWriter with the OutputsBody object.
-    WriterIn.refOutputsBody() = OutputIn;
-
-    //Iterate through each wave direction and calculate outputs.
-    for (unsigned int j = 0; j < sysofreq.listWaveDirections().size(); j++)
-    {
-        //Write output of current wave direction
-        msg = "Wave Direction:  ";
-        convert << (j+1);
-        msg += convert.str() + " of ";
-        convert.str("");
-        convert << sysofreq.listWaveDirections().size();
-        msg += convert.str();
-        convert.str("");
-        sysofreq.logStd.Write(msg,3);
-
-
-        //Set current wave direction
-        sysofreq.setCurWaveDirInd(j);
-        OutputIn.setCurWaveDir(j);
-
-        try
-        {
-            //Write output for Global Motion
-            filetest = WriterIn.writeGlobalMotion();
-
-            if (filetest != 0)
-                throw std::runtime_error("Error writing output to body motion file.");
-        }
-        catch(const std::exception &err)
-        {
-            sysofreq.logStd.Notify();
-            sysofreq.logErr.Write(ID + std::string(err.what()));
-        }
-
-        try
-        {
-            //Write output for Global Velocity
-            filetest = WriterIn.writeGlobalVelocity();
-
-            if (filetest != 0)
-                throw std::runtime_error("Error writing output to body velocity file.");
-        }
-        catch(const std::exception &err)
-        {
-            sysofreq.logStd.Notify();
-            sysofreq.logErr.Write(ID + std::string(err.what()));
-        }
-
-        try
-        {
-            //Write output for Global Acceleration
-            filetest = WriterIn.writeGlobalAcceleration();
-
-            if (filetest != 0)
-                throw std::runtime_error("Error writing output to body acceleration file.");
-        }
-        catch(const std::exception &err)
-        {
-            sysofreq.logStd.Notify();
-            sysofreq.logErr.Write(ID + std::string(err.what()));
-        }
-
-        try
-        {
-            //Write output for Global Solution;
-            filetest = WriterIn.writeGlobalSolution();
-
-            if (filetest != 0)
-                throw std::runtime_error("Error writing output to the body solution file.");
-        }
-        catch(const std::exception &err)
-        {
-            sysofreq.logStd.Notify();
-            sysofreq.logErr.Write(ID + std::string(err.what()));
-        }
-    }
-}
-
 //######################################## ReadFiles Function #########################################################
 void ReadFiles(string runPath)
 {
@@ -747,6 +602,7 @@ void ReadFiles(string runPath)
     dictControl dictCont;               //Create dictionary object for control.in
     dictSeaEnv dictSea;                 //Create dictionary object for seaenv.in
     dictData dictDat(&fileIn);           //Create dictionary object for data.in
+    dictOutputs dictOut;                //Create dictionary object for outputs.in
 
     try {
         //Create pointer to System object for each of the filereader objects
@@ -756,6 +612,7 @@ void ReadFiles(string runPath)
         dictCont.setSystem( &sysofreq);
         dictSea.setSystem( &sysofreq);
         dictDat.setSystem( &sysofreq);
+        dictOut.setSystem( &sysofreq);
 
         //Set path for file reading
         fileIn.setPath(runPath);
@@ -777,6 +634,9 @@ void ReadFiles(string runPath)
         //Read hydrodynamic data
         fileIn.setDictionary(dictDat);
         fileIn.readData();
+        //Read in output controls
+        fileIn.setDictionary(dictOut);
+        fileIn.readOutputs();
 
         //At the end, force system to check one last time for the active sea model.
         sysofreq.SearchActiveSeaModel();

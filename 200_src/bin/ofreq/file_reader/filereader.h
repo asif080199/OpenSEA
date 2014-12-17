@@ -177,6 +177,14 @@ public:
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
+     * @brief Reads in the Outputs input file and parses its inputs.
+     * @return Returns integer to report success or failure of file parsing.  Returns 0 for success.
+     * Returns 1 for file does not exist.
+     */
+    int readOutputs();
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
      * @brief Sets the dictionary object to be used for processing any data read from the input files.
      * @param dictIn The dictionary object that you want to use for processing the file.  This can change between
      * reading individual files.  Variable is passed by reference and stored as a pointer in the object.
@@ -342,6 +350,7 @@ private:
     static std::string DATA; /**< The filename for the data control file. */
     static std::string FORCES; /**< The filename for the forces control file. */
     static std::string SEAENV; /**< The filename for the sea environment control file. */
+    static std::string OUTPUTS; /**< The filename for the outputs control file. */
 
     //------------------------------------------Function Separator ----------------------------------------------------
     // Class Name Designators

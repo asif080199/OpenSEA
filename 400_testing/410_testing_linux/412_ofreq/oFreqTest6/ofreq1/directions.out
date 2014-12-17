@@ -7,16 +7,26 @@
 
 
 
-seafile
-{
+seafile {
   version  1.0;
   format  ascii;
-  object  direction;
+  object  repDirections;
 }
 
-// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
-direction (
-  0.000000e+00
-);
+
+
 
 // ************************************************************************* //
+repDirections {
+  name "World Wave Directions";
+  data {
+    frequency 0;
+    value 0.000000e+00;
+  }
+
+  data {
+    frequency 0;
+    value 0.000000e+00;
+  }
+
+}

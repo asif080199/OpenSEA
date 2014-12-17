@@ -44,6 +44,7 @@ string FileReader::BODIES = "bodies.in"; /**< The filename for the bodies contro
 string FileReader::DATA = "data.in"; /**< The filename for the data control file. */
 string FileReader::FORCES = "forces.in"; /**< The filename for the forces control file. */
 string FileReader::SEAENV = "seaenv.in"; /**< The filename for the sea environment control file. */
+string FileReader::OUTPUTS = "outputs.in"; /**< The filename for the outputs control file. */
 
 //------------------------------------------Function Separator ----------------------------------------------------
 // Class Name Designators
@@ -225,7 +226,7 @@ int FileReader::readControl()
     }
     catch(const std::exception &err)
     {
-        std::string file = "control.in input file >> ";
+        std::string file = CONTROL + " input file >> ";
         if (Stop)
         {
             //Critical error encountered.  Must stop program.
@@ -241,7 +242,7 @@ int FileReader::readControl()
              * If the user knows what they are doing, this may be fine.
              */
             logStd.Notify(std::string("Warnings encountered.  Check the error log for more details."));
-            logErr.Write(file + string(err.what()));
+            logErr.Write(file + string(err.what()), 1);
         }
     }
 }
@@ -394,7 +395,7 @@ int FileReader::readBodies()
     }
     catch(const std::exception &err)
     {
-        std::string file = "bodies.in input file >> ";
+        std::string file = BODIES + " input file >> ";
         if (Stop)
         {
             //Critical error encountered.  Must stop program.
@@ -410,7 +411,7 @@ int FileReader::readBodies()
              * If the user knows what they are doing, this may be fine.
              */
             logStd.Notify(std::string("Warnings encountered.  Check the error log for more details."));
-            logErr.Write(file + string(err.what()));
+            logErr.Write(file + string(err.what()), 1);
         }
     }
 }
@@ -581,7 +582,7 @@ int FileReader::readForces()
     }
     catch(const std::exception &err)
     {
-        std::string file = "forces.in input file >> ";
+        std::string file = FORCES + " input file >> ";
         if (Stop)
         {
             //Critical error encountered.  Must stop program.
@@ -597,7 +598,7 @@ int FileReader::readForces()
              * If the user knows what they are doing, this may be fine.
              */
             logStd.Notify(std::string("Warnings encountered.  Check the error log for more details."));
-            logErr.Write(file + string(err.what()));
+            logErr.Write(file + string(err.what()), 1);
         }
     }
 }
@@ -748,7 +749,7 @@ int FileReader::readSeaEnv()
     }
     catch(const std::exception &err)
     {
-        std::string file = "seaenv.in input file >> ";
+        std::string file = SEAENV + " input file >> ";
         if (Stop)
         {
             //Critical error encountered.  Must stop program.
@@ -764,7 +765,7 @@ int FileReader::readSeaEnv()
              * If the user knows what they are doing, this may be fine.
              */
             logStd.Notify(std::string("Warnings encountered.  Check the error log for more details."));
-            logErr.Write(file + string(err.what()));
+            logErr.Write(file + string(err.what()), 1);
         }
     }
 }
@@ -806,7 +807,7 @@ int FileReader::readData()
     }
     catch(const std::exception &err)
     {
-        std::string file = "data.in input file >> ";
+        std::string file = DATA + " input file >> ";
         if (Stop)
         {
             //Critical error encountered.  Must stop program.
@@ -822,7 +823,73 @@ int FileReader::readData()
              * If the user knows what they are doing, this may be fine.
              */
             logStd.Notify(std::string("Warnings encountered.  Check the error log for more details."));
-            logErr.Write(file + string(err.what()));
+            logErr.Write(file + string(err.what()), 1);
+        }
+    }
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+int FileReader::readOutputs()
+{
+    //Read data input file
+    logStd.Write("Reading outputs input file . . .",3);
+
+    //Set filename
+    string filename;
+    filename = pPath + SLASH + SYS + SLASH + OUTPUTS;
+
+    //clear the list of objects.
+    plistObjects.clear();
+
+    //Read file
+    int out = readFile(filename);
+
+    logStd.Write(". . . done.",3);
+
+    //Write output
+    return out;
+
+    bool Stop = false;       //Boolean to record if warning should require stopping program execution.
+
+    //Perform some sensibility checks to ensure program is sensible.
+    for (unsigned int i = 0; i < ptSystem->refReportManager().listReport().size(); i++)
+    {
+        try
+        {
+            //Get a pointer to the specified report, to simplify code.
+            ofreq::Report *ptRep = ptSystem->refReportManager().listReportPt(i);
+
+            //Check that report has the ReportManager assigned.
+            ptRep->setManager(&(ptSystem->refReportManager()));
+
+            //Check that every output has a name assigned to it.
+            if (ptRep->getName() == "")
+                throw std::runtime_error("No name defined for one of the given reports.");
+
+            //Check that every output has a body assigned to it.
+            if (ptRep->getBody() == NULL)
+                throw std::runtime_error(string("No body assigned to report:  ") + ptRep->getName());
+        }
+        catch(const std::exception &err)
+        {
+            std::string file = OUTPUTS + " input file >> ";
+            if (Stop)
+            {
+                //Critical error encountered.  Must stop program.
+                logStd.Notify();
+                logErr.Write(file + string(err.what()));
+            }
+            else
+            {
+                /* Do not stop program execution.
+                 * These sensibility checks are only considered warnings.
+                 * They are not guaranteed to produce errors, but deviate from typical program
+                 * behavior.
+                 * If the user knows what they are doing, this may be fine.
+                 */
+                logStd.Notify(std::string("Warnings encountered.  Check the error log for more details."));
+                logErr.Write(file + string(err.what()), 1);
+            }
         }
     }
 }

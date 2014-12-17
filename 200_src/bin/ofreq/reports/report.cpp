@@ -93,7 +93,10 @@ void Report::setBody(ofreq::Body *ptIn)
 //------------------------------------------Function Separator --------------------------------------------------------
 Body* Report::getBody()
 {
-    return ptBody;
+    if (ptBody)
+        return ptBody;
+    else
+        return NULL;
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
@@ -134,21 +137,13 @@ std::string Report::getName()
 //------------------------------------------Function Separator --------------------------------------------------------
 std::string Report::getClass()
 {
-    const std::string &rawID = __PRETTY_FUNCTION__;
+    return "Report";
+}
 
-    size_t colons = rawID.find("::");
-    if (colons == std::string::npos)
-    {
-        return "::";
-    }
-
-    size_t begin = rawID.substr(0,colons).rfind(" ") + 1;
-    size_t end = colons - begin;
-    return rawID.substr(begin, end);
-
-    //For the debug version, print out the name.
-    logStd.Write(string("Class Name:  ") + rawID.substr(begin, end),
-                 3);
+//------------------------------------------Function Separator --------------------------------------------------------
+std::string Report::getFileName()
+{
+    return "repFile.out";
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------

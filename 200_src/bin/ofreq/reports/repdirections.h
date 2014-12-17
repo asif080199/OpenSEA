@@ -11,6 +11,7 @@
  *Date          Author                  Description
  *---------------------------------------------------------------------------------------------------------------------
  *Nov 13, 2014	Nicholas Barczak		Initially Created
+ *Dec 14, 2014  Nicholas Barczak        Debugged and updated to Rev 1.0
  *
 \*-------------------------------------------------------------------------------------------------------------------*/
 
@@ -124,13 +125,30 @@ public:
      */
     virtual void calcReport(int freqInd = -1);
 
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Gets the name of the class associated with this Report object.
+     *
+     * The Report class is a pure virtual class.  There are multiple different types of reports, each derived from
+     * this abstract class.  oFreq needs to know the class of the report, to know which file to write the report out
+     * to.  This is done with the getClass() function.  This uses macros in the code.
+     * @return Returns the name of the Report class.  Returned variable is a string, variable passed by value.
+     */
+    std::string getClass();
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Provides the filename associated with this Report object.
+     * @return Returns a string object, passed by value.  String is the filename associated with this Report.
+     */
+    virtual std::string getFileName();
+
 //==========================================Section Separator =========================================================
 protected:
 
 
 //==========================================Section Separator =========================================================
 private:
-
 
 };
 

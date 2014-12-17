@@ -31,6 +31,14 @@ using namespace std;
 using namespace osea;
 
 //==========================================Section Separator =========================================================
+//Static Initialization
+string Dictionary::BRACKET = "<";
+string Dictionary::IMAGINARY = "i";
+string Dictionary::PLUS = "+";
+string Dictionary::MINUS = "-";
+string Dictionary::COMMA = ",";
+
+//==========================================Section Separator =========================================================
 //Public Functions
 
 //------------------------------------------Function Separator --------------------------------------------------------
@@ -135,12 +143,6 @@ complex<double> Dictionary::convertComplex(string input)
 {
     complex<double> output;
 
-    const string BRACKET = "<";
-    const string IMAGINARY = "i";
-    const string PLUS = "+";
-    const string MINUS = "-";
-    const string COMMA = ",";
-
     //First check if defined by amplitude and angle
     int indexPolar;
     indexPolar = input.find(BRACKET);
@@ -155,7 +157,6 @@ complex<double> Dictionary::convertComplex(string input)
 
     try
     {
-
         if (indexPolar != std::string::npos)
         {
             //using bracket.  Process as polar notation.

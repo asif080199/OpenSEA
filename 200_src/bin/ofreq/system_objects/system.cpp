@@ -1029,7 +1029,7 @@ void System::updateHydroForce()
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-ReportManager &System::getReportManager()
+ReportManager &System::refReportManager()
 {
     return pReportManager;
 }

@@ -11,6 +11,7 @@
  *Date          Author                  Description
  *---------------------------------------------------------------------------------------------------------------------
  *Nov 05, 2014	Nicholas Barczak		Initially Created
+ *Dec 14, 2014  Nicholas Barczak        Debugged and updated to Rev 1.0
  *
 \*-------------------------------------------------------------------------------------------------------------------*/
 
@@ -48,6 +49,14 @@
 #include "../system_objects/ofreqcore.h"
 #include "report.h"
 #include "../global_objects/ioword.h"
+
+//Report Classes
+#include "repdirections.h"
+#include "repfrequencies.h"
+#include "repglobacceleration.h"
+#include "repglobmotion.h"
+#include "repglobvelocity.h"
+#include "repglobsolution.h"
 
 //######################################### Class Separator ###########################################################
 //Namespace declarations
@@ -103,6 +112,12 @@ public:
      * @param ptIn The pointer to the System object.  Pointer passed by value.
      */
     ReportManager(ofreq::System *ptIn);
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Default destructor.
+     */
+    ~ReportManager();
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -224,6 +239,22 @@ public:
      */
     bool clearFiles();
 
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Adds a report to the list of reports in the ReportManager.
+     * @param ReportIn Pointer to the Report in question.  Pointer passed by value.
+     */
+    void addReport(ofreq::Report *ReportIn);
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Reads in from input file the header to be used in all files.  This is a basic header text that should
+     * be at the top of all OpenSEA output files.  Simple identification of the program.  Nothing specific for output.
+     * @param filePathIn String variable specifying the full location of the folder which has the text for the header
+     * file.  Header file must be a simple ASCII text file.
+     */
+    void setHeader(std::string filePathIn);
+
 
 //==========================================Section Separator =========================================================
 protected:
@@ -305,18 +336,6 @@ private:
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
-     * @brief The list of valid filenames for output files.
-     *
-     * The list is created from the static variables that represent the filename of each output file.  This is
-     * necessary because some of the file control objects need this list.  Any filename that appears on the list is
-     * part of normal program output and can be safely deleted.  If it is not on the list, the program will not
-     * interact with the file.  File type must be QString because the Qt objects used for directory and file
-     * interaction require QString objects for input.
-     */
-    std::vector<QString> pFileNames;
-
-    //------------------------------------------Function Separator ----------------------------------------------------
-    /**
      * @brief The index of the current wave direction.
      *
      * Most of the report writing functions need to know the current wave index so that they know which directory to
@@ -333,9 +352,6 @@ private:
      * file.  All other functions just refer to it.
      */
     QFile pFileOutput;
-
-    //------------------------------------------Function Separator ----------------------------------------------------
-    std::vector<QString> pClassName;    /**< Class name for each report object. */
 
     //------------------------------------------Function Separator ----------------------------------------------------
     std::string header; /**< The filename for the header to be included in all files */
@@ -357,15 +373,6 @@ private:
      * @return Returns true if removal successful.  False if error encountered.
      */
     bool removeDir(const QString &dirName);
-
-    //------------------------------------------Function Separator ----------------------------------------------------
-    /**
-     * @brief Reads in from input file the header to be used in all files.  This is a basic header text that should
-     * be at the top of all OpenSEA output files.  Simple identification of the program.  Nothing specific for output.
-     * @param filePathIn String variable specifying the full location of the folder which has the text for the header
-     * file.  Header file must be a simple ASCII text file.
-     */
-    void setHeader(std::string filePathIn);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -416,6 +423,32 @@ private:
      * @return Returns QString output, with all proper formatting brackets and ready for insert into output file.
      */
     QString Val2String(std::complex<double> valIn);
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Converts a string to a QString.
+     *
+     * Accomplishes the conversion with depending on the STL compilation option. QString has a built-in capacity to
+     * perform this conversion, but it depends on the STL compilation option in the Qt library.  Since this can change
+     * with each compiler, it creates too much of a chance for things to go wrong.  Instead, creating a custom
+     * conversion function, with is more generic.
+     * @param valIn Standard string, passed by value.
+     * @return QString output, passed by value.
+     */
+    QString a2Qstr(std::string valIn);
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Converts a QString to a standard string.
+     *
+     * Accomplishes the conversion with depending on the STL compilation option. QString has a built-in capacity to
+     * perform this conversion, but it depends on the STL compilation option in the Qt library.  Since this can change
+     * with each compiler, it creates too much of a chance for things to go wrong.  Instead, creating a custom
+     * conversion function, with is more generic.
+     * @param valIn Standard QString, passed by value.
+     * @return standard string output, passed by value.
+     */
+    std::string Qstr2a(QString valIn);
 
     //=================================== Variable Declarations =======================================================
 

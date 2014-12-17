@@ -92,7 +92,9 @@ SOURCES += ofreq.cpp \
     reports/repglobsolution.cpp \
     reports/repglobmotion.cpp \
     reports/repglobvelocity.cpp \
-    reports/repglobacceleration.cpp
+    reports/repglobacceleration.cpp \
+    file_reader/dictoutputs.cpp \
+    reports/replocalsolution.cpp
 
 HEADERS += \
     derived_outputs/outputsbody.h \
@@ -168,7 +170,9 @@ HEADERS += \
     reports/repglobsolution.h \
     reports/repglobmotion.h \
     reports/repglobvelocity.h \
-    reports/repglobacceleration.h
+    reports/repglobacceleration.h \
+    file_reader/dictoutputs.h \
+    reports/replocalsolution.h
 
 # Include header files path for libraries
 INCLUDEPATH += \

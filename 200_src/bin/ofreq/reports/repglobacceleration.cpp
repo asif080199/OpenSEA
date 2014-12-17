@@ -48,9 +48,7 @@ repGlobAcceleration::repGlobAcceleration()
 
     //create a new data object and add it to the constant key values.
     Data keyval;
-    keyval.addString(
-                itoa(2)
-                );
+    keyval.addValue(2);
     plistConst_Val.push_back(keyval);
 }
 
@@ -59,6 +57,19 @@ repGlobAcceleration::repGlobAcceleration(ofreq::ReportManager *ptIn) : repGlobAc
 {
     this->setManager(ptIn);
 }
+
+//------------------------------------------Function Separator --------------------------------------------------------
+string repGlobAcceleration::getClass()
+{
+    return "repGlobalAcceleration";
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+std::string repGlobAcceleration::getFileName()
+{
+    return "accglobal.out";
+}
+
 
 //==========================================Section Separator =========================================================
 //Protected Functions

@@ -48,9 +48,7 @@ repGlobMotion::repGlobMotion()
 
     //create a new data object and add it to the constant key values.
     Data keyval;
-    keyval.addString(
-                itoa(0)
-                );
+    keyval.addValue(0);
     plistConst_Val.push_back(keyval);
 }
 
@@ -58,6 +56,18 @@ repGlobMotion::repGlobMotion()
 repGlobMotion::repGlobMotion(ofreq::ReportManager *ptIn) : repGlobMotion::repGlobMotion()
 {
     this->setManager(ptIn);
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+string repGlobMotion::getClass()
+{
+    return "repGlobalMotion";
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+std::string repGlobMotion::getFileName()
+{
+    return "motglobal.out";
 }
 
 //==========================================Section Separator =========================================================

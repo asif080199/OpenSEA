@@ -48,9 +48,7 @@ repGlobVelocity::repGlobVelocity()
 
     //create a new data object and add it to the constant key values.
     Data keyval;
-    keyval.addString(
-                itoa(1)
-                );
+    keyval.addValue(0);
     plistConst_Val.push_back(keyval);
 }
 
@@ -58,6 +56,18 @@ repGlobVelocity::repGlobVelocity()
 repGlobVelocity::repGlobVelocity(ofreq::ReportManager *ptIn) : repGlobVelocity::repGlobVelocity()
 {
     this->setManager(ptIn);
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+std::string repGlobVelocity::getClass()
+{
+    return "repGlobalVelocity";
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+std::string repGlobVelocity::getFileName()
+{
+    return "velglobal.out";
 }
 
 //==========================================Section Separator =========================================================

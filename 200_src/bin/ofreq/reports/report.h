@@ -11,6 +11,7 @@
  *Date          Author                  Description
  *---------------------------------------------------------------------------------------------------------------------
  *Nov 05, 2014	Nicholas Barczak		Initially Created
+ *Dec 14, 2014  Nicholas Barczak        Debugged and updated to Rev 1.0
  *
 \*-------------------------------------------------------------------------------------------------------------------*/
 
@@ -201,7 +202,14 @@ public:
      * to.  This is done with the getClass() function.  This uses macros in the code.
      * @return Returns the name of the Report class.  Returned variable is a string, variable passed by value.
      */
-    std::string getClass();
+    virtual std::string getClass();
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Provides the filename associated with this Report object.
+     * @return Returns a string object, passed by value.  String is the filename associated with this Report.
+     */
+    virtual std::string getFileName();
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -513,7 +521,6 @@ protected:
 
 //==========================================Section Separator =========================================================
 private:
-
 
 };
 

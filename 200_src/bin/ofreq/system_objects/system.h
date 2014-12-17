@@ -821,7 +821,7 @@ public slots:
      * The ReportManager controls all output Reports generated from the oFreq program.
      * @return Returns a ReportManager, returned variable passed by reference.
      */
-    ofreq::ReportManager &getReportManager();
+    ofreq::ReportManager &refReportManager();
 
 //==========================================Section Separator =========================================================
 signals:

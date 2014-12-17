@@ -103,7 +103,7 @@ static const char qt_meta_stringdata_osea__ofreq__System[] = {
     "listHydroManager(std::string)\0HydroIn\0"
     "addHydroManager(ofreq::HydroManager)\0"
     "addHydroManager()\0updateHydroForce()\0"
-    "getReportManager()\0"
+    "refReportManager()\0"
 };
 
 void osea::ofreq::System::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
@@ -149,7 +149,7 @@ void osea::ofreq::System::qt_static_metacall(QObject *_o, QMetaObject::Call _c, 
         case 33: _t->addHydroManager((*reinterpret_cast< ofreq::HydroManager(*)>(_a[1]))); break;
         case 34: _t->addHydroManager(); break;
         case 35: _t->updateHydroForce(); break;
-        case 36: _t->getReportManager(); break;
+        case 36: _t->refReportManager(); break;
         default: ;
         }
     }

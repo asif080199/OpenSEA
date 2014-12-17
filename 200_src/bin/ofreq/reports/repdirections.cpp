@@ -57,14 +57,14 @@ repDirections::~repDirections()
 //------------------------------------------Function Separator --------------------------------------------------------
 void repDirections::calcReport(int freqInd)
 {
+    //Create one set of output data.
+    plistData.push_back(Data(-1));
+
     //Iterate through each wave direction from the system object.
     for (unsigned int i = 0; i < ptSystem->listWaveDirections().size(); i++)
     {
         try
         {
-            //Add each wave direction to the list of data.
-            plistData.push_back(Data(i));
-
             //Add value to the data object.
             plistData.back().addValue(
                         ptSystem->listWaveDirections(i)
@@ -77,6 +77,18 @@ void repDirections::calcReport(int freqInd)
             logErr.Write(ID + string(err.what()));
         }
     }
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+string repDirections::getClass()
+{
+    return "repDirections";
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+string repDirections::getFileName()
+{
+    return "directions.out";
 }
 
 

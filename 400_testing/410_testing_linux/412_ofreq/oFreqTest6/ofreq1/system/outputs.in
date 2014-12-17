@@ -1,0 +1,66 @@
+/*--------------------------------*- C++ -*------------------------------------*\
+| O pen         | OpenSea:  The Open Source Seakeeping Suite                    |
+| S eakeeping   | Version:  1.0                                                 |
+| E valuation   | Web:      www.opensea.dmsonline.us                            |
+| A nalysis     |                                                               |
+\*-----------------------------------------------------------------------------*/
+seafile
+{
+    version     1.0;
+    format      ascii;
+    object      dictionary;
+}
+
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+//The outputs objects specify which outputs oFreq should create and
+//assigns any necessary parameters for each output.
+
+repglobalacceleration {
+  name "Acceleration 1";
+  body "body1";
+}
+
+repglobalvelocity {
+  name "Velocity 1";
+  body "body1";
+}
+
+repglobalmotion {
+  name "Motion 1";
+  body "body1";
+}
+
+repglobalsolution {
+  name "Solution - ord 5";
+  body "body1";
+  order 5;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ************************************************************************* //

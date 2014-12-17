@@ -177,6 +177,14 @@ protected:
      */
     ofreq::System* ptSystem;
 
+    //------------------------------------------Function Separator ----------------------------------------------------
+    //Static Variables
+    static std::string BRACKET;
+    static std::string IMAGINARY;
+    static std::string PLUS;
+    static std::string MINUS;
+    static std::string COMMA;
+
 //==========================================Section Separator =========================================================
 private:
     //------------------------------------------Function Separator ----------------------------------------------------
