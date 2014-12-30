@@ -11,6 +11,7 @@
  *Date          Author                  Description
  *---------------------------------------------------------------------------------------------------------------------
  *Dec 16, 2014	Nicholas Barczak		Initially Created
+ *Dec 20, 2014  Nicholas Barczak        Debugged and updated to Rev 1.0
  *
 \*-------------------------------------------------------------------------------------------------------------------*/
 
@@ -123,6 +124,19 @@ public:
      * function gets inheritted from another class, and the form of the function must be maintained.
      */
     virtual void calcReport(int freqInd = -1);
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Pure virtual member.  Calculates the RAO report data.
+     *
+     * Write the results of the calculation of the vector of RAO Data values.  Calling calcRAO function only
+     * generates the value.  THey must be retrieved from the object after calculations, using the listRAO() function.
+     *
+     * @param freqInd Integer, variable passed by value.  The wave frequency index to use for calculating the Report
+     * object's data.  Specifies the index of the wave frequency to retrieve from the list of wave frequencies.
+     * Most Report values will depend on the wave frequency specified.
+     */
+    virtual void calcRAO(int freqInd = -1);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**

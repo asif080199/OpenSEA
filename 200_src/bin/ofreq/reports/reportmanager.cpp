@@ -49,29 +49,12 @@ QString ReportManager::NAME_BOD = "body"; /**< The starting characters for the b
 //General File Content Marks
 QString ReportManager::KEY_NAME = "name";
 QString ReportManager::KEY_DATA = "data";
+QString ReportManager::KEY_RAO = "RAO";
 QString ReportManager::KEY_VALUE = "value";
 QString ReportManager::KEY_FREQUENCY = "frequency";
 QString ReportManager::KEY_DIRECTION = "direction";
 QString ReportManager::KEY_BODY = "body";
 
-
-//==========================================Section Separator =========================================================
-//Filename Markers
-QString ReportManager::FILE_DIRECTIONS = "directions.out";
-QString ReportManager::FILE_FREQUENCIES = "frequencies.out";
-QString ReportManager::FILE_GLOBAL_ACCELERATION = "accglobal.out";
-QString ReportManager::FILE_GLOBAL_MOTION = "motglobal.out";
-QString ReportManager::FILE_GLOBAL_VELOCITY = "velglobal.out";
-QString ReportManager::FILE_GLOBAL_SOLUTION = "solglobal.out";
-
-//------------------------------------------Function Separator ----------------------------------------------------
-//Class Name Markers
-QString ReportManager::CLASS_DIRECTIONS = "repDirections";    /**< Class name for wave directions output file. */
-QString ReportManager::CLASS_FREQUENCIES = "repFrequencies";   /**< Class name for wave frequencies output file. */
-QString ReportManager::CLASS_GLOBAL_ACCELERATION = "repGlobalAcceleration";   /**< Class name for global acceleration output file. */
-QString ReportManager::CLASS_GLOBAL_MOTION = "repGlobalMotion"; /**< Class name for global motion output file. */
-QString ReportManager::CLASS_GLOBAL_VELOCITY = "repGlobalVelocity"; /**< Class name for global velocity output file. */
-QString ReportManager::CLASS_GLOBAL_SOLUTION = "repGlobalSolution"; /**< Class name for global solution output file. */
 
 //==========================================Section Separator =========================================================
 //Public Functions
@@ -188,22 +171,26 @@ void ReportManager::writeReport(int waveIndexIn, ofreq::Report *ReportIn)
 {
     try
     {
-        //Calculate the report for the specified wave direction and specified report.
-        calcReport(waveIndexIn, ReportIn);
-
         //Write some user output.
         std::string msg;
+
+        //Start by clearing report data.
+        //This safeguards against any interactions between reports.
+        ReportIn->clearData();
 
         msg = TAB_REF + TAB_REF + ReportIn->getClass() + string("::");
         //Test for null body pointer.
         if (ReportIn->getBody())
         {
             msg += ReportIn->getBody()->getBodyName();
-            msg += string("::");
+            msg += string("::  ");
         }
         msg += ReportIn->getName();
 
         logStd.Write(msg, 3);
+
+        //Calculate the report for the specified wave direction and specified report.
+        calcReport(waveIndexIn, ReportIn);
 
         //Setup the correct directory.
         QString path = setDirectory(ReportIn);
@@ -282,6 +269,13 @@ void ReportManager::calcReport(int waveIndexIn, ofreq::Report *ReportIn)
         {
             ReportIn->calcReport(i);
         }
+
+        //Calculate RAO, for all wave frequencies.
+        for (int i = 0; i < ptSystem->listWaveFrequencies().size(); i++)
+        {
+            ReportIn->calcRAO(i);
+        }
+
     }
     catch(const std::exception &err)
     {
@@ -313,11 +307,13 @@ bool ReportManager::clearFiles()
     QSys = a2Qstr(ptSystem->getPath() + SLASH);
 
     //Remove the wave directions file.
-    Qpath = QSys + FILE_DIRECTIONS;
+    repDirections tempDir;
+    Qpath = QSys + a2Qstr(tempDir.getFileName());
     result = result * QFile::remove(Qpath);
 
     //Remove the frequency direction file.
-    Qpath = QSys + FILE_FREQUENCIES;
+    repFrequencies tempFreq;
+    Qpath = QSys + a2Qstr(tempFreq.getFileName());
     result = result * QFile::remove(Qpath);
 
     //Iterate through each wave directory and remove it.
@@ -335,7 +331,7 @@ bool ReportManager::clearFiles()
         if (!result)
         {
             std::string msg = "Some files not deleted from the following directory:  ";
-            msg = msg + NAME_DIR.toStdString() + itoa(i);
+            msg = msg + NAME_DIR.toStdString() + itoa(i + 1);
             logErr.Write(msg,2);
         }
     }
@@ -415,83 +411,21 @@ QString ReportManager::setDirectory(ofreq::Report *ReportIn)
 
         //Iterate through different possibilities for class names.
         //-------------------------------------------------------
+        repDirections tempDir;
+        repFrequencies tempFreq;
 
         //--------------------------------------
         //Wave Directions
-        if (className == CLASS_DIRECTIONS)
+        if (className == a2Qstr(tempDir.getClass()))
         {
             //just the current directory.
         }
 
         //--------------------------------------
         //Wave Frequencies
-        else if (className == CLASS_FREQUENCIES)
+        else if (className == a2Qstr(tempFreq.getClass()))
         {
             //just the current directory.
-        }
-
-        //--------------------------------------
-        //Global Solution
-        else if (className == CLASS_GLOBAL_SOLUTION)
-        {
-            //Add in the current wave direction and body name.
-            subdir = subdir
-                     + NAME_DIR
-                     + a2Qstr(
-                         itoa(curWaveInd + 1) +
-                         SLASH)
-                     + NAME_BOD
-                     + a2Qstr(
-                         itoa(ReportIn->getBodIndex() + 1) +
-                         SLASH);
-        }
-
-        //--------------------------------------
-        //Global Motion
-        else if (className == CLASS_GLOBAL_MOTION)
-        {
-            //Add in the current wave direction and body name.
-            subdir = subdir
-                     + NAME_DIR
-                     + a2Qstr(
-                         itoa(curWaveInd + 1) +
-                         SLASH)
-                     + NAME_BOD
-                     + a2Qstr(
-                         itoa(ReportIn->getBodIndex() + 1) +
-                         SLASH);
-        }
-
-        //--------------------------------------
-        //Global Velocity
-        else if (className == CLASS_GLOBAL_VELOCITY)
-        {
-            //Add in the current wave direction and body name.
-            subdir = subdir
-                     + NAME_DIR
-                     + a2Qstr(
-                         itoa(curWaveInd + 1) +
-                         SLASH)
-                     + NAME_BOD
-                     + a2Qstr(
-                         itoa(ReportIn->getBodIndex() + 1) +
-                         SLASH);
-        }
-
-        //--------------------------------------
-        //Global Acceleration
-        else if (className == CLASS_GLOBAL_ACCELERATION)
-        {
-            //Add in the current wave direction and body name.
-            subdir = subdir
-                     + NAME_DIR
-                     + a2Qstr(
-                         itoa(curWaveInd + 1) +
-                         SLASH)
-                     + NAME_BOD
-                     + a2Qstr(
-                         itoa(ReportIn->getBodIndex() + 1) +
-                         SLASH);
         }
 
         //--------------------------------------
@@ -579,9 +513,8 @@ void ReportManager::setFile(ofreq::Report *ReportIn, QString dirIn)
         //Assign a text stream
         QTextStream output(&pFileOutput);
 
-        //Append in a few carriage returns and a new section break.
+        //Append in a few carriage returns.
         output << a2Qstr(EOL + EOL + EOL);
-        output << a2Qstr(BREAK_BOTTOM + EOL);
 
         //Close the output file.
         pFileOutput.close();
@@ -600,6 +533,7 @@ bool ReportManager::parseReport(ofreq::Report *ReportIn, QTextStream &fileOut)
     //Set output
     bool status = false;
     //Write report class name and opening brackets.
+    fileOut << a2Qstr(BREAK_TOP + EOL);
     fileOut << a2Qstr(ReportIn->getClass()
                       + SPACE
                       + OBJECT_BEGIN
@@ -895,8 +829,170 @@ bool ReportManager::parseReport(ofreq::Report *ReportIn, QTextStream &fileOut)
     }
 
     //---------------------------------------
+    //Write out the RAO data
+
+    if (ReportIn->listRAO().size() > 0)
+    {
+        //Write out a small separator.
+        fileOut << a2Qstr(EOL + EOL) + TAB()
+                + a2Qstr(BREAK_MIDDLE + EOL);
+        fileOut << TAB()
+                + QString("//RAO Data") + a2Qstr(EOL);
+    }
+
+    for (unsigned int i = 0; i < ReportIn->listRAO().size(); i++)
+    {
+        //Start with the data keyword and object starter.
+        fileOut << TAB()
+                << KEY_RAO
+                << a2Qstr(SPACE + OBJECT_BEGIN + EOL);
+
+        //Write out the frequency index keyword and value.
+        fileOut << TAB(2)
+                + KEY_FREQUENCY
+                + a2Qstr(SPACE)
+                + Val2String(ReportIn->listRAO(i).getIndex() + 1)
+                + a2Qstr(END + EOL);
+
+        //---------------------------------------
+        //Write out the values from the data object.
+
+        //First create keyword
+        fileOut << TAB(2) + KEY_VALUE + a2Qstr(SPACE);
+
+        //---------------------------------------
+        //Check if writing single value or multiple.
+        if (ReportIn->listRAO(i).listValue().size() > 1)
+        {
+            //---------------------------------------
+            //Multiple values
+
+            //Write out beginning of list
+            fileOut << a2Qstr(LIST_BEGIN + EOL);
+
+            //Check Data type
+
+            if (ReportIn->listRAO(i).getDataType() == 0)
+            {
+                //Complex data type
+                for (unsigned int j = 0; j < ReportIn->listRAO(i).listValue().size(); j++)
+                {
+                    fileOut << TAB(3) + Val2String(
+                                  ReportIn->listRAO(i).listValue(j))
+                            + a2Qstr(EOL);
+                }
+            }
+
+            else if (ReportIn->listRAO(i).getDataType() == 1)
+            {
+                //Double data type
+                for (unsigned int j = 0; j < ReportIn->listRAO(i).listValue().size(); j++)
+                {
+                    fileOut << TAB(3) + Val2String(
+                                    ReportIn->listRAO(i).listValueDouble(j))
+                                + a2Qstr(EOL);
+                }
+            }
+
+            else if (ReportIn->listRAO(i).getDataType() == 2)
+            {
+                //Integer data type
+                for (unsigned int j = 0; j < ReportIn->listRAO(i).listValue().size(); j++)
+                {
+                    fileOut << TAB(3) + Val2String(
+                                    ReportIn->listRAO(i).listValueInt(j))
+                                + a2Qstr(EOL);
+                }
+            }
+
+            else if (ReportIn->listRAO(i).getDataType() == 3)
+            {
+                //String data type
+                for (unsigned int j = 0; j < ReportIn->listRAO(i).listString().size(); j++)
+                {
+                    fileOut << TAB(3) + a2Qstr(
+                                   QUOTE)
+                                   + Val2String(
+                                       ReportIn->listRAO(i).listString(j))
+                               + a2Qstr(
+                                   QUOTE
+                                   + EOL
+                                   );
+                }
+            }
+
+            //Write out end of list
+            fileOut << TAB(2) + a2Qstr(LIST_END + END + EOL);
+        }
+        else
+        {
+            //---------------------------------------
+            //Single value
+
+            //Check Data type
+
+            if (ReportIn->listRAO(i).getDataType() == 0)
+            {
+                //Complex data type
+                for (unsigned int j = 0; j < ReportIn->listRAO(i).listValue().size(); j++)
+                {
+                    fileOut << Val2String(
+                                  ReportIn->listRAO(i).listValue(j))
+                            + a2Qstr(END + EOL);
+                }
+            }
+
+            else if (ReportIn->listRAO(i).getDataType() == 1)
+            {
+                //Double data type
+                for (unsigned int j = 0; j < ReportIn->listRAO(i).listValue().size(); j++)
+                {
+                    fileOut << Val2String(
+                                    ReportIn->listRAO(i).listValueDouble(j))
+                                + a2Qstr(END + EOL);
+                }
+            }
+
+            else if (ReportIn->listRAO(i).getDataType() == 2)
+            {
+                //Integer data type
+                for (unsigned int j = 0; j < ReportIn->listRAO(i).listValue().size(); j++)
+                {
+                    fileOut << Val2String(
+                                    ReportIn->listRAO(i).listValueInt(j))
+                                + a2Qstr(END + EOL);
+                }
+            }
+
+            else if (ReportIn->listRAO(i).getDataType() == 3)
+            {
+                //String data type
+                for (unsigned int j = 0; j < ReportIn->listRAO(i).listString().size(); j++)
+                {
+                    fileOut << a2Qstr(
+                                   QUOTE)
+                                   + Val2String(
+                                       ReportIn->listRAO(i).listString(j))
+                               + a2Qstr(
+                                   QUOTE
+                                   + END
+                                   + EOL
+                                   );
+                }
+            }
+        }
+
+        //---------------------------------------
+        //Closing bracket to object.
+        fileOut << TAB() + a2Qstr(OBJECT_END + EOL + EOL);
+    }
+
+    //---------------------------------------
     //Closing bracket to object.
     fileOut << a2Qstr(OBJECT_END + EOL);
+
+    //End mark.
+    fileOut << a2Qstr(BREAK_BOTTOM + EOL + EOL + EOL + EOL);
 
     //Set status to success.
     status = true;

@@ -48,7 +48,6 @@
 #include <vector>
 #include <QObject>
 #include "../global_objects/body.h"
-#include "../derived_outputs/outputsbody.h"
 #include "../system_objects/ofreqcore.h"
 #include "../hydro_data/hydromanager.h"
 #include "../reports/reportmanager.h"
@@ -278,23 +277,6 @@ public:
      * @return Returns a Body object. Returned variable is passed by reference.
      */
     Body &listBody(int input);
-
-    //------------------------------------------Function Separator ----------------------------------------------------
-    /**
-     * @brief Returns direct access to the list of OutputsBody objects.  Includes all the properties included by a
-     * std::vector<> class.
-     * @return Returns a vector of OutputsBody objects.  Returned variable passed by reference.
-     * @sa OutputsBody
-     */
-    std::vector<OutputsBody> &listOutput();
-
-    //------------------------------------------Function Separator ----------------------------------------------------
-    /**
-     * @brief Returns direct access to a single OutputsBody object.
-     * @param input Specifies the index of which OutputsBody object to access in the list of OutputsBody objects.
-     * @return Returns an OutputsBody object.  Returned variable is passed by reference.
-     */
-    OutputsBody &listOutput(int input);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -584,22 +566,6 @@ public slots:
      */
     void addBody();
 
-    //------------------------------------------Function Separator ----------------------------------------------------
-    /**
-     * @brief Adds another OutputsBody object to the list of OutputsBody objects.  Sets the object equal to the input.
-     * @param input OutputsBody object to add into the list of stored OutputsBody objects.  Variable is passed by
-     * value and sotred independant inside the System class.
-     * @sa OutputsBody
-     */
-    void addOutput(OutputsBody input);
-
-    //-----------------------------------------Function Separator ----------------------------------------------------
-    /**
-     * @brief Adds another OutputsBody object to the list of OutputsBody objects.  Uses a blank new OutputsBody object.
-     * @sa OutputsBody
-     */
-    void addOutput();
-
     //-----------------------------------------Function Separator ----------------------------------------------------
     /**
      * @brief Adds another ForceActive object to the list of forceActive_user objects.  Sets the object equal to
@@ -865,15 +831,6 @@ private:
      * @sa Body
      */
     std::vector<Body> plistBody;
-
-    //------------------------------------------Function Separator ----------------------------------------------------
-    /**
-     * @brief The list of OutputsBody objects.  The inputs set by the file reader on which Output options to calculate
-     * go to this list of OutputsBody objects.
-     * @sa OutputsBody
-     * @sa OutputDerived
-     */
-    std::vector<OutputsBody> plistOutputs;
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**

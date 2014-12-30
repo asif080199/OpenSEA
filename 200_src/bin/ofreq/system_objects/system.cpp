@@ -30,6 +30,7 @@ using namespace std;
 using namespace osea;
 using namespace osea::ofreq;
 
+
 //==========================================Section Separator =========================================================
 //Static Initialization
 string System::valForceActive_user = "forceActive_user";
@@ -229,18 +230,6 @@ vector<Body>& System::listBody()
 Body &System::listBody(int input)
 {
     return plistBody.at(input);
-}
-
-//------------------------------------------Function Separator --------------------------------------------------------
-vector<OutputsBody>& System::listOutput()
-{
-    return plistOutputs;
-}
-
-//------------------------------------------Function Separator --------------------------------------------------------
-OutputsBody &System::listOutput(int input)
-{
-    return plistOutputs.at(input);
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
@@ -588,18 +577,6 @@ void System::addBody()
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-void System::addOutput(OutputsBody input)
-{
-    plistOutputs.push_back(input);
-}
-
-//------------------------------------------Function Separator --------------------------------------------------------
-void System::addOutput()
-{
-    plistOutputs.push_back(OutputsBody());
-}
-
-//------------------------------------------Function Separator --------------------------------------------------------
 void System::addForceActive_user(ForceActive input)
 {
     plistForceActive_user.push_back(input);
@@ -646,7 +623,7 @@ void System::linkBodies(int bodID)
 
         for (unsigned int j = 0; j < listBody().size(); j++)
         {
-            if (name == listBody(j).refBodyName())
+            if (name == listBody(j).getBodyName())
             {
                 //Assign the pointer for the body
                 plistBody.at(bodID).listCrossBody_user(i) = listBody(j);
@@ -1049,7 +1026,6 @@ void System::DefineModels()
 {
     //Create each motion model and add it to the list.
     //Don't need to set any properties for the models.  All those get set at object creation.
-
     plistModels.push_back(new Model6DOF());
 }
 

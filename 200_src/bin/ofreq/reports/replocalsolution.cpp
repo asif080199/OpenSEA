@@ -59,86 +59,131 @@ repLocalSolution::repLocalSolution(ofreq::ReportManager *ptIn) : repLocalSolutio
 //------------------------------------------Function Separator --------------------------------------------------------
 void repLocalSolution::calcReport(int freqInd)
 {
-    //Define constants
-    for (unsigned int i = 0; i < plistConst_Key.size(); i++)
+    try
     {
-        this->defineConst(i);
-    }
+        complexDouble compI(0,1); //comlex number w/ 0 real, 1 imaginary used below for computations
+        complexDouble wavefreq(0,0);   //Wave frequency.
+        std::vector<complexDouble> output(3);    //Output list.
+        std::vector<complexDouble> motion(6);     //List of translation motions.
 
-
-    complexDouble compI(0,1); //comlex number w/ 0 real, 1 imaginary used below for computations
-    complexDouble wavefreq(0,0);   //Wave frequency.
-    std::vector<complexDouble> output(3);    //Output list.
-    std::vector<complexDouble> motion(6);     //List of translation motions.
-
-    //Get base solution values.
-    ofreq::Solution* input =
-            &(ptSystem->listSolutionSet(this->getBodIndex())
-            .refSolution(
-                ptSystem->getCurWaveDirInd(),
-                freqInd));
-
-    //Create list of equation indices to match data index.
-    std::vector<int> eqIndex(6);
-    for (unsigned int i = 0; i < eqIndex.size(); i++)
-    {
-        //Assign pointer for motion model.
-        ofreq::MotionModel *ptModel = ptBody->getMotionModel();
-        //Search through equation indices.
-        for (unsigned int j = 0; j < ptModel->listDataIndex().size(); j++)
+        if (pConstCalc)
         {
-            if (ptModel->listDataIndex(j) == i)
+            //Define constants
+            for (unsigned int i = 0; i < plistConst_Key.size(); i++)
             {
-                eqIndex(i) = j;
-                break;
+                this->defineConst(i);
             }
-            else
+
+            //Turn off const calculation
+            pConstCalc = false;
+        }
+
+        //Get base solution values.
+        ofreq::Solution* input =
+                &(ptSystem->listSolutionSet(this->getBodIndex())
+                .refSolution(
+                    ptSystem->getCurWaveDirInd(),
+                    freqInd));
+
+        //Create list of equation indices to match data index.
+        std::vector<int> eqIndex(6);
+        for (unsigned int i = 0; i < eqIndex.size(); i++)
+        {
+            //Assign pointer for motion model.
+            ofreq::MotionModel *ptModel = &(ptBody->getMotionModel());
+            //Search through equation indices.
+            for (unsigned int j = 0; j < ptModel->listDataIndex().size(); j++)
             {
-                eqIndex(i) = -1;
+                if (ptModel->listDataIndex(j) == i)
+                {
+                    eqIndex.at(i) = j;
+                    break;
+                }
+                else
+                {
+                    eqIndex.at(i) = -1;
+                }
+            }
+        }
+
+        //Retrieve translations and rotations from solution.
+        for (unsigned int i = 0; i < motion.size(); i++)
+        {
+            if (eqIndex.at(i) == -1)
+                //No data available for that index.
+                motion.at(i) = complex<double>(0,0);
+            else
+                motion.at(i) = input->getSolnMat()(eqIndex.at(i),0);
+        }
+
+        //Calculate output list.
+        //X-axis outputs. (S_x = T_x - p_y * R_z + p_z * R_y)
+        output.at(0) = motion.at(0) - pMomArm.at(1) * motion.at(5) + pMomArm.at(2) * motion.at(4);
+
+        //Y-axis outputs.   (S_y = T_y - p_z * R_x + p_x * R_z)
+        output.at(1) = motion.at(1) - pMomArm.at(2) * motion.at(3) + pMomArm.at(0) * motion.at(5);
+
+        //Z-axis outputs.  (S_z = T_z + p_y * R_x + p_x * R_y)
+        output.at(2) = motion.at(2) - pMomArm.at(1) * motion.at(3) + pMomArm.at(0) * motion.at(4);
+
+        //Get current frequency, in body encounter frequency.
+        wavefreq.real(
+                    ptSystem->listWaveFrequencies(freqInd));
+
+        //Calculate derivative.
+        for (int i = 0; i < output.size(); i++)
+        {
+            output.at(i) = pow(wavefreq, pOrd)
+                           * pow(compI, pOrd)
+                           * output.at(i);
+        }
+
+        //Write resutls back to results list.
+        plistData.push_back(
+                    Data(freqInd));
+
+        for (unsigned int i = 0; i < output.size(); i++)
+        {
+            plistData.back().addValue(
+                        output.at(i));
+        }
+    }
+    catch(const std::exception &err)
+    {
+        //Error handler.
+        logStd.Notify();
+        logErr.Write(ID + string(err.what()));
+    }
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+void repLocalSolution::calcRAO(int freqInd)
+{
+    try
+    {
+        if (pCalcRAO)
+        {
+            complex<double> amp;
+
+            //Get amplitude.
+            amp.real(ptSystem->refActiveSeaModel().getWaveAmp(ptSystem->getCurWaveDirInd(), freqInd));
+
+            //Write result to results list.
+            plistRAO.push_back(Data(freqInd));
+
+            //Add values to Data object.
+            for (unsigned int i = 0; i < plistData.at(freqInd).listValue().size(); i++)
+            {
+                plistRAO.back().addValue(plistData.at(freqInd).listValue(i)
+                                              / amp);
             }
         }
     }
-
-    //Retrieve translations and rotations from solution.
-    for (unsigned int i = 0; i < motion.size(); i++)
+    catch(const std::exception &err)
     {
-        if (eqIndex(i) == -1)
-            //No data available for that index.
-            motion.at(i) = complex(0,0);
-        else
-            motion.at(i) = input->getSolnMat()(eqIndex(i),0);
-    }
-
-    //Calculate output list.
-    //X-axis outputs. (S_x = T_x - p_y * R_z + p_z * R_y)
-    output.at(0) = motion.at(0) - pMomArm.at(1) * motion(5) + pMomArm.at(2) * motion(4);
-
-    //Y-axis outputs.   (S_y = T_y - p_z * R_x + p_x * R_z)
-    output.at(1) = motion.at(1) - pMomArm.at(2) * motion(3) + pMomArm.at(0) * motion(5);
-
-    //Z-axis outputs.  (S_z = T_z + p_y * R_x + p_x * R_y)
-    output.at(2) = motion.at(2) - pMomArm.at(1) * motion(3) + pMomArm.at(0) * motion(4);
-
-    //Get current frequency, in body encounter frequency.
-    wavefreq.real(
-                ptSystem->listWaveFrequencies(freqInd));
-
-    //Calculate derivative.
-    for (int i = 0; i < output.size(); i++)
-    {
-        output.at(i) = pow(wavefreq, pOrd)
-                       * pow(compI, pOrd)
-                       * output.at(i);
-    }
-
-    //Write resutls back to results list.
-    plistData.push_back(
-                Data(freqInd));
-
-    for (unsigned int i = 0; i < output.size(); i++)
-    {
-        plistData.back().addValue(
-                    output.at(i));
+        //Error handler.
+        logStd.Notify();
+        logErr.Write(ID + string(err.what()));
     }
 }
 

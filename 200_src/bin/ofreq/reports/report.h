@@ -10,7 +10,7 @@
  *---------------------------------------------------------------------------------------------------------------------
  *Date          Author                  Description
  *---------------------------------------------------------------------------------------------------------------------
- *Nov 05, 2014	Nicholas Barczak		Initially Created
+ *Dec 05, 2014	Nicholas Barczak		Initially Created
  *Dec 14, 2014  Nicholas Barczak        Debugged and updated to Rev 1.0
  *
 \*-------------------------------------------------------------------------------------------------------------------*/
@@ -218,16 +218,35 @@ public:
      * Writes the results of the calculation to the vector of Data values.  Calling the calcReport function only
      * generates the values.  They must be retrieved from the object after calculation, using the listData() function.
      *
-     * The calcReport() function will overwrite any previously calculated data.  The function includes a user input
-     * that allows you to specify a specific wave frequency for calculation.  Default behavior is to calculate data
-     * for all wave frequencies.  If only a single wave frequency is specified, the function will fill all other data
-     * entries up to that frequency with zero data objects.  Only the specified frequency will contain the data.  It's
-     * place in the vector of Data objects specifies its index.
      * @param freqInd Integer, variable passed by value.  The wave frequency index to use for calculating the Report
      * object's data.  Specifies the index of the wave frequency to retrieve from the list of wave frequencies.
      * Most Report values will depend on the wave frequency specified.
      */
     virtual void calcReport(int freqInd = -1);
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Pure virtual member.  Calculates the RAO report data.
+     *
+     * Write the results of the calculation of the vector of RAO Data values.  Calling calcRAO function only
+     * generates the value.  THey must be retrieved from the object after calculations, using the listRAO() function.
+     *
+     * @param freqInd Integer, variable passed by value.  The wave frequency index to use for calculating the Report
+     * object's data.  Specifies the index of the wave frequency to retrieve from the list of wave frequencies.
+     * Most Report values will depend on the wave frequency specified.
+     */
+    virtual void calcRAO(int freqInd = -1);
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Triggers whether the report should calculate the RAO or not.
+     *
+     * Sets whether the Report should calculate the RAO value.  If set to no, the calcRAO function will do nothing.
+     * if set to yes (true), the calcRAO function works.  By default, this is set to true.
+     * @param calcYes Boolean input, passed by value.  Determines whether the calcRAO function produces output.
+     * if set to true, the calcRAO function will produce output.
+     */
+    void calcRAO(bool calcYes);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -256,6 +275,29 @@ public:
      * variable.  Returned value is a Data object, variable passed by reference.
      */
     ofreq::Data &listData(int indexIn);
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Lists the RAO's calculated by the report.
+     *
+     * Returns the list of RAO objects calculated by the Report object.  Until the calcRAO() function is executed,
+     * this list will be blank.  The calcRAO() function requires the calcReport() function as a pre-requisite.
+     * @return Returns a vector of Data objects, returned vector passed by reference.
+     */
+    std::vector< ofreq::Data > &listRAO();
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Lists a single entry in the vector of RAO's calculated by the report.
+     *
+     * Returns a single entry from the list of RAO objects calculated by the Report object.  Until the calcRAO()
+     * function is executed, this list will be blank.  The calcRAO() function requires the calcReport() function as
+     * a pre-requisite.
+     * @param indexIn Integer, variable passed by value.  The index of the Data object you wish to retrieve.
+     * @return Returns single entry from the vector of RAO objects.  Single entry is specified by the indexIn
+     * parameter.  Returned object is a Data object, variabled passed by reference.
+     */
+    ofreq::Data &listRAO(int indexIn);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -293,6 +335,7 @@ public:
      * int
      * double
      * string
+     * Data (object)
      * @param keyIn The name associated with this constant.  Used to identify the constant.  String, variable passed
      * by value.
      * @param valIn The value of the constant.  String, variable passed by value.
@@ -309,6 +352,7 @@ public:
      * int
      * double
      * string
+     * Data (object)
      * @param keyIn The name associated with this constant.  Used to identify the constant.  String, variable passed
      * by value.
      * @param valIn The value of the constant.  Integer, variable passed by value.
@@ -325,6 +369,7 @@ public:
      * int
      * double
      * string
+     * Data (object)
      * @param keyIn The name associated with this constant.  Used to identify the constant.  String, variable passed
      * by value.
      * @param valIn The value of the constant.  Double, variable passed by value.
@@ -341,6 +386,7 @@ public:
      * int
      * double
      * string
+     * Data (object)
      * @param keyIn The name associated with this constant.  Used to identify the constant.  String, variable passed
      * by value.
      * @param valIn The value of the constant.  Complex<double>, variable passed by value.
@@ -357,6 +403,7 @@ public:
      * int
      * double
      * string
+     * Data (object)
      * @param keyIn The name associated with this constant.  Used to identify the constant.  String, variable passed
      * by value.
      * @param valIn The value of the constant.  Vector of doubles, variable passed by value.
@@ -373,6 +420,7 @@ public:
      * int
      * double
      * string
+     * Data (object)
      * @param keyIn The name associated with this constant.  Used to identify the constant.  String, variable passed
      * by value.
      * @param valIn The value of the constant.  Vector of integers, variable passed by value.
@@ -389,11 +437,30 @@ public:
      * int
      * double
      * string
+     * Data (object)
      * @param keyIn The name associated with this constant.  Used to identify the constant.  String, variable passed
      * by value.
      * @param valIn The value of the constant.  Vector of complex<double> variables, variable passed by value.
      */
     void addConst(std::string keyIn, std::vector< std::complex<double> > valIn);
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Add a constant to the Report for calculation.
+     *
+     * Adds a constant to the Report.  Constants are user inputs that the report uses for completing the calculation.
+     * Not all Reports have constants.  Constants can be any of the following data types:
+     * complex<double>
+     * int
+     * double
+     * string
+     * Data (object)
+     * @param keyIn The name associated with this constant.  Used to identify the constant.  String, variable passed
+     * by value.
+     * @param datIn The value of the constant.  Data object.  Sends the data in directly.  Variable passed by
+     * value.
+     */
+    void addConst(std::string keyIn, ofreq::Data datIn);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -469,6 +536,17 @@ protected:
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
+     * @brief The results of the calculation of RAO for report.
+     *
+     * List of Data objects.  Vector of Data is only generated after report gets calculated.
+     */
+    std::vector<ofreq::Data> plistRAO;
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    bool pCalcRAO = true;   /**< Boolean to track if should calculate RAO values.  Set to true by default. */
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
      * @brief The name assigned to this report.
      */
     std::string pName = "";
@@ -519,8 +597,16 @@ protected:
      */
     std::vector<ofreq::Data> plistConst_Val;
 
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Boolean to track if Report constants need to be calculated.
+     */
+    bool pConstCalc = true;
+
 //==========================================Section Separator =========================================================
 private:
+
+
 
 };
 

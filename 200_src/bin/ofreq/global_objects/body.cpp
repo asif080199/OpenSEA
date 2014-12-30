@@ -195,21 +195,15 @@ void Body::setBodyName(string newName)
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-string &Body::refBodyName()
+string &Body::getBodyName()
 {
     return pBodyName;
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-string &Body::refHydroBodName()
-{
-    return hydroBody;
-}
-
-//------------------------------------------Function Separator --------------------------------------------------------
 void Body::setHydroBodName(string newName)
 {
-	hydroBody = newName;
+    hydroBody = newName;
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------

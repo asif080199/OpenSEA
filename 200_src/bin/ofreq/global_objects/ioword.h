@@ -108,6 +108,7 @@ protected:
     static std::string COMMENT_BLOCK_END; /**< Block comment end. */
     static std::string BREAK_TOP; /**< String of characters to visually separate the top in an output file. */
     static std::string BREAK_BOTTOM; /**< String of characters to visually separate the bottom in an output file. */
+    static std::string BREAK_MIDDLE; /**< String of characters to visually separate the middle of an output file. */
 
     //------------------------------------------Function Separator ----------------------------------------------------
     //General file formatting marks

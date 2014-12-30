@@ -10,7 +10,7 @@
  *---------------------------------------------------------------------------------------------------------------------
  *Date          Author                  Description
  *---------------------------------------------------------------------------------------------------------------------
- *Nov 13, 2014	Nicholas Barczak		Initially Created
+ *Dec 13, 2014	Nicholas Barczak		Initially Created
  *Dec 14, 2014  Nicholas Barczak        Debugged and updated to Rev 1.0
  *
 \*-------------------------------------------------------------------------------------------------------------------*/
@@ -112,18 +112,25 @@ public:
      *
      * Writes the results of the calculation to the vector of Data values.  Calling the calcReport function only
      * generates the values.  They must be retrieved from the object after calculation, using the listData() function.
-     *
-     * The calcReport() function will overwrite any previously calculated data.  The function includes a user input
-     * that allows you to specify a specific wave frequency for calculation.  Default behavior is to calculate data
-     * for all wave frequencies.  If only a single wave frequency is specified, the function will fill all other data
-     * entries up to that frequency with zero data objects.  Only the specified frequency will contain the data.  It's
-     * place in the vector of Data objects specifies its index.
      * @param freqInd Integer, variable passed by value.  The wave frequency index to use for calculating the Report
      * object's data.  Specifies the index of the wave frequency to retrieve from the list of wave frequencies.
      * The frequency index has no meaning for this report and can be ignored.  It is included only because the
      * function gets inheritted from another class, and the form of the function must be maintained.
      */
     virtual void calcReport(int freqInd = -1);
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Calculates the RAO report data.
+     *
+     * Write the results of the calculation of the vector of RAO Data values.  Calling calcRAO function only
+     * generates the value.  THey must be retrieved from the object after calculations, using the listRAO() function.
+     *
+     * @param freqInd Integer, variable passed by value.  The wave frequency index to use for calculating the Report
+     * object's data.  Specifies the index of the wave frequency to retrieve from the list of wave frequencies.
+     * Most Report values will depend on the wave frequency specified.
+     */
+    virtual void calcRAO(int freqInd = -1);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**

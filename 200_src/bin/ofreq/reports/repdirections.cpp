@@ -40,6 +40,9 @@ repDirections::repDirections()
 {
     //Set the name for this report.
     this->setName("World Wave Directions");
+
+    //Set the standard for calculating the RAO
+    pCalcRAO = false;
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
@@ -77,6 +80,12 @@ void repDirections::calcReport(int freqInd)
             logErr.Write(ID + string(err.what()));
         }
     }
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+void repDirections::calcRAO(int freqInd)
+{
+    //Do nothing.  Do not calculate RAO.
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------

@@ -244,7 +244,7 @@ public:
      * equation.
      * @return Returns reference to the protected pName variable.
      */
-    std::string &refName();
+    std::string &getName();
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -266,7 +266,7 @@ public:
      * behind the equation of motion.
      * @return Returns reference to the protected pDescription variable.
      */
-    std::string &refDescription();
+    std::string &getDescription();
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**

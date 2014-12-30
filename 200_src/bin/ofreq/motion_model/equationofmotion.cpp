@@ -141,7 +141,7 @@ void EquationofMotion::setArguments(int argn, vector<double> argv)
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-string &EquationofMotion::refName()
+string &EquationofMotion::getName()
 {
     //Exposes the object name
     return pName;
@@ -154,7 +154,7 @@ void EquationofMotion::setName(std::string nameIn)
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-string &EquationofMotion::refDescription()
+string &EquationofMotion::getDescription()
 {
     //Exposes the object description
     return pDescription;
@@ -248,8 +248,29 @@ complex<double> EquationofMotion::Ddt(int var, int ord, int bodIn)
             //Calculate refDerivative           
             out = out * pow(freq,ord) * pow(imagI, ord);
 
-//            out = out * pParentModel->listData(bodIn).getSolution().at(var,1);
-            out = out * pParentModel->listData(bodIn).refSolution(var);
+            //Get matrix of solution.
+            arma::cx_mat sol = pParentModel->listSolutionSet(bodIn).refSolution(
+                                   pParentModel->getWaveDirInd(),
+                                   pParentModel->getFreqInd()).getSolnMat();
+
+            //Apply to result.
+            out = out * sol(var, 0);
+
+
+        }
+        else
+        {
+            //Calculating coefficients.  Do not retrieve actual values.
+
+            //Not calculating coefficients.  Get actual values.
+            complex<double> freq(0,0);
+            complex<double> imagI(0,1.0);
+
+            //get wave frequency.
+            freq = pParentModel->getFreq();
+
+            //Calculate refDerivative
+            out = out * pow(freq,ord) * pow(imagI, ord);
         }
     }
     catch(...)
@@ -720,7 +741,7 @@ int EquationofMotion::curbody()
     {
         //Check for error reported from parent model.
         if (pParentModel->getBody() == -1)
-            throw std::out_of_range(string("Equation of Motion:  ") + this->refName() +
+            throw std::out_of_range(string("Equation of Motion:  ") + this->getName() +
                                     string("\nEquation of motion does not current belong to a body.  No body assigned."));
 
         return pParentModel->getBody() + 1;

@@ -37,8 +37,9 @@ using namespace osea::ofreq;
 string ioword::COMMENT_LINE = "//"; /**< Line Comment. */
 string ioword::COMMENT_BLOCK_BEGIN = "/*"; /**< Block Comment Begin. */
 string ioword::COMMENT_BLOCK_END = "*/"; /**< Block comment end. */
-string ioword::BREAK_TOP = "// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //\n";
+string ioword::BREAK_TOP = "// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //";
 string ioword::BREAK_BOTTOM = "// ************************************************************************* //";
+string ioword::BREAK_MIDDLE = "// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - //";
 
 //------------------------------------------Function Separator ----------------------------------------------------
 //General file formatting marks

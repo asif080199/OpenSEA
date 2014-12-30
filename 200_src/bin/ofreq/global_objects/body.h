@@ -130,23 +130,16 @@ public:
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
      * @brief Exposes the body name property for operation.
-     * @return Pointer to the body name property.
+     * @return reference to the body name property.
      */
-    std::string &refBodyName();
-
-    //------------------------------------------Function Separator ----------------------------------------------------
-    /**
-     * @brief Exposes the hydro body name property for operation.
-     * @return Pointer to the hydro body name property.
-     */
-    std::string &refHydroBodName();
+    std::string &getBodyName();
 
     //------------------------------------------Function Separator ----------------------------------------------------
 	/**
 	 * Sets the hydroBody.
 	 * @param newName The std::string passed in sets the hydroBody.
 	 */
-    void setHydroBodName(std::string);
+    void setHydroBodName(std::string newName);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**

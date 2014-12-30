@@ -19,13 +19,6 @@ TEMPLATE = app
 QMAKE_CXXFLAGS += -std=c++11
 
 SOURCES += ofreq.cpp \
-    derived_outputs/outputsbody.cpp \
-    derived_outputs/outputderived.cpp \
-    derived_outputs/globalvelocity.cpp \
-    derived_outputs/globalsolution.cpp \
-    derived_outputs/globalmotion.cpp \
-    derived_outputs/globalacceleration.cpp \
-    file_writer/filewriter.cpp \
     motion_solver/motionsolver.cpp \
     motion_solver/matbody.cpp \
     motion_model/equationofmotion.cpp \
@@ -89,21 +82,24 @@ SOURCES += ofreq.cpp \
     reports/reportmanager.cpp \
     reports/repdirections.cpp \
     reports/repfrequencies.cpp \
-    reports/repglobsolution.cpp \
-    reports/repglobmotion.cpp \
-    reports/repglobvelocity.cpp \
-    reports/repglobacceleration.cpp \
     file_reader/dictoutputs.cpp \
-    reports/replocalsolution.cpp
+    reports/replocalsolution.cpp \
+    reports/replocalacceleration.cpp \
+    reports/repbodacceleration.cpp \
+    reports/repbodmotion.cpp \
+    reports/repbodsolution.cpp \
+    reports/repbodvelocity.cpp \
+    reports/repwavespectra.cpp \
+    reports/repstaticbodyaccel.cpp \
+    reports/repdesignaccel.cpp \
+    reports/repdynfreeboard.cpp \
+    reports/repbodforces.cpp \
+    reports/repbodpower.cpp \
+    reports/repcapturewidth.cpp \
+    reports/repreleff.cpp \
+    reports/repabseff.cpp
 
 HEADERS += \
-    derived_outputs/outputsbody.h \
-    derived_outputs/outputderived.h \
-    derived_outputs/globalvelocity.h \
-    derived_outputs/globalsolution.h \
-    derived_outputs/globalmotion.h \
-    derived_outputs/globalacceleration.h \
-    file_writer/filewriter.h \
     motion_solver/motionsolver.h \
     motion_solver/matbody.h \
     motion_model/equationofmotion.h \
@@ -167,12 +163,22 @@ HEADERS += \
     reports/reportmanager.h \
     reports/repdirections.h \
     reports/repfrequencies.h \
-    reports/repglobsolution.h \
-    reports/repglobmotion.h \
-    reports/repglobvelocity.h \
-    reports/repglobacceleration.h \
     file_reader/dictoutputs.h \
-    reports/replocalsolution.h
+    reports/replocalsolution.h \
+    reports/replocalacceleration.h \
+    reports/repbodacceleration.h \
+    reports/repbodmotion.h \
+    reports/repbodsolution.h \
+    reports/repbodvelocity.h \
+    reports/repwavespectra.h \
+    reports/repstaticbodyaccel.h \
+    reports/repdesignaccel.h \
+    reports/repdynfreeboard.h \
+    reports/repbodforces.h \
+    reports/repbodpower.h \
+    reports/repcapturewidth.h \
+    reports/repreleff.h \
+    reports/repabseff.h
 
 # Include header files path for libraries
 INCLUDEPATH += \

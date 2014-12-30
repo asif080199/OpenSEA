@@ -44,8 +44,6 @@
 #include "./motion_solver/matforceactive.h"
 #include "./motion_solver/matforcecross.h"
 #include "./motion_solver/matforcereact.h"
-#include "./file_writer/filewriter.h"
-#include "./derived_outputs/outputsbody.h"
 #include "./global_objects/solutionset.h"
 #include "./global_objects/solution.h"
 #include "./system_objects/system.h"
@@ -122,16 +120,6 @@ const std::string BINFOLDER = "bin";
  * @return Returns a matBody object, fully provisioned with all necessary data.
  */
 void buildMatBody(int bod, bool useCoeff=true);
-
-//------------------------------------------Function Separator --------------------------------------------------------
-/**
- * @brief Calculates derived outputs using the OutputsBody object and then writes those outputs to files.
- * @param OutputIn The OutputsBody object that will calculate the derived outputs.  All properties for the OutputsBody
- * object must be set by the time the function is called.  Variable passed by reference.
- * @param WriterIn The FileWriter object that will receive the outputs from the OutputsBody object and write those
- * outputs to a file.
- */
-void calcOutput(OutputsBody &OutputIn, FileWriter &WriterIn);
 
 //------------------------------------------Function Separator --------------------------------------------------------
 /**
@@ -411,6 +399,8 @@ void buildMatBody(int bod, bool useCoeff)
         //Create initial setup.
         MyModel->setlistBody(sysofreq.listBody());   //Feed the list of bodies
         MyModel->setBody(bod);       //Set which body to use as the current body
+        MyModel->setFreq(sysofreq.getCurFreqInd(),
+                         sysofreq.getCurFreq());    //Assign the current frequency and frequency index.
         MyModel->CoefficientOnly() = useCoeff;  //Let it know to only calculate coefficients.
         MyModel->Reset();   //Give it a reset just for good measure.
 
@@ -467,8 +457,8 @@ void buildMatBody(int bod, bool useCoeff)
                 //Assign matrices
                 ptForce->listDerivative().push_back(MyModel->getMatForceReact_user(i,j));
 
-    //            //Print out Matrix.  For debugging.
-    //            listMatBody.at(bod).listForceReact_user(0).listDerivative(0).print("Reactive Force:  ");
+                //Print out Matrix.  For debugging.
+                //listMatBody.at(bod).listForceReact_user(0).listDerivative(0).print("Reactive Force:  ");
             }
         }
 

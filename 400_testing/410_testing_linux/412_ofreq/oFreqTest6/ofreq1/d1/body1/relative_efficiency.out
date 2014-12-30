@@ -1,0 +1,65 @@
+/*--------------------------------*- C++ -*------------------------------------*\
+| O pen         | OpenSea: The Open Source Seakeeping Suite            		|
+| S eakeeping   | Version:  0.20                                                |
+| E valuation   | Web:      www.opensea.dmsonline.us                            |
+| A nalysis     |                                                               |
+\*-----------------------------------------------------------------------------*/
+
+
+
+seafile {
+  version  1.0;
+  format  ascii;
+  object  repRelativeEfficiency;
+}
+
+
+
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+repRelativeEfficiency {
+  name "Relative Efficiency";
+  body "body1";
+  repPower "Total Body Power";
+  variables (
+    3
+    4
+    5
+    6
+  );
+  length 1.000000e+00;
+  variables_included  (
+    "TransZ"
+    "RotX"
+    "RotY"
+    "RotZ"
+  );
+  data {
+    frequency 1;
+    value 3.833813e-07;
+  }
+
+  data {
+    frequency 2;
+    value 7.197518e-07;
+  }
+
+
+
+  // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - //
+  //RAO Data
+  RAO {
+    frequency 1;
+    value 7.667626e-08;
+  }
+
+  RAO {
+    frequency 2;
+    value 1.439504e-07;
+  }
+
+}
+// ************************************************************************* //
+
+
+

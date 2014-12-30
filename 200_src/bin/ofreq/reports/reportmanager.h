@@ -10,7 +10,7 @@
  *---------------------------------------------------------------------------------------------------------------------
  *Date          Author                  Description
  *---------------------------------------------------------------------------------------------------------------------
- *Nov 05, 2014	Nicholas Barczak		Initially Created
+ *Dec 05, 2014	Nicholas Barczak		Initially Created
  *Dec 14, 2014  Nicholas Barczak        Debugged and updated to Rev 1.0
  *
 \*-------------------------------------------------------------------------------------------------------------------*/
@@ -53,10 +53,21 @@
 //Report Classes
 #include "repdirections.h"
 #include "repfrequencies.h"
-#include "repglobacceleration.h"
-#include "repglobmotion.h"
-#include "repglobvelocity.h"
-#include "repglobsolution.h"
+#include "repbodacceleration.h"
+#include "repbodmotion.h"
+#include "repbodvelocity.h"
+#include "repbodsolution.h"
+#include "replocalacceleration.h"
+#include "replocalsolution.h"
+#include "repwavespectra.h"
+#include "repstaticbodyaccel.h"
+#include "repdesignaccel.h"
+#include "repdynfreeboard.h"
+#include "repbodforces.h"
+#include "repbodpower.h"
+#include "repcapturewidth.h"
+#include "repreleff.h"
+#include "repabseff.h"
 
 //######################################### Class Separator ###########################################################
 //Namespace declarations
@@ -466,28 +477,12 @@ private:
     //Key-Value Markers
     static QString KEY_NAME; /**< Key to mark name of object being described. */
     static QString KEY_DATA; /**< Key to mark data for an object */
+    static QString KEY_RAO; /**< Key to mark RAO data for an object. */
     static QString KEY_VALUE; /**< Key to mark the values for an object */
     static QString KEY_FREQUENCY; /**< Key to mark a frequency value */
     static QString KEY_DIRECTION; /**< Key to mark a direction value */
     static QString KEY_BODY; /**< Key to mark a body object */
 
-    //------------------------------------------Function Separator ----------------------------------------------------
-    //Filename Markers
-    static QString FILE_DIRECTIONS; /**< Filename for directions output file */
-    static QString FILE_FREQUENCIES; /**< Filename for frequencies output file */
-    static QString FILE_GLOBAL_ACCELERATION; /**< Filename for global acceleration output file */
-    static QString FILE_GLOBAL_MOTION; /**< Filename for global motion output file */
-    static QString FILE_GLOBAL_VELOCITY; /**< Filename for global velocity output file */
-    static QString FILE_GLOBAL_SOLUTION; /**< Filename for general global solution output file */
-
-    //------------------------------------------Function Separator ----------------------------------------------------
-    //Class Name Markers
-    static QString CLASS_DIRECTIONS;    /**< Class name for wave directions output file. */
-    static QString CLASS_FREQUENCIES;   /**< Class name for wave frequencies output file. */
-    static QString CLASS_GLOBAL_ACCELERATION;   /**< Class name for global acceleration output file. */
-    static QString CLASS_GLOBAL_MOTION; /**< Class name for global motion output file. */
-    static QString CLASS_GLOBAL_VELOCITY; /**< Class name for global velocity output file. */
-    static QString CLASS_GLOBAL_SOLUTION; /**< Class name for global solution output file. */
 
 };
 

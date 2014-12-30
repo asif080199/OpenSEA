@@ -1,0 +1,88 @@
+/*--------------------------------*- C++ -*------------------------------------*\
+| O pen         | OpenSea: The Open Source Seakeeping Suite            		|
+| S eakeeping   | Version:  0.20                                                |
+| E valuation   | Web:      www.opensea.dmsonline.us                            |
+| A nalysis     |                                                               |
+\*-----------------------------------------------------------------------------*/
+
+
+
+seafile {
+  version  1.0;
+  format  ascii;
+  object  repBodPower;
+}
+
+
+
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+repBodPower {
+  name "Total Body Power";
+  body "body1";
+  category "total";
+  equation_sequence (
+    "TransX"
+    "TransY"
+    "TransZ"
+    "RotX"
+    "RotY"
+    "RotZ"
+  );
+  data {
+    frequency 1;
+    value (
+      5.984742e-02
+      5.857228e-02
+      5.879430e-02
+      5.877622e-02
+      5.858688e-02
+      6.004058e-02
+    );
+  }
+
+  data {
+    frequency 2;
+    value (
+      7.359056e-02
+      4.559113e-02
+      4.982845e-02
+      5.067775e-02
+      4.628101e-02
+      7.485164e-02
+    );
+  }
+
+
+
+  // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - //
+  //RAO Data
+  RAO {
+    frequency 1;
+    value (
+      1.196948e-02
+      1.171446e-02
+      1.175886e-02
+      1.175524e-02
+      1.171738e-02
+      1.200812e-02
+    );
+  }
+
+  RAO {
+    frequency 2;
+    value (
+      1.471811e-02
+      9.118227e-03
+      9.965691e-03
+      1.013555e-02
+      9.256203e-03
+      1.497033e-02
+    );
+  }
+
+}
+// ************************************************************************* //
+
+
+

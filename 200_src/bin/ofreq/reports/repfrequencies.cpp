@@ -40,6 +40,9 @@ repFrequencies::repFrequencies()
 {
     //Set the name for this report.
     this->setName("World Wave Frequencies");
+
+    //Turn off RAO calculations.
+    pCalcRAO = false;
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
@@ -78,6 +81,12 @@ void repFrequencies::calcReport(int freqInd)
             logErr.Write(ID + string(err.what()));
         }
     }
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+void repFrequencies::calcRAO(int freqInd)
+{
+    //Do not calculate RAO.
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------

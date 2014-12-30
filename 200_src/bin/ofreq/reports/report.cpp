@@ -149,7 +149,19 @@ std::string Report::getFileName()
 //------------------------------------------Function Separator --------------------------------------------------------
 void Report::calcReport(int freqInd)
 {
+    //Do nothing.  Just keep the compiler happy.
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+void Report::calcRAO(int freqInd)
+{
     //Just a default function to keep the compiler happy until child functions insert real code.
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+void Report::calcRAO(bool calcYes)
+{
+    pCalcRAO = calcYes;
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
@@ -171,6 +183,18 @@ Data &Report::listData(int indexIn)
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
+std::vector< Data > &Report::listRAO()
+{
+    return plistRAO;
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+Data &Report::listRAO(int indexIn)
+{
+    return plistRAO.at(indexIn);
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
 int Report::getDataType()
 {
     return pDataType;
@@ -185,6 +209,9 @@ void Report::setCurWaveInd(int indIn)
 //------------------------------------------Function Separator --------------------------------------------------------
 void Report::addConst(std::string keyIn, std::string valIn)
 {
+    //Set constants to true for calculation.
+    pConstCalc = true;
+
     plistConst_Key.push_back(keyIn);
 
     //Create new data value and add it to the list.
@@ -198,6 +225,9 @@ void Report::addConst(std::string keyIn, std::string valIn)
 //------------------------------------------Function Separator --------------------------------------------------------
 void Report::addConst(std::string keyIn, int valIn)
 {
+    //Set constants to true for calculation.
+    pConstCalc = true;
+
     plistConst_Key.push_back(keyIn);
 
     //Create new data value and add it to the list.
@@ -210,6 +240,9 @@ void Report::addConst(std::string keyIn, int valIn)
 //------------------------------------------Function Separator --------------------------------------------------------
 void Report::addConst(std::string keyIn, double valIn)
 {
+    //Set constants to true for calculation.
+    pConstCalc = true;
+
     plistConst_Key.push_back(keyIn);
 
     //Create new data value and add it to the list.
@@ -222,6 +255,9 @@ void Report::addConst(std::string keyIn, double valIn)
 //------------------------------------------Function Separator --------------------------------------------------------
 void Report::addConst(std::string keyIn, std::complex<double> valIn)
 {
+    //Set constants to true for calculation.
+    pConstCalc = true;
+
     plistConst_Key.push_back(keyIn);
 
     //Create new data value and add it to the list.
@@ -234,6 +270,9 @@ void Report::addConst(std::string keyIn, std::complex<double> valIn)
 //------------------------------------------Function Separator --------------------------------------------------------
 void Report::addConst(std::string keyIn, vector<double> valIn)
 {
+    //Set constants to true for calculation.
+    pConstCalc = true;
+
     plistConst_Key.push_back(keyIn);
 
     //Create new data value and add it to the list.
@@ -248,6 +287,9 @@ void Report::addConst(std::string keyIn, vector<double> valIn)
 //------------------------------------------Function Separator --------------------------------------------------------
 void Report::addConst(std::string keyIn, vector<int> valIn)
 {
+    //Set constants to true for calculation.
+    pConstCalc = true;
+
     plistConst_Key.push_back(keyIn);
 
     //Create new data value and add it to the list.
@@ -262,6 +304,9 @@ void Report::addConst(std::string keyIn, vector<int> valIn)
 //------------------------------------------Function Separator --------------------------------------------------------
 void Report::addConst(std::string keyIn, vector< std::complex<double> > valIn)
 {
+    //Set constants to true for calculation.
+    pConstCalc = true;
+
     plistConst_Key.push_back(keyIn);
 
     //Create new data value and add it to the list.
@@ -271,6 +316,18 @@ void Report::addConst(std::string keyIn, vector< std::complex<double> > valIn)
         tempData.addValue(valIn.at(i));
     }
     plistConst_Val.push_back(tempData);
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+void Report::addConst(std::string keyIn, ofreq::Data datIn)
+{
+    //Set constants to true for calculation.
+    pConstCalc = true;
+
+    plistConst_Key.push_back(keyIn);
+
+    //Add data object to the list.
+    plistConst_Val.push_back(datIn);
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
@@ -318,6 +375,12 @@ Data &Report::listConstVal(int indexIn)
 
 //==========================================Section Separator =========================================================
 //Protected Functions
+
+//------------------------------------------Function Separator --------------------------------------------------------
+void defineConst(int constIndex)
+{
+    //Do nothing at the moment.
+}
 
 //==========================================Section Separator =========================================================
 //Private Functions

@@ -25,6 +25,7 @@
 \*-------------------------------------------------------------------------------------------------------------------*/
 
 #include "motionmodel.h"
+//#include "../system_objects/system.h"
 
 using namespace std;
 using namespace arma;
@@ -187,10 +188,25 @@ void MotionModel::Reset()
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-void MotionModel::setFreq(double freq)
+void MotionModel::setWaveDirInd(int dirIn)
 {
-    //Sets the wave frequency.
-    pFreq = freq;
+    pWaveInd = dirIn;
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+int MotionModel::getWaveDirInd()
+{
+    return pWaveInd;
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+void MotionModel::setFreq(int freq, double freqVal)
+{
+    //Set the frequency index.
+    pFreqInd = freq;
+
+    //Set the frequency value.
+    pFreq = freqVal;
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
@@ -201,290 +217,297 @@ double MotionModel::getFreq()
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
+int MotionModel::getFreqInd()
+{
+    //Gets the wave frequency index
+    return pFreqInd;
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+void MotionModel::setSolutionSet(std::vector<ofreq::SolutionSet> *ptSolIn)
+{
+    //Set the current solution set.
+    ptSolutionSet = ptSolIn;
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+vector<SolutionSet> &MotionModel::listSolutionSet()
+{
+    return *(ptSolutionSet);
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+SolutionSet &MotionModel::listSolutionSet(int indexIn)
+{
+    return ptSolutionSet->at(indexIn);
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
 void MotionModel::useForceActive_user(unsigned int force, unsigned int eqn)
 {
-    //Trigger to use active forces.
-    pActiveOnly = pActiveOnly * true;       //Will still evaluate to false if a reactive force was already triggered.
-
-    //Check if there are enough bodies for the current called functions.
-    //All happens in the fillBodies function.
-    fillBodies();
-
-    //Check if the designated body has enough forces for the current specified number.
-    if (plistData.at(curBody).listForceActive_user().size() < force + 1)
+    try
     {
-        //Add enough forces.
-        plistData.at(curBody).listForceActive_user().resize(force + 1);
+        //Trigger to use active forces.
+        pActiveOnly = pActiveOnly * true;       //Will still evaluate to false if a reactive force was already triggered.
 
-        for (unsigned int i = 0; i < plistData.at(curBody).listForceActive_user().size(); i++)
+        //Check if there are enough bodies for the current called functions.
+        //All happens in the fillBodies function.
+        fillBodies();
+
+        //Check if the designated body has enough forces for the current specified number.
+        if (plistData.at(curBody).listForceActive_user().size() < force + 1)
         {
-            if (plistData.at(curBody).listForceActive_user().at(i) == NULL)
+            //Add enough forces.
+            plistData.at(curBody).listForceActive_user().resize(force + 1);
+
+            for (unsigned int i = 0; i < plistData.at(curBody).listForceActive_user().size(); i++)
             {
-                ForceActive* temp = new ForceActive();
-                plistData.at(curBody).listForceActive_user().at(i) = temp;
+                if (plistData.at(curBody).listForceActive_user().at(i) == NULL)
+                {
+                    ForceActive* temp = new ForceActive();
+                    plistData.at(curBody).listForceActive_user().at(i) = temp;
+                }
             }
         }
-    }
 
-    //Get the input value and write it to the new value in the listData.
-    plistData.at(curBody).listForceActive_user(force)->listDataEquation(eqn) =
-            plistBody->at(curBody).listForceActive_user(force)->listDataEquation(eqn);
+        //Get the input value and write it to the new value in the listData.
+        plistData.at(curBody).listForceActive_user(force)->listDataEquation(eqn) =
+                plistBody->at(curBody).listForceActive_user(force)->listDataEquation(eqn);
+    }
+    catch(const std::exception &err)
+    {
+        //Error handler.
+        logStd.Notify();
+        logErr.Write(ID + string(err.what()));
+    }
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
 void MotionModel::useForceActive_user(unsigned int force)
 {
-    //Get total number of equations
-    unsigned int eqn = plistBody->at(curBody).listForceActive_user(force)->listDataEquation().size() - 1;
-
-    //Trigger to use active forces.
-    pActiveOnly = pActiveOnly * true;       //Will still evaluate to false if a reactive force was already triggered.
-
-    //Check if there are enough bodies for the current called functions.
-    //All happens in the fillBodies function.
-    fillBodies();
-
-    //Check if the designated body has enough forces for the current specified number.
-    if (plistData.at(curBody).listForceActive_user().size() < force + 1)
+    try
     {
-        //Add enough forces.
-        plistData.at(curBody).listForceActive_user().resize(force + 1);
+        //Get total number of equations
+        unsigned int eqn = plistBody->at(curBody).listForceActive_user(force)->listDataEquation().size() - 1;
 
-        for (unsigned int i = 0; i < plistData.at(curBody).listForceActive_user().size(); i++)
+        //Trigger to use active forces.
+        pActiveOnly = pActiveOnly * true;       //Will still evaluate to false if a reactive force was already triggered.
+
+        //Check if there are enough bodies for the current called functions.
+        //All happens in the fillBodies function.
+        fillBodies();
+
+        //Check if the designated body has enough forces for the current specified number.
+        if (plistData.at(curBody).listForceActive_user().size() < force + 1)
         {
-            if (plistData.at(curBody).listForceActive_user().at(i) == NULL)
+            //Add enough forces.
+            plistData.at(curBody).listForceActive_user().resize(force + 1);
+
+            for (unsigned int i = 0; i < plistData.at(curBody).listForceActive_user().size(); i++)
             {
-                ForceActive* temp = new ForceActive();
-                plistData.at(curBody).listForceActive_user().at(i) = temp;
+                if (plistData.at(curBody).listForceActive_user().at(i) == NULL)
+                {
+                    ForceActive* temp = new ForceActive();
+                    plistData.at(curBody).listForceActive_user().at(i) = temp;
+                }
             }
         }
-    }
 
-    //Iterate through all equations for the designated forces
-    for (unsigned int i = 0; i <= eqn; i++)
+        //Iterate through all equations for the designated forces
+        for (unsigned int i = 0; i <= eqn; i++)
+        {
+            //Get the input value and write it to the new value in the listData.
+            plistData.at(curBody).listForceActive_user(force)->listDataEquation(i) =
+                    plistBody->at(curBody).listForceActive_user(force)->listDataEquation(i);
+        }
+    }
+    catch(const std::exception &err)
     {
-        //Get the input value and write it to the new value in the listData.
-        plistData.at(curBody).listForceActive_user(force)->listDataEquation(i) =
-                plistBody->at(curBody).listForceActive_user(force)->listDataEquation(i);
+        //Error handler.
+        logStd.Notify();
+        logErr.Write(ID + string(err.what()));
     }
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
 void MotionModel::useForceActive_user()
 {
-    //Get total number of forces
-    int force = plistBody->at(curBody).listForceActive_user().size() - 1;
-
-    //Call to use all the active forces
-    for (int i = 0; i <= force; i++)
+    try
     {
-        useForceActive_user(i);
+        //Get total number of forces
+        int force = plistBody->at(curBody).listForceActive_user().size() - 1;
+
+        //Call to use all the active forces
+        for (int i = 0; i <= force; i++)
+        {
+            useForceActive_user(i);
+        }
+    }
+    catch(const std::exception &err)
+    {
+        //Error handler.
+        logStd.Notify();
+        logErr.Write(ID + string(err.what()));
     }
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
 void MotionModel::useForceActive_hydro(unsigned int force, unsigned int eqn)
 {
-    //Trigger to use active forces.
-    pActiveOnly = pActiveOnly * true;       //Will still evaluate to false if a reactive force was already triggered.
-
-    //Check if there are enough bodies for the current called functions.
-    //All happens in the fillBodies function.
-    fillBodies();
-
-    //Check if the designated body has enough forces for the current specified number.
-    if (plistData.at(curBody).listForceActive_hydro().size() < force + 1)
+    try
     {
-        //Add enough forces.
-        plistData.at(curBody).listForceActive_hydro().resize(force + 1);
+        //Trigger to use active forces.
+        pActiveOnly = pActiveOnly * true;       //Will still evaluate to false if a reactive force was already triggered.
 
-        for (unsigned int i = 0; i < plistData.at(curBody).listForceActive_hydro().size(); i++)
+        //Check if there are enough bodies for the current called functions.
+        //All happens in the fillBodies function.
+        fillBodies();
+
+        //Check if the designated body has enough forces for the current specified number.
+        if (plistData.at(curBody).listForceActive_hydro().size() < force + 1)
         {
-            ForceActive* temp = new ForceActive();
-            plistData.at(curBody).listForceActive_hydro().at(i) = temp;
-        }
-    }
+            //Add enough forces.
+            plistData.at(curBody).listForceActive_hydro().resize(force + 1);
 
-    //Get the input value and write it to the new value in the listData.
-    plistData.at(curBody).listForceActive_hydro(force)->listDataEquation(eqn) =
-            plistBody->at(curBody).listForceActive_hydro(force)->listDataEquation(eqn);
+            for (unsigned int i = 0; i < plistData.at(curBody).listForceActive_hydro().size(); i++)
+            {
+                ForceActive* temp = new ForceActive();
+                plistData.at(curBody).listForceActive_hydro().at(i) = temp;
+            }
+        }
+
+        //Get the input value and write it to the new value in the listData.
+        plistData.at(curBody).listForceActive_hydro(force)->listDataEquation(eqn) =
+                plistBody->at(curBody).listForceActive_hydro(force)->listDataEquation(eqn);
+    }
+    catch(const std::exception &err)
+    {
+        //Error handler.
+        logStd.Notify();
+        logErr.Write(ID + string(err.what()));
+    }
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
 void MotionModel::useForceActive_hydro(unsigned int force)
 {
-    //Get total number of equations
-    unsigned int eqn = plistBody->at(curBody).listForceActive_hydro(force)->listDataEquation().size() - 1;
-
-    //Trigger to use active forces.
-    pActiveOnly = pActiveOnly * true;       //Will still evaluate to false if a reactive force was already triggered.
-
-    //Check if there are enough bodies for the current called functions.
-    //All happens in the fillBodies function.
-    fillBodies();
-
-    //Check if the designated body has enough forces for the current specified number.
-    if (plistData.at(curBody).listForceActive_hydro().size() < force + 1)
+    try
     {
-        //Add enough forces.
-        plistData.at(curBody).listForceActive_hydro().resize(force + 1);
+        //Get total number of equations
+        unsigned int eqn = plistBody->at(curBody).listForceActive_hydro(force)->listDataEquation().size() - 1;
 
-        for (unsigned int i = 0; i < plistData.at(curBody).listForceActive_hydro().size(); i++)
+        //Trigger to use active forces.
+        pActiveOnly = pActiveOnly * true;       //Will still evaluate to false if a reactive force was already triggered.
+
+        //Check if there are enough bodies for the current called functions.
+        //All happens in the fillBodies function.
+        fillBodies();
+
+        //Check if the designated body has enough forces for the current specified number.
+        if (plistData.at(curBody).listForceActive_hydro().size() < force + 1)
         {
-            ForceActive* temp = new ForceActive();
-            plistData.at(curBody).listForceActive_hydro().at(i) = temp;
+            //Add enough forces.
+            plistData.at(curBody).listForceActive_hydro().resize(force + 1);
+
+            for (unsigned int i = 0; i < plistData.at(curBody).listForceActive_hydro().size(); i++)
+            {
+                ForceActive* temp = new ForceActive();
+                plistData.at(curBody).listForceActive_hydro().at(i) = temp;
+            }
+        }
+
+        for (unsigned int i = 0; i <= eqn; i++)
+        {
+            //Get the input value and write it to the new value in the listData.
+            plistData.at(curBody).listForceActive_hydro(force)->listDataEquation(i) =
+                    plistBody->at(curBody).listForceActive_hydro(force)->listDataEquation(i);
         }
     }
-
-    for (unsigned int i = 0; i <= eqn; i++)
+    catch(const std::exception &err)
     {
-        //Get the input value and write it to the new value in the listData.
-        plistData.at(curBody).listForceActive_hydro(force)->listDataEquation(i) =
-                plistBody->at(curBody).listForceActive_hydro(force)->listDataEquation(i);
+        //Error handler.
+        logStd.Notify();
+        logErr.Write(ID + string(err.what()));
     }
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
 void MotionModel::useForceActive_hydro()
 {
-    //Get total number of forces
-    unsigned int force = plistBody->at(curBody).listForceActive_hydro().size() - 1;
-
-    //Call to use all the active forces
-    for (unsigned int i = 0; i <= force; i++)
+    try
     {
-        useForceActive_hydro(i);
+        //Get total number of forces
+        unsigned int force = plistBody->at(curBody).listForceActive_hydro().size() - 1;
+
+        //Call to use all the active forces
+        for (unsigned int i = 0; i <= force; i++)
+        {
+            useForceActive_hydro(i);
+        }
+    }
+    catch(const std::exception &err)
+    {
+        //Error handler.
+        logStd.Notify();
+        logErr.Write(ID + string(err.what()));
     }
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
 void MotionModel::useForceReact_user(unsigned int force, unsigned int ord, unsigned int eqn, unsigned int var)
 {
-    //Turn off active force evaluation.
-    pActiveOnly = false;
-
-    //Check if there are enough bodies for the current called functions.
-    //All happens in the fillBodies function.
-    fillBodies();
-
-    //Check if the designated body has enough forces for the current specified number.
-    if (plistData.at(curBody).listForceReact_user().size() < force + 1)
-    {
-        //Add enough forces.
-        plistData.at(curBody).listForceReact_user().resize(force + 1);
-
-        for (unsigned int i = 0; i < plistData.at(curBody).listForceReact_user().size(); i++)
-        {
-            if (plistData.at(curBody).listForceReact_user(i) == NULL)
-            {
-                ForceReact* temp = new ForceReact();
-                plistData.at(curBody).listForceReact_user().at(i) = temp;
-            }
-        }
-    }
-
-    //Check if the designated force has enough derivatives for the current number specified.
-    if (plistData.at(curBody).listForceReact_user(force)->listDerivative().size() <= ord + 1)
-    {
-        //Add enough derivatives.
-        plistData.at(curBody).listForceReact_user(force)->listDerivative().resize(ord + 1);
-    }
-
-    //temporary variable for data transfer
-    double input;
-
-    //Get the input value.
-    Derivative* tempDeriv = &(plistBody->at(curBody).listForceReact_user(force)->listDerivative(ord));
-
     try
     {
-        //Get the input value
-        input = tempDeriv->listDataEquation(eqn).listDataVariable(var);
-    }
-    catch(...)
-    {
-        //For any error, set value to zero.
-        input = 0;
-    }
+        //Turn off active force evaluation.
+        pActiveOnly = false;
 
-    //Write the input value.
-    plistData.at(curBody).listForceReact_user(force)->listDerivative(ord).
-            listDataEquation(eqn).addVariable(input, var);
+        //Check if there are enough bodies for the current called functions.
+        //All happens in the fillBodies function.
+        fillBodies();
 
-    int input_int;
-
-    //Copy over the data Index.
-    input_int = plistBody->at(curBody).listForceReact_user(force)->listDerivative(ord).
-                listDataEquation(eqn).getDataIndex();
-
-    //Write the input value.
-    plistData.at(curBody).listForceReact_user(force)->listDerivative(ord).
-            listDataEquation(eqn).refDataIndex() = input_int;
-}
-
-//------------------------------------------Function Separator --------------------------------------------------------
-void MotionModel::useForceReact_user(unsigned int force, unsigned int ord, unsigned int eqn)
-{
-    //Turn off active force evaluation.
-    pActiveOnly = false;
-
-    //Check if there are enough bodies for the current called functions.
-    //All happens in the fillBodies function.
-    fillBodies();
-
-    //Check if the designated body has enough forces for the current specified number.
-    if (plistData.at(curBody).listForceReact_user().size() < force + 1)
-    {
-        //Add enough forces.
-        plistData.at(curBody).listForceReact_user().resize(force + 1);
-
-        for (unsigned int i = 0; i < plistData.at(curBody).listForceReact_user().size(); i++)
+        //Check if the designated body has enough forces for the current specified number.
+        if (plistData.at(curBody).listForceReact_user().size() < force + 1)
         {
-            if (plistData.at(curBody).listForceReact_user().at(i) == NULL)
+            //Add enough forces.
+            plistData.at(curBody).listForceReact_user().resize(force + 1);
+
+            for (unsigned int i = 0; i < plistData.at(curBody).listForceReact_user().size(); i++)
             {
-                ForceReact* temp = new ForceReact();
-                plistData.at(curBody).listForceReact_user().at(i) = temp;
+                if (plistData.at(curBody).listForceReact_user(i) == NULL)
+                {
+                    ForceReact* temp = new ForceReact();
+                    plistData.at(curBody).listForceReact_user().at(i) = temp;
+                }
             }
         }
-    }
 
-    //Check if the designated force has enough derivatives for the current number specified.
-    if (plistData.at(curBody).listForceReact_user(force)->listDerivative().size() <= ord + 1)
-    {
-        //Add enough derivatives.
-        plistData.at(curBody).listForceReact_user(force)->listDerivative().resize(ord + 1);
-    }
+        //Check if the designated force has enough derivatives for the current number specified.
+        if (plistData.at(curBody).listForceReact_user(force)->listDerivative().size() <= ord + 1)
+        {
+            //Add enough derivatives.
+            plistData.at(curBody).listForceReact_user(force)->listDerivative().resize(ord + 1);
+        }
 
-    //Get the current number of variables
-    int var = plistBody->at(curBody).
-              listForceReact_user(force)->
-              listDerivative(ord).
-              listDataEquation(eqn).
-              listDataVariable().size() - 1;
-
-    //For each variable, copy over the value.
-    for (int i = 0; i <= var; i++)
-    {
         //temporary variable for data transfer
         double input;
 
         //Get the input value.
         Derivative* tempDeriv = &(plistBody->at(curBody).listForceReact_user(force)->listDerivative(ord));
-        if (eqn < tempDeriv->listDataEquation().size())
+
+        try
         {
-            if (i < tempDeriv->listDataEquation(eqn).listDataVariable().size())
-            {
-                input = tempDeriv->listDataEquation(eqn).listDataVariable(i);
-            }
-            else
-                input = 0;
+            //Get the input value
+            input = tempDeriv->listDataEquation(eqn).listDataVariable(var);
         }
-        else
+        catch(...)
+        {
+            //For any error, set value to zero.
             input = 0;
+        }
 
         //Write the input value.
         plistData.at(curBody).listForceReact_user(force)->listDerivative(ord).
-                listDataEquation(eqn).addVariable(input, i);
+                listDataEquation(eqn).addVariable(input, var);
 
         int input_int;
 
@@ -496,795 +519,1075 @@ void MotionModel::useForceReact_user(unsigned int force, unsigned int ord, unsig
         plistData.at(curBody).listForceReact_user(force)->listDerivative(ord).
                 listDataEquation(eqn).refDataIndex() = input_int;
     }
+    catch(const std::exception &err)
+    {
+        //Error handler.
+        logStd.Notify();
+        logErr.Write(ID + string(err.what()));
+    }
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+void MotionModel::useForceReact_user(unsigned int force, unsigned int ord, unsigned int eqn)
+{
+    try
+        {
+        //Turn off active force evaluation.
+        pActiveOnly = false;
+
+        //Check if there are enough bodies for the current called functions.
+        //All happens in the fillBodies function.
+        fillBodies();
+
+        //Check if the designated body has enough forces for the current specified number.
+        if (plistData.at(curBody).listForceReact_user().size() < force + 1)
+        {
+            //Add enough forces.
+            plistData.at(curBody).listForceReact_user().resize(force + 1);
+
+            for (unsigned int i = 0; i < plistData.at(curBody).listForceReact_user().size(); i++)
+            {
+                if (plistData.at(curBody).listForceReact_user().at(i) == NULL)
+                {
+                    ForceReact* temp = new ForceReact();
+                    plistData.at(curBody).listForceReact_user().at(i) = temp;
+                }
+            }
+        }
+
+        //Check if the designated force has enough derivatives for the current number specified.
+        if (plistData.at(curBody).listForceReact_user(force)->listDerivative().size() <= ord + 1)
+        {
+            //Add enough derivatives.
+            plistData.at(curBody).listForceReact_user(force)->listDerivative().resize(ord + 1);
+        }
+
+        //Get the current number of variables
+        int var = plistBody->at(curBody).
+                  listForceReact_user(force)->
+                  listDerivative(ord).
+                  listDataEquation(eqn).
+                  listDataVariable().size() - 1;
+
+        //For each variable, copy over the value.
+        for (int i = 0; i <= var; i++)
+        {
+            //temporary variable for data transfer
+            double input;
+
+            //Get the input value.
+            Derivative* tempDeriv = &(plistBody->at(curBody).listForceReact_user(force)->listDerivative(ord));
+            if (eqn < tempDeriv->listDataEquation().size())
+            {
+                if (i < tempDeriv->listDataEquation(eqn).listDataVariable().size())
+                {
+                    input = tempDeriv->listDataEquation(eqn).listDataVariable(i);
+                }
+                else
+                    input = 0;
+            }
+            else
+                input = 0;
+
+            //Write the input value.
+            plistData.at(curBody).listForceReact_user(force)->listDerivative(ord).
+                    listDataEquation(eqn).addVariable(input, i);
+
+            int input_int;
+
+            //Copy over the data Index.
+            input_int = plistBody->at(curBody).listForceReact_user(force)->listDerivative(ord).
+                        listDataEquation(eqn).getDataIndex();
+
+            //Write the input value.
+            plistData.at(curBody).listForceReact_user(force)->listDerivative(ord).
+                    listDataEquation(eqn).refDataIndex() = input_int;
+        }
+    }
+    catch(const std::exception &err)
+    {
+        //Error handler.
+        logStd.Notify();
+        logErr.Write(ID + string(err.what()));
+    }
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
 void MotionModel::useForceReact_user(unsigned int force, unsigned int ord)
 {
-    //Check if the designated body has enough forces for the current specified number.
-    if (plistData.at(curBody).listForceReact_user().size() < force + 1)
+    try
     {
-        //Add enough forces.
-        plistData.at(curBody).listForceReact_user().resize(force + 1);
-
-        for (unsigned int i = 0; i < plistData.at(curBody).listForceReact_user().size(); i++)
+        //Check if the designated body has enough forces for the current specified number.
+        if (plistData.at(curBody).listForceReact_user().size() < force + 1)
         {
-            if (plistData.at(curBody).listForceReact_user().at(i) == NULL)
+            //Add enough forces.
+            plistData.at(curBody).listForceReact_user().resize(force + 1);
+
+            for (unsigned int i = 0; i < plistData.at(curBody).listForceReact_user().size(); i++)
             {
-                ForceReact* temp = new ForceReact();
-                plistData.at(curBody).listForceReact_user().at(i) = temp;
+                if (plistData.at(curBody).listForceReact_user().at(i) == NULL)
+                {
+                    ForceReact* temp = new ForceReact();
+                    plistData.at(curBody).listForceReact_user().at(i) = temp;
+                }
             }
         }
+
+        //Check if the designated force has enough derivatives for the current number specified.
+        if (plistData.at(curBody).listForceReact_user(force)->listDerivative().size() <= ord + 1)
+        {
+            //Add enough derivatives.
+            plistData.at(curBody).listForceReact_user(force)->listDerivative().resize(ord + 1);
+        }
+
+        //Get the current number of equations
+        int eqn = plistBody->at(curBody).
+                  listForceReact_user(force)->
+                  listDerivative(ord).
+                  listDataEquation().size() - 1;
+
+        //Iterate through equation and apply the useForce method.
+        for (int i = 0; i <= eqn; i++)
+        {
+            useForceReact_user(force, ord, i);
+        }
     }
-
-    //Check if the designated force has enough derivatives for the current number specified.
-    if (plistData.at(curBody).listForceReact_user(force)->listDerivative().size() <= ord + 1)
+    catch(const std::exception &err)
     {
-        //Add enough derivatives.
-        plistData.at(curBody).listForceReact_user(force)->listDerivative().resize(ord + 1);
-    }
-
-    //Get the current number of equations
-    int eqn = plistBody->at(curBody).
-              listForceReact_user(force)->
-              listDerivative(ord).
-              listDataEquation().size() - 1;
-
-    //Iterate through equation and apply the useForce method.
-    for (int i = 0; i <= eqn; i++)
-    {
-        useForceReact_user(force, ord, i);
+        //Error handler.
+        logStd.Notify();
+        logErr.Write(ID + string(err.what()));
     }
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
 void MotionModel::useForceReact_user(unsigned int force)
 {
-    //Check if the designated body has enough forces for the current specified number.
-    if (plistData.at(curBody).listForceReact_user().size() < force + 1)
+    try
     {
-        //Add enough forces.
-        plistData.at(curBody).listForceReact_user().resize(force + 1);
-
-        for (unsigned int i = 0; i < plistData.at(curBody).listForceReact_user().size(); i++)
+        //Check if the designated body has enough forces for the current specified number.
+        if (plistData.at(curBody).listForceReact_user().size() < force + 1)
         {
-            if (plistData.at(curBody).listForceReact_user().at(i) == NULL)
+            //Add enough forces.
+            plistData.at(curBody).listForceReact_user().resize(force + 1);
+
+            for (unsigned int i = 0; i < plistData.at(curBody).listForceReact_user().size(); i++)
             {
-                ForceReact* temp = new ForceReact();
-                plistData.at(curBody).listForceReact_user().at(i) = temp;
+                if (plistData.at(curBody).listForceReact_user().at(i) == NULL)
+                {
+                    ForceReact* temp = new ForceReact();
+                    plistData.at(curBody).listForceReact_user().at(i) = temp;
+                }
             }
         }
+
+        //Get the maximum number of forces
+        int ord = plistBody->at(curBody).
+                  listForceReact_user(force)->
+                  listDerivative().size() - 1;
+
+        //Iterate through for each derivative and apply the useForce method
+        for (int i = 0; i <= ord; i++)
+        {
+            useForceReact_user(force, i);
+        }
     }
-
-    //Get the maximum number of forces
-    int ord = plistBody->at(curBody).
-              listForceReact_user(force)->
-              listDerivative().size() - 1;
-
-    //Iterate through for each derivative and apply the useForce method
-    for (int i = 0; i <= ord; i++)
+    catch(const std::exception &err)
     {
-        useForceReact_user(force, i);
+        //Error handler.
+        logStd.Notify();
+        logErr.Write(ID + string(err.what()));
     }
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
 void MotionModel::useForceReact_user()
 {
-    //Get the number of forces
-    unsigned int force = plistBody->at(curBody).
-                listForceReact_user().size() - 1;
-
-    //Call the useForce method for each force object.
-    for (unsigned int i = 0; i <= force; i++)
+    try
     {
-        useForceReact_user(i);
+        //Get the number of forces
+        unsigned int force = plistBody->at(curBody).
+                    listForceReact_user().size();
+
+        //Call the useForce method for each force object.
+        for (unsigned int i = 0; i < force; i++)
+        {
+            useForceReact_user(i);
+        }
+    }
+    catch(const std::exception &err)
+    {
+        //Error handler.
+        logStd.Notify();
+        logErr.Write(ID + string(err.what()));
     }
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
 void MotionModel::useForceReact_hydro(unsigned int force, unsigned int ord, unsigned int eqn, unsigned int var)
 {
-    //Turn off active force evaluation.
-    pActiveOnly = false;
-
-    //Check if there are enough bodies for the current called functions.
-    //All happens in the fillBodies function.
-    fillBodies();
-
-    //Check if the designated body has enough forces for the current specified number.
-    if (plistData.at(curBody).listForceReact_hydro().size() < force + 1)
-    {
-        //Add enough forces.
-        plistData.at(curBody).listForceReact_hydro().resize(force + 1);
-
-        for (unsigned int i = 0; i < plistData.at(curBody).listForceReact_hydro().size(); i++)
-        {
-            ForceReact* temp = new ForceReact();
-            plistData.at(curBody).listForceReact_hydro().at(i) = temp;
-        }
-    }
-
-    //Check if the designated force has enough derivatives for the current number specified.
-    if (plistData.at(curBody).listForceReact_hydro(force)->listDerivative().size() <= ord + 1)
-    {
-        //Add enough derivatives.
-        plistData.at(curBody).listForceReact_hydro(force)->listDerivative().resize(ord + 1);
-    }
-
-    //temporary variable for data transfer
-    double input;
-
-    //Get the input value.
-    Derivative* tempDeriv = &(plistBody->at(curBody).listForceReact_hydro(force)->listDerivative(ord));
     try
     {
-        //Get the input value
-        input = tempDeriv->listDataEquation(eqn).listDataVariable(var);
-    }
-    catch(...)
-    {
-        //For any error, set value to zero.
-        input = 0;
-    }
+        //Turn off active force evaluation.
+        pActiveOnly = false;
 
-    //Write the input value.
-    plistData.at(curBody).listForceReact_hydro(force)->listDerivative(ord).
-            listDataEquation(eqn).addVariable(input, var);
+        //Check if there are enough bodies for the current called functions.
+        //All happens in the fillBodies function.
+        fillBodies();
 
-    //Copy over the data Index.
-    plistData.at(curBody).listForceReact_hydro(force)->listDerivative(ord).
-            listDataEquation(eqn).refDataIndex() =
-                plistBody->at(curBody).listForceReact_hydro(force)->listDerivative(ord).
-                listDataEquation(eqn).getDataIndex();
-}
-
-//------------------------------------------Function Separator --------------------------------------------------------
-void MotionModel::useForceReact_hydro(unsigned int force, unsigned int ord, unsigned int eqn)
-{
-    //Turn off active force evaluation.
-    pActiveOnly = false;
-
-    //Check if there are enough bodies for the current called functions.
-    //All happens in the fillBodies function.
-    fillBodies();
-
-    //Check if the designated body has enough forces for the current specified number.
-    if (plistData.at(curBody).listForceReact_hydro().size() < force + 1)
-    {
-        //Add enough forces.
-        plistData.at(curBody).listForceReact_hydro().resize(force + 1);
-
-        for (unsigned int i = 0; i < plistData.at(curBody).listForceReact_hydro().size(); i++)
+        //Check if the designated body has enough forces for the current specified number.
+        if (plistData.at(curBody).listForceReact_hydro().size() < force + 1)
         {
-            ForceReact* temp = new ForceReact();
-            plistData.at(curBody).listForceReact_hydro().at(i) = temp;
+            //Add enough forces.
+            plistData.at(curBody).listForceReact_hydro().resize(force + 1);
+
+            for (unsigned int i = 0; i < plistData.at(curBody).listForceReact_hydro().size(); i++)
+            {
+                ForceReact* temp = new ForceReact();
+                plistData.at(curBody).listForceReact_hydro().at(i) = temp;
+            }
         }
-    }
 
-    //Check if the designated force has enough derivatives for the current number specified.
-    if (plistData.at(curBody).listForceReact_hydro(force)->listDerivative().size() <= ord + 1)
-    {
-        //Add enough derivatives.
-        plistData.at(curBody).listForceReact_hydro(force)->listDerivative().resize(ord + 1);
-    }
+        //Check if the designated force has enough derivatives for the current number specified.
+        if (plistData.at(curBody).listForceReact_hydro(force)->listDerivative().size() <= ord + 1)
+        {
+            //Add enough derivatives.
+            plistData.at(curBody).listForceReact_hydro(force)->listDerivative().resize(ord + 1);
+        }
 
-    //Get the current number of variables
-    int var = plistBody->at(curBody).
-              listForceReact_hydro(force)->
-              listDerivative(ord).
-              listDataEquation(eqn).
-              listDataVariable().size() - 1;
-
-    //For each variable, copy over the value.
-    for (int i = 0; i <= var; i++)
-    {
         //temporary variable for data transfer
         double input;
 
         //Get the input value.
         Derivative* tempDeriv = &(plistBody->at(curBody).listForceReact_hydro(force)->listDerivative(ord));
-            try
-            {
-                //Get the input value
-                input = tempDeriv->listDataEquation(eqn).listDataVariable(var);
-            }
-            catch(...)
-            {
-                //For any error, set value to zero.
-                input = 0;
-            }
+        try
+        {
+            //Get the input value
+            input = tempDeriv->listDataEquation(eqn).listDataVariable(var);
+        }
+        catch(...)
+        {
+            //For any error, set value to zero.
+            input = 0;
+        }
 
-            plistData.at(curBody).listForceReact_hydro(force)->listDerivative(ord).
-                    listDataEquation(eqn).addVariable(input, i);
+        //Write the input value.
+        plistData.at(curBody).listForceReact_hydro(force)->listDerivative(ord).
+                listDataEquation(eqn).addVariable(input, var);
 
-            //Copy over the data Index.
-            plistData.at(curBody).listForceReact_hydro(force)->listDerivative(ord).
-                    listDataEquation(eqn).refDataIndex() =
-                        plistBody->at(curBody).listForceReact_hydro(force)->listDerivative(ord).
-                        listDataEquation(eqn).getDataIndex();
+        //Copy over the data Index.
+        plistData.at(curBody).listForceReact_hydro(force)->listDerivative(ord).
+                listDataEquation(eqn).refDataIndex() =
+                    plistBody->at(curBody).listForceReact_hydro(force)->listDerivative(ord).
+                    listDataEquation(eqn).getDataIndex();
+    }
+    catch(const std::exception &err)
+    {
+        //Error handler.
+        logStd.Notify();
+        logErr.Write(ID + string(err.what()));
+    }
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+void MotionModel::useForceReact_hydro(unsigned int force, unsigned int ord, unsigned int eqn)
+{
+    try
+    {
+        //Turn off active force evaluation.
+        pActiveOnly = false;
+
+        //Check if there are enough bodies for the current called functions.
+        //All happens in the fillBodies function.
+        fillBodies();
+
+        //Check if the designated body has enough forces for the current specified number.
+        if (plistData.at(curBody).listForceReact_hydro().size() < force + 1)
+        {
+            //Add enough forces.
+            plistData.at(curBody).listForceReact_hydro().resize(force + 1);
+
+            for (unsigned int i = 0; i < plistData.at(curBody).listForceReact_hydro().size(); i++)
+            {
+                ForceReact* temp = new ForceReact();
+                plistData.at(curBody).listForceReact_hydro().at(i) = temp;
+            }
+        }
+
+        //Check if the designated force has enough derivatives for the current number specified.
+        if (plistData.at(curBody).listForceReact_hydro(force)->listDerivative().size() <= ord + 1)
+        {
+            //Add enough derivatives.
+            plistData.at(curBody).listForceReact_hydro(force)->listDerivative().resize(ord + 1);
+        }
+
+        //Get the current number of variables
+        int var = plistBody->at(curBody).
+                  listForceReact_hydro(force)->
+                  listDerivative(ord).
+                  listDataEquation(eqn).
+                  listDataVariable().size() - 1;
+
+        //For each variable, copy over the value.
+        for (int i = 0; i <= var; i++)
+        {
+            //temporary variable for data transfer
+            double input;
+
+            //Get the input value.
+            Derivative* tempDeriv = &(plistBody->at(curBody).listForceReact_hydro(force)->listDerivative(ord));
+                try
+                {
+                    //Get the input value
+                    input = tempDeriv->listDataEquation(eqn).listDataVariable(var);
+                }
+                catch(...)
+                {
+                    //For any error, set value to zero.
+                    input = 0;
+                }
+
+                plistData.at(curBody).listForceReact_hydro(force)->listDerivative(ord).
+                        listDataEquation(eqn).addVariable(input, i);
+
+                //Copy over the data Index.
+                plistData.at(curBody).listForceReact_hydro(force)->listDerivative(ord).
+                        listDataEquation(eqn).refDataIndex() =
+                            plistBody->at(curBody).listForceReact_hydro(force)->listDerivative(ord).
+                            listDataEquation(eqn).getDataIndex();
+        }
+    }
+    catch(const std::exception &err)
+    {
+        //Error handler.
+        logStd.Notify();
+        logErr.Write(ID + string(err.what()));
     }
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
 void MotionModel::useForceReact_hydro(unsigned int force, unsigned int ord)
 {
-    //Check if the designated body has enough forces for the current specified number.
-    if (plistData.at(curBody).listForceReact_hydro().size() < force + 1)
+    try
     {
-        //Add enough forces.
-        plistData.at(curBody).listForceReact_hydro().resize(force + 1);
-
-        for (unsigned int i = 0; i < plistData.at(curBody).listForceReact_hydro().size(); i++)
+        //Check if the designated body has enough forces for the current specified number.
+        if (plistData.at(curBody).listForceReact_hydro().size() < force + 1)
         {
-            ForceReact* temp = new ForceReact();
-            plistData.at(curBody).listForceReact_hydro().at(i) = temp;
+            //Add enough forces.
+            plistData.at(curBody).listForceReact_hydro().resize(force + 1);
+
+            for (unsigned int i = 0; i < plistData.at(curBody).listForceReact_hydro().size(); i++)
+            {
+                ForceReact* temp = new ForceReact();
+                plistData.at(curBody).listForceReact_hydro().at(i) = temp;
+            }
+        }
+
+        //Check if the designated force has enough derivatives for the current number specified.
+        if (plistData.at(curBody).listForceReact_hydro(force)->listDerivative().size() <= ord + 1)
+        {
+            //Add enough derivatives.
+            plistData.at(curBody).listForceReact_hydro(force)->listDerivative().resize(ord + 1);
+        }
+
+        //Get the current number of equations
+        unsigned int eqn = plistBody->at(curBody).
+                  listForceReact_hydro(force)->
+                  listDerivative(ord).
+                  listDataEquation().size() - 1;
+
+        //Iterate through equation and apply the useForce method.
+        for (unsigned int i = 0; i <= eqn; i++)
+        {
+            useForceReact_hydro(force, ord, i);
         }
     }
-
-    //Check if the designated force has enough derivatives for the current number specified.
-    if (plistData.at(curBody).listForceReact_hydro(force)->listDerivative().size() <= ord + 1)
+    catch(const std::exception &err)
     {
-        //Add enough derivatives.
-        plistData.at(curBody).listForceReact_hydro(force)->listDerivative().resize(ord + 1);
-    }
-
-    //Get the current number of equations
-    unsigned int eqn = plistBody->at(curBody).
-              listForceReact_hydro(force)->
-              listDerivative(ord).
-              listDataEquation().size() - 1;
-
-    //Iterate through equation and apply the useForce method.
-    for (unsigned int i = 0; i <= eqn; i++)
-    {
-        useForceReact_hydro(force, ord, i);
+        //Error handler.
+        logStd.Notify();
+        logErr.Write(ID + string(err.what()));
     }
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
 void MotionModel::useForceReact_hydro(unsigned int force)
 {
-    //Check if the designated body has enough forces for the current specified number.
-    if (plistData.at(curBody).listForceReact_hydro().size() < force + 1)
+    try
     {
-        //Add enough forces.
-        plistData.at(curBody).listForceReact_hydro().resize(force + 1);
-
-        for (unsigned int i = 0; i < plistData.at(curBody).listForceReact_hydro().size(); i++)
+        //Check if the designated body has enough forces for the current specified number.
+        if (plistData.at(curBody).listForceReact_hydro().size() < force + 1)
         {
-            ForceReact* temp = new ForceReact();
-            plistData.at(curBody).listForceReact_hydro().at(i) = temp;
+            //Add enough forces.
+            plistData.at(curBody).listForceReact_hydro().resize(force + 1);
+
+            for (unsigned int i = 0; i < plistData.at(curBody).listForceReact_hydro().size(); i++)
+            {
+                ForceReact* temp = new ForceReact();
+                plistData.at(curBody).listForceReact_hydro().at(i) = temp;
+            }
+        }
+
+        //Get the maximum number of derivatives
+        unsigned int ord = plistBody->at(curBody).
+                  listForceReact_hydro(force)->
+                  listDerivative().size() - 1;
+
+        //Iterate through for each derivative and apply the useForce method
+        for (unsigned int i = 0; i <= ord; i++)
+        {
+            useForceReact_hydro(force, i);
         }
     }
-
-    //Get the maximum number of derivatives
-    unsigned int ord = plistBody->at(curBody).
-              listForceReact_hydro(force)->
-              listDerivative().size() - 1;
-
-    //Iterate through for each derivative and apply the useForce method
-    for (unsigned int i = 0; i <= ord; i++)
+    catch(const std::exception &err)
     {
-        useForceReact_hydro(force, i);
+        //Error handler.
+        logStd.Notify();
+        logErr.Write(ID + string(err.what()));
     }
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
 void MotionModel::useForceReact_hydro()
 {
-    //Get the number of forces
-    unsigned int force = plistBody->at(curBody).
-                listForceReact_hydro().size() - 1;
-
-    //Call the useForce method for each force object.
-    for (unsigned int i = 0; i <= force; i++)
+    try
     {
-        useForceReact_hydro(i);
+        //Get the number of forces
+        unsigned int force = plistBody->at(curBody).
+                        listForceReact_hydro().size();
+
+        //Call the useForce method for each force object.
+        for (unsigned int i = 0; i < force; i++)
+        {
+            useForceReact_hydro(i);
+        }
+    }
+    catch(const std::exception &err)
+    {
+        //Error handler.
+        logStd.Notify();
+        logErr.Write(ID + string(err.what()));
     }
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
 void MotionModel::useForceCross_user(unsigned int force, unsigned int ord, unsigned int eqn, unsigned int var)
 {
-    //Turn off active force evaluation.
-    pActiveOnly = false;
-
-    //Check if there are enough bodies for the current called functions.
-    //All happens in the fillBodies function.
-    fillBodies();
-
-    //Check if the designated body has enough forces for the current specified number.
-    if (plistData.at(curBody).listForceCross_user().size() < force + 1)
+    try
     {
-        //Add enough forces.
-        plistData.at(curBody).listForceCross_user().resize(force + 1);
+        //Turn off active force evaluation.
+        pActiveOnly = false;
 
-        for (unsigned int i = 0; i < plistData.at(curBody).listForceCross_user().size(); i++)
+        //Check if there are enough bodies for the current called functions.
+        //All happens in the fillBodies function.
+        fillBodies();
+
+        //Check if the designated body has enough forces for the current specified number.
+        if (plistData.at(curBody).listForceCross_user().size() < force + 1)
         {
-            if (plistData.at(curBody).listForceCross_user().at(i) == NULL)
+            //Add enough forces.
+            plistData.at(curBody).listForceCross_user().resize(force + 1);
+
+            for (unsigned int i = 0; i < plistData.at(curBody).listForceCross_user().size(); i++)
             {
-                ForceCross* temp = new ForceCross();
-                plistData.at(curBody).listForceCross_user().at(i) = temp;
+                if (plistData.at(curBody).listForceCross_user().at(i) == NULL)
+                {
+                    ForceCross* temp = new ForceCross();
+                    plistData.at(curBody).listForceCross_user().at(i) = temp;
+                }
+            }
+        }
+
+        //Check if the list of linked cross-bodies has enough entries for the current number specified.
+        if (pCompCrossBod_user.size() < force + 1)
+        {
+            //Add enough entries.
+            pCompCrossBod_user.resize(force + 1);
+        }
+
+        //Check if the designated body has enough linking cross body entries for the current specified number.
+        if (plistData.at(curBody).listCrossBody_user().size() < force + 1)
+        {
+            //Add enough linking cross body entries.
+            plistData.at(curBody).listCrossBody_user().resize(force + 1);
+        }
+
+        //Check if the designated force has enough derivatives for the current number specified.
+        if (plistData.at(curBody).listForceCross_user(force)->listDerivative().size() < ord + 1)
+        {
+            //Add enough derivatives.
+            plistData.at(curBody).listForceCross_user(force)->listDerivative().resize(ord + 1);
+        }
+
+        //temporary variable for data transfer
+        double input;
+
+        //Get the input value.
+        Derivative* tempDeriv = &(plistBody->at(curBody).listForceCross_user(force)->listDerivative(ord));
+        try
+        {
+            //Get the input value
+            input = tempDeriv->listDataEquation(eqn).listDataVariable(var);
+        }
+        catch(...)
+        {
+            //For any error, set value to zero.
+            input = 0;
+        }
+
+        //Write the input value.
+        plistData.at(curBody).listForceCross_user(force)->listDerivative(ord).
+                listDataEquation(eqn).addVariable(input, var);
+
+        //Copy over the data Index.
+        plistData.at(curBody).listForceCross_user(force)->listDerivative(ord).
+                listDataEquation(eqn).refDataIndex() =
+                    plistBody->at(curBody).listForceCross_user(force)->listDerivative(ord).
+                    listDataEquation(eqn).getDataIndex();
+
+        //Copy over the linked body reference.
+        for (unsigned int i = 0; i < plistBody->size(); i++)
+        {
+            //Check if the cross body force matches.
+            if (plistBody->at(i) == (plistBody->at(curBody).listCrossBody_user(force)))
+            {
+                //True.  Copy integer and stop.
+                pCompCrossBod_user.at(force) = i;
+                break;
             }
         }
     }
-
-    //Check if the list of linked cross-bodies has enough entries for the current number specified.
-    if (pCompCrossBod_user.size() < force + 1)
+    catch(const std::exception &err)
     {
-        //Add enough entries.
-        pCompCrossBod_user.resize(force + 1);
-    }
-
-    //Check if the designated body has enough linking cross body entries for the current specified number.
-    if (plistData.at(curBody).listCrossBody_user().size() < force + 1)
-    {
-        //Add enough linking cross body entries.
-        plistData.at(curBody).listCrossBody_user().resize(force + 1);
-    }
-
-    //Check if the designated force has enough derivatives for the current number specified.
-    if (plistData.at(curBody).listForceCross_user(force)->listDerivative().size() < ord + 1)
-    {
-        //Add enough derivatives.
-        plistData.at(curBody).listForceCross_user(force)->listDerivative().resize(ord + 1);
-    }
-
-    //temporary variable for data transfer
-    double input;
-
-    //Get the input value.
-    Derivative* tempDeriv = &(plistBody->at(curBody).listForceCross_user(force)->listDerivative(ord));    
-    try
-    {
-        //Get the input value
-        input = tempDeriv->listDataEquation(eqn).listDataVariable(var);
-    }
-    catch(...)
-    {
-        //For any error, set value to zero.
-        input = 0;
-    }
-
-    //Write the input value.
-    plistData.at(curBody).listForceCross_user(force)->listDerivative(ord).
-            listDataEquation(eqn).addVariable(input, var);
-
-    //Copy over the data Index.
-    plistData.at(curBody).listForceCross_user(force)->listDerivative(ord).
-            listDataEquation(eqn).refDataIndex() =
-                plistBody->at(curBody).listForceCross_user(force)->listDerivative(ord).
-                listDataEquation(eqn).getDataIndex();
-
-    //Copy over the linked body reference.
-    for (unsigned int i = 0; i < plistBody->size(); i++)
-    {
-        //Check if the cross body force matches.
-        if (plistBody->at(i) == (plistBody->at(curBody).listCrossBody_user(force)))
-        {
-            //True.  Copy integer and stop.
-            pCompCrossBod_user.at(force) = i;
-            break;
-        }
+        //Error handler.
+        logStd.Notify();
+        logErr.Write(ID + string(err.what()));
     }
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
 void MotionModel::useForceCross_user(unsigned int force, unsigned int ord, unsigned int eqn)
 {
-    //Check if the designated body has enough forces for the current specified number.
-    if (plistData.at(curBody).listForceCross_user().size() < force + 1)
+    try
     {
-        //Add enough forces.
-        plistData.at(curBody).listForceCross_user().resize(force + 1);
-
-        for (unsigned int i = 0; i < plistData.at(curBody).listForceCross_user().size(); i++)
+        //Check if the designated body has enough forces for the current specified number.
+        if (plistData.at(curBody).listForceCross_user().size() < force + 1)
         {
-            if (plistData.at(curBody).listForceCross_user().at(i) == NULL)
+            //Add enough forces.
+            plistData.at(curBody).listForceCross_user().resize(force + 1);
+
+            for (unsigned int i = 0; i < plistData.at(curBody).listForceCross_user().size(); i++)
             {
-                ForceCross* temp = new ForceCross();
-                plistData.at(curBody).listForceCross_user().at(i) = temp;
+                if (plistData.at(curBody).listForceCross_user().at(i) == NULL)
+                {
+                    ForceCross* temp = new ForceCross();
+                    plistData.at(curBody).listForceCross_user().at(i) = temp;
+                }
             }
         }
+
+        //Check if the designated force has enough derivatives for the current number specified.
+        if (plistData.at(curBody).listForceCross_user(force)->listDerivative().size() < ord + 1)
+        {
+            //Add enough derivatives.
+            plistData.at(curBody).listForceCross_user(force)->listDerivative().resize(ord + 1);
+        }
+
+        //Get the current number of variables
+        unsigned int var = plistBody->at(curBody).
+                  listForceCross_user(force)->
+                  listDerivative(ord).
+                  listDataEquation(eqn).
+                  listDataVariable().size() - 1;
+
+        //For each variable, call the useForce method.
+        for (unsigned int i = 0; i <= var; i++)
+        {
+            useForceCross_user(force, ord, eqn, i);
+        }
     }
-
-    //Check if the designated force has enough derivatives for the current number specified.
-    if (plistData.at(curBody).listForceCross_user(force)->listDerivative().size() < ord + 1)
+    catch(const std::exception &err)
     {
-        //Add enough derivatives.
-        plistData.at(curBody).listForceCross_user(force)->listDerivative().resize(ord + 1);
-    }
-
-    //Get the current number of variables
-    unsigned int var = plistBody->at(curBody).
-              listForceCross_user(force)->
-              listDerivative(ord).
-              listDataEquation(eqn).
-              listDataVariable().size() - 1;
-
-    //For each variable, call the useForce method.
-    for (unsigned int i = 0; i <= var; i++)
-    {
-        useForceCross_user(force, ord, eqn, i);
+        //Error handler.
+        logStd.Notify();
+        logErr.Write(ID + string(err.what()));
     }
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
 void MotionModel::useForceCross_user(unsigned int force, unsigned int ord)
 {
-    //Check if the designated body has enough forces for the current specified number.
-    if (plistData.at(curBody).listForceCross_user().size() < force + 1)
+    try
     {
-        //Add enough forces.
-        plistData.at(curBody).listForceCross_user().resize(force + 1);
-
-        for (unsigned int i = 0; i < plistData.at(curBody).listForceCross_user().size(); i++)
+        //Check if the designated body has enough forces for the current specified number.
+        if (plistData.at(curBody).listForceCross_user().size() < force + 1)
         {
-            if (plistData.at(curBody).listForceCross_user().at(i) == NULL)
+            //Add enough forces.
+            plistData.at(curBody).listForceCross_user().resize(force + 1);
+
+            for (unsigned int i = 0; i < plistData.at(curBody).listForceCross_user().size(); i++)
             {
-                ForceCross* temp = new ForceCross();
-                plistData.at(curBody).listForceCross_user().at(i) = temp;
+                if (plistData.at(curBody).listForceCross_user().at(i) == NULL)
+                {
+                    ForceCross* temp = new ForceCross();
+                    plistData.at(curBody).listForceCross_user().at(i) = temp;
+                }
             }
         }
+
+        //Check if the designated force has enough derivatives for the current number specified.
+        if (plistData.at(curBody).listForceCross_user(force)->listDerivative().size() < ord + 1)
+        {
+            //Add enough derivatives.
+            plistData.at(curBody).listForceCross_user(force)->listDerivative().resize(ord + 1);
+        }
+
+        //Get the current number of equations
+        int eqn = plistBody->at(curBody).
+                  listForceCross_user(force)->
+                  listDerivative(ord).
+                  listDataEquation().size() - 1;
+
+        //Iterate through equation and apply the useForce method.
+        for (int i = 0; i <= eqn; i++)
+        {
+            useForceCross_user(force, ord, i);
+        }
     }
-
-    //Check if the designated force has enough derivatives for the current number specified.
-    if (plistData.at(curBody).listForceCross_user(force)->listDerivative().size() < ord + 1)
+    catch(const std::exception &err)
     {
-        //Add enough derivatives.
-        plistData.at(curBody).listForceCross_user(force)->listDerivative().resize(ord + 1);
-    }
-
-    //Get the current number of equations
-    int eqn = plistBody->at(curBody).
-              listForceCross_user(force)->
-              listDerivative(ord).
-              listDataEquation().size() - 1;
-
-    //Iterate through equation and apply the useForce method.
-    for (int i = 0; i <= eqn; i++)
-    {
-        useForceCross_user(force, ord, i);
+        //Error handler.
+        logStd.Notify();
+        logErr.Write(ID + string(err.what()));
     }
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
 void MotionModel::useForceCross_user(unsigned int force)
 {
-    //Check if the designated body has enough forces for the current specified number.
-    if (plistData.at(curBody).listForceCross_user().size() < force + 1)
+    try
     {
-        //Add enough forces.
-        plistData.at(curBody).listForceCross_user().resize(force + 1);
-
-        for (unsigned int i = 0; i < plistData.at(curBody).listForceCross_user().size(); i++)
+        //Check if the designated body has enough forces for the current specified number.
+        if (plistData.at(curBody).listForceCross_user().size() < force + 1)
         {
-            if (plistData.at(curBody).listForceCross_user().at(i) == NULL)
+            //Add enough forces.
+            plistData.at(curBody).listForceCross_user().resize(force + 1);
+
+            for (unsigned int i = 0; i < plistData.at(curBody).listForceCross_user().size(); i++)
             {
-                ForceCross* temp = new ForceCross();
-                plistData.at(curBody).listForceCross_user().at(i) = temp;
+                if (plistData.at(curBody).listForceCross_user().at(i) == NULL)
+                {
+                    ForceCross* temp = new ForceCross();
+                    plistData.at(curBody).listForceCross_user().at(i) = temp;
+                }
             }
         }
+
+        //Get the maximum number of forces
+        int ord = plistBody->at(curBody).
+                  listForceCross_user(force)->
+                  listDerivative().size() - 1;
+
+        //Iterate through for each derivative and apply the useForce method
+        for (int i = 0; i <= ord; i++)
+        {
+            useForceCross_user(force, i);
+        }
     }
-
-    //Get the maximum number of forces
-    int ord = plistBody->at(curBody).
-              listForceCross_user(force)->
-              listDerivative().size() - 1;
-
-    //Iterate through for each derivative and apply the useForce method
-    for (int i = 0; i <= ord; i++)
+    catch(const std::exception &err)
     {
-        useForceCross_user(force, i);
+        //Error handler.
+        logStd.Notify();
+        logErr.Write(ID + string(err.what()));
     }
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
 void MotionModel::useForceCross_user()
 {
-    //Get the number of forces
-    int force = plistBody->at(curBody).
-                listForceCross_user().size() - 1;
-
-    //Call the useForce method for each force object.
-    for (int i = 0; i <= force; i++)
+    try
     {
-        useForceCross_user(i);
+        //Get the number of forces
+        int force = plistBody->at(curBody).
+                    listForceCross_user().size() - 1;
+
+        //Call the useForce method for each force object.
+        for (int i = 0; i <= force; i++)
+        {
+            useForceCross_user(i);
+        }
+    }
+    catch(const std::exception &err)
+    {
+        //Error handler.
+        logStd.Notify();
+        logErr.Write(ID + string(err.what()));
     }
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
 void MotionModel::useForceCross_hydro(unsigned int force, unsigned int ord, unsigned int eqn, unsigned int var)
 {
-    //Turn off active force evaluation.
-    pActiveOnly = false;
-
-    //Check if there are enough bodies for the current called functions.
-    //All happens in the fillBodies function.
-    fillBodies();
-
-    //Check if the designated body has enough forces for the current specified number.
-    if (plistData.at(curBody).listForceCross_hydro().size() < force + 1)
-    {
-        //Add enough forces.
-        plistData.at(curBody).listForceCross_hydro().resize(force + 1);
-
-        for (unsigned int i = 0; i < plistData.at(curBody).listForceCross_hydro().size(); i++)
-        {
-            ForceCross* temp = new ForceCross();
-            plistData.at(curBody).listForceCross_hydro().at(i) = temp;
-        }
-    }
-
-    //Check if the designated body has enough linking cross body entries for the current specified number.
-    if (plistData.at(curBody).listCrossBody_hydro().size() < force + 1)
-    {
-        //Add enough linking cross body entries.
-        plistData.at(curBody).listCrossBody_hydro().resize(force + 1);
-    }
-
-    //Check if the list of linked cross-bodies has enough entries for the current number specified.
-    if (pCompCrossBod_hydro.size() < force + 1)
-    {
-        //Add enough entries.
-        pCompCrossBod_hydro.resize(force + 1);
-    }
-
-    //Check if the designated force has enough derivatives for the current number specified.
-    if (plistData.at(curBody).listForceCross_hydro(force)->listDerivative().size() < ord + 1)
-    {
-        //Add enough derivatives.
-        plistData.at(curBody).listForceCross_hydro(force)->listDerivative().resize(ord + 1);
-    }
-
-    //temporary variable for data transfer
-    double input;
-
-    //Get the input value.
-    Derivative* tempDeriv = &(plistBody->at(curBody).listForceCross_hydro(force)->listDerivative(ord));
     try
     {
-        //Get the input value
-        input = tempDeriv->listDataEquation(eqn).listDataVariable(var);
-    }
-    catch(...)
-    {
-        //For any error, set value to zero.
-        input = 0;
-    }
+        //Turn off active force evaluation.
+        pActiveOnly = false;
 
-    //Write the input value.
-    plistData.at(curBody).listForceCross_hydro(force)->listDerivative(ord).
-            listDataEquation(eqn).addVariable(input, var);
+        //Check if there are enough bodies for the current called functions.
+        //All happens in the fillBodies function.
+        fillBodies();
 
-    //Copy over the data Index.
-    plistData.at(curBody).listForceCross_hydro(force)->listDerivative(ord).
-            listDataEquation(eqn).refDataIndex() =
-                plistBody->at(curBody).listForceCross_hydro(force)->listDerivative(ord).
-                listDataEquation(eqn).getDataIndex();
-
-    //Copy over the linked body reference.
-    for (unsigned int i = 0; i < plistBody->size(); i++)
-    {
-        //Check if the cross body force matches.
-        if (plistBody->at(i) == plistBody->at(curBody).listCrossBody_hydro(force))
+        //Check if the designated body has enough forces for the current specified number.
+        if (plistData.at(curBody).listForceCross_hydro().size() < force + 1)
         {
-            //True.  Copy integer and stop.
-            pCompCrossBod_hydro.at(force) = i;
-            break;
+            //Add enough forces.
+            plistData.at(curBody).listForceCross_hydro().resize(force + 1);
+
+            for (unsigned int i = 0; i < plistData.at(curBody).listForceCross_hydro().size(); i++)
+            {
+                ForceCross* temp = new ForceCross();
+                plistData.at(curBody).listForceCross_hydro().at(i) = temp;
+            }
         }
+
+        //Check if the designated body has enough linking cross body entries for the current specified number.
+        if (plistData.at(curBody).listCrossBody_hydro().size() < force + 1)
+        {
+            //Add enough linking cross body entries.
+            plistData.at(curBody).listCrossBody_hydro().resize(force + 1);
+        }
+
+        //Check if the list of linked cross-bodies has enough entries for the current number specified.
+        if (pCompCrossBod_hydro.size() < force + 1)
+        {
+            //Add enough entries.
+            pCompCrossBod_hydro.resize(force + 1);
+        }
+
+        //Check if the designated force has enough derivatives for the current number specified.
+        if (plistData.at(curBody).listForceCross_hydro(force)->listDerivative().size() < ord + 1)
+        {
+            //Add enough derivatives.
+            plistData.at(curBody).listForceCross_hydro(force)->listDerivative().resize(ord + 1);
+        }
+
+        //temporary variable for data transfer
+        double input;
+
+        //Get the input value.
+        Derivative* tempDeriv = &(plistBody->at(curBody).listForceCross_hydro(force)->listDerivative(ord));
+        try
+        {
+            //Get the input value
+            input = tempDeriv->listDataEquation(eqn).listDataVariable(var);
+        }
+        catch(...)
+        {
+            //For any error, set value to zero.
+            input = 0;
+        }
+
+        //Write the input value.
+        plistData.at(curBody).listForceCross_hydro(force)->listDerivative(ord).
+                listDataEquation(eqn).addVariable(input, var);
+
+        //Copy over the data Index.
+        plistData.at(curBody).listForceCross_hydro(force)->listDerivative(ord).
+                listDataEquation(eqn).refDataIndex() =
+                    plistBody->at(curBody).listForceCross_hydro(force)->listDerivative(ord).
+                    listDataEquation(eqn).getDataIndex();
+
+        //Copy over the linked body reference.
+        for (unsigned int i = 0; i < plistBody->size(); i++)
+        {
+            //Check if the cross body force matches.
+            if (plistBody->at(i) == plistBody->at(curBody).listCrossBody_hydro(force))
+            {
+                //True.  Copy integer and stop.
+                pCompCrossBod_hydro.at(force) = i;
+                break;
+            }
+        }
+    }
+    catch(const std::exception &err)
+    {
+        //Error handler.
+        logStd.Notify();
+        logErr.Write(ID + string(err.what()));
     }
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
 void MotionModel::useForceCross_hydro(unsigned int force, unsigned int ord, unsigned int eqn)
 {
-    //Check if the designated body has enough forces for the current specified number.
-    if (plistData.at(curBody).listForceCross_hydro().size() < force + 1)
+    try
     {
-        //Add enough forces.
-        plistData.at(curBody).listForceCross_hydro().resize(force + 1);
-
-        for (unsigned int i = 0; i < plistData.at(curBody).listForceCross_hydro().size(); i++)
+        //Check if the designated body has enough forces for the current specified number.
+        if (plistData.at(curBody).listForceCross_hydro().size() < force + 1)
         {
-            ForceCross* temp = new ForceCross();
-            plistData.at(curBody).listForceCross_hydro().at(i) = temp;
+            //Add enough forces.
+            plistData.at(curBody).listForceCross_hydro().resize(force + 1);
+
+            for (unsigned int i = 0; i < plistData.at(curBody).listForceCross_hydro().size(); i++)
+            {
+                ForceCross* temp = new ForceCross();
+                plistData.at(curBody).listForceCross_hydro().at(i) = temp;
+            }
+        }
+
+        //Check if the designated force has enough derivatives for the current number specified.
+        if (plistData.at(curBody).listForceCross_hydro(force)->listDerivative().size() < ord + 1)
+        {
+            //Add enough derivatives.
+            plistData.at(curBody).listForceCross_hydro(force)->listDerivative().resize(ord + 1);
+        }
+
+        //Get the current number of variables
+        unsigned int var = plistBody->at(curBody).
+                  listForceCross_hydro(force)->
+                  listDerivative(ord).
+                  listDataEquation(eqn).
+                  listDataVariable().size() - 1;
+
+        //For each variable, call the useForce method.
+        for (unsigned int i = 0; i <= var; i++)
+        {
+            useForceCross_hydro(force, ord, eqn, i);
         }
     }
-
-    //Check if the designated force has enough derivatives for the current number specified.
-    if (plistData.at(curBody).listForceCross_hydro(force)->listDerivative().size() < ord + 1)
+    catch(const std::exception &err)
     {
-        //Add enough derivatives.
-        plistData.at(curBody).listForceCross_hydro(force)->listDerivative().resize(ord + 1);
-    }
-
-    //Get the current number of variables
-    unsigned int var = plistBody->at(curBody).
-              listForceCross_hydro(force)->
-              listDerivative(ord).
-              listDataEquation(eqn).
-              listDataVariable().size() - 1;
-
-    //For each variable, call the useForce method.
-    for (unsigned int i = 0; i <= var; i++)
-    {
-        useForceCross_hydro(force, ord, eqn, i);
+        //Error handler.
+        logStd.Notify();
+        logErr.Write(ID + string(err.what()));
     }
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
 void MotionModel::useForceCross_hydro(unsigned int force, unsigned int ord)
 {
-    //Check if the designated body has enough forces for the current specified number.
-    if (plistData.at(curBody).listForceCross_hydro().size() < force + 1)
+    try
     {
-        //Add enough forces.
-        plistData.at(curBody).listForceCross_hydro().resize(force + 1);
-
-        for (unsigned int i = 0; i < plistData.at(curBody).listForceCross_hydro().size(); i++)
+        //Check if the designated body has enough forces for the current specified number.
+        if (plistData.at(curBody).listForceCross_hydro().size() < force + 1)
         {
-            ForceCross* temp = new ForceCross();
-            plistData.at(curBody).listForceCross_hydro().at(i) = temp;
+            //Add enough forces.
+            plistData.at(curBody).listForceCross_hydro().resize(force + 1);
+
+            for (unsigned int i = 0; i < plistData.at(curBody).listForceCross_hydro().size(); i++)
+            {
+                ForceCross* temp = new ForceCross();
+                plistData.at(curBody).listForceCross_hydro().at(i) = temp;
+            }
+        }
+
+        //Check if the designated force has enough derivatives for the current number specified.
+        if (plistData.at(curBody).listForceCross_hydro(force)->listDerivative().size() < ord + 1)
+        {
+            //Add enough derivatives.
+            plistData.at(curBody).listForceCross_hydro(force)->listDerivative().resize(ord + 1);
+        }
+
+        //Get the current number of equations
+        int eqn = plistBody->at(curBody).
+                  listForceCross_hydro(force)->
+                  listDerivative(ord).
+                  listDataEquation().size() - 1;
+
+        //Iterate through equation and apply the useForce method.
+        for (int i = 0; i <= eqn; i++)
+        {
+            useForceCross_hydro(force, ord, i);
         }
     }
-
-    //Check if the designated force has enough derivatives for the current number specified.
-    if (plistData.at(curBody).listForceCross_hydro(force)->listDerivative().size() < ord + 1)
+    catch(const std::exception &err)
     {
-        //Add enough derivatives.
-        plistData.at(curBody).listForceCross_hydro(force)->listDerivative().resize(ord + 1);
-    }
-
-    //Get the current number of equations
-    int eqn = plistBody->at(curBody).
-              listForceCross_hydro(force)->
-              listDerivative(ord).
-              listDataEquation().size() - 1;
-
-    //Iterate through equation and apply the useForce method.
-    for (int i = 0; i <= eqn; i++)
-    {
-        useForceCross_hydro(force, ord, i);
+        //Error handler.
+        logStd.Notify();
+        logErr.Write(ID + string(err.what()));
     }
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
 void MotionModel::useForceCross_hydro(unsigned int force)
 {
-    //Check if the designated body has enough forces for the current specified number.
-    if (plistData.at(curBody).listForceCross_hydro().size() < force + 1)
+    try
     {
-        //Add enough forces.
-        plistData.at(curBody).listForceCross_hydro().resize(force + 1);
-
-        for (unsigned int i = 0; i < plistData.at(curBody).listForceCross_hydro().size(); i++)
+        //Check if the designated body has enough forces for the current specified number.
+        if (plistData.at(curBody).listForceCross_hydro().size() < force + 1)
         {
-            ForceCross* temp = new ForceCross();
-            plistData.at(curBody).listForceCross_hydro().at(i) = temp;
+            //Add enough forces.
+            plistData.at(curBody).listForceCross_hydro().resize(force + 1);
+
+            for (unsigned int i = 0; i < plistData.at(curBody).listForceCross_hydro().size(); i++)
+            {
+                ForceCross* temp = new ForceCross();
+                plistData.at(curBody).listForceCross_hydro().at(i) = temp;
+            }
+        }
+
+        //Get the maximum number of forces
+        int ord = plistBody->at(curBody).
+                  listForceCross_hydro(force)->
+                  listDerivative().size() - 1;
+
+        //Iterate through for each derivative and apply the useForce method
+        for (int i = 0; i <= ord; i++)
+        {
+            useForceCross_hydro(force, i);
         }
     }
-
-    //Get the maximum number of forces
-    int ord = plistBody->at(curBody).
-              listForceCross_hydro(force)->
-              listDerivative().size() - 1;
-
-    //Iterate through for each derivative and apply the useForce method
-    for (int i = 0; i <= ord; i++)
+    catch(const std::exception &err)
     {
-        useForceCross_hydro(force, i);
+        //Error handler.
+        logStd.Notify();
+        logErr.Write(ID + string(err.what()));
     }
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
 void MotionModel::useForceCross_hydro()
 {
-    //Get the number of forces
-    int force = plistBody->at(curBody).
-                listForceCross_hydro().size() - 1;
-
-    //Call the useForce method for each force object.
-    for (int i = 0; i <= force; i++)
+    try
     {
-        useForceCross_hydro(i);
+        //Get the number of forces
+        int force = plistBody->at(curBody).
+                    listForceCross_hydro().size() - 1;
+
+        //Call the useForce method for each force object.
+        for (int i = 0; i <= force; i++)
+        {
+            useForceCross_hydro(i);
+        }
+    }
+    catch(const std::exception &err)
+    {
+        //Error handler.
+        logStd.Notify();
+        logErr.Write(ID + string(err.what()));
     }
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
 void MotionModel::useForceMass(unsigned int eqn, unsigned int var)
 {
-    //Turn off active force evaluation.
-    pActiveOnly = false;
-
-    //Check if there are enough bodies for the current called functions.
-    //All happens in the fillBodies function.
-    fillBodies();
-
-    //Don't need to check that the mass matrix created successfully.
-    //Construction of body object automatically initializes with a mass matrix of the correct size.
-
-    int indexeqn;       //Equation index
-    int indexvar;       //Variable index
-
     try
     {
-        //Check if current body is assigned a value.
-        if (curBody < 0 || curBody > plistData.size() - 1)
+        //Turn off active force evaluation.
+        pActiveOnly = false;
+
+        //Check if there are enough bodies for the current called functions.
+        //All happens in the fillBodies function.
+        fillBodies();
+
+        //Don't need to check that the mass matrix created successfully.
+        //Construction of body object automatically initializes with a mass matrix of the correct size.
+
+        int indexeqn;       //Equation index
+        int indexvar;       //Variable index
+
+        try
         {
-            //Throw error for current body not defined.
-            throw std::runtime_error("Error:  index for current body not defined.");
+            //Check if current body is assigned a value.
+            if (curBody < 0 || curBody > plistData.size() - 1)
+            {
+                //Throw error for current body not defined.
+                throw std::runtime_error("Error:  index for current body not defined.");
+            }
+
+            //Get vector occurrence index for equation and variable
+            indexeqn = findIndex(eqn);
+            indexvar = findIndex(var);
+
+            //Copy over the mass matrix entry.
+            plistData.at(curBody).MassMatrix()(indexeqn, indexvar) =
+                    plistBody->at(curBody).getMassMatrix()(indexeqn, indexvar);
         }
-
-        //Get vector occurrence index for equation and variable
-        indexeqn = findIndex(eqn);
-        indexvar = findIndex(var);
-
-        //Copy over the mass matrix entry.
-        plistData.at(curBody).MassMatrix()(indexeqn, indexvar) =
-                plistBody->at(curBody).getMassMatrix()(indexeqn, indexvar);
+        catch(const std::exception &err)
+        {
+            logStd.Notify();
+            logErr.Write(ID + std::string(err.what()));
+        }
     }
     catch(const std::exception &err)
     {
+        //Error handler.
         logStd.Notify();
-        logErr.Write(ID + std::string(err.what()));   
+        logErr.Write(ID + string(err.what()));
     }
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
 void MotionModel::useForceMass(unsigned int eqn)
 {
-    //Turn off active force evaluation.
-    pActiveOnly = false;
-
-    //Check if there are enough bodies for the current called functions.
-    //All happens in the fillBodies function.
-    fillBodies();
-
-    //Don't need to check that the mass matrix created successfully.
-    //Construction of body object automatically initializes with a mass matrix of the correct size.
-
-    int indexeqn;       //Equation index
-    int indexvar;       //Variable index
-
-    //Get total number of variables
-    int var = plistData.at(curBody).getMassMatrix().n_cols - 1;
-
-    //Copy over all variables in the specified equation
-    for (int i = 0; i <= var; i++)
+    try
     {
-        try
-        {
-            //Get vector occurrence index for equation and variable
-            indexeqn = findIndex(eqn);
-            indexvar = findIndex(i);
+        //Turn off active force evaluation.
+        pActiveOnly = false;
 
-            plistData.at(curBody).MassMatrix()(indexeqn, indexvar) =
-                    plistBody->at(curBody).getMassMatrix()(indexeqn, indexvar);
-        }
-        catch(...)
+        //Check if there are enough bodies for the current called functions.
+        //All happens in the fillBodies function.
+        fillBodies();
+
+        //Don't need to check that the mass matrix created successfully.
+        //Construction of body object automatically initializes with a mass matrix of the correct size.
+
+        int indexeqn;       //Equation index
+        int indexvar;       //Variable index
+
+        //Get total number of variables
+        int var = plistData.at(curBody).getMassMatrix().n_cols - 1;
+
+        //Copy over all variables in the specified equation
+        for (int i = 0; i <= var; i++)
         {
-            //Do nothing
+            try
+            {
+                //Get vector occurrence index for equation and variable
+                indexeqn = findIndex(eqn);
+                indexvar = findIndex(i);
+
+                plistData.at(curBody).MassMatrix()(indexeqn, indexvar) =
+                        plistBody->at(curBody).getMassMatrix()(indexeqn, indexvar);
+            }
+            catch(...)
+            {
+                //Do nothing
+            }
         }
+    }
+    catch(const std::exception &err)
+    {
+        //Error handler.
+        logStd.Notify();
+        logErr.Write(ID + string(err.what()));
     }
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
 void MotionModel::useForceMass()
 {
-    //Turn off active force evaluation.
-    pActiveOnly = false;
+    try
+    {
+        //Turn off active force evaluation.
+        pActiveOnly = false;
 
-    //Check if there are enough bodies for the current called functions.
-    //All happens in the fillBodies function.
-    fillBodies();
+        //Check if there are enough bodies for the current called functions.
+        //All happens in the fillBodies function.
+        fillBodies();
 
-    //Don't need to check that the mass matrix created successfully.
-    //Construction of body object automatically initializes with a mass matrix of the correct size.
+        //Don't need to check that the mass matrix created successfully.
+        //Construction of body object automatically initializes with a mass matrix of the correct size.
 
-    //Copy the matrix directly over
-    plistData.at(curBody).MassMatrix() = plistBody->at(curBody).getMassMatrix();
+        //Copy the matrix directly over
+        plistData.at(curBody).MassMatrix() = plistBody->at(curBody).getMassMatrix();
+    }
+    catch(const std::exception &err)
+    {
+        //Error handler.
+        logStd.Notify();
+        logErr.Write(ID + string(err.what()));
+    }
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
@@ -1582,7 +1885,7 @@ complex<double> MotionModel::Evaluate(int eqn)
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-int MotionModel::numEquations()
+int MotionModel::getNumEquations()
 {
     //Reports the number of equations used.
     return plistEquations.size();
@@ -1602,7 +1905,7 @@ int &MotionModel::listDataIndex(unsigned int index)
     try
     {
         //Check if requested index exceeds limits of number of equations
-        if (index > numEquations())
+        if (index > getNumEquations())
             throw std::out_of_range("The requested index exceeds the limits of number of equations.");
 
         //Not out of bounds.  Instead resize vector and insert data.
@@ -1623,9 +1926,9 @@ int &MotionModel::listDataIndex(unsigned int index)
 std::vector<int> MotionModel::getDataIndex()
 {
     //Create a vector containing the data indices used by the equations.
-    pDataIndex.resize(this->numEquations());
+    pDataIndex.resize(this->getNumEquations());
 
-    for (int i = 0; i < this->numEquations(); i++)
+    for (int i = 0; i < this->getNumEquations(); i++)
     {
         pDataIndex.at(i) = plistEquations.at(i)->getDataIndex();
     }
@@ -1635,7 +1938,7 @@ std::vector<int> MotionModel::getDataIndex()
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-int MotionModel::MaxDataIndex()
+int MotionModel::getMaxDataIndex()
 {
     vector<int> listIndex;
 

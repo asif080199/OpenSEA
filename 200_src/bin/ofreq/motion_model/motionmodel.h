@@ -50,6 +50,7 @@
 #endif
 #include "../global_objects/body.h"
 #include "../system_objects/ofreqcore.h"
+#include "../global_objects/solutionset.h"
 
 //######################################### Class Separator ###########################################################
 //Namespace declarations
@@ -89,11 +90,13 @@ namespace ofreq
  * for equations.  The use of functions for the class should use the following sequence.
  * 1.)  Create class:  constructor
  * 2.)  Set body data (if not already done in constructor):  setListBodies
- * 3.)  Set the current body working with:  setBody
- * 4.)  Set the current wave frequency working with:  setFreq
- * 5.)  Set whether calculating coefficients or values (default:  Values):  calcCoefficient
- * 6.)  Reset the forces you wish to use.
- * 7.)  Set the new list of forces you wish to use.:
+ * 3.)  Set the pointer to the solution set (only if pulling actual force values).
+ * 4.)  Set the wave direction index (only if pulling actual force values).
+ * 5.)  Set the current body working with:  setBody
+ * 6.)  Set the current wave frequency working with:  setFreq
+ * 7.)  Set whether calculating coefficients or values (default:  Values):  calcCoefficient
+ * 8.)  Reset the forces you wish to use.
+ * 9.)  Set the new list of forces you wish to use.:
  *      useForceAct_usr
  *      useForceAct_hydro
  *      useForceReact_usr
@@ -101,7 +104,7 @@ namespace ofreq
  *      useForceCross_usr
  *      useForceCross_hydro
  *      useForceMass
- * 7.)  Evaluate the motion model to produce a single complex value result.
+ * 10.)  Evaluate the motion model to produce a single complex value result.
  */
 
 class MotionModel : oFreqCore
@@ -267,19 +270,76 @@ public:
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
-     * @brief Sets the current operating frequency for the function.  Only necessary when calculating true forces
-     * and using derivatives defined in the motion model.  Otherwise, you can safely ignore this function.
-     * @param Double precision value that sets the current wave frequency value.
+     * @brief Sets the index of wave direction.
+     * @param dirIn Integer, variable passed by value.  The index of the current wave direction.
      */
-    void setFreq(double freq);
+    void setWaveDirInd(int dirIn);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
-     * @brief Gets the current operating frequency for the function.  Only necessary when calculating true forces
+     * @brief Gets the index of wave direction.
+     * @return Integer, variable passed by value.  THe index of the current wave direction.
+     */
+    int getWaveDirInd();
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Sets the current operating frequency for the function.  Only necessary when calculating true forces
      * and using derivatives defined in the motion model.  Otherwise, you can safely ignore this function.
+     * @param freq Integer value that gets the index of the current wave frequency.  Value of the current wave frequency is
+     * retrieved from there.
+     * @param freqVal Double, variable passed by value.  The actual value of the frequency index.
+     */
+    void setFreq(int freq, double freqVal);
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Gets the current operating frequency for the function.
+     *
+     * Only necessary when calculating true forces and using derivatives defined in the motion model.  Otherwise,
+     * you can safely ignore this function.
      * @return Double precision variable that is the current wave frequency value.  Variable returned by value.
      */
     double getFreq();
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Gets the index of the current operating frequency for the function.
+     *
+     * Only necessary when calculating true forces and using derivatives defined in the motion model.
+     * Otherwise, you can safely ignore this function.
+     * @return Integer variable, passed by value.  The index of the current wave frequency.  Used to retrieve the
+     * correct set of solution data.
+     */
+    int getFreqInd();
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Sets a pointer to the solution set.
+     * @param ptSolIn Pointer, variable passed by value.  Pointer to the set of solution objects contain in the
+     * system object.  We can not directly reference the system object, as that causes troubles with recursive class
+     * declarations in the compiler.
+     */
+    void setSolutionSet(std::vector<ofreq::SolutionSet> *ptSolIn);
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Retrieves the solution set.
+     * @return Returns vector of solution set objects, variable passed by reference. Each solution
+     * object represents the solutions for a single body object.
+     */
+    std::vector<ofreq::SolutionSet> &listSolutionSet();
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Retrieves a single SolutionSet object from the list.
+     *
+     * Each SolutionSet object represents the solutions for a single Body object.
+     * @param indexIn Integer, variable passed by value.  The index for the single object you want to retrieve
+     * from the list.
+     * @return Returns SolutionSet object, variable passed by reference.
+     */
+    ofreq::SolutionSet &listSolutionSet(int indexIn);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -849,7 +909,7 @@ public:
      * equations to prepare for.
      * @return Returns the number of equations used in the motion model.
      */
-    int numEquations();
+    int getNumEquations();
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -904,7 +964,7 @@ public:
      * are reserved for standard 6dof models.
      * @return Returns integer number representing the maximum number of the data index found from all equations.
      */
-    int MaxDataIndex();
+    int getMaxDataIndex();
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -1074,6 +1134,13 @@ protected:
 private:
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
+     * @brief Pointer to the vector of solutions generated.
+     */
+    std::vector<ofreq::SolutionSet> *ptSolutionSet;
+
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
      * @brief Name for the motion model
      *
      * Name for the motion model.  Used by the user to identify the motion model.
@@ -1110,6 +1177,18 @@ private:
      * @brief Current wave frequency.  Used for calculating derivatives.
      */
     double pFreq;
+
+    //------------------------------------------Function Separator --------------------------------------------------------
+    /**
+     * @brief Index of the current frequency.  Used to retrieve solution data when calculating derivatives.
+     */
+    int pFreqInd;
+
+    //------------------------------------------Function Separator --------------------------------------------------------
+    /**
+     * @brief Index of wave direction.
+     */
+    int pWaveInd;
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**

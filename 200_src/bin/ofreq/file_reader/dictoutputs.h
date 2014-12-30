@@ -42,10 +42,21 @@
 
 //Include Report objects.
 #include "../reports/report.h"
-#include "../reports/repglobacceleration.h"
-#include "../reports/repglobmotion.h"
-#include "../reports/repglobsolution.h"
-#include "../reports/repglobvelocity.h"
+#include "../reports/repbodacceleration.h"
+#include "../reports/repbodmotion.h"
+#include "../reports/repbodsolution.h"
+#include "../reports/repbodvelocity.h"
+#include "../reports/replocalsolution.h"
+#include "../reports/replocalacceleration.h"
+#include "../reports/repwavespectra.h"
+#include "../reports/repstaticbodyaccel.h"
+#include "../reports/repdesignaccel.h"
+#include "../reports/repdynfreeboard.h"
+#include "../reports/repbodforces.h"
+#include "../reports/repbodpower.h"
+#include "../reports/repcapturewidth.h"
+#include "../reports/repreleff.h"
+#include "../reports/repabseff.h"
 
 //######################################### Class Separator ###########################################################
 //Namespace declarations
@@ -151,15 +162,27 @@ private:
 
     //------------------------------------------Function Separator ----------------------------------------------------
     //Class Name constants
-    static std::string OBJECT_REPGLOBACCELERATION;  /**< Key to declare global acceleration object. */
-    static std::string OBJECT_REPGLOBVELOCITY;  /**< Key to declare global velocity object. */
-    static std::string OBJECT_REPGLOBMOTION;    /**< Key to declare global motion object. */
-    static std::string OBJECT_REPGLOBSOLUTION;  /**< Key to declare global solution object. */
+    static std::string OBJECT_REPBODACCELERATION;  /**< Key to declare global acceleration object. */
+    static std::string OBJECT_REPBODVELOCITY;  /**< Key to declare global velocity object. */
+    static std::string OBJECT_REPBODMOTION;    /**< Key to declare global motion object. */
+    static std::string OBJECT_REPBODSOLUTION;  /**< Key to declare global solution object. */
+    static std::string OBJECT_REPLOCALACCELERATION; /**< Key to declare local acceleration object. */
+    static std::string OBJECT_REPLOCALSOLUTION; /**< Key to declare local solution object. */
+    static std::string OBJECT_REPWAVESPECTRA; /**< Key to declare wave spectra object. */
+    static std::string OBJECT_REPSTATICBODACCEL; /**< Key to declare static body acceleration report. */
+    static std::string OBJECT_REPDESIGNACCEL;   /**< Key to declare design acceleration report. */
+    static std::string OBJECT_REPDYNFREEBOARD;  /**< Key to declare dynamic freeboard report. */
+    static std::string OBJECT_REPBODFORCES; /**< Key to declare body forces report. */
+    static std::string OBJECT_REPBODPOWER;  /**< Key to declare body power report. */
+    static std::string OBJECT_REPCAPWIDTH;  /**< Key to declare capture width report. */
+    static std::string OBJECT_REPRELEFF;  /**< Key to declare report of relative efficiency. */
+    static std::string OBJECT_REPABSEFF;  /**< Key to declare report of absolute efficiency. */
 
     //------------------------------------------Function Separator ----------------------------------------------------
     //Keyword name constants
     static std::string KEY_BODY;    /**< Key to declare which body report is associated with. */
     static std::string KEY_NAME;    /**< Key to declare name of report object. */
+    static std::string KEY_RAO;     /**< Key to calculate RAO or not. */
 };
 
 }   //Namespace ofreq

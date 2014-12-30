@@ -1,0 +1,48 @@
+/*--------------------------------*- C++ -*------------------------------------*\
+| O pen         | OpenSea: The Open Source Seakeeping Suite            		|
+| S eakeeping   | Version:  0.20                                                |
+| E valuation   | Web:      www.opensea.dmsonline.us                            |
+| A nalysis     |                                                               |
+\*-----------------------------------------------------------------------------*/
+
+
+
+seafile {
+  version  1.0;
+  format  ascii;
+  object  repWaveSpectra;
+}
+
+
+
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+repWaveSpectra {
+  name "Body Wave Spectra";
+  body "body1";
+  output "wave_amp";
+  data {
+    frequency 1;
+    value 5.000000e+00;
+  }
+
+  data {
+    frequency 2;
+    value 5.000000e+00;
+  }
+
+  data {
+    frequency 1;
+    value 1.000000e+00;
+  }
+
+  data {
+    frequency 2;
+    value 1.000000e+00;
+  }
+
+}
+// ************************************************************************* //
+
+
+

@@ -1,0 +1,56 @@
+/*--------------------------------*- C++ -*------------------------------------*\
+| O pen         | OpenSea: The Open Source Seakeeping Suite            		|
+| S eakeeping   | Version:  0.20                                                |
+| E valuation   | Web:      www.opensea.dmsonline.us                            |
+| A nalysis     |                                                               |
+\*-----------------------------------------------------------------------------*/
+
+
+
+seafile {
+  version  1.0;
+  format  ascii;
+  object  repDynamicFreeboard;
+}
+
+
+
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+repDynamicFreeboard {
+  name "Dynamic freeboard";
+  body "body1";
+  location (
+    1.000000e+00
+    2.000000e+00
+    3.000000e+00
+  );
+  data {
+    frequency 1;
+    value (-5.000000e+00,0.000000e+00);
+  }
+
+  data {
+    frequency 2;
+    value (-5.000000e+00,0.000000e+00);
+  }
+
+
+
+  // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - //
+  //RAO Data
+  RAO {
+    frequency 1;
+    value (-1.000000e+00,0.000000e+00);
+  }
+
+  RAO {
+    frequency 2;
+    value (-1.000000e+00,0.000000e+00);
+  }
+
+}
+// ************************************************************************* //
+
+
+

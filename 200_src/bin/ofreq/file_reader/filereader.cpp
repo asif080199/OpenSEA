@@ -434,9 +434,6 @@ int FileReader::readForces()
 
     logStd.Write(". . . done.",3);
 
-    //Write output
-    return out;
-
     bool Stop = false;       //Boolean to record if warning should require stopping program execution.
 
     //Perform some sensibility checks to ensure program is sensible.
@@ -601,6 +598,9 @@ int FileReader::readForces()
             logErr.Write(file + string(err.what()), 1);
         }
     }
+
+    //Write output
+    return out;
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
@@ -620,9 +620,6 @@ int FileReader::readSeaEnv()
     int out = readFile(filename);
 
     logStd.Write(". . . done",3);
-
-    //Write output
-    return out;
 
     bool Stop = false;       //Boolean to record if warning should require stopping program execution.
 
@@ -656,14 +653,17 @@ int FileReader::readSeaEnv()
         for (unsigned int i = 0; i < ptSystem->listWaveSpec().size(); i++)
         {
             //Assign wave spectrum to variable.
-            osea::WaveSpecBase *mySpec;
-            osea::SpecBretschneider *myBret;
-            osea::SpecJONSWAP *myJON;
-            osea::SpecPM *myPM;
+            osea::WaveSpecBase nameSpec;
+            osea::SpecBretschneider nameBret;
+            osea::SpecJONSWAP nameJON;
+            osea::SpecPM namePM;
 
             //Check on items for Bretschneider wave spectra.
-            if (typeid(*(ptSystem->listWaveSpecPt(i))) == typeid(*myBret))
-            {
+            if (typeid(*(ptSystem->listWaveSpecPt(i))) == typeid(nameBret))
+            {               
+                //Create a pointer
+                osea::SpecBretschneider *myBret;
+
                 //Assign wave spectra.
                 myBret = static_cast<osea::SpecBretschneider *>(ptSystem->listWaveSpecPt(i));
 
@@ -673,7 +673,7 @@ int FileReader::readSeaEnv()
                 {
                     Stop = false;
                     std::string msg = "Significant wave height not set on wave spectrum.";
-                    msg = msg + "  Spectrum name:  " + mySpec->getName();
+                    msg = msg + "  Spectrum name:  " + myBret->getName();
                     throw std::runtime_error(msg);
                 }
 
@@ -683,14 +683,17 @@ int FileReader::readSeaEnv()
                 {
                     Stop = false;
                     std::string msg = "Wave period not set on wave spectrum.";
-                    msg = msg + "  Spectrum name:  " + mySpec->getName();
+                    msg = msg + "  Spectrum name:  " + myBret->getName();
                     throw std::runtime_error(msg);
                 }
             }
 
             //Check on items for JONSWAP wave spectra.
-            if (typeid(*(ptSystem->listWaveSpecPt(i))) == typeid(*myJON))
+            if (typeid(*(ptSystem->listWaveSpecPt(i))) == typeid(nameJON))
             {
+                //Create a pointer
+                osea::SpecJONSWAP *myJON;
+
                 //Assign wave spectra.
                 myJON = static_cast<osea::SpecJONSWAP *>(ptSystem->listWaveSpecPt(i));
 
@@ -700,7 +703,7 @@ int FileReader::readSeaEnv()
                 {
                     Stop = false;
                     std::string msg = "Significant wave height not set on wave spectrum.";
-                    msg = msg + "  Spectrum name:  " + mySpec->getName();
+                    msg = msg + "  Spectrum name:  " + myJON->getName();
                     throw std::runtime_error(msg);
                 }
 
@@ -710,14 +713,17 @@ int FileReader::readSeaEnv()
                 {
                     Stop = false;
                     std::string msg = "Wave period not set on wave spectrum.";
-                    msg = msg + "  Spectrum name:  " + mySpec->getName();
+                    msg = msg + "  Spectrum name:  " + myJON->getName();
                     throw std::runtime_error(msg);
                 }
             }
 
             //Check on items for Pierson-Moskowitz spectra.
-            if (typeid(*(ptSystem->listWaveSpecPt(i))) == typeid(*myPM))
+            if (typeid(*(ptSystem->listWaveSpecPt(i))) == typeid(namePM))
             {
+                //Create a pointer
+                osea::SpecPM *myPM;
+
                 //Assign wave spectra
                 myPM = static_cast<osea::SpecPM *>(ptSystem->listWaveSpecPt(i));
 
@@ -728,7 +734,7 @@ int FileReader::readSeaEnv()
                 {
                     Stop = false;
                     std::string msg = "No significant wave height or wind speed defined for Pierson-Moskowitz spectra.";
-                    msg = msg + "  Spectrum name:  " + mySpec->getName();
+                    msg = msg + "  Spectrum name:  " + myPM->getName();
                     throw std::runtime_error(msg);
                 }
             }
@@ -768,6 +774,9 @@ int FileReader::readSeaEnv()
             logErr.Write(file + string(err.what()), 1);
         }
     }
+
+    //Write output
+    return out;
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
@@ -787,9 +796,6 @@ int FileReader::readData()
     int out = readFile(filename);
 
     logStd.Write(". . . done.",3);
-
-    //Write output
-    return out;
 
     bool Stop = false;       //Boolean to record if warning should require stopping program execution.
 
@@ -826,6 +832,9 @@ int FileReader::readData()
             logErr.Write(file + string(err.what()), 1);
         }
     }
+
+    //Write output
+    return out;
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
@@ -846,9 +855,6 @@ int FileReader::readOutputs()
 
     logStd.Write(". . . done.",3);
 
-    //Write output
-    return out;
-
     bool Stop = false;       //Boolean to record if warning should require stopping program execution.
 
     //Perform some sensibility checks to ensure program is sensible.
@@ -868,7 +874,17 @@ int FileReader::readOutputs()
 
             //Check that every output has a body assigned to it.
             if (ptRep->getBody() == NULL)
+            {
+                Stop = true;
                 throw std::runtime_error(string("No body assigned to report:  ") + ptRep->getName());
+            }
+
+            //Check that body was found in the list of bodies.
+            if (ptRep->getBodIndex() < 0)
+            {
+                Stop = true;
+                throw std::runtime_error(string("No body assigned to report:  ") + ptRep->getName());
+            }
         }
         catch(const std::exception &err)
         {
@@ -892,6 +908,9 @@ int FileReader::readOutputs()
             }
         }
     }
+
+    //Write output
+    return out;
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
