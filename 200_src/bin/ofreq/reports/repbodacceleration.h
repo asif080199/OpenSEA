@@ -10,8 +10,7 @@
  *---------------------------------------------------------------------------------------------------------------------
  *Date          Author                  Description
  *---------------------------------------------------------------------------------------------------------------------
- *Dec 13, 2014	Nicholas Barczak		Initially Created
- *Dec 20, 2014  Nicholas Barczak        Debugged and updated to Rev 1.0
+ *Mar 29, 2015	Nicholas Barczak		Initially Created
  *
 \*-------------------------------------------------------------------------------------------------------------------*/
 
@@ -36,8 +35,8 @@
 
 //######################################### Class Separator ###########################################################
 //Include statements and headers
-#ifndef REPGLOBACCELERATION_H
-#define REPGLOBACCELERATION_H
+#ifndef REPBODACCELERATION_H
+#define REPBODACCELERATION_H
 #include "repbodsolution.h"
 
 #ifdef Q_OS_WIN
@@ -78,10 +77,11 @@ namespace ofreq
 
 //######################################### Class Separator ###########################################################
 /**
- * @brief Report for global acceleration of the body motions (2nd order derivative.)
+ * @brief Report for body acceleration of the body motions (2nd order derivative.)
  *
- * Provides the solution to the Body motions, in each degree of freedom, for a 2nd order of derivative.  The input
- * must specify the name of the body.  The following keywords are declared:
+ * Provides the solution to the Body motions, in each degree of freedom, for a 2nd order of derivative.  Solution
+ * provided in body coordinate system.  The input must specify the name of the body.  The following keywords are
+ * declared:
  *
  * KEY_BODY:        String.  Name of the body to associate with.
  */
@@ -134,4 +134,4 @@ private:
 
 }   //Namespace osea
 
-#endif // REPGLOBACCELERATION_H
+#endif // REPBODACCELERATION_H

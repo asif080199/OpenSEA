@@ -195,12 +195,6 @@ void Body::setBodyName(string newName)
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-string &Body::getBodyName()
-{
-    return pBodyName;
-}
-
-//------------------------------------------Function Separator --------------------------------------------------------
 void Body::setHydroBodName(string newName)
 {
     hydroBody = newName;
@@ -305,7 +299,7 @@ double Body::getMass()
         try
         {
             //Check the next index
-            index = findIndex(1);   //Check for Y-axis translation.
+            index = findIndex(Ty);   //Check for Y-axis translation.
         }
         catch(...)
         {
@@ -1216,4 +1210,40 @@ int Body::findIndex(int DataIndexIn)
     }
 
     return output;
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+void Body::addBodyConst(double constIn)
+{
+    pBodConst.push_back(constIn);
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+std::vector<double> &Body::listBodyConst()
+{
+    try
+    {
+        return pBodConst;
+    }
+    catch(const std::exception &err)
+    {
+        //Error handler.
+        logStd.Notify();
+        logErr.Write(ID + string(err.what()));
+    }
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+double &Body::listBodyConst(int index)
+{
+    try
+    {
+        return pBodConst.at(index);
+    }
+    catch(const std::exception &err)
+    {
+        //Error handler.
+        logStd.Notify();
+        logErr.Write(ID + string(err.what()));
+    }
 }

@@ -33,10 +33,10 @@ using namespace osea::ofreq;
 
 //------------------------------------------Function Separator ----------------------------------------------------
 //Class Name constants
-string dictOutputs::OBJECT_REPBODACCELERATION = "repBodyAcceleration";
-string dictOutputs::OBJECT_REPBODVELOCITY = "repBodyVelocity";
-string dictOutputs::OBJECT_REPBODMOTION = "repBodyMotion";
-string dictOutputs::OBJECT_REPBODSOLUTION = "repBodySolution";
+string dictOutputs::OBJECT_REPGLOBACCELERATION = "repGlobalAcceleration";
+string dictOutputs::OBJECT_REPGLOBVELOCITY = "repGlobalVelocity";
+string dictOutputs::OBJECT_REPGLOBMOTION = "repGlobalMotion";
+string dictOutputs::OBJECT_REPGLOBSOLUTION = "repGlobalSolution";
 string dictOutputs::OBJECT_REPLOCALACCELERATION = "repLocalAcceleration";
 string dictOutputs::OBJECT_REPLOCALSOLUTION = "repLocalSolution";
 string dictOutputs::OBJECT_REPWAVESPECTRA = "repWaveSpectra";
@@ -48,6 +48,10 @@ string dictOutputs::OBJECT_REPBODPOWER = "repBodyPower";
 string dictOutputs::OBJECT_REPCAPWIDTH = "repCaptureWidth";
 string dictOutputs::OBJECT_REPRELEFF = "repRelativeEfficiency";
 string dictOutputs::OBJECT_REPABSEFF = "repAbsoluteEfficiency";
+string dictOutputs::OBJECT_REPBODYACCELERATION = "repBodyAcceleration";
+string dictOutputs::OBJECT_REPBODYVELOCITY = "repBodyVelocity";
+string dictOutputs::OBJECT_REPBODYMOTION = "repBodyMotion";
+string dictOutputs::OBJECT_REPBODYSOLUTION = "repBodSolution";
 
 //------------------------------------------Function Separator ----------------------------------------------------
 //Keyword name static constants
@@ -187,10 +191,10 @@ int dictOutputs::defineKey(std::string keyIn, std::vector<std::string> valIn)
 //------------------------------------------Function Separator --------------------------------------------------------
 int dictOutputs::defineClass(std::string nameIn)
 {
-    if (nameIn == OBJECT_REPBODACCELERATION)
+    if (nameIn == OBJECT_REPGLOBACCELERATION)
     {
         //Create new Report object and add it to the Reports manager.
-        ptRep = new repBodAcceleration(
+        ptRep = new repGlobAcceleration(
                     &(ptSystem->refReportManager()));
 
         //Add report to Report manager
@@ -199,10 +203,10 @@ int dictOutputs::defineClass(std::string nameIn)
         return 0;
     }
 
-    else if (nameIn == OBJECT_REPBODVELOCITY)
+    else if (nameIn == OBJECT_REPGLOBVELOCITY)
     {
         //Create new Report object and add it to the Reports manager.
-        ptRep = new repBodVelocity(
+        ptRep = new repGlobVelocity(
                     &(ptSystem->refReportManager()));
 
         //Add report to Report manager
@@ -211,10 +215,10 @@ int dictOutputs::defineClass(std::string nameIn)
         return 0;
     }
 
-    else if (nameIn == OBJECT_REPBODMOTION)
+    else if (nameIn == OBJECT_REPGLOBMOTION)
     {
         //Create new Report object and add it to the Reports manager.
-        ptRep = new repBodMotion(
+        ptRep = new repGlobMotion(
                     &(ptSystem->refReportManager()));
 
         //Add report to Report manager
@@ -223,10 +227,10 @@ int dictOutputs::defineClass(std::string nameIn)
         return 0;
     }
 
-    else if (nameIn == OBJECT_REPBODSOLUTION)
+    else if (nameIn == OBJECT_REPGLOBSOLUTION)
     {
         //Create new Report object and add it to the Reports manager.
-        ptRep = new repBodSolution(
+        ptRep = new repGlobSolution(
                     &(ptSystem->refReportManager()));
 
         //Add report to Report manager
@@ -355,6 +359,54 @@ int dictOutputs::defineClass(std::string nameIn)
 
         //Add report to Report manager.
         ptSystem->refReportManager().addReport(ptRep);
+    }
+
+    if (nameIn == OBJECT_REPBODYACCELERATION)
+    {
+        //Create new Report object and add it to the Reports manager.
+        ptRep = new repBodAcceleration(
+                    &(ptSystem->refReportManager()));
+
+        //Add report to Report manager
+        ptSystem->refReportManager().addReport(ptRep);
+
+        return 0;
+    }
+
+    else if (nameIn == OBJECT_REPBODYVELOCITY)
+    {
+        //Create new Report object and add it to the Reports manager.
+        ptRep = new repBodVelocity(
+                    &(ptSystem->refReportManager()));
+
+        //Add report to Report manager
+        ptSystem->refReportManager().addReport(ptRep);
+
+        return 0;
+    }
+
+    else if (nameIn == OBJECT_REPBODYMOTION)
+    {
+        //Create new Report object and add it to the Reports manager.
+        ptRep = new repBodMotion(
+                    &(ptSystem->refReportManager()));
+
+        //Add report to Report manager
+        ptSystem->refReportManager().addReport(ptRep);
+
+        return 0;
+    }
+
+    else if (nameIn == OBJECT_REPBODYSOLUTION)
+    {
+        //Create new Report object and add it to the Reports manager.
+        ptRep = new repBodSolution(
+                    &(ptSystem->refReportManager()));
+
+        //Add report to Report manager
+        ptSystem->refReportManager().addReport(ptRep);
+
+        return 0;
     }
 
     else

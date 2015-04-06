@@ -87,26 +87,26 @@ complex<double> EqnTranslation::setFormula()
 
     //I only want to define a single equation to linear translation.  Add some if statements to change equation
     //definition, depending on equation index.
-    if (this->getDataIndex() == 0) //Data index for X-translation
+    if (this->getDataIndex() == 0) //Data index for X-translation, in computer numbering
     {
         //Add in mass objects.
-        valOut = ForceMass(1) * Ddt(1,2) +  //Direct mass object
-                 ForceMass(5) * Ddt(5,2) +
-                 ForceMass(6) * Ddt(6,2);
+        valOut = ForceMass(1) * Ddt("Func21()",2) +  //Direct mass object
+                 ForceMass(5) * Ddt("Func25()",2) +
+                 ForceMass(6) * Ddt("Func26()",2);
     }
-    else if (this->getDataIndex() == 1) //Data index for Y-translation
+    else if (this->getDataIndex() == 1) //Data index for Y-translation, in computer numbering
     {
         //Add in mass objects.
-        valOut = ForceMass(2) * Ddt(2,2) +
-                 ForceMass(4) * Ddt(4,2) +
-                 ForceMass(6) * Ddt(5,2);
+        valOut = ForceMass(2) * Ddt("Func22()",2) +
+                 ForceMass(4) * Ddt("Func24()",2) +
+                 ForceMass(6) * Ddt("Func25()",2);
     }
-    else if (this->getDataIndex() == 2) //Data index for Z-translation
+    else if (this->getDataIndex() == 2) //Data index for Z-translation, in computer numbering
     {
         //Add in mass objects.
-        valOut = ForceMass(3) * Ddt(3,2) +
-                 ForceMass(4) * Ddt(4,2) +
-                 ForceMass(5) * Ddt(5,2);
+        valOut = ForceMass(3) * Ddt("Func23()",2) +
+                 ForceMass(4) * Ddt("Func24()",2) +
+                 ForceMass(5) * Ddt("Func25()",2);
     }
 
 
@@ -132,6 +132,28 @@ complex<double> EqnTranslation::setFormula()
     return valOut;
 }
 
+//------------------------------------------Function Separator --------------------------------------------------------
+std::complex<double> EqnTranslation::setVarGlobtoBod()
+{
+    //I only want to define a single class for all of the translation equations.
+    //So I will use if-then statements to create three separate resposnes.
+
+    if (this->getDataIndex() == 0)  //Data index for x-translation, in computer numbering
+    {
+        return Func21();    //Return variable in body coordinate system.
+    }
+
+    else if (this->getDataIndex() == 1) //Data index for y-translation, in computer numbering
+    {
+        return Func22();    //Return variable in body coordinate system.
+    }
+
+    else if (this->getDataIndex() == 2) //Data index for z-translation, in computer numbering
+    {
+        return Func23();    //Return variable in body coordinate system.
+    }
+}
+
 //==========================================Section Separator =========================================================
 //Custom function definitions
 
@@ -139,7 +161,7 @@ complex<double> EqnTranslation::setFormula()
 std::complex<double> EqnTranslation::Func1()
 {
     //ForceReact_hydro
-    return ForceReact_hydro(ord(),var()) * Ddt(var(),ord());
+    return ForceReact_hydro(ord(),var()) * Func20();
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
@@ -153,7 +175,7 @@ std::complex<double> EqnTranslation::Func2()
 std::complex<double> EqnTranslation::Func3()
 {
     //ForceReact_user
-    return ForceReact_user(ord(),var()) * Ddt(var(),ord());
+    return ForceReact_user(ord(),var()) * Func20();
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
@@ -167,7 +189,7 @@ std::complex<double> EqnTranslation::Func4()
 std::complex<double> EqnTranslation::Func5()
 {
     //ForceCross_hydro
-    return ForceCross_hydro(body(),ord(),var()) * Ddt(var(),ord(),body());
+    return ForceCross_hydro(body(),ord(),var()) * Func20();
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
@@ -182,7 +204,7 @@ std::complex<double> EqnTranslation::Func6()
 std::complex<double> EqnTranslation::Func7()
 {
     //ForceCross_user
-    return ForceCross_user(body(),ord(),var()) * Ddt(var(),ord(),body());
+    return ForceCross_user(body(),ord(),var()) * Func20();
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
@@ -264,67 +286,97 @@ std::complex<double> EqnTranslation::Func19()
 //------------------------------------------Function Separator --------------------------------------------------------
 std::complex<double> EqnTranslation::Func20()
 {
-    return complex<double>(0,0);
+    //Returning derivative of motion variables, in body coordinate system.
+
+    std::complex<double> out;
+
+    switch(var())
+    {
+    case 1:
+        out = Ddt("Func21()", ord(), bod());
+    case 2:
+        out = Ddt("Func22()", ord(), bod());
+    case 3:
+        out = Ddt("Func23()", ord(), bod());
+    case 4:
+        out = Ddt("Func24()", ord(), bod());
+    case 5:
+        out = Ddt("Func25()", ord(), bod());
+    case 6:
+        out = Ddt("Func26()", ord(), bod());
+    }
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
 std::complex<double> EqnTranslation::Func21()
 {
-    return complex<double>(0,0);
+    //Translation X in body coordinates
+    //X_1a * cos(R_z) + X_2a * sin(R_z)
+    Func27() * cos(R_z()) + Func28() * sin(R_z());
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
 std::complex<double> EqnTranslation::Func22()
 {
-    return complex<double>(0,0);
+    //Translation Y in body coordinates
+    //-X_1a * sin(R_z) + X_2a * cos(R_z)
+    return -Func27() * sin(R_z()) + Func28() * cos(R_z());
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
 std::complex<double> EqnTranslation::Func23()
 {
-    return complex<double>(0,0);
+    return T_x() * Ddt(6,0) - T_y() * Ddt(4,0) + Ddt(3,0);
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
 std::complex<double> EqnTranslation::Func24()
 {
-    return complex<double>(0,0);
+    return Func29() * cos(R_z()) + Func30() * sin(R_z());
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
 std::complex<double> EqnTranslation::Func25()
 {
-    return complex<double>(0,0);
+    return -Func29() * sin(R_z()) + Func30() * cos(R_z());
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
 std::complex<double> EqnTranslation::Func26()
 {
-    return complex<double>(0,0);
+    return T_x() * Ddt(3,0) - T_y() * Ddt(2,0) + Ddt(5,0);
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
 std::complex<double> EqnTranslation::Func27()
 {
-    return complex<double>(0,0);
+    //Partial conversion of body coordinates.
+    //X1a;
+    return T_y() * Ddt(6,0) - T_z() * Ddt(5,0) + Ddt(1,0);
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
 std::complex<double> EqnTranslation::Func28()
 {
-    return complex<double>(0,0);
+    //Partial conversion of body coordinates.
+    //X2a;
+    return -T_x() * Ddt(6,0) + T_z() * Ddt(4,0) + Ddt(2,0);
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
 std::complex<double> EqnTranslation::Func29()
 {
-    return complex<double>(0,0);
+    //Partial conversion of body coordinates.
+    //X4a;
+    return T_y() * Ddt(3,0) - T_z() * Ddt(2,0) + Ddt(4,0);
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
 std::complex<double> EqnTranslation::Func30()
 {
-    return complex<double>(0,0);
+    //Partial conversion of body coordinates.
+    //X5a;
+    return -T_x() * Ddt(3,0) + T_z() * Ddt(1,0) + Ddt(5,0);
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------

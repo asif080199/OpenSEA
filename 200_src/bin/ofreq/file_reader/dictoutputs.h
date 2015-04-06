@@ -12,6 +12,7 @@
  *---------------------------------------------------------------------------------------------------------------------
  *Mar 09 2013       Nicholas Barczak	Initially Created
  *May 7, 2014       Nicholas Barczak    Debugged and updated to Rev 1.0
+ *Mar 29, 2015      Nicholas Barczak    Updated to include reports for body coordinate systems
  *
 \*-------------------------------------------------------------------------------------------------------------------*/
 
@@ -42,10 +43,10 @@
 
 //Include Report objects.
 #include "../reports/report.h"
-#include "../reports/repbodacceleration.h"
-#include "../reports/repbodmotion.h"
-#include "../reports/repbodsolution.h"
-#include "../reports/repbodvelocity.h"
+#include "../reports/repglobacceleration.h"
+#include "../reports/repglobmotion.h"
+#include "../reports/repglobsolution.h"
+#include "../reports/repglobvelocity.h"
 #include "../reports/replocalsolution.h"
 #include "../reports/replocalacceleration.h"
 #include "../reports/repwavespectra.h"
@@ -57,6 +58,10 @@
 #include "../reports/repcapturewidth.h"
 #include "../reports/repreleff.h"
 #include "../reports/repabseff.h"
+#include "../reports/repbodacceleration.h"
+#include "../reports/repbodmotion.h"
+#include "../reports/repbodvelocity.h"
+#include "../reports/repbodsolution.h"
 
 //######################################### Class Separator ###########################################################
 //Namespace declarations
@@ -162,10 +167,10 @@ private:
 
     //------------------------------------------Function Separator ----------------------------------------------------
     //Class Name constants
-    static std::string OBJECT_REPBODACCELERATION;  /**< Key to declare global acceleration object. */
-    static std::string OBJECT_REPBODVELOCITY;  /**< Key to declare global velocity object. */
-    static std::string OBJECT_REPBODMOTION;    /**< Key to declare global motion object. */
-    static std::string OBJECT_REPBODSOLUTION;  /**< Key to declare global solution object. */
+    static std::string OBJECT_REPGLOBACCELERATION;  /**< Key to declare global acceleration object. */
+    static std::string OBJECT_REPGLOBVELOCITY;  /**< Key to declare global velocity object. */
+    static std::string OBJECT_REPGLOBMOTION;    /**< Key to declare global motion object. */
+    static std::string OBJECT_REPGLOBSOLUTION;  /**< Key to declare global solution object. */
     static std::string OBJECT_REPLOCALACCELERATION; /**< Key to declare local acceleration object. */
     static std::string OBJECT_REPLOCALSOLUTION; /**< Key to declare local solution object. */
     static std::string OBJECT_REPWAVESPECTRA; /**< Key to declare wave spectra object. */
@@ -177,6 +182,10 @@ private:
     static std::string OBJECT_REPCAPWIDTH;  /**< Key to declare capture width report. */
     static std::string OBJECT_REPRELEFF;  /**< Key to declare report of relative efficiency. */
     static std::string OBJECT_REPABSEFF;  /**< Key to declare report of absolute efficiency. */
+    static std::string OBJECT_REPBODYACCELERATION;  /**< Key to declare body acceleration object. */
+    static std::string OBJECT_REPBODYVELOCITY;  /**< Key to declare body velocity object. */
+    static std::string OBJECT_REPBODYMOTION;    /**< Key to declare body motion object. */
+    static std::string OBJECT_REPBODYSOLUTION;  /**< Key to declare body solution object. */
 
     //------------------------------------------Function Separator ----------------------------------------------------
     //Keyword name constants

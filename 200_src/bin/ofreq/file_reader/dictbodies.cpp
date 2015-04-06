@@ -59,6 +59,7 @@ string dictBodies::KEY_HEADING = "heading"; /**< Key for heading of body, Z-axis
 string dictBodies::KEY_MOTION = "motion"; /**< Key to specify motion model.*/
 string dictBodies::KEY_LINKEDBODY = "linkedbody"; /**< Key for linked body */
 string dictBodies::KEY_MODEL = "model"; /**< Key for model to use for force specification. */
+string dictBodies::KEY_CONST = "constants"; /**< Key for body constants. */
 
 //==========================================Section Separator =========================================================
 //Public Functions
@@ -314,6 +315,17 @@ int dictBodies::defineKey(string keyIn, vector<string> valIn)
             //Invalid use of the key.
             //Return error.
             return 2;
+        }
+    }
+
+    else if (keyIn == KEY_CONST)
+    {
+        //Iterate through each entry in the list and add it to the list of body constants.
+        for (unsigned int i = 0; i < valIn.size(); i++)
+        {
+            ptSystem->listBody(pBody).addBodyConst(
+                        atof(valIn.at(i))
+                        );
         }
     }
 

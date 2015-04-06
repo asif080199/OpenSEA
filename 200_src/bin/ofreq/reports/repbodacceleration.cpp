@@ -40,13 +40,14 @@ using namespace arma;
 repBodAcceleration::repBodAcceleration()
 {
     //Assign a default value for the name.
-    this->setName("Body Global Motion");
+    this->setName("Body Global Acceleration - Global Coordinate System");
 
     //Add the order of derivative constant.
     plistConst_Key.push_back(
                 KEY_ORDER);
 
     //create a new data object and add it to the constant key values.
+    //This is where we set the order of derivative.
     Data keyval;
     keyval.addValue(2);
     plistConst_Val.push_back(keyval);
@@ -77,3 +78,4 @@ std::string repBodAcceleration::getFileName()
 
 //==========================================Section Separator =========================================================
 //Private Functions
+

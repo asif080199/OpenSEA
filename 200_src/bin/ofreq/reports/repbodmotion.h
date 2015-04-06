@@ -10,8 +10,7 @@
  *---------------------------------------------------------------------------------------------------------------------
  *Date          Author                  Description
  *---------------------------------------------------------------------------------------------------------------------
- *Dec 13, 2014	Nicholas Barczak		Initially Created
- *Dec 20, 2014  Nicholas Barczak        Debugged and updated to Rev 1.0
+ *Mar 29, 2015	Nicholas Barczak		Initially Created
  *
 \*-------------------------------------------------------------------------------------------------------------------*/
 
@@ -36,8 +35,8 @@
 
 //######################################### Class Separator ###########################################################
 //Include statements and headers
-#ifndef REPGLOBMOTION_H
-#define REPGLOBMOTION_H
+#ifndef REPBODMOTION_H
+#define REPBODMOTION_H
 #include "repbodsolution.h"
 
 #ifdef Q_OS_WIN
@@ -80,12 +79,14 @@ namespace ofreq
 /**
  * @brief Report for global motions of the body motions (0th order derivative.)
  *
- * Provides the solution to the Body motions, in each degree of freedom, for a 0th order of derivative.  The input
- * must specify the name of the body.  The following keywords are declared:
+ * Provides the solution to the Body motions, in each degree of freedom, for a 0th order of derivative.  Solution
+ * provided in body coordinate system.  The input must specify the name of the body.  The following keywords are
+ * declared:
  *
  * KEY_BODY:        String.  Name of the body to associate with.
  */
-class repBodMotion: public repBodSolution{
+class repBodMotion: public repBodSolution
+{
 //==========================================Section Separator =========================================================
 public:
     //------------------------------------------Function Separator ----------------------------------------------------
@@ -132,4 +133,4 @@ private:
 
 }   //Namespace osea
 
-#endif // REPGLOBMOTION_H
+#endif // REPBODMOTION_H

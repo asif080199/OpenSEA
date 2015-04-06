@@ -104,6 +104,28 @@ std::complex<double> EqnRotation::setFormula()
     return valOut;
 }
 
+//------------------------------------------Function Separator --------------------------------------------------------
+std::complex<double> EqnRotation::setVarGlobtoBod()
+{
+    //I only want to define a single class for all of the rotation equations.
+    //So I will use if-then statements to create three separate responses.
+
+    if (this->getDataIndex() == 3)  //Data index for x-rotation, in computer numbering
+    {
+        return Func24();    //Return variable in body coordinate system.
+    }
+
+    else if (this->getDataIndex() == 4) //Data index for y-rotation, in computer numbering
+    {
+        return Func25();    //Return variable in body coordinate system.
+    }
+
+    else if (this->getDataIndex() == 5) //Data index for z-rotation, in computer numbering
+    {
+        return Func26();    //Return variable in body coordinate system.
+    }
+}
+
 //==========================================Section Separator =========================================================
 //Custom function definitions
 
@@ -111,28 +133,28 @@ std::complex<double> EqnRotation::setFormula()
 std::complex<double> EqnRotation::Func1()
 {
     //ForceMass
-    return ForceMass(var()) * Ddt(var(),2);
+    return ForceMass(var()) * Func20();
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
 std::complex<double> EqnRotation::Func2()
 {
     //ForceReact_hydro
-    return ForceReact_hydro(ord(),var()) * Ddt(var(),ord());
+    return ForceReact_hydro(ord(),var()) * Func20();
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
 std::complex<double> EqnRotation::Func3()
 {
     //ForceReact_user
-    return ForceReact_user(ord(),var()) * Ddt(var(),ord());
+    return ForceReact_user(ord(),var()) * Func20();
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
 std::complex<double> EqnRotation::Func4()
 {
     //ForceCross_hydro
-    return ForceCross_hydro(body(),ord(),var()) * Ddt(var(),ord(),body());
+    return ForceCross_hydro(body(),ord(),var()) * Func20();
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
@@ -154,7 +176,7 @@ std::complex<double> EqnRotation::Func6()
 std::complex<double> EqnRotation::Func7()
 {
     //ForceCross-user
-    return ForceCross_user(body(),ord(),var()) * Ddt(var(),ord(),body());
+    return ForceCross_user(body(),ord(),var()) * Func20();
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
@@ -235,69 +257,99 @@ std::complex<double> EqnRotation::Func19()
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-std::complex<double> EqnRotation::Func20()
+std::complex<double> EqnTranslation::Func20()
 {
-    return std::complex<double>(0,0);
+    //Returning derivative of motion variables, in body coordinate system.
+
+    std::complex<double> out;
+
+    switch(var())
+    {
+    case 1:
+        out = Ddt("Func21()", ord(), bod());
+    case 2:
+        out = Ddt("Func22()", ord(), bod());
+    case 3:
+        out = Ddt("Func23()", ord(), bod());
+    case 4:
+        out = Ddt("Func24()", ord(), bod());
+    case 5:
+        out = Ddt("Func25()", ord(), bod());
+    case 6:
+        out = Ddt("Func26()", ord(), bod());
+    }
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-std::complex<double> EqnRotation::Func21()
+std::complex<double> EqnTranslation::Func21()
 {
-    return std::complex<double>(0,0);
+    //Translation X in body coordinates
+    //X_1a * cos(R_z) + X_2a * sin(R_z)
+    Func27() * cos(R_z()) + Func28() * sin(R_z());
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-std::complex<double> EqnRotation::Func22()
+std::complex<double> EqnTranslation::Func22()
 {
-    return std::complex<double>(0,0);
+    //Translation Y in body coordinates
+    //-X_1a * sin(R_z) + X_2a * cos(R_z)
+    return -Func27() * sin(R_z()) + Func28() * cos(R_z());
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-std::complex<double> EqnRotation::Func23()
+std::complex<double> EqnTranslation::Func23()
 {
-    return std::complex<double>(0,0);
+    return T_x() * Ddt(6,0) - T_y() * Ddt(4,0) + Ddt(3,0);
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-std::complex<double> EqnRotation::Func24()
+std::complex<double> EqnTranslation::Func24()
 {
-    return std::complex<double>(0,0);
+    return Func29() * cos(R_z()) + Func30() * sin(R_z());
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-std::complex<double> EqnRotation::Func25()
+std::complex<double> EqnTranslation::Func25()
 {
-    return std::complex<double>(0,0);
+    return -Func29() * sin(R_z()) + Func30() * cos(R_z());
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-std::complex<double> EqnRotation::Func26()
+std::complex<double> EqnTranslation::Func26()
 {
-    return std::complex<double>(0,0);
+    return T_x() * Ddt(3,0) - T_y() * Ddt(2,0) + Ddt(5,0);
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-std::complex<double> EqnRotation::Func27()
+std::complex<double> EqnTranslation::Func27()
 {
-    return std::complex<double>(0,0);
+    //Partial conversion of body coordinates.
+    //X1a;
+    return T_y() * Ddt(6,0) - T_z() * Ddt(5,0) + Ddt(1,0);
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-std::complex<double> EqnRotation::Func28()
+std::complex<double> EqnTranslation::Func28()
 {
-    return std::complex<double>(0,0);
+    //Partial conversion of body coordinates.
+    //X2a;
+    return -T_x() * Ddt(6,0) + T_z() * Ddt(4,0) + Ddt(2,0);
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-std::complex<double> EqnRotation::Func29()
+std::complex<double> EqnTranslation::Func29()
 {
-    return std::complex<double>(0,0);
+    //Partial conversion of body coordinates.
+    //X4a;
+    return T_y() * Ddt(3,0) - T_z() * Ddt(2,0) + Ddt(4,0);
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
-std::complex<double> EqnRotation::Func30()
+std::complex<double> EqnTranslation::Func30()
 {
-    return std::complex<double>(0,0);
+    //Partial conversion of body coordinates.
+    //X5a;
+    return -T_x() * Ddt(3,0) + T_z() * Ddt(1,0) + Ddt(5,0);
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------

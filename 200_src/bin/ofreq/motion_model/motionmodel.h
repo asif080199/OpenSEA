@@ -141,6 +141,35 @@ public:
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
+     * @brief Gets the constants for the specified body.
+     *
+     * Each Body object has a set of constants associated with it.  These constants can be anything that the user
+     * desires.  They are a vector of constants.  They are referenced simply in the order of the sequence that the
+     * user enters them.  To use these, the user would specify a constant (by index) in the equation of motion or
+     * coordinate transform.  The user then enters that constant in the same sequence in the body input definition.
+     * @param bod Integer, variable passed by value.  The body that you want to get the index for.
+     * @return Returns vector of doubles, passed by value.  The list of body constants.  List size is unknown until
+     * run time.
+     */
+    std::vector<double> getBodyConst(int bod);
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Gets the constants for the specified body.
+     *
+     * Each Body object has a set of constants associated with it.  These constants can be anything that the user
+     * desires.  They are a vector of constants.  They are referenced simply in the order of the sequence that the
+     * user enters them.  To use these, the user would specify a constant (by index) in the equation of motion or
+     * coordinate transform.  The user then enters that constant in the same sequence in the body input definition.
+     * @param bod Integer, variable passed by value.  The body that you want to get the index for.
+     * @param index Integer, variable passed by value.  The index of the constant that you want to retrieve from the
+     * body.
+     * @return Returns single double, passed by value.  The body constant specified by the index.
+     */
+    double getBodyConst(int bod, int index);
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
      * @brief Sets the index for the body that all calculations are based on.
      * @param Integer input specifying the number of the body to use.  Integer corresponds to the sequence of bodies
      * in the vector supplied with the body.
@@ -1192,7 +1221,9 @@ private:
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
-     * @brief The list of equations of motion to use in the motion model.  The sequence of equations in the list is
+     * @brief The list of equations of motion to use in the motion model.
+     *
+     * The list of equations of motion to use in the motion model.  The sequence of equations in the list is
      * important.  Equations appear in the list in the order as they appear in the matrix model of the body.
      * Vector must use a list of pointer objects to allow correct polymorphism to overload the setFormula() function
      * of derived classes and have that derived class formula used.

@@ -10,14 +10,13 @@
  *---------------------------------------------------------------------------------------------------------------------
  *Date          Author                  Description
  *---------------------------------------------------------------------------------------------------------------------
- *Dec 13, 2014	Nicholas Barczak		Initially Created
- *Dec 20, 2014  Nicholas Barczak        Debugged and updated to Rev 1.0
+ *Mar 29, 2015	Nicholas Barczak		Initially Created
  *
 \*-------------------------------------------------------------------------------------------------------------------*/
 
 //License
 /*-------------------------------------------------------------------------------------------------------------------*\
- *Copyright Datawave Marine Solutions, 2013.
+ *Copyright Datawave Marine Solutions, 2015.
  *This file is part of OpenSEA.
 
  *OpenSEA is free software: you can redistribute it and/or modify
@@ -36,8 +35,8 @@
 
 //######################################### Class Separator ###########################################################
 //Include statements and headers
-#ifndef REPGLOBSOLUTION_H
-#define REPGLOBSOLUTION_H
+#ifndef REPBODSOLUTION_H
+#define REPBODSOLUTION_H
 #include "report.h"
 
 #ifdef Q_OS_WIN
@@ -78,10 +77,11 @@ namespace ofreq
 
 //######################################### Class Separator ###########################################################
 /**
- * @brief Report for global solution to Body motions.
+ * @brief Report for body solution to Body motions, in body coordinate system.
  *
  * Provides the solution of the Body motions, in each degree of freedom, for the specified body and order of
- * derivative.  The input must specify the order of derivative and the body.  The following keywords are declared:
+ * derivative.  Results are provided in the body coordinate system.  The input must specify the order of derivative
+ * and the body.  The following keywords are declared:
  *
  * KEY_BODY:        String.  Name of the body to associate with.
  * KEY_ORDER:       String.  The order of the derivative.
@@ -177,4 +177,4 @@ private:
 
 }   //Namespece osea
 
-#endif // REPGLOBSOLUTION_H
+#endif // REPBODSOLUTION_H

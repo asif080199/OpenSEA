@@ -12,6 +12,7 @@
  *---------------------------------------------------------------------------------------------------------------------
  *Aug 03 2013       Nicholas Barczak        Initially created
  *May 7, 2014       Nicholas Barczak    Debugged and updated to Rev 1.0
+ *Mar 29, 2015      Nicholas Barczak        Added more functions to access coordinate transform
  *
 \*-------------------------------------------------------------------------------------------------------------------*/
 
@@ -291,6 +292,13 @@ public:
      */
     void setDebugData(double freqIn, std::complex<double> solnIn, bool coeffIn = false);
 
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Transforms the input variable from global coordinate system to Body coordinate system.
+     * @return Returns double, passed by value.  Equation of motion variable, converted to Body coordinate system.
+     */
+    std::complex<double> VarGlobtoBod();
+
 //==========================================Section Separator =========================================================
 protected:
     //------------------------------------------Function Separator ----------------------------------------------------
@@ -303,8 +311,22 @@ protected:
      * Example:  If the formula were Ax + By = F, it must be rearranged to:  Ax + By - F = 0
      *
      * The formula can also make use of several math functions provided by the equation of motion object.
+     * @return Returns the result of evaluating the equation of motion.  The returned result can be either a coefficient
+     * of motion, or an actual force resulting from the solved motion.  Specific output depends on the settings of
+     * the motion model.  Returns a complex double, variable passed by value.
      */
     virtual std::complex<double> setFormula();
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief The formula used to convert motion from global to body coordinate system.
+     *
+     * The formula used by the equation of motion specifically just to convert the motion variables from global to body
+     * coordinate system.
+     * @return Returns a complex double, variable passed by value.  The returned value is the value of motion for the
+     * given equation of motion, converted into body coordinate system.
+     */
+    virtual std::complex<double> setVarGlobtoBod();
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -341,6 +363,22 @@ protected:
      * values of response were desired, the function will include the effects of response amplitude.
      */
     std::complex<double> Ddt(int var, int ord, int bodIn=-1);
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Time differential function, of a user function.
+     *
+     * Time differential function.  Used to calculate the time derivative of a reponse.  Can convert from response
+     * amplitude to velocity to acceleration, and further.  Used to calculated amplitude of response.
+     * @param funcName String, variable passed by value.  The name of the function used as the input variable.
+     * Frequency and imaginary number multiplied to the result of this function.
+     * @param ord Integer.  The order of the differential.  If the function ord() is used, the order is automatically
+     * determined by the summation function that you include Ddt() into.
+     * @param bodIn The body to retrieve variable data for.
+     * @return Returns a complex value that is the time differential, transposed into a frequency domain.  If absolute
+     * values of response were desired, the function will include the effects of response amplitude.
+     */
+    std::complex<double> Ddt(std::string funcName, int ord, int bodIn=-1);
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**
@@ -673,6 +711,59 @@ protected:
     virtual std::complex<double> Func48();
     virtual std::complex<double> Func49();
     virtual std::complex<double> Func50();
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Translation of coordinate system in the X-axis (global X-axis)
+     * @param bodIn Integer, variable passed by value.  The index of the body that you are requesting translation
+     * for.  Default entry will request the body index for the current body.  Index is numbered starting from 1.
+     * @return Returns the distance of translation of body coordinate system in the X-axis.
+     */
+    std::complex<double> T_x(int bodIn = 0);
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Translation of coordinate system in the Y-axis (global Y-axis)
+     * @param bodIn Integer, variable passed by value.  The index of the body that you are requesting translation
+     * for.  Default entry will request the body index for the current body.  Index is numbered starting from 1.
+     * @return Returns the distance of translation of body coordinate system in the Y-axis.
+     */
+    std::complex<double> T_y(int bodIn = 0);
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Translation of coordinate system in the Z-axis (global Z-axis)
+     * @param bodIn Integer, variable passed by value.  The index of the body that you are requesting translation
+     * for.  Default entry will request the body index for the current body.  Index is numbered starting from 1.
+     * @return Returns the distance of translation of body coordinate system in the Z-axis.
+     */
+    std::complex<double> T_z(int bodIn = 0);
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Rotation of coordinate system about the Z-axis (global z-axis)
+     * @param bodIn Integer, variable passed by value.  The index of the body that you are requesting heading
+     * for.  Default entry will request the body index for the current body.  Index is numbered starting from 1.
+     * @return Returns the angle of rotation of body coordinate system about the Z-axis.  Rotation angle is in
+     * units of radians.
+     */
+    std::complex<double> R_z(int bodIn = 0);
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Returns the body constant for the requested index.
+     *
+     * Each Body object has a set of constants associated with it.  These constants can be anything that the user
+     * desires.  They are a vector of constants.  They are referenced simply in the order of the sequence that the
+     * user enters them.  To use these, the user would specify a constant (by index) in the equation of motion or
+     * coordinate transform.  The user then enters that constant in the same sequence in the body input definition.
+     * @param index Integer, variable passed by value.  The index of the constant that you want to retrieve from the
+     * body.
+     * @param bodIn Integer, variable passed by value.  The index of the body that you are requesting translation
+     * for.  Default entry will request the body index for the current body.  Index is numbered starting from 1.
+     * @return Returns single double, passed by value.  The body constant specified by the index.
+     */
+    std::complex<double> BodConst(int index, int bodIn = 0);
 
 //==========================================Section Separator =========================================================
 private:

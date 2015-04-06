@@ -46,7 +46,7 @@ string repBodSolution::KEY_ORDER = "order";   /**< Order of derivative to use fo
 repBodSolution::repBodSolution()
 {
     //Assign a default value for the name.
-    this->setName("Body Global Solution");
+    this->setName("Body Solution - Body Coordinate System");
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
@@ -86,19 +86,33 @@ void repBodSolution::calcReport(int freqInd)
         //Resize matrix.
         output->set_size(nRow,1);
 
-        //Get base solution values.
-        ofreq::Solution* input =
-                &(ptSystem->listSolutionSet(this->getBodIndex())
-                .refSolution(
-                    ptSystem->getCurWaveDirInd(),
-                    freqInd));
-
         for (int i = 0; i < nRow; i++)
         {
+            //Reset motion model, just for good measure.
+            ptMotion->Reset();
+
+            //Set the wave frequency of the system.
+            ptSystem->setCurFreqInd(freqInd);
+
+            //Set the motion variables
+            ptSystem->listBody(this->getBodIndex())
+                    .getMotionModel()
+                    .setSolutionSet(ptSystem->listSolutionSet(this->getBodIndex())
+                                    .refSolution(
+                                        ptSystem->getCurWaveDirInd(),
+                                        freqInd)
+                                    );
+
+            //Get solution, in body coordinate system.
+            output->at(i,0) = ptSystem->listBody(this->getBodIndex())
+                              .getMotionModel()
+                              .listEquation(i)
+                              .VarGlobtoBod();
+
             //Calculate derivative.
             output->at(i,0) = pow(wavefreq, pOrd)
                               * pow(compI, pOrd)
-                              * input->refSolnMat()(i,0);
+                              * output->at(i,0);
         }
 
         //Write result to results list.

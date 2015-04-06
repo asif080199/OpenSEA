@@ -132,7 +132,7 @@ public:
      * @brief Exposes the body name property for operation.
      * @return reference to the body name property.
      */
-    std::string &getBodyName();
+    std::string getBodyName();
 
     //------------------------------------------Function Separator ----------------------------------------------------
 	/**
@@ -439,13 +439,6 @@ public:
     arma::Mat<double> &refPosn();
 
     //------------------------------------------Function Separator ----------------------------------------------------
-	/**
-	 * Get the name of the body.
-	 * @return The name of the body.
-	 */    
-	std::string getBodyName();
-
-    //------------------------------------------Function Separator ----------------------------------------------------
     /**
      * @brief Set the solution matrix for the body.
      *
@@ -747,6 +740,32 @@ public:
      */
     void initMassMat();
 
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Add an entry to the list of body constants.
+     *
+     * Body constants are arbitrary constants for a body, which get used in custom motion models defined by the user.
+     * Their meaning is completely undefined in the program.  But the user is free to use them however desired.  Just
+     * a list of constants the user can specify for the body.
+     * @param constIn Double, passed by value.  The value to add to the body constants.
+     */
+    void addBodyConst(double constIn);
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Returns the list of body constants.
+     * @return Returns the list of body constants, variable passed by reference.
+     */
+    std::vector<double> &listBodyConst();
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief Returns a single entry from the list of body constants.
+     * @param index Integer, variable passed by value.  The index of the value of body constants to return.
+     * @return Returns a single entry from the list of body constants.  Variable passed by reference.
+     */
+    double &listBodyConst(int index);
+
 
 //==========================================Section Separator =========================================================
 protected:
@@ -933,6 +952,12 @@ private:
      * This functions calculates those coupling terms and adds them into the mass matrix.
      */
     void setMassCouple();
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief The lis of body constants to be applied in the motion model.
+     */
+    std::vector<double> pBodConst;
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**

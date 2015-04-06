@@ -74,6 +74,36 @@ void MotionModel::setlistBody(vector<Body> &listBodIn)
 }
 
 //------------------------------------------Function Separator --------------------------------------------------------
+std::vector<double> MotionModel::getBodyConst(int bod)
+{
+    try
+    {
+        return listBody(bod).listBodyConst();
+    }
+    catch(const std::exception &err)
+    {
+        //Error handler.
+        logStd.Notify();
+        logErr.Write(ID + string(err.what()));
+    }
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+double MotionModel::getBodyConst(int bod, int index)
+{
+    try
+    {
+        return listBody(bod).listBodyConst(index);
+    }
+    catch(const std::exception &err)
+    {
+        //Error handler.
+        logStd.Notify();
+        logErr.Write(ID + string(err.what()));
+    }
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
 void MotionModel::setBody(int bod)
 {
     //Set the integer for the body to use as the reference.

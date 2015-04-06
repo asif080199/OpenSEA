@@ -53,10 +53,10 @@
 //Report Classes
 #include "repdirections.h"
 #include "repfrequencies.h"
-#include "repbodacceleration.h"
-#include "repbodmotion.h"
-#include "repbodvelocity.h"
-#include "repbodsolution.h"
+#include "repglobacceleration.h"
+#include "repglobmotion.h"
+#include "repglobvelocity.h"
+#include "repglobsolution.h"
 #include "replocalacceleration.h"
 #include "replocalsolution.h"
 #include "repwavespectra.h"
@@ -68,6 +68,10 @@
 #include "repcapturewidth.h"
 #include "repreleff.h"
 #include "repabseff.h"
+#include "repbodacceleration.h"
+#include "repbodmotion.h"
+#include "repbodvelocity.h"
+#include "repbodsolution.h"
 
 //######################################### Class Separator ###########################################################
 //Namespace declarations

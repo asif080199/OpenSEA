@@ -85,10 +85,6 @@ SOURCES += ofreq.cpp \
     file_reader/dictoutputs.cpp \
     reports/replocalsolution.cpp \
     reports/replocalacceleration.cpp \
-    reports/repbodacceleration.cpp \
-    reports/repbodmotion.cpp \
-    reports/repbodsolution.cpp \
-    reports/repbodvelocity.cpp \
     reports/repwavespectra.cpp \
     reports/repstaticbodyaccel.cpp \
     reports/repdesignaccel.cpp \
@@ -97,7 +93,15 @@ SOURCES += ofreq.cpp \
     reports/repbodpower.cpp \
     reports/repcapturewidth.cpp \
     reports/repreleff.cpp \
-    reports/repabseff.cpp
+    reports/repabseff.cpp \
+    reports/repglobsolution.cpp \
+    reports/repglobacceleration.cpp \
+    reports/repglobmotion.cpp \
+    reports/repglobvelocity.cpp \
+    reports/repbodsolution.cpp \
+    reports/repbodmotion.cpp \
+    reports/repbodvelocity.cpp \
+    reports/repbodacceleration.cpp
 
 HEADERS += \
     motion_solver/motionsolver.h \
@@ -166,10 +170,6 @@ HEADERS += \
     file_reader/dictoutputs.h \
     reports/replocalsolution.h \
     reports/replocalacceleration.h \
-    reports/repbodacceleration.h \
-    reports/repbodmotion.h \
-    reports/repbodsolution.h \
-    reports/repbodvelocity.h \
     reports/repwavespectra.h \
     reports/repstaticbodyaccel.h \
     reports/repdesignaccel.h \
@@ -178,7 +178,15 @@ HEADERS += \
     reports/repbodpower.h \
     reports/repcapturewidth.h \
     reports/repreleff.h \
-    reports/repabseff.h
+    reports/repabseff.h \
+    reports/repglobacceleration.h \
+    reports/repglobmotion.h \
+    reports/repglobsolution.h \
+    reports/repglobvelocity.h \
+    reports/repbodsolution.h \
+    reports/repbodmotion.h \
+    reports/repbodvelocity.h \
+    reports/repbodacceleration.h
 
 # Include header files path for libraries
 INCLUDEPATH += \

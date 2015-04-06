@@ -174,11 +174,28 @@ void EquationofMotion::setDebugData(double freqIn, std::complex<double> solnIn, 
     debugCoeffOnly = coeffIn;
 }
 
+//------------------------------------------Function Separator --------------------------------------------------------
+complex<double> EquationofMotion::VarGlobtoBod()
+{
+    return setVarGlobtoBod();
+}
+
 //==========================================Section Separator =========================================================
 //Protected Members
 
 //------------------------------------------Function Separator --------------------------------------------------------
 complex<double> EquationofMotion::setFormula()
+{
+    //This is just a simple definition of the setFormula function to keep the compiler happy.
+    //Eventually, this definition will be overriden by the correct definition of the child
+    //class.
+    complex<double> output(0,0);
+
+    return output;
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+std::complex<double> EquationofMotion::setVarGlobtoBod()
 {
     //This is just a simple definition of the setFormula function to keep the compiler happy.
     //Eventually, this definition will be overriden by the correct definition of the child
@@ -232,67 +249,80 @@ complex<double> EquationofMotion::Ddt(int var, int ord, int bodIn)
 
     //Calculate time differential.
     std::complex<double> out(1.0,0);
+    //Initial value for out assumes that calculating coefficients only.
+
+    //These will be needed for the differential.
+    complex<double> freq(0,0);
+    complex<double> imagI(0,1.0);
 
     try
     {
-        //First check if calculating actual values
+        //If calculating actual values, retrieve the solution value.
         if (!(pParentModel->CoefficientOnly()))
         {
-            //Not calculating coefficients.  Get actual values.
-            complex<double> freq(0,0);
-            complex<double> imagI(0,1.0);
-
-            //get wave frequency.
-            freq = pParentModel->getFreq();
-
-            //Calculate refDerivative           
-            out = out * pow(freq,ord) * pow(imagI, ord);
-
             //Get matrix of solution.
             arma::cx_mat sol = pParentModel->listSolutionSet(bodIn).refSolution(
                                    pParentModel->getWaveDirInd(),
                                    pParentModel->getFreqInd()).getSolnMat();
 
             //Apply to result.
-            out = out * sol(var, 0);
-
-
+            out = sol(var, 0);
         }
-        else
-        {
-            //Calculating coefficients.  Do not retrieve actual values.
 
-            //Not calculating coefficients.  Get actual values.
-            complex<double> freq(0,0);
-            complex<double> imagI(0,1.0);
+        //get wave frequency.
+        freq = pParentModel->getFreq();
 
-            //get wave frequency.
-            freq = pParentModel->getFreq();
-
-            //Calculate refDerivative
-            out = out * pow(freq,ord) * pow(imagI, ord);
-        }
+        //Calculate Derivative
+        out = out * pow(freq,ord) * pow(imagI, ord);
     }
-    catch(...)
+    catch(const std::exception &err)
     {
-        //If any errors.  Resort to debugging code.
-        if (!(debugCoeffOnly))
-        {
-            //Not calculating coefficients.  Get actual values.
-            complex<double> freq(0,0);
-            complex<double> imagI(0,1.0);
+        logStd.Notify();
+        logErr.Write(ID + std::string(err.what()));
+    }
 
-            //get wave frequency.
-            freq = debugFreq;
+    //Write output
+    return out;
+}
 
-            //Calculate refDerivative
-            for (int i = 0; i < ord; i++)
-            {
-                out = out * freq * imagI;
-            }
+//------------------------------------------Function Separator --------------------------------------------------------
+std::complex<double> EquationofMotion::Ddt(std::string funcName, int ord, int bodIn)
+{
+    //convert bodies over to computer index
+    if ((bodIn != 0) &&
+            (bodIn != -1))
+        bodIn -= 1;
 
-            out = out * debugSoln;
-        }
+    //set initial value for bodIn
+    if (bodIn == -1)
+        bodIn = pBod;
+
+    //Calculate time differential.
+    std::complex<double> out(1.0,0);
+    //Initial value for out assumes that calculating coefficients only.
+
+    //These will be needed for the differential.
+    complex<double> freq(0,0);
+    complex<double> imagI(0,1.0);
+
+    try
+    {
+        //set body index to current body index
+        pBod = bodIn;
+
+        //Evaluate specified function.
+        out = FunctionFind(funcName);
+
+        //get wave frequency.
+        freq = pParentModel->getFreq();
+
+        //Calculate Derivative
+        out = out * pow(freq,ord) * pow(imagI, ord);
+    }
+    catch(const std::exception &err)
+    {
+        logStd.Notify();
+        logErr.Write(ID + std::string(err.what()));
     }
 
     //Write output
@@ -1277,6 +1307,183 @@ int EquationofMotion::maxord()
 
     //Write output
     return maxme;
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+std::complex<double> EquationofMotion::T_x(int bodIn)
+{
+    //switch index to computer numbering.
+    bodIn -= 1;
+    std::complex<double> output;
+
+    try
+    {
+        if (bodIn < 1)
+        {
+            //Get translation for current body
+            output.real(pParentModel->listBody(
+                            pParentModel->getBody()).getPosnX()
+                        );
+        }
+        else
+        {
+            //get translation for body specified by index.
+            output.real(pParentModel->listBody(
+                            bodIn).getPosnX()
+                        );
+        }
+
+        return output;
+    }
+    catch(const std::exception &err)
+    {
+        //Error handler.
+        logStd.Notify();
+        logErr.Write(ID + std::string("Error referencing body position X.\n") +
+                     string("Error Message:  ") + string(err.what()));
+    }
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+std::complex<double> EquationofMotion::T_y(int bodIn)
+{
+    //switch index to computer numbering.
+    bodIn -= 1;
+    std::complex<double> output;
+
+    try
+    {
+        if (bodIn < 1)
+        {
+            //Get translation for current body
+            output.real(pParentModel->listBody(
+                            pParentModel->getBody()).getPosnY()
+                        );
+        }
+        else
+        {
+            //get translation for body specified by index.
+            output.real(pParentModel->listBody(
+                            bodIn).getPosnY()
+                        );
+        }
+
+        return output;
+    }
+    catch(const std::exception &err)
+    {
+        //Error handler.
+        logStd.Notify();
+        logErr.Write(ID + std::string("Error referencing body position y.\n") +
+                     string("Error Message:  ") + string(err.what()));
+    }
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+std::complex<double> EquationofMotion::T_z(int bodIn)
+{
+    //switch index to computer numbering.
+    bodIn -= 1;
+    std::complex<double> output;
+
+    try
+    {
+        if (bodIn < 1)
+        {
+            //Get translation for current body
+            output.real(pParentModel->listBody(
+                            pParentModel->getBody()).getPosnZ()
+                        );
+        }
+        else
+        {
+            //get translation for body specified by index.
+            output.real(pParentModel->listBody(
+                            bodIn).getPosnZ()
+                        );
+        }
+
+        return output;
+    }
+    catch(const std::exception &err)
+    {
+        //Error handler.
+        logStd.Notify();
+        logErr.Write(ID + std::string("Error referencing body position z.\n") +
+                     string("Error Message:  ") + string(err.what()));
+    }
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+std::complex<double> EquationofMotion::R_z(int bodIn)
+{
+    //switch index to computer numbering.
+    bodIn -= 1;
+    std::complex<double> output;
+
+    try
+    {
+        if (bodIn < 1)
+        {
+            //Get translation for current body
+            output.real(pParentModel->listBody(
+                            pParentModel->getBody()).getHeading()
+                        );
+        }
+        else
+        {
+            //get translation for body specified by index.
+            output.real(pParentModel->listBody(
+                            bodIn).getHeading()
+                        );
+        }
+
+        return output;
+    }
+    catch(const std::exception &err)
+    {
+        //Error handler.
+        logStd.Notify();
+        logErr.Write(ID + std::string("Error referencing body heading.\n") +
+                     string("Error Message:  ") + string(err.what()));
+    }
+}
+
+//------------------------------------------Function Separator --------------------------------------------------------
+std::complex<double> EquationofMotion::BodConst(int index, int bodIn)
+{
+    //switch index to computer numbering.
+    bodIn -= 1;
+    std::complex<double> output;
+
+    try
+    {
+        if (bodIn < 1)
+        {
+            //Get constants for current body
+            output.real(pParentModel->getBodyConst(
+                            pParentModel->getBody(),
+                            index)
+                        );
+        }
+        else
+        {
+            //get constants for body specified by index.
+            output.real(pParentModel->getBodyConst(
+                            bodIn,
+                            index)
+                        );
+        }
+
+        return output;
+    }
+    catch(const std::exception &err)
+    {
+        //Error handler.
+        logStd.Notify();
+        logErr.Write(ID + std::string("Error referencing body constants.\n") +
+                     string("Error Message:  ") + string(err.what()));
+    }
 }
 
 //==========================================Section Separator =========================================================

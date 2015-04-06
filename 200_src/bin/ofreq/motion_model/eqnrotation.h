@@ -117,33 +117,45 @@ namespace ofreq
  *      different forces when developing your own equation of motion.  oFreq recognizes seven (7) basic force types
  *      shown below, with the function name to reference them in the EquationofMotion. (Arguments for each function
  *      are not shown, for sake of clarity.
- *      5.1) ForceMass(...) = The forces associated with the mass of an object.  This includes direct mass for
+ *      5.1) ForceMass() = The forces associated with the mass of an object.  This includes direct mass for
  *           straight linear motion, and moment of inertia for rotational motion.
- *      5.2) ForceActive_hydro(...) = The forces which are independant of body motions.  The hydro subcategory
+ *      5.2) ForceActive_hydro() = The forces which are independant of body motions.  The hydro subcategory
  *           refers to active forces that specifically come from hydrodynamic forces.  This includes the forces
  *           from incident waves.  Sometimes call the Froude-Krylov forces.
- *      5.3) ForceActive_user(...) = The forces which are independant of body motions.  The user subcategory
+ *      5.3) ForceActive_user() = The forces which are independant of body motions.  The user subcategory
  *           refers to active forces specifically defined by the user in the ofreq run file.  These may be
  *           some external force such as an active control system.  Regardless, it is customed defined by the user.
- *      5.4) ForceReact_hydro(...) = The forces which are reactive and dependant on body motions.  This includes
+ *      5.4) ForceReact_hydro() = The forces which are reactive and dependant on body motions.  This includes
  *           derivatives of body motions.  The hydro subcategory refers to reactive forces hydrodynamic in
  *           origin.  This would include body hydrostatic properties, added damping, and added mass.
- *      5.5) ForceReact_user(...) = The forces which are reactive and dependant on body motions.  This includes
+ *      5.5) ForceReact_user() = The forces which are reactive and dependant on body motions.  This includes
  *           derivatives of body motions.  The user subcategory refers to reactive forces defined by the user.
  *           This might include external forces such as a mooring line or dynamic positioning system.  In any
  *           case, these are reactive forces defined at run time in the ofreq input files.
- *      5.6) ForceCross_hydro(...) = The forces which are reactive and dependant on the body motions of another
+ *      5.6) ForceCross_hydro() = The forces which are reactive and dependant on the body motions of another
  *           body.  This is only applicable to multi-body systems.  Examples might be two vessels near each other.
  *           The program can accept equations that use the cross-body forces but are only applied to a single
  *           body problem.  The hydro subcategory refers to reactive forces hydrodynamic in
  *           origin.  This would include body hydrostatic properties, added damping, and added mass, except that
  *           these forces would be dependant on the motions of another body.
- *      5.7) ForceCross_user(...) = The forces which are reactive and dependant on the body motions of another
+ *      5.7) ForceCross_user() = The forces which are reactive and dependant on the body motions of another
  *           body.  This is only applicable to multi-body systems.  Examples might be two vessels near each other.
  *           The program can accept equations that use the cross-body forces but are only applied to a single
  *           body problem.  The user subcategory refers to reactive forces defined by the user.
  *           This might include external forces such as a mooring line or dynamic positioning system.  In any
  *           case, these are reactive forces defined at run time in the ofreq input files.
+ *      5.8) T_X() = The translation vector of the body from the global coordinate system to the body coordinate
+ *           system.  This is specific to translation in the X-direction (global X-axis).
+ *      5.9) T_Y() = The translation vector of the body from the global coordinate system to the body coordinate
+ *           system.  This is specific to translation in the Y-direction (global Y-axis).
+ *     5.10) T_Z() = The translation vector of the body from the global coordinate system to the body coordinate
+ *           system.  This is specific to translation in the Z-direction (global Z-axis).
+ *     5.11) R_Z() = The rotation vector of the body from orientation of the global coordinate system to the
+ *           body coordinate system.  Rotation follows standard coodinate rotations (counter-clockwise).
+ *           Rotation specified in units of radians.  Rotation is applied after coordinate translation.
+ *     5.12) BodConst() = These are any body constants defined by the user.  This can be an unlimited list.
+ *           But there is no structure or meaning to this list.  From oFreq's perspective, this is just an ordered
+ *           list of numbers.  The user must individually track the meaning of each number.
  *
  * 6.)  Use of the Sum() Function.  There are three possible implementations of the Sum() function.  The input
  *      syntax determines which function to use.
@@ -179,6 +191,11 @@ namespace ofreq
  *           Two key points to notice:  The function name was preceded with a reference symbol ( & ); and I only
  *           stated the function name.  I did not include the brackets to explicitely state that it's a function.
  *           Don't include the brackets.  You will get a compiler error if you do.
+ *
+ * 7.)  Keep track of coordinate systems when defining your equations.  The motion variables are for body motion,
+ *      in reference to the global coordinate system.  However, the equations equal forces resolved around the
+ *      body coordinate system.  Part of your equation must include transformation of the motion variables from the
+ *      global coordinate system to the body coordinate system.
  *
  * @sa EquationofMotion
  * @sa MotionModel
@@ -256,6 +273,17 @@ protected:
      * The formula can also make use of several math functions provided by the equation of motion object.
      */
     std::complex<double> setFormula();
+
+    //------------------------------------------Function Separator ----------------------------------------------------
+    /**
+     * @brief The formula used to convert motion from global to body coordinate system.
+     *
+     * The formula used by the equation of motion specifically just to convert the motion variables from global to body
+     * coordinate system.
+     * @return Returns a complex double, variable passed by value.  The returned value is the value of motion for the
+     * given equation of motion, converted into body coordinate system.
+     */
+    virtual std::complex<double> setVarGlobtoBod();
 
     //------------------------------------------Function Separator ----------------------------------------------------
     /**

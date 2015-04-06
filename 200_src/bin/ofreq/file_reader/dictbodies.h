@@ -238,6 +238,7 @@ private:
     static std::string KEY_MOTION; /**< Key to specify motion model.*/
     static std::string KEY_LINKEDBODY; /**< Key for linked body */
     static std::string KEY_MODEL; /**< Key for model to use for force specification. Selects from list of forces defined*/
+    static std::string KEY_CONST; /**< Key for body constants. */
 };
 
 }   //Namespace ofreq
